@@ -8,4 +8,8 @@
     <PackageReference Include="MonoGame.Framework.WindowsDX" Version="3.7.1.189" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MinimalRune.Mathematics\MinimalRune.Mathematics.csproj" />
+  </ItemGroup>
+
 </Project>
