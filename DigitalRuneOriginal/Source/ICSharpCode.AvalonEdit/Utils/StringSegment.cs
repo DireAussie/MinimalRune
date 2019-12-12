@@ -79,7 +79,7 @@ namespace ICSharpCode.AvalonEdit.Utils
 			get { return count; }
 		}
 		
-		#region Equals and GetHashCode implementation
+
 		/// <inheritdoc/>
 		public override bool Equals(object obj)
 		{
@@ -117,6 +117,6 @@ namespace ICSharpCode.AvalonEdit.Utils
 		{
 			return !left.Equals(right);
 		}
-		#endregion
+
 	}
 }

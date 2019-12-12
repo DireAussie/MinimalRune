@@ -18,7 +18,7 @@ namespace DigitalRune.Editor.Errors
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -102,11 +102,11 @@ namespace DigitalRune.Editor.Errors
             set { SetProperty(ref _goToLocationCommand, value); }
         }
         private DelegateCommand<Error> _goToLocationCommand;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -131,6 +131,6 @@ namespace DigitalRune.Editor.Errors
             _line = line;
             _column = column;
         }
-        #endregion
+
     }
 }

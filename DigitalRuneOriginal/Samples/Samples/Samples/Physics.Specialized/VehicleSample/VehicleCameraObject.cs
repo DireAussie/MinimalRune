@@ -26,7 +26,7 @@ namespace Samples.Physics.Specialized
   public class VehicleCameraObject : GameObject
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly IServiceLocator _services;
@@ -35,19 +35,19 @@ namespace Samples.Physics.Specialized
     private bool _useSpectatorView;
     private float _yaw;
     private float _pitch;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     public CameraNode CameraNode { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     public VehicleCameraObject(IGeometricObject vehicle, IServiceLocator services)
@@ -58,11 +58,11 @@ namespace Samples.Physics.Specialized
       _services = services;
       _inputService = services.GetInstance<IInputService>();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     protected override void OnLoad()
@@ -163,6 +163,6 @@ namespace Samples.Physics.Specialized
         CameraNode.View = Matrix44F.CreateLookAt(position, target, up);
       }
     }
-    #endregion
+
   }
 }

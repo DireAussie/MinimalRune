@@ -2,12 +2,12 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#region ----- Credits -----
+
 /*
   The "screen conduction" pattern implemented in DigitalRune.Windows.Framework was
   inspired by the Caliburn.Micro framework (see http://caliburnmicro.codeplex.com/).
 */
-#endregion
+
 
 using System;
 using System.Diagnostics;
@@ -27,13 +27,13 @@ namespace DigitalRune.Windows.Framework
           IDisplayName                  // and has a title.
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -91,11 +91,11 @@ namespace DigitalRune.Windows.Framework
 
         /// <inheritdoc/>
         public event EventHandler<DeactivationEventArgs> Deactivated;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -105,11 +105,11 @@ namespace DigitalRune.Windows.Framework
         {
             _displayName = GetType().FullName;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -193,6 +193,6 @@ namespace DigitalRune.Windows.Framework
         {
             return TaskHelper.FromResult(true);
         }
-        #endregion
+
     }
 }

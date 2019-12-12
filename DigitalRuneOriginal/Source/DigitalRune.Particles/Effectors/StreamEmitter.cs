@@ -35,17 +35,17 @@ namespace DigitalRune.Particles.Effectors
   public class StreamEmitter : ParticleEffector
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
     
     private IParticleParameter<float> _emissionRateParameter;
     private float _leftoverParticles;
     private int _emittedParticles;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -89,11 +89,11 @@ namespace DigitalRune.Particles.Effectors
     /// The default value is -1.
     /// </value>
     public int EmissionLimit { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -104,11 +104,11 @@ namespace DigitalRune.Particles.Effectors
       DefaultEmissionRate = 10;
       EmissionLimit = -1;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -178,6 +178,6 @@ namespace DigitalRune.Particles.Effectors
       // deltaTime is really used. We store the unused fraction for the next frame.
       _leftoverParticles = numberOfParticles - (float)Math.Floor(numberOfParticles);
     }
-    #endregion
+
   }
 }

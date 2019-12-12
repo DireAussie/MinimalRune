@@ -62,7 +62,7 @@ namespace DigitalRune.Particles.Effectors
   public class SingleFadeEffector : ParticleEffector
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private IParticleParameter<float> _valueParameter;
@@ -73,11 +73,11 @@ namespace DigitalRune.Particles.Effectors
     private float _fadeInDuration;
     private float _fadeOutDuration;
     private bool _fadeInBeforeFadeOut;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -173,11 +173,11 @@ namespace DigitalRune.Particles.Effectors
     /// </value>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
     public float FadeOutEnd { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -192,11 +192,11 @@ namespace DigitalRune.Particles.Effectors
       FadeOutStart = 0.5f;
       FadeOutEnd = 1.0f;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -377,6 +377,6 @@ namespace DigitalRune.Particles.Effectors
 
       return value;
     }
-    #endregion
+
   }
 }

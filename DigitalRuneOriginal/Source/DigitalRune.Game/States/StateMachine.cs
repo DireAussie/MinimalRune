@@ -24,16 +24,16 @@ namespace DigitalRune.Game.States
   public class StateMachine
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Re-use StateEventArgs instance to avoid unnecessary memory allocations.
     private readonly StateEventArgs StateEventArgs = new StateEventArgs();
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -41,11 +41,11 @@ namespace DigitalRune.Game.States
     /// </summary>
     /// <value>The states.</value>
     public StateCollection States { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -56,11 +56,11 @@ namespace DigitalRune.Game.States
       States = new StateCollection();
       //States.StateMachine = this;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -78,6 +78,6 @@ namespace DigitalRune.Game.States
       // Update active state. 
       States.UpdateState(StateEventArgs);
     }
-    #endregion
+
   }
 }

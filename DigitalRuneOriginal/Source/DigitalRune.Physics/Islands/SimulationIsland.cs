@@ -41,7 +41,7 @@ namespace DigitalRune.Physics
   public sealed class SimulationIsland
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private static readonly ResourcePool<SimulationIsland> Pool =
@@ -49,11 +49,11 @@ namespace DigitalRune.Physics
         () => new SimulationIsland(),
         null,
         null);
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -140,11 +140,11 @@ namespace DigitalRune.Physics
     /// </summary>
     /// <value>The random generator for constraint randomization.</value>
     internal Random Random { get; set;}
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -196,11 +196,11 @@ namespace DigitalRune.Physics
       Clear();
       Pool.Recycle(this);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -353,6 +353,6 @@ namespace DigitalRune.Physics
 
       return allAreSleeping;
     }
-    #endregion
+
   }
 }

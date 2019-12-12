@@ -21,7 +21,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
   partial class DRModelProcessor
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     private class SubmeshInfo
@@ -53,11 +53,11 @@ namespace DigitalRune.Graphics.Content.Pipeline
         return result;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /*
@@ -130,11 +130,11 @@ namespace DigitalRune.Graphics.Content.Pipeline
     [DisplayName("AABB Maximum"), Description("The maximum corner for the axis-aligned bounding box of the whole model; for example, \"2;3;2\". Only used if 'AABB Enabled' is true.")]
     public virtual Vector3 AabbMaximum { get; set; }
     */
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private void BuildMeshes()
@@ -571,6 +571,6 @@ namespace DigitalRune.Graphics.Content.Pipeline
 
       return boundingShape;
     }
-    #endregion
+
   }
 }

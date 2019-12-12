@@ -25,7 +25,7 @@ namespace Samples.Graphics
   public class TerrainObject : GameObject
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     // The terrain consists of tiles.
@@ -37,21 +37,21 @@ namespace Samples.Graphics
       // A rigid body which contains the tile height field for collision detection.
       public RigidBody RigidBody;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     // The resolution (world units per texel) of the detail textures which are splatted
     // onto the terrain.
     private const float DetailCellSize = 0.005f;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly IServiceLocator _services;
@@ -81,20 +81,20 @@ namespace Samples.Graphics
     private bool _updateGeometryTexture;
     private bool _updateDetailClipmapCellSizes;
     private float _previousCameraFar;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     // The scene node which represents the whole terrain.
     public TerrainNode TerrainNode { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     public TerrainObject(IServiceLocator services)
@@ -104,11 +104,11 @@ namespace Samples.Graphics
 
       _services = services;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     protected override void OnLoad()
@@ -845,7 +845,7 @@ namespace Samples.Graphics
         TerrainNode.DetailClipmap.EnableAnisotropicFiltering,
         isChecked => TerrainNode.DetailClipmap.EnableAnisotropicFiltering = isChecked);
     }
-    #endregion
+
   }
 }
 #endif

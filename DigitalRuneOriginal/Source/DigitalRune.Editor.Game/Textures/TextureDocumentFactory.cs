@@ -18,22 +18,22 @@ namespace DigitalRune.Editor.Textures
     internal class TextureDocumentFactory : DocumentFactory
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly IEditorService _editor;
         private readonly DocumentType _processedTextureDocumentType;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -83,11 +83,11 @@ namespace DigitalRune.Editor.Textures
                 _processedTextureDocumentType,
             };
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -139,6 +139,6 @@ namespace DigitalRune.Editor.Textures
         {
             return new TextureDocument(_editor, documentType);
         }
-        #endregion
+
     }
 }

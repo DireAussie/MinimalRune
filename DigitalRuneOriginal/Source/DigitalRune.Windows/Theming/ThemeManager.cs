@@ -45,7 +45,7 @@ namespace DigitalRune.Windows
     public static class ThemeManager
     {
         //--------------------------------------------------------------
-        #region Nested Types
+
         //--------------------------------------------------------------
 
         private abstract class ThemeResourceDictionary : ResourceDictionary
@@ -62,11 +62,11 @@ namespace DigitalRune.Windows
         private class ColorThemeResourceDictionary : ThemeResourceDictionary
         {
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         private static readonly WeakEvent<EventHandler<ThemeChangedEventArgs>> ThemeChangedEvent = new WeakEvent<EventHandler<ThemeChangedEventArgs>>();
@@ -79,17 +79,17 @@ namespace DigitalRune.Windows
             add { ThemeChangedEvent.Add(value); }
             remove { ThemeChangedEvent.Remove(value); }
         }
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Creation & Cleanup
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Methods
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <overloads>
@@ -194,6 +194,6 @@ namespace DigitalRune.Windows
 
             resources.MergedDictionaries.Add(themeResourceDictionary);
         }
-        #endregion
+
     }
 }

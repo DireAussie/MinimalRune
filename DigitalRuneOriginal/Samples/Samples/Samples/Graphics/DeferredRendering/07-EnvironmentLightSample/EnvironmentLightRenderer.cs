@@ -15,7 +15,7 @@ namespace Samples.Graphics
   internal class EnvironmentLightRenderer : SceneNodeRenderer
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Vector3[] _cameraFrustumFarCorners = new Vector3[4];
@@ -30,17 +30,17 @@ namespace Samples.Graphics
     private readonly EffectParameter _parameterTexture;
     private readonly EffectParameter _parameterGBuffer0;
     private readonly EffectParameter _parameterGBuffer1;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -66,11 +66,11 @@ namespace Samples.Graphics
       _parameterGBuffer0 = _effect.Parameters["GBuffer0"];
       _parameterGBuffer1 = _effect.Parameters["GBuffer1"];
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     // Returns true if node is a LightNode with an EnvironmentLight.
@@ -148,7 +148,7 @@ namespace Samples.Graphics
         graphicsDevice.DrawFullScreenQuad();
       }
     }
-    #endregion
+
   }
 }
 #endif

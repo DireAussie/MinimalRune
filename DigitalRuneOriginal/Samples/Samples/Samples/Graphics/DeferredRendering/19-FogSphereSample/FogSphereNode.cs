@@ -12,13 +12,13 @@ namespace Samples.Graphics
   public class FogSphereNode : SceneNode
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -67,11 +67,11 @@ namespace Samples.Graphics
     /// is 1, the fog is fully visible when the distance to the geometry is 1 world space unit.
     /// </remarks>
     public float IntersectionSoftness { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -88,14 +88,14 @@ namespace Samples.Graphics
       Falloff = 5;
       IntersectionSoftness = 1;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc cref="SceneNode.Clone()" />
     public new FogSphereNode Clone()
@@ -125,9 +125,9 @@ namespace Samples.Graphics
       Falloff = sourceTyped.Falloff;
       IntersectionSoftness = sourceTyped.IntersectionSoftness;
     }
-    #endregion
 
-    #endregion
+
+
   }
 }
 #endif

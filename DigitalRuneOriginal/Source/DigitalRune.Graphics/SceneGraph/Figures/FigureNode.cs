@@ -41,13 +41,13 @@ namespace DigitalRune.Graphics.SceneGraph
   public class FigureNode : SceneNode
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -288,11 +288,11 @@ namespace DigitalRune.Graphics.SceneGraph
       }
     }
     private int _drawOrder;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -319,14 +319,14 @@ namespace DigitalRune.Graphics.SceneGraph
       FillColor = new Vector3F(1, 1, 1);
       FillAlpha = 1;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc cref="SceneNode.Clone"/>
     public new FigureNode Clone()
@@ -359,8 +359,8 @@ namespace DigitalRune.Graphics.SceneGraph
       FillAlpha = sourceTyped.FillAlpha;
       DrawOrder = sourceTyped.DrawOrder;
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

@@ -20,7 +20,7 @@ namespace DigitalRune.Graphics
     public float Value { get; set; }
 
 
-    #region ----- IAnimatableProperty -----
+
 
     /// <inheritdoc/>
     bool IAnimatableProperty.HasBaseValue
@@ -51,10 +51,10 @@ namespace DigitalRune.Graphics
     {
       get { return Value; }
     }
-    #endregion
 
 
-    #region ----- IAnimatableProperty<T> -----
+
+
 
     /// <inheritdoc/>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
@@ -75,6 +75,6 @@ namespace DigitalRune.Graphics
       get { return Value; }
       set { Value = value; }
     }
-    #endregion
+
   }
 }

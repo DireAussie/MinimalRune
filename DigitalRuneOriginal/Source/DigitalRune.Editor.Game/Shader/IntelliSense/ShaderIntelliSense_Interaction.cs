@@ -164,7 +164,7 @@ namespace DigitalRune.Editor.Shader
 
 
         //--------------------------------------------------------------
-        #region Completion Data
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -504,11 +504,11 @@ namespace DigitalRune.Editor.Shader
             // Delete instance when window is closed.
             _completionWindow.Closed += delegate { _completionWindow = null; };
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Insight
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -597,11 +597,11 @@ namespace DigitalRune.Editor.Shader
             // Show window.
             _overloadInsightWindow.Show();
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region ToolTips
+
         //--------------------------------------------------------------
 
         private void OnTextEditorMouseHover(object sender, MouseEventArgs eventArgs)
@@ -654,6 +654,6 @@ namespace DigitalRune.Editor.Shader
             if (_toolTip != null)
                 _toolTip.IsOpen = false;
         }
-        #endregion
+
     }
 }

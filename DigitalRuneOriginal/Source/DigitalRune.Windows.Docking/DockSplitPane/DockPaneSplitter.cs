@@ -26,7 +26,7 @@ namespace DigitalRune.Windows.Docking
     public class DockPaneSplitter : Control
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly DockSplitPanel _panel;
@@ -42,23 +42,23 @@ namespace DigitalRune.Windows.Docking
         private double _actualLengthOfNext;
         private GridLength _gridLengthOfPrevious;
         private GridLength _gridLengthOfNext;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
+
+
+        //--------------------------------------------------------------
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -91,11 +91,11 @@ namespace DigitalRune.Windows.Docking
             _panel = owner;
             _index = index;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------    
 
         /// <summary>
@@ -448,6 +448,6 @@ namespace DigitalRune.Windows.Docking
                 VisualStateManager.GoToState(this, "Disabled", useTransitions);
             }
         }
-        #endregion
+
     }
 }

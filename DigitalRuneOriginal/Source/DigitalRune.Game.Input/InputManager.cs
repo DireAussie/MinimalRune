@@ -43,7 +43,7 @@ namespace DigitalRune.Game.Input
 
 
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     // Info for the last key/button press to detect double-clicks and key/button repetition.
@@ -60,11 +60,11 @@ namespace DigitalRune.Game.Input
     {
       public Vector2F MouseClickPosition;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     // Arrays containing all keys and buttons so that we can enumerate them easily.
@@ -73,11 +73,11 @@ namespace DigitalRune.Game.Input
     private static readonly Buttons[] _gamePadButtons;
 #endif
     private static readonly MouseButtons[] _mouseButtons;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
 #if XNA
@@ -92,11 +92,11 @@ namespace DigitalRune.Game.Input
     private readonly PlayerIndex?[] _logicalPlayers;
     private readonly bool[] _areGamePadsHandled;   // Index is PlayerIndex (not LogicalPlayerIndex).
 #endif
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -132,11 +132,11 @@ namespace DigitalRune.Game.Input
 
     /// <inheritdoc/>
     public InputCommandCollection Commands { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -263,11 +263,11 @@ namespace DigitalRune.Game.Input
       // Input commands
       Commands = new InputCommandCollection(this);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
 #if !SILVERLIGHT
@@ -376,6 +376,6 @@ namespace DigitalRune.Game.Input
       foreach (var command in Commands)
         command.Update(deltaTime);
     }
-    #endregion
+
   }
 }

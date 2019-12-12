@@ -36,13 +36,13 @@ namespace DigitalRune.Mathematics.Statistics
     // See Game Programming Gems 7, for an explanation.
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -57,11 +57,11 @@ namespace DigitalRune.Mathematics.Statistics
     /// </summary>
     /// <value>The standard deviation. The default is 1.</value>
     public float StandardDeviation { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -83,11 +83,11 @@ namespace DigitalRune.Mathematics.Statistics
       ExpectedValue = expectedValue;
       StandardDeviation = standardDeviation;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -109,6 +109,6 @@ namespace DigitalRune.Mathematics.Statistics
 
       return r;
     }
-    #endregion
+
   }
 }

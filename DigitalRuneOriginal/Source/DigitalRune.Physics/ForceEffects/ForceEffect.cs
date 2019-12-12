@@ -86,13 +86,13 @@ namespace DigitalRune.Physics.ForceEffects
     // Order: Simulation --> OnAddToSimulation --> OnApply --> ... --> OnApply --> OnRemoveFromSimulation --> Simulation = null 
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -156,11 +156,11 @@ namespace DigitalRune.Physics.ForceEffects
 
 
     //public float Duration { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -170,11 +170,11 @@ namespace DigitalRune.Physics.ForceEffects
     {
       _enabled = true;  // Note: Virtual OnEnabled() must not be called in constructor.
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -288,6 +288,6 @@ namespace DigitalRune.Physics.ForceEffects
     {
       body.AccumulatedTorque += torqueWorld;
     }
-    #endregion
+
   }
 }

@@ -51,7 +51,7 @@ namespace DigitalRune.Physics.Constraints
   public class AngularLimit : Constraint
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly LimitState[] _limitStates = new LimitState[3];
@@ -63,11 +63,11 @@ namespace DigitalRune.Physics.Constraints
       new Constraint1D(), 
       new Constraint1D(),
     };
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -324,17 +324,17 @@ namespace DigitalRune.Physics.Constraints
         return angles;
       }
     }
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -552,6 +552,6 @@ namespace DigitalRune.Physics.Constraints
 
       base.OnChanged();
     }
-    #endregion
+
   }
 }

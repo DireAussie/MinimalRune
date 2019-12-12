@@ -29,7 +29,7 @@ namespace DigitalRune.Geometry.Partitioning
     //
 
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     private sealed class Node
@@ -38,19 +38,19 @@ namespace DigitalRune.Geometry.Partitioning
       public Node[] Children = new Node[8];  // Note: We could also use ushort indices and store all nodes in one list.
       public List<T> Items = new List<T>();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private Node Root;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
 
@@ -75,22 +75,22 @@ namespace DigitalRune.Geometry.Partitioning
 
 
     public float MinimumCellSize { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     public Octree(Func<T, Aabb> getAabb)
       : base(getAabb)
     {
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     public override IEnumerable<T> GetOverlaps(Aabb aabb)
@@ -251,7 +251,7 @@ namespace DigitalRune.Geometry.Partitioning
       var maximum = minimum + childExtent;
       return new Aabb(minimum, maximum);
     }
-    #endregion
+
 
   }
 }

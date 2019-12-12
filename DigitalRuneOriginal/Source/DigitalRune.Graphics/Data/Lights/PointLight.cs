@@ -82,13 +82,13 @@ namespace DigitalRune.Graphics
   public class PointLight : Light
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -177,11 +177,11 @@ namespace DigitalRune.Graphics
     /// </summary>
     /// <value>The cube map texture. The default value is <see langword="null"/>.</value>
     public TextureCube Texture { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -196,14 +196,14 @@ namespace DigitalRune.Graphics
       Shape = new SphereShape(2);
       Attenuation = 2;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Light CreateInstanceCore()
@@ -231,7 +231,7 @@ namespace DigitalRune.Graphics
       // Shape does not need to be cloned. It is automatically set in the constructor and 
       // adjusted when the related properties change.
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -241,6 +241,6 @@ namespace DigitalRune.Graphics
       return Vector3F.Max(Color * (DiffuseIntensity * HdrScale * attenuation), 
                           Color * (SpecularIntensity * HdrScale * attenuation));
     }
-    #endregion
+
   }
 }

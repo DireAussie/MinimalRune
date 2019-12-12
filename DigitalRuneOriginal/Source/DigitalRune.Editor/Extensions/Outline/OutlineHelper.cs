@@ -15,7 +15,7 @@ namespace DigitalRune.Editor.Outlines
     public static class OutlineHelper
     {
         //--------------------------------------------------------------
-        #region LINQ to Outline tree
+
         //--------------------------------------------------------------
 
         private static readonly Func<OutlineItem, OutlineItem> GetParentCallback = item => item.Parent;
@@ -201,6 +201,6 @@ namespace DigitalRune.Editor.Outlines
 
             return TreeHelper.GetLeaves(item, GetChildren);
         }
-        #endregion
+
     }
 }

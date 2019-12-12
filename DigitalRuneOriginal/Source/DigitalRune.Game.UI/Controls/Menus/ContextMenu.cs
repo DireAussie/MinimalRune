@@ -63,15 +63,15 @@ namespace DigitalRune.Game.UI.Controls
     // The context menu is a scroll viewer with a stack panel filled with menu items.
     
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private StackPanel _panel;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -91,11 +91,11 @@ namespace DigitalRune.Game.UI.Controls
     /// or clickable controls, like buttons, should be used.
     /// </value>
     public NotifyingCollection<UIControl> Items { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Game Object Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary> 
@@ -143,11 +143,11 @@ namespace DigitalRune.Game.UI.Controls
       get { return GetValue<bool>(IsOpenPropertyId); }
       private set { SetValue(IsOpenPropertyId, value); }
     }
-    #endregion
+
     
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -175,11 +175,11 @@ namespace DigitalRune.Game.UI.Controls
       TouchPanel.EnabledGestures |= GestureType.Hold;
 #endif
     }    
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -465,6 +465,6 @@ namespace DigitalRune.Game.UI.Controls
       base.OnUpdate(deltaTime);
     }
 #endif
-    #endregion
+
   }
 }

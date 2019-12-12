@@ -20,7 +20,7 @@ namespace DigitalRune.Geometry.Collisions
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -28,11 +28,11 @@ namespace DigitalRune.Geometry.Collisions
     /// <see cref="CollisionObject"/>s.
     /// </summary>
     private Dictionary<IGeometricObject, CollisionObject> _lookupTable;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -81,11 +81,11 @@ namespace DigitalRune.Geometry.Collisions
       }
     }
     private bool _enableLookupTable;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -94,11 +94,11 @@ namespace DigitalRune.Geometry.Collisions
     internal CollisionObjectCollection() : base(false, true)
     {
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -202,6 +202,6 @@ namespace DigitalRune.Geometry.Collisions
       
       return null;
     }
-    #endregion
+
   }
 }

@@ -37,7 +37,7 @@ namespace DigitalRune.Game
 
 
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     private const int DefaultCapacity = 4;
@@ -48,21 +48,21 @@ namespace DigitalRune.Game
     private static readonly int[] EmptyIds = new int[0];
     private static readonly T[] EmptyData = new T[0];
     // ReSharper restore StaticFieldInGenericType
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private int[] _ids;   // = Keys
     private T[] _data;    // = Values
     private int _count;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     private int Capacity
@@ -109,11 +109,11 @@ namespace DigitalRune.Game
     {
       get { return _count; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -125,11 +125,11 @@ namespace DigitalRune.Game
       _data = EmptyData;
       _count = 0;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -350,6 +350,6 @@ namespace DigitalRune.Game
     //  }
     //}
 
-    #endregion
+
   }
 }

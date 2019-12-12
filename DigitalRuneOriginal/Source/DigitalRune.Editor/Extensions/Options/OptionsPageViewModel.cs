@@ -32,13 +32,13 @@ namespace DigitalRune.Editor.Options
     public abstract class OptionsPageViewModel : Screen, INamedObject
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -79,11 +79,11 @@ namespace DigitalRune.Editor.Options
         //    set { SetProperty(ref _isSelected, value); }
         //}
         //private bool _isSelected;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -100,11 +100,11 @@ namespace DigitalRune.Editor.Options
 
             DisplayName = name;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -120,6 +120,6 @@ namespace DigitalRune.Editor.Options
         /// Called when the options should be applied.
         /// </summary>
         protected abstract void OnApply();
-        #endregion
+
     }
 }

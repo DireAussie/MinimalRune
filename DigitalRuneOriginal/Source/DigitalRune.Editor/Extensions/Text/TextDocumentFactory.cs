@@ -15,29 +15,29 @@ namespace DigitalRune.Editor.Text
     internal class TextDocumentFactory : DocumentFactory
     {
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         internal const string AnyDocumentTypeName = "All files";
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly IEditorService _editor;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -96,11 +96,11 @@ namespace DigitalRune.Editor.Text
                 anyDocumentType
             };
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------    
 
         /// <inheritdoc/>
@@ -112,6 +112,6 @@ namespace DigitalRune.Editor.Text
 
             return document;
         }
-        #endregion
+
     }
 }

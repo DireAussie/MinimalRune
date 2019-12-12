@@ -40,13 +40,13 @@ namespace DigitalRune.Windows.Charts
     public class BarChart : Chart
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -73,11 +73,11 @@ namespace DigitalRune.Windows.Charts
                 return (group != null) ? group.BarGap : BarGap;
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -139,11 +139,11 @@ namespace DigitalRune.Windows.Charts
             get { return (Orientation)GetValue(OrientationProperty); }
             set { SetValue(OrientationProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
 #if SILVERLIGHT
@@ -164,11 +164,11 @@ namespace DigitalRune.Windows.Charts
             DefaultStyleKeyProperty.OverrideMetadata(typeof(BarChart), new FrameworkPropertyMetadata(typeof(BarChart)));
         }
 #endif
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -235,7 +235,7 @@ namespace DigitalRune.Windows.Charts
                 if (Numeric.IsNaN(data.X) || Numeric.IsNaN(data.Y))
                     continue;
 
-                #region ----- Horizontal clipping of data values for speed-up -----
+
                 {
                     // We cannot clip the current value because the value could be outside of the
                     // scale, but the bar could still be visible.
@@ -263,7 +263,7 @@ namespace DigitalRune.Windows.Charts
                         }
                     }
                 }
-                #endregion
+
 
                 double basePosition;      // Position on base axis.
                 double dataPosition;      // Position on data axis
@@ -709,6 +709,6 @@ namespace DigitalRune.Windows.Charts
 
             return base.OnGetLegendSymbol();
         }
-        #endregion
+
     }
 }

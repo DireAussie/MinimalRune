@@ -19,13 +19,13 @@ namespace DigitalRune.Editor.Game
     public class GamePresentationTarget : D3DImagePresentationTarget
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         // Used by GameExtension
@@ -47,11 +47,11 @@ namespace DigitalRune.Editor.Game
         /// successfully copied to the the front buffer.
         /// </remarks>
         public bool IsDirty { get; set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -78,11 +78,11 @@ namespace DigitalRune.Editor.Game
             get { return (IList<GraphicsScreen>)GetValue(GraphicsScreensProperty); }
             set { SetValue(GraphicsScreensProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -97,11 +97,11 @@ namespace DigitalRune.Editor.Game
                 Unloaded += OnUnloaded;
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         //private void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs eventArgs)
@@ -166,6 +166,6 @@ namespace DigitalRune.Editor.Game
         //{
         //    base.OnRenderSizeChanged(sizeInfo);
         //}
-        #endregion
+
     }
 }

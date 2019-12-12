@@ -15,16 +15,16 @@ namespace ICSharpCode.AvalonEdit
     partial class TextEditor
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private DispatcherTimer _foldingTimer;
         private bool _foldingValid;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -69,11 +69,11 @@ namespace ICSharpCode.AvalonEdit
             get { return _foldingTimer.Interval; }
             set { _foldingTimer.Interval = value; }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -100,11 +100,11 @@ namespace ICSharpCode.AvalonEdit
             get { return (bool)GetValue(EnableFoldingProperty); }
             set { SetValue(EnableFoldingProperty, Boxes.Box(value)); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private static void OnEnableFoldingChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
@@ -300,6 +300,6 @@ namespace ICSharpCode.AvalonEdit
             FoldingManager.Clear();
             FoldingManager.UpdateFoldings(list, -1);
         }
-        #endregion
+
     }
 }

@@ -67,13 +67,13 @@ namespace DigitalRune.Mathematics.Interpolation
       where TCurveKey : CurveKey<TParam, TPoint>
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -120,17 +120,17 @@ namespace DigitalRune.Mathematics.Interpolation
     /// smoother curve.
     /// </remarks>
     public bool SmoothEnds { get; set; }
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -361,6 +361,6 @@ namespace DigitalRune.Mathematics.Interpolation
     {
       return ((List<TCurveKey>)Items).GetEnumerator();
     }
-    #endregion
+
   }
 }

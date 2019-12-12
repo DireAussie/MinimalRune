@@ -85,15 +85,15 @@ namespace DigitalRune.Windows.Controls
 
 
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         internal const string PART_DropDownButton = nameof(PART_DropDownButton);
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private ToggleButton _toggleButton;
@@ -102,11 +102,11 @@ namespace DigitalRune.Windows.Controls
         private ContextMenu _contextMenu;
         private DependencyObject _contextMenuRoot;
         private Popup _popup;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -146,11 +146,11 @@ namespace DigitalRune.Windows.Controls
         /// Occurs after the drop-down closed.
         /// </summary>
         public event EventHandler<EventArgs> DropDownClosed;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -285,11 +285,11 @@ namespace DigitalRune.Windows.Controls
             add { AddHandler(ClickEvent, value); }
             remove { RemoveHandler(ClickEvent, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -302,11 +302,11 @@ namespace DigitalRune.Windows.Controls
             EventManager.RegisterClassHandler(typeof(DropDownButton), Mouse.LostMouseCaptureEvent, new MouseEventHandler(OnLostMouseCapture));
             EventManager.RegisterClassHandler(typeof(DropDownButton), Mouse.PreviewMouseDownOutsideCapturedElementEvent, new MouseButtonEventHandler(OnMouseDownOutsideCapturedElement));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -769,7 +769,7 @@ namespace DigitalRune.Windows.Controls
         }
 
 
-        #region ----- Helper methods -----
+
 
         private static bool IsLogicalDescendant(DependencyObject ancestor, DependencyObject node)
         {
@@ -785,9 +785,9 @@ namespace DigitalRune.Windows.Controls
 
             return false;
         }
-        #endregion
 
-        #endregion
+
+
     }
 
 

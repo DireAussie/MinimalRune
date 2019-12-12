@@ -42,7 +42,7 @@ namespace DigitalRune.Graphics.SceneGraph
   public class DecalNode : SceneNode
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     // Defines the decal projection volume: 
@@ -66,20 +66,20 @@ namespace DigitalRune.Graphics.SceneGraph
       protected override void CloneCore(Shape sourceShape)
       { }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Optimization: Store the hash values of all render passes for fast lookup.
     private int[] _passHashes;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -223,11 +223,11 @@ namespace DigitalRune.Graphics.SceneGraph
       }
     }
     private float _normalThreshold;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -248,14 +248,14 @@ namespace DigitalRune.Graphics.SceneGraph
       Alpha = 1;
       NormalThreshold = ConstantsF.Pi / 3; // = 60°
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc cref="SceneNode.Clone"/>
     public new DecalNode Clone()
@@ -286,7 +286,7 @@ namespace DigitalRune.Graphics.SceneGraph
       Options = sourceTyped.Options;
       // (Width, Height, Depth) is ScaleLocal, which is copied in base class.
     }
-    #endregion
+
 
 
     /// <summary>
@@ -310,6 +310,6 @@ namespace DigitalRune.Graphics.SceneGraph
 
       return false;
     }
-    #endregion
+
   }
 }

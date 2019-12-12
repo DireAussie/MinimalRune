@@ -28,13 +28,13 @@ namespace DigitalRune.Graphics.SceneGraph
   public class PlanarReflectionNode : RenderToTextureNode
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -131,11 +131,11 @@ namespace DigitalRune.Graphics.SceneGraph
       get { return base.Shape; }
       set { base.Shape = value; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -152,14 +152,14 @@ namespace DigitalRune.Graphics.SceneGraph
       FieldOfViewScale = 1;
       _normalLocal = new Vector3F(0, 0, 1);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc cref="SceneNode.Clone"/>
     public new PlanarReflectionNode Clone()
@@ -188,8 +188,8 @@ namespace DigitalRune.Graphics.SceneGraph
       LodBias = sourceTyped.LodBias;
       NormalLocal = sourceTyped.NormalLocal;
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

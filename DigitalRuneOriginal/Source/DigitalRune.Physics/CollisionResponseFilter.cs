@@ -35,33 +35,33 @@ namespace DigitalRune.Physics
   public class CollisionResponseFilter : IPairFilter<RigidBody>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Pairwise filtering. If object pair is contained, filtering is disabled.
     private readonly HashSet<Pair<RigidBody>> _disabledPairs = new HashSet<Pair<RigidBody>>();
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
     /// Occurs when the filter rules have changed.
     /// </summary>
     public event EventHandler<EventArgs> Changed;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Creation and Cleanup
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -136,6 +136,6 @@ namespace DigitalRune.Physics
       if (handler != null)
         handler(this, eventArgs);
     }
-    #endregion
+
   }
 }

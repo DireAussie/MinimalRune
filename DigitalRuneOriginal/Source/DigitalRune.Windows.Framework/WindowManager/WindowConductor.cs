@@ -2,12 +2,12 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#region ----- Credits -----
+
 /*
   The "screen conduction" pattern implemented in DigitalRune.Windows.Framework was 
   inspired by the Caliburn.Micro framework (see http://caliburnmicro.codeplex.com/).
 */
-#endregion
+
 
 using System;
 using System.Collections.Generic;
@@ -39,7 +39,7 @@ namespace DigitalRune.Windows.Framework
     internal class WindowConductor : IConductor
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly object _viewModel;
@@ -47,17 +47,17 @@ namespace DigitalRune.Windows.Framework
         private bool _deactivatingFromView;
         private bool _deactivateFromViewModel;
         private bool _actuallyClosing;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -96,11 +96,11 @@ namespace DigitalRune.Windows.Framework
 
             view.Closed += OnViewClosed;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private void OnViewClosing(object sender, CancelEventArgs eventArgs)
@@ -212,11 +212,11 @@ namespace DigitalRune.Windows.Framework
             _actuallyClosing = false;
             _deactivateFromViewModel = false;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region IConductor
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -328,6 +328,6 @@ namespace DigitalRune.Windows.Framework
             return TaskHelper.FromResult(true);
 #endif
         }
-        #endregion
+
     }
 }

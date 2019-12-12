@@ -10,7 +10,7 @@ namespace DigitalRune.Game
   public partial class GameObject 
   {
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     // The local property data of this game object.
@@ -100,11 +100,11 @@ namespace DigitalRune.Game
     {
       get { return new GameEventCollection(this); }
     }
-    #endregion
+
     
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -232,6 +232,6 @@ namespace DigitalRune.Game
       var property = Properties.Get(propertyMetadata);
       property.Value = value;
     }
-    #endregion
+
   }
 }

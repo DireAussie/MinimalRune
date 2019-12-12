@@ -26,7 +26,7 @@ namespace DigitalRune.Editor.Layout
 
 
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         // Folders storing the window layouts:
@@ -37,17 +37,17 @@ namespace DigitalRune.Editor.Layout
         private const string PresetsFolder = "Presets";
         private const string DefaultLayout = "Default";
         private const string LayoutPattern = "*.xml";
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -79,11 +79,11 @@ namespace DigitalRune.Editor.Layout
             }
         }
         private WindowLayout _activeLayout;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -636,6 +636,6 @@ namespace DigitalRune.Editor.Layout
 
             _windowService.ShowDialog(new ManageLayoutsViewModel(this));
         }
-        #endregion
+
     }
 }

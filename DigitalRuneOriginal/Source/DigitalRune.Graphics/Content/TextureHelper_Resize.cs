@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#region ----- Credits -----
+
 /*
    This file is a port of the image resizing functions in NVIDIA Texture Tools
    (NVTT, source http://code.google.com/p/nvidia-texture-tools/).
@@ -29,7 +29,7 @@
    - Stephen Guthe, Paul Heckbert: "Non-Power-of-Two Mipmapping", NVIDIA,
      https://developer.nvidia.com/content/non-power-two-mipmapping
 */
-#endregion
+
 
 using System;
 using System.Diagnostics;
@@ -69,7 +69,7 @@ namespace DigitalRune.Graphics.Content
   partial class TextureHelper
   {
     //--------------------------------------------------------------
-    #region Filter Functions
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -583,11 +583,11 @@ namespace DigitalRune.Graphics.Content
         return 1.0f / (float)Math.Sqrt(2 * ConstantsF.Pi * _variance) * (float)Math.Exp(-x * x / (2 * _variance));
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Convolution
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -652,11 +652,11 @@ namespace DigitalRune.Graphics.Content
       }
       // ReSharper restore AccessToDisposedClosure
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Resizing
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -1287,6 +1287,6 @@ namespace DigitalRune.Graphics.Content
       }
       // ReSharper restore AccessToDisposedClosure
     }
-    #endregion
+
   }
 }

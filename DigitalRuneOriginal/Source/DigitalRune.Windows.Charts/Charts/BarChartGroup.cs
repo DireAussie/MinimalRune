@@ -23,19 +23,19 @@ namespace DigitalRune.Windows.Charts
     public class BarChartGroup : ChartGroup<BarChart>
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties
-        //--------------------------------------------------------------
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -156,11 +156,11 @@ namespace DigitalRune.Windows.Charts
             get { return (Orientation)GetValue(OrientationProperty); }
             set { SetValue(OrientationProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
 #if SILVERLIGHT
@@ -181,11 +181,11 @@ namespace DigitalRune.Windows.Charts
             DefaultStyleKeyProperty.OverrideMetadata(typeof(BarChartGroup), new FrameworkPropertyMetadata(typeof(BarChartGroup)));
         }
 #endif
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -393,6 +393,6 @@ namespace DigitalRune.Windows.Charts
                 }
             }
         }
-        #endregion
+
     }
 }

@@ -42,13 +42,13 @@ namespace DigitalRune.Animation.Character
   public abstract class BoneMapper
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -75,11 +75,11 @@ namespace DigitalRune.Animation.Character
     /// the bone mapper does nothing when <see cref="MapBToA"/> is called.
     /// </remarks>
     public BoneMappingDirection Direction { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -89,11 +89,11 @@ namespace DigitalRune.Animation.Character
     {
       Direction = BoneMappingDirection.Both;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -172,6 +172,6 @@ namespace DigitalRune.Animation.Character
     /// this direction, and <see cref="BoneMapper.SkeletonMapper"/> is set.
     /// </remarks>
     protected abstract void OnMapBToA();
-    #endregion
+
   }
 }

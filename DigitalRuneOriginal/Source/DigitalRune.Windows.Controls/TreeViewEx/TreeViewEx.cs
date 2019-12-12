@@ -56,7 +56,7 @@ namespace DigitalRune.Windows.Controls
     public class TreeViewEx : ItemsControl
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private const string PART_ScrollViewer = nameof(PART_ScrollViewer);
@@ -65,11 +65,11 @@ namespace DigitalRune.Windows.Controls
         private ScrollViewer _scrollViewer;
         private TreeViewItemEx _shiftSelectionAnchor;
         private TreeViewItemEx _lastFocusedContainer;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         private static bool IsControlDown
@@ -82,11 +82,11 @@ namespace DigitalRune.Windows.Controls
         {
             get { return (Keyboard.Modifiers & ModifierKeys.Shift) == ModifierKeys.Shift; }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -135,11 +135,11 @@ namespace DigitalRune.Windows.Controls
             add { AddHandler(SelectionChangedEvent, value); }
             remove { RemoveHandler(SelectionChangedEvent, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Attached Dependency Properties
+
         //--------------------------------------------------------------
 
         private static readonly DependencyPropertyKey IsSelectionActivePropertyKey = DependencyProperty.RegisterAttachedReadOnly(
@@ -202,11 +202,11 @@ namespace DigitalRune.Windows.Controls
 
             obj.SetValue(IsSelectionActivePropertyKey, Boxed.Get(value));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -228,11 +228,11 @@ namespace DigitalRune.Windows.Controls
             Loaded += OnLoaded;
             Unloaded += OnUnloaded;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -799,7 +799,7 @@ namespace DigitalRune.Windows.Controls
         }
 
 
-        #region ----- Helper methods -----
+
 
         private TreeViewItemEx GetContainer(object item)
         {
@@ -1066,8 +1066,8 @@ namespace DigitalRune.Windows.Controls
 
             return container;
         }
-        #endregion
 
-        #endregion
+
+
     }
 }

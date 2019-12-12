@@ -66,13 +66,13 @@ namespace DigitalRune.Geometry.Shapes
   public class CompositeShape : Shape
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -156,11 +156,11 @@ namespace DigitalRune.Geometry.Shapes
       }
     }
     private ISpatialPartition<int> _partition;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -171,11 +171,11 @@ namespace DigitalRune.Geometry.Shapes
       Children = new NotifyingCollection<IGeometricObject>(false, false);
       Children.CollectionChanged += OnChildrenChanged;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
 #if XNA || MONOGAME
@@ -217,7 +217,7 @@ namespace DigitalRune.Geometry.Shapes
 #endif
 
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Shape CreateInstanceCore()
@@ -236,7 +236,7 @@ namespace DigitalRune.Geometry.Shapes
       if (source.Partition != null)
         Partition = source.Partition.Clone();
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -438,6 +438,6 @@ namespace DigitalRune.Geometry.Shapes
     {
       return String.Format(CultureInfo.InvariantCulture, "CompositeShape {{ Count = {0} }}", Children.Count);
     }
-    #endregion
+
   }
 }

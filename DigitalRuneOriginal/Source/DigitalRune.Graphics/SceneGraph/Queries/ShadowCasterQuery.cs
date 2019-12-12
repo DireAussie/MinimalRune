@@ -38,17 +38,17 @@ namespace DigitalRune.Graphics.SceneGraph
   public class ShadowCasterQuery : ISceneQuery
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private bool _checkShadowCusterCulling;
     private Vector3F _cameraPosition;
     private float _lodBiasOverYScale;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -61,11 +61,11 @@ namespace DigitalRune.Graphics.SceneGraph
     /// <value>The scene nodes that cast shadows.</value>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists", Justification = "Performance")]
     public List<SceneNode> ShadowCasters { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -75,11 +75,11 @@ namespace DigitalRune.Graphics.SceneGraph
     {
       ShadowCasters = new List<SceneNode>();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -207,6 +207,6 @@ namespace DigitalRune.Graphics.SceneGraph
             AddSubtree(childNode, context);
       }
     }
-    #endregion
+
   }
 }

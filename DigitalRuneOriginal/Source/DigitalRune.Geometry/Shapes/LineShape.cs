@@ -31,13 +31,13 @@ namespace DigitalRune.Geometry.Shapes
   public class LineShape : Shape
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -103,11 +103,11 @@ namespace DigitalRune.Geometry.Shapes
     /// See <see cref="OnGetMesh"/> for more information.
     /// </remarks>
     public static float MeshSize { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //-------------------------------------------------------------- 
 
     /// <summary>
@@ -171,14 +171,14 @@ namespace DigitalRune.Geometry.Shapes
       _pointOnLine = line.PointOnLine;
       _direction = line.Direction;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Shape CreateInstanceCore()
@@ -194,7 +194,7 @@ namespace DigitalRune.Geometry.Shapes
       _pointOnLine = source.PointOnLine;
       _direction = source.Direction;
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -279,6 +279,6 @@ namespace DigitalRune.Geometry.Shapes
     {
       return String.Format(CultureInfo.InvariantCulture, "LineShape {{ PointOnLine = {0}, Direction = {1} }}", _pointOnLine, _direction);
     }
-    #endregion
+
   }
 }

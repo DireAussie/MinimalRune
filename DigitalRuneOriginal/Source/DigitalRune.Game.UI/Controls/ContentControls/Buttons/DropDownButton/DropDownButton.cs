@@ -66,16 +66,16 @@ namespace DigitalRune.Game.UI.Controls
     // and simultaneously Content of the DropDown.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private DropDown _dropDown;
     private bool _wasOpened;  // true if the DropDown was opened in the last frame.
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -94,11 +94,11 @@ namespace DigitalRune.Game.UI.Controls
     /// <see cref="Items"/>. The default is <see langword="null"/>.
     /// </value>
     public Func<object, UIControl> CreateControlForItem { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Game Object Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary> 
@@ -194,11 +194,11 @@ namespace DigitalRune.Game.UI.Controls
       get { return GetValue<string>(TitlePropertyId); }
       set { SetValue(TitlePropertyId, value); }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
 
@@ -242,11 +242,11 @@ namespace DigitalRune.Game.UI.Controls
           _dropDown.Close();
       };
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -327,6 +327,6 @@ namespace DigitalRune.Game.UI.Controls
 
       base.OnUpdate(deltaTime);
     }
-    #endregion
+
   }
 }

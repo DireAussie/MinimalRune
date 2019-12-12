@@ -28,13 +28,13 @@ namespace DigitalRune.Geometry.Partitioning
   public class DelegatePairFilter<T> : IPairFilter<T>
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -69,11 +69,11 @@ namespace DigitalRune.Geometry.Partitioning
     /// Occurs when the filter rules were changed.
     /// </summary>
     public event EventHandler<EventArgs> Changed;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -85,11 +85,11 @@ namespace DigitalRune.Geometry.Partitioning
     {
       _filterCallback = filterCallback;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -145,6 +145,6 @@ namespace DigitalRune.Geometry.Partitioning
       if (handler != null)
         handler(this, eventArgs);
     }
-    #endregion
+
   }
 }

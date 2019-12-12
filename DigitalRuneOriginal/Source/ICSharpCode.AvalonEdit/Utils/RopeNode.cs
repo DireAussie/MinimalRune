@@ -499,7 +499,7 @@ namespace ICSharpCode.AvalonEdit.Utils
 			return result;
 		}
 		
-		#region Debug Output
+
 		#if DEBUG
 		internal virtual void AppendTreeToString(StringBuilder b, int indent)
 		{
@@ -537,7 +537,7 @@ namespace ICSharpCode.AvalonEdit.Utils
 			return b.ToString();
 		}
 		#endif
-		#endregion
+
 		
 		/// <summary>
 		/// Gets the root node of the subtree from a lazily evaluated function node.

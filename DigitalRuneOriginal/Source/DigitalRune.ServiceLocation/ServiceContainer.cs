@@ -109,17 +109,17 @@ namespace DigitalRune.ServiceLocation
     public partial class ServiceContainer : IDisposable
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly Dictionary<ServiceRegistration, ServiceEntry> _registry;
         private readonly WeakCollection<ServiceContainer> _childContainers;
         private ServiceContainer _parent;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -130,11 +130,11 @@ namespace DigitalRune.ServiceLocation
         /// <see langword="false"/>.
         /// </value>
         public bool IsDisposed { get; private set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -204,11 +204,11 @@ namespace DigitalRune.ServiceLocation
                 IsDisposed = true;
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -863,6 +863,6 @@ namespace DigitalRune.ServiceLocation
                     property.SetValue(instance, injection, null);
             }
         }
-        #endregion
+
     }
 }

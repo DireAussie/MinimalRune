@@ -26,13 +26,13 @@ namespace DigitalRune.Windows.Charts
     public abstract class ChartElement : Control, IChartElement
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -45,14 +45,14 @@ namespace DigitalRune.Windows.Charts
 
         /// <inheritdoc/>
         public event EventHandler<EventArgs> Updated;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties
+
         //--------------------------------------------------------------
 
-        #region ----- Legend -----
+
 
         /// <summary>
         /// Identifies the <see cref="IsVisibleInLegend"/> dependency property.
@@ -105,10 +105,10 @@ namespace DigitalRune.Windows.Charts
             get { return (string)GetValue(TitleProperty); }
             set { SetValue(TitleProperty, value); }
         }
-        #endregion
 
 
-        #region ----- Axes -----
+
+
 
         /// <summary>
         /// Identifies the <see cref="XAxis"/> dependency property.
@@ -168,19 +168,19 @@ namespace DigitalRune.Windows.Charts
             get { return (Axis)GetValue(YAxisProperty); }
             set { SetValue(YAxisProperty, value); }
         }
-        #endregion
-
-        #endregion
 
 
-        //--------------------------------------------------------------
-        #region Creation & Cleanup
-        //--------------------------------------------------------------
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         private static void OnXAxisChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
@@ -469,6 +469,6 @@ namespace DigitalRune.Windows.Charts
         {
             return null;
         }
-        #endregion
+
     }
 }

@@ -15,15 +15,15 @@ namespace DigitalRune.Editor.Search
     internal class QuickFindCommandItem : ObservableObject, ICommandItem
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private ToolBarQuickFindViewModel _toolBarQuickFindViewModel;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -93,11 +93,11 @@ namespace DigitalRune.Editor.Search
         /// </summary>
         /// <value>The <see cref="SearchExtension"/>.</value>
         public SearchExtension SearchExtension { get; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -114,11 +114,11 @@ namespace DigitalRune.Editor.Search
 
             SearchExtension = searchExtension;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -144,6 +144,6 @@ namespace DigitalRune.Editor.Search
 
             return _toolBarQuickFindViewModel;
         }
-        #endregion
+
     }
 }

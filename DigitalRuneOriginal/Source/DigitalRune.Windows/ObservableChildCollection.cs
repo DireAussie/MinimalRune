@@ -29,13 +29,13 @@ namespace DigitalRune.Windows
 
 
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -61,11 +61,11 @@ namespace DigitalRune.Windows
             }
         }
         private TParent _parent;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <overloads>
@@ -100,11 +100,11 @@ namespace DigitalRune.Windows
         {
             _parent = parent;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -231,6 +231,6 @@ namespace DigitalRune.Windows
         /// <param name="parent">The parent to set.</param>
         /// <param name="child">The child object.</param>
         protected abstract void SetParent(TChild child, TParent parent);
-        #endregion
+
     }
 }

@@ -11,21 +11,21 @@ namespace ICSharpCode.AvalonEdit.Folding
     public class HlslFoldingStrategy : FoldingStrategy
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Dictionary<string, object> Blocks;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -52,11 +52,11 @@ namespace ICSharpCode.AvalonEdit.Folding
                 ["technique10"] = null
             };
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -252,6 +252,6 @@ namespace ICSharpCode.AvalonEdit.Folding
 
             foldMarkers.Add(new NewFolding(startOffset, endOffset) { Name = label });
         }
-        #endregion
+
     }
 }

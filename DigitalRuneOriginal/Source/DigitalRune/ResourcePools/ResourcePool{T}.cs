@@ -32,24 +32,24 @@ namespace DigitalRune
 #if (NETFX_CORE || (!SILVERLIGHT && !WP7 && !XBOX && !UNITY))
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly SynchronizedHashtable<int, WorkStealingQueue<T>> _queues;
     private readonly Func<T> _create;
     private readonly Action<T> _initialize;
     private readonly Action<T> _uninitialize;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -82,11 +82,11 @@ namespace DigitalRune
 
       Register(this);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -192,29 +192,29 @@ namespace DigitalRune
         queue.LocalPush(item);
       }
     }
-    #endregion
+
 
 #elif (SILVERLIGHT || WP7 || XBOX || UNITY)
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly FastStack<T> _stack;
     private readonly Func<T> _create;
     private readonly Action<T> _initialize;
     private readonly Action<T> _uninitialize;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -246,11 +246,11 @@ namespace DigitalRune
 
       Register(this);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -316,7 +316,7 @@ namespace DigitalRune
         }
       }
     }
-    #endregion
+
 
 #endif
   }

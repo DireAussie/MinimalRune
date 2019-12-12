@@ -18,7 +18,7 @@ namespace DigitalRune.Physics
   public class SimulationIslandManager : IComparer<SimulationIsland>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Simulation _simulation;
@@ -29,11 +29,11 @@ namespace DigitalRune.Physics
 
     // A list where the union elements will be stored and sorted.
     private readonly List<UnionElement> _sortedElements = new List<UnionElement>(256);
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -69,11 +69,11 @@ namespace DigitalRune.Physics
     // Going through all contact constraints is slower because for many objects 
     // there are 4 contact constraints per contact set.
 
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -94,11 +94,11 @@ namespace DigitalRune.Physics
 
       ContactSetLinks = new List<Pair<RigidBody>>();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -284,7 +284,7 @@ namespace DigitalRune.Physics
     }
 
 
-    #region ----- IComparer<SimulationIsland> -----
+
 
     /// <summary>
     /// Compares two islands by size.
@@ -320,7 +320,7 @@ namespace DigitalRune.Physics
       int constraintsInSecond = second.ConstraintsInternal.Count + second.ContactConstraintsInternal.Count;
       return constraintsInSecond - constraintsInFirst;
     }
-    #endregion
-    #endregion
+
+
   }
 }

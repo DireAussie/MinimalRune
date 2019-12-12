@@ -32,15 +32,15 @@ namespace DigitalRune.Graphics
   public abstract class Figure
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private bool _isDirty = true;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     internal FigureRenderData RenderData
@@ -139,17 +139,17 @@ namespace DigitalRune.Graphics
     {
       get { return RenderData.HitShape; }
     }
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -201,6 +201,6 @@ namespace DigitalRune.Graphics
     /// <param name="strokeIndices">The line indices (2 indices per line).</param>
     /// <param name="fillIndices">The triangle indices (3 indices per triangle).</param>
     internal abstract void Flatten(ArrayList<Vector3F> vertices, ArrayList<int> strokeIndices, ArrayList<int> fillIndices);
-    #endregion
+
   }
 }

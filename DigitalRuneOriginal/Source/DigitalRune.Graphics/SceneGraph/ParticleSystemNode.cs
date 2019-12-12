@@ -411,13 +411,13 @@ namespace DigitalRune.Graphics.SceneGraph
     // ParticleSystem parameters should not be added/removed.
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -465,11 +465,11 @@ namespace DigitalRune.Graphics.SceneGraph
     /// nodes.
     /// </remarks>
     public float AngleOffset { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -491,14 +491,14 @@ namespace DigitalRune.Graphics.SceneGraph
 
       SynchronizeShape();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc cref="SceneNode.Clone"/>
     public new ParticleSystemNode Clone()
@@ -530,7 +530,7 @@ namespace DigitalRune.Graphics.SceneGraph
       Shape = Shape.Empty;
       SynchronizeShape();
     }
-    #endregion
+
 
 
     /// <summary>
@@ -670,7 +670,7 @@ namespace DigitalRune.Graphics.SceneGraph
         foreach (var child in particleSystem.Children)
           SynchronizeNested(nestedData, child);
     }
-    #endregion
+
   }
 }
 #endif

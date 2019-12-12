@@ -32,17 +32,17 @@ namespace DigitalRune.Editor.Textures
 
 
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         private static readonly Vector4 CheckerColor0 = new Vector4(0.25f);
         private static readonly Vector4 CheckerColor1 = new Vector4(0.5f);
         private static readonly Vector2 CheckerCellSize = new Vector2(8);
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly Effect _effect;
@@ -58,11 +58,11 @@ namespace DigitalRune.Editor.Textures
         private readonly EffectParameter _parameterMipLevel;
 
         //private readonly SpriteBatch _spriteBatch;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         ///// <summary>
@@ -84,11 +84,11 @@ namespace DigitalRune.Editor.Textures
         public Vector4F ColorOffset { get; set; }
         public bool IsPremultiplied { get; set; }
         public float MipLevel { get; set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -148,11 +148,11 @@ namespace DigitalRune.Editor.Textures
         //        IsDisposed = true;
         //    }
         //}
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -211,6 +211,6 @@ namespace DigitalRune.Editor.Textures
                 _parameterSourceTexture.SetValue((Texture)null);
             }
         }
-        #endregion
+
     }
 }

@@ -42,13 +42,13 @@ namespace DigitalRune.Graphics.SceneGraph
   public class LightNode : SceneNode
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -178,11 +178,11 @@ namespace DigitalRune.Graphics.SceneGraph
     /// lights with a lower priority.
     /// </remarks>
     public int Priority { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -200,14 +200,14 @@ namespace DigitalRune.Graphics.SceneGraph
       _light = light;
       Shape = light.Shape;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc cref="SceneNode.Clone"/>
     public new LightNode Clone()
@@ -237,13 +237,13 @@ namespace DigitalRune.Graphics.SceneGraph
       if (sourceTyped.Shadow != null)
         Shadow = sourceTyped.Shadow.Clone();
     }
-    #endregion
+
 
 
     private void OnClipChanged(object sender, EventArgs eventArgs)
     {
       RenderData.SafeDispose();
     }
-    #endregion
+
   }
 }

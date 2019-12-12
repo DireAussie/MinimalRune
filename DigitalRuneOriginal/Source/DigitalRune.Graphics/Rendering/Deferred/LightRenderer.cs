@@ -31,19 +31,19 @@ namespace DigitalRune.Graphics.Rendering
   public class LightRenderer : SceneRenderer
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -65,11 +65,11 @@ namespace DigitalRune.Graphics.Rendering
       Renderers.Add(new ProjectorLightRenderer(graphicsService));
       Renderers.Add(new SpotlightRenderer(graphicsService));
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -83,7 +83,7 @@ namespace DigitalRune.Graphics.Rendering
     {
       return (node is LightNode);
     }
-    #endregion
+
   }
 }
 #endif

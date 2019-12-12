@@ -14,16 +14,16 @@ namespace DigitalRune.Editor.Text
     partial class TextExtension
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly MenuManager _menuManager;
         private MergeableNodeCollection<ICommandItem> _contextMenuNodes;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -39,11 +39,11 @@ namespace DigitalRune.Editor.Text
         {
             get { return _menuManager.Menu; }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -91,6 +91,6 @@ namespace DigitalRune.Editor.Text
             Logger.Debug("Updating text context menu.");
             _menuManager.Update(ContextMenuNodeCollections);
         }
-        #endregion
+
     }
 }

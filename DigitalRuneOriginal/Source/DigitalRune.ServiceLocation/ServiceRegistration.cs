@@ -14,7 +14,7 @@ namespace DigitalRune.ServiceLocation
     internal struct ServiceRegistration : IEquatable<ServiceRegistration>
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -28,17 +28,17 @@ namespace DigitalRune.ServiceLocation
         /// empty.
         /// </summary>
         public readonly string Key;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -54,11 +54,11 @@ namespace DigitalRune.ServiceLocation
             Type = type;
             Key = key;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <overloads>
@@ -162,6 +162,6 @@ namespace DigitalRune.ServiceLocation
 
             return string.Format(CultureInfo.InvariantCulture, "({0}; \"{1}\")", Type.Name, Key);
         }
-        #endregion
+
     }
 }

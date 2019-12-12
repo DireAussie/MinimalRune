@@ -19,19 +19,19 @@ namespace DigitalRune.Game.UI.Controls
     // swapped and negative values.
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Game Object Properties & Events
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary> 
@@ -161,11 +161,11 @@ namespace DigitalRune.Game.UI.Controls
       get { return GetValue<float>(LargeChangePropertyId); }
       set { SetValue(LargeChangePropertyId, value); }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -191,12 +191,12 @@ namespace DigitalRune.Game.UI.Controls
       var value = Properties.Get<float>(ValuePropertyId);
       value.Changing += (s, e) => e.CoercedValue = MathHelper.Clamp(e.CoercedValue, Minimum, Maximum);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
-    #endregion
+
   }
 }

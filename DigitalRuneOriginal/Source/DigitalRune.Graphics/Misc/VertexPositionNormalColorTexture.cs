@@ -22,7 +22,7 @@ namespace DigitalRune.Graphics
   public struct VertexPositionNormalColorTexture : IVertexType
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -66,11 +66,11 @@ namespace DigitalRune.Graphics
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
     public Vector2 TextureCoordinate;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -81,11 +81,11 @@ namespace DigitalRune.Graphics
     {
       get { return 12 + 12 + 4 + 8; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -102,11 +102,11 @@ namespace DigitalRune.Graphics
       Color = color;
       TextureCoordinate = textureCoordinate;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -200,6 +200,6 @@ namespace DigitalRune.Graphics
         Color,
         TextureCoordinate);
     }
-    #endregion
+
   }
 }

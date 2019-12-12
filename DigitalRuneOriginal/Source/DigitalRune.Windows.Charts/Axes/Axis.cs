@@ -52,7 +52,7 @@ namespace DigitalRune.Windows.Charts
 
 
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -101,11 +101,11 @@ namespace DigitalRune.Windows.Charts
         /// The default value of the <see cref="OriginY"/> dependency property.
         /// </summary>
         public const double DefaultOriginY = 0.0;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly WeakCollection<IChartElement> _chartElements = new WeakCollection<IChartElement>();
@@ -142,11 +142,11 @@ namespace DigitalRune.Windows.Charts
         private double _length;
         private double _startPosition;
         private double _endPosition;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -320,14 +320,14 @@ namespace DigitalRune.Windows.Charts
             add { _updatedEvent.Add(value); }
             remove { _updatedEvent.Remove(value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
-        #region ----- Styles -----
+
 
         /// <summary>
         /// Identifies the <see cref="AxisStyle"/> dependency property.
@@ -438,7 +438,7 @@ namespace DigitalRune.Windows.Charts
             get { return (Style)GetValue(TitleStyleProperty); }
             set { SetValue(TitleStyleProperty, value); }
         }
-        #endregion
+
 
 
         /// <summary>
@@ -850,11 +850,11 @@ namespace DigitalRune.Windows.Charts
             get { return (bool)GetValue(UseAbsoluteTitleOffsetProperty); }
             set { SetValue(UseAbsoluteTitleOffsetProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
 #if SILVERLIGHT
@@ -875,11 +875,11 @@ namespace DigitalRune.Windows.Charts
             DefaultStyleKeyProperty.OverrideMetadata(typeof(Axis), new FrameworkPropertyMetadata(typeof(Axis)));
         }
 #endif
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -1648,7 +1648,7 @@ namespace DigitalRune.Windows.Charts
         }
 
 
-        #region ----- Other Methods -----
+
 
         /// <summary>
         /// Clips a data value against the scale.
@@ -1812,8 +1812,8 @@ namespace DigitalRune.Windows.Charts
             double mouseValue = GetValue(anchorPoint);
             _scale.Zoom(mouseValue, zoomFactor);
         }
-        #endregion
 
-        #endregion
+
+
     }
 }

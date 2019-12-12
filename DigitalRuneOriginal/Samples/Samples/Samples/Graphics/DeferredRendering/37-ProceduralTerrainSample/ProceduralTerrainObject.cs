@@ -27,17 +27,17 @@ namespace Samples.Graphics
   public class ProceduralTerrainObject : GameObject
   {
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     // The resolution (world units per texel) of the detail textures which are splatted
     // onto the terrain.
     private const float DetailCellSize = 0.005f;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly IServiceLocator _services;
@@ -57,20 +57,20 @@ namespace Samples.Graphics
     // Some flags which tell when we have to re-initialize the terrain.
     private bool _updateGeometryTexture;
     private float _previousCameraFar;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     // The scene node which represents the whole terrain.
     public TerrainNode TerrainNode { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     public ProceduralTerrainObject(IServiceLocator services)
@@ -80,11 +80,11 @@ namespace Samples.Graphics
 
       _services = services;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     protected override void OnLoad()
@@ -419,7 +419,7 @@ namespace Samples.Graphics
           _updateGeometryTexture = true;
         });
     }
-    #endregion
+
   }
 }
 #endif

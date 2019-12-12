@@ -15,7 +15,7 @@ namespace DigitalRune.Editor
     partial class EditorViewModel
     {
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -138,12 +138,12 @@ namespace DigitalRune.Editor
 
         /// <inheritdoc/>
         public event EventHandler<EventArgs> ActiveDockTabItemChanged;
-        #endregion
+
 
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private void OnFloatWindowsChanged(object sender, NotifyCollectionChangedEventArgs eventArgs)
@@ -230,7 +230,7 @@ namespace DigitalRune.Editor
         }
 
 
-        #region ----- DockSerializer -----
+
 
         /// <summary>
         /// Loads the docking layout.
@@ -288,8 +288,8 @@ namespace DigitalRune.Editor
                 DockStrategy.End();
             }
         }
-        #endregion
 
-        #endregion
+
+
     }
 }

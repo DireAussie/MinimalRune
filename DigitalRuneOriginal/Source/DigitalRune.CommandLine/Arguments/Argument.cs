@@ -31,13 +31,13 @@ namespace DigitalRune.CommandLine
     public abstract class Argument : INamedObject
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -93,11 +93,11 @@ namespace DigitalRune.CommandLine
         /// </list>
         /// </remarks>
         public string Name { get; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -126,11 +126,11 @@ namespace DigitalRune.CommandLine
             Name = name;
             Description = description;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -183,6 +183,6 @@ namespace DigitalRune.CommandLine
         /// </remarks>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
         public abstract string GetSyntax();
-        #endregion
+
     }
 }

@@ -16,13 +16,13 @@ namespace DigitalRune.Graphics
   public class ImageBillboard : Billboard
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -146,11 +146,11 @@ namespace DigitalRune.Graphics
     /// has a volume and creates soft transitions when it intersects with other geometry.
     /// </remarks>
     public float Softness { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -179,14 +179,14 @@ namespace DigitalRune.Graphics
       _alphaTest = 0;
       _blendMode = 1;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc cref="Billboard.Clone"/>
     public new ImageBillboard Clone()
@@ -217,8 +217,8 @@ namespace DigitalRune.Graphics
       _blendMode = sourceTyped._blendMode;
       Softness = sourceTyped.Softness;
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

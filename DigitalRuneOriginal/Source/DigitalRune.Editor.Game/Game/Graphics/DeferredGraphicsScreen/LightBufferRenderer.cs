@@ -29,7 +29,7 @@ namespace Samples
   public sealed class LightBufferRenderer : IDisposable
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private bool _disposed;
@@ -41,11 +41,11 @@ namespace Samples
     private PostProcessor _ssaoFilter;
     private int _ssaoDownsampleFactor;
     private readonly CopyFilter _copyFilter;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     public LightRenderer LightRenderer { get; private set; }
@@ -99,11 +99,11 @@ namespace Samples
       }
     }
     private AmbientOcclusionType _ambientOcclusionType;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     public LightBufferRenderer(IGraphicsService graphicsService)
@@ -125,11 +125,11 @@ namespace Samples
         _copyFilter.Dispose();
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     public void Render(IList<SceneNode> lights, RenderContext context)
@@ -209,7 +209,7 @@ namespace Samples
       _renderTargetBindings[0] = new RenderTargetBinding();
       _renderTargetBindings[1] = new RenderTargetBinding();
     }
-    #endregion
+
   }
 }
 #endif

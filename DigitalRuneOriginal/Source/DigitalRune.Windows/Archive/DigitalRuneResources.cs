@@ -19,10 +19,10 @@ namespace DigitalRune.Windows
   public class DigitalRuneResources
   {
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
-    #region ----- Brushes -----
+
 
     /// <summary>
     /// Gets the <see cref="ResourceKey"/> for the checker <see cref="Brush"/>.
@@ -70,10 +70,10 @@ namespace DigitalRune.Windows
       }
     }
     private static ResourceKey _glyphStrokeBrushKey;
-    #endregion
 
 
-    #region ----- Geometries -----
+
+
 
     /// <summary>
     /// Gets the <see cref="ResourceKey"/> for the <see cref="Geometry"/> that defines a triangle
@@ -243,19 +243,19 @@ namespace DigitalRune.Windows
       }
     }
     private static ResourceKey _upArrowGeometryKey;
-    #endregion
 
-    #endregion
+
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private static ResourceKey CreateKey(DigitalRuneResourceKeyID id)
     {
       return new ComponentResourceKey(typeof(DigitalRuneResources), id);
     }
-    #endregion
+
   }
 }

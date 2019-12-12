@@ -30,7 +30,7 @@ namespace DigitalRune.Graphics.Rendering
   public class MeshRenderer : SceneNodeRenderer
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -133,11 +133,11 @@ namespace DigitalRune.Graphics.Rendering
         return weightY.CompareTo(weightX);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Counters used to create unique IDs.
@@ -158,11 +158,11 @@ namespace DigitalRune.Graphics.Rendering
 
     // Dynamic mesh Instancing 
     private InstanceRenderBatch<InstanceData> _instanceRenderBatch;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -189,11 +189,11 @@ namespace DigitalRune.Graphics.Rendering
     /// hardware instancing is used to render models with 4 or more visible instances.
     /// </value>
     public int InstancingThreshold { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -222,11 +222,11 @@ namespace DigitalRune.Graphics.Rendering
 
       base.Dispose(disposing);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -1030,7 +1030,7 @@ namespace DigitalRune.Graphics.Rendering
     }
 
 
-    #region ----- Resource IDs -----
+
 
     // Each resource (effect, material, vertex buffer, submesh) gets a unique ID, 
     // which is used for state sorting. The IDs are assigned during BatchJobs() and 
@@ -1162,8 +1162,8 @@ namespace DigitalRune.Graphics.Rendering
         }
       }
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

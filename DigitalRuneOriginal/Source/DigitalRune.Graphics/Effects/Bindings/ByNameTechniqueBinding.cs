@@ -20,21 +20,21 @@ namespace DigitalRune.Graphics.Effects
   public sealed class ByNameTechniqueBinding : EffectTechniqueBinding
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly EffectTechniqueCollection _techniques;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -67,21 +67,21 @@ namespace DigitalRune.Graphics.Effects
 
       _techniques = techniques;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override EffectTechniqueBinding CreateInstanceCore()
     {
       return new ByNameTechniqueBinding(_techniques);
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -108,6 +108,6 @@ namespace DigitalRune.Graphics.Effects
     {
       return effect.Techniques[Id];
     }
-    #endregion
+
   }
 }

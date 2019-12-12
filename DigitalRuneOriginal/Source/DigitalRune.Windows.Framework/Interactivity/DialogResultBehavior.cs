@@ -43,19 +43,19 @@ namespace DigitalRune.Windows.Framework
     public class DialogResultBehavior : Behavior<Window>
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -79,17 +79,17 @@ namespace DigitalRune.Windows.Framework
             get { return (bool?)GetValue(DialogResultProperty); }
             set { SetValue(DialogResultProperty, value); }
         }
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Creation & Cleanup
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Methods
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -145,6 +145,6 @@ namespace DigitalRune.Windows.Framework
             if (window.IsLoaded && window.DialogResult != dialogResult)
                 window.DialogResult = dialogResult;
         }
-        #endregion
+
     }
 }

@@ -64,13 +64,13 @@ namespace DigitalRune.Windows
 
 
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -115,11 +115,11 @@ namespace DigitalRune.Windows
         /// Occurs when the value of the monitored property is changed.
         /// </summary>
         public event EventHandler ValueChanged;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <overloads>
@@ -182,11 +182,11 @@ namespace DigitalRune.Windows
             BindingOperations.ClearBinding(this, ValueProperty);
             _source.Target = null;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
 
@@ -217,6 +217,6 @@ namespace DigitalRune.Windows
         {
             ValueChanged?.Invoke(this, EventArgs.Empty);
         }
-        #endregion
+
     }
 }

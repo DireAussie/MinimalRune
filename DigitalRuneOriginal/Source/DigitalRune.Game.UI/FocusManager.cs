@@ -50,7 +50,7 @@ namespace DigitalRune.Game.UI
   public class FocusManager
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // The focus manager adds a "LastFocusedControl" property to controls that are focus scopes.
@@ -61,11 +61,11 @@ namespace DigitalRune.Game.UI
 
     // This list will be used within the MoveFocus method. Else it is empty.
     private readonly List<UIControl> _focusableControls = new List<UIControl>();
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     private IInputService InputService { get { return Screen.InputService; } }
@@ -95,11 +95,11 @@ namespace DigitalRune.Game.UI
     /// focus scopes.)
     /// </remarks>
     public UIControl FocusScope { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -116,11 +116,11 @@ namespace DigitalRune.Game.UI
 
       Screen = screen;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -523,6 +523,6 @@ namespace DigitalRune.Game.UI
       // A and B are intersecting.
       return new Vector2F();
     }
-    #endregion
+
   }
 }

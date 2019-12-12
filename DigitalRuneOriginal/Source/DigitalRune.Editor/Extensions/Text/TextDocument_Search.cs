@@ -25,7 +25,7 @@ namespace DigitalRune.Editor.Text
     partial class TextDocument
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private IDisposable _searchUpdateSubscription;
@@ -35,11 +35,11 @@ namespace DigitalRune.Editor.Text
         private IDisposable _themeMessageSubscription; 
 
         private Brush _searchResultBrush;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         private void InitializeSearch()
@@ -99,11 +99,11 @@ namespace DigitalRune.Editor.Text
 
             _searchResults.Clear();
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private void OnThemeMessage(ThemeMessage message)
@@ -289,6 +289,6 @@ namespace DigitalRune.Editor.Text
         {
             AvalonEditDocument.EndUpdate();
         }
-        #endregion
+
     }
 }

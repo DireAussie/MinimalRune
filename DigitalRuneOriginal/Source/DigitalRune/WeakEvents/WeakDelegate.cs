@@ -1,4 +1,4 @@
-﻿#region ----- Copyright -----
+﻿
 /*
   The class in this file is based on the WeakAction from Josh Smith's mediator prototype 
   (http://joshsmithonwpf.wordpress.com/2009/04/06/a-mediator-prototype-for-wpf-apps/), the 
@@ -84,7 +84,7 @@
   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
   OTHER DEALINGS IN THE SOFTWARE.
 */
-#endregion
+
 
 
 using System;
@@ -108,15 +108,15 @@ namespace DigitalRune
     // alive.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private InternalWeakDelegate _internalWeakDelegate;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -191,11 +191,11 @@ namespace DigitalRune
     {
       get { return _internalWeakDelegate.IsAlive; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -211,11 +211,11 @@ namespace DigitalRune
     {
       _internalWeakDelegate = new InternalWeakDelegate(@delegate);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -226,6 +226,6 @@ namespace DigitalRune
     {
       _internalWeakDelegate.Invoke(args);
     }
-    #endregion
+
   }
 }

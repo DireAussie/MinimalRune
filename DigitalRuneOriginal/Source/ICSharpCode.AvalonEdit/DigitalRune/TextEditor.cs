@@ -13,21 +13,21 @@ namespace ICSharpCode.AvalonEdit
     partial class TextEditor
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private MarkerRenderer _bracketMarkerRenderer;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -51,11 +51,11 @@ namespace ICSharpCode.AvalonEdit
             get { return (Pen)GetValue(ColumnRulerProperty); }
             set { SetValue(ColumnRulerProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -82,11 +82,11 @@ namespace ICSharpCode.AvalonEdit
             CommandBindings.Add(new CommandBinding(AvalonEditCommands.ToggleFold, (s, e) => ToggleCurrentFolding(), CanToggleFold));
             CommandBindings.Add(new CommandBinding(AvalonEditCommands.SyntaxHighlighting, (s, e) => SyntaxHighlighting = e.Parameter as IHighlightingDefinition));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private static Pen CreateFrozenPen(SolidColorBrush brush)
@@ -216,6 +216,6 @@ namespace ICSharpCode.AvalonEdit
                 TextArea.Selection = new RectangleSelection(TextArea, rectangleSelection.StartPosition, rectangleSelection.EndPosition);
             }
         }
-        #endregion
+
     }
 }

@@ -20,23 +20,23 @@ namespace DigitalRune.Editor.Shader
     internal class Fxc
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
         private readonly IOutputService _outputService;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -50,11 +50,11 @@ namespace DigitalRune.Editor.Shader
 
             _outputService = outputService;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -191,6 +191,6 @@ namespace DigitalRune.Editor.Shader
                 }
             }
         }
-        #endregion
+
     }
 }

@@ -81,16 +81,16 @@ namespace DigitalRune.Graphics.SceneGraph
     //  - or return an IDisposable (struct) and use a using-statement to capture updates.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private const int DefaultCapacity = 4;
     private bool _suppressUpdates;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -98,11 +98,11 @@ namespace DigitalRune.Graphics.SceneGraph
     /// </summary>
     /// <value>The levels of detail (LODs).</value>
     public LodCollection Levels { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -134,14 +134,14 @@ namespace DigitalRune.Graphics.SceneGraph
 
       Levels = new LodCollection(this, capacity);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc cref="SceneNode.Clone"/>
     public new LodGroupNode Clone()
@@ -174,7 +174,7 @@ namespace DigitalRune.Graphics.SceneGraph
 
       EndUpdate();
     }
-    #endregion
+
 
 
     /// <summary>
@@ -348,7 +348,7 @@ namespace DigitalRune.Graphics.SceneGraph
     }
 
 
-    #region ----- IOcclusionProxy -----
+
 
     private IOcclusionProxy GetOcclusionProxy()
     {
@@ -383,8 +383,8 @@ namespace DigitalRune.Graphics.SceneGraph
       Debug.Assert(occlusionProxy != null, "Check IOcclusionProxy.HasOccluder before calling GetOccluder().");
       return occlusionProxy.GetOccluder();
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

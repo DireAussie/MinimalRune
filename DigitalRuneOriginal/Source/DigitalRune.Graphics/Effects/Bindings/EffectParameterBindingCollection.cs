@@ -17,13 +17,13 @@ namespace DigitalRune.Graphics.Effects
   public class EffectParameterBindingCollection : Collection<EffectParameterBinding>
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -93,11 +93,11 @@ namespace DigitalRune.Graphics.Effects
         return Items[index];
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -111,11 +111,11 @@ namespace DigitalRune.Graphics.Effects
     {
       Hints = hints;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -387,6 +387,6 @@ namespace DigitalRune.Graphics.Effects
       RemoveAt(index);
       return true;
     }
-    #endregion
+
   }
 }

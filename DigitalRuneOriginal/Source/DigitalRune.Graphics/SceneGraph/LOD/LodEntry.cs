@@ -42,7 +42,7 @@ namespace DigitalRune.Graphics.SceneGraph
     public SceneNode Node { get; set; }
 
 
-    #region ----- Equality Members -----
+
 
     /// <summary>
     /// Determines whether the specified <see cref="Object" />, is equal to this instance.
@@ -120,7 +120,7 @@ namespace DigitalRune.Graphics.SceneGraph
     {
       return !left.Equals(right);
     }
-    #endregion
+
     
   }
 }

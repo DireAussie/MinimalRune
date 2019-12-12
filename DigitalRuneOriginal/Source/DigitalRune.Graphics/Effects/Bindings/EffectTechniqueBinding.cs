@@ -41,7 +41,7 @@ namespace DigitalRune.Graphics.Effects
   public class EffectTechniqueBinding
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // The default EffectTechniqueBinding always has the same state (Id is always 0)
@@ -52,11 +52,11 @@ namespace DigitalRune.Graphics.Effects
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
     public static readonly EffectTechniqueBinding Default = new EffectTechniqueBinding();
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -67,20 +67,20 @@ namespace DigitalRune.Graphics.Effects
     /// The ID must be set in <see cref="OnUpdate"/>. The ID may change from frame to frame.
     /// </remarks>
     public byte Id { get; protected set; }
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
+
+    //--------------------------------------------------------------
+
+    //--------------------------------------------------------------
+
+
 
     /// <summary>
     /// Creates a new <see cref="EffectTechniqueBinding"/> that is a clone of the current instance.
@@ -173,7 +173,7 @@ namespace DigitalRune.Graphics.Effects
     {
       Id = source.Id;
     }
-    #endregion
+
 
 
     /// <summary>
@@ -356,6 +356,6 @@ namespace DigitalRune.Graphics.Effects
 
       return true;
     }
-    #endregion
+
   }
 }

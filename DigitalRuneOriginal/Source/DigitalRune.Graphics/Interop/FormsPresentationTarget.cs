@@ -26,18 +26,18 @@ namespace DigitalRune.Graphics.Interop
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private bool _rendering;
 #if MONOGAME
     private SwapChainRenderTarget _renderTarget;
 #endif
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties and Events
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -89,11 +89,11 @@ namespace DigitalRune.Graphics.Interop
     {
       get { return Visible; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -135,11 +135,11 @@ namespace DigitalRune.Graphics.Interop
 
       base.Dispose(disposing);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
@@ -329,7 +329,7 @@ namespace DigitalRune.Graphics.Interop
           NativeMethods.PostMessage(form.Handle, m.Msg, m.WParam, m.LParam);
       }
     }
-    #endregion
+
   }
 }
 #endif

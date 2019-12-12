@@ -15,21 +15,21 @@ namespace DigitalRune.Graphics.Effects
   public class EnvironmentMapEffectBinding : EffectBinding, IStockEffectBinding
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     bool IStockEffectBinding.FogEnabled { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -57,11 +57,11 @@ namespace DigitalRune.Graphics.Effects
       : base(graphicsService, graphicsService.GetEnvironmentMapEffect(), opaqueData)
     {
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -131,6 +131,6 @@ namespace DigitalRune.Graphics.Effects
 
       return (T)datum;
     }
-    #endregion
+
   }
 }

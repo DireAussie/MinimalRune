@@ -41,7 +41,7 @@ namespace DigitalRune.Editor
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
@@ -55,11 +55,11 @@ namespace DigitalRune.Editor
 
         // e.g. C:\Users\UserName\AppData\Local\Temp\DigitalRune.EditorApp\123\
         private readonly string _processDirectoryName;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
 
@@ -78,11 +78,11 @@ namespace DigitalRune.Editor
         /// <see langword="false"/>.
         /// </value>
         public bool IsDisposed { get; private set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -168,11 +168,11 @@ namespace DigitalRune.Editor
                 IsDisposed = true;
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         // Try to delete any directories that were left over from other application instances.
@@ -237,6 +237,6 @@ namespace DigitalRune.Editor
                 }
             }
         }
-        #endregion
+
     }
 }

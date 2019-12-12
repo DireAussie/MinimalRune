@@ -34,7 +34,7 @@ namespace DigitalRune.Editor.Documents
     public sealed partial class DocumentExtension : EditorExtension, IDocumentService, IGuardClose
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
@@ -45,11 +45,11 @@ namespace DigitalRune.Editor.Documents
         private readonly List<Document> _documents;
 
         private ResourceDictionary _resourceDictionary;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -133,11 +133,11 @@ namespace DigitalRune.Editor.Documents
 
         /// <inheritdoc/>
         public event EventHandler<EventArgs> ActiveDocumentChanged;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -151,11 +151,11 @@ namespace DigitalRune.Editor.Documents
 
             _menuManager = new MenuManager();
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -319,14 +319,14 @@ namespace DigitalRune.Editor.Documents
         }
 
 
-        #region ----- IGuardClose -----
+
 
         /// <inheritdoc/>
         public async Task<bool> CanCloseAsync()
         {
             return await CloseAllAsync();
         }
-        #endregion
+
 
 
         /// <summary>
@@ -398,6 +398,6 @@ namespace DigitalRune.Editor.Documents
                 }
             }
         }
-        #endregion
+
     }
 }

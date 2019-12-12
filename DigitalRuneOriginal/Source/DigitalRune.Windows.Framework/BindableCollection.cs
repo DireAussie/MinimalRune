@@ -2,12 +2,12 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#region ----- Credits -----
+
 /*
   The "screen conduction" pattern implemented in DigitalRune.Windows.Framework was 
   inspired by the Caliburn.Micro framework (see http://caliburnmicro.codeplex.com/).
 */
-#endregion
+
 
 using System;
 using System.Collections.Generic;
@@ -33,7 +33,7 @@ namespace DigitalRune.Windows.Framework
     public class BindableCollection<T> : ObservableCollection<T>
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
 #if !SILVERLIGHT && !WINDOWS_PHONE
@@ -42,11 +42,11 @@ namespace DigitalRune.Windows.Framework
         // Default value is false. Otherwise, we need to initialize correctly in constructor and
         // on deserialization.
         private bool _suppressNotifications;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -66,11 +66,11 @@ namespace DigitalRune.Windows.Framework
             get { return !_suppressNotifications; }
             set { _suppressNotifications = !value; }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -93,11 +93,11 @@ namespace DigitalRune.Windows.Framework
         {
             AddRange(collection);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -367,6 +367,6 @@ namespace DigitalRune.Windows.Framework
         {
             base.SetItem(index, item);
         }
-        #endregion
+
     }
 }

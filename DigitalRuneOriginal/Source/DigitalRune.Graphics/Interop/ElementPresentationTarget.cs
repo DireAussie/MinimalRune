@@ -90,21 +90,21 @@ namespace DigitalRune.Graphics.Interop
   public class ElementPresentationTarget : WindowsFormsHost, IPresentationTarget
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly FormsPresentationTarget _formsPresentationTarget;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -115,11 +115,11 @@ namespace DigitalRune.Graphics.Interop
       _formsPresentationTarget = new FormsPresentationTarget();
       Child = _formsPresentationTarget;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region IPresentationTarget Members
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -180,7 +180,7 @@ namespace DigitalRune.Graphics.Interop
     {
       ((IPresentationTarget)_formsPresentationTarget).EndRender(context);
     }
-    #endregion
+
   }
 }
 #endif

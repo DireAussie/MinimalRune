@@ -43,7 +43,7 @@ namespace DigitalRune.Editor.Game
         // TODO: Implement full game loop with all services, game components and game objects.
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
@@ -56,11 +56,11 @@ namespace DigitalRune.Editor.Game
         private HighPrecisionClock _clock;
         private IGameTimer _timer;
         private bool _idle;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -73,17 +73,17 @@ namespace DigitalRune.Editor.Game
         /// Occurs before the game logic is updated.
         /// </summary>
         public event EventHandler<EventArgs> GameLogicUpdating;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Creation & Cleanup
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Methods
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -386,6 +386,6 @@ namespace DigitalRune.Editor.Game
             //    }
             //}
         }
-        #endregion
+
     }
 }

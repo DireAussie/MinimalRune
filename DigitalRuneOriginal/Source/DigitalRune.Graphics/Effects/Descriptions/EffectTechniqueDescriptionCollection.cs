@@ -20,15 +20,15 @@ namespace DigitalRune.Graphics.Effects
   public sealed class EffectTechniqueDescriptionCollection : Collection<EffectTechniqueDescription>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private bool _isReadOnly;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -54,11 +54,11 @@ namespace DigitalRune.Graphics.Effects
         return null;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -78,11 +78,11 @@ namespace DigitalRune.Graphics.Effects
 
       Initialize(graphicsService, effect);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -199,6 +199,6 @@ namespace DigitalRune.Graphics.Effects
       if (_isReadOnly)
         throw new NotSupportedException("The EffectTechniqueDescriptionCollection is read-only.");
     }
-    #endregion
+
   }
 }

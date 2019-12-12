@@ -51,13 +51,13 @@ namespace DigitalRune.Windows
     // manually to all BindingSlaves.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
-    #endregion
+
       
       
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -87,11 +87,11 @@ namespace DigitalRune.Windows
     /// Occurs when a property value changes.
     /// </summary>
     public event PropertyChangedEventHandler PropertyChanged;
-    #endregion
+
       
       
     //--------------------------------------------------------------
-    #region Dependency Properties & Routed Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -114,11 +114,11 @@ namespace DigitalRune.Windows
       get { return GetValue(ConvertedValueProperty); }
       set { SetValue(ConvertedValueProperty, value); }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -128,11 +128,11 @@ namespace DigitalRune.Windows
     {
       Bindings = new BindingCollection();
     }
-    #endregion
+
       
       
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private static void OnConvertedValueChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
@@ -199,6 +199,6 @@ namespace DigitalRune.Windows
       if (handler != null)
         handler(this, new PropertyChangedEventArgs(name));
     }
-    #endregion
+
   }
 }

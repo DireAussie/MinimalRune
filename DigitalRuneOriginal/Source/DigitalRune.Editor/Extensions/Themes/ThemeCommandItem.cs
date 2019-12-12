@@ -17,17 +17,17 @@ namespace DigitalRune.Editor.Themes
     internal class ThemeCommandItem : ObservableObject, ICommandItem
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly ThemeExtension _themeExtension;
         private MenuItemViewModel _menuItemViewModel;
         private ToolBarComboBoxViewModel _toolBarComboBoxViewModel;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -90,11 +90,11 @@ namespace DigitalRune.Editor.Themes
             set { SetProperty(ref _isVisible, value); }
         }
         private bool _isVisible = true;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -112,11 +112,11 @@ namespace DigitalRune.Editor.Themes
             _themeExtension = themeExtension;
             _themeExtension.ThemeChanged += OnThemeChanged;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -198,6 +198,6 @@ namespace DigitalRune.Editor.Themes
             if (_toolBarComboBoxViewModel != null)
                 _toolBarComboBoxViewModel.SelectedItem = _themeExtension.Theme;
         }
-        #endregion
+
     }
 }

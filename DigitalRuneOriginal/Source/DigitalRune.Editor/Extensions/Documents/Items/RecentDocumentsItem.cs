@@ -20,7 +20,7 @@ namespace DigitalRune.Editor.Documents
     internal class RecentDocumentsItem : ObservableObject, ICommandItem
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
@@ -28,11 +28,11 @@ namespace DigitalRune.Editor.Documents
         private readonly DocumentExtension _documentExtension;
         private MenuItemViewModel _menuItem;
         private ToolBarDropDownButtonViewModel _toolBarDropDownButton;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -89,11 +89,11 @@ namespace DigitalRune.Editor.Documents
             set { SetProperty(ref _isVisible, value); }
         }
         private bool _isVisible = true;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -111,11 +111,11 @@ namespace DigitalRune.Editor.Documents
             _documentExtension = documentExtension;
             Command = new DelegateCommand<string>(OnOpenRecentDocument);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -201,6 +201,6 @@ namespace DigitalRune.Editor.Documents
                     });
             }
         }
-        #endregion
+
     }
 }

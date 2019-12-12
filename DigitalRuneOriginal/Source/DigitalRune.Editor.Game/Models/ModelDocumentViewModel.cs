@@ -29,16 +29,16 @@ namespace DigitalRune.Editor.Models
     internal class ModelDocumentViewModel : DocumentViewModel
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private GameExtension _gameExtension;
         private ModelNode _groundModelNode;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -229,11 +229,11 @@ namespace DigitalRune.Editor.Models
 
 
         public DelegateCommand RecreatedModelAndMaterialDescriptionCommand { get; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -249,11 +249,11 @@ namespace DigitalRune.Editor.Models
             ResetCameraCommand = new DelegateCommand(ResetCameraPose);
             RecreatedModelAndMaterialDescriptionCommand = new DelegateCommand(Recreate, CanRecreate);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -690,6 +690,6 @@ namespace DigitalRune.Editor.Models
         {
             Document.LoadAsync(true);
         }
-        #endregion
+
     }
 }

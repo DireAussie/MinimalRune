@@ -31,28 +31,28 @@ namespace DigitalRune.Windows.Charts.Interactivity
     public class ChartZoomBehavior : Behavior<UIElement>
     {
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         private const double MinZoomFactor = -0.5;
         private const double MaxZoomFactor = 0.5;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Properties
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------    
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -190,17 +190,17 @@ namespace DigitalRune.Windows.Charts.Interactivity
             get { return (double)GetValue(ZoomFactorProperty); }
             set { SetValue(ZoomFactorProperty, value); }
         }
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Creation and Cleanup
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Methods
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -303,6 +303,6 @@ namespace DigitalRune.Windows.Charts.Interactivity
 
             eventArgs.Handled = true;
         }
-        #endregion
+
     }
 }

@@ -100,13 +100,13 @@ namespace DigitalRune.Game.UI.Controls
   public class RadioButton : ToggleButton
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -114,11 +114,11 @@ namespace DigitalRune.Game.UI.Controls
     /// </summary>
     /// <value>The name of the group.</value>
     public string GroupName { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -128,11 +128,11 @@ namespace DigitalRune.Game.UI.Controls
     {
       Style = "RadioButton";
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -164,6 +164,6 @@ namespace DigitalRune.Game.UI.Controls
       // Check this radio button.
       IsChecked = true;
     }
-    #endregion
+
   }
 }

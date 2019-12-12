@@ -196,7 +196,7 @@ namespace DigitalRune.Windows.Controls
         }
 
 
-        #region ----- pt <-> px -----
+
 
         private const double PixelsPerPoint = 96.0 / 72.0;
         private const double PointsPerPixel = 72.0 / 96.0;
@@ -222,6 +222,6 @@ namespace DigitalRune.Windows.Controls
         {
             return pixels * PointsPerPixel;
         }
-        #endregion
+
     }
 }

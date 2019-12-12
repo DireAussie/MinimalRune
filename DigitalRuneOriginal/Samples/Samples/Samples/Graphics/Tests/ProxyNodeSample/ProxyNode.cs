@@ -14,15 +14,15 @@ namespace Samples.Graphics
   public class ProxyNode : SceneNode
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private bool _ignoreChanges;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -42,11 +42,11 @@ namespace Samples.Graphics
       }
     }
     private SceneNode _node;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -59,14 +59,14 @@ namespace Samples.Graphics
       CastsShadows = true;
       Node = node;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc cref="SceneNode.Clone"/>
     public new ProxyNode Clone()
@@ -91,7 +91,7 @@ namespace Samples.Graphics
       SetNode((sourceTyped.Node != null) ? sourceTyped.Node.Clone() : null);
       Shape = sourceTyped.Shape.Clone();
     }
-    #endregion
+
 
 
     // Sets the node without updating the bounding shape.
@@ -281,6 +281,6 @@ namespace Samples.Graphics
 
       return transformedShape;
     }
-    #endregion
+
   }
 }

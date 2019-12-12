@@ -79,7 +79,7 @@ namespace ICSharpCode.AvalonEdit.Editing
 			dummyElement.InputBindings.AddRange(inputBindings);
 		}
 		
-		#region Undo / Redo
+
 		UndoStack GetUndoStack()
 		{
 			TextDocument document = this.TextArea.Document;
@@ -130,6 +130,6 @@ namespace ICSharpCode.AvalonEdit.Editing
 				e.CanExecute = undoStack.CanRedo;
 			}
 		}
-		#endregion
+
 	}
 }

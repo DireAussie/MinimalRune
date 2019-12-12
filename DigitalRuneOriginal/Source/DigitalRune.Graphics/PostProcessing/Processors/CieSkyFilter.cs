@@ -35,7 +35,7 @@ namespace DigitalRune.Graphics.PostProcessing
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Vector3[] _cameraFrustumFarCorners = new Vector3[4];
@@ -48,11 +48,11 @@ namespace DigitalRune.Graphics.PostProcessing
     private readonly EffectParameter _parameterAbcd;
     private readonly EffectParameter _parameterEAndStrength;
     private readonly EffectParameter _parameterSourceTexture;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -95,11 +95,11 @@ namespace DigitalRune.Graphics.PostProcessing
     /// values for <see cref="Strength"/>.
     /// </remarks>
     public float Strength { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -125,11 +125,11 @@ namespace DigitalRune.Graphics.PostProcessing
       Exposure = 1;
       Strength = 1;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -188,7 +188,7 @@ namespace DigitalRune.Graphics.PostProcessing
 
       graphicsDevice.DrawFullScreenQuad();
     }
-    #endregion
+
   }
 }
 #endif

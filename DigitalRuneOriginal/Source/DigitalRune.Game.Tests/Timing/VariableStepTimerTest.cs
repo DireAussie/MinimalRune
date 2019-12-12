@@ -334,7 +334,7 @@ namespace DigitalRune.Game.Timing.Tests
     
 
     //--------------------------------------------------------------
-    #region Helpers for Events
+
     //--------------------------------------------------------------
 
     void timer_Idle(object sender, GameTimerEventArgs eventArgs)
@@ -373,6 +373,6 @@ namespace DigitalRune.Game.Timing.Tests
       Assert.AreEqual(expectedDeltaTime, timeEventArgs.DeltaTime);
       timeChangedEventOccured = false;
     }
-    #endregion
+
   }
 }

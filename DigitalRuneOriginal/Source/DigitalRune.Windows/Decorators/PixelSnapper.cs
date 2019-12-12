@@ -15,16 +15,16 @@ namespace DigitalRune.Windows
     public class PixelSnapper : Decorator
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         // The pixel offset that is required to align the child element to device pixels.
         private Point _pixelOffset;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -34,11 +34,11 @@ namespace DigitalRune.Windows
         {
             LayoutUpdated += OnLayoutUpdated;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private void OnLayoutUpdated(object sender, EventArgs eventArgs)
@@ -101,6 +101,6 @@ namespace DigitalRune.Windows
 
             return arrangeSize;
         }
-        #endregion
+
     }
 }

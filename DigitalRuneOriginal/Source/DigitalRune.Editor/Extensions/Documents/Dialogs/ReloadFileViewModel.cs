@@ -20,15 +20,15 @@ namespace DigitalRune.Editor.Documents
     internal class ReloadFileViewModel : Dialog
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -98,11 +98,11 @@ namespace DigitalRune.Editor.Documents
         /// </summary>
         /// <value>The command that is executed when the "No to All" button is pressed.</value>
         public DelegateCommand NoToAllCommand { get; private set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -120,11 +120,11 @@ namespace DigitalRune.Editor.Documents
             NoCommand = new DelegateCommand(No);
             NoToAllCommand = new DelegateCommand(NoToAll);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private void Yes()
@@ -157,6 +157,6 @@ namespace DigitalRune.Editor.Documents
             ReloadFileDialogResult = ReloadFileDialogResult.NoToAll;
             DialogResult = true;
         }
-        #endregion
+
     }
 }

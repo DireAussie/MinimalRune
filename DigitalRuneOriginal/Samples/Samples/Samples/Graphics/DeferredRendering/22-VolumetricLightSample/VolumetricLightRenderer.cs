@@ -51,7 +51,7 @@ namespace Samples.Graphics
   public class VolumetricLightRenderer : SceneNodeRenderer
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -96,11 +96,11 @@ namespace Samples.Graphics
     private readonly EffectPass _passProjectorLightTextureRgb;
     private readonly EffectPass _passProjectorLightTextureAlpha;
     private UpsampleFilter _upsampleFilter;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -167,11 +167,11 @@ namespace Samples.Graphics
     /// </para>
     /// </remarks>
     public float DepthThreshold { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -216,11 +216,11 @@ namespace Samples.Graphics
       AnimateNoise = true;
       DepthThreshold = 1;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -495,7 +495,7 @@ namespace Samples.Graphics
       graphicsDevice.DepthStencilState = originalDepthStencilState;
       graphicsDevice.BlendState = originalBlendState;
     }
-    #endregion
+
   }
 }
 #endif

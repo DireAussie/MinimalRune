@@ -56,7 +56,7 @@ namespace DigitalRune.Animation.Character
   public struct SrtTransform : IEquatable<SrtTransform>
   {
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -68,11 +68,11 @@ namespace DigitalRune.Animation.Character
     /// <see cref="Vector3F.Zero"/>.
     /// </remarks>
     public static readonly SrtTransform Identity = new SrtTransform(Vector3F.One, QuaternionF.Identity, Vector3F.Zero);
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -91,11 +91,11 @@ namespace DigitalRune.Animation.Character
     /// The translation.
     /// </summary>
     public Vector3F Translation;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -167,11 +167,11 @@ namespace DigitalRune.Animation.Character
         return result;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -260,11 +260,11 @@ namespace DigitalRune.Animation.Character
       Rotation = QuaternionF.CreateRotation(rotation);
       Translation = translation;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -468,11 +468,11 @@ namespace DigitalRune.Animation.Character
     {
       return new SrtTransform(pose.Orientation, pose.Position);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Static Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -626,11 +626,11 @@ namespace DigitalRune.Animation.Character
       Matrix33F r;
       return matrix.Decompose(out s, out r, out t);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Overrides
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -706,11 +706,11 @@ namespace DigitalRune.Animation.Character
         "SrtTransform {{ Scale = {0}, Rotation = {1}, Translation = {2} }}", 
         Scale, Rotation, Translation);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Overloaded Operators
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -1141,6 +1141,6 @@ namespace DigitalRune.Animation.Character
                         srt.Translation.X,                   srt.Translation.Y,                   srt.Translation.Z,                   1);
     }
 #endif
-    #endregion
+
   }
 }

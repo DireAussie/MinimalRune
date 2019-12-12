@@ -74,7 +74,7 @@ namespace Samples.Physics
       // rigid bodies are created in code. In practice, ragdolls should be built using
       // external tools, such as a 3D modeler or a game editor.
 
-      #region ----- Create rigid bodies for the most relevant body parts -----
+
 
       // The density used for all bodies.
       const float density = 1000;
@@ -168,9 +168,9 @@ namespace Samples.Physics
         Pose = new Pose(new Vector3F(0.11f * scale, -0.06f * scale, 0.94f * scale) + ragdollPosition),
       };
       simulation.RigidBodies.Add(rightFoot);
-      #endregion
 
-      #region ----- Add joints between body parts -----
+
+
 
       float errorReduction = 0.3f;
       float maxForce = float.PositiveInfinity;
@@ -375,9 +375,9 @@ namespace Samples.Physics
         MaxForce = maxForce,
       };
       simulation.Constraints.Add(rightAnkleJoint);
-      #endregion
 
-      #region ----- Add damping to improve stability -----
+
+
 
       if (addDamping)
       {
@@ -398,7 +398,7 @@ namespace Samples.Physics
         AddDamping(simulation, leftLowerLeg, leftFoot, softness, maxForce);
         AddDamping(simulation, rightLowerLeg, rightFoot, softness, maxForce);
       }
-      #endregion
+
     }
 
 

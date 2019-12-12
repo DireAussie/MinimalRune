@@ -21,37 +21,37 @@ namespace DigitalRune.Editor.Models
     partial class ModelDocument
     {
         //--------------------------------------------------------------
-        #region Constant
+
         //--------------------------------------------------------------
 
         private const string ToolTipGeneral = "Select an item to show additional information in Properties window.";
         private const string ToolTipSceneNode = "Select node to show in Properties window and highlight in 3D view.\n(Highlighting is only visible when animations are stopped.)";
         private const string ToolTipAssimpNode = "This tree represents the data imported by the Assimp library.\nSelect node to show in Properties window.";
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         internal Outline Outline;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Methods
+
+
+
+        //--------------------------------------------------------------
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         private void UpdateOutline()
@@ -372,6 +372,6 @@ namespace DigitalRune.Editor.Models
 
             return item;
         }
-        #endregion
+
     }
 }

@@ -87,7 +87,7 @@ namespace DigitalRune.Physics.Specialized
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // A force effect that takes applies pushing and gravity forces to touched objects.
@@ -104,11 +104,11 @@ namespace DigitalRune.Physics.Specialized
     private bool _isSteppingDown;        // Are we currently stepping down?
     
     internal Vector3F _lastDesiredVelocity;    
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -298,11 +298,11 @@ namespace DigitalRune.Physics.Specialized
       set { _jumpManeuverability = value; }
     }
     private float _jumpManeuverability = 0.05f;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -337,11 +337,11 @@ namespace DigitalRune.Physics.Specialized
       // Enable the character controller. (Adds body and force effect to simulation.)
       Enabled = true;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -562,6 +562,6 @@ namespace DigitalRune.Physics.Specialized
 
       Body.LinearVelocity = Vector3F.Zero;
     }
-    #endregion
+
   }
 }

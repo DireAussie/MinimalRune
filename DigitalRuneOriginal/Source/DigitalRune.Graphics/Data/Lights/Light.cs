@@ -38,13 +38,13 @@ namespace DigitalRune.Graphics
   public abstract class Light : INamedObject
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -86,11 +86,11 @@ namespace DigitalRune.Graphics
     /// </para>
     /// </remarks>
     public Shape Shape { get; protected set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -101,14 +101,14 @@ namespace DigitalRune.Graphics
       // Set a default shape.
       Shape = Shape.Infinite;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <summary>
     /// Creates a new <see cref="Light"/> that is a clone (deep copy) of the current instance.
@@ -205,7 +205,7 @@ namespace DigitalRune.Graphics
 
       // Shape does not need to be cloned. It is managed automatically in derived classes.
     }
-    #endregion
+
 
 
     /// <summary>
@@ -216,6 +216,6 @@ namespace DigitalRune.Graphics
     /// A value representing the (red, green and blue) light intensity at the specified distance. 
     /// </returns>
     public abstract Vector3F GetIntensity(float distance);
-    #endregion
+
   }
 }

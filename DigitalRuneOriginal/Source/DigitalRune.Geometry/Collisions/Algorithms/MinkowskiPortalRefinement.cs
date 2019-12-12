@@ -46,7 +46,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
 
 
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     // To avoid unnecessary memory allocations we do not use lambda expressions to wrap the 
@@ -69,11 +69,11 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
         Method = contactSet => OriginalMethod(CollisionQueryType.Contacts, contactSet, V0);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // A pool of reusable test-methods wrappers.
@@ -87,17 +87,17 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
 
     // We use GJK as a safety check in degenerate cases.
     private Gjk _gjk;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -110,11 +110,11 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
       // Store DoMpr method in delegate to avoid garbage when using TestWithPerturbations.
       _doMprMethod = DoMpr;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -225,7 +225,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
               // The new penetration depth is larger then the old penetration depth.
               // In this case we keep the old contact.
               // This can happen for nearly parallel boxes. First we get a good contact.
-              // Then we get a contact another side. Normal has changed 90°. The new
+              // Then we get a contact another side. Normal has changed 90ï¿½. The new
               // penetration depth can be nearly the whole box side length :-(.
               newContact.Recycle();
               testContactSet[0] = oldContact;
@@ -714,6 +714,6 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
         }
       }
     }
-    #endregion
+
   }
 }

@@ -53,21 +53,21 @@ namespace DigitalRune.Windows.Charts
     public class PieChart : Chart
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly WeakCollection<Canvas> _legendSymbols = new WeakCollection<Canvas>();
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -248,11 +248,11 @@ namespace DigitalRune.Windows.Charts
             get { return (IBrushSelector)GetValue(BrushSelectorProperty); }
             set { SetValue(BrushSelectorProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
 #if SILVERLIGHT
@@ -273,11 +273,11 @@ namespace DigitalRune.Windows.Charts
             DefaultStyleKeyProperty.OverrideMetadata(typeof(PieChart), new FrameworkPropertyMetadata(typeof(PieChart)));
         }
 #endif
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -561,6 +561,6 @@ namespace DigitalRune.Windows.Charts
                     throw new ChartDataException("Pie charts do not support data with negative values.");
             }
         }
-        #endregion
+
     }
 }

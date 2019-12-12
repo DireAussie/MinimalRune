@@ -27,7 +27,7 @@ namespace DigitalRune.Editor
     public partial class EditorWindow
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly BooleanToVisibilityConverter BooleanToVisibilityConverter = new BooleanToVisibilityConverter();
@@ -35,17 +35,17 @@ namespace DigitalRune.Editor
         private bool _menuOrToolBarClicked;
         private EditorViewModel _editorViewModel;
         private IDisposable _focusMessageSubscription;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -59,11 +59,11 @@ namespace DigitalRune.Editor
             Loaded += OnLoaded;
             Unloaded += OnUnloaded;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs eventArgs)
@@ -155,7 +155,7 @@ namespace DigitalRune.Editor
         }
 
 
-        #region ----- Focus Management -----
+
 
         // The main window requires a special focus management. By default, a WPF window is
         // activated when the menu or a toolbar item is clicked. However, when documents are shown
@@ -314,10 +314,10 @@ namespace DigitalRune.Editor
                           .OfType<FrameworkElement>()
                           .FirstOrDefault(e => e.Focusable);
         }
-        #endregion
 
 
-        #region ----- Event Routing -----
+
+
 
         // Routed commands (such as Cut, Copy, Paste, ...) need to be routed from the 
         // main window to the floating window.
@@ -385,8 +385,8 @@ namespace DigitalRune.Editor
 
             return null;
         }
-        #endregion
 
-        #endregion
+
+
     }
 }

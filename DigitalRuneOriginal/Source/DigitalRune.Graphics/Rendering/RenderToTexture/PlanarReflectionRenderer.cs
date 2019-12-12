@@ -39,13 +39,13 @@ namespace DigitalRune.Graphics.Rendering
   public class PlanarReflectionRenderer : SceneNodeRenderer
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -69,11 +69,11 @@ namespace DigitalRune.Graphics.Rendering
       }
     }
     private Action<RenderContext> _renderCallback;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -89,11 +89,11 @@ namespace DigitalRune.Graphics.Rendering
 
       _renderCallback = renderCallback;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -271,6 +271,6 @@ namespace DigitalRune.Graphics.Rendering
     {
       return vector - 2 * Vector3F.Dot(normal, vector) * normal;
     }
-    #endregion
+
   }
 }

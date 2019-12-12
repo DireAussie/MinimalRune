@@ -19,13 +19,13 @@ namespace DigitalRune.Physics.Settings
     // or it can be serialized.
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -208,11 +208,11 @@ namespace DigitalRune.Physics.Settings
       }
     }
     private IMaterialPropertyCombiner _materialPropertyCombiner;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -249,13 +249,13 @@ namespace DigitalRune.Physics.Settings
     //  MaterialCombiner = settings.MaterialCombiner;
     //  EnableMultithreading = settings.EnableMultithreading;
     //}
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
-    #endregion
+
   }
 
 }

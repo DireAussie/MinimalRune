@@ -177,7 +177,7 @@ namespace DigitalRune.Geometry.Shapes.Tests
 
 
     //--------------------------------------------------------------
-    #region Triangle Mirroring
+
     //--------------------------------------------------------------
 
     [Test]
@@ -226,6 +226,6 @@ namespace DigitalRune.Geometry.Shapes.Tests
         }
       }
     }
-    #endregion
+
   }
 }

@@ -27,7 +27,7 @@ namespace DigitalRune.Game.UI
   public class KeyMap
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Note: Enumerations as dictionary keys cause boxing. Instead of 
@@ -35,11 +35,11 @@ namespace DigitalRune.Game.UI
     // use
     //   Dictionary<int, Dictionary<int, char>>.
     private readonly Dictionary<int, Dictionary<int, char>> _map = new Dictionary<int, Dictionary<int, char>>();
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -199,11 +199,11 @@ namespace DigitalRune.Game.UI
       }
     }
     private static KeyMap _englishKeyMapGermanChatPad;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -246,11 +246,11 @@ namespace DigitalRune.Game.UI
         _map.Add(sourceKey, keyVariants);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times")]
@@ -444,6 +444,6 @@ namespace DigitalRune.Game.UI
       }
       writer.WriteEndElement();
     }
-    #endregion
+
   }
 }

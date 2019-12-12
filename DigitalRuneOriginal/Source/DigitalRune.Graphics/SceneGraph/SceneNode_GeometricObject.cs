@@ -26,13 +26,13 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -363,11 +363,11 @@ namespace DigitalRune.Graphics.SceneGraph
     /// Occurs when the <see cref="Shape"/> or <see cref="ScaleWorld"/> was changed.
     /// </summary>
     public event EventHandler<ShapeChangedEventArgs> ShapeChanged;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     private void InitializeGeometricObject()
@@ -380,11 +380,11 @@ namespace DigitalRune.Graphics.SceneGraph
 
       _shape = Shape.Empty;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -597,6 +597,6 @@ namespace DigitalRune.Graphics.SceneGraph
 
       OnSceneChanged(this, SceneChanges.ShapeChanged);
     }
-    #endregion
+
   }
 }

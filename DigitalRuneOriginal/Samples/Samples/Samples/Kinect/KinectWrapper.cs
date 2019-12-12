@@ -19,7 +19,7 @@ namespace Samples.Kinect
   public class KinectWrapper : GameComponent
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     // Describes a bone in the skeleton pose.
@@ -38,11 +38,11 @@ namespace Samples.Kinect
         ParentIndex = parentIndex;
       }
     }
-    #endregion
+
     
 
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     // We represent the Kinect data with following bone hierarchy:
@@ -74,12 +74,12 @@ namespace Samples.Kinect
       new BoneInfo(JointType.AnkleRight,    23, 22),
       new BoneInfo(JointType.FootRight,     24, 23),
     };
-    #endregion
+
     
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Microsoft.Kinect types:
@@ -88,11 +88,11 @@ namespace Samples.Kinect
     private Body[] _bodies;
     private Body _bodyA;
     private Body _bodyB;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     // Is the Kinect sensor running?
@@ -130,11 +130,11 @@ namespace Samples.Kinect
 
     // A scale factor that is applied to the Kinect joint positions.
     public Vector3F Scale { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     public KinectWrapper(Game game)
@@ -189,11 +189,11 @@ namespace Samples.Kinect
 
       base.Dispose(disposing);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     // Called when Kinect has new body data.
@@ -279,7 +279,7 @@ namespace Samples.Kinect
         }
       }
     }
-    #endregion
+
   }
 }
 #endif

@@ -57,7 +57,7 @@ namespace DigitalRune.Graphics.Rendering
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly IGraphicsService _graphicsService;
@@ -67,11 +67,11 @@ namespace DigitalRune.Graphics.Rendering
     private readonly List<LightNode> _lightNodes;   // Temporary list for sorting light nodes.
 
     private UpsampleFilter _upsampleFilter;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -172,11 +172,11 @@ namespace DigitalRune.Graphics.Rendering
     /// </remarks>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Upsample")]
     public float UpsampleDepthSensitivity { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -242,11 +242,11 @@ namespace DigitalRune.Graphics.Rendering
 
       base.Dispose(disposing);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -592,7 +592,7 @@ namespace DigitalRune.Graphics.Rendering
         _shadowMasks[i] = null;
       }
     }
-    #endregion
+
   }
 }
 #endif

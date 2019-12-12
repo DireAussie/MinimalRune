@@ -1,4 +1,4 @@
-﻿#region ----- Copyright -----
+﻿
 /*
   This is a port of the DDS loader in DirectXTex (see http://directxtex.codeplex.com/) which is
   licensed under the MIT license.
@@ -21,7 +21,7 @@
   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT
   OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-#endregion
+
 
 using System;
 using System.Diagnostics;
@@ -34,7 +34,7 @@ using System.Text;
 namespace DigitalRune.Graphics.Content
 {
   //--------------------------------------------------------------
-  #region DirectXTex.h
+
   //--------------------------------------------------------------
 
   /// <summary>
@@ -70,7 +70,7 @@ namespace DigitalRune.Graphics.Content
     /// <summary>DDS_FLAGS_FORCE_DX10_EXT including miscFlags2 information (result may not be compatible with D3DX10 or D3DX11).</summary>
     ForceDX10ExtMisc2 = 0x20000,
   };
-  #endregion
+
 
 
   /// <summary>
@@ -79,7 +79,7 @@ namespace DigitalRune.Graphics.Content
   internal static class DdsHelper
   {
     //--------------------------------------------------------------
-    #region Direct3D 11
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -112,11 +112,11 @@ namespace DigitalRune.Graphics.Content
       SharedKeyedMutex = 256,
       GdiCompatible = 512,
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region DDS.h
+
     //--------------------------------------------------------------
 
     private const uint MagicHeader = 0x20534444; // "DDS "
@@ -294,11 +294,11 @@ namespace DigitalRune.Graphics.Content
       public int ArraySize;
       private readonly MiscFlags MiscFlags2;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region DirectXTexDDS.cpp
+
     //--------------------------------------------------------------
 
     [Flags]
@@ -1570,6 +1570,6 @@ namespace DigitalRune.Graphics.Content
         }
       }
     }
-    #endregion
+
   }
 }

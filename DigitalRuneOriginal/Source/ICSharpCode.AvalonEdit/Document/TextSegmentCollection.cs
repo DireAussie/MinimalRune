@@ -76,7 +76,7 @@ namespace ICSharpCode.AvalonEdit.Document
 		TextSegment root;
 		bool isConnectedToDocument;
 		
-		#region Constructor
+
 		/// <summary>
 		/// Creates a new TextSegmentCollection that needs manual calls to <see cref="UpdateOffsets(DocumentChangeEventArgs)"/>.
 		/// </summary>
@@ -99,9 +99,9 @@ namespace ICSharpCode.AvalonEdit.Document
 			isConnectedToDocument = true;
 			TextDocumentWeakEventManager.Changed.AddListener(textDocument, this);
 		}
-		#endregion
+
 		
-		#region OnDocumentChanged / UpdateOffsets
+
 		bool IWeakEventListener.ReceiveWeakEvent(Type managerType, object sender, EventArgs e)
 		{
 			if (managerType == typeof(TextDocumentWeakEventManager.Changed)) {
@@ -148,9 +148,9 @@ namespace ICSharpCode.AvalonEdit.Document
 			UpdateOffsetsInternal(change);
 			CheckProperties();
 		}
-		#endregion
+
 		
-		#region UpdateOffsets (implementation)
+
 		void UpdateOffsetsInternal(OffsetChangeMapEntry change)
 		{
 			// Special case pure insertions, because they don't always cause a text segment to increase in size when the replaced region
@@ -214,9 +214,9 @@ namespace ICSharpCode.AvalonEdit.Document
 				UpdateAugmentedData(node);
 			}
 		}
-		#endregion
+
 		
-		#region Add
+
 		/// <summary>
 		/// Adds the specified segment to the tree. This will cause the segment to update when the
 		/// document changes.
@@ -271,9 +271,9 @@ namespace ICSharpCode.AvalonEdit.Document
 				InsertAsRight(node.left.RightMost, newNode);
 			}
 		}
-		#endregion
+
 		
-		#region GetNextSegment / GetPreviousSegment
+
 		/// <summary>
 		/// Gets the next segment after the specified segment.
 		/// Segments are sorted by their start offset.
@@ -297,9 +297,9 @@ namespace ICSharpCode.AvalonEdit.Document
 				throw new ArgumentException("segment is not inside the segment tree");
 			return (T)segment.Predecessor;
 		}
-		#endregion
+
 		
-		#region FirstSegment/LastSegment
+
 		/// <summary>
 		/// Returns the first segment in the collection or null, if the collection is empty.
 		/// </summary>
@@ -317,9 +317,9 @@ namespace ICSharpCode.AvalonEdit.Document
 				return root == null ? null : (T)root.RightMost;
 			}
 		}
-		#endregion
+
 		
-		#region FindFirstSegmentWithStartAfter
+
 		/// <summary>
 		/// Gets the first segment with a start offset greater or equal to <paramref name="startOffset"/>.
 		/// Returns null if no such segment is found.
@@ -372,9 +372,9 @@ namespace ICSharpCode.AvalonEdit.Document
 				}
 			}
 		}
-		#endregion
+
 		
-		#region FindOverlappingSegments
+
 		/// <summary>
 		/// Finds all segments that contain the given offset.
 		/// (StartOffset &lt;= offset &lt;= EndOffset)
@@ -451,9 +451,9 @@ namespace ICSharpCode.AvalonEdit.Document
 			if (node.right != null)
 				FindOverlappingSegments(results, node.right, nodeLow, nodeHigh);
 		}
-		#endregion
+
 		
-		#region UpdateAugmentedData
+
 		void UpdateAugmentedData(TextSegment node)
 		{
 			int totalLength = node.nodeLength;
@@ -494,9 +494,9 @@ namespace ICSharpCode.AvalonEdit.Document
 		{
 			UpdateAugmentedData(node);
 		}
-		#endregion
+
 		
-		#region Remove
+
 		/// <summary>
 		/// Removes the specified segment from the tree. This will cause the segment to not update
 		/// anymore when the document changes.
@@ -556,9 +556,9 @@ namespace ICSharpCode.AvalonEdit.Document
 			// [DIGITALRUNE]
 			OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
 		}
-		#endregion
+
 		
-		#region CheckProperties
+
 		[Conditional("DATACONSISTENCYTEST")]
 		internal void CheckProperties()
 		{
@@ -664,9 +664,9 @@ namespace ICSharpCode.AvalonEdit.Document
 			return "Not available in release build.";
 			#endif
 		}
-		#endregion
+
 		
-		#region Red/Black Tree
+
 		internal const bool RED = true;
 		internal const bool BLACK = false;
 		
@@ -938,9 +938,9 @@ namespace ICSharpCode.AvalonEdit.Document
 		{
 			return node != null ? node.color : BLACK;
 		}
-		#endregion
+
 		
-		#region ICollection<T> implementation
+
 		/// <summary>
 		/// Gets the number of segments in the tree.
 		/// </summary>
@@ -995,10 +995,10 @@ namespace ICSharpCode.AvalonEdit.Document
 		{
 			return this.GetEnumerator();
 		}
-		#endregion
 
 
-		#region ----- [DIGITALRUNE] INotifyCollectionChanged -----
+
+
 
 		/// <summary>
 		/// Occurs when the collection changes.
@@ -1022,6 +1022,6 @@ namespace ICSharpCode.AvalonEdit.Document
 		{
 			CollectionChanged?.Invoke(this, eventArgs);
 		}
-		#endregion
+
 	}
 }

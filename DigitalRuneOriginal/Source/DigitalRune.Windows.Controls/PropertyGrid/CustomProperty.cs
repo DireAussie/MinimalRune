@@ -21,13 +21,13 @@ namespace DigitalRune.Windows.Controls
 
 
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -160,11 +160,11 @@ namespace DigitalRune.Windows.Controls
             set { SetProperty(ref _defaultValue, PropertyGridHelper.Convert(value, PropertyType)); }
         }
         private object _defaultValue;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <overloads>
@@ -200,11 +200,11 @@ namespace DigitalRune.Windows.Controls
             _propertyType = value?.GetType() ?? typeof(object);
             _value = value;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -213,6 +213,6 @@ namespace DigitalRune.Windows.Controls
             if (CanReset)
                 Value = DefaultValue;
         }
-        #endregion
+
     }
 }

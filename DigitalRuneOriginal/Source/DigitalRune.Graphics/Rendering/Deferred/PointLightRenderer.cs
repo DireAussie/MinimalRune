@@ -21,7 +21,7 @@ namespace DigitalRune.Graphics.Rendering
   internal class PointLightRenderer : SceneNodeRenderer
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Vector3[] _frustumFarCorners = new Vector3[4];
@@ -48,17 +48,17 @@ namespace DigitalRune.Graphics.Rendering
     private readonly EffectPass _passTexturedAlpha;
     private readonly EffectPass _passShadowedTexturedRgb;
     private readonly EffectPass _passShadowedTexturedAlpha;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -96,11 +96,11 @@ namespace DigitalRune.Graphics.Rendering
       _passShadowedTexturedRgb = _effect.CurrentTechnique.Passes["ShadowedTexturedRgb"];
       _passShadowedTexturedAlpha = _effect.CurrentTechnique.Passes["ShadowedTexturedAlpha"];
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -270,7 +270,7 @@ namespace DigitalRune.Graphics.Rendering
 
       savedRenderState.Restore();
     }
-    #endregion
+
   }
 }
 #endif

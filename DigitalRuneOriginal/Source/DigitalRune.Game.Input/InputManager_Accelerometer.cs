@@ -26,7 +26,7 @@ namespace DigitalRune.Game.Input
   partial class InputManager
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private bool _isAccelerometerInitialized;
@@ -39,11 +39,11 @@ namespace DigitalRune.Game.Input
     private Vector3F _accelerometerCallbackValue;
     private readonly object _syncRoot = new object();
 #endif
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -78,11 +78,11 @@ namespace DigitalRune.Game.Input
       }
     }
     private static Vector3F _accelerometerValue = new Vector3F(0, 0, -1);
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
 #if WP7
@@ -115,7 +115,7 @@ namespace DigitalRune.Game.Input
       }
 #endif
     }
-    #endregion
+
   }
 }
 #endif

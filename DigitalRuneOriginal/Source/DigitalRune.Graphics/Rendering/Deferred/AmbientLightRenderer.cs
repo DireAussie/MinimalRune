@@ -20,7 +20,7 @@ namespace DigitalRune.Graphics.Rendering
   internal class AmbientLightRenderer : SceneNodeRenderer
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Effect _effect;
@@ -33,17 +33,17 @@ namespace DigitalRune.Graphics.Rendering
     private readonly EffectParameter _parameterGBuffer1;
     private readonly EffectPass _passClip;
     private readonly EffectPass _passLight;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -69,11 +69,11 @@ namespace DigitalRune.Graphics.Rendering
       _passClip = _effect.CurrentTechnique.Passes["Clip"];
       _passLight = _effect.CurrentTechnique.Passes["Light"];
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -174,7 +174,7 @@ namespace DigitalRune.Graphics.Rendering
 
       savedRenderState.Restore();
     }
-    #endregion
+
   }
 }
 #endif

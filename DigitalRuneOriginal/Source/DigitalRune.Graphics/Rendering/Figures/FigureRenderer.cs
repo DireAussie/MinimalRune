@@ -44,7 +44,7 @@ namespace DigitalRune.Graphics.Rendering
 
 
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     private struct Job
@@ -68,11 +68,11 @@ namespace DigitalRune.Graphics.Rendering
 
 
     private enum RenderMode { Undefined, Fill, Stroke }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -83,11 +83,11 @@ namespace DigitalRune.Graphics.Rendering
     /// as indices.
     /// </remarks>
     public const int MaxBufferSize = (ushort.MaxValue + 1) / 4; // = 16384 billboards
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private IGraphicsService _graphicsService;
@@ -113,11 +113,11 @@ namespace DigitalRune.Graphics.Rendering
     private Matrix44F _projection;
     private float _cameraNear;
     private Viewport _viewport;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -139,11 +139,11 @@ namespace DigitalRune.Graphics.Rendering
     /// <see cref="FigureRenderOptions.RenderFillAndStroke"/>.
     /// </value>
     public FigureRenderOptions Options { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -262,11 +262,11 @@ namespace DigitalRune.Graphics.Rendering
 
       base.Dispose(disposing);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -736,7 +736,7 @@ namespace DigitalRune.Graphics.Rendering
       var nodeRenderData = (FigureNodeRenderData)node.RenderData;
       Vector3F[] positions = figureRenderData.Vertices.Array;
 
-      #region ----- Cache vertex/index buffer for fill. -----
+
       var fillIndices = figureRenderData.FillIndices;
       if (fillIndices != null
           && fillIndices.Count > 0
@@ -794,9 +794,9 @@ namespace DigitalRune.Graphics.Rendering
           nodeRenderData.FillIndexBuffer.SetData(figureRenderData.FillIndices.Array, 0, numberOfIndices);
         }
       }
-      #endregion
 
-      #region ----- Cache vertex/index buffer for stroke. -----
+
+
 
       var strokeIndices = figureRenderData.StrokeIndices;
       if (strokeIndices != null
@@ -957,10 +957,10 @@ namespace DigitalRune.Graphics.Rendering
           nodeRenderData.StrokeIndexBuffer.SetData(indices);
         }
       }
-      #endregion
+
 
       nodeRenderData.IsValid = true;
     }
-    #endregion
+
   }
 }

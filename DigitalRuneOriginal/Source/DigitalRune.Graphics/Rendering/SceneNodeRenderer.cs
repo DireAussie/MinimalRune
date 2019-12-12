@@ -36,18 +36,18 @@ namespace DigitalRune.Graphics.Rendering
   public abstract class SceneNodeRenderer : IDisposable
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly SceneNode[] _oneNodeArray = new SceneNode[1];
 
     /// <summary>Temporary ID set during rendering.</summary>
     internal uint Id;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -85,11 +85,11 @@ namespace DigitalRune.Graphics.Rendering
       }
     }
     private int _order;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -118,11 +118,11 @@ namespace DigitalRune.Graphics.Rendering
     {
       IsDisposed = true;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     internal void ThrowIfDisposed()
@@ -206,6 +206,6 @@ namespace DigitalRune.Graphics.Rendering
     /// <param name="order">The render order.</param>
     /// <inheritdoc cref="Render(IList{SceneNode},RenderContext)"/>
     public abstract void Render(IList<SceneNode> nodes, RenderContext context, RenderOrder order);
-    #endregion
+
   }
 }

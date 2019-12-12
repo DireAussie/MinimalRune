@@ -32,7 +32,7 @@ namespace DigitalRune.Graphics.Effects
   /// </remarks>
   public static class SceneEffectParameterSemantics
   {
-    #region ----- Bounding Shapes -----
+
 
     ///// <summary>
     ///// The bounding box maximum in x, y, and z (<see cref="Vector3"/>).
@@ -62,29 +62,29 @@ namespace DigitalRune.Graphics.Effects
     ///// The median bounding sphere radius (<see cref="float"/>).
     ///// </summary>
     //public const string BoundingSphereRadius = "BoundingSphereRadius";
-    #endregion
 
 
-    #region ----- Animation -----
+
+
 
     /// <summary>
     /// The skinning matrices for mesh skinning (array of <see cref="Matrix"/>).
     /// </summary>
     [Obsolete("Use DefaultEffectParameterSemantics.Bones instead.")]
     public const string Bones = DefaultEffectParameterSemantics.Bones;
-    #endregion
 
 
-    #region ----- Scene Nodes -----
+
+
 
     /// <summary>
     /// The scene node type (<see cref="float"/>).
     /// </summary>
     internal const string SceneNodeType = "SceneNodeType";
-    #endregion
 
 
-    #region ----- Camera -----
+
+
 
     /// <summary>
     /// The camera direction in world space (<see cref="Vector3"/> or <see cref="Vector4"/>).
@@ -128,10 +128,10 @@ namespace DigitalRune.Graphics.Effects
     /// The position of the camera used as reference for LOD calculations (<see cref="Vector3"/>).
     /// </summary>
     public const string LodCameraPosition = "LodCameraPosition";
-    #endregion
 
 
-    #region ----- Lights -----
+
+
 
     /// <summary>
     /// The intensity of an ambient light (RGB as <see cref="Vector3"/> or RGBA as 
@@ -527,10 +527,10 @@ namespace DigitalRune.Graphics.Effects
     /// space to the texture space of the cube map (<see cref="Matrix"/>).
     /// </summary>
     public const string EnvironmentMapMatrix = "EnvironmentMapMatrix";
-    #endregion
 
 
-    #region ----- Environment, Fog -----
+
+
 
     /// <summary>
     /// The fog color (RGBA as <see cref="Vector4"/>). 
@@ -561,10 +561,10 @@ namespace DigitalRune.Graphics.Effects
     /// (start distance, end distance or 1 / density, fog curve exponent, height falloff).
     /// </summary>
     public const string FogParameters = "FogParameters";
-    #endregion
 
 
-    #region ----- Decals -----
+
+
 
     /// <summary>
     /// The opacity of the decal (<see cref="float"/>).
@@ -588,10 +588,10 @@ namespace DigitalRune.Graphics.Effects
     /// The orientation of the decal (= z-axis in world space, <see cref="Vector3"/>).
     /// </summary>
     public const string DecalOrientation = "DECALORIENTATION";
-    #endregion
 
 
-    #region ----- World, View, Projection -----
+
+
 
     /// <summary>
     /// The position of the object in world space (<see cref="Vector3"/> or <see cref="Vector4"/>).
@@ -762,10 +762,10 @@ namespace DigitalRune.Graphics.Effects
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
     public const string UnscaledWorldView = "UnscaledWorldView";
-    #endregion
 
 
-    #region ----- Last World, View, Projection -----
+
+
 
     /// <summary>
     /// The position of the object in world space (<see cref="Vector3"/> or <see cref="Vector4"/>)
@@ -924,6 +924,6 @@ namespace DigitalRune.Graphics.Effects
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
     public const string LastWorldViewProjectionInverseTranspose = "LastWorldViewProjectionInverseTranspose";
-    #endregion
+
   }
 }

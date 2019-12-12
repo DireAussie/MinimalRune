@@ -26,16 +26,16 @@ namespace DigitalRune.Geometry.Shapes
   public class OrthographicViewVolume : ViewVolume
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private Vector3F _boxCenter;
     private readonly BoxShape _box;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -69,11 +69,11 @@ namespace DigitalRune.Geometry.Shapes
     {
       get { return Single.NaN; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -149,14 +149,14 @@ namespace DigitalRune.Geometry.Shapes
 
       Set(left, right, bottom, top, near, far);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Shape CreateInstanceCore()
@@ -171,7 +171,7 @@ namespace DigitalRune.Geometry.Shapes
       var source = (OrthographicViewVolume)sourceShape;
       Set(source.Left, source.Right, source.Bottom, source.Top, source.Near, source.Far);
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -431,6 +431,6 @@ namespace DigitalRune.Geometry.Shapes
       float centerZ = -(near + depth / 2.0f);
       _boxCenter = new Vector3F(centerX, centerY, centerZ);
     }
-    #endregion
+
   }
 }

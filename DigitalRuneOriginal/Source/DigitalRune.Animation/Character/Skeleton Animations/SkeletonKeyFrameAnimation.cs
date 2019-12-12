@@ -73,7 +73,7 @@ namespace DigitalRune.Animation.Character
   public partial class SkeletonKeyFrameAnimation : IAnimation<SkeletonPose>
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     private class PreprocessingData
@@ -86,11 +86,11 @@ namespace DigitalRune.Animation.Character
       //   bone index --> weight
       public readonly Dictionary<int, float> Weights = new Dictionary<int, float>();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // ----- Preprocessing data ("not yet frozen")
@@ -131,11 +131,11 @@ namespace DigitalRune.Animation.Character
     //   keyFrame = keyFrames[keyFrameIndex]
     // keyFrames is either BoneKeyFrameR[], BoneKeyFrameRT[] or BoneKeyFrameSRT[].
     internal object[] _keyFrames;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -263,11 +263,11 @@ namespace DigitalRune.Animation.Character
       }
     }
 #endif
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -281,11 +281,11 @@ namespace DigitalRune.Animation.Character
       TargetObject = null;
       TargetProperty = null;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private void EnsurePreprocessingData()
@@ -1119,6 +1119,6 @@ namespace DigitalRune.Animation.Character
         transform1 = keyFrame.Transform;
       }
     }
-    #endregion
+
   }
 }

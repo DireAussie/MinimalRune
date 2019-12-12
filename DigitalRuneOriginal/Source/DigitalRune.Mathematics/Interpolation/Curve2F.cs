@@ -87,7 +87,7 @@ namespace DigitalRune.Mathematics.Interpolation
       float loopedParameter = LoopParameter(parameter);
       ICurve<float, float> xSpline, ySpline;
 
-      #region ----- Handle Linear Pre- and PostLoops -----
+
       // If parameter is outside: Use spline tangent. Exceptions are Bézier and Hermite
       // were the exact tangent is given in the outer keys.
       if (loopedParameter < curveStart)
@@ -156,7 +156,7 @@ namespace DigitalRune.Mathematics.Interpolation
 
         return new Vector2F(interpolatedX, lastKey.Point.Y + k * (loopedParameter - curveEnd));
       }
-      #endregion
+
 
       // Special case: Only 1 point.
       if (numberOfKeys == 1)
@@ -659,7 +659,7 @@ namespace DigitalRune.Mathematics.Interpolation
       {
         Vector2F p1; 
         Vector2F p4; 
-        #region ----- Find CatmullRom/BSpline neigbor points p1 and p4 -----
+
         if (index > 0)
           p1 = Items[index - 1].Point;
         else if (SmoothEnds && PreLoop == CurveLoopType.Constant && Items[index].Interpolation == SplineInterpolation.CatmullRom)
@@ -730,7 +730,7 @@ namespace DigitalRune.Mathematics.Interpolation
           // Mirror point Count-2 through last point.
           p4 = Items[Count - 1].Point + (Items[Count - 1].Point - Items[Count - 2].Point);
         }
-        #endregion
+
     
         if (Items[index].Interpolation == SplineInterpolation.BSpline)
         {
@@ -770,7 +770,7 @@ namespace DigitalRune.Mathematics.Interpolation
     }
 
 
-    #region Implementation of IXmlSerializable
+
 
     /// <summary>
     /// This method is reserved and should not be used. When implementing the 
@@ -821,6 +821,6 @@ namespace DigitalRune.Mathematics.Interpolation
       writer.WriteValue(SmoothEnds);
       writer.WriteEndElement();
     }
-    #endregion
+
   }
 }

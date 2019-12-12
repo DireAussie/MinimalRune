@@ -66,13 +66,13 @@ namespace DigitalRune.Game.UI.Controls
     // defines the content of the TabControl when this TabItem is selected.
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -124,11 +124,11 @@ namespace DigitalRune.Game.UI.Controls
         return "Default";
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Game Object Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary> 
@@ -154,11 +154,11 @@ namespace DigitalRune.Game.UI.Controls
       get { return GetValue<bool>(IsSelectedPropertyId); }
       set { SetValue(IsSelectedPropertyId, value); }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -178,11 +178,11 @@ namespace DigitalRune.Game.UI.Controls
                                 TabControl.Select(this);
                             };
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -205,6 +205,6 @@ namespace DigitalRune.Game.UI.Controls
           TabControl.Select(this);
       }
     }
-    #endregion
+
   }
 }

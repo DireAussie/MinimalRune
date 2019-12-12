@@ -36,16 +36,16 @@ namespace DigitalRune.Particles.Effectors
   public class ParticleSystemRecycler : ParticleEffector
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // A lock objects for thread synchronization.
     private static readonly object _lock = new object();
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -89,11 +89,11 @@ namespace DigitalRune.Particles.Effectors
     /// Event raised before the particle system is recycled.
     /// </summary>
     public event EventHandler<EventArgs> Recycle;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -105,14 +105,14 @@ namespace DigitalRune.Particles.Effectors
       MaxRuntime = TimeSpan.MaxValue;
       CheckIfAlive = true;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override ParticleEffector CreateInstanceCore()
@@ -132,7 +132,7 @@ namespace DigitalRune.Particles.Effectors
       CheckIfAlive = sourceTyped.CheckIfAlive;
       ResourcePool = sourceTyped.ResourcePool;
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -191,6 +191,6 @@ namespace DigitalRune.Particles.Effectors
       if (handler != null)
         handler(this, eventArgs);
     }
-    #endregion
+
   }
 }

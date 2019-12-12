@@ -29,7 +29,7 @@ namespace DigitalRune.Geometry.Shapes
   public struct LineSegment : IEquatable<LineSegment>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -44,11 +44,11 @@ namespace DigitalRune.Geometry.Shapes
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
     public Vector3F End;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -69,11 +69,11 @@ namespace DigitalRune.Geometry.Shapes
     {
       get { return (End - Start).LengthSquared; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -112,14 +112,14 @@ namespace DigitalRune.Geometry.Shapes
       Start = lineSegmentShape.Start;
       End = lineSegmentShape.End;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //-------------------------------------------------------------- 
 
-    #region ----- Equality -----
+
 
     /// <overloads>
     /// <summary>
@@ -190,7 +190,7 @@ namespace DigitalRune.Geometry.Shapes
       return lineSegment1.Start != lineSegment2.Start
              || lineSegment1.End != lineSegment2.End;
     }
-    #endregion
+
 
 
     /// <summary>
@@ -223,6 +223,6 @@ namespace DigitalRune.Geometry.Shapes
     {
       return String.Format(CultureInfo.InvariantCulture, "LineSegment {{ Start = {0}, End = {1} }}", Start, End);
     }
-    #endregion
+
   }
 }

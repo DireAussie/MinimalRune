@@ -24,16 +24,16 @@ namespace DigitalRune.Graphics
   public class VarianceShadow : Shadow
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Cached values:
     internal Matrix ViewProjection;   // Transformation from world space to shadow map projection space.
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -144,11 +144,11 @@ namespace DigitalRune.Graphics
     /// </summary>
     /// <value>The target area. The default value is <see langword="null"/>.</value>
     public Aabb? TargetArea { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -163,14 +163,14 @@ namespace DigitalRune.Graphics
       MinVariance = 0;
       LightBleedingReduction = 0;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Shadow CreateInstanceCore()
@@ -199,7 +199,7 @@ namespace DigitalRune.Graphics
 
       // ShadowMap is not cloned!
     }
-    #endregion
-    #endregion
+
+
   }
 }

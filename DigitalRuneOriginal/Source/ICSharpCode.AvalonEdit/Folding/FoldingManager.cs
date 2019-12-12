@@ -40,7 +40,7 @@ namespace ICSharpCode.AvalonEdit.Folding
 		readonly TextSegmentCollection<FoldingSection> foldings;
 		bool isFirstUpdate = true;
 		
-		#region Constructor
+
 		/// <summary>
 		/// Creates a new FoldingManager instance.
 		/// </summary>
@@ -53,9 +53,9 @@ namespace ICSharpCode.AvalonEdit.Folding
 			document.VerifyAccess();
 			TextDocumentWeakEventManager.Changed.AddListener(document, this);
 		}
-		#endregion
+
 		
-		#region ReceiveWeakEvent
+
 		/// <inheritdoc cref="IWeakEventListener.ReceiveWeakEvent"/>
 		protected virtual bool ReceiveWeakEvent(Type managerType, object sender, EventArgs e)
 		{
@@ -86,9 +86,9 @@ namespace ICSharpCode.AvalonEdit.Folding
 				}
 			}
 		}
-		#endregion
+
 		
-		#region Manage TextViews
+
 		internal void AddToTextView(TextView textView)
 		{
 			if (textView == null || textViews.Contains(textView))
@@ -130,9 +130,9 @@ namespace ICSharpCode.AvalonEdit.Folding
 			foreach (TextView textView in textViews)
 				textView.Redraw(fs);
 		}
-		#endregion
+
 		
-		#region Create / Remove / Clear
+
 		/// <summary>
 		/// Creates a folding for the specified text section.
 		/// </summary>
@@ -171,9 +171,9 @@ namespace ICSharpCode.AvalonEdit.Folding
 			foldings.Clear();
 			Redraw();
 		}
-		#endregion
+
 		
-		#region Get...Folding
+
 		/// <summary>
 		/// Gets all foldings in this manager.
 		/// The foldings are returned sorted by start offset;
@@ -227,9 +227,9 @@ namespace ICSharpCode.AvalonEdit.Folding
 		{
 			return foldings.FindSegmentsContaining(offset);
 		}
-		#endregion
+
 		
-		#region UpdateFoldings
+
 		/// <summary>
 		/// Updates the foldings in this <see cref="FoldingManager"/> using the given new foldings.
 		/// This method will try to detect which new foldings correspond to which existing foldings; and will keep the state
@@ -294,9 +294,9 @@ namespace ICSharpCode.AvalonEdit.Folding
 
 			isFirstUpdate = false;
 		}
-		#endregion
 
-        #region Install
+
+
         /// <summary>
         /// Adds Folding support to the specified text area.
         /// Warning: The folding manager is only valid for the text area's current document. The folding manager
@@ -393,6 +393,6 @@ namespace ICSharpCode.AvalonEdit.Folding
 				}
 			}
 		}
-		#endregion
+
 	}
 }

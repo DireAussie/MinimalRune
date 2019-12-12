@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinimalRune.Mathematics", "MinimalRune.Mathematics\MinimalRune.Mathematics.csproj", "{6420E1C9-9A2C-4671-B9C4-F794183303EC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalRune.Mathematics", "MinimalRune.Mathematics\MinimalRune.Mathematics.csproj", "{CCD6947C-9356-4161-B600-233B387CDBB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalRune.Geometry", "MinimalRune.Geometry\MinimalRune.Geometry.csproj", "{2FDEE155-7B67-4137-AED5-FA730E32FEED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalRune.Algebra", "MinimalRune.Algebra\MinimalRune.Algebra.csproj", "{5E771F3B-2805-453B-8CA0-E67460ECF63D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalRune.Graphics", "MinimalRune.Graphics\MinimalRune.Graphics.csproj", "{782AD896-490F-409F-A65D-BBC7991363D6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalRune.Graphics", "MinimalRune.Graphics\MinimalRune.Graphics.csproj", "{C4295114-5233-458A-8AE8-4EC660BA1CF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6420E1C9-9A2C-4671-B9C4-F794183303EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6420E1C9-9A2C-4671-B9C4-F794183303EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6420E1C9-9A2C-4671-B9C4-F794183303EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6420E1C9-9A2C-4671-B9C4-F794183303EC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2FDEE155-7B67-4137-AED5-FA730E32FEED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2FDEE155-7B67-4137-AED5-FA730E32FEED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2FDEE155-7B67-4137-AED5-FA730E32FEED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2FDEE155-7B67-4137-AED5-FA730E32FEED}.Release|Any CPU.Build.0 = Release|Any CPU
-		{782AD896-490F-409F-A65D-BBC7991363D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{782AD896-490F-409F-A65D-BBC7991363D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{782AD896-490F-409F-A65D-BBC7991363D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{782AD896-490F-409F-A65D-BBC7991363D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCD6947C-9356-4161-B600-233B387CDBB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCD6947C-9356-4161-B600-233B387CDBB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCD6947C-9356-4161-B600-233B387CDBB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCD6947C-9356-4161-B600-233B387CDBB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E771F3B-2805-453B-8CA0-E67460ECF63D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E771F3B-2805-453B-8CA0-E67460ECF63D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E771F3B-2805-453B-8CA0-E67460ECF63D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E771F3B-2805-453B-8CA0-E67460ECF63D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4295114-5233-458A-8AE8-4EC660BA1CF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4295114-5233-458A-8AE8-4EC660BA1CF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4295114-5233-458A-8AE8-4EC660BA1CF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4295114-5233-458A-8AE8-4EC660BA1CF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

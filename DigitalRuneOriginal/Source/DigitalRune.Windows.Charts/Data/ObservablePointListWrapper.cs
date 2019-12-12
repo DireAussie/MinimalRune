@@ -18,15 +18,15 @@ namespace DigitalRune.Windows.Charts
     internal class ObservablePointListWrapper : IList<DataPoint>, INotifyCollectionChanged
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly IList<Point> _list;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -66,11 +66,11 @@ namespace DigitalRune.Windows.Charts
         /// Occurs when the collection changes.
         /// </summary>
         public event NotifyCollectionChangedEventHandler CollectionChanged;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -99,11 +99,11 @@ namespace DigitalRune.Windows.Charts
                     (listener, sender, eventArgs) => listener.OnCollectionChanged(sender, eventArgs));
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -298,6 +298,6 @@ namespace DigitalRune.Windows.Charts
         {
             _list.RemoveAt(index);
         }
-        #endregion
+
     }
 }

@@ -18,21 +18,21 @@ namespace DigitalRune.Editor.Game
     internal sealed class GameContentBuildLogger : ContentBuildLogger
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly IOutputService _outputService;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -45,11 +45,11 @@ namespace DigitalRune.Editor.Game
 
             _outputService = outputService;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -98,6 +98,6 @@ namespace DigitalRune.Editor.Game
 
             _outputService.WriteLine(warning.ToString());
         }
-        #endregion
+
     }
 }

@@ -71,18 +71,18 @@ namespace DigitalRune.Graphics.Rendering
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly IGraphicsService _graphicsService;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
-    #region ----- Batches -----
+
     // Render batches and similar things are only allocated when needed because they
     // usually reserve a lot of memory when they are created.
 
@@ -358,7 +358,7 @@ namespace DigitalRune.Graphics.Rendering
     }
     private StringBuilder _stringBuilder;
 
-    #endregion
+
 
 
     /// <summary>
@@ -547,11 +547,11 @@ namespace DigitalRune.Graphics.Rendering
       }
     }
     private bool _autoRenderStates;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -625,11 +625,11 @@ namespace DigitalRune.Graphics.Rendering
         IsDisposed = true;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private void ThrowIfDisposed()
@@ -2408,6 +2408,6 @@ namespace DigitalRune.Graphics.Rendering
       }
     }
 #endif
-    #endregion
+
   }
 }

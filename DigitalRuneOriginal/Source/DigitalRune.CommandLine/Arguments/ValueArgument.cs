@@ -23,13 +23,13 @@ namespace DigitalRune.CommandLine
     public class ValueArgument<T> : Argument
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -40,11 +40,11 @@ namespace DigitalRune.CommandLine
         /// <see langword="false"/>. The default is <see langword="false"/>.
         /// </value>
         public bool AllowMultiple { get; set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -82,11 +82,11 @@ namespace DigitalRune.CommandLine
             if (!ObjectHelper.CanParse(type))
                 throw new NotSupportedException(Invariant($"ValueArguments of type {type.Name} are not supported. The type must provide a TypeConverter that allows conversions from String."));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -202,6 +202,6 @@ namespace DigitalRune.CommandLine
 
             return argument.ToString();
         }
-        #endregion
+
     }
 }

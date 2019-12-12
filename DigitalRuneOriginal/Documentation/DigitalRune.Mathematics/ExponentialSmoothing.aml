@@ -83,15 +83,15 @@ namespace DigitalRune.Mathematics.SignalProcessing
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private bool _isInitialized;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -144,11 +144,11 @@ namespace DigitalRune.Mathematics.SignalProcessing
         /// values make the filtered results smoother, but the filter is less responsive (more latency).
         /// </remarks>
         public float TimeConstant { get; set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -171,11 +171,11 @@ namespace DigitalRune.Mathematics.SignalProcessing
             _rawValue = new float[elementsPerValue];
             _filteredValue = new float[elementsPerValue];
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -213,7 +213,7 @@ namespace DigitalRune.Mathematics.SignalProcessing
                     _filteredValue[i] = _rawValue[i] * weight1 + _filteredValue[i] * weight2;
             }
         }
-        #endregion
+
     }
 }
                     ]]>

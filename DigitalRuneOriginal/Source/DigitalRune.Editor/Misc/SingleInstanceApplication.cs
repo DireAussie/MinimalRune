@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#region Credits
+
 /*
     The types in this file are based on the Code Project article "WPF Single Instance Application" 
     by Arik Poznanski which is licensed under the Microsoft Public License (Ms-PL). 
@@ -64,7 +64,7 @@
     contributors exclude the implied warranties of merchantability, fitness for a particular purpose 
     and non-infringement. 
 */
-#endregion
+
 
 using System;
 using System.Collections;
@@ -155,7 +155,7 @@ namespace DigitalRune.Editor
     public static class SingleInstanceApplication
     {
         //--------------------------------------------------------------
-        #region Nested Types
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -190,11 +190,11 @@ namespace DigitalRune.Editor
                 return null;
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -241,11 +241,11 @@ namespace DigitalRune.Editor
         /// Callback that notifies the application that another instance was started.
         /// </summary>
         private static Func<string[], bool> _callback;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -257,17 +257,17 @@ namespace DigitalRune.Editor
             get { return _commandLineArgs; }
         }
         private static string[] _commandLineArgs;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Creation & Cleanup
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Methods
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -515,6 +515,6 @@ namespace DigitalRune.Editor
             _channelName = null;
             _isFirstInstance = false;
         }
-        #endregion
+
     }
 }

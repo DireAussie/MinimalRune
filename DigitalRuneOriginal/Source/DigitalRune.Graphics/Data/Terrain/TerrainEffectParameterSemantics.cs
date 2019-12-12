@@ -15,17 +15,17 @@ namespace DigitalRune.Graphics.Effects
   /// <inheritdoc cref="SceneEffectParameterSemantics"/>
   public static class TerrainEffectParameterSemantics
   {
-    #region ----- Terrain -----
+
 
     /// <summary>
     /// The clear values written into the <see cref="TerrainClipmap"/> (array of
     /// <see cref="Vector4"/>).
     /// </summary>
     public const string TerrainClearValues = "TerrainClearValues";
-    #endregion
 
 
-    #region ----- TerrainTile -----
+
+
 
     /// <summary>
     /// The world space origin (<see cref="TerrainTile.OriginX"/>, <see cref="TerrainTile.OriginZ"/>)
@@ -77,10 +77,10 @@ namespace DigitalRune.Graphics.Effects
     /// The size of the <see cref="TerrainTileHoleTexture"/> in texels (<see cref="Vector2"/>).
     /// </summary>
     public const string TerrainTileHoleTextureSize = "TerrainTileHoleTextureSize";
-    #endregion
 
 
-    #region ----- TerrainNode -----
+
+
 
     /// <summary>
     /// The threshold used to check for holes in the terrain (<see cref="float"/>).
@@ -200,6 +200,6 @@ namespace DigitalRune.Graphics.Effects
     /// <see cref="TerrainNode.DetailClipmap"/> (<see cref="float"/>).
     /// </summary>
     public const string TerrainEnableAnisotropicFiltering = "TerrainEnableAnisotropicFiltering";
-    #endregion
+
   }
 }

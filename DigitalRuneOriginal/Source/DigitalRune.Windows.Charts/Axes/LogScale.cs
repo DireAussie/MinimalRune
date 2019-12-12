@@ -23,13 +23,13 @@ namespace DigitalRune.Windows.Charts
     public class LogScale : AxisScale
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -125,11 +125,11 @@ namespace DigitalRune.Windows.Charts
             }
         }
         private string _formatString = "g5";
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <overloads>
@@ -155,11 +155,11 @@ namespace DigitalRune.Windows.Charts
             : base(min, max)
         {
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -604,6 +604,6 @@ namespace DigitalRune.Windows.Charts
                 Range = new DoubleRange(min, max);
             }
         }
-        #endregion
+
     }
 }

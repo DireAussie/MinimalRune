@@ -39,16 +39,16 @@ namespace DigitalRune.Editor.Documents
         // handle exceptions.
         
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         // Table with key = file extension (e.g. ".fx") and value = last used number for untitled name.
         private static readonly Dictionary<string, int> _lastUntitledNumbers = new Dictionary<string, int>();
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -242,11 +242,11 @@ namespace DigitalRune.Editor.Documents
         /// </remarks>
         public ReadOnlyObservableCollection<DocumentViewModel> ViewModels { get; }
         private readonly ObservableCollection<DocumentViewModel> _viewModels;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -321,11 +321,11 @@ namespace DigitalRune.Editor.Documents
                 IsDisposed = true;
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private void ThrowIfDisposed()
@@ -620,6 +620,6 @@ namespace DigitalRune.Editor.Documents
             if (!IsUntitled)
                 _documentExtension.ResumeFileWatcher(this);
         }
-        #endregion
+
     }
 }

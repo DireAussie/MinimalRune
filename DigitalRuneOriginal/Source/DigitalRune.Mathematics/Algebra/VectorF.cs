@@ -39,15 +39,15 @@ namespace DigitalRune.Mathematics.Algebra
     // TODO: Remove ArgumentNullException and let runtime throw NullReferenceException. (Minor optimization)
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private float[] _v;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -319,11 +319,11 @@ namespace DigitalRune.Mathematics.Algebra
         return minIndex;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -443,11 +443,11 @@ namespace DigitalRune.Mathematics.Algebra
       }
     }
 #endif
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Interfaces and Overrides
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -491,7 +491,7 @@ namespace DigitalRune.Mathematics.Algebra
     }
 
 
-    #region IEquatable<VectorF> Members
+
     /// <summary>
     /// Indicates whether the current object is equal to another object of the same type.
     /// </summary>
@@ -504,7 +504,7 @@ namespace DigitalRune.Mathematics.Algebra
     {
       return this == other;
     }
-    #endregion
+
 
 
     /// <overloads>
@@ -546,7 +546,7 @@ namespace DigitalRune.Mathematics.Algebra
     }
 
 
-    #region ISerializable Members
+
 
 #if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
     /// <summary>
@@ -588,10 +588,10 @@ namespace DigitalRune.Mathematics.Algebra
       GetObjectData(info, context);
     }
 #endif
-    #endregion
 
 
-    #region IXmlSerializable Members
+
+
 
     /// <summary>
     /// This property is reserved, apply the <see cref="XmlSchemaProviderAttribute"/> to the class 
@@ -655,12 +655,12 @@ namespace DigitalRune.Mathematics.Algebra
 
       writer.WriteEndElement();
     }
-    #endregion
-    #endregion
+
+
 
 
     //--------------------------------------------------------------
-    #region Overloaded Operators
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -1403,11 +1403,11 @@ namespace DigitalRune.Mathematics.Algebra
     {
       return (MatrixF) this;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -1708,11 +1708,11 @@ namespace DigitalRune.Mathematics.Algebra
       for (int i = 0; i < subvector.NumberOfElements; i++)
         _v[i + startIndex] = subvector[i];
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Static Methods
+
     //--------------------------------------------------------------
     /// <summary>
     /// Returns a vector with the absolute values of the elements of the given vector.
@@ -1994,6 +1994,6 @@ namespace DigitalRune.Mathematics.Algebra
 
       return Dot(vector, target) / target.LengthSquared * target;
     }
-    #endregion
+
   }
 }

@@ -50,7 +50,7 @@ namespace DigitalRune.Graphics.Rendering
 
 
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     [StructLayout(LayoutKind.Sequential)]
@@ -70,11 +70,11 @@ namespace DigitalRune.Graphics.Rendering
       );
       VertexDeclaration IVertexType.VertexDeclaration { get { return VertexDeclaration; } }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Effect _effect;
@@ -83,17 +83,17 @@ namespace DigitalRune.Graphics.Rendering
     private readonly EffectParameter _effectParameterIntensity;
     private readonly EffectPass _effectPassLinear;
     private readonly EffectPass _effectPassGamma;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -120,11 +120,11 @@ namespace DigitalRune.Graphics.Rendering
       _effectPassLinear = _effect.Techniques[0].Passes["Linear"];
       _effectPassGamma = _effect.Techniques[0].Passes["Gamma"];
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -289,7 +289,7 @@ namespace DigitalRune.Graphics.Rendering
 
       return mesh;
     }
-    #endregion
+
   }
 }
 #endif

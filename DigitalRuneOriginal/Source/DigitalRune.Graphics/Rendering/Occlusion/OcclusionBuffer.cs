@@ -274,7 +274,7 @@ namespace DigitalRune.Graphics.Rendering
 
 
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     // The AABB of a scene node is tested by making up to n x n depth
@@ -283,11 +283,11 @@ namespace DigitalRune.Graphics.Rendering
 
     // The default width of the render target storing the results.
     private const int ResultsBufferWidth = 256;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // A RenderBatch is used to render occluders.
@@ -375,11 +375,11 @@ namespace DigitalRune.Graphics.Rendering
 
     // Buffer for result readback.
     private float[] _results;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -441,11 +441,11 @@ namespace DigitalRune.Graphics.Rendering
     /// </summary>
     /// <value>The occlusion culling statistics.</value>
     public OcclusionCullingStatistics Statistics { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -629,11 +629,11 @@ namespace DigitalRune.Graphics.Rendering
         IsDisposed = true;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private void InitializeBuffers(GraphicsDevice graphicsDevice, int width, int height)
@@ -1628,7 +1628,7 @@ namespace DigitalRune.Graphics.Rendering
 
       originalRenderState.Restore();
     }
-    #endregion
+
   }
 }
 #endif

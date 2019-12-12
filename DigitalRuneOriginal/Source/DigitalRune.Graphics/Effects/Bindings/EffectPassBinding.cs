@@ -18,23 +18,23 @@ namespace DigitalRune.Graphics.Effects
   public struct EffectPassBinding : IEnumerable<EffectPass>, IEquatable<EffectPassBinding>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly EffectTechniqueBinding _techniqueBinding;
     private readonly EffectTechnique _technique;
     private readonly RenderContext _context;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace DigitalRune.Graphics.Effects
       _technique = technique;
       _context = context;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -181,6 +181,6 @@ namespace DigitalRune.Graphics.Effects
     {
       return !left.Equals(right);
     }
-    #endregion
+
   }
 }

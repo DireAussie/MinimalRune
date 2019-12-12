@@ -51,7 +51,7 @@ namespace DigitalRune.Graphics.SceneGraph
     // The IsDirty flag is used to invalidate the cached result.
 
     //--------------------------------------------------------------
-    #region Static Fields
+
     //--------------------------------------------------------------
 
     // For underwater tests. Use these only in a critical section.
@@ -60,21 +60,21 @@ namespace DigitalRune.Graphics.SceneGraph
     private static RayShape _rayShape;
     private static CollisionObject _testCollisionObject;
     private static CollisionObject _waterCollisionObject;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Cached underwater test result.
     private Vector3F _lastTestPosition = new Vector3F(float.NaN);
     private bool _lastTestResult;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -300,11 +300,11 @@ namespace DigitalRune.Graphics.SceneGraph
     /// <see langword="false"/>.
     /// </value>
     public bool DepthBufferWriteEnable { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -356,14 +356,14 @@ namespace DigitalRune.Graphics.SceneGraph
         base.Dispose(disposing, disposeData);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc cref="SceneNode.Clone"/>
     public new WaterNode Clone()
@@ -396,7 +396,7 @@ namespace DigitalRune.Graphics.SceneGraph
       Waves = sourceTyped.Waves;
       DepthBufferWriteEnable = sourceTyped.DepthBufferWriteEnable;
     }
-    #endregion
+
 
 
     private void OnVolumeChanged(object sender, ShapeChangedEventArgs eventArgs)
@@ -588,6 +588,6 @@ namespace DigitalRune.Graphics.SceneGraph
         }
       }
     }
-    #endregion
+
   }
 }

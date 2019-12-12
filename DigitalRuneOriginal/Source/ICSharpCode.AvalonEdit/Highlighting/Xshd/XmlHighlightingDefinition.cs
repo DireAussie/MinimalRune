@@ -57,7 +57,7 @@ namespace ICSharpCode.AvalonEdit.Highlighting.Xshd
 				propDict.Add(p.Name, p.Value);
 		}
 		
-		#region RegisterNamedElements
+
 		sealed class RegisterNamedElementsVisitor : IXshdVisitor
 		{
 			XmlHighlightingDefinition def;
@@ -121,9 +121,9 @@ namespace ICSharpCode.AvalonEdit.Highlighting.Xshd
 				return rule.ColorReference.AcceptVisitor(this);
 			}
 		}
-		#endregion
+
 		
-		#region TranslateElements
+
 		sealed class TranslateElementVisitor : IXshdVisitor
 		{
 			readonly XmlHighlightingDefinition def;
@@ -364,7 +364,7 @@ namespace ICSharpCode.AvalonEdit.Highlighting.Xshd
 				};
 			}
 		}
-		#endregion
+
 		
 		static Exception Error(XshdElement element, string message)
 		{

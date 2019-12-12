@@ -19,7 +19,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
   partial class DRModelProcessor
   {
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //-------------------------------------------------------------- 
 
     /*
@@ -112,11 +112,11 @@ namespace DigitalRune.Graphics.Content.Pipeline
     }
     private float _animationTranslationCompression = -1;
     */
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     // Merge animations defined in other files.
@@ -328,7 +328,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
 
       return animation;
     }
-    #endregion
+
   }
 }
 #endif

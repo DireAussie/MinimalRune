@@ -474,7 +474,7 @@ namespace DigitalRune.Graphics.Effects
     }
 
 
-    #region ----- Conversion Helpers -----
+
 
     /// <summary>
     /// Determines whether the specified value is array of the specified type.
@@ -558,10 +558,10 @@ namespace DigitalRune.Graphics.Effects
       
       return result;
     }
-    #endregion
 
 
-    #region ----- Original Parameter Values -----
+
+
 
     /// <summary>
     /// Creates a dictionary of all effect parameter values.
@@ -693,6 +693,6 @@ namespace DigitalRune.Graphics.Effects
       if (value != null)
         values.Add(parameter, value);
     }
-    #endregion
+
   }
 }

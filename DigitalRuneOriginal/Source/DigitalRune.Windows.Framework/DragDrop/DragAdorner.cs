@@ -21,13 +21,13 @@ namespace DigitalRune.Windows.Framework
     internal class DragAdorner : SingleChildAdorner
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -50,17 +50,17 @@ namespace DigitalRune.Windows.Framework
             get { return ((ContentPresenter)Child).ContentTemplate; }
             set { ((ContentPresenter)Child).ContentTemplate = value; }
         }
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -77,12 +77,12 @@ namespace DigitalRune.Windows.Framework
             };
             IsHitTestVisible = false;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
-        #endregion
+
     }
 }

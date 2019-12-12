@@ -28,7 +28,7 @@ namespace DigitalRune.Game.UI
   public class UIManager : IUIService
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     private class UIScreenComparer : IComparer<UIScreen>
@@ -41,20 +41,20 @@ namespace DigitalRune.Game.UI
         return y.ZIndex.CompareTo(x.ZIndex);
       }
     }
-    #endregion
+
 
     
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // The screens sorted front-to-back.
     private readonly List<UIScreen> _sortedScreens = new List<UIScreen>();
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -89,11 +89,11 @@ namespace DigitalRune.Game.UI
 
     /// <inheritdoc/>
     public UIScreenCollection Screens { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
 #if !SILVERLIGHT
@@ -143,11 +143,11 @@ namespace DigitalRune.Game.UI
       Screens = new UIScreenCollection(this);
     }
 #endif
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private void OnGameWindowOrientationChanged(object sender, EventArgs eventArgs)
@@ -240,6 +240,6 @@ namespace DigitalRune.Game.UI
         PlatformHelper.SetCursor(GameForm, desiredCursor);
       }
     }
-    #endregion
+
   }
 }

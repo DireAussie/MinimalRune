@@ -1,4 +1,4 @@
-﻿#region ----- Copyright -----
+﻿
 /* 
     Polygon triangulation is based on the Triangulator written by John W. Ratcliff 
     which is licensed under the MIT license. The code was ported to C#, refactored 
@@ -23,7 +23,7 @@
       WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
       CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-#endregion
+
 
 using System;
 using System.Collections.Generic;
@@ -43,7 +43,7 @@ namespace DigitalRune.Geometry.Meshes
   internal class Triangulator
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private static readonly ResourcePool<Triangulator> Pool =
@@ -54,17 +54,17 @@ namespace DigitalRune.Geometry.Meshes
 
     private Vector3F[] _vertices;
     private int[] _indices;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -112,11 +112,11 @@ namespace DigitalRune.Geometry.Meshes
     {
       Pool.Recycle(this);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -427,6 +427,6 @@ namespace DigitalRune.Geometry.Meshes
       // triangle edges, then it is inside.
       return (aXbp >= 0.0f) && (bXcp >= 0.0f) && (cXap >= 0.0f);
     }
-    #endregion
+
   }
 }

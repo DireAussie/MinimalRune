@@ -29,13 +29,13 @@ namespace DigitalRune.Graphics.SceneGraph
   public class CameraFrustumQuery : ISceneQuery
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -48,11 +48,11 @@ namespace DigitalRune.Graphics.SceneGraph
     /// <value>The scene nodes that touch the <see cref="ReferenceNode"/>.</value>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists", Justification = "Performance")]
     public List<SceneNode> SceneNodes { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -62,11 +62,11 @@ namespace DigitalRune.Graphics.SceneGraph
     {
       SceneNodes = new List<SceneNode>();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -92,6 +92,6 @@ namespace DigitalRune.Graphics.SceneGraph
         SceneNodes.Add(node);
       }
     }
-    #endregion
+
   }
 }

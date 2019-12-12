@@ -30,7 +30,7 @@ namespace DigitalRune.Editor.Text
     internal class ThemeAwareHighlightingDefinition : IHighlightingDefinition
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
@@ -45,11 +45,11 @@ namespace DigitalRune.Editor.Text
         private string _theme;
         private IHighlightingDefinition _definition;
         private bool _isLoading;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -75,11 +75,11 @@ namespace DigitalRune.Editor.Text
         {
             get { return EnsureDefinition() ? _definition.Properties : null; }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -107,11 +107,11 @@ namespace DigitalRune.Editor.Text
             _definitionsByTheme = new Dictionary<string, Func<IHighlightingDefinition>>();
             _theme = UnsetTheme;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -240,6 +240,6 @@ namespace DigitalRune.Editor.Text
         {
             return Name;
         }
-        #endregion
+
     }
 }

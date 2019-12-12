@@ -20,13 +20,13 @@ namespace DigitalRune.Graphics
   public class TransformedFigure : Figure
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -94,11 +94,11 @@ namespace DigitalRune.Graphics
 
     /// <inheritdoc/>
     internal override bool HasFill { get { return Child.HasFill; } }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -117,11 +117,11 @@ namespace DigitalRune.Graphics
       Pose = Pose.Identity;
       Scale = new Vector3F(1, 1, 1);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -144,6 +144,6 @@ namespace DigitalRune.Graphics
         vertexArray[i] = Pose.ToWorldPosition(vertexArray[i]);
       }
     }
-    #endregion
+
   }
 }

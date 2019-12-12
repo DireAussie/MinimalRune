@@ -111,7 +111,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
         }
       }
 
-      #region ----- Precomputations -----
+
 
       Vector3F scaleHeightField = heightFieldGeometricObject.Scale;
       Vector3F scaleOther = otherGeometricObject.Scale;
@@ -187,9 +187,9 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
       CollisionAlgorithm collisionAlgorithm = CollisionDetection.AlgorithmMatrix[typeof(ConvexShape), otherShape.GetType()];
 
       int numberOfContactsInLastFrame = contactSet.Count;
-      #endregion
 
-      #region ----- Test all height field cells in the search space. -----
+
+
 
       // Create several temporary test objects:
       // Instead of the original height field geometric object, we test against a shape for each
@@ -300,7 +300,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
                     // If we do not find a neighbor, we assume the neighbor has the same normal.
                     var neighborNormal = triangleNormal;
 
-                    #region ----- Get Neighbor Triangle Normal -----
+
 
                     // Get barycentric coordinates of contact position.
                     Vector3F contactPositionOnHeightField = swapped ? testContact.PositionBLocal / scaleHeightField : testContact.PositionALocal / scaleHeightField;
@@ -377,7 +377,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
                         }
                       }
                     }
-                    #endregion
+
 
                     // Contact normals in the range triangleNormal - neighborNormal are allowed. 
                     // Others, especially vertical contacts in slopes or horizontal normals are not 
@@ -433,7 +433,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
                 // Merge the contact info. (Contacts in testContactSet are recycled!)
                 ContactHelper.Merge(contactSet, testContactSet, type, CollisionDetection.ContactPositionTolerance);
 
-                #region ----- Update search space -----
+
 
                 // Update search space if possible.
                 // The best search distance is 0. For separation we can use the current smallest
@@ -464,7 +464,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
                   zIndexStart = Math.Max(zIndexStart, zIndexStartEstimated);
                   zIndexEnd = Math.Min(zIndexEndEstimated, zIndexMax);
                 }
-                #endregion
+
               }
             }
           }
@@ -480,9 +480,9 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
       ResourcePools.LineSegmentShapes.Recycle(lineSegment);
       triangleGeometricObject.Recycle();
       ResourcePools.TriangleShapes.Recycle(triangleShape);
-      #endregion
 
-      #region ----- Handle missing contact info -----
+
+
 
       if (contactSet.Count == 0
           && (contactSet.HaveContact && type == CollisionQueryType.Contacts || type == CollisionQueryType.ClosestPoints))
@@ -500,7 +500,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
         if (!isOverHole)
           ContactHelper.Merge(contactSet, closestPair, type, CollisionDetection.ContactPositionTolerance);
       }
-      #endregion
+
 
 
       if (CollisionDetection.FullContactSetPerFrame

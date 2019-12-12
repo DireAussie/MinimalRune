@@ -57,7 +57,7 @@ namespace DigitalRune.Graphics.Rendering
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly IGraphicsService _graphicsService;
@@ -153,11 +153,11 @@ namespace DigitalRune.Graphics.Rendering
 
     // Noise texture for flow.
     private readonly Texture2D _noiseMap;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -165,11 +165,11 @@ namespace DigitalRune.Graphics.Rendering
     /// </summary>
     /// <value>The projected grid parameters.</value>
     public ProjectedGridParameters ProjectedGridParameters { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -298,11 +298,11 @@ namespace DigitalRune.Graphics.Rendering
 
       base.Dispose(disposing);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -359,7 +359,7 @@ namespace DigitalRune.Graphics.Rendering
       // Water surface is opaque.
       graphicsDevice.BlendState = BlendState.Opaque;
 
-      #region ----- Common Effect Parameters -----
+
 
       _parameterView.SetValue(view);
       _parameterProjection.SetValue(projection);
@@ -400,13 +400,13 @@ namespace DigitalRune.Graphics.Rendering
 
       if (_parameterNoiseMap != null)
         _parameterNoiseMap.SetValue(_noiseMap);
-      #endregion
 
-      #region ----- Fog Parameters -----
+
+
 
       var fogNodes = context.Scene.Query<FogQuery>(cameraNode, context).FogNodes;
       SetFogParameters(fogNodes, cameraNode, directionalLightDirection);
-      #endregion
+
 
       _parameterProjectedGridParameters.SetValue(new Vector3(
           ProjectedGridParameters.EdgeAttenuation,
@@ -432,7 +432,7 @@ namespace DigitalRune.Graphics.Rendering
         var water = node.Water;
         bool isCameraUnderwater = node.EnableUnderwaterEffect && node.IsUnderwater(cameraNode.PoseWorld.Position);
 
-        #region ----- Wave bending -----
+
 
         // Waves should not cut the near plane. --> Bend waves up or down if necessary.
 
@@ -484,12 +484,12 @@ namespace DigitalRune.Graphics.Rendering
         }
 
         _parameterCameraMisc.SetValue(new Vector4(upperLimit, lowerLimit, bendStart, bendEnd));
-        #endregion
+
 
         // Update the submesh for the given water volume.
         data.UpdateSubmesh(graphicsService, node);
 
-        #region ----- Scroll Normal Maps -----
+
 
         // We update the normal map offsets once(!) per frame.
         // Note: We could skip the offsets and compute all in the shader using absolute
@@ -515,11 +515,11 @@ namespace DigitalRune.Graphics.Rendering
           data.NormalMapOffset1.X = MathHelper.Frac(data.NormalMapOffset1.X);
           data.NormalMapOffset1.Y = MathHelper.Frac(data.NormalMapOffset1.Y);
         }
-        #endregion
+
 
         _parameterSurfaceLevel.SetValue(node.PoseWorld.Position.Y);
 
-        #region ----- Reflection Parameters -----
+
 
         if (node.PlanarReflection != null
             && node.PlanarReflection.ActualIsEnabled
@@ -572,9 +572,9 @@ namespace DigitalRune.Graphics.Rendering
             (Vector3)water.ReflectionColor,
             water.ReflectionDistortion));
         }
-        #endregion
 
-        #region ----- Refraction Parameters -----
+
+
 
         // If we do not have a source texture, resolve the current render target
         // and immediately rebuilt it.
@@ -606,9 +606,9 @@ namespace DigitalRune.Graphics.Rendering
         _parameterRefractionParameters.SetValue(new Vector4(
           ((Vector3)water.RefractionColor),
           water.RefractionDistortion));
-        #endregion
 
-        #region ----- Other Water Effect Parameters -----
+
+
 
         if (water.NormalMap0 != null)
         {
@@ -677,9 +677,9 @@ namespace DigitalRune.Graphics.Rendering
           water.CausticsDistortion,
           water.CausticsPower,
           water.CausticsIntensity));
-        #endregion
 
-        #region ----- Wave Map -----
+
+
 
         var waves = node.Waves;
 
@@ -717,9 +717,9 @@ namespace DigitalRune.Graphics.Rendering
         {
           _parameterWaveMapParameters.SetValue(new Vector4(0, 0, 0, 0));
         }
-        #endregion
 
-        #region ----- Flow -----
+
+
 
         if (node.Flow != null)
         {
@@ -758,7 +758,7 @@ namespace DigitalRune.Graphics.Rendering
           _parameterFlowParameters0.SetValue(new Vector4(0, 0, 0, 0));
           _parameterFlowParameters1.SetValue(new Vector3(0, 0, 0));
         }
-        #endregion
+
 
         if (isCameraUnderwater)
           RenderUnderwaterGeometry(node, cameraNode);
@@ -1241,7 +1241,7 @@ namespace DigitalRune.Graphics.Rendering
       // Set parameters for phase function.
       _parameterFogScatteringSymmetry.SetValue((Vector3)scatteringSymmetry * scatteringSymmetryStrength);
     }
-    #endregion
+
   }
 }
 #endif

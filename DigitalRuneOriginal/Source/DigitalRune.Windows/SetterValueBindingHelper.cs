@@ -1,4 +1,4 @@
-﻿#region ----- Copyright -----
+﻿
 
 /* 
   The class SetterValueBindingHelper is based on the class written by David Anson (Microsoft).
@@ -9,7 +9,7 @@
   (Ms-PL, http://opensource.org/licenses/ms-pl.html).
 */
 
-#endregion
+
 
 
 #if SILVERLIGHT
@@ -100,13 +100,13 @@ namespace DigitalRune.Windows
   public class SetterValueBindingHelper
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -149,11 +149,11 @@ namespace DigitalRune.Windows
       }
     }
     private Collection<SetterValueBindingHelper> _values;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Dependency Properties & Routed Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -202,17 +202,17 @@ namespace DigitalRune.Windows
 
       element.SetValue(PropertyBindingProperty, value);
     }
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -362,7 +362,7 @@ namespace DigitalRune.Windows
 #endif
       }
     }
-    #endregion
+
   }
 }
 #endif

@@ -34,7 +34,7 @@ namespace DigitalRune.Editor
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -56,11 +56,11 @@ namespace DigitalRune.Editor
         {
             get { return GetItems(false); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private IEnumerable<EditorDockTabItemViewModel> GetItems(bool onlyActive)
@@ -222,6 +222,6 @@ namespace DigitalRune.Editor
 
             return await base.CanCloseAsync();
         }
-        #endregion
+
     }
 }

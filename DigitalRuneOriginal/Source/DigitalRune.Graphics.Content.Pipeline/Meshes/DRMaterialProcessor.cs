@@ -24,18 +24,18 @@ namespace DigitalRune.Graphics.Content.Pipeline
   public class DRMaterialProcessor : ContentProcessor<MaterialContent, DRMaterialContent>
   {
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     /// <summary>
     /// The name of the default render pass.
     /// </summary>
     public const string DefaultPass = "Default";
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -254,11 +254,11 @@ namespace DigitalRune.Graphics.Content.Pipeline
       set { _defaultEffectFile = value; }
     }
     private string _defaultEffectFile = "";
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -719,6 +719,6 @@ namespace DigitalRune.Graphics.Content.Pipeline
         }
       }
     }
-    #endregion
+
   }
 }

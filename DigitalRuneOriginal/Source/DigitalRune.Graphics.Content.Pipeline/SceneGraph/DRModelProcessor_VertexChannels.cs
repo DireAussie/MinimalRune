@@ -19,24 +19,24 @@ namespace DigitalRune.Graphics.Content.Pipeline
   partial class DRModelProcessor
   {
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     private const int MaxBonesPerVertex = 4;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly int[] _tempIndices = new int[MaxBonesPerVertex];
     private readonly float[] _tempWeights = new float[MaxBonesPerVertex];
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /*
@@ -56,11 +56,11 @@ namespace DigitalRune.Graphics.Content.Pipeline
     }
     private bool _premultiplyVertexColors = true;
     */
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private void ProcessVertexChannels(MeshContent mesh)
@@ -248,6 +248,6 @@ namespace DigitalRune.Graphics.Content.Pipeline
       boneWeights[vertexIndex] = new Vector4(_tempWeights[0], _tempWeights[1], _tempWeights[2], _tempWeights[3]);
     }
 #endif
-    #endregion
+
   }
 }

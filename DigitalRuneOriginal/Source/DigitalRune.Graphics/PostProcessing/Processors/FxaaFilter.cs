@@ -23,7 +23,7 @@ namespace DigitalRune.Graphics.PostProcessing
   public class FxaaFilter : PostProcessor
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Effect _effect;
@@ -31,11 +31,11 @@ namespace DigitalRune.Graphics.PostProcessing
     private readonly EffectParameter _sourceTextureParameter;
     private readonly EffectPass _luminanceToAlphaPass;
     private readonly EffectPass _fxaaPass;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -48,11 +48,11 @@ namespace DigitalRune.Graphics.PostProcessing
     /// in the alpha channel of the image. The default value is <see langword="true"/>.
     /// </value>
     public bool ComputeLuminance { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -73,11 +73,11 @@ namespace DigitalRune.Graphics.PostProcessing
 
       ComputeLuminance = true;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -120,7 +120,7 @@ namespace DigitalRune.Graphics.PostProcessing
       _sourceTextureParameter.SetValue((Texture2D)null);
       renderTargetPool.Recycle(rgbLuma);
     }
-    #endregion
+
   }
 }
 #endif

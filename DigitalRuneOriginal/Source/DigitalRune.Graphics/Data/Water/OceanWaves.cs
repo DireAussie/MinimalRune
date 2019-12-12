@@ -51,7 +51,7 @@ namespace DigitalRune.Graphics
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private bool _isDirty;
@@ -94,11 +94,11 @@ namespace DigitalRune.Graphics
     private Vector2F[,] _D;
 
     private FastFourierTransformF _fft;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     // Data of the WaterWavesRenderer:
@@ -386,11 +386,11 @@ namespace DigitalRune.Graphics
       }
     }
     private int _cpuSize;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -436,11 +436,11 @@ namespace DigitalRune.Graphics
 
       base.Dispose(disposing);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     // Called by the WaterWavesRenderer.
@@ -799,6 +799,6 @@ namespace DigitalRune.Graphics
       int size = CpuSize;
       return ((index % size) + size) % size;
     }
-    #endregion
+
   }
 }

@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#region ----- Credits -----
+
 // The ephemeris model is based on:
 //
 //    "Physically-Based Outdoor Scene Lighting", by Frank Kane (Founder of Sundog Software, LLC),
@@ -11,7 +11,7 @@
 //    Copyright (c) 2004-2008  Sundog Software, LLC. All rights reserved worldwide.
 //
 // Code is used with permission from Frank Kane.
-#endregion
+
 
 using System;
 using System.Collections.Generic;

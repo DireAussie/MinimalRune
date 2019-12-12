@@ -81,13 +81,13 @@ namespace DigitalRune.Graphics.SceneGraph
   public class SpriteNode : SceneNode
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -210,11 +210,11 @@ namespace DigitalRune.Graphics.SceneGraph
     /// <value>The depth of the sprite in the range [0, 1].</value>
     /// <inheritdoc cref="LastBounds"/>
     public float LastDepth { get; internal set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -237,14 +237,14 @@ namespace DigitalRune.Graphics.SceneGraph
       LastBounds = Rectangle.Empty;
       LastDepth = 0;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc cref="SceneNode.Clone"/>
     public new SpriteNode Clone()
@@ -275,8 +275,8 @@ namespace DigitalRune.Graphics.SceneGraph
       Rotation = sourceTyped.Rotation;
       // Scale is cloned in base class.
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

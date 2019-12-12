@@ -21,16 +21,16 @@ namespace DigitalRune.Windows.Docking
     public abstract class DockOverlay : Window
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private FrameworkElement _targetElement;
         private Window _targetWindow;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -56,17 +56,17 @@ namespace DigitalRune.Windows.Docking
                 UpdateBounds();
             }
         }
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -99,11 +99,11 @@ namespace DigitalRune.Windows.Docking
             Target = target;
             Loaded += OnLoaded;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private void AttachToTarget()
@@ -179,6 +179,6 @@ namespace DigitalRune.Windows.Docking
             base.OnClosed(e);
             DetachFromTarget();
         }
-        #endregion
+
     }
 }

@@ -47,17 +47,17 @@ namespace DigitalRune.Game.UI.Controls
 #endif
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // We reuse the InputContext and RenderContext instances between frames.
     private readonly InputContext _inputContext = new InputContext();
     private readonly UIRenderContext _renderContext = new UIRenderContext();
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -225,11 +225,11 @@ namespace DigitalRune.Game.UI.Controls
     }
     private event EventHandler<EventArgs> ZIndexChanged;
 #endif
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Game Object Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary> 
@@ -321,11 +321,11 @@ namespace DigitalRune.Game.UI.Controls
       get { return GetValue<int>(MouseWheelScrollLinesPropertyId); }
       set { SetValue(MouseWheelScrollLinesPropertyId, value); }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -381,11 +381,11 @@ namespace DigitalRune.Game.UI.Controls
 
       InputEnabled = true;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private void OnChildrenChanged(object sender, CollectionChangedEventArgs<UIControl> eventArgs)
@@ -613,6 +613,6 @@ namespace DigitalRune.Game.UI.Controls
         handler(this, eventArgs);
     }
 #endif
-    #endregion
+
   }
 }

@@ -43,13 +43,13 @@ namespace DigitalRune.Graphics
 
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------    
 
     /// <summary>
@@ -64,11 +64,11 @@ namespace DigitalRune.Graphics
     /// <strong>SurfaceFormat.Alpha8</strong> (unsigned format, 8-bit alpha only).
     /// </remarks>
     public Texture2D Texture { get; protected set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -101,12 +101,12 @@ namespace DigitalRune.Graphics
         Texture = null;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
-    #endregion
+
   }
 }

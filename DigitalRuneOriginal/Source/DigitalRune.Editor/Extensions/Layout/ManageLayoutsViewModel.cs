@@ -15,15 +15,15 @@ namespace DigitalRune.Editor.Layout
     internal class ManageLayoutsViewModel : Dialog
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly LayoutExtension _layoutExtension;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -74,11 +74,11 @@ namespace DigitalRune.Editor.Layout
         /// </summary>
         /// <value>The Close command.</value>
         public DelegateCommand CloseCommand { get; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -104,11 +104,11 @@ namespace DigitalRune.Editor.Layout
             DeleteCommand = new DelegateCommand(Delete, CanDelete);
             CloseCommand = new DelegateCommand(Close);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private bool CanRename()
@@ -141,6 +141,6 @@ namespace DigitalRune.Editor.Layout
         {
             DialogResult = true;
         }
-        #endregion
+
     }
 }

@@ -55,7 +55,7 @@ namespace DigitalRune.Geometry.Partitioning
   public abstract partial class BasePartition<T> : ISpatialPartition<T>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -81,11 +81,11 @@ namespace DigitalRune.Geometry.Partitioning
     // Synchronization object for Update().
     private readonly object _syncRoot = new object();
     private bool _updateInProgress;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -231,11 +231,11 @@ namespace DigitalRune.Geometry.Partitioning
       get { return _selfOverlaps; }
     }
     private HashSet<Pair<T>> _selfOverlaps;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -245,14 +245,14 @@ namespace DigitalRune.Geometry.Partitioning
     {
       _items = new HashSet<T>();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     ISpatialPartition<T> ISpatialPartition<T>.Clone()
@@ -350,7 +350,7 @@ namespace DigitalRune.Geometry.Partitioning
       Filter = source.Filter;
       GetAabbForItem = source.GetAabbForItem;
     }
-    #endregion
+
 
 
     private static void EnsureSet(ref HashSet<T> set)
@@ -991,6 +991,6 @@ namespace DigitalRune.Geometry.Partitioning
     //    handler(this, _eventArgs);
     //  }
     //}
-    #endregion
+
   }
 }

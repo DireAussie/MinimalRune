@@ -30,7 +30,7 @@ namespace DigitalRune.Windows.Controls
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         // Flag to avoid update loops.
@@ -40,17 +40,17 @@ namespace DigitalRune.Windows.Controls
         private ColorSlider1D _slider;
         private NumericUpDown _int32ValueControl;
         private NumericUpDown _doubleValueControl;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -194,11 +194,11 @@ namespace DigitalRune.Windows.Controls
             add { AddHandler(ValueChangedEvent, value); }
             remove { RemoveHandler(ValueChangedEvent, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -208,11 +208,11 @@ namespace DigitalRune.Windows.Controls
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ColorComponentControl), new FrameworkPropertyMetadata(typeof(ColorComponentControl)));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -426,6 +426,6 @@ namespace DigitalRune.Windows.Controls
 
             return value;
         }
-        #endregion
+
     }
 }

@@ -42,15 +42,15 @@ namespace DigitalRune.Physics.Specialized
   public class RagdollMotor
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
     
     private readonly QuaternionMotor _quaternionMotor;
-    #endregion
+
       
       
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -211,11 +211,11 @@ namespace DigitalRune.Physics.Specialized
     // TODO: VelocityFactor to lessen the strength of the velocity motor. 
     // If < 1 then interpolate desired velocity with actual velocity.
     //public float VelocityFactor { get; set; }
-    #endregion
+
       
       
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -253,11 +253,11 @@ namespace DigitalRune.Physics.Specialized
 
       };
     }
-    #endregion
+
       
       
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
     
     internal void AddToSimulation()
@@ -384,6 +384,6 @@ namespace DigitalRune.Physics.Specialized
         _quaternionMotor.TargetOrientation = QuaternionF.CreateRotation(rotationMatrix);
       }
     }
-    #endregion
+
   }
 }

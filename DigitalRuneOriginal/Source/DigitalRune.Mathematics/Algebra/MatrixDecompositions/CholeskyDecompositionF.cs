@@ -41,16 +41,16 @@ namespace DigitalRune.Mathematics.Algebra
   public class CholeskyDecompositionF
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly MatrixF _l;
     private readonly bool _isSymmetricPositiveDefinite;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -75,11 +75,11 @@ namespace DigitalRune.Mathematics.Algebra
     {
       get { return _l; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -132,11 +132,11 @@ namespace DigitalRune.Mathematics.Algebra
         //  _l[j, k] = 0;      // Not needed. Already initialized with 0.
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -188,6 +188,6 @@ namespace DigitalRune.Mathematics.Algebra
       }
       return x;
     }
-    #endregion
+
   }
 }

@@ -13,13 +13,13 @@ namespace Samples.Graphics
   public class EnvironmentLight : Light
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     public new Shape Shape
@@ -39,11 +39,11 @@ namespace Samples.Graphics
     public float SpecularIntensity { get; set; }
     public float HdrScale { get; set; }
     public TextureCube EnvironmentMap { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     public EnvironmentLight()
@@ -53,14 +53,14 @@ namespace Samples.Graphics
       SpecularIntensity = 1;
       HdrScale = 1;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Light CreateInstanceCore()
@@ -84,7 +84,7 @@ namespace Samples.Graphics
       HdrScale = sourceTyped.HdrScale;
       EnvironmentMap = sourceTyped.EnvironmentMap;
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -92,7 +92,7 @@ namespace Samples.Graphics
     {
       return Color * Math.Max(DiffuseIntensity, SpecularIntensity) * HdrScale;
     }
-    #endregion
+
   }
 }
 #endif

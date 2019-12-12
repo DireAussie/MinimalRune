@@ -1,4 +1,4 @@
-﻿#region ----- Copyright -----
+﻿
 /*
   The class Squish is a port of libsquish (https://code.google.com/p/libsquish/)
   which is licensed under the MIT License.
@@ -25,7 +25,7 @@
   TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
   SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-#endregion
+
 
 using System;
 using System.Threading.Tasks;
@@ -86,7 +86,7 @@ namespace DigitalRune.Graphics.Content
   internal static class Squish
   {
     //--------------------------------------------------------------
-    #region alpha.h/.cpp
+
     //--------------------------------------------------------------
 
     private static int FloatToInt(float a, int limit)
@@ -407,11 +407,11 @@ namespace DigitalRune.Graphics.Content
       for (int i = 0; i < 16; ++i)
         rgba[4 * i + 3] = codes[indices[i]];
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region clusterfit.h/.cpp
+
     //--------------------------------------------------------------
 
     private class ClusterFit
@@ -823,11 +823,11 @@ namespace DigitalRune.Graphics.Content
         }
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region ColourBlock.h/.cpp
+
     //--------------------------------------------------------------
 
     private static int FloatTo565(Vector3F colour)
@@ -997,11 +997,11 @@ namespace DigitalRune.Graphics.Content
           rgba[4 * i + j] = codes[offset + j];
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region ColourSet.h/.cpp
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -1141,11 +1141,11 @@ namespace DigitalRune.Graphics.Content
         }
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region math.h/.cpp
+
     //--------------------------------------------------------------
 
     private static Vector4F MultiplyAdd(Vector4F a, float b, Vector4F c)
@@ -1264,11 +1264,11 @@ namespace DigitalRune.Graphics.Content
 
       return v.XYZ;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region rangefit.h/.cpp
+
     //--------------------------------------------------------------
 
     private class RangeFit
@@ -1465,11 +1465,11 @@ namespace DigitalRune.Graphics.Content
         }
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region singlecolourlookup.h
+
     //--------------------------------------------------------------
 
     private struct SourceBlock
@@ -2544,11 +2544,11 @@ namespace DigitalRune.Graphics.Content
       new SingleColourLookup(new SourceBlock(63, 0, 1), new SourceBlock(63, 63, 1)),
       new SingleColourLookup(new SourceBlock(63, 0, 0), new SourceBlock(63, 63, 0)),
     };
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region singlecolourlookup.h/.cpp
+
     //--------------------------------------------------------------
 
     private class SingleColourFit
@@ -2702,11 +2702,11 @@ namespace DigitalRune.Graphics.Content
         }
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region squish.h/.cpp
+
     //--------------------------------------------------------------
 
     // Provides instances to use per thread. (For thread-safety and to avoid memory allocations.)
@@ -3136,6 +3136,6 @@ namespace DigitalRune.Graphics.Content
         }
       }
     }
-    #endregion
+
   }
 }

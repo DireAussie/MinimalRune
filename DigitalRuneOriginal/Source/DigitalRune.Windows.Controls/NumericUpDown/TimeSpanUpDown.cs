@@ -36,7 +36,7 @@ namespace DigitalRune.Windows.Controls
     public class TimeSpanUpDown : BaseUpDownControl<TimeSpan>, IValueConverter
     {
         //--------------------------------------------------------------
-        #region Types
+
         //--------------------------------------------------------------
 
         private enum TimeUnit
@@ -47,31 +47,31 @@ namespace DigitalRune.Windows.Controls
             Seconds,
             Milliseconds,
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private TextBox _textBox;
         private Binding _textBoxBinding;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties
+
         //--------------------------------------------------------------   
 
         private bool IsBindingValid
         {
             get { return _textBoxBinding != null && _textBox != null; }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -203,11 +203,11 @@ namespace DigitalRune.Windows.Controls
             get { return (bool)GetValue(AlwaysShowMillisecondsProperty); }
             set { SetValue(AlwaysShowMillisecondsProperty, Boxed.Get(value)); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -219,11 +219,11 @@ namespace DigitalRune.Windows.Controls
             MinimumProperty.OverrideMetadata(typeof(TimeSpanUpDown), new FrameworkPropertyMetadata(TimeSpan.MinValue));
             MaximumProperty.OverrideMetadata(typeof(TimeSpanUpDown), new FrameworkPropertyMetadata(TimeSpan.MaxValue));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------    
 
         private static void OnAlwaysShowXChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
@@ -693,6 +693,6 @@ namespace DigitalRune.Windows.Controls
 
             return DependencyProperty.UnsetValue;
         }
-        #endregion
+
     }
 }

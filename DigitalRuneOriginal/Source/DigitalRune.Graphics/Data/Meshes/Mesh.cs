@@ -76,15 +76,15 @@ namespace DigitalRune.Graphics
     // the shared buffers for clones. 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private string[] _cachedMorphTargetNames;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -211,11 +211,11 @@ namespace DigitalRune.Graphics
     [Category("Misc")]
 #endif
     public object UserData { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -262,14 +262,14 @@ namespace DigitalRune.Graphics
         UserData.SafeDispose();
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Morph Targets -----
+
 
     internal void InvalidateMorphTargetNames()
     {
@@ -313,8 +313,8 @@ namespace DigitalRune.Graphics
 
       return false;
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

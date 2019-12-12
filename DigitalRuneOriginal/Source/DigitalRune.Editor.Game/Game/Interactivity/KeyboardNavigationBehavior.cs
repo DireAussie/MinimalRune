@@ -49,16 +49,16 @@ namespace DigitalRune.Editor.Game
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private GameExtension _gameExtension;
         private IGameTimer _gameTimer;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -133,17 +133,17 @@ namespace DigitalRune.Editor.Game
             get { return (double)GetValue(SpeedProperty); }
             set { SetValue(SpeedProperty, value); }
         }
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Creation & Cleanup
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Methods
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -311,6 +311,6 @@ namespace DigitalRune.Editor.Game
                 eventArgs.Handled = true;
             }
         }
-        #endregion
+
     }
 }

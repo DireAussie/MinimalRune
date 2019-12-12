@@ -18,18 +18,18 @@ namespace DigitalRune.Editor
     public abstract class EditorDockTabItemViewModel : Screen, IDockTabItem
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
-        #region ----- IDockElement -----
+
 
         /// <inheritdoc/>
         public DockState DockState
@@ -56,10 +56,10 @@ namespace DigitalRune.Editor
             set { SetProperty(ref _dockHeight, value); }
         }
         private GridLength _dockHeight = new GridLength(1, GridUnitType.Star);
-        #endregion
 
 
-        #region ----- IDockTabItem -----
+
+
 
         /// <inheritdoc/>
         public DockState LastDockState
@@ -147,7 +147,7 @@ namespace DigitalRune.Editor
             protected set { SetProperty(ref _dockId, value); }
         }
         private string _dockId;
-        #endregion
+
 
 
         /// <summary>
@@ -179,17 +179,17 @@ namespace DigitalRune.Editor
             set { SetProperty(ref _dockToolTip, value); }
         }
         private object _dockToolTip;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Creation & Cleanup
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Methods
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -208,7 +208,7 @@ namespace DigitalRune.Editor
         }
 
 
-        #region ----- IScreen -----
+
 
         /// <inheritdoc/>
         protected override void OnActivated(ActivationEventArgs eventArgs)
@@ -231,8 +231,8 @@ namespace DigitalRune.Editor
 
             base.OnDeactivated(eventArgs);
         }
-        #endregion
 
-        #endregion
+
+
     }
 }

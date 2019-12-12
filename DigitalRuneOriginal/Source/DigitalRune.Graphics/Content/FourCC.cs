@@ -1,4 +1,4 @@
-﻿#region ----- Copyright -----
+﻿
 /*
   Copyright (c) 2010-2014 SharpDX - Alexandre Mutel
   
@@ -20,7 +20,7 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
-#endregion
+
 
 using System;
 using System.Globalization;
@@ -36,24 +36,24 @@ namespace DigitalRune.Graphics.Content
   internal struct FourCC : IEquatable<FourCC>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly uint _value;
 
     /// <summary>Empty FourCC.</summary>
     public static readonly FourCC Empty = new FourCC(0);
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -104,11 +104,11 @@ namespace DigitalRune.Graphics.Content
     {
       _value = unchecked((uint)fourCC);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -272,6 +272,6 @@ namespace DigitalRune.Graphics.Content
                                     (char) ((_value >> 24) & 0xFF)
                                   }));
     }
-    #endregion
+
   }
 }

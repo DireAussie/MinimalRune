@@ -25,7 +25,7 @@ namespace DigitalRune.Editor.Textures
     internal class TexturePresentationTarget : GamePresentationTarget, IScrollInfo
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private const double LineSize = 10.0;           // ScrollBar button scrolls 10 px.
@@ -48,14 +48,14 @@ namespace DigitalRune.Editor.Textures
         private Vector _margin;             // Virtual space around the texture.
         private Vector _offset;             // Scroll offset.
         private double _zoom = 1.0;         // Zoom factor.
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
-        #region ----- Commands -----
+
 
         /// <summary>
         /// Gets the value that represents the <strong>Fit Screen</strong> command.
@@ -93,10 +93,10 @@ namespace DigitalRune.Editor.Textures
             }
         }
         private static RoutedUICommand _fillScreen;
-        #endregion
 
 
-        #region ----- IScrollInfo -----
+
+
 
         /// <summary>
         /// Gets or sets a value that indicates whether scrolling on the vertical axis is possible.
@@ -172,13 +172,13 @@ namespace DigitalRune.Editor.Textures
             get { return _scrollOwner; }
             set { _scrollOwner = value; }
         }
-        #endregion
 
-        #endregion
+
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -472,11 +472,11 @@ namespace DigitalRune.Editor.Textures
             get { return (float)GetValue(MipLevelProperty); }
             set { SetValue(MipLevelProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -496,11 +496,11 @@ namespace DigitalRune.Editor.Textures
                 CommandBindings.Add(new CommandBinding(FillScreen, FillScreenExecuted));
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -1043,7 +1043,7 @@ namespace DigitalRune.Editor.Textures
         }
 
 
-        #region ----- IScrollInfo -----
+
 
         void IScrollInfo.LineUp()
         {
@@ -1139,8 +1139,8 @@ namespace DigitalRune.Editor.Textures
         {
             return rectangle;
         }
-        #endregion
 
-        #endregion
+
+
     }
 }

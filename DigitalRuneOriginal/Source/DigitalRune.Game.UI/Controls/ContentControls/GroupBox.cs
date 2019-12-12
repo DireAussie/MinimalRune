@@ -99,21 +99,21 @@ namespace DigitalRune.Game.UI.Controls
     // A group box does not have a special functionality.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private TextBlock _titleTextBlock;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Game Object Properties & Events
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary> 
@@ -161,11 +161,11 @@ namespace DigitalRune.Game.UI.Controls
       get { return GetValue<string>(TitlePropertyId); }
       set { SetValue(TitlePropertyId, value); }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -175,11 +175,11 @@ namespace DigitalRune.Game.UI.Controls
     {
       Style = "GroupBox";
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -223,6 +223,6 @@ namespace DigitalRune.Game.UI.Controls
 
       base.OnUnload();
     }
-    #endregion
+
   }
 }

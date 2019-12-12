@@ -24,16 +24,16 @@ namespace DigitalRune.Physics.Constraints
   public class CylindricalJoint : Constraint
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly LinearLimit _linearLimit;
     private readonly AngularLimit _angularLimit;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -299,11 +299,11 @@ namespace DigitalRune.Physics.Constraints
     {
       get { return _angularLimit.RelativePosition.X; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -322,11 +322,11 @@ namespace DigitalRune.Physics.Constraints
         Maximum = new Vector3F(float.PositiveInfinity, 0, 0),
       };
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -375,6 +375,6 @@ namespace DigitalRune.Physics.Constraints
 
       base.OnChanged();
     }
-    #endregion
+
   }
 }

@@ -27,15 +27,15 @@ namespace DigitalRune.Graphics.Effects
   public class DefaultEffectBinder : DictionaryEffectBinder
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly IGraphicsService _graphicsService;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -68,11 +68,11 @@ namespace DigitalRune.Graphics.Effects
     /// in the shader to perform a different action.
     /// </remarks>
     public static Vector4 Debug1 { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -154,11 +154,11 @@ namespace DigitalRune.Graphics.Effects
       lut.Add(DefaultEffectParameterSemantics.JitterMap, CreateJitterMapBinding<Texture2D>);
       lut.Add(DefaultEffectParameterSemantics.NoiseMap, CreateNoiseMapBinding<Texture2D>);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -343,6 +343,6 @@ namespace DigitalRune.Graphics.Effects
         return Debug1;
       return new Vector4(0, 0, 0, 0);
     }
-    #endregion
+
   }
 }

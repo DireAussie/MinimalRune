@@ -22,7 +22,7 @@ namespace DigitalRune.Editor.Commands
     internal sealed class ToolBarsCommandItem : ObservableObject, ICommandItem, IDisposable
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
@@ -33,11 +33,11 @@ namespace DigitalRune.Editor.Commands
         private readonly DelegateCommand<ToolBarViewModel> _toggleToolBarCommand;
         internal readonly DelegateCommand<bool> ToggleAllToolBarsCommand;
         private IDisposable _propertyChangedSubscription;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -106,11 +106,11 @@ namespace DigitalRune.Editor.Commands
             get { return true; }
             set { throw new NotSupportedException(); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -173,11 +173,11 @@ namespace DigitalRune.Editor.Commands
                 IsDisposed = true;
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         public MenuItemViewModel CreateMenuItem()
@@ -331,6 +331,6 @@ namespace DigitalRune.Editor.Commands
 
             UpdateMenuItems();
         }
-        #endregion
+
     }
 }

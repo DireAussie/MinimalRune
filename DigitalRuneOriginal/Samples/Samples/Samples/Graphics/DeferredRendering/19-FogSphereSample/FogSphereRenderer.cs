@@ -23,7 +23,7 @@ namespace Samples.Graphics
   public class FogSphereRenderer : SceneNodeRenderer
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Effect _effect;
@@ -42,17 +42,17 @@ namespace Samples.Graphics
     private readonly EffectParameter _parameterIntersectionSoftness;
 
     private readonly Submesh _submesh;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -99,11 +99,11 @@ namespace Samples.Graphics
         base.Dispose(disposing);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -181,7 +181,7 @@ namespace Samples.Graphics
       graphicsDevice.DepthStencilState = originalDepthStencilState;
       graphicsDevice.BlendState = originalBlendState;
     }
-    #endregion
+
   }
 }
 #endif

@@ -28,16 +28,16 @@ namespace DigitalRune.Collections
     // recycle the whole object.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private int _state; // 0 = in pool, 1 = in use, 2 = in use and enumerator was given out.
     private T _current;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -60,11 +60,11 @@ namespace DigitalRune.Collections
     {
       get { return _current; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -104,11 +104,11 @@ namespace DigitalRune.Collections
       _current = default(T);
       OnRecycle();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -190,6 +190,6 @@ namespace DigitalRune.Collections
     /// Called when this instance should be recycled.
     /// </summary>
     protected abstract void OnRecycle();
-    #endregion
+
   }
 }

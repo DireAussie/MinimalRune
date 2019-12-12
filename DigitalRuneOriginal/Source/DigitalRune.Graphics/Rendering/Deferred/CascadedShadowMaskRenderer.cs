@@ -22,7 +22,7 @@ namespace DigitalRune.Graphics.Rendering
   internal class CascadedShadowMaskRenderer : SceneNodeRenderer
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Vector3[] _frustumFarCorners = new Vector3[4];
@@ -51,17 +51,17 @@ namespace DigitalRune.Graphics.Rendering
 
     private readonly Vector3[] _samples = new Vector3[StandardShadowMaskRenderer.PoissonKernel.Length];
     private int _lastNumberOfSamples;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -102,11 +102,11 @@ namespace DigitalRune.Graphics.Rendering
       //_parameterNear = parameterShadow.StructureMembers["Near"];
       //...
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -320,7 +320,7 @@ namespace DigitalRune.Graphics.Rendering
 
       return _effect.Techniques[0].Passes[6 + (int)cascadeSelection * 5 + 4];
     }
-    #endregion
+
   }
 }
 #endif

@@ -270,7 +270,7 @@ namespace DigitalRune.Geometry
     }
 
 
-    #region ----- Vertex welding -----
+
 
     private struct WeldVertex
     {
@@ -476,6 +476,6 @@ namespace DigitalRune.Geometry
 
       return numberOfMergedVertices;
     }
-    #endregion
+
   }
 }

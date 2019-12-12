@@ -29,7 +29,7 @@ namespace DigitalRune.Physics.Constraints
     // This is derived in http://bulletphysics.org/Bullet/phpBB3/viewtopic.php?f=4&t=1354&hilit=cfm.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // The Jacobian matrices J.
@@ -56,23 +56,23 @@ namespace DigitalRune.Physics.Constraints
 
     // The total constraint impulse (the sum of all sequential impulses per time step).
     public float ConstraintImpulse;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Methods
+
+
+
+    //--------------------------------------------------------------
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -329,6 +329,6 @@ namespace DigitalRune.Physics.Constraints
 
       return impulse;
     }
-    #endregion
+
   }
 }

@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#region ----- Credits -----
+
 // The ephemeris model is based on:
 //
 //    "Physically-Based Outdoor Scene Lighting", by Frank Kane (Founder of Sundog Software, LLC),
@@ -11,7 +11,7 @@
 //    Copyright (c) 2004-2008  Sundog Software, LLC. All rights reserved worldwide.
 //
 // Code is used with permission from Frank Kane.
-#endregion
+
 
 using System;
 using DigitalRune.Mathematics;
@@ -46,7 +46,7 @@ namespace DigitalRune.Graphics
 
 
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -92,17 +92,17 @@ namespace DigitalRune.Graphics
       { 0.0002f, 0.0001f, 0.0000f }, { 0.0002f, 0.0001f, 0.0000f }, { 0.0001f, 0.0000f, 0.0000f },
       { 0.0001f, 0.0000f, 0.0000f }, { 0.0001f, 0.0000f, 0.0000f }, { 0.0000f, 0.0000f, 0.0000f }
     };
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -112,11 +112,11 @@ namespace DigitalRune.Graphics
     /// The array of spectral powers, from 380 - 780 nm sampled at 5 nm intervals.
     /// </value>
     public float[] Powers { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -126,11 +126,11 @@ namespace DigitalRune.Graphics
     {
       Powers = new float[NumberOfSamples];
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -364,6 +364,6 @@ namespace DigitalRune.Graphics
         }
       }
     }
-    #endregion
+
   }
 }

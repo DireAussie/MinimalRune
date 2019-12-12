@@ -18,13 +18,13 @@ namespace DigitalRune.Physics.Specialized
   internal class VehicleForceEffect : ForceEffect
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -32,11 +32,11 @@ namespace DigitalRune.Physics.Specialized
     /// </summary>
     /// <value>The vehicle.</value>
     public Vehicle Vehicle { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -48,11 +48,11 @@ namespace DigitalRune.Physics.Specialized
       Debug.Assert(vehicle != null);
       Vehicle = vehicle;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -253,6 +253,6 @@ namespace DigitalRune.Physics.Specialized
       // The impulse (lambda) is (J * M^-1 * J^T)^-1 * (newRelativeVelocity - oldRelativeVelocity).
       return JWJTInverse * relativeVelocity;
     }
-    #endregion
+
   }
 }

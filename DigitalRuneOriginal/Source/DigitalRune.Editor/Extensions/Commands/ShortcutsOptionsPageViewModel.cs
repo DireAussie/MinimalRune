@@ -18,15 +18,15 @@ namespace DigitalRune.Editor.Commands
     internal class ShortcutsOptionsPageViewModel : OptionsPageViewModel
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly IEditorService _editor;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         internal static ShortcutsOptionsPageViewModel DesignInstance
@@ -57,11 +57,11 @@ namespace DigitalRune.Editor.Commands
             set { SetProperty(ref _selectedCategory, value); }
         }
         private IGrouping<string, CommandItem> _selectedCategory;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -79,11 +79,11 @@ namespace DigitalRune.Editor.Commands
 
             _editor = editor;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -125,6 +125,6 @@ namespace DigitalRune.Editor.Commands
         protected override void OnApply()
         {
         }
-        #endregion
+
     }
 }

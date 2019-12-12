@@ -19,7 +19,7 @@ namespace DigitalRune.Windows.Docking
     partial class DockControl
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private AutoHideBar _leftAutoHideBar;
@@ -28,17 +28,17 @@ namespace DigitalRune.Windows.Docking
         private AutoHideBar _bottomAutoHideBar;
         private AutoHideBar[] _autoHideBars = Array.Empty<AutoHideBar>();
         private Panel _autoHidePanel;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Methods
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -135,6 +135,6 @@ namespace DigitalRune.Windows.Docking
             foreach (var autoHideBar in _autoHideBars)
                 autoHideBar.CloseAutoHidePanesExcept(dockTabPane);
         }
-        #endregion
+
     }
 }

@@ -48,7 +48,7 @@ namespace DigitalRune.Collections
 
 
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     // This view is used as DebuggerTypeProxy.
@@ -66,20 +66,20 @@ namespace DigitalRune.Collections
         get { return _list.Array.Take(_list.Count).ToArray(); }
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private T[] _items;
     private int _count;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -113,11 +113,11 @@ namespace DigitalRune.Collections
       get { return _items[index]; }
       set { _items[index] = value; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -128,11 +128,11 @@ namespace DigitalRune.Collections
     {
       _items = new T[initialCapacity];
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -368,11 +368,11 @@ namespace DigitalRune.Collections
     {
       System.Array.Sort(_items, 0, _count, comparer);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Interface IList<T>
+
     //--------------------------------------------------------------
 
     // Not all methods are used. (Add methods when needed.)
@@ -405,6 +405,6 @@ namespace DigitalRune.Collections
     {
       throw new NotImplementedException();
     }
-    #endregion
+
   }
 }

@@ -31,19 +31,19 @@ namespace DigitalRune.Windows.Docking
     public class DockIndicator : ContentControl
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -75,11 +75,11 @@ namespace DigitalRune.Windows.Docking
             get { return (bool)GetValue(IsSelectedProperty); }
             set { SetValue(IsSelectedProperty, Boxed.Get(value)); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -97,11 +97,11 @@ namespace DigitalRune.Windows.Docking
         {
             IsEnabledChanged += OnStateChanged;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -136,6 +136,6 @@ namespace DigitalRune.Windows.Docking
                 VisualStateManager.GoToState(this, "Disabled", useTransitions);
             }
         }
-        #endregion
+
     }
 }

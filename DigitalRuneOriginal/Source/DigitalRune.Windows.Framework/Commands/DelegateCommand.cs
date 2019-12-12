@@ -50,7 +50,7 @@ namespace DigitalRune.Windows.Framework
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly Action _execute;
@@ -58,11 +58,11 @@ namespace DigitalRune.Windows.Framework
 #if !NET45
         private readonly WeakEvent<EventHandler> _canExecuteChangedEvent;
 #endif
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
 #if NET45
@@ -94,11 +94,11 @@ namespace DigitalRune.Windows.Framework
             }
         }
 #endif
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -126,11 +126,11 @@ namespace DigitalRune.Windows.Framework
 #endif
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -214,6 +214,6 @@ namespace DigitalRune.Windows.Framework
             }
 #endif
         }
-        #endregion
+
     }
 }

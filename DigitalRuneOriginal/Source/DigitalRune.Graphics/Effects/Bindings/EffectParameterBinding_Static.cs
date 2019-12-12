@@ -16,7 +16,7 @@ namespace DigitalRune.Graphics.Effects
   partial class EffectParameterBinding
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -113,11 +113,11 @@ namespace DigitalRune.Graphics.Effects
 //      { typeof(Matrix44F), (Action<EffectParameter, Matrix44F[]>)((parameter, value) => parameter.SetValue(value)) },
 ////#endif
     };
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
@@ -380,7 +380,7 @@ namespace DigitalRune.Graphics.Effects
              && parameter.ColumnCount == 4
              && parameter.RowCount == 1;
     }
-    #endregion
+
     
   }
 }

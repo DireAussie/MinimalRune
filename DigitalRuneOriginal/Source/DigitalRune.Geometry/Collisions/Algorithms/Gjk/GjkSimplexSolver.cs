@@ -32,7 +32,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
 
 
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -51,11 +51,11 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
         U = u; V = v; W = w; X = x;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private static readonly ResourcePool<GjkSimplexSolver> Pool =
@@ -82,11 +82,11 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
 
     // Data for backup in error cases.
     private Vector3F _lastClosestPointOnA, _lastClosestPointOnB, _lastClosestPoint;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -256,7 +256,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
     public int NumberOfVertices { get; private set; }
 
 
-    #region ----- EPA properties (not used anymore) -----
+
 
     // Following properties where necessary for the EPA. EPA has been removed.
     // If these methods are required, modify them so that they do not allocate 
@@ -298,12 +298,12 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
     //    return list;
     //  }
     //}
-    #endregion
-    #endregion
+
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -353,11 +353,11 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
     {
       Pool.Recycle(this);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -788,6 +788,6 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
 
       return containsPoint;
     }
-    #endregion
+
   }
 }

@@ -21,7 +21,7 @@ namespace DigitalRune.Editor.Properties
     public sealed class PropertiesExtension : EditorExtension, IPropertiesService
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
@@ -32,11 +32,11 @@ namespace DigitalRune.Editor.Properties
         private CommandBinding _propertiesCommandBinding;
 
         private Lazy<PropertiesViewModel> _propertiesViewModel;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -66,11 +66,11 @@ namespace DigitalRune.Editor.Properties
             }
         }
         private IPropertySource _propertySource;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace DigitalRune.Editor.Properties
         {
             Logger.Debug("Initializing PropertiesExtension.");
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -254,6 +254,6 @@ namespace DigitalRune.Editor.Properties
         //{
         //    _propertiesViewModel.Value.Hide(propertySource);
         //}
-        #endregion
+
     }
 }

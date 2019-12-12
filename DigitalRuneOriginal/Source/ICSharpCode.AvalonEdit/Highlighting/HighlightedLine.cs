@@ -90,7 +90,7 @@ namespace ICSharpCode.AvalonEdit.Highlighting
 			}
 		}
 		
-		#region Merge
+
 		/// <summary>
 		/// Merges the additional line into this line.
 		/// </summary>
@@ -179,9 +179,9 @@ namespace ICSharpCode.AvalonEdit.Highlighting
 				newSectionStart = insertionEndPos;
 			}
 		}
-		#endregion
+
 		
-		#region WriteTo / ToHtml
+
 		sealed class HtmlElement : IComparable<HtmlElement>
 		{
 			internal readonly int Offset;
@@ -295,7 +295,7 @@ namespace ICSharpCode.AvalonEdit.Highlighting
 		{
 			return "[" + GetType().Name + " " + ToHtml() + "]";
 		}
-		#endregion
+
 		
 		/// <summary>
 		/// Creates a <see cref="HighlightedInlineBuilder"/> that stores the text and highlighting of this line.

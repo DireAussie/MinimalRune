@@ -420,7 +420,7 @@ namespace DigitalRune.Geometry.Partitioning
       // If A can be split and is bigger than B, we split A.
       if (nodeB.IsLeaf || (!nodeA.IsLeaf && IsABiggerThanB(nodeA, scaleA, nodeB, scaleB)))
       {
-        #region ----- Split A -----
+
 
         SplitIfNecessary(nodeA);
         Node leftChild = nodeA.LeftChild;
@@ -501,11 +501,11 @@ namespace DigitalRune.Geometry.Partitioning
 
           GetClosestPointCandidatesImpl(leftChild, scaleA, nodeB, scaleB, poseB, callback, ref closestPointDistanceSquared);
         }
-        #endregion
+
       }
       else
       {
-        #region ----- Split B -----
+
 
         SplitIfNecessary(nodeB);
         Node leftChildB = nodeB.LeftChild;
@@ -587,7 +587,7 @@ namespace DigitalRune.Geometry.Partitioning
             GetClosestPointCandidatesImpl(nodeA, scaleA, leftChildB, scaleB, poseB, callback, ref closestPointDistanceSquared);
           }
         }
-        #endregion
+
       }
     }
 

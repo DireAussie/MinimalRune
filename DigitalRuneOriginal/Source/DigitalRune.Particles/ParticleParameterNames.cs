@@ -247,7 +247,7 @@ namespace DigitalRune.Particles
     public const string Softness = "Softness";
 
 
-    #region ----- Ribbons -----
+
 
     /// <summary>
     /// The type of the particles, which determines whether particles are rendered as individual 
@@ -282,6 +282,6 @@ namespace DigitalRune.Particles
     /// (Parameter type: varying, value type: <see cref="int"/>)
     /// </summary>
     public const string LinkedIndex = "LinkedIndex";
-    #endregion
+
   }
 }

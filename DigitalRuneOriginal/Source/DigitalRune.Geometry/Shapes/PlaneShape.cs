@@ -31,16 +31,16 @@ namespace DigitalRune.Geometry.Shapes
   public class PlaneShape : Shape
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private Vector3F _normal;
     private float _distanceFromOrigin;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -108,11 +108,11 @@ namespace DigitalRune.Geometry.Shapes
     /// See <see cref="OnGetMesh"/> for more information.
     /// </remarks>
     public static float MeshSize { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -231,14 +231,14 @@ namespace DigitalRune.Geometry.Shapes
       _normal = plane.Normal;
       _distanceFromOrigin = plane.DistanceFromOrigin;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Shape CreateInstanceCore()
@@ -254,7 +254,7 @@ namespace DigitalRune.Geometry.Shapes
       _normal = source.Normal;
       _distanceFromOrigin = source.DistanceFromOrigin;
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -394,6 +394,6 @@ namespace DigitalRune.Geometry.Shapes
 
       return mesh;
     }
-    #endregion
+
   }
 }

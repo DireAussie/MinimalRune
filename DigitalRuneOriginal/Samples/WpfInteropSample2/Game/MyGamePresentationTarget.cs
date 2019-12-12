@@ -24,7 +24,7 @@ namespace WpfInteropSample2
   internal class MyGamePresentationTarget : D3DImagePresentationTarget
   {
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -38,11 +38,11 @@ namespace WpfInteropSample2
         Unloaded += OnUnloaded;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private void OnLoaded(object sender, RoutedEventArgs eventArgs)
@@ -104,6 +104,6 @@ namespace WpfInteropSample2
         }
       }
     }
-    #endregion
+
   }
 }

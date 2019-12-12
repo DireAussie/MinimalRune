@@ -26,13 +26,13 @@ namespace DigitalRune.Geometry.Shapes
     // TODO: Optimize: AABB could be more efficiently than the default implementation.
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -71,11 +71,11 @@ namespace DigitalRune.Geometry.Shapes
       }
     }
     private float _radius;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -109,14 +109,14 @@ namespace DigitalRune.Geometry.Shapes
 
       _radius = radius;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Shape CreateInstanceCore()
@@ -131,7 +131,7 @@ namespace DigitalRune.Geometry.Shapes
       var source = (CircleShape)sourceShape;
       _radius = source.Radius;
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -278,6 +278,6 @@ namespace DigitalRune.Geometry.Shapes
     {
       return String.Format(CultureInfo.InvariantCulture, "CircleShape {{ Radius = {0} }}", _radius);
     }
-    #endregion
+
   }
 }

@@ -25,13 +25,13 @@ namespace DigitalRune.Geometry.Shapes
   public class ScaledConvexShape : ConvexShape
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -101,11 +101,11 @@ namespace DigitalRune.Geometry.Shapes
       }
     }
     private ConvexShape _shape;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -165,14 +165,14 @@ namespace DigitalRune.Geometry.Shapes
       _shape.Changed += OnChildShapeChanged;
       _scale = scale; 
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Shape CreateInstanceCore()
@@ -187,7 +187,7 @@ namespace DigitalRune.Geometry.Shapes
     protected override void CloneCore(Shape sourceShape)
     {
     }
-    #endregion
+
 
 
     /// <summary>
@@ -257,6 +257,6 @@ namespace DigitalRune.Geometry.Shapes
     {
       OnChanged(eventArgs);
     }
-    #endregion
+
   }
 }

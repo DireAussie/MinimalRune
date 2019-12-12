@@ -147,13 +147,13 @@ namespace DigitalRune.Diagnostics
 
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -206,11 +206,11 @@ namespace DigitalRune.Diagnostics
 #endif
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -230,11 +230,11 @@ namespace DigitalRune.Diagnostics
       Stopwatch = System.Diagnostics.Stopwatch.StartNew();
 #endif
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -468,6 +468,6 @@ namespace DigitalRune.Diagnostics
         stringBuilder.Append(microseconds.ToString("0.###us", CultureInfo.InvariantCulture));
       }
     }
-    #endregion
+
   }
 }

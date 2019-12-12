@@ -26,7 +26,7 @@ namespace DigitalRune.Game
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly GameObject _owner;
@@ -35,11 +35,11 @@ namespace DigitalRune.Game
     private T _animationValue;
     private bool _isAnimated;
 
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     public override T Value
@@ -241,11 +241,11 @@ namespace DigitalRune.Game
         }
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     public AnimatableGamePropertyData(GameObject owner, GamePropertyMetadata<T> metadata, GamePropertyData<T> data)
@@ -257,12 +257,12 @@ namespace DigitalRune.Game
       _owner = owner;
       _metadata = metadata;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
-    #endregion
+
   }
 }

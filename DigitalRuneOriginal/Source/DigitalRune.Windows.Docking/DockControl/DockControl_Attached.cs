@@ -13,7 +13,7 @@ namespace DigitalRune.Windows.Docking
     partial class DockControl
     {
         //--------------------------------------------------------------
-        #region Attached Dependency Properties & Routed Events
+
         //--------------------------------------------------------------    
 
         /// <summary>
@@ -136,11 +136,11 @@ namespace DigitalRune.Windows.Docking
 
             obj.SetValue(DockHeightProperty, value);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -216,6 +216,6 @@ namespace DigitalRune.Windows.Docking
                 }
             }
         }
-        #endregion
+
     }
 }

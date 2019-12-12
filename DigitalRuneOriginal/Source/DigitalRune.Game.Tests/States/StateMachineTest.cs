@@ -815,7 +815,7 @@ namespace DigitalRune.Game.States.Tests
 
 
     //--------------------------------------------------------------
-    #region Helper Methods & Event Handlers
+
     //--------------------------------------------------------------
 
     private State CreateState(string name)
@@ -847,6 +847,6 @@ namespace DigitalRune.Game.States.Tests
     {
       _events = _events + "X" + ((State)sender).Name;
     }
-    #endregion
+
   }
 }

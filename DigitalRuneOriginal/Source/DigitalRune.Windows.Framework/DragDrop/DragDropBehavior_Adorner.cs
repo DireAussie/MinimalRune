@@ -17,7 +17,7 @@ namespace DigitalRune.Windows.Framework
         private DropAdorner _dropAdorner;
 
 
-        #region ----- Drag Adorner -----
+
 
         // Creates or updates the DragAdorner. 
         private void UpdateDragAdorner(Point mousePosition)
@@ -68,10 +68,10 @@ namespace DigitalRune.Windows.Framework
                 _dragAdorner = null;
             }
         }
-        #endregion
 
 
-        #region ----- Drop Adorner -----
+
+
 
         // Creates or updates the DropAdorner.
         private void UpdateDropAdorner(FrameworkElement adornedElement, bool isVertical, bool insertAfter)
@@ -114,6 +114,6 @@ namespace DigitalRune.Windows.Framework
                 _dropAdorner = null;
             }
         }
-        #endregion
+
     }
 }

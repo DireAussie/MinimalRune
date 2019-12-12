@@ -1,4 +1,4 @@
-﻿#region ----- Copyright -----
+﻿
 /*
    The class in this file is based on the StringBuilderExtension class from the Performance 
    Measuring Sample which is licensed under the terms of the Microsoft Permissive License (Ms-PL).
@@ -44,16 +44,16 @@
         laws, the contributors exclude the implied warranties of merchantability, fitness for a 
         particular purpose and non-infringement. 
 */
-#endregion
 
-#region Original File Description
+
+
 //-----------------------------------------------------------------------------
 // StringBuilderExtensions.cs
 //
 // Microsoft XNA Community Game Platform
 // Copyright (C) Microsoft Corporation. All rights reserved.
 //-----------------------------------------------------------------------------
-#endregion
+
 
 
 using System;

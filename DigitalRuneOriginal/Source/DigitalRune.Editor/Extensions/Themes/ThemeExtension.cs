@@ -26,7 +26,7 @@ namespace DigitalRune.Editor.Themes
     public sealed class ThemeExtension : EditorExtension, IThemeService
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
@@ -37,11 +37,11 @@ namespace DigitalRune.Editor.Themes
         private MergeableNodeCollection<ICommandItem> _menuNodes;
         private MergeableNodeCollection<ICommandItem> _toolBarNodes;
         private MergeableNodeCollection<OptionsPageViewModel> _optionsNodes;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -114,11 +114,11 @@ namespace DigitalRune.Editor.Themes
         /// </summary>
         /// <seealso cref="Theme"/>
         public event EventHandler<EventArgs> ThemeChanged;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -136,11 +136,11 @@ namespace DigitalRune.Editor.Themes
 
             Theme = "Gray";
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -343,6 +343,6 @@ namespace DigitalRune.Editor.Themes
         {
             return null;
         }
-        #endregion
+
     }
 }

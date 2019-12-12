@@ -66,24 +66,24 @@ namespace DigitalRune.Graphics
     //   TerrainDecalInstancingLayer.
 
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     /// <summary>
     /// The maximum number of clipmap levels.
     /// </summary>
     public const int MaxNumberOfLevels = 9;
-    #endregion
+
     
    
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     internal SurfaceFormat Format { get; private set; }
@@ -326,11 +326,11 @@ namespace DigitalRune.Graphics
 
     // The AABB of the whole clipmap.
     internal Aabb Aabb;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -374,11 +374,11 @@ namespace DigitalRune.Graphics
         Textures[i] = null;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -403,6 +403,6 @@ namespace DigitalRune.Graphics
         previousCellSize = ActualCellSizes[level];
       }
     }
-    #endregion
+
   }
 }

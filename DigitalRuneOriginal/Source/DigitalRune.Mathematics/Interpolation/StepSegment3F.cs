@@ -76,7 +76,7 @@ namespace DigitalRune.Mathematics.Interpolation
 
 
     //--------------------------------------------------------------
-    #region Resource Pooling
+
     //--------------------------------------------------------------
 
     private static readonly ResourcePool<StepSegment3F> Pool = new ResourcePool<StepSegment3F>(
@@ -119,6 +119,6 @@ namespace DigitalRune.Mathematics.Interpolation
 
       Pool.Recycle(this);
     }
-    #endregion
+
   }
 }

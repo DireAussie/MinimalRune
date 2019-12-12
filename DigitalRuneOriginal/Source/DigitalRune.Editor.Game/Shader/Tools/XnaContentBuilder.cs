@@ -34,7 +34,7 @@ namespace DigitalRune.Editor.Shader
         // executing project is x64.
 
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         // TODO: Auto-detect MSBuild.exe and let user change path in options page.
@@ -59,11 +59,11 @@ namespace DigitalRune.Editor.Shader
             // If the extension DLL is not in the GAC, you should refer to it by
             // file path, eg. "c:/MyProject/bin/MyPipelineExtension.dll".
         };
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
@@ -78,11 +78,11 @@ namespace DigitalRune.Editor.Shader
         private readonly List<ProjectItem> _projectItems = new List<ProjectItem>();
 
         private readonly TempDirectoryHelper _tempDirectoryHelper;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -102,11 +102,11 @@ namespace DigitalRune.Editor.Shader
         {
             get { return Path.Combine(_tempDirectoryHelper.TempDirectoryName, "bin/Content"); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -177,11 +177,11 @@ namespace DigitalRune.Editor.Shader
                 IsDisposed = true;
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -352,6 +352,6 @@ namespace DigitalRune.Editor.Shader
                 }
             });
         }
-        #endregion
+
     }
 }

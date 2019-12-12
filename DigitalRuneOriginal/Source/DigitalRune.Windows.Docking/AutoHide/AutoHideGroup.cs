@@ -18,19 +18,19 @@ namespace DigitalRune.Windows.Docking
     public class AutoHideGroup : ItemsControl
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -40,11 +40,11 @@ namespace DigitalRune.Windows.Docking
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(AutoHideGroup), new FrameworkPropertyMetadata(typeof(AutoHideGroup)));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -101,6 +101,6 @@ namespace DigitalRune.Windows.Docking
         {
             return new AutoHideTab();
         }
-        #endregion
+
     }
 }

@@ -23,13 +23,13 @@ namespace DigitalRune.Geometry.Shapes
   public class CapsuleShape : ConvexShape
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -95,11 +95,11 @@ namespace DigitalRune.Geometry.Shapes
       }
     }
     private float _radius;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -142,14 +142,14 @@ namespace DigitalRune.Geometry.Shapes
       _height = height;
       _radius = radius;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Shape CreateInstanceCore()
@@ -165,7 +165,7 @@ namespace DigitalRune.Geometry.Shapes
       _radius = source.Radius;
       _height = source.Height;
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -375,6 +375,6 @@ namespace DigitalRune.Geometry.Shapes
     {
       return String.Format(CultureInfo.InvariantCulture,"CapsuleShape {{ Radius = {0}, Height = {1} }}", _radius, _height);
     }
-    #endregion
+
   }
 }

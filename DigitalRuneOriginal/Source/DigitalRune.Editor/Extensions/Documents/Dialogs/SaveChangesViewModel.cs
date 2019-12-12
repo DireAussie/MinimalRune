@@ -19,15 +19,15 @@ namespace DigitalRune.Editor.Documents
     internal class SaveChangesViewModel : Dialog
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -74,11 +74,11 @@ namespace DigitalRune.Editor.Documents
         /// </summary>
         /// <value>The command that is executed when the "Cancel" button is pressed.</value>
         public DelegateCommand CancelCommand { get; private set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -99,11 +99,11 @@ namespace DigitalRune.Editor.Documents
             NoCommand = new DelegateCommand(No);
             CancelCommand = new DelegateCommand(Cancel);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private void Yes()
@@ -128,6 +128,6 @@ namespace DigitalRune.Editor.Documents
             SaveChangesDialogResult = SaveChangesDialogResult.Cancel;
             DialogResult = false;
         }
-        #endregion
+
     }
 }

@@ -25,7 +25,7 @@ namespace DigitalRune.Windows.Controls
     public class ExplorerViewMenu : ContextMenu
     {
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         // The scales that correspond to the individual view modes.
@@ -45,31 +45,31 @@ namespace DigitalRune.Windows.Controls
         private const double SliderPositionList = 72;
         private const double SliderPositionDetails = 36;
         private const double SliderPositionTiles = 0;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private bool _initialized;
         private bool _updating;
         private Slider _slider;
         private Thumb _sliderThumb;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties
+
         //--------------------------------------------------------------
 
-        #region ----- Customization -----
+
+
+        //--------------------------------------------------------------
+
+        //--------------------------------------------------------------
+
+
 
         /// <summary>
         /// Identifies the <see cref="ImageSourceExtraLargeIcons"/> dependency property.
@@ -384,7 +384,7 @@ namespace DigitalRune.Windows.Controls
             get { return (string)GetValue(StringTilesProperty); }
             set { SetValue(StringTilesProperty, value); }
         }
-        #endregion
+
 
 
         private static readonly DependencyPropertyKey IconPropertyKey = DependencyProperty.RegisterReadOnly(
@@ -495,11 +495,11 @@ namespace DigitalRune.Windows.Controls
             get { return (double)GetValue(SliderPositionProperty); }
             set { SetValue(SliderPositionProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -510,11 +510,11 @@ namespace DigitalRune.Windows.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ExplorerViewMenu), new FrameworkPropertyMetadata(typeof(ExplorerViewMenu)));
             EventManager.RegisterClassHandler(typeof(ExplorerViewMenu), MenuItem.ClickEvent, new RoutedEventHandler(OnMenuItemClicked));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -971,6 +971,6 @@ namespace DigitalRune.Windows.Controls
             else
                 Mode = ExplorerViewMode.ExtraLargeIcons;
         }
-        #endregion
+
     }
 }

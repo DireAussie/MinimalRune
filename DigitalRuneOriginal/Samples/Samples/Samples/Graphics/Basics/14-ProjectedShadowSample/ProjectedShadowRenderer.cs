@@ -22,7 +22,7 @@ namespace Samples.Graphics
   public class ProjectedShadowRenderer : SceneNodeRenderer
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // To avoid overdraw: Only draw if stencil buffer contains 0, write 1 to stencil buffer.
@@ -37,11 +37,11 @@ namespace Samples.Graphics
     };
     
     private readonly BasicEffect _effect;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -98,11 +98,11 @@ namespace Samples.Graphics
         _effect.Alpha = value.W;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -145,11 +145,11 @@ namespace Samples.Graphics
         base.Dispose(disposing);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -265,6 +265,6 @@ namespace Samples.Graphics
 
       return shadowMatrix;
     }
-    #endregion
+
   }
 }

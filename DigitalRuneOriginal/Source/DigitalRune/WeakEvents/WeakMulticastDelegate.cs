@@ -1,4 +1,4 @@
-﻿#region ----- Copyright -----
+﻿
 /*
   The class in this file is based on the WeakDelegatesManager from the MSDN article "Composite 
   Application Guidance for WPF" (http://msdn.microsoft.com/en-us/library/dd458809.aspx) which is 
@@ -82,7 +82,7 @@
   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
   OTHER DEALINGS IN THE SOFTWARE.
 */
-#endregion
+
 
 
 using System;
@@ -107,15 +107,15 @@ namespace DigitalRune
   public class WeakMulticastDelegate
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly List<InternalWeakDelegate> _delegates = new List<InternalWeakDelegate>();
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -130,17 +130,17 @@ namespace DigitalRune
         return _delegates.Count;
       }
     }
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -243,6 +243,6 @@ namespace DigitalRune
           _delegates.RemoveAt(i);
       }
     }
-    #endregion
+
   }
 }

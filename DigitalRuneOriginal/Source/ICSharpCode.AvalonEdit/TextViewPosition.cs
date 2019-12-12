@@ -130,7 +130,7 @@ namespace ICSharpCode.AvalonEdit
 			                     this.line, this.column, this.visualColumn, this.isAtEndOfLine);
 		}
 		
-		#region Equals and GetHashCode implementation
+
 		// The code in this region is useful if you want to use this structure in collections.
 		// If you don't need it, you can just remove the region and the ": IEquatable<Struct1>" declaration.
 		
@@ -178,7 +178,7 @@ namespace ICSharpCode.AvalonEdit
 		{
 			return !(left.Equals(right)); // use operator == and negate result
 		}
-		#endregion
+
 		
 		/// <inheritdoc/>
 		public int CompareTo(TextViewPosition other)

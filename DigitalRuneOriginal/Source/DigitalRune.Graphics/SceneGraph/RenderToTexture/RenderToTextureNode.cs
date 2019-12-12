@@ -25,13 +25,13 @@ namespace DigitalRune.Graphics.SceneGraph
   public abstract class RenderToTextureNode : SceneNode
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -53,11 +53,11 @@ namespace DigitalRune.Graphics.SceneGraph
       }
     }
     private RenderToTexture _renderToTexture;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -91,12 +91,12 @@ namespace DigitalRune.Graphics.SceneGraph
         base.Dispose(disposing, disposeData);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
-    #endregion
+
   }
 }

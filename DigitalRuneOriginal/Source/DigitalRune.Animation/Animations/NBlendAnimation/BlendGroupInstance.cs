@@ -13,7 +13,7 @@ namespace DigitalRune.Animation
   internal sealed class BlendGroupInstance : AnimationInstance
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private static readonly ResourcePool<BlendGroupInstance> Pool = new ResourcePool<BlendGroupInstance>(
@@ -24,17 +24,17 @@ namespace DigitalRune.Animation
     // The previous synchronized duration of the BlendGroup.
     // (TimeSpan.Zero if the animations are not synchronized.)
     private TimeSpan _duration;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -93,11 +93,11 @@ namespace DigitalRune.Animation
       if (RunCount < int.MaxValue)
         Pool.Recycle(this);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -117,6 +117,6 @@ namespace DigitalRune.Animation
 
       base.SetTime(time);
     }
-    #endregion
+
   }
 }

@@ -36,24 +36,24 @@ namespace DigitalRune.Editor.Documents
     public abstract class DocumentViewModel : EditorDockTabItemViewModel
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
         public Document Document { get; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -81,11 +81,11 @@ namespace DigitalRune.Editor.Documents
                 UpdateProperties();
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -153,6 +153,6 @@ namespace DigitalRune.Editor.Documents
             // TODO: DockId must not be null.
             //DockId = Document.Uri?.LocalPath;
         }
-        #endregion
+
     }
 }

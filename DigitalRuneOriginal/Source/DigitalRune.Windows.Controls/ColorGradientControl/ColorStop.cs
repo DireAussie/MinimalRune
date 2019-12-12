@@ -19,19 +19,19 @@ namespace DigitalRune.Windows.Controls
     public class ColorStop : Control
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties
-        //--------------------------------------------------------------
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -84,11 +84,11 @@ namespace DigitalRune.Windows.Controls
             get { return (bool)GetValue(IsSelectedProperty); }
             set { SetValue(IsSelectedProperty, Boxed.Get(value)); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -98,11 +98,11 @@ namespace DigitalRune.Windows.Controls
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ColorStop), new FrameworkPropertyMetadata(typeof(ColorStop)));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -128,6 +128,6 @@ namespace DigitalRune.Windows.Controls
             string state = IsSelected ? "Selected" : "Unselected";
             VisualStateManager.GoToState(this, state, useTransitions);
         }
-        #endregion
+
     }
 }

@@ -24,22 +24,22 @@ namespace DigitalRune.Game
   public class GamePropertyMetadata<T> : IGamePropertyMetadata, IGamePropertyFactory
   {
     //--------------------------------------------------------------
-    #region Static Fields
+
     //--------------------------------------------------------------
 
     // The global store for all property metadata for properties of type T.
     internal static NamedObjectCollection<GamePropertyMetadata<T>> Properties { get; private set; }
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -87,11 +87,11 @@ namespace DigitalRune.Game
       get { return DefaultValue; }
       set { DefaultValue = (T)value; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -119,17 +119,17 @@ namespace DigitalRune.Game
       Id = id;
       Properties.Add(this);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     IGameProperty IGamePropertyFactory.CreateGameProperty(GameObject owner)
     {
       return new GameProperty<T>(owner, this);
     }
-    #endregion
+
   }
 }

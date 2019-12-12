@@ -103,7 +103,7 @@ namespace DigitalRune.Geometry.Shapes
     //   region of a larger 1-dimensional array.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // The cached difference of the highest and lowest height field point.
@@ -112,11 +112,11 @@ namespace DigitalRune.Geometry.Shapes
 
     // Array with normals for the height entries. - Used when UseFastCollisionApproximation is set.
     //internal Vector3F[,] NormalArray = null;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -395,11 +395,11 @@ namespace DigitalRune.Geometry.Shapes
       }
     }
     private float _widthZ = 1000;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -510,14 +510,14 @@ namespace DigitalRune.Geometry.Shapes
       _numberOfSamplesX = numberOfSamplesX;
       _numberOfSamplesZ = numberOfSamplesZ;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Shape CreateInstanceCore()
@@ -542,7 +542,7 @@ namespace DigitalRune.Geometry.Shapes
       _widthX = source.WidthX;
       _widthZ = source.WidthZ;
     }
-    #endregion
+
 
 
     /// <summary>
@@ -957,6 +957,6 @@ namespace DigitalRune.Geometry.Shapes
         _widthX,
         _widthZ);
     }
-    #endregion
+
   }
 }

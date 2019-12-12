@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#region ----- Credits -----
+
 /* 
    The CompressedAabbTree is based on the quantized/optimized bounding volume hierarchy of Bullet.
    (Note: Our CompressedAabbTree and the original version of Bullet have only the general algorithm
@@ -21,7 +21,7 @@
      2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
      3. This notice may not be removed or altered from any source distribution.
 */
-#endregion
+
 
 using System;
 using System.Collections;
@@ -78,7 +78,7 @@ namespace DigitalRune.Geometry.Partitioning
 
 
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     [Flags]
@@ -88,22 +88,22 @@ namespace DigitalRune.Geometry.Partitioning
       UpdateSelfOverlaps = 1,   // Need to recompute the self-overlaps.
       Invalid = 3,              // Tree needs to be rebuilt or refit.
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     /// <summary>
     /// A margin which is added to the tree's AABB to avoid divisions by zero.
     /// </summary>
     private static readonly float AabbMargin = Numeric.EpsilonF;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Note: When the items are added or removed the tree becomes invalid.
@@ -123,11 +123,11 @@ namespace DigitalRune.Geometry.Partitioning
     // Synchronization object for Update().
     private readonly object _syncRoot = new object();
     private bool _updateInProgress;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -262,11 +262,11 @@ namespace DigitalRune.Geometry.Partitioning
       }
     }
 #endif
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -279,14 +279,14 @@ namespace DigitalRune.Geometry.Partitioning
       // Compressed AABB tree is initially up-to-date. (Nothing to do in Update().)
       _state = State.IsUpToDate;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     ISpatialPartition<int> ISpatialPartition<int>.Clone()
@@ -311,7 +311,7 @@ namespace DigitalRune.Geometry.Partitioning
         GetAabbForItem = GetAabbForItem,
       };
     }
-    #endregion
+
 
 
     /// <summary>
@@ -749,6 +749,6 @@ namespace DigitalRune.Geometry.Partitioning
         }
       }
     }
-    #endregion
+
   }
 }

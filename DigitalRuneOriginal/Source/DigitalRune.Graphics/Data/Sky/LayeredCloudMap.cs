@@ -38,15 +38,15 @@ namespace DigitalRune.Graphics
   public class LayeredCloudMap : CloudMap
   {
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     internal const int NumberOfTextures = 8;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     internal int LastFrame = -1;
@@ -63,11 +63,11 @@ namespace DigitalRune.Graphics
     internal RenderTarget2D[] LayerTextures = new RenderTarget2D[NumberOfTextures];
 
     internal Random Random;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -127,11 +127,11 @@ namespace DigitalRune.Graphics
     /// The default value is 1234567.
     /// </remarks>
     public int Seed { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -180,11 +180,11 @@ namespace DigitalRune.Graphics
 
       base.Dispose(disposing);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -195,6 +195,6 @@ namespace DigitalRune.Graphics
     {
       Texture = texture;
     }
-    #endregion
+
   }
 }

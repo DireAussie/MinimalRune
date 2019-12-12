@@ -22,7 +22,7 @@ namespace DigitalRune.Graphics
   internal struct TerrainLayerVertex : IVertexType
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -50,11 +50,11 @@ namespace DigitalRune.Graphics
     /// </summary>
     [SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
     public Vector2 TextureCoordinate;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -65,11 +65,11 @@ namespace DigitalRune.Graphics
     {
       get { return 16; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -82,11 +82,11 @@ namespace DigitalRune.Graphics
       Position = position;
       TextureCoordinate = textureCoordinate;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -171,6 +171,6 @@ namespace DigitalRune.Graphics
         "{{Position:{0} TextureCoordinate:{1}}}",
         Position, TextureCoordinate);
     }
-    #endregion
+
   }
 }

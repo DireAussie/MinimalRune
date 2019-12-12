@@ -20,7 +20,7 @@ namespace DigitalRune.Windows.Framework
     public class MultiKeyGestureConverter : TypeConverter
     {
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         private const char DisplayStringSeparator = ':';
@@ -28,29 +28,29 @@ namespace DigitalRune.Windows.Framework
         private const char ModifiersDelimiter = '+';
         private static readonly KeyConverter KeyConverter = new KeyConverter();
         private static readonly ModifierKeysConverter ModifierKeysConverter = new ModifierKeysConverter();
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
-        //--------------------------------------------------------------
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -303,6 +303,6 @@ namespace DigitalRune.Windows.Framework
 
             return result.ToString();
         }
-        #endregion
+
     }
 }

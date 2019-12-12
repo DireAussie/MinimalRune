@@ -53,7 +53,7 @@ namespace DigitalRune.Graphics
   public class OrthographicProjection : Projection
   {
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -78,23 +78,23 @@ namespace DigitalRune.Graphics
     /// The default value for <see cref="Projection.Height"/>.
     /// </summary>
     private const float DefaultHeight = 9.0f;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+
+
+    //--------------------------------------------------------------
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -105,14 +105,14 @@ namespace DigitalRune.Graphics
       ViewVolume = new OrthographicViewVolume();
       Set(DefaultWidth, DefaultHeight, DefaultNear, DefaultFar);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Projection CreateInstanceCore()
@@ -129,7 +129,7 @@ namespace DigitalRune.Graphics
                    sourceTyped.Bottom, sourceTyped.Top, 
                    sourceTyped.Near, sourceTyped.Far);
     }
-    #endregion
+
     
 
     /// <overloads>
@@ -300,6 +300,6 @@ namespace DigitalRune.Graphics
       projection.Set(matrix);
       return projection;
     }
-    #endregion
+
   }
 }

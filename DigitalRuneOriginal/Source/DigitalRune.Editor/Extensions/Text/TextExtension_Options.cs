@@ -13,24 +13,24 @@ namespace DigitalRune.Editor.Text
     partial class TextExtension
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private MergeableNodeCollection<OptionsPageViewModel> _optionsNodes;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
         public TextEditorOptions Options { get; private set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private void AddOptions()
@@ -66,6 +66,6 @@ namespace DigitalRune.Editor.Text
         {
             Settings.Default.TextEditorOptions = Options;
         }
-        #endregion
+
     }
 }

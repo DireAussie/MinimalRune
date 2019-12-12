@@ -21,15 +21,15 @@ namespace DigitalRune.Game.UI.Controls
   public class Thumb : UIControl
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private Vector2F _offset;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -52,11 +52,11 @@ namespace DigitalRune.Game.UI.Controls
         return "Default";
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Game Object Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary> 
@@ -104,11 +104,11 @@ namespace DigitalRune.Game.UI.Controls
       get { return GetValue<Vector2F>(DragDeltaPropertyId); }
       private set { SetValue(DragDeltaPropertyId, value); }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -118,11 +118,11 @@ namespace DigitalRune.Game.UI.Controls
     {
       Style = "Thumb";
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -169,6 +169,6 @@ namespace DigitalRune.Game.UI.Controls
         }
       }
     }
-    #endregion
+
   }
 }

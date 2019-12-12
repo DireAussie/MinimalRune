@@ -41,7 +41,7 @@ namespace DigitalRune.Graphics
 
 
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     // Describes a cache entry that stores a Submesh which represent a shape.
@@ -84,11 +84,11 @@ namespace DigitalRune.Graphics
         return 0;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // A special submesh without vertex buffer or index buffer. Represents an "empty" submesh.
@@ -104,11 +104,11 @@ namespace DigitalRune.Graphics
     private readonly CacheEntry _tempEntry;
 
     private readonly List<CacheEntry> _cache;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -191,11 +191,11 @@ namespace DigitalRune.Graphics
       set { _meshCacheFrameLimit = value; }
     }
     private int _meshCacheFrameLimit = 50;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -245,11 +245,11 @@ namespace DigitalRune.Graphics
         _cache.Clear();
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private void ThrowIfDisposed()
@@ -530,6 +530,6 @@ namespace DigitalRune.Graphics
         matrix = Matrix44F.Identity;
       }
     }
-    #endregion
+
   }
 }

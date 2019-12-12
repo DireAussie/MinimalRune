@@ -1,4 +1,4 @@
-﻿#region ----- Copyright -----
+﻿
 /*
    The EventToCommand class is taken from the MVVM Light Toolkit (see http://mvvmlight.codeplex.com/)
    by Laurent Bugnion which is licensed under the MIT License (MIT).
@@ -20,7 +20,7 @@
   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT 
   OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
 */
-#endregion
+
 
 using System;
 using System.Windows;

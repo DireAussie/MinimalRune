@@ -44,15 +44,15 @@ namespace DigitalRune.Particles.Effectors
   public class StartDirectionEffector : ParticleEffector
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private IParticleParameter<Vector3F> _parameter;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -102,11 +102,11 @@ namespace DigitalRune.Particles.Effectors
 
     // TODO: Add Emitter parameter if only particles of a certain emitter should be initialized?
     //public IParticleEmitter Emitter { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -116,11 +116,11 @@ namespace DigitalRune.Particles.Effectors
     {
       Parameter = ParticleParameterNames.Direction;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -228,6 +228,6 @@ namespace DigitalRune.Particles.Effectors
           array[i] = startDirection;
       }
     }
-    #endregion
+
   }
 }

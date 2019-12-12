@@ -34,7 +34,7 @@ namespace DigitalRune.Graphics.PostProcessing
   public class LuminanceFilter : PostProcessor
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -58,11 +58,11 @@ namespace DigitalRune.Graphics.PostProcessing
         LastLuminance = null;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Effect _effect;
@@ -80,11 +80,11 @@ namespace DigitalRune.Graphics.PostProcessing
 
     private readonly DownsampleFilter _downsampleFilter;
     private readonly CopyFilter _copyFilter;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -117,11 +117,11 @@ namespace DigitalRune.Graphics.PostProcessing
     /// <see langword="false"/>.
     /// </value>
     public bool UseGeometricMean { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -156,11 +156,11 @@ namespace DigitalRune.Graphics.PostProcessing
 
       DefaultTargetFormat = new RenderTargetFormat(1, 1, false, SurfaceFormat.HalfVector4, DepthFormat.None);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -295,7 +295,7 @@ namespace DigitalRune.Graphics.PostProcessing
 
       _textureParameter.SetValue((Texture2D)null);
     }
-    #endregion
+
   }
 }
 #endif

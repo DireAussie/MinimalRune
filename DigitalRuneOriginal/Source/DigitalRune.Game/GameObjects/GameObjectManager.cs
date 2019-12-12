@@ -34,24 +34,24 @@ namespace DigitalRune.Game
     // not garbage collected - a very unlikely scenario.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly List<GameObject> _objectsCopy = new List<GameObject>();
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
     public GameObjectCollection Objects { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -61,11 +61,11 @@ namespace DigitalRune.Game
     {
       Objects = new GameObjectCollection();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -100,6 +100,6 @@ namespace DigitalRune.Game
       if (Objects.IsDirty)
         _objectsCopy.Clear();
     }
-    #endregion
+
   }
 }

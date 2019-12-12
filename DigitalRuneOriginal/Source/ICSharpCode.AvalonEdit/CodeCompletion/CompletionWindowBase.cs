@@ -86,7 +86,7 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 			AttachEvents();
 		}
 		
-		#region Event Handlers
+
 		void AttachEvents()
 		{
 			document = this.TextArea.Document;
@@ -128,7 +128,7 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 			this.TextArea.PopStackedInputHandler(myInputHandler);
 		}
 		
-		#region InputHandler
+
 		InputHandler myInputHandler;
 		
 		/// <summary>
@@ -172,7 +172,7 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 				                           new KeyEventArgs(e.KeyboardDevice, e.InputSource, e.Timestamp, e.Key));
 			}
 		}
-		#endregion
+
 		
 		void TextViewScrollOffsetChanged(object sender, EventArgs e)
 		{
@@ -211,7 +211,7 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 			base.OnDeactivated(e);
 			Dispatcher.BeginInvoke(new Action(CloseIfFocusLost), DispatcherPriority.Background);
 		}
-		#endregion
+
 		
 		/// <summary>
 		/// Raises a tunnel/bubble event pair for a WPF control.

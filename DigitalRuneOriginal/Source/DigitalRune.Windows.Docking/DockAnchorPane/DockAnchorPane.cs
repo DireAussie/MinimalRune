@@ -35,15 +35,15 @@ namespace DigitalRune.Windows.Docking
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private ContentPresenter _contentPresenter;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------    
 
         /// <summary>
@@ -58,11 +58,11 @@ namespace DigitalRune.Windows.Docking
         {
             get { return _contentPresenter.GetContentContainer<FrameworkElement>(); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -95,11 +95,11 @@ namespace DigitalRune.Windows.Docking
             get { return (GridLength)GetValue(DockHeightProperty); }
             set { SetValue(DockHeightProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -123,11 +123,11 @@ namespace DigitalRune.Windows.Docking
         {
             Loaded += OnLoaded;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -197,6 +197,6 @@ namespace DigitalRune.Windows.Docking
             else
                 VisualStateManager.GoToState(this, "Empty", useTransitions);
         }
-        #endregion
+
     }
 }

@@ -99,13 +99,13 @@ namespace DigitalRune.Graphics
   public class Spotlight : Light
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     private ConeShape ConeShape
@@ -279,11 +279,11 @@ namespace DigitalRune.Graphics
     /// </summary>
     /// <value>The texture. The default value is <see langword="null"/>.</value>
     public Texture2D Texture { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -299,14 +299,14 @@ namespace DigitalRune.Graphics
       Shape = new TransformedShape(new GeometricObject(new ConeShape((float)Math.Tan(MathHelper.ToRadians(30)) * 5, 5), new Pose(new Vector3F(0, 0, -5), QuaternionF.CreateRotationX(ConstantsF.PiOver2))));
       Attenuation = 2;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Light CreateInstanceCore()
@@ -336,7 +336,7 @@ namespace DigitalRune.Graphics
       // Shape does not need to be cloned. It is automatically set in the constructor and 
       // adjusted when the related properties change.
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -357,6 +357,6 @@ namespace DigitalRune.Graphics
     //  return Vector3F.Max(Color * (DiffuseIntensity * HdrScale * spotlightFalloff * attenuation),
     //                      Color * (SpecularIntensity * HdrScale * spotlightFalloff * attenuation));
     //}
-    #endregion
+
   }
 }

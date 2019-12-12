@@ -22,7 +22,7 @@ namespace Samples.Physics.Specialized
   public class CharacterControllerLevelObject : GameObject
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly IServiceLocator _services;
@@ -32,17 +32,17 @@ namespace Samples.Physics.Specialized
 
     // A platform that moves sideways.
     private RigidBody _pusher;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     public CharacterControllerLevelObject(IServiceLocator services)
@@ -50,11 +50,11 @@ namespace Samples.Physics.Specialized
       _services = services;
       Name = "CharacterControllerLevel";
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     protected override void OnLoad()
@@ -320,6 +320,6 @@ namespace Samples.Physics.Specialized
         _pusher.LinearVelocity *= -1;
       }
     }
-    #endregion
+
   }
 }

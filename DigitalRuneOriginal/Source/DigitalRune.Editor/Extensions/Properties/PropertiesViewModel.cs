@@ -22,15 +22,15 @@ namespace DigitalRune.Editor.Properties
     internal class PropertiesViewModel : EditorDockTabItemViewModel
     {
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         internal const string DockIdString = "Properties";
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly IEditorService _editor;
@@ -41,11 +41,11 @@ namespace DigitalRune.Editor.Properties
 
         private bool _requiresTimer;
         private DispatcherTimer _timer;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -125,11 +125,11 @@ namespace DigitalRune.Editor.Properties
         /// The command that is invoked to copy the value of a property to the clipboard.
         /// </value>
         public DelegateCommand CopyValueCommand { get; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -163,11 +163,11 @@ namespace DigitalRune.Editor.Properties
 
             Show(null, false);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -329,6 +329,6 @@ namespace DigitalRune.Editor.Properties
             foreach (var property in PropertySource.Properties.OfType<IReflectedProperty>())
                 property.Update();
         }
-        #endregion
+
     }
 }

@@ -34,7 +34,7 @@ namespace DigitalRune.Geometry.Shapes
   public class PerspectiveViewVolume : ViewVolume
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Cached vertices.
@@ -46,11 +46,11 @@ namespace DigitalRune.Geometry.Shapes
     private Vector3F _farBottomRightVertex;
     private Vector3F _farTopLeftVertex;
     private Vector3F _farTopRightVertex;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -119,11 +119,11 @@ namespace DigitalRune.Geometry.Shapes
         return (float)Math.Atan((-bottom) / distance) + (float)Math.Atan(top / distance);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -162,14 +162,14 @@ namespace DigitalRune.Geometry.Shapes
     {
       SetFieldOfView(fieldOfViewY, aspectRatio, near, far);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Shape CreateInstanceCore()
@@ -184,7 +184,7 @@ namespace DigitalRune.Geometry.Shapes
       var source = (PerspectiveViewVolume)sourceShape;
       Set(source.Left, source.Right, source.Bottom, source.Top, source.Near, source.Far);
     }
-    #endregion
+
 
 
     /// <summary>
@@ -710,6 +710,6 @@ namespace DigitalRune.Geometry.Shapes
 
       return 2.0f * (float)Math.Atan(extent / (2.0f * distance));
     }
-    #endregion
+
   }
 }

@@ -18,7 +18,7 @@ namespace DigitalRune.Windows.Controls
     internal class TextBoxAdorner : Adorner
     {
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -32,20 +32,20 @@ namespace DigitalRune.Windows.Controls
         /// considered at each side.
         /// </summary>
         private const double TextBoxBorder = 2;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly VisualCollection _visualChildren;
         private readonly TextBox _textBox;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -67,11 +67,11 @@ namespace DigitalRune.Windows.Controls
         {
             get { return _visualChildren.Count; }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -90,11 +90,11 @@ namespace DigitalRune.Windows.Controls
             _textBox.TextChanged += OnTextBoxTextChanged;
             _visualChildren.Add(_textBox);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private void OnTextBoxLayoutUpdated(object sender, EventArgs eventArgs)
@@ -181,6 +181,6 @@ namespace DigitalRune.Windows.Controls
             _textBox.Arrange(new Rect(left, top, finalSize.Width, finalSize.Height));
             return finalSize;
         }
-        #endregion
+
     }
 }

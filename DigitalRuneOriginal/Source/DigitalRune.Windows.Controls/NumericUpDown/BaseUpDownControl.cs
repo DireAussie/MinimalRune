@@ -37,23 +37,23 @@ namespace DigitalRune.Windows.Controls
     public abstract class BaseUpDownControl<T> : BaseUpDownControl where T : IComparable
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private TextBox _textBox;
         private ButtonBase _buttonUp;
         private ButtonBase _buttonDown;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties
+
         //--------------------------------------------------------------   
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -154,17 +154,17 @@ namespace DigitalRune.Windows.Controls
             add { AddHandler(ValueChangedEvent, value); }
             remove { RemoveHandler(ValueChangedEvent, value); }
         }
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Creation and Cleanup
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Methods
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -450,6 +450,6 @@ namespace DigitalRune.Windows.Controls
         {
             _textBox?.SelectAll();
         }
-        #endregion
+
     }
 }

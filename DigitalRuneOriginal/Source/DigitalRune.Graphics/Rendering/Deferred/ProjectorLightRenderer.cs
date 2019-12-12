@@ -21,7 +21,7 @@ namespace DigitalRune.Graphics.Rendering
   internal class ProjectorLightRenderer : SceneNodeRenderer
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Vector3[] _frustumFarCorners = new Vector3[4];
@@ -46,17 +46,17 @@ namespace DigitalRune.Graphics.Rendering
     private readonly EffectPass _passDefaultAlpha;
     private readonly EffectPass _passShadowedRgb;
     private readonly EffectPass _passShadowedAlpha;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -92,11 +92,11 @@ namespace DigitalRune.Graphics.Rendering
       _passShadowedRgb = _effect.CurrentTechnique.Passes["ShadowedRgb"];
       _passShadowedAlpha = _effect.CurrentTechnique.Passes["ShadowedAlpha"];
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -241,7 +241,7 @@ namespace DigitalRune.Graphics.Rendering
 
       savedRenderState.Restore();
     }
-    #endregion
+
   }
 }
 #endif

@@ -26,7 +26,7 @@ namespace DigitalRune.Graphics.Rendering
   internal class VarianceShadowMapRenderer : SceneNodeRenderer
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // A cached array which is reused in GetBoundingSphere().
@@ -34,11 +34,11 @@ namespace DigitalRune.Graphics.Rendering
 
     private readonly PerspectiveViewVolume _cameraVolume;
     private readonly CameraNode _orthographicCameraNode;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -65,11 +65,11 @@ namespace DigitalRune.Graphics.Rendering
       }
     }
     private Func<RenderContext, bool> _renderCallback;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -88,11 +88,11 @@ namespace DigitalRune.Graphics.Rendering
       _cameraVolume = new PerspectiveViewVolume();
       _orthographicCameraNode = new CameraNode(new Camera(new OrthographicProjection()));
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -343,6 +343,6 @@ namespace DigitalRune.Graphics.Rendering
       position.Y = (float)Math.Ceiling(position.Y / texelSize) * texelSize;
       position.Z = (float)Math.Ceiling(position.Z / texelSize) * texelSize;
     }
-    #endregion
+
   }
 }

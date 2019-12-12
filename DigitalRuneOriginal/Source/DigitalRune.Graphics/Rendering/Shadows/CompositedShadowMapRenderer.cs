@@ -20,21 +20,21 @@ namespace DigitalRune.Graphics.Rendering
     // is made public the interface should be implemented similar to ShadowMapRenderer.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly IList<SceneNodeRenderer> _shadowMapRenderers;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -51,11 +51,11 @@ namespace DigitalRune.Graphics.Rendering
 
       _shadowMapRenderers = shadowMapRenderers;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -109,6 +109,6 @@ namespace DigitalRune.Graphics.Rendering
         lightNode.Shadow = shadow;
       }
     }
-    #endregion
+
   }
 }

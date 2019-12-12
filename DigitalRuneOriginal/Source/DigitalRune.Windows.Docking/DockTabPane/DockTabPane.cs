@@ -44,7 +44,7 @@ namespace DigitalRune.Windows.Docking
     public partial class DockTabPane : Selector
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         // Workaround for creating item containers.
@@ -64,17 +64,17 @@ namespace DigitalRune.Windows.Docking
 
         // Visual states
         private bool _isMouseOverDragArea;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -155,11 +155,11 @@ namespace DigitalRune.Windows.Docking
             get { return GetValue(SelectedContentProperty); }
             internal set { SetValue(SelectedContentPropertyKey, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -192,11 +192,11 @@ namespace DigitalRune.Windows.Docking
 
             RegisterCommandBindings();
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private static void OnAccessKeyPressed(object sender, AccessKeyPressedEventArgs eventArgs)
@@ -826,6 +826,6 @@ namespace DigitalRune.Windows.Docking
                     break;
             }
         }
-        #endregion
+
     }
 }

@@ -49,18 +49,18 @@ namespace DigitalRune.Windows
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private IList<T> _items;
 
         // Note: We could use a HashSet<T>. However, Silverlight 3 does not yet support HashSets.
         private readonly Dictionary<T, bool> _usedItems = new Dictionary<T, bool>();
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -121,11 +121,11 @@ namespace DigitalRune.Windows
         {
             get { return _items.Count; }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -145,11 +145,11 @@ namespace DigitalRune.Windows
         {
             _items = new List<T>(items);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -213,6 +213,6 @@ namespace DigitalRune.Windows
         {
             _usedItems.Clear();
         }
-        #endregion
+
     }
 }

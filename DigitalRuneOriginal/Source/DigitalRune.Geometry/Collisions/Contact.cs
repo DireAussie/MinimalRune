@@ -94,7 +94,7 @@ namespace DigitalRune.Geometry.Collisions
 
     
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private static readonly ResourcePool<Contact> Pool =
@@ -102,11 +102,11 @@ namespace DigitalRune.Geometry.Collisions
         () => new Contact(),
         null,
         null);
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
         
     ///// <summary>
@@ -342,11 +342,11 @@ namespace DigitalRune.Geometry.Collisions
         return contact;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -395,11 +395,11 @@ namespace DigitalRune.Geometry.Collisions
       Reset();
       Pool.Recycle(this);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -431,6 +431,6 @@ namespace DigitalRune.Geometry.Collisions
         PenetrationDepth, 
         Lifetime);
     }
-    #endregion
+
   }
 }

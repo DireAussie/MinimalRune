@@ -81,15 +81,15 @@ namespace DigitalRune.Graphics
   public class TerrainTile : IDisposable, IInternalTerrainLayer
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private const string DefaultMaterialKey = "DefaultTerrainTileMaterial";
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -318,11 +318,11 @@ namespace DigitalRune.Graphics
       }
     }
     private Texture2D _holeTexture;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -415,11 +415,11 @@ namespace DigitalRune.Graphics
         IsDisposed = true;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -517,6 +517,6 @@ namespace DigitalRune.Graphics
     {
       graphicsDevice.DrawQuad(rectangle, topLeftPosition, bottomRightPosition);
     }
-    #endregion
+
   }
 }

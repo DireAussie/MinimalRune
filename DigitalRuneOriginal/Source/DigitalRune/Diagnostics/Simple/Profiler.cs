@@ -159,13 +159,13 @@ namespace DigitalRune.Diagnostics
   public static class Profiler
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -215,11 +215,11 @@ namespace DigitalRune.Diagnostics
     /// </remarks>
     internal static System.Diagnostics.Stopwatch Stopwatch { get; private set; }
 #endif
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -236,11 +236,11 @@ namespace DigitalRune.Diagnostics
 
       Formats = new Dictionary<string, ProfilerDataFormat>();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -701,6 +701,6 @@ namespace DigitalRune.Diagnostics
     {
       return Get(managedThreadId).Dump();
     }
-    #endregion
+
   }
 }

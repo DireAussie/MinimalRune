@@ -53,17 +53,17 @@ namespace DigitalRune.Windows.Docking
     public class AutoHidePane : ContentControl
     {
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         // When moving the auto-hide pane out of the view, add this offset. This offset is necessary
         // to hide effects, such as a DropShadowEffect, that are drawn outside of the window bounds.
         private const double AdditionalOffset = 10;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         // Template parts
@@ -79,11 +79,11 @@ namespace DigitalRune.Windows.Docking
 
         // Focus handling
         private bool _isFocusDeferred; // True if the auto-hide pane receives focus as soon as it is loaded.
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -122,11 +122,11 @@ namespace DigitalRune.Windows.Docking
         /// Occurs when the <see cref="AutoHidePane"/> is fully hidden.
         /// </summary>
         public event EventHandler<EventArgs> Hidden;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -255,11 +255,11 @@ namespace DigitalRune.Windows.Docking
             get { return (TimeSpan)GetValue(TimeoutProperty); }
             set { SetValue(TimeoutProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -286,14 +286,14 @@ namespace DigitalRune.Windows.Docking
 
             Loaded += OnLoaded;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
-        #region ----- Property Change Events -----
+
 
         /// <summary>
         /// Called when the <see cref="ContentControl.Content"/> property changes.
@@ -407,10 +407,10 @@ namespace DigitalRune.Windows.Docking
         {
             _timer.Interval = newValue;
         }
-        #endregion
 
 
-        #region ----- Initialization -----
+
+
 
         /// <summary>
         /// When overridden in a derived class, is invoked whenever application code or internal 
@@ -491,10 +491,10 @@ namespace DigitalRune.Windows.Docking
             StopAutomaticTimeout();
             ResetAnimations();
         }
-        #endregion
 
 
-        #region ----- Resizing -----
+
+
 
         private void UpdateAutoHideSize()
         {
@@ -622,10 +622,10 @@ namespace DigitalRune.Windows.Docking
             Height = double.NaN;
             SaveAutoHideSize();
         }
-        #endregion
 
 
-        #region ----- Show/Hide with Animations -----
+
+
 
         private void ResetAnimations()
         {
@@ -876,10 +876,10 @@ namespace DigitalRune.Windows.Docking
         {
             Hidden?.Invoke(this, eventArgs);
         }
-        #endregion
 
 
-        #region ----- Focus Management and Automatic Timeout -----
+
+
 
         /// <summary>
         /// Moves the logical focus and keyboard focus to the content of the <see cref="AutoHidePane"/>.
@@ -997,8 +997,8 @@ namespace DigitalRune.Windows.Docking
             if (!IsKeyboardFocusWithin && !IsMouseOver)
                 Hide();
         }
-        #endregion
 
-        #endregion
+
+
     }
 }

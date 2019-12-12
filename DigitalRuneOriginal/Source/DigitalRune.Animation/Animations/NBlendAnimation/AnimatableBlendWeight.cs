@@ -13,21 +13,21 @@ namespace DigitalRune.Animation
   internal sealed class AnimatableBlendWeight : IAnimatableProperty<float>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly BlendGroup _blendGroup;
     private float _baseValue;
     private float _animationValue;
     private bool _isAnimated;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
-    #region ----- IAnimatableProperty -----
+
 
     /// <inheritdoc/>
     bool IAnimatableProperty.HasBaseValue
@@ -63,10 +63,10 @@ namespace DigitalRune.Animation
     {
       get { return _animationValue; }
     }
-    #endregion
 
 
-    #region ----- IAnimatableProperty<T> -----
+
+
 
     /// <inheritdoc/>
     float IAnimatableProperty<float>.BaseValue
@@ -91,7 +91,7 @@ namespace DigitalRune.Animation
         }
       }
     }
-    #endregion
+
 
 
     /// <summary>
@@ -119,11 +119,11 @@ namespace DigitalRune.Animation
         }
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -137,12 +137,12 @@ namespace DigitalRune.Animation
       _blendGroup = blendGroup;
       _baseValue = weight;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
-    #endregion
+
   }
 }

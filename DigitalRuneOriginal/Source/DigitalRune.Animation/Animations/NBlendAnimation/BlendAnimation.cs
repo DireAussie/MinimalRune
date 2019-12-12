@@ -13,13 +13,13 @@ namespace DigitalRune.Animation
   public abstract class BlendAnimation : IAnimation
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -44,17 +44,17 @@ namespace DigitalRune.Animation
 
     /// <inheritdoc cref="Animation{T}.TargetProperty"/>
     public string TargetProperty { get; private set; }
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -118,6 +118,6 @@ namespace DigitalRune.Animation
     {
       return (Group != null) ? Group.GetTotalDuration() : TimeSpan.Zero;
     }
-    #endregion
+
   }
 }

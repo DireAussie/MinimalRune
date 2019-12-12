@@ -20,7 +20,7 @@ namespace Game
       base.Dispose(disposing);
     }
 
-    #region Windows Form Designer generated code
+
 
     /// <summary>
     /// Required method for Designer support - do not modify
@@ -33,7 +33,7 @@ namespace Game
       this.Text = "Form1";
     }
 
-    #endregion
+
   }
 }
 

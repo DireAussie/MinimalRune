@@ -15,13 +15,13 @@ namespace DigitalRune.Storages
   public abstract class Storage : IStorage
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -39,11 +39,11 @@ namespace DigitalRune.Storages
     /// </summary>
     /// <value>The directory separator.</value>
     protected abstract char DirectorySeparator { get; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -83,11 +83,11 @@ namespace DigitalRune.Storages
         IsDisposed = true;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -96,6 +96,6 @@ namespace DigitalRune.Storages
 
     /// <inheritdoc/>
     public abstract Stream OpenFile(string path);
-    #endregion
+
   }
 }

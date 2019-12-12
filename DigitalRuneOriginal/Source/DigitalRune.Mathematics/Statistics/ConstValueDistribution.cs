@@ -15,13 +15,13 @@ namespace DigitalRune.Mathematics.Statistics
   public class ConstValueDistribution<T> : Distribution<T>
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -29,11 +29,11 @@ namespace DigitalRune.Mathematics.Statistics
     /// </summary>
     /// <value>The single constant value. The default is 0.</value>
     public T Value { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -52,11 +52,11 @@ namespace DigitalRune.Mathematics.Statistics
     {
       Value = value;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -64,6 +64,6 @@ namespace DigitalRune.Mathematics.Statistics
     {
       return Value;
     }
-    #endregion
+
   }
 }

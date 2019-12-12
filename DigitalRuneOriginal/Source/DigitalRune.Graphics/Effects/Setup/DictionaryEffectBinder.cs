@@ -28,7 +28,7 @@ namespace DigitalRune.Graphics.Effects
   public class DictionaryEffectBinder : IEffectBinder
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -42,11 +42,11 @@ namespace DigitalRune.Graphics.Effects
     /// </returns>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
     public delegate EffectParameterBinding CreateEffectParameterBinding(Effect effect, EffectParameter parameter, IDictionary<string, object> opaqueData);
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -389,11 +389,11 @@ namespace DigitalRune.Graphics.Effects
       }
     }
     private Dictionary<string, CreateEffectParameterBinding> _structBindings;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -623,6 +623,6 @@ namespace DigitalRune.Graphics.Effects
 
       return null;
     }
-    #endregion
+
   }
 }

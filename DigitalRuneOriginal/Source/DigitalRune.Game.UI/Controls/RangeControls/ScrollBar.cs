@@ -27,7 +27,7 @@ namespace DigitalRune.Game.UI.Controls
     // See also comments in Slider.cs!
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private Button _decrementButton;
@@ -37,17 +37,17 @@ namespace DigitalRune.Game.UI.Controls
     // Used to detect if the left mouse button was pressed over the control - only then
     // virtual button repeats count.
     private bool _isPressed;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Game Object Properties & Events
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary> 
@@ -179,11 +179,11 @@ namespace DigitalRune.Game.UI.Controls
       get { return GetValue<string>(IncrementButtonStylePropertyId); }
       set { SetValue(IncrementButtonStylePropertyId, value); }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -203,11 +203,11 @@ namespace DigitalRune.Game.UI.Controls
     {
       Style = "ScrollBar";
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -446,6 +446,6 @@ namespace DigitalRune.Game.UI.Controls
 
       base.OnArrange(position, size);
     }
-    #endregion
+
   }
 }

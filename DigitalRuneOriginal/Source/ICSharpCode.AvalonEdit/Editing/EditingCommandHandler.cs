@@ -100,7 +100,7 @@ namespace ICSharpCode.AvalonEdit.Editing
 			return target as TextArea;
 		}
 		
-		#region Text Transformation Helpers
+
 		enum DefaultSegmentType
 		{
 			None,
@@ -180,9 +180,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 				args.Handled = true;
 			}
 		}
-		#endregion
+
 		
-		#region EnterLineBreak
+
 		static void OnEnter(object target, ExecutedRoutedEventArgs args)
 		{
 			TextArea textArea = GetTextArea(target);
@@ -197,9 +197,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 				args.Handled = true;
 			}
 		}
-		#endregion
+
 		
-		#region Tab
+
 		static void OnTab(object target, ExecutedRoutedEventArgs args)
 		{
 			TextArea textArea = GetTextArea(target);
@@ -245,9 +245,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 					}
 				}, target, args, DefaultSegmentType.CurrentLine);
 		}
-		#endregion
+
 		
-		#region Delete
+
 		static ExecutedRoutedEventHandler OnDelete(CaretMovementType caretMovement)
 		{
 			return (target, args) => {
@@ -306,9 +306,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 
 			return selection.Segments.SelectMany(segment => readOnlySectionProvider.GetDeletableSegments(segment)).Any();
 		}
-		#endregion
 
-		#region Clipboard commands
+
+
 
 		static void CanCut(object target, CanExecuteRoutedEventArgs args)
 		{
@@ -536,9 +536,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 				args.Handled = true;
 			}
 		}
-		#endregion
 
-		#region DeleteLine
+
+
 		static void OnDeleteLine(object target, ExecutedRoutedEventArgs args)
 		{
 			TextArea textArea = GetTextArea(target);
@@ -559,9 +559,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 				args.Handled = true;
 			}
 		}
-		#endregion
 
-		#region Remove..Whitespace / Convert Tabs-Spaces
+
+
 		// [DIGITALRUNE] FIX: Check for read-only documents.
 		static void CanRemoveLeadingWhitespace(object target, CanExecuteRoutedEventArgs args)
 		{
@@ -718,9 +718,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 				}
 			}
 		}
-		#endregion
+
 		
-		#region Convert...Case
+
 		static void ConvertCase(Func<string, string> transformText, object target, ExecutedRoutedEventArgs args)
 		{
 			TransformSelectedSegments(
@@ -761,7 +761,7 @@ namespace ICSharpCode.AvalonEdit.Editing
 			}
 			return new string(buffer);
 		}
-		#endregion
+
 		
 		static void OnIndentSelection(object target, ExecutedRoutedEventArgs args)
 		{

@@ -30,7 +30,7 @@ namespace DigitalRune.Editor.Text
     public partial class TextDocument : Document, ISearchable
     {
         //--------------------------------------------------------------
-        #region Nested types
+
         //--------------------------------------------------------------
 
         private enum LineEndingType
@@ -43,11 +43,11 @@ namespace DigitalRune.Editor.Text
             PS,    // Unicode Paragraph Separator PS
             Mixed,
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         // Line ending characters.
@@ -55,12 +55,12 @@ namespace DigitalRune.Editor.Text
         private const char LineFeed = '\u000A';
         private const char LineSeparator = '\u2028';
         private const char ParagraphSeparator = '\u2029';
-        #endregion
+
 
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Encoding UTF8NoBOM = new UTF8Encoding(false);
@@ -72,11 +72,11 @@ namespace DigitalRune.Editor.Text
         private bool _updateProperties;
         private FileInfo _fileInfo;
         private Encoding _encoding;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -105,11 +105,11 @@ namespace DigitalRune.Editor.Text
         /// </summary>
         /// <value>The error markers.</value>
         public TextSegmentCollection<Marker> ErrorMarkers { get; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -180,11 +180,11 @@ namespace DigitalRune.Editor.Text
 
             base.Dispose(disposing);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -504,6 +504,6 @@ namespace DigitalRune.Editor.Text
 
             throw new InvalidOperationException("This line must never be reached.");
         }
-        #endregion
+
     }
 }

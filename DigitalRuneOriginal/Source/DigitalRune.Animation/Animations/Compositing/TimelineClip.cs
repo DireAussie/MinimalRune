@@ -75,13 +75,13 @@ namespace DigitalRune.Animation
   public class TimelineClip : ITimeline
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -296,11 +296,11 @@ namespace DigitalRune.Animation
       }
     }
     private LoopBehavior _loopBehavior;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -339,11 +339,11 @@ namespace DigitalRune.Animation
       Speed = 1.0f;
       LoopBehavior = LoopBehavior.Constant;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -491,6 +491,6 @@ namespace DigitalRune.Animation
 
       return new TimeSpan(delay.Ticks + (long)(duration.Ticks / (double)speed));
     }
-    #endregion
+
   }
 }

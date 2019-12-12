@@ -26,16 +26,16 @@ namespace DigitalRune.Windows.Charts
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly double _min;
         private readonly double _max;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -56,11 +56,11 @@ namespace DigitalRune.Windows.Charts
         {
             get { return _max; }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -73,11 +73,11 @@ namespace DigitalRune.Windows.Charts
             _min = min;
             _max = max;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
 
@@ -284,6 +284,6 @@ namespace DigitalRune.Windows.Charts
         {
             return _min <= value && value <= _max;
         }
-        #endregion
+
     }
 }

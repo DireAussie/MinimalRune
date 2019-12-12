@@ -24,16 +24,16 @@ namespace DigitalRune.Physics.Constraints
   public class PrismaticJoint : Constraint
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly LinearLimit _linearLimit;
     private readonly AngularLimit _angularLimit;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -245,11 +245,11 @@ namespace DigitalRune.Physics.Constraints
     {
       get { return _linearLimit.RelativePosition.X; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -268,11 +268,11 @@ namespace DigitalRune.Physics.Constraints
         Maximum = new Vector3F(0, 0, 0),
       };
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -321,6 +321,6 @@ namespace DigitalRune.Physics.Constraints
 
       base.OnChanged();
     }
-    #endregion
+
   }
 }

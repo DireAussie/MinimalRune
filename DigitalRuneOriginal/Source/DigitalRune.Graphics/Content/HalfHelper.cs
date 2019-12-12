@@ -21,7 +21,7 @@ namespace DigitalRune.Graphics.Content
     //            ftp://www.fox-toolkit.org/pub/fasthalffloatconversion.pdf
 
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     // ReSharper disable FieldCanBeMadeReadOnly.Local
@@ -33,11 +33,11 @@ namespace DigitalRune.Graphics.Content
       [FieldOffset(0)]
       public uint UInt32;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Half to Float
@@ -48,17 +48,17 @@ namespace DigitalRune.Graphics.Content
     // Float to Half
     static readonly ushort[] BaseTable = new ushort[512];
     static readonly byte[] ShiftTable = new byte[512];
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -165,11 +165,11 @@ namespace DigitalRune.Graphics.Content
         }
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -207,7 +207,7 @@ namespace DigitalRune.Graphics.Content
       var t = new SingleToUInt32 { UInt32 = value };
       return t.Single;
     }
-    #endregion
+
   }
 }
 

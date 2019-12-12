@@ -15,13 +15,13 @@ namespace DigitalRune.Physics.Materials
   public class UniformMaterial : IMaterial, INamedObject
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -139,11 +139,11 @@ namespace DigitalRune.Physics.Materials
     /// and for debugging.
     /// </remarks>
     public string Name { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -228,11 +228,11 @@ namespace DigitalRune.Physics.Materials
       SupportsSurfaceMotion = material.SupportsSurfaceMotion;
       _surfaceMotion = material.SurfaceMotion;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -263,6 +263,6 @@ namespace DigitalRune.Physics.Materials
 
       return parameters;
     }
-    #endregion
+
   }
 }

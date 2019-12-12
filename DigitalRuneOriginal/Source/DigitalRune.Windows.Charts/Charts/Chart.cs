@@ -27,16 +27,16 @@ namespace DigitalRune.Windows.Charts
     public abstract class Chart : ChartElement
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private bool _isDataSourceValid;
         private IDisposable _dataSourceSubscription;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -74,11 +74,11 @@ namespace DigitalRune.Windows.Charts
         /// <see cref="ChartElement.Update"/> or when the chart is rendered.
         /// </remarks>
         public IList<DataPoint> Data { get; private set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -162,7 +162,7 @@ namespace DigitalRune.Windows.Charts
         }
 
 
-        #region ----- Data Source -----
+
 
         /// <summary>
         /// Identifies the <see cref="DataSource"/> dependency property.
@@ -263,13 +263,13 @@ namespace DigitalRune.Windows.Charts
             get { return (PropertyPath)GetValue(XYValuePathProperty); }
             set { SetValue(XYValuePathProperty, value); }
         }
-        #endregion
 
-        #endregion
+
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
 #if SILVERLIGHT
@@ -290,11 +290,11 @@ namespace DigitalRune.Windows.Charts
             DefaultStyleKeyProperty.OverrideMetadata(typeof(Chart), new FrameworkPropertyMetadata(typeof(Chart)));
         }
 #endif
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -665,6 +665,6 @@ namespace DigitalRune.Windows.Charts
         /// Invalid chart data.
         /// </exception>
         public abstract void ValidateData();
-        #endregion
+
     }
 }

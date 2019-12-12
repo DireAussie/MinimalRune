@@ -41,18 +41,18 @@ namespace EditorApp
     public class AppBootstrapper : Bootstrapper
     {
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         private const string UniqueName = "DigitalRune_EditorApp";
         private const string ApplicationName = "EditorApp";
         private const int ExitCodeConfigurationFailed = 1;
         private const string Email = "office@digitalrune.com";
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
@@ -61,23 +61,23 @@ namespace EditorApp
         private EditorViewModel _editor;
         private bool _configurationFailed;
         private DocumentExtension _documentExtension;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Methods
+
+
+
+        //--------------------------------------------------------------
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         protected override void OnConfigure()
@@ -297,6 +297,6 @@ namespace EditorApp
             Application.Shutdown();
             eventArgs.Handled = true;
         }
-        #endregion
+
     }
 }

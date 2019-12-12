@@ -126,13 +126,13 @@ namespace DigitalRune.Animation
   public abstract class FromToByAnimation<T> : Animation<T> where T : struct
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -203,11 +203,11 @@ namespace DigitalRune.Animation
     [ContentSerializer(SharedResource = true)]
 #endif
     public IEasingFunction EasingFunction { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -217,11 +217,11 @@ namespace DigitalRune.Animation
     {
       _duration = new TimeSpan(0, 0, 0, 1); // 1 s
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -318,6 +318,6 @@ namespace DigitalRune.Animation
       if (recycleTarget)
         traits.Recycle(ref target);
     }
-    #endregion
+
   }
 }

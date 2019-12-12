@@ -16,15 +16,15 @@ namespace DigitalRune.Windows.Charts
     internal class PointListWrapper : IList<DataPoint>
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly IList<Point> _list;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -58,11 +58,11 @@ namespace DigitalRune.Windows.Charts
             get { return new DataPoint(_list[index], null); }
             set { _list[index] = value.Point; }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -79,11 +79,11 @@ namespace DigitalRune.Windows.Charts
 
             _list = list;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -256,6 +256,6 @@ namespace DigitalRune.Windows.Charts
         {
             _list.RemoveAt(index);
         }
-        #endregion
+
     }
 }

@@ -30,16 +30,16 @@ namespace DigitalRune.CommandLine
     public class SwitchArgument : Argument
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         /// <summary>A list of characters that are not allowed in the name of a switch</summary>
         private static readonly char[] BadCharacters = { '/', '-', ':', ',', ';', '=', ' ', '|' };
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -62,11 +62,11 @@ namespace DigitalRune.CommandLine
             get { return _shortAliases; }
         }
         private readonly List<char> _shortAliases = new List<char>();
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -149,11 +149,11 @@ namespace DigitalRune.CommandLine
                 }
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -380,6 +380,6 @@ namespace DigitalRune.CommandLine
 
             return sb.ToString();
         }
-        #endregion
+
     }
 }

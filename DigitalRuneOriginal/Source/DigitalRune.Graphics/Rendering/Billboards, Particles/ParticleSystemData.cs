@@ -31,7 +31,7 @@ namespace DigitalRune.Graphics.Rendering
     // TODO: Improve performance by using unsafe code.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // The frame in which the ParticleSystemData was updated the last time.
@@ -42,7 +42,7 @@ namespace DigitalRune.Graphics.Rendering
     public List<ParticleSystemData> NestedRenderData;
 
 
-    #region ----- Particle Parameters -----
+
 
     // Uniform particle parameters:
     public IParticleParameter TextureParameter;
@@ -70,9 +70,9 @@ namespace DigitalRune.Graphics.Rendering
     public IParticleParameter<float> AnimationTimeParameter;
     public IParticleParameter<float> BlendModeParameter;
     public IParticleParameter<float> SoftnessParameter;
-    #endregion
 
-    #region ----- Cached Values -----
+
+
 
     // The pose relative to the root particle system.
     public Pose Pose;
@@ -93,19 +93,19 @@ namespace DigitalRune.Graphics.Rendering
 
     // The particle data for rendering.
     public ArrayList<Particle> Particles;
-    #endregion
-
-    #endregion
 
 
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -117,11 +117,11 @@ namespace DigitalRune.Graphics.Rendering
       RequeryParameters(particleSystem);
       Particles = new ArrayList<Particle>(Math.Max(particleSystem.NumberOfActiveParticles, 8));
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     public void RequeryParameters(ParticleSystem particleSystem)
@@ -465,7 +465,7 @@ namespace DigitalRune.Graphics.Rendering
           targetArray[targetIndex].BlendMode = sourceArray[sourceIndex];
       }
     }
-    #endregion
+
   }
 }
 #endif

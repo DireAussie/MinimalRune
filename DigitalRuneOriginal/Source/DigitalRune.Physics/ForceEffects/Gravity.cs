@@ -23,15 +23,15 @@ namespace DigitalRune.Physics.ForceEffects
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private Vector3F _direction;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -50,11 +50,11 @@ namespace DigitalRune.Physics.ForceEffects
       }
     }
     private Vector3F _acceleration;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -91,11 +91,11 @@ namespace DigitalRune.Physics.ForceEffects
     {
       Acceleration = new Vector3F(0, -9.81f, 0);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -150,6 +150,6 @@ namespace DigitalRune.Physics.ForceEffects
         AddForce(body, Acceleration * body.MassFrame.Mass / (stackingOptimization + 1));
       }
     }
-    #endregion
+
   }
 }

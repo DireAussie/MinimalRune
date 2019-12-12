@@ -17,13 +17,13 @@ namespace DigitalRune.Windows.Charts.Interactivity
     public class ChartSelectionRectangleEventArgs : EventArgs
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -74,11 +74,11 @@ namespace DigitalRune.Windows.Charts.Interactivity
         /// only execute when it is <see langword="false"/>.
         /// </remarks>
         public bool Handled { get; set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -108,12 +108,12 @@ namespace DigitalRune.Windows.Charts.Interactivity
             Bottom = bottom;
             ModifierKeys = modifierKeys;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
-        #endregion
+
     }
 }

@@ -13,7 +13,7 @@ namespace DigitalRune.Windows.Charts
     partial class ChartPanel
     {
         //--------------------------------------------------------------
-        #region Dependency Properties
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace DigitalRune.Windows.Charts
         }
 
 
-        #region ----- XAxis, YAxis -----
+
 
         /// <summary>
         /// Identifies the <see cref="P:DigitalRune.Windows.Charts.ChartPanel.XAxis"/> attached
@@ -304,10 +304,10 @@ namespace DigitalRune.Windows.Charts
 
             element.SetValue(YAxisProperty, value);
         }
-        #endregion
 
 
-        #region ----- X1, Y1, X2, Y2 -----
+
+
 
         /// <summary>
         /// Identifies the <see cref="P:DigitalRune.Windows.Charts.ChartPanel.X1"/> attached
@@ -562,12 +562,12 @@ namespace DigitalRune.Windows.Charts
 
             element.SetValue(Y2Property, value);
         }
-        #endregion
-        #endregion
+
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private static void OnPositioningChanged(DependencyObject element, DependencyPropertyChangedEventArgs eventArgs)
@@ -648,6 +648,6 @@ namespace DigitalRune.Windows.Charts
             if (chartPanel != null)
                 chartPanel.DetectAxes();
         }
-        #endregion
+
     }
 }

@@ -23,23 +23,23 @@ namespace DigitalRune.Graphics.Rendering
   internal sealed class BillboardBatchReach : BillboardBatch<VertexPositionColorTexture>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Camera parameters.
     private Pose _cameraPose;
     private Vector3F _cameraDown;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
-    #endregion
+
     
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -58,11 +58,11 @@ namespace DigitalRune.Graphics.Rendering
       : base(graphicsDevice, bufferSize)
     {
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -82,7 +82,7 @@ namespace DigitalRune.Graphics.Rendering
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods")]
     protected override void OnDrawBillboard(ref BillboardArgs b, PackedTexture texture, VertexPositionColorTexture[] vertices, int index)
     {
-      #region ----- Billboarding -----
+
 
       // The billboard orientation is defined by three vectors: normal (pointing to the camera),
       // up and right (both lying in the billboard plane).
@@ -144,9 +144,9 @@ namespace DigitalRune.Graphics.Rendering
 
         // No need to normalize because normal and right are normalized and perpendicular.
       }
-      #endregion
 
-      #region ----- Rotate up and right vectors -----
+
+
 
       Vector3F upRotated;
       Vector3F rightRotated;
@@ -199,9 +199,9 @@ namespace DigitalRune.Graphics.Rendering
         upRotated = b.Axis;
         rightRotated = right;
       }
-      #endregion
 
-      #region ----- Handle texture information and size -----
+
+
 
       Vector2F texCoordTopLeft = texture.GetTextureCoordinates(Vector2F.Zero, b.AnimationTime);
       Vector2F texCoordBottomRight = texture.GetTextureCoordinates(Vector2F.One, b.AnimationTime);
@@ -232,9 +232,9 @@ namespace DigitalRune.Graphics.Rendering
       vOffset.X = upRotated.X * b.Size.Y;
       vOffset.Y = upRotated.Y * b.Size.Y;
       vOffset.Z = upRotated.Z * b.Size.Y;
-      #endregion
 
-      #region ----- Get Color -----
+
+
 
       // Premultiply alpha.
       Vector4 color4 = new Vector4
@@ -248,9 +248,9 @@ namespace DigitalRune.Graphics.Rendering
       };
 
       var color = new Color(color4);
-      #endregion
 
-      #region ----- Initializes vertices in vertex array -----
+
+
 
       // Bottom left vertex
       vertices[index].Position.X = b.Position.X - hOffset.X - vOffset.X;
@@ -286,7 +286,7 @@ namespace DigitalRune.Graphics.Rendering
       vertices[index].Color = color;
       vertices[index].TextureCoordinate.X = texCoordBottomRight.X;
       vertices[index].TextureCoordinate.Y = texCoordBottomRight.Y;
-      #endregion
+
     }
 
 
@@ -299,7 +299,7 @@ namespace DigitalRune.Graphics.Rendering
       //    p0             p1  
       //   --+--------------+--
 
-      #region ----- Handle texture information and size -----
+
 
       float animationTime = p0.AnimationTime;
       Vector2F texCoordTopLeft = texture.GetTextureCoordinates(new Vector2F(p0.TextureCoordinateU, 0), animationTime);
@@ -320,9 +320,9 @@ namespace DigitalRune.Graphics.Rendering
       up1.X = p1.Axis.X * size1;
       up1.Y = p1.Axis.Y * size1;
       up1.Z = p1.Axis.Z * size1;
-      #endregion
 
-      #region ----- Get Color -----
+
+
 
       // Premultiply alpha.
       Vector4 color4 = new Vector4
@@ -345,9 +345,9 @@ namespace DigitalRune.Graphics.Rendering
       };
 
       var color1 = new Color(color4);
-      #endregion
 
-      #region ----- Initializes vertices in vertex array -----
+
+
 
       // Bottom left vertex
       vertices[index].Position.X = p0.Position.X - up0.X;
@@ -383,8 +383,8 @@ namespace DigitalRune.Graphics.Rendering
       vertices[index].Color = color1;
       vertices[index].TextureCoordinate.X = texCoordBottomRight.X;
       vertices[index].TextureCoordinate.Y = texCoordBottomRight.Y;
-      #endregion
+
     }
-    #endregion
+
   }
 }

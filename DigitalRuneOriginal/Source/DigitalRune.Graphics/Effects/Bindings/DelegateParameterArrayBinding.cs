@@ -19,13 +19,13 @@ namespace DigitalRune.Graphics.Effects
   public class DelegateParameterArrayBinding<T> : EffectParameterArrayBinding<T>
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -53,11 +53,11 @@ namespace DigitalRune.Graphics.Effects
       }
     }
     private Action<DelegateParameterArrayBinding<T>, RenderContext, T[]> _computeParameter;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -103,14 +103,14 @@ namespace DigitalRune.Graphics.Effects
 
       _computeParameter = computeParameter;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override EffectParameterBinding CreateInstanceCore()
@@ -129,7 +129,7 @@ namespace DigitalRune.Graphics.Effects
       var sourceTyped = (DelegateParameterArrayBinding<T>)source;
       ComputeParameter = sourceTyped.ComputeParameter;
     }
-    #endregion
+
 
 
     /// <summary>
@@ -146,6 +146,6 @@ namespace DigitalRune.Graphics.Effects
     {
       ComputeParameter(this, context, Values);
     }
-    #endregion
+
   }
 }

@@ -215,7 +215,7 @@ GameComponent with a StateMachine.",
     }
 
 
-    #region ----- Loading State -----
+
 
     private TextBlock _loadingTextBlock;    // Shows the text "Loading...".
     private volatile bool _allAssetsLoaded; // Will be set to true, when the background thread is finished.
@@ -267,10 +267,10 @@ GameComponent with a StateMachine.",
       _uiScreen.Children.Remove(_loadingTextBlock);
       _loadingTextBlock = null;
     }
-    #endregion
 
 
-    #region ----- Start State -----
+
+
 
     private TextBlock _startTextBlock;                    // Shows the text "Press Start button".
     private bool _exitAnimationIsPlaying;                 // true if fade-out animation is playing.
@@ -405,10 +405,10 @@ GameComponent with a StateMachine.",
       _uiScreen.Children.Remove(_startTextBlock);
       _startTextBlock = null;
     }
-    #endregion
 
 
-    #region ----- Menu State -----
+
+
 
     private Window _menuWindow;
     private AnimationController _menuExitAnimationController;
@@ -576,10 +576,10 @@ GameComponent with a StateMachine.",
       _uiScreen.Children.Remove(_menuWindow);
       _menuWindow = null;
     }
-    #endregion
 
 
-    #region ----- Sub Menu State -----
+
+
 
     private Window _subMenuWindow;
     private bool _subMenuExitAnimationIsPlaying;
@@ -704,10 +704,10 @@ GameComponent with a StateMachine.",
       _uiScreen.Children.Remove(_subMenuWindow);
       _subMenuWindow = null;
     }
-    #endregion
 
 
-    #region ----- Game State -----
+
+
 
     private TextBlock _gameTextBlock;
 
@@ -752,10 +752,10 @@ GameComponent with a StateMachine.",
       _uiScreen.Children.Remove(_gameTextBlock);
       _gameTextBlock = null;
     }
-    #endregion
 
 
-    #region ----- Animation Helpers -----
+
+
 
     // The following code contains two helper methods to animate the opacity and offset
     // of a group of UI controls. The methods basically do the same, they animate the 
@@ -903,6 +903,6 @@ GameComponent with a StateMachine.",
       // explicitly stop and recycle the animations in the code above.)
       return animationController;
     }
-    #endregion
+
   }
 }

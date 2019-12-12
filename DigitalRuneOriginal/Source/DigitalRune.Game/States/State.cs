@@ -24,15 +24,15 @@ namespace DigitalRune.Game.States
     // runtime. --> It has been commented out.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private static int _lastId = -1;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -163,11 +163,11 @@ namespace DigitalRune.Game.States
     /// Occurs when the state is exited.
     /// </summary>
     public event EventHandler<StateEventArgs> Exit;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -194,11 +194,11 @@ namespace DigitalRune.Game.States
       Transitions = new TransitionCollection();
       Transitions.CollectionChanged += OnTransitionsChanged;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -485,6 +485,6 @@ namespace DigitalRune.Game.States
       if (handler != null)
         handler(this, eventArgs);
     }
-    #endregion
+
   }
 }

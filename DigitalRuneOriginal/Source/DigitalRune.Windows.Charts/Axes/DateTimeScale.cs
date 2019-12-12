@@ -47,7 +47,7 @@ namespace DigitalRune.Windows.Charts
 
 
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         private static readonly double[] EmptyArrayOfDoubles = new double[0];
@@ -158,17 +158,17 @@ namespace DigitalRune.Windows.Charts
 
         private static readonly int[] MonthsMajorSteps = { 1, 2, 3, 6 };
         private static readonly int[] YearsMajorSteps = { 1, 2, 5, 10, 20, 50, 100, 200, 500, 1000 };
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Properties
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -361,11 +361,11 @@ namespace DigitalRune.Windows.Charts
             }
         }
         private TimeZoneInfo _timeZone = TimeZoneInfo.Local;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <overloads>
@@ -427,11 +427,11 @@ namespace DigitalRune.Windows.Charts
         {
             _rangeDateTime = new DateTimeRange(min, max);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -1494,6 +1494,6 @@ namespace DigitalRune.Windows.Charts
                 Range = new DoubleRange(min, max);
             }
         }
-        #endregion
+
     }
 }

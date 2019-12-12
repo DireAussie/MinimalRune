@@ -88,7 +88,7 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // ReSharper disable once StaticFieldInGenericType
@@ -99,11 +99,11 @@ namespace DigitalRune.Graphics.SceneGraph
     private bool _useDynamicVertexBuffer;
     private ICollection<T> _instances;
     private VertexBuffer _instanceVertexBuffer;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -158,11 +158,11 @@ namespace DigitalRune.Graphics.SceneGraph
     {
       get { return _instanceVertexBuffer; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -227,14 +227,14 @@ namespace DigitalRune.Graphics.SceneGraph
         base.Dispose(disposing, disposeData);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc cref="SceneNode.Clone"/>
     public new MeshInstancingNode<T> Clone()
@@ -260,7 +260,7 @@ namespace DigitalRune.Graphics.SceneGraph
       var sourceTyped = (MeshInstancingNode<T>)source;
       Instances = sourceTyped.Instances;
     }
-    #endregion
+
 
 
     /// <summary>
@@ -378,6 +378,6 @@ namespace DigitalRune.Graphics.SceneGraph
       // The MeshNode sets Shape to Mesh.BoundingShape.
       // The MeshInstancingNode does not change the Shape. This is the responsibility of the user.
     }
-    #endregion
+
   }
 }

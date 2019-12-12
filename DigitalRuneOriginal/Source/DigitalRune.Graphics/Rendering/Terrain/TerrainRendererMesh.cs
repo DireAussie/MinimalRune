@@ -69,13 +69,13 @@ namespace DigitalRune.Graphics.Rendering
 
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -103,11 +103,11 @@ namespace DigitalRune.Graphics.Rendering
 
 
     internal Submesh Submesh { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -155,11 +155,11 @@ namespace DigitalRune.Graphics.Rendering
       IsDisposed = true;
       Submesh.Dispose();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -227,7 +227,7 @@ namespace DigitalRune.Graphics.Rendering
 
         if (useDiamondTessellation)
         {
-          #region ----- Diamond tessellation -----
+
 
           int index = 0;
           for (int z = minInclusive; z <= maxInclusive; z += cellSize)
@@ -361,11 +361,11 @@ namespace DigitalRune.Graphics.Rendering
           Debug.Assert(levelTriangleMesh.Indices.Count <= indicesPerLevelUpperBound, "Bad estimate for upper bound of indices.");
 
           levelTriangleMesh.WeldVertices(0.1f);
-          #endregion
+
         }
         else
         {
-          #region ----- Simple tessellation -----
+
 
           // Add one extra border to hide gaps.
           minInclusive -= cellSize;
@@ -413,7 +413,7 @@ namespace DigitalRune.Graphics.Rendering
           Debug.Assert(levelTriangleMesh.Indices.Count <= indicesPerLevelUpperBound, "Bad estimate for upper bound of indices.");
 
           levelTriangleMesh.WeldVertices(0.1f);
-          #endregion
+
         }
       });
 
@@ -611,6 +611,6 @@ namespace DigitalRune.Graphics.Rendering
 
       writer.Flush();
     }
-    #endregion
+
   }
 }

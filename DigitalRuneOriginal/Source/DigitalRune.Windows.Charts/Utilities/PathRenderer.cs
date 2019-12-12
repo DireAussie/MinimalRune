@@ -20,7 +20,7 @@ namespace DigitalRune.Windows.Charts
     internal class PathRenderer
     {
         //--------------------------------------------------------------
-        #region Nested Types
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -123,25 +123,25 @@ namespace DigitalRune.Windows.Charts
                 _pathGeometry.Figures.Add(pathFigure);
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly PathGeometry _pathGeometry;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -160,11 +160,11 @@ namespace DigitalRune.Windows.Charts
 
             path.Data = _pathGeometry;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -191,7 +191,7 @@ namespace DigitalRune.Windows.Charts
         {
             return new Context(_pathGeometry);
         }
-        #endregion
+
     }
 #else
     /// <summary>
@@ -200,7 +200,7 @@ namespace DigitalRune.Windows.Charts
     internal class PathRenderer
     {
         //--------------------------------------------------------------
-        #region Nested Types
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -308,25 +308,25 @@ namespace DigitalRune.Windows.Charts
                     _streamGeometryContext.LineTo(points[i], true, true);
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly StreamGeometry _streamGeometry;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -341,11 +341,11 @@ namespace DigitalRune.Windows.Charts
             _streamGeometry = new StreamGeometry();
             path.Data = _streamGeometry;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -365,7 +365,7 @@ namespace DigitalRune.Windows.Charts
         {
             return new Context(_streamGeometry);
         }
-        #endregion
+
     }
 #endif
 }

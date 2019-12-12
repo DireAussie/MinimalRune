@@ -15,7 +15,7 @@ namespace DigitalRune.Mathematics.Interpolation
   internal static partial class CurveHelper
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     // This nested class gets a curve parameter using a root finder. This class can be 
@@ -167,7 +167,7 @@ namespace DigitalRune.Mathematics.Interpolation
         return length;
       }
     }
-    #endregion
+
 
 
     // A pool of reusable GetParameterHelper instances.

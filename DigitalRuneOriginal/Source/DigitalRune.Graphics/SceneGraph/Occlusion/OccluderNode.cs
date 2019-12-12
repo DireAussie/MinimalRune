@@ -29,13 +29,13 @@ namespace DigitalRune.Graphics.SceneGraph
   public class OccluderNode : SceneNode, IOcclusionProxy
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -60,11 +60,11 @@ namespace DigitalRune.Graphics.SceneGraph
       }
     }
     private Occluder _occluder;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -93,14 +93,14 @@ namespace DigitalRune.Graphics.SceneGraph
 
       Occluder = occluder;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc cref="SceneNode.Clone"/>
     public new OccluderNode Clone()
@@ -125,10 +125,10 @@ namespace DigitalRune.Graphics.SceneGraph
     //  // Clone OccluderNode properties.
     //  var sourceTyped = (OccluderNode)source;
     //}
-    #endregion
 
 
-    #region ----- IOcclusionProxy -----
+
+
 
     /// <inheritdoc/>
     bool IOcclusionProxy.HasOccluder
@@ -162,8 +162,8 @@ namespace DigitalRune.Graphics.SceneGraph
       Debug.Assert(!IsDirty, "Call IOcclusionProxy.UpdateOccluder() before calling GetOccluder().");
       return (OccluderData)RenderData;
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

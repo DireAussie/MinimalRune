@@ -31,7 +31,7 @@ namespace DigitalRune.Graphics.Rendering
 
 
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -56,20 +56,20 @@ namespace DigitalRune.Graphics.Rendering
         Color = color;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly List<Point> _points = new List<Point>();
     private VertexPositionColor[] _buffer = new VertexPositionColor[128];
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -87,11 +87,11 @@ namespace DigitalRune.Graphics.Rendering
     /// </summary>
     /// <value>The size of a visible point (in pixels). The default value is 5.</value>
     public float PointSize { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -106,11 +106,11 @@ namespace DigitalRune.Graphics.Rendering
       Effect = effect;
       PointSize = 5;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -275,6 +275,6 @@ namespace DigitalRune.Graphics.Rendering
         _buffer = new VertexPositionColor[bufferLength];
       }
     }
-    #endregion
+
   }
 }

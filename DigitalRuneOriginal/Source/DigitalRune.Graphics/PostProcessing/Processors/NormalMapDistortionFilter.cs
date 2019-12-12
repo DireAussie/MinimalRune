@@ -22,7 +22,7 @@ namespace DigitalRune.Graphics.PostProcessing
   internal class NormalMapDistortionFilter : PostProcessor
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Effect _effect;
@@ -34,11 +34,11 @@ namespace DigitalRune.Graphics.PostProcessing
     private readonly EffectParameter _normalMapParameter;
     private readonly EffectPass _basicPass;
     private readonly EffectPass _blur4Pass;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -88,11 +88,11 @@ namespace DigitalRune.Graphics.PostProcessing
       }
     }
     private int _blurLevel;      // TODO: We could add more levels with Poisson blur, etc.
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -118,11 +118,11 @@ namespace DigitalRune.Graphics.PostProcessing
       Scale = new Vector2F(1);
       Strength = 10;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
     
 
@@ -162,7 +162,7 @@ namespace DigitalRune.Graphics.PostProcessing
       _sourceTextureParameter.SetValue((Texture2D)null);
       _normalMapParameter.SetValue((Texture2D)null);
     }
-    #endregion
+
   }
 }
 #endif

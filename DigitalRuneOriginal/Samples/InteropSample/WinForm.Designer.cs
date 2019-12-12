@@ -20,7 +20,7 @@
       base.Dispose(disposing);
     }
 
-    #region Windows Form Designer generated code
+
 
     /// <summary>
     /// Required method for Designer support - do not modify
@@ -91,7 +91,7 @@
 
     }
 
-    #endregion
+
 
     private DigitalRune.Graphics.Interop.FormsPresentationTarget PresentationTarget0;
     private System.Windows.Forms.Button ClearButton;

@@ -39,7 +39,7 @@ namespace DigitalRune.Graphics.Rendering
 
 
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -72,20 +72,20 @@ namespace DigitalRune.Graphics.Rendering
         return 0;
       }
     }
-    #endregion
+
 
     
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     internal readonly ArrayList<Job> Jobs;
     internal readonly Accessor JobsAccessor;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -93,11 +93,11 @@ namespace DigitalRune.Graphics.Rendering
     /// </summary>
     /// <value>The list of scene node renderers.</value>
     public SceneNodeRendererCollection Renderers { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -129,11 +129,11 @@ namespace DigitalRune.Graphics.Rendering
 
       base.Dispose(disposing);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------    
 
     /// <inheritdoc/>
@@ -307,6 +307,6 @@ namespace DigitalRune.Graphics.Rendering
     //internal virtual void PostProcess(RenderContext context)
     //{
     //}
-    #endregion
+
   }
 }

@@ -18,7 +18,7 @@ namespace DigitalRune.Graphics.Effects
   public class DirectionalLightShadowParameterBinding : EffectParameterBinding
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     private class StandardShadowParameters
@@ -50,26 +50,26 @@ namespace DigitalRune.Graphics.Effects
       public EffectParameter ParameterMaxDistance;
       public EffectParameter ParameterShadowFog;
     }
-    #endregion
+
     
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private StandardShadowParameters _standardShadowParameters;
     private CascadedShadowParameters _cascadedShadowParameters;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -151,14 +151,14 @@ namespace DigitalRune.Graphics.Effects
         throw new GraphicsException("Could not initialize DirectionalLightShadowParameterBinding: " + exception.Message);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override EffectParameterBinding CreateInstanceCore()
@@ -175,7 +175,7 @@ namespace DigitalRune.Graphics.Effects
 
       Initialize();
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -260,6 +260,6 @@ namespace DigitalRune.Graphics.Effects
 #pragma warning restore 618
       }
     }
-    #endregion
+
   }
 }

@@ -21,7 +21,7 @@ namespace DigitalRune.Graphics
   public struct VertexPositionNormal : IVertexType
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace DigitalRune.Graphics
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
     public Vector3 Normal;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -64,11 +64,11 @@ namespace DigitalRune.Graphics
     {
       get { return 12 + 12; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -81,11 +81,11 @@ namespace DigitalRune.Graphics
       Position = position;
       Normal = normal;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -171,6 +171,6 @@ namespace DigitalRune.Graphics
         Position,
         Normal);
     }
-    #endregion
+
   }
 }

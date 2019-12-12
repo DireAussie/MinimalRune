@@ -17,13 +17,13 @@ namespace DigitalRune.Particles
   partial class ParticleSystem
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -156,11 +156,11 @@ namespace DigitalRune.Particles
 
     /// <inheritdoc/>
     public event EventHandler<ShapeChangedEventArgs> ShapeChanged;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     private void InitializeGeometricObject()
@@ -168,11 +168,11 @@ namespace DigitalRune.Particles
       _shape = Shape.Infinite;
       _pose = Pose.Identity;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private void OnShapeChanged(object sender, ShapeChangedEventArgs eventArgs)
@@ -221,6 +221,6 @@ namespace DigitalRune.Particles
       if (handler != null)
         handler(this, eventArgs);
     }
-    #endregion
+
   }
 }

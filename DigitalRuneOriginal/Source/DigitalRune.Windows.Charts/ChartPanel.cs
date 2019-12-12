@@ -142,7 +142,7 @@ namespace DigitalRune.Windows.Charts
     public partial class ChartPanel : Panel
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         // Workaround for Silverlight: 
@@ -157,11 +157,11 @@ namespace DigitalRune.Windows.Charts
 
         private readonly ObservableCollection<ChartElement> _chartElements = new ObservableCollection<ChartElement>();
         private ReadOnlyObservableCollection<ChartElement> _chartElementsReadOnly;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -231,11 +231,11 @@ namespace DigitalRune.Windows.Charts
                 return _chartElementsReadOnly;
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
 #if !SILVERLIGHT
@@ -270,11 +270,11 @@ namespace DigitalRune.Windows.Charts
             remove { RemoveHandler(MouseDoubleClickEvent, value); }
         }
 #endif
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
 #if !SILVERLIGHT
@@ -303,15 +303,15 @@ namespace DigitalRune.Windows.Charts
             LayoutUpdated += OnLayoutUpdated;
             Loaded += OnLayoutUpdated;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
 #if !SILVERLIGHT
-        #region ----- Double Click -----
+
 
         /// <summary>
         /// Handles double clicks.
@@ -383,7 +383,7 @@ namespace DigitalRune.Windows.Charts
             Debug.Assert(eventArgs != null && eventArgs.RoutedEvent == MouseDoubleClickEvent, "Invalid arguments for ChartPanel.OnMouseDoubleClick.");
             RaiseEvent(eventArgs);
         }
-        #endregion
+
 #endif
 
 
@@ -1097,6 +1097,6 @@ namespace DigitalRune.Windows.Charts
         {
             InvalidateArrange();
         }
-        #endregion
+
     }
 }

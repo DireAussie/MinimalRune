@@ -27,7 +27,7 @@ namespace DigitalRune.Graphics.Rendering
   internal class SkyObjectRenderer : SceneNodeRenderer
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly VertexPositionTexture[] _vertices = new VertexPositionTexture[4];
@@ -49,17 +49,17 @@ namespace DigitalRune.Graphics.Rendering
     private readonly EffectPass _effectPassObjectGamma;
     private readonly EffectPass _effectPassGlowLinear;
     private readonly EffectPass _effectPassGlowGamma;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -97,11 +97,11 @@ namespace DigitalRune.Graphics.Rendering
       _effectPassGlowLinear = _effect.Techniques[0].Passes["GlowLinear"];
       _effectPassGlowGamma = _effect.Techniques[0].Passes["GlowGamma"];
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -245,7 +245,7 @@ namespace DigitalRune.Graphics.Rendering
 
       savedRenderState.Restore();
     }
-    #endregion
+
   }
 }
 #endif

@@ -13,7 +13,7 @@ namespace DigitalRune.Graphics
   partial class GraphicsHelper
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // For rendering of quads in screen space:
@@ -24,23 +24,23 @@ namespace DigitalRune.Graphics
       new VertexPositionTexture(new Vector3(0, 0, 0), new Vector2(1, 0)),
       new VertexPositionTexture(new Vector3(0, 0, 0), new Vector2(1, 1)),
     };
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Methods
+
+
+
+    //--------------------------------------------------------------
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -311,6 +311,6 @@ namespace DigitalRune.Graphics
       frustumFarCorners[3].X = left + texCoordRight * dX;
       frustumFarCorners[3].Y = top + texCoordBottom * dY;
     }
-    #endregion
+
   }
 }

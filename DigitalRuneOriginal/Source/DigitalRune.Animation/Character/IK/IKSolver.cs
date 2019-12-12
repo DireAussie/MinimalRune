@@ -61,13 +61,13 @@ namespace DigitalRune.Animation.Character
 
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -135,11 +135,11 @@ namespace DigitalRune.Animation.Character
     /// velocity for each bone.
     /// </remarks>
     public float MaxAngularVelocity { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -152,11 +152,11 @@ namespace DigitalRune.Animation.Character
       _weightProperty = new AnimatableProperty<float>();
       _weightProperty.Value = 1.0f;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -291,11 +291,11 @@ namespace DigitalRune.Animation.Character
         }
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region IAnimatableObject
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -346,6 +346,6 @@ namespace DigitalRune.Animation.Character
 
       return null;
     }
-    #endregion
+
   }
 }

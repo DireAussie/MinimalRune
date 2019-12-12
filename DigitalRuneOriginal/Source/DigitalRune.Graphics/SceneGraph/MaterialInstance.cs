@@ -63,15 +63,15 @@ namespace DigitalRune.Graphics.SceneGraph
   public partial class MaterialInstance : IDictionary<string, EffectBinding>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private Dictionary<string, EffectBinding> _bindingsPerPass;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -145,11 +145,11 @@ namespace DigitalRune.Graphics.SceneGraph
       get { return _bindingsPerPass[pass]; }
       set { throw new NotSupportedException("The MaterialInstance is a read-only collection."); }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -186,11 +186,11 @@ namespace DigitalRune.Graphics.SceneGraph
         _bindingsPerPass.Add(pass, effectBinding.CreateMaterialInstance());
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -243,6 +243,6 @@ namespace DigitalRune.Graphics.SceneGraph
     {
       return _bindingsPerPass.TryGetValue(pass, out bindings);
     }
-    #endregion
+
   }
 }

@@ -18,17 +18,17 @@ namespace DigitalRune.Editor.Text
     internal sealed class SyntaxHighlightingItem : ObservableObject, ICommandItem
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly TextExtension _textExtension;
         private readonly IHighlightingService _highlightingService;
         private MenuItemViewModel _menuItemViewModel;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -98,11 +98,11 @@ namespace DigitalRune.Editor.Text
             set { SetProperty(ref _isVisible, value); }
         }
         private bool _isVisible = true;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -120,11 +120,11 @@ namespace DigitalRune.Editor.Text
             _textExtension = textExtension;
             _highlightingService = textExtension.Editor.Services.GetInstance<IHighlightingService>().ThrowIfMissing();
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -205,6 +205,6 @@ namespace DigitalRune.Editor.Text
         {
             return null;
         }
-        #endregion
+
     }
 }

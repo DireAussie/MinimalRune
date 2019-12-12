@@ -1,4 +1,4 @@
-﻿#region ----- Copyright -----
+﻿
 /*
   The classes in this file are derived from the CompositeCommand from "patterns and practices 
   Composite WPF and Silverlight" (http://compositewpf.codeplex.com/) licensed under Ms-PL (see 
@@ -56,7 +56,7 @@
   contributors exclude the implied warranties of merchantability, fitness for a particular purpose 
   and non-infringement. 
 */
-#endregion
+
 
 using System;
 using System.Collections.Generic;
@@ -84,7 +84,7 @@ namespace DigitalRune.Windows.Framework
     public class CompositeCommand : ICommand
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly List<ICommand> _registeredCommands = new List<ICommand>();
@@ -92,11 +92,11 @@ namespace DigitalRune.Windows.Framework
         private readonly WeakEvent<EventHandler> _canExecuteChangedEvent = new WeakEvent<EventHandler>();
 #endif
         private readonly EventHandler _onRegisteredCommandCanExecuteChangedHandler;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -142,11 +142,11 @@ namespace DigitalRune.Windows.Framework
             remove { _canExecuteChangedEvent.Remove(value); }
         }
 #endif
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -158,11 +158,11 @@ namespace DigitalRune.Windows.Framework
             // implementations are wrong and the event handler might get garbage collected.
             _onRegisteredCommandCanExecuteChangedHandler = OnRegisteredCommandCanExecuteChanged;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -320,6 +320,6 @@ namespace DigitalRune.Windows.Framework
             }
 #endif
         }
-        #endregion
+
     }
 }

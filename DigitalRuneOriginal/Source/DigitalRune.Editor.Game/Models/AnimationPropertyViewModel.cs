@@ -16,15 +16,15 @@ namespace DigitalRune.Editor.Models
     internal class AnimationPropertyViewModel : ObservableObject
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly ModelDocument _document;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         public string Name
@@ -61,11 +61,11 @@ namespace DigitalRune.Editor.Models
 
 
         public DelegateCommand ToggleIsPlayingCommand { get; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         public AnimationPropertyViewModel(ModelDocument document)
@@ -76,17 +76,17 @@ namespace DigitalRune.Editor.Models
             _document = document;
             ToggleIsPlayingCommand = new DelegateCommand(OnToggleIsPlaying);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private void OnToggleIsPlaying()
         {
             IsPlaying = !IsPlaying;
         }
-        #endregion
+
     }
 }

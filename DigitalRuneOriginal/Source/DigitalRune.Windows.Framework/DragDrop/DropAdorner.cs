@@ -15,24 +15,24 @@ namespace DigitalRune.Windows.Framework
     internal class DropAdorner : Adorner
     {
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         private static readonly Pen Pen;
         private static readonly PathGeometry Triangle;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly bool _isIndicatorHorizontal;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -44,17 +44,17 @@ namespace DigitalRune.Windows.Framework
         /// otherwise, <see langword="false"/>.
         /// </value>
         public bool InsertAfter { get; set; }
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -101,11 +101,11 @@ namespace DigitalRune.Windows.Framework
             IsHitTestVisible = false;
             InsertAfter = insertAfter;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -178,6 +178,6 @@ namespace DigitalRune.Windows.Framework
             drawingContext.Pop();
             drawingContext.Pop();
         }
-        #endregion
+
     }
 }

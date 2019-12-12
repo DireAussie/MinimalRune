@@ -39,15 +39,15 @@ namespace DigitalRune.Graphics.Rendering
   public class SceneCaptureRenderer : SceneNodeRenderer
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private SpriteBatch _spriteBatch;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -71,11 +71,11 @@ namespace DigitalRune.Graphics.Rendering
       }
     }
     private Action<RenderContext> _renderCallback;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -94,11 +94,11 @@ namespace DigitalRune.Graphics.Rendering
 
       _renderCallback = renderCallback;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -265,6 +265,6 @@ namespace DigitalRune.Graphics.Rendering
       context.LodCameraNode = originalLodCameraNode;
       context.ReferenceNode = originalReferenceNode;
     }
-    #endregion
+
   }
 }

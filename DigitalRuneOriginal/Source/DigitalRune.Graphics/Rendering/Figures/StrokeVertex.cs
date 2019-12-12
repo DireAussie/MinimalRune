@@ -25,7 +25,7 @@ namespace DigitalRune.Graphics.Rendering
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -48,23 +48,23 @@ namespace DigitalRune.Graphics.Rendering
     public HalfVector4 Data;  // (U, V, Thickness)
     public HalfVector4 Color; // RGBA premultiplied
     public HalfVector4 Dash;  // Dash pattern data
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Methods
+
+
+
+    //--------------------------------------------------------------
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -158,6 +158,6 @@ namespace DigitalRune.Graphics.Rendering
         "{{Start:{0} End:{1} Data:{2} Color:{3} Dash:{4}}}",
         Start, End, Data, Color, Dash); 
     }
-    #endregion
+
   }
 }

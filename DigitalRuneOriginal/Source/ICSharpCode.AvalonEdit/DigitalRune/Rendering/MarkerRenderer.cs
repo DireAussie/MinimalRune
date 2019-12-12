@@ -14,15 +14,15 @@ namespace ICSharpCode.AvalonEdit.Rendering
     public class MarkerRenderer : IBackgroundRenderer
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly TextView _textView;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -78,11 +78,11 @@ namespace ICSharpCode.AvalonEdit.Rendering
         {
             get { return KnownLayer.Selection; }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -99,11 +99,11 @@ namespace ICSharpCode.AvalonEdit.Rendering
 
             _textView = textView;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private void OnMarkersChanged(object sender, NotifyCollectionChangedEventArgs notifyCollectionChangedEventArgs)
@@ -138,6 +138,6 @@ namespace ICSharpCode.AvalonEdit.Rendering
             foreach (var marker in Markers.FindOverlappingSegments(visualStart, visualEnd))
                 marker.Draw(textView, drawingContext);
         }
-        #endregion
+
     }
 }

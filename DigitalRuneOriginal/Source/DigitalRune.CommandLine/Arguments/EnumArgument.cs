@@ -52,22 +52,22 @@ namespace DigitalRune.CommandLine
     public class EnumArgument<T> : ValueArgument<T>
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly Type _type;
         private Dictionary<string, object> _namesAndValues;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -107,11 +107,11 @@ namespace DigitalRune.CommandLine
             if (attributes != null && attributes.Length > 0 && attributes[0] is FlagsAttribute)
                 AllowMultiple = true;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -186,6 +186,6 @@ namespace DigitalRune.CommandLine
 
             return sb.ToString();
         }
-        #endregion
+
     }
 }

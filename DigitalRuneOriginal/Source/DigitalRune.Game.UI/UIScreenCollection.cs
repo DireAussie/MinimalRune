@@ -21,24 +21,24 @@ namespace DigitalRune.Game.UI
     // - Sets IsDirty when the collection was changed.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly UIManager _uiManager;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     // This flag is set when the collection was modified. It is reset by the UIManager.
     internal bool IsDirty { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -50,11 +50,11 @@ namespace DigitalRune.Game.UI
       Debug.Assert(uiManager != null);
       _uiManager = uiManager;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -177,6 +177,6 @@ namespace DigitalRune.Game.UI
       IsDirty = true;
       base.MoveItem(oldIndex, newIndex);
     }
-    #endregion
+
   }
 }

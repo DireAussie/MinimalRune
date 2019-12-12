@@ -29,13 +29,13 @@ namespace DigitalRune.Geometry.Shapes
   public class TriangleShape : ConvexShape
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -158,11 +158,11 @@ namespace DigitalRune.Geometry.Shapes
       }
     }
     private Vector3F _vertex2;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -209,14 +209,14 @@ namespace DigitalRune.Geometry.Shapes
       _vertex1 = triangle.Vertex1;
       _vertex2 = triangle.Vertex2;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Shape CreateInstanceCore()
@@ -233,7 +233,7 @@ namespace DigitalRune.Geometry.Shapes
       _vertex1 = source.Vertex1;
       _vertex2 = source.Vertex2;
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -347,6 +347,6 @@ namespace DigitalRune.Geometry.Shapes
     {
       return String.Format(CultureInfo.InvariantCulture, "TriangleShape {{ Vertex0 = {0}, Vertex1 = {1}, Vertex2 = {2} }}", _vertex0, _vertex1, _vertex2);
     }
-    #endregion
+
   }
 }

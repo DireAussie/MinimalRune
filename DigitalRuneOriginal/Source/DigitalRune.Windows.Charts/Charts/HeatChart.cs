@@ -32,13 +32,13 @@ namespace DigitalRune.Windows.Charts
     public class HeatChart : Chart
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -101,11 +101,11 @@ namespace DigitalRune.Windows.Charts
                 return group.ItemContainerGenerator.IndexFromContainer(this);
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -174,11 +174,11 @@ namespace DigitalRune.Windows.Charts
             get { return (Palette)GetValue(StrokePaletteProperty); }
             set { SetValue(StrokePaletteProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
 #if SILVERLIGHT
@@ -196,11 +196,11 @@ namespace DigitalRune.Windows.Charts
             DefaultStyleKeyProperty.OverrideMetadata(typeof(HeatChart), new FrameworkPropertyMetadata(typeof(HeatChart)));
         }
 #endif
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -418,6 +418,6 @@ namespace DigitalRune.Windows.Charts
                 if (Numeric.IsNaN(Data[i].X) || Numeric.IsNaN(Data[i].Y))
                     throw new ChartDataException("Data with NaN values is not supported for heat charts.");
         }
-        #endregion
+
     }
 }

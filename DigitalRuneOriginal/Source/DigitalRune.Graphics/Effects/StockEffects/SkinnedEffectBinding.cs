@@ -15,13 +15,13 @@ namespace DigitalRune.Graphics.Effects
   public class SkinnedEffectBinding : EffectBinding, IStockEffectBinding
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     bool IStockEffectBinding.FogEnabled { get; set; }
@@ -42,11 +42,11 @@ namespace DigitalRune.Graphics.Effects
     /// </summary>
     /// <value>The max number of bone weights per vertex.</value>
     public int WeightsPerVertex { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -74,11 +74,11 @@ namespace DigitalRune.Graphics.Effects
       : base(graphicsService, graphicsService.GetSkinnedEffect(), opaqueData)
     {
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -150,6 +150,6 @@ namespace DigitalRune.Graphics.Effects
 
       return (T)datum;
     }
-    #endregion
+
   }
 }

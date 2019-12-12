@@ -86,7 +86,7 @@ namespace ICSharpCode.AvalonEdit.Highlighting.Xshd
 				return null;
 		}
 		
-		#region Equals and GetHashCode implementation
+
 		// The code in this region is useful if you want to use this structure in collections.
 		// If you don't need it, you can just remove the region and the ": IEquatable<XshdColorReference>" declaration.
 		
@@ -137,6 +137,6 @@ namespace ICSharpCode.AvalonEdit.Highlighting.Xshd
 		{
 			return !left.Equals(right);
 		}
-		#endregion
+
 	}
 }

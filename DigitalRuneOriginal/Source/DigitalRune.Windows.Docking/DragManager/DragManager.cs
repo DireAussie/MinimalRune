@@ -38,7 +38,7 @@ namespace DigitalRune.Windows.Docking
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         // Tolerance when dragging items in DockTabPanel.
@@ -78,11 +78,11 @@ namespace DigitalRune.Windows.Docking
         private IFloatWindow _originalFloatWindow;
         private double _originalFloatLeft;
         private double _originalFloatTop;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -123,11 +123,11 @@ namespace DigitalRune.Windows.Docking
         {
             get { return IsDragging && !IsDraggingFloatWindow; }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -149,11 +149,11 @@ namespace DigitalRune.Windows.Docking
             // Register event handlers.
             ((INotifyCollectionChanged)_dockControl.DockTabPanes).CollectionChanged += OnDockTabPanesChanged;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------    
 
         /// <summary>
@@ -773,6 +773,6 @@ namespace DigitalRune.Windows.Docking
                 _originalFloatWindow.Top = _originalFloatTop;
             }
         }
-        #endregion
+
     }
 }

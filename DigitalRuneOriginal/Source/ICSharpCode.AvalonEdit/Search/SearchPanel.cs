@@ -50,7 +50,7 @@ namespace ICSharpCode.AvalonEdit.Search
 		TextBox searchTextBox;
 		SearchPanelAdorner adorner;
 		
-		#region DependencyProperties
+
 		/// <summary>
 		/// Dependency property for <see cref="UseRegex"/>.
 		/// </summary>
@@ -140,7 +140,7 @@ namespace ICSharpCode.AvalonEdit.Search
 			get { return (Localization)GetValue(LocalizationProperty); }
 			set { SetValue(LocalizationProperty, value); }
 		}
-		#endregion
+
 		
 		static void MarkerBrushChangedCallback(DependencyObject d, DependencyPropertyChangedEventArgs e)
 		{

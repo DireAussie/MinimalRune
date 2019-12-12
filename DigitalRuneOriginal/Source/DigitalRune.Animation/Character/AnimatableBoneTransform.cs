@@ -17,20 +17,20 @@ namespace DigitalRune.Animation.Character
   internal sealed class AnimatableBoneTransform : IAnimatableProperty<SrtTransform>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     internal SkeletonPose SkeletonPose; // Internal because the AnimatableBoneTransforms are pooled.
                                         // The field is set/reset when created/recycled.
     private readonly int _boneIndex;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
-    #region ----- IAnimatableProperty -----
+
 
     /// <inheritdoc/>
     bool IAnimatableProperty.HasBaseValue
@@ -60,10 +60,10 @@ namespace DigitalRune.Animation.Character
     {
       get { return SkeletonPose.BoneTransforms[_boneIndex]; }
     }
-    #endregion
 
 
-    #region ----- IAnimatableProperty<T> -----
+
+
 
     /// <inheritdoc/>
     SrtTransform IAnimatableProperty<SrtTransform>.BaseValue
@@ -87,13 +87,13 @@ namespace DigitalRune.Animation.Character
         SkeletonPose.Invalidate(_boneIndex);
       }
     }
-    #endregion
 
-    #endregion
+
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -108,12 +108,12 @@ namespace DigitalRune.Animation.Character
       // Note: The SkeletonPose is set/reset when the object is created/recycled.
       // See class SkeletonPose.
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
-    #endregion
+
   }
 }

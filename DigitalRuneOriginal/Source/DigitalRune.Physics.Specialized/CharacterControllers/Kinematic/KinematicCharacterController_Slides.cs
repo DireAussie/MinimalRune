@@ -52,13 +52,13 @@ namespace DigitalRune.Physics.Specialized
 
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -119,11 +119,11 @@ namespace DigitalRune.Physics.Specialized
       }
     }
     private int _numberOfSolverIterations = 4;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -736,6 +736,6 @@ namespace DigitalRune.Physics.Specialized
 
       return true;
     }
-    #endregion
+
   }
 }

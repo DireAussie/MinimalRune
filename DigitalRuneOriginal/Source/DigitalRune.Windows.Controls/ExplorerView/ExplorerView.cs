@@ -72,15 +72,15 @@ namespace DigitalRune.Windows.Controls
     public class ExplorerView : GridView
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private bool _updating;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -119,11 +119,11 @@ namespace DigitalRune.Windows.Controls
             }
         }
         private static ComponentResourceKey _itemContainerDefaultStyleKey;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -393,11 +393,11 @@ namespace DigitalRune.Windows.Controls
             get { return (double)GetValue(ScaleProperty); }
             set { SetValue(ScaleProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -408,11 +408,11 @@ namespace DigitalRune.Windows.Controls
             Menu = new ExplorerViewMenu();
             Menu.Loaded += OnMenuLoaded;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------    
 
         private void OnMenuLoaded(object sender, RoutedEventArgs eventArgs)
@@ -617,6 +617,6 @@ namespace DigitalRune.Windows.Controls
                     break;
             }
         }
-        #endregion
+
     }
 }

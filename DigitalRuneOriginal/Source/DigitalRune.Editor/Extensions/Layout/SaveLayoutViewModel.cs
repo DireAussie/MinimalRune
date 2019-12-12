@@ -15,15 +15,15 @@ namespace DigitalRune.Editor.Layout
     internal class SaveLayoutViewModel : Dialog
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private const string InvalidCharactersErrorMessage = "The layout name must be a valid file name. Remove any invalid characters.";
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -62,11 +62,11 @@ namespace DigitalRune.Editor.Layout
         /// </summary>
         /// <value>The Cancel command.</value>
         public DelegateCommand CancelCommand { get; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -77,11 +77,11 @@ namespace DigitalRune.Editor.Layout
             OkCommand = new DelegateCommand(Ok, CanOk);
             CancelCommand = new DelegateCommand(Cancel);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private bool CanOk()
@@ -101,6 +101,6 @@ namespace DigitalRune.Editor.Layout
         {
             DialogResult = false;
         }
-        #endregion
+
     }
 }

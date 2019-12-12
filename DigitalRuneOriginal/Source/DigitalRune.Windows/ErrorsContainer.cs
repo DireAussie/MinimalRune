@@ -17,16 +17,16 @@ namespace DigitalRune.Windows
     public sealed class ErrorsContainer
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly Dictionary<string, List<string>> _errorsPerProperty = new Dictionary<string, List<string>>();
         private readonly Action<string> _errorsChanged;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -57,11 +57,11 @@ namespace DigitalRune.Windows
             }
         }
         private bool? _hasErrors;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -77,11 +77,11 @@ namespace DigitalRune.Windows
 
             _errorsChanged = errorsChanged;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -242,6 +242,6 @@ namespace DigitalRune.Windows
             }
             // ReSharper restore PossibleMultipleEnumeration
         }
-        #endregion
+
     }
 }

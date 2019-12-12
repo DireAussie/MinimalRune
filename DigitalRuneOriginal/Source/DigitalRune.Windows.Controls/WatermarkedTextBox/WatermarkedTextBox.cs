@@ -24,21 +24,21 @@ namespace DigitalRune.Windows.Controls
     public class WatermarkedTextBox : TextBox
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private ScrollViewer _contentHost;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -183,11 +183,11 @@ namespace DigitalRune.Windows.Controls
             get { return (string)GetValue(WatermarkStringFormatProperty); }
             set { SetValue(WatermarkStringFormatProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -197,11 +197,11 @@ namespace DigitalRune.Windows.Controls
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(WatermarkedTextBox), new FrameworkPropertyMetadata(typeof(WatermarkedTextBox)));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -307,6 +307,6 @@ namespace DigitalRune.Windows.Controls
             // ReSharper disable once PossibleUnintendedReferenceComparison
             return source.GetVisualParent() == scrollContentPresenter;
         }
-        #endregion
+
     }
 }

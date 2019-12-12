@@ -48,7 +48,7 @@ namespace DigitalRune.Geometry.Meshes
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private ITriangleMesh _mesh;
@@ -57,11 +57,11 @@ namespace DigitalRune.Geometry.Meshes
     private List<CDIslandLink> _links;
 
     private readonly object _syncRoot = new object();
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -245,11 +245,11 @@ namespace DigitalRune.Geometry.Meshes
     /// Occurs when an asynchronous decomposition (see <see cref="DecomposeAsync"/>) has completed.
     /// </summary>
     public event EventHandler<AsyncCompletedEventArgs> Completed;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -265,11 +265,11 @@ namespace DigitalRune.Geometry.Meshes
       SampleTriangleVertices = true;
       SampleTriangleCenters = false;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -737,7 +737,7 @@ namespace DigitalRune.Geometry.Meshes
         // ReSharper restore EmptyGeneralCatchClause
       }
     }
-    #endregion
+
   }
 }
 #endif

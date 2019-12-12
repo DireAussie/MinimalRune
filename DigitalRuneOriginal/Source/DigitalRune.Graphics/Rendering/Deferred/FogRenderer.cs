@@ -33,7 +33,7 @@ namespace DigitalRune.Graphics.Rendering
   public class FogRenderer : SceneNodeRenderer
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Vector3[] _cameraFrustumFarCorners = new Vector3[4];
@@ -54,17 +54,17 @@ namespace DigitalRune.Graphics.Rendering
     private readonly EffectPass _passFogWithHeightFalloffWithPhase;
 
     private List<SceneNode> _fogNodes;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -95,11 +95,11 @@ namespace DigitalRune.Graphics.Rendering
       _passFogWithPhase = _effect.Techniques[0].Passes["FogWithPhase"];
       _passFogWithHeightFalloffWithPhase = _effect.Techniques[0].Passes["FogWithHeightFalloffWithPhase"];
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -303,7 +303,7 @@ namespace DigitalRune.Graphics.Rendering
         return 0;
       return 1 - lightDirection.Y / limit;
     }
-    #endregion
+
   }
 }
 #endif

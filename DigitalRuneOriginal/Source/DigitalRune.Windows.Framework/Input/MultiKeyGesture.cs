@@ -59,7 +59,7 @@ namespace DigitalRune.Windows.Framework
         // conflicting key gestures such as "Ctrl+X" and "Ctrl+K, Ctrl+X" correctly.
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly List<Key> _keys;
@@ -67,11 +67,11 @@ namespace DigitalRune.Windows.Framework
         private int _lastKeyPress;
         private UIElement _currentTarget;
         private bool _reportMatch;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -93,11 +93,11 @@ namespace DigitalRune.Windows.Framework
         /// two key strokes.
         /// </remarks>
         public static TimeSpan MaximumDelayBetweenKeyPresses { get; set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -179,11 +179,11 @@ namespace DigitalRune.Windows.Framework
             if (_keys.Count == 0)
                 throw new ArgumentException("A multi key gesture needs to have at least one key.");
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -423,6 +423,6 @@ namespace DigitalRune.Windows.Framework
             // Automatically create the display string.
             return MultiKeyGestureConverter.GetDisplayStringForCulture(keys, modifiers, null, CultureInfo.CurrentCulture);
         }
-        #endregion
+
     }
 }

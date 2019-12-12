@@ -93,7 +93,7 @@ namespace DigitalRune.Graphics.Effects
     // <see cref="Matrix33F"/>
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // ReSharper disable StaticFieldInGenericType
@@ -117,11 +117,11 @@ namespace DigitalRune.Graphics.Effects
     internal static readonly IEqualityComparer<T> Comparer = EqualityComparer<T>.Default;
 
     // ReSharper restore StaticFieldInGenericType
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -147,11 +147,11 @@ namespace DigitalRune.Graphics.Effects
       }
     }
     private T _value;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -237,14 +237,14 @@ namespace DigitalRune.Graphics.Effects
 
       _value = value;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override void CloneCore(EffectParameterBinding source)
@@ -256,7 +256,7 @@ namespace DigitalRune.Graphics.Effects
       var sourceTyped = (EffectParameterBinding<T>)source;
       Value = sourceTyped.Value;
     }
-    #endregion
+
 
 
     /// <summary>
@@ -284,6 +284,6 @@ namespace DigitalRune.Graphics.Effects
     {
       SetValue(Parameter, Value);
     }
-    #endregion
+
   }
 }

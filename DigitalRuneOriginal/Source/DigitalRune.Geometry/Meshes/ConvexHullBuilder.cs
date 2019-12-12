@@ -164,7 +164,7 @@ namespace DigitalRune.Geometry.Meshes
 
       Matrix44D toUnitCube;
       Matrix44D fromUnitCube;
-      #region ----- Convert to Unit Cube -----
+
       {
         // Get AABB of existing and new points.
         var aabb = new Aabb(pointList[0], pointList[0]);
@@ -193,7 +193,7 @@ namespace DigitalRune.Geometry.Meshes
         for (int i = 0; i < pointList.Count; i++)
           pointList[i] = (Vector3F)toUnitCube.TransformPosition(pointList[i]);
       }
-      #endregion
+
 
       // Remove duplicate vertices.
       GeometryHelper.MergeDuplicatePositions(pointList, Numeric.EpsilonF);
@@ -273,7 +273,7 @@ namespace DigitalRune.Geometry.Meshes
           prune = true;
 
         // Prune vertices.
-        #region ----- Prune Vertices -----
+
         if (prune)
         {
           for (int j = i + 1; j < numberOfPoints; j++)
@@ -300,7 +300,7 @@ namespace DigitalRune.Geometry.Meshes
             }
           }
         }
-        #endregion
+
       }
 
       _mesh.ResetTags();

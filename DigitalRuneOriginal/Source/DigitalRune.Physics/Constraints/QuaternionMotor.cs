@@ -30,7 +30,7 @@ namespace DigitalRune.Physics.Constraints
   public class QuaternionMotor : Constraint
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private Vector3F _minImpulseLimits;
@@ -41,11 +41,11 @@ namespace DigitalRune.Physics.Constraints
       new Constraint1D(), 
       new Constraint1D(),
     };
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -254,17 +254,17 @@ namespace DigitalRune.Physics.Constraints
       }
     }
     private bool _useSingleAxisMode;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -415,6 +415,6 @@ namespace DigitalRune.Physics.Constraints
 
       base.OnChanged();
     }
-    #endregion
+
   }
 }

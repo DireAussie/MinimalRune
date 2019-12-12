@@ -75,13 +75,13 @@ namespace DigitalRune.Animation
   public class AnimationClip<T> : IAnimation<T>
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -338,11 +338,11 @@ namespace DigitalRune.Animation
     /// <see cref="DigitalRune.Animation.LoopBehavior.Constant"/>.
     /// </value>
     public LoopBehavior LoopBehavior { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -384,11 +384,11 @@ namespace DigitalRune.Animation
       Speed = 1.0f;
       LoopBehavior = LoopBehavior.Constant;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc cref="ITimeline.CreateInstance"/>
@@ -644,6 +644,6 @@ namespace DigitalRune.Animation
         traits.Recycle(ref value);
       }
     }
-    #endregion
+
   }
 }

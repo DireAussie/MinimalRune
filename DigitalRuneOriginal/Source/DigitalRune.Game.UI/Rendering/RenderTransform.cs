@@ -47,18 +47,18 @@ namespace DigitalRune.Game.UI.Rendering
   public struct RenderTransform : IEquatable<RenderTransform>
   {
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     /// <summary>
     /// The identity transform.
     /// </summary>
     public static readonly RenderTransform Identity = new RenderTransform(Vector2F.Zero, Vector2F.One, 0, Vector2F.Zero);
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -91,17 +91,17 @@ namespace DigitalRune.Game.UI.Rendering
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
     public Vector2F Translation;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -149,11 +149,11 @@ namespace DigitalRune.Game.UI.Rendering
       Rotation = rotation;
       Translation = translation;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -735,6 +735,6 @@ namespace DigitalRune.Game.UI.Rendering
         "RenderTransform {{ Origin = {0}, Scale = {1}, Rotation = {2}, Translation = {3} }}",
         Origin, Scale, Rotation, Translation);
     }
-    #endregion
+
   }
 }

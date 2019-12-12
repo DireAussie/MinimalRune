@@ -15,13 +15,13 @@ namespace DigitalRune.Graphics.Effects
   public class AlphaTestEffectBinding : EffectBinding, IStockEffectBinding
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     bool IStockEffectBinding.FogEnabled { get; set; }
@@ -51,11 +51,11 @@ namespace DigitalRune.Graphics.Effects
     /// <see langword="true"/> if vertex color is enabled; otherwise, <see langword="false"/>.
     /// </value>
     public bool VertexColorEnabled { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -83,11 +83,11 @@ namespace DigitalRune.Graphics.Effects
       : base(graphicsService, graphicsService.GetAlphaTestEffect(), opaqueData)
     {
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -146,6 +146,6 @@ namespace DigitalRune.Graphics.Effects
 
       return (T)datum;
     }
-    #endregion
+
   }
 }

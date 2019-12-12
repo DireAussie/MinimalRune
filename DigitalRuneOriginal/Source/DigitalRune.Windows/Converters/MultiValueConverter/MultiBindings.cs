@@ -28,15 +28,15 @@ namespace DigitalRune.Windows
     // TODO: !Silverlight code path is not tested.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
     
     private FrameworkElement _targetElement;
-    #endregion
+
       
       
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -44,11 +44,11 @@ namespace DigitalRune.Windows
     /// </summary>
     /// <value>The <see cref="MultiBinding"/>s.</value>
     public ObservableCollection<MultiBinding> Bindings { get; private set; }
-    #endregion
+
       
       
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
     
     /// <summary>
@@ -58,11 +58,11 @@ namespace DigitalRune.Windows
     {
       Bindings = new ObservableCollection<MultiBinding>();
     }
-    #endregion
+
       
       
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
 #if !SILVERLIGHT && !WINDOWS_PHONE
@@ -148,6 +148,6 @@ namespace DigitalRune.Windows
       }
 #endif
     }
-    #endregion
+
   }
 }

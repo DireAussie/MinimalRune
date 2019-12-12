@@ -14,18 +14,18 @@ namespace DigitalRune.Animation.Transitions
   public abstract class AnimationTransition
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
     /// The default easing function used by fade-in/out transitions.
     /// </summary>
     internal static readonly IEasingFunction DefaultEase = new HermiteEase { Mode = EasingMode.EaseInOut };
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -33,17 +33,17 @@ namespace DigitalRune.Animation.Transitions
     /// </summary>
     /// <value>The animation instance that is controlled by this animation transition.</value>
     protected internal AnimationInstance AnimationInstance { get; set; }
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -107,6 +107,6 @@ namespace DigitalRune.Animation.Transitions
     protected virtual void OnUninitialize(AnimationManager animationManager)
     {
     }
-    #endregion
+
   }
 }

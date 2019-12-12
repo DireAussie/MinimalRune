@@ -47,7 +47,7 @@ namespace DigitalRune.Game.UI.Rendering
 #endif
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // For drawing of blinking caret:
@@ -62,11 +62,11 @@ namespace DigitalRune.Game.UI.Rendering
 #endif
     private Vector2F _lastCaretPosition;
     private Action<UIControl, UIRenderContext> _renderUIControl;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -114,11 +114,11 @@ namespace DigitalRune.Game.UI.Rendering
     /// </remarks>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")]
     public Dictionary<string, Action<UIControl, UIRenderContext>> RenderCallbacks { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     private void InitializeRendering()
@@ -135,11 +135,11 @@ namespace DigitalRune.Game.UI.Rendering
       RenderCallbacks.Add("ContentControl", RenderContentControl);
       RenderCallbacks.Add("TextBox", RenderTextBox);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private static void SetState(UIRenderContext context, ThemeState state)
@@ -1271,6 +1271,6 @@ namespace DigitalRune.Game.UI.Rendering
       return new Color(vector.X * vector.W, vector.Y * vector.W, vector.Z * vector.W, vector.W);
     }
 #endif
-    #endregion
+
   }
 }

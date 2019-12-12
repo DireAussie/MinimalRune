@@ -20,7 +20,7 @@ namespace DigitalRune.Graphics.PostProcessing
   public class GrainFilter : PostProcessor
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Random _random;
@@ -33,11 +33,11 @@ namespace DigitalRune.Graphics.PostProcessing
     private readonly EffectParameter _luminanceThresholdParameter;
     private readonly EffectPass _scaledNoisePass;
     private readonly EffectPass _equalNoisePass;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -84,11 +84,11 @@ namespace DigitalRune.Graphics.PostProcessing
     /// if the noise is static. The default value is <see langword="true" />.
     /// </value>
     public bool IsAnimated { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -118,11 +118,11 @@ namespace DigitalRune.Graphics.PostProcessing
       GrainScale = 1;
       IsAnimated = true;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -158,7 +158,7 @@ namespace DigitalRune.Graphics.PostProcessing
 
       _sourceTextureParameter.SetValue((Texture2D)null);
     }
-    #endregion
+
   }
 }
 #endif

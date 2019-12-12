@@ -39,7 +39,7 @@ namespace DigitalRune.Windows
         }
 
 
-        #region ----- LINQ to Logical Tree -----
+
 
         // Silverlight does not provide an API to access the logical tree. Instead, Silverlight has
         // an 'object tree'. The relationship is defined using the property FrameworkElement.Parent.
@@ -323,10 +323,10 @@ namespace DigitalRune.Windows
 
             return TreeHelper.GetSubtree(dependencyObject, GetLogicalChildren, depthFirst);
         }
-        #endregion
 
 
-        #region ----- ClipToBounds Attached Property -----
+
+
 
         /// <summary>
         /// Identifies the <see cref="P:DigitalRune.Windows.WindowsHelper.ClipToBounds"/> attached 
@@ -448,7 +448,7 @@ namespace DigitalRune.Windows
                 element.Clip = null;
             }
         }
-        #endregion
+
     }
 }
 #endif

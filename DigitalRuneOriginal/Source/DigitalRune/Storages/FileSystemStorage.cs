@@ -21,13 +21,13 @@ namespace DigitalRune.Storages
   public class FileSystemStorage : Storage, IStorageInternal
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -45,11 +45,11 @@ namespace DigitalRune.Storages
     /// All file access is relative to this root directory.
     /// </remarks>
     public string RootDirectory { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -93,11 +93,11 @@ namespace DigitalRune.Storages
         RootDirectory = Path.GetFullPath(rootDirectory);
 #endif
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -144,6 +144,6 @@ namespace DigitalRune.Storages
       return File.Exists(path) ? File.OpenRead(path) : null;
 #endif
     }
-    #endregion
+
   }
 }

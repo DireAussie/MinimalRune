@@ -39,7 +39,7 @@ namespace DigitalRune.Editor.Text
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly IHighlightingService _highlightingService;
@@ -53,11 +53,11 @@ namespace DigitalRune.Editor.Text
         private IDisposable _markSelectedWordSubscription;
         private string _selectedWord;
         private Brush _selectedWordBrush;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -238,11 +238,11 @@ namespace DigitalRune.Editor.Text
         /// </summary>
         /// <value>The "Cancel" command.</value>
         public DelegateCommand CancelCommand { get; private set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -275,11 +275,11 @@ namespace DigitalRune.Editor.Text
             FindAndReplaceCommand = new DelegateCommand(FindAndReplace);
             CancelCommand = new DelegateCommand(Cancel);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -499,6 +499,6 @@ namespace DigitalRune.Editor.Text
                 }
             }
         }
-        #endregion
+
     }
 }

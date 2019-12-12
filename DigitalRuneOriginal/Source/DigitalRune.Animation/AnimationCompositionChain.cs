@@ -28,7 +28,7 @@ namespace DigitalRune.Animation
   internal sealed class AnimationCompositionChain<T> : Collection<AnimationInstance<T>>, IAnimationCompositionChain, IRecyclable
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // ReSharper disable StaticFieldInGenericType
@@ -51,11 +51,11 @@ namespace DigitalRune.Animation
 
     // The cached animation value.
     private T _value;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -87,11 +87,11 @@ namespace DigitalRune.Animation
     {
       get { return _traits; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -164,11 +164,11 @@ namespace DigitalRune.Animation
       _traits.Recycle(ref _value);
       _traits = null;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -379,11 +379,11 @@ namespace DigitalRune.Animation
         _hasSnapshot = false;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Collection<AnimationInstance<T>>
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -396,11 +396,11 @@ namespace DigitalRune.Animation
     {
       return ((List<AnimationInstance<T>>)Items).GetEnumerator();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region IList<AnimationInstance>
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -595,6 +595,6 @@ namespace DigitalRune.Animation
         this[index] = animationInstance;
       }
     }
-    #endregion
+
   }
 }

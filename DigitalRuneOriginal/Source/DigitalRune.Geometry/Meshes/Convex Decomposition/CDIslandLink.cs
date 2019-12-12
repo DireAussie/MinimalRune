@@ -25,13 +25,13 @@ namespace DigitalRune.Geometry.Meshes
   internal sealed class CDIslandLink
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     public readonly CDIsland IslandA;
@@ -51,11 +51,11 @@ namespace DigitalRune.Geometry.Meshes
 
     // Either null or an the convex hull of the island.
     public ConvexHullBuilder ConvexHullBuilder;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     public CDIslandLink(CDIsland islandA, CDIsland islandB, float allowedConcavity, float smallIslandBoost, int vertexLimit, bool sampleVertices, bool sampleCenters)
@@ -91,11 +91,11 @@ namespace DigitalRune.Geometry.Meshes
 
       DecimationCost = term1 + term2 + term3;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     // Computes the aspect ratio: 
@@ -352,7 +352,7 @@ namespace DigitalRune.Geometry.Meshes
         return 0;
       }
     }
-    #endregion
+
   }
 }
 #endif

@@ -44,13 +44,13 @@ namespace DigitalRune.Graphics.Rendering
   public class ShadowMapRenderer : SceneRenderer, IShadowMapRenderer
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -72,11 +72,11 @@ namespace DigitalRune.Graphics.Rendering
       }
     }
     private Func<RenderContext, bool> _renderCallback;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -143,11 +143,11 @@ namespace DigitalRune.Graphics.Rendering
       Renderers.Add(new CascadedShadowMapRenderer(renderCallback));
       Renderers.Add(new CompositeShadowMapRenderer(Renderers));
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -163,6 +163,6 @@ namespace DigitalRune.Graphics.Rendering
       var lightNode = node as LightNode;
       return lightNode != null && lightNode.Shadow != null;
     }
-    #endregion
+
   }
 }

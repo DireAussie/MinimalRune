@@ -20,13 +20,13 @@ namespace DigitalRune.Animation
   public class SrtAnimation : Animation<SrtTransform>
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -64,11 +64,11 @@ namespace DigitalRune.Animation
     [ContentSerializer(SharedResource = true)]
 #endif
     public IAnimation<Vector3F> Translation { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
     
     /// <overloads>
@@ -98,11 +98,11 @@ namespace DigitalRune.Animation
       Rotation = rotation;
       Translation = translation;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -141,6 +141,6 @@ namespace DigitalRune.Animation
       else
         result.Translation = defaultSource.Translation;
     }
-    #endregion
+
   }
 }

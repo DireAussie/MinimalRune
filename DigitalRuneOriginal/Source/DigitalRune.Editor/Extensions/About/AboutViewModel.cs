@@ -15,13 +15,13 @@ namespace DigitalRune.Editor.About
     internal class AboutViewModel : Screen
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -52,11 +52,11 @@ namespace DigitalRune.Editor.About
         /// </summary>
         /// <value>The command that copies the About dialog information to the clipboard.</value>
         public DelegateCommand CopyToClipboardCommand { get; private set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -76,12 +76,12 @@ namespace DigitalRune.Editor.About
             CloseAboutDialogCommand = new DelegateCommand(() => Conductor.DeactivateItemAsync(this, true));
             CopyToClipboardCommand = new DelegateCommand(() => AboutService.CopyInformationToClipboard());
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
-        #endregion
+
     }
 }

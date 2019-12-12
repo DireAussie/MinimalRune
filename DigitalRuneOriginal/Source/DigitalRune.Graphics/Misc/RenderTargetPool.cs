@@ -41,7 +41,7 @@ namespace DigitalRune.Graphics
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Fields are internal for unit testing.
@@ -49,11 +49,11 @@ namespace DigitalRune.Graphics
     internal readonly List<RenderTargetCube> RenderTargetsCube = new List<RenderTargetCube>();
     internal readonly List<int> Counters2D = new List<int>();
     internal readonly List<int> CountersCube = new List<int>();
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -104,11 +104,11 @@ namespace DigitalRune.Graphics
       }
     }
     private bool _enabled;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -159,11 +159,11 @@ namespace DigitalRune.Graphics
         Clear();
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -455,6 +455,6 @@ namespace DigitalRune.Graphics
         }
       }
     }
-    #endregion
+
   }
 }

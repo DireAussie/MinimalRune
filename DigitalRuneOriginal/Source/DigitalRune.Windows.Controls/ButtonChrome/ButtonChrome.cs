@@ -28,19 +28,19 @@ namespace DigitalRune.Windows.Controls
     public class ButtonChrome : ContentControl
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties
-        //--------------------------------------------------------------
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -193,11 +193,11 @@ namespace DigitalRune.Windows.Controls
             get { return (CornerRadius)GetValue(InnerCornerRadiusProperty); }
             private set { SetValue(InnerCornerRadiusPropertyKey, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -207,11 +207,11 @@ namespace DigitalRune.Windows.Controls
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ButtonChrome), new FrameworkPropertyMetadata(typeof(ButtonChrome)));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -242,6 +242,6 @@ namespace DigitalRune.Windows.Controls
                 Math.Max(0, newValue.BottomRight - 1),
                 Math.Max(0, newValue.BottomLeft - 1));
         }
-        #endregion
+
     }
 }

@@ -1,4 +1,4 @@
-﻿#region ----- Copyright -----
+﻿
 // The HashSet implementation is missing in the .NET Compact Framework. This
 // port is based on the Mono implementation, which is licensed under the MIT 
 // license. 
@@ -49,7 +49,7 @@
 // - Using struct enumerator in set operations to avoid unnecessary memory 
 //   allocation.
 // - Some code inlined in set operations to improve performance.
-#endregion
+
 
 #if WP7 || XBOX
 using System;
@@ -104,7 +104,7 @@ namespace DigitalRune.Collections
 
 
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     private struct Slot
@@ -285,19 +285,19 @@ namespace DigitalRune.Collections
         return hash;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     private const int InitialSize = 4;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private static HashSetEqualityComparer _setComparer;
@@ -334,11 +334,11 @@ namespace DigitalRune.Collections
 #if !SILVERLIGHT && !WP7 && !XBOX
     private SerializationInfo _serializationInfo;
 #endif
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -377,11 +377,11 @@ namespace DigitalRune.Collections
     {
       get { return false; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -465,11 +465,11 @@ namespace DigitalRune.Collections
       _comparer = comparer ?? EqualityComparer<T>.Default;
       _version = 0;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
 #if !SILVERLIGHT && !WP7 && !XBOX
@@ -949,7 +949,7 @@ namespace DigitalRune.Collections
     }
 
 
-    #region ----- IEnumerable, IEnumerable<T> -----
+
 
     /// <summary>
     /// Returns an enumerator that iterates through the collection.
@@ -985,10 +985,10 @@ namespace DigitalRune.Collections
     {
       return new Enumerator(this);
     }
-    #endregion
 
 
-    #region ----- Set Operations -----
+
+
 
     HashSetEx<T> ToHashSetEx(IEnumerable<T> enumerable)
     {
@@ -1318,7 +1318,7 @@ namespace DigitalRune.Collections
 
       return CheckIsSupersetOf(otherSet);
     }
-    #endregion
+
 
 
     /// <summary>
@@ -1338,7 +1338,7 @@ namespace DigitalRune.Collections
 
       return _setComparer;
     }
-    #endregion
+
   }
 }
 #endif

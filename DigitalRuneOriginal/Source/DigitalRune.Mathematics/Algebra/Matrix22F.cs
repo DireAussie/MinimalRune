@@ -33,7 +33,7 @@ namespace DigitalRune.Mathematics.Algebra
   public struct Matrix22F : IEquatable<Matrix22F>
   {
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -53,11 +53,11 @@ namespace DigitalRune.Mathematics.Algebra
     /// </summary>
     public static readonly Matrix22F Identity = new Matrix22F(1, 0,
                                                               0, 1);
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -95,11 +95,11 @@ namespace DigitalRune.Mathematics.Algebra
     [DataMember]
 #endif
     public float M11;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -317,11 +317,11 @@ namespace DigitalRune.Mathematics.Algebra
         return result;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -456,11 +456,11 @@ namespace DigitalRune.Mathematics.Algebra
       M00 = elements[0][0]; M01 = elements[0][1];
       M10 = elements[1][0]; M11 = elements[1][1];
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Interfaces and Overrides
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -502,7 +502,7 @@ namespace DigitalRune.Mathematics.Algebra
     }
 
 
-    #region IEquatable<Matrix22F> Members
+
     /// <summary>
     /// Indicates whether the current object is equal to another object of the same type.
     /// </summary>
@@ -515,7 +515,7 @@ namespace DigitalRune.Mathematics.Algebra
     {
       return this == other;
     }
-    #endregion
+
 
 
     /// <overloads>
@@ -548,11 +548,11 @@ namespace DigitalRune.Mathematics.Algebra
         "({0}; {1})\n({2}; {3})\n",
         M00, M01, M10, M11);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Overloaded Operators
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -946,11 +946,11 @@ namespace DigitalRune.Mathematics.Algebra
     {
       return this;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -1222,11 +1222,11 @@ namespace DigitalRune.Mathematics.Algebra
     {
       MathHelper.Swap(ref M01, ref M10);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Static Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -1410,6 +1410,6 @@ namespace DigitalRune.Mathematics.Algebra
       result.M11 = cos;
       return result;
     }
-    #endregion
+
   }
 }

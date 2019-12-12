@@ -20,15 +20,15 @@ namespace DigitalRune.Animation.Character
   public class UpperBackBoneMapper : BoneMapper
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private bool _isDirty = true;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -181,11 +181,11 @@ namespace DigitalRune.Animation.Character
       }
     }
     private int _rightShoulderBoneIndexB;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -210,11 +210,11 @@ namespace DigitalRune.Animation.Character
       LeftShoulderBoneIndexB = leftShoulderBoneIndexB;
       RightShoulderBoneIndexB = rightShoulderBoneIndexB;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -334,6 +334,6 @@ namespace DigitalRune.Animation.Character
       // Apply the shoulder twist rotation followed by the spine swing rotation.
       skeletonB.RotateBoneAbsolute(boneIndexB, spineRotation * shoulderRotation);
     }
-    #endregion
+
   }
 }

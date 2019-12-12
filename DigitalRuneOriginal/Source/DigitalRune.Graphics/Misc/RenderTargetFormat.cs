@@ -26,13 +26,13 @@ namespace DigitalRune.Graphics
   public struct RenderTargetFormat : IEquatable<RenderTargetFormat>
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -154,11 +154,11 @@ namespace DigitalRune.Graphics
       set { _renderTargetUsage = value; }
     }
     private RenderTargetUsage? _renderTargetUsage;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -388,11 +388,11 @@ namespace DigitalRune.Graphics
         _renderTargetUsage = null;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -603,6 +603,6 @@ namespace DigitalRune.Graphics
 
       return true;
     }
-    #endregion
+
   }
 }

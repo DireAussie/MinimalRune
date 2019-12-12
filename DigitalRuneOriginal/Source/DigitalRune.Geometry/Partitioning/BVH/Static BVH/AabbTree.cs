@@ -48,7 +48,7 @@ namespace DigitalRune.Geometry.Partitioning
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     internal static readonly ResourcePool<FastStack<AabbTree<T>.Node>> Stacks =
@@ -70,26 +70,26 @@ namespace DigitalRune.Geometry.Partitioning
     private Node[] _leaves;
 
     private int _height;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Methods
+
+
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
+    //--------------------------------------------------------------
+
+
 
     /// <inheritdoc/>
     protected override BasePartition<T> CreateInstanceCore()
@@ -103,7 +103,7 @@ namespace DigitalRune.Geometry.Partitioning
     {
       base.CloneCore(source);
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -171,6 +171,6 @@ namespace DigitalRune.Geometry.Partitioning
         //}
       }
     }
-    #endregion
+
   }
 }

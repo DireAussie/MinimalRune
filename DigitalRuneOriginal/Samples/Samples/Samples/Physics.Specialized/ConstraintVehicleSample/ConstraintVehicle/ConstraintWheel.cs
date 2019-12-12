@@ -32,7 +32,7 @@ namespace DigitalRune.Physics.Specialized
   public partial class ConstraintWheel : IGeometricObject
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // The chassis to which the wheel is attached.
@@ -43,11 +43,11 @@ namespace DigitalRune.Physics.Specialized
 
     internal WheelConstraint Constraint;
     internal int Tag;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Constant Input Properties
+
     //--------------------------------------------------------------
 
     // 
@@ -218,11 +218,11 @@ namespace DigitalRune.Physics.Specialized
     }
     private Vector3F _offset;
 
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Driving Input Properties
+
     //--------------------------------------------------------------
 
     //
@@ -295,11 +295,11 @@ namespace DigitalRune.Physics.Specialized
       }
     }
     private float _brakeForce;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Simulation Properties
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -362,11 +362,11 @@ namespace DigitalRune.Physics.Specialized
         }
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Simulation Result Properties
+
     //--------------------------------------------------------------
 
     // Following properties are updated by the simulation each frame.
@@ -504,11 +504,11 @@ namespace DigitalRune.Physics.Specialized
     /// </para>
     /// </remarks>
     public float SkidEnergy { get; internal set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -538,11 +538,11 @@ namespace DigitalRune.Physics.Specialized
 
       Constraint = new WheelConstraint(this);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     // Called when the Chassis RigidBody changes.
@@ -573,6 +573,6 @@ namespace DigitalRune.Physics.Specialized
       _rayPose = new Pose(wheelPosition, chassisPose.Orientation);
       OnPoseChanged(eventArgs);
     }
-    #endregion
+
   }
 }

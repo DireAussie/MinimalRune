@@ -44,16 +44,16 @@ namespace DigitalRune.Editor
     internal class ToolBarManager : IWeakEventListener
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly Action _coerceVisibilityAction;
         private DispatcherOperation _coerceVisibilityOperation;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -88,11 +88,11 @@ namespace DigitalRune.Editor
         /// </summary>
         /// <value>The toolbars.</value>
         public ToolBarViewModelCollection ToolBars { get; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -105,11 +105,11 @@ namespace DigitalRune.Editor
             CommandItems = new List<ICommandItem>();
             ToolBars = new ToolBarViewModelCollection();
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -348,6 +348,6 @@ namespace DigitalRune.Editor
                 hasVisiblePredecessor = false;
             }
         }
-        #endregion
+
     }
 }

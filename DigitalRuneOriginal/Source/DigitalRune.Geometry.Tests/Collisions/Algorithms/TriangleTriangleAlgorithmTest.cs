@@ -13,7 +13,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms.Tests
   public class TriangleTriangleAlgorithmTest
   {
     //--------------------------------------------------------------
-    #region Face-Vertex contacts
+
     //--------------------------------------------------------------
 
     [Test]
@@ -207,11 +207,11 @@ namespace DigitalRune.Geometry.Collisions.Algorithms.Tests
       Assert.IsTrue(Vector3F.AreNumericallyEqual(new Vector3F(0, 1, 0), n));
       Assert.IsTrue(Numeric.AreEqual(1, d));
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Edge-Edge contacts
+
     //--------------------------------------------------------------
 
     [Test]
@@ -501,11 +501,11 @@ namespace DigitalRune.Geometry.Collisions.Algorithms.Tests
       Assert.IsTrue(Vector3F.AreNumericallyEqual(new Vector3F(1, 0, 0), n));
       Assert.IsTrue(Numeric.AreEqual(1, d));
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Face separations
+
     //--------------------------------------------------------------
 
     [Test]
@@ -559,11 +559,11 @@ namespace DigitalRune.Geometry.Collisions.Algorithms.Tests
 
       Assert.AreEqual(false, haveContact);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Edge-Edge separations
+
     //--------------------------------------------------------------
 
     [Test]
@@ -799,11 +799,11 @@ namespace DigitalRune.Geometry.Collisions.Algorithms.Tests
 
       Assert.AreEqual(false, haveContact);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Degenerate cases
+
     //--------------------------------------------------------------
 
     [Test]
@@ -867,11 +867,11 @@ namespace DigitalRune.Geometry.Collisions.Algorithms.Tests
 
       Assert.AreEqual(false, haveContact);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Vertex-Vertex cases
+
     //--------------------------------------------------------------
 
     [Test]
@@ -888,11 +888,11 @@ namespace DigitalRune.Geometry.Collisions.Algorithms.Tests
       Assert.IsTrue(Vector3F.AreNumericallyEqual(tA.Vertex0, p));
       Assert.IsTrue(Numeric.AreEqual(0, d));
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Face vs. Planar Edge
+
     //--------------------------------------------------------------
 
     [Test]
@@ -938,11 +938,11 @@ namespace DigitalRune.Geometry.Collisions.Algorithms.Tests
         MathHelper.Swap(ref tA, ref tB);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Coplanar Triangles
+
     //--------------------------------------------------------------
 
     [Test]
@@ -1115,11 +1115,11 @@ namespace DigitalRune.Geometry.Collisions.Algorithms.Tests
         MathHelper.Swap(ref tA, ref tB);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Stochastic Tests
+
     //--------------------------------------------------------------
     
     [Test]
@@ -1214,6 +1214,6 @@ namespace DigitalRune.Geometry.Collisions.Algorithms.Tests
 
       //Trace.WriteLine("% hits:" + 100f * numberOfContacts / numberOfTests);
     }
-    #endregion
+
   }
 }

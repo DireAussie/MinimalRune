@@ -27,22 +27,22 @@ namespace DigitalRune.Windows.Framework
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private DragCommandParameter _dragCommandParameter;
         private bool _inDragDrop;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -134,11 +134,11 @@ namespace DigitalRune.Windows.Framework
             get { return (ICommand)GetValue(DragCommandProperty); }
             set { SetValue(DragCommandProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private static void OnAllowDragChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
@@ -293,6 +293,6 @@ namespace DigitalRune.Windows.Framework
             return Math.Abs(currentPosition.X - initialPosition.X) >= SystemParameters.MinimumHorizontalDragDistance
                    || Math.Abs(currentPosition.Y - initialPosition.Y) >= SystemParameters.MinimumVerticalDragDistance;
         }
-        #endregion
+
     }
 }

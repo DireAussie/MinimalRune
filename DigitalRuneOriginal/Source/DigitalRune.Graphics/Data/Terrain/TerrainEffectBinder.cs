@@ -71,7 +71,7 @@ namespace DigitalRune.Graphics.Effects
     }
 
 
-    #region ----- Terrain -----
+
 
     private static void GetTerrainClearValues(DelegateParameterArrayBinding<Vector4> binding, RenderContext context, Vector4[] values)
     {
@@ -81,9 +81,9 @@ namespace DigitalRune.Graphics.Effects
         values[i] = (Vector4)clearValues[i];
     }
 
-    #endregion
 
-    #region ----- TerrainTile -----
+
+
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
     private static TerrainTile GetTerrainTile(RenderContext context)
@@ -148,9 +148,9 @@ namespace DigitalRune.Graphics.Effects
       return new Vector2(texture.Width, texture.Height);
     }
 
-    #endregion
 
-    #region ----- TerrainNode -----
+
+
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
     private static TerrainNode GetTerrainNode(RenderContext context)
@@ -293,6 +293,6 @@ namespace DigitalRune.Graphics.Effects
       for (int i = 0; i < Math.Min(offsets.Length, values.Length); i++)
         values[i] = (Vector2)offsets[i];
     }
-    #endregion
+
   }
 }

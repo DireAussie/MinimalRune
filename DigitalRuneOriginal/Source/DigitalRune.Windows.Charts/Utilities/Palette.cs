@@ -35,7 +35,7 @@ namespace DigitalRune.Windows.Charts
     public class Palette : Collection<PaletteEntry>
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
 #if SILVERLIGHT || WINDOWS_PHONE
@@ -44,11 +44,11 @@ namespace DigitalRune.Windows.Charts
         private SortedList<double, PaletteEntry> _sortedPaletteEntries;
 #endif
         private Palette _convertedPalette;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -70,11 +70,11 @@ namespace DigitalRune.Windows.Charts
         /// <see cref="System.Windows.Media.ColorInterpolationMode.SRgbLinearInterpolation"/>.
         /// </value>
         public ColorInterpolationMode ColorInterpolationMode { get; set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <overloads>
@@ -124,11 +124,11 @@ namespace DigitalRune.Windows.Charts
             Mode = mode;
             ColorInterpolationMode = ColorInterpolationMode.SRgbLinearInterpolation;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -780,6 +780,6 @@ namespace DigitalRune.Windows.Charts
 
             return reversedGradient;
         }
-        #endregion
+
     }
 }

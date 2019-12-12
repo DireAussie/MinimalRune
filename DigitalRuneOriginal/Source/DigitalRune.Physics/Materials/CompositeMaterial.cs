@@ -36,13 +36,13 @@ namespace DigitalRune.Physics.Materials
   public class CompositeMaterial : IMaterial
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -67,11 +67,11 @@ namespace DigitalRune.Physics.Materials
     /// </remarks>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists", Justification = "Breaking change. Fix in next version.")]
     public List<UniformMaterial> Materials { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -104,11 +104,11 @@ namespace DigitalRune.Physics.Materials
       DefaultMaterial = defaultMaterial;
       Materials = new List<UniformMaterial>();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -166,6 +166,6 @@ namespace DigitalRune.Physics.Materials
 
       return material.GetProperties(body, positionLocal, featureIndex);
     }
-    #endregion
+
   }
 }

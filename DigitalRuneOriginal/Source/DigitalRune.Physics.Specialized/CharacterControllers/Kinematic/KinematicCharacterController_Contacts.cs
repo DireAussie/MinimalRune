@@ -25,7 +25,7 @@ namespace DigitalRune.Physics.Specialized
 
 
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     private struct CCContact
@@ -34,11 +34,11 @@ namespace DigitalRune.Physics.Specialized
       public Vector3F Normal;         // Normal pointing to capsule.
       public float PenetrationDepth;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -49,11 +49,11 @@ namespace DigitalRune.Physics.Specialized
     private static readonly float OppositeContactLimit = (float)Math.Cos(MathHelper.ToRadians(120));
     // Note: 3 contacts distributed in 120° around the cap is the case with the smallest possible 
     // angle between any two contacts.
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Result of CollectObstacles(). In each ContactSet the CC is the first object.
@@ -73,11 +73,11 @@ namespace DigitalRune.Physics.Specialized
     // For BackupContacts()/RollbackContacts():
     private readonly List<CCContact> _backupContacts = new List<CCContact>();
     private bool? _backupHasGroundContact;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     private float AllowedPenetration
@@ -186,11 +186,11 @@ namespace DigitalRune.Physics.Specialized
         return false;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -403,6 +403,6 @@ namespace DigitalRune.Physics.Specialized
     {
       return Vector3F.Dot(normal, UpVector) >= _cosSlopeLimit;
     }
-    #endregion
+
   }
 }

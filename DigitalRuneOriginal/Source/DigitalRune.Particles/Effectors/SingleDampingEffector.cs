@@ -42,16 +42,16 @@ namespace DigitalRune.Particles.Effectors
   public class SingleDampingEffector : ParticleEffector
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private IParticleParameter<float> _valueParameter;
     private IParticleParameter<float> _dampingParameter;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -86,11 +86,11 @@ namespace DigitalRune.Particles.Effectors
     /// </remarks>
     [ParticleParameter(ParticleParameterUsage.In)]
     public string DampingParameter { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -101,11 +101,11 @@ namespace DigitalRune.Particles.Effectors
       ValueParameter = ParticleParameterNames.LinearSpeed;
       DampingParameter = ParticleParameterNames.Damping;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -186,6 +186,6 @@ namespace DigitalRune.Particles.Effectors
           values[i] *= (1 - dampings[i] * dt);
       }
     }
-    #endregion
+
   }
 }

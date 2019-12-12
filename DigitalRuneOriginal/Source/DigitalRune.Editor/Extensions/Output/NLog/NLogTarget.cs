@@ -39,7 +39,7 @@ namespace DigitalRune.Editor.Output
         }
 
 
-        #region ----- INLogTarget -----
+
 
         /// <inheritdoc/>
         public event EventHandler<NLogMessageEventArgs> MessageWritten;
@@ -54,6 +54,6 @@ namespace DigitalRune.Editor.Output
             foreach (var message in _log)
                 buffer.AppendLine(message);
         }
-        #endregion
+
     }
 }

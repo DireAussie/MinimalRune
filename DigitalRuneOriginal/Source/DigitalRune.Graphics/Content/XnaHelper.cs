@@ -15,7 +15,7 @@ namespace DigitalRune.Graphics.Content
   internal static class XnaHelper
   {
     //--------------------------------------------------------------
-    #region Meshes
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -219,11 +219,11 @@ namespace DigitalRune.Graphics.Content
         element.VertexElementFormat.ToDataFormat(),
         element.Offset);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Textures
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -407,6 +407,6 @@ namespace DigitalRune.Graphics.Content
         //  SurfaceFormat.Dxt1a = 70
       }
     }
-    #endregion
+
   }
 }

@@ -77,13 +77,13 @@ namespace DigitalRune.Geometry.Meshes
     // method to allow inheritance.
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -130,11 +130,11 @@ namespace DigitalRune.Geometry.Meshes
     /// </summary>
     /// <value>Custom data defined by the user.</value>
     public object Tag { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -172,14 +172,14 @@ namespace DigitalRune.Geometry.Meshes
       Vertices = new List<Vector3F>(verticesCapacity);
       Indices = new List<int>(indicesCapacity);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <summary>
     /// Creates a new <see cref="TriangleMesh"/> that is a copy of the current instance.
@@ -205,7 +205,7 @@ namespace DigitalRune.Geometry.Meshes
 
       return clone;
     }
-    #endregion
+
 
 
     /// <overloads>
@@ -842,6 +842,6 @@ namespace DigitalRune.Geometry.Meshes
       return bone.Transform * GetAbsoluteTransform(bone.Parent);
     }
 #endif
-    #endregion
+
   }
 }

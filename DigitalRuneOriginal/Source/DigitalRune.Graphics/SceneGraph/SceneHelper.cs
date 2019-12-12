@@ -43,7 +43,7 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
     //--------------------------------------------------------------
-    #region LINQ to Scene Graph
+
     //--------------------------------------------------------------
 
     private static readonly Func<SceneNode, SceneNode> GetParentCallback = node => node.Parent;
@@ -228,7 +228,7 @@ namespace DigitalRune.Graphics.SceneGraph
 
       return TreeHelper.GetLeaves(node, GetChildren);
     }
-    #endregion
+
 
 
     /// <overloads>

@@ -16,7 +16,7 @@ namespace Game
   /// </remarks>
   class Game
   {
-    #region ----- Win32 Helper -----
+
 
     [StructLayout(LayoutKind.Sequential)]
     public struct MSG
@@ -41,7 +41,7 @@ namespace Game
         return !PeekMessage(out message, IntPtr.Zero, 0, 0, 0);
       }
     }
-    #endregion
+
 
 
     private static Window _window;

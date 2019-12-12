@@ -70,27 +70,27 @@ namespace DigitalRune.Mathematics.Interpolation
 
     
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private bool _prepared;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Methods
+
+
+
+    //--------------------------------------------------------------
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -277,6 +277,6 @@ namespace DigitalRune.Mathematics.Interpolation
     /// </remarks>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
     protected abstract VectorF OnCompute(VectorF x);
-    #endregion
+
   }
 }

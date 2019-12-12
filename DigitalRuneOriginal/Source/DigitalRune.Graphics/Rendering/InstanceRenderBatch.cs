@@ -29,7 +29,7 @@ namespace DigitalRune.Graphics.Rendering
   internal sealed class InstanceRenderBatch<T> : IDisposable where T : struct, IVertexType
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private RenderContext _renderContext;
@@ -49,11 +49,11 @@ namespace DigitalRune.Graphics.Rendering
 
     // SetData options for current batch.
     private SetDataOptions _setDataOptions = SetDataOptions.NoOverwrite;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -71,11 +71,11 @@ namespace DigitalRune.Graphics.Rendering
     /// </summary>
     /// <value>The instance data.</value>
     public T[] Instances { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -118,11 +118,11 @@ namespace DigitalRune.Graphics.Rendering
       _instanceVertexBuffer.Dispose();
       IsDisposed = true;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -263,6 +263,6 @@ namespace DigitalRune.Graphics.Rendering
       // Reset vertex buffer to remove second vertex stream.
       graphicsDevice.SetVertexBuffer(null);
     }
-    #endregion
+
   }
 }

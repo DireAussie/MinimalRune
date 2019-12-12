@@ -26,13 +26,13 @@ namespace DigitalRune.Geometry.Shapes
     // TODO: Optimize: The support vertex distance could be simply computed as Dot(v.absolute().Normalized, halfExtentVector).
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -153,11 +153,11 @@ namespace DigitalRune.Geometry.Shapes
       }
     }
     private float _widthZ;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -210,14 +210,14 @@ namespace DigitalRune.Geometry.Shapes
       _widthY = widthY;
       _widthZ = widthZ;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Shape CreateInstanceCore()
@@ -234,7 +234,7 @@ namespace DigitalRune.Geometry.Shapes
       _widthY = source.WidthY;
       _widthZ = source.WidthZ;
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -506,6 +506,6 @@ namespace DigitalRune.Geometry.Shapes
     {
       return String.Format(CultureInfo.InvariantCulture, "BoxShape {{ WidthX = {0}, WidthY = {1}, WidthZ = {2} }}", _widthX, _widthY, _widthZ);
     }
-    #endregion
+
   }
 }

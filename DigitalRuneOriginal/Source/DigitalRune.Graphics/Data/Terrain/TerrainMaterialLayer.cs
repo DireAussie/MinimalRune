@@ -101,13 +101,13 @@ namespace DigitalRune.Graphics
 
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -772,11 +772,11 @@ namespace DigitalRune.Graphics
       get { return GetParameter<float>(true, "TerrainSlopeBlendRange"); }
       set { SetParameter(true, "TerrainSlopeBlendRange", value); }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -851,12 +851,12 @@ namespace DigitalRune.Graphics
 
       Material = material;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
-    #endregion
+
   }
 }

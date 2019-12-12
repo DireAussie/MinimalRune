@@ -98,7 +98,7 @@ namespace DigitalRune.Game.UI.Controls
   public class Window : ContentControl
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     // The direction in which we are currently resizing. Determines the appearance 
@@ -116,11 +116,11 @@ namespace DigitalRune.Game.UI.Controls
       SW = 4 + 8,
       NW = 1 + 8,
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private Image _icon;
@@ -143,11 +143,11 @@ namespace DigitalRune.Game.UI.Controls
     private float _originalHeight;
     private Vector2F _startPosition;
     private Vector2F _startSize;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -175,11 +175,11 @@ namespace DigitalRune.Game.UI.Controls
         return "Default";
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Game Object Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary> 
@@ -683,11 +683,11 @@ namespace DigitalRune.Game.UI.Controls
         closed.Event -= value;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -708,11 +708,11 @@ namespace DigitalRune.Game.UI.Controls
     {
       Style = "Window";
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -1375,6 +1375,6 @@ namespace DigitalRune.Game.UI.Controls
 
       return null;
     }
-    #endregion
+
   }
 }

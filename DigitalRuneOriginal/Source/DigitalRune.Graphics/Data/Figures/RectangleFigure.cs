@@ -14,13 +14,13 @@ namespace DigitalRune.Graphics
   public class RectangleFigure : Figure
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------    
 
     /// <summary>
@@ -85,11 +85,11 @@ namespace DigitalRune.Graphics
 
     /// <inheritdoc/>
     internal override bool HasFill { get { return IsFilled; } }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -101,11 +101,11 @@ namespace DigitalRune.Graphics
       WidthX = 1;
       WidthY = 1;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -144,6 +144,6 @@ namespace DigitalRune.Graphics
         fillIndices.Add(index + 3);
       }
     }
-    #endregion
+
   }
 }

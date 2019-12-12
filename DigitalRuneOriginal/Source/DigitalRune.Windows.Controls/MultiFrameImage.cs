@@ -1,4 +1,4 @@
-﻿#region ----- Copyright -----
+﻿
 /*
    This control is a modified version of the MultiFrameImage implemented in MahApps.Metro (see
    https://github.com/MahApps/MahApps.Metro) which is licensed under Ms-PL (see below).
@@ -44,7 +44,7 @@
         laws, the contributors exclude the implied warranties of merchantability, fitness for a 
         particular purpose and non-infringement. 
 */
-#endregion
+
 
 using System;
 using System.Diagnostics;
@@ -68,15 +68,15 @@ namespace DigitalRune.Windows.Controls
     public class MultiFrameImage : Icon
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private BitmapFrame[] _frames;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -86,11 +86,11 @@ namespace DigitalRune.Windows.Controls
         {
             SourceProperty.OverrideMetadata(typeof(MultiFrameImage), new FrameworkPropertyMetadata(OnSourceChanged));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private static void OnSourceChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
@@ -147,6 +147,6 @@ namespace DigitalRune.Windows.Controls
 
             return frames[frames.Length - 1];
         }
-        #endregion
+
     }
 }

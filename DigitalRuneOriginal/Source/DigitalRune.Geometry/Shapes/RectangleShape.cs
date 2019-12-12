@@ -27,13 +27,13 @@ namespace DigitalRune.Geometry.Shapes
   public class RectangleShape : ConvexShape
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -126,11 +126,11 @@ namespace DigitalRune.Geometry.Shapes
       }
     }
     private float _widthY;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -181,14 +181,14 @@ namespace DigitalRune.Geometry.Shapes
       _widthX = widthX;
       _widthY = widthY;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Shape CreateInstanceCore()
@@ -204,7 +204,7 @@ namespace DigitalRune.Geometry.Shapes
       _widthX = source.WidthX;
       _widthY = source.WidthY;
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -336,6 +336,6 @@ namespace DigitalRune.Geometry.Shapes
     {
       return String.Format(CultureInfo.InvariantCulture, "RectangleShape {{ WidthX = {0}, WidthY = {1} }}", _widthX, _widthY);
     }
-    #endregion
+
   }
 }

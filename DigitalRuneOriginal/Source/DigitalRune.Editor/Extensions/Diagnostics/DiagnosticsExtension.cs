@@ -36,7 +36,7 @@ namespace DigitalRune.Editor.Diagnostics
     public sealed class DiagnosticsExtension : EditorExtension
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private const string NodesView = "Nodes";
@@ -45,17 +45,17 @@ namespace DigitalRune.Editor.Diagnostics
         private MergeableNodeCollection<ICommandItem> _menuNodes;
 
         private Process _systemInfoProcess;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -69,11 +69,11 @@ namespace DigitalRune.Editor.Diagnostics
             Logger.Debug(CultureInfo.InvariantCulture, "Application settings folder: {0}", EditorHelper.GetUserSettingsFolder(ConfigurationUserLevel.None));
             Logger.Debug(CultureInfo.InvariantCulture, "User settings folder: {0}", EditorHelper.GetUserSettingsFolder(ConfigurationUserLevel.PerUserRoamingAndLocal));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -260,7 +260,7 @@ namespace DigitalRune.Editor.Diagnostics
         }
 
 
-        #region ----- Output nodes -----
+
 
         private void OutputCommandNodes()
         {
@@ -330,7 +330,7 @@ namespace DigitalRune.Editor.Diagnostics
                 outputService.WriteLine(Invariant($"{indent}\"{toolBarItem.CommandItem.Name}\""), NodesView);
             }
         }
-        #endregion
+
 
 
         private void ShowSystemInfo()
@@ -378,6 +378,6 @@ namespace DigitalRune.Editor.Diagnostics
 
         [DllImport("user32.dll")]
         private static extern bool SetForegroundWindow(IntPtr hWnd);
-        #endregion
+
     }
 }

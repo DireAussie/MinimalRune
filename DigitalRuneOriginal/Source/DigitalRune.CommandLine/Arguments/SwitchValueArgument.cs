@@ -19,13 +19,13 @@ namespace DigitalRune.CommandLine
     public class SwitchValueArgument<T> : SwitchArgument
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -47,11 +47,11 @@ namespace DigitalRune.CommandLine
             }
         }
         private ValueArgument<T> _valueArgument;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <overloads>
@@ -126,11 +126,11 @@ namespace DigitalRune.CommandLine
 
             _valueArgument = value;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -246,6 +246,6 @@ namespace DigitalRune.CommandLine
 
             return s.ToString();
         }
-        #endregion
+
     }
 }

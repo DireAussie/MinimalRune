@@ -33,13 +33,13 @@ namespace DigitalRune.Collections
     where TChild : class
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -65,11 +65,11 @@ namespace DigitalRune.Collections
       }
     }
     private TParent _parent;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -101,11 +101,11 @@ namespace DigitalRune.Collections
     {
       _parent = parent;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -273,6 +273,6 @@ namespace DigitalRune.Collections
       Items.RemoveAt(oldIndex);
       Items.Insert(newIndex, item);
     }
-    #endregion
+
   }
 }

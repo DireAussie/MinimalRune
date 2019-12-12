@@ -13,13 +13,13 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
     public class CompletionData : ICompletionData
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -63,11 +63,11 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
         /// </summary>
         /// <value>The priority. The default value is 0.</value>
         public double Priority { get; set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <overloads>
@@ -114,11 +114,11 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
             Image = image;
         }
 
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -138,6 +138,6 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
                 textArea.Document.Replace(completionSegment, Text);
             }
         }
-        #endregion
+
     }
 }

@@ -44,13 +44,13 @@ namespace DigitalRune.Graphics
   public class LensFlare : INamedObject
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -185,11 +185,11 @@ namespace DigitalRune.Graphics
       }
     }
     private float _size;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -217,14 +217,14 @@ namespace DigitalRune.Graphics
       _intensity = 1;
       _size = 0.2f;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <summary>
     /// Creates a new <see cref="LensFlare"/> that is a clone (deep copy) of the current instance.
@@ -325,7 +325,7 @@ namespace DigitalRune.Graphics
       foreach (var element in source.Elements)
         Elements.Add(element.Clone());
     }
-    #endregion
+
 
 
     /// <summary>
@@ -409,6 +409,6 @@ namespace DigitalRune.Graphics
         }
       }
     }
-    #endregion
+
   }
 }

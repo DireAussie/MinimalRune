@@ -20,7 +20,7 @@ namespace DigitalRune.Graphics.Effects
     // Note: Helper methods with arrays are commented out because they create garbage 
     // and should not be used.
 
-    #region ----- Effect extensions -----
+
 
     ///// <summary>
     ///// Gets the effect parameter with the given name.
@@ -106,10 +106,10 @@ namespace DigitalRune.Graphics.Effects
 
     //  return parameter;
     //}
-    #endregion
 
 
-    #region ----- EffectParameter extensions for DigitalRune Mathematics -----
+
+
 
     ///// <summary>
     ///// Gets the value of the effect parameter as <see cref="Matrix22F"/>.
@@ -611,10 +611,10 @@ namespace DigitalRune.Graphics.Effects
     //    parameter.SetValue(convertedValue);
     //  }
     //}    
-    #endregion
 
 
-    #region ----- EffectParameter extensions for special types -----
+
+
 
     /// <summary>
     /// Gets the value of the effect parameter as <see cref="Color"/>. 
@@ -1320,6 +1320,6 @@ namespace DigitalRune.Graphics.Effects
         throw new InvalidCastException(message);
       }
     }
-    #endregion
+
   }
 }

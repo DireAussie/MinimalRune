@@ -30,7 +30,7 @@ namespace DigitalRune.Editor.Errors
     public sealed class ErrorExtension : EditorExtension, IErrorService
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
@@ -39,11 +39,11 @@ namespace DigitalRune.Editor.Errors
         private MergeableNodeCollection<ICommandItem> _menuNodes;
         private MergeableNodeCollection<ICommandItem> _toolBarNodes;
         private Lazy<ErrorsViewModel> _errorsViewModel;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         ///// <inheritdoc/>
@@ -58,11 +58,11 @@ namespace DigitalRune.Editor.Errors
         {
             get { return _errorsViewModel.Value.Items; }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -72,11 +72,11 @@ namespace DigitalRune.Editor.Errors
         {
             Logger.Debug("Initializing ErrorExtension.");
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -212,6 +212,6 @@ namespace DigitalRune.Editor.Errors
 
             Editor.ActivateItem(_errorsViewModel.Value);
         }
-        #endregion
+
     }
 }

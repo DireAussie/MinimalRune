@@ -19,13 +19,13 @@ namespace DigitalRune.Mathematics.Statistics
   public class UniformDistributionF : Distribution<float>
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -40,11 +40,11 @@ namespace DigitalRune.Mathematics.Statistics
     /// </summary>
     /// <value>The minimum value. The default is -1.</value>
     public float MinValue { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -67,11 +67,11 @@ namespace DigitalRune.Mathematics.Statistics
       MinValue = minValue;
       MaxValue = maxValue;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -82,6 +82,6 @@ namespace DigitalRune.Mathematics.Statistics
 
       return MinValue + (MaxValue - MinValue) * (float)random.NextDouble();
     }
-    #endregion
+
   }
 }

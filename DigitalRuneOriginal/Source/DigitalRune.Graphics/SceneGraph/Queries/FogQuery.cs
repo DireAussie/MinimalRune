@@ -26,13 +26,13 @@ namespace DigitalRune.Graphics.SceneGraph
   public class FogQuery : ISceneQuery
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -45,11 +45,11 @@ namespace DigitalRune.Graphics.SceneGraph
     /// <value>The fog nodes.</value>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists", Justification = "Performance")]
     public List<FogNode> FogNodes { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -59,11 +59,11 @@ namespace DigitalRune.Graphics.SceneGraph
     {
       FogNodes = new List<FogNode>();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -95,6 +95,6 @@ namespace DigitalRune.Graphics.SceneGraph
       // Sort fog nodes.
       FogNodes.Sort(DescendingFogNodeComparer.Instance);
     }
-    #endregion
+
   }
 }

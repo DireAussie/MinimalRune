@@ -60,7 +60,7 @@ namespace DigitalRune.Editor.Game
     public class TurntableBehavior : Behavior<D3DImagePresentationTarget>
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private CameraNode _cameraNode;
@@ -68,11 +68,11 @@ namespace DigitalRune.Editor.Game
 
         private float _upDirection;
         private Point _lastMousePosition;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -171,11 +171,11 @@ namespace DigitalRune.Editor.Game
             get { return (double)GetValue(SpeedProperty); }
             set { SetValue(SpeedProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -376,6 +376,6 @@ namespace DigitalRune.Editor.Game
 
             _lastMousePosition = mousePosition;
         }
-        #endregion
+
     }
 }

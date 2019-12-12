@@ -18,13 +18,13 @@ namespace DigitalRune.Game.Input
   partial class InputManager
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -116,11 +116,11 @@ namespace DigitalRune.Game.Input
     {
       get { return _newMouseState.ScrollWheelValue - _previousMouseState.ScrollWheelValue; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private void UpdateMouse(TimeSpan deltaTime)
@@ -320,6 +320,6 @@ namespace DigitalRune.Game.Input
     {
       return _lastMouseButton.Button == button && _lastMouseButton.IsDoubleClick;
     }
-    #endregion
+
   }
 }

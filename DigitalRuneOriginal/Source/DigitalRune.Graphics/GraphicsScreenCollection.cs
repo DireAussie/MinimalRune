@@ -26,13 +26,13 @@ namespace DigitalRune.Graphics
   public class GraphicsScreenCollection : NotifyingCollection<GraphicsScreen>
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -53,11 +53,11 @@ namespace DigitalRune.Graphics
         return null;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -66,12 +66,12 @@ namespace DigitalRune.Graphics
     public GraphicsScreenCollection() : base(false, false)
     {
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
-    #endregion
+
   }
 }

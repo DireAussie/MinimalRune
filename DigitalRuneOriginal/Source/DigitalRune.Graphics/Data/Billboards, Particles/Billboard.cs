@@ -56,13 +56,13 @@ namespace DigitalRune.Graphics
   public abstract class Billboard : INamedObject
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -101,11 +101,11 @@ namespace DigitalRune.Graphics
     /// </summary>
     /// <value>The opacity. The default value is 1 (opaque).</value>
     public float Alpha { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -118,14 +118,14 @@ namespace DigitalRune.Graphics
       Color = new Vector3F(1, 1, 1);
       Alpha = 1;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <summary>
     /// Creates a new <see cref="Billboard"/> that is a clone (deep copy) of the current instance.
@@ -222,8 +222,8 @@ namespace DigitalRune.Graphics
       Color = source.Color;
       Alpha = source.Alpha;
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

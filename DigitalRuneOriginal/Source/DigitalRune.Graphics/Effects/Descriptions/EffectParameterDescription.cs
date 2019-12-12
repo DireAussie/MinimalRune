@@ -50,13 +50,13 @@ namespace DigitalRune.Graphics.Effects
   public class EffectParameterDescription
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -122,11 +122,11 @@ namespace DigitalRune.Graphics.Effects
     /// A value indicating how the effect parameter should be treated during state sorting.
     /// </value>
     public EffectParameterHint Hint { get; internal set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -161,11 +161,11 @@ namespace DigitalRune.Graphics.Effects
       Index = index;
       Hint = hint;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     [Conditional("DEBUG")]
@@ -184,6 +184,6 @@ namespace DigitalRune.Graphics.Effects
           throw new ArgumentException("Invalid effect parameter hint. Allowed values are Global, Material, Local, PerInstance, and PerPass.", "hint");
       }
     }
-    #endregion
+
   }
 }

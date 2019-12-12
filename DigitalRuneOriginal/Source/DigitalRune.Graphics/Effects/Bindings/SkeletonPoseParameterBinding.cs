@@ -21,13 +21,13 @@ namespace DigitalRune.Graphics.Effects
   public class SkeletonPoseParameterBinding : EffectParameterBinding
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -35,11 +35,11 @@ namespace DigitalRune.Graphics.Effects
     /// </summary>
     /// <value>The skeleton pose.</value>
     public SkeletonPose Value { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -70,14 +70,14 @@ namespace DigitalRune.Graphics.Effects
       : base(effect, parameter)
     {
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override EffectParameterBinding CreateInstanceCore()
@@ -96,7 +96,7 @@ namespace DigitalRune.Graphics.Effects
       var sourceTyped = (SkeletonPoseParameterBinding)source;
       Value = sourceTyped.Value;
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -138,7 +138,7 @@ namespace DigitalRune.Graphics.Effects
       if (Value != null)
         Parameter.SetValue(Value.SkinningMatricesXna);
     }
-    #endregion
+
   }
 }
 #endif

@@ -149,17 +149,17 @@ namespace DigitalRune.Graphics
     //   or lower mip levels.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // An ID for sorting, see ImageBasedLightRenderer.
     private static int NextId;
     internal int Id = Interlocked.Increment(ref NextId);
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -374,11 +374,11 @@ namespace DigitalRune.Graphics
     /// <see cref="SceneNode.PoseLocal"/> properties.
     /// </remarks>
     public Aabb? LocalizedReflectionBox { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -406,14 +406,14 @@ namespace DigitalRune.Graphics
       : this(null)
     {
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Light CreateInstanceCore()
@@ -442,7 +442,7 @@ namespace DigitalRune.Graphics
       EnableLocalizedReflection = sourceTyped.EnableLocalizedReflection;
       LocalizedReflectionBox = sourceTyped.LocalizedReflectionBox;
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -452,6 +452,6 @@ namespace DigitalRune.Graphics
       float specular = Numeric.IsNaN(SpecularIntensity) ? 0.0f : SpecularIntensity;
       return Color * Math.Max(diffuse, specular) * HdrScale;
     }
-    #endregion
+
   }
 }

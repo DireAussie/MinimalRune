@@ -30,19 +30,19 @@ namespace DigitalRune.Graphics.Rendering
   public class SkyRenderer : SceneRenderer
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -72,11 +72,11 @@ namespace DigitalRune.Graphics.Rendering
         Renderers.Add(new CloudLayerRenderer(graphicsService));
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -149,7 +149,7 @@ namespace DigitalRune.Graphics.Rendering
              | (uint)order << 8
              | id;
     }
-    #endregion
+
   }
 }
 #endif

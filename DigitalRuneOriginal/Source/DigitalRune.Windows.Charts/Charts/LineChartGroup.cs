@@ -25,19 +25,19 @@ namespace DigitalRune.Windows.Charts
     public class LineChartGroup : ChartGroup<LineChart>, ILineChartGroup
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties
-        //--------------------------------------------------------------
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -97,11 +97,11 @@ namespace DigitalRune.Windows.Charts
             get { return (LineChartGrouping)GetValue(GroupingProperty); }
             set { SetValue(GroupingProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
 #if SILVERLIGHT
@@ -122,11 +122,11 @@ namespace DigitalRune.Windows.Charts
             DefaultStyleKeyProperty.OverrideMetadata(typeof(LineChartGroup), new FrameworkPropertyMetadata(typeof(LineChartGroup)));
         }
 #endif
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -357,6 +357,6 @@ namespace DigitalRune.Windows.Charts
                 }
             }
         }
-        #endregion
+
     }
 }

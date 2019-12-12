@@ -12,13 +12,13 @@ namespace DigitalRune.Physics
   public partial class RigidBody
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -250,11 +250,11 @@ namespace DigitalRune.Physics
       }
     }
     private bool _lockRotationZ;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -300,6 +300,6 @@ namespace DigitalRune.Physics
       Matrix33F orientationCOM = _poseCenterOfMass.Orientation;
       InertiaInverseWorld = orientationCOM * Matrix33F.CreateScale(inertiaInverse) * orientationCOM.Transposed;
     }
-    #endregion
+
   }
 }

@@ -28,7 +28,7 @@ namespace DigitalRune.Graphics.PostProcessing
   public class SimpleMotionBlur : PostProcessor
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -52,11 +52,11 @@ namespace DigitalRune.Graphics.PostProcessing
         LastBlurredScene = null;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Effect _effect;
@@ -66,11 +66,11 @@ namespace DigitalRune.Graphics.PostProcessing
     private readonly EffectParameter _lastSourceTextureParameter;
 
     private readonly CopyFilter _copyFilter;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -78,11 +78,11 @@ namespace DigitalRune.Graphics.PostProcessing
     /// </summary>
     /// <value>The strength. The default value 0.8.</value>
     public float Strength { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -105,11 +105,11 @@ namespace DigitalRune.Graphics.PostProcessing
 
       Strength = 0.8f;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -207,7 +207,7 @@ namespace DigitalRune.Graphics.PostProcessing
       // Restore original context.
       context.SourceTexture = source;
     }
-    #endregion
+
   }
 }
 #endif

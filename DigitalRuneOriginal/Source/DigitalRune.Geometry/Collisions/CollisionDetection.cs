@@ -18,13 +18,13 @@ namespace DigitalRune.Geometry.Collisions
   public class CollisionDetection
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -208,11 +208,11 @@ namespace DigitalRune.Geometry.Collisions
       remove { _collisionFilterChangedEvent.Remove(value); }
     }
     private readonly WeakEvent<EventHandler<EventArgs>> _collisionFilterChangedEvent = new WeakEvent<EventHandler<EventArgs>>();
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -228,11 +228,11 @@ namespace DigitalRune.Geometry.Collisions
       // This property must be updated last because it uses "this".
       AlgorithmMatrix = new CollisionAlgorithmMatrix(this);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -498,6 +498,6 @@ namespace DigitalRune.Geometry.Collisions
     {
       _collisionFilterChangedEvent.Invoke(this, eventArgs);
     }
-    #endregion
+
   }
 }

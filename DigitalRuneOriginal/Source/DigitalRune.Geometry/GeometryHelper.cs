@@ -171,7 +171,7 @@ namespace DigitalRune.Geometry
 
 
     //--------------------------------------------------------------
-    #region Cartesian Coordinates <-> Spherical Coordinates
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -226,11 +226,11 @@ namespace DigitalRune.Geometry
         radius * sinθ * sinφ,
         radius * cosθ);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region k-DOP
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -420,6 +420,6 @@ namespace DigitalRune.Geometry
       }
     }
 #endif
-    #endregion
+
   }
 }

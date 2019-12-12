@@ -46,7 +46,7 @@ namespace Samples.Physics.Specialized
 
 
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     private const float LinearVelocityMagnitude = 5f;
@@ -59,11 +59,11 @@ namespace Samples.Physics.Specialized
     // The JumpVelocity is sustained as long as the jump button is pressed, but no longer
     // than DynamicJumpTime. 
     private const float DynamicJumpTime = 10 / 60f;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly IInputService _inputService;
@@ -78,11 +78,11 @@ namespace Samples.Physics.Specialized
 
     // The character can be in "Hulk" mode where it is stronger and can easily push heavy objects.
     private bool _isHulk;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     // A "CharacterController" controls the character that can collide with other objects.
@@ -109,11 +109,11 @@ namespace Samples.Physics.Specialized
         return new Pose(position, orientation);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     public CharacterControllerObject(IServiceLocator services)
@@ -155,11 +155,11 @@ namespace Samples.Physics.Specialized
       ICollisionFilter filter = (ICollisionFilter)_simulation.CollisionDomain.CollisionDetection.CollisionFilter;
       filter.Set(3, 4, false);  // Disable collisions between group 3 and 4.
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     protected override void OnLoad()
@@ -415,6 +415,6 @@ namespace Samples.Physics.Specialized
 
       return false;
     }
-    #endregion
+
   }
 }

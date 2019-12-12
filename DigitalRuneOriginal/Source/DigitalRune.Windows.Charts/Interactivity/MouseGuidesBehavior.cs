@@ -20,22 +20,22 @@ namespace DigitalRune.Windows.Charts.Interactivity
     public class MouseGuidesBehavior : Behavior<ChartPanel>
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties and Events
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         private Line _horizontalLine;
         private Line _verticalLine;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties
+
         //--------------------------------------------------------------    
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace DigitalRune.Windows.Charts.Interactivity
         }
 
 
-        #region ----- Axes -----
+
 
         /// <summary>
         /// Identifies the <see cref="XAxis"/> dependency property.
@@ -187,18 +187,18 @@ namespace DigitalRune.Windows.Charts.Interactivity
             get { return (Axis)GetValue(YAxisProperty); }
             set { SetValue(YAxisProperty, value); }
         }
-        #endregion
-        #endregion
+
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Methods
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         private static void OnXAxisChangedStatic(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
@@ -387,6 +387,6 @@ namespace DigitalRune.Windows.Charts.Interactivity
                 _verticalLine.Visibility = Visibility.Collapsed;
             }
         }
-        #endregion
+
     }
 }

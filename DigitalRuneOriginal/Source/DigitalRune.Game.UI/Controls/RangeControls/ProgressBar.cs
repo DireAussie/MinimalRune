@@ -39,22 +39,22 @@ namespace DigitalRune.Game.UI.Controls
   public class ProgressBar : RangeBase
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Current direction of cycling value in Indeterminate mode.
     private bool _forward = true;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Game Object Properties & Events
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary> 
@@ -107,11 +107,11 @@ namespace DigitalRune.Game.UI.Controls
       get { return GetValue<TimeSpan>(IndeterminateCycleTimePropertyId); }
       set { SetValue(IndeterminateCycleTimePropertyId, value); }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -131,11 +131,11 @@ namespace DigitalRune.Game.UI.Controls
     {
       Style = "ProgressBar";
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -171,6 +171,6 @@ namespace DigitalRune.Game.UI.Controls
 
       base.OnUpdate(deltaTime);
     }
-    #endregion
+
   }
 }

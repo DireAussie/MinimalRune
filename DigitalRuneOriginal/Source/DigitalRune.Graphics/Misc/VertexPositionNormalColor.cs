@@ -21,7 +21,7 @@ namespace DigitalRune.Graphics
   public struct VertexPositionNormalColor : IVertexType
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -57,11 +57,11 @@ namespace DigitalRune.Graphics
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
     public Color Color;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -72,11 +72,11 @@ namespace DigitalRune.Graphics
     {
       get { return 12 + 12 + 4; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -91,11 +91,11 @@ namespace DigitalRune.Graphics
       Normal = normal;
       Color = color;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -185,6 +185,6 @@ namespace DigitalRune.Graphics
         Normal,
         Color);
     }
-    #endregion
+
   }
 }

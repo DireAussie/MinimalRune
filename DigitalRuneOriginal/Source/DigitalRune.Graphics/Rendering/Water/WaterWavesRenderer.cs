@@ -34,7 +34,7 @@ namespace DigitalRune.Graphics.Rendering
     // TODO: Run CPU FFT as parallel task.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly IGraphicsService _graphicsService;
@@ -47,17 +47,17 @@ namespace DigitalRune.Graphics.Rendering
     private readonly EffectPass _passSpectrum;
 
     private readonly OceanFft _fft;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -100,11 +100,11 @@ namespace DigitalRune.Graphics.Rendering
 
       base.Dispose(disposing);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -212,7 +212,7 @@ namespace DigitalRune.Graphics.Rendering
           (RenderTarget2D)waves.NormalMap,
           waves.Choppiness);
 
-        #region ----- Old Debugging Code -----
+
 
         // Create textures from CPU FFT data for debug visualization.
         //n = waves.CpuSize;
@@ -241,7 +241,7 @@ namespace DigitalRune.Graphics.Rendering
         //s1.SetData(s1Data);
         //WaterSample._t0 = s0;
         //WaterSample._t1 = waves.DisplacementMap;
-        #endregion
+
       }
 
       savedRenderState.Restore();
@@ -258,7 +258,7 @@ namespace DigitalRune.Graphics.Rendering
       graphicsDevice.ResetTextures();
 #endif
     }
-    #endregion
+
   }
 }
 #endif

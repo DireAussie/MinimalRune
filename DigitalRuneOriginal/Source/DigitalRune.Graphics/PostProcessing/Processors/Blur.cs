@@ -53,7 +53,7 @@ namespace DigitalRune.Graphics.PostProcessing
   public class Blur : PostProcessor
   {
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     // 13-tap Poisson Disk
@@ -75,11 +75,11 @@ namespace DigitalRune.Graphics.PostProcessing
       new Vector2(-0.32194f,-0.932615f),
       new Vector2(-0.791559f,-0.59771f)
     };
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Effect _effect;
@@ -96,11 +96,11 @@ namespace DigitalRune.Graphics.PostProcessing
     private readonly Vector3[] _frustumFarCorners = new Vector3[4];
     private readonly Vector2[] _horizontalOffsets;
     private Vector2[] _verticalOffsets;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -344,11 +344,11 @@ namespace DigitalRune.Graphics.PostProcessing
     /// Log-space filtering must be applied for <i>Exponential Shadow Maps</i>.
     /// </remarks>
     public bool FilterInLogSpace { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -383,11 +383,11 @@ namespace DigitalRune.Graphics.PostProcessing
 
       InitializeBoxBlur(9, true);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -1009,7 +1009,7 @@ namespace DigitalRune.Graphics.PostProcessing
 
       _effect.CurrentTechnique = technique;
     }
-    #endregion
+
   }
 }
 #endif

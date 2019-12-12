@@ -20,7 +20,7 @@ namespace DigitalRune.Geometry.Shapes
   internal sealed class TestMinkowskiSumShape : ConvexShape, IRecyclable
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     public static readonly ResourcePool<TestMinkowskiSumShape> Pool =
@@ -28,11 +28,11 @@ namespace DigitalRune.Geometry.Shapes
         () => new TestMinkowskiSumShape(),
         null,
         null);
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     public override Vector3F InnerPoint
@@ -62,11 +62,11 @@ namespace DigitalRune.Geometry.Shapes
       set { _objectB = value; }
     }
     private TestGeometricObject _objectB;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     private TestMinkowskiSumShape()
@@ -86,11 +86,11 @@ namespace DigitalRune.Geometry.Shapes
       ObjectB = null;
       Pool.Recycle(this);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     protected override Shape CreateInstanceCore()
@@ -133,6 +133,6 @@ namespace DigitalRune.Geometry.Shapes
       Vector3F pointB = _objectB.Pose.ToWorldPosition(pointBLocalB);
       return pointA + pointB;
     }
-    #endregion
+
   }
 }

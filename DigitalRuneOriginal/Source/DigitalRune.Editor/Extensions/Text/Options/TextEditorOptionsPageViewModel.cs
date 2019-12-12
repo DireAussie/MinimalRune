@@ -23,7 +23,7 @@ namespace DigitalRune.Editor.Text
     internal class TextEditorOptionsPageViewModel : OptionsPageViewModel
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
@@ -32,11 +32,11 @@ namespace DigitalRune.Editor.Text
         private readonly FontStretchConverter _fontStretchConverter;
         private readonly FontStyleConverter _fontStyleConverter;
         private readonly FontWeightConverter _fontWeightConverter;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -67,11 +67,11 @@ namespace DigitalRune.Editor.Text
         /// </summary>
         /// <value>The "Select Font" command.</value>
         public DelegateCommand SelectFontCommand { get; private set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -110,11 +110,11 @@ namespace DigitalRune.Editor.Text
             _fontStyleConverter = new FontStyleConverter();
             _fontWeightConverter = new FontWeightConverter();
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -177,6 +177,6 @@ namespace DigitalRune.Editor.Text
             // Update global text editor options.
             _textExtension.Options.Set(Options);
         }
-        #endregion
+
     }
 }

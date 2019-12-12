@@ -11,7 +11,7 @@ namespace DigitalRune.Physics
   public partial class RigidBody
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Force effects must use different AddForce() method, so that the user set forces are not deleted.
@@ -26,17 +26,17 @@ namespace DigitalRune.Physics
     // each frame or use a ForceEffect
     internal Vector3F UserForce;
     internal Vector3F UserTorque;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -112,6 +112,6 @@ namespace DigitalRune.Physics
     {
       UserTorque += torqueWorld;
     }
-    #endregion
+
   }
 }

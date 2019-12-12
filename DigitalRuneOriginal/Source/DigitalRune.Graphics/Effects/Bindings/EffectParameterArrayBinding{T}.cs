@@ -34,7 +34,7 @@ namespace DigitalRune.Graphics.Effects
     // to copy the array each time the value is applied - and it could create garbage.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // ReSharper disable StaticFieldInGenericType
@@ -52,11 +52,11 @@ namespace DigitalRune.Graphics.Effects
     private static readonly Action<EffectParameter, T[]> SetValue;
 
     // ReSharper restore StaticFieldInGenericType
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -96,11 +96,11 @@ namespace DigitalRune.Graphics.Effects
       }
     }
     private T[] _values;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -233,14 +233,14 @@ namespace DigitalRune.Graphics.Effects
 
       return values;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override void CloneCore(EffectParameterBinding source)
@@ -252,7 +252,7 @@ namespace DigitalRune.Graphics.Effects
       var sourceTyped = (EffectParameterArrayBinding<T>)source;
       Values = (T[])sourceTyped.Values.Clone();
     }
-    #endregion
+
 
 
     /// <summary>
@@ -280,6 +280,6 @@ namespace DigitalRune.Graphics.Effects
     {
       SetValue(Parameter, _values);
     }
-    #endregion
+
   }
 }

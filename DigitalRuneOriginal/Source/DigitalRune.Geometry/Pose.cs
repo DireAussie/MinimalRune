@@ -56,18 +56,18 @@ namespace DigitalRune.Geometry
   public struct Pose : IEquatable<Pose>
   {
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     /// <summary>
     /// A pose with no translation and no rotation.
     /// </summary>
     public static readonly Pose Identity = new Pose(Vector3F.Zero, Matrix33F.Identity);
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -91,11 +91,11 @@ namespace DigitalRune.Geometry
 #endif
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
     public Matrix33F Orientation;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -146,11 +146,11 @@ namespace DigitalRune.Geometry
         return false;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -214,11 +214,11 @@ namespace DigitalRune.Geometry
       Position = Vector3F.Zero;
       Orientation = orientation.ToRotationMatrix33();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -457,11 +457,11 @@ namespace DigitalRune.Geometry
                         Position.X, Position.Y, Position.Z, 1);
     }
 #endif
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Static Methods
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -587,11 +587,11 @@ namespace DigitalRune.Geometry
              && Numeric.IsZero(matrix.M32)
              && Numeric.AreEqual(matrix.M33, 1);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Overrides
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -661,11 +661,11 @@ namespace DigitalRune.Geometry
     {
       return string.Format(provider, "Pose {{ Position = {0}, Orientation = {1} }}", Position, Orientation);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Overloaded Operators
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -859,6 +859,6 @@ namespace DigitalRune.Geometry
                         v.X, v.Y, v.Z, 1);
     }
 #endif
-    #endregion
+
   }
 }

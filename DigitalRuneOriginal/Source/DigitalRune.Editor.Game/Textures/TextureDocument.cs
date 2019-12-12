@@ -24,7 +24,7 @@ namespace DigitalRune.Editor.Textures
     internal class TextureDocument : Document
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly IGraphicsService _graphicsService;
@@ -34,11 +34,11 @@ namespace DigitalRune.Editor.Textures
         private PropertySource _propertySource;
 
         private MonoGameContent _monoGameContent;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -55,11 +55,11 @@ namespace DigitalRune.Editor.Textures
             }
         }
         private Texture2D _texture2D;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -103,11 +103,11 @@ namespace DigitalRune.Editor.Textures
 
             base.Dispose(disposing);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -240,6 +240,6 @@ namespace DigitalRune.Editor.Textures
                 IsReadOnly = true,
             });
         }
-        #endregion
+
     }
 }

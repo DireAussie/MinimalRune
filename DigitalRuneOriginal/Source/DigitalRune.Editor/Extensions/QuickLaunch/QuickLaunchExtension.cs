@@ -28,40 +28,40 @@ namespace DigitalRune.Editor.QuickLaunch
     public sealed class QuickLaunchExtension : EditorExtension, IQuickLaunchService
     {
         //--------------------------------------------------------------
-        #region Contants
+
         //--------------------------------------------------------------
 
         internal const string FocusQuickLaunchMessage = "FocusQuickLaunch";
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private ResourceDictionary _resourceDictionary;
         private MergeableNodeCollection<ICommandItem> _menuNodes;
         private QuickLaunchViewModel _quickLaunchViewModel;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
         public IList<QuickLaunchItem> Items { get; } = new List<QuickLaunchItem>();
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Creation & Cleanup
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Methods
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -175,6 +175,6 @@ namespace DigitalRune.Editor.QuickLaunch
         {
             Editor.Focus(_quickLaunchViewModel);
         }
-        #endregion
+
     }
 }

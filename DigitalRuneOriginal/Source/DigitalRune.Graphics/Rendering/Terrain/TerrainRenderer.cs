@@ -60,16 +60,16 @@ namespace DigitalRune.Graphics.Rendering
   public class TerrainRenderer : SceneNodeRenderer
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     //private readonly IGraphicsService _graphicsService;
     private readonly Dictionary<Pair<int, int>, TerrainRendererMesh> _meshes = new Dictionary<Pair<int, int>, TerrainRendererMesh>(1);
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -83,11 +83,11 @@ namespace DigitalRune.Graphics.Rendering
     /// See <see cref="TerrainRenderer"/> for more details.
     /// </remarks>
     public bool DrawWireFrame { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -127,11 +127,11 @@ namespace DigitalRune.Graphics.Rendering
 
       base.Dispose(disposing);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -392,7 +392,7 @@ namespace DigitalRune.Graphics.Rendering
       if (parameter != null)
         parameter.SetValue((Texture2D)null);
     }
-    #endregion
+
   }
 }
 #endif

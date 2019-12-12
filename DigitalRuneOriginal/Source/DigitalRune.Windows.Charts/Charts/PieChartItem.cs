@@ -60,7 +60,7 @@ namespace DigitalRune.Windows.Charts
     public class PieChartItem : Control
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private bool _isValid;
@@ -70,17 +70,17 @@ namespace DigitalRune.Windows.Charts
         private PathGeometry _leaderLineGeometry;
         private ContentControl _innerLabel;
         private ContentControl _outerLabel;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -470,11 +470,11 @@ namespace DigitalRune.Windows.Charts
             get { return (Style)GetValue(SectorStyleProperty); }
             set { SetValue(SectorStyleProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
 #if SILVERLIGHT
@@ -495,11 +495,11 @@ namespace DigitalRune.Windows.Charts
             DefaultStyleKeyProperty.OverrideMetadata(typeof(PieChartItem), new FrameworkPropertyMetadata(typeof(PieChartItem)));
         }
 #endif
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -753,6 +753,6 @@ namespace DigitalRune.Windows.Charts
             x = Math.Sin(angle);
             y = -Math.Cos(angle);
         }
-        #endregion
+
     }
 }

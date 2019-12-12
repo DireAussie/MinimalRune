@@ -38,7 +38,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
     //   project. Therefore, this processor cannot be simply named "ModelProcessor".
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Input
@@ -72,11 +72,11 @@ namespace DigitalRune.Graphics.Content.Pipeline
     //   Key: MaterialContent
     //   Value: DRMaterialContent
     private Dictionary<object, object> _materials;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -177,11 +177,11 @@ namespace DigitalRune.Graphics.Content.Pipeline
     }
     private float _scale = 1f;
     */
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -346,6 +346,6 @@ namespace DigitalRune.Graphics.Content.Pipeline
         // ReSharper restore CompareOfFloatsByEqualityOperator
       }
     }
-    #endregion
+
   }
 }

@@ -60,7 +60,7 @@ namespace DigitalRune.Windows.Charts.Interactivity
     public class ChartSelectionBehavior : Behavior<ChartPanel>
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private bool _mouseLeftButtonDownHandled;
@@ -72,11 +72,11 @@ namespace DigitalRune.Windows.Charts.Interactivity
 #else
         private Adorner _adorner;
 #endif
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------    
 
         /// <summary>
@@ -99,11 +99,11 @@ namespace DigitalRune.Windows.Charts.Interactivity
         /// </para>
         /// </remarks>
         public event EventHandler<ChartSelectionRectangleEventArgs> SelectionRectangle;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -165,11 +165,11 @@ namespace DigitalRune.Windows.Charts.Interactivity
             get { return (bool)GetValue(IsSelectionRectangleEnabledProperty); }
             set { SetValue(IsSelectionRectangleEnabledProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Attached Dependency Properties
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -296,17 +296,17 @@ namespace DigitalRune.Windows.Charts.Interactivity
 
             element.SetValue(SelectableProperty, value);
         }
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Creation and Cleanup
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Methods
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <overloads>
@@ -761,6 +761,6 @@ namespace DigitalRune.Windows.Charts.Interactivity
             if (handler != null)
                 handler(this, eventArgs);
         }
-        #endregion
+
     }
 }

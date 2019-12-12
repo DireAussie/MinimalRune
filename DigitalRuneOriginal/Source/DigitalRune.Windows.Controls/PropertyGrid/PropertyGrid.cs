@@ -38,7 +38,7 @@ namespace DigitalRune.Windows.Controls
     public class PropertyGrid : Control
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private Thumb _thumb;
@@ -48,17 +48,17 @@ namespace DigitalRune.Windows.Controls
 
         // True if the collapse or expand operation was triggered in explicitly in code.
         private bool _isManualCollapseOrExpand;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -257,11 +257,11 @@ namespace DigitalRune.Windows.Controls
             get { return (string)GetValue(FilterProperty); }
             set { SetValue(FilterProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -286,11 +286,11 @@ namespace DigitalRune.Windows.Controls
             AddHandler(Expander.ExpandedEvent, new RoutedEventHandler(OnCategoryExpanded));
             AddHandler(Expander.CollapsedEvent, new RoutedEventHandler(OnCategoryCollapsed));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private static void OnPropertiesSourceChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
@@ -765,6 +765,6 @@ namespace DigitalRune.Windows.Controls
                        .OfType<Expander>()
                        .FirstOrDefault(expander => Equals(expander.Header, property.Category));
         }
-        #endregion
+
     }
 }

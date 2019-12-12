@@ -130,7 +130,7 @@ namespace DigitalRune.Animation.Character
     // automatically throw an exception if a bone index is out of range.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     internal readonly SrtTransform[] BoneTransforms;
@@ -140,11 +140,11 @@ namespace DigitalRune.Animation.Character
 
     // The bone transforms as animatable properties. Only allocated when needed.
     private AnimatableBoneTransform[] _animatableBoneTransforms;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -216,11 +216,11 @@ namespace DigitalRune.Animation.Character
       }
     }
 #endif
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -323,11 +323,11 @@ namespace DigitalRune.Animation.Character
       // Recycle self.
       Skeleton.SkeletonPosePool.Recycle(this);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -507,11 +507,11 @@ namespace DigitalRune.Animation.Character
       EnsureBoneAccessor();
       _boneAccessor.Update();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region IAnimatableObject
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -542,11 +542,11 @@ namespace DigitalRune.Animation.Character
 
       return null;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region IAnimatableProperty<SkeletonPose>
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -606,6 +606,6 @@ namespace DigitalRune.Animation.Character
     /// <inheritdoc/>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes")]
     object IAnimatableProperty.AnimationValue { get { return this; } }
-    #endregion
+
   }
 }

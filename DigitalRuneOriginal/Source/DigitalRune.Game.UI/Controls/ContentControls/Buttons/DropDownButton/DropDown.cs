@@ -58,16 +58,16 @@ namespace DigitalRune.Game.UI.Controls
     // On Windows Phone the DropDown fills the entire screen and displays a title.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private StackPanel _itemsPanel;
     private ScrollViewer _scrollViewer;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -75,11 +75,11 @@ namespace DigitalRune.Game.UI.Controls
     /// </summary>
     /// <value>The <see cref="DropDownButton"/> that owns this <see cref="DropDown"/>.</value>
     public DropDownButton Owner { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Game Object Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary> 
@@ -129,11 +129,11 @@ namespace DigitalRune.Game.UI.Controls
       get { return GetValue<string>(TitleTextBlockStylePropertyId); }
       set { SetValue(TitleTextBlockStylePropertyId, value); }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -162,11 +162,11 @@ namespace DigitalRune.Game.UI.Controls
       Owner = owner;
       Style = "DropDown";
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -450,6 +450,6 @@ namespace DigitalRune.Game.UI.Controls
       Owner.SelectedIndex = index;
       Close();
     }
-    #endregion
+
   }
 }

@@ -27,7 +27,7 @@ namespace DigitalRune.Graphics.Effects
   public class DictionaryEffectInterpreter : IEffectInterpreter
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -47,17 +47,17 @@ namespace DigitalRune.Graphics.Effects
     /// <returns>The description of <paramref name="parameter"/>.</returns>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
     public delegate EffectParameterDescription CreateEffectParameterDescription(EffectParameter parameter, int index);
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -87,11 +87,11 @@ namespace DigitalRune.Graphics.Effects
     /// <see cref="EffectParameterDescription"/>.
     /// </remarks>
     public Dictionary<string, CreateEffectParameterDescription> ParameterDescriptions { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -103,11 +103,11 @@ namespace DigitalRune.Graphics.Effects
       TechniqueDescriptions = new Dictionary<string, CreateEffectTechniqueDescription>(StringComparer.OrdinalIgnoreCase);
       ParameterDescriptions = new Dictionary<string, CreateEffectParameterDescription>(StringComparer.OrdinalIgnoreCase);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -209,6 +209,6 @@ namespace DigitalRune.Graphics.Effects
 
       return null;
     }
-    #endregion
+
   }
 }

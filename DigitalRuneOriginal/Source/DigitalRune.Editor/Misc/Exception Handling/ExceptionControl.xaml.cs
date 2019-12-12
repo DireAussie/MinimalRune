@@ -19,15 +19,15 @@ namespace DigitalRune.Editor
     internal partial class ExceptionControl
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -55,11 +55,11 @@ namespace DigitalRune.Editor
         /// Occurs when the Close button is clicked.
         /// </summary>
         public event EventHandler<EventArgs> Close;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -70,11 +70,11 @@ namespace DigitalRune.Editor
             InitializeComponent();
             Loaded += OnLoaded;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -217,6 +217,6 @@ namespace DigitalRune.Editor
             message.AppendLine("-");
             return message.ToString();
         }
-        #endregion
+
     }
 }

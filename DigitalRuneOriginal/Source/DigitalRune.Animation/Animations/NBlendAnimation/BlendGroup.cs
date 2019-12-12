@@ -137,7 +137,7 @@ namespace DigitalRune.Animation
 
 
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     // Data per timeline.
@@ -268,11 +268,11 @@ namespace DigitalRune.Animation
         _current = null;
       }
     }
-    #endregion
+
     
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly ArrayList<Entry> _entries;
@@ -285,11 +285,11 @@ namespace DigitalRune.Animation
 
     // The internal update requires locking.
     private readonly object _syncRoot = new object();
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -488,11 +488,11 @@ namespace DigitalRune.Animation
     {
       get { return GetDefaultDuration(); }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -516,11 +516,11 @@ namespace DigitalRune.Animation
       _synchronized = false;
       _synchronizedDuration = TimeSpan.Zero;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -1348,11 +1348,11 @@ namespace DigitalRune.Animation
       _entries.RemoveAt(index);
       OnTimelineChanged(-1);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region IAnimatableObject
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -1414,6 +1414,6 @@ namespace DigitalRune.Animation
 
       return null;
     }
-    #endregion
+
   }
 }

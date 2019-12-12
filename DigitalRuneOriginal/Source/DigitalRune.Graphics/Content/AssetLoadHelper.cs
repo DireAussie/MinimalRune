@@ -84,7 +84,7 @@ namespace DigitalRune.Graphics.Content
 
 
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     // Wraps a fixup action and calls AssetLoadHelper.OnFixupExecuted when the 
@@ -109,11 +109,11 @@ namespace DigitalRune.Graphics.Content
         _helper.OnFixupExecuted(this);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // A static register for (asset name, AssetLoadHelper) pairs.
@@ -125,11 +125,11 @@ namespace DigitalRune.Graphics.Content
     // A list of all fixups for the current asset. When a fixup is executed, the 
     // entry is replaced with null.
     private readonly List<object> _fixups = new List<object>();
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -143,11 +143,11 @@ namespace DigitalRune.Graphics.Content
     /// Occurs after all fix-up actions were executed and the asset is fully loaded.
     /// </summary>
     public event EventHandler<EventArgs> AssetLoaded;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -167,11 +167,11 @@ namespace DigitalRune.Graphics.Content
     {
       RemoveReference();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -293,6 +293,6 @@ namespace DigitalRune.Graphics.Content
       if (handler != null)
         handler(this, eventArgs);
     }
-    #endregion
+
   }
 }

@@ -41,21 +41,21 @@ namespace DigitalRune.Windows
     public class ValidatableObservableObject : ObservableObject, INotifyDataErrorInfo
     {
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         private const string HasErrorsPropertyName = "HasErrors";
-        #endregion
+
 
     
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -82,11 +82,11 @@ namespace DigitalRune.Windows
         /// Occurs when the validation errors have changed for a property or for the entire object.
         /// </summary>
         public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -100,11 +100,11 @@ namespace DigitalRune.Windows
                                                       OnPropertyChanged(new PropertyChangedEventArgs(HasErrorsPropertyName));
                                                   });
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -237,7 +237,7 @@ namespace DigitalRune.Windows
 
             return isValid;
         }
-        #endregion
+
     }
 }
 #endif

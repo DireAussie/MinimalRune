@@ -20,7 +20,7 @@ namespace EditorApp
     public sealed class TestExtension0 : EditorExtension
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private ResourceDictionary _resourceDictionary;
@@ -28,23 +28,23 @@ namespace EditorApp
         private MergeableNodeCollection<OptionsPageViewModel> _optionsNodes;    // Option pages
         private EditorExtensionDescription _extensionDescription;               // About information
         private bool _isTestItemChecked;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Methods
+
+
+
+        //--------------------------------------------------------------
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         protected override void OnInitialize()
@@ -299,6 +299,6 @@ namespace EditorApp
                 progress.Report(value); // IProgress<T>.Report can be called from background thread.
             }
         }
-        #endregion
+
     }
 }

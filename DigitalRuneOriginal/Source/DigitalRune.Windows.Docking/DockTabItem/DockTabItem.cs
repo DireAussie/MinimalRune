@@ -55,18 +55,18 @@ namespace DigitalRune.Windows.Docking
     public partial class DockTabItem : ContentControl
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private DockControl _dockControl;
         private bool _activating;
         private UIElement _tab;
         private IEnumerable _logicalChildren = Enumerable.Empty<object>();
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -77,11 +77,11 @@ namespace DigitalRune.Windows.Docking
         {
             get { return ItemsControl.ItemsControlFromItemContainer(this) as DockTabPane; }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------    
 
         /// <summary>
@@ -375,11 +375,11 @@ namespace DigitalRune.Windows.Docking
             add { AddHandler(DeactivatedEvent, value); }
             remove { RemoveHandler(DeactivatedEvent, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -414,11 +414,11 @@ namespace DigitalRune.Windows.Docking
 
             RegisterCommandBindings();
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private static void OnAccessKeyPressed(object sender, AccessKeyPressedEventArgs eventArgs)
@@ -1047,6 +1047,6 @@ namespace DigitalRune.Windows.Docking
             else
                 VisualStateManager.GoToState(this, "Unfocused", useTransitions);
         }
-        #endregion
+
     }
 }

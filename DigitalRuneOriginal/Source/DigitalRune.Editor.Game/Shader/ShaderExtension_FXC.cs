@@ -22,13 +22,13 @@ namespace DigitalRune.Editor.Shader
     partial class ShaderExtension
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -50,11 +50,11 @@ namespace DigitalRune.Editor.Shader
             }
         }
         private bool _isFxcEffectProcessorEnabled = true;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private static async Task<Tuple<bool, List<Error>>> BuildFxcAsync(
@@ -201,6 +201,6 @@ namespace DigitalRune.Editor.Shader
 
             status.CloseAfterDefaultDurationAsync().Forget();
         }
-        #endregion
+
     }
 }

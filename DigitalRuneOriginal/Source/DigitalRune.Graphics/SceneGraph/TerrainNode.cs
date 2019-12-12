@@ -98,13 +98,13 @@ namespace DigitalRune.Graphics.SceneGraph
     //   needed for metals. In most cases specular intensity is enough.
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -230,11 +230,11 @@ namespace DigitalRune.Graphics.SceneGraph
     /// texture resolution. Small values like 0.3 are usually better.
     /// </remarks>
     public float DetailFadeRange { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -296,14 +296,14 @@ namespace DigitalRune.Graphics.SceneGraph
         base.Dispose(disposing, disposeData);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc cref="SceneNode.Clone"/>
     public new TerrainNode Clone()
@@ -329,8 +329,8 @@ namespace DigitalRune.Graphics.SceneGraph
       var sourceTyped = (TerrainNode)source;
       HoleThreshold = sourceTyped.HoleThreshold;
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

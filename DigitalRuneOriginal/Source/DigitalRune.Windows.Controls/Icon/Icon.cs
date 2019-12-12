@@ -47,24 +47,24 @@ namespace DigitalRune.Windows.Controls
     public class Icon : FrameworkElement, IUriContext // IUriContext is required to resolve ImageSource URIs.
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Dictionary<FontFamily, Typeface> TypefaceCache = new Dictionary<FontFamily, Typeface>();
         private MultiColorGlyph _multiColorGlyph;
         private ImageSource _imageSource;
         private ImageEffect _imageEffect;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -232,7 +232,7 @@ namespace DigitalRune.Windows.Controls
         }
 
 
-        #region ----- IUriContext -----
+
 
         /// <summary>
         /// Gets or sets the base URI of the current application context.
@@ -254,13 +254,13 @@ namespace DigitalRune.Windows.Controls
             get { return (Uri)GetValue(BaseUriHelper.BaseUriProperty); }
             set { SetValue(BaseUriHelper.BaseUriProperty, value); }
         }
-        #endregion
 
-        #endregion
+
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -275,11 +275,11 @@ namespace DigitalRune.Windows.Controls
             WidthProperty.OverrideMetadata(typeof(Icon), new FrameworkPropertyMetadata(16.0, FrameworkPropertyMetadataOptions.AffectsMeasure));
             HeightProperty.OverrideMetadata(typeof(Icon), new FrameworkPropertyMetadata(16.0, FrameworkPropertyMetadataOptions.AffectsMeasure));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private static Typeface GetTypeface(FontFamily fontFamily)
@@ -580,6 +580,6 @@ namespace DigitalRune.Windows.Controls
 
             return brush ?? GetForegroundBrush();
         }
-        #endregion
+
     }
 }

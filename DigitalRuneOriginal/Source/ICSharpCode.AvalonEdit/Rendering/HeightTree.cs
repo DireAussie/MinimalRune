@@ -52,7 +52,7 @@ namespace ICSharpCode.AvalonEdit.Rendering
 		 collapsing/uncollapsing, especially when compression reduces the n.
 		 */
 		
-		#region Constructor
+
 		readonly TextDocument document;
 		HeightTreeNode root;
 		WeakLineTracker weakLineTracker;
@@ -96,9 +96,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 		{
 			return GetNodeByIndex(ls.LineNumber - 1);
 		}
-		#endregion
+
 		
-		#region RebuildDocument
+
 		void ILineTracker.ChangeComplete(DocumentChangeEventArgs e)
 		{
 		}
@@ -153,9 +153,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 			UpdateAugmentedData(node, UpdateAfterChildrenChangeRecursionMode.None);
 			return node;
 		}
-		#endregion
+
 		
-		#region Insert/Remove lines
+
 		void ILineTracker.BeforeRemoveLine(DocumentLine line)
 		{
 			HeightTreeNode node = GetNode(line);
@@ -222,9 +222,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 			}
 			return newNode;
 		}
-		#endregion
+
 		
-		#region Rotation callbacks
+
 		enum UpdateAfterChildrenChangeRecursionMode
 		{
 			None,
@@ -419,9 +419,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 				MergeCollapsedSectionsIfPossible(node.parent);
 			}
 		}
-		#endregion
+
 		
-		#region GetNodeBy... / Get...FromNode
+
 		HeightTreeNode GetNodeByIndex(int index)
 		{
 			Debug.Assert(index >= 0);
@@ -493,9 +493,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 			}
 			return position;
 		}
-		#endregion
+
 		
-		#region Public methods
+
 		public DocumentLine GetLineByNumber(int number)
 		{
 			return GetNodeByIndex(number - 1).documentLine;
@@ -549,9 +549,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 			#endif
 			return section;
 		}
-		#endregion
+
 		
-		#region LineCount & TotalHeight
+
 		public int LineCount {
 			get {
 				return root.totalCount;
@@ -563,9 +563,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 				return root.totalHeight;
 			}
 		}
-		#endregion
+
 		
-		#region GetAllCollapsedSections
+
 		IEnumerable<HeightTreeNode> AllNodes {
 			get {
 				if (root != null) {
@@ -587,9 +587,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 					                                                node.collapsedSections ?? emptyCSList)
 				));
 		}
-		#endregion
+
 		
-		#region CheckProperties
+
 		#if DEBUG
 		[Conditional("DATACONSISTENCYTEST")]
 		internal void CheckProperties()
@@ -727,9 +727,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 			}
 		}
 		#endif
-		#endregion
+
 		
-		#region Red/Black Tree
+
 		const bool RED = true;
 		const bool BLACK = false;
 		
@@ -1002,9 +1002,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 		{
 			return node != null ? node.color : BLACK;
 		}
-		#endregion
+
 		
-		#region Collapsing support
+
 		static bool GetIsCollapedFromNode(HeightTreeNode node)
 		{
 			while (node != null) {
@@ -1106,6 +1106,6 @@ namespace ICSharpCode.AvalonEdit.Rendering
 			AddRemoveCollapsedSection(section, sectionLength, false);
 			// do not call CheckProperties() in here - Uncollapse is also called during line removals
 		}
-		#endregion
+
 	}
 }

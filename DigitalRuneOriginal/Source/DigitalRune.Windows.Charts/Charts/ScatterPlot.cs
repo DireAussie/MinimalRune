@@ -28,25 +28,25 @@ namespace DigitalRune.Windows.Charts
     public class ScatterPlot : Chart
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties
-        //--------------------------------------------------------------
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
+
+
+        //--------------------------------------------------------------
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
 #if SILVERLIGHT
@@ -66,11 +66,11 @@ namespace DigitalRune.Windows.Charts
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ScatterPlot), new FrameworkPropertyMetadata(typeof(ScatterPlot)));
         }
 #endif
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -237,6 +237,6 @@ namespace DigitalRune.Windows.Charts
         public override void ValidateData()
         {
         }
-        #endregion
+
     }
 }

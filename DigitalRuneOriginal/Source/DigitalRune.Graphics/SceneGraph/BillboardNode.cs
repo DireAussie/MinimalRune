@@ -30,13 +30,13 @@ namespace DigitalRune.Graphics.SceneGraph
   public class BillboardNode : SceneNode
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -139,11 +139,11 @@ namespace DigitalRune.Graphics.SceneGraph
         return PoseWorld.Orientation.GetColumn(1);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -165,14 +165,14 @@ namespace DigitalRune.Graphics.SceneGraph
       Alpha = 1.0f;
       _animationTime = float.NaN;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
     
     /// <inheritdoc cref="SceneNode.Clone"/>
     public new BillboardNode Clone()
@@ -200,8 +200,8 @@ namespace DigitalRune.Graphics.SceneGraph
       Alpha = sourceTyped.Alpha;
       _animationTime = sourceTyped.AnimationTime;
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

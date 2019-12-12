@@ -20,16 +20,16 @@ namespace DigitalRune.Editor.Game
     public class BasicGraphicsScreen : GraphicsScreen
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly MeshRenderer _meshRenderer;
         private readonly BillboardRenderer _billboardRenderer;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -62,11 +62,11 @@ namespace DigitalRune.Editor.Game
         /// </summary>
         /// <value>The <see cref="DebugRenderer"/>.</value>
         public DebugRenderer DebugRenderer { get; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -91,11 +91,11 @@ namespace DigitalRune.Editor.Game
 
             Scene = new Scene();
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -167,6 +167,6 @@ namespace DigitalRune.Editor.Game
             context.CameraNode = null;
             context.Scene = null;
         }
-        #endregion
+
     }
 }

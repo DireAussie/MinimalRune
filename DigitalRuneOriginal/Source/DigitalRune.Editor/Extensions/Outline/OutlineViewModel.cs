@@ -19,23 +19,23 @@ namespace DigitalRune.Editor.Outlines
 
 
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         internal const string DockIdString = "Outline";
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         //private readonly IEditorService _editor;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -110,11 +110,11 @@ namespace DigitalRune.Editor.Outlines
             set { SetProperty(ref _outline, value); }
         }
         private Outline _outline;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -143,12 +143,12 @@ namespace DigitalRune.Editor.Outlines
             //    _editor = editor;
             //}
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
-        #endregion
+
     }
 }

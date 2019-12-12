@@ -28,15 +28,15 @@ namespace DigitalRune.Windows.Charts
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private bool _invalidating;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -71,14 +71,14 @@ namespace DigitalRune.Windows.Charts
 
         /// <inheritdoc/>
         public event EventHandler<EventArgs> Updated;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
-        #region ----- Axes -----
+
 
         /// <summary>
         /// Identifies the <see cref="XAxis"/> dependency property.
@@ -138,13 +138,13 @@ namespace DigitalRune.Windows.Charts
             get { return (Axis)GetValue(YAxisProperty); }
             set { SetValue(YAxisProperty, value); }
         }
-        #endregion
 
-        #endregion
+
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
 #if SILVERLIGHT
@@ -165,11 +165,11 @@ namespace DigitalRune.Windows.Charts
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ChartGroup), new FrameworkPropertyMetadata(typeof(ChartGroup)));
         }
 #endif
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private static void OnXAxisChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
@@ -573,6 +573,6 @@ namespace DigitalRune.Windows.Charts
         /// Data is not valid.
         /// </exception>
         public abstract void ValidateData();
-        #endregion
+
     }
 }

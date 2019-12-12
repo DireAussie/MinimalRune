@@ -34,7 +34,7 @@ namespace ICSharpCode.AvalonEdit.Document
 	/// </summary>
 	sealed class DocumentLineTree : IList<DocumentLine>
 	{
-		#region Constructor
+
 		readonly TextDocument document;
 		LineNode root;
 		
@@ -45,9 +45,9 @@ namespace ICSharpCode.AvalonEdit.Document
 			DocumentLine emptyLine = new DocumentLine(document);
 			root = emptyLine.InitLineNode();
 		}
-		#endregion
+
 		
-		#region Rotation callbacks
+
 		internal static void UpdateAfterChildrenChange(LineNode node)
 		{
 			int totalCount = 1;
@@ -86,9 +86,9 @@ namespace ICSharpCode.AvalonEdit.Document
 			// -> totalCount changes -> the parent is always updated
 			//UpdateAfterChildrenChange(node.parent);
 		}
-		#endregion
+
 		
-		#region RebuildDocument
+
 		/// <summary>
 		/// Rebuild the tree, in O(n).
 		/// </summary>
@@ -139,9 +139,9 @@ namespace ICSharpCode.AvalonEdit.Document
 			UpdateAfterChildrenChange(node);
 			return node;
 		}
-		#endregion
+
 		
-		#region GetNodeBy... / Get...FromNode
+
 		LineNode GetNodeByIndex(int index)
 		{
 			Debug.Assert(index >= 0);
@@ -212,9 +212,9 @@ namespace ICSharpCode.AvalonEdit.Document
 			}
 			return offset;
 		}
-		#endregion
+
 		
-		#region GetLineBy
+
 		public DocumentLine GetByNumber(int number)
 		{
 			return GetNodeByIndex(number - 1);
@@ -224,17 +224,17 @@ namespace ICSharpCode.AvalonEdit.Document
 		{
 			return GetNodeByOffset(offset);
 		}
-		#endregion
+
 		
-		#region LineCount
+
 		public int LineCount {
 			get {
 				return root.nodeTotalCount;
 			}
 		}
-		#endregion
+
 		
-		#region CheckProperties
+
 		#if DEBUG
 		[Conditional("DATACONSISTENCYTEST")]
 		internal void CheckProperties()
@@ -323,9 +323,9 @@ namespace ICSharpCode.AvalonEdit.Document
 			}
 		}
 		#endif
-		#endregion
+
 		
-		#region Insert/Remove lines
+
 		public void RemoveLine(DocumentLine line)
 		{
 			RemoveNode(line);
@@ -350,9 +350,9 @@ namespace ICSharpCode.AvalonEdit.Document
 				InsertAsLeft(node.right.LeftMost, newNode);
 			}
 		}
-		#endregion
+
 		
-		#region Red/Black Tree
+
 		internal const bool RED = true;
 		internal const bool BLACK = false;
 		
@@ -622,9 +622,9 @@ namespace ICSharpCode.AvalonEdit.Document
 		{
 			return node != null ? node.color : BLACK;
 		}
-		#endregion
+
 		
-		#region IList implementation
+
 		DocumentLine IList<DocumentLine>.this[int index] {
 			get {
 				document.VerifyAccess();
@@ -722,6 +722,6 @@ namespace ICSharpCode.AvalonEdit.Document
 		{
 			return this.GetEnumerator();
 		}
-		#endregion
+
 	}
 }

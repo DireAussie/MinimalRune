@@ -16,7 +16,7 @@ namespace DigitalRune.Graphics.Content
   partial class TextureHelper
   {
     //--------------------------------------------------------------
-    #region XNA Content Pipeline
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -297,6 +297,6 @@ namespace DigitalRune.Graphics.Content
       content.SetPixelData(image.Data);
       return content;
     }
-    #endregion
+
   }
 }

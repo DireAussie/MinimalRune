@@ -168,7 +168,7 @@ namespace Samples.Physics
       // rigid bodies are created in code. In practice, ragdolls should be built using
       // external tools, such as a 3D modeller or a game editor.
 
-      #region ----- Create rigid bodies for the most relevant body parts -----
+
 
       BoxShape pelvisShape = new BoxShape(0.3f * scale, 0.22f * scale, 0.20f * scale);
       MassFrame pelvisMass = MassFrame.FromShapeAndDensity(pelvisShape, Vector3F.One, Density, 0.01f, 3);
@@ -259,9 +259,9 @@ namespace Samples.Physics
         Pose = new Pose(new Vector3F(0.11f * scale, -0.06f * scale, 0.94f * scale) + ragdollPosition),
       };
       Simulation.RigidBodies.Add(rightFoot);
-      #endregion
 
-      #region ----- Add joints between body parts -----
+
+
 
       Vector3F pelvisJointPosition = new Vector3F(0f, 0.026f * scale, -0.115f * scale) + ragdollPosition;
       HingeJoint pelvisJoint = new HingeJoint
@@ -463,9 +463,9 @@ namespace Samples.Physics
         MaxForce = JointMaxForce,
       };
       Simulation.Constraints.Add(rightAnkleJoint);
-      #endregion
 
-      #region ----- Add damping to improve stability -----
+
+
 
       if (DampingEnabled)
       {
@@ -483,7 +483,7 @@ namespace Samples.Physics
         AddDamping(leftLowerLeg, leftFoot);
         AddDamping(rightLowerLeg, rightFoot);
       }
-      #endregion
+
     }
 
 

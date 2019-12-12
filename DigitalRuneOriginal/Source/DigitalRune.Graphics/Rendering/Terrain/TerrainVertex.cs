@@ -25,7 +25,7 @@ namespace DigitalRune.Graphics
     // HalfVector3 would be even better - or HalfVector2 (X, Z) + Byte (LOD).
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -45,11 +45,11 @@ namespace DigitalRune.Graphics
     /// </summary>
     [SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
     public HalfVector4 Position;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -60,11 +60,11 @@ namespace DigitalRune.Graphics
     {
       get { return 8; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -75,11 +75,11 @@ namespace DigitalRune.Graphics
     {
       Position = position;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -154,6 +154,6 @@ namespace DigitalRune.Graphics
     {
       return string.Format(CultureInfo.CurrentCulture, "{{Position:{0}}}", Position);
     }
-    #endregion
+
   }
 }

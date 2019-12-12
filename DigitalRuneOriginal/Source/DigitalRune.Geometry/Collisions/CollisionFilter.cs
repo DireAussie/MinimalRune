@@ -53,7 +53,7 @@ namespace DigitalRune.Geometry.Collisions
   public class CollisionFilter : ICollisionFilter
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly bool[] _groupFlags;
@@ -64,11 +64,11 @@ namespace DigitalRune.Geometry.Collisions
 
     // Pairwise filtering. If object pair is contained, filtering is disabled.
     private readonly HashSet<Pair<CollisionObject>> _disabledPairs;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -88,11 +88,11 @@ namespace DigitalRune.Geometry.Collisions
     /// Occurs when the filter rules were changed.
     /// </summary>
     public event EventHandler<EventArgs> Changed;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -136,11 +136,11 @@ namespace DigitalRune.Geometry.Collisions
       // Per default all collisions are enabled.
       ResetInternal();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -283,6 +283,6 @@ namespace DigitalRune.Geometry.Collisions
       if (handler != null)
         handler(this, eventArgs);
     }
-    #endregion
+
   }
 }

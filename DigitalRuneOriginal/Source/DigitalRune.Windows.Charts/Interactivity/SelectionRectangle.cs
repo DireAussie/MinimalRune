@@ -14,19 +14,19 @@ namespace DigitalRune.Windows.Charts.Interactivity
     public class SelectionRectangle : Control
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
 #if SILVERLIGHT
@@ -46,12 +46,12 @@ namespace DigitalRune.Windows.Charts.Interactivity
             DefaultStyleKeyProperty.OverrideMetadata(typeof(SelectionRectangle), new FrameworkPropertyMetadata(typeof(SelectionRectangle)));
         }
 #endif
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
-        #endregion
+
     }
 }

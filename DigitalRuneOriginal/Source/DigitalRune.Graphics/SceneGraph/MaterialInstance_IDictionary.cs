@@ -15,7 +15,7 @@ namespace DigitalRune.Graphics.SceneGraph
     // Explicit interface implementations.
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -72,11 +72,11 @@ namespace DigitalRune.Graphics.SceneGraph
     {
       get { return _bindingsPerPass.Values; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -278,6 +278,6 @@ namespace DigitalRune.Graphics.SceneGraph
     {
       return _bindingsPerPass.TryGetValue(key, out value);
     }
-    #endregion
+
   }
 }

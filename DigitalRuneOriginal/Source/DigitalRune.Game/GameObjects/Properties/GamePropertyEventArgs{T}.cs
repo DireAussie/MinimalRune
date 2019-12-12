@@ -48,7 +48,7 @@ namespace DigitalRune.Game
 
 
     //--------------------------------------------------------------
-    #region Static Fields
+
     //--------------------------------------------------------------
 
     // ReSharper disable StaticFieldInGenericType
@@ -57,17 +57,17 @@ namespace DigitalRune.Game
       null,                                      // Initialize
       null);                                     // Uninitialize
     // ReSharper restore StaticFieldInGenericType
-    #endregion
+
     
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
-    #endregion
+
       
       
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -108,22 +108,22 @@ namespace DigitalRune.Game
     /// </summary>
     /// <value> The coerced value.</value>
     public T CoercedValue { get; set; }
-    #endregion
+
       
       
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     // Constructor is private to force use of resource pooling!
     private GamePropertyEventArgs()
     {
     }
-    #endregion
+
       
       
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -168,6 +168,6 @@ namespace DigitalRune.Game
       CoercedValue = default(T);
       Pool.Recycle(this);
     }
-    #endregion
+
   }
 }

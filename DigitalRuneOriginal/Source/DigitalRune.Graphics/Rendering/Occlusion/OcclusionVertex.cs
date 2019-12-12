@@ -21,7 +21,7 @@ namespace DigitalRune.Graphics.Rendering
   internal struct OcclusionVertex : IVertexType
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -48,11 +48,11 @@ namespace DigitalRune.Graphics.Rendering
     public Vector3F Position;
     public Vector3F Scale;
     public float MaxDistance;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -63,17 +63,17 @@ namespace DigitalRune.Graphics.Rendering
     {
       get { return 8 + 12 + 12 + 12 + 12 + 4; }
     }
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -174,6 +174,6 @@ namespace DigitalRune.Graphics.Rendering
         "{{Pixel:{0} Minimum:{1} Maximum:{2} Position:{3} Scale:{4} MaxDistance:{5}}}",
         Pixel, Minimum, Maximum, Position, Scale, MaxDistance);
     }
-    #endregion
+
   }
 }

@@ -49,7 +49,7 @@ namespace DigitalRune.Graphics.Rendering
     // too high.
 
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     [DebuggerDisplay("Job({DrawOrder}, {MaterialKey}, Name = {Node.Name})")]
@@ -86,11 +86,11 @@ namespace DigitalRune.Graphics.Rendering
       }
     }
 
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private const int NumberOfVertices = 8;
@@ -124,19 +124,19 @@ namespace DigitalRune.Graphics.Rendering
     private readonly VertexBuffer _vertexBuffer;
     private readonly IndexBuffer _indexBuffer;
 
-    #region ----- Mesh Instancing -----
+
     // See MeshRenderer for reference.
-    #endregion
+
 
 
     // For rendering using screen space quads:
     private readonly Vector3F[] _quadVertices = new Vector3F[4];
     private Aabb _cameraNearPlaneAabbWorld;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -182,11 +182,11 @@ namespace DigitalRune.Graphics.Rendering
     ///// hardware instancing is used to render decals with 4 or more visible instances.
     ///// </value>
     //public int InstancingThreshold { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -253,11 +253,11 @@ namespace DigitalRune.Graphics.Rendering
 
       base.Dispose(disposing);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -690,7 +690,7 @@ namespace DigitalRune.Graphics.Rendering
     //}
 
 
-    #region ----- Resource IDs -----
+
 
     // Each resource (effect, material) gets a unique ID, which is used for state 
     // sorting. The IDs are assigned during BatchJobs() and reset during ProcessJobs().
@@ -766,8 +766,8 @@ namespace DigitalRune.Graphics.Rendering
         }
       }
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

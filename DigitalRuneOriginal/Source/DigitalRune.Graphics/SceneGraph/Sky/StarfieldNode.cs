@@ -27,13 +27,13 @@ namespace DigitalRune.Graphics.SceneGraph
   public class StarfieldNode : SkyNode
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -65,11 +65,11 @@ namespace DigitalRune.Graphics.SceneGraph
       }
     }
     private IList<Star> _stars;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -96,11 +96,11 @@ namespace DigitalRune.Graphics.SceneGraph
       Color = Vector3F.One;
       Stars = stars;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc cref="SceneNode.Clone"/>
@@ -128,6 +128,6 @@ namespace DigitalRune.Graphics.SceneGraph
       Color = sourceTyped.Color;
       Stars = sourceTyped.Stars;
     }
-    #endregion
+
   }
 }

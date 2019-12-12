@@ -38,18 +38,18 @@ namespace DigitalRune.Editor.About
     public partial class AboutExtension : EditorExtension, IAboutService
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
         private IWindowService _windowService;
         private MergeableNodeCollection<ICommandItem> _menuNodes;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -78,11 +78,11 @@ namespace DigitalRune.Editor.About
 
         /// <inheritdoc/>
         public ICollection<EditorExtensionDescription> ExtensionDescriptions { get; } = new List<EditorExtensionDescription>();
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -117,11 +117,11 @@ namespace DigitalRune.Editor.About
 
             Icon = MultiColorGlyphs.MessageInformation;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -291,6 +291,6 @@ namespace DigitalRune.Editor.About
 
             return stringBuilder.ToString();
         }
-        #endregion
+
     }
 }

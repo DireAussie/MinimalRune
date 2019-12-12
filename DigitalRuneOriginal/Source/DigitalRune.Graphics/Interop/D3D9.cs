@@ -30,16 +30,16 @@ namespace DigitalRune.Graphics.Interop
     // It does not work with the Windows 2000 Display Driver Model (XDDM).
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Direct3DEx _direct3D;
     private readonly DeviceEx _device;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -50,11 +50,11 @@ namespace DigitalRune.Graphics.Interop
     /// <see langword="false"/>.
     /// </value>
     public bool IsDisposed { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -125,11 +125,11 @@ namespace DigitalRune.Graphics.Interop
         IsDisposed = true;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     [DllImport("user32.dll", SetLastError = false)]
@@ -330,7 +330,7 @@ namespace DigitalRune.Graphics.Interop
           throw new ArgumentException("The specified surface format is not supported.");
       }
     }
-    #endregion
+
   }
 }
 #endif

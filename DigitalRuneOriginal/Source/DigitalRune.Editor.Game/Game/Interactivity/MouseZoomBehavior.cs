@@ -25,7 +25,7 @@ namespace DigitalRune.Editor.Game
     public class MouseZoomBehavior : Behavior<D3DImagePresentationTarget>
     {
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -184,11 +184,11 @@ namespace DigitalRune.Editor.Game
             get { return (double)GetValue(MaxDistanceProperty); }
             set { SetValue(MaxDistanceProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -271,6 +271,6 @@ namespace DigitalRune.Editor.Game
             cameraNode.PoseWorld = pose;
             eventArgs.Handled = true;
         }
-        #endregion
+
     }
 }

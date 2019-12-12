@@ -16,16 +16,16 @@ namespace DigitalRune.Windows.Charts
     public struct DateTimeRange : IEquatable<DateTimeRange>
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly DateTime _min;
         private readonly DateTime _max;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -46,11 +46,11 @@ namespace DigitalRune.Windows.Charts
         {
             get { return _max; }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -63,11 +63,11 @@ namespace DigitalRune.Windows.Charts
             _min = min;
             _max = max;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
 
@@ -270,6 +270,6 @@ namespace DigitalRune.Windows.Charts
         {
             return _min <= value && value <= _max;
         }
-        #endregion
+
     }
 }

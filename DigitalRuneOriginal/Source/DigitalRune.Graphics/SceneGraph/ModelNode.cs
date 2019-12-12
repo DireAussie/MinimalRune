@@ -74,19 +74,19 @@ namespace DigitalRune.Graphics.SceneGraph
   public class ModelNode : SceneNode
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     internal void OnAssetLoaded(object sender, EventArgs eventArgs)
@@ -113,14 +113,14 @@ namespace DigitalRune.Graphics.SceneGraph
       }
 #endif
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc cref="SceneNode.Clone"/>
     public new ModelNode Clone()
@@ -177,8 +177,8 @@ namespace DigitalRune.Graphics.SceneGraph
       }
 #endif
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

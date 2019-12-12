@@ -93,7 +93,7 @@ namespace DigitalRune.Game.UI.Controls
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private ScrollBar _horizontalScrollBar;
@@ -114,11 +114,11 @@ namespace DigitalRune.Game.UI.Controls
     // On phone/tablet the user can drag the content beyond the limit.
     private Vector2F _virtualOffset;  // The virtual offset, which can be beyond the limits.
 #endif
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -292,11 +292,11 @@ namespace DigitalRune.Game.UI.Controls
     {
       get { return _contentBounds; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Game Object Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary> 
@@ -445,11 +445,11 @@ namespace DigitalRune.Game.UI.Controls
       get { return GetValue<string>(VerticalScrollBarStylePropertyId); }
       set { SetValue(VerticalScrollBarStylePropertyId, value); }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -478,11 +478,11 @@ namespace DigitalRune.Game.UI.Controls
       verticalOffsetProperty.Changed += (s, e) => _virtualOffset.Y = e.NewValue;
 #endif
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -1294,6 +1294,6 @@ namespace DigitalRune.Game.UI.Controls
 
       VerticalOffset = verticalOffset;
     }
-    #endregion
+
   }
 }

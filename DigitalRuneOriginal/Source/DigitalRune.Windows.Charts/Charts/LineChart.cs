@@ -42,7 +42,7 @@ namespace DigitalRune.Windows.Charts
         // - Line segments and steps are drawn from index i to i+1.
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private Path _linePath;
@@ -71,11 +71,11 @@ namespace DigitalRune.Windows.Charts
         private double[] _xPositions;      // The x position.
         private double[] _yPositions;      // The y position.
         private double[] _basePositions;   // The y position at the bottom of the chart (for filled area charts).
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -101,14 +101,14 @@ namespace DigitalRune.Windows.Charts
         /// Gets or sets the clip geometry for the chart area.
         /// </summary>
         protected RectangleGeometry AreaClipGeometry { get; set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
-        #region ----- Styles -----
+
 
         /// <summary>
         /// Identifies the <see cref="LineStyle"/> dependency property.
@@ -152,7 +152,7 @@ namespace DigitalRune.Windows.Charts
             get { return (Style)GetValue(AreaStyleProperty); }
             set { SetValue(AreaStyleProperty, value); }
         }
-        #endregion
+
 
 
         /// <summary>
@@ -338,11 +338,11 @@ namespace DigitalRune.Windows.Charts
             get { return (double)GetValue(MarkerThresholdProperty); }
             set { SetValue(MarkerThresholdProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
 #if SILVERLIGHT
@@ -363,11 +363,11 @@ namespace DigitalRune.Windows.Charts
             DefaultStyleKeyProperty.OverrideMetadata(typeof(LineChart), new FrameworkPropertyMetadata(typeof(LineChart)));
         }
 #endif
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -1035,6 +1035,6 @@ namespace DigitalRune.Windows.Charts
 
             return grid;
         }
-        #endregion
+
     }
 }

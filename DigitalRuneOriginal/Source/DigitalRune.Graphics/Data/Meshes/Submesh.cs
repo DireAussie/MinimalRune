@@ -40,16 +40,16 @@ namespace DigitalRune.Graphics
   public class Submesh : IDisposable
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>Temporary ID set during rendering.</summary>
     internal uint Id;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -256,11 +256,11 @@ namespace DigitalRune.Graphics
     [Category("Misc")]
 #endif
     public object UserData { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -309,11 +309,11 @@ namespace DigitalRune.Graphics
         UserData.SafeDispose();
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -324,6 +324,6 @@ namespace DigitalRune.Graphics
       if (Mesh != null)
         Mesh.InvalidateMorphTargetNames();
     }
-    #endregion
+
   }
 }

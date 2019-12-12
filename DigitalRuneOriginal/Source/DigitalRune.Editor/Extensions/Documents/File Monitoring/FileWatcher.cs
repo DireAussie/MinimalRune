@@ -18,18 +18,18 @@ namespace DigitalRune.Editor.Documents
     internal class FileWatcher : FileSystemWatcher
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
         private readonly string _fileName;
         private int _suspendCounter;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -47,11 +47,11 @@ namespace DigitalRune.Editor.Documents
         /// </summary>
         /// <value>The document associated with the file.</value>
         public Document Document { get; private set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -130,11 +130,11 @@ namespace DigitalRune.Editor.Documents
                 Logger.Debug(CultureInfo.InvariantCulture, "FileWatcher of file \"{0}\" disposed.", _fileName);
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -171,6 +171,6 @@ namespace DigitalRune.Editor.Documents
                 Logger.Debug(CultureInfo.InvariantCulture, "FileWatcher of file \"{0}\" resumed.", _fileName);
             }
         }
-        #endregion
+
     }
 }

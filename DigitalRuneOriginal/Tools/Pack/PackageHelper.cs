@@ -20,13 +20,13 @@ namespace DigitalRune.Tools
     public class PackageHelper
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -62,11 +62,11 @@ namespace DigitalRune.Tools
         /// The encryption algorithm. The default value is <see cref="EncryptionAlgorithm.PkzipWeak"/>.
         /// </value>
         public EncryptionAlgorithm Encryption { get; set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -76,11 +76,11 @@ namespace DigitalRune.Tools
         {
             Encryption = EncryptionAlgorithm.PkzipWeak;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <overloads>
@@ -415,6 +415,6 @@ namespace DigitalRune.Tools
 
             return true;
         }
-        #endregion
+
     }
 }

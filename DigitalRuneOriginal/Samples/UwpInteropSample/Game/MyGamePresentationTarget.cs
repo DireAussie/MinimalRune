@@ -33,15 +33,15 @@ namespace UwpInteropSample
   internal class MyGamePresentationTarget : SwapChainPresentationTarget
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private MyGraphicsScreen _graphicsScreen;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties and Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -49,12 +49,12 @@ namespace UwpInteropSample
     /// </summary>
     /// <value>The graphics screens that should be presented in this element.</value>
     public IList<GraphicsScreen> GraphicsScreens { get; private set; }
-    #endregion
+
 
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -70,11 +70,11 @@ namespace UwpInteropSample
         SizeChanged += OnSizeChanged;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private void OnLoaded(object sender, RoutedEventArgs eventArgs)
@@ -238,6 +238,6 @@ namespace UwpInteropSample
       };
       scene.Children.Add(backLightNode);
     }
-    #endregion
+
   }
 }

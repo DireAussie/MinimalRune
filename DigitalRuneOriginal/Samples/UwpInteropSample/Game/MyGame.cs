@@ -25,7 +25,7 @@ namespace UwpInteropSample
   internal sealed class MyGame : IDisposable
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private bool _isDisposed;
@@ -41,19 +41,19 @@ namespace UwpInteropSample
     private readonly GraphicsManager _graphicsManager;
     private readonly SharpDX.DXGI.Output _dxgiOutput;
     private readonly Task _gameLoopTask;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     public object Lock { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     public MyGame()
@@ -158,11 +158,11 @@ namespace UwpInteropSample
       _graphicsManager.Dispose();
       _dxgiOutput.Dispose();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     // This method runs in a parallel task.
@@ -219,6 +219,6 @@ namespace UwpInteropSample
           dxgiDevice3.Trim();
       }
     }
-    #endregion
+
   }
 }

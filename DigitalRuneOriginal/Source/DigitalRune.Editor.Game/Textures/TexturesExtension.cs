@@ -19,7 +19,7 @@ namespace DigitalRune.Editor.Textures
     public sealed class TexturesExtension : EditorExtension
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
@@ -27,17 +27,17 @@ namespace DigitalRune.Editor.Textures
         private IDocumentService _documentService;
         private ResourceDictionary _resourceDictionary;
         private TextureDocumentFactory _textureDocumentFactory;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -47,11 +47,11 @@ namespace DigitalRune.Editor.Textures
         {
             Logger.Debug("Initializing TexturesExtension.");
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -121,6 +121,6 @@ namespace DigitalRune.Editor.Textures
         {
             return null;
         }
-        #endregion
+
     }
 }

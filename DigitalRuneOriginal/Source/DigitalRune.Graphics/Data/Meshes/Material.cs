@@ -71,15 +71,15 @@ namespace DigitalRune.Graphics
   public partial class Material : IDictionary<string, EffectBinding>, INamedObject
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Dictionary<string, EffectBinding> _bindingsPerPass;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -151,11 +151,11 @@ namespace DigitalRune.Graphics
       get { return _bindingsPerPass[pass]; }
       set { _bindingsPerPass[pass] = value; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -165,11 +165,11 @@ namespace DigitalRune.Graphics
     {
       _bindingsPerPass = new Dictionary<string, EffectBinding>();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -270,6 +270,6 @@ namespace DigitalRune.Graphics
     {
       return _bindingsPerPass.TryGetValue(pass, out effectBinding);
     }
-    #endregion
+
   }
 }

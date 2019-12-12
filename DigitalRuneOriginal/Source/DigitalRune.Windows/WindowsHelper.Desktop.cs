@@ -22,7 +22,7 @@ namespace DigitalRune.Windows
 {
     partial class WindowsHelper
     {
-        #region ----- LINQ to Logical Tree -----
+
 
         /// <summary>
         /// Gets the logical parent of the <see cref="DependencyObject"/>.
@@ -238,7 +238,7 @@ namespace DigitalRune.Windows
 
             return TreeHelper.GetSubtree(dependencyObject, GetLogicalChildren, depthFirst);
         }
-        #endregion
+
 
 
         /* NOTE: CloneUsingXaml is temporarily removed.
@@ -286,7 +286,7 @@ namespace DigitalRune.Windows
         }
 
 
-        #region ----- Aero Glass Frame (Windows 10 version) -----
+
 
         // References:
         // - http://withinrafael.com/adding-the-aero-glass-blur-to-your-windows-10-apps/
@@ -411,10 +411,10 @@ namespace DigitalRune.Windows
 
             return true;
         }
-        #endregion
 
 
-        #region ----- Numeric -----
+
+
 
         /// <summary>
         /// Determines whether two values are equal (regarding the tolerance
@@ -526,10 +526,10 @@ namespace DigitalRune.Windows
             return Numeric.IsZero(value.X, epsilon)
                    && Numeric.IsZero(value.Y, epsilon);
         }
-        #endregion
 
 
-        #region ----- Dispatcher -----
+
+
 
         /// <summary>
         /// Synchronously processes all window messages currently in the message queue. (Blocks
@@ -559,10 +559,10 @@ namespace DigitalRune.Windows
         //    Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() => tcs.SetResult(null)));
         //    return tcs.Task;
         //}
-        #endregion
 
 
-        #region ----- Routed Events -----
+
+
 
         /// <summary>
         /// Raise a routed event on a target <see cref="UIElement"/> or
@@ -637,10 +637,10 @@ namespace DigitalRune.Windows
                 }
             }
         }
-        #endregion
 
 
-        #region ----- Window ShowIcon/CanMinimize/CanMaximize Properties -----
+
+
 
         /// <summary>
         /// Identifies the <see cref="P:DigitalRune.Windows.WindowsHelper.ShowIcon"/> attached
@@ -987,10 +987,10 @@ namespace DigitalRune.Windows
             int value = Win32.GetWindowLong(hwnd, GetWindowLongIndex.GWL_STYLE);
             Win32.SetWindowLong(hwnd, GetWindowLongIndex.GWL_STYLE, (int)(value & ~WindowStyles.WS_MAXIMIZEBOX));
         }
-        #endregion
 
 
-        #region ----- SelectOnMouseDown Attached Property -----
+
+
 
         /// <summary>
         /// Identifies the <see cref="P:DigitalRune.Windows.WindowsHelper.SelectOnMouseDown"/>
@@ -1087,10 +1087,10 @@ namespace DigitalRune.Windows
 
             Selector.SetIsSelected(element, true);
         }
-        #endregion
 
 
-        #region ----- Pixel Snapping -----
+
+
 
         /// <summary>
         /// Gets the size of a device pixel (screen) in device-independent pixels (WPF).
@@ -1314,10 +1314,10 @@ namespace DigitalRune.Windows
         {
             return RoundToDevicePixels(value + pixelSize, 2 * pixelSize) - pixelSize;
         }
-        #endregion
 
 
-        #region ----- Misc -----
+
+
 
         /// <summary>
         /// Activates the window and makes sure the window is in the foreground.
@@ -1352,6 +1352,6 @@ namespace DigitalRune.Windows
             window.Topmost = false;
             window.Focus();
         }
-        #endregion
+
     }
 }

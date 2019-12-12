@@ -17,13 +17,13 @@ namespace DigitalRune.Windows.Charts.Interactivity
     public class ChartSelectionChangedEventArgs : EventArgs
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -67,11 +67,11 @@ namespace DigitalRune.Windows.Charts.Interactivity
         /// </para>
         /// </remarks>
         public bool Handled { get; set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -93,12 +93,12 @@ namespace DigitalRune.Windows.Charts.Interactivity
             Element = element;
             Select = select;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
-        #endregion
+
     }
 }

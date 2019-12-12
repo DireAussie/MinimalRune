@@ -24,7 +24,7 @@ namespace DigitalRune.Editor.Commands
     public sealed partial class CommandExtension : EditorExtension
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
@@ -35,17 +35,17 @@ namespace DigitalRune.Editor.Commands
         private MergeableNodeCollection<OptionsPageViewModel> _optionsNodes;
         private ToolBarsCommandItem _toolBarsCommandItem;
         private bool _toolBarStateLoaded;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -62,11 +62,11 @@ namespace DigitalRune.Editor.Commands
             NavigationCommands.DecreaseZoom.InputGestures.Add(new KeyGesture(Key.OemMinus));
             NavigationCommands.DecreaseZoom.InputGestures.Add(new KeyGesture(Key.Subtract)); // - on number pad
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -347,6 +347,6 @@ namespace DigitalRune.Editor.Commands
             RemoveQuickLaunchItems();
             AddQuickLaunchItems();
         }
-        #endregion
+
     }
 }

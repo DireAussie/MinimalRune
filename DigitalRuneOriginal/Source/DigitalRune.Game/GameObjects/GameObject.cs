@@ -71,7 +71,7 @@ namespace DigitalRune.Game
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private static readonly PropertyChangedEventArgs IsLoadedChangedEventArgs = new PropertyChangedEventArgs("IsLoaded");
@@ -81,11 +81,11 @@ namespace DigitalRune.Game
     private static int _lastId = -1;
 
     private bool _updated; // Indicates whether this object has been updated in the current frame.
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -208,11 +208,11 @@ namespace DigitalRune.Game
     /// Occurs when the <see cref="Template"/> changed.
     /// </summary>
     public event EventHandler TemplateChanged;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -241,11 +241,11 @@ namespace DigitalRune.Game
     {
       _name = name;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -474,6 +474,6 @@ namespace DigitalRune.Game
 
       return new GameProperty<T>(this, metadata).AsAnimatable();
     }
-    #endregion
+
   }
 }

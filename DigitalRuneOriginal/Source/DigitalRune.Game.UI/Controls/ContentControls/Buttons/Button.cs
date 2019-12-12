@@ -39,19 +39,19 @@ namespace DigitalRune.Game.UI.Controls
   public class Button : ButtonBase
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Game Object Properties & Events
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary> 
@@ -140,11 +140,11 @@ namespace DigitalRune.Game.UI.Controls
       get { return GetValue<bool>(IsRepeatButtonPropertyId); }
       set { SetValue(IsRepeatButtonPropertyId, value); }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -163,11 +163,11 @@ namespace DigitalRune.Game.UI.Controls
                                             ClickMode = ClickMode.Press;
                                         };
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -253,6 +253,6 @@ namespace DigitalRune.Game.UI.Controls
 #endif
       }
     }
-    #endregion
+
   }
 }

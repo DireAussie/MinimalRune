@@ -26,7 +26,7 @@ namespace Samples
   class DeferredGraphicsScreen : GraphicsScreen, IDisposable
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly SampleFramework _sampleFramework;
@@ -49,11 +49,11 @@ namespace Samples
     private readonly RebuildZBufferRenderer _rebuildZBufferRenderer;
     private readonly Texture2D _reticle;
     private readonly UnderwaterPostProcessor _underwaterPostProcessor;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     public bool IsDisposed { get; private set; }
@@ -99,11 +99,11 @@ namespace Samples
     }
 
     public bool DrawReticle { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     public DeferredGraphicsScreen(IServiceLocator services)
@@ -317,11 +317,11 @@ namespace Samples
         IsDisposed = true;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     // Updates the graphics screen. - This method is called by GraphicsManager.Update().
@@ -633,7 +633,7 @@ namespace Samples
 
       return false;
     }
-    #endregion
+
   }
 }
 #endif

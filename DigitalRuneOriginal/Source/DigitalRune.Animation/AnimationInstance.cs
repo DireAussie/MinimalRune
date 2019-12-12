@@ -113,18 +113,18 @@ namespace DigitalRune.Animation
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private static readonly ResourcePool<AnimationInstance> Pool = new ResourcePool<AnimationInstance>(
       () => new AnimationInstance(),  // Create
       null,                           // Initialize
       null);                          // Uninitialize
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -461,11 +461,11 @@ namespace DigitalRune.Animation
     {
       get { return Completed != null; }
     }
-    #endregion
+
     
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -593,11 +593,11 @@ namespace DigitalRune.Animation
       // The animation instance requires a new ID: Increment RunCount.
       _runCount++;
     }
-    #endregion
+
       
       
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -1131,11 +1131,11 @@ namespace DigitalRune.Animation
       if (handler != null)
         handler(this, eventArgs);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region IAnimatableObject
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -1194,6 +1194,6 @@ namespace DigitalRune.Animation
           return null;
       }
     }
-    #endregion
+
   }
 }

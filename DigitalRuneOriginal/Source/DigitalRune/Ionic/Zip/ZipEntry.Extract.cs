@@ -496,7 +496,7 @@ namespace DigitalRune.Ionic.Zip
 
 
 
-        #region Support methods
+
 
 
         // workitem 7968
@@ -672,7 +672,7 @@ namespace DigitalRune.Ionic.Zip
             return IsDirectory || FileName.EndsWith("/", StringComparison.Ordinal);
         }
 
-        #endregion
+
 
     }
 }

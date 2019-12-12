@@ -21,7 +21,7 @@ namespace DigitalRune.Graphics.Rendering
   internal struct BillboardVertex : IVertexType
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -52,11 +52,11 @@ namespace DigitalRune.Graphics.Rendering
     public Vector4F Args1;
     public Vector4F Args2;
     public Vector4F Args3;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -163,17 +163,17 @@ namespace DigitalRune.Graphics.Rendering
     {
       set { Args3.W = value; }
     }
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -279,6 +279,6 @@ namespace DigitalRune.Graphics.Rendering
         "{{Position:{0} Normal:{1} Axis:{2} Color:{3} TextureCoordinate:{4}}}",
         Position, Normal, Axis, Color, TextureCoordinate);
     }
-    #endregion
+
   }
 }

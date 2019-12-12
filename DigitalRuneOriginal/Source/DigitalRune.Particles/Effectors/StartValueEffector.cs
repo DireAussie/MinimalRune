@@ -30,15 +30,15 @@ namespace DigitalRune.Particles.Effectors
   public class StartValueEffector<T> : ParticleEffector
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private IParticleParameter<T> _parameter;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -88,17 +88,17 @@ namespace DigitalRune.Particles.Effectors
 
     // TODO: Add Emitter parameter if only particles of a certain emitter should be initialized?
     //public IParticleEmitter Emitter { get; set; }
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -181,6 +181,6 @@ namespace DigitalRune.Particles.Effectors
           values[i] = startValue;
       }
     }
-    #endregion
+
   }
 }

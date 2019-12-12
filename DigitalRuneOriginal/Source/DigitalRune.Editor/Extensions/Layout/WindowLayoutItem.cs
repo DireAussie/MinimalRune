@@ -17,18 +17,18 @@ namespace DigitalRune.Editor.Layout
     internal class WindowLayoutItem : ObservableObject, ICommandItem
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly LayoutExtension _layoutExtensions;
         private MenuItemViewModel _menuItem;
         private ToolBarDropDownButtonViewModel _toolBarDropDownButton;
         private WindowLayoutCaptionBarViewModel _captionBarViewModel;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -85,11 +85,11 @@ namespace DigitalRune.Editor.Layout
             set { SetProperty(ref _isVisible, value); }
         }
         private bool _isVisible = true;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -107,11 +107,11 @@ namespace DigitalRune.Editor.Layout
             _layoutExtensions = layoutExtensions;
             Command = new DelegateCommand<WindowLayout>(_layoutExtensions.SwitchLayout);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -232,6 +232,6 @@ namespace DigitalRune.Editor.Layout
             if (_captionBarViewModel.SelectedItem == null)
                 _captionBarViewModel.SelectedItem = this;
         }
-        #endregion
+
     }
 }

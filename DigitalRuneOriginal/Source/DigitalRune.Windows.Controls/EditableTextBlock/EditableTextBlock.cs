@@ -28,7 +28,7 @@ namespace DigitalRune.Windows.Controls
     public class EditableTextBlock : Control
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private TextBlock _textBlock;
@@ -36,17 +36,17 @@ namespace DigitalRune.Windows.Controls
         private bool _canBeEdited;
         private bool _cancelEditing;
         private bool _mouseDownDetected;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -166,11 +166,11 @@ namespace DigitalRune.Windows.Controls
             get { return (Style)GetValue(TextBoxStyleProperty); }
             set { SetValue(TextBoxStyleProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -180,11 +180,11 @@ namespace DigitalRune.Windows.Controls
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(EditableTextBlock), new FrameworkPropertyMetadata(typeof(EditableTextBlock)));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -369,6 +369,6 @@ namespace DigitalRune.Windows.Controls
             // Switch back to read-only mode.
             IsEditing = false;
         }
-        #endregion
+
     }
 }

@@ -16,13 +16,13 @@ namespace DigitalRune.Editor.Textures
     internal class TextureDocumentViewModel : DocumentViewModel
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -154,11 +154,11 @@ namespace DigitalRune.Editor.Textures
 
 
         public DelegateCommand<object> ChangeMipLevelCommand { get; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -202,11 +202,11 @@ namespace DigitalRune.Editor.Textures
 
             ChangeMipLevelCommand = new DelegateCommand<object>(ChangeMipLevel);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private void OnChannelChanged(ColorChannels colorChannel, bool newValue)
@@ -230,6 +230,6 @@ namespace DigitalRune.Editor.Textures
                 0,
                 ((TextureDocument)Document).Texture2D.LevelCount - 1);
         }
-        #endregion
+
     }
 }

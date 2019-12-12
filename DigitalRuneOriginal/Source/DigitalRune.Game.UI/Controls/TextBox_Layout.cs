@@ -20,13 +20,13 @@ namespace DigitalRune.Game.UI.Controls
   partial class TextBox
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -72,11 +72,11 @@ namespace DigitalRune.Game.UI.Controls
     /// </value>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists", Justification = "Performance")]
     public List<RectangleF> VisualSelectionBounds { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -738,6 +738,6 @@ namespace DigitalRune.Game.UI.Controls
 
       return new Vector2F(x, y);
     }
-    #endregion
+
   }
 }

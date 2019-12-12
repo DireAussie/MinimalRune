@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#region ----- Credits -----
+
 // The ephemeris model is based on:
 //
 //    "Physically-Based Outdoor Scene Lighting", by Frank Kane (Founder of Sundog Software, LLC),
@@ -11,7 +11,7 @@
 //    Copyright (c) 2004-2008  Sundog Software, LLC. All rights reserved worldwide.
 //
 // Code is used with permission from Frank Kane.
-#endregion
+
 
 using DigitalRune.Mathematics;
 
@@ -35,7 +35,7 @@ namespace DigitalRune.Graphics
   partial class Ephemeris
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     // Stores the parameters required to uniquely identify a specific planet orbit.
@@ -80,11 +80,11 @@ namespace DigitalRune.Graphics
     //  // (I think this is the same as "apparent magnitude".)
     //  public double VisualMagnitude;
     //};
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     //private const int NumberOfPlanets = 6;
@@ -116,25 +116,25 @@ namespace DigitalRune.Graphics
       new OrbitalElements(29.471362, MathHelper.ToRadians(287.690033), MathHelper.ToRadians(92.861407), 
         0.055581, 9.554747, MathHelper.ToRadians(2.488980), MathHelper.ToRadians(113.576139), 165.60, -8.88)
     };
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     //private readonly PlanetData[] _planetData = new PlanetData[NumberOfPlanets];
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     ///// <summary>
@@ -252,6 +252,6 @@ namespace DigitalRune.Graphics
     //  // To convert from radiometric units to photometric units multiply with 683 for green
     //  // (and smaller values for mixed spectrums).
     //}
-    #endregion
+
   }
 }

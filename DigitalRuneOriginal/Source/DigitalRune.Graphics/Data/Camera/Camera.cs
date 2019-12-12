@@ -42,13 +42,13 @@ namespace DigitalRune.Graphics
     ///// </para>
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -84,11 +84,11 @@ namespace DigitalRune.Graphics
     /// </para>
     /// </remarks>
     public Matrix44F? LastProjection { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -105,14 +105,14 @@ namespace DigitalRune.Graphics
 
       Projection = projection;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <summary>
     /// Creates a new <see cref="Camera"/> that is a clone (deep copy) of the current instance.
@@ -210,8 +210,8 @@ namespace DigitalRune.Graphics
       Name = source.Name;
       LastProjection = source.LastProjection;
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

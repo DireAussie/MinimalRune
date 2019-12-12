@@ -27,23 +27,23 @@ namespace DigitalRune.Editor.Game
     public sealed class GameContentBuilder
     {
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         private static readonly string[] SupportedModelFileExtensions = { ".DAE", ".FBX", ".X" };
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly GameContentBuildLogger _logger;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -73,11 +73,11 @@ namespace DigitalRune.Editor.Game
         /// <see cref="ExecutableFolder"/>.
         /// </value>
         public string OutputFolder { get; set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -98,11 +98,11 @@ namespace DigitalRune.Editor.Game
             IntermediateFolder = "GameContentBuilder/obj";
             OutputFolder = "GameContentBuilder/bin";
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -217,6 +217,6 @@ namespace DigitalRune.Editor.Game
 
             return false;
         }
-        #endregion
+
     }
 }

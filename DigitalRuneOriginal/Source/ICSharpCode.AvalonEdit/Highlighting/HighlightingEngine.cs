@@ -59,7 +59,7 @@ namespace ICSharpCode.AvalonEdit.Highlighting
 			}
 		}
 		
-		#region Highlighting Engine
+
 		
 		// local variables from HighlightLineInternal (are member because they are accessed by HighlighLine helper methods)
 		string lineText;
@@ -231,9 +231,9 @@ namespace ICSharpCode.AvalonEdit.Highlighting
 					return spanStack.Peek().RuleSet ?? emptyRuleSet;
 			}
 		}
-		#endregion
+
 		
-		#region Color Stack Management
+
 		Stack<HighlightedSection> highlightedSectionStack;
 		HighlightedSection lastPoppedSection;
 		
@@ -294,9 +294,9 @@ namespace ICSharpCode.AvalonEdit.Highlighting
 					PopColor();
 			}
 		}
-		#endregion
+
 		
-		#region Match helpers
+
 		/// <summary>
 		/// Returns the first match from the array or endSpanMatch.
 		/// </summary>
@@ -320,6 +320,6 @@ namespace ICSharpCode.AvalonEdit.Highlighting
 			else
 				return new Match[count];
 		}
-		#endregion
+
 	}
 }

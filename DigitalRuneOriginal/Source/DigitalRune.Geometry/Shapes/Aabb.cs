@@ -42,7 +42,7 @@ namespace DigitalRune.Geometry.Shapes
 
     
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -63,11 +63,11 @@ namespace DigitalRune.Geometry.Shapes
     /// </remarks>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
     public Vector3F Maximum;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -101,11 +101,11 @@ namespace DigitalRune.Geometry.Shapes
         return (Maximum.X - Minimum.X) * (Maximum.Y - Minimum.Y) * (Maximum.Z - Minimum.Z);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -118,14 +118,14 @@ namespace DigitalRune.Geometry.Shapes
       Minimum = minimum;
       Maximum = maximum;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //-------------------------------------------------------------- 
 
-    #region ----- Equality -----
+
 
     /// <overloads>
     /// <summary>
@@ -244,7 +244,7 @@ namespace DigitalRune.Geometry.Shapes
     {
       return aabbA.Minimum != aabbB.Minimum || aabbA.Maximum != aabbB.Maximum;
     }
-    #endregion
+
 
 
     /// <summary>
@@ -568,6 +568,6 @@ namespace DigitalRune.Geometry.Shapes
     {
       return String.Format(CultureInfo.InvariantCulture, "Aabb {{ Minimum = {0}, Maximum = {1} }}", Minimum, Maximum);
     }
-    #endregion
+
   }
 }

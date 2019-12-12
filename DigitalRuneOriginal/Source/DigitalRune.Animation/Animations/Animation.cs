@@ -30,13 +30,13 @@ namespace DigitalRune.Animation
   public abstract class Animation<T> : IAnimation<T> 
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -86,11 +86,11 @@ namespace DigitalRune.Animation
 
     /// <inheritdoc/>
     public abstract IAnimationValueTraits<T> Traits { get; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -103,11 +103,11 @@ namespace DigitalRune.Animation
       TargetObject = null;
       TargetProperty = null;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -258,6 +258,6 @@ namespace DigitalRune.Animation
     /// </para>
     /// </remarks>
     protected abstract void GetValueCore(TimeSpan time, ref T defaultSource, ref T defaultTarget, ref T result);
-    #endregion
+
   }
 }

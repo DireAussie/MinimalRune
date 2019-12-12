@@ -29,15 +29,15 @@ namespace DigitalRune.Animation
   public class TimelineGroup : ITimeline, IList<ITimeline>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly List<ITimeline> _timelines;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
 
@@ -110,11 +110,11 @@ namespace DigitalRune.Animation
         _timelines[index] = value;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -126,11 +126,11 @@ namespace DigitalRune.Animation
       FillBehavior = FillBehavior.Hold;
       TargetObject = null;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -343,6 +343,6 @@ namespace DigitalRune.Animation
     {
       _timelines.RemoveAt(index);
     }
-    #endregion
+
   }
 }

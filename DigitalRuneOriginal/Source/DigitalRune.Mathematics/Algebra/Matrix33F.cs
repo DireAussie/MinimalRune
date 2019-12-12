@@ -32,7 +32,7 @@ namespace DigitalRune.Mathematics.Algebra
   public struct Matrix33F : IEquatable<Matrix33F>
   {
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -55,11 +55,11 @@ namespace DigitalRune.Mathematics.Algebra
     public static readonly Matrix33F Identity = new Matrix33F(1, 0, 0,
                                                               0, 1, 0,
                                                               0, 0, 1);
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -142,11 +142,11 @@ namespace DigitalRune.Mathematics.Algebra
     [DataMember]
 #endif
     public float M22;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -437,11 +437,11 @@ namespace DigitalRune.Mathematics.Algebra
         return result;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
     
     /// <overloads>
@@ -595,11 +595,11 @@ namespace DigitalRune.Mathematics.Algebra
       M10 = elements[1][0]; M11 = elements[1][1]; M12 = elements[1][2];
       M20 = elements[2][0]; M21 = elements[2][1]; M22 = elements[2][2];
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Interfaces and Overrides
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -646,7 +646,7 @@ namespace DigitalRune.Mathematics.Algebra
     }
 
 
-    #region IEquatable<Matrix33F> Members
+
     /// <summary>
     /// Indicates whether the current object is equal to another object of the same type.
     /// </summary>
@@ -659,7 +659,7 @@ namespace DigitalRune.Mathematics.Algebra
     {
       return this == other;
     }
-    #endregion
+
 
 
     /// <overloads>
@@ -692,11 +692,11 @@ namespace DigitalRune.Mathematics.Algebra
         "({0}; {1}; {2})\n({3}; {4}; {5})\n({6}; {7}; {8})\n",
         M00, M01, M02, M10, M11, M12, M20, M21, M22);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Overloaded Operators
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -1145,11 +1145,11 @@ namespace DigitalRune.Mathematics.Algebra
     {
       return this;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -1518,11 +1518,11 @@ namespace DigitalRune.Mathematics.Algebra
       MathHelper.Swap(ref M02, ref M20);
       MathHelper.Swap(ref M12, ref M21);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Static Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -1826,6 +1826,6 @@ namespace DigitalRune.Mathematics.Algebra
                            sin, cos, 0,
                            0, 0, 1);
     }
-    #endregion
+
   }
 }

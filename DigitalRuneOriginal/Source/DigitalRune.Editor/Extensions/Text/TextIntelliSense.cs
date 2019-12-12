@@ -30,7 +30,7 @@ namespace DigitalRune.Editor.Text
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly TextEditor _textEditor;
@@ -41,17 +41,17 @@ namespace DigitalRune.Editor.Text
 
         // This flag avoids unnecessary CompletionWindow updates in OnCaretPositionChanged().
         private bool _textIsUpdating;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         private TextIntelliSense(TextEditor textEditor)
@@ -67,14 +67,14 @@ namespace DigitalRune.Editor.Text
             textEditor.TextArea.TextEntered += OnTextEntered;
             textEditor.TextArea.Caret.PositionChanged += OnCaretPositionChanged;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
-        #region ----- Initialization -----
+
 
         public static void EnableIntelliSense(TextDocument document)
         {
@@ -118,10 +118,10 @@ namespace DigitalRune.Editor.Text
                     new TextIntelliSense(textEditor);
             }
         }
-        #endregion
 
 
-        #region ----- Event handling -----
+
+
 
         private void OnPreviewKeyDown(object sender, KeyEventArgs eventArgs)
         {
@@ -170,7 +170,7 @@ namespace DigitalRune.Editor.Text
             if (_completionWindow != null)
                 RequestCompletionWindow('\0', false);
         }
-        #endregion
+
 
 
         /// <summary>
@@ -374,6 +374,6 @@ namespace DigitalRune.Editor.Text
 
             return offset;
         }
-        #endregion
+
     }
 }

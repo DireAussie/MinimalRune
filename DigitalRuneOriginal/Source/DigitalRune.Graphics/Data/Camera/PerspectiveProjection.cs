@@ -67,7 +67,7 @@ namespace DigitalRune.Graphics
 
 
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -92,17 +92,17 @@ namespace DigitalRune.Graphics
     /// The default value for <see cref="Projection.FieldOfViewY"/>.
     /// </summary>
     private const float DefaultFieldOfViewY = 60.0f * ConstantsF.Pi / 180; // 60°
-    #endregion
+
 
     
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -143,11 +143,11 @@ namespace DigitalRune.Graphics
       }
     }
     private Plane? _nearClipPlane;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -158,14 +158,14 @@ namespace DigitalRune.Graphics
       ViewVolume = new PerspectiveViewVolume();
       SetFieldOfView(DefaultFieldOfViewY, DefaultAspectRatio, DefaultNear, DefaultFar);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Projection CreateInstanceCore()
@@ -183,7 +183,7 @@ namespace DigitalRune.Graphics
                    sourceTyped.Bottom, sourceTyped.Top, 
                    sourceTyped.Near, sourceTyped.Far);
     }
-    #endregion
+
 
 
     /// <overloads>
@@ -431,6 +431,6 @@ namespace DigitalRune.Graphics
       projection.Set(matrix);
       return projection;
     }
-    #endregion
+
   }
 }

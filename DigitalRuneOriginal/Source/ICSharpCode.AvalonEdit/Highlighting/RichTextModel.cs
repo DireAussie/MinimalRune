@@ -91,7 +91,7 @@ namespace ICSharpCode.AvalonEdit.Highlighting
 			this.stateChanges.AddRange(stateChanges);
 		}
 		
-		#region UpdateOffsets
+
 		/// <summary>
 		/// Updates the start and end offsets of all segments stored in this collection.
 		/// </summary>
@@ -145,7 +145,7 @@ namespace ICSharpCode.AvalonEdit.Highlighting
 			stateChangeOffsets.RemoveRange(writePos, stateChangeOffsets.Count - writePos);
 			stateChanges.RemoveRange(writePos, stateChanges.Count - writePos);
 		}
-		#endregion
+
 		
 		/// <summary>
 		/// Appends another RichTextModel after this one.

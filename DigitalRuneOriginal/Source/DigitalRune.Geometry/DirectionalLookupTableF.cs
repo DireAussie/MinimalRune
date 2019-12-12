@@ -51,7 +51,7 @@ namespace DigitalRune.Geometry
 
 
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     // Face indices.
@@ -61,11 +61,11 @@ namespace DigitalRune.Geometry
     private const int NegativeY = 3;
     private const int PositiveZ = 4;
     private const int NegativeZ = 5;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -73,11 +73,11 @@ namespace DigitalRune.Geometry
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1814:PreferJaggedArraysOverMultidimensional", MessageId = "Member")]
     internal T[,,] CubeMap;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -136,11 +136,11 @@ namespace DigitalRune.Geometry
       }
     }
 #endif
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -162,11 +162,11 @@ namespace DigitalRune.Geometry
     {
       CubeMap = new T[6, width, width];
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -324,6 +324,6 @@ namespace DigitalRune.Geometry
         }
       }
     }
-    #endregion
+
   }
 }

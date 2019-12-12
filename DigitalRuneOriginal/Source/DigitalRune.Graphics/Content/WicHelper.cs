@@ -1,4 +1,4 @@
-﻿#region ----- Copyright -----
+﻿
 /*
   The WicHelper is a port of the WIC loader in DirectXTex (see http://directxtex.codeplex.com/)
   which is licensed under the MIT license.
@@ -21,7 +21,7 @@
   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT
   OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-#endregion
+
 
 using System;
 using System.Collections.Generic;
@@ -87,7 +87,7 @@ namespace DigitalRune.Graphics.Content
   internal static class WicHelper
   {
     //--------------------------------------------------------------
-    #region DirectXTexUtil.cpp
+
     //--------------------------------------------------------------
 
     // WIC Pixel Format Translation Data
@@ -215,7 +215,7 @@ namespace DigitalRune.Graphics.Content
 
       throw new NotSupportedException("The specified texture format is not supported.");
     }
-    #endregion
+
 
 
     // WIC Pixel Format nearest conversion table

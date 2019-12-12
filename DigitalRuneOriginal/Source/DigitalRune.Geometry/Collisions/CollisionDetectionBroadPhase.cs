@@ -37,7 +37,7 @@ namespace DigitalRune.Geometry.Collisions
   internal sealed class CollisionDetectionBroadPhase : IBroadPhase<CollisionObject>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly CollisionDomain _collisionDomain;
@@ -52,11 +52,11 @@ namespace DigitalRune.Geometry.Collisions
     // still store a reference in one of the contact constraints. The contact sets need 
     // to be valid until the next update of the collision domain.)
     private readonly List<ContactSet> _obsoleteContactSetList = new List<ContactSet>();
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -139,11 +139,11 @@ namespace DigitalRune.Geometry.Collisions
       }
     }
     private ISpatialPartition<CollisionObject> _spatialPartition;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -161,11 +161,11 @@ namespace DigitalRune.Geometry.Collisions
 
       CandidatePairs = new ContactSetCollection();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     // Adds/Removes objects in the spatial partition.
@@ -273,7 +273,7 @@ namespace DigitalRune.Geometry.Collisions
     }
 
 
-    #region ----- IBroadPhase<T> -----
+
 
     /// <summary>
     /// Called when all self-overlaps of the spatial partition were removed.
@@ -329,8 +329,8 @@ namespace DigitalRune.Geometry.Collisions
     {
       CandidatePairs.RemoveUnused(_obsoleteContactSetList);
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

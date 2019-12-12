@@ -34,21 +34,21 @@ namespace DigitalRune.Windows.Controls
     public class ColorSlider2D : Control
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private FrameworkElement _thumb;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -124,11 +124,11 @@ namespace DigitalRune.Windows.Controls
             add { AddHandler(ValueChangedEvent, value); }
             remove { RemoveHandler(ValueChangedEvent, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -138,11 +138,11 @@ namespace DigitalRune.Windows.Controls
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ColorSlider2D), new FrameworkPropertyMetadata(typeof(ColorSlider2D)));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private static Point ClampValue(Point value)
@@ -412,6 +412,6 @@ namespace DigitalRune.Windows.Controls
                 Canvas.SetTop(_thumb, yOffset);
             }
         }
-        #endregion
+
     }
 }

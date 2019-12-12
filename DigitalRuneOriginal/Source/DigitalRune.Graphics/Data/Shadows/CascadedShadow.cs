@@ -39,7 +39,7 @@ namespace DigitalRune.Graphics
   public class CascadedShadow : Shadow
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Cached values.
@@ -47,11 +47,11 @@ namespace DigitalRune.Graphics
     internal Matrix[] ViewProjections = new Matrix[4];
     internal Vector4F EffectiveDepthBias;      // Bias in light space [0, 1] range. Usually negative.
     internal Vector4F EffectiveNormalOffset;   // Offset in world space.
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <inheritdoc cref="Shadow.ShadowMap"/>
@@ -311,7 +311,7 @@ namespace DigitalRune.Graphics
     public bool[] IsCascadeLocked { get; private set; }
 
 
-    #region ----- Obsolete -----
+
 
     /// <summary>
     /// Gets or sets the split distribution parameter.
@@ -377,12 +377,12 @@ namespace DigitalRune.Graphics
     /// </remarks>
     [Obsolete("The properties DepthBiasScale and DepthBiasOffset have been replaced by DepthBias.")]
     public Vector4F DepthBiasOffset { get; set; }
-    #endregion
-    #endregion
+
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -414,14 +414,14 @@ namespace DigitalRune.Graphics
       DepthBiasOffset = new Vector4F(-0.001f);
 #pragma warning restore 618
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Shadow CreateInstanceCore()
@@ -464,7 +464,7 @@ namespace DigitalRune.Graphics
 
       // ShadowMap is not cloned!
     }
-    #endregion
+
 
 
     /// <summary>
@@ -513,6 +513,6 @@ namespace DigitalRune.Graphics
       splits[numberOfCascades - 1] = maxDistance;
       return splits;
     }
-    #endregion
+
   }
 }

@@ -25,16 +25,16 @@ namespace DigitalRune.Game
   public struct GameProperty<T> : IGameProperty, IEquatable<GameProperty<T>>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly GameObject _owner;
     private readonly GamePropertyMetadata<T> _metadata;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -294,11 +294,11 @@ namespace DigitalRune.Game
         data.Changed -= value;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -314,11 +314,11 @@ namespace DigitalRune.Game
       _owner = owner;
       _metadata = metadata;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private GamePropertyData<T> GetOrCreateLocalData()
@@ -544,6 +544,6 @@ namespace DigitalRune.Game
       Owner.PropertyData.Set(_metadata.Id, animatableData);
       return animatableData;
     }
-    #endregion
+
   }
 }

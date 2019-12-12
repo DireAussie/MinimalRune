@@ -322,7 +322,7 @@ namespace ICSharpCode.AvalonEdit.Utils
 		}
 		
 		/*
-		#region Equality
+
 		/// <summary>
 		/// Gets whether the two ropes have the same content.
 		/// Runs in O(N + M).
@@ -382,7 +382,7 @@ namespace ICSharpCode.AvalonEdit.Utils
 			}
 			return hashcode;
 		}
-		#endregion
+
 		 */
 		
 		/// <summary>
@@ -421,7 +421,7 @@ namespace ICSharpCode.AvalonEdit.Utils
 			return result;
 		}
 		
-		#region Caches / Changed event
+
 		internal struct RopeCacheEntry
 		{
 			internal readonly RopeNode<T> node;
@@ -449,9 +449,9 @@ namespace ICSharpCode.AvalonEdit.Utils
 			
 			root.CheckInvariants();
 		}
-		#endregion
+
 		
-		#region GetChar / SetChar
+
 		/// <summary>
 		/// Gets/Sets a single character.
 		/// Runs in O(lg N) for random access. Sequential read-only access benefits from a special optimization and runs in amortized O(1).
@@ -560,9 +560,9 @@ namespace ICSharpCode.AvalonEdit.Utils
 			Debug.Assert(stack.Peek().node.contents != null);
 			return stack;
 		}
-		#endregion
+
 		
-		#region ToString / WriteTo
+
 		internal void VerifyRange(int startIndex, int length)
 		{
 			if (startIndex < 0 || startIndex > this.Length) {
@@ -621,7 +621,7 @@ namespace ICSharpCode.AvalonEdit.Utils
 			return "Not available in release build.";
 			#endif
 		}
-		#endregion
+
 		
 		bool ICollection<T>.IsReadOnly {
 			get { return false; }

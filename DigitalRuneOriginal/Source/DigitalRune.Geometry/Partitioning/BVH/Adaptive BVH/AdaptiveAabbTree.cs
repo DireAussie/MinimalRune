@@ -95,7 +95,7 @@ namespace DigitalRune.Geometry.Partitioning
   public partial class AdaptiveAabbTree<T> : BasePartition<T>, ISupportClosestPointQueries<T>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // ReSharper disable StaticFieldInGenericType
@@ -128,26 +128,26 @@ namespace DigitalRune.Geometry.Partitioning
     /// The leaves of the tree.
     /// </summary>
     private readonly List<Node> _leaves = new List<Node>();
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Methods
+
+
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
+    //--------------------------------------------------------------
+
+
 
     /// <inheritdoc/>
     protected override BasePartition<T> CreateInstanceCore()
@@ -161,7 +161,7 @@ namespace DigitalRune.Geometry.Partitioning
     {
       base.CloneCore(source);
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -233,6 +233,6 @@ namespace DigitalRune.Geometry.Partitioning
         }
       }
     }
-    #endregion
+
   }
 }

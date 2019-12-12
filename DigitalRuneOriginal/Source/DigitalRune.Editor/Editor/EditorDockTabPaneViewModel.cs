@@ -16,7 +16,7 @@ namespace DigitalRune.Editor
     internal class EditorDockTabPaneViewModel : DockTabPaneViewModel
     {
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -24,11 +24,11 @@ namespace DigitalRune.Editor
         /// </summary>
         /// <value>The editor.</value>
         public IEditorService Editor { get; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -45,11 +45,11 @@ namespace DigitalRune.Editor
 
             Editor = editor;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -101,6 +101,6 @@ namespace DigitalRune.Editor
                         (item as IActivatable)?.OnDeactivate(false);
             }
         }
-        #endregion
+
     }
 }

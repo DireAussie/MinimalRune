@@ -26,7 +26,7 @@ namespace DigitalRune.Windows.Framework
     public class AutoScrollBehavior : Behavior<FrameworkElement>
     {
         //--------------------------------------------------------------
-        #region Nested Types
+
         //--------------------------------------------------------------
 
         [Flags]
@@ -38,32 +38,32 @@ namespace DigitalRune.Windows.Framework
             Up = 1 << 2,
             Down = 1 << 3,
         }
-        #endregion
+
 
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         private const double AutoScrollTolerance = 32;      // Area near border in device-independent pixels.
         private const double AutoScrollDistance = 10;       // Distance scrolled in device-independent pixels.
         private static readonly TimeSpan AutoScrollInterval = new TimeSpan(33333);
         private static readonly TimeSpan HoverInterval = TimeSpan.Zero; // SystemParameters.MouseHoverTime;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private ScrollViewer _scrollViewer;
         private DispatcherTimer _hoverTimer;
         private DispatcherTimer _scrollTimer;
         private Direction _scrollDirection;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -89,11 +89,11 @@ namespace DigitalRune.Windows.Framework
             get { return (bool)GetValue(IsEnabledProperty); }
             set { SetValue(IsEnabledProperty, Boxed.Get(value)); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -375,6 +375,6 @@ namespace DigitalRune.Windows.Framework
             if ((_scrollDirection & Direction.Down) == Direction.Down)
                 _scrollViewer.ScrollToVerticalOffset(_scrollViewer.VerticalOffset + deltaY);
         }
-        #endregion
+
     }
 }

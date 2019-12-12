@@ -75,16 +75,16 @@ namespace DigitalRune.Geometry.Shapes
   public class TriangleMeshShape : Shape
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // The cached local space AABB
     internal Aabb _aabbLocal = new Aabb(new Vector3F(float.NaN), new Vector3F(float.NaN));
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -283,11 +283,11 @@ namespace DigitalRune.Geometry.Shapes
       }
     }
 #endif
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -369,11 +369,11 @@ namespace DigitalRune.Geometry.Shapes
 
       EnableContactWelding = enableContactWelding;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
 #if XNA || MONOGAME
@@ -425,7 +425,7 @@ namespace DigitalRune.Geometry.Shapes
 #endif
 
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Shape CreateInstanceCore()
@@ -446,7 +446,7 @@ namespace DigitalRune.Geometry.Shapes
       if (source.TriangleNeighbors != null)
         TriangleNeighbors = new List<int>(source.TriangleNeighbors);
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -823,6 +823,6 @@ namespace DigitalRune.Geometry.Shapes
     //    return v0.Y > v1.Y;
     //  return v0.Z > v1.Z;
     //}
-    #endregion
+
   }
 }

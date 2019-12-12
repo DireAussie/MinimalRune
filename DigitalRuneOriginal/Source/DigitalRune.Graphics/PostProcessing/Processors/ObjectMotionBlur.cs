@@ -32,7 +32,7 @@ namespace DigitalRune.Graphics.PostProcessing
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Effect _effect;
@@ -53,11 +53,11 @@ namespace DigitalRune.Graphics.PostProcessing
     private readonly EffectPass _neighborMaxPass;
     private readonly EffectPass _softEdgePass;
     private readonly Texture2D _jitterTexture;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -111,11 +111,11 @@ namespace DigitalRune.Graphics.PostProcessing
     /// </summary>
     /// <value>The max blur radius in pixels. The default value is 20.</value>
     public float MaxBlurRadius { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -150,11 +150,11 @@ namespace DigitalRune.Graphics.PostProcessing
       NumberOfSamples = 9;
       MaxBlurRadius = 20;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
 
@@ -327,7 +327,7 @@ namespace DigitalRune.Graphics.PostProcessing
         renderTargetPool.Recycle(temp1);
       }
     }
-    #endregion
+
   }
 }
 #endif

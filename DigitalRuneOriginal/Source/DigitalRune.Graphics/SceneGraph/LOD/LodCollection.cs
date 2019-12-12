@@ -51,7 +51,7 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -152,22 +152,22 @@ namespace DigitalRune.Graphics.SceneGraph
         _current = new LodEntry();
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly LodGroupNode _owner;
     private LodEntry[] _array;
     private int _size;
     private bool _ignoreChanges;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -212,11 +212,11 @@ namespace DigitalRune.Graphics.SceneGraph
         return _array[index];
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -229,11 +229,11 @@ namespace DigitalRune.Graphics.SceneGraph
       _owner = owner;
       _array = new LodEntry[capacity];
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -657,7 +657,7 @@ namespace DigitalRune.Graphics.SceneGraph
     }
 
 
-    #region ----- IEnumerable -----
+
 
     /// <summary>
     /// Returns an enumerator that iterates through the collection.
@@ -693,10 +693,10 @@ namespace DigitalRune.Graphics.SceneGraph
     {
       return new Enumerator(this);
     }
-    #endregion
 
 
-    #region ----- ICollection<T> -----
+
+
 
     /// <summary>
     /// Adds an item to the <see cref="ICollection{T}"/>.
@@ -795,8 +795,8 @@ namespace DigitalRune.Graphics.SceneGraph
       Remove(index);
       return true;
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

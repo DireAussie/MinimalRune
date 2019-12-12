@@ -54,15 +54,15 @@ namespace DigitalRune.Windows.Framework
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private CommandBinding _commandBinding;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace DigitalRune.Windows.Framework
             }
         }
         private RoutedCommand _routedCommand;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -138,17 +138,17 @@ namespace DigitalRune.Windows.Framework
             get { return GetValue(CommandParameterProperty); }
             set { SetValue(CommandParameterProperty, value); }
         }
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Creation & Cleanup
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Methods
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -241,6 +241,6 @@ namespace DigitalRune.Windows.Framework
                 eventArgs.Handled = true;
             }
         }
-        #endregion
+
     }
 }

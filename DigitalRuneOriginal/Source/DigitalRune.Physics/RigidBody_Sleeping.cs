@@ -20,16 +20,16 @@ namespace DigitalRune.Physics
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // How long the body's velocities were below the sleeping thresholds [s].
     private float _noMovementTime;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -101,11 +101,11 @@ namespace DigitalRune.Physics
     /// otherwise, <see langword="false"/>.
     /// </value>
     internal bool IslandTouchesImmovable { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -210,6 +210,6 @@ namespace DigitalRune.Physics
         }
       }
     }
-    #endregion
+
   }
 }

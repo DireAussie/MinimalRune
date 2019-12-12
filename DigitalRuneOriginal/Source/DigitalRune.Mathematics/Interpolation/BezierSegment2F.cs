@@ -148,7 +148,7 @@ namespace DigitalRune.Mathematics.Interpolation
 
 
     //--------------------------------------------------------------
-    #region Resource Pooling
+
     //--------------------------------------------------------------
 
     private static readonly ResourcePool<BezierSegment2F> Pool = new ResourcePool<BezierSegment2F>(
@@ -192,6 +192,6 @@ namespace DigitalRune.Mathematics.Interpolation
 
       Pool.Recycle(this);
     }
-    #endregion
+
   }
 }

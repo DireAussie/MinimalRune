@@ -49,7 +49,7 @@ namespace Samples
   public class DynamicSkyObject : GameObject
   {
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     // This game object computes physically based light intensities. Since our material
@@ -63,11 +63,11 @@ namespace Samples
 
     // Ambient light from light pollution.
     private static readonly Vector3F LightPollution = new Vector3F(0.004f);
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly IServiceLocator _services;
@@ -112,11 +112,11 @@ namespace Samples
     private ColorEncoder _colorEncoder;
     private SceneCaptureRenderer _sceneCaptureRenderer;
     private RenderContext _context;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     // The direction to the sun in world space.
@@ -256,11 +256,11 @@ namespace Samples
       }
     }
     private Vector3F _fogScatteringSymmetry = new Vector3F(0.26f, 0.24f, 0.22f);
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     public DynamicSkyObject(IServiceLocator services)
@@ -278,11 +278,11 @@ namespace Samples
       _cacheSky = cacheSky;
       EnableCloudShadows = true;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     protected override void OnLoad()
@@ -1014,7 +1014,7 @@ namespace Samples
     }
 
 
-    #region ----- Helper Methods -----
+
 
     /// <summary>
     /// Creates the texture matrix for scaling texture coordinates.
@@ -1040,9 +1040,9 @@ namespace Samples
         0, sv, 0,
         0, 0, 1);
     }
-    #endregion
 
-    #endregion
+
+
   }
 }
 #endif

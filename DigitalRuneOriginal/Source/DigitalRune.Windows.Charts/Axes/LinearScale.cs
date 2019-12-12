@@ -18,7 +18,7 @@ namespace DigitalRune.Windows.Charts
     public class LinearScale : AxisScale
     {
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -38,17 +38,17 @@ namespace DigitalRune.Windows.Charts
         /// <see cref="NumberOfMinorTicks"/> too and this list is not used.
         /// </remarks>
         private static readonly int[] MinorTickCounts = { 1, 1, 4 };
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------    
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -168,11 +168,11 @@ namespace DigitalRune.Windows.Charts
             }
         }
         private string _formatString = "g5";
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <overloads>
@@ -198,11 +198,11 @@ namespace DigitalRune.Windows.Charts
             : base(min, max)
         {
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -546,6 +546,6 @@ namespace DigitalRune.Windows.Charts
         {
             return value.ToString(FormatString, cultureInfo);
         }
-        #endregion
+
     }
 }

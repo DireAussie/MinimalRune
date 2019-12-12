@@ -25,21 +25,21 @@ namespace DigitalRune.Windows.Charts
     public class VerticalChartLine : ChartElement
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private Line _line;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -85,11 +85,11 @@ namespace DigitalRune.Windows.Charts
             get { return (double)GetValue(XProperty); }
             set { SetValue(XProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
 #if SILVERLIGHT
@@ -110,11 +110,11 @@ namespace DigitalRune.Windows.Charts
             DefaultStyleKeyProperty.OverrideMetadata(typeof(VerticalChartLine), new FrameworkPropertyMetadata(typeof(VerticalChartLine)));
         }
 #endif
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private static void OnXChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
@@ -196,6 +196,6 @@ namespace DigitalRune.Windows.Charts
 
             return grid;
         }
-        #endregion
+
     }
 }

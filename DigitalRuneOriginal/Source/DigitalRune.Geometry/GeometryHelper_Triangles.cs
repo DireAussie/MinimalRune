@@ -66,7 +66,7 @@ namespace DigitalRune.Geometry
       v = vb * denominator;
       w = vc * denominator;
 
-      #region ----- Triangle vs Point in Triangle Plane -----
+
       //// Following code can be used if point is in the triangle plane.
       //// Unnormalized triangle normal.
       //Vector3F m = Vector3F.Cross(v1 - v0, v2 - v0);
@@ -121,7 +121,7 @@ namespace DigitalRune.Geometry
       //u = nu * ood;
       //v = nv * ood;
       //w = 1 - u - v;
-      #endregion
+
     }
 
 

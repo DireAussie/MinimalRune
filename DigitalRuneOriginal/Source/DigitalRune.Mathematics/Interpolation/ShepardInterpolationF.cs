@@ -19,16 +19,16 @@ namespace DigitalRune.Mathematics.Interpolation
   public class ShepardInterpolationF : ScatteredInterpolationF
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private float _power = 2;
     private VectorF _weights;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -44,17 +44,17 @@ namespace DigitalRune.Mathematics.Interpolation
       get { return _power; }
       set { _power = value; }
     }
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Creation and Cleanup
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -99,6 +99,6 @@ namespace DigitalRune.Mathematics.Interpolation
 
       return y / weightSum;
     }
-    #endregion
+
   } 
 }

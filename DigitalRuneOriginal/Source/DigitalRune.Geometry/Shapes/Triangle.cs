@@ -28,7 +28,7 @@ namespace DigitalRune.Geometry.Shapes
   public struct Triangle : IEquatable<Triangle>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -51,11 +51,11 @@ namespace DigitalRune.Geometry.Shapes
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
     public Vector3F Vertex2;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -130,11 +130,11 @@ namespace DigitalRune.Geometry.Shapes
         }
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -175,14 +175,14 @@ namespace DigitalRune.Geometry.Shapes
       Vertex1 = triangleShape.Vertex1;
       Vertex2 = triangleShape.Vertex2;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //-------------------------------------------------------------- 
 
-    #region ----- Equality -----
+
 
     /// <overloads>
     /// <summary>
@@ -255,7 +255,7 @@ namespace DigitalRune.Geometry.Shapes
              || triangle1.Vertex1 != triangle2.Vertex1
              || triangle1.Vertex2 != triangle2.Vertex2;
     }
-    #endregion
+
 
 
     /// <summary>
@@ -317,6 +317,6 @@ namespace DigitalRune.Geometry.Shapes
     {
       return String.Format(CultureInfo.InvariantCulture, "Triangle {{ Vertex0 = {0}, Vertex1 = {1}, Vertex2 = {2} }}", Vertex0, Vertex1, Vertex2);
     }
-    #endregion
+
   }
 }

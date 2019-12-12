@@ -18,13 +18,13 @@ namespace DigitalRune.Editor.Shader
     partial class ShaderExtension
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -46,11 +46,11 @@ namespace DigitalRune.Editor.Shader
             }
         }
         private bool _isMonoGameEffectProcessorEnabled = true;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private static async Task<Tuple<bool, List<Error>>> BuildMonoGameAsync(
@@ -108,6 +108,6 @@ namespace DigitalRune.Editor.Shader
 
             return Tuple.Create(string.IsNullOrEmpty(errorMessage), errors);
         }
-        #endregion
+
     }
 }

@@ -56,7 +56,7 @@ namespace WindowsControlsApp
         }
 
 
-        #region ----- Column Sorting -----
+
 
         GridViewColumnHeader _lastHeaderClicked;
         ListSortDirection _lastSortDirection = ListSortDirection.Ascending;
@@ -109,7 +109,7 @@ namespace WindowsControlsApp
             dataView.SortDescriptions.Add(sd);
             dataView.Refresh();
         }
-        #endregion
+
     }
 
 

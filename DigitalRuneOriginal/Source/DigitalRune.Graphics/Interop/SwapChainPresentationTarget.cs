@@ -33,7 +33,7 @@ namespace DigitalRune.Graphics.Interop
     IPresentationTarget
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
 #if WINDOWS_UWP
@@ -46,11 +46,11 @@ namespace DigitalRune.Graphics.Interop
     private float _compositionScaleY;
     private bool _requiresResize;
 #endif
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties and Events
+
     //--------------------------------------------------------------
 
 #if WINDOWS_UWP
@@ -174,11 +174,11 @@ namespace DigitalRune.Graphics.Interop
     /// thread.
     /// </remarks>
     public object Lock { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
 #if WINDOWS_UWP
@@ -208,11 +208,11 @@ namespace DigitalRune.Graphics.Interop
       }
     }
 #endif
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
 #if WINDOWS_UWP
@@ -329,6 +329,6 @@ namespace DigitalRune.Graphics.Interop
       throw new NotImplementedException("Only available on Universal Windows Platform.");
     }
 #endif
-    #endregion
+
   }
 }

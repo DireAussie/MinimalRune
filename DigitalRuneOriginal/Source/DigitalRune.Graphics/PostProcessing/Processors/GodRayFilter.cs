@@ -38,7 +38,7 @@ namespace DigitalRune.Graphics.PostProcessing
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly EffectParameter _viewportSizeParameter;
@@ -54,11 +54,11 @@ namespace DigitalRune.Graphics.PostProcessing
     private readonly EffectPass _combinePass;
 
     private readonly DownsampleFilter _downsampleFilter;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -221,11 +221,11 @@ namespace DigitalRune.Graphics.PostProcessing
     /// 1, then the god rays are added using the softer "Screen" blending.
     /// </remarks>
     public float Softness { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -262,11 +262,11 @@ namespace DigitalRune.Graphics.PostProcessing
       NumberOfPasses = 2;
       Softness = 1;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -380,7 +380,7 @@ namespace DigitalRune.Graphics.PostProcessing
       context.RenderTarget = target;
       context.Viewport = viewport;
     }
-    #endregion
+
   }
 }
 #endif

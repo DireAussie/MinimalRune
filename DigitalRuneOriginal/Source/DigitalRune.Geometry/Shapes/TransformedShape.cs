@@ -27,13 +27,13 @@ namespace DigitalRune.Geometry.Shapes
   public class TransformedShape : Shape
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -90,11 +90,11 @@ namespace DigitalRune.Geometry.Shapes
         return _child.Pose.ToWorldPosition(_child.Shape.InnerPoint * _child.Scale);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -135,14 +135,14 @@ namespace DigitalRune.Geometry.Shapes
       _child.PoseChanged += OnChildPoseChanged;
       _child.ShapeChanged += OnChildShapeChanged;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Shape CreateInstanceCore()
@@ -156,7 +156,7 @@ namespace DigitalRune.Geometry.Shapes
     protected override void CloneCore(Shape sourceShape)
     {
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -245,6 +245,6 @@ namespace DigitalRune.Geometry.Shapes
       mesh.Transform(_child.Pose.ToMatrix44F() * Matrix44F.CreateScale(_child.Scale));
       return mesh;
     }
-    #endregion
+
   }
 }

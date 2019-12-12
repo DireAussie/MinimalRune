@@ -28,17 +28,17 @@ namespace DigitalRune.Editor.Game
     internal class GameModelProcessor : DRModelProcessor
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         // Input
         private NodeContent _input;
         //private ContentProcessorContext _context;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -69,11 +69,11 @@ namespace DigitalRune.Editor.Game
         [DisplayName("Recreate Material Description Files")]
         [Description("If enabled, existing .DRMAT files are replaced by default files when a new model is processed.")]
         public bool RecreateMaterialDefinitionFiles { get; set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -391,6 +391,6 @@ namespace DigitalRune.Editor.Game
                 document.Save(writer);
             }
         }
-        #endregion
+
     }
 }

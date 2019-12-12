@@ -21,23 +21,23 @@ namespace DigitalRune.Editor.Errors
     internal class ErrorsViewModel : EditorDockTabItemViewModel
     {
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         internal const string DockIdString = "Errors";
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly IEditorService _editor;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -191,11 +191,11 @@ namespace DigitalRune.Editor.Errors
         /// The command that is invoked when a key is pressed.
         /// </value>
         public DelegateCommand<KeyEventArgs> PreviewKeyDownCommand { get; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -241,11 +241,11 @@ namespace DigitalRune.Editor.Errors
             PreviewMouseDoubleClickCommand = new DelegateCommand<MouseButtonEventArgs>(OnPreviewMouseDoubleClick);
             PreviewKeyDownCommand = new DelegateCommand<KeyEventArgs>(OnPreviewKeyDown);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private void OnItemsChanged(object sender, NotifyCollectionChangedEventArgs eventArgs)
@@ -335,6 +335,6 @@ namespace DigitalRune.Editor.Errors
                 }
             }
         }
-        #endregion
+
     }
 }

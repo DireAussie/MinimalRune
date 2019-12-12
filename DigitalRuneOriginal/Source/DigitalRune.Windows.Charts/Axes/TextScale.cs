@@ -24,13 +24,13 @@ namespace DigitalRune.Windows.Charts
     public class TextScale : AxisScale
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------   
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -87,11 +87,11 @@ namespace DigitalRune.Windows.Charts
             }
         }
         private bool _ticksBetweenLabels;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <overloads>
@@ -120,11 +120,11 @@ namespace DigitalRune.Windows.Charts
         {
             Labels = new TextLabelCollection();
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -253,6 +253,6 @@ namespace DigitalRune.Windows.Charts
 
             return String.Empty;
         }
-        #endregion
+
     }
 }

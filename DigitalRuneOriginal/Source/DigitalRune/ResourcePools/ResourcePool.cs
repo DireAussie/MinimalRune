@@ -76,17 +76,17 @@ namespace DigitalRune
   public abstract class ResourcePool
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private static readonly WeakCollection<ResourcePool> PoolsInternal = new WeakCollection<ResourcePool>();
 
     private static readonly WeakEvent<EventHandler<EventArgs>> _clearingAllEvent = new WeakEvent<EventHandler<EventArgs>>();
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -141,18 +141,18 @@ namespace DigitalRune
       add { _clearingAllEvent.Add(value); }
       remove { _clearingAllEvent.Remove(value); }
     }
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
+    //--------------------------------------------------------------
+
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -206,6 +206,6 @@ namespace DigitalRune
     {
       _clearingAllEvent.Invoke(null, eventArgs);
     }  
-    #endregion
+
   }
 }

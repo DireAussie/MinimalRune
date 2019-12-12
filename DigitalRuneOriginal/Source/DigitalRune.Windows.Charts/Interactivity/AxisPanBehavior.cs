@@ -23,24 +23,24 @@ namespace DigitalRune.Windows.Charts.Interactivity
     public class AxisPanBehavior : Behavior<UIElement>
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private bool _isPanning;
         private Axis _selectedAxis;
         private double _axisMin, _axisMax;
         private Point _lastMousePosition;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties
+
         //--------------------------------------------------------------    
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -138,17 +138,17 @@ namespace DigitalRune.Windows.Charts.Interactivity
             set { SetValue(MouseButtonProperty, value); }
         }
 #endif
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Creation and Cleanup
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Methods
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -393,6 +393,6 @@ namespace DigitalRune.Windows.Charts.Interactivity
                    && (MouseButton == MouseButton.XButton2) == (Mouse.XButton2 == MouseButtonState.Pressed);
 #endif
         }
-#endregion
+
     }
 }

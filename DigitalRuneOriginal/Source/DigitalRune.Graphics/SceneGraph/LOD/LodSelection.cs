@@ -16,13 +16,13 @@ namespace DigitalRune.Graphics.SceneGraph
   public struct LodSelection : IEquatable<LodSelection>
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -63,11 +63,11 @@ namespace DigitalRune.Graphics.SceneGraph
     /// </remarks>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
     public float Transition;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -118,14 +118,14 @@ namespace DigitalRune.Graphics.SceneGraph
       Next = next;
       Transition = transition;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Equality Members -----
+
     
     /// <summary>
     /// Determines whether the specified <see cref="Object" />, is equal to this instance.
@@ -211,8 +211,8 @@ namespace DigitalRune.Graphics.SceneGraph
     {
       return !left.Equals(right);
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

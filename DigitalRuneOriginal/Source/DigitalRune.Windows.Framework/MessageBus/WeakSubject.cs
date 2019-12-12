@@ -19,7 +19,7 @@ namespace DigitalRune
     internal class WeakSubject<T> : ISubject<T>, IDisposable
     {
         //--------------------------------------------------------------
-        #region Nested Types
+
         //--------------------------------------------------------------
 
         private class Subscription : IDisposable
@@ -45,21 +45,21 @@ namespace DigitalRune
                 }
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private WeakCollection<IObserver<T>> _observers;
         private Exception _error;
         private readonly object _gate = new object();
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -70,11 +70,11 @@ namespace DigitalRune
         /// <see langword="false"/>.
         /// </value>
         public bool IsDisposed { get; private set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -84,11 +84,11 @@ namespace DigitalRune
         {
             _observers = new WeakCollection<IObserver<T>>();
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -222,6 +222,6 @@ namespace DigitalRune
             if (IsDisposed)
                 throw new ObjectDisposedException(GetType().FullName);
         }
-        #endregion
+
     }
 }

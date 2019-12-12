@@ -44,18 +44,18 @@ namespace DigitalRune.Physics.Specialized
     
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // A force effect is used to update the car and to compute forces. The force effect is 
     // updated by the simulation. It is not necessary for the user to call something like
     // vehicle.Update().
     private readonly VehicleForceEffect _forceEffect;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -137,11 +137,11 @@ namespace DigitalRune.Physics.Specialized
     /// </summary>
     /// <value>The wheels. The default is an empty collection.</value>
     public NotifyingCollection<Wheel> Wheels { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -170,11 +170,11 @@ namespace DigitalRune.Physics.Specialized
       Wheels = new NotifyingCollection<Wheel>(false, false);
       Wheels.CollectionChanged += OnWheelsChanged;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -269,6 +269,6 @@ namespace DigitalRune.Physics.Specialized
 
       outer.SteeringAngle = Math.Sign(steeringAngle) * outerAngle;
     }
-    #endregion
+
   }
 }

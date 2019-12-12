@@ -14,7 +14,7 @@ namespace DigitalRune.Physics
   public partial class RigidBody
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -22,11 +22,11 @@ namespace DigitalRune.Physics
     /// </summary>
     internal float TimeOfImpact;  // The property is stored as a field because it needs to be 
     // synchronized using and Interlocked.CompareExchange.
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -209,11 +209,11 @@ namespace DigitalRune.Physics
     {
       get { return TranslationalEnergy + RotationalEnergy; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -450,6 +450,6 @@ namespace DigitalRune.Physics
       LinearCorrectionVelocity = Vector3F.Zero;
       AngularCorrectionVelocity = Vector3F.Zero;
     }
-    #endregion
+
   }
 }

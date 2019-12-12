@@ -19,7 +19,7 @@ namespace DigitalRune.Game.Input
 
 
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     // Constants to identify certain groups of buttons.
@@ -37,26 +37,26 @@ namespace DigitalRune.Game.Input
 
     // Default gamepad state used if no game controller is assigned to a player.
     private static readonly GamePadState DefaultGamePadState = new GamePadState();
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly GamePadState[] _newGamePadStates;
     private readonly GamePadState[] _previousGamePadStates;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -499,7 +499,7 @@ namespace DigitalRune.Game.Input
       var lastGamePadButton = _lastGamePadButtons[index];
       return lastGamePadButton.Button == button && lastGamePadButton.IsDoubleClick;
     }
-    #endregion
+
   }
 }
 #endif

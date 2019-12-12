@@ -41,15 +41,15 @@ namespace DigitalRune.Animation
   public class DelegateAnimatableProperty<T> : IAnimatableProperty<T>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private bool _isAnimated;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -66,7 +66,7 @@ namespace DigitalRune.Animation
     public Action<T> SetValue { get; set; }
 
 
-    #region ----- IAnimatableProperty -----
+
 
     /// <summary>
     /// Gets a value indicating whether this property has a base value.
@@ -116,10 +116,10 @@ namespace DigitalRune.Animation
         return (GetValue != null) ? (object)GetValue() : null;
       }
     }
-    #endregion
 
 
-    #region ----- IAnimatableProperty<T> -----
+
+
 
     /// <summary>
     /// Not implemented.
@@ -154,13 +154,13 @@ namespace DigitalRune.Animation
           SetValue(value);
       }
     }
-    #endregion
 
-    #endregion
+
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -173,12 +173,12 @@ namespace DigitalRune.Animation
       GetValue = getter;
       SetValue = setter;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
-    #endregion
+
   }
 }

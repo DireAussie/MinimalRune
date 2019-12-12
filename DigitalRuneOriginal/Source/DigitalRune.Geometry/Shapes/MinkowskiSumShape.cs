@@ -24,13 +24,13 @@ namespace DigitalRune.Geometry.Shapes
   public class MinkowskiSumShape : ConvexShape
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -125,11 +125,11 @@ namespace DigitalRune.Geometry.Shapes
       }
     }
     private IGeometricObject _objectB;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -187,14 +187,14 @@ namespace DigitalRune.Geometry.Shapes
       _objectB.ShapeChanged += OnChildShapeChanged;
       CheckShapes();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Shape CreateInstanceCore()
@@ -209,7 +209,7 @@ namespace DigitalRune.Geometry.Shapes
     protected override void CloneCore(Shape sourceShape)
     {
     }
-    #endregion
+
 
 
     /// <summary>
@@ -279,6 +279,6 @@ namespace DigitalRune.Geometry.Shapes
       CheckShapes();
       OnChanged(eventArgs);
     }
-    #endregion
+
   }
 }

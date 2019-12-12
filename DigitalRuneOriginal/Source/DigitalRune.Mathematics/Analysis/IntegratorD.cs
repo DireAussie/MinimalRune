@@ -13,17 +13,17 @@ namespace DigitalRune.Mathematics.Analysis
   public abstract class IntegratorD
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private int _maxNumberOfIterations = 20;
     private int _minNumberOfIterations = 5;
     private double _epsilon = Numeric.EpsilonD;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -109,17 +109,17 @@ namespace DigitalRune.Mathematics.Analysis
         _epsilon = value;
       }
     }
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Creation and Cleanup
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -134,6 +134,6 @@ namespace DigitalRune.Mathematics.Analysis
     /// </returns>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
     public abstract double Integrate(Func<double, double> function, double lowerBound, double upperBound);
-    #endregion
+
   }
 }

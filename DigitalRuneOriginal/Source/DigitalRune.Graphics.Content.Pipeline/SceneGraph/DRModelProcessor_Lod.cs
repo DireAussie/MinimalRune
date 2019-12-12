@@ -11,7 +11,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
   partial class DRModelProcessor
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -35,11 +35,11 @@ namespace DigitalRune.Graphics.Content.Pipeline
         return 0;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -115,6 +115,6 @@ namespace DigitalRune.Graphics.Content.Pipeline
           lodNode.Parent.Children.Remove(lodNode);
       }
     }
-    #endregion
+
   }
 }

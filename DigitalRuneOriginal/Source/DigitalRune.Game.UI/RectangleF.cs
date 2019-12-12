@@ -19,18 +19,18 @@ namespace DigitalRune.Game.UI
   public struct RectangleF : IEquatable<RectangleF>
   {
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     /// <summary>
     /// An empty rectangle (all values set to zero).
     /// </summary>
     public static readonly RectangleF Empty = new RectangleF(0.0f, 0.0f, 0.0f, 0.0f);
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -61,11 +61,11 @@ namespace DigitalRune.Game.UI
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
     public float Height;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -136,11 +136,11 @@ namespace DigitalRune.Game.UI
         Height = value.Y;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -178,11 +178,11 @@ namespace DigitalRune.Game.UI
       Width = rectangle.Width;
       Height = rectangle.Height;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -414,6 +414,6 @@ namespace DigitalRune.Game.UI
     {
       return string.Format(provider, "RectangleF {{ X = {0}, Y = {1}, Width = {2}, Height = {3} }}", X, Y, Width, Height);
     }  
-    #endregion
+
   }
 }

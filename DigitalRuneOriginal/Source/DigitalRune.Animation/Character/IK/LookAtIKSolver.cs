@@ -40,13 +40,13 @@ namespace DigitalRune.Animation.Character
     // TODO: more flexible limits
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -85,11 +85,11 @@ namespace DigitalRune.Animation.Character
     /// range, the limit is disabled. Per default, the value is ∞ and the limit is disabled.
     /// </value>
     public float Limit { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -99,11 +99,11 @@ namespace DigitalRune.Animation.Character
     {
       Limit = float.PositiveInfinity;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -203,6 +203,6 @@ namespace DigitalRune.Animation.Character
 
       SkeletonPose.SetBoneTransform(BoneIndex, lookAtTransform);
     }
-    #endregion
+
   }
 }

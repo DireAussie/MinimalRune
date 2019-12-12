@@ -78,7 +78,7 @@ namespace DigitalRune.Geometry.Shapes
   public abstract class Shape 
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -94,11 +94,11 @@ namespace DigitalRune.Geometry.Shapes
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
     public static readonly InfiniteShape Infinite = new InfiniteShape(0);
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -121,20 +121,20 @@ namespace DigitalRune.Geometry.Shapes
       remove { _changed -= value; }
     }
     private event EventHandler<ShapeChangedEventArgs> _changed;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Creation and Cleanup
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
+
+    //--------------------------------------------------------------
+
+    //--------------------------------------------------------------
+
+
 
     /// <summary>
     /// Creates a new <see cref="Shape"/> that is a clone (deep copy) of the current instance.
@@ -224,7 +224,7 @@ namespace DigitalRune.Geometry.Shapes
     /// properties of the base class and then copy all properties of the derived class.
     /// </remarks>
     protected abstract void CloneCore(Shape sourceShape);
-    #endregion
+
 
 
     /// <overloads>
@@ -437,6 +437,6 @@ namespace DigitalRune.Geometry.Shapes
       if (handler != null)
         handler(this, eventArgs);
     }
-    #endregion
+
   }
 }

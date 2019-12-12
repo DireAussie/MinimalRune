@@ -26,13 +26,13 @@ namespace DigitalRune.Graphics.PostProcessing
   public class EffectPostProcessor : PostProcessor
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -40,11 +40,11 @@ namespace DigitalRune.Graphics.PostProcessing
     /// </summary>
     /// <value>The effect binding.</value>
     public EffectBinding EffectBinding { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -60,11 +60,11 @@ namespace DigitalRune.Graphics.PostProcessing
     {
       EffectBinding = new EffectBinding(graphicsService, effect);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -123,7 +123,7 @@ namespace DigitalRune.Graphics.PostProcessing
         graphicsDevice.DrawFullScreenQuad();
       }
     }
-    #endregion
+
   }
 }
 #endif

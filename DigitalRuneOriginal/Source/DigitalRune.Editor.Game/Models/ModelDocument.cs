@@ -39,7 +39,7 @@ namespace DigitalRune.Editor.Models
     internal partial class ModelDocument : Document
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
@@ -68,11 +68,11 @@ namespace DigitalRune.Editor.Models
         private AnimationController _animationController;
 
         private readonly List<Error> _errors = new List<Error>();
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -150,11 +150,11 @@ namespace DigitalRune.Editor.Models
             set { SetProperty(ref _isXnb, value); }
         }
         private bool _isXnb;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -205,11 +205,11 @@ namespace DigitalRune.Editor.Models
 
             base.Dispose(disposing);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -651,6 +651,6 @@ namespace DigitalRune.Editor.Models
             _errors.Add(item);
             _errorService?.Errors.Add(item);
         }
-        #endregion
+
     }
 }

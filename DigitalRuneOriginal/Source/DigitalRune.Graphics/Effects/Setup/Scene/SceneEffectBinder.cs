@@ -19,7 +19,7 @@ namespace DigitalRune.Graphics.Effects
   public class SceneEffectBinder : DictionaryEffectBinder
   {
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -312,11 +312,11 @@ namespace DigitalRune.Graphics.Effects
       d = StructBindings;
       d.Add(SceneEffectParameterSemantics.DirectionalLightShadowParameters, (e, p, o) => new DirectionalLightShadowParameterBinding(e, p));
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region General Scene Node Callbacks
+
     //--------------------------------------------------------------
 
     private float GetSceneNodeType(DelegateParameterBinding<float> binding, RenderContext context)
@@ -327,11 +327,11 @@ namespace DigitalRune.Graphics.Effects
 
       return 1;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Camera Callbacks
+
     //--------------------------------------------------------------
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
@@ -447,11 +447,11 @@ namespace DigitalRune.Graphics.Effects
 
       return (Vector3)lodCameraNode.PoseWorld.Position;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Light Callbacks
+
     //--------------------------------------------------------------
 
     private static readonly LightQuery EmptyLightQuery = new LightQuery();
@@ -589,7 +589,7 @@ namespace DigitalRune.Graphics.Effects
     }
 
 
-    #region ----- Ambient Lights -----
+
 
     private static readonly Func<AmbientLight, Vector3> GetAmbientLightColorLdr3 = light => (Vector3)light.Color * light.Intensity;
     private static readonly Func<AmbientLight, Vector4> GetAmbientLightColorLdr4 = light => new Vector4((Vector3)light.Color * light.Intensity, 1);
@@ -668,10 +668,10 @@ namespace DigitalRune.Graphics.Effects
     {
       GetLightNodePropertyArray<AmbientLight, Vector4>(binding, context, GetLightNodeUp4, values, DefaultLightUp4);
     }
-    #endregion
 
 
-    #region ----- Directional Lights -----
+
+
 
     private static readonly Func<DirectionalLight, Vector3> GetDirectionalLightDiffuseLdr3 = light => (Vector3)light.Color * light.DiffuseIntensity;
     private static readonly Func<DirectionalLight, Vector4> GetDirectionalLightDiffuseLdr4 = light => new Vector4((Vector3)light.Color * light.DiffuseIntensity, 1);
@@ -1021,10 +1021,10 @@ namespace DigitalRune.Graphics.Effects
     {
       return GetShadowProperty<DirectionalLight, CascadedShadow, float>(binding, context, GetDirectionalLightShadowFog_, 0);
     }
-    #endregion
 
 
-    #region ----- Point Lights -----
+
+
 
     private static readonly Func<PointLight, Vector3> GetPointLightDiffuseLdr3 = light => (Vector3)light.Color * light.DiffuseIntensity;
     private static readonly Func<PointLight, Vector4> GetPointLightDiffuseLdr4 = light => new Vector4((Vector3)light.Color * light.DiffuseIntensity, 1);
@@ -1192,10 +1192,10 @@ namespace DigitalRune.Graphics.Effects
     {
       GetLightNodePropertyArray<PointLight, Matrix>(binding, context, GetPointLightTextureMatrix_, values, Matrix.Identity);
     }
-    #endregion
 
 
-    #region ----- Spotlights -----
+
+
 
     private static readonly Func<Spotlight, Vector3> GetSpotlightDiffuseLdr3 = light => (Vector3)light.Color * light.DiffuseIntensity;
     private static readonly Func<Spotlight, Vector4> GetSpotlightDiffuseLdr4 = light => new Vector4((Vector3)light.Color * light.DiffuseIntensity, 1);
@@ -1415,10 +1415,10 @@ namespace DigitalRune.Graphics.Effects
     {
       GetLightNodePropertyArray<Spotlight, Matrix>(binding, context, GetSpotlightTextureMatrix_, values, Matrix.Identity);
     }
-    #endregion
 
 
-    #region ----- Projector Lights -----
+
+
 
     private static readonly Func<ProjectorLight, Vector3> GetProjectorLightDiffuseLdr3 = light => (Vector3)light.Color * light.DiffuseIntensity;
     private static readonly Func<ProjectorLight, Vector4> GetProjectorLightDiffuseLdr4 = light => new Vector4((Vector3)light.Color * light.DiffuseIntensity, 1);
@@ -1630,10 +1630,10 @@ namespace DigitalRune.Graphics.Effects
     {
       GetLightNodePropertyArray<ProjectorLight, Matrix>(binding, context, GetProjectorLightTextureMatrix_, values, Matrix.Identity);
     }
-    #endregion
 
 
-    #region ----- Image-Based Lighting (IBL), Environment Maps -----
+
+
 
     // Note: In .NET 4.0 we only need Func<IBL, TextureCube>. But .NET 3.5 does not support co- and contra-variance!
     private static readonly Func<ImageBasedLight, Texture> GetImageBasedLightTexture_ = light => light.Texture;
@@ -1739,24 +1739,24 @@ namespace DigitalRune.Graphics.Effects
     {
       return GetLightNodeProperty<ImageBasedLight, Matrix>(binding, context, GetImageBasedLightTextureMatrix_, Matrix.Identity);
     }
-    #endregion
+
     
 
 
-    #region ----- Shadows -----
+
 
     // Obsolete
     private static float GetShadowNear(DelegateParameterBinding<float> binding, RenderContext context)
     {
       return Numeric.IsNaN(context.ShadowNear) ? GetCameraNear(binding, context) : context.ShadowNear;
     }
-    #endregion
 
-    #endregion
+
+
 
 
     //--------------------------------------------------------------
-    #region Fog Callbacks
+
     //--------------------------------------------------------------
 
     // Returns null, or a list with at least one node.
@@ -1877,11 +1877,11 @@ namespace DigitalRune.Graphics.Effects
       // to specify the end parameter.
       return new Vector4(fog.Start, fog.End, fogDensity, heightFalloff);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Decals
+
     //--------------------------------------------------------------
 
     private static float GetDecalAlpha(DelegateParameterBinding<float> binding, RenderContext context)
@@ -1898,7 +1898,7 @@ namespace DigitalRune.Graphics.Effects
     {
       var decalNode = context.SceneNode as DecalNode;
       if (decalNode == null)
-        return 0.5f; // = cos(60°)
+        return 0.5f; // = cos(60ï¿½)
 
       return (float)Math.Cos(decalNode.NormalThreshold);
     }
@@ -1922,11 +1922,11 @@ namespace DigitalRune.Graphics.Effects
 
       return decalNode.Options == DecalOptions.ProjectOnAll;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region World, View, Projection
+
     //--------------------------------------------------------------
 
     private static Matrix GetWorld(RenderContext context)
@@ -2139,11 +2139,11 @@ namespace DigitalRune.Graphics.Effects
     {
       return GetUnscaledWorld(context) * GetView(context);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Last World, View, Projection
+
     //--------------------------------------------------------------
 
     private static Matrix GetLastWorld(RenderContext context)
@@ -2337,6 +2337,6 @@ namespace DigitalRune.Graphics.Effects
     {
       return Matrix.Transpose(Matrix.Invert(GetLastWorld(context) * GetLastViewProjection(context)));
     }
-    #endregion
+
   }
 }

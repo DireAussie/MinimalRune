@@ -42,7 +42,7 @@ namespace ICSharpCode.AvalonEdit.Document
 	/// </remarks>
 	public sealed partial class DocumentLine : IDocumentLine
 	{
-		#region Constructor
+
 		#if DEBUG
 		// Required for thread safety check which is done only in debug builds.
 		// To save space, we don't store the document reference in release builds as we don't need it there.
@@ -66,9 +66,9 @@ namespace ICSharpCode.AvalonEdit.Document
 			document.DebugVerifyAccess();
 			#endif
 		}
-		#endregion
+
 		
-		#region Events
+
 //		/// <summary>
 //		/// Is raised when the line is deleted.
 //		/// </summary>
@@ -92,9 +92,9 @@ namespace ICSharpCode.AvalonEdit.Document
 //					TextChanged(this, EventArgs.Empty);
 //			}
 //		}
-		#endregion
+
 		
-		#region Properties stored in tree
+
 		/// <summary>
 		/// Gets if this line was deleted from the document.
 		/// </summary>
@@ -140,9 +140,9 @@ namespace ICSharpCode.AvalonEdit.Document
 		public int EndOffset {
 			get { return this.Offset + this.Length; }
 		}
-		#endregion
+
 		
-		#region Length
+
 		int totalLength;
 		byte delimiterLength;
 		
@@ -191,9 +191,9 @@ namespace ICSharpCode.AvalonEdit.Document
 				delimiterLength = (byte)value;
 			}
 		}
-		#endregion
+
 		
-		#region Previous / Next Line
+
 		/// <summary>
 		/// Gets the next line in the document.
 		/// </summary>
@@ -247,9 +247,9 @@ namespace ICSharpCode.AvalonEdit.Document
 		IDocumentLine IDocumentLine.PreviousLine {
 			get { return this.PreviousLine; }
 		}
-		#endregion
+
 		
-		#region ToString
+
 		/// <summary>
 		/// Gets a string with debug output showing the line number and offset.
 		/// Does not include the line's text.
@@ -263,6 +263,6 @@ namespace ICSharpCode.AvalonEdit.Document
 					CultureInfo.InvariantCulture,
 					"[DocumentLine Number={0} Offset={1} Length={2}]", LineNumber, Offset, Length);
 		}
-		#endregion
+
 	}
 }

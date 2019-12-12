@@ -29,25 +29,25 @@ namespace DigitalRune.Mathematics.Interpolation
       where TCurveKey : CurveKey<float, TPoint>
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Methods
+
+
+
+    //--------------------------------------------------------------
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -193,7 +193,7 @@ namespace DigitalRune.Mathematics.Interpolation
 
       if (parameter < curveStart)
       {
-        #region ----- Pre-loop -----
+
 
         // Handle pre-loop. For some loop types we return immediately. For some
         // we adjust the parameter.
@@ -221,11 +221,11 @@ namespace DigitalRune.Mathematics.Interpolation
           // odd = not mirrored
           return parameter + curveLength * (numberOfPeriods + 1);
         }       
-        #endregion
+
       }
       else if (parameter > curveEnd)
       {
-        #region ----- Post-loop -----
+
 
         // Handle post-loop. For some loop types we return immediately. For some
         // we adjust the parameter.
@@ -253,11 +253,11 @@ namespace DigitalRune.Mathematics.Interpolation
           // odd = not mirrored
           return parameter - curveLength * (numberOfPeriods + 1);
         }
-        #endregion
+
       }
 
       return parameter;
     }
-    #endregion
+
   }
 }

@@ -17,16 +17,16 @@ namespace DigitalRune.Editor.Text
     internal class SearchResult : TextSegment, ISearchResult
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly TextDocument _document;
         private readonly Match _match;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -94,11 +94,11 @@ namespace DigitalRune.Editor.Text
                 }
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -121,11 +121,11 @@ namespace DigitalRune.Editor.Text
             Length = match.Length;
             _match = match;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -143,6 +143,6 @@ namespace DigitalRune.Editor.Text
                 textEditor.CaretOffset = StartOffset + replacement.Length;
             }
         }
-        #endregion
+
     }
 }

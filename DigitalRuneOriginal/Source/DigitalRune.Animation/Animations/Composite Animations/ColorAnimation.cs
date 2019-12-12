@@ -21,13 +21,13 @@ namespace DigitalRune.Animation
   public class ColorAnimation : Animation<Color>
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -67,11 +67,11 @@ namespace DigitalRune.Animation
     /// <value>The animation of the alpha component.</value>
     [ContentSerializer(SharedResource = true)]
     public IAnimation<float> A { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -103,11 +103,11 @@ namespace DigitalRune.Animation
       B = b;
       A = a;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -153,7 +153,7 @@ namespace DigitalRune.Animation
 
       result = new Color(value.X, value.Y, value.Z, value.W);
     }
-    #endregion
+
   }
 }
 #endif

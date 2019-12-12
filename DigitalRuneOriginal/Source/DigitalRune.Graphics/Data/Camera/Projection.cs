@@ -32,16 +32,16 @@ namespace DigitalRune.Graphics
   public abstract class Projection
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private Matrix44F _projection = Matrix44F.Identity;
     private bool _projectionNeedsToBeUpdated;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -255,20 +255,20 @@ namespace DigitalRune.Graphics
     /// </summary>
     /// <value>A <see cref="ViewVolume"/> that describes the viewing frustum.</value>
     public ViewVolume ViewVolume { get; protected set; }
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
+
+    //--------------------------------------------------------------
+
+    //--------------------------------------------------------------
+
+
 
     /// <summary>
     /// Creates a new <see cref="Projection"/> that is a clone (deep copy) of the current instance.
@@ -345,7 +345,7 @@ namespace DigitalRune.Graphics
     /// implement this method. 
     /// </remarks>
     protected abstract void CloneCore(Projection source);
-    #endregion
+
 
 
     /// <summary>
@@ -464,6 +464,6 @@ namespace DigitalRune.Graphics
 
       return (Matrix)projection._projection;
     }
-    #endregion
+
   }
 }

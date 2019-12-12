@@ -9,13 +9,13 @@ namespace ICSharpCode.AvalonEdit.Rendering
     public class BlockMarker : Marker
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -30,11 +30,11 @@ namespace ICSharpCode.AvalonEdit.Rendering
         /// </summary>
         /// <value>The pen. The default value is <see langword="null"/>.</value>
         public Pen Pen { get; set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -45,11 +45,11 @@ namespace ICSharpCode.AvalonEdit.Rendering
             Brush = Brushes.DarkRed;
             Pen = null;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -69,6 +69,6 @@ namespace ICSharpCode.AvalonEdit.Rendering
             if (geometry != null && geometry.Bounds.Width > 1 && geometry.Bounds.Height > 1)
                 drawingContext.DrawGeometry(Brush, Pen, geometry);
         }
-        #endregion
+
     }
 }

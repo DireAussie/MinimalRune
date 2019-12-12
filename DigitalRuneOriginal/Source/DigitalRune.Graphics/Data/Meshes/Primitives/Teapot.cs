@@ -1,4 +1,4 @@
-﻿#region ----- Copyright -----
+﻿
 /*
    Teapot creation code is taken from the Primitives3D sample, which is licensed
    under the Microsoft Public License (MS-PL).
@@ -11,7 +11,7 @@
    Copyright (C) Microsoft Corporation. All rights reserved.
   -----------------------------------------------------------------------------
 */
-#endregion
+
 
 using System;
 using System.Collections.Generic;
@@ -38,7 +38,7 @@ namespace DigitalRune.Graphics
   internal sealed class Teapot
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -61,11 +61,11 @@ namespace DigitalRune.Graphics
         MirrorZ = mirrorZ;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -265,20 +265,20 @@ namespace DigitalRune.Graphics
       new Vector3(-0.21f, -0.31125f, -0.375f),
       new Vector3(-0.375f, -0.31125f, -0.21f),
     };
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly List<VertexPositionNormal> _vertices;
     private readonly List<ushort> _indices;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -303,11 +303,11 @@ namespace DigitalRune.Graphics
     /// </summary>
     /// <value>The indices of the teapot.</value>
     public ushort[] Indices { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -365,11 +365,11 @@ namespace DigitalRune.Graphics
       _vertices = null;
       _indices = null;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -569,6 +569,6 @@ namespace DigitalRune.Graphics
 
       return result;
     }
-    #endregion
+
   }
 }

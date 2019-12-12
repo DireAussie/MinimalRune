@@ -29,7 +29,7 @@ namespace ICSharpCode.AvalonEdit.Document
 	/// </summary>
 	sealed class LineManager
 	{
-		#region Constructor
+
 		readonly TextDocument document;
 		readonly DocumentLineTree documentLineTree;
 		
@@ -52,9 +52,9 @@ namespace ICSharpCode.AvalonEdit.Document
 			
 			Rebuild();
 		}
-		#endregion
+
 		
-		#region Change events
+
 		/*
 		HashSet<DocumentLine> deletedLines = new HashSet<DocumentLine>();
 		readonly HashSet<DocumentLine> changedLines = new HashSet<DocumentLine>();
@@ -97,9 +97,9 @@ namespace ICSharpCode.AvalonEdit.Document
 			return r;
 		}
 		 */
-		#endregion
+
 		
-		#region Rebuild
+
 		public void Rebuild()
 		{
 			// keep the first document line
@@ -129,9 +129,9 @@ namespace ICSharpCode.AvalonEdit.Document
 			foreach (ILineTracker lineTracker in lineTrackers)
 				lineTracker.RebuildDocument();
 		}
-		#endregion
+
 		
-		#region Remove
+
 		public void Remove(int offset, int length)
 		{
 			Debug.Assert(length >= 0);
@@ -199,9 +199,9 @@ namespace ICSharpCode.AvalonEdit.Document
 //			deletedOrChangedLines.Add(lineToRemove);
 		}
 
-		#endregion
+
 		
-		#region Insert
+
 		public void Insert(int offset, ITextSource text)
 		{
 			DocumentLine line = documentLineTree.GetByOffset(offset);
@@ -258,9 +258,9 @@ namespace ICSharpCode.AvalonEdit.Document
 				lt.LineInserted(line, newLine);
 			return newLine;
 		}
-		#endregion
+
 		
-		#region SetLineLength
+
 		/// <summary>
 		/// Sets the total line length and checks the delimiter.
 		/// This method can cause line to be deleted when it contains a single '\n' character
@@ -304,15 +304,15 @@ namespace ICSharpCode.AvalonEdit.Document
 			}
 			return line;
 		}
-		#endregion
+
 		
-		#region ChangeComplete
+
 		public void ChangeComplete(DocumentChangeEventArgs e)
 		{
 			foreach (ILineTracker lt in lineTrackers) {
 				lt.ChangeComplete(e);
 			}
 		}
-		#endregion
+
 	}
 }

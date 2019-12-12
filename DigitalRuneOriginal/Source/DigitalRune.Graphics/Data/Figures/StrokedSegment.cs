@@ -76,13 +76,13 @@ namespace DigitalRune.Graphics
   public class StrokedSegment<TParam, TPoint> : ICurve<TParam, TPoint>
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -114,11 +114,11 @@ namespace DigitalRune.Graphics
       }
     }
     private ICurve<TParam, TPoint> _curve;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -159,11 +159,11 @@ namespace DigitalRune.Graphics
       _curve = curve;
       IsStroked = isStroked;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -192,7 +192,7 @@ namespace DigitalRune.Graphics
     {
       Curve.Flatten(points, maxNumberOfIterations, tolerance);
     }
-    #endregion
+
   }
 
 

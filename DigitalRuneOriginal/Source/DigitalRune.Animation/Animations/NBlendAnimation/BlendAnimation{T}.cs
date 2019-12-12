@@ -16,15 +16,15 @@ namespace DigitalRune.Animation
   public class BlendAnimation<T> : BlendAnimation, IAnimation<T> 
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly List<IAnimation<T>> _animations = new List<IAnimation<T>>();
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <inheritdoc cref="IAnimation{T}.Traits"/>
@@ -32,17 +32,17 @@ namespace DigitalRune.Animation
     {
       get { return (_animations.Count > 0) ? _animations[0].Traits : null; }
     }
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -134,6 +134,6 @@ namespace DigitalRune.Animation
       traits.Recycle(ref nextValue);
       traits.Recycle(ref value);
     }
-    #endregion
+
   }
 }

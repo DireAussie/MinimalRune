@@ -40,15 +40,15 @@ namespace DigitalRune.Animation.Character
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private bool _isDirty = true;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -208,11 +208,11 @@ namespace DigitalRune.Animation.Character
     /// </para>
     /// </remarks>
     public QuaternionF? TipBoneOrientation { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -224,11 +224,11 @@ namespace DigitalRune.Animation.Character
       MinHingeAngle = 0;
       MaxHingeAngle = 3 * ConstantsF.PiOver4;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -413,6 +413,6 @@ namespace DigitalRune.Animation.Character
         SkeletonPose.SetBoneTransform(TipBoneIndex, targetBoneTransform);
       }
     }
-    #endregion
+
   }
 }

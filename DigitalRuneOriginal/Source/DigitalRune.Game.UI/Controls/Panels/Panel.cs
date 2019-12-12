@@ -24,13 +24,13 @@ namespace DigitalRune.Game.UI.Controls
 
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -38,11 +38,11 @@ namespace DigitalRune.Game.UI.Controls
     /// </summary>
     /// <value>The children.</value>
     public NotifyingCollection<UIControl> Children { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -55,11 +55,11 @@ namespace DigitalRune.Game.UI.Controls
       Children = new NotifyingCollection<UIControl>(false, false);
       Children.CollectionChanged += OnChildrenChanged;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private void OnChildrenChanged(object sender, CollectionChangedEventArgs<UIControl> eventArgs)
@@ -95,6 +95,6 @@ namespace DigitalRune.Game.UI.Controls
 
       InvalidateMeasure();
     }
-    #endregion
+
   }
 }

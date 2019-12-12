@@ -32,7 +32,7 @@ namespace DigitalRune.Graphics.PostProcessing
   public class SsaoFilter : PostProcessor
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Effect _effect;
@@ -55,11 +55,11 @@ namespace DigitalRune.Graphics.PostProcessing
 
     private readonly CopyFilter _copyFilter;
     private readonly DownsampleFilter _downsampleFilter;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -221,11 +221,11 @@ namespace DigitalRune.Graphics.PostProcessing
     /// not occluded, black = fully occluded). The default value is <see langword="true"/>.
     /// </value>
     public bool CombineWithSource { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -293,11 +293,11 @@ namespace DigitalRune.Graphics.PostProcessing
 
       _effect.Parameters["RandomVectors"].SetValue(vectors);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -497,7 +497,7 @@ namespace DigitalRune.Graphics.PostProcessing
       context.RenderTarget = target;
       context.Viewport = viewport;
     }
-    #endregion
+
   }
 }
 #endif

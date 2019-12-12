@@ -22,27 +22,27 @@ namespace DigitalRune.Windows.Charts
     public class ChartBackground : ChartElement
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private FrameworkElement _background;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
+
+
+        //--------------------------------------------------------------
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
 #if SILVERLIGHT
@@ -62,11 +62,11 @@ namespace DigitalRune.Windows.Charts
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ChartBackground), new FrameworkPropertyMetadata(typeof(ChartBackground)));
         }
 #endif
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -125,6 +125,6 @@ namespace DigitalRune.Windows.Charts
             grid.Children.Add(background);
             return grid;
         }
-        #endregion
+
     }
 }

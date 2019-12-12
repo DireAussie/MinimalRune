@@ -47,17 +47,17 @@ namespace DigitalRune.Particles.Effectors
   public class LinearVelocityEffector : ParticleEffector
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private IParticleParameter<Vector3F> _positionParameter;
     private IParticleParameter<Vector3F> _directionParameter;
     private IParticleParameter<float> _linearSpeedParameter;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -109,11 +109,11 @@ namespace DigitalRune.Particles.Effectors
     /// </remarks>
     [ParticleParameter(ParticleParameterUsage.In)]
     public string SpeedParameter { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -125,11 +125,11 @@ namespace DigitalRune.Particles.Effectors
       DirectionParameter = "Direction";
       SpeedParameter = "LinearSpeed";
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -234,6 +234,6 @@ namespace DigitalRune.Particles.Effectors
           positions[i] += _directionParameter.GetValue(i) * _linearSpeedParameter.GetValue(i) * dt;
       }
     }
-    #endregion
+
   }
 }

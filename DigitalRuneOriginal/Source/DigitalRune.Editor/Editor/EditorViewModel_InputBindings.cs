@@ -26,7 +26,7 @@ namespace DigitalRune.Editor
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         // Original input bindings of the main window.
@@ -37,11 +37,11 @@ namespace DigitalRune.Editor
 
         // Original command bindings of the main window.
         private readonly List<CommandBinding> _commandBindings = new List<CommandBinding>();
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private void UpdateInputAndCommandBindings()
@@ -189,6 +189,6 @@ namespace DigitalRune.Editor
             foreach (var autoHideOverlay in dockControl.AutoHideOverlays)
                 RemoveCommandBindings(autoHideOverlay);
         }
-        #endregion
+
     }
 }

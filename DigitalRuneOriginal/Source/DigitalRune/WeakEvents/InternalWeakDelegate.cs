@@ -1,4 +1,4 @@
-﻿#region ----- Copyright -----
+﻿
 /*
   The class in this file is based on the WeakAction from Josh Smith's mediator prototype 
   (http://joshsmithonwpf.wordpress.com/2009/04/06/a-mediator-prototype-for-wpf-apps/), the 
@@ -84,7 +84,7 @@
   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
   OTHER DEALINGS IN THE SOFTWARE.
 */
-#endregion
+
 
 
 using System;
@@ -104,13 +104,13 @@ namespace DigitalRune
   internal struct InternalWeakDelegate
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -195,11 +195,11 @@ namespace DigitalRune
           || TargetReference.IsAlive;  // Delegate points to a live object.
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -234,11 +234,11 @@ namespace DigitalRune
       CheckForClosure(MethodInfo);
       CheckForNonPublicEventHandler(target, MethodInfo);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -296,6 +296,6 @@ namespace DigitalRune
           "weak-delegate or a weak-event needs to be a public methods. This is necessary " +
           "because of security restrictions in Silverlight.");
     }
-    #endregion
+
   }
 }

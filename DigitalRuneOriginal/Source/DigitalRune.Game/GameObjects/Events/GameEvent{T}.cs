@@ -16,16 +16,16 @@ namespace DigitalRune.Game
   public struct GameEvent<T> : IGameEvent, IEquatable<GameEvent<T>> where T : EventArgs
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly GameObject _owner;
     private readonly GameEventMetadata<T> _metadata;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -106,11 +106,11 @@ namespace DigitalRune.Game
         data.Event -= value;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -126,11 +126,11 @@ namespace DigitalRune.Game
       _owner = owner;
       _metadata = metadata;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private GameEventData<T> GetOrCreateLocalData()
@@ -262,6 +262,6 @@ namespace DigitalRune.Game
     {
       return !event1.Equals(event2);
     }
-    #endregion
+
   }
 }

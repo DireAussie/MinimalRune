@@ -25,22 +25,22 @@ namespace DigitalRune.Graphics.Rendering
   public class SpriteRenderer : SceneNodeRenderer
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly SpriteBatch _spriteBatch;
     private readonly SpriteFont _spriteFont;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -122,11 +122,11 @@ namespace DigitalRune.Graphics.Rendering
       : this(graphicsService, spriteFont)
     {
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -307,6 +307,6 @@ namespace DigitalRune.Graphics.Rendering
       _spriteBatch.End();
       savedRenderState.Restore();
     }
-    #endregion
+
   }
 }

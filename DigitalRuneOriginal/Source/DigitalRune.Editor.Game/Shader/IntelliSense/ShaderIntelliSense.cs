@@ -18,7 +18,7 @@ namespace DigitalRune.Editor.Shader
     internal abstract partial class ShaderIntelliSense
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly ShaderParser _parser;
@@ -43,11 +43,11 @@ namespace DigitalRune.Editor.Shader
         private ICompletionData[] _samplerState10CompletionData;
         private ICompletionData[] _stateBlockCompletionData;
         private ICompletionData[] _fullCompletionData;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties
+
         //--------------------------------------------------------------
 
         protected internal Dictionary<string, SnippetCompletionData> Snippets { get; }
@@ -434,11 +434,11 @@ namespace DigitalRune.Editor.Shader
                 return _fullCompletionData;
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         protected ShaderIntelliSense()
@@ -473,14 +473,14 @@ namespace DigitalRune.Editor.Shader
             // Create shader parser
             _parser = new ShaderParser(this);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
-        #region ----- IntelliSense Info -----
+
 
         /// <summary>
         /// Initializes the code snippets.
@@ -644,7 +644,7 @@ namespace DigitalRune.Editor.Shader
             Constants.Add(new ConstantCompletionData("true"));
             Constants.Add(new ConstantCompletionData("false"));
         }
-        #endregion
+
 
 
         /// <summary>
@@ -798,6 +798,6 @@ namespace DigitalRune.Editor.Shader
             }
             return lookupTables;
         }
-        #endregion
+
     }
 }

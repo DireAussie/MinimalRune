@@ -15,7 +15,7 @@ namespace DigitalRune.Physics.Specialized
     // Here we implement the IGeometricObject interface.
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     Aabb IGeometricObject.Aabb
@@ -66,11 +66,11 @@ namespace DigitalRune.Physics.Specialized
       remove { _shapeChanged -= value; }
     }
     private event EventHandler<ShapeChangedEventArgs> _shapeChanged;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     IGeometricObject IGeometricObject.Clone()
@@ -97,6 +97,6 @@ namespace DigitalRune.Physics.Specialized
       if (handler != null)
         handler(this, eventArgs);
     }
-    #endregion
+
   }
 }

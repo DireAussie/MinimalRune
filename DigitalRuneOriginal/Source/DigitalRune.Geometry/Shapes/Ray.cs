@@ -30,7 +30,7 @@ namespace DigitalRune.Geometry.Shapes
   public struct Ray : IEquatable<Ray>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -52,17 +52,17 @@ namespace DigitalRune.Geometry.Shapes
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
     public float Length;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -103,14 +103,14 @@ namespace DigitalRune.Geometry.Shapes
       Direction = rayShape.Direction;
       Length = rayShape.Length;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //-------------------------------------------------------------- 
 
-    #region ----- Equality -----
+
 
     /// <overloads>
     /// <summary>
@@ -185,7 +185,7 @@ namespace DigitalRune.Geometry.Shapes
              || ray1.Direction != ray2.Direction
              || ray1.Length != ray2.Length;
     }
-    #endregion
+
 
 
     /// <summary>
@@ -297,6 +297,6 @@ namespace DigitalRune.Geometry.Shapes
       Origin = pose.ToLocalPosition(Origin);
       Direction = pose.ToLocalDirection(Direction);
     }
-    #endregion
+
   }
 }

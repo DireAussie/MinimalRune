@@ -23,7 +23,7 @@ namespace DigitalRune.Graphics.Rendering
   internal sealed class TextBatch
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -78,20 +78,20 @@ namespace DigitalRune.Graphics.Rendering
       /// <summary>The color.</summary>
       public Color Color;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly List<TextInfo2D> _texts2D = new List<TextInfo2D>();
     private readonly List<TextInfo3D> _texts3D = new List<TextInfo3D>();
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -121,11 +121,11 @@ namespace DigitalRune.Graphics.Rendering
     /// <see langword="true"/> if depth test is used; otherwise, <see langword="false"/>.
     /// </value>
     public bool EnableDepthTest { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -144,11 +144,11 @@ namespace DigitalRune.Graphics.Rendering
       SpriteBatch = spriteBatch;
       SpriteFont = spriteFont;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -406,6 +406,6 @@ namespace DigitalRune.Graphics.Rendering
 
       return origin;
     }
-    #endregion
+
   }
 }

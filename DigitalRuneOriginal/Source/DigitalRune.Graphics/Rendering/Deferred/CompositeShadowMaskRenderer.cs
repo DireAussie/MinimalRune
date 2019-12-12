@@ -19,7 +19,7 @@ namespace DigitalRune.Graphics.Rendering
   internal class CompositeShadowMaskRenderer : SceneNodeRenderer
   {
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     // Blend states for single channels writes and min() blending.
@@ -58,25 +58,25 @@ namespace DigitalRune.Graphics.Rendering
         AlphaSourceBlend = Blend.One,
       },
     };
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly IList<SceneNodeRenderer> _shadowMaskRenderers;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -118,11 +118,11 @@ namespace DigitalRune.Graphics.Rendering
 
       base.Dispose(disposing);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -198,7 +198,7 @@ namespace DigitalRune.Graphics.Rendering
 
       savedRenderState.Restore();
     }
-    #endregion
+
   }
 }
 #endif

@@ -12,16 +12,16 @@ namespace DigitalRune.Editor.Documents
     partial class DocumentExtension
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly MenuManager _menuManager;
         private MergeableNodeCollection<ICommandItem> _contextMenuNodes;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -33,11 +33,11 @@ namespace DigitalRune.Editor.Documents
         {
             get { return _menuManager.Menu; }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private void AddContextMenu()
@@ -74,6 +74,6 @@ namespace DigitalRune.Editor.Documents
 
             _menuManager.Update(Editor.DockContextMenuNodeCollections, DockContextMenuNodeCollections);
         }
-        #endregion
+
     }
 }

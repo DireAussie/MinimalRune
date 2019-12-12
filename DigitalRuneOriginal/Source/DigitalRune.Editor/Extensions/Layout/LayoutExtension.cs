@@ -22,7 +22,7 @@ namespace DigitalRune.Editor.Layout
     public sealed partial class LayoutExtension : EditorExtension
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
@@ -33,23 +33,23 @@ namespace DigitalRune.Editor.Layout
         //private MergeableNodeCollection<ICommandItem> _toolBarNodes;
         private MergeableNodeCollection<ICommandItem> _contextMenuNodes;
         private object _captionBarItem;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Methods
+
+
+
+        //--------------------------------------------------------------
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -408,6 +408,6 @@ namespace DigitalRune.Editor.Layout
                 Settings.Default.WindowState = window.WindowState;
             }
         }
-        #endregion
+
     }
 }

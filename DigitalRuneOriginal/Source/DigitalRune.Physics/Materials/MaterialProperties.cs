@@ -178,7 +178,7 @@ namespace DigitalRune.Physics.Materials
     }
 
 
-    #region ----- Equality Members -----
+
 
     /// <summary>
     /// Indicates whether the current object is equal to another object of the same type.
@@ -265,7 +265,7 @@ namespace DigitalRune.Physics.Materials
     {
       return !left.Equals(right);
     }
-    #endregion
+
 
   }
 }

@@ -13,13 +13,13 @@ namespace DigitalRune.Game.Input
   partial class InputManager
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -37,11 +37,11 @@ namespace DigitalRune.Game.Input
       get { return _gestures; }
     }
     private readonly List<GestureSample> _gestures;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", Justification = "Signature should be consistent with other Update methods.")]
@@ -55,7 +55,7 @@ namespace DigitalRune.Game.Input
       while (TouchPanel.IsGestureAvailable)
         _gestures.Add(TouchPanel.ReadGesture());
     }
-    #endregion
+
   }
 }
 #endif

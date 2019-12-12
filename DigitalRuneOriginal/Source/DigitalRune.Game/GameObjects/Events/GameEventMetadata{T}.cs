@@ -24,22 +24,22 @@ namespace DigitalRune.Game
   public class GameEventMetadata<T> : IGameEventMetadata, IGameEventFactory where T : EventArgs
   {
     //--------------------------------------------------------------
-    #region Static Fields
+
     //--------------------------------------------------------------
     
     // The global store for all event metadata for events of type T.
     internal static NamedObjectCollection<GameEventMetadata<T>> Events { get; private set; }
-    #endregion
+
     
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
-    #endregion
+
       
       
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -74,11 +74,11 @@ namespace DigitalRune.Game
     {
       get { return DefaultEventArgs; }
     }
-    #endregion
+
       
       
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -106,17 +106,17 @@ namespace DigitalRune.Game
       Id = id;
       Events.Add(this);
     }
-    #endregion
+
       
       
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     IGameEvent IGameEventFactory.CreateGameEvent(GameObject owner)
     {
       return new GameEvent<T>(owner, this);
     }
-    #endregion
+
   }
 }

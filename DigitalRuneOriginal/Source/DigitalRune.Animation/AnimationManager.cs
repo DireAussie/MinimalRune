@@ -32,7 +32,7 @@ namespace DigitalRune.Animation
   public class AnimationManager : IAnimationService
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly List<AnimationInstance> _rootInstances;
@@ -54,11 +54,11 @@ namespace DigitalRune.Animation
 
     // The size of the current time step.
     private TimeSpan _deltaTime;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -90,11 +90,11 @@ namespace DigitalRune.Animation
     /// </remarks>
     /// <seealso cref="Parallel"/>
     public bool EnableMultithreading { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -128,11 +128,11 @@ namespace DigitalRune.Animation
       _updateAnimationsMethod = UpdateAnimation;
       _updateCompositionChainMethod = UpdateCompositionChain;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -930,6 +930,6 @@ namespace DigitalRune.Animation
 
       return compositionChain;
     }
-    #endregion
+
   }
 }

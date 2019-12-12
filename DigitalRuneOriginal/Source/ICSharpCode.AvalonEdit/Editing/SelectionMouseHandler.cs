@@ -40,7 +40,7 @@ namespace ICSharpCode.AvalonEdit.Editing
 	/// </summary>
 	sealed class SelectionMouseHandler : ITextAreaInputHandler
 	{
-		#region enum SelectionMode
+
 		enum SelectionMode
 		{
 			/// <summary>
@@ -73,7 +73,7 @@ namespace ICSharpCode.AvalonEdit.Editing
 			/// </summary>
 			Rectangular
 		}
-		#endregion
+
 		
 		readonly TextArea textArea;
 		
@@ -81,7 +81,7 @@ namespace ICSharpCode.AvalonEdit.Editing
 		AnchorSegment startWord;
 		Point possibleDragStartMousePos;
 		
-		#region Constructor + Attach + Detach
+
 		public SelectionMouseHandler(TextArea textArea)
 		{
 			if (textArea == null)
@@ -155,9 +155,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 					DetachDragDrop();
 			}
 		}
-		#endregion
+
 		
-		#region Dropping text
+
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes")]
 		void textArea_DragEnter(object sender, DragEventArgs e)
 		{
@@ -313,9 +313,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 				OnDragException(ex);
 			}
 		}
-		#endregion
+
 		
-		#region Start Drag
+
 		object currentDragDescriptor;
 		
 		void StartDrag()
@@ -381,9 +381,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 				}
 			}
 		}
-		#endregion
+
 		
-		#region QueryCursor
+
 		// provide the IBeam Cursor for the text area
 		void textArea_QueryCursor(object sender, QueryCursorEventArgs e)
 		{
@@ -409,9 +409,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 				}
 			}
 		}
-		#endregion
+
 		
-		#region LeftButtonDown
+
 		void textArea_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
 		{
 			mode = SelectionMode.None;
@@ -480,9 +480,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 			}
 			e.Handled = true;
 		}
-		#endregion
+
 		
-		#region Mouse Position <-> Text coordinates
+
 		SimpleSegment GetWordAtMousePosition(MouseEventArgs e)
 		{
 			TextView textView = textArea.TextView;
@@ -574,9 +574,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 			}
 			return -1;
 		}
-		#endregion
+
 		
-		#region MouseMove
+
 		void textArea_MouseMove(object sender, MouseEventArgs e)
 		{
 			if (e.Handled)
@@ -599,9 +599,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 				}
 			}
 		}
-		#endregion
+
 		
-		#region ExtendSelection
+
 		void SetCaretOffsetToMousePosition(MouseEventArgs e)
 		{
 			SetCaretOffsetToMousePosition(e, null);
@@ -653,9 +653,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 			}
 			textArea.Caret.BringCaretToView(5.0);
 		}
-		#endregion
+
 		
-		#region MouseLeftButtonUp
+
 		void textArea_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
 		{
 			if (mode == SelectionMode.None || e.Handled)
@@ -671,6 +671,6 @@ namespace ICSharpCode.AvalonEdit.Editing
 			mode = SelectionMode.None;
 			textArea.ReleaseMouseCapture();
 		}
-		#endregion
+
 	}
 }

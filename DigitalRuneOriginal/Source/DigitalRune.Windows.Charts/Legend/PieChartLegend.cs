@@ -47,34 +47,34 @@ namespace DigitalRune.Windows.Charts
     public class PieChartLegend : Control
     {
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         /// <summary>
         /// The default value of the <see cref="Title"/> property.
         /// </summary>
         private const string DefaultTitle = "Pie Chart Legend";
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private IDisposable _pieChartSubscription;
         private PieChart _pieChart;
         private Panel _itemsPanel;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -169,11 +169,11 @@ namespace DigitalRune.Windows.Charts
             get { return (Style)GetValue(TitleStyleProperty); }
             set { SetValue(TitleStyleProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
 #if SILVERLIGHT
@@ -194,11 +194,11 @@ namespace DigitalRune.Windows.Charts
             DefaultStyleKeyProperty.OverrideMetadata(typeof(PieChartLegend), new FrameworkPropertyMetadata(typeof(PieChartLegend)));
         }
 #endif
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -296,6 +296,6 @@ namespace DigitalRune.Windows.Charts
                 }
             }
         }
-        #endregion
+
     }
 }

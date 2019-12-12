@@ -31,16 +31,16 @@ namespace DigitalRune.Graphics.Rendering
     // TODO: Remove previous SkyboxRenderer and rename this class to SkyboxRenderer.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private Effect _effect;
 
-    #region ----- Reach -----
+
     private VertexPositionTexture[] _faceVertices;
-    #endregion
+
     
-    #region ----- HiDef -----
+
     private EffectParameter _textureParameter;
     private EffectParameter _parameterWorldViewProjection;
     private EffectParameter _parameterColor;
@@ -53,19 +53,19 @@ namespace DigitalRune.Graphics.Rendering
     private EffectPass _passSRgbToSRgb;
     private EffectPass _passRgbmToSRgb;
     private Submesh _submesh;
-    #endregion
-
-    #endregion
 
 
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -85,11 +85,11 @@ namespace DigitalRune.Graphics.Rendering
       else
         InitializeHiDef(graphicsService);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -142,7 +142,7 @@ namespace DigitalRune.Graphics.Rendering
     }
 
 
-    #region ----- Reach -----
+
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
     private void InitializeReach(IGraphicsService graphicsService)
@@ -316,10 +316,10 @@ namespace DigitalRune.Graphics.Rendering
         foreach (var face in faces)
           face.Dispose();
     }
-    #endregion
 
 
-    #region ----- HiDef -----
+
+
 
     private void InitializeHiDef(IGraphicsService graphicsService)
     {
@@ -413,9 +413,9 @@ namespace DigitalRune.Graphics.Rendering
       _submesh.Draw();
       savedRenderState.Restore();
     }
-    #endregion
 
-    #endregion
+
+
   }
 }
 #endif

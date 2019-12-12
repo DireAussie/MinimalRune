@@ -16,13 +16,13 @@ namespace DigitalRune.Graphics
   public class TextBillboard : Billboard
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -71,11 +71,11 @@ namespace DigitalRune.Graphics
       }
     }
     private SpriteFont _font;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -102,14 +102,14 @@ namespace DigitalRune.Graphics
       _font = font;
       Text = text;   // The property setter calls Invalidate()!
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc cref="Sprite.Clone"/>
     public new TextBillboard Clone()
@@ -136,7 +136,7 @@ namespace DigitalRune.Graphics
       _text = sourceTyped.Text;
       Font = sourceTyped.Font;
     }
-    #endregion
+
 
 
     /// <summary>
@@ -170,6 +170,6 @@ namespace DigitalRune.Graphics
       Vector2 size = (text != null) ? Font.MeasureString(text) : Font.MeasureString(stringBuilder);
       Shape.Radius = size.Length() / 2;
     }
-    #endregion
+
   }
 }

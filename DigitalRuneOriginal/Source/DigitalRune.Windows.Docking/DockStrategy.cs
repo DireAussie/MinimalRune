@@ -207,7 +207,7 @@ namespace DigitalRune.Windows.Docking
         }
 
 
-        #region ----- Clean-up -----
+
 
         /// <summary>
         /// Removes empty panes/windows and updates all properties to ensure that the
@@ -483,10 +483,10 @@ namespace DigitalRune.Windows.Docking
             foreach (var dockPane in dockPanes)
                 UpdateProperties(dockPane, dockState);
         }
-        #endregion
 
 
-        #region ----- Validation -----
+
+
 
         [Conditional("DEBUG")]
         private void Validate()
@@ -553,10 +553,10 @@ namespace DigitalRune.Windows.Docking
                 }
             }
         }
-        #endregion
 
 
-        #region ----- Factory methods -----
+
+
 
         internal IFloatWindow CreateFloatWindow()
         {
@@ -700,10 +700,10 @@ namespace DigitalRune.Windows.Docking
         /// </para>
         /// </remarks>
         protected abstract IDockTabItem OnCreateDockTabItem(string dockId);
-        #endregion
 
 
-        #region ----- DockState -----
+
+
 
         private static void SetDockState(IDockTabItem dockTabItem, DockState state)
         {
@@ -734,10 +734,10 @@ namespace DigitalRune.Windows.Docking
 
             return DockState.Hide;
         }
-        #endregion
 
 
-        #region ----- Active/Selected -----
+
+
 
         // Can be called with null.
         internal void Activate(IDockTabItem dockTabItem)
@@ -854,10 +854,10 @@ namespace DigitalRune.Windows.Docking
             for (int i = 0; i < dockPanes.Count; i++)
                 FindLastActive(dockPanes[i], dockState, ref lastActivePane, ref lastActiveItem);
         }
-        #endregion
 
 
-        #region ----- Layout queries -----
+
+
 
         /// <summary>
         /// Gets the default target for docking the specified element.
@@ -1058,10 +1058,10 @@ namespace DigitalRune.Windows.Docking
 
             return false;
         }
-        #endregion
 
 
-        #region ----- Docking operations -----
+
+
 
         /// <overloads>
         /// <summary>
@@ -2393,6 +2393,6 @@ namespace DigitalRune.Windows.Docking
         protected virtual void OnClose(IDockTabItem dockTabItem)
         {
         }
-        #endregion
+
     }
 }

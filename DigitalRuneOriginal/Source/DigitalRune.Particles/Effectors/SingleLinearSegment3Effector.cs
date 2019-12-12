@@ -60,17 +60,17 @@ namespace DigitalRune.Particles.Effectors
   public class SingleLinearSegment3Effector : ParticleEffector
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private IParticleParameter<float> _inputParameter;
     private IParticleParameter<float> _outputParameter;
     private IParticleParameter<float> _timeParameter;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -219,11 +219,11 @@ namespace DigitalRune.Particles.Effectors
       set { _value3 = value; }
     }
     private float _value3;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -235,11 +235,11 @@ namespace DigitalRune.Particles.Effectors
       Time3 = 1;
       Value3 = 1;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -441,6 +441,6 @@ namespace DigitalRune.Particles.Effectors
           values[i] = y;
       }
     }
-    #endregion
+
   }
 }

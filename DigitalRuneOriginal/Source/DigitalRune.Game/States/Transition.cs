@@ -32,7 +32,7 @@ namespace DigitalRune.Game.States
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Remember if Fire() was called.
@@ -42,11 +42,11 @@ namespace DigitalRune.Game.States
     // (The transitions needs to be fired when _restDelay becomes 0 or negative in
     // the current update.)
     private TimeSpan _restDelay;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -151,17 +151,17 @@ namespace DigitalRune.Game.States
     /// Occurs when the transition is performed.
     /// </summary>
     public event EventHandler<StateEventArgs> Action;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -292,6 +292,6 @@ namespace DigitalRune.Game.States
       if (handler != null)
         handler(this, eventArgs);
     }
-    #endregion
+
   }
 }

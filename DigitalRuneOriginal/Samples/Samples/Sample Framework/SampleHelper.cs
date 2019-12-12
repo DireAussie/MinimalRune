@@ -29,7 +29,7 @@ namespace Samples
   public static class SampleHelper
   {
     //--------------------------------------------------------------
-    #region Graphics
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -270,11 +270,11 @@ namespace Samples
           ((SkinnedEffectBinding)effectBinding).PreferPerPixelLighting = true;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Physics Constraints
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -487,11 +487,11 @@ namespace Samples
       // Line from end of arc to circle center.
       debugRenderer.DrawLine(previousArcPoint, center, color, drawOverScene);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region GUI
+
     //--------------------------------------------------------------
 
     // Following methods add UI controls to a given parent panel or parent control.
@@ -698,11 +698,11 @@ namespace Samples
     {
       return AddSlider(parent, title, format, min, max, defaultValue, valueChangedHandler, null);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Miscellaneous
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -750,6 +750,6 @@ namespace Samples
 
       stringBuilder.AppendLine("-");
     }
-    #endregion
+
   }
 }

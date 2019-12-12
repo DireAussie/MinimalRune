@@ -136,7 +136,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
       // algorithm could find a shallow surface contact.
       contactSet.HaveContact = (contactSet.HaveContact || testContactSet.HaveContact);
 
-      #region ----- Merge testContactSet into contactSet -----
+
 
       if (testContactSet.Count > 0)
       {
@@ -155,7 +155,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
         // Merge the contact info.
         ContactHelper.Merge(contactSet, testContactSet, type, CollisionDetection.ContactPositionTolerance);
       }
-      #endregion
+
     }
   }
 }

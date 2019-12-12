@@ -19,17 +19,17 @@ namespace DigitalRune.Windows.Charts
     public struct DataPoint : IFormattable, IEquatable<DataPoint>
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private double _x;
         private double _y;
         private object _dataContext;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -86,11 +86,11 @@ namespace DigitalRune.Windows.Charts
             get { return _dataContext; }
             set { _dataContext = value; }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <overloads>
@@ -126,11 +126,11 @@ namespace DigitalRune.Windows.Charts
             _y = point.Y;
             _dataContext = dataContext;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -271,6 +271,6 @@ namespace DigitalRune.Windows.Charts
             string dataContextString = (DataContext != null) ? DataContext.ToString() : "null";
             return string.Format(provider, formatString, X, Y, dataContextString);
         }
-        #endregion
+
     }
 }

@@ -68,16 +68,16 @@ namespace DigitalRune.Animation
       where TValue : IEquatable<TValue>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private TimeSpan _startTime;
     private TimeSpan _endTime;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -157,11 +157,11 @@ namespace DigitalRune.Animation
       }
     }
     private float _endParameter;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -173,11 +173,11 @@ namespace DigitalRune.Animation
       StartParameter = float.NaN;
       EndParameter = float.NaN;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -265,6 +265,6 @@ namespace DigitalRune.Animation
     /// <param name="point">The point on the curve.</param>
     /// <returns>The animation value.</returns>
     protected abstract TValue GetValueFromPoint(TPoint point);
-    #endregion
+
   }
 }

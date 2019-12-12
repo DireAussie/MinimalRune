@@ -20,13 +20,13 @@ namespace DigitalRune.Graphics.SceneGraph
   public class GradientSkyNode : SkyNode
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -186,11 +186,11 @@ namespace DigitalRune.Graphics.SceneGraph
     /// </remarks>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
     public float CieSkyStrength { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -210,11 +210,11 @@ namespace DigitalRune.Graphics.SceneGraph
 
       CieSkyParameters = CieSkyParameters.Type12;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc cref="SceneNode.Clone"/>
@@ -251,6 +251,6 @@ namespace DigitalRune.Graphics.SceneGraph
       CieSkyParameters = sourceTyped.CieSkyParameters;
       CieSkyStrength = sourceTyped.CieSkyStrength;
     }
-    #endregion
+
   }
 }

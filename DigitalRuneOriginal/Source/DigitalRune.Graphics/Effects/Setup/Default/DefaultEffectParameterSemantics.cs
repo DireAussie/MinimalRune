@@ -31,7 +31,7 @@ namespace DigitalRune.Graphics.Effects
   /// </remarks>
   public static class DefaultEffectParameterSemantics
   {
-    #region ----- Animation -----
+
 
     /// <summary>
     /// The weight of a morph target (<see cref="float"/> or an array of <see cref="float"/>).
@@ -43,10 +43,10 @@ namespace DigitalRune.Graphics.Effects
     /// The skinning matrices for mesh skinning (array of <see cref="Matrix"/>).
     /// </summary>
     public const string Bones = "Bones";
-    #endregion
 
 
-    #region ----- Material -----
+
+
 
     /// <summary>
     /// The diffuse material color as RGB (<see cref="Vector3"/>) or RGBA (<see cref="Vector4"/>).
@@ -170,10 +170,10 @@ namespace DigitalRune.Graphics.Effects
     /// The instance opacity (alpha) as a single value (<see cref="float"/>).
     /// </summary>
     public const string InstanceAlpha = "InstanceAlpha";
-    #endregion   
 
 
-    #region ----- Render Properties -----
+
+
 
     /// <summary>
     /// The zero-based index of the current effect pass (<see cref="int"/>).
@@ -202,10 +202,10 @@ namespace DigitalRune.Graphics.Effects
     /// The viewport width and height in pixels (<see cref="Vector2"/>).
     /// </summary>
     public const string ViewportSize = "ViewportSize";
-    #endregion
 
 
-    #region ----- Simulation -----
+
+
 
     /// <summary>
     /// The <see cref="RenderContext.Time">simulation time</see> in seconds (<see cref="float"/>).
@@ -224,10 +224,10 @@ namespace DigitalRune.Graphics.Effects
     /// The time since the previous frame in seconds (<see cref="float"/>).
     /// </summary>
     public const string ElapsedTime = "ElapsedTime";
-    #endregion
 
 
-    #region ----- Deferred Rendering -----
+
+
 
     /// <summary>
     /// The G-buffer texture (<see cref="Texture"/> or <see cref="Texture2D"/>).
@@ -247,10 +247,10 @@ namespace DigitalRune.Graphics.Effects
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
     public const string NormalsFittingTexture = "NormalsFittingTexture";
-    #endregion
 
 
-    #region ----- Misc -----
+
+
 
     ///// <summary>
     ///// A random value (<see cref="float"/>, <see cref="Vector2"/>, <see cref="Vector3"/>, or 
@@ -298,6 +298,6 @@ namespace DigitalRune.Graphics.Effects
     /// A value containing <see cref="float.NaN"/> (<see cref="float"/>).
     /// </summary>
     public const string NaN = "NaN";
-    #endregion
+
   }
 }

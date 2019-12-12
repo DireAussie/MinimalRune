@@ -31,7 +31,7 @@ namespace DigitalRune.Editor.Text
     public sealed partial class TextExtension : EditorExtension, ITextService
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
@@ -46,17 +46,17 @@ namespace DigitalRune.Editor.Text
 
         private TextEditorStatusViewModel _statusInfo;      // Shows line and column in status bar.
         private IDisposable _statusInfoUpdateSubscription;  // Updates the visibility of the _statusInfo.
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -66,11 +66,11 @@ namespace DigitalRune.Editor.Text
         {
             _menuManager = new MenuManager();
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -317,6 +317,6 @@ namespace DigitalRune.Editor.Text
         {
             _syntaxHighlightingItem?.Update();
         }
-        #endregion
+
     }
 }

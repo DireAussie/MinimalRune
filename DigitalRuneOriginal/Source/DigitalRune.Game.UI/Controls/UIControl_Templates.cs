@@ -15,7 +15,7 @@ namespace DigitalRune.Game.UI.Controls
   public partial class UIControl
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     // Since the GameProperty and GameEvent classes are generic types. It is difficult to handle
@@ -78,11 +78,11 @@ namespace DigitalRune.Game.UI.Controls
         gameObject.Events.Add<T>(EventId);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -293,6 +293,6 @@ namespace DigitalRune.Game.UI.Controls
       // Remember template for reuse in other controls that have the same style.
       renderer.Templates.Add(Style, template);
     }
-    #endregion
+
   }
 }

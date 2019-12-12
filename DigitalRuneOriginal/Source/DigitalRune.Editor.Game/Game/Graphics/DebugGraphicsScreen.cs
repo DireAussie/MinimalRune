@@ -25,18 +25,18 @@ namespace DigitalRune.Editor.Game
     public class DebugGraphicsScreen : GraphicsScreen, IDisposable
     {
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         // Colors used to highlight the safe areas:
         //  Invisible area > action safe area > title safe area
         private static readonly Color InvisibleAreaColor = new Color(255, 0, 0, 127);
         private static readonly Color ActionSafeAreaColor = new Color(255, 255, 0, 127);
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private bool _isDisposed;
@@ -51,11 +51,11 @@ namespace DigitalRune.Editor.Game
         private readonly StringBuilder _stringBuilder = new StringBuilder();
         private float _textWidth;
         private readonly GameExtension _gameExtension;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -84,11 +84,11 @@ namespace DigitalRune.Editor.Game
         /// is tinted red. The title safe area is not colorized.
         /// </remarks>
         public bool ShowTitleSafeArea { get; set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -177,11 +177,11 @@ namespace DigitalRune.Editor.Game
                 _isDisposed = true;
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private void OnGameLogicUpdating(object sender, EventArgs eventArgs)
@@ -285,6 +285,6 @@ namespace DigitalRune.Editor.Game
 
             _spriteBatch.End();
         }
-        #endregion
+
     }
 }

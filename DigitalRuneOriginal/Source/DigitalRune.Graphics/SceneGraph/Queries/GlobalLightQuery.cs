@@ -16,13 +16,13 @@ namespace DigitalRune.Graphics.SceneGraph
   internal sealed class GlobalLightQuery : ISceneQuery
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -56,11 +56,11 @@ namespace DigitalRune.Graphics.SceneGraph
     /// </summary>
     /// <value>The other lights.</value>
     public List<LightNode> OtherLights { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -74,11 +74,11 @@ namespace DigitalRune.Graphics.SceneGraph
       ImageBasedLights = new List<LightNode>();
       OtherLights = new List<LightNode>();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -169,6 +169,6 @@ namespace DigitalRune.Graphics.SceneGraph
       string message = String.Format(CultureInfo.InvariantCulture, "Type of light \"{0}\" is not supported by GlobalLightQuery.", type);
       throw new GraphicsException(message);
     }
-    #endregion
+
   }
 }

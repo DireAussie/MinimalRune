@@ -32,13 +32,13 @@ namespace DigitalRune.Physics.Specialized
   public class ConstraintVehicle
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -121,11 +121,11 @@ namespace DigitalRune.Physics.Specialized
     /// </summary>
     /// <value>The wheels. The default is an empty collection.</value>
     public NotifyingCollection<ConstraintWheel> Wheels { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -153,11 +153,11 @@ namespace DigitalRune.Physics.Specialized
       Wheels = new NotifyingCollection<ConstraintWheel>(false, false);
       Wheels.CollectionChanged += OnWheelsChanged;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -191,6 +191,6 @@ namespace DigitalRune.Physics.Specialized
 
       _chassis.WakeUp();
     }
-    #endregion
+
   }
 }

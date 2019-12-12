@@ -54,7 +54,7 @@ namespace DigitalRune.Physics.Constraints
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private static readonly ResourcePool<ContactConstraint> Pool =
@@ -91,11 +91,11 @@ namespace DigitalRune.Physics.Constraints
     private bool _surfaceMotionBEnabled;
 
     private float _minConstraintImpulse;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -283,11 +283,11 @@ namespace DigitalRune.Physics.Constraints
     /// <see langword="true"/> if used; otherwise, <see langword="false"/>.
     /// </value>
     internal bool Used { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -413,11 +413,11 @@ namespace DigitalRune.Physics.Constraints
       Contact = null;
       Used = false;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -644,6 +644,6 @@ namespace DigitalRune.Physics.Constraints
 
       return Math.Abs(impulse) > _minConstraintImpulse;
     }
-    #endregion
+
   }
 }

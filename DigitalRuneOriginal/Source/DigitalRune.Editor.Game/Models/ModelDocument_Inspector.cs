@@ -18,7 +18,7 @@ namespace DigitalRune.Editor.Models
     partial class ModelDocument
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly ComponentResourceKey TextBlockKey = new ComponentResourceKey(typeof(PropertyGrid), "TextBlock");
@@ -31,23 +31,23 @@ namespace DigitalRune.Editor.Models
         // The current property source displayed in the Properties window.
         // Per default, it is _modelPropertySource. But it can also represent another outline item.
         private PropertySource _currentPropertySource;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Methods
+
+
+
+        //--------------------------------------------------------------
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         private void UpdateProperties()
@@ -243,6 +243,6 @@ namespace DigitalRune.Editor.Models
 
             return fileName;
         }
-        #endregion
+
     }
 }

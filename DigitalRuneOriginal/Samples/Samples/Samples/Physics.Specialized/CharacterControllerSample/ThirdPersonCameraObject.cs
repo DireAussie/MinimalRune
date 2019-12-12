@@ -23,7 +23,7 @@ namespace Samples.Physics.Specialized
   public class ThirdPersonCameraObject : GameObject
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly IServiceLocator _services;
@@ -34,19 +34,19 @@ namespace Samples.Physics.Specialized
 
     // Distance of camera to player's head. Set to 0 for first-person mode.
     private float _thirdPersonDistance = 3;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     public CameraNode CameraNode { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     public ThirdPersonCameraObject(CharacterControllerObject characterControllerObject, IServiceLocator services)
@@ -58,11 +58,11 @@ namespace Samples.Physics.Specialized
       _services = services;
       _inputService = services.GetInstance<IInputService>();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     protected override void OnLoad()
@@ -124,6 +124,6 @@ namespace Samples.Physics.Specialized
       // Set the new camera pose.
       CameraNode.PoseWorld = new Pose(position, orientation);
     }
-    #endregion
+
   }
 }

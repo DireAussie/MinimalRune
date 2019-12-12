@@ -16,7 +16,7 @@ namespace DigitalRune.Game.UI.Consoles
   public class ConsoleCommandInterpreter
   {
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -35,11 +35,11 @@ namespace DigitalRune.Game.UI.Consoles
     /// caught and displayed in the console.
     /// </remarks>
     public NamedObjectCollection<ConsoleCommand> Commands { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -63,11 +63,11 @@ namespace DigitalRune.Game.UI.Consoles
       Commands.Add(new ConsoleCommand("gc", "Forces a full garbage collection.", CollectGarbage));
       Commands.Add(new ConsoleCommand("parse", "Prints the command and its arguments (for debugging the console).", ParseCommand));
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -217,6 +217,6 @@ namespace DigitalRune.Game.UI.Consoles
       foreach (var arg in args)
         Console.WriteLine(arg);
     }
-    #endregion
+
   }
 }

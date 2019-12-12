@@ -18,13 +18,13 @@ namespace DigitalRune.Editor
     public abstract class CommandItem : ObservableObject, ICommandItem
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -189,11 +189,11 @@ namespace DigitalRune.Editor
             set { SetProperty(ref _isVisible, value); }
         }
         private bool _isVisible = true;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <overloads>
@@ -233,11 +233,11 @@ namespace DigitalRune.Editor
             Name = name;
             _text = name;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -255,6 +255,6 @@ namespace DigitalRune.Editor
 
             return new ToolBarButtonViewModel(this);
         }
-        #endregion
+
     }
 }

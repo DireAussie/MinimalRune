@@ -19,7 +19,7 @@ namespace DigitalRune.Editor.Colors
     public sealed class ColorExtension : EditorExtension
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
@@ -28,23 +28,23 @@ namespace DigitalRune.Editor.Colors
         private MergeableNodeCollection<ICommandItem> _menuNodes;
         private MergeableNodeCollection<ICommandItem> _toolBarNodes;
         private ColorViewModel _colorViewModel;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Methods
+
+
+
+        //--------------------------------------------------------------
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -169,6 +169,6 @@ namespace DigitalRune.Editor.Colors
 
             Editor.ActivateItem(_colorViewModel);
         }
-        #endregion
+
     }
 }

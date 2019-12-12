@@ -45,13 +45,13 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -247,11 +247,11 @@ namespace DigitalRune.Graphics.SceneGraph
     /// </value>
     /// <inheritdoc cref="BaseHorizonColor"/>
     public float BaseColorShift { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -281,11 +281,11 @@ namespace DigitalRune.Graphics.SceneGraph
 
       BaseColorShift = 0.5f;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc cref="SceneNode.Clone"/>
@@ -663,6 +663,6 @@ namespace DigitalRune.Graphics.SceneGraph
     {
       return new Vector3F((float)Math.Exp(value.X), (float)Math.Exp(value.Y), (float)Math.Exp(value.Z));
     }
-    #endregion
+
   }
 }

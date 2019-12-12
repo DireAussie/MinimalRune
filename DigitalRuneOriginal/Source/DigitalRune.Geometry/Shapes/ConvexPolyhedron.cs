@@ -48,7 +48,7 @@ namespace DigitalRune.Geometry.Shapes
     // We use the center of the circumscribed sphere instead of the center of mass for building the 
     // lookup table.
 
-    #region ----- Version 1: Spherical Lookup Table (Obsolete) -----
+
 
     // The initial version uses spherical lookup table as described by Ehmann and Lin. 
     // That means the tables is indexed by inclination and azimuth angle.
@@ -125,10 +125,10 @@ namespace DigitalRune.Geometry.Shapes
     //   marginally better - speed-up increase ≤ 10%. Random convex objects with width:height:depth 
     //   ratio of 10:5:2 were tested. 
 
-    #endregion
 
 
-    #region ----- Version 2: Cube Map Lookup Table -----
+
+
 
     // The Cartesian to spherical coordinates conversion was expensive and a spherical coordinates
     // show a non-uniform distribution along the unit sphere with poles at the top and bottom.
@@ -145,10 +145,10 @@ namespace DigitalRune.Geometry.Shapes
     // due to the additional memory overhead were not considered in the experiments.)
     // The speed-up is significantly better than version 1. With 100 vertices the speed-up is ~7.
 
-    #endregion
+
 
     
-    #region ----- Further Optimizations -----
+
 
     // Further Optimizations
     // =====================
@@ -161,11 +161,11 @@ namespace DigitalRune.Geometry.Shapes
     //   - The performance test above did not consider cache misses, so the performance should also
     //     be checked in a real world application.
 
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -189,20 +189,20 @@ namespace DigitalRune.Geometry.Shapes
     /// The width of the directional lookup table (= the length of a cube map side).
     /// </summary>
     private const int LookupTableWidth = 4;
-    #endregion
+
 
     
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // The cached local space AABB
     private Aabb _aabbLocal = new Aabb(new Vector3F(float.NaN), new Vector3F(float.NaN));
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -289,11 +289,11 @@ namespace DigitalRune.Geometry.Shapes
       }
     }
 #endif
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -322,11 +322,11 @@ namespace DigitalRune.Geometry.Shapes
     {
       BuildConvexPolyhedron(points);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     internal void Set(Vector3F[] vertices, Aabb aabb, Vector3F innerPoint, DirectionalLookupTableUInt16F directionalLookupTable, VertexAdjacency vertexAdjacency)
@@ -339,7 +339,7 @@ namespace DigitalRune.Geometry.Shapes
     }
 
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Shape CreateInstanceCore()
@@ -358,10 +358,10 @@ namespace DigitalRune.Geometry.Shapes
       _directionLookupTable = source._directionLookupTable;
       _vertexAdjacency = source._vertexAdjacency;
     }
-    #endregion
 
 
-    #region ----- Shape -----
+
+
 
     /// <inheritdoc/>
     public override Aabb GetAabb(Vector3F scale, Pose pose)
@@ -461,7 +461,7 @@ namespace DigitalRune.Geometry.Shapes
     {
       return String.Format(CultureInfo.InvariantCulture, "ConvexPolyhedron {{ Count = {0} }}", _vertices.Length);
     }
-    #endregion
+
 
 
     /// <summary>
@@ -625,6 +625,6 @@ namespace DigitalRune.Geometry.Shapes
 
       supportVertex = vertex;
     }
-    #endregion
+
   }
 }

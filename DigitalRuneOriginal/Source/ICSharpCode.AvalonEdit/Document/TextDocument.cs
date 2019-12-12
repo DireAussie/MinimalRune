@@ -40,7 +40,7 @@ namespace ICSharpCode.AvalonEdit.Document
 	/// </remarks>
 	public class TextDocument : IDocument, INotifyPropertyChanged  // [DIGITALRUNE] TextDocument should not be sealed.
 	{
-		#region Thread ownership
+
 		readonly object lockObject = new object();
 		Thread owner = Thread.CurrentThread;
 		
@@ -82,9 +82,9 @@ namespace ICSharpCode.AvalonEdit.Document
 				owner = newOwner;
 			}
 		}
-		#endregion
+
 		
-		#region Fields + Constructor
+
 		readonly Rope<char> rope;
 		readonly DocumentLineTree lineTree;
 		readonly LineManager lineManager;
@@ -147,9 +147,9 @@ namespace ICSharpCode.AvalonEdit.Document
 			
 			return textSource.Text;
 		}
-		#endregion
+
 		
-		#region Text
+
 		void ThrowIfRangeInvalid(int offset, int length)
 		{
 			if (offset < 0 || offset > rope.Length) {
@@ -405,9 +405,9 @@ namespace ICSharpCode.AvalonEdit.Document
 			VerifyAccess();
 			rope.WriteTo(writer, offset, length);
 		}
-		#endregion
+
 		
-		#region BeginUpdate / EndUpdate
+
 		int beginUpdateCount;
 		
 		/// <summary>
@@ -503,9 +503,9 @@ namespace ICSharpCode.AvalonEdit.Document
 		{
 			return RunUpdate();
 		}
-		#endregion
+
 		
-		#region Fire events after update
+
 		int oldTextLength;
 		int oldLineCount;
 		bool fireTextChanged;
@@ -552,9 +552,9 @@ namespace ICSharpCode.AvalonEdit.Document
 		{
 			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 		}
-		#endregion
+
 		
-		#region Insert / Remove  / Replace
+
 		/// <summary>
 		/// Inserts text.
 		/// </summary>
@@ -919,9 +919,9 @@ namespace ICSharpCode.AvalonEdit.Document
       if (handler != null)
         handler(this, eventArgs);
     }
-	  #endregion
+
 		
-		#region GetLineBy...
+
 		/// <summary>
 		/// Gets a read-only list of lines.
 		/// </summary>
@@ -964,9 +964,9 @@ namespace ICSharpCode.AvalonEdit.Document
 		{
 			return GetLineByOffset(offset);
 		}
-		#endregion
+
 		
-		#region GetOffset / GetLocation
+
 		/// <summary>
 		/// Gets the offset from a text location.
 		/// </summary>
@@ -999,9 +999,9 @@ namespace ICSharpCode.AvalonEdit.Document
 			DocumentLine line = GetLineByOffset(offset);
 			return new TextLocation(line.LineNumber, offset - line.Offset + 1);
 		}
-		#endregion
+
 		
-		#region Line Trackers
+
 		readonly ObservableCollection<ILineTracker> lineTrackers = new ObservableCollection<ILineTracker>();
 		
 		/// <summary>
@@ -1014,9 +1014,9 @@ namespace ICSharpCode.AvalonEdit.Document
 				return lineTrackers;
 			}
 		}
-		#endregion
+
 		
-		#region UndoStack
+
 		UndoStack undoStack;
 		
 		/// <summary>
@@ -1036,9 +1036,9 @@ namespace ICSharpCode.AvalonEdit.Document
 				}
 			}
 		}
-		#endregion
+
 		
-		#region CreateAnchor
+
 		/// <summary>
 		/// Creates a new <see cref="TextAnchor"/> at the specified offset.
 		/// </summary>
@@ -1056,9 +1056,9 @@ namespace ICSharpCode.AvalonEdit.Document
 		{
 			return CreateAnchor(offset);
 		}
-		#endregion
+
 		
-		#region LineCount
+
 		/// <summary>
 		/// Gets the total number of lines in the document.
 		/// Runtime: O(1).
@@ -1075,9 +1075,9 @@ namespace ICSharpCode.AvalonEdit.Document
 		/// </summary>
 		[Obsolete("This event will be removed in a future version; use the PropertyChanged event instead")]
 		public event EventHandler LineCountChanged;
-		#endregion
+
 		
-		#region Debugging
+
 		[Conditional("DEBUG")]
 		internal void DebugVerifyAccess()
 		{
@@ -1111,9 +1111,9 @@ namespace ICSharpCode.AvalonEdit.Document
 			return "Not available in release build.";
 			#endif
 		}
-		#endregion
+
 		
-		#region Service Provider
+
 		IServiceProvider serviceProvider;
 		
 		/// <summary>
@@ -1144,9 +1144,9 @@ namespace ICSharpCode.AvalonEdit.Document
 		{
 			return this.ServiceProvider.GetService(serviceType);
 		}
-		#endregion
+
 		
-		#region FileName
+
 		string fileName;
 		
 		/// <inheritdoc/>
@@ -1169,6 +1169,6 @@ namespace ICSharpCode.AvalonEdit.Document
 				}
 			}
 		}
-		#endregion
+
 	}
 }

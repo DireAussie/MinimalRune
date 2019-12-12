@@ -19,15 +19,15 @@ namespace DigitalRune.Graphics.Rendering
   public class ProjectedGridParameters
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly GraphicsDevice _graphicsDevice;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -144,11 +144,11 @@ namespace DigitalRune.Graphics.Rendering
       }
     }
     private Submesh _submesh;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     internal ProjectedGridParameters(GraphicsDevice graphicsDevice)
@@ -165,11 +165,11 @@ namespace DigitalRune.Graphics.Rendering
       DistanceAttenuationStart = 20;
       DistanceAttenuationEnd = 300;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     internal void Dispose()
@@ -180,6 +180,6 @@ namespace DigitalRune.Graphics.Rendering
         _submesh = null;
       }
     }
-    #endregion
+
   }
 }

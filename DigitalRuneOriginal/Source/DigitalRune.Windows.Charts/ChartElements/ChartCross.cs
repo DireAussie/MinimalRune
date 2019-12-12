@@ -28,22 +28,22 @@ namespace DigitalRune.Windows.Charts
     public class ChartCross : ChartElement
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private Line _horizontalLine;
         private Line _verticalLine;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -134,11 +134,11 @@ namespace DigitalRune.Windows.Charts
             get { return (double)GetValue(YProperty); }
             set { SetValue(YProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
 #if SILVERLIGHT
@@ -159,11 +159,11 @@ namespace DigitalRune.Windows.Charts
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ChartCross), new FrameworkPropertyMetadata(typeof(ChartCross)));
         }
 #endif
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private static void OnOriginChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
@@ -276,6 +276,6 @@ namespace DigitalRune.Windows.Charts
 
             return grid;
         }
-        #endregion
+
     }
 }

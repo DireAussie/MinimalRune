@@ -18,21 +18,21 @@ namespace DigitalRune.Windows.Controls
     public class ImageEffect : ShaderEffect
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly PixelShader ImageEffectShader = new PixelShader { UriSource = MakePackUri("Resources/ImageEffect.ps") };
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //-------------------------------------------------------------- 
 
         /// <summary>
@@ -126,11 +126,11 @@ namespace DigitalRune.Windows.Controls
             get { return (double)GetValue(SaturationProperty); }
             set { SetValue(SaturationProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -145,11 +145,11 @@ namespace DigitalRune.Windows.Controls
             UpdateShaderValue(OpacityProperty);
             UpdateShaderValue(SaturationProperty);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         // MakePackUri is a utility method for computing a pack URI for the given resource.
@@ -162,6 +162,6 @@ namespace DigitalRune.Windows.Controls
             string uriString = Invariant($"pack://application:,,,/{assemblyShortName};component/{relativeFile}");
             return new Uri(uriString);
         }
-        #endregion
+
     }
 }

@@ -24,13 +24,13 @@ namespace DigitalRune.Physics.ForceEffects
   public abstract class ForceField : ForceEffect
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace DigitalRune.Physics.ForceEffects
     /// effect.
     /// </remarks>
     public IAreaOfEffect AreaOfEffect { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -77,11 +77,11 @@ namespace DigitalRune.Physics.ForceEffects
     {
       AreaOfEffect = areaOfEffect;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -125,6 +125,6 @@ namespace DigitalRune.Physics.ForceEffects
     /// <paramref name="body"/> is <see langword="null"/>.
     /// </exception>
     public abstract void Apply(RigidBody body);
-    #endregion
+
   }
 }

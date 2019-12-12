@@ -39,7 +39,7 @@ namespace DigitalRune.Animation.Character
   public class ChainBoneMapper : BoneMapper
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // true if cached data is invalid.
@@ -47,11 +47,11 @@ namespace DigitalRune.Animation.Character
 
     // A nested direct bone mapper that is used if MapFromBindPose is false.
     private DirectBoneMapper _directBoneMapper;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -160,11 +160,11 @@ namespace DigitalRune.Animation.Character
       }
     }
     private bool _mapFromBindPose;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -193,11 +193,11 @@ namespace DigitalRune.Animation.Character
 
       MapFromBindPose = true;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -335,6 +335,6 @@ namespace DigitalRune.Animation.Character
       var rotation = QuaternionF.CreateRotation(directionA, directionB);
       skeletonInstanceA.RotateBoneAbsolute(RootBoneIndexA, rotation);
     }
-    #endregion
+
   }
 }

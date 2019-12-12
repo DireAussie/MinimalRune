@@ -22,16 +22,16 @@ namespace DigitalRune.Graphics.Interop
   public static class WpfEnvironment
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private static volatile bool _applicationStarted;   // Needs to be volatile because it is used 
                                                         // for synchronization!
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -65,18 +65,18 @@ namespace DigitalRune.Graphics.Interop
 
 
     private static IntPtr Handle { get; set; }
-    #endregion
+
     
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Methods
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -206,7 +206,7 @@ namespace DigitalRune.Graphics.Interop
         NativeMethods.PostMessage(Handle, msg.message, msg.wParam, msg.lParam);
       }
     }
-    #endregion
+
   }
 }
 #endif

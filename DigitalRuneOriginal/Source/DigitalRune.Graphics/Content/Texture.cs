@@ -29,13 +29,13 @@ namespace DigitalRune.Graphics.Content
   internal class Texture
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -50,11 +50,11 @@ namespace DigitalRune.Graphics.Content
     /// </summary>
     /// <value>The images.</value>
     public ImageCollection Images { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -292,11 +292,11 @@ namespace DigitalRune.Graphics.Content
           break;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -534,6 +534,6 @@ namespace DigitalRune.Graphics.Content
 
       return resizedTexture;
     }
-    #endregion
+
   }
 }

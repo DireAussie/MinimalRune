@@ -14,13 +14,13 @@ namespace DigitalRune.Graphics
   public class CompositeFigure : Figure
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -42,11 +42,11 @@ namespace DigitalRune.Graphics
         return false;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -56,11 +56,11 @@ namespace DigitalRune.Graphics
     {
       Children = new FigureCollection(this);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -69,6 +69,6 @@ namespace DigitalRune.Graphics
       foreach (var child in Children)
         child.Flatten(vertices, strokeIndices, fillIndices);
     }
-    #endregion
+
   }
 }

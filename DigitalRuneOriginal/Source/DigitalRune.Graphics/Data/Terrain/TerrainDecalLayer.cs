@@ -65,7 +65,7 @@ namespace DigitalRune.Graphics
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private static readonly TerrainLayerVertex[] QuadVertices =
@@ -75,11 +75,11 @@ namespace DigitalRune.Graphics
       new TerrainLayerVertex(new Vector2(0, 0), new Vector2(0, 1)),
       new TerrainLayerVertex(new Vector2(0, 0), new Vector2(1, 1)),
     };
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -314,11 +314,11 @@ namespace DigitalRune.Graphics
       get { return GetParameter<Texture2D>(true, "HeightTexture"); }
       set { SetParameter(true, "HeightTexture", value); }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -386,11 +386,11 @@ namespace DigitalRune.Graphics
       Material = material;
       UpdateAabb();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private void UpdateAabb()
@@ -441,6 +441,6 @@ namespace DigitalRune.Graphics
 
       graphicsDevice.DrawUserPrimitives(PrimitiveType.TriangleStrip, QuadVertices, 0, 2);
     }
-    #endregion
+
   }
 }

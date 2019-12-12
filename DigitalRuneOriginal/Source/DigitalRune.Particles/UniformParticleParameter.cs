@@ -103,7 +103,7 @@ namespace DigitalRune.Particles
 
 
     //--------------------------------------------------------------
-    #region IAnimatableProperty
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -148,6 +148,6 @@ namespace DigitalRune.Particles
       get { return _animationValue; }
       set { _animationValue = value; }
     }
-    #endregion
+
   }
 }

@@ -26,13 +26,13 @@ namespace DigitalRune.Geometry.Shapes
   public class ConvexHullOfShapes : ConvexShape
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -74,11 +74,11 @@ namespace DigitalRune.Geometry.Shapes
         return innerPoint / numberOfGeometries;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -89,14 +89,14 @@ namespace DigitalRune.Geometry.Shapes
       Children = new NotifyingCollection<IGeometricObject>(false, false);
       Children.CollectionChanged += OnChildrenChanged;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Shape CreateInstanceCore()
@@ -112,7 +112,7 @@ namespace DigitalRune.Geometry.Shapes
       foreach (var geometry in source.Children)
         Children.Add((IGeometricObject)geometry.Clone());
     }
-    #endregion
+
 
 
     /// <summary>
@@ -243,6 +243,6 @@ namespace DigitalRune.Geometry.Shapes
     {
       return String.Format(CultureInfo.InvariantCulture, "ConvexHullOfShapes {{ Count = {0} }}", Children.Count);
     }
-    #endregion
+
   }
 }

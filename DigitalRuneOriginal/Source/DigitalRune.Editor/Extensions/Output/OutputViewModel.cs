@@ -34,17 +34,17 @@ namespace DigitalRune.Editor.Output
 
 
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         internal const string DockIdString = "OutputWindow";
         public const string DefaultView = "Default";
         public const string NLogView = "NLog";
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
@@ -54,11 +54,11 @@ namespace DigitalRune.Editor.Output
         private readonly IWindowService _windowService;
         private readonly Dictionary<string, StringBuilder> _buffers;
         private IDisposable _nlogSubscription;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -146,11 +146,11 @@ namespace DigitalRune.Editor.Output
         /// </summary>
         /// <value>The "Print" command.</value>
         public DelegateCommand PrintCommand { get; private set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -190,11 +190,11 @@ namespace DigitalRune.Editor.Output
             Output = new TextDocument { UndoStack = { SizeLimit = 0 } };
             SelectedView = DefaultView;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0")]
@@ -396,6 +396,6 @@ namespace DigitalRune.Editor.Output
                     (listener, sender, eventArgs) => WriteLine(eventArgs.Message, NLogView));
             }
         }
-        #endregion
+
     }
 }

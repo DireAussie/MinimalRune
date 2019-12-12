@@ -17,13 +17,13 @@ namespace DigitalRune.Graphics.SceneGraph
       ICollection<SceneNode>  // The interface is necessary for the VS class diagrams!
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -37,11 +37,11 @@ namespace DigitalRune.Graphics.SceneGraph
       get { return base.Parent; }
       internal set { base.Parent = value; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -68,11 +68,11 @@ namespace DigitalRune.Graphics.SceneGraph
       : base(null, capacity)
     {
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -91,6 +91,6 @@ namespace DigitalRune.Graphics.SceneGraph
 
       child.Parent = parent;
     }
-    #endregion
+
   }
 }

@@ -46,13 +46,13 @@ namespace DigitalRune.Animation.Character
   public class SkeletonMapper
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -129,11 +129,11 @@ namespace DigitalRune.Animation.Character
       }
     }
     private QuaternionF _rotationOffset = QuaternionF.Identity;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -149,11 +149,11 @@ namespace DigitalRune.Animation.Character
       BoneMappers = new BoneMapperCollection();
       BoneMappers.CollectionChanged += OnBoneMappersChanged;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private void OnBoneMappersChanged(object sender, CollectionChangedEventArgs<BoneMapper> eventArgs)
@@ -207,6 +207,6 @@ namespace DigitalRune.Animation.Character
       foreach (var boneMapper in BoneMappers)
         boneMapper.MapBToA();
     }
-    #endregion
+
   }
 }

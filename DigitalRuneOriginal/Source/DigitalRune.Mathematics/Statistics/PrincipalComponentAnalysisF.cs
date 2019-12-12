@@ -31,13 +31,13 @@ namespace DigitalRune.Mathematics.Statistics
   public class PrincipalComponentAnalysisF
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
-    #endregion
+
       
       
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -62,11 +62,11 @@ namespace DigitalRune.Mathematics.Statistics
     /// first element.
     /// </remarks>
     public VectorF Variances { get; private set; }
-    #endregion
+
       
       
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -111,12 +111,12 @@ namespace DigitalRune.Mathematics.Statistics
         evd.RealEigenvalues[index] = float.NegativeInfinity;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
-    #endregion
+
   }
 }

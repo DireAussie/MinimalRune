@@ -14,16 +14,16 @@ namespace DigitalRune.Graphics
   public class CubeMapShadow : Shadow
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     internal float EffectiveDepthBias;      // Bias in light space [0, 1] range. Usually negative.
     internal float EffectiveNormalOffset;   // Offset in world space.
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <inheritdoc cref="Shadow.ShadowMap"/>
@@ -136,7 +136,7 @@ namespace DigitalRune.Graphics
     public float JitterResolution { get; set; }
 
 
-    #region ----- Obsolete -----
+
 
     /// <summary>
     /// Gets or sets the depth bias scale used to remove surface acne.
@@ -162,12 +162,12 @@ namespace DigitalRune.Graphics
     /// </remarks>
     [Obsolete("The properties DepthBiasScale and DepthBiasOffset have been replaced by DepthBias.")]
     public float DepthBiasOffset { get; set; }
-    #endregion
-    #endregion
+
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -187,14 +187,14 @@ namespace DigitalRune.Graphics
       DepthBiasOffset = -0.001f;
 #pragma warning restore 618
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Shadow CreateInstanceCore()
@@ -224,8 +224,8 @@ namespace DigitalRune.Graphics
 
       // ShadowMap is not cloned!
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

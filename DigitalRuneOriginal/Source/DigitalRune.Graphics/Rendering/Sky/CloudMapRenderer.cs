@@ -35,7 +35,7 @@ namespace DigitalRune.Graphics.Rendering
   public class CloudMapRenderer : SceneNodeRenderer
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private static readonly CloudMapLayer EmptyLayer = new CloudMapLayer(null, Matrix33F.Identity, 0, 0, 0);
@@ -54,17 +54,17 @@ namespace DigitalRune.Graphics.Rendering
 
     private readonly EffectPass _passLerp;
     private readonly EffectPass _passDensity;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -128,11 +128,11 @@ namespace DigitalRune.Graphics.Rendering
 
       base.Dispose(disposing);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -278,7 +278,7 @@ namespace DigitalRune.Graphics.Rendering
       context.RenderTarget = originalRenderTarget;
       context.Viewport = originalViewport;
     }
-    #endregion
+
   }
 }
 #endif

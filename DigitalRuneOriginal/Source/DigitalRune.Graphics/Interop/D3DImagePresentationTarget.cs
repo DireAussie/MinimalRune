@@ -122,7 +122,7 @@ namespace DigitalRune.Graphics.Interop
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
 #if MONOGAME
@@ -133,11 +133,11 @@ namespace DigitalRune.Graphics.Interop
     private int _nativeWidth;
     private int _nativeHeight;
 #endif
-#endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
 #if MONOGAME
@@ -412,11 +412,11 @@ namespace DigitalRune.Graphics.Interop
     /// Occurs when the <see cref="IsFrontBufferAvailable"/> property value changed.
     /// </summary>
     public event DependencyPropertyChangedEventHandler IsFrontBufferAvailableChanged;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -447,11 +447,11 @@ namespace DigitalRune.Graphics.Interop
       throw new NotImplementedException("Only available in MonoGame-compatible builds.");
     }
 #endif
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -731,7 +731,7 @@ namespace DigitalRune.Graphics.Interop
       if (handler != null)
         handler(presentationTarget, eventArgs);
     }
-    #endregion
+
   }
 }
 #endif

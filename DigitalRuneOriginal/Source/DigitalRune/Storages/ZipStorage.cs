@@ -31,7 +31,7 @@ namespace DigitalRune.Storages
   public class ZipStorage : Storage, IStorageInternal
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly object _lock = new object();
@@ -42,11 +42,11 @@ namespace DigitalRune.Storages
     // A list of all temp files created in this session.
     private static List<string> _tempFiles = new List<string>();
 #endif
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -85,11 +85,11 @@ namespace DigitalRune.Storages
     /// ZIP entry is not encrypted.
     /// </remarks>
     public Func<string, string> PasswordCallback { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -191,11 +191,11 @@ namespace DigitalRune.Storages
 
       base.Dispose(disposing);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -262,6 +262,6 @@ namespace DigitalRune.Storages
         return null;
       }
     }
-    #endregion
+
   }
 }

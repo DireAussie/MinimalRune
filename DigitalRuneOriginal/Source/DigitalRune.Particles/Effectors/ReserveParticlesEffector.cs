@@ -25,16 +25,16 @@ namespace DigitalRune.Particles.Effectors
   public class ReserveParticleEffector : ParticleEffector
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private int _numberOfFreeParticles;
     private IParticleParameter<float> _normalizedAgeParameter;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -44,11 +44,11 @@ namespace DigitalRune.Particles.Effectors
     /// The number of particles to reserve. The default value is 5.
     /// </value>
     public int Reserve { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -58,11 +58,11 @@ namespace DigitalRune.Particles.Effectors
     {
       Reserve = 5;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -122,6 +122,6 @@ namespace DigitalRune.Particles.Effectors
         }
       }
     }
-    #endregion
+
   }
 }

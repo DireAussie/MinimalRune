@@ -94,7 +94,7 @@ namespace DigitalRune.Graphics
 
 
     //--------------------------------------------------------------
-    #region Bounding Shape
+
     //--------------------------------------------------------------
 
     /// <summary>The bounding shape.</summary> 
@@ -133,11 +133,11 @@ namespace DigitalRune.Graphics
         boxShape.Extent = Vector3F.Zero;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Hit Shape
+
     //--------------------------------------------------------------
 
     // The triangle mesh shape for hit testing.
@@ -204,7 +204,7 @@ namespace DigitalRune.Graphics
     }
 
 
-    #region ----- ITriangleMesh -----
+
 
     /// <inheritdoc/>
     int ITriangleMesh.NumberOfTriangles
@@ -238,8 +238,8 @@ namespace DigitalRune.Graphics
 
       throw new ArgumentOutOfRangeException("index");
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

@@ -10,16 +10,16 @@ namespace DigitalRune.Collections
   internal sealed class FastBitArray
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly int[] _array;
     private readonly int _length;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     public int Length
@@ -42,11 +42,11 @@ namespace DigitalRune.Collections
           _array[index / 32] &= ~(1 << (index % 32));
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -62,11 +62,11 @@ namespace DigitalRune.Collections
       _array = new int[arrayLength];
       _length = length;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     public void SetAll(bool value)
@@ -75,6 +75,6 @@ namespace DigitalRune.Collections
       for (int i = 0; i < _array.Length; i++)
         _array[i] = v;
     }
-    #endregion
+
   }
 }

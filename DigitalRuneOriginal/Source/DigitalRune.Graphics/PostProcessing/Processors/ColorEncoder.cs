@@ -16,7 +16,7 @@ namespace DigitalRune.Graphics.PostProcessing
   public class ColorEncoder : PostProcessor
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Effect _effect;
@@ -24,11 +24,11 @@ namespace DigitalRune.Graphics.PostProcessing
     private readonly EffectParameter _sourceTextureParameter;
     private readonly EffectParameter _sourceEncodingParameter;
     private readonly EffectParameter _targetEncodingParameter;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -81,11 +81,11 @@ namespace DigitalRune.Graphics.PostProcessing
     }
 
     private ColorEncoding _targetEncoding;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -107,11 +107,11 @@ namespace DigitalRune.Graphics.PostProcessing
       _sourceEncoding = ColorEncoding.Rgb;
       _targetEncoding = ColorEncoding.Rgb;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -197,6 +197,6 @@ namespace DigitalRune.Graphics.PostProcessing
       }
     }
   }
-  #endregion
+
 }
 #endif

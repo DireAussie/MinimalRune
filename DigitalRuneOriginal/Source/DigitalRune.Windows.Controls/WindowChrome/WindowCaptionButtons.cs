@@ -25,18 +25,18 @@ namespace DigitalRune.Windows.Controls
     public class WindowCaptionButtons : Control
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private SafeLibraryHandle _user32;
         private Button _closeButton;
         private Button _maximizeButton;
         private Button _minimizeButton;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -106,11 +106,11 @@ namespace DigitalRune.Windows.Controls
             }
         }
         private static string _restoreCaption;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -258,11 +258,11 @@ namespace DigitalRune.Windows.Controls
             get { return (Style)GetValue(MinimizeButtonStyleProperty); }
             set { SetValue(MinimizeButtonStyleProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -272,11 +272,11 @@ namespace DigitalRune.Windows.Controls
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(WindowCaptionButtons), new FrameworkPropertyMetadata(typeof(WindowCaptionButtons)));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private string GetCaption(uint id)
@@ -344,6 +344,6 @@ namespace DigitalRune.Windows.Controls
 
             SystemCommands.MinimizeWindow(window);
         }
-        #endregion
+
     }
 }

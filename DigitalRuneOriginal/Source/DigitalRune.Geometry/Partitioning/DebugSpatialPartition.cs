@@ -20,7 +20,7 @@ namespace DigitalRune.Geometry.Partitioning
   /// </remarks>
   internal sealed class DebugSpatialPartition<T> : BasePartition<T>
   {
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override BasePartition<T> CreateInstanceCore()
@@ -34,7 +34,7 @@ namespace DigitalRune.Geometry.Partitioning
     {
       base.CloneCore(source);
     }
-    #endregion
+
 
 
     /// <inheritdoc/>

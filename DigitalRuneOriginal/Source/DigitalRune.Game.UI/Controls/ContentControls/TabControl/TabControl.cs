@@ -60,15 +60,15 @@ namespace DigitalRune.Game.UI.Controls
     // the selected item is displayed.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private StackPanel _itemsPanel;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -76,11 +76,11 @@ namespace DigitalRune.Game.UI.Controls
     /// </summary>
     /// <value>The items.</value>
     public NotifyingCollection<TabItem> Items { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Game Object Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary> 
@@ -130,11 +130,11 @@ namespace DigitalRune.Game.UI.Controls
       get { return GetValue<string>(TabItemPanelStylePropertyId); }
       set { SetValue(TabItemPanelStylePropertyId, value); }
     }
-    #endregion
+
     
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -152,11 +152,11 @@ namespace DigitalRune.Game.UI.Controls
       var selectedIndex = Properties.Get<int>(SelectedIndexPropertyId);
       selectedIndex.Changed += (s, e) => Select(e.NewValue);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -382,6 +382,6 @@ namespace DigitalRune.Game.UI.Controls
         InvalidateMeasure();
       }
     }
-    #endregion
+
   }
 }

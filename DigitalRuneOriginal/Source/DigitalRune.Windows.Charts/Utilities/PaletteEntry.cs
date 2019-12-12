@@ -15,13 +15,13 @@ namespace DigitalRune.Windows.Charts
     public struct PaletteEntry : IEquatable<PaletteEntry>
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -46,11 +46,11 @@ namespace DigitalRune.Windows.Charts
             set { _color = value; }
         }
         private Color _color;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -63,11 +63,11 @@ namespace DigitalRune.Windows.Charts
             _value = value;
             _color = color;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -162,6 +162,6 @@ namespace DigitalRune.Windows.Charts
         {
             return String.Format(CultureInfo.InvariantCulture, "PaletteEntry{{Value={0}, Color={1}}}", Value, Color);
         }
-        #endregion
+
     }
 }

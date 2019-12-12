@@ -28,7 +28,7 @@ namespace DigitalRune.Graphics.Rendering
   internal sealed class PrimitiveBatch
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     // TODO: Use ResourcePoolUnsafe for performance.
@@ -117,11 +117,11 @@ namespace DigitalRune.Graphics.Rendering
         return 0;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly IGraphicsService _graphicsService;
@@ -145,11 +145,11 @@ namespace DigitalRune.Graphics.Rendering
     private Submesh _coneLinePrimitive;
     private Submesh _conePrimitive;
     private Submesh _uncappedCylinderPrimitive;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -198,11 +198,11 @@ namespace DigitalRune.Graphics.Rendering
     /// expected.
     /// </remarks>
     public bool AutoRasterizerState { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -225,11 +225,11 @@ namespace DigitalRune.Graphics.Rendering
       _triangleBatch = new TriangleBatch(effect);
       AutoRasterizerState = true;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -934,6 +934,6 @@ namespace DigitalRune.Graphics.Rendering
 
       job.Submesh.Draw();
     }
-    #endregion
+
   }
 }

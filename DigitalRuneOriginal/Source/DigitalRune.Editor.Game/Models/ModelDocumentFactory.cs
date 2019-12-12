@@ -20,28 +20,28 @@ namespace DigitalRune.Editor.Models
     internal class ModelDocumentFactory : DocumentFactory
     {
         //--------------------------------------------------------------
-        #region Constants
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Fields
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         private readonly IEditorService _editor;
         private readonly DocumentType _processedModelDocumentType;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -90,11 +90,11 @@ namespace DigitalRune.Editor.Models
             };
 
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -145,6 +145,6 @@ namespace DigitalRune.Editor.Models
         {
             return new ModelDocument(_editor, documentType);
         }
-        #endregion
+
     }
 }

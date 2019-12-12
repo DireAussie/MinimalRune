@@ -61,7 +61,7 @@ namespace DigitalRune.Game.UI
     // for a certain time and the control under the mouse has specified a ToolTip.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // How long the mouse cursor has been still.
@@ -69,11 +69,11 @@ namespace DigitalRune.Game.UI
 
     // The control for which the tool tip is shown.
     private UIControl _control;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -135,11 +135,11 @@ namespace DigitalRune.Game.UI
     /// </summary>
     /// <value>The offset of the tool tip to the mouse position.</value>
     public float ToolTipOffset { get { return Screen.ToolTipOffset; } }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -158,11 +158,11 @@ namespace DigitalRune.Game.UI
         IsVisible = false,
       };
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private void OnScreenInputProcessed(object sender, InputEventArgs eventArgs)
@@ -287,6 +287,6 @@ namespace DigitalRune.Game.UI
       ToolTipControl.IsVisible = false;
       _control = null;
     }
-    #endregion
+
   }
 }

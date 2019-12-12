@@ -25,13 +25,13 @@ namespace DigitalRune.Geometry.Shapes
   public class PointShape : ConvexShape
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -68,11 +68,11 @@ namespace DigitalRune.Geometry.Shapes
       }
     }
     private Vector3F _position;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -111,14 +111,14 @@ namespace DigitalRune.Geometry.Shapes
     {
       _position = new Vector3F(x, y, z);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Shape CreateInstanceCore()
@@ -133,7 +133,7 @@ namespace DigitalRune.Geometry.Shapes
       var source = (PointShape)sourceShape;
       _position = source.Position;
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -231,6 +231,6 @@ namespace DigitalRune.Geometry.Shapes
     {
       return String.Format(CultureInfo.InvariantCulture, "PointShape {{ Position = {0} }}", _position);
     }
-    #endregion
+
   }
 }

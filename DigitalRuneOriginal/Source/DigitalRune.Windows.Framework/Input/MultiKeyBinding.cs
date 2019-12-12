@@ -18,13 +18,13 @@ namespace DigitalRune.Windows.Framework
     public class MultiKeyBinding : InputBinding
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -82,11 +82,11 @@ namespace DigitalRune.Windows.Framework
                 Gesture = new MultiKeyGesture(((MultiKeyGesture)Gesture).Keys, value);
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -118,12 +118,12 @@ namespace DigitalRune.Windows.Framework
             : base(command, new MultiKeyGesture(keys, modifiers))
         {
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
-        #endregion
+
     }
 }

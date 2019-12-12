@@ -28,13 +28,13 @@ namespace DigitalRune.Graphics
   public abstract class WaterWaves : IDisposable
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------    
 
     /// <summary>
@@ -98,11 +98,11 @@ namespace DigitalRune.Graphics
     /// <see langword="false"/>.
     /// </value>
     public bool IsTiling { get; protected set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -148,12 +148,12 @@ namespace DigitalRune.Graphics
         NormalMap = null;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
-    #endregion
+
   }
 }

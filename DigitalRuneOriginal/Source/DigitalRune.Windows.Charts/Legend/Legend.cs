@@ -42,34 +42,34 @@ namespace DigitalRune.Windows.Charts
     public class Legend : Control
     {
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         /// <summary>
         /// The default value of the <see cref="Title"/> property.
         /// </summary>
         private const string DefaultTitle = "Legend";
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly BooleanToVisibilityConverter BooleanToVisibilityConverter = new BooleanToVisibilityConverter();
         private ReadOnlyObservableCollection<ChartElement> _chartElements;
         private Panel _itemsPanel;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties
+
         //--------------------------------------------------------------    
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Depencency Properties
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -164,11 +164,11 @@ namespace DigitalRune.Windows.Charts
             get { return (Style)GetValue(TitleStyleProperty); }
             set { SetValue(TitleStyleProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
 #if SILVERLIGHT
@@ -189,11 +189,11 @@ namespace DigitalRune.Windows.Charts
             DefaultStyleKeyProperty.OverrideMetadata(typeof(Legend), new FrameworkPropertyMetadata(typeof(Legend)));
         }
 #endif
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------   
 
         /// <summary>
@@ -291,6 +291,6 @@ namespace DigitalRune.Windows.Charts
                 _itemsPanel.Children.Add(legendItem);
             }
         }
-        #endregion
+
     }
 }

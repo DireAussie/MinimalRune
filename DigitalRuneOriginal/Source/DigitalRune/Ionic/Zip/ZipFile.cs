@@ -49,7 +49,7 @@ namespace DigitalRune.Ionic.Zip
     IDisposable
     {
 
-        #region public properties
+
 
         /// <summary>
         ///   Size of the IO buffer used while saving.
@@ -376,9 +376,9 @@ namespace DigitalRune.Ionic.Zip
 
             throw new NotSupportedException("ZIP files that span multiple disk files are not supported.");
         }
-        #endregion
 
-        #region Constructors
+
+
 
         /// <summary>
         ///   Create a zip file, without specifying a target filename or stream to save to.
@@ -412,11 +412,11 @@ namespace DigitalRune.Ionic.Zip
             // workitem 7685, 9868
             _initEntriesDictionary();
         }
-        #endregion
 
 
 
-        #region Indexers and Collections
+
+
 
         private List<ZipEntry> ZipEntriesAsList
         {
@@ -735,9 +735,9 @@ namespace DigitalRune.Ionic.Zip
             }
         }
 
-        #endregion
 
-        #region Destructors and Disposers
+
+
 
         /// <summary>
         ///   Closes the read and write streams associated
@@ -812,10 +812,10 @@ namespace DigitalRune.Ionic.Zip
                 this._disposed = true;
             }
         }
-        #endregion
 
 
-        #region private properties
+
+
 
         internal Stream ReadStream
         {
@@ -823,9 +823,9 @@ namespace DigitalRune.Ionic.Zip
         }
 
 
-        #endregion
 
-        #region private fields
+
+
         private bool _CaseSensitiveRetrieval;
         private Stream _readstream;
         private UInt32 _diskNumberWithCd;
@@ -859,7 +859,7 @@ namespace DigitalRune.Ionic.Zip
         /// </summary>
         public static readonly int BufferSizeDefault = 32768;
 
-        #endregion
+
     }
 
     /// <summary>

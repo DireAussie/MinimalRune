@@ -1,4 +1,4 @@
-﻿#region ----- Copyright -----
+﻿
 /*
   The class in this file is based on the WorkOptions from the ParallelTasks library (see 
   http://paralleltasks.codeplex.com/) which is licensed under Ms-PL (see below).
@@ -55,7 +55,7 @@
   contributors exclude the implied warranties of merchantability, fitness for a particular purpose 
   and non-infringement.  
 */
-#endregion
+
 
 using System;
 
@@ -128,7 +128,7 @@ namespace DigitalRune.Threading
     public bool QueueFIFO { get; set; }
 
 
-    #region ----- Equality Members -----
+
 
     /// <summary>
     /// Indicates whether the current object is equal to another object of the same type.
@@ -206,7 +206,7 @@ namespace DigitalRune.Threading
     {
       return !left.Equals(right);
     }
-    #endregion
+
   }
 }
 #endif

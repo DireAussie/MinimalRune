@@ -89,13 +89,13 @@ namespace DigitalRune.Graphics
   public abstract class TerrainLayer : IDisposable, IInternalTerrainLayer
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -324,11 +324,11 @@ namespace DigitalRune.Graphics
       }
     }
     private int _fadeOutEnd;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -383,11 +383,11 @@ namespace DigitalRune.Graphics
         IsDisposed = true;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -607,6 +607,6 @@ namespace DigitalRune.Graphics
 
       return parameterBinding;
     }
-    #endregion
+
   }
 }

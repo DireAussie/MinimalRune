@@ -19,7 +19,7 @@ namespace DigitalRune.Graphics.Content
   internal static class DataFormatHelper
   {
     //--------------------------------------------------------------
-    #region Data Conversion (Integer formats)
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -99,11 +99,11 @@ namespace DigitalRune.Graphics.Content
 
       return t1 | t2 | t3 | ta;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Data Conversion (Float <-> SInt, UInt, SNorm, UNorm)
+
     //--------------------------------------------------------------
 
     // References: 
@@ -273,7 +273,7 @@ namespace DigitalRune.Graphics.Content
 
       return (float)Math.Round(value, mode);
     }
-    #endregion
+
   }
 
 
@@ -299,7 +299,7 @@ namespace DigitalRune.Graphics.Content
   internal static partial class TextureHelper
   {
     //--------------------------------------------------------------
-    #region Texture Extensions
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -400,11 +400,11 @@ namespace DigitalRune.Graphics.Content
           throw new InvalidOperationException("Invalid texture dimension.");
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Mipmaps
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -516,11 +516,11 @@ namespace DigitalRune.Graphics.Content
 
       return true;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Texture Address Modes
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -567,11 +567,11 @@ namespace DigitalRune.Graphics.Content
 
       return x % width;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Texture Conversion
+
     //--------------------------------------------------------------
 
     // Note:
@@ -2950,11 +2950,11 @@ namespace DigitalRune.Graphics.Content
 
       throw new NotSupportedException(string.Format("Texture conversion from {0} to format {1} is not supported.", srcFormat, dstFormat));
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Block Compression
+
     //--------------------------------------------------------------
 
     // Reference: http://msdn.microsoft.com/en-us/library/bb694531.aspx
@@ -3425,11 +3425,11 @@ namespace DigitalRune.Graphics.Content
         }
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Mirror, Rotate
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -3706,11 +3706,11 @@ namespace DigitalRune.Graphics.Content
         }
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Processing
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -4610,6 +4610,6 @@ namespace DigitalRune.Graphics.Content
       }
       // ReSharper restore AccessToDisposedClosure
     }
-    #endregion
+
   }
 }

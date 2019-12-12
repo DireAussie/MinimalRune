@@ -21,13 +21,13 @@ namespace DigitalRune.Game.UI.Controls
   public abstract class ToggleButton : ButtonBase
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -50,11 +50,11 @@ namespace DigitalRune.Game.UI.Controls
         return IsChecked ? "Checked-Default" : "Unchecked-Default";
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Game Object Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary> 
@@ -79,11 +79,11 @@ namespace DigitalRune.Game.UI.Controls
       get { return GetValue<bool>(IsCheckedPropertyId); }
       set { SetValue(IsCheckedPropertyId, value); }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -93,11 +93,11 @@ namespace DigitalRune.Game.UI.Controls
     {
       Style = "ToggleButton";
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -117,6 +117,6 @@ namespace DigitalRune.Game.UI.Controls
     /// <see cref="IsChecked"/> property.
     /// </remarks>
     protected abstract void OnToggle();
-    #endregion
+
   }
 }

@@ -37,7 +37,7 @@ namespace DigitalRune.Animation.Character
     // TODO: Optimize: Do not cache the values for all bones. Only for the needed bones.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Cached values for the bone chain. Bones are sorted from root to tip.
@@ -52,11 +52,11 @@ namespace DigitalRune.Animation.Character
     private readonly List<SrtTransform> _originalBoneTransforms = new List<SrtTransform>();
     
     private bool _isDirty = true;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -124,17 +124,17 @@ namespace DigitalRune.Animation.Character
       }
     }
     private Vector3F _tipOffset;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -355,7 +355,7 @@ namespace DigitalRune.Animation.Character
             }
             else
             {
-              // Tip is very near and this bone can bend more than 180°. Add additional chain length
+              // Tip is very near and this bone can bend more than 180ï¿½. Add additional chain length
               // in radians.
               maxTipAngle = (float)Math.Acos(MathHelper.Clamp((a * 0.5f) / remainingChainLength, 0.0f, 1.0f));
               maxTipAngle += ((c - d) / a);
@@ -369,7 +369,7 @@ namespace DigitalRune.Animation.Character
             }
             else
             {
-              // Target is very near and this bone can bend more than 180°. Add additional chain 
+              // Target is very near and this bone can bend more than 180ï¿½. Add additional chain 
               // length in radians.
               maxTargetAngle = (float)Math.Acos(MathHelper.Clamp((a * 0.5f) / remainingChainLength, 0.0f, 1.0f));
               maxTargetAngle += ((c - b) / a);
@@ -455,8 +455,8 @@ namespace DigitalRune.Animation.Character
     ///// <returns></returns>
     //private float LimitValue(float value, float limit, float softening)
     //{
-    //  float tan225 = (float)Math.Tan(ConstantsF.PiOver4 / 2);  // tan(22.5°)
-    //  float sin45 = (float)Math.Sin(ConstantsF.PiOver4);       // sin(45°)
+    //  float tan225 = (float)Math.Tan(ConstantsF.PiOver4 / 2);  // tan(22.5ï¿½)
+    //  float sin45 = (float)Math.Sin(ConstantsF.PiOver4);       // sin(45ï¿½)
 
     //  softening = softening / (sin45 * tan225);
 
@@ -467,6 +467,6 @@ namespace DigitalRune.Animation.Character
 
     //  return (float)(limit + (softening * (Math.Cos(Math.Asin(tan225 + ((limit - value) / softening)))) - softening));
     //}
-    #endregion
+
   }
 }

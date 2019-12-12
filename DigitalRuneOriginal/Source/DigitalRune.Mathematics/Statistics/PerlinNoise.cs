@@ -68,7 +68,7 @@ namespace DigitalRune.Mathematics.Statistics
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -76,11 +76,11 @@ namespace DigitalRune.Mathematics.Statistics
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2105:ArrayFieldsShouldNotBeReadOnly")]
     public static readonly byte[] Permutation;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -113,14 +113,14 @@ namespace DigitalRune.Mathematics.Statistics
       Array.Copy(values, 0, Permutation, 0, 256);
       Array.Copy(values, 0, Permutation, 256, 256);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Static Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Private Helper Methods -----
+
 
     private static double Lerp(double source, double target, double parameter)
     {
@@ -173,7 +173,7 @@ namespace DigitalRune.Mathematics.Statistics
       double w = (h < 8) ? z : t;
       return ((h & 1) != 0 ? -u : u) + ((h & 2) != 0 ? -v : v) + ((h & 4) != 0 ? -w : w);
     }
-    #endregion
+
 
 
     /// <overloads>
@@ -774,6 +774,6 @@ namespace DigitalRune.Mathematics.Statistics
 
       return noiseValue;
     }
-    #endregion
+
   }
 }

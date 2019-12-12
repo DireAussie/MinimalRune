@@ -28,7 +28,7 @@ namespace DigitalRune.Graphics.Rendering
   internal sealed class RenderBatch<TVertex, TIndex> : IDisposable where TVertex : struct where TIndex : struct
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly VertexDeclaration _vertexDeclaration;
@@ -52,11 +52,11 @@ namespace DigitalRune.Graphics.Rendering
 
     // The primitive type of current batch.
     private PrimitiveType? _primitiveType;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -81,11 +81,11 @@ namespace DigitalRune.Graphics.Rendering
     /// </summary>
     /// <value>The indices (either <strong>ushort[]</strong> or <strong>int[]</strong>).</value>
     public TIndex[] Indices { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -176,11 +176,11 @@ namespace DigitalRune.Graphics.Rendering
       _indexBuffer.Dispose();
       IsDisposed = true;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -315,6 +315,6 @@ namespace DigitalRune.Graphics.Rendering
       if (vertexBufferBatchCapacity < 128 || indexBufferBatchCapacity < 128 * 3)
         Reset();
     }
-    #endregion
+
   }
 }

@@ -27,16 +27,16 @@ namespace DigitalRune.Game.States
     // runtime. --> It has been commented out.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Threshold for creating a lookup dictionary in the base NamedObjectCollection<T>.
     private const int DictionaryCreationThreshold = 8;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -185,11 +185,11 @@ namespace DigitalRune.Game.States
     //  }
     //}
     //private StateMachine _stateMachine;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -198,11 +198,11 @@ namespace DigitalRune.Game.States
     public StateCollection() : base(StringComparer.Ordinal, DictionaryCreationThreshold)
     {
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -536,6 +536,6 @@ namespace DigitalRune.Game.States
 
       return GetCollection(stateA.Owner.Owner, stateB.Owner.Owner);
     }
-    #endregion
+
   }
 }

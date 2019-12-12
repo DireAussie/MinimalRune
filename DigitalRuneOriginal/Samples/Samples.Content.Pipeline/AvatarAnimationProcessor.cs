@@ -1,5 +1,5 @@
 #if XNA
-#region License
+
 // This file extends the CustomAvatarAnimationProcessor.cs from the 
 // AppHub Custom Avatar Animation Sample which is licensed under the.
 // Microsoft Permissive License (Ms-PL, see http://create.msdn.com/downloads/?id=15) 
@@ -11,7 +11,7 @@
 // Microsoft XNA Community Game Platform
 // Copyright (C) Microsoft Corporation. All rights reserved.
 //-----------------------------------------------------------------------------
-#endregion
+
 
 
 using System;
@@ -37,7 +37,7 @@ namespace Samples.Content.Pipeline
   public class AvatarAnimation : ContentProcessor<NodeContent, TimelineGroup>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // The bone bind poses.
@@ -45,11 +45,11 @@ namespace Samples.Content.Pipeline
 
     // A mapping between bone names and indices.
     private Dictionary<string, int> _boneNames;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     [DisplayName("Facial expression file")]
@@ -88,11 +88,11 @@ namespace Samples.Content.Pipeline
       set { _compressionScaleThreshold = value; }
     }
     private float _compressionScaleThreshold = -1;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region General Methods
+
     //--------------------------------------------------------------
 
     public override TimelineGroup Process(NodeContent input, ContentProcessorContext context)
@@ -145,11 +145,11 @@ namespace Samples.Content.Pipeline
 
       return timelineGroup;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Skeleton Processing
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -267,11 +267,11 @@ namespace Samples.Content.Pipeline
       // return the flattened array of bones
       return bones;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Avatar Expression Animation
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -339,11 +339,11 @@ namespace Samples.Content.Pipeline
 
       return animation;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Avatar Skeleton Animation
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -461,7 +461,7 @@ namespace Samples.Content.Pipeline
 
       return keyframeMatrix;
     }
-    #endregion
+
   }
 }
 #endif

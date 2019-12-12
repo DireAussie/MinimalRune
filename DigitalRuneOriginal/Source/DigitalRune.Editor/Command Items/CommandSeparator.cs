@@ -19,13 +19,13 @@ namespace DigitalRune.Editor
 
 
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -80,11 +80,11 @@ namespace DigitalRune.Editor
             get { return true; }
             set { throw new NotSupportedException(); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -101,11 +101,11 @@ namespace DigitalRune.Editor
 
             Name = name;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -120,6 +120,6 @@ namespace DigitalRune.Editor
         {
             return new ToolBarSeparatorViewModel(this);
         }
-        #endregion
+
     }
 }

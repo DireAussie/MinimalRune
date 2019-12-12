@@ -93,7 +93,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
       // otherwise the normal will be computed later.
       Vector3F normal = Vector3F.Zero;
 
-      #region ----- Look for the point p of the box that is closest to center of the sphere. -----
+
       Vector3F boxHalfExtent = 0.5f * boxExtent;
 
       // x component
@@ -190,7 +190,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
           }
         }
       }
-      #endregion
+
       
       // ----- Convert back to world space
       p = boxPose.ToWorldPosition(p);

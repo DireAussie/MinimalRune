@@ -22,13 +22,13 @@ namespace DigitalRune.Game
   public struct GameEventCollection : IEnumerable<IGameEvent>, IEquatable<GameEventCollection>
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -40,11 +40,11 @@ namespace DigitalRune.Game
       get { return _owner; }
     }
     private readonly GameObject _owner;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -57,11 +57,11 @@ namespace DigitalRune.Game
       
       _owner = owner;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -433,6 +433,6 @@ namespace DigitalRune.Game
     {
       return collection1._owner != collection2._owner;
     }
-    #endregion
+
   }
 }

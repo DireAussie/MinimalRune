@@ -139,7 +139,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
         {
           if (compositeShapeB != null && compositeShapeB.Partition != null)
           {
-            #region ----- Composite with BVH vs. Composite with BVH -----
+
 
             Debug.Assert(swapped == false, "Why did we swap the objects? Order of objects is fine.");
 
@@ -215,11 +215,11 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
 
               ClosestPointsCallbacks.Recycle(callback);
             }
-            #endregion
+
           }
           else
           {
-            #region ----- Composite with BVH vs. * -----
+
 
             // Compute AABB of B in local space of the CompositeShape.
             Aabb aabbBInA = geometricObjectB.Shape.GetAabb(
@@ -269,12 +269,12 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
 
               ClosestPointsCallbacks.Recycle(callback);
             }
-            #endregion
+
           }
         }
         else
         {
-          #region ----- Composite vs. *-----
+
 
           // Compute AABB of B in local space of the composite.
           Aabb aabbBInA = geometricObjectB.Shape.GetAabb(scaleB, geometricObjectA.Pose.Inverse * geometricObjectB.Pose);
@@ -318,7 +318,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
                 break;
             }
           }
-          #endregion
+
         }
       }
       finally

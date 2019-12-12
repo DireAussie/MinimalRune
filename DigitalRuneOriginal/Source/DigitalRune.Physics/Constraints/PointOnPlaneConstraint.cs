@@ -27,15 +27,15 @@ namespace DigitalRune.Physics.Constraints
   public class PointOnPlaneConstraint : Constraint
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly LinearLimit _linearLimit;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -326,11 +326,11 @@ namespace DigitalRune.Physics.Constraints
         return new Vector2F(relativePosition.X, relativePosition.Y);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -344,11 +344,11 @@ namespace DigitalRune.Physics.Constraints
         Maximum = new Vector3F(float.PositiveInfinity, float.PositiveInfinity, 0),
       };
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -390,6 +390,6 @@ namespace DigitalRune.Physics.Constraints
 
       base.OnChanged();
     }
-    #endregion
+
   }
 }

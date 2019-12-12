@@ -19,13 +19,13 @@ namespace DigitalRune.Physics.ForceEffects
   public class DampedSpring : ForceEffect
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -83,7 +83,7 @@ namespace DigitalRune.Physics.ForceEffects
     public float SpringConstant { get; set; }
 
 
-    #region ----- Optional new properties -----
+
     //        /// <summary>
     //        /// Not implemented yet.
     //        /// </summary>
@@ -115,13 +115,13 @@ namespace DigitalRune.Physics.ForceEffects
     //        {
     //            set { throw new NotImplementedException(); }
     //        }
-    #endregion
 
-    #endregion
+
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -132,11 +132,11 @@ namespace DigitalRune.Physics.ForceEffects
       DampingConstant = 1.6f;
       SpringConstant = 2;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -193,6 +193,6 @@ namespace DigitalRune.Physics.ForceEffects
       if (BodyB != null && BodyB.MotionType == MotionType.Dynamic)
         AddForce(BodyB, -force, worldPosB);
     }
-    #endregion
+
   }
 }

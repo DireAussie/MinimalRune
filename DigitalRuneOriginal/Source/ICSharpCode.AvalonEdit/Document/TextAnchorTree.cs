@@ -77,7 +77,7 @@ namespace ICSharpCode.AvalonEdit.Document
 			Debug.WriteLine("TextAnchorTree: " + text);
 		}
 		
-		#region Insert Text
+
 		void InsertText(int offset, int length, bool defaultAnchorMovementIsBeforeInsertion)
 		{
 			if (length == 0 || root == null || offset > root.totalLength)
@@ -189,9 +189,9 @@ namespace ICSharpCode.AvalonEdit.Document
 				}
 			}
 		}
-		#endregion
+
 		
-		#region Remove or Replace text
+
 		public void HandleTextChange(OffsetChangeMapEntry entry, DelayedEvents delayedEvents)
 		{
 			//Log("HandleTextChange(" + entry + ")");
@@ -276,9 +276,9 @@ namespace ICSharpCode.AvalonEdit.Document
 			}
 			DeleteMarkedNodes();
 		}
-		#endregion
+
 		
-		#region Node removal when TextAnchor was GC'ed
+
 		void MarkNodeForDelete(TextAnchorNode node)
 		{
 			if (!nodesToDelete.Contains(node))
@@ -305,9 +305,9 @@ namespace ICSharpCode.AvalonEdit.Document
 			}
 			CheckProperties();
 		}
-		#endregion
+
 		
-		#region FindNode
+
 		/// <summary>
 		/// Finds the node at the specified offset.
 		/// After the method has run, offset is relative to the beginning of the returned node.
@@ -339,9 +339,9 @@ namespace ICSharpCode.AvalonEdit.Document
 				}
 			}
 		}
-		#endregion
+
 		
-		#region UpdateAugmentedData
+
 		void UpdateAugmentedData(TextAnchorNode n)
 		{
 			if (!n.IsAlive)
@@ -358,9 +358,9 @@ namespace ICSharpCode.AvalonEdit.Document
 					UpdateAugmentedData(n.parent);
 			}
 		}
-		#endregion
+
 		
-		#region CreateAnchor
+
 		public TextAnchor CreateAnchor(int offset)
 		{
 			Log("CreateAnchor(" + offset + ")");
@@ -395,9 +395,9 @@ namespace ICSharpCode.AvalonEdit.Document
 				InsertAsRight(node.left.RightMost, newNode);
 			}
 		}
-		#endregion
+
 		
-		#region Red/Black Tree
+
 		internal const bool RED = true;
 		internal const bool BLACK = false;
 		
@@ -669,9 +669,9 @@ namespace ICSharpCode.AvalonEdit.Document
 		{
 			return node != null ? node.color : BLACK;
 		}
-		#endregion
+
 		
-		#region CheckProperties
+
 		[Conditional("DATACONSISTENCYTEST")]
 		internal void CheckProperties()
 		{
@@ -731,9 +731,9 @@ namespace ICSharpCode.AvalonEdit.Document
 			CheckNodeProperties(node.right, node, node.color, blackCount, ref expectedBlackCount);
 		}
 		#endif
-		#endregion
+
 		
-		#region GetTreeAsString
+
 		#if DEBUG
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
 		public string GetTreeAsString()
@@ -765,6 +765,6 @@ namespace ICSharpCode.AvalonEdit.Document
 			}
 		}
 		#endif
-		#endregion
+
 	}
 }

@@ -19,13 +19,13 @@ namespace DigitalRune.CommandLine
     public class BoundedValueArgument<T> : ValueArgument<T> where T : struct, IComparable<T>
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -40,11 +40,11 @@ namespace DigitalRune.CommandLine
         /// </summary>
         /// <value>The maximal value.</value>
         public T Max { get; set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -77,11 +77,11 @@ namespace DigitalRune.CommandLine
             Min = min;
             Max = max;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -127,6 +127,6 @@ namespace DigitalRune.CommandLine
 
             return sb.ToString();
         }
-        #endregion
+
     }
 }

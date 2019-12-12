@@ -29,13 +29,13 @@ namespace DigitalRune.Graphics.Effects
   public class EffectTechniqueDescription
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -133,11 +133,11 @@ namespace DigitalRune.Graphics.Effects
     /// </remarks>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Justification = "Instancing is currently missing in MonoGame. Will be added in the future.")]
     public EffectTechnique InstancingTechnique { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -203,11 +203,11 @@ namespace DigitalRune.Graphics.Effects
       }
 #endif
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -226,6 +226,6 @@ namespace DigitalRune.Graphics.Effects
       string message = string.Format(CultureInfo.InvariantCulture, "The effect technique \"{0}\" does not belong to the effect \"{1}\".", technique.Name, effect.Name);
       throw new ArgumentException(message, "technique");
     }
-    #endregion
+
   }
 }

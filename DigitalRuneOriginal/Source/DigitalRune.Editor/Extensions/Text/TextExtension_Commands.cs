@@ -17,17 +17,17 @@ namespace DigitalRune.Editor.Text
     partial class TextExtension
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private bool _showCommands = true;
         private MergeableNodeCollection<ICommandItem> _menuNodes;
         private SyntaxHighlightingItem _syntaxHighlightingItem;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private void AddCommands()
@@ -261,6 +261,6 @@ namespace DigitalRune.Editor.Text
                 textEditor.TextArea.Caret.BringCaretToView();
             }
         }
-        #endregion
+
     }
 }

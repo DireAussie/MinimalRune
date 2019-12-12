@@ -20,7 +20,7 @@ namespace DigitalRune.Editor.Models
     public sealed class ModelsExtension : EditorExtension
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
@@ -28,11 +28,11 @@ namespace DigitalRune.Editor.Models
         private IDocumentService _documentService;
         private ResourceDictionary _resourceDictionary;
         private ModelDocumentFactory _textureDocumentFactory;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         internal bool UseDigitalRuneGraphics
@@ -40,11 +40,11 @@ namespace DigitalRune.Editor.Models
             get { return Settings.Default.ModelDocumentUsesDigitalRune; }
             set { Settings.Default.ModelDocumentUsesDigitalRune = value; }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -54,11 +54,11 @@ namespace DigitalRune.Editor.Models
         {
             Logger.Debug("Initializing ModelsExtension.");
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -128,6 +128,6 @@ namespace DigitalRune.Editor.Models
         {
             return null;
         }
-        #endregion
+
     }
 }

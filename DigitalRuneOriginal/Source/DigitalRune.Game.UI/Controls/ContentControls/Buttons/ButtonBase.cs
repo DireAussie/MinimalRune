@@ -29,13 +29,13 @@ namespace DigitalRune.Game.UI.Controls
   public class ButtonBase : ContentControl
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -58,11 +58,11 @@ namespace DigitalRune.Game.UI.Controls
         return "Default";
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Game Object Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary> 
@@ -163,11 +163,11 @@ namespace DigitalRune.Game.UI.Controls
         click.Event -= value;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -198,11 +198,11 @@ namespace DigitalRune.Game.UI.Controls
       var isVisible = Properties.Get<bool>(IsVisiblePropertyId);
       isVisible.Changed += OnDisable;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private void OnDisable(object sender, GamePropertyEventArgs<bool> eventArgs)
@@ -384,6 +384,6 @@ namespace DigitalRune.Game.UI.Controls
       var click = Events.Get<EventArgs>(ClickEventId);
       click.Raise();
     }
-    #endregion
+
   }
 }

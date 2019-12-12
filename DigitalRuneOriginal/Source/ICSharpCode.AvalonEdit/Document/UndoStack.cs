@@ -50,7 +50,7 @@ namespace ICSharpCode.AvalonEdit.Document
 		object lastGroupDescriptor;
 		bool allowContinue;
 		
-		#region IsOriginalFile implementation
+
 		// implements feature request SD2-784 - File still considered dirty after undoing all changes
 		
 		/// <summary>
@@ -107,7 +107,7 @@ namespace ICSharpCode.AvalonEdit.Document
 			
 			// don't call RecalcIsOriginalFile(): wait until end of undo group
 		}
-		#endregion
+
 		
 		/// <summary>
 		/// Gets if the undo stack currently accepts changes.

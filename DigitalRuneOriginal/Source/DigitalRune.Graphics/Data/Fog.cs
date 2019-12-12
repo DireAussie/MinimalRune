@@ -64,13 +64,13 @@ namespace DigitalRune.Graphics
 
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -270,11 +270,11 @@ namespace DigitalRune.Graphics
     /// sun.
     /// </remarks>
     public Vector3F ScatteringSymmetry { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -291,14 +291,14 @@ namespace DigitalRune.Graphics
       Start = 0;
       End = 50;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <summary>
     /// Creates a new <see cref="Fog"/> that is a clone (deep copy) of the current instance.
@@ -402,7 +402,7 @@ namespace DigitalRune.Graphics
       ScatteringSymmetry = source.ScatteringSymmetry;
       // Density0 and Density1 are computed from Density and HeightFalloff.
     }
-    #endregion
+
 
 
     // Computes Density0/1 from Density and HeightFalloff.
@@ -508,6 +508,6 @@ namespace DigitalRune.Graphics
       opticalLength = MathHelper.Clamp(opticalLength, 0, 1e16f);
       return opticalLength;
     }
-    #endregion
+
   }
 }

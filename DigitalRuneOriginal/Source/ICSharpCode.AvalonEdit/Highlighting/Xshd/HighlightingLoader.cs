@@ -27,7 +27,7 @@ namespace ICSharpCode.AvalonEdit.Highlighting.Xshd
 	/// </summary>
 	public static class HighlightingLoader
 	{
-		#region XSHD loading
+
 		/// <summary>
 		/// Lodas a syntax definition from the xml reader.
 		/// </summary>
@@ -89,9 +89,9 @@ namespace ICSharpCode.AvalonEdit.Highlighting.Xshd
 			};
 			return schemaSet;
 		}
-		#endregion
+
 		
-		#region Load Highlighting from XSHD
+
 		/// <summary>
 		/// Creates a highlighting definition from the XSHD file.
 		/// </summary>
@@ -109,6 +109,6 @@ namespace ICSharpCode.AvalonEdit.Highlighting.Xshd
 		{
 			return Load(LoadXshd(reader), resolver);
 		}
-		#endregion
+
 	}
 }

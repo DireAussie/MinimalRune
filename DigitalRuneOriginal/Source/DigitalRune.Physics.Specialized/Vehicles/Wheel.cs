@@ -33,16 +33,16 @@ namespace DigitalRune.Physics.Specialized
   public class Wheel
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // The chassis to which the wheel is attached.
     private RigidBody _chassis;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Constant Input Properties
+
     //--------------------------------------------------------------
 
     // 
@@ -227,11 +227,11 @@ namespace DigitalRune.Physics.Specialized
     }
     private Vector3F _offset;
     
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Driving Input Properties
+
     //--------------------------------------------------------------
 
     //
@@ -268,11 +268,11 @@ namespace DigitalRune.Physics.Specialized
     /// A value greater than 0 makes the car slow down. 
     /// </remarks>
     public float BrakeForce { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Simulation Properties
+
     //--------------------------------------------------------------
 
     //
@@ -342,11 +342,11 @@ namespace DigitalRune.Physics.Specialized
         }
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Simulation Result Properties
+
     //--------------------------------------------------------------
 
     //
@@ -473,11 +473,11 @@ namespace DigitalRune.Physics.Specialized
     /// </para>
     /// </remarks>
     public float SkidEnergy { get; internal set; }
-    #endregion
+
     
     
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -508,11 +508,11 @@ namespace DigitalRune.Physics.Specialized
       GeometricObject = new GeometricObject(Ray);
       CollisionObject = new CollisionObject(GeometricObject);
     }    
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     // Called when the Chassis RigidBody changes.
@@ -573,6 +573,6 @@ namespace DigitalRune.Physics.Specialized
         SuspensionLength = SuspensionRestLength;
       }
     }
-    #endregion
+
   }
 }

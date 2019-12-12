@@ -21,7 +21,7 @@ namespace DigitalRune.Graphics.Interop
   internal class D3D11Image : D3DImage, IDisposable
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly bool _enableAlpha;
@@ -52,11 +52,11 @@ namespace DigitalRune.Graphics.Interop
 
     // Workaround for WPF bug.
     private bool _isLocked;   // Set in BeginRender()/EndRender().
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -90,11 +90,11 @@ namespace DigitalRune.Graphics.Interop
     /// </para>
     /// </remarks>
     public bool IsSynchronized { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -170,11 +170,11 @@ namespace DigitalRune.Graphics.Interop
         IsDisposed = true;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     ///// <summary>
@@ -493,7 +493,7 @@ namespace DigitalRune.Graphics.Interop
       _renderTarget.GetData(data);
       return true;
     }
-    #endregion
+
   }
 }
 #endif

@@ -27,7 +27,7 @@ namespace DigitalRune.Windows.Framework
     public class MousePanBehavior : Behavior<UIElement>
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         // TODO: Store all cursors in one place to save memory.
@@ -39,11 +39,11 @@ namespace DigitalRune.Windows.Framework
         private Point _mouseDownPosition = new Point(double.NaN, double.NaN);
         private Point _originalScrollOffset = new Point(double.NaN, double.NaN);
         private ScrollViewer _scrollViewer;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -141,11 +141,11 @@ namespace DigitalRune.Windows.Framework
             set { SetValue(MouseButtonProperty, value); }
         }
 #endif
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -161,11 +161,11 @@ namespace DigitalRune.Windows.Framework
             if (streamResourceInfo != null)
                 _grabbedCursor = new Cursor(streamResourceInfo.Stream);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -410,6 +410,6 @@ namespace DigitalRune.Windows.Framework
                    && (MouseButton == MouseButton.XButton2) == (Mouse.XButton2 == MouseButtonState.Pressed);
 #endif
         }
-        #endregion
+
     }
 }

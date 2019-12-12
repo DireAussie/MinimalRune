@@ -67,13 +67,13 @@ namespace DigitalRune.Graphics.SceneGraph
   public class SceneCaptureNode : RenderToTextureNode
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -97,11 +97,11 @@ namespace DigitalRune.Graphics.SceneGraph
       get { return base.Shape; }
       set { base.Shape = value; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -115,14 +115,14 @@ namespace DigitalRune.Graphics.SceneGraph
       : base(renderToTexture)
     {
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc cref="SceneNode.Clone"/>
     public new SceneCaptureNode Clone()
@@ -148,8 +148,8 @@ namespace DigitalRune.Graphics.SceneGraph
       var sourceTyped = (SceneCaptureNode)source;
       CameraNode = sourceTyped.CameraNode;
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

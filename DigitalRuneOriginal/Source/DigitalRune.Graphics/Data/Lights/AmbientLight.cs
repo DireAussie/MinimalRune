@@ -45,13 +45,13 @@ namespace DigitalRune.Graphics
   public class AmbientLight : Light
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -134,11 +134,11 @@ namespace DigitalRune.Graphics
     /// 30% intensity and only surface points with up point normals are lit with 100% intensity.
     /// </remarks>
     public float HemisphericAttenuation { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -151,14 +151,14 @@ namespace DigitalRune.Graphics
       HdrScale = 1;
       HemisphericAttenuation = 0.7f;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Light CreateInstanceCore()
@@ -182,7 +182,7 @@ namespace DigitalRune.Graphics
       HemisphericAttenuation = sourceTyped.HemisphericAttenuation;
       Shape = source.Shape.Clone();
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -190,6 +190,6 @@ namespace DigitalRune.Graphics
     {
       return Color * (Intensity * HdrScale);
     }
-    #endregion
+
   }
 }

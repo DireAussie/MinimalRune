@@ -16,19 +16,19 @@ namespace DigitalRune.Graphics.Rendering
   internal sealed class BillboardBatchHiDef : BillboardBatch<BillboardVertex>
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -47,11 +47,11 @@ namespace DigitalRune.Graphics.Rendering
       : base(graphicsDevice, bufferSize)
     {
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
 
@@ -142,6 +142,6 @@ namespace DigitalRune.Graphics.Rendering
       v.TextureCoordinate.Y = 1;
       vertices[index] = v;
     }
-    #endregion
+
   }
 }

@@ -15,7 +15,7 @@ namespace DigitalRune.Windows.Charts
     partial class ChartPanel
     {
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <overrides>
@@ -384,6 +384,6 @@ namespace DigitalRune.Windows.Charts
             return visualHits;
         }
 #endif
-        #endregion
+
     }
 }

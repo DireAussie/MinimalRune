@@ -49,18 +49,18 @@ namespace DigitalRune.Particles.Effectors
   public class Vector3FLerpEffector : ParticleEffector
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private IParticleParameter<Vector3F> _startParameter;
     private IParticleParameter<Vector3F> _endParameter;
     private IParticleParameter<Vector3F> _valueParameter;
     private IParticleParameter<float> _factorParameter;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -129,11 +129,11 @@ namespace DigitalRune.Particles.Effectors
     /// </remarks>
     [ParticleParameter(ParticleParameterUsage.In)]
     public string FactorParameter { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -143,11 +143,11 @@ namespace DigitalRune.Particles.Effectors
     {
       FactorParameter = ParticleParameterNames.NormalizedAge;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -266,6 +266,6 @@ namespace DigitalRune.Particles.Effectors
         }
       }
     }
-    #endregion
+
   }
 }

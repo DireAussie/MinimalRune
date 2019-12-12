@@ -59,7 +59,7 @@ namespace DigitalRune.Graphics
     //  - No Clone() mechanism.
 
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     internal sealed class MorphWeightCollectionView
@@ -185,20 +185,20 @@ namespace DigitalRune.Graphics
         _current = new KeyValuePair<string, float>();
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly string[] _names;
     private readonly MorphWeight[] _weights;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -237,11 +237,11 @@ namespace DigitalRune.Graphics
       get { return _weights[GetIndexOrThrow(name)].Value; }
       set { _weights[GetIndexOrThrow(name)].Value = value; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -304,11 +304,11 @@ namespace DigitalRune.Graphics
       for (int i = 0; i < weights.Length; i++)
         _weights[i] = new MorphWeight { Value = weights[i].Value };
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private static string[] GetMorphTargetNames(Mesh mesh)
@@ -403,7 +403,7 @@ namespace DigitalRune.Graphics
     }
 
 
-    #region ----- IAnimatableObject -----
+
 
     /// <inheritdoc/>
     IEnumerable<IAnimatableProperty> IAnimatableObject.GetAnimatedProperties()
@@ -426,10 +426,10 @@ namespace DigitalRune.Graphics
 
       return null;
     }
-    #endregion
 
 
-    #region ----- IEnumerable<T> -----
+
+
 
     /// <summary>
     /// Returns an enumerator that iterates through the morph target weights.
@@ -465,8 +465,8 @@ namespace DigitalRune.Graphics
     {
       return GetEnumerator();
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

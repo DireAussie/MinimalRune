@@ -89,17 +89,17 @@ namespace DigitalRune.Graphics.Rendering
 
 
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     // Render pass names.
     internal const string RenderPassBase = "Base";
     internal const string RenderPassDetail = "Detail";
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // 4 render target binding arrays for 1 to 4 render targets at once.
@@ -136,20 +136,20 @@ namespace DigitalRune.Graphics.Rendering
     private readonly TerrainClearLayer _clearLayer;
 
     private EffectBinding _previousMaterialBinding;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     // 8 pixel border supports 16x anisotropic filtering.
     private const int Border = 8;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -173,11 +173,11 @@ namespace DigitalRune.Graphics.Rendering
 
       _clearLayer = new TerrainClearLayer(graphicsService);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -729,7 +729,7 @@ namespace DigitalRune.Graphics.Rendering
       graphicsDevice.RasterizerState = RasterizerStateCullNoneWithScissorTest;
       graphicsDevice.DepthStencilState = DepthStencilState.None;
 
-      #region ----- Effect binding updates -----
+
 
       // Get the EffectBindings and the Effect for the current render pass.
       EffectBinding materialInstanceBinding = layer.MaterialInstance[context.RenderPass];
@@ -798,7 +798,7 @@ namespace DigitalRune.Graphics.Rendering
       techniqueBinding.Update(context);
       var technique = techniqueBinding.GetTechnique(effect, context);
       effect.CurrentTechnique = technique;
-      #endregion
+
 
       int border = isBaseClipmap ? 0 : Border;
 
@@ -975,7 +975,7 @@ namespace DigitalRune.Graphics.Rendering
 
       return new Rectangle(rectX0, rectY0, (rectX1 - rectX0), (rectY1 - rectY0));
     }
-    #endregion
+
   }
 }
 #endif

@@ -20,7 +20,7 @@ namespace DigitalRune.Graphics.Rendering
     internal class Accessor : IList<SceneNode>
     {
       //--------------------------------------------------------------
-      #region Nested Types
+
       //--------------------------------------------------------------
 
       private class Enumerator : IEnumerator<SceneNode>
@@ -79,22 +79,22 @@ namespace DigitalRune.Graphics.Rendering
           _current = null;
         }
       }
-      #endregion
+
 
 
       //--------------------------------------------------------------
-      #region Fields
+
       //--------------------------------------------------------------
 
       private const string MessageListIsReadOnly = "The list is read-only.";
       private Job[] _jobs;
       private int _startInclusive;
       private int _endExclusive;
-      #endregion
+
 
 
       //--------------------------------------------------------------
-      #region Properties & Events
+
       //--------------------------------------------------------------
 
       public int Count
@@ -114,17 +114,17 @@ namespace DigitalRune.Graphics.Rendering
         get { return _jobs[_startInclusive + index].Node; }
         set { throw new NotSupportedException(MessageListIsReadOnly); }
       }
-      #endregion
 
-
-      //--------------------------------------------------------------
-      #region Creation & Cleanup
-      //--------------------------------------------------------------
-      #endregion
 
 
       //--------------------------------------------------------------
-      #region Methods
+
+      //--------------------------------------------------------------
+
+
+
+      //--------------------------------------------------------------
+
       //--------------------------------------------------------------
 
       /// <summary>
@@ -234,7 +234,7 @@ namespace DigitalRune.Graphics.Rendering
       {
         throw new NotSupportedException(MessageListIsReadOnly);
       }
-      #endregion
+
     }
   }
 }

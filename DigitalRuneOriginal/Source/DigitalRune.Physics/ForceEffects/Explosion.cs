@@ -31,13 +31,13 @@ namespace DigitalRune.Physics.ForceEffects
     // TODO: Make auto-removal optional.
     
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -77,11 +77,11 @@ namespace DigitalRune.Physics.ForceEffects
     /// radius where it reaches 0. Bodies outside this radius are not affected.
     /// </remarks>
     public float Radius { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -121,11 +121,11 @@ namespace DigitalRune.Physics.ForceEffects
       EndTime = TimeSpan.MinValue;
       Radius = 5;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -196,6 +196,6 @@ namespace DigitalRune.Physics.ForceEffects
       var force = Force * attenuation * explosionToBody;
       AddForce(body, force);
     }
-    #endregion
+
   }
 }

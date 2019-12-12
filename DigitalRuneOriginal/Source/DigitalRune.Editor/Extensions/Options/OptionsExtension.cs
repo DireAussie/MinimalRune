@@ -27,18 +27,18 @@ namespace DigitalRune.Editor.Options
     public sealed partial class OptionsExtension : EditorExtension, IOptionsService
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
         private IWindowService _windowService;
         private MergeableNodeCollection<ICommandItem> _menuNodes;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         private OptionsViewModel Options
@@ -56,17 +56,17 @@ namespace DigitalRune.Editor.Options
 
         /// <inheritdoc/>
         public ICollection<MergeableNodeCollection<OptionsPageViewModel>> OptionsNodeCollections { get; } = new List<MergeableNodeCollection<OptionsPageViewModel>>();
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Creation & Cleanup
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Methods
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -176,6 +176,6 @@ namespace DigitalRune.Editor.Options
 
             Logger.Info("Options dialog closed.");
         }
-        #endregion
+
     }
 }

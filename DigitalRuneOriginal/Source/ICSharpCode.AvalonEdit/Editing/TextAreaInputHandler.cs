@@ -145,7 +145,7 @@ namespace ICSharpCode.AvalonEdit.Editing
 			get { return isAttached; }
 		}
 		
-		#region CommandBindings / InputBindings
+
 		/// <summary>
 		/// Gets the command bindings of this input handler.
 		/// </summary>
@@ -196,9 +196,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 			this.CommandBindings.Add(new CommandBinding(command, handler));
 			this.InputBindings.Add(new KeyBinding(command, key, modifiers));
 		}
-		#endregion
+
 		
-		#region NestedInputHandlers
+
 		/// <summary>
 		/// Gets the collection of nested input handlers. NestedInputHandlers are activated and deactivated
 		/// together with this input handler.
@@ -222,9 +222,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 			if (isAttached)
 				handler.Detach();
 		}
-		#endregion
+
 		
-		#region Attach/Detach
+
 		/// <inheritdoc/>
 		public virtual void Attach()
 		{
@@ -252,6 +252,6 @@ namespace ICSharpCode.AvalonEdit.Editing
 			foreach (ITextAreaInputHandler handler in nestedInputHandlers)
 				handler.Detach();
 		}
-		#endregion
+
 	}
 }

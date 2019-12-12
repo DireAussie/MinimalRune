@@ -20,15 +20,15 @@ namespace DigitalRune.Editor.Colors
     internal class ColorViewModel : EditorDockTabItemViewModel
     {
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         internal const string DockIdString = "ColorPicker";
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly IMessageBus _messageBus;
@@ -38,11 +38,11 @@ namespace DigitalRune.Editor.Colors
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         private IDisposable _subscription;
         private bool _acceptColors;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -89,11 +89,11 @@ namespace DigitalRune.Editor.Colors
             }
         }
         private Color _color;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -118,11 +118,11 @@ namespace DigitalRune.Editor.Colors
             if (_messageBus != null)
                 _subscription = _messageBus.Listen<Color>().Subscribe(ReceiveColor);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -159,6 +159,6 @@ namespace DigitalRune.Editor.Colors
             _messageBus.Publish(color);
             _acceptColors = true;
         }
-        #endregion
+
     }
 }

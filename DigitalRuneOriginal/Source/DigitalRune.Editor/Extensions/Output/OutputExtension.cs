@@ -31,30 +31,30 @@ namespace DigitalRune.Editor.Output
     public sealed class OutputExtension : EditorExtension
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private ResourceDictionary _resourceDictionary;
         private OutputViewModel _output;
         private MergeableNodeCollection<ICommandItem> _menuNodes;
         private MergeableNodeCollection<ICommandItem> _toolBarNodes;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Methods
+
+
+
+        //--------------------------------------------------------------
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -180,6 +180,6 @@ namespace DigitalRune.Editor.Output
 
             return null;
         }
-        #endregion
+
     }
 }

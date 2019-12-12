@@ -34,7 +34,7 @@ namespace DigitalRune.Collections
   public class Deque<T> : IList<T>, ICollection
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -159,11 +159,11 @@ namespace DigitalRune.Collections
         _current = default(T);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // ReSharper disable StaticFieldInGenericType
@@ -177,11 +177,11 @@ namespace DigitalRune.Collections
     private int _version;
 
     private object _syncRoot;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -335,11 +335,11 @@ namespace DigitalRune.Collections
         _version++;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -394,11 +394,11 @@ namespace DigitalRune.Collections
 
       _array = new T[capacity];
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -864,7 +864,7 @@ namespace DigitalRune.Collections
     }
 
 
-    #region ----- Unsupported ICollection<T> methods -----
+
 
     /// <summary>
     /// Removes the first occurrence of a specific object from the <see cref="ICollection{T}"/>.
@@ -885,10 +885,10 @@ namespace DigitalRune.Collections
     {
       throw new NotSupportedException("Deque<T> does not support direct removal of items. Use DequeueHead or DequeueTail instead.");
     }
-    #endregion
+
     
 
-    #region ----- Unsupported IList<T> methods -----
+
 
     /// <summary>
     /// Inserts an item into the <see cref="IList{T}"/> at the specified index.
@@ -929,8 +929,8 @@ namespace DigitalRune.Collections
     {
       throw new NotSupportedException("Deque<T> does not support direct removal of items. Use DequeueHead or DequeueTail instead.");
     }
-    #endregion
+
     
-    #endregion
+
   }
 }

@@ -1,4 +1,4 @@
-﻿#region ----- Copyright -----
+﻿
 /*
   The class in this file is based on the Worker from the ParallelTasks library (see 
   http://paralleltasks.codeplex.com/) which is licensed under Ms-PL (see below).
@@ -55,7 +55,7 @@
   contributors exclude the implied warranties of merchantability, fitness for a particular purpose 
   and non-infringement.  
 */
-#endregion
+
 
 #if !NETFX_CORE && !PORTABLE && !USE_TPL
 using System;

@@ -41,7 +41,7 @@ namespace ICSharpCode.AvalonEdit.Utils
 		// Also possible is to remove the count field and calculate it as totalCount-left.totalCount-right.totalCount
 		// - but that would make tree manipulations more difficult to handle.
 		
-		#region Node definition
+
 		sealed class Node
 		{
 			internal Node left, right, parent;
@@ -119,9 +119,9 @@ namespace ICSharpCode.AvalonEdit.Utils
 				return "[TotalCount=" + totalCount + " Count=" + count + " Value=" + value + "]";
 			}
 		}
-		#endregion
+
 		
-		#region Fields and Constructor
+
 		readonly Func<T, T, bool> comparisonFunc;
 		Node root;
 		
@@ -148,9 +148,9 @@ namespace ICSharpCode.AvalonEdit.Utils
 				throw new ArgumentNullException("comparisonFunc");
 			this.comparisonFunc = comparisonFunc;
 		}
-		#endregion
+
 		
-		#region InsertRange
+
 		/// <summary>
 		/// Inserts <paramref name="item"/> <paramref name="count"/> times at position
 		/// <paramref name="index"/>.
@@ -212,9 +212,9 @@ namespace ICSharpCode.AvalonEdit.Utils
 				InsertAsRight(node.left.RightMost, newNode);
 			}
 		}
-		#endregion
+
 		
-		#region RemoveRange
+
 		/// <summary>
 		/// Removes <paramref name="count"/> items starting at position
 		/// <paramref name="index"/>.
@@ -269,9 +269,9 @@ namespace ICSharpCode.AvalonEdit.Utils
 			
 			CheckProperties();
 		}
-		#endregion
+
 		
-		#region SetRange
+
 		/// <summary>
 		/// Sets <paramref name="count"/> indices starting at <paramref name="index"/> to
 		/// <paramref name="item"/>
@@ -281,9 +281,9 @@ namespace ICSharpCode.AvalonEdit.Utils
 			RemoveRange(index, count);
 			InsertRange(index, count, item);
 		}
-		#endregion
+
 		
-		#region GetNode
+
 		Node GetNode(ref int index)
 		{
 			Node node = root;
@@ -301,9 +301,9 @@ namespace ICSharpCode.AvalonEdit.Utils
 				}
 			}
 		}
-		#endregion
+
 		
-		#region UpdateAugmentedData
+
 		void UpdateAugmentedData(Node node)
 		{
 			int totalCount = node.count;
@@ -315,9 +315,9 @@ namespace ICSharpCode.AvalonEdit.Utils
 					UpdateAugmentedData(node.parent);
 			}
 		}
-		#endregion
+
 		
-		#region IList<T> implementation
+
 		/// <summary>
 		/// Gets or sets an item by index.
 		/// </summary>
@@ -516,9 +516,9 @@ namespace ICSharpCode.AvalonEdit.Utils
 				return false;
 			}
 		}
-		#endregion
+
 		
-		#region IEnumerable<T>
+
 		/// <summary>
 		/// Gets an enumerator for this list.
 		/// </summary>
@@ -539,9 +539,9 @@ namespace ICSharpCode.AvalonEdit.Utils
 		{
 			return GetEnumerator();
 		}
-		#endregion
+
 		
-		#region Red/Black Tree
+
 		internal const bool RED = true;
 		internal const bool BLACK = false;
 		
@@ -813,9 +813,9 @@ namespace ICSharpCode.AvalonEdit.Utils
 		{
 			return node != null ? node.color : BLACK;
 		}
-		#endregion
+
 		
-		#region CheckProperties
+
 		[Conditional("DATACONSISTENCYTEST")]
 		internal void CheckProperties()
 		{
@@ -885,9 +885,9 @@ namespace ICSharpCode.AvalonEdit.Utils
 			CheckNodeProperties(node.right, node, node.color, blackCount, ref expectedBlackCount);
 		}
 		#endif
-		#endregion
+
 		
-		#region GetTreeAsString
+
 		internal string GetTreeAsString()
 		{
 			#if DEBUG
@@ -922,6 +922,6 @@ namespace ICSharpCode.AvalonEdit.Utils
 			}
 		}
 		#endif
-		#endregion
+
 	}
 }

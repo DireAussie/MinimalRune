@@ -46,13 +46,13 @@ namespace DigitalRune.Graphics
   public class MorphTarget : IDisposable, INamedObject
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -78,11 +78,11 @@ namespace DigitalRune.Graphics
     /// </summary>
     /// <value>The index of the first vertex in the vertex buffer.</value>
     public int StartVertex { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -145,12 +145,12 @@ namespace DigitalRune.Graphics
         VertexBuffer.SafeDispose();
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
-    #endregion
+
   }
 }

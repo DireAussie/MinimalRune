@@ -22,15 +22,15 @@ namespace DigitalRune.Graphics.Effects
   public sealed class EffectParameterDescriptionCollection : KeyedCollection<EffectParameter, EffectParameterDescription>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private bool _isReadOnly;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -40,11 +40,11 @@ namespace DigitalRune.Graphics.Effects
     {
       get { return (List<EffectParameterDescription>)base.Items; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -65,11 +65,11 @@ namespace DigitalRune.Graphics.Effects
 
       Initialize(graphicsService, effect);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -358,6 +358,6 @@ namespace DigitalRune.Graphics.Effects
       if (_isReadOnly)
         throw new NotSupportedException("The EffectParameterDescriptionCollection is read-only.");
     }
-    #endregion
+
   }
 }

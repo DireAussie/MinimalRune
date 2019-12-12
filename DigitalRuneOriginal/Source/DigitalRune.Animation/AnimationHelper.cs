@@ -159,7 +159,7 @@ namespace DigitalRune.Animation
 
       if (time < startTime)
       {
-        #region ----- Pre-loop -----
+
 
         // Handle pre-loop. For some loop types we return immediately. For some
         // we adjust the time value.
@@ -188,12 +188,12 @@ namespace DigitalRune.Animation
         // even = not mirrored
         loopedTime = new TimeSpan(time.Ticks + length.Ticks * numberOfPeriods);
         return false;
-        #endregion
+
       }
       
       if (time > endTime)
       {
-        #region ----- Post-loop -----
+
 
         // Handle post-loop. For some loop types we return immediately. For some
         // we adjust the time value.
@@ -222,7 +222,7 @@ namespace DigitalRune.Animation
         // even = not mirrored
         loopedTime = new TimeSpan(time.Ticks - length.Ticks * numberOfPeriods);
         return false;
-        #endregion
+
       }
 
       loopedTime = time;
@@ -285,7 +285,7 @@ namespace DigitalRune.Animation
     }
 
 
-    #region ----- LINQ to Animation Tree -----
+
 
     private static readonly Func<AnimationInstance, AnimationInstance> GetParent = animationInstance => animationInstance.Parent;
     private static readonly Func<AnimationInstance, IEnumerable<AnimationInstance>> GetChildren = animationInstance => animationInstance.Children;
@@ -467,7 +467,7 @@ namespace DigitalRune.Animation
 
       return TreeHelper.GetLeaves(animationInstance, GetChildren);
     }
-    #endregion
+
 
 
     /// <summary>

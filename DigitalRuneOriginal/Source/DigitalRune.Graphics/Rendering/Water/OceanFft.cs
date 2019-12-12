@@ -30,7 +30,7 @@ namespace DigitalRune.Graphics.Rendering
     //   normal map. fft
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly RenderTargetBinding[] _renderTargetBindings = new RenderTargetBinding[2];
@@ -52,17 +52,17 @@ namespace DigitalRune.Graphics.Rendering
     // The butterfly lookup textures for a given number of Butterfly passes.
     private Dictionary<int, Texture2D> _forwardButterflyTextures;
     private Dictionary<int, Texture2D> _inverseButterflyTextures;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -133,11 +133,11 @@ namespace DigitalRune.Graphics.Rendering
         _inverseButterflyTextures = null;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
@@ -456,7 +456,7 @@ namespace DigitalRune.Graphics.Rendering
       graphicsDevice.ResetTextures();
 #endif
     }
-    #endregion
+
   }
 }
 #endif

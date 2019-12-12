@@ -34,7 +34,7 @@ namespace DigitalRune.Editor.Game
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private CameraNode _cameraNode;
@@ -42,11 +42,11 @@ namespace DigitalRune.Editor.Game
         private Matrix44F _originalTransform = Matrix44F.Identity;
         private Matrix44F _originalViewMatrix;
         private Matrix44F _transform = Matrix44F.Identity;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -120,11 +120,11 @@ namespace DigitalRune.Editor.Game
             get { return (Vector3F)GetValue(CameraTargetProperty); }
             set { SetValue(CameraTargetProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -338,6 +338,6 @@ namespace DigitalRune.Editor.Game
             pose.Position += CameraTarget;
             camera.PoseWorld = pose;
         }
-        #endregion
+
     }
 }

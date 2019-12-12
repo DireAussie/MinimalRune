@@ -18,7 +18,7 @@ namespace DigitalRune.Collections
   internal sealed class SynchronizedHashtable<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>>
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     private class Node
@@ -91,11 +91,11 @@ namespace DigitalRune.Collections
         _node = null;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // ReSharper disable StaticFieldInGenericType
@@ -104,17 +104,17 @@ namespace DigitalRune.Collections
 
     private Node[] _buckets;
     private readonly object _writeLock = new object();
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -136,11 +136,11 @@ namespace DigitalRune.Collections
       capacity = PrimeHelper.NextPrime(capacity);
       _buckets = new Node[capacity];
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -251,7 +251,7 @@ namespace DigitalRune.Collections
     }
 
 
-    #region ----- IEnumerable -----
+
         
     /// <summary>
     /// Returns an enumerator that iterates through a collection.
@@ -287,8 +287,8 @@ namespace DigitalRune.Collections
     {
       return new Enumerator(this);
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

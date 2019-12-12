@@ -23,28 +23,28 @@ namespace DigitalRune.Windows.Charts.Interactivity
     public class AxisZoomBehavior : Behavior<UIElement>
     {
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         private const double MinZoomFactor = -0.5;
         private const double MaxZoomFactor = 0.5;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Properties and Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------    
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -129,17 +129,17 @@ namespace DigitalRune.Windows.Charts.Interactivity
             get { return (double)GetValue(ZoomFactorProperty); }
             set { SetValue(ZoomFactorProperty, value); }
         }
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Creation and Cleanup
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Methods
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -199,6 +199,6 @@ namespace DigitalRune.Windows.Charts.Interactivity
             axis.Zoom(mousePosition, zoomFactor);
             eventArgs.Handled = true;
         }
-        #endregion
+
     }
 }

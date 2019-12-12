@@ -26,7 +26,7 @@ namespace DigitalRune.Graphics.Rendering
   internal class CloudLayerRenderer : SceneNodeRenderer
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Effect _effect;
@@ -51,17 +51,17 @@ namespace DigitalRune.Graphics.Rendering
 
     private readonly Submesh _submesh;
     private readonly Vector3F[] _queryGeometry;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -110,11 +110,11 @@ namespace DigitalRune.Graphics.Rendering
 
       _queryGeometry = new Vector3F[4];
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -291,7 +291,7 @@ namespace DigitalRune.Graphics.Rendering
 
       savedRenderState.Restore();
     }
-    #endregion
+
   }
 }
 #endif

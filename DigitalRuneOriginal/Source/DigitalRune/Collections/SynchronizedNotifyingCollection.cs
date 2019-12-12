@@ -22,7 +22,7 @@ namespace DigitalRune.Collections
   public class SynchronizedNotifyingCollection<T> : Collection<T>
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -41,17 +41,17 @@ namespace DigitalRune.Collections
         return Items.GetEnumerator();
       }
     }
-    #endregion
+
     
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -80,11 +80,11 @@ namespace DigitalRune.Collections
     /// The default value is <see langword="true"/>.
     /// </value>
     public bool AllowDuplicates { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -118,11 +118,11 @@ namespace DigitalRune.Collections
       AllowNull = allowNull;
       AllowDuplicates = allowDuplicates;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -388,7 +388,7 @@ namespace DigitalRune.Collections
         args.Recycle();
       }
     }
-    #endregion
+
   }
 }
 #endif

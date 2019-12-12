@@ -28,18 +28,18 @@ namespace DigitalRune.Collections
   public struct Pair<TFirst, TSecond> : IEquatable<Pair<TFirst, TSecond>>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // ReSharper disable StaticFieldInGenericType
     private static readonly EqualityComparer<TFirst> EqualityComparer1 = EqualityComparer<TFirst>.Default;
     private static readonly EqualityComparer<TSecond> EqualityComparer2 = EqualityComparer<TSecond>.Default;
     // ReSharper restore StaticFieldInGenericType
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -64,11 +64,11 @@ namespace DigitalRune.Collections
       set { _second = value; }
     }
     private TSecond _second;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -82,11 +82,11 @@ namespace DigitalRune.Collections
       _first = first;
       _second = second;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -189,6 +189,6 @@ namespace DigitalRune.Collections
     {
       return String.Format(CultureInfo.InvariantCulture, "({0}; {1})", First, Second);
     }
-    #endregion
+
   }
 }

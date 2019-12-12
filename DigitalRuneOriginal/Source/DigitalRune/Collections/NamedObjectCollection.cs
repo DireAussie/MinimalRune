@@ -39,26 +39,26 @@ namespace DigitalRune.Collections
     // Derived types can override the virtual methods and throw an ArgumentNullException.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private bool _suppressCollectionChangedEvent;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     /// <summary>
     /// Occurs when items were added, replaced or removed.
     /// </summary>
     public event EventHandler<CollectionChangedEventArgs<T>> CollectionChanged;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -98,18 +98,18 @@ namespace DigitalRune.Collections
     /// <param name="comparer">The comparer that compares whether two names are equal.</param>
     /// <param name="dictionaryCreationThreshold">
     /// The number of elements the collection can hold without creating a lookup dictionary (0
-    /// creates the lookup dictionary when the first item is added), or –1 to specify that a lookup
+    /// creates the lookup dictionary when the first item is added), or ï¿½1 to specify that a lookup
     /// dictionary is never created. 
     /// </param>
     public NamedObjectCollection(IEqualityComparer<string> comparer, int dictionaryCreationThreshold)
       : base(comparer, dictionaryCreationThreshold)
     {
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -600,6 +600,6 @@ namespace DigitalRune.Collections
       if (handler != null)
         handler(this, eventArgs);
     }
-    #endregion
+
   }
 }

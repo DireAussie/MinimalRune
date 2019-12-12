@@ -1,4 +1,4 @@
-﻿#region ----- Copyright -----
+﻿
 /*
   The class in this file is based on and the SmartWeakEvent/FastWeakEvent from Daniel Grundwald's 
   article "Weak Events in C#" (http://www.codeproject.com/KB/cs/WeakEvents.aspx) which is licensed 
@@ -28,7 +28,7 @@
   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
   OTHER DEALINGS IN THE SOFTWARE.
 */
-#endregion
+
 
 
 using System;

@@ -33,13 +33,13 @@ namespace DigitalRune.Windows
 
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -124,17 +124,17 @@ namespace DigitalRune.Windows
 
       obj.SetValue(MultiBindingsProperty, value);
     }
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     private static void OnAttachedDataContextChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
@@ -158,6 +158,6 @@ namespace DigitalRune.Windows
       MultiBindings bindings = GetMultiBindings(element);
       bindings.Initialize(element);
     }
-    #endregion
+
   }
 }

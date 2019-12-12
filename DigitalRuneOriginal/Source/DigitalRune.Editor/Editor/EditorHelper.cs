@@ -31,7 +31,7 @@ namespace DigitalRune.Editor
 
 
         //--------------------------------------------------------------
-        #region Collections
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -81,11 +81,11 @@ namespace DigitalRune.Editor
                 foreach (var text in stringCollection)
                     collection.Add(text);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Configuration
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -154,11 +154,11 @@ namespace DigitalRune.Editor
                 return exception.Filename;
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Resources
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -205,11 +205,11 @@ namespace DigitalRune.Editor
         {
             Application.Current.Resources.MergedDictionaries.Remove(resources);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Services
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -328,11 +328,11 @@ namespace DigitalRune.Editor
 
             return service;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Misc
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -412,6 +412,6 @@ namespace DigitalRune.Editor
             Logger.Warn("Could not find editor view model in visual tree.");
             return null;
         }
-        #endregion
+
     }
 }

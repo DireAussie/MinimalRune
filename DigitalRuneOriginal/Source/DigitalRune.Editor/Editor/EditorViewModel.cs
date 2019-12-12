@@ -34,18 +34,18 @@ namespace DigitalRune.Editor
     public partial class EditorViewModel : Screen, IEditorService
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
         private bool _isInitialized;
         private ResourceDictionary _resourceDictionary;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -164,7 +164,7 @@ namespace DigitalRune.Editor
         public IList<object> CaptionBarItemsRight { get; } = new ObservableCollection<object>();
 
 
-        #region ----- Window -----
+
 
         /// <inheritdoc/>
         public EditorWindow Window
@@ -187,7 +187,7 @@ namespace DigitalRune.Editor
             }
         }
         private EditorWindow _window;
-        #endregion
+
 
 
         /// <summary>
@@ -201,11 +201,11 @@ namespace DigitalRune.Editor
 
         /// <inheritdoc/>
         public event EventHandler<EventArgs> WindowActivated;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -236,11 +236,11 @@ namespace DigitalRune.Editor
 
             WindowActivationCommand = new DelegateCommand(() => OnWindowActivated(EventArgs.Empty));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -378,6 +378,6 @@ namespace DigitalRune.Editor
         {
             WindowActivated?.Invoke(this, eventArgs);
         }
-        #endregion
+
     }
 }

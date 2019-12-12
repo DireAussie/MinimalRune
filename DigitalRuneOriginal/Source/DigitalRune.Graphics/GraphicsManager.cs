@@ -74,16 +74,16 @@ namespace DigitalRune.Graphics
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly List<GraphicsScreen> _tempScreens = new List<GraphicsScreen>();
     private RenderContext _context;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -200,11 +200,11 @@ namespace DigitalRune.Graphics
 
 
     internal ShapeMeshCache ShapeMeshCache { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -330,11 +330,11 @@ namespace DigitalRune.Graphics
         IsDisposed = true;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     internal void ThrowIfDisposed()
@@ -818,6 +818,6 @@ namespace DigitalRune.Graphics
 
       return 0;
     }
-    #endregion
+
   }
 }

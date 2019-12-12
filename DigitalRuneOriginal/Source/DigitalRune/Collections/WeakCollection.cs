@@ -20,7 +20,7 @@ namespace DigitalRune.Collections
   public sealed class WeakCollection<T> : ICollection<T>, ICollection where T : class
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -160,11 +160,11 @@ namespace DigitalRune.Collections
       }
 
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private const int PurgeThreshold = 1;
@@ -172,11 +172,11 @@ namespace DigitalRune.Collections
     private int _size;
     private int _version;
     private object _syncRoot;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -239,11 +239,11 @@ namespace DigitalRune.Collections
         return _syncRoot;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -253,11 +253,11 @@ namespace DigitalRune.Collections
     {
       _weakHandles = CollectionHelper.EmptyWeakReferenceArray;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -525,6 +525,6 @@ namespace DigitalRune.Collections
       _size = writeIndex;
       _version++;
     }
-    #endregion
+
   }
 }

@@ -40,7 +40,7 @@ namespace DigitalRune.Graphics
   public class CloudMapLayer
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -103,17 +103,17 @@ namespace DigitalRune.Graphics
     /// is ignored if a <see cref="Texture"/> is set.
     /// </remarks>
     public float AnimationSpeed { get; set; }
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -147,12 +147,12 @@ namespace DigitalRune.Graphics
       DensityOffset = densityOffset;
       AnimationSpeed = animationSpeed;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
-    #endregion
+
   }
 }

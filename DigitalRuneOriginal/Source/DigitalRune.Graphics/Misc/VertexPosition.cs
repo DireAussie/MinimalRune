@@ -22,7 +22,7 @@ namespace DigitalRune.Graphics
   public struct VertexPosition : IVertexType
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -42,11 +42,11 @@ namespace DigitalRune.Graphics
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
     public Vector3 Position;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -57,11 +57,11 @@ namespace DigitalRune.Graphics
     {
       get { return 12; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -72,11 +72,11 @@ namespace DigitalRune.Graphics
     {
       Position = position;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -151,6 +151,6 @@ namespace DigitalRune.Graphics
     {
       return string.Format(CultureInfo.CurrentCulture, "{{Position:{0}}}", Position);
     }
-    #endregion
+
   }
 }

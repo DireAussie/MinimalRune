@@ -34,7 +34,7 @@ namespace DigitalRune.Windows.Controls
     public class FontChooser : Control
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private TextBox _fontFamilyTextBox;
@@ -49,17 +49,17 @@ namespace DigitalRune.Windows.Controls
 
         private bool _isInternalUpdate;   // true if a UI update (e.g. check box change) is caused by code.
         private BackgroundWorker _backgroundWorker;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         private static readonly DependencyPropertyKey IsLoadingPropertyKey = DependencyProperty.RegisterReadOnly(
@@ -283,11 +283,11 @@ namespace DigitalRune.Windows.Controls
             get { return (TextDecorationCollection)GetValue(SelectedTextDecorationsProperty); }
             set { SetValue(SelectedTextDecorationsProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -308,11 +308,11 @@ namespace DigitalRune.Windows.Controls
             Loaded += OnLoaded;
             Unloaded += OnUnloaded;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -797,6 +797,6 @@ namespace DigitalRune.Windows.Controls
             _overlineCheckBox.IsChecked = overline;
             _isInternalUpdate = false;
         }
-        #endregion
+
     }
 }

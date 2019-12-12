@@ -26,13 +26,13 @@ namespace DigitalRune.Windows.Charts
     public class CompositeDataSource : IEnumerable<DataPoint>
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -73,11 +73,11 @@ namespace DigitalRune.Windows.Charts
         /// <value>
         /// The binding path for the y values.</value>
         public PropertyPath YValuePath { get; set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <overloads>
@@ -106,11 +106,11 @@ namespace DigitalRune.Windows.Charts
             XValues = xValues;
             YValues = yValues;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -193,6 +193,6 @@ namespace DigitalRune.Windows.Charts
         {
             return GetEnumerator();
         }
-        #endregion
+
     }
 }

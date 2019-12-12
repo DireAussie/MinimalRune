@@ -18,15 +18,15 @@ namespace DigitalRune.Mathematics.Analysis
   public abstract class RootFinderD
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private int _maxNumberOfIterations = 100;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -150,11 +150,11 @@ namespace DigitalRune.Mathematics.Analysis
       }
     }
     private double _epsilonY = Numeric.EpsilonD;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -171,11 +171,11 @@ namespace DigitalRune.Mathematics.Analysis
 
       Function = function;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -329,6 +329,6 @@ namespace DigitalRune.Mathematics.Analysis
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
     protected abstract double FindRoot(Func<double, double> function, double x0, double x1);
-    #endregion
+
   }
 }

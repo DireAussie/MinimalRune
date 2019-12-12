@@ -49,7 +49,7 @@ namespace DigitalRune.Graphics.Rendering
 
 
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     // Some nested types to sort light probes by a packed ulong sort-ID.
@@ -67,11 +67,11 @@ namespace DigitalRune.Graphics.Rendering
         return x.SortId.CompareTo(y.SortId);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Temporary list for sorting.
@@ -98,17 +98,17 @@ namespace DigitalRune.Graphics.Rendering
     private readonly EffectPass _passSpecularLight;
 
     private Submesh _boxSubmesh;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -141,11 +141,11 @@ namespace DigitalRune.Graphics.Rendering
       _passDiffuseLight = _effect.CurrentTechnique.Passes["DiffuseLight"];
       _passSpecularLight = _effect.CurrentTechnique.Passes["SpecularLight"];
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -441,7 +441,7 @@ namespace DigitalRune.Graphics.Rendering
       savedRenderState.Restore();
       _jobs.Clear();
     }
-    #endregion
+
   }
 }
 #endif

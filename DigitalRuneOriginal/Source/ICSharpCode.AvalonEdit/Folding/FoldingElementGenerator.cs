@@ -36,7 +36,7 @@ namespace ICSharpCode.AvalonEdit.Folding
 		readonly List<TextView> textViews = new List<TextView>();
 		FoldingManager foldingManager;
 		
-		#region FoldingManager property / connecting with TextView
+
 		/// <summary>
 		/// Gets/Sets the folding manager from which the foldings should be shown.
 		/// </summary>
@@ -72,7 +72,7 @@ namespace ICSharpCode.AvalonEdit.Folding
 			if (foldingManager != null)
 				foldingManager.RemoveFromTextView(textView);
 		}
-		#endregion
+
 		
 		/// <inheritdoc/>
 		public override void StartGeneration(ITextRunConstructionContext context)

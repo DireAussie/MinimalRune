@@ -16,33 +16,33 @@ namespace DigitalRune.Game
     // This collection calls GameObject.Load/Unload when game objects are added/removed.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // This flag is set when the collection is modified. It is read and reset by the 
     // GameObjectManager.
     internal bool IsDirty;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     internal GameObjectCollection()
     {
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -155,6 +155,6 @@ namespace DigitalRune.Game
       IsDirty = true;
       base.MoveItem(oldIndex, newIndex);
     }
-    #endregion
+
   }
 }

@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#region ----- Credits -----
+
 // The ephemeris model is based on:
 //
 //    "Physically-Based Outdoor Scene Lighting", by Frank Kane (Founder of Sundog Software, LLC),
@@ -11,7 +11,7 @@
 //    Copyright (c) 2004-2008  Sundog Software, LLC. All rights reserved worldwide.
 //
 // Code is used with permission from Frank Kane.
-#endregion
+
 
 using System;
 using DigitalRune.Mathematics;
@@ -99,7 +99,7 @@ namespace DigitalRune.Graphics
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // The fractional number of centuries elapsed since January 1, 2000 GMT, terrestrial time
@@ -123,11 +123,11 @@ namespace DigitalRune.Graphics
 
     // Conversion from Equatorial to World ignoring precession.
     private Matrix44D _equatorialToWorldNoPrecession;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -272,11 +272,11 @@ namespace DigitalRune.Graphics
 
 
     //private Matrix33D WorldToGeographic { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -295,11 +295,11 @@ namespace DigitalRune.Graphics
       Time = DateTimeOffset.UtcNow;
 #endif
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -498,6 +498,6 @@ namespace DigitalRune.Graphics
       // Note: The moon formula is already corrected by precession.
       MoonPosition = _equatorialToWorldNoPrecession.TransformPosition(moonPositionEquatorial);
     }
-    #endregion
+
   }
 }

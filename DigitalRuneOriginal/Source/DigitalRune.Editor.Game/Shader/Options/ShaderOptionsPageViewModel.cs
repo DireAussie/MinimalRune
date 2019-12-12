@@ -16,17 +16,17 @@ namespace DigitalRune.Editor.Shader
     internal class ShaderOptionsPageViewModel : OptionsPageViewModel
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
         private readonly ShaderExtension _shaderExtension;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -82,11 +82,11 @@ namespace DigitalRune.Editor.Shader
             set { SetProperty(ref _isXnaEnabled, value); }
         }
         private bool _isXnaEnabled = true;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         private ShaderOptionsPageViewModel()
@@ -110,11 +110,11 @@ namespace DigitalRune.Editor.Shader
 
             _shaderExtension = shaderExtension;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -136,6 +136,6 @@ namespace DigitalRune.Editor.Shader
             _shaderExtension.IsMonoGameEffectProcessorEnabled = IsMonoGameEnabled;
             _shaderExtension.IsXnaEffectProcessorEnabled = IsXnaEnabled;
         }
-        #endregion
+
     }
 }

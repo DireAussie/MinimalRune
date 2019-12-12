@@ -22,15 +22,15 @@ namespace DigitalRune.Windows.Docking
     public class AutoHideTab : Control
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly DispatcherTimer _hoverTimer;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -73,17 +73,17 @@ namespace DigitalRune.Windows.Docking
                 return dockPosition == Dock.Right || dockPosition == Dock.Top;
             }
         }
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -107,11 +107,11 @@ namespace DigitalRune.Windows.Docking
             _hoverTimer = new DispatcherTimer { Interval = SystemParameters.MouseHoverTime };
             _hoverTimer.Tick += OnMouseHover;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -264,6 +264,6 @@ namespace DigitalRune.Windows.Docking
             else
                 VisualStateManager.GoToState(this, "Upright", useTransitions);
         }
-        #endregion
+
     }
 }

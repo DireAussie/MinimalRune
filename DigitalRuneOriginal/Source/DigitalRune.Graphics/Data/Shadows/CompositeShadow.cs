@@ -36,13 +36,13 @@ namespace DigitalRune.Graphics
   public class CompositeShadow : Shadow
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -50,11 +50,11 @@ namespace DigitalRune.Graphics
     /// </summary>
     /// <value>The list of shadows. Empty by default.</value>
     public ShadowCollection Shadows { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -64,14 +64,14 @@ namespace DigitalRune.Graphics
     {
       Shadows = new ShadowCollection();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Shadow CreateInstanceCore()
@@ -93,8 +93,8 @@ namespace DigitalRune.Graphics
 
       // ShadowMap is not cloned!
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

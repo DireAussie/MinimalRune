@@ -17,7 +17,7 @@ namespace DigitalRune.Windows.Framework
     public partial class DragDropBehavior
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly DataFormat DefaultFormat = DataFormats.GetDataFormat("DigitalRune.DragDropBehavior.DefaultFormat");
@@ -30,17 +30,17 @@ namespace DigitalRune.Windows.Framework
         // both. In this case the DropCommand sets the _sourceUpdated flag to indicate that the
         // DragCommand should not do anything.
         private bool _sourceUpdated;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -70,17 +70,17 @@ namespace DigitalRune.Windows.Framework
             get { return (DragDropEffects)GetValue(DefaultEffectsProperty); }
             set { SetValue(DefaultEffectsProperty, value); }
         }
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Creation & Cleanup
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Methods
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
 
@@ -426,6 +426,6 @@ namespace DigitalRune.Windows.Framework
 
             return indexToBeRemoved;
         }
-        #endregion
+
     }
 }

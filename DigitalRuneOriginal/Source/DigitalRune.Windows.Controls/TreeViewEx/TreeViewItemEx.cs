@@ -34,16 +34,16 @@ namespace DigitalRune.Windows.Controls
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private const string PART_Header = nameof(PART_Header);
         private FrameworkElement _header;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -120,11 +120,11 @@ namespace DigitalRune.Windows.Controls
         {
             get { return HasItems; }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
         private static readonly DependencyPropertyKey IndentationLevelPropertyKey = DependencyProperty.RegisterReadOnly(
@@ -151,7 +151,7 @@ namespace DigitalRune.Windows.Controls
         }
 
 
-        #region ----- Expand/Collapse -----
+
 
         /// <summary>
         /// Identifies the <see cref="IsExpanded"/> dependency property.
@@ -219,10 +219,10 @@ namespace DigitalRune.Windows.Controls
             add { AddHandler(CollapsedEvent, value); }
             remove { RemoveHandler(CollapsedEvent, value); }
         }
-        #endregion
 
 
-        #region ----- Selection -----
+
+
 
         /// <summary>
         /// Identifies the <see cref="IsSelected"/> dependency property.
@@ -293,13 +293,13 @@ namespace DigitalRune.Windows.Controls
             add { AddHandler(UnselectedEvent, value); }
             remove { RemoveHandler(UnselectedEvent, value); }
         }
-        #endregion
 
-        #endregion
+
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -323,11 +323,11 @@ namespace DigitalRune.Windows.Controls
         {
             DataContextChanged += OnDataContextChanged;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -747,6 +747,6 @@ namespace DigitalRune.Windows.Controls
                 ParentTreeView?.MoveSelection(this);
             }
         }
-        #endregion
+
     }
 }

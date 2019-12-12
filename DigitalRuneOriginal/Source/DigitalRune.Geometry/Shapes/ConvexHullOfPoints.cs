@@ -34,7 +34,7 @@ namespace DigitalRune.Geometry.Shapes
   public class ConvexHullOfPoints : ConvexShape
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // The cached local space AABB
@@ -42,11 +42,11 @@ namespace DigitalRune.Geometry.Shapes
 
     // The cached inner point.
     private Vector3F _innerPoint = new Vector3F(float.NaN);
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -114,11 +114,11 @@ namespace DigitalRune.Geometry.Shapes
       }
     }
     private IList<Vector3F> _points;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -173,14 +173,14 @@ namespace DigitalRune.Geometry.Shapes
 
       _points = points;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Shape CreateInstanceCore()
@@ -197,7 +197,7 @@ namespace DigitalRune.Geometry.Shapes
       for (int i = 0; i < numberOfPoints; i++)
         _points.Add(source._points[i]);
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -323,6 +323,6 @@ namespace DigitalRune.Geometry.Shapes
     {
       return String.Format(CultureInfo.InvariantCulture, "ConvexHullOfPoints {{ Count = {0} }}", _points.Count);
     }
-    #endregion
+
   }
 }

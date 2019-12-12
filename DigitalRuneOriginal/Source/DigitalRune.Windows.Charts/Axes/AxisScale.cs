@@ -26,13 +26,13 @@ namespace DigitalRune.Windows.Charts
     public abstract class AxisScale : INotifyPropertyChanged
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -129,11 +129,11 @@ namespace DigitalRune.Windows.Charts
         /// Occurs when a property value changes.
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <overloads>
@@ -182,11 +182,11 @@ namespace DigitalRune.Windows.Charts
 
             _range = new DoubleRange(min, max);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -432,6 +432,6 @@ namespace DigitalRune.Windows.Charts
                 Range = new DoubleRange(min, max);
             }
         }
-        #endregion
+
     }
 }

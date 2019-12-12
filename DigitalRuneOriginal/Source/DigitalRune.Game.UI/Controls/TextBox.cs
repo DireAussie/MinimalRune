@@ -72,7 +72,7 @@ namespace DigitalRune.Game.UI.Controls
   public partial class TextBox : UIControl
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // For platforms which do not have an OS clipboard mechanism:
@@ -106,11 +106,11 @@ namespace DigitalRune.Game.UI.Controls
 #if WP7 || PORTABLE
     private bool _isPressed;
 #endif
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -194,11 +194,11 @@ namespace DigitalRune.Game.UI.Controls
         return text.Substring(start, end - start);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Game Object Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary> 
@@ -330,7 +330,7 @@ namespace DigitalRune.Game.UI.Controls
     [Browsable(false)]
 #endif
     public static readonly int PasswordCharacterPropertyId = CreateProperty(
-      typeof(TextBox), "PasswordCharacter", GamePropertyCategories.Behavior, null, '•',
+      typeof(TextBox), "PasswordCharacter", GamePropertyCategories.Behavior, null, 'ï¿½',
       UIPropertyOptions.AffectsMeasure);
 
     /// <summary>
@@ -491,11 +491,11 @@ namespace DigitalRune.Game.UI.Controls
       get { return GetValue<string>(VerticalScrollBarStylePropertyId); }
       set { SetValue(VerticalScrollBarStylePropertyId, value); }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -530,11 +530,11 @@ namespace DigitalRune.Game.UI.Controls
       var textProperty = Properties.Get<string>(TextPropertyId);
       textProperty.Changed += (s, e) => ClearSelection();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -972,6 +972,6 @@ namespace DigitalRune.Game.UI.Controls
     }
 #endif
 #endif
-    #endregion
+
   }
 }

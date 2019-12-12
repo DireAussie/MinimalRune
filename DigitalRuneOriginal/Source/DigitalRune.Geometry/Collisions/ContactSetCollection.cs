@@ -24,7 +24,7 @@ namespace DigitalRune.Geometry.Collisions
   public class ContactSetCollection : ICollection<ContactSet>
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     // This view is used as DebuggerTypeProxy. With this, the debugger will display 
@@ -180,11 +180,11 @@ namespace DigitalRune.Geometry.Collisions
         _current = null;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // The hash table stores the index into the slots array plus 1.
@@ -219,11 +219,11 @@ namespace DigitalRune.Geometry.Collisions
 
     // Array used in Synchronize() method. (Only used by CollisionDetectionBroadPhase.)
     private bool[] _used;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -275,11 +275,11 @@ namespace DigitalRune.Geometry.Collisions
     {
       get { return _slots[index].ContactSet; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -342,11 +342,11 @@ namespace DigitalRune.Geometry.Collisions
       _count = 0;
       _version = 0;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     internal static int GetHashCode(CollisionObject objectA, CollisionObject objectB)
@@ -1155,7 +1155,7 @@ namespace DigitalRune.Geometry.Collisions
     }
 
 
-    #region ----- IEnumerable, IEnumerable<T> -----
+
 
     /// <summary>
     /// Returns an enumerator that iterates through the collection.
@@ -1192,13 +1192,13 @@ namespace DigitalRune.Geometry.Collisions
       // Use struct Enumerator.
       return new Enumerator(this);
     }
-    #endregion
 
-    #endregion
+
+
 
 
     //--------------------------------------------------------------
-    #region Linked Lists
+
     //--------------------------------------------------------------
 
     // Contact sets are stored in linked lists for fast access (one linked list 
@@ -1300,11 +1300,11 @@ namespace DigitalRune.Geometry.Collisions
         }
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Broad Phase Support
+
     //--------------------------------------------------------------
 
     // The following methods are used by the broad phase to synchronize the self-overlaps
@@ -1382,6 +1382,6 @@ namespace DigitalRune.Geometry.Collisions
 
       Array.Clear(_used, 0, _touchedSlots);
     }
-    #endregion
+
   }
 }

@@ -77,7 +77,7 @@ namespace DigitalRune.Graphics.PostProcessing
   public class UpsampleFilter : PostProcessor
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Effect _effect;
@@ -92,11 +92,11 @@ namespace DigitalRune.Graphics.PostProcessing
     private readonly EffectParameter _parameterSceneTexture;
     private readonly EffectParameter _parameterDepthBuffer;
     private readonly EffectParameter _parameterDepthBufferLow;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -170,11 +170,11 @@ namespace DigitalRune.Graphics.PostProcessing
     /// output together with the color information in the pixel shader.
     /// </remarks>
     public bool RebuildZBuffer { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -200,11 +200,11 @@ namespace DigitalRune.Graphics.PostProcessing
       _parameterDepthBuffer = _effect.Parameters["DepthBuffer"];
       _parameterDepthBufferLow = _effect.Parameters["DepthBufferLow"];
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -315,7 +315,7 @@ namespace DigitalRune.Graphics.PostProcessing
       _parameterDepthBuffer.SetValue((Texture2D)null);
       _parameterDepthBufferLow.SetValue((Texture2D)null);
     }
-    #endregion
+
   }
 }
 #endif

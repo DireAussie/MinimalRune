@@ -73,7 +73,7 @@ namespace DigitalRune.Graphics.PostProcessing
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly EffectParameter _viewportSizeParameter;
@@ -88,11 +88,11 @@ namespace DigitalRune.Graphics.PostProcessing
 
     // A default texture without a color transformation.
     private Texture3D _defaultLookupTexture;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -177,11 +177,11 @@ namespace DigitalRune.Graphics.PostProcessing
     /// </value>
     /// <inheritdoc cref="LookupTextureB"/>
     public float InterpolationParameter { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -220,11 +220,11 @@ namespace DigitalRune.Graphics.PostProcessing
 
       base.Dispose(disposing);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -340,11 +340,11 @@ namespace DigitalRune.Graphics.PostProcessing
 
       CopyData(lookupTexture2D, LookupTextureA);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Static Methods
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -457,7 +457,7 @@ namespace DigitalRune.Graphics.PostProcessing
 
       texture3D.SetData(data3D);
     }
-    #endregion
+
   }
 }
 #endif

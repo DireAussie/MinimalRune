@@ -19,7 +19,7 @@ namespace DigitalRune.Graphics.PostProcessing
   public class DepthOfFieldFilter : PostProcessor
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Effect _effect;
@@ -49,11 +49,11 @@ namespace DigitalRune.Graphics.PostProcessing
     private Vector2[] _horizontalOffsets;
     private Vector2[] _verticalOffsets;
     private float[] _weights;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -131,11 +131,11 @@ namespace DigitalRune.Graphics.PostProcessing
       }
     }
     private float _blurStrength;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -178,11 +178,11 @@ namespace DigitalRune.Graphics.PostProcessing
       _downsampleFactor = 2;
       BlurStrength = 1;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -409,7 +409,7 @@ namespace DigitalRune.Graphics.PostProcessing
       for (int i = 0; i < numberOfSamples; i++)
         _weights[i] /= weightSum;
     }
-    #endregion
+
   }
 }
 #endif

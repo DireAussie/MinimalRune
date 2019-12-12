@@ -26,7 +26,7 @@ namespace DigitalRune.Graphics.Rendering
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Vector3[] _frustumFarCorners = new Vector3[4];
@@ -39,17 +39,17 @@ namespace DigitalRune.Graphics.Rendering
     private readonly EffectParameter _parameterShadowMap;
     private readonly EffectParameter _parameterParameters0;
     private readonly EffectParameter _parameterParameters1;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -73,11 +73,11 @@ namespace DigitalRune.Graphics.Rendering
       _parameterParameters0 = _effect.Parameters["Parameters0"];
       _parameterParameters1 = _effect.Parameters["Parameters1"];
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -182,7 +182,7 @@ namespace DigitalRune.Graphics.Rendering
       graphicsDevice.DepthStencilState = originalDepthStencilState;
       graphicsDevice.RasterizerState = originalRasterizerState;
     }
-    #endregion
+
   }
 }
 #endif

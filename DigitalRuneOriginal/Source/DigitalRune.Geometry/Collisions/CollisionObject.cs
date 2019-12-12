@@ -39,7 +39,7 @@ namespace DigitalRune.Geometry.Collisions
   public class CollisionObject
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     private enum ShapeType
@@ -48,11 +48,11 @@ namespace DigitalRune.Geometry.Collisions
       Ray,
       RayThatStopsAtFirstHit,
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Cached shape info to avoid casting the shape to find out if it is a ray.
@@ -62,11 +62,11 @@ namespace DigitalRune.Geometry.Collisions
     // Cache shape because in OnShapeChanged we need to be able to check if the type
     // has changed.
     private Shape _shape;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     internal bool ShapeTypeChanged = true;
@@ -258,11 +258,11 @@ namespace DigitalRune.Geometry.Collisions
     // object stores the head of the list. The list is managed completely by the 
     // ContactSetCollection!
     internal ContactSet ContactSets;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -294,14 +294,14 @@ namespace DigitalRune.Geometry.Collisions
       Changed = true;
       Type = CollisionObjectType.Default;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Internal -----
+
 
     // The following methods are used internally by the collision detection to make direct 
     // changes to a CollisionObject during collision checks.
@@ -341,7 +341,7 @@ namespace DigitalRune.Geometry.Collisions
       _shape = null;
       ShapeTypeChanged = true;
     }
-    #endregion
+
 
 
     /// <summary>
@@ -450,6 +450,6 @@ namespace DigitalRune.Geometry.Collisions
     {
       return String.Format(CultureInfo.InvariantCulture, "CollisionObject {{ {0} }}", GeometricObject);
     }
-    #endregion
+
   }
 }

@@ -1,4 +1,4 @@
-﻿#region ----- Copyright -----
+﻿
 /*
   This is a port of DirectXTex (see http://directxtex.codeplex.com/) which is licensed under the
   MIT license. Extensions to the DDS functionality are marked with [DIGITALRUNE].
@@ -21,7 +21,7 @@
   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT
   OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-#endregion
+
 
 using System;
 using System.Diagnostics;
@@ -87,7 +87,7 @@ namespace DigitalRune.Graphics.Content
   partial class TextureHelper
   {
     //--------------------------------------------------------------
-    #region Format
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -1609,11 +1609,11 @@ namespace DigitalRune.Graphics.Content
           break;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region DirectXTexConvert.cpp
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -1932,6 +1932,6 @@ namespace DigitalRune.Graphics.Content
 
       return false;
     }
-    #endregion
+
   }
 }

@@ -62,7 +62,7 @@ namespace ICSharpCode.AvalonEdit.Document
 	/// </summary>
 	public static partial class TextUtilities
 	{
-		#region GetControlCharacterName
+
 		// the names of the first 32 ASCII characters = Unicode C0 block
 		static readonly string[] c0Table = {
 			"NUL", "SOH", "STX", "ETX", "EOT", "ENQ", "ACK", "BEL", "BS", "HT",
@@ -95,9 +95,9 @@ namespace ICSharpCode.AvalonEdit.Document
 			else
 				return num.ToString("x4", CultureInfo.InvariantCulture);
 		}
-		#endregion
+
 		
-		#region GetWhitespace
+
 		/// <summary>
 		/// Gets all whitespace (' ' and '\t', but no newlines) after offset.
 		/// </summary>
@@ -174,9 +174,9 @@ namespace ICSharpCode.AvalonEdit.Document
 			else
 				return segment;
 		}
-		#endregion
+
 		
-		#region GetSingleIndentationSegment
+
 		/// <summary>
 		/// Gets a single indentation segment starting at <paramref name="offset"/> - at most one tab
 		/// or <paramref name="indentationSize"/> spaces.
@@ -210,9 +210,9 @@ namespace ICSharpCode.AvalonEdit.Document
 			}
 			return new SimpleSegment(offset, pos - offset);
 		}
-		#endregion
+
 		
-		#region GetCharacterClass
+
 		/// <summary>
 		/// Gets whether the character is whitespace, part of an identifier, or line terminator.
 		/// </summary>
@@ -259,9 +259,9 @@ namespace ICSharpCode.AvalonEdit.Document
 					return CharacterClass.Other;
 			}
 		}
-		#endregion
+
 		
-		#region GetNextCaretPosition
+
 		/// <summary>
 		/// Gets the next caret position.
 		/// </summary>
@@ -387,7 +387,7 @@ namespace ICSharpCode.AvalonEdit.Document
 			}
 			return false;
 		}
-		#endregion
+
 
 		
 		static readonly char[] whitespaceChars = { ' ', '\t' };

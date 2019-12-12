@@ -169,7 +169,7 @@ namespace DigitalRune.Graphics.Rendering
 
 
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -218,11 +218,11 @@ namespace DigitalRune.Graphics.Rendering
         return x.SortKey.CompareTo(y.SortKey);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -239,11 +239,11 @@ namespace DigitalRune.Graphics.Rendering
     /// be rendered last.)
     /// </summary>
     private const uint FontTextureId = uint.MaxValue;
-    #endregion
+
 
     
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private uint _textureCount;
@@ -253,11 +253,11 @@ namespace DigitalRune.Graphics.Rendering
     private Pose _cameraPose;         // The position and orientation of the camera in world space.
     private Vector3F _cameraForward;  // The camera forward vector in world space.
     private Vector3F _defaultNormal;  // The default normal vector.
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -415,11 +415,11 @@ namespace DigitalRune.Graphics.Rendering
     /// </para>
     /// </remarks>
     public bool EnableSoftParticles { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -504,11 +504,11 @@ namespace DigitalRune.Graphics.Rendering
 
       base.Dispose(disposing);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -768,7 +768,7 @@ namespace DigitalRune.Graphics.Rendering
     }
 
 
-    #region ----- Texture IDs -----
+
 
     // Each Texture2D gets a unique ID, which is used for state sorting.
     // The ID is assigned during BatchJobs() and reset during ProcessJobs().
@@ -840,8 +840,8 @@ namespace DigitalRune.Graphics.Rendering
 #endif
       }
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

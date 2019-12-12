@@ -15,7 +15,7 @@ namespace DigitalRune.Geometry.Partitioning
   public partial class SweepAndPruneSpace<T>
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -105,6 +105,6 @@ namespace DigitalRune.Geometry.Partitioning
         return itemInfo;
       }
     }
-    #endregion
+
   }
 }

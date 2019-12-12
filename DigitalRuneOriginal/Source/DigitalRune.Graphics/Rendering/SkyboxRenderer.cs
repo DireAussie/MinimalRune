@@ -80,7 +80,7 @@ namespace DigitalRune.Graphics.Rendering
     }
 
 
-    #region ----- Reach -----
+
 
     private VertexPositionTexture[] _faceVertices;
 
@@ -252,10 +252,10 @@ namespace DigitalRune.Graphics.Rendering
         foreach (var face in faces)
           face.Dispose();
     }
-    #endregion
 
 
-    #region ----- HiDef -----
+
+
 
     private EffectParameter _textureParameter;
     private EffectParameter _parameterWorldViewProjection;
@@ -306,6 +306,6 @@ namespace DigitalRune.Graphics.Rendering
       _submesh.Draw();
       savedRenderState.Restore();
     }
-    #endregion
+
   }
 }

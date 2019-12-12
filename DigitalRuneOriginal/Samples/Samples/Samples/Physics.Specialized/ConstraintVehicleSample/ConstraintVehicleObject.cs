@@ -33,7 +33,7 @@ namespace Samples.Physics.Specialized
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly IServiceLocator _services;
@@ -48,19 +48,19 @@ namespace Samples.Physics.Specialized
     // Vehicle values.
     private float _steeringAngle;
     private float _motorForce;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     public ConstraintVehicle Vehicle { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     public ConstraintVehicleObject(IServiceLocator services)
@@ -156,11 +156,11 @@ namespace Samples.Physics.Specialized
       Vehicle.Enabled = false;
 
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     protected override void OnLoad()
@@ -311,6 +311,6 @@ namespace Samples.Physics.Specialized
       Vehicle.Wheels[2].MotorForce = _motorForce;
       Vehicle.Wheels[3].MotorForce = _motorForce;
     }
-    #endregion
+
   }
 }

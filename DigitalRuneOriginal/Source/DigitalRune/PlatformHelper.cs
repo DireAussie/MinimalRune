@@ -323,7 +323,7 @@ namespace DigitalRune
 
 
     //--------------------------------------------------------------
-    #region Clipboard
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -410,11 +410,11 @@ namespace DigitalRune
       Clipboard.SetText(text);
 #endif
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region SystemInformation
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -454,11 +454,11 @@ namespace DigitalRune
 #endif
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region KeyMap
+
     //--------------------------------------------------------------
 
 #if WINDOWS
@@ -590,6 +590,6 @@ namespace DigitalRune
       }
     }
 #endif
-#endregion
+
   }
 }

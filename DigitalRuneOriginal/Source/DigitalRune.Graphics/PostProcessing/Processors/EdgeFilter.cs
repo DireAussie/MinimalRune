@@ -27,7 +27,7 @@ namespace DigitalRune.Graphics.PostProcessing
   public class EdgeFilter : PostProcessor
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Effect _effect;
@@ -45,11 +45,11 @@ namespace DigitalRune.Graphics.PostProcessing
     private readonly EffectParameter _parameterGBuffer1;
     private readonly EffectPass _passEdge;
     private readonly EffectPass _passOnePixelEdge;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -150,11 +150,11 @@ namespace DigitalRune.Graphics.PostProcessing
     /// </summary>
     /// <value>The color of the crease edges.</value>
     public Vector4F CreaseColor { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -191,11 +191,11 @@ namespace DigitalRune.Graphics.PostProcessing
       SilhouetteColor = new Vector4F(0, 0, 0, 1);
       CreaseColor = new Vector4F(0, 0, 0, 1);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -251,7 +251,7 @@ namespace DigitalRune.Graphics.PostProcessing
       context.RenderTarget = target;
       context.Viewport = viewport;
     }
-    #endregion
+
   }
 }
 #endif

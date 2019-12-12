@@ -187,7 +187,7 @@ namespace ICSharpCode.AvalonEdit.Editing
 			};
 		}
 		
-		#region Caret movement
+
 		internal static void MoveCaret(TextArea textArea, CaretMovementType direction)
 		{
 			double desiredXPos = textArea.Caret.DesiredXPos;
@@ -241,9 +241,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 					throw new NotSupportedException(direction.ToString());
 			}
 		}
-		#endregion
+
 		
-		#region Home/End
+
 		static TextViewPosition GetStartOfLineCaretPosition(int oldVC, VisualLine visualLine, TextLine textLine, bool enableVirtualSpace)
 		{
 			int newVC = visualLine.GetTextLineVisualStartColumn(textLine);
@@ -264,9 +264,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 			pos.IsAtEndOfLine = true;
 			return pos;
 		}
-		#endregion
+
 		
-		#region By-character / By-word movement
+
 		static TextViewPosition GetNextCaretPosition(TextView textView, TextViewPosition caretPosition, VisualLine visualLine, CaretPositioningMode mode, bool enableVirtualSpace)
 		{
 			int pos = visualLine.GetNextCaretPosition(caretPosition.VisualColumn, LogicalDirection.Forward, mode, enableVirtualSpace);
@@ -310,9 +310,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 				}
 			}
 		}
-		#endregion
 
-		#region Line+Page up/down
+
+
 		static TextViewPosition GetUpDownCaretPosition(TextView textView, TextViewPosition caretPosition, CaretMovementType direction, VisualLine visualLine, TextLine textLine, bool enableVirtualSpace, ref double xPos)
 		{
 			// moving up/down happens using the desired visual X position
@@ -387,6 +387,6 @@ namespace ICSharpCode.AvalonEdit.Editing
 				return caretPosition;
 			}
 		}
-		#endregion
+
 	}
 }

@@ -20,7 +20,7 @@ namespace DigitalRune.Graphics.Rendering
   internal class CubeMapShadowMapRenderer : SceneNodeRenderer, IShadowMapRenderer
   {
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     private static readonly CubeMapFace[] CubeMapFaces =
@@ -48,19 +48,19 @@ namespace DigitalRune.Graphics.Rendering
 
     // Boxed integers to avoid allocation.
     internal static object[] BoxedIntegers = { 0, 1, 2, 3, 4, 5 };
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly CameraNode _perspectiveCameraNode;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -76,11 +76,11 @@ namespace DigitalRune.Graphics.Rendering
       }
     }
     private Func<RenderContext, bool> _renderCallback;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -98,11 +98,11 @@ namespace DigitalRune.Graphics.Rendering
       RenderCallback = renderCallback;
       _perspectiveCameraNode = new CameraNode(new Camera(new PerspectiveProjection()));
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -241,6 +241,6 @@ namespace DigitalRune.Graphics.Rendering
       context.Object = null;
       context.Data[RenderContextKeys.ShadowTileIndex] = null;
     }
-    #endregion
+
   }
 }

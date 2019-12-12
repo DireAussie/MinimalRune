@@ -19,13 +19,13 @@ namespace DigitalRune.Graphics.Effects
   public class ConstParameterBinding<T> : EffectParameterBinding<T>
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -37,11 +37,11 @@ namespace DigitalRune.Graphics.Effects
       get { return base.Value; }
       set { base.Value = value; } // Same as in base class, but this time the setter is public.
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -76,14 +76,14 @@ namespace DigitalRune.Graphics.Effects
       : base(effect, parameter, value)
     {
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override EffectParameterBinding CreateInstanceCore()
@@ -102,8 +102,8 @@ namespace DigitalRune.Graphics.Effects
       var sourceTyped = (ConstParameterBinding<T>)source;
       Value = sourceTyped.Value;
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

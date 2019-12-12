@@ -1920,7 +1920,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
 
 
     //--------------------------------------------------------------
-    #region Projection Matrices
+
     //--------------------------------------------------------------
 
     [Test]
@@ -2206,6 +2206,6 @@ namespace DigitalRune.Mathematics.Algebra.Tests
       Assert.AreEqual(-1, v.Y);
       Assert.LessOrEqual(0.999, v.Z);
     }
-    #endregion
+
   }
 }

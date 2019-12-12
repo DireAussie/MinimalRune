@@ -40,7 +40,7 @@ namespace ICSharpCode.AvalonEdit.Editing
 	/// </summary>
 	public sealed class RectangleSelection : Selection
 	{
-		#region Commands
+
 		/// <summary>
 		/// Expands the selection left by one character, creating a rectangular selection.
 		/// Key gesture: Alt+Shift+Left
@@ -93,7 +93,7 @@ namespace ICSharpCode.AvalonEdit.Editing
 		{
 			return new RoutedUICommand(name, name, typeof(RectangleSelection));
 		}
-		#endregion
+
 		
 		TextDocument document;
 		readonly int startLine, endLine;
@@ -103,7 +103,7 @@ namespace ICSharpCode.AvalonEdit.Editing
 		
 		readonly List<SelectionSegment> segments = new List<SelectionSegment>();
 		
-		#region Constructors
+
 		/// <summary>
 		/// Creates a new rectangular selection.
 		/// </summary>
@@ -207,7 +207,7 @@ namespace ICSharpCode.AvalonEdit.Editing
 				return new TextViewPosition(document.GetLocation(segment.StartOffset), segment.StartVisualColumn);
 			}
 		}
-		#endregion
+
 		
 		/// <inheritdoc/>
 		public override string GetText()

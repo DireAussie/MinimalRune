@@ -15,16 +15,16 @@ namespace DigitalRune.Graphics.Effects
   internal sealed class EffectEx : GraphicsResourceEx<Effect>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>Counts the bindings for this effect during rendering.</summary>
     internal uint BindingCount;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -62,11 +62,11 @@ namespace DigitalRune.Graphics.Effects
     /// </summary>
     /// <value>The effect parameter bindings.</value>
     public EffectParameterBindingCollection ParameterBindings { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -106,12 +106,12 @@ namespace DigitalRune.Graphics.Effects
       ParameterBindings = new EffectParameterBindingCollection(EffectParameterHint.Any);
       EffectHelper.InitializeParameterBindings(graphicsService, this, null, ParameterBindings);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
-    #endregion
+
   }
 }

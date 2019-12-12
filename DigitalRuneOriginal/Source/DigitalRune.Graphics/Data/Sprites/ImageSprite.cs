@@ -11,13 +11,13 @@ namespace DigitalRune.Graphics
   public class ImageSprite : Sprite
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -29,11 +29,11 @@ namespace DigitalRune.Graphics
     /// animations.
     /// </remarks>
     public PackedTexture Texture { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -59,14 +59,14 @@ namespace DigitalRune.Graphics
     {
       Texture = texture;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
     
-    #region ----- Cloning -----
+
 
     /// <inheritdoc cref="Sprite.Clone"/>
     public new ImageSprite Clone()
@@ -92,8 +92,8 @@ namespace DigitalRune.Graphics
       var sourceTyped = (ImageSprite)source;
       Texture = sourceTyped.Texture;
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

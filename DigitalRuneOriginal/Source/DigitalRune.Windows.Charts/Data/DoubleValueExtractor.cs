@@ -25,16 +25,16 @@ namespace DigitalRune.Windows.Charts
 #endif
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private Dictionary<string, double> _textLabelDictionary;
         private double _nextLabelValue;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties
+
         //--------------------------------------------------------------
 
         private Dictionary<string, double> TextLabelDictionary
@@ -57,11 +57,11 @@ namespace DigitalRune.Windows.Charts
                 return _textLabelDictionary;
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -183,17 +183,17 @@ namespace DigitalRune.Windows.Charts
             get { return GetValue(ValueHolderProperty); }
             set { SetValue(ValueHolderProperty, value); }
         }
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Creation and Cleanup
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Methods
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
 #if !SILVERLIGHT
@@ -335,6 +335,6 @@ namespace DigitalRune.Windows.Charts
 
             throw new ChartDataException("Unable to convert data to Double, DateTime, String. Value is either null, an unsupported type or the binding has failed.");
         }
-        #endregion
+
     }
 }

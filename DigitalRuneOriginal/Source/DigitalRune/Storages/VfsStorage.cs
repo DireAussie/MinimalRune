@@ -60,13 +60,13 @@ namespace DigitalRune.Storages
 
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -82,11 +82,11 @@ namespace DigitalRune.Storages
     /// <value>The storage providers mounted into the virtual file system.</value>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
     public VfsMountInfoCollection MountInfos { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -96,11 +96,11 @@ namespace DigitalRune.Storages
     {
       MountInfos = new VfsMountInfoCollection();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -172,6 +172,6 @@ namespace DigitalRune.Storages
 
       return null;
     }
-    #endregion
+
   }
 }

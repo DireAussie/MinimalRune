@@ -59,15 +59,15 @@ namespace DigitalRune.Particles
   public class ParticleParameterCollection : IEnumerable<IParticleParameter>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly NamedObjectCollection<IParticleParameter> _collection;
-    #endregion
+
       
       
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -84,11 +84,11 @@ namespace DigitalRune.Particles
     /// Occurs when the collection was modified.
     /// </summary>
     public event EventHandler<EventArgs> Changed;
-    #endregion
+
       
       
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -109,11 +109,11 @@ namespace DigitalRune.Particles
         StringComparer.Ordinal,
         8);   // TODO: Choose appropriate threshold for lookup-table.
     }
-    #endregion
+
       
       
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -433,7 +433,7 @@ namespace DigitalRune.Particles
     }
 
     
-    #region ----- IEnumerable -----
+
 
     /// <summary>
     /// Returns an enumerator that iterates through the <see cref="ParticleParameterCollection"/>. 
@@ -469,7 +469,7 @@ namespace DigitalRune.Particles
     {
       return _collection.GetEnumerator();
     }
-    #endregion
+
 
 
     /// <summary>
@@ -490,6 +490,6 @@ namespace DigitalRune.Particles
       if (handler != null)
         handler(this, eventArgs);
     }
-    #endregion
+
   }
 }

@@ -27,17 +27,17 @@ namespace DigitalRune.Editor.Game
     public class MouseLookBehavior : Behavior<D3DImagePresentationTarget>
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private CameraNode _cameraNode;
         private Point _lastMousePosition;
         private Matrix33F _originalOrientation;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -111,11 +111,11 @@ namespace DigitalRune.Editor.Game
             get { return (double)GetValue(SpeedProperty); }
             set { SetValue(SpeedProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -278,6 +278,6 @@ namespace DigitalRune.Editor.Game
             yaw = (float)Math.Atan2(-matrix.M20, matrix.M00);
             pitch = (float)Math.Asin(-matrix.M12);
         }
-        #endregion
+
     }
 }

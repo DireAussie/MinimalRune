@@ -21,13 +21,13 @@ namespace DigitalRune.Animation
   public class Vector2Animation : Animation<Vector2>
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -51,11 +51,11 @@ namespace DigitalRune.Animation
     /// <value>The animation of the y component.</value>
     [ContentSerializer(SharedResource = true)]
     public IAnimation<float> Y { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -83,11 +83,11 @@ namespace DigitalRune.Animation
       X = x;
       Y = y;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -118,7 +118,7 @@ namespace DigitalRune.Animation
       else
         result.Y = defaultSource.Y;
     }
-    #endregion
+
   }
 }
 #endif

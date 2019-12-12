@@ -18,16 +18,16 @@ namespace DigitalRune.Graphics.Rendering
   internal class StandardShadowMapRenderer : SceneNodeRenderer, IShadowMapRenderer
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly CameraNode _perspectiveCameraNode;
     private readonly CameraNode _orthographicCameraNode;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -43,11 +43,11 @@ namespace DigitalRune.Graphics.Rendering
       }
     }
     private Func<RenderContext, bool> _renderCallback;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -66,11 +66,11 @@ namespace DigitalRune.Graphics.Rendering
       _perspectiveCameraNode = new CameraNode(new Camera(new PerspectiveProjection()));
       _orthographicCameraNode = new CameraNode(new Camera(new OrthographicProjection()));
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -229,6 +229,6 @@ namespace DigitalRune.Graphics.Rendering
       context.ReferenceNode = originalReferenceNode;
       context.Object = null;
     }
-    #endregion
+
   }
 }

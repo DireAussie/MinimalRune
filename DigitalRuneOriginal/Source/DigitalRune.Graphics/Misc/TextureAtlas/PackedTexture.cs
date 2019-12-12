@@ -53,13 +53,13 @@ namespace DigitalRune.Graphics
     //       PackedTexture with properties set --> resolved?
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -118,7 +118,7 @@ namespace DigitalRune.Graphics
     public Vector2F Scale { get; set; }
 
 
-    #region ----- Tile Set -----
+
 
     /// <summary>
     /// Gets or sets the number of columns in the tile set.
@@ -162,13 +162,13 @@ namespace DigitalRune.Graphics
       }
     }
     private int _numberOfRows;
-    #endregion
 
-    #endregion
+
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -232,11 +232,11 @@ namespace DigitalRune.Graphics
       _numberOfColumns = numberOfColumns;
       _numberOfRows = numberOfRows;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -321,6 +321,6 @@ namespace DigitalRune.Graphics
       int h = (int)(ity * Scale.Y * pixelHeight);
       return new Rectangle(x, y, w, h);
     }
-    #endregion
+
   }
 }

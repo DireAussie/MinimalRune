@@ -38,7 +38,7 @@ namespace DigitalRune.Mathematics.Algebra
   public struct Vector4D : IEquatable<Vector4D>
   {
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -70,11 +70,11 @@ namespace DigitalRune.Mathematics.Algebra
     /// Returns the w unit <see cref="Vector4D"/> (0, 0, 0, 1).
     /// </summary>
     public static readonly Vector4D UnitW = new Vector4D(0, 0, 0, 1);
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -116,11 +116,11 @@ namespace DigitalRune.Mathematics.Algebra
     [DataMember]
 #endif
     public double W;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -400,11 +400,11 @@ namespace DigitalRune.Mathematics.Algebra
         return 3;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -503,11 +503,11 @@ namespace DigitalRune.Mathematics.Algebra
       Z = vector.Z;
       W = w;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Interfaces and Overrides
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -549,7 +549,7 @@ namespace DigitalRune.Mathematics.Algebra
     }
 
 
-    #region IEquatable<Vector4D> Members
+
     /// <summary>
     /// Indicates whether the current object is equal to another object of the same type.
     /// </summary>
@@ -562,7 +562,7 @@ namespace DigitalRune.Mathematics.Algebra
     {
       return this == other;
     }
-    #endregion
+
 
 
     /// <overloads>
@@ -593,11 +593,11 @@ namespace DigitalRune.Mathematics.Algebra
     {
       return string.Format(provider, "({0}; {1}; {2}; {3})", X, Y, Z, W);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Overloaded Operators
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -1157,11 +1157,11 @@ namespace DigitalRune.Mathematics.Algebra
       return new Vector4((float)X, (float)Y, (float)Z, (float)W);
     }
 #endif
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -1310,11 +1310,11 @@ namespace DigitalRune.Mathematics.Algebra
     {
       this = Dot(this, target) / target.LengthSquared * target;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Static Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -1587,6 +1587,6 @@ namespace DigitalRune.Mathematics.Algebra
 
       throw new FormatException("String is not a valid Vector4D.");
     }
-    #endregion
+
   }
 }

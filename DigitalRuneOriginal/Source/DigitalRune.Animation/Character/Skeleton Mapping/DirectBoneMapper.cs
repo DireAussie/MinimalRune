@@ -34,7 +34,7 @@ namespace DigitalRune.Animation.Character
   public class DirectBoneMapper : BoneMapper
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // true if cached data is invalid.
@@ -42,11 +42,11 @@ namespace DigitalRune.Animation.Character
 
     // Converts from A space to B space. Only rotations.
     private QuaternionF _rotationAToB;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -148,11 +148,11 @@ namespace DigitalRune.Animation.Character
     // The archer is in T-Pose. The Dude has lowered arms. The rotation offset rotates from
     // horizontal arms to lowered arms.
     // Currently we use the ChainBoneMapper for this cases.
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -168,11 +168,11 @@ namespace DigitalRune.Animation.Character
       MapAbsoluteTransforms = false;
       ScaleAToB = 1;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -352,6 +352,6 @@ namespace DigitalRune.Animation.Character
       // Apply new bone transform to B.
       skeletonB.SetBoneTransform(boneIndexB, boneTransform);
     }
-    #endregion
+
   }
 }

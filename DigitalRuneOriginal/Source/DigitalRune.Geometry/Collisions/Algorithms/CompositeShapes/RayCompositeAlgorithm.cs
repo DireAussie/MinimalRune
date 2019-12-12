@@ -110,7 +110,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
       {
         if (compositeShape.Partition != null)
         {
-          #region ----- Composite with BVH vs. * -----
+
 
           foreach (var childIndex in compositeShape.Partition.GetOverlaps(ray))
           {
@@ -126,11 +126,11 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
               testCollisionObject,
               testGeometricObject);
           }
-          #endregion
+
         }
         else
         {
-          #region ----- Composite vs. *-----
+
 
           var rayDirectionInverse = new Vector3F(
             1 / ray.Direction.X,
@@ -161,7 +161,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
                 break;
             }
           }
-          #endregion
+
         }
       }
       finally

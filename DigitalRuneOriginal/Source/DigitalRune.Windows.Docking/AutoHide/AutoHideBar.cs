@@ -27,21 +27,21 @@ namespace DigitalRune.Windows.Docking
     public class AutoHideBar : ItemsControl
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly List<AutoHideOverlay> _autoHideOverlays = new List<AutoHideOverlay>();
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -95,11 +95,11 @@ namespace DigitalRune.Windows.Docking
             get { return (FrameworkElement)GetValue(WindowPanelProperty); }
             set { SetValue(WindowPanelProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -109,11 +109,11 @@ namespace DigitalRune.Windows.Docking
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(AutoHideBar), new FrameworkPropertyMetadata(typeof(AutoHideBar)));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private static void OnDockPropertyChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
@@ -390,6 +390,6 @@ namespace DigitalRune.Windows.Docking
                     break;
             }
         }
-        #endregion
+
     }
 }

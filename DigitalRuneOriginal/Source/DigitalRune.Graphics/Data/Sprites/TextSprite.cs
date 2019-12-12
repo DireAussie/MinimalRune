@@ -15,13 +15,13 @@ namespace DigitalRune.Graphics
   public class TextSprite : Sprite
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -59,11 +59,11 @@ namespace DigitalRune.Graphics
     /// </summary>
     /// <value>The font. Can be <see langword="null"/>.</value>
     public SpriteFont Font { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -90,14 +90,14 @@ namespace DigitalRune.Graphics
       Text = text;
       Font = font;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc cref="Sprite.Clone"/>
     public new TextSprite Clone()
@@ -124,8 +124,8 @@ namespace DigitalRune.Graphics
       _text = sourceTyped.Text;
       Font = sourceTyped.Font;
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

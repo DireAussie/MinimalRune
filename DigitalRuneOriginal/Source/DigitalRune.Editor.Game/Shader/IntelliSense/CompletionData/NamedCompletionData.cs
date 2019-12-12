@@ -20,13 +20,13 @@ namespace DigitalRune.Editor.Shader
     internal class NamedCompletionData : ICompletionData, INamedObject
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -83,11 +83,11 @@ namespace DigitalRune.Editor.Shader
         /// </remarks>
         public string Text { get; protected set; }
 
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -109,11 +109,11 @@ namespace DigitalRune.Editor.Shader
             Image = image;
             Priority = 0;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -133,6 +133,6 @@ namespace DigitalRune.Editor.Shader
             // Insert Text.
             textArea.Document.Replace(completionSegment, Text);
         }
-        #endregion
+
     }
 }

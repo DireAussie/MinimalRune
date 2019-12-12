@@ -1,4 +1,4 @@
-﻿#region ----- Copyright -----
+﻿
 /*
    This control is a modified version of the ProgressRing implemented in MahApps.Metro (see
    https://github.com/MahApps/MahApps.Metro) which is licensed under Ms-PL (see below).
@@ -44,7 +44,7 @@
         laws, the contributors exclude the implied warranties of merchantability, fitness for a 
         particular purpose and non-infringement. 
 */
-#endregion
+
 
 using System;
 using System.Collections.Generic;
@@ -76,22 +76,22 @@ namespace DigitalRune.Windows.Controls
     public class ProgressRing : Control
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         // Defer actions until template is applied.
         private List<Action> _deferredActions = new List<Action>();
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -216,11 +216,11 @@ namespace DigitalRune.Windows.Controls
             get { return (Thickness)GetValue(EllipseOffsetProperty); }
             private set { SetValue(EllipseOffsetPropertyKey, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -240,11 +240,11 @@ namespace DigitalRune.Windows.Controls
         {
             SizeChanged += OnSizeChanged;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private static void OnIsActiveChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
@@ -350,6 +350,6 @@ namespace DigitalRune.Windows.Controls
             else
                 ExecuteOrDefer(() => VisualStateManager.GoToState(this, "Inactive", true));
         }
-        #endregion
+
     }
 }

@@ -64,7 +64,7 @@ namespace DigitalRune.Graphics.PostProcessing
   public class HdrFilter : PostProcessor
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Effect _effect;
@@ -87,11 +87,11 @@ namespace DigitalRune.Graphics.PostProcessing
     private readonly LuminanceFilter _luminance;
     private readonly RenderTarget2D _luminanceTarget;
     private readonly DownsampleFilter _downsampleFilter;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -269,11 +269,11 @@ namespace DigitalRune.Graphics.PostProcessing
     /// </para>
     /// </remarks>
     public float BlueShiftRange { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -328,11 +328,11 @@ namespace DigitalRune.Graphics.PostProcessing
       defaultTargetFormat.SurfaceFormat = SurfaceFormat.Color;
       DefaultTargetFormat = defaultTargetFormat;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -441,7 +441,7 @@ namespace DigitalRune.Graphics.PostProcessing
       context.RenderTarget = target;
       context.Viewport = viewport;
     }
-    #endregion
+
   }
 }
 #endif

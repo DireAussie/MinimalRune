@@ -52,7 +52,7 @@ namespace DigitalRune.Game.UI.Controls
   public class StackPanel : Panel
   {
     //--------------------------------------------------------------
-    #region Game Object Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary> 
@@ -75,11 +75,11 @@ namespace DigitalRune.Game.UI.Controls
       get { return GetValue<Orientation>(OrientationPropertyId); }
       set { SetValue(OrientationPropertyId, value); }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -89,11 +89,11 @@ namespace DigitalRune.Game.UI.Controls
     {
       Style = "StackPanel";
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -206,6 +206,6 @@ namespace DigitalRune.Game.UI.Controls
         }
       }
     }
-    #endregion
+
   }
 }

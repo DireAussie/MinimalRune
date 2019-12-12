@@ -17,7 +17,7 @@ namespace DigitalRune.Graphics.Effects
   public struct EffectPassEnumerator : IEnumerator<EffectPass>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly EffectTechniqueBinding _techniqueBinding;
@@ -25,11 +25,11 @@ namespace DigitalRune.Graphics.Effects
     private readonly RenderContext _context;
     private int _index; // Index of the next effect pass.
     private EffectPass _current;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -50,11 +50,11 @@ namespace DigitalRune.Graphics.Effects
     {
       get { return _current; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -82,11 +82,11 @@ namespace DigitalRune.Graphics.Effects
       _index = 0;
       _current = null;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -121,6 +121,6 @@ namespace DigitalRune.Graphics.Effects
       _index = 0;
       _current = null;
     }
-    #endregion
+
   }
 }

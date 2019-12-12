@@ -119,13 +119,13 @@ namespace DigitalRune.Physics.Specialized
     // - Test position motors instead of rotation motors.
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -208,11 +208,11 @@ namespace DigitalRune.Physics.Specialized
     /// </summary>
     /// <value>The motors. Per default this collection is empty.</value>
     public NotifyingCollection<RagdollMotor> Motors { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -234,11 +234,11 @@ namespace DigitalRune.Physics.Specialized
       Motors = new NotifyingCollection<RagdollMotor>(true, false);
       Motors.CollectionChanged += OnMotorsChanged;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private void OnBodiesChanged(object sender, CollectionChangedEventArgs<RigidBody> eventArgs)
@@ -577,6 +577,6 @@ namespace DigitalRune.Physics.Specialized
       body.LinearVelocity = Vector3F.Zero;
       body.AngularVelocity = Vector3F.Zero;
     }
-    #endregion
+
   }
 }

@@ -16,7 +16,7 @@ namespace DigitalRune.Geometry.Meshes
   internal sealed class CDTriangle
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // A unique number
@@ -40,23 +40,23 @@ namespace DigitalRune.Geometry.Meshes
 
     // The island to which this triangle belongs. 
     public CDIsland Island;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Methods
+
+
+
+    //--------------------------------------------------------------
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     // Creates CDTriangle.Neighbor references if the triangles are edge neighbors.
@@ -93,7 +93,7 @@ namespace DigitalRune.Geometry.Meshes
         }
       }
     }
-    #endregion
+
   }
 }
 #endif

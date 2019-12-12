@@ -46,16 +46,16 @@ namespace DigitalRune.Particles.Effectors
   public class FuncEffector<T, TResult> : ParticleEffector
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private IParticleParameter<T> _inputParameter;
     private IParticleParameter<TResult> _outputParameter;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -97,17 +97,17 @@ namespace DigitalRune.Particles.Effectors
     /// </summary>
     /// <value>The delegate function.</value>
     public Func<T, TResult> Func { get; set; }
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -191,6 +191,6 @@ namespace DigitalRune.Particles.Effectors
           outputs[i] = output;
       }
     }
-    #endregion
+
   }
 }

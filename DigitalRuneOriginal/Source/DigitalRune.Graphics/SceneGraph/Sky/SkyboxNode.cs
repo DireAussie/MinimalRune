@@ -26,13 +26,13 @@ namespace DigitalRune.Graphics.SceneGraph
   public class SkyboxNode : SkyNode
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -100,11 +100,11 @@ namespace DigitalRune.Graphics.SceneGraph
       }
     }
     private ColorEncoding _encoding;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -133,11 +133,11 @@ namespace DigitalRune.Graphics.SceneGraph
       Alpha = 1.0f;
       Encoding = ColorEncoding.SRgb;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc cref="SceneNode.Clone"/>
@@ -168,6 +168,6 @@ namespace DigitalRune.Graphics.SceneGraph
       EnableAlphaBlending = sourceTyped.EnableAlphaBlending;
       Encoding = sourceTyped.Encoding;
     }
-    #endregion
+
   }
 }

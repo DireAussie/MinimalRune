@@ -19,13 +19,13 @@ namespace DigitalRune.Editor
 
 
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -116,11 +116,11 @@ namespace DigitalRune.Editor
             set { SetProperty(ref _isVisible, value); }
         }
         private bool _isVisible = true;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <overloads>
@@ -161,11 +161,11 @@ namespace DigitalRune.Editor
             Name = name;
             _text = text;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -184,6 +184,6 @@ namespace DigitalRune.Editor
             // must be created by the caller.
             return null;
         }
-        #endregion
+
     }
 }

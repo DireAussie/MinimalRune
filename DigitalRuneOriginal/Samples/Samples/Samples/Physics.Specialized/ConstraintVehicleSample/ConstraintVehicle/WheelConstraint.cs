@@ -20,7 +20,7 @@ namespace DigitalRune.Physics.Specialized
   internal class WheelConstraint : Constraint
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly ConstraintWheel _wheel;
@@ -47,11 +47,11 @@ namespace DigitalRune.Physics.Specialized
     // value is determined by the motor force, the braking force and the
     // rolling friction force.
     private float _forwardImpulseLimit;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     public override Vector3F LinearConstraintImpulse
@@ -70,11 +70,11 @@ namespace DigitalRune.Physics.Specialized
     {
       get { return Vector3F.Zero; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     public WheelConstraint(ConstraintWheel wheel)
@@ -86,11 +86,11 @@ namespace DigitalRune.Physics.Specialized
       _sideConstraint = new Constraint1D();
       _forwardConstraint = new Constraint1D();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -308,6 +308,6 @@ namespace DigitalRune.Physics.Specialized
 
       base.OnChanged();
     }
-    #endregion
+
   }
 }

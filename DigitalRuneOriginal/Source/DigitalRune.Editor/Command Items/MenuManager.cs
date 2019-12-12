@@ -44,16 +44,16 @@ namespace DigitalRune.Editor
     internal class MenuManager : IWeakEventListener
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly Action _coerceVisibilityAction;
         private DispatcherOperation _coerceVisibilityOperation;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -88,11 +88,11 @@ namespace DigitalRune.Editor
         /// </summary>
         /// <value>The menu items.</value>
         public MenuItemViewModelCollection Menu { get; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -105,11 +105,11 @@ namespace DigitalRune.Editor
             CommandItems = new List<ICommandItem>();
             Menu = new MenuItemViewModelCollection();
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -339,6 +339,6 @@ namespace DigitalRune.Editor
                 hasVisiblePredecessor = false;
             }
         }
-        #endregion
+
     }
 }

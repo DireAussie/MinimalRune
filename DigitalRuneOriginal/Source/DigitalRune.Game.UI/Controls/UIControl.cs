@@ -155,7 +155,7 @@ namespace DigitalRune.Game.UI.Controls
   public partial class UIControl : GameObject
   {
     //--------------------------------------------------------------
-    #region Static Fields
+
     //--------------------------------------------------------------
 
     // The input event args can be cached and reused since UIControls are never updated in parallel.
@@ -171,21 +171,21 @@ namespace DigitalRune.Game.UI.Controls
 
     // The events of each control type.
     private static readonly Dictionary<Type, List<IUIEvent>> _eventsPerType = new Dictionary<Type, List<IUIEvent>>();
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // When we loop over the visual children we loop over a copy of the collection. This way
     // the children can remove themselves from the original collection.
     private readonly List<UIControl> _visualChildrenCopy;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -479,11 +479,11 @@ namespace DigitalRune.Game.UI.Controls
     /// Occurs after the device input was processed.
     /// </summary>
     public event EventHandler<InputEventArgs> InputProcessed;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Game Object Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary> 
@@ -1275,11 +1275,11 @@ namespace DigitalRune.Game.UI.Controls
       get { return GetValue<VerticalAlignment>(VerticalAlignmentPropertyId); }
       set { SetValue(VerticalAlignmentPropertyId, value); }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -1309,11 +1309,11 @@ namespace DigitalRune.Game.UI.Controls
       var isEnabled = Properties.Get<bool>(IsEnabledPropertyId);
       isEnabled.Changed += OnIsEnabledChanged;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -1832,6 +1832,6 @@ namespace DigitalRune.Game.UI.Controls
 
       base.OnPropertyChanged(gameProperty, oldValue, newValue);
     }
-    #endregion
+
   }
 }

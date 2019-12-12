@@ -14,15 +14,15 @@ namespace DigitalRune.Particles.Effectors
   public class TimeToSingleEffector : ParticleEffector
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private IParticleParameter<float> _parameter;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -40,17 +40,17 @@ namespace DigitalRune.Particles.Effectors
     /// </remarks>
     [ParticleParameter(ParticleParameterUsage.Out)]
     public string Parameter { get; set; }
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -119,6 +119,6 @@ namespace DigitalRune.Particles.Effectors
       for (int i = startIndex; i < startIndex + count; i++)
         values[i] = time;
     }
-    #endregion
+
   }
 }

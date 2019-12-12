@@ -49,13 +49,13 @@ namespace DigitalRune.Graphics
   public abstract class Sprite : INamedObject
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -63,20 +63,20 @@ namespace DigitalRune.Graphics
     /// </summary>
     /// <value>The name of the sprite.</value>
     public string Name { get; set; }
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
+
+    //--------------------------------------------------------------
+
+    //--------------------------------------------------------------
+
+
 
     /// <summary>
     /// Creates a new <see cref="Sprite"/> that is a clone (deep copy) of the current instance.
@@ -165,8 +165,8 @@ namespace DigitalRune.Graphics
     {
       Name = source.Name;
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

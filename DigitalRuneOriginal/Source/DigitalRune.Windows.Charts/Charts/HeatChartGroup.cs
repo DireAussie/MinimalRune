@@ -19,19 +19,19 @@ namespace DigitalRune.Windows.Charts
     public class HeatChartGroup : ChartGroup<HeatChart>
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties
-        //--------------------------------------------------------------
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -130,11 +130,11 @@ namespace DigitalRune.Windows.Charts
             get { return (Palette)GetValue(StrokePaletteProperty); }
             set { SetValue(StrokePaletteProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
 #if SILVERLIGHT
@@ -152,11 +152,11 @@ namespace DigitalRune.Windows.Charts
             DefaultStyleKeyProperty.OverrideMetadata(typeof(HeatChartGroup), new FrameworkPropertyMetadata(typeof(HeatChartGroup)));
         }
 #endif
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -190,6 +190,6 @@ namespace DigitalRune.Windows.Charts
         public override void ValidateData()
         {
         }
-        #endregion
+
     }
 }

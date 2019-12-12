@@ -26,13 +26,13 @@ namespace DigitalRune.Game
 
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -44,11 +44,11 @@ namespace DigitalRune.Game
       get { return _owner; }
     }
     private readonly GameObject _owner;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -61,11 +61,11 @@ namespace DigitalRune.Game
 
       _owner = owner;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -437,6 +437,6 @@ namespace DigitalRune.Game
     {
       return collection1._owner != collection2._owner;
     }
-    #endregion
+
   }
 }

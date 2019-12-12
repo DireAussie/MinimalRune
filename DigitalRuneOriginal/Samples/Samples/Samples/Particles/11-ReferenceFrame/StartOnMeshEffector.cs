@@ -25,7 +25,7 @@ namespace Samples.Particles
     }
 
 
-    #region ----- Cloning -----
+
 
     // Creates an instance of this class.
     protected override ParticleEffector CreateInstanceCore()
@@ -43,7 +43,7 @@ namespace Samples.Particles
       Parameter = sourceTyped.Parameter;
       Mesh = sourceTyped.Mesh;
     }
-    #endregion
+
 
 
     protected override void OnRequeryParameters()

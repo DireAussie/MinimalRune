@@ -27,16 +27,16 @@ namespace DigitalRune.Windows.Controls
     public class PathTextBlock : Control, ICommandSource
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private Typeface _typeface;
         private TextBlock _textBlock;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -131,11 +131,11 @@ namespace DigitalRune.Windows.Controls
             get { return (IInputElement)GetValue(CommandTargetProperty); }
             set { SetValue(CommandTargetProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -154,11 +154,11 @@ namespace DigitalRune.Windows.Controls
         {
             AddVisualChild(_textBlock);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -312,6 +312,6 @@ namespace DigitalRune.Windows.Controls
                 return "..." + parts[0];
             }
         }
-        #endregion
+
     }
 }

@@ -140,7 +140,7 @@ namespace DigitalRune.Animation.Tests
     }
 
 
-    #region ----- KeyFrameAnimation<T> -----
+
 
     // In the original version, the KeyFrameAnimation<T> directly support pre- and post-loop
     // behaviors. But this was removed in favor of the more general AnimationClip<T>.
@@ -262,6 +262,6 @@ namespace DigitalRune.Animation.Tests
       Assert.That(() => { animationClip.GetValue(TimeSpan.FromSeconds(0.25), defaultSource, defaultTarget); }, Throws.Nothing);
       Assert.That(() => { animationClip.GetValue(TimeSpan.FromSeconds(4.75), defaultSource, defaultTarget); }, Throws.Nothing);           
     }
-    #endregion    
+
   }
 }

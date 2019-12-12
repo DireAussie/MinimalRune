@@ -42,7 +42,7 @@ namespace ICSharpCode.AvalonEdit.Folding
 		
 		internal const double SizeFactor = Constants.PixelPerPoint;
 		
-		#region Brushes
+
 		/// <summary>
 		/// FoldingMarkerBrush dependency property.
 		/// </summary>
@@ -118,7 +118,7 @@ namespace ICSharpCode.AvalonEdit.Folding
 			if (e.Property.Name == SelectedFoldingMarkerBrushProperty.Name)
 				m.selectedFoldingControlPen = MakeFrozenPen((Brush)e.NewValue);
 		}
-		#endregion
+
 		
 		/// <inheritdoc/>
 		protected override Size MeasureOverride(Size availableSize)

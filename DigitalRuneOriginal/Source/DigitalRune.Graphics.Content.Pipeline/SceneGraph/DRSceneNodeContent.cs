@@ -17,13 +17,13 @@ namespace DigitalRune.Graphics.Content.Pipeline
   public class DRSceneNodeContent : INamedObject
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -100,11 +100,11 @@ namespace DigitalRune.Graphics.Content.Pipeline
     /// <value>User-defined tag object.</value>
     [ContentSerializer(ElementName = "UserData", SharedResource = true)]
     public object UserData { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -116,14 +116,14 @@ namespace DigitalRune.Graphics.Content.Pipeline
       ScaleLocal = Vector3F.One;
       PoseWorld = Pose.Identity;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Traversal -----
+
 
     /// <summary>
     /// Gets the children of the given scene node.
@@ -253,8 +253,8 @@ namespace DigitalRune.Graphics.Content.Pipeline
     {
       return TreeHelper.GetLeaves(this, node => node.GetChildren());
     }
-    #endregion
+
     
-    #endregion
+
   }
 }

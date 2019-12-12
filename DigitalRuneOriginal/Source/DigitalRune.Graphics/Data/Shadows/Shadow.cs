@@ -35,13 +35,13 @@ namespace DigitalRune.Graphics
 
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -114,11 +114,11 @@ namespace DigitalRune.Graphics
     /// <see langword="false"/>. The default value is <see langword="true"/>.
     /// </value>
     public bool Prefer16Bit { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -129,14 +129,14 @@ namespace DigitalRune.Graphics
       PreferredSize = 512;
       Prefer16Bit = true;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <summary>
     /// Creates a new <see cref="Shadow"/> that is a clone (deep copy) of the current instance.
@@ -230,8 +230,8 @@ namespace DigitalRune.Graphics
 
       // ShadowMap, ShadowMask, ShadowMaskChannel are not cloned!
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

@@ -44,7 +44,7 @@ namespace Samples.Animation
 
       var material = new UniformMaterial();
 
-      #region ----- Add Bodies and Body Offsets -----
+
 
       var numberOfBones = skeleton.NumberOfBones;
       ragdoll.Bodies.AddRange(Enumerable.Repeat<RigidBody>(null, numberOfBones));
@@ -117,9 +117,9 @@ namespace Samples.Animation
       var footRight = skeleton.GetIndex("R_Ankle");
       ragdoll.Bodies[footRight] = new RigidBody(new BoxShape(0.20f * scale, 0.5f * scale, 0.3f * scale), massFrame, material);
       ragdoll.BodyOffsets[footRight] = new Pose(new Vector3F(0.16f * scale, 0.15f * scale, 0));
-      #endregion
 
-      #region ----- Set Collision Filters -----
+
+
 
       // Collisions between connected bodies will be disabled in AddJoint(). (A BallJoint 
       // has a property CollisionEnabled which decides whether connected bodies can 
@@ -131,9 +131,9 @@ namespace Samples.Animation
       filter.Set(ragdoll.Bodies[armUpperRight].CollisionObject, ragdoll.Bodies[backLower].CollisionObject, false);
       filter.Set(ragdoll.Bodies[armUpperLeft].CollisionObject, ragdoll.Bodies[backLower].CollisionObject, false);
       filter.Set(ragdoll.Bodies[legUpperLeft].CollisionObject, ragdoll.Bodies[legUpperRight].CollisionObject, false);
-      #endregion
 
-      #region ----- Add Joints -----
+
+
 
       AddJoint(skeletonPose, ragdoll, pelvis, backLower);
       AddJoint(skeletonPose, ragdoll, backLower, backUpper);
@@ -151,9 +151,9 @@ namespace Samples.Animation
       AddJoint(skeletonPose, ragdoll, pelvis, legUpperRight);
       AddJoint(skeletonPose, ragdoll, legUpperRight, legLowerRight);
       AddJoint(skeletonPose, ragdoll, legLowerRight, footRight);
-      #endregion
 
-      #region ----- Add Limits -----
+
+
 
       // Choosing limits is difficult. 
       // We create hinge limits with AngularLimits in the back and in the knee. 
@@ -195,9 +195,9 @@ namespace Samples.Animation
 
       AddAngularLimit(skeletonPose, ragdoll, legUpperRight, legLowerRight, new Vector3F(0, 0, -2.2f), new Vector3F(0, 0, 0.0f));
       AddTwistSwingLimit(ragdoll, legLowerRight, footRight, Matrix33F.Identity, Matrix33F.Identity, new Vector3F(-0.1f, -0.3f, -0.7f), new Vector3F(0.1f, 0.3f, 0.7f));
-      #endregion
 
-      #region ----- Add Motors -----
+
+
 
       ragdoll.Motors.AddRange(Enumerable.Repeat<RagdollMotor>(null, numberOfBones));
       ragdoll.Motors[pelvis] = new RagdollMotor(pelvis, -1);
@@ -217,7 +217,7 @@ namespace Samples.Animation
       ragdoll.Motors[legUpperRight] = new RagdollMotor(legUpperRight, pelvis);
       ragdoll.Motors[legLowerRight] = new RagdollMotor(legLowerRight, legUpperRight);
       ragdoll.Motors[footRight] = new RagdollMotor(footRight, legLowerRight);
-      #endregion
+
     }
 
 

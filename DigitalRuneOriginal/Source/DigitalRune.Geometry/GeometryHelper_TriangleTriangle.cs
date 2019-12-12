@@ -29,7 +29,7 @@ namespace DigitalRune.Geometry
     //   to the other triangle. Bugfix: See Real-Time Rendering p. 760.
 
     //--------------------------------------------------------------
-    #region Helper Methods
+
     //--------------------------------------------------------------
 
     //private static void CROSS(out Vector3F result, ref Vector3F v1, ref Vector3F v2)
@@ -108,11 +108,11 @@ namespace DigitalRune.Geometry
 
       return true;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region 3D Overlap Tests
+
     //--------------------------------------------------------------
 
     private static bool coplanar_tri_tri3d(ref Vector3F p1, ref Vector3F q1, ref Vector3F r1,
@@ -383,11 +383,11 @@ namespace DigitalRune.Geometry
         }
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region 3D Intersection Tests
+
     //--------------------------------------------------------------
 
     //// This method is called when the triangles surely intersect
@@ -662,11 +662,11 @@ namespace DigitalRune.Geometry
     //    }
     //  }
     //}
-    #endregion
+
 
     
     //--------------------------------------------------------------
-    #region 2D Overlap Tests
+
     //--------------------------------------------------------------
 
     private static float ORIENT_2D(ref Vector2F a, ref Vector2F b, ref Vector2F c)
@@ -855,7 +855,7 @@ namespace DigitalRune.Geometry
         else
           return ccw_tri_tri_intersection_2d(ref p1, ref q1, ref r1, ref p2, ref q2, ref r2);
     }
-    #endregion
+
 
 // ReSharper restore IdentifierWordIsNotInDictionary
   }

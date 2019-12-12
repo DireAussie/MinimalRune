@@ -21,13 +21,13 @@ namespace DigitalRune.Game.UI.Controls
   public class ContentControl : UIControl
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -71,11 +71,11 @@ namespace DigitalRune.Game.UI.Controls
           ActualHeight - padding.Y - padding.W);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Game Object Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary> 
@@ -130,11 +130,11 @@ namespace DigitalRune.Game.UI.Controls
       get { return GetValue<bool>(ClipContentPropertyId); }
       set { SetValue(ClipContentPropertyId, value); }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -144,11 +144,11 @@ namespace DigitalRune.Game.UI.Controls
     {
       Style = "ContentControl";
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -275,6 +275,6 @@ namespace DigitalRune.Game.UI.Controls
         Arrange(Content, position, size);
       }
     }
-    #endregion
+
   }
 }

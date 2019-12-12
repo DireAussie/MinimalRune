@@ -19,13 +19,13 @@ namespace DigitalRune.Physics.Specialized
     // not rotate. The position of the CC is the bottom of the capsule.
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -120,11 +120,11 @@ namespace DigitalRune.Physics.Specialized
         Body.Pose = pose;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private void InitializeBody(Vector3F upVector)
@@ -172,6 +172,6 @@ namespace DigitalRune.Physics.Specialized
       // When the user changes the shape, we must re-compute all contacts.
       Body.ShapeChanged += (s, e) => UpdateContacts();
     }
-    #endregion
+
   }
 }

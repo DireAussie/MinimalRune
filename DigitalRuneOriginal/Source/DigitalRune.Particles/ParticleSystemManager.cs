@@ -27,7 +27,7 @@ namespace DigitalRune.Particles
   public class ParticleSystemManager : IParticleSystemService
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly List<ParticleSystem> _particleSystemsCopy = new List<ParticleSystem>();
@@ -35,11 +35,11 @@ namespace DigitalRune.Particles
 
     private readonly Action<int> _updateParticleSystem;
     private TimeSpan _deltaTime;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -82,11 +82,11 @@ namespace DigitalRune.Particles
     /// </remarks>
     /// <seealso cref="Parallel"/>
     public bool EnableMultithreading { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -111,11 +111,11 @@ namespace DigitalRune.Particles
       ParticleSystems = new ParticleSystemCollection();
       ParticleSystems.CollectionChanged += OnParticleSystemsChanged;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private void OnParticleSystemsChanged(object sender, CollectionChangedEventArgs<ParticleSystem> eventArgs)
@@ -199,6 +199,6 @@ namespace DigitalRune.Particles
     {
       _particleSystemsCopy[index].Update(_deltaTime);
     }
-    #endregion
+
   }
 }

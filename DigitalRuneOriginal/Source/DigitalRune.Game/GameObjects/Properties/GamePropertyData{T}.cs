@@ -14,7 +14,7 @@ namespace DigitalRune.Game
   internal class GamePropertyData<T> : IGamePropertyData
   {
     //--------------------------------------------------------------
-    #region Fields, Properties and Events
+
     //--------------------------------------------------------------
 
     // ----- The actual data that is stored for a property instance:
@@ -37,11 +37,11 @@ namespace DigitalRune.Game
 
     public event EventHandler<GamePropertyEventArgs<T>> Changing;
     public event EventHandler<GamePropertyEventArgs<T>> Changed;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     public GamePropertyData()
@@ -60,11 +60,11 @@ namespace DigitalRune.Game
         Changed = data.Changed;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     // Factory method of IGamePropertyData.
@@ -130,6 +130,6 @@ namespace DigitalRune.Game
         gameObject.OnPropertyChanged(property, oldValue, newValue);
       }
     }
-    #endregion
+
   }
 }

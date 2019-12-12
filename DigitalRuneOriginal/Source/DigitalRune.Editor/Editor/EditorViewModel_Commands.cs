@@ -14,7 +14,7 @@ namespace DigitalRune.Editor
     public partial class EditorViewModel
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         // Merge DockTabItem context menu nodes and create the menu items. (Note: The managers need
@@ -23,11 +23,11 @@ namespace DigitalRune.Editor
         internal MenuManager MenuManager;       // Used in EditorWindow.
         internal ToolBarManager ToolBarManager; // Used in EditorWindow.
         private MenuManager _contextMenuManager;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -69,11 +69,11 @@ namespace DigitalRune.Editor
 
         /// <inheritdoc/>
         public event EventHandler<EventArgs> UIInvalidated;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         private void InitializeCommandItems()
@@ -82,11 +82,11 @@ namespace DigitalRune.Editor
             ToolBarManager = new ToolBarManager();
             _contextMenuManager = new MenuManager();
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -145,6 +145,6 @@ namespace DigitalRune.Editor
         {
             UIInvalidated?.Invoke(this, eventArgs);
         }
-        #endregion
+
     }
 }

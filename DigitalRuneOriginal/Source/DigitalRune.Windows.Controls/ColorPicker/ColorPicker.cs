@@ -47,7 +47,7 @@ namespace DigitalRune.Windows.Controls
     public class ColorPicker : Control
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         // True if the eye dropper button was clicked.
@@ -106,17 +106,17 @@ namespace DigitalRune.Windows.Controls
         private RadioButton _buttonB;
         private Button _eyeDropperButton;
         private Selector _colorSpaceSelector;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -254,11 +254,11 @@ namespace DigitalRune.Windows.Controls
             add { AddHandler(ColorChangedEvent, value); }
             remove { RemoveHandler(ColorChangedEvent, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -285,11 +285,11 @@ namespace DigitalRune.Windows.Controls
 
             CommandBindings.Add(new CommandBinding(ColorPickerCommands.ResetColor, OnResetColorExecuted));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private void OnResetColorExecuted(object sender, ExecutedRoutedEventArgs eventArgs)
@@ -1233,7 +1233,7 @@ namespace DigitalRune.Windows.Controls
         }
 
 
-        #region ----- EyeDropper Color Picking -----
+
 
         private void OnEyeDropperButtonClicked(object sender, RoutedEventArgs eventArgs)
         {
@@ -1390,8 +1390,8 @@ namespace DigitalRune.Windows.Controls
 
             return position;
         }
-        #endregion
 
-        #endregion
+
+
     }
 }

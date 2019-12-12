@@ -57,17 +57,17 @@ namespace DigitalRune.Editor
     public abstract class EditorExtension
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
         private bool _initialized;   // True if Initialize and Startup were executed.
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -97,11 +97,11 @@ namespace DigitalRune.Editor
         /// higher priority are initialized first.
         /// </remarks>
         public int Priority { get; set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -111,11 +111,11 @@ namespace DigitalRune.Editor
         {
             Logger.Debug(CultureInfo.InvariantCulture, "Creating {0}.", GetType().Name);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -244,6 +244,6 @@ namespace DigitalRune.Editor
         /// from file, the editor checks the editor extensions and this method is called.
         /// </remarks>
         protected abstract IDockTabItem OnGetViewModel(string dockId);
-        #endregion
+
     }
 }

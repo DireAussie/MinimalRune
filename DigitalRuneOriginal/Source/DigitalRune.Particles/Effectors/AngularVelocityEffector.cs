@@ -40,16 +40,16 @@ namespace DigitalRune.Particles.Effectors
   public class AngularVelocityEffector : ParticleEffector
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private IParticleParameter<float> _angleParameter;
     private IParticleParameter<float> _angularSpeedParameter;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -84,11 +84,11 @@ namespace DigitalRune.Particles.Effectors
     /// </remarks>
     [ParticleParameter(ParticleParameterUsage.In)]
     public string SpeedParameter { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -99,11 +99,11 @@ namespace DigitalRune.Particles.Effectors
       AngleParameter = ParticleParameterNames.Angle;
       SpeedParameter = ParticleParameterNames.AngularSpeed;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -210,6 +210,6 @@ namespace DigitalRune.Particles.Effectors
 
       return angle;
     }
-    #endregion
+
   }
 }

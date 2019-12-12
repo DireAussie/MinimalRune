@@ -20,7 +20,7 @@ namespace DigitalRune.Editor.Outlines
     public sealed class OutlineExtension : EditorExtension, IOutlineService
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
@@ -29,11 +29,11 @@ namespace DigitalRune.Editor.Outlines
         private MergeableNodeCollection<ICommandItem> _menuNodes;
         private MergeableNodeCollection<ICommandItem> _toolBarNodes;
         private Lazy<OutlineViewModel> _outlineViewModel;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -49,11 +49,11 @@ namespace DigitalRune.Editor.Outlines
             get { return _outlineViewModel.Value.Outline; }
             set { _outlineViewModel.Value.Outline = value; }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -63,11 +63,11 @@ namespace DigitalRune.Editor.Outlines
         {
             Logger.Debug("Initializing OutlineExtension.");
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -196,6 +196,6 @@ namespace DigitalRune.Editor.Outlines
 
             Editor.ActivateItem(_outlineViewModel.Value);
         }
-        #endregion
+
     }
 }

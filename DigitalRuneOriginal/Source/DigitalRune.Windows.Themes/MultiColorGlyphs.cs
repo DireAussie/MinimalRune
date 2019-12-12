@@ -578,7 +578,7 @@ namespace DigitalRune.Windows.Themes
         public static MultiColorGlyph Macro { get; } = Create("\xE0D3", "\xE0D4");
 
 
-        #region ----- Message symbols -----
+
 
         /// <summary>
         /// Gets the information symbol (i).
@@ -603,7 +603,7 @@ namespace DigitalRune.Windows.Themes
         /// </summary>
         /// <value>The error/stop symbol (X).</value>
         public static MultiColorGlyph MessageError { get; } = Create("\xE071", LightGray, "\xE077", Red);
-        #endregion
+
 
 
         private static MultiColorGlyph Create(string backgroundGlyph, string foregroundGlyph)

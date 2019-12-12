@@ -19,7 +19,7 @@ namespace DigitalRune.Graphics.SceneGraph
   public class MaterialInstanceCollection : IList<MaterialInstance>
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     // This view is used as DebuggerTypeProxy. With this, the debugger will display 
@@ -143,22 +143,22 @@ namespace DigitalRune.Graphics.SceneGraph
         _current = null;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly MaterialInstance[] _array;
 
     // Optimization: Store the hash values of all render passes for fast lookup.
     internal int[] PassHashes;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -209,11 +209,11 @@ namespace DigitalRune.Graphics.SceneGraph
         ThrowNotSupportedException();
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -251,11 +251,11 @@ namespace DigitalRune.Graphics.SceneGraph
       for (int i = 0; i < numberOfMaterials; i++)
         _array[i] = materials[i].Clone();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -301,7 +301,7 @@ namespace DigitalRune.Graphics.SceneGraph
     }
 
 
-    #region ----- IEnumerable, IEnumerable<T> -----
+
 
     /// <summary>
     /// Returns an enumerator that iterates through the collection.
@@ -337,10 +337,10 @@ namespace DigitalRune.Graphics.SceneGraph
     {
       return GetEnumerator();
     }
-    #endregion
 
 
-    #region ----- ICollection, ICollection<T> -----
+
+
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
     private static void ThrowNotSupportedException()
@@ -453,10 +453,10 @@ namespace DigitalRune.Graphics.SceneGraph
       ThrowNotSupportedException();
       return false;
     }
-    #endregion
 
 
-    #region ----- IList<T> -----
+
+
 
     /// <summary>
     /// Determines the index of a specific material instance in the 
@@ -506,8 +506,8 @@ namespace DigitalRune.Graphics.SceneGraph
     {
       ThrowNotSupportedException();
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

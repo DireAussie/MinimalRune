@@ -22,7 +22,7 @@ namespace DigitalRune.Physics.Constraints
   public class BallJoint : Constraint
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private float _deltaTime;
@@ -30,11 +30,11 @@ namespace DigitalRune.Physics.Constraints
     private Vector3F _anchorBWorld;
     private Matrix33F _kInverse;
     private Vector3F _targetVelocity;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -165,17 +165,17 @@ namespace DigitalRune.Physics.Constraints
       }
     }
     private float _maxForce = float.PositiveInfinity;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -254,6 +254,6 @@ namespace DigitalRune.Physics.Constraints
 
       base.OnChanged();
     }
-    #endregion
+
   }
 }

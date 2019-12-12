@@ -51,7 +51,7 @@ namespace DigitalRune.Mathematics.Interpolation
       // Correct parameter.
       float loopedParameter = LoopParameter(parameter);
 
-      #region ----- Handle CurveLoopType.Linear -----
+
       var firstKey = Items[0];
       var lastKey = Items[numberOfKeys - 1];
       float curveStart = firstKey.Parameter;
@@ -69,7 +69,7 @@ namespace DigitalRune.Mathematics.Interpolation
         var tangent = GetTangent(loopedParameter);
         return lastKey.Point + tangent * (loopedParameter - curveEnd);
       }
-      #endregion
+
 
       // Special case: Only 1 point.
       if (numberOfKeys == 1)
@@ -432,7 +432,7 @@ namespace DigitalRune.Mathematics.Interpolation
 
       Vector3F p1;
       Vector3F p4;
-      #region ----- Find CatmullRom/BSpline neigbor points p1 and p4 -----
+
       if (index > 0)
         p1 = Items[index - 1].Point;
       else if (SmoothEnds && PreLoop == CurveLoopType.Cycle)
@@ -471,7 +471,7 @@ namespace DigitalRune.Mathematics.Interpolation
         // Mirror point Count-2 through last point.
         p4 = Items[numberOfKeys - 1].Point + (Items[numberOfKeys - 1].Point - Items[numberOfKeys - 2].Point);
       }
-      #endregion
+
 
       if (Items[index].Interpolation == SplineInterpolation.BSpline)
       {
@@ -607,7 +607,7 @@ namespace DigitalRune.Mathematics.Interpolation
     }
 
 
-    #region Implementation of IXmlSerializable
+
 
     /// <summary>
     /// This method is reserved and should not be used. When implementing the 
@@ -658,6 +658,6 @@ namespace DigitalRune.Mathematics.Interpolation
       writer.WriteValue(SmoothEnds);
       writer.WriteEndElement();
     }
-    #endregion
+
   }
 }

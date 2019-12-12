@@ -80,18 +80,18 @@ namespace DigitalRune.Editor.Status
     public sealed class StatusViewModel : Screen, IProgress<double>, IProgress<int>
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
         private static readonly TimeSpan DefaultDuration = TimeSpan.FromSeconds(3);
 
         private readonly Subject<double> _subject;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -222,11 +222,11 @@ namespace DigitalRune.Editor.Status
             }
         }
         private bool _isCompleted;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -254,11 +254,11 @@ namespace DigitalRune.Editor.Status
                 Message = "TODO: Update status message.";
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         [Conditional("DEBUG")]
@@ -498,7 +498,7 @@ namespace DigitalRune.Editor.Status
         }
 
 
-        #region ----- IProgress<T> -----
+
 
         /// <summary>
         /// Reports a progress update.
@@ -536,8 +536,8 @@ namespace DigitalRune.Editor.Status
                 Progress = double.NaN;
             }
         }
-        #endregion
 
-        #endregion
+
+
     }
 }

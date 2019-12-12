@@ -19,7 +19,7 @@ namespace DigitalRune.Editor.Shader
     internal class BuildLogger : ILogger
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private const string Indentation = "  ";
@@ -27,11 +27,11 @@ namespace DigitalRune.Editor.Shader
         private int _indent;
         private readonly IOutputService _outputService;
         private readonly StringBuilder _stringBuilder; // To be used on UI thread!
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -48,11 +48,11 @@ namespace DigitalRune.Editor.Shader
         /// One of the enumeration values. The default is <see cref="LoggerVerbosity.Normal"/>.
         /// </value>
         public LoggerVerbosity Verbosity { get; set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -71,11 +71,11 @@ namespace DigitalRune.Editor.Shader
             _stringBuilder = new StringBuilder();
             Verbosity = LoggerVerbosity.Normal;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
 
@@ -252,6 +252,6 @@ namespace DigitalRune.Editor.Shader
         public void Shutdown()
         {
         }
-        #endregion
+
     }
 }

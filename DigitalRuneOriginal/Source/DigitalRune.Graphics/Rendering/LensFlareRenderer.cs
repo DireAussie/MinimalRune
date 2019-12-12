@@ -76,7 +76,7 @@ namespace DigitalRune.Graphics.Rendering
     // - "Texture Masking for Faster Lens Flare", Game Programming Gems 2, pp. 474
 
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -99,11 +99,11 @@ namespace DigitalRune.Graphics.Rendering
         }
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Lens flares below these thresholds are ignored.
@@ -125,17 +125,17 @@ namespace DigitalRune.Graphics.Rendering
     private readonly EffectTechnique _techniqueLinear;
     private readonly EffectTechnique _techniqueGamma;
     private readonly EffectParameter _transformParameter;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -226,11 +226,11 @@ namespace DigitalRune.Graphics.Rendering
 
       base.Dispose(disposing);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -692,6 +692,6 @@ namespace DigitalRune.Graphics.Rendering
       _spriteBatch.End();
       savedRenderState.Restore();
     }
-    #endregion
+
   }
 }

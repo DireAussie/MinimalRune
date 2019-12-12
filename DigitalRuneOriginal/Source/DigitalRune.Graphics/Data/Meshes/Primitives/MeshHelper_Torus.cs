@@ -1,10 +1,10 @@
-﻿#region ----- Copyright -----
+﻿
 /*
    Torus creation algorithm is taken from the Primitives3D sample, which is 
    licensed under the Microsoft Public License (MS-PL).
    See http://create.msdn.com/en-US/education/catalog/sample/primitives_3d
 */
-#endregion
+
 
 using System;
 using System.Collections.Generic;

@@ -74,15 +74,15 @@ namespace DigitalRune.Graphics
   public abstract class GraphicsScreen : INamedObject
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private int _lastFrame = -1;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -160,11 +160,11 @@ namespace DigitalRune.Graphics
     /// back buffer. The default value is <see langword="null"/>.
     /// </value>
     public RenderTargetFormat SourceTextureFormat { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -183,11 +183,11 @@ namespace DigitalRune.Graphics
       Coverage = GraphicsScreenCoverage.Partial;
       IsVisible = true;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -297,6 +297,6 @@ namespace DigitalRune.Graphics
     /// </para>
     /// </remarks>
     protected abstract void OnRender(RenderContext context);
-    #endregion
+
   }
 }

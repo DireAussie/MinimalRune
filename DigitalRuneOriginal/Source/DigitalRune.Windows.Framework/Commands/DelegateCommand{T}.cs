@@ -24,7 +24,7 @@ namespace DigitalRune.Windows.Framework
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
         // See also How to: Identify a Nullable Type (C# Programming Guide), https://msdn.microsoft.com/en-us/library/ms366789.aspx
         private static readonly bool IsNotNullableValueType = 
@@ -35,11 +35,11 @@ namespace DigitalRune.Windows.Framework
 #if !NET45
         private readonly WeakEvent<EventHandler> _canExecuteChangedEvent;
 #endif
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
 #if NET45
@@ -71,11 +71,11 @@ namespace DigitalRune.Windows.Framework
             }
         }
 #endif
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -102,11 +102,11 @@ namespace DigitalRune.Windows.Framework
 #endif
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -204,6 +204,6 @@ namespace DigitalRune.Windows.Framework
             }
 #endif
         }
-        #endregion
+
     }
 }

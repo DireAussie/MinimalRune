@@ -8,25 +8,25 @@ namespace EditorApp
     internal sealed class TestDockTabItemViewModel : EditorDockTabItemViewModel
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         public new const string DockId = "TestView";
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         public DelegateCommand PrintPreviewCommand { get; private set; }
 
         public DelegateCommand PrintCommand { get; private set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         public TestDockTabItemViewModel()
@@ -38,11 +38,11 @@ namespace EditorApp
             PrintPreviewCommand = new DelegateCommand(ShowPrintPreview);
             PrintCommand = new DelegateCommand(Print);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private static void ShowPrintPreview()
@@ -56,6 +56,6 @@ namespace EditorApp
         {
             new TestPrintDocument().Print();
         }
-        #endregion
+
     }
 }

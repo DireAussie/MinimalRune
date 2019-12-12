@@ -47,13 +47,13 @@ namespace DigitalRune.Graphics.PostProcessing
   public abstract class PostProcessor : IDisposable, INamedObject
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -130,11 +130,11 @@ namespace DigitalRune.Graphics.PostProcessing
     /// (R8G8B8A8) texture.
     /// </remarks>
     public RenderTargetFormat DefaultTargetFormat { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -190,11 +190,11 @@ namespace DigitalRune.Graphics.PostProcessing
         IsDisposed = true;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -300,7 +300,7 @@ namespace DigitalRune.Graphics.PostProcessing
     /// </para>
     /// </remarks>
     protected abstract void OnProcess(RenderContext context);
-    #endregion
+
   }
 }
 #endif

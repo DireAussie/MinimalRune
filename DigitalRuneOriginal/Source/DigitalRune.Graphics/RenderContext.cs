@@ -41,16 +41,16 @@ namespace DigitalRune.Graphics
   public class RenderContext
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
     //--------------------------------------------------------------
 
-    #region ----- General -----
+    //--------------------------------------------------------------
+
+
 
     /// <summary>
     /// Gets or sets the graphics service.
@@ -105,10 +105,10 @@ namespace DigitalRune.Graphics
     /// </summary>
     /// <value>The current data object.</value>
     public object Object { get; set; }
-    #endregion
 
 
-    #region ----- Render State -----
+
+
 
     /// <summary>
     /// Gets or sets the source texture that contains the source image for the current render
@@ -163,10 +163,10 @@ namespace DigitalRune.Graphics
     /// <see cref="SceneTexture"/> will specify the last scene texture. 
     /// </remarks>
     public Texture2D SceneTexture { get; set; }
-    #endregion
 
 
-    #region ----- Deferred Rendering Buffers -----
+
+
 
     /// <summary>
     /// Gets or sets the first texture containing G-buffer data.
@@ -205,10 +205,10 @@ namespace DigitalRune.Graphics
     /// </summary>
     /// <value>The first light buffer texture.</value>
     public RenderTarget2D LightBuffer1 { get; set; }
-    #endregion
 
 
-    #region ----- Effect -----
+
+
 
     /// <summary>
     /// Gets or sets a string that identifies the current render pass.
@@ -308,10 +308,10 @@ namespace DigitalRune.Graphics
     /// The index of the current <see cref="EffectPass"/>, or -1 if not applicable.
     /// </value>
     public int PassIndex { get; set; }  // Needed by the DefaultEffectBinder.
-    #endregion
 
 
-    #region ----- Scene -----
+
+
 
     /// <summary>
     /// Gets or sets the scene.
@@ -357,10 +357,10 @@ namespace DigitalRune.Graphics
     /// </para>
     /// </remarks>
     public SceneNode ReferenceNode { get; set; }
-    #endregion
 
 
-    #region ----- Level of Detail (LOD) -----
+
+
 
     /// <summary>
     /// Gets or sets the global LOD bias.
@@ -540,10 +540,10 @@ namespace DigitalRune.Graphics
 
     // LOD hysteresis corrected by LOD bias.
     internal float ScaledLodHysteresis; 
-    #endregion
 
 
-    #region ----- Shadows -----
+
+
 
     // Obsolete: Only kept for backward compatibility.
     /// <summary>
@@ -563,10 +563,10 @@ namespace DigitalRune.Graphics
     /// </para>
     /// </remarks>
     internal float ShadowNear { get; set; }
-    #endregion
+
     
 
-    #region ----- Misc -----
+
 
     /// <summary>
     /// Gets or sets a user-defined object.
@@ -603,13 +603,13 @@ namespace DigitalRune.Graphics
       }
     }
     private Dictionary<string, object> _data;
-    #endregion
 
-    #endregion
+
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -627,14 +627,14 @@ namespace DigitalRune.Graphics
       GraphicsService = graphicsService;
       Reset();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <summary>
     /// Creates a new <see cref="RenderContext"/> that is a clone of the current instance.
@@ -773,7 +773,7 @@ namespace DigitalRune.Graphics
           _data.Add(entry.Key, entry.Value);
       }
     }
-    #endregion
+
 
 
     /// <summary>
@@ -836,6 +836,6 @@ namespace DigitalRune.Graphics
     {
       CloneCore(source);
     }
-    #endregion
+
   }
 }

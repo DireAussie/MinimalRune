@@ -27,7 +27,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -206,11 +206,11 @@ namespace DigitalRune.Graphics.Content.Pipeline
       set { _scaleAlphaToCoverage = value; }
     }
     private bool _scaleAlphaToCoverage;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -655,6 +655,6 @@ namespace DigitalRune.Graphics.Content.Pipeline
       throw new InvalidOperationException("Invalid texture dimension.");
     }
 #endif
-    #endregion
+
   }
 }

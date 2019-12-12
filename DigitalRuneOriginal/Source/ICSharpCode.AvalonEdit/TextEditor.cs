@@ -46,7 +46,7 @@ namespace ICSharpCode.AvalonEdit
 	[Localizability(LocalizationCategory.Text), ContentProperty("Text")]
 	public partial class TextEditor : Control, ITextEditorComponent, IServiceProvider, IWeakEventListener
 	{
-		#region Constructors
+
 		static TextEditor()
 		{
 			DefaultStyleKeyProperty.OverrideMetadata(typeof(TextEditor),
@@ -86,7 +86,7 @@ namespace ICSharpCode.AvalonEdit
 			SetValue(property, value);
 		}
 		#endif
-		#endregion
+
 		
 		/// <inheritdoc/>
 		protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer()
@@ -105,7 +105,7 @@ namespace ICSharpCode.AvalonEdit
 			}
 		}
 		
-		#region Document property
+
 		/// <summary>
 		/// Document property.
 		/// </summary>
@@ -159,9 +159,9 @@ namespace ICSharpCode.AvalonEdit
 			OnDocumentChanged(EventArgs.Empty);
 			OnTextChanged(EventArgs.Empty);
 		}
-		#endregion
+
 		
-		#region Options property
+
 		/// <summary>
 		/// Options property.
 		/// </summary>
@@ -230,9 +230,9 @@ namespace ICSharpCode.AvalonEdit
 		{
 			return ReceiveWeakEvent(managerType, sender, e);
 		}
-		#endregion
+
 		
-		#region Text property
+
 		/// <summary>
 		/// Gets/Sets the text of the current document.
 		/// </summary>
@@ -278,9 +278,9 @@ namespace ICSharpCode.AvalonEdit
 				TextChanged(this, e);
 			}
 		}
-		#endregion
+
 		
-		#region TextArea / ScrollViewer properties
+
 		readonly TextArea textArea;
 		ScrollViewer scrollViewer;
 		
@@ -325,9 +325,9 @@ namespace ICSharpCode.AvalonEdit
 			if (textArea != null)
 				command.Execute(null, textArea);
 		}
-		#endregion
+
 		
-		#region Syntax highlighting
+
 		/// <summary>
 		/// The <see cref="SyntaxHighlighting"/> property.
 		/// </summary>
@@ -375,9 +375,9 @@ namespace ICSharpCode.AvalonEdit
 				throw new ArgumentNullException("highlightingDefinition");
 			return new HighlightingColorizer(highlightingDefinition);
 		}
-		#endregion
+
 		
-		#region WordWrap
+
 		/// <summary>
 		/// Word wrap dependency property.
 		/// </summary>
@@ -396,9 +396,9 @@ namespace ICSharpCode.AvalonEdit
 			get { return (bool)GetValue(WordWrapProperty); }
 			set { SetValue(WordWrapProperty, Boxes.Box(value)); }
 		}
-		#endregion
+
 		
-		#region IsReadOnly
+
 		/// <summary>
 		/// IsReadOnly dependency property.
 		/// </summary>
@@ -431,9 +431,9 @@ namespace ICSharpCode.AvalonEdit
 				}
 			}
 		}
-		#endregion
+
 		
-		#region IsModified
+
 		/// <summary>
 		/// Dependency property for <see cref="IsModified"/>
 		/// </summary>
@@ -478,9 +478,9 @@ namespace ICSharpCode.AvalonEdit
 				return false;
 			}
 		}
-		#endregion
+
 		
-		#region ShowLineNumbers
+
 		/// <summary>
 		/// ShowLineNumbers dependency property.
 		/// </summary>
@@ -520,9 +520,9 @@ namespace ICSharpCode.AvalonEdit
 				}
 			}
 		}
-		#endregion
+
 		
-		#region LineNumbersForeground
+
 		/// <summary>
 		/// LineNumbersForeground dependency property.
 		/// </summary>
@@ -547,9 +547,9 @@ namespace ICSharpCode.AvalonEdit
 				lineNumberMargin.SetValue(Control.ForegroundProperty, e.NewValue);
 			}
 		}
-		#endregion
+
 		
-		#region TextBoxBase-like methods
+
 		/// <summary>
 		/// Appends text to the end of the document.
 		/// </summary>
@@ -829,9 +829,9 @@ namespace ICSharpCode.AvalonEdit
 					scrollViewer.ScrollToHorizontalOffset(value);
 			}
 		}
-		#endregion
+
 		
-		#region TextBox methods
+
 		/// <summary>
 		/// Gets/Sets the selected text.
 		/// </summary>
@@ -952,9 +952,9 @@ namespace ICSharpCode.AvalonEdit
 		{
 			this.Text = string.Empty;
 		}
-		#endregion
+
 		
-		#region Loading from stream
+
 		/// <summary>
 		/// Loads the text from the stream, auto-detecting the encoding.
 		/// </summary>
@@ -1032,9 +1032,9 @@ namespace ICSharpCode.AvalonEdit
 				Save(fs);
 			}
 		}
-		#endregion
+
 		
-		#region MouseHover events
+
 		/// <summary>
 		/// The PreviewMouseHover event.
 		/// </summary>
@@ -1092,9 +1092,9 @@ namespace ICSharpCode.AvalonEdit
 			add { AddHandler(MouseHoverStoppedEvent, value); }
 			remove { RemoveHandler(MouseHoverStoppedEvent, value); }
 		}
-		#endregion
+
 		
-		#region ScrollBarVisibility
+
 		/// <summary>
 		/// Dependency property for <see cref="HorizontalScrollBarVisibility"/>
 		/// </summary>
@@ -1120,7 +1120,7 @@ namespace ICSharpCode.AvalonEdit
 			get { return (ScrollBarVisibility)GetValue(VerticalScrollBarVisibilityProperty); }
 			set { SetValue(VerticalScrollBarVisibilityProperty, value); }
 		}
-		#endregion
+
 		
 		object IServiceProvider.GetService(Type serviceType)
 		{

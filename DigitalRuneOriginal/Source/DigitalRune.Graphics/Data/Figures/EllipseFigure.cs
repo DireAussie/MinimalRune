@@ -14,18 +14,18 @@ namespace DigitalRune.Graphics
   public class EllipseFigure : Figure
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly ArcSegment2F _arcSegment = new ArcSegment2F
     {
       Radius = new Vector2F(0.5f)
     };
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------    
 
     /// <summary>
@@ -92,17 +92,17 @@ namespace DigitalRune.Graphics
 
     /// <inheritdoc/>
     internal override bool HasFill { get { return IsFilled; } }
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -157,6 +157,6 @@ namespace DigitalRune.Graphics
 
       ResourcePools<Vector2F>.Lists.Recycle(tempVertices);
     }
-    #endregion
+
   }
 }

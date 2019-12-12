@@ -21,13 +21,13 @@ namespace DigitalRune.Graphics
   public class LensFlareElement
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -83,11 +83,11 @@ namespace DigitalRune.Graphics
     /// </summary>
     /// <value>The texture. The default value is <see langword="null" />.</value>
     public PackedTexture Texture { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -158,14 +158,14 @@ namespace DigitalRune.Graphics
       Origin = origin;
       Texture = texture;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <summary>
     /// Creates a new <see cref="LensFlareElement"/> that is a clone (deep copy) of the current instance.
@@ -260,8 +260,8 @@ namespace DigitalRune.Graphics
       Scale = source.Scale;
       Texture = source.Texture;
     }
-    #endregion
+
     
-    #endregion
+
   }
 }

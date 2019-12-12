@@ -15,7 +15,7 @@ namespace DigitalRune.Graphics
     // Explicit interface implementations.
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -72,11 +72,11 @@ namespace DigitalRune.Graphics
     {
       get { return _bindingsPerPass.Values; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -215,6 +215,6 @@ namespace DigitalRune.Graphics
     {
       return _bindingsPerPass.TryGetValue(key, out value);
     }
-    #endregion
+
   }
 }

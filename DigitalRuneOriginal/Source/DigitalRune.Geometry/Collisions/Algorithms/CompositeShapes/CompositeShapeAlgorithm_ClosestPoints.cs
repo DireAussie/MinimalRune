@@ -21,7 +21,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
       public ContactSet ContactSet;
 
 
-      #region ----- Test Objects -----
+
 
       // Test objects which are re-used to avoid unnecessary memory allocations.
       public ContactSet TestContactSet;
@@ -31,7 +31,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
       // Only needed for Partition vs. Partition.
       public CollisionObject TestCollisionObjectB;
       public TestGeometricObject TestGeometricObjectB;
-      #endregion
+
 
 
       public ClosestPointCallback()

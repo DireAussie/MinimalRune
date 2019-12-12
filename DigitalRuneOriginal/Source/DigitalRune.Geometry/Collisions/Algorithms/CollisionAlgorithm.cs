@@ -20,13 +20,13 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
   public abstract class CollisionAlgorithm
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -34,11 +34,11 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
     /// </summary>
     /// <value>The collision detection service.</value>
     public CollisionDetection CollisionDetection { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -55,11 +55,11 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
 
       CollisionDetection = collisionDetection;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -433,6 +433,6 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
       if (contactSet.HaveContact == false && contactSet.Any(contact => contact.PenetrationDepth >= 0))
         throw new GeometryException("HaveContact is false but the contactSet contains a touching/penetrating contact.");
     }
-    #endregion
+
   }
 }

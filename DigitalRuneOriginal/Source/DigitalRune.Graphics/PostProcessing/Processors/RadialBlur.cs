@@ -21,7 +21,7 @@ namespace DigitalRune.Graphics.PostProcessing
   public class RadialBlur : PostProcessor
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Effect _effect;
@@ -30,11 +30,11 @@ namespace DigitalRune.Graphics.PostProcessing
     private readonly EffectParameter _numberOfSamplesParameter;
     private readonly EffectParameter _maxBlurRadiusParameter;
     private readonly EffectParameter _maxBlurAmountParameter;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -63,11 +63,11 @@ namespace DigitalRune.Graphics.PostProcessing
     /// </summary>
     /// <value>The number of samples. The default value is 5.</value>
     public int NumberOfSamples { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -90,11 +90,11 @@ namespace DigitalRune.Graphics.PostProcessing
       MaxBlurRadius = 1;
       MaxBlurAmount = 0.04f;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -121,7 +121,7 @@ namespace DigitalRune.Graphics.PostProcessing
 
       _sourceTextureParameter.SetValue((Texture2D)null);
     }
-    #endregion
+
   }
 }
 #endif

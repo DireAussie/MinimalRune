@@ -16,22 +16,22 @@ namespace DigitalRune.Windows.Framework
     public partial class DragDropBehavior
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private DropCommandParameter _dropCommandParameter;
         private Point _currentMousePosition;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -211,11 +211,11 @@ namespace DigitalRune.Windows.Framework
             get { return (bool)GetValue(ShowBetweenItemsIndicatorProperty); }
             set { SetValue(ShowBetweenItemsIndicatorProperty, Boxed.Get(value)); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private static void OnAllowDropChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
@@ -493,6 +493,6 @@ namespace DigitalRune.Windows.Framework
 
             return hasVerticalOrientation;
         }
-        #endregion
+
     }
 }

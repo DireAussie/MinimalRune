@@ -27,13 +27,13 @@ namespace DigitalRune.Geometry.Shapes
   public class LineSegmentShape : ConvexShape
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -105,11 +105,11 @@ namespace DigitalRune.Geometry.Shapes
     {
       get { return (_end - _start).LengthSquared; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -154,14 +154,14 @@ namespace DigitalRune.Geometry.Shapes
       _start = lineSegment.Start;
       _end = lineSegment.End;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Shape CreateInstanceCore()
@@ -177,7 +177,7 @@ namespace DigitalRune.Geometry.Shapes
       _start = source.Start;
       _end = source.End;
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -285,6 +285,6 @@ namespace DigitalRune.Geometry.Shapes
     {
       return String.Format(CultureInfo.InvariantCulture, "LineSegmentShape {{ Start = {0}, End = {1} }}", _start, _end);
     }
-    #endregion
+
   }
 }

@@ -19,15 +19,15 @@ namespace DigitalRune.Graphics.Content
   internal class ImageCollection : IList<Image>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Image[] _images;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -79,11 +79,11 @@ namespace DigitalRune.Graphics.Content
         _images[index] = value;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -98,11 +98,11 @@ namespace DigitalRune.Graphics.Content
     {
       _images = new Image[numberOfImages];
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -236,6 +236,6 @@ namespace DigitalRune.Graphics.Content
     {
       throw new NotSupportedException();
     }
-    #endregion
+
   }
 }

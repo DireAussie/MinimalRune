@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#region ----- Credits -----
+
 /* 
    The DualPartition is based on the dynamic bounding volume tree broadphase of Bullet.
    (Note: Our DualPartition and the original version of Bullet have only the general algorithm
@@ -23,7 +23,7 @@
   
      btDbvtBroadphase implementation by Nathanael Presson
 */
-#endregion
+
 
 
 using System;
@@ -77,7 +77,7 @@ namespace DigitalRune.Geometry.Partitioning
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // New or invalid items are stored in stages. (Stage 0 and 1 are alternated.)
@@ -97,11 +97,11 @@ namespace DigitalRune.Geometry.Partitioning
     // All dynamic items are now in the dynamic partition.
     // All items in the previous stage are moved from the dynamic partition into the static
     // partition.
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -152,11 +152,11 @@ namespace DigitalRune.Geometry.Partitioning
       }
     }
 #endif
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -221,14 +221,14 @@ namespace DigitalRune.Geometry.Partitioning
       _currentStage = _stage0;
       _previousStage = _stage1;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override BasePartition<T> CreateInstanceCore()
@@ -248,7 +248,7 @@ namespace DigitalRune.Geometry.Partitioning
       sourceTyped.StaticPartition = sourceTyped.StaticPartition.Clone();
       sourceTyped.DynamicPartition = sourceTyped.DynamicPartition.Clone();
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -480,6 +480,6 @@ namespace DigitalRune.Geometry.Partitioning
       Debug.Assert(FilterSelfOverlap(overlap), "Filtering should have been applied.");
       SelfOverlaps.Add(overlap);
     }
-    #endregion
+
   }
 }

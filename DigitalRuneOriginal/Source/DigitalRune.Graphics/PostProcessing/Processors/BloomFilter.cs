@@ -19,7 +19,7 @@ namespace DigitalRune.Graphics.PostProcessing
   public class BloomFilter : PostProcessor
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Effect _effect;
@@ -34,11 +34,11 @@ namespace DigitalRune.Graphics.PostProcessing
 
     private readonly Blur _blur;
     private readonly DownsampleFilter _downsampleFilter;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -95,11 +95,11 @@ namespace DigitalRune.Graphics.PostProcessing
       }
     }
     private int _downsampleFactor;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -132,11 +132,11 @@ namespace DigitalRune.Graphics.PostProcessing
       Saturation = 0.5f;
       DownsampleFactor = 4;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -203,7 +203,7 @@ namespace DigitalRune.Graphics.PostProcessing
       context.RenderTarget = target;
       context.Viewport = viewport;
     }
-    #endregion
+
   }
 }
 #endif

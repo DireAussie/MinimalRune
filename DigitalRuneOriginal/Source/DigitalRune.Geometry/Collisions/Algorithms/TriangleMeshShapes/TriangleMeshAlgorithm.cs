@@ -126,7 +126,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
             && (type != CollisionQueryType.ClosestPoints
                 || triangleMeshShapeA.Partition is ISupportClosestPointQueries<int>))
         {
-          #region ----- TriangleMesh with BVH vs. TriangleMesh with BVH -----
+
 
           Debug.Assert(swapped == false, "Why did we swap the objects? Order of objects is fine.");
 
@@ -209,7 +209,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
 
             ClosestPointCallbacks.Recycle(callback);
           }
-          #endregion
+
         }
         else
         {
@@ -296,7 +296,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
               && (type != CollisionQueryType.ClosestPoints
                 || triangleMeshShapeA.Partition is ISupportClosestPointQueries<int>))
           {
-            #region ----- TriangleMesh BVH vs. * -----
+
 
             // Get AABB of B in local space of A.
             var aabbBInA = geometricObjectB.Shape.GetAabb(scaleB, poseA.Inverse * poseB);
@@ -347,11 +347,11 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
 
               ClosestPointCallbacks.Recycle(callback);
             }
-            #endregion
+
           }
           else
           {
-            #region ----- TriangleMesh vs. * -----
+
 
             // Find an upper bound for the distance we have to search.
             // If object are in contact or we make contact/boolean query, then the distance is 0.
@@ -420,7 +420,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
                 }
               }
             }
-            #endregion
+
           }
         }
       }
@@ -594,7 +594,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
           }
         }
 
-        #region ----- Merge testContactSet into contactSet -----
+
 
         if (testContactSet.Count > 0)
         {
@@ -615,7 +615,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
           // Merge the contact info.
           ContactHelper.Merge(contactSet, testContactSet, type, CollisionDetection.ContactPositionTolerance);
         }
-        #endregion
+
       }
     }
 

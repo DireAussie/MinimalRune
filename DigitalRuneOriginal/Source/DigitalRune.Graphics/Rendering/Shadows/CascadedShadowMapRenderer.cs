@@ -22,7 +22,7 @@ namespace DigitalRune.Graphics.Rendering
   internal class CascadedShadowMapRenderer : SceneNodeRenderer, IShadowMapRenderer
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // A cached array which is reused in GetBoundingSphere().
@@ -33,11 +33,11 @@ namespace DigitalRune.Graphics.Rendering
 
     private readonly PerspectiveViewVolume _splitVolume;
     private readonly CameraNode _orthographicCameraNode;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -53,11 +53,11 @@ namespace DigitalRune.Graphics.Rendering
       }
     }
     private Func<RenderContext, bool> _renderCallback;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -76,11 +76,11 @@ namespace DigitalRune.Graphics.Rendering
       _splitVolume = new PerspectiveViewVolume();
       _orthographicCameraNode = new CameraNode(new Camera(new OrthographicProjection()));
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -371,6 +371,6 @@ namespace DigitalRune.Graphics.Rendering
       position.Y = (float)Math.Ceiling(position.Y / texelSize) * texelSize;
       position.Z = (float)Math.Ceiling(position.Z / texelSize) * texelSize;
     }
-    #endregion
+
   }
 }

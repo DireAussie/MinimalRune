@@ -61,7 +61,7 @@ namespace DigitalRune.Windows.Charts
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private PathRenderer _horizontalMajorLinesRenderer;
@@ -74,20 +74,20 @@ namespace DigitalRune.Windows.Charts
         private CacheMode _cacheMode;
         private EdgeMode _edgeMode;
 #endif
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties
+
         //--------------------------------------------------------------
 
-        #region ----- Line Styles -----
+
+
+        //--------------------------------------------------------------
+
+        //--------------------------------------------------------------
+
+
 
         /// <summary>
         /// Identifies the <see cref="HorizontalMajorLineStyle"/> dependency property.
@@ -189,7 +189,7 @@ namespace DigitalRune.Windows.Charts
             get { return (Style)GetValue(VerticalMinorLineStyleProperty); }
             set { SetValue(VerticalMinorLineStyleProperty, value); }
         }
-        #endregion
+
 
 
 #if !SILVERLIGHT
@@ -219,11 +219,11 @@ namespace DigitalRune.Windows.Charts
             set { SetValue(RenderModeProperty, value); }
         }
 #endif
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
 #if SILVERLIGHT
@@ -244,11 +244,11 @@ namespace DigitalRune.Windows.Charts
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ChartGrid), new FrameworkPropertyMetadata(typeof(ChartGrid)));
         }
 #endif
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -531,6 +531,6 @@ namespace DigitalRune.Windows.Charts
 
             return grid;
         }
-        #endregion
+
     }
 }

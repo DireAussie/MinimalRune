@@ -49,13 +49,13 @@ namespace DigitalRune.Graphics.Effects
     ///// </para>
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -73,11 +73,11 @@ namespace DigitalRune.Graphics.Effects
     /// </summary>
     /// <value>The description of the effect parameter.</value>
     public EffectParameterDescription Description { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -127,14 +127,14 @@ namespace DigitalRune.Graphics.Effects
       if ((GlobalSettings.ValidationLevelInternal & GlobalSettings.ValidationLevelDevBasic) != 0)
         VerifyEffectParameter(effect);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <summary>
     /// Creates a new <see cref="EffectParameterBinding"/> that is a clone of the current instance.
@@ -223,7 +223,7 @@ namespace DigitalRune.Graphics.Effects
     {
       Description = source.Description;
     }
-    #endregion
+
 
 
     /// <summary>
@@ -425,6 +425,6 @@ namespace DigitalRune.Graphics.Effects
     // Note: context parameter is not needed by most bindings, but it could be used to check 
     // what technique is used and to ignore parameters that are not used in the technique, 
     // or for other optimizations.
-    #endregion
+
   }
 }

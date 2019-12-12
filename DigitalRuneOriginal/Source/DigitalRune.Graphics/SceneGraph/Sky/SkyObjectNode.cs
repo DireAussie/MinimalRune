@@ -59,13 +59,13 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -202,11 +202,11 @@ namespace DigitalRune.Graphics.SceneGraph
     /// intensity. 
     /// </remarks>
     public float GlowCutoffThreshold { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -228,11 +228,11 @@ namespace DigitalRune.Graphics.SceneGraph
       GlowExponent0 = 4000;
       GlowCutoffThreshold = 0.001f;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc cref="SceneNode.Clone"/>
@@ -271,6 +271,6 @@ namespace DigitalRune.Graphics.SceneGraph
       GlowExponent1 = sourceTyped.GlowExponent1;
       GlowCutoffThreshold = sourceTyped.GlowCutoffThreshold;
     }
-    #endregion
+
   }
 }

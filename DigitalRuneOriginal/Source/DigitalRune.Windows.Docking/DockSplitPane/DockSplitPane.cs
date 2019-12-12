@@ -18,22 +18,22 @@ namespace DigitalRune.Windows.Docking
     public class DockSplitPane : ItemsControl
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         // Workaround for creating item containers.
         private object _currentItem;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -95,11 +95,11 @@ namespace DigitalRune.Windows.Docking
             get { return (Orientation)GetValue(OrientationProperty); }
             set { SetValue(OrientationProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -109,11 +109,11 @@ namespace DigitalRune.Windows.Docking
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(DockSplitPane), new FrameworkPropertyMetadata(typeof(DockSplitPane)));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -202,6 +202,6 @@ namespace DigitalRune.Windows.Docking
             throw new DockException("Items in DockSplitPane need to be of type DockAnchorPane/DockSplitPane/DockTabPane "
                                     + "or need to have an implicit data template of the given type.");
         }
-        #endregion
+
     }
 }

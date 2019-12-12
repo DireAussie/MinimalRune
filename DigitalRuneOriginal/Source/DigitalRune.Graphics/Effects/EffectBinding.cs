@@ -109,16 +109,16 @@ namespace DigitalRune.Graphics.Effects
   public partial class EffectBinding
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>Temporary ID set during rendering.</summary>
     internal uint Id;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -222,11 +222,11 @@ namespace DigitalRune.Graphics.Effects
     /// </summary>
     /// <value>User-defined data.</value>
     public object UserData { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -355,11 +355,11 @@ namespace DigitalRune.Graphics.Effects
 
       return effectBinding;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -397,6 +397,6 @@ namespace DigitalRune.Graphics.Effects
 
       EffectHelper.InitializeParameterBindings(graphicsService, EffectEx, opaqueData, ParameterBindings);
     }
-    #endregion
+
   }
 }

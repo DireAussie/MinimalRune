@@ -80,7 +80,7 @@ namespace DigitalRune.Geometry.Partitioning
       }
 
 
-      #region ----- IAabbTreeNode<T> -----
+
 
       /// <summary>
       /// Gets or sets the AABB of this node which contains the current subtree.
@@ -168,7 +168,7 @@ namespace DigitalRune.Geometry.Partitioning
       {
         get { return Item; }
       }
-      #endregion
+
     }
   }
 }

@@ -74,17 +74,17 @@ namespace DigitalRune.Graphics.SceneGraph
   public class CameraNode : SceneNode
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>A (weak) list of all camera nodes.</summary>
     private static readonly WeakCollection<CameraNode> Instances = new WeakCollection<CameraNode>();
     private static readonly ReadOnlyWeakCollection<CameraNode> InstancesReadOnly = Instances.AsReadOnly();
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -212,11 +212,11 @@ namespace DigitalRune.Graphics.SceneGraph
       }
     }
     private Dictionary<object, object> _viewDependentData;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -255,14 +255,14 @@ namespace DigitalRune.Graphics.SceneGraph
         base.Dispose(disposing, disposeData);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc cref="SceneNode.Clone"/>
     public new CameraNode Clone()
@@ -286,7 +286,7 @@ namespace DigitalRune.Graphics.SceneGraph
       var sourceTyped = (CameraNode)source;
       LodBias = sourceTyped.LodBias;
     }
-    #endregion
+
 
 
     /// <summary>
@@ -372,6 +372,6 @@ namespace DigitalRune.Graphics.SceneGraph
         }
       }
     }
-    #endregion
+
   }
 }

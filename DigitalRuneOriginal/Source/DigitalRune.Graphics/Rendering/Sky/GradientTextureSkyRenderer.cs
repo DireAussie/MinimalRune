@@ -26,7 +26,7 @@ namespace DigitalRune.Graphics.Rendering
   internal class GradientTextureSkyRenderer : SceneNodeRenderer
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Effect _effect;
@@ -45,17 +45,17 @@ namespace DigitalRune.Graphics.Rendering
     private readonly EffectPass _passCieGamma;
 
     private readonly Submesh _submesh;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -91,11 +91,11 @@ namespace DigitalRune.Graphics.Rendering
 
       _submesh = MeshHelper.GetBox(graphicsService);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -178,7 +178,7 @@ namespace DigitalRune.Graphics.Rendering
 
       savedRenderState.Restore();
     }
-    #endregion
+
   }
 }
 #endif

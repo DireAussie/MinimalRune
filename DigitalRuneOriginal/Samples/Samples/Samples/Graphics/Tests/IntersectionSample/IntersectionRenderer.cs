@@ -25,7 +25,7 @@ namespace Samples.Graphics
   public sealed class IntersectionRenderer : IDisposable
   {
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -132,11 +132,11 @@ namespace Samples.Graphics
       CullMode = CullMode.CullCounterClockwiseFace,
       ScissorTestEnable = true,
     };
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly IGraphicsService _graphicsService;
@@ -164,11 +164,11 @@ namespace Samples.Graphics
     private Rectangle _totalScissorRectangle;
 
     private bool _isDisposed;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -196,11 +196,11 @@ namespace Samples.Graphics
 
 
     public bool Dummy { get; set; }    // TODO: This is only for debugging and will be removed.
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -249,11 +249,11 @@ namespace Samples.Graphics
         _intersectionImage.SafeDispose();
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -596,6 +596,6 @@ namespace Samples.Graphics
       graphicsDevice.RasterizerState = originalRasterizerState ?? RasterizerState.CullCounterClockwise;
       graphicsDevice.ScissorRectangle = originalScissorRectangle;
     }
-    #endregion
+
   }
 }

@@ -208,15 +208,15 @@ namespace DigitalRune.Graphics.SceneGraph
     // descendant nodes needs to be updated.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private SceneNodeFlags _flags;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -689,11 +689,11 @@ namespace DigitalRune.Graphics.SceneGraph
     /// Occurs when the local subtree changed.
     /// </summary>
     public event EventHandler<SceneChangedEventArgs> SceneChanged;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -801,11 +801,11 @@ namespace DigitalRune.Graphics.SceneGraph
         IsDisposed = true;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     internal bool GetFlag(SceneNodeFlags flag)
@@ -892,6 +892,6 @@ namespace DigitalRune.Graphics.SceneGraph
       if (_parent != null)
         _parent.OnSceneChanged(eventArgs);
     }
-    #endregion
+
   }
 }

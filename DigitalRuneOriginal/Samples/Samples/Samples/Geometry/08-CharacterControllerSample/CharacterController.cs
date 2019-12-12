@@ -61,7 +61,7 @@ namespace Samples.Geometry
   public class CharacterController
   {
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     // The dimensions of the character controller capsule (in meter).
@@ -97,11 +97,11 @@ namespace Samples.Geometry
     // set to <c>0</c>, the character will not try to step down and instead will "fall" down the
     // plane on short ballistic curves.    
     private const float StepHeight = 0.3f;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // The collision domain that computes all collisions of the character controller.
@@ -118,11 +118,11 @@ namespace Samples.Geometry
 
     // The desired target position (set in Move()).
     private Vector3F _desiredPosition;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     // The geometric object of the character.
@@ -151,11 +151,11 @@ namespace Samples.Geometry
         // We need to set the whole struct.
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     public CharacterController(CollisionDomain domain)
@@ -171,11 +171,11 @@ namespace Samples.Geometry
       CollisionObject = new CollisionObject(GeometricObject);
       _collisionDomain.CollisionObjects.Add(CollisionObject);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     // Move the character to the new desired position, sliding along obstacles and stepping 
@@ -553,6 +553,6 @@ namespace Samples.Geometry
       // cosine of the max slope angle, then we can stand on the plane.
       return Vector3F.Dot(normal, Vector3F.UnitY) >= (float)Math.Cos(SlopeLimit);
     }
-    #endregion
+
   }
 }

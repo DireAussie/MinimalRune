@@ -49,13 +49,13 @@ namespace DigitalRune.Animation.Character
   public class AvatarPose : IAnimatableObject, IAvatarAnimation
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -115,11 +115,11 @@ namespace DigitalRune.Animation.Character
       get { return _skeletonPose; }
     }
     private readonly SkeletonPose _skeletonPose;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -167,11 +167,11 @@ namespace DigitalRune.Animation.Character
 
       _skeletonPose = SkeletonPose.Create(skeleton);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -207,11 +207,11 @@ namespace DigitalRune.Animation.Character
 
       return result;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region IAnimatableObject
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -240,11 +240,11 @@ namespace DigitalRune.Animation.Character
           return null;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region IAvatarAnimation
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -317,7 +317,7 @@ namespace DigitalRune.Animation.Character
       for (int i = 0; i < _boneTransforms.Length; i++)
         _boneTransforms[i] = _skeletonPose.GetBoneTransform(i);
     }
-    #endregion
+
   }
 }
 #endif

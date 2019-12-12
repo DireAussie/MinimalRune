@@ -92,13 +92,13 @@ namespace DigitalRune.Physics.ForceEffects
     // See Game Programming Gems 6
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -172,11 +172,11 @@ namespace DigitalRune.Physics.ForceEffects
     /// direction.
     /// </remarks>
     public Vector3F Velocity { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -218,11 +218,11 @@ namespace DigitalRune.Physics.ForceEffects
       LinearDrag = 5.0f;
       Velocity = Vector3F.Zero;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -496,6 +496,6 @@ namespace DigitalRune.Physics.ForceEffects
       center += 0.25f * volume * (v0 + v1 + v2 + p);
       return volume;
     }
-    #endregion
+
   }
 }

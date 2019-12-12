@@ -74,7 +74,7 @@ namespace DigitalRune.Physics.Specialized
 
     
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private Vector3F _gravityVelocity;   // Current velocity from gravity.
@@ -82,11 +82,11 @@ namespace DigitalRune.Physics.Specialized
 
     // A ray is used to sense for ground under the capsule.
     private readonly CollisionObject _ray;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -325,11 +325,11 @@ namespace DigitalRune.Physics.Specialized
       }
     }
     private bool? _hasGroundContact;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -395,11 +395,11 @@ namespace DigitalRune.Physics.Specialized
       // Enable the character controller. (Adds body to simulation.)
       Enabled = true;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -530,6 +530,6 @@ namespace DigitalRune.Physics.Specialized
         _hasGroundContact = null;
       }
     }
-    #endregion
+
   }
 }

@@ -31,7 +31,7 @@ namespace DigitalRune.Graphics.PostProcessing
   public class SaoFilter : PostProcessor
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly EffectParameter _frustumInfoParameter;
@@ -49,11 +49,11 @@ namespace DigitalRune.Graphics.PostProcessing
     private readonly EffectPass _blurHorizontalPass;
     private readonly EffectPass _blurVerticalPass;
     private readonly EffectPass _blurVerticalAndCombinePass;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -214,11 +214,11 @@ namespace DigitalRune.Graphics.PostProcessing
     /// not occluded, black = fully occluded). The default value is <see langword="true"/>.
     /// </value>
     public bool CombineWithSource { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -258,11 +258,11 @@ namespace DigitalRune.Graphics.PostProcessing
       EdgeSoftness = 0.5f;
       CombineWithSource = true;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -382,7 +382,7 @@ namespace DigitalRune.Graphics.PostProcessing
       context.RenderTarget = target;
       context.Viewport = viewport;
     }
-    #endregion
+
   }
 }
 #endif

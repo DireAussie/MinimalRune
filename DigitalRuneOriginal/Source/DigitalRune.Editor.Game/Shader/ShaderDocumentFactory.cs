@@ -25,34 +25,34 @@ namespace DigitalRune.Editor.Shader
         // using only event handlers.
 
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         internal const string FxFile = "DirectX Effect file";
         private const string CgFile = "NVIDIA Cg file";
         private const string CgFXFile = "NVIDIA CgFX file";
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
         private readonly IEditorService _editor;
         private readonly string _filter;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -122,11 +122,11 @@ namespace DigitalRune.Editor.Shader
 
             _filter = DocumentHelper.GetFilterString(DocumentTypes);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------    
 
         /// <inheritdoc/>
@@ -219,6 +219,6 @@ namespace DigitalRune.Editor.Shader
                     return new HlslIntelliSense();
             }
         }
-        #endregion
+
     }
 }

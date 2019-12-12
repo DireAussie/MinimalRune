@@ -19,21 +19,21 @@ namespace DigitalRune.Graphics
   public class FigureDataCollection<T> : Collection<T> where T : class
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Figure _figure;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -45,11 +45,11 @@ namespace DigitalRune.Graphics
       Debug.Assert(owner != null, "owner must not be null.");
       _figure = owner;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
     
     /// <summary>
@@ -129,7 +129,7 @@ namespace DigitalRune.Graphics
       base.SetItem(index, item);
       _figure.Invalidate();
     }    
-    #endregion
+
   }
 
 

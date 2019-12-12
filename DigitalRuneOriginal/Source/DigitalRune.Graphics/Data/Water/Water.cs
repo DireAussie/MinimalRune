@@ -38,13 +38,13 @@ namespace DigitalRune.Graphics
   public class Water
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -368,11 +368,11 @@ namespace DigitalRune.Graphics
     /// </value>
     /// <inheritdoc cref="CausticsSampleCount"/>
     public float CausticsIntensity { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -420,14 +420,14 @@ namespace DigitalRune.Graphics
       CausticsPower = 100;
       CausticsIntensity = 2;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <summary>
     /// Creates a new <see cref="Water"/> that is a clone (deep copy) of the current instance.
@@ -551,8 +551,8 @@ namespace DigitalRune.Graphics
       CausticsPower = source.CausticsPower;
       CausticsIntensity = source.CausticsIntensity;
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

@@ -32,13 +32,13 @@ namespace DigitalRune.Collections
     public sealed class MergeableNode<T> where T : class, INamedObject
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -108,11 +108,11 @@ namespace DigitalRune.Collections
         /// with <see cref="MergeOperation.Append"/> and no target node.
         /// </value>
         public IEnumerable<MergePoint> MergePoints { get; set; } = MergePoint.DefaultMergePoints;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <overloads>
@@ -287,11 +287,11 @@ namespace DigitalRune.Collections
                 Children.AddRange(children);
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -321,11 +321,11 @@ namespace DigitalRune.Collections
 
             return nodes[index];
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Traversal Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -444,7 +444,7 @@ namespace DigitalRune.Collections
         {
             return TreeHelper.GetSubtree(this, GetChildren, depthFirst);
         }
-        #endregion
+
 
     }
 }

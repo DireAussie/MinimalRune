@@ -19,13 +19,13 @@ namespace DigitalRune.Geometry.Shapes
   public sealed class EmptyShape : Shape
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -44,11 +44,11 @@ namespace DigitalRune.Geometry.Shapes
       add { }
       remove { }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -66,14 +66,14 @@ namespace DigitalRune.Geometry.Shapes
     internal EmptyShape(int dummy)
     {
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Shape CreateInstanceCore()
@@ -86,7 +86,7 @@ namespace DigitalRune.Geometry.Shapes
     protected override void CloneCore(Shape sourceShape)
     {
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -122,6 +122,6 @@ namespace DigitalRune.Geometry.Shapes
     {
       return new TriangleMesh();
     }
-    #endregion
+
   }
 }

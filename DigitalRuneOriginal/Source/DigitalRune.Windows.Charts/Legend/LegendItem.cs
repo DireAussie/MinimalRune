@@ -15,7 +15,7 @@ namespace DigitalRune.Windows.Charts
     public class LegendItem : Control
     {
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -85,11 +85,11 @@ namespace DigitalRune.Windows.Charts
             get { return (DataTemplate)GetValue(LabelTemplateProperty); }
             set { SetValue(LabelTemplateProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
 #if SILVERLIGHT
@@ -110,6 +110,6 @@ namespace DigitalRune.Windows.Charts
             DefaultStyleKeyProperty.OverrideMetadata(typeof(LegendItem), new FrameworkPropertyMetadata(typeof(LegendItem)));
         }
 #endif
-        #endregion
+
     }
 }

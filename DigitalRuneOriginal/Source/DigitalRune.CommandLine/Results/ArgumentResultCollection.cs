@@ -15,13 +15,13 @@ namespace DigitalRune.CommandLine
     public class ArgumentResultCollection : ReadOnlyCollection<ArgumentResult>
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -74,11 +74,11 @@ namespace DigitalRune.CommandLine
                 return null;
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -91,11 +91,11 @@ namespace DigitalRune.CommandLine
             // The parameter is List and not IList to be able to allow to cast to 
             // List in GetEnumerator below.
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -108,6 +108,6 @@ namespace DigitalRune.CommandLine
         {
             return ((List<ArgumentResult>)Items).GetEnumerator();
         }
-        #endregion
+
     }
 }

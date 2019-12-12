@@ -18,7 +18,7 @@ namespace DigitalRune.Animation
   public sealed class AnimationInstance<T> : AnimationInstance
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // ReSharper disable StaticFieldInGenericType
@@ -27,11 +27,11 @@ namespace DigitalRune.Animation
       null,                             // Initialize
       null);                            // Uninitialize
     // ReSharper restore StaticFieldInGenericType
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -57,11 +57,11 @@ namespace DigitalRune.Animation
     {
       get { return (IAnimation<T>)base.Animation; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -121,11 +121,11 @@ namespace DigitalRune.Animation
       if (RunCount < int.MaxValue)
         Pool.Recycle(this);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -466,6 +466,6 @@ namespace DigitalRune.Animation
       if (property != null)
         animationManager.UpdateAndApplyAnimation(Property);
     }
-    #endregion
+
   }
 }

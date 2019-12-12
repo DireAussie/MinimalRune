@@ -23,16 +23,16 @@ namespace DigitalRune.Graphics.Rendering
   internal sealed class LineBatch 
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private VertexPositionColor[] _buffer = new VertexPositionColor[256];
     private int _numberOfLines;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -43,11 +43,11 @@ namespace DigitalRune.Graphics.Rendering
     /// If this value is <see langword="null"/>, then <see cref="Render"/> does nothing.
     /// </remarks>
     public BasicEffect Effect { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -61,11 +61,11 @@ namespace DigitalRune.Graphics.Rendering
     {
       Effect = effect;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -173,6 +173,6 @@ namespace DigitalRune.Graphics.Rendering
 
       _buffer = newBuffer;
     }
-    #endregion
+
   }
 }

@@ -17,16 +17,16 @@ namespace DigitalRune.Editor.Game
     internal class GameViewModel : EditorDockTabItemViewModel
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static int _nextId = 0;
         private readonly IEditorService _editor;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -52,11 +52,11 @@ namespace DigitalRune.Editor.Game
             private set { SetProperty(ref _graphicsScreens, value); }
         }
         private IList<GraphicsScreen> _graphicsScreens;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -76,11 +76,11 @@ namespace DigitalRune.Editor.Game
             DisplayName = "3D Scene";
             DockId = "Scene" + _nextId++;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -117,6 +117,6 @@ namespace DigitalRune.Editor.Game
 
             base.OnDeactivated(eventArgs);
         }
-        #endregion
+
     }
 }

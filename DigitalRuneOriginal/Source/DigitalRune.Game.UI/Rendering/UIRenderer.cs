@@ -53,7 +53,7 @@ namespace DigitalRune.Game.UI.Rendering
     // TODO: Cache info in UIControl.RenderData. Check UIControl IsVisualValid to see if the cache must be updated.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Copy from CullNone but with activate scissors test.
@@ -72,11 +72,11 @@ namespace DigitalRune.Game.UI.Rendering
     private SpriteFont _defaultFont;
     private Texture2D _defaultTexture;
     private bool _batchIsActive;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -110,11 +110,11 @@ namespace DigitalRune.Game.UI.Rendering
       get { return _templates; }
     }
     private readonly Dictionary<string, GameObject> _templates = new Dictionary<string, GameObject>();
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
 #if !SILVERLIGHT
@@ -304,11 +304,11 @@ namespace DigitalRune.Game.UI.Rendering
         IsDisposed = true;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -496,6 +496,6 @@ namespace DigitalRune.Game.UI.Rendering
         _batchIsActive = false;
       }
     }
-    #endregion
+
   }
 }

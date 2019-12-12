@@ -16,7 +16,7 @@ namespace DigitalRune.Graphics.Rendering
   internal abstract class BillboardBatch<T> : IBillboardBatch where T : struct, IVertexType
   {
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -27,19 +27,19 @@ namespace DigitalRune.Graphics.Rendering
     /// as indices.
     /// </remarks>
     public const int MaxBufferSize = (ushort.MaxValue + 1) / 4; // = 16384 billboards
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly RenderBatch<T, ushort> _renderBatch; 
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -68,11 +68,11 @@ namespace DigitalRune.Graphics.Rendering
     /// call.
     /// </remarks>
     public int BufferSize { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
     
     /// <summary>
@@ -159,11 +159,11 @@ namespace DigitalRune.Graphics.Rendering
         IsDisposed = true;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -218,6 +218,6 @@ namespace DigitalRune.Graphics.Rendering
     /// <param name="vertices">The vertex buffer.</param>
     /// <param name="index">The index of the next free slot in the vertex buffer.</param>
     protected abstract void OnDrawRibbon(ref RibbonArgs p0, ref RibbonArgs p1, PackedTexture texture, T[] vertices, int index);
-    #endregion
+
   }
 }

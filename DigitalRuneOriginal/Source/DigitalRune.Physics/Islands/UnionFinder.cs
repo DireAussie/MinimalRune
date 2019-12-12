@@ -42,13 +42,13 @@ namespace DigitalRune.Physics
 
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -63,11 +63,11 @@ namespace DigitalRune.Physics
     /// </summary>
     /// <value>The number of unions.</value>
     public int NumberOfUnions { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -77,11 +77,11 @@ namespace DigitalRune.Physics
     {
       Elements = new UnionElement[256];
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -222,6 +222,6 @@ namespace DigitalRune.Physics
       // One union less.
       NumberOfUnions--;
     }
-    #endregion
+
   }
 }

@@ -22,7 +22,7 @@ namespace DigitalRune.Windows.Docking
     public class DockPaneMenu : ContextMenu
     {
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -32,11 +32,11 @@ namespace DigitalRune.Windows.Docking
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(DockPaneMenu), new FrameworkPropertyMetadata(typeof(DockPaneMenu)));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -86,6 +86,6 @@ namespace DigitalRune.Windows.Docking
 
             return menuItem;
         }
-        #endregion
+
     }
 }

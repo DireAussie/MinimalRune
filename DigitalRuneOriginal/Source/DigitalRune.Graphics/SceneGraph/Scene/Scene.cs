@@ -136,7 +136,7 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     private class NullFilter : IPairFilter<SceneNode>
@@ -163,11 +163,11 @@ namespace DigitalRune.Graphics.SceneGraph
 
       // Note: New properties must be initialized in GetAttachedSceneData().
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // The collision object filter of the collision domain. This filter is never
@@ -188,11 +188,11 @@ namespace DigitalRune.Graphics.SceneGraph
     // Reusable lists to avoid memory allocations.
     private readonly List<SceneNode> _tempNodes = new List<SceneNode>();
     private readonly List<Plane> _tempPlanes = new List<Plane>(6);
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -259,11 +259,11 @@ namespace DigitalRune.Graphics.SceneGraph
       get { return _collisionDomain.EnableMultithreading; }
       set { _collisionDomain.EnableMultithreading = value; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -308,14 +308,14 @@ namespace DigitalRune.Graphics.SceneGraph
         base.Dispose(disposing, disposeData);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <summary>
     /// Not supported.
@@ -335,7 +335,7 @@ namespace DigitalRune.Graphics.SceneGraph
     {
       throw new NotSupportedException("A scene cannot be cloned.");
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -1012,6 +1012,6 @@ namespace DigitalRune.Graphics.SceneGraph
 
     //  return GeometryHelper.HaveContact(aabb, plane);
     //}
-    #endregion
+
   }
 }

@@ -36,7 +36,7 @@ namespace DigitalRune.Geometry.Shapes
   public struct Plane : IEquatable<Plane>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -62,17 +62,17 @@ namespace DigitalRune.Geometry.Shapes
     /// </remarks>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
     public float DistanceFromOrigin;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -156,11 +156,11 @@ namespace DigitalRune.Geometry.Shapes
       Normal = planeShape.Normal;
       DistanceFromOrigin = planeShape.DistanceFromOrigin;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //-------------------------------------------------------------- 
 
     /// <summary>
@@ -216,7 +216,7 @@ namespace DigitalRune.Geometry.Shapes
     }
 
 
-    #region ----- Equality -----
+
 
     /// <overloads>
     /// <summary>
@@ -287,7 +287,7 @@ namespace DigitalRune.Geometry.Shapes
       return plane1.Normal != plane2.Normal
              || plane1.DistanceFromOrigin != plane2.DistanceFromOrigin;
     }
-    #endregion
+
 
 
     /// <summary>
@@ -395,6 +395,6 @@ namespace DigitalRune.Geometry.Shapes
       // Project point on to normal vector to get the new DistanceFromOrigin.
       DistanceFromOrigin = Vector3F.Dot(pointOnPlane, Normal);
     }
-    #endregion
+
   }
 }

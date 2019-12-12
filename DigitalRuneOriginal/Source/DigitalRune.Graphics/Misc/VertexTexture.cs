@@ -22,7 +22,7 @@ namespace DigitalRune.Graphics
   public struct VertexTexture : IVertexType
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -42,11 +42,11 @@ namespace DigitalRune.Graphics
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
     public Vector2 TextureCoordinate;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -57,11 +57,11 @@ namespace DigitalRune.Graphics
     {
       get { return 8; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -84,11 +84,11 @@ namespace DigitalRune.Graphics
     {
       TextureCoordinate = new Vector2(u, v);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -163,6 +163,6 @@ namespace DigitalRune.Graphics
     {
       return string.Format(CultureInfo.CurrentCulture, "{{TextureCoordinate:{0}}}", TextureCoordinate);
     }
-    #endregion
+
   }
 }

@@ -94,7 +94,7 @@ namespace DigitalRune.Ionic.Zlib
             _baseStream = new ZlibBaseStream(stream, ZlibStreamFlavor.DEFLATE, leaveOpen);
         }
 
-        #region System.IO.Stream methods
+
         /// <summary>
         ///   Dispose the stream.
         /// </summary>
@@ -281,7 +281,7 @@ namespace DigitalRune.Ionic.Zlib
         {
             throw new NotImplementedException();
         }
-        #endregion
+
     }
 }
 

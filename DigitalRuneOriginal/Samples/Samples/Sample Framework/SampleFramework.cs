@@ -71,7 +71,7 @@ namespace Samples
   public class SampleFramework
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly SampleGame _game;
@@ -119,11 +119,11 @@ namespace Samples
 
     // Misc
     private readonly StringBuilder _stringBuilder = new StringBuilder();
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -180,11 +180,11 @@ namespace Samples
       get { return _guiGraphicsScreen.IsVisible; }
       set { _guiGraphicsScreen.IsVisible = value; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -699,11 +699,11 @@ namespace Samples
       };
       _helpWindow.Closed += OnWindowClosed;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -1211,6 +1211,6 @@ namespace Samples
       _titleTextBlock.Text = (_sample != null) ? category + " - " + name : name;
       _helpTextBlock.Text = helpText;
     }
-    #endregion
+
   }
 }

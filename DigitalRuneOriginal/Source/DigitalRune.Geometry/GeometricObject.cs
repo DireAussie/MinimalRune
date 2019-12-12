@@ -23,13 +23,13 @@ namespace DigitalRune.Geometry
   public class GeometricObject : IGeometricObject
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -140,11 +140,11 @@ namespace DigitalRune.Geometry
 
     /// <inheritdoc/>
     public event EventHandler<ShapeChangedEventArgs> ShapeChanged;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -256,14 +256,14 @@ namespace DigitalRune.Geometry
       _scale = scale;
       _pose = pose;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     IGeometricObject IGeometricObject.Clone()
@@ -364,7 +364,7 @@ namespace DigitalRune.Geometry
       Shape = source.Shape.Clone();
       Scale = source.Scale;
     }
-    #endregion
+
 
 
     /// <summary>
@@ -423,6 +423,6 @@ namespace DigitalRune.Geometry
       if (handler != null)
         handler(this, eventArgs);
     }
-    #endregion
+
   }
 }

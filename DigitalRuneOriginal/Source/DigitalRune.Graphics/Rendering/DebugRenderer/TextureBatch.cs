@@ -20,7 +20,7 @@ namespace DigitalRune.Graphics.Rendering
   internal sealed class TextureBatch 
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     /// <summary>Describes a draw info for a texture.</summary>
@@ -43,19 +43,19 @@ namespace DigitalRune.Graphics.Rendering
         Rectangle = rectangle;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly List<TextureInfo> _textures = new List<TextureInfo>();
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -66,11 +66,11 @@ namespace DigitalRune.Graphics.Rendering
     /// If this value is <see langword="null"/>, then <see cref="Render"/> does nothing.
     /// </remarks>
     public SpriteBatch SpriteBatch { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -84,11 +84,11 @@ namespace DigitalRune.Graphics.Rendering
     {
       SpriteBatch = spriteBatch;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -165,6 +165,6 @@ namespace DigitalRune.Graphics.Rendering
 
       savedRenderState.Restore();
     }
-    #endregion
+
   }
 }

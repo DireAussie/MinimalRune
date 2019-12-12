@@ -16,13 +16,13 @@ namespace DigitalRune.CommandLine
     public sealed class ParseResult
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -72,11 +72,11 @@ namespace DigitalRune.CommandLine
         /// this collection to provide additional information about the parsed argument values.
         /// </remarks>
         public ArgumentResultCollection ParsedArguments { get; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -97,12 +97,12 @@ namespace DigitalRune.CommandLine
 
             UnknownArguments = unknownArguments?.ToArray() ?? Array.Empty<string>();
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
-        #endregion
+
     }
 }

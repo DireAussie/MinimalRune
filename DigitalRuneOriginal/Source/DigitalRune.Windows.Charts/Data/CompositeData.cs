@@ -15,13 +15,13 @@ namespace DigitalRune.Windows.Charts
     public class CompositeData
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -36,11 +36,11 @@ namespace DigitalRune.Windows.Charts
         /// </summary>
         /// <value>The original item that contains the y value.</value>
         public object YValue { get; set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <overloads>
@@ -69,11 +69,11 @@ namespace DigitalRune.Windows.Charts
             XValue = x;
             YValue = y;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -127,6 +127,6 @@ namespace DigitalRune.Windows.Charts
         {
             return string.Format(CultureInfo.InvariantCulture, "(X={0} Y={1})", XValue, YValue);
         }
-        #endregion
+
     }
 }

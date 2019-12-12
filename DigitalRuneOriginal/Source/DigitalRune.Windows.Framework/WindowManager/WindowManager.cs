@@ -2,12 +2,12 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#region ----- Credits -----
+
 /*
   The "screen conduction" pattern implemented in DigitalRune.Windows.Framework was 
   inspired by the Caliburn.Micro framework (see http://caliburnmicro.codeplex.com/).
 */
-#endregion
+
 
 using System;
 using System.Linq;
@@ -46,21 +46,21 @@ namespace DigitalRune.Windows.Framework
         // Phone. If necessary, port functionality from Windows Phone project.
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly IViewLocator _viewLocator;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -74,11 +74,11 @@ namespace DigitalRune.Windows.Framework
         {
             _viewLocator = viewLocator;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -261,6 +261,6 @@ namespace DigitalRune.Windows.Framework
             activeWindow = activeWindow ?? Application.Current.MainWindow;
             return (activeWindow != window) ? activeWindow : null;
         }
-        #endregion
+
     }
 }

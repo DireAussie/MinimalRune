@@ -16,23 +16,23 @@ namespace DigitalRune.Editor.Documents
         // TODO: Add support for monitoring dependencies. (E.g. document = HTML file, dependencies = CSS/JPG files.)
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly List<FileWatcher> _fileWatchers = new List<FileWatcher>();
         private readonly List<FileChangeRecord> _fileChangeRecords = new List<FileChangeRecord>();
         private bool _applyingFileChanges;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Methods
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -462,6 +462,6 @@ namespace DigitalRune.Editor.Documents
                 Debug.Assert(document.IsModified == false);
             }
         }
-        #endregion
+
     }
 }

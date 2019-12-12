@@ -20,24 +20,24 @@ namespace DigitalRune.Editor.Documents
     partial class DocumentExtension
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private MergeableNodeCollection<ICommandItem> _menuNodes;
         private MergeableNodeCollection<ICommandItem> _toolBarNodes;
         private CommandBinding _openCommandBinding;
         private bool _suppressUpdateCommandItems;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Methods
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         private void AddCommands()
@@ -332,6 +332,6 @@ namespace DigitalRune.Editor.Documents
                         .Select(item => item.Command)
                         .ForEach(command => command.RaiseCanExecuteChanged());
         }
-        #endregion
+
     }
 }

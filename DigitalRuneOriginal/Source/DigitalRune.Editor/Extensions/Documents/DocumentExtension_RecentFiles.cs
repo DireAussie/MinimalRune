@@ -12,21 +12,21 @@ namespace DigitalRune.Editor.Documents
     partial class DocumentExtension
     {
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         private const int DefaultNumberOfRecentFiles = 10;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -63,11 +63,11 @@ namespace DigitalRune.Editor.Documents
             get { return _recentFiles; }
         }
         private readonly ObservableCollection<string> _recentFiles = new ObservableCollection<string>();
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -138,6 +138,6 @@ namespace DigitalRune.Editor.Documents
             // Update menu and toolbar.
             ((RecentDocumentsItem)CommandItems["RecentFiles"]).Update();
         }
-        #endregion
+
     }
 }

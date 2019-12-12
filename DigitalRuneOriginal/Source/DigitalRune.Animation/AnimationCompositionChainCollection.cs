@@ -31,7 +31,7 @@ namespace DigitalRune.Animation
     // be updated first. (Animation weights are of type IImmediateAnimatableProperty.)
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Dummy hash code which is stored for IImmediateAnimatableProperties instead of the real hash
@@ -46,11 +46,11 @@ namespace DigitalRune.Animation
 
     // The hash codes of the animatable properties of the chains.
     private readonly List<uint> _hashCodes;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -80,11 +80,11 @@ namespace DigitalRune.Animation
     {
       get { return _compositionChains[index]; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -95,11 +95,11 @@ namespace DigitalRune.Animation
       _compositionChains = new List<IAnimationCompositionChain>();
       _hashCodes = new List<uint>();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -319,6 +319,6 @@ namespace DigitalRune.Animation
         previousHash = hashCode;
       }
     }
-    #endregion
+
   }
 }

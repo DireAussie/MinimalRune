@@ -1,4 +1,4 @@
-﻿#region ----- Copyright -----
+﻿
 /*
   The classes in this file are based on and the WeakEventHandler from Daniel Grundwald's article 
   "Weak Events in C#" (http://www.codeproject.com/KB/cs/WeakEvents.aspx) which is licensed under 
@@ -28,7 +28,7 @@
   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
   OTHER DEALINGS IN THE SOFTWARE.
 */
-#endregion
+
 
 
 using System;

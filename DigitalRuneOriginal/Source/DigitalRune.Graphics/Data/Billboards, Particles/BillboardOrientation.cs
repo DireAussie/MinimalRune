@@ -105,7 +105,7 @@ namespace DigitalRune.Graphics
 
 
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     // Internal the billboard orientation is stored as an enum.
@@ -135,11 +135,11 @@ namespace DigitalRune.Graphics
       AxisMask = 2,
       NormalMask = 12,
     }
-    #endregion
+
     
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Flags _flags;
@@ -248,11 +248,11 @@ namespace DigitalRune.Graphics
     /// </remarks>
     public static readonly BillboardOrientation AxialViewpointOriented =
       new BillboardOrientation(BillboardNormal.ViewpointOriented, false, true);
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -309,11 +309,11 @@ namespace DigitalRune.Graphics
     {
       get { return (_flags & Flags.FixedMask) == Flags.AxisIsFixed; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -348,11 +348,11 @@ namespace DigitalRune.Graphics
       _flags |= isAxisInViewSpace ? Flags.AxisInViewSpace : Flags.AxisInWorldSpace;
       _flags |= isAxisFixed ? Flags.AxisIsFixed : Flags.NormalIsFixed;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -426,6 +426,6 @@ namespace DigitalRune.Graphics
     {
       return !left.Equals(right);
     }
-    #endregion
+
   }
 }

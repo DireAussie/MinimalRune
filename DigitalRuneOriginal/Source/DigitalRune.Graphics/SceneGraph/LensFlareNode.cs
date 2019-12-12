@@ -28,13 +28,13 @@ namespace DigitalRune.Graphics.SceneGraph
   public class LensFlareNode : SceneNode
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -82,11 +82,11 @@ namespace DigitalRune.Graphics.SceneGraph
       }
     }
     private float _intensity;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -107,14 +107,14 @@ namespace DigitalRune.Graphics.SceneGraph
       IsRenderable = true;
       Shape = lensFlare.Shape;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc cref="SceneNode.Clone"/>
     public new LensFlareNode Clone()
@@ -140,8 +140,8 @@ namespace DigitalRune.Graphics.SceneGraph
       var sourceTyped = (LensFlareNode)source;
       _intensity = sourceTyped.Intensity;
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

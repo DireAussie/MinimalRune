@@ -21,13 +21,13 @@ namespace DigitalRune.Animation
   public class Vector3Animation : Animation<Vector3>
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -59,11 +59,11 @@ namespace DigitalRune.Animation
     /// <value>The animation of the z component.</value>
     [ContentSerializer(SharedResource = true)]
     public IAnimation<float> Z { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
     
     /// <overloads>
@@ -93,11 +93,11 @@ namespace DigitalRune.Animation
       Y = y;
       Z = z;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -136,7 +136,7 @@ namespace DigitalRune.Animation
       else
         result.Y = defaultSource.Z;
     }
-    #endregion
+
   }
 }
 #endif

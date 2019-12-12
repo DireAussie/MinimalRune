@@ -22,18 +22,18 @@ namespace Samples.Particles
   public class CollisionPlaneEffector : ParticleEffector
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private IParticleParameter<Vector3F> _positionParameter;
     private IParticleParameter<Vector3F> _directionParameter;
     private IParticleParameter<float> _linearSpeedParameter;
     private IParticleParameter<float> _restitutionParameter;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     [ParticleParameter(ParticleParameterUsage.In)]
@@ -55,11 +55,11 @@ namespace Samples.Particles
       set { _plane = value; }
     }
     private Plane _plane;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     public CollisionPlaneEffector()
@@ -69,14 +69,14 @@ namespace Samples.Particles
       LinearSpeedParameter = ParticleParameterNames.LinearSpeed;
       _plane = new Plane(new Vector3F(0, 1, 0), 0);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     // Creates a new instance of this type.
     protected override ParticleEffector CreateInstanceCore()
@@ -97,7 +97,7 @@ namespace Samples.Particles
       RestitutionParameter = sourceTyped.RestitutionParameter;
       Plane = sourceTyped.Plane;
     }
-    #endregion
+
 
 
     // OnRequeryParameters is called when the particle system is started and when the particle 
@@ -165,6 +165,6 @@ namespace Samples.Particles
           _directionParameter.SetValue(i, velocity / newSpeed);
       }
     }
-    #endregion
+
   }
 }

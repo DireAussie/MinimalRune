@@ -88,13 +88,13 @@ namespace DigitalRune.Graphics
   public class DirectionalLight : Light
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -185,11 +185,11 @@ namespace DigitalRune.Graphics
     /// </summary>
     /// <value>The texture scale. The default value is (1, 1).</value>
     public Vector2F TextureScale { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -203,14 +203,14 @@ namespace DigitalRune.Graphics
       HdrScale = 1;
       TextureScale = Vector2F.One;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
  
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override Light CreateInstanceCore()
@@ -237,7 +237,7 @@ namespace DigitalRune.Graphics
       TextureScale = sourceTyped.TextureScale;
       Shape = source.Shape.Clone();
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -246,6 +246,6 @@ namespace DigitalRune.Graphics
       return Vector3F.Max(Color * (DiffuseIntensity * HdrScale), 
                           Color * (SpecularIntensity * HdrScale));
     }
-    #endregion
+
   }
 }

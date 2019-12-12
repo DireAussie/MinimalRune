@@ -16,16 +16,16 @@ namespace DigitalRune.Undo
   public class UndoBuffer : INotifyPropertyChanged
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private int _groupDepth;
     private int _numberOfOperationsInGroup;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -44,11 +44,11 @@ namespace DigitalRune.Undo
     /// Occurs when a property value changes.
     /// </summary>
     public event PropertyChangedEventHandler PropertyChanged;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -230,11 +230,11 @@ namespace DigitalRune.Undo
     /// </para>
     /// </remarks>
     public ReadOnlyCollection<IUndoableOperation> RedoStack { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -247,11 +247,11 @@ namespace DigitalRune.Undo
       UndoStack = new ReadOnlyCollection<IUndoableOperation>(InternalUndoStack);
       RedoStack = new ReadOnlyCollection<IUndoableOperation>(InternalRedoStack);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -525,6 +525,6 @@ namespace DigitalRune.Undo
       if (handler != null)
         handler(this, eventArgs);
     }
-    #endregion
+
   }
 }

@@ -49,7 +49,7 @@ namespace DigitalRune.Animation.Character
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private SkeletonPose _skeletonPose;
@@ -75,11 +75,11 @@ namespace DigitalRune.Animation.Character
 
     // Object to lock when updating stuff in reads.
     private readonly object _syncRoot = new object();
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     // Array must not be modified by user!
@@ -130,11 +130,11 @@ namespace DigitalRune.Animation.Character
       }
     }
 #endif
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -236,11 +236,11 @@ namespace DigitalRune.Animation.Character
       _skeletonPose = null;
       pool.Recycle(this);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -473,6 +473,6 @@ namespace DigitalRune.Animation.Character
         }
       }
     }
-    #endregion
+
   }
 }

@@ -24,16 +24,16 @@ namespace DigitalRune.Graphics.SceneGraph
   public class SceneNodeCollisionFilter : IPairFilter<SceneNode>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Use jagged array [i][j] for lower triangular matrix where i ≥ j.
     private readonly bool[][] _groupPairFlags;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -60,11 +60,11 @@ namespace DigitalRune.Graphics.SceneGraph
     /// Occurs when the filter rules were changed.
     /// </summary>
     public event EventHandler<EventArgs> Changed;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -105,11 +105,11 @@ namespace DigitalRune.Graphics.SceneGraph
       // Per default all collisions are enabled.
       ResetInternal();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -225,6 +225,6 @@ namespace DigitalRune.Graphics.SceneGraph
       if (handler != null)
         handler(this, eventArgs);
     }
-    #endregion
+
   }
 }

@@ -27,7 +27,7 @@ namespace DigitalRune.Editor.Status
     public sealed class StatusExtension : EditorExtension, IStatusService
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private ResourceDictionary _resourceDictionary;
@@ -37,23 +37,23 @@ namespace DigitalRune.Editor.Status
         private StatusConductor _statusConductor;
 
         private TotalMemoryViewModel _totalMemory;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Methods
+
+
+
+        //--------------------------------------------------------------
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -145,6 +145,6 @@ namespace DigitalRune.Editor.Status
 
             _statusConductor.ActivateItem(viewModel);
         }
-        #endregion
+
     }
 }

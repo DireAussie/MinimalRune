@@ -35,7 +35,7 @@ namespace DigitalRune.Graphics.PostProcessing
   public class PostProcessorChain : PostProcessor, IList<PostProcessor>
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     // This view is used as DebuggerTypeProxy. With this, the debugger will display 
@@ -54,21 +54,21 @@ namespace DigitalRune.Graphics.PostProcessing
         get { return _collection.ToArray(); }
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly List<PostProcessor> _processors;
     private readonly List<PostProcessor> _processorsCopy;
     private bool _processorsCopyDirty = true;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -138,11 +138,11 @@ namespace DigitalRune.Graphics.PostProcessing
         return null;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -159,14 +159,14 @@ namespace DigitalRune.Graphics.PostProcessing
       _processorsCopy = new List<PostProcessor>();
       _processorsCopyDirty = true;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- IEnumerable<T> -----
+
 
     /// <summary>
     /// Returns an enumerator that iterates through the collection.
@@ -202,10 +202,10 @@ namespace DigitalRune.Graphics.PostProcessing
     {
       return _processors.GetEnumerator();
     }
-    #endregion
 
 
-    #region ----- ICollection<T> -----
+
+
 
     /// <summary>
     /// Appends a post-processor to the post-processor chain.
@@ -301,10 +301,10 @@ namespace DigitalRune.Graphics.PostProcessing
       _processorsCopyDirty = true;
       return _processors.Remove(postProcessor);
     }
-    #endregion
 
 
-    #region ----- IList<T> -----
+
+
 
     /// <summary>
     /// Determines the index of a specific post-processor in the post-processor chain.
@@ -360,7 +360,7 @@ namespace DigitalRune.Graphics.PostProcessing
       _processors.RemoveAt(index);
       _processorsCopyDirty = true;
     }
-    #endregion
+
 
 
     /// <overloads>
@@ -578,7 +578,7 @@ namespace DigitalRune.Graphics.PostProcessing
 
       return true;
     }
-    #endregion
+
   }
 }
 #endif

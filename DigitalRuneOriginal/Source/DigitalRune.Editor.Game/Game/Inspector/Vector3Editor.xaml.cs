@@ -23,22 +23,22 @@ namespace DigitalRune.Editor.Game
     internal partial class Vector3Editor
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private bool _isUpdating;
         private Type _vectorType;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         public static readonly DependencyProperty IsReadOnlyProperty = DependencyProperty.Register(
@@ -107,22 +107,22 @@ namespace DigitalRune.Editor.Game
             get { return (double)GetValue(ZProperty); }
             set { SetValue(ZProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         public Vector3Editor()
         {
             InitializeComponent();
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private static void OnIsReadOnlyChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
@@ -236,6 +236,6 @@ namespace DigitalRune.Editor.Game
 
             return (double)(decimal)value;
         }
-        #endregion
+
     }
 }

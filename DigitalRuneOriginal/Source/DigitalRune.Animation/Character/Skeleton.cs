@@ -36,7 +36,7 @@ namespace DigitalRune.Animation.Character
   public class Skeleton : INamedObject
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     // A node in the skeleton tree.
@@ -45,21 +45,21 @@ namespace DigitalRune.Animation.Character
       public int Parent;      // Parent index.
       public int[] Children;  // Child indices.
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     internal readonly ResourcePool<SkeletonPose> SkeletonPosePool;
     internal readonly ResourcePool<SkeletonBoneAccessor> SkeletonBoneAccessorPool;
     internal readonly ResourcePool<AnimatableBoneTransform[]> AnimatableBoneTransformsPool;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     // The bone nodes describing the parent-child relationships.
@@ -119,11 +119,11 @@ namespace DigitalRune.Animation.Character
       }
     }
 #endif
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -182,11 +182,11 @@ namespace DigitalRune.Animation.Character
         null,
         null);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -441,6 +441,6 @@ namespace DigitalRune.Animation.Character
     {
       return BindPosesAbsoluteInverse[boneIndex];
     }
-    #endregion
+
   }
 }

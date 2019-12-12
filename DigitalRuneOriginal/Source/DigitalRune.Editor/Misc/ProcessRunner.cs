@@ -35,7 +35,7 @@ namespace DigitalRune.Editor
     public class ProcessRunner : IDisposable
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private Process _process;
@@ -43,11 +43,11 @@ namespace DigitalRune.Editor
         private readonly ManualResetEvent _outputComplete = new ManualResetEvent(true);
         private readonly StringBuilder _standardOutput = new StringBuilder();
         private readonly StringBuilder _standardError = new StringBuilder();
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -176,11 +176,11 @@ namespace DigitalRune.Editor
         /// Occurs when the associated process exited.
         /// </summary>
         public event EventHandler<EventArgs> ProcessExited;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -250,11 +250,11 @@ namespace DigitalRune.Editor
                 IsDisposed = true;
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private void ThrowIfDisposed()
@@ -504,6 +504,6 @@ namespace DigitalRune.Editor
         {
             ProcessExited?.Invoke(this, eventArgs);
         }
-        #endregion
+
     }
 }

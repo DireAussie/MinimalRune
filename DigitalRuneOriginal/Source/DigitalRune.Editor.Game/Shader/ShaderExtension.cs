@@ -41,7 +41,7 @@ namespace DigitalRune.Editor.Shader
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
@@ -62,17 +62,17 @@ namespace DigitalRune.Editor.Shader
 
         // A dictionary that stores error lists per document.
         private readonly Dictionary<TextDocument, List<Error>> _errorLists = new Dictionary<TextDocument, List<Error>>();
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -82,11 +82,11 @@ namespace DigitalRune.Editor.Shader
         {
             Logger.Debug("Initializing ShaderExtension.");
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -644,6 +644,6 @@ namespace DigitalRune.Editor.Shader
             textDocumentVM.TextEditor.TextArea.Caret.Column = column;
             textDocumentVM.TextEditor.TextArea.Caret.BringCaretToView();
         }
-        #endregion
+
     }
 }

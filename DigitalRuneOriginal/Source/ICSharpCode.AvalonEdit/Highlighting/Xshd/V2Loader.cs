@@ -260,7 +260,7 @@ namespace ICSharpCode.AvalonEdit.Highlighting.Xshd
 			}
 		}
 		
-		#region ParseColor
+
 		static XshdColor ParseNamedColor(XmlReader reader)
 		{
 			XshdColor color = ParseColorAttributes(reader);
@@ -345,6 +345,6 @@ namespace ICSharpCode.AvalonEdit.Highlighting.Xshd
 				return null;
 			return (FontStyle?)FontStyleConverter.ConvertFromInvariantString(fontStyle);
 		}
-		#endregion
+
 	}
 }

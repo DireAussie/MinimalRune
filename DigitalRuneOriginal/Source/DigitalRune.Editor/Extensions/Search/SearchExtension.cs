@@ -25,7 +25,7 @@ namespace DigitalRune.Editor.Search
     public sealed partial class SearchExtension : EditorExtension, ISearchService
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
@@ -36,11 +36,11 @@ namespace DigitalRune.Editor.Search
         private MergeableNodeCollection<ICommandItem> _toolBarNodes;
         private CommandBinding _quickFindCommandBinding;
         private QuickFindCommandItem _quickFindCommandItem;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         private FindAndReplaceViewModel FindAndReplaceViewModel
@@ -54,11 +54,11 @@ namespace DigitalRune.Editor.Search
             }
         }
         private FindAndReplaceViewModel _findAndReplaceViewModel;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -68,11 +68,11 @@ namespace DigitalRune.Editor.Search
         {
             InitializeSearchService();
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -320,6 +320,6 @@ namespace DigitalRune.Editor.Search
 
             return null;
         }
-        #endregion
+
     }
 }

@@ -14,7 +14,7 @@ namespace DigitalRune.Geometry
   public static partial class GeometryHelper
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -79,11 +79,11 @@ namespace DigitalRune.Geometry
         return -1;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -304,6 +304,6 @@ namespace DigitalRune.Geometry
 
       return points.Points;
     }
-    #endregion
+
   }
 }

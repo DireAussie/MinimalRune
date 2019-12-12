@@ -232,7 +232,7 @@ namespace ICSharpCode.AvalonEdit.Indentation
 
             char lastRealChar = '\n'; // The last non-comment character.
 
-            #region ----- Parse line character by character. -----
+
 
             char previousChar;
             char currentChar = ' ';
@@ -600,7 +600,7 @@ namespace ICSharpCode.AvalonEdit.Indentation
                     lastRealChar = currentChar;
                 }
             }
-            #endregion
+
 
             // At this point the line is parsed.
 
@@ -617,7 +617,7 @@ namespace ICSharpCode.AvalonEdit.Indentation
             if (doc.Text.StartsWith("//\t", StringComparison.Ordinal) || doc.Text == "//")
                 return;
 
-            #region ----- Build indentation string. -----
+
 
             // Note: Line continuations, one-line-blocks, and multiline block comments
             // are not handled here. They are handled explicitly when the indentation
@@ -723,10 +723,10 @@ namespace ICSharpCode.AvalonEdit.Indentation
                 _block.Continuation = false;
                 oldBlock.OneLineBlock = _block.OneLineBlock - 1;
             }
-            #endregion
 
 
-            #region ----- Apply indentation. -----
+
+
 
             if (doc.IsReadOnly)
             {
@@ -820,7 +820,7 @@ namespace ICSharpCode.AvalonEdit.Indentation
                     doc.Text = _indent.Append(line).ToString();
                 }
             }
-            #endregion
+
         }
 
 

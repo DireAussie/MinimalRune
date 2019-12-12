@@ -15,15 +15,15 @@ namespace DigitalRune.Windows.Controls
     public class SplitButton : DropDownButton
     {
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         internal const string PART_ActionButton = nameof(PART_ActionButton);
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -33,11 +33,11 @@ namespace DigitalRune.Windows.Controls
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(SplitButton), new FrameworkPropertyMetadata(typeof(SplitButton)));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace DigitalRune.Windows.Controls
 
             Button = GetTemplateChild(PART_ActionButton) as Button;
         }
-        #endregion
+
     }
 
 

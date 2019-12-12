@@ -83,13 +83,13 @@ namespace DigitalRune.Graphics
     // - Flow could also be specified in vertex attributes.
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -212,11 +212,11 @@ namespace DigitalRune.Graphics
     /// to <see cref="MinStrength"/> when the flow speed reaches its maximum (<see cref="MaxSpeed"/>).
     /// </remarks>
     public float MinStrength { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -265,12 +265,12 @@ namespace DigitalRune.Graphics
         FlowMap = null;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
-    #endregion
+
   }
 }

@@ -61,17 +61,17 @@ namespace DigitalRune.Graphics.SceneGraph
   public class CloudLayerNode : SkyNode
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     internal OcclusionQuery OcclusionQuery;
     internal float QuerySize;       // The total size of the occlusion query in pixels.
     internal bool IsQueryPending;   // true if query was started and result was not yet retrieved.
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------    
 
     /// <summary>
@@ -283,11 +283,11 @@ namespace DigitalRune.Graphics.SceneGraph
       internal set { _sunOcclusion = value; }
     }
     private float _sunOcclusion;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -337,11 +337,11 @@ namespace DigitalRune.Graphics.SceneGraph
         base.Dispose(disposing, disposeData);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc cref="SceneNode.Clone"/>
@@ -424,6 +424,6 @@ namespace DigitalRune.Graphics.SceneGraph
         SunOcclusion = 1 - MathHelper.Clamp(OcclusionQuery.PixelCount / QuerySize, 0, 1);
       }
     }
-    #endregion
+
   }
 }

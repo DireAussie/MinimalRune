@@ -82,7 +82,7 @@ namespace DigitalRune.Game.UI.Controls
   public class Console : UIControl, IConsole
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // The index of the selected history index. -1 means no history entry is selected.
@@ -105,11 +105,11 @@ namespace DigitalRune.Game.UI.Controls
     private readonly List<string> _wrappedLines = new List<string>();
 
     private ScrollBar _verticalScrollBar;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -244,11 +244,11 @@ namespace DigitalRune.Game.UI.Controls
 
     /// <inheritdoc/>
     public event EventHandler<ConsoleCommandEventArgs> CommandEntered;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Game Object Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary> 
@@ -325,11 +325,11 @@ namespace DigitalRune.Game.UI.Controls
       get { return GetValue<string>(VerticalScrollBarStylePropertyId); }
       set { SetValue(VerticalScrollBarStylePropertyId, value); }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -361,11 +361,11 @@ namespace DigitalRune.Game.UI.Controls
       var lineOffset = Properties.Get<int>(LineOffsetPropertyId);
       lineOffset.Changing += OnCoerceLineOffset;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -1095,6 +1095,6 @@ namespace DigitalRune.Game.UI.Controls
       CaretIndex += data.Length;
       InvalidateArrange();
     }
-    #endregion
+
   }
 }

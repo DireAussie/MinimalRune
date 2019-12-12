@@ -28,13 +28,13 @@ namespace DigitalRune.Graphics
   public class PathFigure3F : Figure
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------    
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -52,11 +52,11 @@ namespace DigitalRune.Graphics
     /// etc. 
     /// </remarks>
     public PathSegment3FCollection Segments { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -66,11 +66,11 @@ namespace DigitalRune.Graphics
     {
       Segments = new PathSegment3FCollection(this);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -157,6 +157,6 @@ namespace DigitalRune.Graphics
         strokeIndices.Add(i + 1);
       }
     }
-    #endregion
+
   }
 }

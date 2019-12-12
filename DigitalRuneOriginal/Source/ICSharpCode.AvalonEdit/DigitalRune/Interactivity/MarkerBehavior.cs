@@ -14,21 +14,21 @@ namespace ICSharpCode.AvalonEdit
     public sealed class MarkerBehavior : Behavior<TextEditor>
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private MarkerRenderer _markerRenderer;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -77,17 +77,17 @@ namespace ICSharpCode.AvalonEdit
             get { return (TextSegmentCollection<Marker>)GetValue(MarkersProperty); }
             set { SetValue(MarkersProperty, value); }
         }
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Creation & Cleanup
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Methods
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -169,6 +169,6 @@ namespace ICSharpCode.AvalonEdit
             if (_markerRenderer != null)
                 _markerRenderer.Markers = newValue;
         }
-        #endregion
+
     }
 }

@@ -25,18 +25,18 @@ namespace DigitalRune.Windows.Docking
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         double[] _minSizes;
         private double[] _finalSizes;
         private double _splitterSize;
         private Orientation _splitterOrientation;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -46,11 +46,11 @@ namespace DigitalRune.Windows.Docking
         {
             get { return _finalSizes; }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
         /// <inheritdoc cref="DockSplitPane.Orientation"/>
@@ -116,11 +116,11 @@ namespace DigitalRune.Windows.Docking
             get { return (double)GetValue(SplitterSizeProperty); }
             set { SetValue(SplitterSizeProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -130,11 +130,11 @@ namespace DigitalRune.Windows.Docking
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(DockSplitPanel), new FrameworkPropertyMetadata(typeof(DockSplitPanel)));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -412,7 +412,7 @@ namespace DigitalRune.Windows.Docking
 
                 if (totalMinStarSize + totalNonStarSize <= GetPrimarySize(fullSize, orientation))
                 {
-                    #region ----- There is enough room for the * children. -----
+
                     // The non-* children use their optimal size.
 
                     // The non-* children use this total size:
@@ -489,11 +489,11 @@ namespace DigitalRune.Windows.Docking
                             }
                         }
                     }
-                    #endregion
+
                 }
                 else
                 {
-                    #region ----- The * children are at their minimum and the other sizes must shrink too. -----
+
 
                     // The *-sized elements use their min size.
                     // Of the others a few - but no all - must shrink too.
@@ -552,7 +552,7 @@ namespace DigitalRune.Windows.Docking
                             Debug.Assert(_finalSizes[i] >= _minSizes[i]);
                         }
                     }
-                    #endregion
+
                 }
             }
 
@@ -687,6 +687,6 @@ namespace DigitalRune.Windows.Docking
 
             return sum;
         }
-        #endregion
+
     }
 }

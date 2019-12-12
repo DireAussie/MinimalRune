@@ -41,7 +41,7 @@ namespace DigitalRune.Game.UI
 
 
     //--------------------------------------------------------------
-    #region LINQ to Visual Tree
+
     //--------------------------------------------------------------
 
     private static readonly Func<UIControl, UIControl> GetParent = control => control.VisualParent;
@@ -214,6 +214,6 @@ namespace DigitalRune.Game.UI
 
       return TreeHelper.GetLeaves(control, GetChildren);
     }
-    #endregion
+
   }
 }

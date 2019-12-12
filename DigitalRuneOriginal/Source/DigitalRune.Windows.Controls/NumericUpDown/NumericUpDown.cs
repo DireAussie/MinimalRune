@@ -44,24 +44,24 @@ namespace DigitalRune.Windows.Controls
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private TextBox _textBox;
         private Binding _textBoxBinding;
         private BindingExpression _textBoxBindingExpression;
         private string _stringFormat;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties
+
         //--------------------------------------------------------------   
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -138,11 +138,11 @@ namespace DigitalRune.Windows.Controls
             get { return (string)GetValue(StringValueProperty); }
             set { SetValue(StringValueProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -154,11 +154,11 @@ namespace DigitalRune.Windows.Controls
             MinimumProperty.OverrideMetadata(typeof(NumericUpDown), new FrameworkPropertyMetadata(double.NegativeInfinity));
             MaximumProperty.OverrideMetadata(typeof(NumericUpDown), new FrameworkPropertyMetadata(double.PositiveInfinity));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------    
 
         /// <summary>
@@ -365,6 +365,6 @@ namespace DigitalRune.Windows.Controls
         {
             return (int)value >= -1;
         }
-        #endregion
+
     }
 }

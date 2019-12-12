@@ -65,16 +65,16 @@ namespace DigitalRune.Animation
       where TPoint : IEquatable<TPoint>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private TimeSpan _startTime;
     private TimeSpan _endTime;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
     
     /// <summary>
@@ -173,11 +173,11 @@ namespace DigitalRune.Animation
       }
     }
     private float _endParameter;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -188,11 +188,11 @@ namespace DigitalRune.Animation
       StartParameter = float.NaN;
       EndParameter = float.NaN;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -272,6 +272,6 @@ namespace DigitalRune.Animation
         Traits.Copy(ref defaultSource, ref result);
       }
     }
-    #endregion
+
   }
 }

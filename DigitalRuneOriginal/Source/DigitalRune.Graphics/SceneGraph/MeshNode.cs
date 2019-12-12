@@ -47,16 +47,16 @@ namespace DigitalRune.Graphics.SceneGraph
   public class MeshNode : SceneNode, IOcclusionProxy
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Optimization: Store the hash values of all render passes for fast lookup.
     private int[] _passHashes;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -214,11 +214,11 @@ namespace DigitalRune.Graphics.SceneGraph
     }
     private SkeletonPose _skeletonPose;
 #endif
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -309,14 +309,14 @@ namespace DigitalRune.Graphics.SceneGraph
         base.Dispose(disposing, disposeData);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc cref="SceneNode.Clone"/>
     public new MeshNode Clone()
@@ -352,7 +352,7 @@ namespace DigitalRune.Graphics.SceneGraph
         _skeletonPose = sourceTyped.SkeletonPose.Clone();
 #endif
     }
-    #endregion
+
 
 
     /// <summary>
@@ -415,7 +415,7 @@ namespace DigitalRune.Graphics.SceneGraph
     }
 
 
-    #region ----- IOcclusionProxy -----
+
 
     /// <inheritdoc/>
     bool IOcclusionProxy.HasOccluder
@@ -454,8 +454,8 @@ namespace DigitalRune.Graphics.SceneGraph
 
       return (OccluderData)RenderData;
     }
-    #endregion
 
-    #endregion
+
+
   }
 }

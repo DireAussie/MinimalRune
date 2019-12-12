@@ -50,13 +50,13 @@ namespace DigitalRune.Graphics
   public class Occluder : ITriangleMesh
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -98,11 +98,11 @@ namespace DigitalRune.Graphics
     {
       get { return Indices.Length / 3; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -178,11 +178,11 @@ namespace DigitalRune.Graphics
       Vertices = vertices;
       Indices = indices;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     // Only for CLS-compliance.
@@ -232,6 +232,6 @@ namespace DigitalRune.Graphics
         Vertices[Indices[index + 1]],
         Vertices[Indices[index + 2]]);
     }
-    #endregion
+
   }
 }

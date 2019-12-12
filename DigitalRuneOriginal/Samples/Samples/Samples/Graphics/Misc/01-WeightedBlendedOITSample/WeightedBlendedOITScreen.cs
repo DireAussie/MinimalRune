@@ -17,7 +17,7 @@ namespace Samples.Graphics
   {
     private readonly MeshRenderer _meshRenderer;
 
-    #region ----- WBOIT -----
+
     private readonly RenderTargetBinding[] _renderTargetBindings = new RenderTargetBinding[2];
 
     // Blend state used for rendering transparent object into the WBOIT render targets.
@@ -43,7 +43,7 @@ namespace Samples.Graphics
     private readonly EffectParameter _parameterViewportSize;
     private readonly EffectParameter _parameterTextureA;
     private readonly EffectParameter _parameterTextureB;
-    #endregion
+
 
 
     /// <summary>

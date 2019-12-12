@@ -19,13 +19,13 @@ namespace DigitalRune.Windows
     public class ObservableUIElementCollection : UIElementCollection, INotifyCollectionChanged, INotifyPropertyChanged
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -65,11 +65,11 @@ namespace DigitalRune.Windows
         /// Occurs when a property value changes.
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -81,11 +81,11 @@ namespace DigitalRune.Windows
             : base(visualParent, logicalParent)
         {
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -226,6 +226,6 @@ namespace DigitalRune.Windows
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        #endregion
+
     }
 }

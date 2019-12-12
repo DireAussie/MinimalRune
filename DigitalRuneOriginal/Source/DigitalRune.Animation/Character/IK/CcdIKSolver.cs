@@ -31,7 +31,7 @@ namespace DigitalRune.Animation.Character
   /// <strong>Bone rotation limits: </strong><br/>
   /// Per default, the <see cref="IKSolver"/> assumes that the bones can rotate in any direction
   /// without rotation limits. If the bone rotations should be limited (e.g. "do not rotate about
-  /// the y axis" or "do not rotate more than 45°"), then a <see cref="LimitBoneTransforms"/>
+  /// the y axis" or "do not rotate more than 45ï¿½"), then a <see cref="LimitBoneTransforms"/>
   /// callback must be set. The <see cref="LimitBoneTransforms"/> callback must be a method that
   /// checks the current bone rotations and removes any invalid rotations. See 
   /// <see cref="LimitBoneTransforms"/> for more details.
@@ -46,18 +46,18 @@ namespace DigitalRune.Animation.Character
     // TODO: Add support for solving several concurrent chains.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private bool _isDirty = true;
 
     // A list that is re-used in each OnSolve(). It does not store data between calls.
     private readonly List<SrtTransform> _originalTransforms = new List<SrtTransform>();
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -180,11 +180,11 @@ namespace DigitalRune.Animation.Character
     /// </para>
     /// </remarks>
     public Action<int> LimitBoneTransforms { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -196,11 +196,11 @@ namespace DigitalRune.Animation.Character
       AllowedDeviation = 0.01f;
       BoneGain = 1f;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -353,6 +353,6 @@ namespace DigitalRune.Animation.Character
 
       _originalTransforms.Clear();
     }
-    #endregion
+
   }
 }

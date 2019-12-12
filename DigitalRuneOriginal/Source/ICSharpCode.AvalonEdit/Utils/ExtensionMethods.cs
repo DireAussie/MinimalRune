@@ -28,7 +28,7 @@ namespace ICSharpCode.AvalonEdit.Utils
 {
 	static class ExtensionMethods
 	{
-		#region Epsilon / IsClose / CoerceValue
+
 		/// <summary>
 		/// Epsilon used for <c>IsClose()</c> implementations.
 		/// We can use up quite a few digits in front of the decimal point (due to visual positions being relative to document origin),
@@ -86,9 +86,9 @@ namespace ICSharpCode.AvalonEdit.Utils
 		{
 			return Math.Max(Math.Min(value, maximum), minimum);
 		}
-		#endregion
+
 		
-		#region CreateTypeface
+
 		/// <summary>
 		/// Creates typeface from the framework element.
 		/// </summary>
@@ -99,9 +99,9 @@ namespace ICSharpCode.AvalonEdit.Utils
 			                    (FontWeight)fe.GetValue(TextBlock.FontWeightProperty),
 			                    (FontStretch)fe.GetValue(TextBlock.FontStretchProperty));
 		}
-		#endregion
+
 		
-		#region AddRange / Sequence
+
 		public static void AddRange<T>(this ICollection<T> collection, IEnumerable<T> elements)
 		{
 			foreach (T e in elements)
@@ -115,9 +115,9 @@ namespace ICSharpCode.AvalonEdit.Utils
 		{
 			yield return value;
 		}
-		#endregion
+
 		
-		#region XML reading
+
 		/// <summary>
 		/// Gets the value of the attribute, or null if the attribute does not exist.
 		/// </summary>
@@ -147,9 +147,9 @@ namespace ICSharpCode.AvalonEdit.Utils
 			else
 				return XmlConvert.ToBoolean(attributeValue);
 		}
-		#endregion
+
 		
-		#region DPI independence
+
 		public static Rect TransformToDevice(this Rect rect, Visual visual)
 		{
 			Matrix matrix = PresentationSource.FromVisual(visual).CompositionTarget.TransformToDevice;
@@ -185,9 +185,9 @@ namespace ICSharpCode.AvalonEdit.Utils
 			Matrix matrix = PresentationSource.FromVisual(visual).CompositionTarget.TransformFromDevice;
 			return new Point(point.X * matrix.M11, point.Y * matrix.M22);
 		}
-		#endregion
+
 		
-		#region System.Drawing <-> WPF conversions
+
 		public static System.Drawing.Point ToSystemDrawing(this Point p)
 		{
 			return new System.Drawing.Point((int)p.X, (int)p.Y);
@@ -207,7 +207,7 @@ namespace ICSharpCode.AvalonEdit.Utils
 		{
 			return new Rect(rect.Location.ToWpf(), rect.Size.ToWpf());
 		}
-		#endregion
+
 		
 		public static IEnumerable<DependencyObject> VisualAncestorsAndSelf(this DependencyObject obj)
 		{

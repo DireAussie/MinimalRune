@@ -22,16 +22,16 @@ namespace ICSharpCode.AvalonEdit
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly char[] OpeningBrackets = { '(', '{', '[' };
         private static readonly char[] ClosingBrackets = { ')', '}', ']' };
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -103,11 +103,11 @@ namespace ICSharpCode.AvalonEdit
             get { return (Pen)GetValue(BracketHighlightingPenProperty); }
             set { SetValue(BracketHighlightingPenProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private void UpdateBracketHighlighting()
@@ -179,6 +179,6 @@ namespace ICSharpCode.AvalonEdit
                 }
             }
         }
-        #endregion
+
     }
 }

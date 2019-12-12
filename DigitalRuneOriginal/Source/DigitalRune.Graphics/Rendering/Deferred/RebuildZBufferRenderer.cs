@@ -26,7 +26,7 @@ namespace DigitalRune.Graphics.Rendering
   public class RebuildZBufferRenderer
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Effect _effect;
@@ -38,11 +38,11 @@ namespace DigitalRune.Graphics.Rendering
     private readonly EffectParameter _parameterSourceTexture;
     private readonly EffectTechnique _techniqueOrthographic;
     private readonly EffectTechnique _techniquePerspective;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -59,11 +59,11 @@ namespace DigitalRune.Graphics.Rendering
     /// </summary>
     /// <value>The far bias factor. The default value is 0.995f.</value>
     public float FarBias { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -91,11 +91,11 @@ namespace DigitalRune.Graphics.Rendering
       _techniqueOrthographic = _effect.Techniques["Orthographic"];
       _techniquePerspective = _effect.Techniques["Perspective"];
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -226,6 +226,6 @@ namespace DigitalRune.Graphics.Rendering
 
       savedRenderState.Restore();
     }
-    #endregion
+
   }
 }

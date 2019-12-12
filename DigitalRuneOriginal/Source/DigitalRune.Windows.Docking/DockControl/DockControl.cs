@@ -25,15 +25,15 @@ namespace DigitalRune.Windows.Docking
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------    
 
         private ContentPresenter _contentPresenter;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <inheritdoc cref="IDockControl.DockStrategy"/>
@@ -94,17 +94,17 @@ namespace DigitalRune.Windows.Docking
         public ReadOnlyObservableCollection<AutoHideOverlay> AutoHideOverlays { get; }
         // AutoHideOverlays add/remove themselves to/from this list.
         internal readonly ObservableCollection<AutoHideOverlay> _autoHideOverlays;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -140,11 +140,11 @@ namespace DigitalRune.Windows.Docking
             Loaded += OnLoaded;
             Unloaded += OnUnloaded;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -387,6 +387,6 @@ namespace DigitalRune.Windows.Docking
             if (viewModel != null)
                 viewModel.DockControl = null;
         }
-        #endregion
+
     }
 }

@@ -25,7 +25,7 @@ namespace DigitalRune.Graphics.Rendering
   partial class BillboardRenderer
   {
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
 #if PARTICLES
@@ -59,11 +59,11 @@ namespace DigitalRune.Graphics.Rendering
       }
     }
 #endif
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -141,17 +141,17 @@ namespace DigitalRune.Graphics.Rendering
     // For depth-sorting of particles, created on demand.
     private ArrayList<ParticleIndex> _particleIndices;
 #endif
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
@@ -210,11 +210,11 @@ namespace DigitalRune.Graphics.Rendering
       if (!_hiDef)
         _billboardEffect.Dispose();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     // Prepare effect for rendering billboards.
@@ -516,7 +516,7 @@ namespace DigitalRune.Graphics.Rendering
     }
 
 
-    #region ----- Particles -----
+
 
     private void DrawParticlesOldToNew(ParticleSystemData particleSystemData, bool requiresTransformation, ref Vector3F scale, ref Pose pose, ref Vector3F color, float alpha, float angleOffset)
     {
@@ -647,10 +647,10 @@ namespace DigitalRune.Graphics.Rendering
         _billboardBatch.DrawBillboard(ref b, texture);
       }
     }
-    #endregion
 
 
-    #region ----- Ribbons -----
+
+
 
     // Particle ribbons:
     // Particles can be rendered as ribbons (a.k.a. trails, lines). Subsequent living 
@@ -1015,9 +1015,9 @@ namespace DigitalRune.Graphics.Rendering
 
       return texCoordU;
     }
-    #endregion
+
 #endif
 
-    #endregion
+
   }
 }

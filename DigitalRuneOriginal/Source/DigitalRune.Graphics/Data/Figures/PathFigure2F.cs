@@ -91,13 +91,13 @@ namespace DigitalRune.Graphics
   public class PathFigure2F : Figure
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------    
 
     /// <inheritdoc/>
@@ -137,11 +137,11 @@ namespace DigitalRune.Graphics
     /// etc. 
     /// </remarks>
     public PathSegment2FCollection Segments { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -152,11 +152,11 @@ namespace DigitalRune.Graphics
       Segments = new PathSegment2FCollection(this);
       _isFilled = true;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -314,6 +314,6 @@ namespace DigitalRune.Graphics
 
       triangulator.Triangulate(vertices, startIndex, vertices.Count - startIndex, fillIndices);
     }
-    #endregion
+
   }
 }

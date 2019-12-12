@@ -39,7 +39,7 @@ namespace DigitalRune.Editor.Text
     internal class HighlightingManager : IHighlightingService
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
@@ -51,11 +51,11 @@ namespace DigitalRune.Editor.Text
         private ReadOnlyCollection<ThemeAwareHighlightingDefinition> _definitionsReadOnly;
         private Dictionary<string, ThemeAwareHighlightingDefinition> _definitionsByName;
         private Dictionary<string, ThemeAwareHighlightingDefinition> _definitionsByExtension;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -73,11 +73,11 @@ namespace DigitalRune.Editor.Text
                 }
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -94,11 +94,11 @@ namespace DigitalRune.Editor.Text
 
             _themeService = editor.Services.GetInstance<IThemeService>().ThrowIfMissing();
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -286,6 +286,6 @@ namespace DigitalRune.Editor.Text
                 return definition;
             }
         }
-        #endregion
+
     }
 }

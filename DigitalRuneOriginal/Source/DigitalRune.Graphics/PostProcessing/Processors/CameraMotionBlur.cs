@@ -26,7 +26,7 @@ namespace DigitalRune.Graphics.PostProcessing
     // see "GPU Gems 3: Motion Blur as a Post-Processing Effect"
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Vector3[] _cameraFrustumFarCorners = new Vector3[4];
@@ -40,11 +40,11 @@ namespace DigitalRune.Graphics.PostProcessing
     private readonly EffectParameter _viewProjOldParameter;
     private readonly EffectParameter _numberOfSamplesParameter;
     private readonly EffectParameter _strengthParameter;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -59,11 +59,11 @@ namespace DigitalRune.Graphics.PostProcessing
     /// </summary>
     /// <value>The strength. The default value is 0.6.</value>
     public float Strength { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -89,11 +89,11 @@ namespace DigitalRune.Graphics.PostProcessing
       NumberOfSamples = 8;
       Strength = 0.6f;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -142,7 +142,7 @@ namespace DigitalRune.Graphics.PostProcessing
       _sourceTextureParameter.SetValue((Texture2D)null);
       _gBuffer0Parameter.SetValue((Texture2D)null);
     }
-    #endregion
+
   }
 }
 #endif

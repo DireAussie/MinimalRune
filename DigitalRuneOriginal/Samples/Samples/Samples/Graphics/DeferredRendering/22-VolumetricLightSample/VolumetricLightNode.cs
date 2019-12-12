@@ -18,13 +18,13 @@ namespace Samples.Graphics
   public class VolumetricLightNode : SceneNode
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -72,11 +72,11 @@ namespace Samples.Graphics
       }
     }
     private int _mipMapBias;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -91,14 +91,14 @@ namespace Samples.Graphics
       Color = new Vector3F(1, 1, 1);
       NumberOfSamples = 10;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc cref="SceneNode.Clone()" />
     public new VolumetricLightNode Clone()
@@ -126,7 +126,7 @@ namespace Samples.Graphics
       NumberOfSamples = sourceTyped.NumberOfSamples;
       MipMapBias = sourceTyped.MipMapBias;
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -140,7 +140,7 @@ namespace Samples.Graphics
 
       base.OnParentChanged(oldParent, newParent);
     }
-    #endregion
+
   }
 }
 #endif

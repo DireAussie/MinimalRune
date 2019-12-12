@@ -21,13 +21,13 @@ namespace DigitalRune.Animation
   public class Vector4Animation : Animation<Vector4>
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -67,11 +67,11 @@ namespace DigitalRune.Animation
     /// <value>The animation of the w component.</value>
     [ContentSerializer(SharedResource = true)]
     public IAnimation<float> W { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
     
     /// <overloads>
@@ -103,11 +103,11 @@ namespace DigitalRune.Animation
       Z = z;
       W = w;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -154,7 +154,7 @@ namespace DigitalRune.Animation
       else
         result.W = defaultSource.W;
     }
-    #endregion
+
   }
 }
 #endif

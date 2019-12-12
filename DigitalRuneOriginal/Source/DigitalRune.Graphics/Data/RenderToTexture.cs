@@ -33,13 +33,13 @@ namespace DigitalRune.Graphics
     // TODO: Add property RenderToTexture.FrameRate as possible extension.
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -85,11 +85,11 @@ namespace DigitalRune.Graphics
     /// </remarks>
     /// <seealso cref="IGraphicsService.Frame"/>
     public int LastFrame { get; internal set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -99,12 +99,12 @@ namespace DigitalRune.Graphics
     {
       LastFrame = -1;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
-    #endregion
+
   }
 }

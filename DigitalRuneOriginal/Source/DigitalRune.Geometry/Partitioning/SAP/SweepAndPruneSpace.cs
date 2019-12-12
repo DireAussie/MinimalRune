@@ -33,7 +33,7 @@ namespace DigitalRune.Geometry.Partitioning
     // - 3D-DDA for fast ray casting support.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Sorted lists of edges for the axes X, Y and Z. 
@@ -41,11 +41,11 @@ namespace DigitalRune.Geometry.Partitioning
 
     // Stores SAP info for each item. Uses a dictionary for O(1) retrieval.
     private readonly ItemInfoCollection _itemInfos = new ItemInfoCollection();
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -55,11 +55,11 @@ namespace DigitalRune.Geometry.Partitioning
       set { _broadPhase = value; }
     }
     private IBroadPhase<T> _broadPhase;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -71,14 +71,14 @@ namespace DigitalRune.Geometry.Partitioning
       _edges[1] = new List<Edge>();
       _edges[2] = new List<Edge>();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override BasePartition<T> CreateInstanceCore()
@@ -92,7 +92,7 @@ namespace DigitalRune.Geometry.Partitioning
     {
       base.CloneCore(source);
     }
-    #endregion
+
 
 
     /// <inheritdoc/>
@@ -567,6 +567,6 @@ namespace DigitalRune.Geometry.Partitioning
 
       return true;
     }
-    #endregion
+
   }
 }

@@ -30,15 +30,15 @@ namespace DigitalRune.Collections
   public class NotifyingCollection<T> : Collection<T>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private bool _suppressCollectionChangedEvent;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -66,11 +66,11 @@ namespace DigitalRune.Collections
     /// The default value is <see langword="true"/>.
     /// </value>
     public bool AllowDuplicates { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -104,11 +104,11 @@ namespace DigitalRune.Collections
       AllowNull = allowNull;
       AllowDuplicates = allowDuplicates;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -570,6 +570,6 @@ namespace DigitalRune.Collections
       if (handler != null)
         handler(this, eventArgs);
     }
-    #endregion
+
   }
 }

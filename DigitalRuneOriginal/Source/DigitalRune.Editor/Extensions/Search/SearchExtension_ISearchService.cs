@@ -15,24 +15,24 @@ namespace DigitalRune.Editor.Search
     partial class SearchExtension
     {
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         private const int MaxNumberOfCachedEntries = 20;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private IEnumerator<ISearchable> _searchableIterator;
         private IEnumerator<ISearchResult> _searchResultIterator;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -63,11 +63,11 @@ namespace DigitalRune.Editor.Search
 
         /// <inheritdoc/>
         public IList<ISearchScope> SearchScopes { get; private set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         private void InitializeSearchService()
@@ -80,11 +80,11 @@ namespace DigitalRune.Editor.Search
 
             SearchScopes = new SearchScopeCollection(this);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private static void Reset<T>(ref IEnumerator<T> enumerator)
@@ -333,6 +333,6 @@ namespace DigitalRune.Editor.Search
             foreach (var item in CommandItems.OfType<DelegateCommandItem>())
                 item.Command.RaiseCanExecuteChanged();
         }
-        #endregion
+
     }
 }

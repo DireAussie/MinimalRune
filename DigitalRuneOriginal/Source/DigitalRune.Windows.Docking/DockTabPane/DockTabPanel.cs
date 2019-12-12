@@ -21,7 +21,7 @@ namespace DigitalRune.Windows.Docking
     public class DockTabPanel : Panel
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private double _elementHeight;
@@ -34,17 +34,17 @@ namespace DigitalRune.Windows.Docking
         private readonly List<UIElement> _previousChildren = new List<UIElement>();
 
         private double _scrollOffset;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -130,11 +130,11 @@ namespace DigitalRune.Windows.Docking
 
             obj.SetValue(IsDraggedProperty, Boxed.Get(value));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -149,11 +149,11 @@ namespace DigitalRune.Windows.Docking
             // move the focus to the content of the DockTabItem.
             KeyboardNavigation.TabNavigationProperty.OverrideMetadata(typeof(DockTabPanel), new FrameworkPropertyMetadata(KeyboardNavigationMode.Once));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -546,6 +546,6 @@ namespace DigitalRune.Windows.Docking
             };
             translateTransform.BeginAnimation(TranslateTransform.XProperty, doubleAnimation, HandoffBehavior.SnapshotAndReplace);
         }
-        #endregion
+
     }
 }

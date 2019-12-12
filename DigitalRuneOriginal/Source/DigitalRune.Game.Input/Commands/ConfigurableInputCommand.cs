@@ -32,13 +32,13 @@ namespace DigitalRune.Game.Input
 
 
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -177,11 +177,11 @@ namespace DigitalRune.Game.Input
       }
     }
     private LogicalPlayerIndex _logicalPlayerIndex = LogicalPlayerIndex.One;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -206,11 +206,11 @@ namespace DigitalRune.Game.Input
       Enabled = true;
       Scale = 1;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -417,6 +417,6 @@ namespace DigitalRune.Game.Input
 
       return axisValue;
     }
-    #endregion
+
   }
 }

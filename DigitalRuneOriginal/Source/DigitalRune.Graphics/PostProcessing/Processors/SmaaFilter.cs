@@ -31,7 +31,7 @@ namespace DigitalRune.Graphics.PostProcessing
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     //private readonly DepthStencilState _stencilStateReplace;
@@ -50,17 +50,17 @@ namespace DigitalRune.Graphics.PostProcessing
 
     private readonly Texture2D _searchLookupTexture;
     private readonly Texture2D _areaLookupTexture;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -110,11 +110,11 @@ namespace DigitalRune.Graphics.PostProcessing
       _areaLookupTexture = content.Load<Texture2D>("DigitalRune/PostProcessing/SmaaAreaTexDX9");
       _searchLookupTexture = content.Load<Texture2D>("DigitalRune/PostProcessing/SmaaSearchTex");
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -172,7 +172,7 @@ namespace DigitalRune.Graphics.PostProcessing
       GraphicsService.RenderTargetPool.Recycle(blendRenderTarget);
       GraphicsService.RenderTargetPool.Recycle(edgeRenderTarget);
     }
-    #endregion
+
   }
 }
 #endif

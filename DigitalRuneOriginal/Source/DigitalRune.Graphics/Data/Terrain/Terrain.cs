@@ -46,7 +46,7 @@ namespace DigitalRune.Graphics
   public class Terrain : IDisposable
   {
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -54,17 +54,17 @@ namespace DigitalRune.Graphics
     /// </summary>
     internal const float TerrainLimit = int.MaxValue;
     // We use int.MaxValue because some internal calculations are done in int.
-    #endregion
+
 
     
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -134,11 +134,11 @@ namespace DigitalRune.Graphics
     /// x and z values are set.
     /// </remarks>
     public Aabb Aabb { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -197,11 +197,11 @@ namespace DigitalRune.Graphics
         IsDisposed = true;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -450,6 +450,6 @@ namespace DigitalRune.Graphics
     //  boxShape.Extent = aabb.Extent;
     //  childObject.Pose = new Pose(aabb.Center);
     //}
-    #endregion
+
   }
 }

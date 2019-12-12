@@ -63,7 +63,7 @@ namespace DigitalRune.Geometry.Partitioning
       return BuildMixed(leaves, 0, leaves.Count - 1, createNode, bottomUpThreshold);
     }
 
-    #region ----- Bottom-Up Approach -----
+
 
     // The following basic top-down approach is used in Bullet (btDbvt).
 
@@ -129,10 +129,10 @@ namespace DigitalRune.Geometry.Partitioning
       DigitalRune.ResourcePools<IAabbTreeNode<T>>.Lists.Recycle(nodes);
       return root;
     }
-    #endregion
 
 
-    #region ----- Top-Down Approach: Center Split -----
+
+
     
     // The following basic top-down approach is described in many papers about AABB trees:
     //   - Determine combined AABB of nodes.
@@ -197,10 +197,10 @@ namespace DigitalRune.Geometry.Partitioning
 
       return node;
     }
-    #endregion
 
 
-    #region ----- Top-Down Approach: Variance-Based Split -----
+
+
 
     // The following basic top-down approach is used in Bullet (btQuantizedBvh):
     //   - Determine mean and variance of nodes.
@@ -267,10 +267,10 @@ namespace DigitalRune.Geometry.Partitioning
       node.RightChild = BuildTopDownVarianceBasedSplit(leaves, rightLeaf, lastLeaf, createNode);
       return node;
     }
-    #endregion
 
 
-    #region ----- Mixed Approach -----
+
+
 
     // The following basic mixed approach is used in Bullet (btDbvt).
     //   - Determine mean and variance of nodes.
@@ -370,7 +370,7 @@ namespace DigitalRune.Geometry.Partitioning
       node.RightChild = BuildMixed(leaves, rightLeaf, lastLeaf, createNode, bottomUpThreshold);
       return node;
     }
-    #endregion
+
 
 
     /// <summary>

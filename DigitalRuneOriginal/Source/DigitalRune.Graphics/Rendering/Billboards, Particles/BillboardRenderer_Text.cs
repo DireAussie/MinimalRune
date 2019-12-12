@@ -15,7 +15,7 @@ namespace DigitalRune.Graphics.Rendering
   partial class BillboardRenderer
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // The sprite batch and effect are created on demand.
@@ -24,17 +24,17 @@ namespace DigitalRune.Graphics.Rendering
 
     // Default font used if no other font is specified.
     private SpriteFont _defaultFont;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     private void InitializeText(SpriteFont spriteFont)
@@ -48,11 +48,11 @@ namespace DigitalRune.Graphics.Rendering
       if (_textEffect != null)
         _textEffect.Dispose();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
@@ -98,7 +98,7 @@ namespace DigitalRune.Graphics.Rendering
         Vector3F position = node.PoseWorld.Position;
         var orientation = billboard.Orientation;
 
-        #region ----- Billboarding -----
+
 
         // (Code copied from BillboardBatchReach.)
 
@@ -164,7 +164,7 @@ namespace DigitalRune.Graphics.Rendering
 
           // No need to normalize because normal and right are normalized and perpendicular.
         }
-        #endregion
+
 
         _textEffect.World = new Matrix(right.X, right.Y, right.Z, 0,
                                        -axis.X, -axis.Y, -axis.Z, 0,
@@ -193,6 +193,6 @@ namespace DigitalRune.Graphics.Rendering
 
       savedRenderStates.Restore();
     }
-    #endregion
+
   }
 }

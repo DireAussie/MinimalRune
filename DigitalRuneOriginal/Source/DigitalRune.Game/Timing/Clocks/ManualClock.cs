@@ -22,16 +22,16 @@ namespace DigitalRune.Game.Timing
   public class ManualClock : IGameClock
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // TimeEventArgs object is reused to avoid unnecessary memory allocations.
     private readonly GameClockEventArgs _eventArgs = new GameClockEventArgs(); 
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -59,11 +59,11 @@ namespace DigitalRune.Game.Timing
 
     /// <inheritdoc/>
     public event EventHandler<GameClockEventArgs> TimeChanged;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -73,11 +73,11 @@ namespace DigitalRune.Game.Timing
     {
       MaxDeltaTime = TimeSpan.FromMilliseconds(100);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -160,6 +160,6 @@ namespace DigitalRune.Game.Timing
       if (handler != null)
         handler(this, eventArgs);
     }
-    #endregion
+
   }
 }

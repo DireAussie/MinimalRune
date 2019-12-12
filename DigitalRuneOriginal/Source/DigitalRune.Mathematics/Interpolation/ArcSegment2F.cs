@@ -32,7 +32,7 @@ namespace DigitalRune.Mathematics.Interpolation
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private bool _isDirty = true;
@@ -43,11 +43,11 @@ namespace DigitalRune.Mathematics.Interpolation
     private float _rY;             // Radius.Y with out-of-range corrections.
     private float _angle1;         // The angle of Point1.
     private float _angleDelta;     // The angle from Point1 to Point2.
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -179,11 +179,11 @@ namespace DigitalRune.Mathematics.Interpolation
       }
     }
     private bool _sweepClockwise;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -195,11 +195,11 @@ namespace DigitalRune.Mathematics.Interpolation
       _point1 = new Vector2F(1, 0);
       _point2 = new Vector2F(0, 1);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private void ComputeParameters()
@@ -372,11 +372,11 @@ namespace DigitalRune.Mathematics.Interpolation
         "Point1: {0}, Point2: {1}, Radius: {2}, IsLargeArc: {3}, SweepClockwise: {4}, RotationAngle: {5}",
         Point1, Point2, Radius, IsLargeArc, SweepClockwise, RotationAngle);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Resource Pooling
+
     //--------------------------------------------------------------
 
     private static ResourcePool<ArcSegment2F> _pool;
@@ -420,6 +420,6 @@ namespace DigitalRune.Mathematics.Interpolation
 
       _pool.Recycle(this);
     }
-    #endregion
+
   }
 }

@@ -22,7 +22,7 @@ namespace DigitalRune.Graphics.Rendering
   internal class StandardShadowMaskRenderer : SceneNodeRenderer
   {
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     // Poisson disk kernel (n = 32, min distance = 0.28, sorted by radius):
@@ -61,11 +61,11 @@ namespace DigitalRune.Graphics.Rendering
       new Vector2(-0.07513653f, -0.9907708f),
       new Vector2(-0.1376491f, 0.9876857f),
     };
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly Vector3[] _frustumFarCorners = new Vector3[4];
@@ -88,17 +88,17 @@ namespace DigitalRune.Graphics.Rendering
 
     private readonly Vector3[] _samples = new Vector3[PoissonKernel.Length];
     private int _lastNumberOfSamples;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -136,11 +136,11 @@ namespace DigitalRune.Graphics.Rendering
       //_parameterNear = parameterShadow.StructureMembers["Near"];
       //...
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -324,7 +324,7 @@ namespace DigitalRune.Graphics.Rendering
         return pass;
       }
     }
-    #endregion
+
   }
 }
 #endif

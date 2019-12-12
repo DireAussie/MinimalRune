@@ -29,7 +29,7 @@ namespace ICSharpCode.AvalonEdit
 	[Serializable]
 	public partial class TextEditorOptions : INotifyPropertyChanged
 	{
-		#region ctor
+
 		/// <summary>
 		/// Initializes an empty instance of TextEditorOptions.
 		/// </summary>
@@ -52,9 +52,9 @@ namespace ICSharpCode.AvalonEdit
 					fi.SetValue(this, fi.GetValue(options));
 			}
 		}
-		#endregion
+
 		
-		#region PropertyChanged handling
+
 		/// <inheritdoc/>
 		[field: NonSerialized]
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -77,9 +77,9 @@ namespace ICSharpCode.AvalonEdit
 				PropertyChanged(this, e);
 			}
 		}
-		#endregion
+
 		
-		#region ShowSpaces / ShowTabs / ShowEndOfLine / ShowBoxForControlCharacters
+
 		bool showSpaces;
 		
 		/// <summary>
@@ -147,9 +147,9 @@ namespace ICSharpCode.AvalonEdit
 				}
 			}
 		}
-		#endregion
+
 		
-		#region EnableHyperlinks
+
 		bool enableHyperlinks = true;
 		
 		/// <summary>
@@ -201,9 +201,9 @@ namespace ICSharpCode.AvalonEdit
 				}
 			}
 		}
-		#endregion
+
 		
-		#region TabSize / IndentationSize / ConvertTabsToSpaces / GetIndentationString
+
 		// I'm using '_' prefixes for the fields here to avoid confusion with the local variables
 		// in the methods below.
 		// The fields should be accessed only by their property - the fields might not be used
@@ -274,7 +274,7 @@ namespace ICSharpCode.AvalonEdit
 				return "\t";
 			}
 		}
-		#endregion
+
 		
 		bool cutCopyWholeLine = true;
 		

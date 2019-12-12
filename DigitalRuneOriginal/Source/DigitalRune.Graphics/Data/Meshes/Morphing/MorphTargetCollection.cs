@@ -24,13 +24,13 @@ namespace DigitalRune.Graphics
   public class MorphTargetCollection : NamedObjectCollection<MorphTarget>
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -38,11 +38,11 @@ namespace DigitalRune.Graphics
     /// </summary>
     /// <value>The submesh that owns the morph targets.</value>
     internal Submesh Submesh { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -52,11 +52,11 @@ namespace DigitalRune.Graphics
       : base(StringComparer.Ordinal, 8)
     {
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -120,6 +120,6 @@ namespace DigitalRune.Graphics
       base.SetItem(index, item);
       InvalidateMorphTargetNames();
     }
-    #endregion
+
   }
 }

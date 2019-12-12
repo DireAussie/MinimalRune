@@ -44,7 +44,7 @@ namespace DigitalRune.Windows.Charts
     public class DefaultChartPanel : ChartPanel
     {
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         private const double DefaultWidth = 600;
@@ -52,19 +52,19 @@ namespace DigitalRune.Windows.Charts
         private const double MinChartAreaWidth = 10;
         private const double MinChartAreaHeight = 10;
         private const int AxisZIndex = 0;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private bool _positioningAxes;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -97,14 +97,14 @@ namespace DigitalRune.Windows.Charts
         [Description("Gets the secondary y-axis.")]
         [Category(ChartCategories.Default)]
         public Axis YAxis2 { get; private set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
-        #region ----- Axis Styles -----
+
 
         /// <summary>
         /// Identifies the <see cref="XAxis1Style"/> dependency property.
@@ -192,7 +192,7 @@ namespace DigitalRune.Windows.Charts
             get { return (Style)GetValue(YAxis2StyleProperty); }
             set { SetValue(YAxis2StyleProperty, value); }
         }
-        #endregion
+
 
 
         /// <summary>
@@ -286,11 +286,11 @@ namespace DigitalRune.Windows.Charts
             get { return (Thickness)GetValue(AxisSpacingProperty); }
             set { SetValue(AxisSpacingProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
 #if !SILVERLIGHT
@@ -350,11 +350,11 @@ namespace DigitalRune.Windows.Charts
             XAxis2.Invalidated += OnAxisInvalidated;
             YAxis2.Invalidated += OnAxisInvalidated;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private static void OnRelevantPropertyChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
@@ -545,6 +545,6 @@ namespace DigitalRune.Windows.Charts
             YAxis2.OriginY = verticalOffsetOfXAxis1;
             YAxis2.Length = Math.Max(yAxisLength, 0);
         }
-        #endregion
+
     }
 }

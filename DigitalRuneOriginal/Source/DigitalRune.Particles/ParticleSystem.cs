@@ -151,7 +151,7 @@ namespace DigitalRune.Particles
     // by their age. Order of indices in buffer: _firstLiving <= _firstFree <= _firstLiving <= ...
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private bool _isInitialized;
@@ -172,11 +172,11 @@ namespace DigitalRune.Particles
     // Order of indices in buffer: _firstLiving <= _firstNew <= _firstFree <= _firstDead <= _firstLiving <= ...
     //private int _firstDeadParticleIndex;
     //private int _firstNewParticleIndex;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -755,11 +755,11 @@ namespace DigitalRune.Particles
     [ContentSerializer(Optional = true)]
 #endif
     public object UserData { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -783,11 +783,11 @@ namespace DigitalRune.Particles
 
       _normalizedAgeParameter = Parameters.AddVarying<float>(ParticleParameterNames.NormalizedAge);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private void OnParametersChanged(object sender, EventArgs eventArgs)
@@ -1422,7 +1422,7 @@ namespace DigitalRune.Particles
     }
 
 
-    #region ----- IAnimatabelObject -----
+
 
     /// <inheritdoc/>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes")]
@@ -1444,7 +1444,7 @@ namespace DigitalRune.Particles
       IParticleParameter<T> parameter = Parameters.GetUnchecked<T>(name, true);
       return parameter as IAnimatableProperty<T>;
     }
-    #endregion
-    #endregion
+
+
   }
 }

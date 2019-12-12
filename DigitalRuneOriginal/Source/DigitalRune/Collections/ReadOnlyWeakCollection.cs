@@ -16,15 +16,15 @@ namespace DigitalRune.Collections
   public sealed class ReadOnlyWeakCollection<T> : ICollection<T>, ICollection where T : class
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly WeakCollection<T> _weakCollection;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -71,11 +71,11 @@ namespace DigitalRune.Collections
     {
       get { return ((ICollection)_weakCollection).SyncRoot; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -92,11 +92,11 @@ namespace DigitalRune.Collections
 
       _weakCollection = weakCollection;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -252,6 +252,6 @@ namespace DigitalRune.Collections
     {
       throw new NotSupportedException("This collection is read-only.");
     }
-    #endregion
+
   }
 }

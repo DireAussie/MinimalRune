@@ -48,7 +48,7 @@ namespace ICSharpCode.AvalonEdit.Rendering
 	                                                 Justification = "The user usually doesn't work with TextView but with TextEditor; and nulling the Document property is sufficient to dispose everything.")]
 	public class TextView : FrameworkElement, IScrollInfo, IWeakEventListener, ITextEditorComponent, IServiceProvider
 	{
-		#region Constructor
+
 		static TextView()
 		{
 			ClipToBoundsProperty.OverrideMetadata(typeof(TextView), new FrameworkPropertyMetadata(Boxes.True));
@@ -82,9 +82,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 			this.hoverLogic.MouseHoverStopped += (sender, e) => RaiseHoverEventPair(e, PreviewMouseHoverStoppedEvent, MouseHoverStoppedEvent);
 		}
 
-		#endregion
+
 		
-		#region Document Property
+
 		/// <summary>
 		/// Document property.
 		/// </summary>
@@ -188,9 +188,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 		{
 			return ReceiveWeakEvent(managerType, sender, e);
 		}
-		#endregion
+
 		
-		#region Options property
+
 		/// <summary>
 		/// Options property.
 		/// </summary>
@@ -244,9 +244,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 			}
 			OnOptionChanged(new PropertyChangedEventArgs(null));
 		}
-		#endregion
+
 		
-		#region ElementGenerators+LineTransformers Properties
+
 		readonly ObserveAddRemoveCollection<VisualLineElementGenerator> elementGenerators;
 		
 		/// <summary>
@@ -288,9 +288,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 			DisconnectFromTextView(lineTransformer);
 			Redraw();
 		}
-		#endregion
+
 		
-		#region Builtin ElementGenerators
+
 //		NewLineElementGenerator newLineElementGenerator;
 		SingleCharacterElementGenerator singleCharacterElementGenerator;
 		LinkElementGenerator linkElementGenerator;
@@ -322,9 +322,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 			if (generator != null)
 				generator.FetchOptions(this.Options);
 		}
-		#endregion
+
 		
-		#region Layers
+
 		internal readonly TextLayer textLayer;
 		readonly LayerCollection layers;
 		
@@ -446,9 +446,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 				return inlineObjects.Select(io => io.Element).Concat(layers.Cast<UIElement>()).GetEnumerator();
 			}
 		}
-		#endregion
+
 		
-		#region Inline object handling
+
 		List<InlineObjectRun> inlineObjects = new List<InlineObjectRun>();
 		
 		/// <summary>
@@ -548,9 +548,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 			if (!keepElement)
 				RemoveVisualChild(ior.Element);
 		}
-		#endregion
+
 		
-		#region Brushes
+
 		/// <summary>
 		/// NonPrintableCharacterBrush dependency property.
 		/// </summary>
@@ -595,7 +595,7 @@ namespace ICSharpCode.AvalonEdit.Rendering
 			get { return (Brush)GetValue(LinkTextBackgroundBrushProperty); }
 			set { SetValue(LinkTextBackgroundBrushProperty, value); }
 		}
-		#endregion
+
 		
 		/// <summary>
 		/// LinkTextUnderlinedBrush dependency property.
@@ -617,7 +617,7 @@ namespace ICSharpCode.AvalonEdit.Rendering
 			set { SetValue(LinkTextUnderlineProperty, Boxes.Box(value)); }
 		}
 
-		#region Redraw methods / VisualLine invalidation
+
 		/// <summary>
 		/// Causes the text editor to regenerate all visual lines.
 		/// </summary>
@@ -735,9 +735,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 			visualLine.Dispose();
 			RemoveInlineObjects(visualLine);
 		}
-		#endregion
+
 		
-		#region InvalidateMeasure(DispatcherPriority)
+
 		DispatcherOperation invalidateMeasureOperation;
 		
 		void InvalidateMeasure(DispatcherPriority priority)
@@ -764,9 +764,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 				}
 			}
 		}
-		#endregion
+
 		
-		#region Get(OrConstruct)VisualLine
+
 		/// <summary>
 		/// Gets the visual line that contains the document line with the specified number.
 		/// Returns null if the document line is outside the visible range.
@@ -817,9 +817,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 			}
 			return l;
 		}
-		#endregion
+
 		
-		#region Visual Lines (fields and properties)
+
 		List<VisualLine> allVisualLines = new List<VisualLine>();
 		ReadOnlyCollection<VisualLine> visibleVisualLines;
 		double clippedPixelsOnTop;
@@ -891,9 +891,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 			if (!VisualLinesValid)
 				throw new VisualLinesInvalidException("Internal error: visual lines invalid after EnsureVisualLines call");
 		}
-		#endregion
+
 		
-		#region Measure
+
 		/// <summary>
 		/// Additonal amount that allows horizontal scrolling past the end of the longest line.
 		/// This is necessary to ensure the caret always is visible, even when it is at the end of the longest line.
@@ -1027,9 +1027,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 			}
 			return maxWidth;
 		}
-		#endregion
+
 		
-		#region BuildVisualLine
+
 		TextFormatter formatter;
 		internal TextViewCachedElements cachedElements;
 		
@@ -1152,9 +1152,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 			}
 			return column;
 		}
-		#endregion
+
 		
-		#region Arrange
+
 		/// <summary>
 		/// Arrange implementation.
 		/// </summary>
@@ -1206,9 +1206,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 			
 			return finalSize;
 		}
-		#endregion
+
 		
-		#region Render
+
 		readonly ObserveAddRemoveCollection<IBackgroundRenderer> backgroundRenderers;
 		
 		/// <summary>
@@ -1293,9 +1293,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 				pos.Y += visual.Height;
 			}
 		}
-		#endregion
+
 		
-		#region IScrollInfo implementation
+
 		/// <summary>
 		/// Size of the document, in pixels.
 		/// </summary>
@@ -1644,9 +1644,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 				InvalidateMeasure(DispatcherPriority.Normal);
 			}
 		}
-		#endregion
+
 		
-		#region Visual element mouse handling
+
 		/// <inheritdoc/>
 		protected override HitTestResult HitTestCore(PointHitTestParameters hitTestParameters)
 		{
@@ -1716,9 +1716,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 				}
 			}
 		}
-		#endregion
+
 		
-		#region Getting elements from Visual Position
+
 		/// <summary>
 		/// Gets the visual line at the specified document position (relative to start of document).
 		/// Returns null if there is no visual line for the position (e.g. the position is outside the visible
@@ -1763,9 +1763,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 			}
 			return null;
 		}
-		#endregion
+
 		
-		#region Visual Position <-> TextViewPosition
+
 		/// <summary>
 		/// Gets the visual position from a text view position.
 		/// </summary>
@@ -1823,9 +1823,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 				return null;
 			return line.GetTextViewPositionFloor(visualPosition, Options.EnableVirtualSpace);
 		}
-		#endregion
+
 		
-		#region Service Provider
+
 		readonly ServiceContainer services = new ServiceContainer();
 		
 		/// <summary>
@@ -1867,9 +1867,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 			if (c != null)
 				c.RemoveFromTextView(this);
 		}
-		#endregion
+
 		
-		#region MouseHover
+
 		/// <summary>
 		/// The PreviewMouseHover event.
 		/// </summary>
@@ -1948,7 +1948,7 @@ namespace ICSharpCode.AvalonEdit.Rendering
 			};
 			RaiseEvent(args2);
 		}
-		#endregion
+
 		
 		/// <summary>
 		/// Collapses lines for the purpose of scrolling. <see cref="DocumentLine"/>s marked as collapsed will be hidden

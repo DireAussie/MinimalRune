@@ -15,13 +15,13 @@ namespace DigitalRune.Graphics.Effects
   public class BasicEffectBinding : EffectBinding, IStockEffectBinding
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     bool IStockEffectBinding.FogEnabled { get; set; }
@@ -63,11 +63,11 @@ namespace DigitalRune.Graphics.Effects
     /// <see langword="true"/> if vertex color is enabled; otherwise, <see langword="false"/>.
     /// </value>
     public bool VertexColorEnabled { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -100,11 +100,11 @@ namespace DigitalRune.Graphics.Effects
       // lighting kill performance on WP7. --> Change the default to false.
       PreferPerPixelLighting = false;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -182,6 +182,6 @@ namespace DigitalRune.Graphics.Effects
 
       return (T)datum;
     }
-    #endregion
+
   }
 }

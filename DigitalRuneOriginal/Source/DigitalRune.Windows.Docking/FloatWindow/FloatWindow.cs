@@ -20,17 +20,17 @@ namespace DigitalRune.Windows.Docking
     public class FloatWindow : Window
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private HwndSource _hwndSource;
         private ContentPresenter _contentPresenter;
         private bool _ignoreSizingMessage;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -60,17 +60,17 @@ namespace DigitalRune.Windows.Docking
         {
             get { return _contentPresenter.GetContentContainer<FrameworkElement>(); }
         }
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -101,11 +101,11 @@ namespace DigitalRune.Windows.Docking
             Loaded += OnLoaded;
             Unloaded += OnUnloaded;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -268,6 +268,6 @@ namespace DigitalRune.Windows.Docking
 
             return IntPtr.Zero;
         }
-        #endregion
+
     }
 }

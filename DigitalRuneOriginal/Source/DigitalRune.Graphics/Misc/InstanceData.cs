@@ -62,7 +62,7 @@ namespace DigitalRune.Graphics
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -107,11 +107,11 @@ namespace DigitalRune.Graphics
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
     public Vector4 Register3;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -122,11 +122,11 @@ namespace DigitalRune.Graphics
     {
       get { return 16 * 4; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -192,11 +192,11 @@ namespace DigitalRune.Graphics
       Register2 = new Vector4(world.M13, world.M23, world.M33, world.M43);
       Register3 = new Vector4(color.X, color.Y, color.Z, color.W);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -287,6 +287,6 @@ namespace DigitalRune.Graphics
         "{{Register0:{0} Register1:{1} Register2:{2} Register3:{3}}}",
         Register0, Register1, Register2, Register3);
     }
-    #endregion
+
   }
 }

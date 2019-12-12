@@ -73,24 +73,24 @@ namespace DigitalRune.Windows.Controls
     public class ColorGradientControl : Control
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private int _selectedIndex = -1;
         private double _mouseOffsetToColorStop;
         private Canvas _colorStopPanel;
         private FrameworkElement _gradientArea;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -164,11 +164,11 @@ namespace DigitalRune.Windows.Controls
             add { AddHandler(GradientStopsChangedEvent, value); }
             remove { RemoveHandler(GradientStopsChangedEvent, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -178,11 +178,11 @@ namespace DigitalRune.Windows.Controls
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ColorGradientControl), new FrameworkPropertyMetadata(typeof(ColorGradientControl)));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -633,6 +633,6 @@ namespace DigitalRune.Windows.Controls
             if (colorDialog.DialogResult.GetValueOrDefault())
                 gradientStop.Color = colorDialog.Color;
         }
-        #endregion
+
     }
 }

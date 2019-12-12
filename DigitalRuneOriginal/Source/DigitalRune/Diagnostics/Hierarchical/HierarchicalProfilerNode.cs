@@ -33,7 +33,7 @@ namespace DigitalRune.Diagnostics
   public class HierarchicalProfilerNode : INamedObject
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private TimeSpan _startTime; 
@@ -43,11 +43,11 @@ namespace DigitalRune.Diagnostics
     // 2 = this node was entered twice (1 recursion!).
     // ...
     private int _numberOfRecursions;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -144,11 +144,11 @@ namespace DigitalRune.Diagnostics
         return new TimeSpan(Sum.Ticks / Count);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -177,11 +177,11 @@ namespace DigitalRune.Diagnostics
       Parent = parent;
       Reset();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -290,6 +290,6 @@ namespace DigitalRune.Diagnostics
 
       return node;
     }
-    #endregion
+
   }
 }

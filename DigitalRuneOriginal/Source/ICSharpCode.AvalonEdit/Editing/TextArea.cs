@@ -45,7 +45,7 @@ namespace ICSharpCode.AvalonEdit.Editing
 	{
 		internal readonly ImeSupport ime;
 		
-		#region Constructor
+
 		static TextArea()
 		{
 			DefaultStyleKeyProperty.OverrideMetadata(typeof(TextArea),
@@ -93,9 +93,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 			this.DefaultInputHandler = new TextAreaDefaultInputHandler(this);
 			this.ActiveInputHandler = this.DefaultInputHandler;
 		}
-		#endregion
+
 		
-		#region InputHandler management
+
 		/// <summary>
 		/// Gets the default input handler.
 		/// </summary>
@@ -182,9 +182,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 				} while (oldHandler != inputHandler);
 			}
 		}
-		#endregion
+
 		
-		#region Document property
+
 		/// <summary>
 		/// Document property.
 		/// </summary>
@@ -230,9 +230,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 				DocumentChanged(this, EventArgs.Empty);
 			CommandManager.InvalidateRequerySuggested();
 		}
-		#endregion
+
 		
-		#region Options property
+
 		/// <summary>
 		/// Options property.
 		/// </summary>
@@ -278,9 +278,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 			}
 			OnOptionChanged(new PropertyChangedEventArgs(null));
 		}
-		#endregion
+
 		
-		#region ReceiveWeakEvent
+
 		/// <inheritdoc cref="IWeakEventListener.ReceiveWeakEvent"/>
 		protected virtual bool ReceiveWeakEvent(Type managerType, object sender, EventArgs e)
 		{
@@ -307,9 +307,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 		{
 			return ReceiveWeakEvent(managerType, sender, e);
 		}
-		#endregion
+
 		
-		#region Caret handling on document changes
+
 		void OnDocumentChanging()
 		{
 			caret.OnDocumentChanging();
@@ -362,9 +362,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 				Undo();
 			}
 		}
-		#endregion
+
 		
-		#region TextView property
+
 		readonly TextView textView;
 		IScrollInfo scrollInfo;
 
@@ -383,9 +383,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 			scrollInfo = textView;
 			ApplyScrollInfo();
 		}
-		#endregion
+
 		
-		#region Selection property
+
 		internal readonly Selection emptySelection;
 		Selection selection;
 		
@@ -505,9 +505,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 			get { return (double)GetValue(SelectionCornerRadiusProperty); }
 			set { SetValue(SelectionCornerRadiusProperty, value); }
 		}
-		#endregion
+
 		
-		#region Force caret to stay inside selection
+
 		bool ensureSelectionValidRequested;
 		int allowCaretOutsideSelection;
 		
@@ -564,9 +564,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 					RequestSelectionValidation();
 				});
 		}
-		#endregion
+
 		
-		#region Properties
+
 		readonly Caret caret;
 		
 		/// <summary>
@@ -623,9 +623,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 				CommandManager.InvalidateRequerySuggested(); // the read-only status effects Paste.CanExecute and the IME
 			}
 		}
-		#endregion
+
 		
-		#region IScrollInfo implementation
+
 		ScrollViewer scrollOwner;
 		bool canVerticallyScroll, canHorizontallyScroll;
 		
@@ -768,9 +768,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 			else
 				return Rect.Empty;
 		}
-		#endregion
+
 		
-		#region Focus Handling (Show/Hide Caret)
+
 		/// <inheritdoc/>
 		protected override void OnMouseDown(MouseButtonEventArgs e)
 		{
@@ -800,9 +800,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 			// [DIGITALRUNE] Redraw selections.
 			TextView.InvalidateLayer(KnownLayer.Selection);
 		}
-		#endregion
+
 		
-		#region OnTextInput / RemoveSelectedText / ReplaceSelectionWithText
+
 		/// <summary>
 		/// Occurs when the TextArea receives text input.
 		/// This is like the <see cref="UIElement.TextInput"/> event,
@@ -953,9 +953,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 				throw new InvalidOperationException("ReadOnlySectionProvider returned incorrect segments (outside of input segment / wrong order)");
 			return array;
 		}
-		#endregion
+
 		
-		#region IndentationStrategy property
+
 		/// <summary>
 		/// IndentationStrategy property.
 		/// </summary>
@@ -970,9 +970,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 			get { return (IIndentationStrategy)GetValue(IndentationStrategyProperty); }
 			set { SetValue(IndentationStrategyProperty, value); }
 		}
-		#endregion
+
 		
-		#region OnKeyDown/OnKeyUp
+
 		/// <inheritdoc/>
 		protected override void OnPreviewKeyDown(KeyEventArgs e)
 		{
@@ -1048,9 +1048,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 			base.OnKeyUp(e);
 			TextView.InvalidateCursorIfMouseWithinTextView();
 		}
-		#endregion
+
 		
-		#region Hide Mouse Cursor While Typing
+
 		
 		bool isMouseCursorHidden;
 		
@@ -1082,9 +1082,9 @@ namespace ICSharpCode.AvalonEdit.Editing
 			}
 		}
 		
-		#endregion
+
 		
-		#region Overstrike mode
+
 		
 		/// <summary>
 		/// The <see cref="OverstrikeMode"/> dependency property.
@@ -1101,7 +1101,7 @@ namespace ICSharpCode.AvalonEdit.Editing
 			set { SetValue(OverstrikeModeProperty, Boxes.Box(value)); }
 		}
 		
-		#endregion
+
 		
 		/// <inheritdoc/>
 		protected override HitTestResult HitTestCore(PointHitTestParameters hitTestParameters)

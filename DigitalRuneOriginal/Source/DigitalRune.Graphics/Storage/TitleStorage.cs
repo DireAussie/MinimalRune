@@ -18,13 +18,13 @@ namespace DigitalRune.Storages
   public class TitleStorage : Storage
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -45,11 +45,11 @@ namespace DigitalRune.Storages
     /// All file access is relative to this root directory.
     /// </remarks>
     public string RootDirectory { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
     
     /// <overloads>
@@ -76,11 +76,11 @@ namespace DigitalRune.Storages
     {
       RootDirectory = rootDirectory;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -99,6 +99,6 @@ namespace DigitalRune.Storages
 
       return TitleContainer.OpenStream(path);
     }
-    #endregion
+
   }
 }

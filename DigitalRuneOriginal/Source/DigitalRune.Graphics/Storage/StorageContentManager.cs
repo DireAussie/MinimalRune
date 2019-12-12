@@ -16,13 +16,13 @@ namespace DigitalRune.Storages
   public class StorageContentManager : ContentManager, IStorageProvider
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -30,11 +30,11 @@ namespace DigitalRune.Storages
     /// </summary>
     /// <value>The storage that provides the content.</value>
     public IStorage Storage { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -110,11 +110,11 @@ namespace DigitalRune.Storages
 
       Storage = storage;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
 
@@ -142,6 +142,6 @@ namespace DigitalRune.Storages
           exception);
       }
     }
-    #endregion
+
   }
 }

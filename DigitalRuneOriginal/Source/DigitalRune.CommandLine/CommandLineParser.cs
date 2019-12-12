@@ -37,21 +37,21 @@ namespace DigitalRune.CommandLine
     public sealed class CommandLineParser
     {
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         private const int IndentSpacing = 4;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -113,11 +113,11 @@ namespace DigitalRune.CommandLine
         /// </summary>
         /// <value>The footer of the help text. (Can be <see langword="null"/> or empty.)</value>
         public string HelpFooter { get; set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation and Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -127,11 +127,11 @@ namespace DigitalRune.CommandLine
         {
             Arguments = new NamedObjectCollection<Argument>(StringComparer.OrdinalIgnoreCase);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -463,6 +463,6 @@ namespace DigitalRune.CommandLine
                 if (!argument.IsOptional && parseResult.ParsedArguments[argument] == null)
                     throw new MissingArgumentException(argument);
         }
-        #endregion
+
     }
 }

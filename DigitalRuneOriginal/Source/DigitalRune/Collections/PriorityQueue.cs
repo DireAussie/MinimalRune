@@ -42,7 +42,7 @@ namespace DigitalRune.Collections
 
 
     //--------------------------------------------------------------
-    #region Nested Types
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -160,11 +160,11 @@ namespace DigitalRune.Collections
         _current = default(T);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Start with 4 heap levels.
@@ -173,11 +173,11 @@ namespace DigitalRune.Collections
     private int _size;
     private T[] _heap;
     private int _version;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -253,11 +253,11 @@ namespace DigitalRune.Collections
     {
       get { return false; }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -305,11 +305,11 @@ namespace DigitalRune.Collections
       _size = InitialSize;
       _heap = new T[InitialSize];
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -708,6 +708,6 @@ namespace DigitalRune.Collections
           throw new Exception("Heap entries were not reset.");
       }
     }
-    #endregion
+
   }
 }

@@ -57,19 +57,19 @@ namespace DigitalRune.Game.UI.Controls
   public class Image : UIControl
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
-    //--------------------------------------------------------------
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Game Object Properties & Events
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary> 
@@ -161,11 +161,11 @@ namespace DigitalRune.Game.UI.Controls
       set { SetValue(SourceRectanglePropertyId, value); }
     }
 #endif
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -187,11 +187,11 @@ namespace DigitalRune.Game.UI.Controls
     {
       Style = "Image";
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -240,6 +240,6 @@ namespace DigitalRune.Game.UI.Controls
 
       return desiredSize;
     }
-    #endregion
+
   }
 }

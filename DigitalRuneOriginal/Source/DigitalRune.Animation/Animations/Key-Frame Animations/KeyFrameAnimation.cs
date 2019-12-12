@@ -55,13 +55,13 @@ namespace DigitalRune.Animation
   public abstract class KeyFrameAnimation<T> : Animation<T> 
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -82,11 +82,11 @@ namespace DigitalRune.Animation
     [ContentSerializer]
 #endif
     public KeyFrameCollection<T> KeyFrames { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -97,11 +97,11 @@ namespace DigitalRune.Animation
       EnableInterpolation = true;
       KeyFrames = new KeyFrameCollection<T>();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -231,6 +231,6 @@ namespace DigitalRune.Animation
       T targetValue = target.Value;
       Traits.Interpolate(ref sourceValue, ref targetValue, parameter, ref result);
     }
-    #endregion
+
   }
 }

@@ -24,7 +24,7 @@ namespace DigitalRune.Graphics
     // TODO: Discuss order of method arguments.
 
     //--------------------------------------------------------------
-    #region Get/Set texture data
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -460,11 +460,11 @@ namespace DigitalRune.Graphics
         throw new NotSupportedException("Texture format '" + texture.Format + "' is not yet supported.");
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Scaling
+
     //--------------------------------------------------------------
 
     ///// <overloads>
@@ -514,11 +514,11 @@ namespace DigitalRune.Graphics
         data[i] = data[i] * scale + bias;
       }, 128);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Smoothing
+
     //--------------------------------------------------------------
 
     //public static void SmoothTexture(Texture2D texture, float smoothness)
@@ -687,11 +687,11 @@ namespace DigitalRune.Graphics
       // Copy result back to data.
       Array.Copy(result, data, data.Length);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Mipmaps
+
     //--------------------------------------------------------------
 
     //private static void CreateTerrainGeometryMipLevels(Texture2D texture, bool useNearestNeighborFilter)
@@ -926,11 +926,11 @@ namespace DigitalRune.Graphics
         }
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Texture creation
+
     //--------------------------------------------------------------
 
     //public static void CreateHeightTexture(Texture2D inputHeightTexture, float minHeight, float maxHeight, float smoothness, bool useNearestNeighborFilter, ref Texture2D heightTexture)
@@ -1203,6 +1203,6 @@ namespace DigitalRune.Graphics
       SetTextureLevel(holeTexture, 0, data);
       CreateTerrainGeometryMipLevels(holeTexture, data, useNearestNeighborFilter);
     }
-    #endregion
+
   }
 }

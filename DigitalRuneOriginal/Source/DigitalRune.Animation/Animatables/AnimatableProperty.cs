@@ -44,20 +44,20 @@ namespace DigitalRune.Animation
   public class AnimatableProperty<T> : IAnimatableProperty<T>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private T _baseValue;
     private T _animationValue;
     private bool _isAnimated;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
-    #region ----- IAnimatableProperty -----
+
 
     /// <inheritdoc/>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes")]
@@ -90,10 +90,10 @@ namespace DigitalRune.Animation
     {
       get { return _animationValue; }
     }
-    #endregion
 
 
-    #region ----- IAnimatableProperty<T> -----
+
+
 
     /// <inheritdoc/>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes")]
@@ -110,7 +110,7 @@ namespace DigitalRune.Animation
       get { return _animationValue; }
       set { _animationValue = value; }
     }
-    #endregion
+
 
 
     /// <summary>
@@ -128,18 +128,18 @@ namespace DigitalRune.Animation
       get { return _isAnimated ? _animationValue : _baseValue; }
       set { _baseValue = value; }
     }
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
-    #endregion
+
+
+
+    //--------------------------------------------------------------
+
+    //--------------------------------------------------------------
+
   }
 }

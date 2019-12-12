@@ -14,7 +14,7 @@ namespace DigitalRune.Game.UI.Controls
   public partial class UIControl
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private bool _isMeasureInProgress;
@@ -24,11 +24,11 @@ namespace DigitalRune.Game.UI.Controls
     private Vector2F _lastMeasureConstraintSize = new Vector2F(float.NaN);
     private Vector2F _lastArrangePosition = new Vector2F(float.NaN);
     private Vector2F _lastArrangeSize = new Vector2F(float.NaN);
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -162,11 +162,11 @@ namespace DigitalRune.Game.UI.Controls
     /// This flag is set to <see langword="false"/> when <see cref="InvalidateVisual"/> is called.
     /// </remarks>
     public bool IsVisualValid { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -490,6 +490,6 @@ namespace DigitalRune.Game.UI.Controls
 
       control.Arrange(childPosition, childSize);
     }
-    #endregion
+
   }
 }

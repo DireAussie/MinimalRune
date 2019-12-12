@@ -1,4 +1,4 @@
-﻿#region ----- Copyright -----
+﻿
 /*
   This is a port of DirectXMesh (see http://directxmesh.codeplex.com/) which is licensed under the
   MIT license.
@@ -21,7 +21,7 @@
   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT
   OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-#endregion
+
 
 using System;
 using System.Collections.Generic;
@@ -215,7 +215,7 @@ namespace DigitalRune.Graphics.Content
 
 
     //--------------------------------------------------------------
-    #region Constants
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -258,11 +258,11 @@ namespace DigitalRune.Graphics.Content
     /// Indicates no vertex cache optimization, only reordering into strips.
     /// </summary>
     public const int OPTFACES_V_STRIPORDER = 0;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region DirectXMeshAdjacency
+
     //--------------------------------------------------------------
 
     private class VertexHashEntry
@@ -919,11 +919,11 @@ namespace DigitalRune.Graphics.Content
         }
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region DirectXMeshGSAdjacency
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -1066,11 +1066,11 @@ namespace DigitalRune.Graphics.Content
       Debug.Assert(inputi == numberOfFaces * 3);
       Debug.Assert(outputi == numberOfFaces * 6);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region DirectXMeshClean
+
     //--------------------------------------------------------------
 
     // unordered_multimap<>
@@ -1559,11 +1559,11 @@ namespace DigitalRune.Graphics.Content
       duplicateVertices = dupVerts.ToArray();
       return true;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region DirectXMeshNormals
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -1786,11 +1786,11 @@ namespace DigitalRune.Graphics.Content
           normals[i] = Normalize(normals[i]);
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region DirectXMeshTangentFrame
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -2096,11 +2096,11 @@ namespace DigitalRune.Graphics.Content
           bitangents[i] = b2;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region DirectXMeshOptimize
+
     //--------------------------------------------------------------
 
     private class MeshStatus
@@ -3030,11 +3030,11 @@ namespace DigitalRune.Graphics.Content
       }
       */
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region DirectXMeshRemap
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -4017,11 +4017,11 @@ namespace DigitalRune.Graphics.Content
 
       SwapVertices(vb, stride, numberOfVertices, pointRep, vertexRemap);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region DirectXMeshValidate
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -4384,11 +4384,11 @@ namespace DigitalRune.Graphics.Content
 
       return result;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region DirectXMeshP
+
     //--------------------------------------------------------------
 
     private enum WalkType
@@ -4665,11 +4665,11 @@ namespace DigitalRune.Graphics.Content
 
       return edge;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region DirectXMeshUtil
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -5069,11 +5069,11 @@ namespace DigitalRune.Graphics.Content
       // Ideal is 1.0, worst case is 6.0.
       atvr = (float)misses / numberOfVertices;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Misc
+
     //--------------------------------------------------------------
 
     private static Vector3F Normalize(Vector3F v)
@@ -5088,7 +5088,7 @@ namespace DigitalRune.Graphics.Content
 
       return v;
     }
-    #endregion
+
     
   }
 }

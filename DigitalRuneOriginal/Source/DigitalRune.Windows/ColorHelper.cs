@@ -38,7 +38,7 @@ namespace DigitalRune.Windows
         }
 
 
-        #region ----- HSV, HSL -----
+
 
         /// <summary>
         /// Creates a <see cref="Color"/> from HSV values.
@@ -270,7 +270,7 @@ namespace DigitalRune.Windows
             Debug.Assert(s >= 0 && s <= 100, "Saturation of HSV color is out of range.");
             Debug.Assert(l >= 0 && l <= 100, "Lightness of HSV color is out of range.");
         }
-        #endregion
+
 
 
         /// <summary>
@@ -395,7 +395,7 @@ namespace DigitalRune.Windows
         //}
 
 
-        #region ----- sRGB -----
+
 
         // References: 
         // -  Adventures with Gamma-Correct Rendering,
@@ -499,6 +499,6 @@ namespace DigitalRune.Windows
 
             return c;
         }
-        #endregion
+
     }
 }

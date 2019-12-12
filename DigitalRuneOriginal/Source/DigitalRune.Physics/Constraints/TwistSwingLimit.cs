@@ -47,7 +47,7 @@ namespace DigitalRune.Physics.Constraints
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly LimitState[] _limitStates = new LimitState[2];
@@ -58,11 +58,11 @@ namespace DigitalRune.Physics.Constraints
       new Constraint1D(), 
       new Constraint1D(), 
     };
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -321,17 +321,17 @@ namespace DigitalRune.Physics.Constraints
     //    return angles;
     //  }
     //}
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Creation & Cleanup
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Methods
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -658,6 +658,6 @@ namespace DigitalRune.Physics.Constraints
         return pointInA + coneTip;
       }
     }
-    #endregion
+
   }
 }

@@ -20,7 +20,7 @@ namespace DigitalRune.Game.Input
   partial class InputManager
   {
     //--------------------------------------------------------------
-    #region Native Methods
+
       //--------------------------------------------------------------
 
 #if WINDOWS
@@ -28,17 +28,17 @@ namespace DigitalRune.Game.Input
     [DllImport("user32.dll")]
     private static extern short GetKeyState(int key);
 #endif
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -100,11 +100,11 @@ namespace DigitalRune.Game.Input
       }
     }
     private ModifierKeys? _modifierKeys;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private void UpdateKeyboard(TimeSpan deltaTime)
@@ -244,6 +244,6 @@ namespace DigitalRune.Game.Input
     {
       return _lastKey.Button == key && _lastKey.IsDoubleClick;
     }
-    #endregion
+
   }
 }

@@ -19,16 +19,16 @@ namespace DigitalRune.Diagnostics
     // Methods are all internal because the user should only use the thread-safe Profiler methods.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // The total elapsed seconds when Start() was called. -1 means that Start() was not called.
     private double _startTime = -1;
-    #endregion
+
       
       
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
     
     /// <summary>
@@ -82,11 +82,11 @@ namespace DigitalRune.Diagnostics
     /// </summary>
     /// <value>The last value that was measured.</value>
     public double Last { get; private set; }
-    #endregion
+
       
       
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -99,11 +99,11 @@ namespace DigitalRune.Diagnostics
 
       Reset();
     }
-    #endregion
+
       
       
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     internal void Reset()
@@ -166,6 +166,6 @@ namespace DigitalRune.Diagnostics
 
       Count++;
     }
-    #endregion
+
   }
 }

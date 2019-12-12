@@ -24,18 +24,18 @@ namespace DigitalRune.Editor.QuickLaunch
     internal class QuickLaunchViewModel : ObservableObject
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
         private static readonly char[] Separators = { '\t', ' ', ',', ';' };
 
         private readonly IQuickLaunchService _quickLaunchService;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -140,11 +140,11 @@ namespace DigitalRune.Editor.QuickLaunch
         /// Gets the command that is invoked when the user presses Escape.
         /// </summary>
         public DelegateCommand CancelCommand { get; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         private QuickLaunchViewModel()
@@ -171,11 +171,11 @@ namespace DigitalRune.Editor.QuickLaunch
             ExecuteCommand = new DelegateCommand(Execute);
             CancelCommand = new DelegateCommand(Cancel);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private bool CanFind()
@@ -321,6 +321,6 @@ namespace DigitalRune.Editor.QuickLaunch
                 }
             }
         }
-        #endregion
+
     }
 }

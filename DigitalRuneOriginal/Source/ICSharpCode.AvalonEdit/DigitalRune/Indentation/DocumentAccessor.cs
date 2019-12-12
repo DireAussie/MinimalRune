@@ -42,7 +42,7 @@ namespace ICSharpCode.AvalonEdit.Indentation
     }
 
 
-    #region TextDocumentAccessor
+
 
     /// <summary>
     /// Adapter IDocumentAccessor -> TextDocument.
@@ -138,5 +138,5 @@ namespace ICSharpCode.AvalonEdit.Indentation
             return true;
         }
     }
-    #endregion
+
 }

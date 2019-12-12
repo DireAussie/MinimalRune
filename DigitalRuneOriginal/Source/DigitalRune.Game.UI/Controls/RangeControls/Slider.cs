@@ -64,7 +64,7 @@ namespace DigitalRune.Game.UI.Controls
     // The horizontal Padding determines the allowed visual range the thumb can move.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private Thumb _thumb;
@@ -72,11 +72,11 @@ namespace DigitalRune.Game.UI.Controls
     // Used to detect if the left mouse button was pressed over the control - only then
     // virtual button repeats count.
     private bool _isPressed;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     // IsDirectionReversed
@@ -86,11 +86,11 @@ namespace DigitalRune.Game.UI.Controls
     // TickFrequency
     // TickPlacement
     // Ticks
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Game Object Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary> 
@@ -116,11 +116,11 @@ namespace DigitalRune.Game.UI.Controls
       get { return GetValue<string>(ThumbStylePropertyId); }
       set { SetValue(ThumbStylePropertyId, value); }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -141,11 +141,11 @@ namespace DigitalRune.Game.UI.Controls
     {
       Style = "Slider";
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -315,6 +315,6 @@ namespace DigitalRune.Game.UI.Controls
 
       base.OnArrange(position, size);
     }
-    #endregion
+
   }
 }

@@ -12,13 +12,13 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
     public class OverloadProvider : IOverloadProvider
     {
         //--------------------------------------------------------------
-        #region Fields
-        //--------------------------------------------------------------
-        #endregion
-
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -92,11 +92,11 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
         /// Occurs when a property value changed.
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <overloads>
@@ -122,11 +122,11 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
         {
             Overloads = overloads;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -144,6 +144,6 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
         {
             PropertyChanged?.Invoke(this, eventArgs);
         }
-        #endregion
+
     }
 }

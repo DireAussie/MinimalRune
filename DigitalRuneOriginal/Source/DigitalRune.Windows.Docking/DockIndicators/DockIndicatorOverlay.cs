@@ -45,24 +45,24 @@ namespace DigitalRune.Windows.Docking
     public abstract class DockIndicatorOverlay : DockOverlay
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         // _dockIndicators[(int)DockPosition] = DockIndicator
         private readonly DockIndicator[] _dockIndicators = new DockIndicator[6];
 
         private bool _fadeOutAnimationCompleted;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -270,11 +270,11 @@ namespace DigitalRune.Windows.Docking
             get { return (Storyboard)GetValue(FadeOutAnimationProperty); }
             set { SetValue(FadeOutAnimationProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -291,11 +291,11 @@ namespace DigitalRune.Windows.Docking
         {
             Loaded += OnLoaded;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private static void OnAllowedDockPositionChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
@@ -485,6 +485,6 @@ namespace DigitalRune.Windows.Docking
             UpdateVisualStates(true);
             return result;
         }
-        #endregion
+
     }
 }

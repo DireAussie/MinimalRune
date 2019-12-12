@@ -18,22 +18,22 @@ namespace DigitalRune.Windows.Framework
     public class ToggleGroupBehavior : Behavior<FrameworkElement>
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private object _groupId;
         private bool _isChecked;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Attached Dependency Properties
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -91,11 +91,11 @@ namespace DigitalRune.Windows.Framework
 
             obj.SetValue(IdProperty, value);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -200,6 +200,6 @@ namespace DigitalRune.Windows.Framework
 
             eventArgs.Handled = true;
         }
-        #endregion
+
     }
 }

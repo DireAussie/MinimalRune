@@ -79,13 +79,13 @@ namespace DigitalRune.Particles
   public abstract partial class ParticleEffector : INamedObject
   {
     //--------------------------------------------------------------
-    #region Fields
-    //--------------------------------------------------------------
-    #endregion
-
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
     
     /// <summary>
@@ -148,11 +148,11 @@ namespace DigitalRune.Particles
     [ContentSerializer(Optional = true)]
 #endif
     public bool Enabled { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -162,11 +162,11 @@ namespace DigitalRune.Particles
     {
       Enabled = true;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -440,6 +440,6 @@ namespace DigitalRune.Particles
     protected virtual void OnEndUpdate(TimeSpan deltaTime)
     {
     }
-    #endregion
+
   }
 }

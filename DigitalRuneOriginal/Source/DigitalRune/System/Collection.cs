@@ -173,7 +173,7 @@ namespace DigitalRune.Collections.ObjectModel
     }
 
 
-#region Helper methods for non-generic interfaces
+
 
     internal static T ConvertItem(object item)
     {
@@ -199,9 +199,9 @@ namespace DigitalRune.Collections.ObjectModel
       IList l = items as IList;
       return (l != null) ? l.IsFixedSize : false;
     }
-    #endregion
 
-    #region Not generic interface implementations
+
+
     void ICollection.CopyTo(Array array, int index)
     {
       ((ICollection)items).CopyTo(array, index);
@@ -276,7 +276,7 @@ namespace DigitalRune.Collections.ObjectModel
       get { return items[index]; }
       set { SetItem(index, ConvertItem(value)); }
     }
-    #endregion
+
   }
 
   static class CollectionHelpers

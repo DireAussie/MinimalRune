@@ -135,7 +135,7 @@ namespace DigitalRune.Windows.Framework
     public class AutoCompleteBehavior : Behavior<TextBox>
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private Window _window;
@@ -145,11 +145,11 @@ namespace DigitalRune.Windows.Framework
         private bool _updatingText;
         private bool _suppressAutoAppend;
         private string _originalText;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -192,11 +192,11 @@ namespace DigitalRune.Windows.Framework
             }
         }
         private static ResourceKey _autoCompleteShadowDepthKey;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -272,17 +272,17 @@ namespace DigitalRune.Windows.Framework
             get { return (IAutoCompleteProvider)GetValue(ProviderProperty); }
             set { SetValue(ProviderProperty, value); }
         }
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Creation & Cleanup
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Methods
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -737,6 +737,6 @@ namespace DigitalRune.Windows.Framework
                 _updatingText = false;
             }
         }
-        #endregion
+
     }
 }

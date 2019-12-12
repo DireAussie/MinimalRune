@@ -21,7 +21,7 @@ namespace DigitalRune.Windows.Controls
     public class WindowCaptionIcon : ContentControl
     {
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -31,11 +31,11 @@ namespace DigitalRune.Windows.Controls
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(WindowCaptionIcon), new FrameworkPropertyMetadata(typeof(WindowCaptionIcon)));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -83,6 +83,6 @@ namespace DigitalRune.Windows.Controls
                 e.Handled = true;
             }
         }
-        #endregion
+
     }
 }

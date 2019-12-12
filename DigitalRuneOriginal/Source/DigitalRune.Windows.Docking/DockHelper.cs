@@ -131,7 +131,7 @@ namespace DigitalRune.Windows.Docking
         }
 
 
-        #region ----- View-model <-> DockControl -----
+
 
         internal static T GetViewModel<T>(FrameworkElement view) where T : class
         {
@@ -174,11 +174,11 @@ namespace DigitalRune.Windows.Docking
         {
             return GetViewModel<IDockTabItem>(view);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Layout operations
+
         //--------------------------------------------------------------
 
         /// <overloads>
@@ -606,6 +606,6 @@ namespace DigitalRune.Windows.Docking
 
             return dockPanes.SelectMany(GetDockElements);
         }
-        #endregion
+
     }
 }

@@ -63,7 +63,7 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 			AttachEvents();
 		}
 		
-		#region ToolTip handling
+
 		void toolTip_Closed(object sender, RoutedEventArgs e)
 		{
 			// Clear content after tooltip is closed.
@@ -94,7 +94,7 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 				toolTip.IsOpen = false;
 			}
 		}
-		#endregion
+
 		
 		void completionList_InsertionRequested(object sender, EventArgs e)
 		{

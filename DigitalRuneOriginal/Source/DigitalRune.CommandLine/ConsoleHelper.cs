@@ -54,15 +54,15 @@ namespace DigitalRune.CommandLine
     public static class ConsoleHelper
     {
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         private const int DefaultWindowWidth = 80;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -99,12 +99,12 @@ namespace DigitalRune.CommandLine
                 }
             }
         }
-        #endregion
+
 
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -443,6 +443,6 @@ namespace DigitalRune.CommandLine
                     stringBuilder.Append(' ', indent);
             }
         }
-        #endregion
+
     }
 }

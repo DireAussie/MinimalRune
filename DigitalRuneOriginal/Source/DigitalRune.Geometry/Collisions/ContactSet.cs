@@ -48,7 +48,7 @@ namespace DigitalRune.Geometry.Collisions
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Dummy CollisionObjects required for un-/initialization of ContactSets.
@@ -60,14 +60,14 @@ namespace DigitalRune.Geometry.Collisions
         null);
 
     private List<Contact> _contacts;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties
+
     //--------------------------------------------------------------
 
-    #region ----- IList<Contact>, ICollection -----
+
 
     /// <summary>
     /// Gets the number of <see cref="Contact"/>s contained in the <see cref="ContactSet"/>.
@@ -144,7 +144,7 @@ namespace DigitalRune.Geometry.Collisions
     {
       get { return false; }
     }
-    #endregion
+
 
 
     /// <summary>
@@ -304,11 +304,11 @@ namespace DigitalRune.Geometry.Collisions
     // this list. The list is managed completely by the ContactSetCollection!
     internal ContactSet NextA;  // The next ContactSet containing ObjectA.
     internal ContactSet NextB;  // The next ContactSet containing ObjectB.
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -417,11 +417,11 @@ namespace DigitalRune.Geometry.Collisions
       Reset(null, null);
       Pool.Recycle(this);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     private void EnsureList()
@@ -456,7 +456,7 @@ namespace DigitalRune.Geometry.Collisions
     }
 
 
-    #region ----- IList<Contact>, ICollection -----
+
 
     /// <summary>
     /// Adds a <see cref="Contact"/> to the end of the <see cref="ContactSet"/>.
@@ -674,7 +674,7 @@ namespace DigitalRune.Geometry.Collisions
 
       _contacts.RemoveAt(index);
     }
-    #endregion
+
     
 
     /// <summary>
@@ -692,6 +692,6 @@ namespace DigitalRune.Geometry.Collisions
         (ObjectB != null) ? ObjectB.GeometricObject : null, 
         Count);
     }
-    #endregion
+
   }
 }

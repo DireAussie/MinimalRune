@@ -19,7 +19,7 @@ namespace DigitalRune.Editor.Game
     public class CameraFieldOfViewBehavior : Behavior<D3DImagePresentationTarget>
     {
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -70,11 +70,11 @@ namespace DigitalRune.Editor.Game
             get { return (CameraNode)GetValue(CameraNodeProperty); }
             set { SetValue(CameraNodeProperty, value); }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private static void OnCameraNodeChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
@@ -152,6 +152,6 @@ namespace DigitalRune.Editor.Game
                 perspectiveProjection.Set(width, height);
             }
         }
-        #endregion
+
     }
 }

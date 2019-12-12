@@ -17,15 +17,15 @@ namespace DigitalRune.Editor.Options
     internal sealed class OptionsViewModel : OneActiveItemsConductor
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -103,11 +103,11 @@ namespace DigitalRune.Editor.Options
         /// </summary>
         /// <value>The Cancel command.</value>
         public DelegateCommand CancelCommand { get; private set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         private OptionsViewModel()
@@ -142,11 +142,11 @@ namespace DigitalRune.Editor.Options
 
             SelectedNode = OptionsNodes.FirstOrDefault();
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -202,6 +202,6 @@ namespace DigitalRune.Editor.Options
             Logger.Debug("Closing Options dialog. (\"Cancel\" selected.)");
             Conductor.DeactivateItemAsync(this, true).Forget();
         }
-        #endregion
+
     }
 }

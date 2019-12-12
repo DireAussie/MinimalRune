@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#region ----- Credits -----
+
 /* 
    The DynamicAabbTree is based on the dynamic bounding volume tree of Bullet.
    (Note: Our DynamicAabbTree and the original version of Bullet have only the general algorithm
@@ -23,7 +23,7 @@
   
      btDbvt implementation by Nathanael Presson
 */
-#endregion
+
 
 using System;
 using System.Collections.Generic;
@@ -135,7 +135,7 @@ namespace DigitalRune.Geometry.Partitioning
   public partial class DynamicAabbTree<T> : BasePartition<T>, ISupportClosestPointQueries<T>, ISupportFrustumCulling<T>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // ReSharper disable StaticFieldInGenericType
@@ -174,11 +174,11 @@ namespace DigitalRune.Geometry.Partitioning
     /// The number of nodes that should be optimized.
     /// </summary>
     private int _numberOfNodesToOptimize;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -290,11 +290,11 @@ namespace DigitalRune.Geometry.Partitioning
       }
     }
     private float _motionPrediction = 1.0f;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -304,14 +304,14 @@ namespace DigitalRune.Geometry.Partitioning
     {
       _leaves = new Dictionary<T, Node>();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
-    #region ----- Cloning -----
+
 
     /// <inheritdoc/>
     protected override BasePartition<T> CreateInstanceCore()
@@ -333,7 +333,7 @@ namespace DigitalRune.Geometry.Partitioning
       OptimizationPerFrame = sourceTyped.OptimizationPerFrame;
       RelativeMargin = sourceTyped.RelativeMargin;
     }
-    #endregion
+
 
 
     private Node GetNode(T item)
@@ -568,6 +568,6 @@ namespace DigitalRune.Geometry.Partitioning
         }
       }
     }
-    #endregion
+
   }
 }

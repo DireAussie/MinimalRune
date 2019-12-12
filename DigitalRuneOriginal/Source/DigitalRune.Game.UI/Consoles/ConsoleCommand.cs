@@ -13,7 +13,7 @@ namespace DigitalRune.Game.UI.Consoles
   public class ConsoleCommand : INamedObject
   {
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -62,11 +62,11 @@ namespace DigitalRune.Game.UI.Consoles
       }
     }
     private Action<string[]> _execute;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -126,12 +126,12 @@ namespace DigitalRune.Game.UI.Consoles
       Description = description;
       Execute = callback;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
-    #endregion
+
   }
 }

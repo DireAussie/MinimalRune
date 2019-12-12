@@ -20,24 +20,24 @@ namespace DigitalRune.Windows.Framework
     public sealed class WatermarkBehavior : Behavior<Control>
     {
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private TextBox _textBox;
         private TextBlock _watermarkTextBlock;
         private SingleChildAdorner _textBoxAdorner;
         private bool _adornerAdded;
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Properties & Events
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -109,17 +109,17 @@ namespace DigitalRune.Windows.Framework
             get { return (Style)GetValue(WatermarkStyleProperty); }
             set { SetValue(WatermarkStyleProperty, value); }
         }
-        #endregion
 
-
-        //--------------------------------------------------------------
-        #region Creation & Cleanup
-        //--------------------------------------------------------------
-        #endregion
 
 
         //--------------------------------------------------------------
-        #region Methods
+
+        //--------------------------------------------------------------
+
+
+
+        //--------------------------------------------------------------
+
         //--------------------------------------------------------------
 
         private static void OnPropertyChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
@@ -270,6 +270,6 @@ namespace DigitalRune.Windows.Framework
                 _adornerAdded = false;
             }
         }
-        #endregion
+
     }
 }

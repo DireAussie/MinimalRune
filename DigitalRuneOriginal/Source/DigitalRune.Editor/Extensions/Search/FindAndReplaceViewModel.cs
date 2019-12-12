@@ -20,23 +20,23 @@ namespace DigitalRune.Editor.Search
     internal class FindAndReplaceViewModel : EditorDockTabItemViewModel
     {
         //--------------------------------------------------------------
-        #region Constants
+
         //--------------------------------------------------------------
 
         internal const string DockIdString = "FindAndReplace";
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private readonly SearchExtension _searchExtension;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -185,11 +185,11 @@ namespace DigitalRune.Editor.Search
         /// </summary>
         /// <value>The 'Cancel' command.</value>
         public DelegateCommand CancelCommand { get; private set; }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -237,11 +237,11 @@ namespace DigitalRune.Editor.Search
                 CancelCommand = new DelegateCommand(Cancel);
             }
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private void OnQueryChanged(object sender, PropertyChangedEventArgs eventArgs)
@@ -255,6 +255,6 @@ namespace DigitalRune.Editor.Search
         {
             Query.FindPattern = null;
         }
-        #endregion
+
     }
 }

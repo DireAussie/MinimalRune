@@ -58,17 +58,17 @@ namespace DigitalRune.Particles.Effectors
   public class StartVelocityBiasEffector : ParticleEffector
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private IParticleParameter<Vector3F> _directionParameter;
     private IParticleParameter<float> _linearSpeedParameter;
     private IParticleParameter<Vector3F> _biasVelocityParameter;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -137,11 +137,11 @@ namespace DigitalRune.Particles.Effectors
 
     // TODO: Add Emitter parameter if only particles of a certain emitter should be initialized?
     //public IParticleEmitter Emitter { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -154,11 +154,11 @@ namespace DigitalRune.Particles.Effectors
       BiasVelocityParameter = ParticleParameterNames.EmitterVelocity;
       Strength = 1;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -281,6 +281,6 @@ namespace DigitalRune.Particles.Effectors
         }
       }
     }
-    #endregion
+
   }
 }

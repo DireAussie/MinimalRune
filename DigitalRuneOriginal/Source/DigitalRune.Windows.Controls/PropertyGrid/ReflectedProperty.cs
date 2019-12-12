@@ -39,7 +39,7 @@ namespace DigitalRune.Windows.Controls
 
 
         //--------------------------------------------------------------
-        #region Fields
+
         //--------------------------------------------------------------
 
         private object _oldValue;
@@ -51,11 +51,11 @@ namespace DigitalRune.Windows.Controls
 
         // ReSharper disable once PrivateFieldCanBeConvertedToLocalVariable
         private readonly BindablePropertyObserver _bindablePropertyObserver;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Properties & Events
+
         //--------------------------------------------------------------
 
         /// <inheritdoc/>
@@ -152,11 +152,11 @@ namespace DigitalRune.Windows.Controls
         /// Occurs when a property value changes.
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -180,11 +180,11 @@ namespace DigitalRune.Windows.Controls
             _bindablePropertyObserver = new BindablePropertyObserver(instance, property.Name);
             _bindablePropertyObserver.ValueChanged += OnValueChanged;
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         private void OnValueChanged(object sender, EventArgs eventArgs)
@@ -249,6 +249,6 @@ namespace DigitalRune.Windows.Controls
             if (hasChanged)
                 OnPropertyChanged(new PropertyChangedEventArgs(nameof(Value)));
         }
-        #endregion
+
     }
 }

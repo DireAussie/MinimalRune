@@ -109,15 +109,15 @@ namespace DigitalRune.Animation
   public struct AnimationController
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private readonly int _id; // 0 indicates an invalid AnimationController.
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -374,11 +374,11 @@ namespace DigitalRune.Animation
           _animationInstance.Completed -= value;
       }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -394,11 +394,11 @@ namespace DigitalRune.Animation
       _animationManager = animationManager;
       _animationInstance = animationInstance;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -639,6 +639,6 @@ namespace DigitalRune.Animation
 
       _animationInstance.UpdateAndApply(_animationManager);
     }
-    #endregion
+
   }
 }

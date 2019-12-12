@@ -26,7 +26,7 @@ namespace ICSharpCode.AvalonEdit.Rendering
 {
 	sealed class CurrentLineHighlightRenderer : IBackgroundRenderer
 	{
-		#region Fields
+
 		
 		int line;
 		TextView textView;
@@ -34,9 +34,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 		public static readonly Color DefaultBackground = Colors.LightYellow /* Color.FromArgb(22, 20, 220, 224) */;  // [DIGITALRUNE]
 		public static readonly Color DefaultBorder = Colors.LightYellow /* Color.FromArgb(52, 0, 255, 110) */;
 		
-		#endregion
 
-		#region Properties
+
+
 		
 		public int Line {
 			get { return this.line; } 
@@ -61,7 +61,7 @@ namespace ICSharpCode.AvalonEdit.Rendering
 			get; set;
 		}
 		
-		#endregion
+
 		
 		public CurrentLineHighlightRenderer(TextView textView)
 		{

@@ -25,7 +25,7 @@ namespace DigitalRune.Geometry
   internal sealed class TestGeometricObject : IGeometricObject, IRecyclable
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private static readonly ResourcePool<TestGeometricObject> Pool =
@@ -33,11 +33,11 @@ namespace DigitalRune.Geometry
         () => new TestGeometricObject(),
         null,
         null);
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     public Aabb Aabb
@@ -96,11 +96,11 @@ namespace DigitalRune.Geometry
     // Events are not implemented.
     public event EventHandler<EventArgs> PoseChanged { add { } remove { } }
     public event EventHandler<ShapeChangedEventArgs> ShapeChanged { add { } remove { } }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     private TestGeometricObject()
@@ -121,17 +121,17 @@ namespace DigitalRune.Geometry
       Pose = Pose.Identity;
       Pool.Recycle(this);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     IGeometricObject IGeometricObject.Clone()
     {
       throw new NotImplementedException();
     }
-    #endregion
+
   }
 }

@@ -29,7 +29,7 @@ namespace DigitalRune.Geometry.Shapes
   public struct Line : IEquatable<Line>
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -45,17 +45,17 @@ namespace DigitalRune.Geometry.Shapes
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
     public Vector3F Direction;
-    #endregion
 
-
-    //--------------------------------------------------------------
-    #region Properties
-    //--------------------------------------------------------------
-    #endregion
 
 
     //--------------------------------------------------------------
-    #region Creation and Cleanup
+
+    //--------------------------------------------------------------
+
+
+
+    //--------------------------------------------------------------
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -94,14 +94,14 @@ namespace DigitalRune.Geometry.Shapes
       PointOnLine = lineShape.PointOnLine;
       Direction = lineShape.Direction;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //-------------------------------------------------------------- 
 
-    #region ----- Equality -----
+
 
     /// <overloads>
     /// <summary>
@@ -172,7 +172,7 @@ namespace DigitalRune.Geometry.Shapes
       return line1.PointOnLine != line2.PointOnLine
              || line1.Direction != line2.Direction;
     }
-    #endregion
+
 
 
     /// <summary>
@@ -254,6 +254,6 @@ namespace DigitalRune.Geometry.Shapes
       PointOnLine = pose.ToLocalPosition(PointOnLine);
       Direction = pose.ToLocalDirection(Direction);
     }
-    #endregion
+
   }
 }

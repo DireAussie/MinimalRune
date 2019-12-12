@@ -35,7 +35,7 @@ namespace DigitalRune.Graphics.SceneGraph
   public class LightQuery : ISceneQuery
   {
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     // Reference position for calculating light contribution.
@@ -48,11 +48,11 @@ namespace DigitalRune.Graphics.SceneGraph
     // Clip geometry tests:
     private CollisionObject _sphereCollisionObject;
     private CollisionObject _clipCollisionObject;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -114,11 +114,11 @@ namespace DigitalRune.Graphics.SceneGraph
     /// <value>The other lights.</value>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists", Justification = "Performance")]
     public List<LightNode> OtherLights { get; private set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -135,11 +135,11 @@ namespace DigitalRune.Graphics.SceneGraph
       ImageBasedLights = new List<LightNode>();
       OtherLights = new List<LightNode>();
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
@@ -379,6 +379,6 @@ namespace DigitalRune.Graphics.SceneGraph
       string message = String.Format(CultureInfo.InvariantCulture, "Type of light \"{0}\" is not supported by LightQuery.", type);
       throw new GraphicsException(message);
     }
-    #endregion
+
   }
 }

@@ -38,7 +38,7 @@ namespace DigitalRune.Windows
         // are marked with NETFX_CORE.
 
 
-        #region ----- Data Binding -----
+
 
         /*  MartinG: The following code is from a Microsoft Sample application - not sure if we need it.
 
@@ -118,10 +118,10 @@ namespace DigitalRune.Windows
 
             return clone;
         }
-        #endregion
 
 
-        #region ----- Design Mode -----
+
+
 
         /// <summary>
         /// Gets a value indicating whether the application is running in design mode (in Microsoft
@@ -186,10 +186,10 @@ namespace DigitalRune.Windows
             }
         }
         private static bool? _isInDesignMode;
-        #endregion
 
 
-        #region ----- Numeric -----
+
+
 
         /// <overloads>
         /// <summary>
@@ -440,10 +440,10 @@ namespace DigitalRune.Windows
             return Numeric.IsZero(value.Width, epsilon)
                    && Numeric.IsZero(value.Height, epsilon);
         }
-        #endregion
 
 
-        #region ----- LINQ to Visual Tree -----
+
+
 
         /// <summary>
         /// Determines whether the current <see cref="DependencyObject"/> is a visual ancestor of
@@ -716,10 +716,10 @@ namespace DigitalRune.Windows
 
             return TreeHelper.GetSubtree(dependencyObject, GetVisualChildren, depthFirst);
         }
-        #endregion
 
 
-        #region ----- Change Notification for DependencyProperty -----
+
+
 
         /// <summary>
         /// Registers an event handler that is called when a given <see cref="DependencyProperty"/>
@@ -812,10 +812,10 @@ namespace DigitalRune.Windows
             descriptor.AddValueChanged(source, handler);
 #endif
         }
-        #endregion
 
 
-        #region ----- ItemsControl -----
+
+
 
 #if SILVERLIGHT || WINDOWS_PHONE
         /// <summary>
@@ -957,10 +957,10 @@ namespace DigitalRune.Windows
             return panel != null && panel.Children != null;
         }
 #endif
-        #endregion
 
 
-        #region ----- Dispatcher -----
+
+
 
         /// <summary>
         /// Gets or sets the dispatcher associated with the UI thread.
@@ -1280,6 +1280,6 @@ namespace DigitalRune.Windows
 #endif
             }
         }
-#endregion
+
     }
 }

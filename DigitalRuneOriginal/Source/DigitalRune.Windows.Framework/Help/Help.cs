@@ -81,7 +81,7 @@ namespace DigitalRune.Windows.Framework
         // - The Help provider is no longer hardcoded and can be set via a property.
 
         //--------------------------------------------------------------
-        #region Properties
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -100,11 +100,11 @@ namespace DigitalRune.Windows.Framework
             }
         }
         private static IHelpProvider _helpProvider; // new FormsHelpProvider();
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Dependency Properties & Routed Events
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -221,11 +221,11 @@ namespace DigitalRune.Windows.Framework
 
             obj.SetValue(KeywordProperty, value);
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Creation & Cleanup
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -238,11 +238,11 @@ namespace DigitalRune.Windows.Framework
                 typeof(FrameworkElement),
                 new CommandBinding(ApplicationCommands.Help, Executed, CanExecute));
         }
-        #endregion
+
 
 
         //--------------------------------------------------------------
-        #region Methods
+
         //--------------------------------------------------------------
 
         /// <summary>
@@ -296,6 +296,6 @@ namespace DigitalRune.Windows.Framework
             else
                 HelpProvider.ShowHelp(url, keyword);
         }
-        #endregion
+
     }
 }

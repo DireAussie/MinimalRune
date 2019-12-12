@@ -68,7 +68,7 @@ namespace Samples
     //   and feedback in XBLIG.
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private GraphicsDeviceManager _graphics;
@@ -81,11 +81,11 @@ namespace Samples
 
     // true if the user selected the "View error details" option in the message box.
     private bool _showException;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -103,11 +103,11 @@ namespace Samples
     /// </summary>
     /// <value>The exception.</value>
     public Exception Exception { get; set; }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -124,11 +124,11 @@ namespace Samples
       Components.Add(new GamerServicesComponent(this));
       IsMouseVisible = true;
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -296,6 +296,6 @@ namespace Samples
 
       base.Draw(gameTime);
     }
-    #endregion
+
   }
 }

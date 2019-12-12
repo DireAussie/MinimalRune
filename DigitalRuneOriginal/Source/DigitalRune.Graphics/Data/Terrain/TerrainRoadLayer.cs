@@ -48,15 +48,15 @@ namespace DigitalRune.Graphics
 
 
     //--------------------------------------------------------------
-    #region Fields
+
     //--------------------------------------------------------------
 
     private bool _disposeMesh;
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Properties & Events
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -309,11 +309,11 @@ namespace DigitalRune.Graphics
       get { return GetParameter<float>(true, "RoadLength"); }
       set { SetParameter(true, "RoadLength", value); }
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Creation & Cleanup
+
     //--------------------------------------------------------------
 
     /// <overloads>
@@ -374,11 +374,11 @@ namespace DigitalRune.Graphics
 
       base.Dispose(disposing);
     }
-    #endregion
+
 
 
     //--------------------------------------------------------------
-    #region Methods
+
     //--------------------------------------------------------------
 
     /// <summary>
@@ -409,6 +409,6 @@ namespace DigitalRune.Graphics
       if (Submesh != null)
         Submesh.Draw();
     }
-    #endregion
+
   }
 }
