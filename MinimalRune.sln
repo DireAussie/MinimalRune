@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalRune.Algebra", "Mini
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalRune.Graphics", "MinimalRune.Graphics\MinimalRune.Graphics.csproj", "{C4295114-5233-458A-8AE8-4EC660BA1CF0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalRune.Geometry", "MinimalRune.Geometry\MinimalRune.Geometry.csproj", "{C178DB85-19AF-4DCC-92CD-A6D4C9ADBB6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C4295114-5233-458A-8AE8-4EC660BA1CF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4295114-5233-458A-8AE8-4EC660BA1CF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4295114-5233-458A-8AE8-4EC660BA1CF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C178DB85-19AF-4DCC-92CD-A6D4C9ADBB6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C178DB85-19AF-4DCC-92CD-A6D4C9ADBB6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C178DB85-19AF-4DCC-92CD-A6D4C9ADBB6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C178DB85-19AF-4DCC-92CD-A6D4C9ADBB6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
