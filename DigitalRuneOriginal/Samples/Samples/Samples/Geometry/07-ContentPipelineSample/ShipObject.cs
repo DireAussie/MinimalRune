@@ -53,7 +53,7 @@ namespace Samples
       // ----- Graphics
       // Load a graphics model and add it to the scene for rendering.
       _modelNode = contentManager.Load<ModelNode>("Ship/Ship").Clone();
-      _modelNode.PoseWorld = new Pose(Vector3F.Zero, Matrix33F.CreateRotationY(-ConstantsF.PiOver2));
+      _modelNode.PoseWorld = new Pose(Vector3.Zero, Matrix.CreateRotationY(-ConstantsF.PiOver2));
 
       var scene = _services.GetInstance<IScene>();
       scene.Children.Add(_modelNode);

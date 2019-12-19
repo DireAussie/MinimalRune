@@ -22,37 +22,37 @@ namespace DigitalRune.Mathematics.Algebra
   /// M20 M21 M22
   /// </code>
   /// </remarks>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
   [TypeConverter(typeof(ExpandableObjectConverter))]
-#endif
-#if !XBOX && !UNITY
+
+
   [DataContract]
-#endif
-  public struct Matrix33F : IEquatable<Matrix33F>
+
+  public struct Matrix : IEquatable<Matrix>
   {
     //--------------------------------------------------------------
 
     //--------------------------------------------------------------
 
     /// <summary>
-    /// Returns a <see cref="Matrix33F"/> with all of its components set to zero.
+    /// Returns a <see cref="Matrix"/> with all of its components set to zero.
     /// </summary>
-    public static readonly Matrix33F Zero = new Matrix33F(0, 0, 0,
+    public static readonly Matrix Zero = new Matrix(0, 0, 0,
                                                           0, 0, 0,
                                                           0, 0, 0);
 
     /// <summary>
-    /// Returns a <see cref="Matrix33F"/> with all of its components set to one.
+    /// Returns a <see cref="Matrix"/> with all of its components set to one.
     /// </summary>
-    public static readonly Matrix33F One = new Matrix33F(1, 1, 1,
+    public static readonly Matrix One = new Matrix(1, 1, 1,
                                                          1, 1, 1,
                                                          1, 1, 1);
 
     /// <summary>
     /// Returns the 3 x 3 identity matrix.
     /// </summary>
-    public static readonly Matrix33F Identity = new Matrix33F(1, 0, 0,
+    public static readonly Matrix Identity = new Matrix(1, 0, 0,
                                                               0, 1, 0,
                                                               0, 0, 1);
 
@@ -66,81 +66,81 @@ namespace DigitalRune.Mathematics.Algebra
     /// The element in first row, first column.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public float M00;
 
     /// <summary>
     /// The element in first row, second column.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public float M01;
 
     /// <summary>
     /// The element in first row, third column.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public float M02;
 
     /// <summary>
     /// The element in second row, first column.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public float M10;
 
     /// <summary>
     /// The element in second row, second column.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public float M11;
 
     /// <summary>
     /// The element in second row, third column.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public float M12;
 
     /// <summary>
     /// The element in third row, first column.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public float M20;
 
     /// <summary>
     /// The element in third row, second column.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public float M21;
 
     /// <summary>
     /// The element in third row, third column.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public float M22;
 
 
@@ -404,11 +404,11 @@ namespace DigitalRune.Mathematics.Algebra
     /// The property does not change this instance. To transpose this instance you need to call 
     /// <see cref="Transpose"/>.
     /// </remarks>
-    public Matrix33F Transposed
+    public Matrix Transposed
     {
       get
       {
-        Matrix33F result = this;
+        Matrix result = this;
         result.Transpose();
         return result;
       }
@@ -428,11 +428,11 @@ namespace DigitalRune.Mathematics.Algebra
     /// </exception>
     /// <seealso cref="Invert"/>
     /// <seealso cref="TryInvert"/>
-    public Matrix33F Inverse
+    public Matrix Inverse
     {
       get
       {
-        Matrix33F result = this;
+        Matrix result = this;
         result.Invert();
         return result;
       }
@@ -446,18 +446,18 @@ namespace DigitalRune.Mathematics.Algebra
     
     /// <overloads>
     /// <summary>
-    /// Initializes a new instance of the <see cref="Matrix33F"/> class.
+    /// Initializes a new instance of the <see cref="Matrix"/> class.
     /// </summary>
     /// </overloads>
     /// 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Matrix33F"/> struct.
+    /// Initializes a new instance of the <see cref="Matrix"/> struct.
     /// </summary>
     /// <param name="elementValue">The initial value for the matrix elements.</param>
     /// <remarks>
     /// All matrix elements are set to <paramref name="elementValue"/>.
     /// </remarks>
-    public Matrix33F(float elementValue)
+    public Matrix(float elementValue)
       : this(elementValue, elementValue, elementValue,
              elementValue, elementValue, elementValue,
              elementValue, elementValue, elementValue)
@@ -466,7 +466,7 @@ namespace DigitalRune.Mathematics.Algebra
 
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Matrix33F"/> class.
+    /// Initializes a new instance of the <see cref="Matrix"/> class.
     /// </summary>
     /// <param name="m00">The element in the first row, first column.</param>
     /// <param name="m01">The element in the first row, second column.</param>
@@ -478,7 +478,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="m21">The element in the third row, second column.</param>
     /// <param name="m22">The element in the third row, third column.</param>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-    public Matrix33F(float m00, float m01, float m02,
+    public Matrix(float m00, float m01, float m02,
                     float m10, float m11, float m12,
                     float m20, float m21, float m22)
     {
@@ -489,7 +489,7 @@ namespace DigitalRune.Mathematics.Algebra
 
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Matrix33F"/> struct.
+    /// Initializes a new instance of the <see cref="Matrix"/> struct.
     /// </summary>
     /// <param name="elements">The array with the initial values for the matrix elements.</param>
     /// <param name="order">The order of the matrix elements in <paramref name="elements"/>.</param>
@@ -500,7 +500,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <paramref name="elements"/> must not be <see langword="null"/>.
     /// </exception>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods")]
-    public Matrix33F(float[] elements, MatrixOrder order)
+    public Matrix(float[] elements, MatrixOrder order)
     {
       if (order == MatrixOrder.RowMajor)
       {
@@ -524,7 +524,7 @@ namespace DigitalRune.Mathematics.Algebra
 
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Matrix33F"/> struct.
+    /// Initializes a new instance of the <see cref="Matrix"/> struct.
     /// </summary>
     /// <param name="elements">The list with the initial values for the matrix elements.</param>
     /// <param name="order">The order of the matrix elements in <paramref name="elements"/>.</param>
@@ -535,7 +535,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <paramref name="elements"/> must not be <see langword="null"/>.
     /// </exception>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods")]
-    public Matrix33F(IList<float> elements, MatrixOrder order)
+    public Matrix(IList<float> elements, MatrixOrder order)
     {
       if (order == MatrixOrder.RowMajor)
       {
@@ -559,7 +559,7 @@ namespace DigitalRune.Mathematics.Algebra
 
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Matrix33F"/> struct.
+    /// Initializes a new instance of the <see cref="Matrix"/> struct.
     /// </summary>
     /// <param name="elements">The array with the initial values for the matrix elements.</param>
     /// <exception cref="IndexOutOfRangeException">
@@ -570,7 +570,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// </exception>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods")]
     [CLSCompliant(false)]
-    public Matrix33F(float[,] elements)
+    public Matrix(float[,] elements)
     {
       M00 = elements[0, 0]; M01 = elements[0, 1]; M02 = elements[0, 2];
       M10 = elements[1, 0]; M11 = elements[1, 1]; M12 = elements[1, 2];
@@ -579,7 +579,7 @@ namespace DigitalRune.Mathematics.Algebra
 
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Matrix33F"/> struct.
+    /// Initializes a new instance of the <see cref="Matrix"/> struct.
     /// </summary>
     /// <param name="elements">The array with the initial values for the matrix elements.</param>
     /// <exception cref="IndexOutOfRangeException">
@@ -589,7 +589,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <paramref name="elements"/> or the arrays in elements[0] must not be <see langword="null"/>.
     /// </exception>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods")]
-    public Matrix33F(float[][] elements)
+    public Matrix(float[][] elements)
     {
       M00 = elements[0][0]; M01 = elements[0][1]; M02 = elements[0][2];
       M10 = elements[1][0]; M11 = elements[1][1]; M12 = elements[1][2];
@@ -642,7 +642,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// </returns>
     public override bool Equals(object obj)
     {
-      return obj is Matrix33F && this == (Matrix33F)obj;
+      return obj is Matrix && this == (Matrix)obj;
     }
 
 
@@ -655,7 +655,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <see langword="true"/> if the current object is equal to the other parameter; otherwise, 
     /// <see langword="false"/>.
     /// </returns>
-    public bool Equals(Matrix33F other)
+    public bool Equals(Matrix other)
     {
       return this == other;
     }
@@ -707,7 +707,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <remarks>
     /// Each element of the matrix is negated.
     /// </remarks>
-    public static Matrix33F operator -(Matrix33F matrix)
+    public static Matrix operator -(Matrix matrix)
     {
       matrix.M00 = -matrix.M00; matrix.M01 = -matrix.M01; matrix.M02 = -matrix.M02;
       matrix.M10 = -matrix.M10; matrix.M11 = -matrix.M11; matrix.M12 = -matrix.M12;
@@ -724,7 +724,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <remarks>
     /// Each element of the matrix is negated.
     /// </remarks>
-    public static Matrix33F Negate(Matrix33F matrix)
+    public static Matrix Negate(Matrix matrix)
     {
       matrix.M00 = -matrix.M00; matrix.M01 = -matrix.M01; matrix.M02 = -matrix.M02;
       matrix.M10 = -matrix.M10; matrix.M11 = -matrix.M11; matrix.M12 = -matrix.M12;
@@ -739,7 +739,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="matrix1">The first matrix.</param>
     /// <param name="matrix2">The second Matrix.</param>
     /// <returns>The sum of the two matrices.</returns>
-    public static Matrix33F operator +(Matrix33F matrix1, Matrix33F matrix2)
+    public static Matrix operator +(Matrix matrix1, Matrix matrix2)
     {
       matrix1.M00 += matrix2.M00; matrix1.M01 += matrix2.M01; matrix1.M02 += matrix2.M02;
       matrix1.M10 += matrix2.M10; matrix1.M11 += matrix2.M11; matrix1.M12 += matrix2.M12;
@@ -754,7 +754,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="matrix1">The first matrix.</param>
     /// <param name="matrix2">The second Matrix.</param>
     /// <returns>The sum of the two matrices.</returns>
-    public static Matrix33F Add(Matrix33F matrix1, Matrix33F matrix2)
+    public static Matrix Add(Matrix matrix1, Matrix matrix2)
     {
       matrix1.M00 += matrix2.M00; matrix1.M01 += matrix2.M01; matrix1.M02 += matrix2.M02;
       matrix1.M10 += matrix2.M10; matrix1.M11 += matrix2.M11; matrix1.M12 += matrix2.M12;
@@ -769,7 +769,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="minuend">The first matrix (minuend).</param>
     /// <param name="subtrahend">The second matrix (subtrahend).</param>
     /// <returns>The difference of the two matrices.</returns>
-    public static Matrix33F operator -(Matrix33F minuend, Matrix33F subtrahend)
+    public static Matrix operator -(Matrix minuend, Matrix subtrahend)
     {
       minuend.M00 -= subtrahend.M00;
       minuend.M01 -= subtrahend.M01;
@@ -790,7 +790,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="minuend">The first matrix (minuend).</param>
     /// <param name="subtrahend">The second matrix (subtrahend).</param>
     /// <returns>The difference of the two matrices.</returns>
-    public static Matrix33F Subtract(Matrix33F minuend, Matrix33F subtrahend)
+    public static Matrix Subtract(Matrix minuend, Matrix subtrahend)
     {
       minuend.M00 -= subtrahend.M00;
       minuend.M01 -= subtrahend.M01;
@@ -817,7 +817,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="matrix">The matrix.</param>
     /// <param name="scalar">The scalar.</param>
     /// <returns>The matrix with each element multiplied by <paramref name="scalar"/>.</returns>
-    public static Matrix33F operator *(Matrix33F matrix, float scalar)
+    public static Matrix operator *(Matrix matrix, float scalar)
     {
       matrix.M00 *= scalar; matrix.M01 *= scalar; matrix.M02 *= scalar;
       matrix.M10 *= scalar; matrix.M11 *= scalar; matrix.M12 *= scalar;
@@ -832,7 +832,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="scalar">The scalar.</param>
     /// <param name="matrix">The matrix.</param>
     /// <returns>The matrix with each element multiplied by <paramref name="scalar"/>.</returns>
-    public static Matrix33F operator *(float scalar, Matrix33F matrix)
+    public static Matrix operator *(float scalar, Matrix matrix)
     {
       matrix.M00 *= scalar; matrix.M01 *= scalar; matrix.M02 *= scalar;
       matrix.M10 *= scalar; matrix.M11 *= scalar; matrix.M12 *= scalar;
@@ -853,7 +853,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="matrix">The matrix.</param>
     /// <param name="scalar">The scalar.</param>
     /// <returns>The matrix with each element multiplied by <paramref name="scalar"/>.</returns>
-    public static Matrix33F Multiply(float scalar, Matrix33F matrix)
+    public static Matrix Multiply(float scalar, Matrix matrix)
     {
       matrix.M00 *= scalar; matrix.M01 *= scalar; matrix.M02 *= scalar;
       matrix.M10 *= scalar; matrix.M11 *= scalar; matrix.M12 *= scalar;
@@ -868,9 +868,9 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="matrix1">The first matrix.</param>
     /// <param name="matrix2">The second matrix.</param>
     /// <returns>The matrix with the product the two matrices.</returns>
-    public static Matrix33F operator *(Matrix33F matrix1, Matrix33F matrix2)
+    public static Matrix operator *(Matrix matrix1, Matrix matrix2)
     {
-      Matrix33F product;
+      Matrix product;
       product.M00 = matrix1.M00 * matrix2.M00 + matrix1.M01 * matrix2.M10 + matrix1.M02 * matrix2.M20;
       product.M01 = matrix1.M00 * matrix2.M01 + matrix1.M01 * matrix2.M11 + matrix1.M02 * matrix2.M21;
       product.M02 = matrix1.M00 * matrix2.M02 + matrix1.M01 * matrix2.M12 + matrix1.M02 * matrix2.M22;
@@ -890,9 +890,9 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="matrix1">The first matrix.</param>
     /// <param name="matrix2">The second matrix.</param>
     /// <returns>The matrix with the product the two matrices.</returns>
-    public static Matrix33F Multiply(Matrix33F matrix1, Matrix33F matrix2)
+    public static Matrix Multiply(Matrix matrix1, Matrix matrix2)
     {
-      Matrix33F product;
+      Matrix product;
       product.M00 = matrix1.M00 * matrix2.M00 + matrix1.M01 * matrix2.M10 + matrix1.M02 * matrix2.M20;
       product.M01 = matrix1.M00 * matrix2.M01 + matrix1.M01 * matrix2.M11 + matrix1.M02 * matrix2.M21;
       product.M02 = matrix1.M00 * matrix2.M02 + matrix1.M01 * matrix2.M12 + matrix1.M02 * matrix2.M22;
@@ -912,9 +912,9 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="matrix">The matrix.</param>
     /// <param name="vector">The column vector.</param>
     /// <returns>The resulting column vector.</returns>
-    public static Vector3F operator *(Matrix33F matrix, Vector3F vector)
+    public static Vector3 operator *(Matrix matrix, Vector3 vector)
     {
-      Vector3F result;
+      Vector3 result;
       result.X = matrix.M00 * vector.X + matrix.M01 * vector.Y + matrix.M02 * vector.Z;
       result.Y = matrix.M10 * vector.X + matrix.M11 * vector.Y + matrix.M12 * vector.Z;
       result.Z = matrix.M20 * vector.X + matrix.M21 * vector.Y + matrix.M22 * vector.Z;
@@ -928,9 +928,9 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="matrix">The matrix.</param>
     /// <param name="vector">The column vector.</param>
     /// <returns>The resulting column vector.</returns>
-    public static Vector3F Multiply(Matrix33F matrix, Vector3F vector)
+    public static Vector3 Multiply(Matrix matrix, Vector3 vector)
     {
-      Vector3F result;
+      Vector3 result;
       result.X = matrix.M00 * vector.X + matrix.M01 * vector.Y + matrix.M02 * vector.Z;
       result.Y = matrix.M10 * vector.X + matrix.M11 * vector.Y + matrix.M12 * vector.Z;
       result.Z = matrix.M20 * vector.X + matrix.M21 * vector.Y + matrix.M22 * vector.Z;
@@ -948,9 +948,9 @@ namespace DigitalRune.Mathematics.Algebra
     /// This method transposes the given matrix and multiplies the transposed matrix with the given
     /// vector.
     /// </remarks>
-    public static Vector3F MultiplyTransposed(Matrix33F matrix, Vector3F vector)
+    public static Vector3 MultiplyTransposed(Matrix matrix, Vector3 vector)
     {
-      Vector3F result;
+      Vector3 result;
       result.X = matrix.M00 * vector.X + matrix.M10 * vector.Y + matrix.M20 * vector.Z;
       result.Y = matrix.M01 * vector.X + matrix.M11 * vector.Y + matrix.M21 * vector.Z;
       result.Z = matrix.M02 * vector.X + matrix.M12 * vector.Y + matrix.M22 * vector.Z;
@@ -964,7 +964,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="matrix">The matrix.</param>
     /// <param name="scalar">The scalar.</param>
     /// <returns>The matrix with each element divided by scalar.</returns>
-    public static Matrix33F operator /(Matrix33F matrix, float scalar)
+    public static Matrix operator /(Matrix matrix, float scalar)
     {
       float f = 1 / scalar;
       matrix.M00 *= f; matrix.M01 *= f; matrix.M02 *= f;
@@ -980,7 +980,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="matrix">The matrix.</param>
     /// <param name="scalar">The scalar.</param>
     /// <returns>The matrix with each element divided by scalar.</returns>
-    public static Matrix33F Divide(Matrix33F matrix, float scalar)
+    public static Matrix Divide(Matrix matrix, float scalar)
     {
       float f = 1 / scalar;
       matrix.M00 *= f; matrix.M01 *= f; matrix.M02 *= f;
@@ -1001,7 +1001,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <remarks>
     /// For the test the corresponding elements of the matrices are compared.
     /// </remarks>
-    public static bool operator ==(Matrix33F matrix1, Matrix33F matrix2)
+    public static bool operator ==(Matrix matrix1, Matrix matrix2)
     {
       return (matrix1.M00 == matrix2.M00) && (matrix1.M01 == matrix2.M01) && (matrix1.M02 == matrix2.M02)
           && (matrix1.M10 == matrix2.M10) && (matrix1.M11 == matrix2.M11) && (matrix1.M12 == matrix2.M12)
@@ -1020,7 +1020,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <remarks>
     /// For the test the corresponding elements of the matrices are compared.
     /// </remarks>
-    public static bool operator !=(Matrix33F matrix1, Matrix33F matrix2)
+    public static bool operator !=(Matrix matrix1, Matrix matrix2)
     {
       return (matrix1.M00 != matrix2.M00) || (matrix1.M01 != matrix2.M01) || (matrix1.M02 != matrix2.M02)
           || (matrix1.M10 != matrix2.M10) || (matrix1.M11 != matrix2.M11) || (matrix1.M12 != matrix2.M12)
@@ -1035,13 +1035,13 @@ namespace DigitalRune.Mathematics.Algebra
     /// </overloads>
     /// 
     /// <summary>
-    /// Performs an explicit conversion from <see cref="Matrix33F"/> to a 2-dimensional 
+    /// Performs an explicit conversion from <see cref="Matrix"/> to a 2-dimensional 
     /// <see langword="float"/> array.
     /// </summary>
     /// <param name="matrix">The matrix.</param>
     /// <returns>The result of the conversion.</returns>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1814:PreferJaggedArraysOverMultidimensional")]
-    public static explicit operator float[,](Matrix33F matrix)
+    public static explicit operator float[,](Matrix matrix)
     {
       float[,] result = new float[3, 3];
 
@@ -1054,7 +1054,7 @@ namespace DigitalRune.Mathematics.Algebra
 
 
     /// <summary>
-    /// Converts this <see cref="Matrix33F"/> to a 2-dimensional <see langword="float"/> array.
+    /// Converts this <see cref="Matrix"/> to a 2-dimensional <see langword="float"/> array.
     /// </summary>
     /// <returns>The result of the conversion.</returns>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1814:PreferJaggedArraysOverMultidimensional")]
@@ -1065,12 +1065,12 @@ namespace DigitalRune.Mathematics.Algebra
 
 
     /// <summary>
-    /// Performs an explicit conversion from <see cref="Matrix33F"/> to a jagged 
+    /// Performs an explicit conversion from <see cref="Matrix"/> to a jagged 
     /// <see langword="float"/> array.
     /// </summary>
     /// <param name="matrix">The matrix.</param>
     /// <returns>The result of the conversion.</returns>
-    public static explicit operator float[][](Matrix33F matrix)
+    public static explicit operator float[][](Matrix matrix)
     {
       float[][] result = new float[3][];
       result[0] = new float[3]; result[1] = new float[3]; result[2] = new float[3];
@@ -1084,7 +1084,7 @@ namespace DigitalRune.Mathematics.Algebra
 
 
     /// <summary>
-    /// Converts this <see cref="Matrix33F"/> to a jagged <see langword="float"/> array.
+    /// Converts this <see cref="Matrix"/> to a jagged <see langword="float"/> array.
     /// </summary>
     /// <returns>The result of the conversion.</returns>
     public float[][] ToArrayJagged()
@@ -1095,16 +1095,16 @@ namespace DigitalRune.Mathematics.Algebra
 
     /// <overloads>
     /// <summary>
-    /// Performs an implicit conversion from <see cref="Matrix33F"/> to another data type.
+    /// Performs an implicit conversion from <see cref="Matrix"/> to another data type.
     /// </summary>
     /// </overloads>
     /// 
     /// <summary>
-    /// Performs an implicit conversion from <see cref="Matrix33F"/> to <see cref="MatrixF"/>.
+    /// Performs an implicit conversion from <see cref="Matrix"/> to <see cref="MatrixF"/>.
     /// </summary>
     /// <param name="matrix">The matrix.</param>
     /// <returns>The result of the conversion.</returns>
-    public static implicit operator MatrixF(Matrix33F matrix)
+    public static implicit operator MatrixF(Matrix matrix)
     {
       MatrixF result = new MatrixF(3, 3);
       result[0, 0] = matrix.M00; result[0, 1] = matrix.M01; result[0, 2] = matrix.M02;
@@ -1115,7 +1115,7 @@ namespace DigitalRune.Mathematics.Algebra
 
 
     /// <summary>
-    /// Converts this <see cref="Matrix33F"/> to <see cref="MatrixF"/>.
+    /// Converts this <see cref="Matrix"/> to <see cref="MatrixF"/>.
     /// </summary>
     /// <returns>The result of the conversion.</returns>
     public MatrixF ToMatrixF()
@@ -1125,11 +1125,11 @@ namespace DigitalRune.Mathematics.Algebra
 
 
     /// <summary>
-    /// Performs an implicit conversion from <see cref="Matrix33F"/> to <see cref="Matrix33D"/>.
+    /// Performs an implicit conversion from <see cref="Matrix"/> to <see cref="Matrix33D"/>.
     /// </summary>
     /// <param name="matrix">The matrix.</param>
     /// <returns>The result of the conversion.</returns>
-    public static implicit operator Matrix33D(Matrix33F matrix)
+    public static implicit operator Matrix33D(Matrix matrix)
     {
       return new Matrix33D(matrix.M00, matrix.M01, matrix.M02,
                            matrix.M10, matrix.M11, matrix.M12,
@@ -1138,7 +1138,7 @@ namespace DigitalRune.Mathematics.Algebra
 
 
     /// <summary>
-    /// Converts this <see cref="Matrix33F"/> to <see cref="Matrix33D"/>.
+    /// Converts this <see cref="Matrix"/> to <see cref="Matrix33D"/>.
     /// </summary>
     /// <returns>The result of the conversion.</returns>
     public Matrix33D ToMatrix33D()
@@ -1219,16 +1219,16 @@ namespace DigitalRune.Mathematics.Algebra
 
 
     /// <summary>
-    /// Gets a column as <see cref="Vector3F"/>.
+    /// Gets a column as <see cref="Vector3"/>.
     /// </summary>
     /// <param name="index">The index of the column (0, 1, or 2).</param>
     /// <returns>The column vector.</returns>
     /// <exception cref="ArgumentOutOfRangeException">
     /// The <paramref name="index"/> is out of range.
     /// </exception>
-    public Vector3F GetColumn(int index)
+    public Vector3 GetColumn(int index)
     {
-      Vector3F column;
+      Vector3 column;
       switch (index)
       {
         case 0:
@@ -1254,14 +1254,14 @@ namespace DigitalRune.Mathematics.Algebra
 
 
     /// <summary>
-    /// Sets a column from a <see cref="Vector3F"/>.
+    /// Sets a column from a <see cref="Vector3"/>.
     /// </summary>
     /// <param name="index">The index of the column (0, 1, or 2).</param>
     /// <param name="columnVector">The column vector.</param>
     /// <exception cref="ArgumentOutOfRangeException">
     /// The <paramref name="index"/> is out of range.
     /// </exception>
-    public void SetColumn(int index, Vector3F columnVector)
+    public void SetColumn(int index, Vector3 columnVector)
     {
       switch (index)
       {
@@ -1287,16 +1287,16 @@ namespace DigitalRune.Mathematics.Algebra
 
 
     /// <summary>
-    /// Gets a row as <see cref="Vector3F"/>.
+    /// Gets a row as <see cref="Vector3"/>.
     /// </summary>
     /// <param name="index">The index of the row (0, 1, or 2).</param>
     /// <returns>The row vector.</returns>
     /// <exception cref="ArgumentOutOfRangeException">
     /// The <paramref name="index"/> is out of range.
     /// </exception>
-    public Vector3F GetRow(int index)
+    public Vector3 GetRow(int index)
     {
-      Vector3F row;
+      Vector3 row;
       switch (index)
       {
         case 0:
@@ -1322,14 +1322,14 @@ namespace DigitalRune.Mathematics.Algebra
 
 
     /// <summary>
-    /// Sets a row from a <see cref="Vector3F"/>.
+    /// Sets a row from a <see cref="Vector3"/>.
     /// </summary>
     /// <param name="index">The index of the row (0, 1, or 2).</param>
     /// <param name="rowVector">The row vector.</param>
     /// <exception cref="ArgumentOutOfRangeException">
     /// The <paramref name="index"/> is out of range.
     /// </exception>
-    public void SetRow(int index, Vector3F rowVector)
+    public void SetRow(int index, Vector3 rowVector)
     {
       switch (index)
       {
@@ -1384,12 +1384,12 @@ namespace DigitalRune.Mathematics.Algebra
       // http://en.wikipedia.org/wiki/Gram%E2%80%93Schmidt_process and
       // http://fgiesen.wordpress.com/2013/06/02/modified-gram-schmidt-orthogonalization/.
 
-      var column0 = new Vector3F(M00, M10, M20);
-      var column1 = new Vector3F(M01, M11, M21);
-      var column2 = new Vector3F(M02, M12, M22);
+      var column0 = new Vector3(M00, M10, M20);
+      var column1 = new Vector3(M01, M11, M21);
+      var column2 = new Vector3(M02, M12, M22);
 
-      column1 = column1 - Vector3F.ProjectTo(column1, column0);
-      column2 = column2 - Vector3F.ProjectTo(column2, column0) - Vector3F.ProjectTo(column2, column1);
+      column1 = column1 - Vector3.ProjectTo(column1, column0);
+      column2 = column2 - Vector3.ProjectTo(column2, column0) - Vector3.ProjectTo(column2, column1);
 
       column0.TryNormalize();
       column1.TryNormalize();
@@ -1484,7 +1484,7 @@ namespace DigitalRune.Mathematics.Algebra
       if (Numeric.IsZero(determinant, Numeric.EpsilonFSquared * Numeric.EpsilonF))
         return false;
 
-      Matrix33F transposedAdjoint;
+      Matrix transposedAdjoint;
       transposedAdjoint.M00 = m11m22_m12m21;
       transposedAdjoint.M01 = -(M01 * M22 - M21 * M02);
       transposedAdjoint.M02 = M01 * M12 - M02 * M11;
@@ -1530,9 +1530,9 @@ namespace DigitalRune.Mathematics.Algebra
     /// </summary>
     /// <param name="matrix">The matrix.</param>
     /// <returns>A matrix with the absolute values of the elements of the given matrix.</returns>
-    public static Matrix33F Absolute(Matrix33F matrix)
+    public static Matrix Absolute(Matrix matrix)
     {
-      return new Matrix33F(Math.Abs(matrix.M00), Math.Abs(matrix.M01), Math.Abs(matrix.M02),
+      return new Matrix(Math.Abs(matrix.M00), Math.Abs(matrix.M01), Math.Abs(matrix.M02),
                            Math.Abs(matrix.M10), Math.Abs(matrix.M11), Math.Abs(matrix.M12),
                            Math.Abs(matrix.M20), Math.Abs(matrix.M21), Math.Abs(matrix.M22));
     }
@@ -1558,7 +1558,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// The two matrices are compared component-wise. If the differences of the components are less
     /// than <see cref="Numeric.EpsilonF"/> the matrices are considered as being equal.
     /// </remarks>
-    public static bool AreNumericallyEqual(Matrix33F matrix1, Matrix33F matrix2)
+    public static bool AreNumericallyEqual(Matrix matrix1, Matrix matrix2)
     {
       return Numeric.AreEqual(matrix1.M00, matrix2.M00)
           && Numeric.AreEqual(matrix1.M01, matrix2.M01)
@@ -1586,7 +1586,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// The two matrices are compared component-wise. If the differences of the components are less
     /// than <paramref name="epsilon"/> the matrices are considered as being equal.
     /// </remarks>
-    public static bool AreNumericallyEqual(Matrix33F matrix1, Matrix33F matrix2, float epsilon)
+    public static bool AreNumericallyEqual(Matrix matrix1, Matrix matrix2, float epsilon)
     {
       return Numeric.AreEqual(matrix1.M00, matrix2.M00, epsilon)
           && Numeric.AreEqual(matrix1.M01, matrix2.M01, epsilon)
@@ -1612,7 +1612,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// [-<see cref="Numeric.EpsilonF"/>, +<see cref="Numeric.EpsilonF"/>] it is set to zero, 
     /// otherwise it remains unchanged.
     /// </remarks>
-    public static Matrix33F ClampToZero(Matrix33F matrix)
+    public static Matrix ClampToZero(Matrix matrix)
     {
       matrix.M00 = Numeric.ClampToZero(matrix.M00);
       matrix.M01 = Numeric.ClampToZero(matrix.M01);
@@ -1643,7 +1643,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// [-<paramref name="epsilon"/>, +<paramref name="epsilon"/>] it is set to zero, otherwise it 
     /// remains unchanged.
     /// </remarks>
-    public static Matrix33F ClampToZero(Matrix33F matrix, float epsilon)
+    public static Matrix ClampToZero(Matrix matrix, float epsilon)
     {
       matrix.M00 = Numeric.ClampToZero(matrix.M00, epsilon);
       matrix.M01 = Numeric.ClampToZero(matrix.M01, epsilon);
@@ -1674,9 +1674,9 @@ namespace DigitalRune.Mathematics.Algebra
     /// The uniform scale factor that is applied to the x-, y-, and z-axis.
     /// </param>
     /// <returns>The created scaling matrix.</returns>
-    public static Matrix33F CreateScale(float scale)
+    public static Matrix CreateScale(float scale)
     {
-      Matrix33F result = new Matrix33F 
+      Matrix result = new Matrix 
       {
         M00 = scale, 
         M11 = scale, 
@@ -1693,9 +1693,9 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="scaleY">The value to scale by on the y-axis.</param>
     /// <param name="scaleZ">The value to scale by on the z-axis.</param>
     /// <returns>The created scaling matrix.</returns>
-    public static Matrix33F CreateScale(float scaleX, float scaleY, float scaleZ)
+    public static Matrix CreateScale(float scaleX, float scaleY, float scaleZ)
     {
-      Matrix33F result = new Matrix33F 
+      Matrix result = new Matrix 
       {
         M00 = scaleX,
         M11 = scaleY,
@@ -1710,9 +1710,9 @@ namespace DigitalRune.Mathematics.Algebra
     /// </summary>
     /// <param name="scale">Amounts to scale by the x, y, and z-axis.</param>
     /// <returns>The created scaling matrix.</returns>
-    public static Matrix33F CreateScale(Vector3F scale)
+    public static Matrix CreateScale(Vector3 scale)
     {
-      Matrix33F result = new Matrix33F 
+      Matrix result = new Matrix 
       {
         M00 = scale.X,
         M11 = scale.Y,
@@ -1737,7 +1737,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <exception cref="ArgumentException">
     /// The <paramref name="axis"/> vector has 0 length.
     /// </exception>
-    public static Matrix33F CreateRotation(Vector3F axis, float angle)
+    public static Matrix CreateRotation(Vector3 axis, float angle)
     {
       if (!axis.TryNormalize())
         throw new ArgumentException("The axis vector has length 0.");
@@ -1758,7 +1758,7 @@ namespace DigitalRune.Mathematics.Algebra
       float zsin = z * sin;
       float oneMinusCos = 1.0f - cos;
 
-      Matrix33F result;
+      Matrix result;
       result.M00 = x2 + cos * (1.0f - x2);
       result.M01 = xy * oneMinusCos - zsin;
       result.M02 = xz * oneMinusCos + ysin;
@@ -1777,7 +1777,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// </summary>
     /// <param name="rotation">The rotation described by a unit quaternion.</param>
     /// <returns>The created rotation matrix.</returns>
-    public static Matrix33F CreateRotation(QuaternionF rotation)
+    public static Matrix CreateRotation(Quaternion rotation)
     {
       return rotation.ToRotationMatrix33();
     }
@@ -1788,11 +1788,11 @@ namespace DigitalRune.Mathematics.Algebra
     /// </summary>
     /// <param name="angle">The rotation angle in radians.</param>
     /// <returns>The created rotation matrix.</returns>
-    public static Matrix33F CreateRotationX(float angle)
+    public static Matrix CreateRotationX(float angle)
     {
       float cos = (float) Math.Cos(angle);
       float sin = (float) Math.Sin(angle);
-      return new Matrix33F(1, 0, 0,
+      return new Matrix(1, 0, 0,
                            0, cos, -sin,
                            0, sin, cos);
     }
@@ -1803,11 +1803,11 @@ namespace DigitalRune.Mathematics.Algebra
     /// </summary>
     /// <param name="angle">The rotation angle in radians.</param>
     /// <returns>The created rotation matrix.</returns>
-    public static Matrix33F CreateRotationY(float angle)
+    public static Matrix CreateRotationY(float angle)
     {
       float cos = (float) Math.Cos(angle);
       float sin = (float) Math.Sin(angle);
-      return new Matrix33F(cos, 0, sin,
+      return new Matrix(cos, 0, sin,
                            0, 1, 0,
                            -sin, 0, cos);
     }
@@ -1818,11 +1818,11 @@ namespace DigitalRune.Mathematics.Algebra
     /// </summary>
     /// <param name="angle">The rotation angle in radians.</param>
     /// <returns>The created rotation matrix.</returns>
-    public static Matrix33F CreateRotationZ(float angle)
+    public static Matrix CreateRotationZ(float angle)
     {
       float cos = (float) Math.Cos(angle);
       float sin = (float) Math.Sin(angle);
-      return new Matrix33F(cos, -sin, 0,
+      return new Matrix(cos, -sin, 0,
                            sin, cos, 0,
                            0, 0, 1);
     }

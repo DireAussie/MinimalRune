@@ -140,24 +140,24 @@ technique Orthographic
 {
   pass ColorAndDepth
   {
-#if !SM4
+
     VertexShader = compile vs_2_0 VS();
     PixelShader = compile ps_2_0 PSOrthographic_ColorAndDepth();
 #else
     VertexShader = compile vs_4_0_level_9_1 VS();
     PixelShader = compile ps_4_0_level_9_1 PSOrthographic_ColorAndDepth();
-#endif
+
   }
   
   pass TextureAndDepth
   {
-#if !SM4
+
     VertexShader = compile vs_2_0 VS();
     PixelShader = compile ps_2_0 PSOrthographic_TextureAndDepth();
 #else
     VertexShader = compile vs_4_0_level_9_1 VS();
     PixelShader = compile ps_4_0_level_9_1 PSOrthographic_TextureAndDepth();
-#endif
+
   }
 }
 
@@ -166,23 +166,23 @@ technique Perspective
 {
   pass ColorAndDepth
   {
-#if !SM4
+
     VertexShader = compile vs_2_0 VS();
     PixelShader = compile ps_2_0 PSPerspective_ColorAndDepth();
 #else
     VertexShader = compile vs_4_0_level_9_1 VS();
     PixelShader = compile ps_4_0_level_9_1 PSPerspective_ColorAndDepth();
-#endif
+
   }
   
   pass TextureAndDepth
   {
-#if !SM4
+
     VertexShader = compile vs_2_0 VS();
     PixelShader = compile ps_2_0 PSPerspective_TextureAndDepth();
 #else
     VertexShader = compile vs_4_0_level_9_1 VS();
     PixelShader = compile ps_4_0_level_9_1 PSPerspective_TextureAndDepth();
-#endif
+
   }
 }

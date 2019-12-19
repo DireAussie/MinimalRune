@@ -8,9 +8,9 @@ using DigitalRune.Collections;
 using DigitalRune.Geometry.Shapes;
 using DigitalRune.Mathematics.Algebra;
 
-#if !POOL_ENUMERABLES
+
 using DigitalRune.Mathematics;
-#endif
+
 
 
 namespace DigitalRune.Geometry.Partitioning
@@ -39,7 +39,7 @@ namespace DigitalRune.Geometry.Partitioning
       // the equality and filter tests could be made before the Aabb test.
       // --> No big advantage...or?
 
-#if !POOL_ENUMERABLES
+
       Aabb aabb = GetAabbForItem(item);
 
       foreach (var touchedItem in GetOverlaps(aabb))
@@ -50,18 +50,18 @@ namespace DigitalRune.Geometry.Partitioning
 #else
       // Avoiding garbage:
       return GetOverlapsWithItemWork.Create(this, item);
-#endif
+
     }
 
 
     /// <inheritdoc/>
     public virtual IEnumerable<T> GetOverlaps(Ray ray)
     {
-#if !POOL_ENUMERABLES
+
       Aabb rayAabb = new Aabb(ray.Origin, ray.Origin);
       rayAabb.Grow(ray.Origin + ray.Direction * ray.Length);
 
-      var rayDirectionInverse = new Vector3F(
+      var rayDirectionInverse = new Vector3(
             1 / ray.Direction.X,
             1 / ray.Direction.Y,
             1 / ray.Direction.Z);
@@ -74,7 +74,7 @@ namespace DigitalRune.Geometry.Partitioning
 #else
       // Avoiding garbage:
       return GetOverlapsWithRayWork.Create(this, ref ray);
-#endif
+
     }
 
 
@@ -106,7 +106,7 @@ namespace DigitalRune.Geometry.Partitioning
 
       UpdateInternal();
 
-#if !POOL_ENUMERABLES
+
       // Get all items that touch the other partition's AABB.
       var candidates = GetOverlaps(otherPartition.Aabb);
 
@@ -127,12 +127,12 @@ namespace DigitalRune.Geometry.Partitioning
 #else
       // Avoiding garbage:
       return GetOverlapsWithPartitionWork.Create(this, otherPartition);
-#endif
+
     }
 
 
     /// <inheritdoc/>
-    public virtual IEnumerable<Pair<T>> GetOverlaps(Vector3F scale, Pose pose, ISpatialPartition<T> otherPartition, Vector3F otherScale, Pose otherPose)
+    public virtual IEnumerable<Pair<T>> GetOverlaps(Vector3 scale, Pose pose, ISpatialPartition<T> otherPartition, Vector3 otherScale, Pose otherPose)
     {
       if (otherPartition == null)
         throw new ArgumentNullException("otherPartition");
@@ -146,8 +146,8 @@ namespace DigitalRune.Geometry.Partitioning
       UpdateInternal();
 
       // Compute transformations.
-      Vector3F scaleInverse = Vector3F.One / scale;
-      Vector3F otherScaleInverse = Vector3F.One / otherScale;
+      Vector3 scaleInverse = Vector3.One / scale;
+      Vector3 otherScaleInverse = Vector3.One / otherScale;
       Pose toLocal = pose.Inverse * otherPose;
       Pose toOther = toLocal.Inverse;
 
@@ -158,7 +158,7 @@ namespace DigitalRune.Geometry.Partitioning
 
       var candidates = GetOverlaps(otherAabb);
 
-#if !POOL_ENUMERABLES
+
       foreach (var candidate in candidates)
       {
         // Transform AABB of this partition into space of the other partition.
@@ -176,7 +176,7 @@ namespace DigitalRune.Geometry.Partitioning
 #else
       // Avoiding garbage:
       return GetOverlapsWithTransformedPartitionWork.Create(this, otherPartition, candidates, ref scale, ref otherScaleInverse, ref toOther);
-#endif
+
     }
   }
 }

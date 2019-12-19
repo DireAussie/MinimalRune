@@ -15,9 +15,9 @@ namespace DigitalRune.Graphics
   /// Describes a custom vertex format structure that contains only the vertex position (no normals,
   /// texture coordinates or other vertex data).
   /// </summary>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !PORTABLE
+
   [Serializable]
-#endif
+
   [StructLayout(LayoutKind.Sequential)]
   public struct VertexPosition : IVertexType
   {

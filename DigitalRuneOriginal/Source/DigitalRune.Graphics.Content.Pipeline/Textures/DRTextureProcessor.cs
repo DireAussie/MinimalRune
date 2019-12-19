@@ -372,12 +372,12 @@ namespace DigitalRune.Graphics.Content.Pipeline
           TextureHelper.ProcessNormals(texture, Format == DRTextureFormat.NormalInvertY);
         }
 
-#if !MONOGAME
+
         // No PVRTC in XNA build.
         string mgPlatform = ContentHelper.GetMonoGamePlatform();
         if (!string.IsNullOrEmpty(mgPlatform) && mgPlatform.ToUpperInvariant() == "IOS")
           Format = DRTextureFormat.Color;
-#endif
+
 
         // Convert to from floating-point format to requested output format.
         switch (Format)
@@ -400,7 +400,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
             }
             else
             {
-#if MONOGAME
+
               input = Compress(context, texture, hasAlpha, hasFractionalAlpha, PremultiplyAlpha, input.Identity);
 #else
               if (hasFractionalAlpha)
@@ -409,18 +409,18 @@ namespace DigitalRune.Graphics.Content.Pipeline
                 texture = texture.ConvertTo(DataFormat.BC1_UNORM);
 
               input = TextureHelper.ToContent(texture, input.Identity);
-#endif
+
             }
             break;
 
           case DRTextureFormat.Normal:
           case DRTextureFormat.NormalInvertY:
-#if MONOGAME
+
             input = Compress(context, texture, true, true, false, input.Identity);
 #else
             texture = texture.ConvertTo(DataFormat.BC3_UNORM);
             input = TextureHelper.ToContent(texture, input.Identity);
-#endif
+
             break;
           default:
             throw new NotSupportedException("The specified output format is not supported.");
@@ -509,7 +509,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
     //}
 
 
-#if MONOGAME
+
     private static TextureContent Compress(ContentProcessorContext context, Texture texture, bool hasAlpha, bool hasFractionalAlpha, bool premultipliedAlpha, ContentIdentity identity)
     {
       TextureContent textureContent;
@@ -654,7 +654,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
 
       throw new InvalidOperationException("Invalid texture dimension.");
     }
-#endif
+
 
   }
 }

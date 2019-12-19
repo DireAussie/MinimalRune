@@ -44,7 +44,7 @@ namespace DigitalRune.Windows.Charts
         /// Identifies the <see cref="Interpolation"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty InterpolationProperty =
-#if SILVERLIGHT
+
             DependencyProperty.Register(
                 "Interpolation",
                 typeof(ChartInterpolation),
@@ -54,7 +54,7 @@ namespace DigitalRune.Windows.Charts
             LineChart.InterpolationProperty.AddOwner(
                 typeof(LineChartGroup),
                 new PropertyMetadata(ChartInterpolation.Linear, OnRelevantPropertyChanged));
-#endif
+
 
         /// <summary>
         /// Gets or sets the type of data interpolation between data points.
@@ -104,7 +104,7 @@ namespace DigitalRune.Windows.Charts
 
         //--------------------------------------------------------------
 
-#if SILVERLIGHT
+
         /// <summary>
         /// Initializes a new instance of the <see cref="LineChartGroup"/> class.
         /// </summary>
@@ -121,7 +121,7 @@ namespace DigitalRune.Windows.Charts
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(LineChartGroup), new FrameworkPropertyMetadata(typeof(LineChartGroup)));
         }
-#endif
+
 
 
 
@@ -154,11 +154,11 @@ namespace DigitalRune.Windows.Charts
             int zIndex = Items.Count;
             foreach (var chart in Charts)
             {
-#if SILVERLIGHT
+
                 Canvas.SetZIndex(chart, zIndex);
 #else
                 Panel.SetZIndex(chart, zIndex);
-#endif
+
                 --zIndex;
             }
         }

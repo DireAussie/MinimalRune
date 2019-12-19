@@ -69,7 +69,7 @@ namespace Samples
       _campfire = new SceneNode
       {
         Name = "Campfire",
-        PoseLocal = new Pose(new Vector3F(0, 0, -1)),
+        PoseLocal = new Pose(new Vector3(0, 0, -1)),
         Children = new SceneNodeCollection()
       };
 
@@ -81,7 +81,7 @@ namespace Samples
       {
         // The fire effect lies in the xy plane and shoots into the forward direction (= -z axis).
         // Therefore we rotate the particle system to shoot upwards.
-        PoseLocal = new Pose(new Vector3F(0, 0.2f, 0), Matrix33F.CreateRotationX(ConstantsF.PiOver2))
+        PoseLocal = new Pose(new Vector3(0, 0.2f, 0), Matrix.CreateRotationX(ConstantsF.PiOver2))
       };
       _campfire.Children.Add(_fireParticles);
 
@@ -90,7 +90,7 @@ namespace Samples
       particleSystemService.ParticleSystems.Add(particleSystem);
       _smokeParticles = new ParticleSystemNode(particleSystem)
       {
-        PoseLocal = new Pose(new Vector3F(0, 0.2f, 0), Matrix33F.CreateRotationX(ConstantsF.PiOver2))
+        PoseLocal = new Pose(new Vector3(0, 0.2f, 0), Matrix.CreateRotationX(ConstantsF.PiOver2))
       };
       _campfire.Children.Add(_smokeParticles);
 
@@ -98,7 +98,7 @@ namespace Samples
       var light = new PointLight
       {
         Attenuation = 0.1f,
-        Color = new Vector3F(1, 0.2f, 0),
+        Color = new Vector3(1, 0.2f, 0),
         HdrScale = 20,
         Range = 4
       };
@@ -106,7 +106,7 @@ namespace Samples
       {
         // Optional: We can make this light cast shadows - but this will cost performance!
         //Shadow = new CubeMapShadow { PreferredSize = 64, FilterRadius = 2, JitterResolution = 2048 },
-        PoseLocal = new Pose(new Vector3F(0, 1f, 0))
+        PoseLocal = new Pose(new Vector3(0, 1f, 0))
       };
       _campfire.Children.Add(_light);
 
@@ -121,11 +121,11 @@ namespace Samples
       //  var clone = _campfire.Clone();
 
       //  // Set random scale, position, orientation.
-      //  clone.ScaleLocal = _random.NextVector3F(0.5f, 1.5f);
+      //  clone.ScaleLocal = _random.NextVector3(0.5f, 1.5f);
       //  var pose = _campfire.PoseWorld;
       //  pose.Position.X += _random.NextFloat(-10, 10);
       //  pose.Position.Z += _random.NextFloat(-10, 10);
-      //  pose.Orientation = Matrix33F.CreateRotationY(_random.NextFloat(-ConstantsF.PiOver2, ConstantsF.PiOver2));
+      //  pose.Orientation = Matrix.CreateRotationY(_random.NextFloat(-ConstantsF.PiOver2, ConstantsF.PiOver2));
       //  clone.PoseLocal = pose;
 
       //  scene.Children.Add(clone);
@@ -175,19 +175,19 @@ namespace Samples
       });
 
       // Particle positions start on a circular area (in the xy-plane).
-      ps.Parameters.AddVarying<Vector3F>(ParticleParameterNames.Position);
+      ps.Parameters.AddVarying<Vector3>(ParticleParameterNames.Position);
       ps.Effectors.Add(new StartPositionEffector
       {
         Parameter = ParticleParameterNames.Position,
         Distribution = new CircleDistribution { OuterRadius = 0.4f, InnerRadius = 0 }
       });
 
-      // Set default axis of billboards. (Usually Vector3F.Up, but in this case the 
+      // Set default axis of billboards. (Usually Vector3.Up, but in this case the 
       // particle system is rotated.)
-      ps.Parameters.AddUniform<Vector3F>(ParticleParameterNames.Axis).DefaultValue = Vector3F.Forward;
+      ps.Parameters.AddUniform<Vector3>(ParticleParameterNames.Axis).DefaultValue = Vector3.Forward;
 
       // Particles move in forward direction with a random speed.
-      ps.Parameters.AddUniform<Vector3F>(ParticleParameterNames.Direction).DefaultValue = Vector3F.Forward;
+      ps.Parameters.AddUniform<Vector3>(ParticleParameterNames.Direction).DefaultValue = Vector3.Forward;
       ps.Parameters.AddVarying<float>(ParticleParameterNames.LinearSpeed);
       ps.Effectors.Add(new StartValueEffector<float>
       {
@@ -209,7 +209,7 @@ namespace Samples
       });
 
       // To create a wind effect, we apply an acceleration to all particles.
-      ps.Parameters.AddUniform<Vector3F>("Wind").DefaultValue = new Vector3F(-1, -0.5f, -3);//new Vector3F(-1, 3, -0.5f);
+      ps.Parameters.AddUniform<Vector3>("Wind").DefaultValue = new Vector3(-1, -0.5f, -3);//new Vector3(-1, 3, -0.5f);
       ps.Effectors.Add(new LinearAccelerationEffector { AccelerationParameter = "Wind" });
 
       // Each particle starts with a random rotation angle and a random angular speed.
@@ -243,7 +243,7 @@ namespace Samples
         FadeOutEnd = 1.0f,
       });
 
-      ps.Parameters.AddUniform<Vector3F>(ParticleParameterNames.Color).DefaultValue = new Vector3F(5, 5, 5);
+      ps.Parameters.AddUniform<Vector3>(ParticleParameterNames.Color).DefaultValue = new Vector3(5, 5, 5);
 
       // DigitalRune Graphics supports a "Texture" parameter of type Texture2D or 
       // PackedTexture. The texture "FireParticles.tga" is a tile set, which can be 
@@ -270,7 +270,7 @@ namespace Samples
 
       // Optional: Set a bounding shape for frustum culling. The bounding shape needs 
       // to be large enough to include all fire particles.
-      ps.Shape = new TransformedShape(new GeometricObject(new BoxShape(2.5f, 2.5f, 2.5f), new Pose(new Vector3F(0, 0, -1))));
+      ps.Shape = new TransformedShape(new GeometricObject(new BoxShape(2.5f, 2.5f, 2.5f), new Pose(new Vector3(0, 0, -1))));
 
       return ps;
     }
@@ -305,23 +305,23 @@ namespace Samples
       });
 
       // Particle positions start on a circular area (in the xy-plane).
-      ps.Parameters.AddVarying<Vector3F>(ParticleParameterNames.Position);
+      ps.Parameters.AddVarying<Vector3>(ParticleParameterNames.Position);
       ps.Effectors.Add(new StartPositionEffector
       {
         Parameter = ParticleParameterNames.Position,
         Distribution = new CircleDistribution { OuterRadius = 0.4f, InnerRadius = 0 }
       });
 
-      // Set default axis of billboards. (Usually Vector3F.Up, but in this case the 
+      // Set default axis of billboards. (Usually Vector3.Up, but in this case the 
       // particle system is rotated.)
-      ps.Parameters.AddUniform<Vector3F>(ParticleParameterNames.Axis).DefaultValue = Vector3F.Forward;
+      ps.Parameters.AddUniform<Vector3>(ParticleParameterNames.Axis).DefaultValue = Vector3.Forward;
 
       // Particles move in up direction with a slight random deviation with a random speed.
-      ps.Parameters.AddVarying<Vector3F>(ParticleParameterNames.Direction);
+      ps.Parameters.AddVarying<Vector3>(ParticleParameterNames.Direction);
       ps.Effectors.Add(new StartDirectionEffector
       {
         Parameter = ParticleParameterNames.Direction,
-        Distribution = new DirectionDistribution { Deviation = 0.15f, Direction = Vector3F.Forward },
+        Distribution = new DirectionDistribution { Deviation = 0.15f, Direction = Vector3.Forward },
       });
       ps.Parameters.AddVarying<float>(ParticleParameterNames.LinearSpeed);
       ps.Effectors.Add(new StartValueEffector<float>
@@ -344,7 +344,7 @@ namespace Samples
       });
 
       // To create a wind effect, we apply an acceleration to all particles.
-      ps.Parameters.AddUniform<Vector3F>("Wind").DefaultValue = new Vector3F(-1, -0.5f, -3);//new Vector3F(-1, 3, -0.5f);
+      ps.Parameters.AddUniform<Vector3>("Wind").DefaultValue = new Vector3(-1, -0.5f, -3);//new Vector3(-1, 3, -0.5f);
       ps.Effectors.Add(new LinearAccelerationEffector { AccelerationParameter = "Wind" });
 
       // Each particle starts with a random rotation angle and a random angular speed.
@@ -393,10 +393,10 @@ namespace Samples
       });
 
       // The Color slowly changes linearly from light gray to a darker gray.
-      ps.Parameters.AddUniform<Vector3F>("StartColor").DefaultValue = new Vector3F(0.1f, 0.1f, 0.1f);
-      ps.Parameters.AddUniform<Vector3F>("EndColor").DefaultValue = new Vector3F(0.01f, 0.01f, 0.01f);
-      ps.Parameters.AddVarying<Vector3F>(ParticleParameterNames.Color);
-      ps.Effectors.Add(new Vector3FLerpEffector
+      ps.Parameters.AddUniform<Vector3>("StartColor").DefaultValue = new Vector3(0.1f, 0.1f, 0.1f);
+      ps.Parameters.AddUniform<Vector3>("EndColor").DefaultValue = new Vector3(0.01f, 0.01f, 0.01f);
+      ps.Parameters.AddVarying<Vector3>(ParticleParameterNames.Color);
+      ps.Effectors.Add(new Vector3LerpEffector
       {
         ValueParameter = ParticleParameterNames.Color,
         StartParameter = "StartColor",
@@ -441,7 +441,7 @@ namespace Samples
 
       // Optional: Set a bounding shape for frustum culling. The bounding shape needs 
       // to be large enough to include all smoke particles.
-      ps.Shape = new TransformedShape(new GeometricObject(new BoxShape(3, 3, 4), new Pose(new Vector3F(-1, 0, -3))));
+      ps.Shape = new TransformedShape(new GeometricObject(new BoxShape(3, 3, 4), new Pose(new Vector3(-1, 0, -3))));
 
       ps.Parameters.AddUniform<int>(ParticleParameterNames.DrawOrder).DefaultValue = 1;
 

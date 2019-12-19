@@ -7,9 +7,9 @@ using DigitalRune.Graphics.SceneGraph;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-#if PORTABLE || WINDOWS_UWP
+
 #pragma warning disable 1574  // Disable warning "XML comment has cref attribute that could not be resolved."
-#endif
+
 
 
 namespace DigitalRune.Graphics.Effects

@@ -25,9 +25,9 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 using ICSharpCode.AvalonEdit.Utils;
-#if NREFACTORY
+
 using ICSharpCode.NRefactory.Editor;
-#endif
+
 
 namespace ICSharpCode.AvalonEdit.Document
 {
@@ -562,7 +562,7 @@ namespace ICSharpCode.AvalonEdit.Document
 		[Conditional("DATACONSISTENCYTEST")]
 		internal void CheckProperties()
 		{
-			#if DEBUG
+
 			if (root != null) {
 				CheckProperties(root);
 				
@@ -578,10 +578,10 @@ namespace ICSharpCode.AvalonEdit.Document
 				while (en.MoveNext()) expectedCount++;
 			}
 			Debug.Assert(count == expectedCount);
-			#endif
+
 		}
 		
-		#if DEBUG
+
 		void CheckProperties(TextSegment node)
 		{
 			int totalLength = node.nodeLength;
@@ -651,18 +651,18 @@ namespace ICSharpCode.AvalonEdit.Document
 				AppendTreeToString(node.right, b, indent);
 			}
 		}
-		#endif
+
 		
 		internal string GetTreeAsString()
 		{
-			#if DEBUG
+
 			StringBuilder b = new StringBuilder();
 			if (root != null)
 				AppendTreeToString(root, b, 0);
 			return b.ToString();
 			#else
 			return "Not available in release build.";
-			#endif
+
 		}
 
 		

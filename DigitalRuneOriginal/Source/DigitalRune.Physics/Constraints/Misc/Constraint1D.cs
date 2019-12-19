@@ -33,17 +33,17 @@ namespace DigitalRune.Physics.Constraints
     //--------------------------------------------------------------
 
     // The Jacobian matrices J.
-    public Vector3F JLinA;
-    public Vector3F JAngA;
-    public Vector3F JLinB;
-    public Vector3F JAngB;
+    public Vector3 JLinA;
+    public Vector3 JAngA;
+    public Vector3 JLinB;
+    public Vector3 JAngB;
 
     // The terms: M^-1 * J^T. 
     // M^-1 is often written as W.
-    public Vector3F WJTLinA;
-    public Vector3F WJTAngA;
-    public Vector3F WJTLinB;
-    public Vector3F WJTAngB;
+    public Vector3 WJTLinA;
+    public Vector3 WJTAngA;
+    public Vector3 WJTLinB;
+    public Vector3 WJTAngB;
 
     // The term: (J * M^-1 * J^T)^-1. This is equal to the collision matrix K^-1.
     public float JWJTInverse;
@@ -78,7 +78,7 @@ namespace DigitalRune.Physics.Constraints
     /// <summary>
     /// Initializes the 1-dimensional constraint.
     /// </summary>
-    public void Prepare(RigidBody bodyA, RigidBody bodyB, Vector3F jLinA, Vector3F jAngA, Vector3F jLinB, Vector3F jAngB)
+    public void Prepare(RigidBody bodyA, RigidBody bodyB, Vector3 jLinA, Vector3 jAngA, Vector3 jLinB, Vector3 jAngB)
     {
       JLinA = jLinA;
       JAngA = jAngA;
@@ -93,7 +93,7 @@ namespace DigitalRune.Physics.Constraints
       WJTLinA.X = bodyA.MassInverse * jLinA.X;
       WJTLinA.Y = bodyA.MassInverse * jLinA.Y;
       WJTLinA.Z = bodyA.MassInverse * jLinA.Z;
-      Matrix33F matrix = bodyA.InertiaInverseWorld;
+      Matrix matrix = bodyA.InertiaInverseWorld;
       WJTAngA.X = matrix.M00 * jAngA.X + matrix.M01 * jAngA.Y + matrix.M02 * jAngA.Z;
       WJTAngA.Y = matrix.M10 * jAngA.X + matrix.M11 * jAngA.Y + matrix.M12 * jAngA.Z;
       WJTAngA.Z = matrix.M20 * jAngA.X + matrix.M21 * jAngA.Y + matrix.M22 * jAngA.Z;
@@ -105,8 +105,8 @@ namespace DigitalRune.Physics.Constraints
       WJTAngB.Y = matrix.M10 * jAngB.X + matrix.M11 * jAngB.Y + matrix.M12 * jAngB.Z;
       WJTAngB.Z = matrix.M20 * jAngB.X + matrix.M21 * jAngB.Y + matrix.M22 * jAngB.Z;
 
-      //float JWJT = Vector3F.Dot(jLinA, WJTLinA) + Vector3F.Dot(jAngA, WJTAngA)
-      //             + Vector3F.Dot(jLinB, WJTLinB) + Vector3F.Dot(jAngB, WJTAngB);
+      //float JWJT = Vector3.Dot(jLinA, WJTLinA) + Vector3.Dot(jAngA, WJTAngA)
+      //             + Vector3.Dot(jLinB, WJTLinB) + Vector3.Dot(jAngB, WJTAngB);
       // ----- Optimized version:
       float JWJT = jLinA.X * WJTLinA.X + jLinA.Y * WJTLinA.Y + jLinA.Z * WJTLinA.Z
                    + jAngA.X * WJTAngA.X + jAngA.Y * WJTAngA.Y + jAngA.Z * WJTAngA.Z
@@ -180,16 +180,16 @@ namespace DigitalRune.Physics.Constraints
     public float GetRelativeVelocity(RigidBody bodyA, RigidBody bodyB)
     {
       // relative velocity = J * u.
-      //return Vector3F.Dot(JLinA, bodyA._linearVelocity)
-      //       + Vector3F.Dot(JAngA, bodyA._angularVelocity)
-      //       + Vector3F.Dot(JLinB, bodyB._linearVelocity)
-      //       + Vector3F.Dot(JAngB, bodyB._angularVelocity);
+      //return Vector3.Dot(JLinA, bodyA._linearVelocity)
+      //       + Vector3.Dot(JAngA, bodyA._angularVelocity)
+      //       + Vector3.Dot(JLinB, bodyB._linearVelocity)
+      //       + Vector3.Dot(JAngB, bodyB._angularVelocity);
 
       // ----- Optimized version:
-      Vector3F linearVelocityA = bodyA._linearVelocity;
-      Vector3F angularVelocityA = bodyA._angularVelocity;
-      Vector3F linearVelocityB = bodyB._linearVelocity;
-      Vector3F angularVelocityB = bodyB._angularVelocity;
+      Vector3 linearVelocityA = bodyA._linearVelocity;
+      Vector3 angularVelocityA = bodyA._angularVelocity;
+      Vector3 linearVelocityB = bodyB._linearVelocity;
+      Vector3 angularVelocityB = bodyB._angularVelocity;
       return JLinA.X * linearVelocityA.X + JLinA.Y * linearVelocityA.Y + JLinA.Z * linearVelocityA.Z
              + JAngA.X * angularVelocityA.X + JAngA.Y * angularVelocityA.Y + JAngA.Z * angularVelocityA.Z
              + JLinB.X * linearVelocityB.X + JLinB.Y * linearVelocityB.Y + JLinB.Z * linearVelocityB.Z
@@ -203,16 +203,16 @@ namespace DigitalRune.Physics.Constraints
     public float GetRelativeCorrectionVelocity(RigidBody bodyA, RigidBody bodyB)
     {
       // relative velocity = J * u.
-      //return Vector3F.Dot(JLinA, bodyA.LinearCorrectionVelocity)
-      //       + Vector3F.Dot(JAngA, bodyA.AngularCorrectionVelocity)
-      //       + Vector3F.Dot(JLinB, bodyB.LinearCorrectionVelocity)
-      //       + Vector3F.Dot(JAngB, bodyB.AngularCorrectionVelocity);
+      //return Vector3.Dot(JLinA, bodyA.LinearCorrectionVelocity)
+      //       + Vector3.Dot(JAngA, bodyA.AngularCorrectionVelocity)
+      //       + Vector3.Dot(JLinB, bodyB.LinearCorrectionVelocity)
+      //       + Vector3.Dot(JAngB, bodyB.AngularCorrectionVelocity);
       
       // ----- Optimized version:
-      Vector3F linearVelocityA = bodyA.LinearCorrectionVelocity;
-      Vector3F angularVelocityA = bodyA.AngularCorrectionVelocity;
-      Vector3F linearVelocityB = bodyB.LinearCorrectionVelocity;
-      Vector3F angularVelocityB = bodyB.AngularCorrectionVelocity;
+      Vector3 linearVelocityA = bodyA.LinearCorrectionVelocity;
+      Vector3 angularVelocityA = bodyA.AngularCorrectionVelocity;
+      Vector3 linearVelocityB = bodyB.LinearCorrectionVelocity;
+      Vector3 angularVelocityB = bodyB.AngularCorrectionVelocity;
       return JLinA.X * linearVelocityA.X + JLinA.Y * linearVelocityA.Y + JLinA.Z * linearVelocityA.Z
              + JAngA.X * angularVelocityA.X + JAngA.Y * angularVelocityA.Y + JAngA.Z * angularVelocityA.Z
              + JLinB.X * linearVelocityB.X + JLinB.Y * linearVelocityB.Y + JLinB.Z * linearVelocityB.Z

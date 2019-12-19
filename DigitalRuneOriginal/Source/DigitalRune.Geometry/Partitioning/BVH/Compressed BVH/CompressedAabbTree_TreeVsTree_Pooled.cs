@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if POOL_ENUMERABLES
+
 using System.Collections.Generic;
 using DigitalRune.Collections;
 using DigitalRune.Geometry.Shapes;
@@ -91,13 +91,13 @@ namespace DigitalRune.Geometry.Partitioning
       private IEnumerator<Node> _leafNodes;
       private Aabb _leafAabb;
       private IEnumerator<int> _otherCandidates;
-      private Vector3F _scale;
-      private Vector3F _otherScaleInverse;
+      private Vector3 _scale;
+      private Vector3 _otherScaleInverse;
       private Pose _toOther;
 
       public static IEnumerable<Pair<int>> Create(CompressedAabbTree partition,
         ISpatialPartition<int> otherPartition, IEnumerable<Node> leafNodes,
-        ref Vector3F scale, ref Vector3F otherScaleInverse, ref Pose toOther)
+        ref Vector3 scale, ref Vector3 otherScaleInverse, ref Pose toOther)
       {
         var enumerable = Pool.Obtain();
         enumerable._partition = partition;
@@ -164,4 +164,4 @@ namespace DigitalRune.Geometry.Partitioning
     // ReSharper restore StaticFieldInGenericType
   }
 }
-#endif
+

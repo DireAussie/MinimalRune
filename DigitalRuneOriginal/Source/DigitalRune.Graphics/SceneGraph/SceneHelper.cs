@@ -269,7 +269,7 @@ namespace DigitalRune.Graphics.SceneGraph
     /// is probably pointing in the same or opposite direction as <paramref name="upVector"/>. (The 
     /// two vectors must not be parallel.)
     /// </exception>
-    public static void LookAt(this SceneNode node, Vector3F target, Vector3F upVector)
+    public static void LookAt(this SceneNode node, Vector3 target, Vector3 upVector)
     {
       if (node == null)
         throw new ArgumentNullException("node");
@@ -311,14 +311,14 @@ namespace DigitalRune.Graphics.SceneGraph
     /// pointing in the same or opposite direction as <paramref name="upVector"/>. (The two vectors 
     /// must not be parallel.)
     /// </exception>
-    public static void LookAt(this SceneNode node, Vector3F position, Vector3F target, Vector3F upVector)
+    public static void LookAt(this SceneNode node, Vector3 position, Vector3 target, Vector3 upVector)
     {
       if (node == null)
         throw new ArgumentNullException("node");
 
-      Matrix44F view = Matrix44F.CreateLookAt(position, target, upVector);
-      Matrix44F viewInverse = view.Inverse;
-      QuaternionF orientation = QuaternionF.CreateRotation(viewInverse.Minor);
+      Matrix view = Matrix.CreateLookAt(position, target, upVector);
+      Matrix viewInverse = view.Inverse;
+      Quaternion orientation = Quaternion.CreateRotation(viewInverse.Minor);
       node.PoseWorld = new Pose(position, orientation);
     }
 
@@ -511,7 +511,7 @@ namespace DigitalRune.Graphics.SceneGraph
       if (GetSubtreeAabbInternal(sceneNode, ref aabb))
       {
         // The extent of subtree is infinite in one or more dimensions.
-        aabb = new Aabb(new Vector3F(float.NegativeInfinity), new Vector3F(float.PositiveInfinity));
+        aabb = new Aabb(new Vector3(float.NegativeInfinity), new Vector3(float.PositiveInfinity));
       }
 
       return aabb;

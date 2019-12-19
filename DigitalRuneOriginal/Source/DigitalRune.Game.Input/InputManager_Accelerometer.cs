@@ -5,20 +5,20 @@
 // The MonoGame portable DLL does not have an Accelerometer class. Since it also 
 // doesn't wrap the other sensors (compass, gyrometer, etc.), we leave sensor handling
 // to the user.
-#if !MONOGAME
 
-#if USE_DIGITALRUNE_MATHEMATICS
+
+
 using DigitalRune.Mathematics.Algebra;
 #else
 using Vector2F = Microsoft.Xna.Framework.Vector2;
-using Vector3F = Microsoft.Xna.Framework.Vector3;
-#endif
+using Vector3 = Microsoft.Xna.Framework.Vector3;
 
-#if WP7
+
+
 using System.Diagnostics;
 using Microsoft.Devices.Sensors;
 using Microsoft.Xna.Framework.Input;
-#endif
+
 
 
 namespace DigitalRune.Game.Input
@@ -31,14 +31,14 @@ namespace DigitalRune.Game.Input
 
     private bool _isAccelerometerInitialized;
 
-#if WP7
+
     // The accelerometer sensor on the device.
     private readonly Accelerometer _accelerometer = new Accelerometer();
 
     // Value is set asynchronously in callback.
-    private Vector3F _accelerometerCallbackValue;
+    private Vector3 _accelerometerCallbackValue;
     private readonly object _syncRoot = new object();
-#endif
+
 
 
 
@@ -52,7 +52,7 @@ namespace DigitalRune.Game.Input
 
 
     /// <inheritdoc/>
-    public Vector3F AccelerometerValue
+    public Vector3 AccelerometerValue
     {
       get
       {
@@ -60,7 +60,7 @@ namespace DigitalRune.Game.Input
         {
           _isAccelerometerInitialized = true;
 
-#if WP7
+
           try
           {
             _accelerometer.ReadingChanged += OnAccelerometerReadingChanged;
@@ -71,13 +71,13 @@ namespace DigitalRune.Game.Input
           {
             IsAccelerometerActive = false;
           }
-#endif
+
         }
 
         return _accelerometerValue;
       }
     }
-    private static Vector3F _accelerometerValue = new Vector3F(0, 0, -1);
+    private static Vector3 _accelerometerValue = new Vector3(0, 0, -1);
 
 
 
@@ -85,7 +85,7 @@ namespace DigitalRune.Game.Input
 
     //--------------------------------------------------------------
 
-#if WP7
+
     // Accelerometer callback.
     private void OnAccelerometerReadingChanged(object sender, AccelerometerReadingEventArgs eventArgs)
     {
@@ -93,16 +93,16 @@ namespace DigitalRune.Game.Input
       // can come from another thread!
       lock (_syncRoot)
       {
-        _accelerometerCallbackValue = new Vector3F((float)eventArgs.X, (float)eventArgs.Y, (float)eventArgs.Z);
+        _accelerometerCallbackValue = new Vector3((float)eventArgs.X, (float)eventArgs.Y, (float)eventArgs.Z);
       }
     }
-#endif
+
 
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
     private void UpdateAccelerometer()
     {
-#if WP7
+
       if (_isAccelerometerInitialized)
       {
         if (IsAccelerometerActive)
@@ -113,9 +113,8 @@ namespace DigitalRune.Game.Input
           }
         }
       }
-#endif
+
     }
 
   }
 }
-#endif

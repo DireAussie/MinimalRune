@@ -13,21 +13,21 @@
 //
 //-----------------------------------------------------------------------------
 
-#ifndef DIGITALRUNE_DEFERRED_FXH
+
 #define DIGITALRUNE_DEFERRED_FXH
 
-#ifndef DIGITALRUNE_ENCODING_FXH
+
 #error "Encoding.fxh required. Please include Encoding.fxh before including Deferred.fxh."
-#endif
+
 
 
 //-----------------------------------------------------------------------------
 // Constants
 //-----------------------------------------------------------------------------
 
-#if CREATE_GBUFFER
+
 DECLARE_UNIFORM_NORMALSFITTINGTEXTURE
-#endif
+
 
 
 /// Declares the uniform const for the view frustum far corners in view space.
@@ -105,7 +105,7 @@ float GetGBufferDepth(float4 gBuffer0)
 }
 
 
-#if CREATE_GBUFFER
+
 /// Stores the depth in the given G-buffer 0 value.
 /// \param[in] depth          The linear depth in the range [0, 1].
 /// \param[in] sceneNodeType  The scene node type info (1 = static, 0 = dynamic).
@@ -123,7 +123,7 @@ void SetGBufferDepth(float depth, float sceneNodeType, inout float4 gBuffer0)
     gBuffer0 = -depth;
   }
 }
-#endif
+
 
 
 /// Gets the world space normal from a G-buffer 1 sample.
@@ -141,7 +141,7 @@ float3 GetGBufferNormal(float4 gBuffer1)
   //return normalize(DecodeNormalSphereMap(gBuffer1));
 }
 
-#if CREATE_GBUFFER
+
 /// Stores the world space normal in the given G-buffer 1 value.
 /// \param[in] normal         The normal in world space.
 /// \param[in,out] gBuffer1   The G-buffer 1 value.
@@ -156,7 +156,7 @@ void SetGBufferNormal(float3 normal, inout float4 gBuffer1)
   //gBuffer1.rg = EncodeNormalStereographic(normal);
   //gBuffer1.rg = EncodeNormalSphereMap(normal);
 }
-#endif
+
 
 
 /// Gets the specular power from the given G-buffer samples.
@@ -244,9 +244,9 @@ VSFrustumRayOutput VSFrustumRay(VSFrustumRayInput input,
   // Instead of subtracting the 0.5 pixel offset from the position, we add
   // it to the texture coordinates - because frustumRay is associated with
   // the position output.
-#if !SM4
+
   texCoord.xy += 0.5f / viewportSize;
-#endif
+
   
   position.xy = position.xy * float2(2, -2) - float2(1, -1);
   
@@ -283,4 +283,4 @@ float3 DeriveNormal(float3 position)
 {
   return normalize(cross(ddy(position), ddx(position)));
 }
-#endif
+

@@ -3,11 +3,11 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-#if WP7 || XBOX
+
 using System.Diagnostics;
 #else
 using DigitalRune.Diagnostics;
-#endif
+
 
 
 namespace DigitalRune.Game.Timing
@@ -39,11 +39,11 @@ namespace DigitalRune.Game.Timing
     // TimeEventArgs object is reused to avoid unnecessary memory allocations.
     private readonly GameClockEventArgs _eventArgs = new GameClockEventArgs(); 
 
-#if WP7 || XBOX
+
     private readonly System.Diagnostics.Stopwatch _totalTimeWatch = new System.Diagnostics.Stopwatch();
 #else
     private readonly DigitalRune.Diagnostics.Stopwatch _totalTimeWatch = new DigitalRune.Diagnostics.Stopwatch();
-#endif
+
 
     private TimeSpan _lastTime;   // time of last TimeChangedEvent.
 

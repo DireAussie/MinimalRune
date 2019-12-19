@@ -14,7 +14,7 @@ using NUnit.Framework;
 namespace DigitalRune.Mathematics.Algebra.Tests
 {
   [TestFixture]
-  public class Matrix33FTest
+  public class MatrixTest
   {
     //           1, 2, 3
     // Matrix =  4, 5, 6
@@ -42,11 +42,11 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void Constants()
     {
-      Matrix33F zero = Matrix33F.Zero;
+      Matrix zero = Matrix.Zero;
       for (int i = 0; i < 9; i++)
         Assert.AreEqual(0.0, zero[i]);
 
-      Matrix33F one = Matrix33F.One;
+      Matrix one = Matrix.One;
       for (int i = 0; i < 9; i++)
         Assert.AreEqual(1.0f, one[i]);
     }
@@ -55,35 +55,35 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void Constructors()
     {
-      Matrix33F m = new Matrix33F(1.0f, 2.0f, 3.0f,
+      Matrix m = new Matrix(1.0f, 2.0f, 3.0f,
                                   4.0f, 5.0f, 6.0f,
                                   7.0f, 8.0f, 9.0f);
       for (int i = 0; i < 9; i++)
         Assert.AreEqual(rowMajor[i], m[i]);
 
-      m = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
+      m = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
       for (int i = 0; i < 9; i++)
         Assert.AreEqual(rowMajor[i], m[i]);
 
-      m = new Matrix33F(rowMajor, MatrixOrder.RowMajor);
+      m = new Matrix(rowMajor, MatrixOrder.RowMajor);
       for (int i = 0; i < 9; i++)
         Assert.AreEqual(rowMajor[i], m[i]);
 
-      m = new Matrix33F(new List<float>(columnMajor), MatrixOrder.ColumnMajor);
+      m = new Matrix(new List<float>(columnMajor), MatrixOrder.ColumnMajor);
       for (int i = 0; i < 9; i++)
         Assert.AreEqual(rowMajor[i], m[i]);
 
-      m = new Matrix33F(new List<float>(rowMajor), MatrixOrder.RowMajor);
+      m = new Matrix(new List<float>(rowMajor), MatrixOrder.RowMajor);
       for (int i = 0; i < 9; i++)
         Assert.AreEqual(rowMajor[i], m[i]);
 
-      m = new Matrix33F(new float[3, 3] { { 1, 2, 3 }, 
+      m = new Matrix(new float[3, 3] { { 1, 2, 3 }, 
                                           { 4, 5, 6 }, 
                                           { 7, 8, 9 } });
       for (int i = 0; i < 9; i++)
         Assert.AreEqual(rowMajor[i], m[i]);
 
-      m = new Matrix33F(new float[3][] { new float[3] { 1, 2, 3 }, 
+      m = new Matrix(new float[3][] { new float[3] { 1, 2, 3 }, 
                                          new float[3] { 4, 5, 6 }, 
                                          new float[3] { 7, 8, 9 } });
       for (int i = 0; i < 9; i++)
@@ -95,7 +95,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(NullReferenceException))]
     public void ConstructorException1()
     {
-      new Matrix33F(new float[3][]);
+      new Matrix(new float[3][]);
     }
 
 
@@ -106,14 +106,14 @@ namespace DigitalRune.Mathematics.Algebra.Tests
       float[][] elements = new float[3][];
       elements[0] = new float[3];
       elements[1] = new float[2];
-      new Matrix33F(elements);
+      new Matrix(elements);
     }
 
 
     [Test]
     public void Properties()
     {
-      Matrix33F m = new Matrix33F(rowMajor, MatrixOrder.RowMajor);
+      Matrix m = new Matrix(rowMajor, MatrixOrder.RowMajor);
       Assert.AreEqual(1.0f, m.M00);
       Assert.AreEqual(2.0f, m.M01);
       Assert.AreEqual(3.0f, m.M02);
@@ -124,7 +124,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
       Assert.AreEqual(8.0f, m.M21);
       Assert.AreEqual(9.0f, m.M22);
 
-      m = Matrix33F.Zero;
+      m = Matrix.Zero;
       m.M00 = 1.0f;
       m.M01 = 2.0f;
       m.M02 = 3.0f;
@@ -134,21 +134,21 @@ namespace DigitalRune.Mathematics.Algebra.Tests
       m.M20 = 7.0f;
       m.M21 = 8.0f;
       m.M22 = 9.0f;
-      Assert.AreEqual(new Matrix33F(rowMajor, MatrixOrder.RowMajor), m);
+      Assert.AreEqual(new Matrix(rowMajor, MatrixOrder.RowMajor), m);
     }
 
 
     [Test]
     public void Indexer1d()
     {
-      Matrix33F m = new Matrix33F(rowMajor, MatrixOrder.RowMajor);
+      Matrix m = new Matrix(rowMajor, MatrixOrder.RowMajor);
       for (int i = 0; i < 9; i++)
         Assert.AreEqual(rowMajor[i], m[i]);
 
-      m = Matrix33F.Zero;
+      m = Matrix.Zero;
       for (int i = 0; i < 9; i++)
         m[i] = rowMajor[i];
-      Assert.AreEqual(new Matrix33F(rowMajor, MatrixOrder.RowMajor), m);
+      Assert.AreEqual(new Matrix(rowMajor, MatrixOrder.RowMajor), m);
     }
 
 
@@ -156,7 +156,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void Indexer1dException()
     {
-      Matrix33F m = new Matrix33F();
+      Matrix m = new Matrix();
       m[-1] = 0.0f;
     }
 
@@ -165,7 +165,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void Indexer1dException2()
     {
-      Matrix33F m = new Matrix33F();
+      Matrix m = new Matrix();
       m[9] = 0.0f;
     }
 
@@ -174,7 +174,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void Indexer1dException3()
     {
-      Matrix33F m = new Matrix33F();
+      Matrix m = new Matrix();
       float x = m[-1];
     }
 
@@ -183,7 +183,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void Indexer1dException4()
     {
-      Matrix33F m = new Matrix33F();
+      Matrix m = new Matrix();
       float x = m[9];
     }
 
@@ -191,15 +191,15 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void Indexer2d()
     {
-      Matrix33F m = new Matrix33F(rowMajor, MatrixOrder.RowMajor);
+      Matrix m = new Matrix(rowMajor, MatrixOrder.RowMajor);
       for (int column = 0; column < 3; column++)
         for (int row = 0; row < 3; row++)
           Assert.AreEqual(columnMajor[column * 3 + row], m[row, column]);
-      m = Matrix33F.Zero;
+      m = Matrix.Zero;
       for (int column = 0; column < 3; column++)
         for (int row = 0; row < 3; row++)
           m[row, column] = (float) (row * 3 + column + 1);
-      Assert.AreEqual(new Matrix33F(rowMajor, MatrixOrder.RowMajor), m);
+      Assert.AreEqual(new Matrix(rowMajor, MatrixOrder.RowMajor), m);
     }
 
 
@@ -207,7 +207,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void Indexer2dException()
     {
-      Matrix33F m = Matrix33F.Zero;
+      Matrix m = Matrix.Zero;
       m[0, 3] = 1.0f;
     }
 
@@ -216,7 +216,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void Indexer2dException2()
     {
-      Matrix33F m = Matrix33F.Zero;
+      Matrix m = Matrix.Zero;
       m[3, 0] = 1.0f;
     }
 
@@ -225,7 +225,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void Indexer2dException3()
     {
-      Matrix33F m = Matrix33F.Zero;
+      Matrix m = Matrix.Zero;
       m[0, -1] = 1.0f;
     }
 
@@ -234,7 +234,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void Indexer2dException4()
     {
-      Matrix33F m = Matrix33F.Zero;
+      Matrix m = Matrix.Zero;
       m[-1, 0] = 1.0f;
     }
 
@@ -243,7 +243,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void Indexer2dException5()
     {
-      Matrix33F m = Matrix33F.Zero;
+      Matrix m = Matrix.Zero;
       m[1, 3] = 1.0f;
     }
 
@@ -252,7 +252,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void Indexer2dException6()
     {
-      Matrix33F m = Matrix33F.Zero;
+      Matrix m = Matrix.Zero;
       m[2, 3] = 1.0f;
     }
 
@@ -261,7 +261,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void Indexer2dException7()
     {
-      Matrix33F m = Matrix33F.Zero;
+      Matrix m = Matrix.Zero;
       m[3, 1] = 1.0f;
     }
 
@@ -270,7 +270,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void Indexer2dException8()
     {
-      Matrix33F m = Matrix33F.Zero;
+      Matrix m = Matrix.Zero;
       m[3, 2] = 1.0f;
     }
 
@@ -279,7 +279,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void Indexer2dException9()
     {
-      Matrix33F m = Matrix33F.Zero;
+      Matrix m = Matrix.Zero;
       float x = m[0, 3];
     }
 
@@ -288,7 +288,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void Indexer2dException10()
     {
-      Matrix33F m = Matrix33F.Zero;
+      Matrix m = Matrix.Zero;
       float x = m[3, 0];
     }
 
@@ -297,7 +297,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void Indexer2dException11()
     {
-      Matrix33F m = Matrix33F.Zero;
+      Matrix m = Matrix.Zero;
       float x = m[0, -1];
     }
 
@@ -306,7 +306,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void Indexer2dException12()
     {
-      Matrix33F m = Matrix33F.Zero;
+      Matrix m = Matrix.Zero;
       float x = m[-1, 0];
     }
 
@@ -315,7 +315,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void Indexer2dException13()
     {
-      Matrix33F m = Matrix33F.Zero;
+      Matrix m = Matrix.Zero;
       float x = m[3, 1];
     }
 
@@ -324,7 +324,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void Indexer2dException14()
     {
-      Matrix33F m = Matrix33F.Zero;
+      Matrix m = Matrix.Zero;
       float x = m[3, 2];
     }
 
@@ -333,7 +333,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void Indexer2dException15()
     {
-      Matrix33F m = Matrix33F.Zero;
+      Matrix m = Matrix.Zero;
       float x = m[1, 3];
     }
 
@@ -342,7 +342,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void Indexer2dException16()
     {
-      Matrix33F m = Matrix33F.Zero;
+      Matrix m = Matrix.Zero;
       float x = m[2, 3];
     }
 
@@ -350,11 +350,11 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void Determinant()
     {
-      Matrix33F m = new Matrix33F(rowMajor, MatrixOrder.RowMajor);
+      Matrix m = new Matrix(rowMajor, MatrixOrder.RowMajor);
       Assert.AreEqual(0.0, m.Determinant);
-      Assert.AreEqual(0.0, Matrix33F.Zero.Determinant);
-      Assert.AreEqual(0.0, Matrix33F.One.Determinant);
-      Assert.AreEqual(1.0f, Matrix33F.Identity.Determinant);
+      Assert.AreEqual(0.0, Matrix.Zero.Determinant);
+      Assert.AreEqual(0.0, Matrix.One.Determinant);
+      Assert.AreEqual(1.0f, Matrix.Identity.Determinant);
     }
 
 
@@ -363,13 +363,13 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     {
       const int numberOfRows = 3;
       const int numberOfColumns = 3;
-      Assert.IsFalse(new Matrix33F().IsNaN);
+      Assert.IsFalse(new Matrix().IsNaN);
 
       for (int r = 0; r < numberOfRows; r++)
       {
         for (int c = 0; c < numberOfColumns; c++)
         {
-          Matrix33F m = new Matrix33F();
+          Matrix m = new Matrix();
           m[r, c] = float.NaN;
           Assert.IsTrue(m.IsNaN);
         }
@@ -380,27 +380,27 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void IsOrthogonal()
     {
-      Assert.IsTrue(!Matrix33F.Zero.IsOrthogonal);
-      Assert.IsTrue(Matrix33F.Identity.IsOrthogonal);
-      Assert.IsTrue(Matrix33F.CreateRotation(new Vector3F(1, 2, 3).Normalized, 0.5f).IsOrthogonal);
-      Assert.IsTrue(new Matrix33F(1, 0, 0, 0, 1, 0, 0, 0, -1).IsOrthogonal);
+      Assert.IsTrue(!Matrix.Zero.IsOrthogonal);
+      Assert.IsTrue(Matrix.Identity.IsOrthogonal);
+      Assert.IsTrue(Matrix.CreateRotation(new Vector3(1, 2, 3).Normalized, 0.5f).IsOrthogonal);
+      Assert.IsTrue(new Matrix(1, 0, 0, 0, 1, 0, 0, 0, -1).IsOrthogonal);
     }
 
 
     [Test]
     public void IsRotation()
     {
-      Assert.IsTrue(!Matrix33F.Zero.IsRotation);
-      Assert.IsTrue(Matrix33F.Identity.IsRotation);
-      Assert.IsTrue(Matrix33F.CreateRotation(new Vector3F(1, 2, 3).Normalized, 0.5f).IsRotation);
-      Assert.IsTrue(!new Matrix33F(1, 0, 0, 0, 1, 0, 0, 0, -1).IsRotation);
+      Assert.IsTrue(!Matrix.Zero.IsRotation);
+      Assert.IsTrue(Matrix.Identity.IsRotation);
+      Assert.IsTrue(Matrix.CreateRotation(new Vector3(1, 2, 3).Normalized, 0.5f).IsRotation);
+      Assert.IsTrue(!new Matrix(1, 0, 0, 0, 1, 0, 0, 0, -1).IsRotation);
     }
 
 
     [Test]
     public void Orthogonalize()
     {
-      var m = Matrix33F.CreateRotationX(0.1f) * Matrix33F.CreateRotationY(20) * Matrix33F.CreateRotationZ(1000);
+      var m = Matrix.CreateRotationX(0.1f) * Matrix.CreateRotationY(20) * Matrix.CreateRotationZ(1000);
 
       // Introduce error.
       m.M01 += 0.1f;
@@ -417,19 +417,19 @@ namespace DigitalRune.Mathematics.Algebra.Tests
       // Orthogonalizing and orthogonal matrix does not change the matrix.
       var n = m;
       n.Orthogonalize();
-      Assert.IsTrue(Matrix33F.AreNumericallyEqual(m, n));
+      Assert.IsTrue(Matrix.AreNumericallyEqual(m, n));
     }
 
 
     [Test]
     public void IsSymmetric()
     {
-      Matrix33F m = new Matrix33F(new float[3, 3] { { 1, 2, 3 }, 
+      Matrix m = new Matrix(new float[3, 3] { { 1, 2, 3 }, 
                                                     { 2, 4, 5 }, 
                                                     { 3, 5, 7 } });
       Assert.AreEqual(true, m.IsSymmetric);
 
-      m = new Matrix33F(new float[3, 3] { { 1, 2, 3 }, 
+      m = new Matrix(new float[3, 3] { { 1, 2, 3 }, 
                                           { 4, 5, 2 }, 
                                           { 7, 4, 1 } });
       Assert.AreEqual(false, m.IsSymmetric);
@@ -439,7 +439,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void Trace()
     {
-      Matrix33F m = new Matrix33F(new float[3, 3] { { 1, 2, 3 }, 
+      Matrix m = new Matrix(new float[3, 3] { { 1, 2, 3 }, 
                                                     { 2, 4, 5 }, 
                                                     { 3, 5, 7 } });
       Assert.AreEqual(12, m.Trace);
@@ -449,51 +449,51 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void Transposed()
     {
-      Matrix33F m = new Matrix33F(rowMajor, MatrixOrder.RowMajor);
-      Matrix33F mt = new Matrix33F(rowMajor, MatrixOrder.ColumnMajor);
+      Matrix m = new Matrix(rowMajor, MatrixOrder.RowMajor);
+      Matrix mt = new Matrix(rowMajor, MatrixOrder.ColumnMajor);
       Assert.AreEqual(mt, m.Transposed);
-      Assert.AreEqual(Matrix33F.Identity, Matrix33F.Identity.Transposed);
+      Assert.AreEqual(Matrix.Identity, Matrix.Identity.Transposed);
     }
 
 
     [Test]
     public void Transpose()
     {
-      Matrix33F m = new Matrix33F(rowMajor, MatrixOrder.RowMajor);
+      Matrix m = new Matrix(rowMajor, MatrixOrder.RowMajor);
       m.Transpose();
-      Matrix33F mt = new Matrix33F(rowMajor, MatrixOrder.ColumnMajor);
+      Matrix mt = new Matrix(rowMajor, MatrixOrder.ColumnMajor);
       Assert.AreEqual(mt, m);
-      Matrix33F i = Matrix33F.Identity;
+      Matrix i = Matrix.Identity;
       i.Transpose();
-      Assert.AreEqual(Matrix33F.Identity, i);
+      Assert.AreEqual(Matrix.Identity, i);
     }
 
 
     [Test]
     public void Inverse()
     {
-      Assert.AreEqual(Matrix33F.Identity, Matrix33F.Identity.Inverse);
+      Assert.AreEqual(Matrix.Identity, Matrix.Identity.Inverse);
 
-      Matrix33F m = new Matrix33F(1, 2, 3,
+      Matrix m = new Matrix(1, 2, 3,
                                   2, 5, 8,
                                   7, 6, -1);
-      Vector3F v = Vector3F.One;
-      Vector3F w = m * v;
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(v, m.Inverse * w));
-      Assert.IsTrue(Matrix33F.AreNumericallyEqual(Matrix33F.Identity, m * m.Inverse));
+      Vector3 v = Vector3.One;
+      Vector3 w = m * v;
+      Assert.IsTrue(Vector3.AreNumericallyEqual(v, m.Inverse * w));
+      Assert.IsTrue(Matrix.AreNumericallyEqual(Matrix.Identity, m * m.Inverse));
     }
 
 
     [Test]
     public void InverseWithNearSingularMatrix()
     {
-      Matrix33F m = new Matrix33F(0.0001f, 0, 0,
+      Matrix m = new Matrix(0.0001f, 0, 0,
                                   0, 0.0001f, 0,
                                   0, 0, 0.0001f);
-      Vector3F v = Vector3F.One;
-      Vector3F w = m * v;
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(v, m.Inverse * w));
-      Assert.IsTrue(Matrix33F.AreNumericallyEqual(Matrix33F.Identity, m * m.Inverse));
+      Vector3 v = Vector3.One;
+      Vector3 w = m * v;
+      Assert.IsTrue(Vector3.AreNumericallyEqual(v, m.Inverse * w));
+      Assert.IsTrue(Matrix.AreNumericallyEqual(Matrix.Identity, m * m.Inverse));
     }
 
 
@@ -501,7 +501,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(MathematicsException))]
     public void InverseException()
     {
-      Matrix33F m = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
+      Matrix m = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
       m = m.Inverse;
     }
 
@@ -510,24 +510,24 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(MathematicsException))]
     public void InverseException2()
     {
-      Matrix33F m = Matrix33F.Zero.Inverse;
+      Matrix m = Matrix.Zero.Inverse;
     }
 
 
     [Test]
     public void Invert()
     {
-      Assert.AreEqual(Matrix33F.Identity, Matrix33F.Identity.Inverse);
+      Assert.AreEqual(Matrix.Identity, Matrix.Identity.Inverse);
 
-      Matrix33F m = new Matrix33F(1, 2, 3,
+      Matrix m = new Matrix(1, 2, 3,
                                   2, 5, 8,
                                   7, 6, -1);
-      Vector3F v = Vector3F.One;
-      Vector3F w = m * v;
-      Matrix33F im = m;
+      Vector3 v = Vector3.One;
+      Vector3 w = m * v;
+      Matrix im = m;
       im.Invert();
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(v, im * w));
-      Assert.IsTrue(Matrix33F.AreNumericallyEqual(Matrix33F.Identity, m * im));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(v, im * w));
+      Assert.IsTrue(Matrix.AreNumericallyEqual(Matrix.Identity, m * im));
     }
 
 
@@ -535,7 +535,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(MathematicsException))]
     public void InvertException()
     {
-      Matrix33F m = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
+      Matrix m = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
       m.Invert();
     }
 
@@ -544,17 +544,17 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(MathematicsException))]
     public void InvertException2()
     {
-      Matrix33F.Zero.Invert();
+      Matrix.Zero.Invert();
     }
 
 
     [Test]
     public void GetColumn()
     {
-      Matrix33F m = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
-      Assert.AreEqual(new Vector3F(1.0f, 4.0f, 7.0f), m.GetColumn(0));
-      Assert.AreEqual(new Vector3F(2.0f, 5.0f, 8.0f), m.GetColumn(1));
-      Assert.AreEqual(new Vector3F(3.0f, 6.0f, 9.0f), m.GetColumn(2));
+      Matrix m = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
+      Assert.AreEqual(new Vector3(1.0f, 4.0f, 7.0f), m.GetColumn(0));
+      Assert.AreEqual(new Vector3(2.0f, 5.0f, 8.0f), m.GetColumn(1));
+      Assert.AreEqual(new Vector3(3.0f, 6.0f, 9.0f), m.GetColumn(2));
     }
 
 
@@ -562,7 +562,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void GetColumnException1()
     {
-      Matrix33F m = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
+      Matrix m = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
       m.GetColumn(-1);
     }
 
@@ -571,7 +571,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void GetColumnException2()
     {
-      Matrix33F m = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
+      Matrix m = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
       m.GetColumn(3);
     }
 
@@ -579,21 +579,21 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void SetColumn()
     {
-      Matrix33F m = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
-      m.SetColumn(0, new Vector3F(0.1f, 0.2f, 0.3f));
-      Assert.AreEqual(new Vector3F(0.1f, 0.2f, 0.3f), m.GetColumn(0));
-      Assert.AreEqual(new Vector3F(2.0f, 5.0f, 8.0f), m.GetColumn(1));
-      Assert.AreEqual(new Vector3F(3.0f, 6.0f, 9.0f), m.GetColumn(2));
+      Matrix m = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
+      m.SetColumn(0, new Vector3(0.1f, 0.2f, 0.3f));
+      Assert.AreEqual(new Vector3(0.1f, 0.2f, 0.3f), m.GetColumn(0));
+      Assert.AreEqual(new Vector3(2.0f, 5.0f, 8.0f), m.GetColumn(1));
+      Assert.AreEqual(new Vector3(3.0f, 6.0f, 9.0f), m.GetColumn(2));
 
-      m.SetColumn(1, new Vector3F(0.4f, 0.5f, 0.6f));
-      Assert.AreEqual(new Vector3F(0.1f, 0.2f, 0.3f), m.GetColumn(0));
-      Assert.AreEqual(new Vector3F(0.4f, 0.5f, 0.6f), m.GetColumn(1));
-      Assert.AreEqual(new Vector3F(3.0f, 6.0f, 9.0f), m.GetColumn(2));
+      m.SetColumn(1, new Vector3(0.4f, 0.5f, 0.6f));
+      Assert.AreEqual(new Vector3(0.1f, 0.2f, 0.3f), m.GetColumn(0));
+      Assert.AreEqual(new Vector3(0.4f, 0.5f, 0.6f), m.GetColumn(1));
+      Assert.AreEqual(new Vector3(3.0f, 6.0f, 9.0f), m.GetColumn(2));
 
-      m.SetColumn(2, new Vector3F(0.7f, 0.8f, 0.9f));
-      Assert.AreEqual(new Vector3F(0.1f, 0.2f, 0.3f), m.GetColumn(0));
-      Assert.AreEqual(new Vector3F(0.4f, 0.5f, 0.6f), m.GetColumn(1));
-      Assert.AreEqual(new Vector3F(0.7f, 0.8f, 0.9f), m.GetColumn(2));
+      m.SetColumn(2, new Vector3(0.7f, 0.8f, 0.9f));
+      Assert.AreEqual(new Vector3(0.1f, 0.2f, 0.3f), m.GetColumn(0));
+      Assert.AreEqual(new Vector3(0.4f, 0.5f, 0.6f), m.GetColumn(1));
+      Assert.AreEqual(new Vector3(0.7f, 0.8f, 0.9f), m.GetColumn(2));
     }
 
 
@@ -601,8 +601,8 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void SetColumnException1()
     {
-      Matrix33F m = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
-      m.SetColumn(-1, Vector3F.One);
+      Matrix m = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
+      m.SetColumn(-1, Vector3.One);
     }
 
 
@@ -610,18 +610,18 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void SetColumnException2()
     {
-      Matrix33F m = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
-      m.SetColumn(3, Vector3F.One);
+      Matrix m = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
+      m.SetColumn(3, Vector3.One);
     }
 
 
     [Test]
     public void GetRow()
     {
-      Matrix33F m = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
-      Assert.AreEqual(new Vector3F(1.0f, 2.0f, 3.0f), m.GetRow(0));
-      Assert.AreEqual(new Vector3F(4.0f, 5.0f, 6.0f), m.GetRow(1));
-      Assert.AreEqual(new Vector3F(7.0f, 8.0f, 9.0f), m.GetRow(2));
+      Matrix m = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
+      Assert.AreEqual(new Vector3(1.0f, 2.0f, 3.0f), m.GetRow(0));
+      Assert.AreEqual(new Vector3(4.0f, 5.0f, 6.0f), m.GetRow(1));
+      Assert.AreEqual(new Vector3(7.0f, 8.0f, 9.0f), m.GetRow(2));
     }
 
 
@@ -629,7 +629,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void GetRowException1()
     {
-      Matrix33F m = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
+      Matrix m = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
       m.GetRow(-1);
     }
 
@@ -638,7 +638,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void GetRowException2()
     {
-      Matrix33F m = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
+      Matrix m = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
       m.GetRow(3);
     }
 
@@ -646,21 +646,21 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void SetRow()
     {
-      Matrix33F m = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
-      m.SetRow(0, new Vector3F(0.1f, 0.2f, 0.3f));
-      Assert.AreEqual(new Vector3F(0.1f, 0.2f, 0.3f), m.GetRow(0));
-      Assert.AreEqual(new Vector3F(4.0f, 5.0f, 6.0f), m.GetRow(1));
-      Assert.AreEqual(new Vector3F(7.0f, 8.0f, 9.0f), m.GetRow(2));
+      Matrix m = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
+      m.SetRow(0, new Vector3(0.1f, 0.2f, 0.3f));
+      Assert.AreEqual(new Vector3(0.1f, 0.2f, 0.3f), m.GetRow(0));
+      Assert.AreEqual(new Vector3(4.0f, 5.0f, 6.0f), m.GetRow(1));
+      Assert.AreEqual(new Vector3(7.0f, 8.0f, 9.0f), m.GetRow(2));
 
-      m.SetRow(1, new Vector3F(0.4f, 0.5f, 0.6f));
-      Assert.AreEqual(new Vector3F(0.1f, 0.2f, 0.3f), m.GetRow(0));
-      Assert.AreEqual(new Vector3F(0.4f, 0.5f, 0.6f), m.GetRow(1));
-      Assert.AreEqual(new Vector3F(7.0f, 8.0f, 9.0f), m.GetRow(2));
+      m.SetRow(1, new Vector3(0.4f, 0.5f, 0.6f));
+      Assert.AreEqual(new Vector3(0.1f, 0.2f, 0.3f), m.GetRow(0));
+      Assert.AreEqual(new Vector3(0.4f, 0.5f, 0.6f), m.GetRow(1));
+      Assert.AreEqual(new Vector3(7.0f, 8.0f, 9.0f), m.GetRow(2));
 
-      m.SetRow(2, new Vector3F(0.7f, 0.8f, 0.9f));
-      Assert.AreEqual(new Vector3F(0.1f, 0.2f, 0.3f), m.GetRow(0));
-      Assert.AreEqual(new Vector3F(0.4f, 0.5f, 0.6f), m.GetRow(1));
-      Assert.AreEqual(new Vector3F(0.7f, 0.8f, 0.9f), m.GetRow(2));
+      m.SetRow(2, new Vector3(0.7f, 0.8f, 0.9f));
+      Assert.AreEqual(new Vector3(0.1f, 0.2f, 0.3f), m.GetRow(0));
+      Assert.AreEqual(new Vector3(0.4f, 0.5f, 0.6f), m.GetRow(1));
+      Assert.AreEqual(new Vector3(0.7f, 0.8f, 0.9f), m.GetRow(2));
     }
 
 
@@ -668,8 +668,8 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void SetRowException1()
     {
-      Matrix33F m = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
-      m.SetRow(-1, Vector3F.One);
+      Matrix m = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
+      m.SetRow(-1, Vector3.One);
     }
 
 
@@ -677,8 +677,8 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void SetRowException2()
     {
-      Matrix33F m = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
-      m.SetRow(3, Vector3F.One);
+      Matrix m = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
+      m.SetRow(3, Vector3.One);
     }
 
 
@@ -688,15 +688,15 @@ namespace DigitalRune.Mathematics.Algebra.Tests
       float originalEpsilon = Numeric.EpsilonF;
       Numeric.EpsilonF = 1e-8f;
 
-      Matrix33F m0 = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
-      Matrix33F m1 = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
-      m1 += new Matrix33F(0.000001f);
-      Matrix33F m2 = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
-      m2 += new Matrix33F(0.00000001f);
+      Matrix m0 = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
+      Matrix m1 = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
+      m1 += new Matrix(0.000001f);
+      Matrix m2 = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
+      m2 += new Matrix(0.00000001f);
 
-      Assert.IsTrue(Matrix33F.AreNumericallyEqual(m0, m0));
-      Assert.IsFalse(Matrix33F.AreNumericallyEqual(m0, m1));
-      Assert.IsTrue(Matrix33F.AreNumericallyEqual(m0, m2));
+      Assert.IsTrue(Matrix.AreNumericallyEqual(m0, m0));
+      Assert.IsFalse(Matrix.AreNumericallyEqual(m0, m1));
+      Assert.IsTrue(Matrix.AreNumericallyEqual(m0, m2));
 
       Numeric.EpsilonF = originalEpsilon;
     }
@@ -706,34 +706,34 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     public void AreEqualWithEpsilon()
     {
       float epsilon = 0.001f;
-      Matrix33F m0 = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
-      Matrix33F m1 = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
-      m1 += new Matrix33F(0.002f);
-      Matrix33F m2 = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
-      m2 += new Matrix33F(0.0001f);
+      Matrix m0 = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
+      Matrix m1 = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
+      m1 += new Matrix(0.002f);
+      Matrix m2 = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
+      m2 += new Matrix(0.0001f);
 
-      Assert.IsTrue(Matrix33F.AreNumericallyEqual(m0, m0, epsilon));
-      Assert.IsFalse(Matrix33F.AreNumericallyEqual(m0, m1, epsilon));
-      Assert.IsTrue(Matrix33F.AreNumericallyEqual(m0, m2, epsilon));
+      Assert.IsTrue(Matrix.AreNumericallyEqual(m0, m0, epsilon));
+      Assert.IsFalse(Matrix.AreNumericallyEqual(m0, m1, epsilon));
+      Assert.IsTrue(Matrix.AreNumericallyEqual(m0, m2, epsilon));
     }
 
 
     [Test]
     public void CreateScale()
     {
-      Matrix33F i = Matrix33F.CreateScale(1.0f);
-      Assert.AreEqual(Matrix33F.Identity, i);
+      Matrix i = Matrix.CreateScale(1.0f);
+      Assert.AreEqual(Matrix.Identity, i);
 
-      Vector3F v = Vector3F.One;
-      Matrix33F m = Matrix33F.CreateScale(2.0f);
+      Vector3 v = Vector3.One;
+      Matrix m = Matrix.CreateScale(2.0f);
       Assert.AreEqual(2 * v, m * v);
 
-      m = Matrix33F.CreateScale(-1.0f, 1.5f, 2.0f);
-      Assert.AreEqual(new Vector3F(-1.0f, 1.5f, 2.0f), m * v);
+      m = Matrix.CreateScale(-1.0f, 1.5f, 2.0f);
+      Assert.AreEqual(new Vector3(-1.0f, 1.5f, 2.0f), m * v);
 
-      Vector3F scale = new Vector3F(-2.0f, -3.0f, -4.0f);
-      m = Matrix33F.CreateScale(scale);
-      v = new Vector3F(1.0f, 2.0f, 3.0f);
+      Vector3 scale = new Vector3(-2.0f, -3.0f, -4.0f);
+      m = Matrix.CreateScale(scale);
+      v = new Vector3(1.0f, 2.0f, 3.0f);
       Assert.AreEqual(v * scale, m * v);
     }
 
@@ -741,17 +741,17 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void CreateRotation()
     {
-      Matrix33F m = Matrix33F.CreateRotation(Vector3F.UnitX, 0.0f);
-      Assert.AreEqual(Matrix33F.Identity, m);
+      Matrix m = Matrix.CreateRotation(Vector3.UnitX, 0.0f);
+      Assert.AreEqual(Matrix.Identity, m);
 
-      m = Matrix33F.CreateRotation(Vector3F.UnitX, (float) Math.PI / 2);
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(Vector3F.UnitZ, m * Vector3F.UnitY));
+      m = Matrix.CreateRotation(Vector3.UnitX, (float) Math.PI / 2);
+      Assert.IsTrue(Vector3.AreNumericallyEqual(Vector3.UnitZ, m * Vector3.UnitY));
 
-      m = Matrix33F.CreateRotation(Vector3F.UnitY, (float) Math.PI / 2);
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(Vector3F.UnitX, m * Vector3F.UnitZ));
+      m = Matrix.CreateRotation(Vector3.UnitY, (float) Math.PI / 2);
+      Assert.IsTrue(Vector3.AreNumericallyEqual(Vector3.UnitX, m * Vector3.UnitZ));
 
-      m = Matrix33F.CreateRotation(Vector3F.UnitZ, (float) Math.PI / 2);
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(Vector3F.UnitY, m * Vector3F.UnitX));
+      m = Matrix.CreateRotation(Vector3.UnitZ, (float) Math.PI / 2);
+      Assert.IsTrue(Vector3.AreNumericallyEqual(Vector3.UnitY, m * Vector3.UnitX));
     }
 
 
@@ -759,7 +759,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [ExpectedException(typeof(ArgumentException))]
     public void CreateRotationException()
     {
-      Matrix33F.CreateRotation(Vector3F.Zero, 1f);
+      Matrix.CreateRotation(Vector3.Zero, 1f);
     }
 
 
@@ -767,13 +767,13 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     public void CreateRotationX()
     {
       float angle = (float) MathHelper.ToRadians(30.0f);
-      Matrix33F m = Matrix33F.CreateRotationX(angle);
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(new Vector3F(0, (float) Math.Cos(angle), (float) Math.Sin(angle)), m * Vector3F.UnitY));
+      Matrix m = Matrix.CreateRotationX(angle);
+      Assert.IsTrue(Vector3.AreNumericallyEqual(new Vector3(0, (float) Math.Cos(angle), (float) Math.Sin(angle)), m * Vector3.UnitY));
 
-      QuaternionF q = QuaternionF.CreateRotation(Vector3F.UnitX, angle);
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(q.Rotate(Vector3F.One), m * Vector3F.One));
+      Quaternion q = Quaternion.CreateRotation(Vector3.UnitX, angle);
+      Assert.IsTrue(Vector3.AreNumericallyEqual(q.Rotate(Vector3.One), m * Vector3.One));
 
-      Assert.IsTrue(Matrix33F.AreNumericallyEqual(Matrix33F.CreateRotation(Vector3F.UnitX, angle), m));
+      Assert.IsTrue(Matrix.AreNumericallyEqual(Matrix.CreateRotation(Vector3.UnitX, angle), m));
     }
 
 
@@ -781,13 +781,13 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     public void CreateRotationY()
     {
       float angle = (float) MathHelper.ToRadians(30);
-      Matrix33F m = Matrix33F.CreateRotationY(angle);
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(new Vector3F((float) Math.Sin(angle), 0, (float) Math.Cos(angle)), m * Vector3F.UnitZ));
+      Matrix m = Matrix.CreateRotationY(angle);
+      Assert.IsTrue(Vector3.AreNumericallyEqual(new Vector3((float) Math.Sin(angle), 0, (float) Math.Cos(angle)), m * Vector3.UnitZ));
 
-      QuaternionF q = QuaternionF.CreateRotation(Vector3F.UnitY, angle);
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(q.Rotate(Vector3F.One), m * Vector3F.One));
+      Quaternion q = Quaternion.CreateRotation(Vector3.UnitY, angle);
+      Assert.IsTrue(Vector3.AreNumericallyEqual(q.Rotate(Vector3.One), m * Vector3.One));
 
-      Assert.IsTrue(Matrix33F.AreNumericallyEqual(Matrix33F.CreateRotation(Vector3F.UnitY, angle), m));
+      Assert.IsTrue(Matrix.AreNumericallyEqual(Matrix.CreateRotation(Vector3.UnitY, angle), m));
     }
 
 
@@ -795,13 +795,13 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     public void CreateRotationZ()
     {
       float angle = (float) MathHelper.ToRadians(30);
-      Matrix33F m = Matrix33F.CreateRotationZ(angle);
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(new Vector3F((float) Math.Cos(angle), (float) Math.Sin(angle), 0), m * Vector3F.UnitX));
+      Matrix m = Matrix.CreateRotationZ(angle);
+      Assert.IsTrue(Vector3.AreNumericallyEqual(new Vector3((float) Math.Cos(angle), (float) Math.Sin(angle), 0), m * Vector3.UnitX));
 
-      QuaternionF q = QuaternionF.CreateRotation(Vector3F.UnitZ, angle);
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(q.Rotate(Vector3F.One), m * Vector3F.One));
+      Quaternion q = Quaternion.CreateRotation(Vector3.UnitZ, angle);
+      Assert.IsTrue(Vector3.AreNumericallyEqual(q.Rotate(Vector3.One), m * Vector3.One));
 
-      Assert.IsTrue(Matrix33F.AreNumericallyEqual(Matrix33F.CreateRotation(Vector3F.UnitZ, angle), m));
+      Assert.IsTrue(Matrix.AreNumericallyEqual(Matrix.CreateRotation(Vector3.UnitZ, angle), m));
     }
 
 
@@ -809,35 +809,35 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     public void FromQuaternion()
     {
       float angle = -1.6f;
-      Vector3F axis = new Vector3F(1.0f, 2.0f, -3.0f);
-      Matrix33F matrix = Matrix33F.CreateRotation(axis, angle);
-      QuaternionF q = QuaternionF.CreateRotation(axis, angle);
-      Matrix33F matrixFromQuaternion = Matrix33F.CreateRotation(q);
-      Vector3F v = new Vector3F(0.3f, -2.4f, 5.6f);
-      Vector3F result1 = matrix * v;
-      Vector3F result2 = matrixFromQuaternion * v;
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(result1, result2));
+      Vector3 axis = new Vector3(1.0f, 2.0f, -3.0f);
+      Matrix matrix = Matrix.CreateRotation(axis, angle);
+      Quaternion q = Quaternion.CreateRotation(axis, angle);
+      Matrix matrixFromQuaternion = Matrix.CreateRotation(q);
+      Vector3 v = new Vector3(0.3f, -2.4f, 5.6f);
+      Vector3 result1 = matrix * v;
+      Vector3 result2 = matrixFromQuaternion * v;
+      Assert.IsTrue(Vector3.AreNumericallyEqual(result1, result2));
     }
 
 
     [Test]
     public void HashCode()
     {
-      Matrix33F m = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
-      Assert.AreNotEqual(Matrix33F.Identity.GetHashCode(), m.GetHashCode());
+      Matrix m = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
+      Assert.AreNotEqual(Matrix.Identity.GetHashCode(), m.GetHashCode());
     }
 
 
     [Test]
     public void TestEquals()
     {
-      Matrix33F m1 = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
-      Matrix33F m2 = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
+      Matrix m1 = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
+      Matrix m2 = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
       Assert.IsTrue(m1.Equals(m1));
       Assert.IsTrue(m1.Equals(m2));
       for (int i = 0; i < 9; i++)
       {
-        m2 = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
+        m2 = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
         m2[i] += 0.1f;
         Assert.IsFalse(m1.Equals(m2));
       }
@@ -849,13 +849,13 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void EqualityOperators()
     {
-      Matrix33F m1 = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
-      Matrix33F m2 = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
+      Matrix m1 = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
+      Matrix m2 = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
       Assert.IsTrue(m1 == m2);
       Assert.IsFalse(m1 != m2);
       for (int i = 0; i < 9; i++)
       {
-        m2 = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
+        m2 = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
         m2[i] += 0.1f;
         Assert.IsFalse(m1 == m2);
         Assert.IsTrue(m1 != m2);
@@ -866,7 +866,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void TestToString()
     {
-      Matrix33F m = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
+      Matrix m = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
       Assert.IsFalse(String.IsNullOrEmpty(m.ToString()));
     }
 
@@ -874,7 +874,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void NegationOperator()
     {
-      Matrix33F m = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
+      Matrix m = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
       for (int i = 0; i < 9; i++)
         Assert.AreEqual(-rowMajor[i], (-m)[i]);
     }
@@ -883,18 +883,18 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void Negation()
     {
-      Matrix33F m = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
+      Matrix m = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
       for (int i = 0; i < 9; i++)
-        Assert.AreEqual(-rowMajor[i], Matrix33F.Negate(m)[i]);
+        Assert.AreEqual(-rowMajor[i], Matrix.Negate(m)[i]);
     }
 
 
     [Test]
     public void AdditionOperator()
     {
-      Matrix33F m1 = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
-      Matrix33F m2 = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor) * 3;
-      Matrix33F result = m1 + m2;
+      Matrix m1 = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
+      Matrix m2 = new Matrix(columnMajor, MatrixOrder.ColumnMajor) * 3;
+      Matrix result = m1 + m2;
       for (int i = 0; i < 9; i++)
         Assert.AreEqual(rowMajor[i] * 4, result[i]);
     }
@@ -903,9 +903,9 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void Addition()
     {
-      Matrix33F m1 = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
-      Matrix33F m2 = Matrix33F.One;
-      Matrix33F result = Matrix33F.Add(m1, m2);
+      Matrix m1 = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
+      Matrix m2 = Matrix.One;
+      Matrix result = Matrix.Add(m1, m2);
       for (int i = 0; i < 9; i++)
         Assert.AreEqual(rowMajor[i] + 1.0f, result[i]);
     }
@@ -914,9 +914,9 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void SubtractionOperator()
     {
-      Matrix33F m1 = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
-      Matrix33F m2 = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor) * 3;
-      Matrix33F result = m1 - m2;
+      Matrix m1 = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
+      Matrix m2 = new Matrix(columnMajor, MatrixOrder.ColumnMajor) * 3;
+      Matrix result = m1 - m2;
       for (int i = 0; i < 9; i++)
         Assert.AreEqual(-rowMajor[i] * 2, result[i]);
     }
@@ -925,9 +925,9 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void Subtraction()
     {
-      Matrix33F m1 = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
-      Matrix33F m2 = Matrix33F.One;
-      Matrix33F result = Matrix33F.Subtract(m1, m2);
+      Matrix m1 = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
+      Matrix m2 = Matrix.One;
+      Matrix result = Matrix.Subtract(m1, m2);
       for (int i = 0; i < 9; i++)
         Assert.AreEqual(rowMajor[i] - 1.0f, result[i]);
     }
@@ -937,12 +937,12 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     public void MultiplicationOperator()
     {
       float s = 0.1234f;
-      Matrix33F m = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
+      Matrix m = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
       m = s * m;
       for (int i = 0; i < 9; i++)
         Assert.AreEqual(rowMajor[i] * s, m[i]);
 
-      m = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
+      m = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
       m = m * s;
       for (int i = 0; i < 9; i++)
         Assert.AreEqual(rowMajor[i] * s, m[i]);
@@ -953,8 +953,8 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     public void Multiplication()
     {
       float s = 0.1234f;
-      Matrix33F m = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
-      m = Matrix33F.Multiply(s, m);
+      Matrix m = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
+      m = Matrix.Multiply(s, m);
       for (int i = 0; i < 9; i++)
         Assert.AreEqual(rowMajor[i] * s, m[i]);
     }
@@ -964,7 +964,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     public void DivisionOperator()
     {
       float s = 0.1234f;
-      Matrix33F m = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
+      Matrix m = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
       m = m / s;
       for (int i = 0; i < 9; i++)
         Assert.IsTrue(Numeric.AreEqual(rowMajor[i] / s, m[i]));
@@ -975,8 +975,8 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     public void Division()
     {
       float s = 0.1234f;
-      Matrix33F m = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
-      m = Matrix33F.Divide(m, s);
+      Matrix m = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
+      m = Matrix.Divide(m, s);
       for (int i = 0; i < 9; i++)
         Assert.IsTrue(Numeric.AreEqual(rowMajor[i] / s, m[i]));
     }
@@ -985,92 +985,92 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void MultiplyMatrixOperator()
     {
-      Matrix33F m = new Matrix33F(12, 23, 45,
+      Matrix m = new Matrix(12, 23, 45,
                                 67, 89, 90,
                                 43, 65, 87);
-      Assert.AreEqual(Matrix33F.Zero, m * Matrix33F.Zero);
-      Assert.AreEqual(Matrix33F.Zero, Matrix33F.Zero * m);
-      Assert.AreEqual(m, m * Matrix33F.Identity);
-      Assert.AreEqual(m, Matrix33F.Identity * m);
-      Assert.IsTrue(Matrix33F.AreNumericallyEqual(Matrix33F.Identity, m * m.Inverse));
-      Assert.IsTrue(Matrix33F.AreNumericallyEqual(Matrix33F.Identity, m.Inverse * m));
+      Assert.AreEqual(Matrix.Zero, m * Matrix.Zero);
+      Assert.AreEqual(Matrix.Zero, Matrix.Zero * m);
+      Assert.AreEqual(m, m * Matrix.Identity);
+      Assert.AreEqual(m, Matrix.Identity * m);
+      Assert.IsTrue(Matrix.AreNumericallyEqual(Matrix.Identity, m * m.Inverse));
+      Assert.IsTrue(Matrix.AreNumericallyEqual(Matrix.Identity, m.Inverse * m));
 
-      Matrix33F m1 = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
-      Matrix33F m2 = new Matrix33F(12, 23, 45,
+      Matrix m1 = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
+      Matrix m2 = new Matrix(12, 23, 45,
                                  67, 89, 90,
                                  43, 65, 87);
-      Matrix33F result = m1 * m2;
+      Matrix result = m1 * m2;
       for (int column = 0; column < 3; column++)
         for (int row = 0; row < 3; row++)
-          Assert.AreEqual(Vector3F.Dot(m1.GetRow(row), m2.GetColumn(column)), result[row, column]);
+          Assert.AreEqual(Vector3.Dot(m1.GetRow(row), m2.GetColumn(column)), result[row, column]);
     }
 
 
     [Test]
     public void MultiplyMatrix()
     {
-      Matrix33F m = new Matrix33F(12, 23, 45,
+      Matrix m = new Matrix(12, 23, 45,
                                 67, 89, 90,
                                 43, 65, 87);
-      Assert.AreEqual(Matrix33F.Zero, Matrix33F.Multiply(m, Matrix33F.Zero));
-      Assert.AreEqual(Matrix33F.Zero, Matrix33F.Multiply(Matrix33F.Zero, m));
-      Assert.AreEqual(m, Matrix33F.Multiply(m, Matrix33F.Identity));
-      Assert.AreEqual(m, Matrix33F.Multiply(Matrix33F.Identity, m));
-      Assert.IsTrue(Matrix33F.AreNumericallyEqual(Matrix33F.Identity, Matrix33F.Multiply(m, m.Inverse)));
-      Assert.IsTrue(Matrix33F.AreNumericallyEqual(Matrix33F.Identity, Matrix33F.Multiply(m.Inverse, m)));
+      Assert.AreEqual(Matrix.Zero, Matrix.Multiply(m, Matrix.Zero));
+      Assert.AreEqual(Matrix.Zero, Matrix.Multiply(Matrix.Zero, m));
+      Assert.AreEqual(m, Matrix.Multiply(m, Matrix.Identity));
+      Assert.AreEqual(m, Matrix.Multiply(Matrix.Identity, m));
+      Assert.IsTrue(Matrix.AreNumericallyEqual(Matrix.Identity, Matrix.Multiply(m, m.Inverse)));
+      Assert.IsTrue(Matrix.AreNumericallyEqual(Matrix.Identity, Matrix.Multiply(m.Inverse, m)));
 
-      Matrix33F m1 = new Matrix33F(columnMajor, MatrixOrder.ColumnMajor);
-      Matrix33F m2 = new Matrix33F(12, 23, 45,
+      Matrix m1 = new Matrix(columnMajor, MatrixOrder.ColumnMajor);
+      Matrix m2 = new Matrix(12, 23, 45,
                                  67, 89, 90,
                                  43, 65, 87);
-      Matrix33F result = Matrix33F.Multiply(m1, m2);
+      Matrix result = Matrix.Multiply(m1, m2);
       for (int column = 0; column < 3; column++)
         for (int row = 0; row < 3; row++)
-          Assert.AreEqual(Vector3F.Dot(m1.GetRow(row), m2.GetColumn(column)), result[row, column]);
+          Assert.AreEqual(Vector3.Dot(m1.GetRow(row), m2.GetColumn(column)), result[row, column]);
     }
 
 
     [Test]
     public void MultiplyVectorOperator()
     {
-      Vector3F v = new Vector3F(2.34f, 3.45f, 4.56f);
-      Assert.AreEqual(v, Matrix33F.Identity * v);
-      Assert.AreEqual(Vector3F.Zero, Matrix33F.Zero * v);
+      Vector3 v = new Vector3(2.34f, 3.45f, 4.56f);
+      Assert.AreEqual(v, Matrix.Identity * v);
+      Assert.AreEqual(Vector3.Zero, Matrix.Zero * v);
 
-      Matrix33F m = new Matrix33F(12, 23, 45,
+      Matrix m = new Matrix(12, 23, 45,
                                 67, 89, 90,
                                 43, 65, 87);
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(v, m * m.Inverse * v));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(v, m * m.Inverse * v));
 
       for (int i = 0; i < 3; i++)
-        Assert.AreEqual(Vector3F.Dot(m.GetRow(i), v), (m * v)[i]);
+        Assert.AreEqual(Vector3.Dot(m.GetRow(i), v), (m * v)[i]);
     }
 
 
     [Test]
     public void MultiplyVector()
     {
-      Vector3F v = new Vector3F(2.34f, 3.45f, 4.56f);
-      Assert.AreEqual(v, Matrix33F.Multiply(Matrix33F.Identity, v));
-      Assert.AreEqual(Vector3F.Zero, Matrix33F.Multiply(Matrix33F.Zero, v));
+      Vector3 v = new Vector3(2.34f, 3.45f, 4.56f);
+      Assert.AreEqual(v, Matrix.Multiply(Matrix.Identity, v));
+      Assert.AreEqual(Vector3.Zero, Matrix.Multiply(Matrix.Zero, v));
 
-      Matrix33F m = new Matrix33F(12, 23, 45,
+      Matrix m = new Matrix(12, 23, 45,
                                 67, 89, 90,
                                 43, 65, 87);
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(v, Matrix33F.Multiply(m * m.Inverse, v)));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(v, Matrix.Multiply(m * m.Inverse, v)));
 
       for (int i = 0; i < 3; i++)
-        Assert.AreEqual(Vector3F.Dot(m.GetRow(i), v), Matrix33F.Multiply(m, v)[i]);
+        Assert.AreEqual(Vector3.Dot(m.GetRow(i), v), Matrix.Multiply(m, v)[i]);
     }
 
 
     [Test]
     public void MultiplyTransposed()
     {
-      var m = RandomHelper.Random.NextMatrix33F(1, 10);
-      var v = RandomHelper.Random.NextVector3F(1, 10);
+      var m = RandomHelper.Random.NextMatrix(1, 10);
+      var v = RandomHelper.Random.NextVector3(1, 10);
 
-      Assert.AreEqual(m.Transposed * v, Matrix33F.MultiplyTransposed(m, v));
+      Assert.AreEqual(m.Transposed * v, Matrix.MultiplyTransposed(m, v));
     }
 
 
@@ -1080,7 +1080,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
       float m00 = 23.5f; float m01 = 0.0f; float m02 = -11.0f;
       float m10 = 33.5f; float m11 = 1.1f; float m12 = -12.0f;
       float m20 = 43.5f; float m21 = 2.2f; float m22 = -13.0f;
-      Matrix33D matrix33D = new Matrix33F(m00, m01, m02, m10, m11, m12, m20, m21, m22);
+      Matrix33D matrix33D = new Matrix(m00, m01, m02, m10, m11, m12, m20, m21, m22);
       Assert.IsTrue(Numeric.AreEqual(m00, (float)matrix33D[0, 0]));
       Assert.IsTrue(Numeric.AreEqual(m01, (float)matrix33D[0, 1]));
       Assert.IsTrue(Numeric.AreEqual(m02, (float)matrix33D[0, 2]));
@@ -1099,7 +1099,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
       float m00 = 23.5f; float m01 = 0.0f; float m02 = -11.0f;
       float m10 = 33.5f; float m11 = 1.1f; float m12 = -12.0f;
       float m20 = 43.5f; float m21 = 2.2f; float m22 = -13.0f;
-      Matrix33D matrix33D = new Matrix33F(m00, m01, m02, m10, m11, m12, m20, m21, m22).ToMatrix33D();
+      Matrix33D matrix33D = new Matrix(m00, m01, m02, m10, m11, m12, m20, m21, m22).ToMatrix33D();
       Assert.IsTrue(Numeric.AreEqual(m00, (float)matrix33D[0, 0]));
       Assert.IsTrue(Numeric.AreEqual(m01, (float)matrix33D[0, 1]));
       Assert.IsTrue(Numeric.AreEqual(m02, (float)matrix33D[0, 2]));
@@ -1115,24 +1115,24 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void SerializationXml()
     {
-      Matrix33F m1 = new Matrix33F(12, 23, 45,
+      Matrix m1 = new Matrix(12, 23, 45,
                                   67, 89, 90,
                                   43, 65, 87.3f);
-      Matrix33F m2;
+      Matrix m2;
 
-      string fileName = "SerializationMatrix33F.xml";
+      string fileName = "SerializationMatrix.xml";
 
       if (File.Exists(fileName))
         File.Delete(fileName);
 
-      XmlSerializer serializer = new XmlSerializer(typeof(Matrix33F));
+      XmlSerializer serializer = new XmlSerializer(typeof(Matrix));
       StreamWriter writer = new StreamWriter(fileName);
       serializer.Serialize(writer, m1);
       writer.Close();
 
-      serializer = new XmlSerializer(typeof(Matrix33F));
+      serializer = new XmlSerializer(typeof(Matrix));
       FileStream fileStream = new FileStream(fileName, FileMode.Open);
-      m2 = (Matrix33F) serializer.Deserialize(fileStream);
+      m2 = (Matrix) serializer.Deserialize(fileStream);
       Assert.AreEqual(m1, m2);
     }
 
@@ -1141,12 +1141,12 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Ignore("Binary serialization not supported in PCL version.")]
     public void SerializationBinary()
     {
-      Matrix33F m1 = new Matrix33F(12, 23, 45, 
+      Matrix m1 = new Matrix(12, 23, 45, 
                                    56, 67, 89, 
                                    90, 12, 43.3f);
-      Matrix33F m2;
+      Matrix m2;
 
-      string fileName = "SerializationMatrix33F.bin";
+      string fileName = "SerializationMatrix.bin";
 
       if (File.Exists(fileName))
         File.Delete(fileName);
@@ -1159,7 +1159,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
 
       fs = new FileStream(fileName, FileMode.Open);
       formatter = new BinaryFormatter();
-      m2 = (Matrix33F) formatter.Deserialize(fs);
+      m2 = (Matrix) formatter.Deserialize(fs);
       fs.Close();
 
       Assert.AreEqual(m1, m2);
@@ -1169,24 +1169,24 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void SerializationXml2()
     {
-      Matrix33F m1 = new Matrix33F(12, 23, 45,
+      Matrix m1 = new Matrix(12, 23, 45,
                                    56, 67, 89,
                                    90, 12, 43.3f);
-      Matrix33F m2;
+      Matrix m2;
 
-      string fileName = "SerializationMatrix33F_DataContractSerializer.xml";
+      string fileName = "SerializationMatrix_DataContractSerializer.xml";
 
       if (File.Exists(fileName))
         File.Delete(fileName);
 
-      var serializer = new DataContractSerializer(typeof(Matrix33F));
+      var serializer = new DataContractSerializer(typeof(Matrix));
       using (var stream = new FileStream(fileName, FileMode.CreateNew, FileAccess.Write))
       using (var writer = XmlDictionaryWriter.CreateTextWriter(stream, Encoding.UTF8))
         serializer.WriteObject(writer, m1);
 
       using (var stream = new FileStream(fileName, FileMode.Open, FileAccess.Read))
       using (var reader = XmlDictionaryReader.CreateTextReader(stream, new XmlDictionaryReaderQuotas()))
-        m2 = (Matrix33F)serializer.ReadObject(reader);
+        m2 = (Matrix)serializer.ReadObject(reader);
 
       Assert.AreEqual(m1, m2);
     }
@@ -1195,22 +1195,22 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void SerializationJson()
     {
-      Matrix33F m1 = new Matrix33F(12, 23, 45,
+      Matrix m1 = new Matrix(12, 23, 45,
                                    56, 67, 89,
                                    90, 12, 43.3f);
-      Matrix33F m2;
+      Matrix m2;
 
-      string fileName = "SerializationMatrix33F.json";
+      string fileName = "SerializationMatrix.json";
 
       if (File.Exists(fileName))
         File.Delete(fileName);
 
-      var serializer = new DataContractJsonSerializer(typeof(Matrix33F));
+      var serializer = new DataContractJsonSerializer(typeof(Matrix));
       using (var stream = new FileStream(fileName, FileMode.CreateNew, FileAccess.Write))
         serializer.WriteObject(stream, m1);
 
       using (var stream = new FileStream(fileName, FileMode.Open, FileAccess.Read))
-        m2 = (Matrix33F)serializer.ReadObject(stream);
+        m2 = (Matrix)serializer.ReadObject(stream);
 
       Assert.AreEqual(m1, m2);
     }
@@ -1219,7 +1219,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void Absolute()
     {
-      Matrix33F absoluteM = new Matrix33F(-1, -2, -3, -4, -5, -6, -7, -8, -9);
+      Matrix absoluteM = new Matrix(-1, -2, -3, -4, -5, -6, -7, -8, -9);
       absoluteM.Absolute();
 
       Assert.AreEqual(1, absoluteM.M00);
@@ -1232,7 +1232,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
       Assert.AreEqual(8, absoluteM.M21);
       Assert.AreEqual(9, absoluteM.M22);
 
-      absoluteM = new Matrix33F(1, 2, 3, 4, 5, 6, 7, 8, 9);
+      absoluteM = new Matrix(1, 2, 3, 4, 5, 6, 7, 8, 9);
       absoluteM.Absolute();
       Assert.AreEqual(1, absoluteM.M00);
       Assert.AreEqual(2, absoluteM.M01);
@@ -1249,8 +1249,8 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void AbsoluteStatic()
     {
-      Matrix33F m = new Matrix33F(-1, -2, -3, -4, -5, -6, -7, -8, -9);
-      Matrix33F absoluteM = Matrix33F.Absolute(m);
+      Matrix m = new Matrix(-1, -2, -3, -4, -5, -6, -7, -8, -9);
+      Matrix absoluteM = Matrix.Absolute(m);
 
       Assert.AreEqual(1, absoluteM.M00);
       Assert.AreEqual(2, absoluteM.M01);
@@ -1262,8 +1262,8 @@ namespace DigitalRune.Mathematics.Algebra.Tests
       Assert.AreEqual(8, absoluteM.M21);
       Assert.AreEqual(9, absoluteM.M22);
 
-      m = new Matrix33F(1, 2, 3, 4, 5, 6, 7, 8, 9);
-      absoluteM = Matrix33F.Absolute(m);
+      m = new Matrix(1, 2, 3, 4, 5, 6, 7, 8, 9);
+      absoluteM = Matrix.Absolute(m);
       Assert.AreEqual(1, absoluteM.M00);
       Assert.AreEqual(2, absoluteM.M01);
       Assert.AreEqual(3, absoluteM.M02);
@@ -1279,49 +1279,49 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void ClampToZero()
     {
-      Matrix33F m = new Matrix33F(0.000001f);
+      Matrix m = new Matrix(0.000001f);
       m.ClampToZero();
-      Assert.AreEqual(new Matrix33F(), m);
+      Assert.AreEqual(new Matrix(), m);
 
-      m = new Matrix33F(0.1f);
+      m = new Matrix(0.1f);
       m.ClampToZero();
-      Assert.AreEqual(new Matrix33F(0.1f), m);
+      Assert.AreEqual(new Matrix(0.1f), m);
 
-      m = new Matrix33F(0.001f);
+      m = new Matrix(0.001f);
       m.ClampToZero(0.01f);
-      Assert.AreEqual(new Matrix33F(), m);
+      Assert.AreEqual(new Matrix(), m);
 
-      m = new Matrix33F(0.1f);
+      m = new Matrix(0.1f);
       m.ClampToZero(0.01f);
-      Assert.AreEqual(new Matrix33F(0.1f), m);
+      Assert.AreEqual(new Matrix(0.1f), m);
     }
 
 
     [Test]
     public void ClampToZeroStatic()
     {
-      Matrix33F m = new Matrix33F(0.000001f);
-      Assert.AreEqual(new Matrix33F(), Matrix33F.ClampToZero(m));
-      Assert.AreEqual(new Matrix33F(0.000001f), m); // m unchanged?
+      Matrix m = new Matrix(0.000001f);
+      Assert.AreEqual(new Matrix(), Matrix.ClampToZero(m));
+      Assert.AreEqual(new Matrix(0.000001f), m); // m unchanged?
 
-      m = new Matrix33F(0.1f);
-      Assert.AreEqual(new Matrix33F(0.1f), Matrix33F.ClampToZero(m));
-      Assert.AreEqual(new Matrix33F(0.1f), m);
+      m = new Matrix(0.1f);
+      Assert.AreEqual(new Matrix(0.1f), Matrix.ClampToZero(m));
+      Assert.AreEqual(new Matrix(0.1f), m);
 
-      m = new Matrix33F(0.001f);
-      Assert.AreEqual(new Matrix33F(), Matrix33F.ClampToZero(m, 0.01f));
-      Assert.AreEqual(new Matrix33F(0.001f), m);
+      m = new Matrix(0.001f);
+      Assert.AreEqual(new Matrix(), Matrix.ClampToZero(m, 0.01f));
+      Assert.AreEqual(new Matrix(0.001f), m);
 
-      m = new Matrix33F(0.1f);
-      Assert.AreEqual(new Matrix33F(0.1f), Matrix33F.ClampToZero(m, 0.01f));
-      Assert.AreEqual(new Matrix33F(0.1f), m);
+      m = new Matrix(0.1f);
+      Assert.AreEqual(new Matrix(0.1f), Matrix.ClampToZero(m, 0.01f));
+      Assert.AreEqual(new Matrix(0.1f), m);
     }
 
 
     [Test]
     public void ToArray1D()
     {
-      Matrix33F m = new Matrix33F(1, 2, 3, 4, 5, 6, 7, 8, 9);
+      Matrix m = new Matrix(1, 2, 3, 4, 5, 6, 7, 8, 9);
       float[] array = m.ToArray1D(MatrixOrder.RowMajor);
       for (int i = 0; i < 9; i++)
         Assert.AreEqual(rowMajor[i], array[i]);
@@ -1334,7 +1334,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void ToList()
     {
-      Matrix33F m = new Matrix33F(1, 2, 3, 4, 5, 6, 7, 8, 9);
+      Matrix m = new Matrix(1, 2, 3, 4, 5, 6, 7, 8, 9);
       IList<float> list = m.ToList(MatrixOrder.RowMajor);
       for (int i = 0; i < 9; i++)
         Assert.AreEqual(rowMajor[i], list[i]);
@@ -1347,7 +1347,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void ToArray2D()
     {
-      Matrix33F m = new Matrix33F(1, 2, 3, 4, 5, 6, 7, 8, 9);
+      Matrix m = new Matrix(1, 2, 3, 4, 5, 6, 7, 8, 9);
 
       float[,] array = m.ToArray2D();
       for (int i = 0; i < 3; i++)
@@ -1364,7 +1364,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void ToArrayJagged()
     {
-      Matrix33F m = new Matrix33F(1, 2, 3, 4, 5, 6, 7, 8, 9);
+      Matrix m = new Matrix(1, 2, 3, 4, 5, 6, 7, 8, 9);
 
       float[][] array = m.ToArrayJagged();
       for (int i = 0; i < 3; i++)
@@ -1381,7 +1381,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void ToMatrixF()
     {
-      Matrix33F m33 = new Matrix33F(1, 2, 3, 4, 5, 6, 7, 8, 9);
+      Matrix m33 = new Matrix(1, 2, 3, 4, 5, 6, 7, 8, 9);
 
       MatrixF m = m33.ToMatrixF();
       for (int i = 0; i < 3; i++)

@@ -60,12 +60,12 @@ namespace DigitalRune
       GCHandle handle = GCHandle.Alloc(buffer, GCHandleType.Pinned);
       try
       {
-#if NET45
+
         // New generic version (avoids boxing).
         return Marshal.PtrToStructure<T>(handle.AddrOfPinnedObject());
 #else
         return (T)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(T));
-#endif
+
       }
       finally
       {
@@ -91,12 +91,12 @@ namespace DigitalRune
       GCHandle handle = GCHandle.Alloc(buffer, GCHandleType.Pinned);
       try
       {
-#if NET45
+
         // New generic version (avoids boxing).
         Marshal.StructureToPtr<T>(t, handle.AddrOfPinnedObject(), false);
 #else
         Marshal.StructureToPtr(t, handle.AddrOfPinnedObject(), false);
-#endif
+
       }
       finally
       {

@@ -10,10 +10,10 @@ using DigitalRune.Geometry.Shapes;
 using DigitalRune.Mathematics;
 using DigitalRune.Mathematics.Algebra;
 
-#if XNA || MONOGAME
+
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-#endif
+
 
 
 namespace DigitalRune.Geometry.Meshes
@@ -67,9 +67,9 @@ namespace DigitalRune.Geometry.Meshes
   /// </code>
   /// </para>
   /// </remarks>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
+
   public sealed class TriangleMesh : ITriangleMesh
   {
     // NOTE: TriangleMesh is sealed because it implements a non-virtual Clone().
@@ -108,7 +108,7 @@ namespace DigitalRune.Geometry.Meshes
     /// <value>The vertices. The default value is an empty list.</value>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-    public List<Vector3F> Vertices { get; set; }
+    public List<Vector3> Vertices { get; set; }
 
 
     /// <summary>
@@ -148,7 +148,7 @@ namespace DigitalRune.Geometry.Meshes
     /// </summary>
     public TriangleMesh()
     {
-      Vertices = new List<Vector3F>();
+      Vertices = new List<Vector3>();
       Indices = new List<int>();
     }
 
@@ -169,7 +169,7 @@ namespace DigitalRune.Geometry.Meshes
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
     public TriangleMesh(int verticesCapacity, int indicesCapacity)
     {
-      Vertices = new List<Vector3F>(verticesCapacity);
+      Vertices = new List<Vector3>(verticesCapacity);
       Indices = new List<int>(indicesCapacity);
     }
 
@@ -198,7 +198,7 @@ namespace DigitalRune.Geometry.Meshes
 
       // Clone vertices.
       if (Vertices != null)
-        foreach (Vector3F vertex in Vertices)
+        foreach (Vector3 vertex in Vertices)
           clone.Vertices.Add(vertex);
 
       clone.Tag = Tag;
@@ -255,7 +255,7 @@ namespace DigitalRune.Geometry.Meshes
           return;
 
         if (Vertices == null)
-          Vertices = new List<Vector3F>(triangleMesh.Vertices.Count);
+          Vertices = new List<Vector3>(triangleMesh.Vertices.Count);
 
         int numberOfNewIndices = triangleMesh.Indices.Count;
         if (Indices == null)
@@ -338,9 +338,9 @@ namespace DigitalRune.Geometry.Meshes
 
       // If desired, remove degenerate triangles.
       if (removeDegenerateTriangles
-          && (Vector3F.AreNumericallyEqual(triangle.Vertex0, triangle.Vertex1, vertexPositionTolerance)
-              || Vector3F.AreNumericallyEqual(triangle.Vertex0, triangle.Vertex2, vertexPositionTolerance)
-              || Vector3F.AreNumericallyEqual(triangle.Vertex1, triangle.Vertex2, vertexPositionTolerance)))
+          && (Vector3.AreNumericallyEqual(triangle.Vertex0, triangle.Vertex1, vertexPositionTolerance)
+              || Vector3.AreNumericallyEqual(triangle.Vertex0, triangle.Vertex2, vertexPositionTolerance)
+              || Vector3.AreNumericallyEqual(triangle.Vertex1, triangle.Vertex2, vertexPositionTolerance)))
       {
         // Ignore degenerated triangles.
         return;
@@ -348,7 +348,7 @@ namespace DigitalRune.Geometry.Meshes
 
       // Create lists if they were removed.
       if (Vertices == null)
-        Vertices = new List<Vector3F>();
+        Vertices = new List<Vector3>();
       if (Indices == null)
         Indices = new List<int>();
 
@@ -372,12 +372,12 @@ namespace DigitalRune.Geometry.Meshes
         // Loop through the 3 vertices of the triangle.
         for (int vertexIndex = 0; vertexIndex < 3; vertexIndex++)
         {
-          Vector3F vertex = triangle[vertexIndex];
+          Vector3 vertex = triangle[vertexIndex];
 
           // See if the vertex is already in the mesh.
           int index = numberOfVertices;
           for (int i = 0; i < numberOfVertices && index == numberOfVertices; i++)
-            if (Vector3F.AreNumericallyEqual(Vertices[i], vertex, vertexPositionTolerance))
+            if (Vector3.AreNumericallyEqual(Vertices[i], vertex, vertexPositionTolerance))
               index = i;
 
           // Add vertex if it is not in the mesh.
@@ -506,7 +506,7 @@ namespace DigitalRune.Geometry.Meshes
     /// Transforms all vertices by the given matrix.
     /// </summary>
     /// <param name="matrix">The transformation matrix.</param>
-    public void Transform(Matrix44F matrix)
+    public void Transform(Matrix matrix)
     {
       if (Vertices == null)
         return;
@@ -559,12 +559,12 @@ namespace DigitalRune.Geometry.Meshes
     /// </para>
     /// </remarks>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-    public Vector3F[] ComputeNormals(bool useWeightedAverage, float angleLimit)
+    public Vector3[] ComputeNormals(bool useWeightedAverage, float angleLimit)
     {
       if (Vertices == null || Indices == null)
         return null;
 
-      Vector3F[] normals;
+      Vector3[] normals;
       if (angleLimit < 0)
       {
         // ----- Not using angle limit.
@@ -580,13 +580,13 @@ namespace DigitalRune.Geometry.Meshes
     }
 
 
-    private Vector3F[] ComputeNormals(bool useWeightedAverage)
+    private Vector3[] ComputeNormals(bool useWeightedAverage)
     {
       var numberOfVertices = Vertices.Count;
       var numberOfTriangles = NumberOfTriangles;
 
       // One normal per vertex.
-      Vector3F[] normals = new Vector3F[numberOfVertices];
+      Vector3[] normals = new Vector3[numberOfVertices];
 
       // Loop over all triangles and sum up the normals.
       for (int i = 0; i < numberOfTriangles; i++)
@@ -595,12 +595,12 @@ namespace DigitalRune.Geometry.Meshes
         int i1 = Indices[i * 3 + 1];
         int i2 = Indices[i * 3 + 2];
 
-        Vector3F v0 = Vertices[i0];
-        Vector3F v1 = Vertices[i1];
-        Vector3F v2 = Vertices[i2];
+        Vector3 v0 = Vertices[i0];
+        Vector3 v1 = Vertices[i1];
+        Vector3 v2 = Vertices[i2];
 
         // The unnormalized normal, the normal length is proportional to the triangle area.
-        Vector3F normal = Vector3F.Cross(v1 - v0, v2 - v0);
+        Vector3 normal = Vector3.Cross(v1 - v0, v2 - v0);
 
         if (useWeightedAverage || normal.TryNormalize())
         {
@@ -618,13 +618,13 @@ namespace DigitalRune.Geometry.Meshes
         if (normal.TryNormalize())
           normals[i] = normal;
         else
-          normals[i] = Vector3F.UnitY;
+          normals[i] = Vector3.UnitY;
       }
       return normals;
     }
 
 
-    private Vector3F[] ComputeNormalsUsingAngleLimit(float angleLimit, bool useWeightedAverage)
+    private Vector3[] ComputeNormalsUsingAngleLimit(float angleLimit, bool useWeightedAverage)
     {
       var numberOfVertices = Vertices.Count;
       var numberOfTriangles = NumberOfTriangles;
@@ -648,11 +648,11 @@ namespace DigitalRune.Geometry.Meshes
         int i1 = Indices[i * 3 + 1];
         int i2 = Indices[i * 3 + 2];
 
-        Vector3F v0 = Vertices[i0];
-        Vector3F v1 = Vertices[i1];
-        Vector3F v2 = Vertices[i2];
+        Vector3 v0 = Vertices[i0];
+        Vector3 v1 = Vertices[i1];
+        Vector3 v2 = Vertices[i2];
 
-        Vector3F normal = Vector3F.Cross(v1 - v0, v2 - v0);
+        Vector3 normal = Vector3.Cross(v1 - v0, v2 - v0);
         float lengthSquared = normal.LengthSquared;
         if (!Numeric.IsZero(lengthSquared, Numeric.EpsilonFSquared))  // Degenerate triangles are ignored.
         {
@@ -669,7 +669,7 @@ namespace DigitalRune.Geometry.Meshes
       var cosAngleLimit = (float)Math.Cos(angleLimit);
 
       // The result array with one entry per index (3 entries per triangle).
-      Vector3F[] normals = new Vector3F[numberOfTriangles * 3];
+      Vector3[] normals = new Vector3[numberOfTriangles * 3];
 
       // Loop over triangles.
       for (int i = 0; i < numberOfTriangles; i++)
@@ -680,9 +680,9 @@ namespace DigitalRune.Geometry.Meshes
         if (triangleNormal4.W == 0)
         {
           // The triangle is degenerate. We set an arbitrary normalized vector for each vertex.
-          normals[i * 3 + 0] = Vector3F.UnitY;
-          normals[i * 3 + 1] = Vector3F.UnitY;
-          normals[i * 3 + 2] = Vector3F.UnitY;
+          normals[i * 3 + 0] = Vector3.UnitY;
+          normals[i * 3 + 1] = Vector3.UnitY;
+          normals[i * 3 + 2] = Vector3.UnitY;
         }
         else
         {
@@ -691,7 +691,7 @@ namespace DigitalRune.Geometry.Meshes
           {
             var indexIndex = i * 3 + j;
             var vertexIndex = Indices[indexIndex];
-            var vertexNormal = new Vector3F();
+            var vertexNormal = new Vector3();
 
             // Average all normals in the normal list of the current vertex.
             foreach (var normal4 in normalsPerVertex[vertexIndex])
@@ -700,7 +700,7 @@ namespace DigitalRune.Geometry.Meshes
               var weight = normal4.W;
 
               // Angle limit test.
-              if (Numeric.IsGreaterOrEqual(Vector3F.Dot(triangleNormal, normal), cosAngleLimit))  // This also checks the triangleNormal against itself.
+              if (Numeric.IsGreaterOrEqual(Vector3.Dot(triangleNormal, normal), cosAngleLimit))  // This also checks the triangleNormal against itself.
               {
                 if (useWeightedAverage)
                   vertexNormal += normal * weight;
@@ -719,7 +719,7 @@ namespace DigitalRune.Geometry.Meshes
     }
 
 
-#if XNA || MONOGAME
+
     /// <summary>
     /// Creates a triangle mesh from an XNA <see cref="Model"/>. (Only available in the
     /// XNA-compatible build, except Silverlight.)
@@ -776,7 +776,7 @@ namespace DigitalRune.Geometry.Meshes
 
           // Add the vertices of the current modelMeshPart.
           foreach (Vector3 p in positions)
-            triangleMesh.Vertices.Add((Vector3F)p);
+            triangleMesh.Vertices.Add((Vector3)p);
 
           // Get indices.
           var indexElementSize = (modelMeshPart.IndexBuffer.IndexElementSize == IndexElementSize.SixteenBits) ? 2 : 4;
@@ -841,7 +841,7 @@ namespace DigitalRune.Geometry.Meshes
         return Matrix.Identity;
       return bone.Transform * GetAbsoluteTransform(bone.Parent);
     }
-#endif
+
 
   }
 }

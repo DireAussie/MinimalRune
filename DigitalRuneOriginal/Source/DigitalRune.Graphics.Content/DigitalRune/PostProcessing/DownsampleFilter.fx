@@ -255,7 +255,7 @@ float4 PSPoint4Depth(float2 texCoord : TEXCOORD0) : COLOR0
 // Techniques
 //-----------------------------------------------------------------------------
 
-#if SM4
+
 #define VSTARGET vs_4_0_level_9_3
 #define PSTARGET ps_4_0_level_9_3
 #elif OPENGL
@@ -264,7 +264,7 @@ float4 PSPoint4Depth(float2 texCoord : TEXCOORD0) : COLOR0
 #else
 #define VSTARGET vs_2_0
 #define PSTARGET ps_2_0
-#endif
+
 
 technique
 {

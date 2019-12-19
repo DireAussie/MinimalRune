@@ -217,12 +217,12 @@ namespace DigitalRune.Editor.Models
         private float _moveSpeed = 5;
 
 
-        public Vector3F ModelCenter      // For camera orbiting.
+        public Vector3 ModelCenter      // For camera orbiting.
         {
             get { return _modelCenter; }
             set { SetProperty(ref _modelCenter, value); }
         }
-        private Vector3F _modelCenter;
+        private Vector3 _modelCenter;
 
 
         public DelegateCommand ResetCameraCommand { get; }
@@ -511,9 +511,9 @@ namespace DigitalRune.Editor.Models
         {
             if (ModelNode == null && Document.Model == null)
             {
-                var lookAtMatrix = Matrix44F.CreateLookAt(new Vector3F(10, 10, 10), new Vector3F(0, 1, 0), new Vector3F(0, 1, 0));
+                var lookAtMatrix = Matrix.CreateLookAt(new Vector3(10, 10, 10), new Vector3(0, 1, 0), new Vector3(0, 1, 0));
                 _cameraNode.PoseWorld = Pose.FromMatrix(lookAtMatrix).Inverse;
-                ModelCenter = new Vector3F(0, 1, 0);
+                ModelCenter = new Vector3(0, 1, 0);
                 MoveSpeed = 5;
                 ZoomSpeed = MoveSpeed / 10;
                 return;
@@ -534,8 +534,8 @@ namespace DigitalRune.Editor.Models
                 {
                     var sphere = mesh.BoundingSphere;
                     sphere = sphere.Transform(boneTransforms[mesh.ParentBone.Index]);
-                    var partCenter = (Vector3F)sphere.Center;
-                    var partRadius = new Vector3F(sphere.Radius);
+                    var partCenter = (Vector3)sphere.Center;
+                    var partRadius = new Vector3(sphere.Radius);
                     aabb.Grow(new Aabb(partCenter - partRadius, partCenter + partRadius));
                 }
             }
@@ -546,7 +546,7 @@ namespace DigitalRune.Editor.Models
             var gamma = _cameraNode.Camera.Projection.FieldOfViewY / 2;
             var distance = Math.Max((float)(radius / Math.Tan(gamma)) * 0.7f, 1);  // * 0.x to move a bit closer otherwise distance is usually to large.
             _cameraNode.PoseWorld = Pose.FromMatrix(
-                Matrix44F.CreateLookAt(center + new Vector3F(distance), center, Vector3F.Up)).Inverse;
+                Matrix.CreateLookAt(center + new Vector3(distance), center, Vector3.Up)).Inverse;
 
             // Center for camera orbiting.
             ModelCenter = center;
@@ -600,7 +600,7 @@ namespace DigitalRune.Editor.Models
                     {
                         var sphere = mesh.BoundingSphere;
                         sphere = sphere.Transform(boneTransforms[mesh.ParentBone.Index]);
-                        debugRenderer.DrawSphere(sphere.Radius, new Pose((Vector3F)sphere.Center), Color.Orange, true, false);
+                        debugRenderer.DrawSphere(sphere.Radius, new Pose((Vector3)sphere.Center), Color.Orange, true, false);
                     }
                 }
             }

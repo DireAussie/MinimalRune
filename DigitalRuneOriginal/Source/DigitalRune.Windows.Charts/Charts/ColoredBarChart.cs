@@ -138,7 +138,7 @@ namespace DigitalRune.Windows.Charts
 
         //--------------------------------------------------------------
 
-#if SILVERLIGHT
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ColoredBarChart"/> class.
         /// </summary>
@@ -152,7 +152,7 @@ namespace DigitalRune.Windows.Charts
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ColoredBarChart), new FrameworkPropertyMetadata(typeof(ColoredBarChart)));
         }
-#endif
+
 
 
 

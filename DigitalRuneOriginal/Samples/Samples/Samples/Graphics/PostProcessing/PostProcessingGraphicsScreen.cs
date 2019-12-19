@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using System;
 using System.Collections.Generic;
 using DigitalRune.Graphics;
@@ -118,9 +118,9 @@ namespace Samples
 
     protected override void OnRender(RenderContext context)
     {
-#if OPENGL
+
       GraphicsService.RenderTargetPool.Clear();  // Required because of a GraphicsDevice.SetRenderTarget() bug...
-#endif
+
 
       // Abort if no active camera is set.
       if (ActiveCameraNode == null)
@@ -318,4 +318,4 @@ namespace Samples
     }
   }
 }
-#endif
+

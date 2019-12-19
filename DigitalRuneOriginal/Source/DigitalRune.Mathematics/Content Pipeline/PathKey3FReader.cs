@@ -4,9 +4,9 @@
 
 using DigitalRune.Mathematics.Algebra;
 using DigitalRune.Mathematics.Interpolation;
-#if XNA || MONOGAME
+
 using Microsoft.Xna.Framework.Content;
-#endif
+
 
 
 namespace DigitalRune.Mathematics.Content
@@ -20,7 +20,7 @@ namespace DigitalRune.Mathematics.Content
   /// </remarks>
   public class PathKey3FReader : ContentTypeReader<PathKey3F>
   {
-#if !MONOGAME
+
     /// <summary>
     /// Determines if deserialization into an existing object is possible.
     /// </summary>
@@ -32,7 +32,7 @@ namespace DigitalRune.Mathematics.Content
     {
       get { return true; }
     }
-#endif
+
 
 
     /// <summary>
@@ -49,9 +49,9 @@ namespace DigitalRune.Mathematics.Content
 
       existingInstance.Interpolation = input.ReadRawObject<SplineInterpolation>();
       existingInstance.Parameter = input.ReadSingle();
-      existingInstance.Point = input.ReadRawObject<Vector3F>();
-      existingInstance.TangentIn = input.ReadRawObject<Vector3F>();
-      existingInstance.TangentOut = input.ReadRawObject<Vector3F>();
+      existingInstance.Point = input.ReadRawObject<Vector3>();
+      existingInstance.TangentIn = input.ReadRawObject<Vector3>();
+      existingInstance.TangentOut = input.ReadRawObject<Vector3>();
 
       return existingInstance;
     }

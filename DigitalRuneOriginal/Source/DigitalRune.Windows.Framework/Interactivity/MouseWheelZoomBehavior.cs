@@ -301,11 +301,11 @@ namespace DigitalRune.Windows.Framework
             if (!IsEnabled || Keyboard.Modifiers != ModifierKeys)
                 return;
 
-#if SILVERLIGHT
+
             const double mouseWheelDeltaForOneLine = 120;
 #else
             const double mouseWheelDeltaForOneLine = Mouse.MouseWheelDeltaForOneLine;
-#endif
+
 
             double increments = eventArgs.Delta / mouseWheelDeltaForOneLine;
             double zoom = Zoom * Math.Pow(1.1, increments);

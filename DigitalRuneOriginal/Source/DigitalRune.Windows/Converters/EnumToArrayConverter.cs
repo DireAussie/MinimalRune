@@ -14,9 +14,9 @@ namespace DigitalRune.Windows
     /// Converts an <see cref="Enum"/> to an <see cref="Array"/> with all defined enumeration
     /// values.
     /// </summary>
-#if !SILVERLIGHT && !WINDOWS_PHONE
+
     [ValueConversion(typeof(Enum), typeof(Array))]
-#endif
+
     public class EnumToArrayConverter : IValueConverter
     {
         /// <summary>
@@ -52,11 +52,11 @@ namespace DigitalRune.Windows
         {
             try
             {
-#if SILVERLIGHT || WINDOWS_PHONE
+
                 return EnumHelper.GetValues(value.GetType());
 #else
                 return Enum.GetValues(value.GetType());
-#endif
+
             }
             catch
             {

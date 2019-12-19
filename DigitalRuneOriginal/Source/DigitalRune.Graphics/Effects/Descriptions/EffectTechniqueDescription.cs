@@ -158,7 +158,7 @@ namespace DigitalRune.Graphics.Effects
       Technique = technique;
       Index = GetIndex(effect, technique);
 
-#if !MONOGAME
+
       // Check if there is an associated technique for hardware instancing.
       var annotation = technique.Annotations["InstancingTechnique"];
       if (annotation != null && annotation.ParameterType == EffectParameterType.String)
@@ -201,7 +201,7 @@ namespace DigitalRune.Graphics.Effects
           }
         }
       }
-#endif
+
     }
 
 

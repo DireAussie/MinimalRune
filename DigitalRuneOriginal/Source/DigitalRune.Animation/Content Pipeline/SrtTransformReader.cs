@@ -26,9 +26,9 @@ namespace DigitalRune.Animation.Content
     /// <returns>The type of object to read.</returns>
     protected override SrtTransform Read(ContentReader input, SrtTransform existingInstance)
     {
-      Vector3F scale = input.ReadRawObject<Vector3F>();
-      QuaternionF rotation = input.ReadRawObject<QuaternionF>();
-      Vector3F translation = input.ReadRawObject<Vector3F>();
+      Vector3 scale = input.ReadRawObject<Vector3>();
+      Quaternion rotation = input.ReadRawObject<Quaternion>();
+      Vector3 translation = input.ReadRawObject<Vector3>();
 
       return new SrtTransform(scale, rotation, translation);
     }

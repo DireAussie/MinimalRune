@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !WP7
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -311,7 +311,7 @@ namespace DigitalRune.Graphics.Rendering
       Debug.Assert(_previousMaterialBinding == null);
 
       // Loop over all layers. Render each layer into all levels (if there is an invalid region).
-      Aabb tileAabb = new Aabb(new Vector3F(-Terrain.TerrainLimit), new Vector3F(Terrain.TerrainLimit));
+      Aabb tileAabb = new Aabb(new Vector3(-Terrain.TerrainLimit), new Vector3(Terrain.TerrainLimit));
       ProcessLayer(graphicsDevice, context, clipmap, isBaseClipmap, _clearLayer, tileAabb);
       foreach (var tile in node.Terrain.Tiles)
       {
@@ -357,7 +357,7 @@ namespace DigitalRune.Graphics.Rendering
       {
         // Compute new origins.
         int texelsPerLevel = clipmap.CellsPerLevel - 2 * border;
-        Vector3F referencePosition3D = lodCameraNode.PoseWorld.Position;
+        Vector3 referencePosition3D = lodCameraNode.PoseWorld.Position;
         Vector2F referencePosition2D = new Vector2F(referencePosition3D.X, referencePosition3D.Z);
         clipmap.LevelSizes[level] = clipmap.ActualCellSizes[level] * texelsPerLevel;
         Vector2F levelOrigin = new Vector2F(
@@ -657,7 +657,7 @@ namespace DigitalRune.Graphics.Rendering
           }
         }
 
-#if DEBUG
+
         // Assert: Invalid regions do not overlap.
         for (int i = 0; i < clipmap.InvalidRegions[level].Count; i++)
         {
@@ -668,14 +668,14 @@ namespace DigitalRune.Graphics.Rendering
             Debug.Assert(!HaveContactXZ(ref a, ref b));
           }
         }
-#endif
+
 
         // Compute the union of all invalid regions. We can use this to early out if a layer
         // does not overlap this combined region.
         var numberOfInvalidRegions = clipmap.InvalidRegions[level].Count;
         if (numberOfInvalidRegions == 0)
         {
-          clipmap.CombinedInvalidRegionsAabbs[level] = new Aabb(new Vector3F(float.NaN), new Vector3F(float.NaN));
+          clipmap.CombinedInvalidRegionsAabbs[level] = new Aabb(new Vector3(float.NaN), new Vector3(float.NaN));
         }
         else
         {
@@ -685,7 +685,7 @@ namespace DigitalRune.Graphics.Rendering
         }
 
         // For debugging:
-        //clipmap.CombinedInvalidRegionsAabbs[level] = new Aabb(new Vector3F(float.MinValue), new Vector3F(float.MaxValue));
+        //clipmap.CombinedInvalidRegionsAabbs[level] = new Aabb(new Vector3(float.MinValue), new Vector3(float.MaxValue));
       }
     }
 
@@ -978,4 +978,4 @@ namespace DigitalRune.Graphics.Rendering
 
   }
 }
-#endif
+

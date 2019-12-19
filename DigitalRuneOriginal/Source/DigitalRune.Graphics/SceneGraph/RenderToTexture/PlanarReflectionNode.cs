@@ -93,7 +93,7 @@ namespace DigitalRune.Graphics.SceneGraph
     /// <exception cref="ArgumentException">
     /// The normal vector must be normalized.
     /// </exception>
-    public Vector3F NormalLocal
+    public Vector3 NormalLocal
     {
       get { return _normalLocal; }
       set
@@ -104,14 +104,14 @@ namespace DigitalRune.Graphics.SceneGraph
         _normalLocal = value;
       }
     }
-    private Vector3F _normalLocal;
+    private Vector3 _normalLocal;
 
 
     /// <summary>
     /// Gets the normal of the reflection plane in world space.
     /// </summary>
     /// <value>The normal world of the reflection plane in world space.</value>
-    public Vector3F NormalWorld
+    public Vector3 NormalWorld
     {
       get { return PoseWorld.ToWorldDirection(_normalLocal); }
     }
@@ -150,7 +150,7 @@ namespace DigitalRune.Graphics.SceneGraph
     {
       CameraNode = new CameraNode(new Camera(new PerspectiveProjection()));
       FieldOfViewScale = 1;
-      _normalLocal = new Vector3F(0, 0, 1);
+      _normalLocal = new Vector3(0, 0, 1);
     }
 
 

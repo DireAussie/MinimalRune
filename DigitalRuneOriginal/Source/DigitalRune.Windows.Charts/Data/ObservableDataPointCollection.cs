@@ -56,7 +56,7 @@ namespace DigitalRune.Windows.Charts
         }
 
 
-#if WINDOWS_PHONE
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ObservableDataPointCollection"/> class that contains
         /// the elements copied from the specified collection.
@@ -86,10 +86,10 @@ namespace DigitalRune.Windows.Charts
             : base(collection)
         {
         }
-#endif
 
 
-#if WINDOWS_PHONE
+
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ObservableDataPointCollection"/> class that contains
         /// the elements copied from the specified list.
@@ -120,7 +120,7 @@ namespace DigitalRune.Windows.Charts
             : base(list)
         {
         }
-#endif
+
 
 
 

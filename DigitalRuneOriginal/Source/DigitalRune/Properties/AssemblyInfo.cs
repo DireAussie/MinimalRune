@@ -21,7 +21,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCulture("")]
 [assembly: NeutralResourcesLanguage("en")]
 
-#if !PORTABLE
+
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
 // COM, set the ComVisible attribute to true on that type.
@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("f2283a82-ab21-424a-8c5d-d993141f4874")]
-#endif
+
 
 // Version information for an assembly consists of the following four values:
 //
@@ -42,9 +42,9 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.20.0.0")]
-#if !XBOX
+
 [assembly: AssemblyFileVersion("1.20.1.14552")]
-#endif
+
 [assembly: CLSCompliant(true)]
 
 // Internals are visible to these assemblies:

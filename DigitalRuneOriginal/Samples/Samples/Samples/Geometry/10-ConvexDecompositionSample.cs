@@ -1,4 +1,4 @@
-﻿#if WINDOWS
+﻿
 using System.ComponentModel;
 using System.Linq;
 using DigitalRune.Geometry.Meshes;
@@ -40,7 +40,7 @@ At regular intervals, the intermediate decomposition is updated and rendered to 
       SampleFramework.IsMouseVisible = false;
       GraphicsScreen.ClearBackground = true;
       GraphicsScreen.BackgroundColor = Color.CornflowerBlue;
-      SetCamera(new Vector3F(3, 3, 3), 0.8f, -0.6f);
+      SetCamera(new Vector3(3, 3, 3), 0.8f, -0.6f);
 
       // Load model.
       _modelNode = ContentManager.Load<ModelNode>("Saucer/Saucer").Clone();
@@ -50,7 +50,7 @@ At regular intervals, the intermediate decomposition is updated and rendered to 
       foreach (var meshNode in _modelNode.GetChildren().OfType<MeshNode>())
       {
         var childMesh = MeshHelper.ToTriangleMesh(meshNode.Mesh);
-        childMesh.Transform(meshNode.PoseWorld * Matrix44F.CreateScale(meshNode.ScaleWorld));
+        childMesh.Transform(meshNode.PoseWorld * Matrix.CreateScale(meshNode.ScaleWorld));
         mesh.Add(childMesh);
       }
 
@@ -125,4 +125,3 @@ At regular intervals, the intermediate decomposition is updated and rendered to 
     }
   }
 }
-#endif

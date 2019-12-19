@@ -20,9 +20,9 @@ namespace DigitalRune.Windows
     /// <see cref="Numeric.EpsilonD"/>. The property <see cref="Comparison"/> determines how the two
     /// values are compared.
     /// </remarks>
-#if !SILVERLIGHT && !WINDOWS_PHONE
+
     [ValueConversion(typeof(double), typeof(bool), ParameterType = typeof(double))]
-#endif
+
     public class DoubleToBooleanConverter : IValueConverter
     {
         /// <summary>

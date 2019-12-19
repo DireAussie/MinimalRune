@@ -215,7 +215,7 @@ namespace DigitalRune.Graphics
     /// <returns>
     /// A value representing the (red, green and blue) light intensity at the specified distance. 
     /// </returns>
-    public abstract Vector3F GetIntensity(float distance);
+    public abstract Vector3 GetIntensity(float distance);
 
   }
 }

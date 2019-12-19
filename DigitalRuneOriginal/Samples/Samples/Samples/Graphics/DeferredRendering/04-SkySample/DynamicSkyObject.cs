@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -62,7 +62,7 @@ namespace Samples
     private const float MoonlightScale = SunlightScale * 100f;
 
     // Ambient light from light pollution.
-    private static readonly Vector3F LightPollution = new Vector3F(0.004f);
+    private static readonly Vector3 LightPollution = new Vector3(0.004f);
 
 
 
@@ -120,13 +120,13 @@ namespace Samples
     //--------------------------------------------------------------
 
     // The direction to the sun in world space.
-    public Vector3F SunDirection { get; private set; }
+    public Vector3 SunDirection { get; private set; }
 
     // The sun light intensity (RGB).
-    public Vector3F SunLight { get; private set; }
+    public Vector3 SunLight { get; private set; }
 
     // The ambient light intensity (RGB).
-    public Vector3F AmbientLight { get; private set; }
+    public Vector3 AmbientLight { get; private set; }
 
     // If cacheSky is true, the sky is rendered into a cube map and the cube map
     // is displayed using this SkyboxNode.
@@ -162,11 +162,11 @@ namespace Samples
 
 
     // The current date, time and time zone.
-#if !XBOX
+
     public DateTimeOffset Time
 #else
     public DateTime Time
-#endif
+
     {
       get { return _time; }
       set
@@ -178,11 +178,11 @@ namespace Samples
         _isDirty = true;
       }
     }
-#if !XBOX
+
     private DateTimeOffset _time = new DateTimeOffset(2014, 06, 01, 14, 0, 0, 0, TimeSpan.Zero);  //DateTimeOffset.Now
 #else
     private DateTime _time = new DateTime(2014, 06, 01, 14, 0, 0, 0);  //DateTime.Now;
-#endif
+
 
 
     /// <summary>
@@ -243,7 +243,7 @@ namespace Samples
     /// red and less for blue.
     /// See <see cref="Fog.ScatteringSymmetry"/> for more details.
     /// </remarks>
-    public Vector3F FogScatteringSymmetry
+    public Vector3 FogScatteringSymmetry
     {
       get { return _fogScatteringSymmetry; }
       set
@@ -255,7 +255,7 @@ namespace Samples
         _isDirty = true;
       }
     }
-    private Vector3F _fogScatteringSymmetry = new Vector3F(0.26f, 0.24f, 0.22f);
+    private Vector3 _fogScatteringSymmetry = new Vector3(0.26f, 0.24f, 0.22f);
 
 
 
@@ -313,11 +313,11 @@ namespace Samples
         {
           Texture = new RenderTargetCube(
             _graphicsService.GraphicsDevice, 
-#if XBOX
+
             512,
 #else
             1024,
-#endif
+
             true,
             SurfaceFormat.Color, 
             DepthFormat.None),
@@ -415,7 +415,7 @@ namespace Samples
       //  0,
       //  1,
       //  FogScatteringSymmetry.X,
-      //  value => FogScatteringSymmetry = new Vector3F(value, FogScatteringSymmetry.Y, FogScatteringSymmetry.Z));
+      //  value => FogScatteringSymmetry = new Vector3(value, FogScatteringSymmetry.Y, FogScatteringSymmetry.Z));
       //SampleHelper.AddSlider(
       //  panel,
       //  "Fog scattering symmetry G",
@@ -423,7 +423,7 @@ namespace Samples
       //  0,
       //  1,
       //  FogScatteringSymmetry.Y,
-      //  value => FogScatteringSymmetry = new Vector3F(FogScatteringSymmetry.X, value, FogScatteringSymmetry.Z));
+      //  value => FogScatteringSymmetry = new Vector3(FogScatteringSymmetry.X, value, FogScatteringSymmetry.Z));
       //SampleHelper.AddSlider(
       //  panel,
       //  "Fog scattering symmetry B",
@@ -431,7 +431,7 @@ namespace Samples
       //  0,
       //  1,
       //  FogScatteringSymmetry.Z,
-      //  value => FogScatteringSymmetry = new Vector3F(FogScatteringSymmetry.X, FogScatteringSymmetry.Y, value));
+      //  value => FogScatteringSymmetry = new Vector3(FogScatteringSymmetry.X, FogScatteringSymmetry.Y, value));
     }
 
 
@@ -451,7 +451,7 @@ namespace Samples
       // Add a skybox with milky way cube map.
       _milkyWayNode = new SkyboxNode(content.Load<TextureCube>("Sky/MilkyWay"))
       {
-        Color = new Vector3F(MilkyWayLightScale),
+        Color = new Vector3(MilkyWayLightScale),
       };
       _skyGroupNode.Children.Add(_milkyWayNode);
 
@@ -475,8 +475,8 @@ namespace Samples
         AngularDiameter = new Vector2F(MathHelper.ToRadians(5)),
 
         // Disable glow.
-        GlowColor0 = new Vector3F(0),
-        GlowColor1 = new Vector3F(0),
+        GlowColor0 = new Vector3(0),
+        GlowColor1 = new Vector3(0),
       };
       _skyGroupNode.Children.Add(_moonNode);
 
@@ -486,8 +486,8 @@ namespace Samples
         SunIntensity = 1,
 
         // Set a base color to get a dark blue instead of a pitch black night.
-        BaseHorizonColor = new Vector3F(0.043f, 0.090f, 0.149f) * 0.01f,
-        BaseZenithColor = new Vector3F(0.024f, 0.051f, 0.102f) * 0.01f,
+        BaseHorizonColor = new Vector3(0.043f, 0.090f, 0.149f) * 0.01f,
+        BaseZenithColor = new Vector3(0.024f, 0.051f, 0.102f) * 0.01f,
         BaseColorShift = 0.5f
       };
       _skyGroupNode.Children.Add(_scatteringSkyNode);
@@ -541,7 +541,7 @@ namespace Samples
 
       _starfieldNode = new StarfieldNode
       {
-        Color = new Vector3F(1),
+        Color = new Vector3(1),
         Stars = stars
       };
     }
@@ -644,11 +644,11 @@ namespace Samples
         // This light uses Cascaded Shadow Mapping.
         Shadow = new CascadedShadow
         {
-#if XBOX
+
           PreferredSize = 512,
 #else
           PreferredSize = 1024,
-#endif
+
           Prefer16Bit = true,
           MinLightDistance = 1000,
         }
@@ -770,11 +770,11 @@ namespace Samples
         }
       }
 
-#if !MONOGAME
+
       // Re-render cached cube map if content was lost.
       if (_cacheSky && ((RenderTargetCube)_sceneCaptureNode.RenderToTexture.Texture).IsContentLost)
         _isDirty = true;
-#endif
+
 
       if (_isDirty)
       {
@@ -791,35 +791,35 @@ namespace Samples
     private void UpdateSky()
     {
       // Update ephemeris model.
-#if XBOX
+
       _ephemeris.Time = new DateTimeOffset(_time.Ticks, TimeSpan.Zero);
 #else
       _ephemeris.Time = _time;
-#endif
+
       _ephemeris.Update();
 
       // Update rotation of milky way. We also need to add an offset because the 
       // cube map texture is rotated.
       _milkyWayNode.PoseWorld = new Pose(
-        (Matrix33F)_ephemeris.EquatorialToWorld.Minor
-        * Matrix33F.CreateRotationZ(ConstantsF.PiOver2 + -0.004f)
-        * Matrix33F.CreateRotationX(ConstantsF.PiOver2 + -0.002f));
+        (Matrix)_ephemeris.EquatorialToWorld.Minor
+        * Matrix.CreateRotationZ(ConstantsF.PiOver2 + -0.004f)
+        * Matrix.CreateRotationX(ConstantsF.PiOver2 + -0.002f));
 
       // Update rotation of stars.
-      _starfieldNode.PoseWorld = new Pose((Matrix33F)_ephemeris.EquatorialToWorld.Minor);
+      _starfieldNode.PoseWorld = new Pose((Matrix)_ephemeris.EquatorialToWorld.Minor);
 
       // Update direction of sun.
-      SunDirection = (Vector3F)_ephemeris.SunDirectionRefracted;
+      SunDirection = (Vector3)_ephemeris.SunDirectionRefracted;
       var sunUp = SunDirection.Orthonormal1;
       _sunNode.LookAt(SunDirection, sunUp);
 
       // Update direction of moon.
-      var moonDirection = (Vector3F)_ephemeris.MoonPosition.Normalized;
-      var moonUp = (Vector3F)_ephemeris.EquatorialToWorld.TransformDirection(Vector3D.Up);
+      var moonDirection = (Vector3)_ephemeris.MoonPosition.Normalized;
+      var moonUp = (Vector3)_ephemeris.EquatorialToWorld.TransformDirection(Vector3D.Up);
       _moonNode.LookAt(moonDirection, moonUp);
 
       // The moon needs to know the sun position and brightness to compute the moon phase.
-      _moonNode.SunDirection = (Vector3F)_ephemeris.SunPosition.Normalized;
+      _moonNode.SunDirection = (Vector3)_ephemeris.SunPosition.Normalized;
       _moonNode.SunLight = Ephemeris.ExtraterrestrialSunlight * SunlightScale;
 
       // The ScatteringSky needs the sun direction and brightness to compute the sky colors.
@@ -843,12 +843,12 @@ namespace Samples
 
       // Desaturate the ambient light to avoid very blue shadows.
       AmbientLight = InterpolationHelper.Lerp(
-        new Vector3F(Vector3F.Dot(AmbientLight, GraphicsHelper.LuminanceWeights)),
+        new Vector3(Vector3.Dot(AmbientLight, GraphicsHelper.LuminanceWeights)),
         AmbientLight,
         0.5f);
 
       // The Ephemeris model can compute the actual moonlight.
-      Vector3F moonlight, moonAmbient;
+      Vector3 moonlight, moonAmbient;
       Ephemeris.GetMoonlight(
         _scatteringSkyNode.ObserverAltitude,
         2.2f,
@@ -882,7 +882,7 @@ namespace Samples
 
         // The second cloud layer uses simple unlit clouds (only ambient lighting).
         _cloudLayerNode1.SunDirection = SunDirection;
-        _cloudLayerNode1.SunLight = Vector3F.Zero;
+        _cloudLayerNode1.SunLight = Vector3.Zero;
         _cloudLayerNode1.AmbientLight = AmbientLight + SunLight;
 
         // Use the cloud map as the texture for the directional light to create cloud shadows.
@@ -896,7 +896,7 @@ namespace Samples
         // Since sky dome is always centered on the camera, position the sunlight node in 
         // line with the camera.
         var cameraPosition = _cameraObject.CameraNode.PoseWorld.Position;
-        var upVector = Vector3F.AreNumericallyEqual(SunDirection, Vector3F.UnitZ) ? Vector3F.UnitY : Vector3F.UnitZ;
+        var upVector = Vector3.AreNumericallyEqual(SunDirection, Vector3.UnitZ) ? Vector3.UnitY : Vector3.UnitZ;
         _sunlightNode.LookAt(cameraPosition + SunDirection, cameraPosition, upVector);
 
         // Choose a scale for the cloud shadows.
@@ -908,11 +908,11 @@ namespace Samples
       }
 
       // The ScatteringSkyNode can also estimate a fog color by sampling the horizon colors.
-      Vector3F fogColor = _scatteringSkyNode.GetFogColor(256, FogSampleAngle);
+      Vector3 fogColor = _scatteringSkyNode.GetFogColor(256, FogSampleAngle);
 
       // Desaturate the fog color.
       fogColor = InterpolationHelper.Lerp(
-        new Vector3F(Vector3F.Dot(fogColor, GraphicsHelper.LuminanceWeights)),
+        new Vector3(Vector3.Dot(fogColor, GraphicsHelper.LuminanceWeights)),
         fogColor,
         FogSaturation);
 
@@ -1021,7 +1021,7 @@ namespace Samples
     /// </summary>
     /// <param name="s">The uniform scale factor.</param>
     /// <returns>The texture matrix.</returns>
-    private static Matrix33F CreateScale(float s)
+    private static Matrix CreateScale(float s)
     {
       return CreateScale(s, s);
     }
@@ -1033,9 +1033,9 @@ namespace Samples
     /// <param name="su">The scale factor for u texture coordinates.</param>
     /// <param name="sv">The scale factor for v texture coordinates.</param>
     /// <returns>The texture matrix.</returns>
-    private static Matrix33F CreateScale(float su, float sv)
+    private static Matrix CreateScale(float su, float sv)
     {
-      return new Matrix33F(
+      return new Matrix(
         su, 0, 0,
         0, sv, 0,
         0, 0, 1);
@@ -1045,4 +1045,3 @@ namespace Samples
 
   }
 }
-#endif

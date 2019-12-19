@@ -6,9 +6,9 @@ using System;
 using DigitalRune.Mathematics;
 using DigitalRune.Mathematics.Algebra;
 using DigitalRune.Mathematics.Interpolation;
-#if XNA || MONOGAME
+
 using Microsoft.Xna.Framework.Content;
-#endif
+
 
 
 namespace DigitalRune.Animation
@@ -17,7 +17,7 @@ namespace DigitalRune.Animation
   /// Animates a point that follows a predefined path. (Base implementation.)
   /// </summary>
   /// <typeparam name="TPoint">
-  /// The type of the path points, such as <see cref="Vector2F"/>, <see cref="Vector3F"/>, etc.
+  /// The type of the path points, such as <see cref="Vector2F"/>, <see cref="Vector3"/>, etc.
   /// </typeparam>
   /// <typeparam name="TPathKey">
   /// The type of the path key. (A type derived from <see cref="CurveKey{TParam,TPoint}"/>.)
@@ -81,9 +81,9 @@ namespace DigitalRune.Animation
     /// Gets or sets the animation path.
     /// </summary>
     /// <value>The animation path.</value>
-#if XNA || MONOGAME
+
     [ContentSerializer(SharedResource = true)]
-#endif
+
     public TPath Path { get; set; }
 
 

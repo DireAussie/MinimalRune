@@ -7,10 +7,10 @@ using System.ComponentModel;
 using DigitalRune.Mathematics;
 using DigitalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
-#if WP7 || PORTABLE
+
 using DigitalRune.Game.Input;
 using Microsoft.Xna.Framework.Input.Touch;
-#endif
+
 
 using MathHelper = Microsoft.Xna.Framework.MathHelper;
 
@@ -100,7 +100,7 @@ namespace DigitalRune.Game.UI.Controls
     private ScrollBar _verticalScrollBar;
     private RectangleF _contentBounds;
 
-#if WP7 || PORTABLE
+
     private bool _isTouchDevice;
 
     // Dynamic scrolling with flick gestures:
@@ -113,7 +113,7 @@ namespace DigitalRune.Game.UI.Controls
 
     // On phone/tablet the user can drag the content beyond the limit.
     private Vector2F _virtualOffset;  // The virtual offset, which can be beyond the limits.
-#endif
+
 
 
 
@@ -302,9 +302,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <summary> 
     /// The ID of the <see cref="HorizontalScrollBarVisibility"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int HorizontalScrollBarVisibilityPropertyId = CreateProperty(
       typeof(ScrollViewer), "HorizontalScrollBarVisibility", GamePropertyCategories.Behavior, null,
       ScrollBarVisibility.Auto, UIPropertyOptions.AffectsMeasure);
@@ -326,9 +326,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <summary> 
     /// The ID of the <see cref="VerticalScrollBarVisibility"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int VerticalScrollBarVisibilityPropertyId = CreateProperty(
       typeof(ScrollViewer), "VerticalScrollBarVisibility", GamePropertyCategories.Behavior, null,
       ScrollBarVisibility.Auto, UIPropertyOptions.AffectsMeasure);
@@ -350,9 +350,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <summary> 
     /// The ID of the <see cref="HorizontalOffset"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int HorizontalOffsetPropertyId = CreateProperty(
       typeof(ScrollViewer), "HorizontalOffset", GamePropertyCategories.Layout, null, 0.0f,
       UIPropertyOptions.AffectsArrange);
@@ -375,9 +375,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <summary> 
     /// The ID of the <see cref="VerticalOffset"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int VerticalOffsetPropertyId = CreateProperty(
       typeof(ScrollViewer), "VerticalOffset", GamePropertyCategories.Layout, null, 0.0f,
       UIPropertyOptions.AffectsArrange);
@@ -400,9 +400,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <summary> 
     /// The ID of the <see cref="HorizontalScrollBarStyle"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int HorizontalScrollBarStylePropertyId = CreateProperty(
       typeof(ScrollViewer), "HorizontalScrollBarStyle", GamePropertyCategories.Style, null,
       "HorizontalScrollBar", UIPropertyOptions.None);
@@ -425,9 +425,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <summary> 
     /// The ID of the <see cref="VerticalScrollBarStyle"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int VerticalScrollBarStylePropertyId = CreateProperty(
       typeof(ScrollViewer), "VerticalScrollBarStyle", GamePropertyCategories.Style, null,
       "VerticalScrollBar", UIPropertyOptions.None);
@@ -460,7 +460,7 @@ namespace DigitalRune.Game.UI.Controls
       Style = "ScrollViewer";
       ClipContent = true;
 
-#if WP7 || PORTABLE
+
       _isTouchDevice = GlobalSettings.PlatformID == PlatformID.WindowsPhone7
                        || GlobalSettings.PlatformID == PlatformID.WindowsPhone8
                        || GlobalSettings.PlatformID == PlatformID.WindowsStore
@@ -476,7 +476,7 @@ namespace DigitalRune.Game.UI.Controls
       // Update _virtualVerticalOffset whenever VerticalOffset changes.
       var verticalOffsetProperty = Properties.Get<float>(VerticalOffsetPropertyId);
       verticalOffsetProperty.Changed += (s, e) => _virtualOffset.Y = e.NewValue;
-#endif
+
     }
 
 
@@ -511,10 +511,10 @@ namespace DigitalRune.Game.UI.Controls
         scrollBarValue.Changed += horizontalOffset.Change;
         horizontalOffset.Changed += scrollBarValue.Change;
 
-#if WP7 || PORTABLE
+
         if (_isTouchDevice)
           _horizontalScrollBar.Opacity = 0;
-#endif
+
       }
 
       // Create vertical scroll bar.
@@ -538,10 +538,10 @@ namespace DigitalRune.Game.UI.Controls
         scrollBarValue.Changed += verticalOffset.Change;
         verticalOffset.Changed += scrollBarValue.Change;
 
-#if WP7 || PORTABLE
+
         if (_isTouchDevice)
           _verticalScrollBar.Opacity = 0;
-#endif
+
       }
     }
 
@@ -704,7 +704,7 @@ namespace DigitalRune.Game.UI.Controls
 
       float verticalOverlap = 0;
       float horizontalOverlap = 0;
-#if WP7 || PORTABLE
+
       if (_isTouchDevice)
       {
         // On phone the bars overlap the content area.
@@ -714,7 +714,7 @@ namespace DigitalRune.Game.UI.Controls
         if (verticalScrollBarVisible)
           horizontalOverlap = _verticalScrollBar.DesiredWidth;
       }
-#endif
+
 
       // Set bar properties. Remeasure with the new properties and arrange the bars.
       if (horizontalScrollBarVisible)
@@ -802,10 +802,10 @@ namespace DigitalRune.Game.UI.Controls
       }
 
       // Subtract scroll bars from viewport size.
-#if !WP7
-#if PORTABLE
+
+
       if (!_isTouchDevice)
-#endif
+
       {
         // The bar area has to be removed from the content area. (Note: On phone/tablet
         // the bars overlap the content area. They are invisible most of the time.)
@@ -814,7 +814,7 @@ namespace DigitalRune.Game.UI.Controls
         if (verticalScrollBarVisible)
           viewportSize.X = size.X - padding.X - padding.Z - _verticalScrollBar.DesiredWidth;
       }
-#endif
+
     }
 
 
@@ -826,7 +826,7 @@ namespace DigitalRune.Game.UI.Controls
     {
       var inputService = InputService;
 
-#if WP7 || PORTABLE
+
       if (_isTouchDevice)
       {
         // Scrolling on phone/tablet has priority over the actions of the visual children.
@@ -925,14 +925,14 @@ namespace DigitalRune.Game.UI.Controls
         if (!inputService.IsMouseOrTouchHandled && inputService.IsDown(MouseButtons.Left))
           _scrollVelocity = Vector2F.Zero;
       }
-#endif
+
 
       base.OnHandleInput(context);
 
       if (!IsLoaded)
         return;
 
-#if !WP7 && !XBOX
+
       // Mouse wheel scrolls vertically when the mouse cursor is over the scroll viewer.
       if (!inputService.IsMouseOrTouchHandled && IsMouseOver)
       {
@@ -954,7 +954,7 @@ namespace DigitalRune.Game.UI.Controls
           VerticalOffset = offset;
         }
       }
-#endif
+
 
       // Scroll with game pad right stick.
       if (!inputService.IsGamePadHandled(context.AllowedPlayer))
@@ -1011,7 +1011,7 @@ namespace DigitalRune.Game.UI.Controls
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
     protected override void OnUpdate(TimeSpan deltaTime)
     {
-#if WP7 || PORTABLE
+
       float t = (float)deltaTime.TotalSeconds;
       bool canScrollHorizontally = (ExtentWidth > ViewportWidth);
       bool canScrollVertically = (ExtentHeight > ViewportHeight);
@@ -1202,7 +1202,7 @@ namespace DigitalRune.Game.UI.Controls
         VerticalOffset = minOffset.Y;
       else if (verticalOffset > maxOffset.Y)
         VerticalOffset = maxOffset.Y;
-#endif
+
 
       base.OnUpdate(deltaTime);
     }

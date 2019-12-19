@@ -9,10 +9,10 @@ using DigitalRune.Geometry.Shapes;
 using DigitalRune.Linq;
 using DigitalRune.Mathematics.Algebra;
 
-#if !POOL_ENUMERABLES
+
 using DigitalRune.Collections;
 using DigitalRune.Mathematics;
-#endif
+
 
 
 namespace DigitalRune.Geometry.Partitioning
@@ -24,7 +24,7 @@ namespace DigitalRune.Geometry.Partitioning
     {
       UpdateInternal();
 
-#if !POOL_ENUMERABLES
+
       if (_root == null)
         yield break;
 
@@ -52,7 +52,7 @@ namespace DigitalRune.Geometry.Partitioning
 #else
       // Avoiding garbage:
       return GetOverlapsWork.Create(this, ref aabb);
-#endif
+
     }
 
 
@@ -62,7 +62,7 @@ namespace DigitalRune.Geometry.Partitioning
       // checking the AABBs we compare the nodes. This removes some unnecessary AABB
       // checks when computing self-overlaps. Filtering is not applied.
 
-#if !POOL_ENUMERABLES
+
       if (_root == null)
         yield break;
 
@@ -89,7 +89,7 @@ namespace DigitalRune.Geometry.Partitioning
       DigitalRune.ResourcePools<Node>.Stacks.Recycle(stack);
 #else
       return GetOverlapsWithLeafWork.Create(this, leaf);
-#endif
+
     }
 
 
@@ -110,7 +110,7 @@ namespace DigitalRune.Geometry.Partitioning
 
       UpdateInternal();
 
-#if !POOL_ENUMERABLES
+
       if (_root == null)
         yield break;
 
@@ -138,7 +138,7 @@ namespace DigitalRune.Geometry.Partitioning
 #else
       // Avoiding garbage:
       return GetLeafNodesWork.Create(this, ref aabb);
-#endif
+
     }
 
 
@@ -147,11 +147,11 @@ namespace DigitalRune.Geometry.Partitioning
     {
       UpdateInternal();
 
-#if !POOL_ENUMERABLES
+
       if (_root == null)
         yield break;
 
-      var rayDirectionInverse = new Vector3F(
+      var rayDirectionInverse = new Vector3(
             1 / ray.Direction.X,
             1 / ray.Direction.Y,
             1 / ray.Direction.Z);
@@ -182,7 +182,7 @@ namespace DigitalRune.Geometry.Partitioning
 #else
       // Avoiding garbage:
       return GetOverlapsWithRayWork.Create(this, ref ray);
-#endif
+
     }
 
 
@@ -191,7 +191,7 @@ namespace DigitalRune.Geometry.Partitioning
     {
       UpdateInternal();
 
-#if !POOL_ENUMERABLES
+
       if (_root == null || planes == null)
         yield break;
 
@@ -289,17 +289,17 @@ namespace DigitalRune.Geometry.Partitioning
         throw new ArgumentException("The bounding volume (k-DOP) needs to have at least 1 but max 32 planes.", "planes");
 
       return GetOverlapsWithKDOPWork.Create(this, planes);
-#endif
+
     }
 
 
     private static int Classify(ref Aabb aabb, ref Plane plane, int signs)
     {
-      Vector3F min = aabb.Minimum;
-      Vector3F max = aabb.Maximum;
+      Vector3 min = aabb.Minimum;
+      Vector3 max = aabb.Maximum;
 
       // Get near and far corners of the AABB.
-      Vector3F pNear, pFar;
+      Vector3 pNear, pFar;
       switch (signs)
       {
         case (0 + 0 + 0): // normal = (-x, -y, -z)
@@ -307,28 +307,28 @@ namespace DigitalRune.Geometry.Partitioning
           pFar  = min;
           break;
         case (1 + 0 + 0): // normal = (+x, -y, -z)
-          pNear = new Vector3F(min.X, max.Y, max.Z);
-          pFar  = new Vector3F(max.X, min.Y, min.Z);
+          pNear = new Vector3(min.X, max.Y, max.Z);
+          pFar  = new Vector3(max.X, min.Y, min.Z);
           break;
         case (0 + 2 + 0):// normal = (-x, +y, -z)
-          pNear = new Vector3F(max.X, min.Y, max.Z);
-          pFar  = new Vector3F(min.X, max.Y, min.Z);
+          pNear = new Vector3(max.X, min.Y, max.Z);
+          pFar  = new Vector3(min.X, max.Y, min.Z);
           break;
         case (1 + 2 + 0): // normal = (+x, +y, -z)
-          pNear = new Vector3F(min.X, min.Y, max.Z);
-          pFar  = new Vector3F(max.X, max.Y, min.Z);
+          pNear = new Vector3(min.X, min.Y, max.Z);
+          pFar  = new Vector3(max.X, max.Y, min.Z);
           break;
         case (0 + 0 + 4): // normal = (-x, -y, +z)
-          pNear = new Vector3F(max.X, max.Y, min.Z);
-          pFar  = new Vector3F(min.X, min.Y, max.Z);
+          pNear = new Vector3(max.X, max.Y, min.Z);
+          pFar  = new Vector3(min.X, min.Y, max.Z);
           break;
         case (1 + 0 + 4): // normal = (+x, -y, +z)
-          pNear = new Vector3F(min.X, max.Y, min.Z);
-          pFar  = new Vector3F(max.X, min.Y, max.Z);
+          pNear = new Vector3(min.X, max.Y, min.Z);
+          pFar  = new Vector3(max.X, min.Y, max.Z);
           break;
         case (0 + 2 + 4): // normal = (-x, +y, +z)
-          pNear = new Vector3F(max.X, min.Y, min.Z);
-          pFar  = new Vector3F(min.X, max.Y, max.Z);
+          pNear = new Vector3(max.X, min.Y, min.Z);
+          pFar  = new Vector3(min.X, max.Y, max.Z);
           break;
         case (1 + 2 + 4): // normal = (+x, +y, +z)
           pNear = min;
@@ -338,10 +338,10 @@ namespace DigitalRune.Geometry.Partitioning
           throw new ArgumentException("Invalid signs.", "signs");
       }
 
-      if (Vector3F.Dot(plane.Normal, pNear) >= plane.DistanceFromOrigin)
+      if (Vector3.Dot(plane.Normal, pNear) >= plane.DistanceFromOrigin)
         return +1;  // AABB is in positive halfspace.
 
-      if (Vector3F.Dot(plane.Normal, pFar) <= plane.DistanceFromOrigin)
+      if (Vector3.Dot(plane.Normal, pFar) <= plane.DistanceFromOrigin)
         return -1;  // AABB is in negative halfspace.
 
       // AABB intersects plane.

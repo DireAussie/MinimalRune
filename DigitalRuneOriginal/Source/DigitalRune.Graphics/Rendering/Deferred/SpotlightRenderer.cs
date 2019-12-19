@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !WP7
+
 using System;
 using System.Collections.Generic;
 using DigitalRune.Geometry;
@@ -175,7 +175,7 @@ namespace DigitalRune.Graphics.Rendering
         var lightPose = lightNode.PoseWorld;
         _parameterPosition.SetValue((Vector3)(lightPose.Position - cameraPose.Position));
 
-        var lightDirectionWorld = lightPose.ToWorldDirection(Vector3F.Forward);
+        var lightDirectionWorld = lightPose.ToWorldDirection(Vector3.Forward);
         _parameterLightDirection.SetValue((Vector3)lightDirectionWorld);
 
         _parameterRange.SetValue(light.Range);
@@ -200,7 +200,7 @@ namespace DigitalRune.Graphics.Rendering
         bool hasTexture = (light.Texture != null);
         if (hasTexture)
         {
-          var projection = Matrix44F.CreatePerspectiveFieldOfView(light.CutoffAngle * 2, 1, 0.1f, 100);
+          var projection = Matrix.CreatePerspectiveFieldOfView(light.CutoffAngle * 2, 1, 0.1f, 100);
           _parameterTextureMatrix.SetValue((Matrix)(GraphicsHelper.ProjectorBiasMatrix * projection * (lightPose.Inverse * new Pose(cameraPose.Position))));
           _parameterTexture.SetValue(light.Texture);
         }
@@ -212,7 +212,7 @@ namespace DigitalRune.Graphics.Rendering
         
         // Convert frustum far corners from view space to world space.
         for (int j = 0; j < _frustumFarCorners.Length; j++)
-          _frustumFarCorners[j] = (Vector3)cameraPose.ToWorldDirection((Vector3F)_frustumFarCorners[j]);
+          _frustumFarCorners[j] = (Vector3)cameraPose.ToWorldDirection((Vector3)_frustumFarCorners[j]);
         _parameterFrustumCorners.SetValue(_frustumFarCorners);
 
         if (lightNode.Clip != null)
@@ -280,4 +280,4 @@ namespace DigitalRune.Graphics.Rendering
 
   }
 }
-#endif
+

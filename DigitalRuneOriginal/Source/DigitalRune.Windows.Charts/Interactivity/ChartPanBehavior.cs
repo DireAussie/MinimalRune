@@ -169,7 +169,7 @@ namespace DigitalRune.Windows.Charts.Interactivity
         }
 
 
-#if !SILVERLIGHT
+
         /// <summary>
         /// Identifies the <see cref="MouseButton"/> dependency property.
         /// </summary>
@@ -201,7 +201,7 @@ namespace DigitalRune.Windows.Charts.Interactivity
             get { return (MouseButton)GetValue(MouseButtonProperty); }
             set { SetValue(MouseButtonProperty, value); }
         }
-#endif
+
 
 
 
@@ -224,11 +224,11 @@ namespace DigitalRune.Windows.Charts.Interactivity
         protected override void OnAttached()
         {
             base.OnAttached();
-#if SILVERLIGHT
+
             AssociatedObject.MouseLeftButtonDown += OnMouseDown;
 #else
             AssociatedObject.MouseDown += OnMouseDown;
-#endif
+
         }
 
 
@@ -242,11 +242,11 @@ namespace DigitalRune.Windows.Charts.Interactivity
         /// </remarks>
         protected override void OnDetaching()
         {
-#if SILVERLIGHT
+
             AssociatedObject.MouseLeftButtonDown -= OnMouseDown;
 #else
             AssociatedObject.MouseDown -= OnMouseDown;
-#endif
+
             base.OnDetaching();
         }
 
@@ -268,11 +268,11 @@ namespace DigitalRune.Windows.Charts.Interactivity
 
         private void OnMouseDown(object sender, MouseButtonEventArgs eventArgs)
         {
-#if SILVERLIGHT
+
             bool buttonPressed = true;
 #else
             bool buttonPressed = (eventArgs.ChangedButton == MouseButton);
-#endif
+
 
             if (IsEnabled && buttonPressed)
             {
@@ -334,13 +334,13 @@ namespace DigitalRune.Windows.Charts.Interactivity
             _axisMax = _affectedAxes.Select(axis => axis.Scale.Max).ToArray();
 
             // Try to capture the mouse.
-#if SILVERLIGHT
+
             // In Silverlight: Always capture mouse.
             bool captureMouse = true;
 #else
             // Only capture mouse if it is not already captured by a different element.
             bool captureMouse = (Mouse.Captured == null || Mouse.Captured == _chartPanel);
-#endif
+
 
             bool mouseCaptured = false;
             if (captureMouse)
@@ -349,19 +349,19 @@ namespace DigitalRune.Windows.Charts.Interactivity
             if (mouseCaptured)
             {
                 _lastMousePosition = mousePosition;
-#if !SILVERLIGHT
+
                 _chartPanel.Focus();
                 _chartPanel.PreviewKeyDown += OnPreviewKeyDown;
-#endif
+
                 _chartPanel.LostMouseCapture += OnLostMouseCapture;
                 _chartPanel.MouseMove += OnMouseMove;
 
-#if SILVERLIGHT
+
                 _chartPanel.MouseLeftButtonUp += OnMouseUp;
 #else
                 _chartPanel.MouseUp += OnMouseUp;
                 Mouse.OverrideCursor = Cursors.ScrollAll;
-#endif
+
             }
             else
             {
@@ -378,24 +378,24 @@ namespace DigitalRune.Windows.Charts.Interactivity
             if (_chartPanel == null)
                 return;
 
-#if !SILVERLIGHT
+
             _chartPanel.PreviewKeyDown -= OnPreviewKeyDown;
-#endif
+
 
             _chartPanel.LostMouseCapture -= OnLostMouseCapture;
             _chartPanel.MouseMove -= OnMouseMove;
 
-#if SILVERLIGHT
+
             _chartPanel.MouseLeftButtonUp -= OnMouseUp;
 #else
             _chartPanel.MouseUp -= OnMouseUp;
-#endif
+
 
             _chartPanel.ReleaseMouseCapture();
 
-#if !SILVERLIGHT
+
             Mouse.OverrideCursor = null;
-#endif
+
 
             if (!commit)
             {
@@ -421,7 +421,7 @@ namespace DigitalRune.Windows.Charts.Interactivity
         }
 
 
-#if !SILVERLIGHT
+
         private void OnPreviewKeyDown(object sender, KeyEventArgs eventArgs)
         {
             if (eventArgs.Key == Key.Escape)
@@ -430,29 +430,29 @@ namespace DigitalRune.Windows.Charts.Interactivity
                 EndPanning(false);
             }
         }
-#endif
+
 
 
         private void OnLostMouseCapture(object sender, MouseEventArgs eventArgs)
         {
             // End panning because ChartPanel lost the mouse capture.
             // (Possible application switch, or another interaction as released the mouse capture.)
-#if SILVERLIGHT
+
             bool commit = true;
 #else
             bool commit = !Keyboard.IsKeyDown(Key.Escape);
-#endif
+
             EndPanning(commit);
         }
 
 
         private void OnMouseUp(object sender, MouseButtonEventArgs eventArgs)
         {
-#if SILVERLIGHT
+
             bool buttonPressed = true;
 #else
             bool buttonPressed = eventArgs.ChangedButton == MouseButton;
-#endif
+
 
             if (buttonPressed)
             {
@@ -507,7 +507,7 @@ namespace DigitalRune.Windows.Charts.Interactivity
         /// </returns>
         private bool MouseButtonPressed()
         {
-#if SILVERLIGHT
+
             return true;
 #else
             return (MouseButton == MouseButton.Left) == (Mouse.LeftButton == MouseButtonState.Pressed)
@@ -515,7 +515,7 @@ namespace DigitalRune.Windows.Charts.Interactivity
                    && (MouseButton == MouseButton.Right) == (Mouse.RightButton == MouseButtonState.Pressed)
                    && (MouseButton == MouseButton.XButton1) == (Mouse.XButton1 == MouseButtonState.Pressed)
                    && (MouseButton == MouseButton.XButton2) == (Mouse.XButton2 == MouseButtonState.Pressed);
-#endif
+
         }
 
     }

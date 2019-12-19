@@ -112,7 +112,7 @@ namespace DigitalRune.Animation.Character
     /// the hand center. Then the target will be grabbed correctly with the hand center and not the
     /// wrist.
     /// </remarks>
-    public Vector3F TipOffset
+    public Vector3 TipOffset
     {
       get { return _tipOffset; }
       set
@@ -124,7 +124,7 @@ namespace DigitalRune.Animation.Character
         }
       }
     }
-    private Vector3F _tipOffset;
+    private Vector3 _tipOffset;
 
 
     /// <summary>
@@ -264,7 +264,7 @@ namespace DigitalRune.Animation.Character
           // Get current tip position in local bone space.
           var bonePoseAbsolute = SkeletonPose.GetBonePoseAbsolute(boneIndex);
           var targetPositionLocal = bonePoseAbsolute.ToLocalPosition(Target);
-          Vector3F tipLocal;
+          Vector3 tipLocal;
           if (boneIndex == TipBoneIndex)
           {
             tipLocal = TipOffset;
@@ -291,7 +291,7 @@ namespace DigitalRune.Animation.Character
           // Rotate bone so that it points to the target.
           if (tipLocal.TryNormalize() && targetPositionLocal.TryNormalize())
           {
-            var rotation = QuaternionF.CreateRotation(tipLocal, targetPositionLocal);
+            var rotation = Quaternion.CreateRotation(tipLocal, targetPositionLocal);
             var angle = rotation.Angle;
 
             // If the bone gain is less than 1, then we make a smaller correction. We will need

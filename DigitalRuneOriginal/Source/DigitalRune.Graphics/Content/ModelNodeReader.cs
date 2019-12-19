@@ -13,7 +13,7 @@ namespace DigitalRune.Graphics.Content
   /// </summary>
   public class ModelNodeReader : ContentTypeReader<ModelNode>
   {
-#if !MONOGAME
+
     /// <summary>
     /// Determines if deserialization into an existing object is possible.
     /// </summary>
@@ -25,7 +25,7 @@ namespace DigitalRune.Graphics.Content
     {
       get { return true; }
     }
-#endif
+
 
 
     /// <summary>

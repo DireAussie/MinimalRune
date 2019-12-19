@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !NETFX_CORE && !WP7 && !XBOX
+
 using System.Diagnostics;
 using DigitalRune.Mathematics.Algebra;
 
@@ -23,14 +23,14 @@ namespace DigitalRune.Geometry.Meshes
     public int Id;
 
     // The three vertices.
-    public Vector3F[] Vertices;
+    public Vector3[] Vertices;
 
     // The triangle face normal.
-    public Vector3F Normal;
+    public Vector3 Normal;
 
     // The averaged vertex normals.
     // TODO: If this info is stored per triangle it is stored duplicated in all triangles that share this vertex. 
-    public Vector3F[] VertexNormals = new Vector3F[3];
+    public Vector3[] VertexNormals = new Vector3[3];
 
     // The neighbor triangles.
     // Neighbor[i] contains the neighbor on the edge that does NOT involve vertex i.
@@ -69,8 +69,8 @@ namespace DigitalRune.Geometry.Meshes
           continue;
 
         // Get edge opposite of vertex i.
-        Vector3F startEdgeA = triangleA.Vertices[(i + 1) % 3];
-        Vector3F endEdgeA = triangleA.Vertices[(i + 2) % 3];
+        Vector3 startEdgeA = triangleA.Vertices[(i + 1) % 3];
+        Vector3 endEdgeA = triangleA.Vertices[(i + 2) % 3];
 
         // Loop through all edges of B.
         for (int j = 0; j < 3; j++)
@@ -79,12 +79,12 @@ namespace DigitalRune.Geometry.Meshes
             continue;
 
           // Get edge opposite of vertex j.
-          Vector3F startEdgeB = triangleB.Vertices[(j + 1) % 3];
-          Vector3F endEdgeB = triangleB.Vertices[(j + 2) % 3];
+          Vector3 startEdgeB = triangleB.Vertices[(j + 1) % 3];
+          Vector3 endEdgeB = triangleB.Vertices[(j + 2) % 3];
 
           // Check if edges use the same vertices like to DCEL half edges.
-          if (Vector3F.AreNumericallyEqual(startEdgeA, endEdgeB)
-              && Vector3F.AreNumericallyEqual(endEdgeA, startEdgeB))
+          if (Vector3.AreNumericallyEqual(startEdgeA, endEdgeB)
+              && Vector3.AreNumericallyEqual(endEdgeA, startEdgeB))
           {
             // Store neighbor links.
             triangleA.Neighbors[i] = triangleB;
@@ -96,4 +96,4 @@ namespace DigitalRune.Geometry.Meshes
 
   }
 }
-#endif
+

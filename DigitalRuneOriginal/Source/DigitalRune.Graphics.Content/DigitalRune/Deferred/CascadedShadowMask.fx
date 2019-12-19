@@ -18,11 +18,11 @@
 #define CLAMP_TEXCOORDS_TO_SHADOW_MAP_BOUNDS 1
 #include "../ShadowMap.fxh"
 
-#if SM4
+
 #define PIXELPOS SV_Position
 #else
 #define PIXELPOS VPOS
-#endif
+
 
 // Warning: gradient-based operations must be moved out of flow control...
 // Is caused by DeriveNormal, which is called before flow control!?
@@ -125,7 +125,7 @@ float4 PS(float2 texCoord : TEXCOORD0,
   //                    Distances, ShadowMatrices, vPos, cascade, shadowTexCoord);
   //}
   
-#if !SM4
+
   // Abort if the texture coordinates are outside [0, 1].
   if (!IsInRange(shadowTexCoord, 0, 1))
   {
@@ -150,7 +150,7 @@ float4 PS(float2 texCoord : TEXCOORD0,
     float3 offsetPositionView = ApplyNormalOffset(positionView, normalView, LightDirection, NormalOffset[cascade]);
     shadowTexCoord.xy = GetShadowTexCoord(float4(offsetPositionView, 1), ShadowMatrices[cascade]).xy;
   }
-#endif
+
   
   if (visualizeCascades > 0 && vPos.x < ViewportSize.x / 2)
   {
@@ -226,13 +226,13 @@ float4 PSBestDitheredPcf22     (float2 texCoord : TEXCOORD0, float3 frustumRay :
 // Techniques
 //-----------------------------------------------------------------------------
 
-#if !SM4
+
 #define VSTARGET vs_3_0
 #define PSTARGET ps_3_0
 #else
 #define VSTARGET vs_4_0
 #define PSTARGET ps_4_0
-#endif
+
 
 technique
 {

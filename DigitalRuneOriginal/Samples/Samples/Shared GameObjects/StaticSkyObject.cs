@@ -40,13 +40,13 @@ namespace Samples
       var content = _services.GetInstance<ContentManager>();
       _skyboxNode = new SkyboxNode(content.Load<TextureCube>("Sky2"))
       {
-        Color = new Vector3F(SkyExposure),
+        Color = new Vector3(SkyExposure),
       };
 
       // The ambient light.
       var ambientLight = new AmbientLight
       {
-        Color = new Vector3F(0.9f, 0.9f, 1f),
+        Color = new Vector3(0.9f, 0.9f, 1f),
         HdrScale = 0.1f,
         Intensity = 0.5f,
         HemisphericAttenuation = 0.8f,
@@ -59,7 +59,7 @@ namespace Samples
       // The main directional light.
       var sunlight = new DirectionalLight
       {
-        Color = new Vector3F(1, 0.9607844f, 0.9078432f),
+        Color = new Vector3(1, 0.9607844f, 0.9078432f),
         HdrScale = 0.4f,
         DiffuseIntensity = 1,
         SpecularIntensity = 1,
@@ -68,16 +68,16 @@ namespace Samples
       {
         Name = "Sunlight",
         Priority = 10,   // This is the most important light.
-        PoseWorld = new Pose(QuaternionF.CreateRotationY(-1.4f) * QuaternionF.CreateRotationX(-0.6f)),
+        PoseWorld = new Pose(Quaternion.CreateRotationY(-1.4f) * Quaternion.CreateRotationX(-0.6f)),
 
         // This light uses Cascaded Shadow Mapping.
         Shadow = new CascadedShadow
         {
-#if XBOX
+
           PreferredSize = 512,
 #else
           PreferredSize = 1024,
-#endif
+
           Prefer16Bit = true,
         }
       };

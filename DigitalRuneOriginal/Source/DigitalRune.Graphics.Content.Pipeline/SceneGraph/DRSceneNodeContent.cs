@@ -61,7 +61,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
     /// Gets or sets the scale.
     /// </summary>
     /// <value>The scale.</value>
-    public Vector3F ScaleLocal { get; set; }
+    public Vector3 ScaleLocal { get; set; }
 
 
     /// <summary>
@@ -113,7 +113,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
     public DRSceneNodeContent()
     {
       PoseLocal = Pose.Identity;
-      ScaleLocal = Vector3F.One;
+      ScaleLocal = Vector3.One;
       PoseWorld = Pose.Identity;
     }
 

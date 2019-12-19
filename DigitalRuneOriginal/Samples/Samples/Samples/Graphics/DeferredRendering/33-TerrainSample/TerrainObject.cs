@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8 && !XBOX
+﻿
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -376,9 +376,9 @@ namespace Samples.Graphics
             // tool, like GIMP. Blur the texture until it is one solid color. Pick the color using
             // a color picker tool. If the image-processing tool uses sRGB, then convert the color
             // to linear RGB: colorLinear = colorSRgb^2.2)
-            DiffuseColor = new Vector3F(1 / 0.246f, 1 / 0.205f, 1 / 0.171f),
+            DiffuseColor = new Vector3(1 / 0.246f, 1 / 0.205f, 1 / 0.171f),
 
-            SpecularColor = new Vector3F(0.5f),
+            SpecularColor = new Vector3(0.5f),
             SpecularPower = 20,
 
             FadeOutStart = fadeOutStart,
@@ -399,8 +399,8 @@ namespace Samples.Graphics
             TileSize = DetailCellSize * 1024,
             TintTexture = tintTexture,
             TintStrength = 1,
-            DiffuseColor = new Vector3F(1 / 0.25f),
-            SpecularColor = new Vector3F(1),
+            DiffuseColor = new Vector3(1 / 0.25f),
+            SpecularColor = new Vector3(1),
             SpecularPower = 20,
 
             BlendTexture = content.Load<Texture2D>("Terrain/Terrain001-Blend-Grass" + tilePostfix),
@@ -428,8 +428,8 @@ namespace Samples.Graphics
               TileSize = DetailCellSize * 512,
               TintTexture = tintTexture,
               TintStrength = 1f,
-              DiffuseColor = new Vector3F(1 / 0.429f, 1 / 0.347f, 1 / 0.275f),
-              SpecularColor = new Vector3F(10),
+              DiffuseColor = new Vector3(1 / 0.429f, 1 / 0.347f, 1 / 0.275f),
+              SpecularColor = new Vector3(10),
               SpecularPower = 50,
               BlendTexture = content.Load<Texture2D>("Terrain/Terrain001-Blend-Sand" + tilePostfix),
               BlendTextureChannel = 0,
@@ -453,8 +453,8 @@ namespace Samples.Graphics
             TileSize = DetailCellSize * 1024 * 10,
             TintTexture = tintTexture,
             TintStrength = 1f,
-            DiffuseColor = new Vector3F(1 / 0.702f) * new Vector3F(0.9f, 1, 0.9f),
-            SpecularColor = new Vector3F(2),
+            DiffuseColor = new Vector3(1 / 0.702f) * new Vector3(0.9f, 1, 0.9f),
+            SpecularColor = new Vector3(2),
             SpecularPower = 100,
             BlendTexture = content.Load<Texture2D>("Terrain/Terrain001-Blend-Dirt" + tilePostfix),
             BlendTextureChannel = 0,
@@ -469,8 +469,8 @@ namespace Samples.Graphics
             TileSize = DetailCellSize * 512,
             TintTexture = tintTexture,
             TintStrength = 1f,
-            DiffuseColor = new Vector3F(1 / 0.59f, 1 / 0.537f, 1 / 0.5f),
-            SpecularColor = new Vector3F(0.5f),
+            DiffuseColor = new Vector3(1 / 0.59f, 1 / 0.537f, 1 / 0.5f),
+            SpecularColor = new Vector3(0.5f),
             SpecularPower = 20,
 
             // This layer is transparent to blend with the underlying rock texture.
@@ -494,8 +494,8 @@ namespace Samples.Graphics
             TileSize = DetailCellSize * 1024 * 20,
             TintTexture = tintTexture,
             TintStrength = 1f,
-            DiffuseColor = new Vector3F(1 / 0.702f) * 1,
-            SpecularColor = new Vector3F(2),
+            DiffuseColor = new Vector3(1 / 0.702f) * 1,
+            SpecularColor = new Vector3(2),
             SpecularPower = 100,
             BlendTexture = content.Load<Texture2D>("Terrain/Terrain001-Blend-Rock" + tilePostfix),
             BlendTextureChannel = 0,
@@ -511,8 +511,8 @@ namespace Samples.Graphics
             TileSize = DetailCellSize * 1024,
             TintTexture = tintTexture,
             TintStrength = 1f,
-            DiffuseColor = new Vector3F(1 / 0.702f) * 1,
-            SpecularColor = new Vector3F(2),
+            DiffuseColor = new Vector3(1 / 0.702f) * 1,
+            SpecularColor = new Vector3(2),
             SpecularPower = 100,
             Alpha = 0.5f,
             BlendTexture = content.Load<Texture2D>("Terrain/Terrain001-Blend-Rock" + tilePostfix),
@@ -532,8 +532,8 @@ namespace Samples.Graphics
             TileSize = DetailCellSize * 512,
             TintTexture = tintTexture,
             TintStrength = 1f,
-            DiffuseColor = new Vector3F(1 / 0.246f, 1 / 0.205f, 1 / 0.171f),
-            SpecularColor = new Vector3F(1),
+            DiffuseColor = new Vector3(1 / 0.246f, 1 / 0.205f, 1 / 0.171f),
+            SpecularColor = new Vector3(1),
             BlendRange = blendRange,
             BlendTexture = content.Load<Texture2D>("Terrain/Terrain001-Blend-Flow" + tilePostfix),
             BlendTextureChannel = 0,
@@ -554,8 +554,8 @@ namespace Samples.Graphics
               TileSize = DetailCellSize * 512,
               TintTexture = tintTexture,
               TintStrength = 0.0f,
-              DiffuseColor = new Vector3F(1),
-              SpecularColor = new Vector3F(10),
+              DiffuseColor = new Vector3(1),
+              SpecularColor = new Vector3(10),
               SpecularPower = 100,
               BlendTexture = content.Load<Texture2D>("Terrain/Terrain001-Blend-Snow" + tilePostfix),
               BlendTextureChannel = 0,
@@ -600,7 +600,7 @@ namespace Samples.Graphics
       // edges. Assuming a symmetric frustum, we compute the length from the camera to the far
       // plane along the frustum edge.
       var projection = _cameraObject.CameraNode.Camera.Projection;
-      Vector3F nearCorner = new Vector3F(projection.Left, projection.Bottom, projection.Near);
+      Vector3 nearCorner = new Vector3(projection.Left, projection.Bottom, projection.Near);
       float maxViewDistance = (nearCorner / projection.Near * projection.Far).Length;
 
       // The terrain distance must cover 2 * maxViewDistance (because the clipmap is centered on
@@ -608,7 +608,7 @@ namespace Samples.Graphics
       float maxTerrainSize = 2 * maxViewDistance;
 
       // It is not necessary to make the clipmap bigger than the actual terrain.
-      Vector3F terrainExtent = TerrainNode.Terrain.Aabb.Extent;
+      Vector3 terrainExtent = TerrainNode.Terrain.Aabb.Extent;
       maxTerrainSize = Math.Min(maxTerrainSize, Math.Max(terrainExtent.X, terrainExtent.Z));
 
       // Get the number of cells per detail clipmap level.
@@ -795,11 +795,11 @@ namespace Samples.Graphics
         TerrainNode.BaseClipmap.NumberOfLevels,
         value => TerrainNode.BaseClipmap.NumberOfLevels = (int)value);
 
-#if !MONOGAME
+
       var detailTexelsPerLevelList = new List<int> { 512, 1024, 1365 };
 #else
       var detailTexelsPerLevelList = new List<int> { 512, 1024, 1365, 2048 };
-#endif
+
       SampleHelper.AddDropDown(
         panel,
         "Detail clipmap cells per level",
@@ -848,4 +848,4 @@ namespace Samples.Graphics
 
   }
 }
-#endif
+

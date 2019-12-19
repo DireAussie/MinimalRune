@@ -45,7 +45,7 @@ namespace DigitalRune.Graphics.SceneGraph
     /// <remarks>
     /// This color can be used to change the color or the brightness of the stars.
     /// </remarks>
-    public Vector3F Color { get; set; }
+    public Vector3 Color { get; set; }
 
 
     /// <summary>
@@ -93,7 +93,7 @@ namespace DigitalRune.Graphics.SceneGraph
     /// <param name="stars">The stars.</param>
     public StarfieldNode(IList<Star> stars)
     {
-      Color = Vector3F.One;
+      Color = Vector3.One;
       Stars = stars;
     }
 

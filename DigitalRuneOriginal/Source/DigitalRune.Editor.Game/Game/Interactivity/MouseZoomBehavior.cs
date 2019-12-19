@@ -108,9 +108,9 @@ namespace DigitalRune.Editor.Game
         /// </summary>
         public static readonly DependencyProperty CameraTargetProperty = DependencyProperty.Register(
             "CameraTarget",
-            typeof(Vector3F),
+            typeof(Vector3),
             typeof(MouseZoomBehavior),
-            new FrameworkPropertyMetadata(Vector3F.Zero));
+            new FrameworkPropertyMetadata(Vector3.Zero));
 
         /// <summary>
         /// Gets or sets the center around which the camera is orbiting.
@@ -125,9 +125,9 @@ namespace DigitalRune.Editor.Game
         /// </remarks>
         [Description("Gets or sets the center around which the camera is orbiting.")]
         [Category(Categories.Behavior)]
-        public Vector3F CameraTarget
+        public Vector3 CameraTarget
         {
-            get { return (Vector3F)GetValue(CameraTargetProperty); }
+            get { return (Vector3)GetValue(CameraTargetProperty); }
             set { SetValue(CameraTargetProperty, value); }
         }
 
@@ -239,7 +239,7 @@ namespace DigitalRune.Editor.Game
 
             // Move camera in forward direction.
             Pose pose = cameraNode.PoseWorld;
-            Vector3F forward = pose.ToWorldDirection(Vector3F.Forward);
+            Vector3 forward = pose.ToWorldDirection(Vector3.Forward);
             pose.Position += forward * distanceChange;
 
             // Apply min/max distance limits.
@@ -249,7 +249,7 @@ namespace DigitalRune.Editor.Game
                 float cameraDistance = cameraToTarget.Length;
 
                 // cameraDistance is negative if the target is behind the camera.
-                if (Vector3F.Dot(cameraToTarget, forward) < 0)
+                if (Vector3.Dot(cameraToTarget, forward) < 0)
                     cameraDistance = -cameraDistance;
 
                 // Normally, cameraToTarget should be equal to forward and the min/max

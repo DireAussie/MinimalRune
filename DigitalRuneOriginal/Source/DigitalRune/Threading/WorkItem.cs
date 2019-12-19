@@ -57,7 +57,7 @@
 */
 
 
-#if !NETFX_CORE && !PORTABLE && !USE_TPL
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -122,12 +122,12 @@ namespace DigitalRune.Threading
     internal static readonly List<WorkItem> AwaitingCallbacks = new List<WorkItem>();
 
 
-#if WP7
+
       // Cannot access Environment.ProcessorCount in phone app. (Security issue)
     private static readonly SynchronizedHashtable<int, Stack<Task>> RunningTasks = new SynchronizedHashtable<int, Stack<Task>>(8);
 #else
     private static readonly SynchronizedHashtable<int, Stack<Task>> RunningTasks = new SynchronizedHashtable<int, Stack<Task>>(Environment.ProcessorCount * 4);
-#endif
+
 
 
     public static Task? CurrentTask
@@ -442,4 +442,4 @@ namespace DigitalRune.Threading
     }
   }
 }
-#endif
+

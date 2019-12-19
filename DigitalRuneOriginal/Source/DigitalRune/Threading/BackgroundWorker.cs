@@ -57,7 +57,7 @@
 */
 
 
-#if !NETFX_CORE && !PORTABLE && !USE_TPL
+
 using System.Collections.Generic;
 using System.Threading;
 
@@ -125,4 +125,4 @@ namespace DigitalRune.Threading
     }
   }
 }
-#endif
+

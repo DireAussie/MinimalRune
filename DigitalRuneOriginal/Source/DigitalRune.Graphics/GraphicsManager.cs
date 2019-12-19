@@ -12,9 +12,9 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
-#if PORTABLE || WINDOWS_UWP
+
 #pragma warning disable 1574  // Disable warning "XML comment has cref attribute that could not be resolved."
-#endif
+
 
 
 namespace DigitalRune.Graphics
@@ -260,9 +260,9 @@ namespace DigitalRune.Graphics
         new StockEffectInterpreter(),
         new DefaultEffectInterpreter(),
         new SceneEffectInterpreter(),
-#if !WINDOWS_PHONE && !XBOX360
+
         new TerrainEffectInterpreter(),
-#endif
+
         new Dxsas08EffectInterpreter(),
       };
       EffectBinders = new EffectBinderCollection
@@ -270,9 +270,9 @@ namespace DigitalRune.Graphics
         new StockEffectBinder(),
         new DefaultEffectBinder(this),
         new SceneEffectBinder(),
-#if !WINDOWS_PHONE && !XBOX360
+
         new TerrainEffectBinder(),
-#endif
+
       };
 
       Data = new Dictionary<string, object>();
@@ -681,12 +681,12 @@ namespace DigitalRune.Graphics
       Rectangle sourceRectangle = new Rectangle(0, 0, width, height);
       try
       {
-#if !MONOGAME
+
         GraphicsDevice.Present(sourceRectangle, null, presentationTarget.Handle);
         return true;
 #else
         throw new NotImplementedException("MonoGame builds support only D3DImagePresentationTargets.");
-#endif
+
       }
       // ReSharper disable EmptyGeneralCatchClause
       catch

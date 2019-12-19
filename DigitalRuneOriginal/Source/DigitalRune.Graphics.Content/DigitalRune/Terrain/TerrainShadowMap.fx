@@ -75,7 +75,7 @@ float TerrainHoleThreshold = 0.3;
 float2 TerrainBaseClipmapOrigins[9];
 float NaN;
 
-#if PIXEL_HOLES
+
 float TerrainMipmapBias;
 texture TerrainDetailClipmap0;
 sampler TerrainDetailClipmapSampler0 = sampler_state
@@ -96,7 +96,7 @@ float TerrainDetailClipmapLevelBias;
 float2 TerrainDetailClipmapOffsets[9];
 float TerrainDetailFadeRange;
 float TerrainEnableAnisotropicFiltering;
-#endif
+
 
 
 //-----------------------------------------------------------------------------
@@ -112,9 +112,9 @@ struct VSInput
 struct VSOutput
 {
   float3 DepthOrPositionView : TEXCOORD0;
-#if PIXEL_HOLES
+
   float3 PositionWorld: TEXCOORD1;
-#endif
+
   float4 Position : SV_Position;
 };
 
@@ -122,9 +122,9 @@ struct VSOutput
 struct PSInput
 {
   float3 DepthOrPositionView : TEXCOORD0; // Stores depth in x, or position in xyz.
-#if PIXEL_HOLES
+
   float3 PositionWorld: TEXCOORD1;
-#endif
+
 };
 
 
@@ -134,11 +134,11 @@ struct PSInput
 
 VSOutput VS(VSInput input, int depthType, float near)
 {
-#if PIXEL_HOLES
+
   float holeThreshold = -1;
 #else
   float holeThreshold = TerrainHoleThreshold;
-#endif
+
   
   float3 position = input.Position.xyz;
   float3 normal;
@@ -167,16 +167,16 @@ VSOutput VS(VSInput input, int depthType, float near)
     // Pass position in view space to pixel shader.
     output.DepthOrPositionView = positionView.xyz;
   }
-#if PIXEL_HOLES
+
   output.PositionWorld = position;
-#endif
+
   return output;
 }
 
 
 float4 PS(PSInput input, uniform int depthType, uniform int smType) : COLOR
 {
-#if PIXEL_HOLES
+
   float3 positionWorld = input.PositionWorld;
   float specularPower, alpha = 0;
   float3 normal = 0, diffuse = 0, specular = 0;
@@ -192,7 +192,7 @@ float4 PS(PSInput input, uniform int depthType, uniform int smType) : COLOR
     normal, specularPower, diffuse, alpha, specular);
   
   clip(alpha - TerrainHoleThreshold);
-#endif
+
   
   float depth;
   if (depthType == DepthTypePlanar)
@@ -213,11 +213,11 @@ float4 PS(PSInput input, uniform int depthType, uniform int smType) : COLOR
   }
   else if (smType == SMTypeVsm)
   {
-#if VSM_BIAS
+
     bool useBias = true;
 #else
     bool useBias = false;
-#endif
+
     float2 moments = GetDepthMoments(depth, useBias);
     return float4(moments.x, moments.y, 0, 1);
   }
@@ -240,13 +240,13 @@ float4 PSLinearDefault(PSInput input) : COLOR { return PS(input, DepthTypeLinear
 // Techniques
 //-----------------------------------------------------------------------------
 
-#if !SM4
+
 #define VSTARGET vs_3_0
 #define PSTARGET ps_3_0
 #else
 #define VSTARGET vs_4_0
 #define PSTARGET ps_4_0
-#endif
+
 
 
 technique Default

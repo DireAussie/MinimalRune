@@ -58,8 +58,8 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
         throw new ArgumentException("The contact set must contain a plane and a ray.", "contactSet");
 
       // Get transformations.
-      Vector3F planeScale = planeObject.Scale;
-      Vector3F rayScale = rayObject.Scale;
+      Vector3 planeScale = planeObject.Scale;
+      Vector3 rayScale = rayObject.Scale;
       Pose rayPose = rayObject.Pose;
       Pose planePose = planeObject.Pose;
 
@@ -77,9 +77,9 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
       LineSegment segment = new LineSegment { Start = ray.Origin, End = ray.Origin + ray.Direction * ray.Length };
 
       // Check if ray origin is inside the plane. Otherwise call plane vs. ray query.
-      Vector3F linePoint;
-      Vector3F planePoint = Vector3F.Zero;
-      if (Vector3F.Dot(segment.Start, plane.Normal) <= plane.DistanceFromOrigin)
+      Vector3 linePoint;
+      Vector3 planePoint = Vector3.Zero;
+      if (Vector3.Dot(segment.Start, plane.Normal) <= plane.DistanceFromOrigin)
       {
         // The origin of the ray is below the plane.
         linePoint = segment.Start;
@@ -99,7 +99,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
       }
 
       // ----- Create contact info.
-      Vector3F position;
+      Vector3 position;
       float penetrationDepth;
       if (contactSet.HaveContact)
       {
@@ -114,7 +114,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
         penetrationDepth = -(linePoint - planePoint).Length;
       }
 
-      Vector3F normal = planePose.ToWorldDirection(plane.Normal);
+      Vector3 normal = planePose.ToWorldDirection(plane.Normal);
       if (swapped)
         normal = -normal;
 

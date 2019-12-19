@@ -78,7 +78,7 @@ namespace DigitalRune.Graphics
         PrimitiveType = PrimitiveType.LineList,
       };
 
-      var vertices = new List<Vector3F>();
+      var vertices = new List<Vector3>();
 
       // Base
       for (int i = 0; i < numberOfSegments; i++)
@@ -86,11 +86,11 @@ namespace DigitalRune.Graphics
         float angle = i * ConstantsF.TwoPi / numberOfSegments;
         float x = (float)Math.Cos(angle);
         float z = -(float)Math.Sin(angle);
-        vertices.Add(new Vector3F(x, 0, z));
+        vertices.Add(new Vector3(x, 0, z));
       }
 
       // Tip
-      vertices.Add(new Vector3F(0, 1, 0));
+      vertices.Add(new Vector3(0, 1, 0));
 
       submesh.VertexBuffer = new VertexBuffer(
         graphicsDevice,

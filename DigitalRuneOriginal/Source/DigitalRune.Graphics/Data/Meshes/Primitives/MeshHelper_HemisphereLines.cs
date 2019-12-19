@@ -81,16 +81,16 @@ namespace DigitalRune.Graphics
       };
 
       // Create vertices for a circle on the floor.
-      var vertices = new List<Vector3F>();
+      var vertices = new List<Vector3>();
       for (int i = 0; i < numberOfSegments; i++)
       {
         float angle = i * ConstantsF.TwoPi / numberOfSegments;
-        vertices.Add(new Vector3F((float)Math.Cos(angle), 0, -(float)Math.Sin(angle)));
+        vertices.Add(new Vector3((float)Math.Cos(angle), 0, -(float)Math.Sin(angle)));
       }
 
       // Top vertex of the sphere.
       var topVertexIndex = vertices.Count;
-      vertices.Add(new Vector3F(0, 1, 0));
+      vertices.Add(new Vector3(0, 1, 0));
 
       // 4 quarter arcs. Each arc starts at the base circle and ends at the top vertex. We already
       // have the first and last vertex.
@@ -99,31 +99,31 @@ namespace DigitalRune.Graphics
       for (int i = 0; i < numberOfSegments / 4 - 1; i++)
       {
         float angle = (i + 1) * ConstantsF.TwoPi / numberOfSegments;
-        vertices.Add(new Vector3F((float)Math.Cos(angle), (float)Math.Sin(angle), 0));
+        vertices.Add(new Vector3((float)Math.Cos(angle), (float)Math.Sin(angle), 0));
       }
 
       // Arc from -z to top. (Copy from first arc.)
       int secondArcIndex = vertices.Count;
       for (int i = 0; i < numberOfSegments / 4 - 1; i++)
       {
-        Vector3F p = vertices[firstArcIndex + i];
-        vertices.Add(new Vector3F(0, p.Y, -p.X));
+        Vector3 p = vertices[firstArcIndex + i];
+        vertices.Add(new Vector3(0, p.Y, -p.X));
       }
 
       // Arc from -x to top. (Copy from first arc.)
       int thirdArcIndex = vertices.Count;
       for (int i = 0; i < numberOfSegments / 4 - 1; i++)
       {
-        Vector3F p = vertices[firstArcIndex + i];
-        vertices.Add(new Vector3F(-p.X, p.Y, 0));
+        Vector3 p = vertices[firstArcIndex + i];
+        vertices.Add(new Vector3(-p.X, p.Y, 0));
       }
 
       // Arc from +z to top. (Copy from first arc.)
       int fourthArcIndex = vertices.Count;
       for (int i = 0; i < numberOfSegments / 4 - 1; i++)
       {
-        Vector3F p = vertices[firstArcIndex + i];
-        vertices.Add(new Vector3F(0, p.Y, p.X));
+        Vector3 p = vertices[firstArcIndex + i];
+        vertices.Add(new Vector3(0, p.Y, p.X));
       }
 
       submesh.VertexBuffer = new VertexBuffer(
@@ -194,7 +194,7 @@ namespace DigitalRune.Graphics
     }
 
 
-    //private void RenderHemicircle(float radius, ref Vector3F center, ref Vector3F right, ref Vector3F normal, ref Color color)
+    //private void RenderHemicircle(float radius, ref Vector3 center, ref Vector3 right, ref Vector3 normal, ref Color color)
     //{
     //  var numberOfSegments = 16;
 
@@ -203,7 +203,7 @@ namespace DigitalRune.Graphics
     //  {
     //    var angle = i * ConstantsF.Pi / numberOfSegments;
 
-    //    var end = center + radius * Matrix33F.CreateRotation(normal, angle) * right;
+    //    var end = center + radius * Matrix.CreateRotation(normal, angle) * right;
     //    _lineRenderer.Lines.Add(new LineBatch.Line(start, end, color));
     //    start = end;
     //  }

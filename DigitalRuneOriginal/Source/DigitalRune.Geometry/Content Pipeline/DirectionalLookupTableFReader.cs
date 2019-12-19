@@ -14,7 +14,7 @@ namespace DigitalRune.Geometry.Content
   /// <typeparam name="T">The type of data stored in the lookup table.</typeparam>
   public class DirectionalLookupTableFReader<T> : ContentTypeReader<DirectionalLookupTableF<T>>
   {
-#if !MONOGAME
+
     /// <summary>
     /// Determines if deserialization into an existing object is possible.
     /// </summary>
@@ -26,7 +26,7 @@ namespace DigitalRune.Geometry.Content
     {
       get { return true; }
     }
-#endif
+
 
 
     /// <summary>
@@ -60,7 +60,7 @@ namespace DigitalRune.Geometry.Content
   [CLSCompliant(false)]
   public class DirectionalLookupTableUInt16FReader : ContentTypeReader<DirectionalLookupTableUInt16F>
   {
-#if !MONOGAME
+
     /// <summary>
     /// Determines if deserialization into an existing object is possible.
     /// </summary>
@@ -72,7 +72,7 @@ namespace DigitalRune.Geometry.Content
     {
       get { return true; }
     }
-#endif
+
 
 
     /// <summary>

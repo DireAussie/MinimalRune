@@ -32,13 +32,13 @@ namespace DigitalRune.Physics.Constraints.Tests
       b.MassFrame = new MassFrame()
       {
         Mass = 3,
-        Inertia = new Vector3F(0.4f, 0.5f, 0.6f),
+        Inertia = new Vector3(0.4f, 0.5f, 0.6f),
       };
 
-      var r = new Vector3F(1, 2, 3);
+      var r = new Vector3(1, 2, 3);
       var k = ConstraintHelper.ComputeKMatrix(b, r);
 
-      var desiredK = 1 / b.MassFrame.Mass * Matrix33F.Identity - r.ToCrossProductMatrix() * Matrix33F.CreateScale(b.MassFrame.InertiaInverse) * r.ToCrossProductMatrix();
+      var desiredK = 1 / b.MassFrame.Mass * Matrix.Identity - r.ToCrossProductMatrix() * Matrix.CreateScale(b.MassFrame.InertiaInverse) * r.ToCrossProductMatrix();
 
       Assert.AreEqual(desiredK, k);
     }
@@ -49,17 +49,17 @@ namespace DigitalRune.Physics.Constraints.Tests
     {
       var body = new RigidBody(new BoxShape(1, 2, 3));
 
-      body.Pose = new Pose(new Vector3F(10, 20, 30), QuaternionF.CreateRotationY(1.1f));
-      body.LinearVelocity = new Vector3F(1, 2, 3);
-      body.AngularVelocity = new Vector3F(4, 5, 6);
+      body.Pose = new Pose(new Vector3(10, 20, 30), Quaternion.CreateRotationY(1.1f));
+      body.LinearVelocity = new Vector3(1, 2, 3);
+      body.AngularVelocity = new Vector3(4, 5, 6);
 
-      Vector3F pointLocal = new Vector3F(0.5f, 0.9f, 1.3f);
-      Vector3F point = body.Pose.ToWorldPosition(pointLocal);
-      Vector3F targetVelocity = new Vector3F(7, -8, 9);
+      Vector3 pointLocal = new Vector3(0.5f, 0.9f, 1.3f);
+      Vector3 point = body.Pose.ToWorldPosition(pointLocal);
+      Vector3 targetVelocity = new Vector3(7, -8, 9);
       Assert.AreNotEqual(targetVelocity, body.GetVelocityOfLocalPoint(pointLocal));
       
       ConstraintHelper.SetVelocityOfWorldPoint(body, point, targetVelocity);
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(targetVelocity, body.GetVelocityOfLocalPoint(pointLocal)));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(targetVelocity, body.GetVelocityOfLocalPoint(pointLocal)));
     }
   }
 }

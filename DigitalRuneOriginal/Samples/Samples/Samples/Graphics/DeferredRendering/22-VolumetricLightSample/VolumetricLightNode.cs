@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using System;
 using DigitalRune.Geometry.Shapes;
 using DigitalRune.Graphics;
@@ -31,7 +31,7 @@ namespace Samples.Graphics
     /// Gets or sets the color (tint color and effect intensity).
     /// </summary>
     /// <value>The color (tint color and effect intensity). The default value is (1, 1, 1).</value>
-    public Vector3F Color { get; set; }
+    public Vector3 Color { get; set; }
 
 
     /// <summary>
@@ -88,7 +88,7 @@ namespace Samples.Graphics
 
       Shape = Shape.Empty;
 
-      Color = new Vector3F(1, 1, 1);
+      Color = new Vector3(1, 1, 1);
       NumberOfSamples = 10;
     }
 
@@ -143,4 +143,3 @@ namespace Samples.Graphics
 
   }
 }
-#endif

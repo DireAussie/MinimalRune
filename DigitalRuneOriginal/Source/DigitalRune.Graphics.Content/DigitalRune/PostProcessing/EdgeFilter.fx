@@ -133,7 +133,7 @@ void DetectOnePixelEdge(float2 texCoord, out float silhouette, out float crease)
   // ----- Depth Threshold
   // Artifacts appear when
   //
-  //  n --> 90°  (The normal goes to 90° in view space.)
+  //  n --> 90ï¿½  (The normal goes to 90ï¿½ in view space.)
   //    AND
   //  z --> 1    (The sample depth goes to 1.)
   //
@@ -154,7 +154,7 @@ void DetectOnePixelEdge(float2 texCoord, out float silhouette, out float crease)
   float4 dz = saturate(zs - z);
   dz = saturate((dz - depthThreshold) * DepthSensitivity);
   
-  // Optional: Use d² instead of d to create a sharper transition.
+  // Optional: Use dï¿½ instead of d to create a sharper transition.
   //dz = dz * dz;
   
   // Take dz.x OR dz.y OR dz.z OR dz.w.
@@ -199,7 +199,7 @@ void DetectEdge(float2 texCoord, out float silhouette, out float crease)
   //    | s2 |    | s3 |
   //   -|----|----|----|-
   //
-  // According to Nienhaus and Döllner: "Edge-Enhancement - An Algorithm for Real-Time Non-Photorealistic Rendering"
+  // According to Nienhaus and Dï¿½llner: "Edge-Enhancement - An Algorithm for Real-Time Non-Photorealistic Rendering"
   // diagonal samples yield better results than sampling all 8 directions. This coincides with our own findings.
   
   // The sample offset is scaled by edge width.
@@ -219,7 +219,7 @@ void DetectEdge(float2 texCoord, out float silhouette, out float crease)
   // ----- Depth Threshold
   // Artifacts appear when
   //
-  //  n --> 90°  (The normal goes to 90° in view space.)
+  //  n --> 90ï¿½  (The normal goes to 90ï¿½ in view space.)
   //    AND
   //  z --> 1    (The sample depth goes to 1.)
   //
@@ -237,12 +237,12 @@ void DetectEdge(float2 texCoord, out float silhouette, out float crease)
   //normalThreshold = lerp(NormalThreshold, 2, z * z);
   
   // ----- Silhouette (depth discontinuity)
-  float dz0 = abs(z3 - z0); // Delta along -45° diagonal.
-  float dz1 = abs(z1 - z2); // Delta along +45° diagonal.
+  float dz0 = abs(z3 - z0); // Delta along -45ï¿½ diagonal.
+  float dz1 = abs(z1 - z2); // Delta along +45ï¿½ diagonal.
   dz0 = saturate((dz0 - depthThreshold) * DepthSensitivity);
   dz1 = saturate((dz1 - depthThreshold) * DepthSensitivity);
   
-  // Optional: Use d² instead of d to create a sharper transition.
+  // Optional: Use dï¿½ instead of d to create a sharper transition.
   //dz0 = dz0 * dz0;
   //dz1 = dz1 * dz1;
   
@@ -250,8 +250,8 @@ void DetectEdge(float2 texCoord, out float silhouette, out float crease)
   silhouette = 1 - (1 - dz0) * (1 - dz1);
   
   // ----- Crease (normal discontinuity)
-  float dn0 = 1 - dot(n0, n3); // Delta along -45° diagonal.
-  float dn1 = 1 - dot(n1, n2); // Delta along +45° diagonal.
+  float dn0 = 1 - dot(n0, n3); // Delta along -45ï¿½ diagonal.
+  float dn1 = 1 - dot(n1, n2); // Delta along +45ï¿½ diagonal.
   
   // Skybox pixels do not have valid normals. Ignore them.
   const float skyBoxLimit = 0.99999;
@@ -322,13 +322,13 @@ float4 PSOnePixelEdge(in float2 texCoord : TEXCOORD0) : COLOR0 { return PS(texCo
 // Techniques
 //-----------------------------------------------------------------------------
 
-#if !SM4
+
 #define VSTARGET vs_3_0
 #define PSTARGET ps_3_0
 #else
 #define VSTARGET vs_4_0
 #define PSTARGET ps_4_0
-#endif
+
 
 technique
 {

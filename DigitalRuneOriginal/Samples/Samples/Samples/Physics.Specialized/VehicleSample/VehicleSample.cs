@@ -1,4 +1,4 @@
-﻿#if !ANDROID && !IOS   // Cannot read from vertex buffer in MonoGame/OpenGLES.
+﻿
 using DigitalRune.Physics.ForceEffects;
 
 
@@ -33,4 +33,3 @@ friction and sliding, etc.",
     }
   }
 }
-#endif

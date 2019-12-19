@@ -31,7 +31,7 @@ namespace DigitalRune.Game.UI.Content.Pipeline
     private Uri _sourceRootDirectoryUri;
 
 
-#if MONOGAME
+
     // When using MonoGame content pipeline:
     // Target platform is stored in ContentProcessorContext.TargetPlatform.
     internal string MonoGamePlatform
@@ -55,7 +55,7 @@ namespace DigitalRune.Game.UI.Content.Pipeline
       }
     }
     private string _monoGamePlatform = "_";
-#endif
+
 
 
     /// <summary>

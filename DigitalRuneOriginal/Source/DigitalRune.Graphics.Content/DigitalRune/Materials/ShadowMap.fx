@@ -75,22 +75,22 @@ float4x4 Projection : PROJECTION;
 float CameraNear : CAMERANEAR;
 float CameraFar : CAMERAFAR;
 
-#if ALPHA_TEST
+
 float ReferenceAlpha = 0.9f;
 DECLARE_UNIFORM_DIFFUSETEXTURE
-#endif
 
-#if MORPHING
+
+
 float MorphWeight0 : MORPHWEIGHT0;
 float MorphWeight1 : MORPHWEIGHT1;
 float MorphWeight2 : MORPHWEIGHT2;
 float MorphWeight3 : MORPHWEIGHT3;
 float MorphWeight4 : MORPHWEIGHT4;
-#endif
 
-#if SKINNING
+
+
 float4x3 Bones[72];
-#endif
+
 
 
 //-----------------------------------------------------------------------------
@@ -100,29 +100,29 @@ float4x3 Bones[72];
 struct VSInput
 {
   float4 Position : POSITION0;
-#if ALPHA_TEST
+
   float2 TexCoord : TEXCOORD0;
-#endif
-#if MORPHING
+
+
   float3 MorphPosition0 : POSITION1;
   float3 MorphPosition1 : POSITION2;
   float3 MorphPosition2: POSITION3;
   float3 MorphPosition3 : POSITION4;
   float3 MorphPosition4 : POSITION5;
-#endif
-#if SKINNING
+
+
   uint4 BoneIndices : BLENDINDICES0;
   float4 BoneWeights : BLENDWEIGHT0;
-#endif
+
 };
 
 
 struct VSOutput
 {
   float3 DepthOrPositionView : TEXCOORD0;
-#if ALPHA_TEST
+
   float2 TexCoord : TEXCOORD1;
-#endif
+
   float4 Position : SV_Position;
 };
 
@@ -130,9 +130,9 @@ struct VSOutput
 struct PSInput
 {
   float3 DepthOrPositionView : TEXCOORD0; // Stores depth in x, or position in xyz.
-#if ALPHA_TEST
+
   float2 TexCoord : TEXCOORD1;
-#endif
+
 };
 
 
@@ -144,16 +144,16 @@ VSOutput VS(VSInput input, float4x4 world, int depthType, float near)
 {
   float4 position = input.Position;
   
-#if MORPHING
+
   // ----- Apply morph targets.
   position.xyz += MorphWeight0 * input.MorphPosition0;
   position.xyz += MorphWeight1 * input.MorphPosition1;
   position.xyz += MorphWeight2 * input.MorphPosition2;
   position.xyz += MorphWeight3 * input.MorphPosition3;
   position.xyz += MorphWeight4 * input.MorphPosition4;
-#endif
 
-#if SKINNING
+
+
   // ----- Apply skinning matrix.
   float4x3 skinningMatrix = 0;
   skinningMatrix += Bones[input.BoneIndices.x] * input.BoneWeights.x;
@@ -161,7 +161,7 @@ VSOutput VS(VSInput input, float4x4 world, int depthType, float near)
   skinningMatrix += Bones[input.BoneIndices.z] * input.BoneWeights.z;
   skinningMatrix += Bones[input.BoneIndices.w] * input.BoneWeights.w;
   position.xyz = mul(position, skinningMatrix);
-#endif
+
   
   // ----- Apply world, view, projection transformation.
   float4 positionWorld = mul(position, world);
@@ -181,9 +181,9 @@ VSOutput VS(VSInput input, float4x4 world, int depthType, float near)
     // Pass position in view space to pixel shader.
     output.DepthOrPositionView = positionView.xyz;
   }
-#if ALPHA_TEST
+
   output.TexCoord = input.TexCoord;
-#endif
+
   return output;
 }
 
@@ -217,10 +217,10 @@ VSOutput VSInstancing(VSInput input,
 
 float4 PS(PSInput input, uniform int depthType, uniform int smType) : COLOR
 {
-#if ALPHA_TEST
+
   float4 diffuse = tex2D(DiffuseSampler, input.TexCoord);
   clip(diffuse.a - ReferenceAlpha);
-#endif
+
   
   float depth;
   if (depthType == DepthTypePlanar)
@@ -241,11 +241,11 @@ float4 PS(PSInput input, uniform int depthType, uniform int smType) : COLOR
   }
   else if (smType == SMTypeVsm)
   {
-#if VSM_BIAS
+
     bool useBias = true;
 #else
     bool useBias = false;
-#endif
+
     float2 moments = GetDepthMoments(depth, useBias);
     return float4(moments.x, moments.y, 0, 1);
   }
@@ -280,7 +280,7 @@ float4 PSLinearDefault(PSInput input) : COLOR { return PS(input, DepthTypeLinear
 // Techniques
 //-----------------------------------------------------------------------------
 
-#if !SM4
+
 #define VSTARGET_2_0 vs_2_0
 #define PSTARGET_2_0 ps_2_0
 #define VSTARGET_3_0 vs_3_0
@@ -290,85 +290,85 @@ float4 PSLinearDefault(PSInput input) : COLOR { return PS(input, DepthTypeLinear
 #define PSTARGET_2_0 ps_4_0_level_9_1
 #define VSTARGET_3_0 vs_4_0_level_9_3
 #define PSTARGET_3_0 ps_4_0_level_9_3
-#endif
 
 
-#if !SKINNING && !MORPHING
+
+
 #define SUPPORTS_INSTANCING 1
-#endif
+
 
 technique Default
-#if !MGFX && SUPPORTS_INSTANCING   // TODO: Add Annotation support to MonoGame.
+
 < string InstancingTechnique = "DefaultInstancing"; >
-#endif
+
 {
   pass
   {
-#if ALPHA_TEST
+
     CullMode = NONE;
 #else
     CullMode = CCW;
-#endif
+
     VertexShader = compile VSTARGET_2_0 VSNoInstancingPlanar();
     PixelShader = compile PSTARGET_2_0 PSPlanarDefault();
   }
 }
 
-#if SUPPORTS_INSTANCING
+
 technique DefaultInstancing
 {
   pass
   {
-#if ALPHA_TEST
+
     CullMode = NONE;
 #else
     CullMode = CCW;
-#endif
+
     VertexShader = compile VSTARGET_3_0 VSInstancingPlanar();
     PixelShader = compile PSTARGET_3_0 PSPlanarDefault();
   }
 }
-#endif
+
 
 
 technique Directional
-#if !MGFX && SUPPORTS_INSTANCING
+
 < string InstancingTechnique = "DirectionalInstancing"; >
-#endif
+
 {
   pass
   {
-#if ALPHA_TEST
+
     CullMode = NONE;
 #else
     CullMode = CCW;
-#endif
+
     VertexShader = compile VSTARGET_2_0 VSNoInstancingPlanarPancaking();
     PixelShader = compile PSTARGET_2_0 PSPlanarDefault();
   }
 }
 
-#if SUPPORTS_INSTANCING
+
 technique DirectionalInstancing
 {
   pass
   {
-#if ALPHA_TEST
+
     CullMode = NONE;
 #else
     CullMode = CCW;
-#endif
+
     VertexShader = compile VSTARGET_3_0 VSInstancingPlanarPancaking();
     PixelShader = compile PSTARGET_3_0 PSPlanarDefault();
   }
 }
-#endif
+
 
 
 technique DirectionalVsm
-#if !MGFX && SUPPORTS_INSTANCING
+
 < string InstancingTechnique = "DirectionalVsmInstancing"; >
-#endif
+
 {
   pass
   {
@@ -378,7 +378,7 @@ technique DirectionalVsm
   }
 }
 
-#if SUPPORTS_INSTANCING
+
 technique DirectionalVsmInstancing
 {
   pass
@@ -388,38 +388,38 @@ technique DirectionalVsmInstancing
     PixelShader = compile PSTARGET_3_0 PSPlanarVsm();
   }
 }
-#endif
+
 
 
 technique Omnidirectional
-#if !MGFX && SUPPORTS_INSTANCING
+
 < string InstancingTechnique = "OmnidirectionalInstancing"; >
-#endif
+
 {
   pass
   {
-#if ALPHA_TEST
+
     CullMode = NONE;
 #else
     CullMode = CCW;
-#endif
+
     VertexShader = compile VSTARGET_2_0 VSNoInstancingLinear();
     PixelShader = compile PSTARGET_2_0 PSLinearDefault();
   }
 }
 
-#if SUPPORTS_INSTANCING
+
 technique OmnidirectionalInstancing
 {
   pass
   {
-#if ALPHA_TEST
+
     CullMode = NONE;
 #else
     CullMode = CCW;
-#endif
+
     VertexShader = compile VSTARGET_3_0 VSInstancingLinear();
     PixelShader = compile PSTARGET_3_0 PSLinearDefault();
   }
 }
-#endif
+

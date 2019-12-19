@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if SILVERLIGHT
+
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -57,4 +57,4 @@ namespace DigitalRune.Windows
     }
   }
 }
-#endif
+

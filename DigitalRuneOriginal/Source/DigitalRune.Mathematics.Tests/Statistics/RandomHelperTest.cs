@@ -126,20 +126,20 @@ namespace DigitalRune.Mathematics.Statistics.Tests
 
 
     [Test]
-    public void RandomVector3F()
+    public void RandomVector3()
     {
-      Vector3F vector = RandomHelper.Random.NextVector3F(-20.0f, -10.0f);
+      Vector3 vector = RandomHelper.Random.NextVector3(-20.0f, -10.0f);
       Assert.IsTrue(-20.0f <= vector.X && vector.X <= -10.0f);
       Assert.IsTrue(-20.0f <= vector.Y && vector.Y <= -10.0f);
       Assert.IsTrue(-20.0f <= vector.Z && vector.Z <= -10.0f);
 
-      vector = RandomHelper.Random.NextVector3F(1.0f, 1.0f);
+      vector = RandomHelper.Random.NextVector3(1.0f, 1.0f);
       Assert.AreEqual(1.0f, vector.X);
       Assert.AreEqual(1.0f, vector.Y);
       Assert.AreEqual(1.0f, vector.Z);
 
       // Must not throw exception.
-      RandomHelper.NextVector3F(null, 1, 3);
+      RandomHelper.NextVector3(null, 1, 3);
     }
 
 
@@ -232,16 +232,16 @@ namespace DigitalRune.Mathematics.Statistics.Tests
 
     
     [Test]
-    public void RandomQuaternionF()
+    public void RandomQuaternion()
     {
-      QuaternionF quaternion1 = RandomHelper.Random.NextQuaternionF();
-      QuaternionF quaternion2 = RandomHelper.Random.NextQuaternionF();
+      Quaternion quaternion1 = RandomHelper.Random.NextQuaternion();
+      Quaternion quaternion2 = RandomHelper.Random.NextQuaternion();
       Assert.AreNotEqual(quaternion1, quaternion2);
       Assert.IsTrue(quaternion1.IsNumericallyNormalized);
       Assert.IsTrue(quaternion2.IsNumericallyNormalized);
 
       // Must not throw exception.
-      RandomHelper.NextQuaternionF(null);
+      RandomHelper.NextQuaternion(null);
     }
 
 
@@ -288,16 +288,16 @@ namespace DigitalRune.Mathematics.Statistics.Tests
 
 
     [Test]
-    public void RandomMatrix33F()
+    public void RandomMatrix()
     {
-      Matrix33F matrix = RandomHelper.Random.NextMatrix33F(10.0f, 100.0f);
+      Matrix matrix = RandomHelper.Random.NextMatrix(10.0f, 100.0f);
       for (int i = 0; i < 9; i++)
       {
         Assert.IsTrue(10.0f <= matrix[i] && matrix[i] <= 100.0f);
       }
 
       // Must not throw exception.
-      RandomHelper.NextMatrix33F(null, 1, 3);
+      RandomHelper.NextMatrix(null, 1, 3);
     }
 
 
@@ -316,16 +316,16 @@ namespace DigitalRune.Mathematics.Statistics.Tests
 
 
     [Test]
-    public void RandomMatrix44F()
+    public void RandomMatrix()
     {
-      Matrix44F matrix = RandomHelper.Random.NextMatrix44F(-2.0f, 0.5f);
+      Matrix matrix = RandomHelper.Random.NextMatrix(-2.0f, 0.5f);
       for (int i = 0; i < 16; i++)
       {
         Assert.IsTrue(-2.0f <= matrix[i] && matrix[i] <= 0.5f);
       }
 
       // Must not throw exception.
-      RandomHelper.NextMatrix44F(null, 1, 3);
+      RandomHelper.NextMatrix(null, 1, 3);
     }
 
 

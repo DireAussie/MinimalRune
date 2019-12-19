@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -29,11 +29,11 @@ namespace Samples.Graphics
     private readonly CameraObject _cameraObject;
 
     private Ephemeris _ephemeris;
-#if XBOX
+
     private DateTime _time;
 #else
     private DateTimeOffset _time;
-#endif
+
 
     private TextureCube _milkyWay;
 
@@ -117,27 +117,27 @@ namespace Samples.Graphics
       _skyRenderer = new SkyRenderer(GraphicsService);
 
       _milkyWay = ContentManager.Load<TextureCube>("Sky/MilkyWay");
-      _milkyWaySkybox = new SkyboxNode(_milkyWay) { Color = new Vector3F(0.05f) };
+      _milkyWaySkybox = new SkyboxNode(_milkyWay) { Color = new Vector3(0.05f) };
 
       _sun = new SkyObjectNode
       {
-        GlowColor0 = new Vector3F(1, 1, 1) * 5,
+        GlowColor0 = new Vector3(1, 1, 1) * 5,
         GlowExponent0 = 4000,
 
-        //GlowColor1 = new Vector3F(0.4f) * 0.1f,
+        //GlowColor1 = new Vector3(0.4f) * 0.1f,
         //GlowExponent1 = 100
       };
 
       _moon = new SkyObjectNode
       {
         Texture = new PackedTexture(ContentManager.Load<Texture2D>("Sky/Moon")),
-        SunLight = new Vector3F(1, 1, 1) * 1,
-        AmbientLight = new Vector3F(0.001f) * 1,
+        SunLight = new Vector3(1, 1, 1) * 1,
+        AmbientLight = new Vector3(0.001f) * 1,
         LightWrap = 0.1f,
         LightSmoothness = 1,
         AngularDiameter = new Vector2F(MathHelper.ToRadians(5)),
 
-        GlowColor0 = new Vector3F(0.005f * 0),
+        GlowColor0 = new Vector3(0.005f * 0),
         GlowCutoffThreshold = 0.001f,
         GlowExponent0 = 100
       };
@@ -171,13 +171,13 @@ namespace Samples.Graphics
       _ephemeris.Latitude = 0;
       _ephemeris.Longitude = 15;
       _ephemeris.Altitude = 300;
-#if XBOX
+
       //_time = new DateTime(2013, 5, 1, 17, 17, 0, 0);
       _time = DateTime.Now;
 #else
       _time = new DateTimeOffset(2013, 5, 1, 12, 0, 0, 0, TimeSpan.Zero);
       //_time = DateTimeOffset.UtcNow;
-#endif
+
       UpdateEphemeris();
 
       _milkyWaySkybox.DrawOrder = 0;
@@ -251,7 +251,7 @@ namespace Samples.Graphics
       }
 
       _starfield = new StarfieldNode();
-      _starfield.Color = new Vector3F(1);
+      _starfield.Color = new Vector3(1);
       _starfield.Stars = stars;
     }
 
@@ -269,36 +269,36 @@ namespace Samples.Graphics
 
     private void UpdateEphemeris()
     {
-#if XBOX
+
       _ephemeris.Time = new DateTimeOffset(_time.Ticks, TimeSpan.Zero);
 #else
       _ephemeris.Time = _time;
-#endif
+
       _ephemeris.Update();
 
-      var sunDirection = (Vector3F)_ephemeris.SunDirectionRefracted;
+      var sunDirection = (Vector3)_ephemeris.SunDirectionRefracted;
       var sunUp = sunDirection.Orthonormal1;
-      var moonDirection = (Vector3F)_ephemeris.MoonPosition.Normalized;
-      var moonUp = (Vector3F)_ephemeris.EquatorialToWorld.TransformDirection(Vector3D.Up);
+      var moonDirection = (Vector3)_ephemeris.MoonPosition.Normalized;
+      var moonUp = (Vector3)_ephemeris.EquatorialToWorld.TransformDirection(Vector3D.Up);
 
-#if true
-      _starfield.PoseWorld = new Pose((Matrix33F)_ephemeris.EquatorialToWorld.Minor);
-      _sun.LookAt((Vector3F)_ephemeris.SunDirectionRefracted, sunUp);
-      _moon.SunDirection = (Vector3F)_ephemeris.SunPosition.Normalized;
+
+      _starfield.PoseWorld = new Pose((Matrix)_ephemeris.EquatorialToWorld.Minor);
+      _sun.LookAt((Vector3)_ephemeris.SunDirectionRefracted, sunUp);
+      _moon.SunDirection = (Vector3)_ephemeris.SunPosition.Normalized;
 #else
-      Vector3F sunRotationAxis = new Vector3F(0, -0.1f, 1).Normalized;
+      Vector3 sunRotationAxis = new Vector3(0, -0.1f, 1).Normalized;
       float hour = (float)_time.TimeOfDay.TotalHours / 24;
-      Matrix33F sunRotation = Matrix33F.CreateRotation(sunRotationAxis, hour * ConstantsF.TwoPi - ConstantsF.PiOver2);
+      Matrix sunRotation = Matrix.CreateRotation(sunRotationAxis, hour * ConstantsF.TwoPi - ConstantsF.PiOver2);
 
       _starfield.Orientation = sunRotation;
-      _sun.Direction = sunRotation * new Vector3F(1, 0, 0);
+      _sun.Direction = sunRotation * new Vector3(1, 0, 0);
       _moon.SunDirection = _sun.Direction;
-#endif
+
 
       _milkyWaySkybox.PoseWorld = new Pose(
-        (Matrix33F)_ephemeris.EquatorialToWorld.Minor
-        * Matrix33F.CreateRotationZ(ConstantsF.PiOver2)
-        * Matrix33F.CreateRotationX(ConstantsF.PiOver2));
+        (Matrix)_ephemeris.EquatorialToWorld.Minor
+        * Matrix.CreateRotationZ(ConstantsF.PiOver2)
+        * Matrix.CreateRotationX(ConstantsF.PiOver2));
 
       _moon.LookAt(moonDirection, moonUp);
       _cieSkyFilter.SunDirection = sunDirection;
@@ -310,7 +310,7 @@ namespace Samples.Graphics
       _cloudLayerNode.SunDirection = _scatteringSky.SunDirection;
       _cloudLayerNode.SunLight = ChangeSaturation(_scatteringSky.GetSunlight() / 5f, 1);
       //_cloudPlaneRenderer.Color = new Vector4F(ChangeSaturation(_scatteringSky.GetFogColor(128), 0.9f) * 1.0f, 1);
-      //Vector3F c = (_scatteringSky.GetFogColor(128) + _scatteringSky.GetSunlight() / 10) / 2;
+      //Vector3 c = (_scatteringSky.GetFogColor(128) + _scatteringSky.GetSunlight() / 10) / 2;
       //_cloudPlaneRenderer.Color = new Vector4F(c, 1);
       _cloudLayerNode.AmbientLight = _scatteringSky.GetAmbientLight(1024) / 6f;
       //_cloudLayerNode.AmbientLight = _scatteringSky.GetFogColor(128) * _scatteringSky.GetAmbientLight(256).Length / 6f;
@@ -389,8 +389,8 @@ namespace Samples.Graphics
         {
           // Rotate camera to face the current cube map face.
           var cubeMapFace = (CubeMapFace)side;
-          context.CameraNode.View = Matrix44F.CreateLookAt(
-            new Vector3F(),
+          context.CameraNode.View = Matrix.CreateLookAt(
+            new Vector3(),
             GraphicsHelper.GetCubeMapForwardDirection(cubeMapFace),
             GraphicsHelper.GetCubeMapUpDirection(cubeMapFace));
 
@@ -456,18 +456,18 @@ namespace Samples.Graphics
 
       //_debugRenderer.DrawTexture(_cloudLayerNode._renderTarget, new Rectangle(1280-512, 0, 512, 512));
 
-#if XBOX
+
       _debugRenderer.DrawText(_ephemeris.Time.DateTime.ToString());
 #else
       _debugRenderer.DrawText(_ephemeris.Time.ToString());
-#endif
+
 
       _debugRenderer.PointSize = 10;
 
       var extraterrestrialSunlight = Ephemeris.ExtraterrestrialSunlight;
 
-      Vector3F sun;
-      Vector3F ambient;
+      Vector3 sun;
+      Vector3 ambient;
       Ephemeris.GetSunlight(_scatteringSky.ObserverAltitude, 2.2f, _scatteringSky.SunDirection, out sun, out ambient);
 
       var scatterSun = _scatteringSky.GetSunlight() / _scatteringSky.SunIntensity * extraterrestrialSunlight;
@@ -475,8 +475,8 @@ namespace Samples.Graphics
       scatterAmbient = scatterAmbient / _scatteringSky.SunIntensity * extraterrestrialSunlight;
 
       var scatterFog = _scatteringSky.GetFogColor(128) / _scatteringSky.SunIntensity * extraterrestrialSunlight;
-      var luminance = Vector3F.Dot(GraphicsHelper.LuminanceWeights, scatterFog);
-      scatterFog = InterpolationHelper.Lerp(scatterFog, new Vector3F(luminance), 0.7f);
+      var luminance = Vector3.Dot(GraphicsHelper.LuminanceWeights, scatterFog);
+      scatterFog = InterpolationHelper.Lerp(scatterFog, new Vector3(luminance), 0.7f);
 
       _debugRenderer.DrawText("Extraterrestrial sun intensity:" + extraterrestrialSunlight.Length);
       _debugRenderer.DrawText("Spectrum sun intensity:" + sun.Length);
@@ -487,20 +487,20 @@ namespace Samples.Graphics
 
       _debugRenderer.DrawText("\nScatter fog intensity:" + scatterFog.Length);
 
-      _debugRenderer.DrawPoint(new Vector3F(-0.5f, 0, 0), new Color((Vector3)extraterrestrialSunlight.Normalized), true);
+      _debugRenderer.DrawPoint(new Vector3(-0.5f, 0, 0), new Color((Vector3)extraterrestrialSunlight.Normalized), true);
 
       sun.TryNormalize();
       ambient /= ambient.Length;
-      _debugRenderer.DrawPoint(new Vector3F(0, 0, 0), new Color((Vector3)sun), true);
-      _debugRenderer.DrawPoint(new Vector3F(0, -0.5f, 0), new Color((Vector3)ambient), true);
+      _debugRenderer.DrawPoint(new Vector3(0, 0, 0), new Color((Vector3)sun), true);
+      _debugRenderer.DrawPoint(new Vector3(0, -0.5f, 0), new Color((Vector3)ambient), true);
 
       scatterSun.TryNormalize();
       scatterAmbient.TryNormalize();
-      _debugRenderer.DrawPoint(new Vector3F(0.5f, 0, 0), new Color((Vector3)scatterSun), true);
-      _debugRenderer.DrawPoint(new Vector3F(0.5f, -0.5f, 0), new Color((Vector3)scatterAmbient), true);
+      _debugRenderer.DrawPoint(new Vector3(0.5f, 0, 0), new Color((Vector3)scatterSun), true);
+      _debugRenderer.DrawPoint(new Vector3(0.5f, -0.5f, 0), new Color((Vector3)scatterAmbient), true);
 
       scatterFog.TryNormalize();
-      _debugRenderer.DrawPoint(new Vector3F(0, 0.5f, 0), new Color((Vector3)scatterFog), true);
+      _debugRenderer.DrawPoint(new Vector3(0, 0.5f, 0), new Color((Vector3)scatterFog), true);
 
       _debugRenderer.PointSize = 40f;
       _debugRenderer.Render(context);
@@ -512,7 +512,7 @@ namespace Samples.Graphics
     /// </summary>
     /// <param name="s">The uniform scale factor.</param>
     /// <returns>The texture matrix.</returns>
-    private static Matrix33F CreateScale(float s)
+    private static Matrix CreateScale(float s)
     {
       return CreateScale(s, s);
     }
@@ -524,9 +524,9 @@ namespace Samples.Graphics
     /// <param name="su">The scale factor for u texture coordinates.</param>
     /// <param name="sv">The scale factor for v texture coordinates.</param>
     /// <returns>The texture matrix.</returns>
-    private static Matrix33F CreateScale(float su, float sv)
+    private static Matrix CreateScale(float su, float sv)
     {
-      return new Matrix33F(
+      return new Matrix(
         su, 0, 0,
         0, sv, 0,
         0, 0, 1);
@@ -541,11 +541,10 @@ namespace Samples.Graphics
     /// The saturation. Less than 1 to desaturate the color, greater than 1 to saturate the color.
     /// </param>
     /// <returns>The saturated color.</returns>
-    private static Vector3F ChangeSaturation(Vector3F color, float saturation)
+    private static Vector3 ChangeSaturation(Vector3 color, float saturation)
     {
-      float colorDesaturated = Vector3F.Dot(GraphicsHelper.LuminanceWeights, color);
-      return InterpolationHelper.Lerp(new Vector3F(colorDesaturated), color, saturation);
+      float colorDesaturated = Vector3.Dot(GraphicsHelper.LuminanceWeights, color);
+      return InterpolationHelper.Lerp(new Vector3(colorDesaturated), color, saturation);
     }
   }
 }
-#endif

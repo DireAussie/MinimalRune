@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8 && !XBOX
+﻿
 using DigitalRune.Geometry;
 using DigitalRune.Graphics;
 using DigitalRune.Graphics.Rendering;
@@ -45,7 +45,7 @@ efficient to use a TerrainDecalLayer to add a decal to terrain tiles.",
 
       // Add a custom game object which controls the camera.
       var cameraObject = new CameraObject(Services, 5000);
-      cameraObject.ResetPose(new Vector3F(0, 2, 5), 0, 0);
+      cameraObject.ResetPose(new Vector3(0, 2, 5), 0, 0);
       GameObjectService.Objects.Add(cameraObject);
       _graphicsScreen.ActiveCameraNode = cameraObject.CameraNode;
 
@@ -69,8 +69,8 @@ efficient to use a TerrainDecalLayer to add a decal to terrain tiles.",
         Pose = GetRandomPose(),
         Width = 2,
         Height = 2,
-        DiffuseColor = new Vector3F(0.08f),
-        SpecularColor = new Vector3F(0.2f),
+        DiffuseColor = new Vector3(0.08f),
+        SpecularColor = new Vector3(0.2f),
         SpecularPower = 100,
         DiffuseTexture = ContentManager.Load<Texture2D>("Decals/Decal_diffuse_mask"), // Original: "Decals/Blood_diffuse_mask",
         NormalTexture =  GraphicsService.GetDefaultNormalTexture(),   // Original: ContentManager.Load<Texture2D>("Decals/Blood_normal"),
@@ -87,8 +87,8 @@ efficient to use a TerrainDecalLayer to add a decal to terrain tiles.",
         Pose = GetRandomPose(),
         Width = 2,
         Height = 2,
-        DiffuseColor = new Vector3F(0.0f),
-        SpecularColor = new Vector3F(0.5f),
+        DiffuseColor = new Vector3(0.0f),
+        SpecularColor = new Vector3(0.5f),
         SpecularPower = 100,
         DiffuseTexture = ContentManager.Load<Texture2D>("Decals/Decal_diffuse_mask"), // Original: "Decals/Blood_diffuse_mask",
         NormalTexture = GraphicsService.GetDefaultNormalTexture(),   // Original: ContentManager.Load<Texture2D>("Decals/Blood_normal"),
@@ -117,17 +117,17 @@ efficient to use a TerrainDecalLayer to add a decal to terrain tiles.",
     {
       // Get a random position.
       const float decalAreaSize = 20;
-      var randomPosition = new Vector3F(
+      var randomPosition = new Vector3(
         RandomHelper.Random.NextFloat(-decalAreaSize, decalAreaSize),
         0,
         RandomHelper.Random.NextFloat(-decalAreaSize, 0));
 
       // Decals are project along the forward (-z) direction.
       // To project onto the terrain we have to point the decal down.
-      var downOrientation = Matrix33F.CreateRotationX(-ConstantsF.PiOver2);
+      var downOrientation = Matrix.CreateRotationX(-ConstantsF.PiOver2);
 
       // Get a random rotation around z.
-      var randomOrientation = Matrix33F.CreateRotationZ(RandomHelper.Random.NextFloat(0, ConstantsF.TwoPi));
+      var randomOrientation = Matrix.CreateRotationZ(RandomHelper.Random.NextFloat(0, ConstantsF.TwoPi));
 
       return new Pose(randomPosition, downOrientation * randomOrientation);
     }
@@ -149,4 +149,4 @@ efficient to use a TerrainDecalLayer to add a decal to terrain tiles.",
     }
   }
 }
-#endif
+

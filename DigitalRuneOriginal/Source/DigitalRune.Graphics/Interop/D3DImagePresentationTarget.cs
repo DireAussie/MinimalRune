@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if WINDOWS
+
 using System;
 using System.ComponentModel;
 using System.Windows;
@@ -10,10 +10,10 @@ using System.Windows.Controls;
 using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-#if MONOGAME
+
 using System.Diagnostics;
 using Microsoft.Xna.Framework.Graphics;
-#endif
+
 
 
 namespace DigitalRune.Graphics.Interop
@@ -125,22 +125,22 @@ namespace DigitalRune.Graphics.Interop
 
     //--------------------------------------------------------------
 
-#if MONOGAME
+
     private D3D11Image _d3D11Image;
-#if !NET45
+
     private bool _isFrontBufferAvailable; // Locally cached value.
-#endif
+
     private int _nativeWidth;
     private int _nativeHeight;
-#endif
 
 
 
-    //--------------------------------------------------------------
 
     //--------------------------------------------------------------
 
-#if MONOGAME
+    //--------------------------------------------------------------
+
+
     /// <inheritdoc/>
     IGraphicsService IPresentationTarget.GraphicsService
     {
@@ -182,12 +182,12 @@ namespace DigitalRune.Graphics.Interop
     {
       get
       {
-#if NET45
+
         // Ignore IsFrontBufferAvailable in .NET 4.5.
         return IsVisible;
 #else
         return _isFrontBufferAvailable && IsVisible;
-#endif
+
       }
     }
 
@@ -234,7 +234,7 @@ namespace DigitalRune.Graphics.Interop
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes")]
     int IPresentationTarget.Height { get { throw new NotImplementedException(); } }
-#endif
+
 
     /// <summary>
     /// Identifies the <see cref="EnableAlpha"/> dependency property.
@@ -349,11 +349,11 @@ namespace DigitalRune.Graphics.Interop
     /// </remarks>
     public bool IsFrameReady
     {
-#if MONOGAME
+
       get { return _d3D11Image == null || _d3D11Image.IsFrameReady(GraphicsService.GraphicsDevice); }
 #else
       get { return false; }
-#endif
+
     }
 
 
@@ -393,18 +393,18 @@ namespace DigitalRune.Graphics.Interop
     public bool IsFrontBufferAvailable
     {
       get { return (bool)GetValue(IsFrontBufferAvailableProperty); }
-#if MONOGAME
+
       private set
       {
         // DependencyProperties can only be read on UI thread, but
         // IPresentationTarget.IsVisible might be read from non-UI thread.
         // --> Cache value locally to avoid cross-thread exception.
-#if !NET45
+
         _isFrontBufferAvailable = value;
-#endif
+
         SetValue(IsFrontBufferAvailablePropertyKey, value);
       }
-#endif
+
       }
 
 
@@ -430,7 +430,7 @@ namespace DigitalRune.Graphics.Interop
     }
 
 
-#if MONOGAME
+
     /// <summary>
     /// Initializes a new instance of the <see cref="D3DImagePresentationTarget"/> class.
     /// </summary>
@@ -446,7 +446,7 @@ namespace DigitalRune.Graphics.Interop
     {
       throw new NotImplementedException("Only available in MonoGame-compatible builds.");
     }
-#endif
+
 
 
 
@@ -476,17 +476,17 @@ namespace DigitalRune.Graphics.Interop
     /// <param name="newValue">The new value.</param>
     protected virtual void OnEnableAlphaChanged(bool oldValue, bool newValue)
     {
-#if MONOGAME
+
       if (GraphicsService != null)
       {
         UninitializeImageSource();
         InitializeImageSource(GraphicsService);
       }
-#endif
+
     }
 
 
-#if MONOGAME
+
     /// <summary>
     /// When overridden in a derived class, participates in rendering operations that are directed
     /// by the layout system. This method is invoked after layout update, and before rendering, if
@@ -520,7 +520,7 @@ namespace DigitalRune.Graphics.Interop
       _nativeWidth = (int)(size.Width < 0 ? 0 : Math.Ceiling(size.Width * dpiScale));
       _nativeHeight = (int)(size.Height < 0 ? 0 : Math.Ceiling(size.Height * dpiScale));
     }
-#endif
+
 
 
     /// <summary>
@@ -545,14 +545,14 @@ namespace DigitalRune.Graphics.Interop
     /// <param name="newValue">The new value.</param>
     protected virtual void OnIsSynchronizedChanged(bool oldValue, bool newValue)
     {
-#if MONOGAME
+
       if (_d3D11Image != null)
         _d3D11Image.IsSynchronized = newValue;
-#endif
+
     }
 
 
-#if MONOGAME
+
     private void OnGraphicsServiceChanged(IGraphicsService oldGraphicsService, IGraphicsService newGraphicsService)
     {
       if (Dispatcher.CheckAccess())
@@ -713,7 +713,7 @@ namespace DigitalRune.Graphics.Interop
     {
       throw new NotImplementedException("Only available in MonoGame-compatible builds.");
     }
-#endif
+
 
 
     /// <summary>
@@ -734,4 +734,4 @@ namespace DigitalRune.Graphics.Interop
 
   }
 }
-#endif
+

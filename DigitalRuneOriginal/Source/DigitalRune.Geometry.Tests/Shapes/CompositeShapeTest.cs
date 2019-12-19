@@ -16,8 +16,8 @@ namespace DigitalRune.Geometry.Shapes.Tests
     [SetUp]
     public void SetUp()
     {
-      child0 = new GeometricObject(new CircleShape(3), new Pose(new Vector3F(0, 5, 0), QuaternionF.CreateRotationX(ConstantsF.PiOver2)));
-      child1 = new GeometricObject(new CircleShape(3), new Pose(new Vector3F(0, -5, 0), QuaternionF.CreateRotationX(ConstantsF.PiOver2)));
+      child0 = new GeometricObject(new CircleShape(3), new Pose(new Vector3(0, 5, 0), Quaternion.CreateRotationX(ConstantsF.PiOver2)));
+      child1 = new GeometricObject(new CircleShape(3), new Pose(new Vector3(0, -5, 0), Quaternion.CreateRotationX(ConstantsF.PiOver2)));
 
       cs = new CompositeShape();
       cs.Children.Add(child0);
@@ -35,10 +35,10 @@ namespace DigitalRune.Geometry.Shapes.Tests
     [Test]
     public void InnerPoint()
     {
-      Assert.AreEqual(new Vector3F(0, 0, 0), new CompositeShape().InnerPoint);
-      Assert.AreEqual(new Vector3F(0, 5, 0), cs.InnerPoint);
-      cs.Children.Add(new GeometricObject(new PointShape(new Vector3F(5, 0, 0)), new Pose(new Vector3F(1, 0, 0), QuaternionF.Identity)));
-      Assert.AreEqual(new Vector3F(0, 5, 0), cs.InnerPoint);
+      Assert.AreEqual(new Vector3(0, 0, 0), new CompositeShape().InnerPoint);
+      Assert.AreEqual(new Vector3(0, 5, 0), cs.InnerPoint);
+      cs.Children.Add(new GeometricObject(new PointShape(new Vector3(5, 0, 0)), new Pose(new Vector3(1, 0, 0), Quaternion.Identity)));
+      Assert.AreEqual(new Vector3(0, 5, 0), cs.InnerPoint);
     }
 
 
@@ -46,31 +46,31 @@ namespace DigitalRune.Geometry.Shapes.Tests
     //public void GetAabb()
     //{
     //  Assert.AreEqual(new Aabb(), new ConvexHullOfPoints().GetAabb(Pose.Identity));
-    //  Assert.AreEqual(new Aabb(new Vector3F(10, 100, -13), new Vector3F(10, 100, -13)),
-    //                 new ConvexHullOfPoints().GetAabb(new Pose(new Vector3F(10, 100, -13),
-    //                                                                     QuaternionF.CreateRotation(new Vector3F(1, 1, 1), 0.7f))));
-    //  Assert.AreEqual(new Aabb(new Vector3F(11, 102, 1003), new Vector3F(11, 102, 1003)),
-    //                 new ConvexHullOfPoints(new Vector3F(1, 2, 3)).GetAabb(new Pose(new Vector3F(10, 100, 1000),
-    //                                                                     QuaternionF.Identity)));
-    //  QuaternionF rotation = QuaternionF.CreateRotation(new Vector3F(1, 1, 1), 0.7f);
-    //  Vector3F worldPos = rotation.Rotate(new Vector3F(1, 2, 3)) + new Vector3F(10, 100, 1000);
-    //  Assert.IsTrue(Vector3F.AreNumericallyEqual(worldPos, new ConvexHullOfPoints(new Vector3F(1, 2, 3)).GetAabb(new Pose(new Vector3F(10, 100, 1000), rotation)).Minimum));
-    //  Assert.IsTrue(Vector3F.AreNumericallyEqual(worldPos, new ConvexHullOfPoints(new Vector3F(1, 2, 3)).GetAabb(new Pose(new Vector3F(10, 100, 1000), rotation)).Maximum));
+    //  Assert.AreEqual(new Aabb(new Vector3(10, 100, -13), new Vector3(10, 100, -13)),
+    //                 new ConvexHullOfPoints().GetAabb(new Pose(new Vector3(10, 100, -13),
+    //                                                                     Quaternion.CreateRotation(new Vector3(1, 1, 1), 0.7f))));
+    //  Assert.AreEqual(new Aabb(new Vector3(11, 102, 1003), new Vector3(11, 102, 1003)),
+    //                 new ConvexHullOfPoints(new Vector3(1, 2, 3)).GetAabb(new Pose(new Vector3(10, 100, 1000),
+    //                                                                     Quaternion.Identity)));
+    //  Quaternion rotation = Quaternion.CreateRotation(new Vector3(1, 1, 1), 0.7f);
+    //  Vector3 worldPos = rotation.Rotate(new Vector3(1, 2, 3)) + new Vector3(10, 100, 1000);
+    //  Assert.IsTrue(Vector3.AreNumericallyEqual(worldPos, new ConvexHullOfPoints(new Vector3(1, 2, 3)).GetAabb(new Pose(new Vector3(10, 100, 1000), rotation)).Minimum));
+    //  Assert.IsTrue(Vector3.AreNumericallyEqual(worldPos, new ConvexHullOfPoints(new Vector3(1, 2, 3)).GetAabb(new Pose(new Vector3(10, 100, 1000), rotation)).Maximum));
     //}
 
 
     //[Test]
     //public void GetSupportPointDistance()
     //{
-    //  Assert.AreEqual(0, new ConvexHullOfPoints().GetSupportPointDistance(new Vector3F(1, 0, 0)));
-    //  Assert.AreEqual(0, new ConvexHullOfPoints().GetSupportPointDistance(new Vector3F(0, 1, 0)));
-    //  Assert.AreEqual(0, new ConvexHullOfPoints().GetSupportPointDistance(new Vector3F(0, 0, 1)));
-    //  Assert.AreEqual(0, new ConvexHullOfPoints().GetSupportPointDistance(new Vector3F(1, 1, 1)));
+    //  Assert.AreEqual(0, new ConvexHullOfPoints().GetSupportPointDistance(new Vector3(1, 0, 0)));
+    //  Assert.AreEqual(0, new ConvexHullOfPoints().GetSupportPointDistance(new Vector3(0, 1, 0)));
+    //  Assert.AreEqual(0, new ConvexHullOfPoints().GetSupportPointDistance(new Vector3(0, 0, 1)));
+    //  Assert.AreEqual(0, new ConvexHullOfPoints().GetSupportPointDistance(new Vector3(1, 1, 1)));
 
-    //  Assert.AreEqual(1, new ConvexHullOfPoints(new Vector3F(1, 2, 3)).GetSupportPointDistance(new Vector3F(1, 0, 0)));
-    //  Assert.AreEqual(2, new ConvexHullOfPoints(new Vector3F(1, 2, 3)).GetSupportPointDistance(new Vector3F(0, 1, 0)));
-    //  Assert.AreEqual(3, new ConvexHullOfPoints(new Vector3F(1, 2, 3)).GetSupportPointDistance(new Vector3F(0, 0, 1)));
-    //  Assert.IsTrue(Numeric.AreEqual(Vector3F.ProjectTo(new Vector3F(1, 2, 3), new Vector3F(1, 1, 1)).Length, new ConvexHullOfPoints(new Vector3F(1, 2, 3)).GetSupportPointDistance(new Vector3F(1, 1, 1))));
+    //  Assert.AreEqual(1, new ConvexHullOfPoints(new Vector3(1, 2, 3)).GetSupportPointDistance(new Vector3(1, 0, 0)));
+    //  Assert.AreEqual(2, new ConvexHullOfPoints(new Vector3(1, 2, 3)).GetSupportPointDistance(new Vector3(0, 1, 0)));
+    //  Assert.AreEqual(3, new ConvexHullOfPoints(new Vector3(1, 2, 3)).GetSupportPointDistance(new Vector3(0, 0, 1)));
+    //  Assert.IsTrue(Numeric.AreEqual(Vector3.ProjectTo(new Vector3(1, 2, 3), new Vector3(1, 1, 1)).Length, new ConvexHullOfPoints(new Vector3(1, 2, 3)).GetSupportPointDistance(new Vector3(1, 1, 1))));
     //}
 
 
@@ -93,8 +93,8 @@ namespace DigitalRune.Geometry.Shapes.Tests
     //  Assert.AreEqual(cs, cs2);
 
     //  CompositeShape cs3 = new CompositeShape();
-    //  cs3.Children.Add(new DefaultGeometry(new Pose(new Vector3F(0, 5, 0), QuaternionF.CreateRotationX(ConstantsF.PiOver2)), new CircleShape(3)));
-    //  cs3.Children.Add(new DefaultGeometry(new Pose(new Vector3F(0, -5, 0), QuaternionF.CreateRotationX(ConstantsF.PiOver2)), new CircleShape(3)));
+    //  cs3.Children.Add(new DefaultGeometry(new Pose(new Vector3(0, 5, 0), Quaternion.CreateRotationX(ConstantsF.PiOver2)), new CircleShape(3)));
+    //  cs3.Children.Add(new DefaultGeometry(new Pose(new Vector3(0, -5, 0), Quaternion.CreateRotationX(ConstantsF.PiOver2)), new CircleShape(3)));
     //  Assert.AreEqual(cs3, cs2);
     //}
 
@@ -128,7 +128,7 @@ namespace DigitalRune.Geometry.Shapes.Tests
       CompositeShape compositeShape = new CompositeShape();
       for (int i = 0; i < 10; i++)
       {
-        Pose pose = new Pose(new Vector3F(i, i, i));
+        Pose pose = new Pose(new Vector3(i, i, i));
         PointShape point = new PointShape(i, i, i);
         GeometricObject geometry = new GeometricObject(point, pose);
         compositeShape.Children.Add(geometry);
@@ -160,7 +160,7 @@ namespace DigitalRune.Geometry.Shapes.Tests
       CompositeShape compositeShape = new CompositeShape();
       for (int i = 0; i < 10; i++)
       {
-        Pose pose = new Pose(new Vector3F(i, i, i));
+        Pose pose = new Pose(new Vector3(i, i, i));
         PointShape point = new PointShape(i, i, i);
         GeometricObject geometry = new GeometricObject(point, pose);
         compositeShape.Children.Add(geometry);

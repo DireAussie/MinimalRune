@@ -1,4 +1,4 @@
-﻿#if !MONOGAME && !WP7 && !WP8
+﻿
 // TODO: Add annotation support to MonoGame.
 
 using DigitalRune.Geometry;
@@ -80,7 +80,7 @@ The fur is not animated in this sample.",
       _rigidBody = new RigidBody(new SphereShape(0.5f));
 
       // Set a random pose.
-      _rigidBody.Pose = new Pose(new Vector3F(0, 1, 0), RandomHelper.Random.NextQuaternionF());
+      _rigidBody.Pose = new Pose(new Vector3(0, 1, 0), RandomHelper.Random.NextQuaternion());
       _modelNode.PoseWorld = _rigidBody.Pose;
 
       // Add rigid body to physics simulation and model to scene.
@@ -115,4 +115,3 @@ The fur is not animated in this sample.",
     }
   }
 }
-#endif

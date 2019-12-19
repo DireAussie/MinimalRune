@@ -22,7 +22,7 @@ namespace DigitalRune.Graphics
   /// </para>
   /// <para>
   /// The <see cref="DirectionalLight"/> object defines the light properties of a directional light
-  /// that shines in forward direction (0, 0, -1) - see <see cref="Vector3F.Forward"/>. A 
+  /// that shines in forward direction (0, 0, -1) - see <see cref="Vector3.Forward"/>. A 
   /// <see cref="LightNode"/> needs to be created to orient a light within a 3D scene.
   /// </para>
   /// <para>
@@ -128,7 +128,7 @@ namespace DigitalRune.Graphics
     /// <remarks>
     /// This property defines only the color of the light source - not its intensity. 
     /// </remarks>
-    public Vector3F Color { get; set; }
+    public Vector3 Color { get; set; }
 
 
     /// <summary>
@@ -197,7 +197,7 @@ namespace DigitalRune.Graphics
     /// </summary>
     public DirectionalLight()
     {
-      Color = Vector3F.One;
+      Color = Vector3.One;
       DiffuseIntensity = 1;
       SpecularIntensity = 1;
       HdrScale = 1;
@@ -241,9 +241,9 @@ namespace DigitalRune.Graphics
 
 
     /// <inheritdoc/>
-    public override Vector3F GetIntensity(float distance)
+    public override Vector3 GetIntensity(float distance)
     {
-      return Vector3F.Max(Color * (DiffuseIntensity * HdrScale), 
+      return Vector3.Max(Color * (DiffuseIntensity * HdrScale), 
                           Color * (SpecularIntensity * HdrScale));
     }
 

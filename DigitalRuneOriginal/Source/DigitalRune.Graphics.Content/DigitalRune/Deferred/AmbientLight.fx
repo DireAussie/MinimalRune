@@ -93,13 +93,13 @@ float4 PS(float2 texCoord : TEXCOORD) : COLOR0
 // Techniques
 //-----------------------------------------------------------------------------
 
-#if !SM4
+
 #define VSTARGET vs_3_0
 #define PSTARGET ps_3_0
 #else
 #define VSTARGET vs_4_0
 #define PSTARGET ps_4_0
-#endif
+
 
 technique
 {

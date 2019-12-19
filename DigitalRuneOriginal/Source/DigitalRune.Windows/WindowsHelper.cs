@@ -17,12 +17,12 @@ using System.Windows.Media;
 using System.Windows.Threading;
 using DigitalRune.Linq;
 using DigitalRune.Mathematics;
-#if WP8
+
 using System.Reflection;
 using System.Threading;
 #else
 using System.Threading.Tasks;
-#endif
+
 
 
 namespace DigitalRune.Windows
@@ -160,7 +160,7 @@ namespace DigitalRune.Windows
                 // http://blog.galasoft.ch/archive/2009/09/05/detecting-design-time-mode-in-wpf-and-silverlight.aspx.
                 if (!_isInDesignMode.HasValue)
                 {
-#if NETFX_CORE
+
                     _isInDesignMode = DesignMode.DesignModeEnabled;
 #elif SILVERLIGHT || WINDOWS_PHONE
                     _isInDesignMode = DesignerProperties.IsInDesignTool;
@@ -179,7 +179,7 @@ namespace DigitalRune.Windows
                             _isInDesignMode = true;
                         }
                     }
-#endif
+
                 }
 
                 return _isInDesignMode.Value;
@@ -599,11 +599,11 @@ namespace DigitalRune.Windows
 
         private static IEnumerable<DependencyObject> GetVisualChildrenImpl(DependencyObject dependencyObject)
         {
-#if !SILVERLIGHT && !WINDOWS_PHONE
+
             FrameworkElement frameworkElement = dependencyObject as FrameworkElement;
             if (frameworkElement != null)
                 frameworkElement.ApplyTemplate();
-#endif
+
 
             int count = VisualTreeHelper.GetChildrenCount(dependencyObject);
             for (int i = 0; i < count; ++i)
@@ -785,7 +785,7 @@ namespace DigitalRune.Windows
                 throw new ArgumentNullException(nameof(handler));
 
 
-#if SILVERLIGHT || WINDOWS_PHONE
+
             if (element == null)
                 throw new ArgumentNullException("element");
 
@@ -810,14 +810,14 @@ namespace DigitalRune.Windows
             // In WPF we can register an event handler using the DependencyPropertyDescriptor.
             var descriptor = DependencyPropertyDescriptor.FromName(propertyName, ownerType, targetType);
             descriptor.AddValueChanged(source, handler);
-#endif
+
         }
 
 
 
 
 
-#if SILVERLIGHT || WINDOWS_PHONE
+
         /// <summary>
         /// Gets the child of a panel that contains the specified element.
         /// </summary>
@@ -857,7 +857,7 @@ namespace DigitalRune.Windows
         /// <exception cref="ArgumentNullException">
         /// <paramref name="element"/> is <see langword="null"/>.
         /// </exception>
-#endif
+
         public static UIElement GetChildContainingElement(this Panel panel, DependencyObject element)
         {
             if (panel == null)
@@ -865,13 +865,13 @@ namespace DigitalRune.Windows
             if (element == null)
                 throw new ArgumentNullException(nameof(element));
 
-#if !SILVERLIGHT && !WINDOWS_PHONE
+
             // Make sure that element is of type Visual.
             if (!(element is Visual))
                 element = element.GetLogicalAncestors().OfType<Visual>().FirstOrDefault();
 
             Debug.Assert(element == null || element is Visual);
-#endif
+
 
             if (element != null)
             {
@@ -921,7 +921,7 @@ namespace DigitalRune.Windows
         }
 
 
-#if !SILVERLIGHT
+
         /// <summary>
         /// Ensures that the item containers of an <see cref="ItemsControl"/> have been
         /// generated.
@@ -945,10 +945,10 @@ namespace DigitalRune.Windows
             if (itemsControl == null)
                 throw new ArgumentNullException(nameof(itemsControl));
 
-#if !WINDOWS_PHONE
+
             if (itemsControl.ItemContainerGenerator.Status == GeneratorStatus.ContainersGenerated)
                 return true;
-#endif
+
 
             // Find the items host.
             var panel = itemsControl.GetItemsPanel();
@@ -956,7 +956,7 @@ namespace DigitalRune.Windows
             // Querying the UIElementCollection generates the item containers!
             return panel != null && panel.Children != null;
         }
-#endif
+
 
 
 
@@ -975,18 +975,18 @@ namespace DigitalRune.Windows
         /// <seealso cref="CheckBeginInvokeOnUI"/>
         /// <seealso cref="BeginInvokeOnUI"/>
         /// <seealso cref="InvokeOnUI"/>
-#if NETFX_CORE
+
         public static CoreDispatcher Dispatcher
 #else
         public static Dispatcher Dispatcher
-#endif
+
         {
             get
             {
                 // Note: Background threads should never occur at design-time.
                 if (_dispatcher == null && !IsInDesignMode)
                 {
-#if NETFX_CORE
+
                     if (Window.Current != null)
                         _dispatcher = Window.Current.Dispatcher;
 #elif SILVERLIGHT || WINDOWS_PHONE
@@ -995,18 +995,18 @@ namespace DigitalRune.Windows
 #else
                     if (Application.Current != null)
                         _dispatcher = Application.Current.Dispatcher;
-#endif
+
                 }
 
                 return _dispatcher;
             }
             set { _dispatcher = value; }
         }
-#if NETFX_CORE
+
         private static CoreDispatcher _dispatcher;
 #else
         private static Dispatcher _dispatcher;
-#endif
+
 
 
         /// <summary>
@@ -1023,11 +1023,11 @@ namespace DigitalRune.Windows
         public static bool CheckAccess()
         {
             var dispatcher = Dispatcher;
-#if NETFX_CORE
+
             return dispatcher == null || dispatcher.HasThreadAccess;
 #else
             return dispatcher == null || dispatcher.CheckAccess();
-#endif
+
         }
 
 
@@ -1063,16 +1063,16 @@ namespace DigitalRune.Windows
             }
             else
             {
-#if NETFX_CORE
+
                 dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => action());
 #else
                 dispatcher.BeginInvoke(action);
-#endif
+
             }
         }
 
 
-#if !NETFX_CORE
+
         /// <summary>
         /// If necessary, executes the specified action asynchronously on the UI thread. (If the
         /// method is called on the UI thread the action is executed immediately.)
@@ -1105,7 +1105,7 @@ namespace DigitalRune.Windows
                 dispatcher.BeginInvoke(action, priority);
             }
         }
-#endif
+
 
 
         /// <summary>
@@ -1131,16 +1131,16 @@ namespace DigitalRune.Windows
             }
             else
             {
-#if NETFX_CORE
+
                 dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => action());
 #else
                 dispatcher.BeginInvoke(action);
-#endif
+
             }
         }
 
 
-#if !NETFX_CORE
+
         /// <overloads>
         /// <summary>
         /// Executes the specified action asynchronously on the UI thread.
@@ -1178,10 +1178,10 @@ namespace DigitalRune.Windows
                 dispatcher.BeginInvoke(action, priority);
             }
         }
-#endif
 
 
-#if !WP8
+
+
         /// <summary>
         /// Executes the specified action asynchronously on the UI thread.
         /// </summary>
@@ -1196,7 +1196,7 @@ namespace DigitalRune.Windows
                 throw new ArgumentNullException(nameof(action));
 
             var dispatcher = Dispatcher;
-#if NETFX_CORE
+
             return dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => action()).AsTask();
 #elif NET45
             return dispatcher.InvokeAsync(action).Task;
@@ -1217,9 +1217,9 @@ namespace DigitalRune.Windows
                              };
             dispatcher.BeginInvoke(wrapper);
             return tcs.Task;
-#endif
+
         }
-#endif
+
 
 
         /// <summary>
@@ -1241,18 +1241,18 @@ namespace DigitalRune.Windows
 
             var dispatcher = Dispatcher;
             if (dispatcher == null
-#if NETFX_CORE
+
                 || dispatcher.HasThreadAccess()
 #else
                 || dispatcher.CheckAccess()
-#endif
+
 )
             {
                 action();
             }
             else
             {
-#if WP8
+
                 // Legacy implementation Windows Phone 7:
                 var waitHandle = new ManualResetEvent(false);
                 Exception exception = null;
@@ -1277,7 +1277,7 @@ namespace DigitalRune.Windows
                     throw new TargetInvocationException("An error occurred while dispatching a call to the UI thread.", exception);
 #else
                 RunAsync(action).Wait();
-#endif
+
             }
         }
 

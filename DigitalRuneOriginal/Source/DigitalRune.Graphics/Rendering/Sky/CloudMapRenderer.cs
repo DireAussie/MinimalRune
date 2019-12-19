@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !WP7
+
 using System;
 using System.Collections.Generic;
 using DigitalRune.Graphics.SceneGraph;
@@ -38,7 +38,7 @@ namespace DigitalRune.Graphics.Rendering
 
     //--------------------------------------------------------------
 
-    private static readonly CloudMapLayer EmptyLayer = new CloudMapLayer(null, Matrix33F.Identity, 0, 0, 0);
+    private static readonly CloudMapLayer EmptyLayer = new CloudMapLayer(null, Matrix.Identity, 0, 0, 0);
     private Texture2D _noiseTexture;
 
     private readonly Effect _effect;
@@ -264,7 +264,7 @@ namespace DigitalRune.Graphics.Rendering
         {
           var layer = layers[i] ?? EmptyLayer;
           _parameterTextures[i].SetValue(layer.Texture ?? renderTargets[i]);
-          _parameterMatrices[i].SetValue((Matrix)new Matrix44F(layer.TextureMatrix, Vector3F.Zero));
+          _parameterMatrices[i].SetValue((Matrix)new Matrix(layer.TextureMatrix, Vector3.Zero));
           _parameterDensities[i].SetValue(new Vector2(layer.DensityScale, layer.DensityOffset));
         }
         _parameterCoverage.SetValue(cloudMap.Coverage);
@@ -281,4 +281,4 @@ namespace DigitalRune.Graphics.Rendering
 
   }
 }
-#endif
+

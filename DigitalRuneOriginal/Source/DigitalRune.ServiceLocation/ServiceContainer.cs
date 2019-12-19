@@ -650,11 +650,11 @@ namespace DigitalRune.ServiceLocation
             // - IEnumerable<TService> ... service instance collection
             // - Func<TService> .......... factory method for lazy resolution
 
-#if !NETFX_CORE && !NET45
+
             if (serviceType.IsGenericType)
 #else
             if (serviceType.GetTypeInfo().IsGenericType)
-#endif
+
             {
                 var genericType = serviceType.GetGenericTypeDefinition();
                 if (genericType == typeof(IEnumerable<>))
@@ -662,11 +662,11 @@ namespace DigitalRune.ServiceLocation
                     // Requested type is IEnumerable<TService>.
 
                     // Get typeof(TService).
-#if !NETFX_CORE && !NET45
+
                     Type actualServiceType = serviceType.GetGenericArguments()[0];
 #else
                     Type actualServiceType = serviceType.GetTypeInfo().GenericTypeArguments[0];
-#endif
+
 
                     // Get array of all named TService instances.
                     object[] instances = GetAllInstancesImpl(actualServiceType).ToArray();
@@ -682,7 +682,7 @@ namespace DigitalRune.ServiceLocation
                 if (genericType == typeof(Func<>))
                 {
                     // Requested type is Func<TService>.
-#if !NETFX_CORE && !NET45
+
                     var actualServiceType = serviceType.GetGenericArguments()[0];
                     var factoryFactoryType = typeof(ServiceFactoryFactory<>).MakeGenericType(actualServiceType);
                     var factoryFactoryInstance = Activator.CreateInstance(factoryFactoryType);
@@ -692,7 +692,7 @@ namespace DigitalRune.ServiceLocation
                     var factoryFactoryType = typeof(ServiceFactoryFactory<>).MakeGenericType(actualServiceType);
                     var factoryFactoryInstance = Activator.CreateInstance(factoryFactoryType);
                     var factoryFactoryMethod = factoryFactoryType.GetTypeInfo().GetDeclaredMethod("Create");
-#endif
+
                     return factoryFactoryMethod.Invoke(factoryFactoryInstance, new object[] { this, key });
                 }
 
@@ -764,11 +764,11 @@ namespace DigitalRune.ServiceLocation
 
             ConstructorInfo preferredConstructor = null;
             int preferredNumberOfParameters = -1;
-#if !NETFX_CORE && !NET45
+
             foreach (var constructor in type.GetConstructors())
 #else
             foreach (var constructor in type.GetTypeInfo().DeclaredConstructors)
-#endif
+
             {
                 int numberOfParameters = constructor.GetParameters().Length;
 
@@ -826,7 +826,7 @@ namespace DigitalRune.ServiceLocation
                 throw new ArgumentNullException(nameof(instance));
 
             var instanceType = instance.GetType();
-#if !NETFX_CORE && !NET45
+
             foreach (var property in instanceType.GetProperties())
             {
                 // Check whether property has public getter and setter.
@@ -852,7 +852,7 @@ namespace DigitalRune.ServiceLocation
                 // Ignore value types.
                 if (propertyType.GetTypeInfo().IsValueType)
                     continue;
-#endif
+
                 // Ignore property if a value is already set.
                 if (property.GetValue(instance, null) != null)
                     continue;

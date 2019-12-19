@@ -27,7 +27,7 @@ namespace DigitalRune.Graphics
   /// </item>
   /// <item>
   /// <description>
-  /// By setting assigning a projection matrix using <see cref="Set(Matrix44F)"/> or the property
+  /// By setting assigning a projection matrix using <see cref="Set(Matrix)"/> or the property
   /// <see cref="Projection.Inverse"/>.
   /// </description>
   /// </item>
@@ -36,7 +36,7 @@ namespace DigitalRune.Graphics
   /// By calling on of the following methods:
   /// <see cref="Set(float,float)"/>,
   /// <see cref="Set(float,float,float,float)"/>,
-  /// <see cref="Set(DigitalRune.Mathematics.Algebra.Matrix44F)"/>,
+  /// <see cref="Set(DigitalRune.Mathematics.Algebra.Matrix)"/>,
   /// <see cref="SetFieldOfView(float,float)"/>,
   /// <see cref="SetFieldOfView(float,float,float,float)"/>,
   /// <see cref="SetOffCenter(float,float,float,float)"/>,
@@ -335,7 +335,7 @@ namespace DigitalRune.Graphics
     /// Sets the perspective projection from the given projection matrix.
     /// </summary>
     /// <param name="projection">The perspective projection.</param>
-    public override void Set(Matrix44F projection)
+    public override void Set(Matrix projection)
     {
       const string message = "Given matrix is not a valid perspective projection matrix.";
       Debug.Assert(Numeric.IsZero(projection.M01), message);
@@ -376,9 +376,9 @@ namespace DigitalRune.Graphics
 
 
     /// <inheritdoc/>
-    protected override Matrix44F ComputeProjection()
+    protected override Matrix ComputeProjection()
     {
-      var projection = Matrix44F.CreatePerspectiveOffCenter(Left, Right, Bottom, Top, Near, Far);
+      var projection = Matrix.CreatePerspectiveOffCenter(Left, Right, Bottom, Top, Near, Far);
 
       if (_nearClipPlane.HasValue)
       {
@@ -412,7 +412,7 @@ namespace DigitalRune.Graphics
     /// </summary>
     /// <param name="matrix">The projection.</param>
     /// <returns>The perspective projection.</returns>
-    public static explicit operator PerspectiveProjection(Matrix44F matrix)
+    public static explicit operator PerspectiveProjection(Matrix matrix)
     {
       var projection = new PerspectiveProjection();
       projection.Set(matrix);
@@ -425,7 +425,7 @@ namespace DigitalRune.Graphics
     /// </summary>
     /// <param name="matrix">The projection matrix.</param>
     /// <returns>The perspective projection.</returns>
-    public static PerspectiveProjection FromMatrix(Matrix44F matrix)
+    public static PerspectiveProjection FromMatrix(Matrix matrix)
     {
       var projection = new PerspectiveProjection();
       projection.Set(matrix);

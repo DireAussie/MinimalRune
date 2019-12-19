@@ -286,7 +286,7 @@ namespace DigitalRune.Graphics.Content
           return SurfaceFormat.HalfVector4;
         //return SurfaceFormat.HdrBlendable;  // Only needed as render target format.
 
-#if MONOGAME
+
         case DataFormat.B8G8R8X8_UNORM:
           return SurfaceFormat.Bgr32;
         case DataFormat.B8G8R8A8_UNORM:
@@ -309,7 +309,7 @@ namespace DigitalRune.Graphics.Content
           return SurfaceFormat.RgbaAtcExplicitAlpha;
         case DataFormat.ATC_RGBA_INTERPOLATED_ALPHA:
           return SurfaceFormat.RgbaAtcInterpolatedAlpha;
-#endif
+
 
         default:
           string message = string.Format(CultureInfo.InvariantCulture, "The texture format {0} is not supported in MonoGame.", format);
@@ -374,7 +374,7 @@ namespace DigitalRune.Graphics.Content
         case SurfaceFormat.HalfVector4:
           return DataFormat.R16G16B16A16_FLOAT;
 
-#if MONOGAME
+
         case SurfaceFormat.Bgr32:
           return DataFormat.B8G8R8X8_UNORM;
         case SurfaceFormat.Bgra32:
@@ -396,7 +396,7 @@ namespace DigitalRune.Graphics.Content
           return DataFormat.ATC_RGBA_EXPLICIT_ALPHA;
         case SurfaceFormat.RgbaAtcInterpolatedAlpha:
           return DataFormat.ATC_RGBA_INTERPOLATED_ALPHA;
-#endif
+
 
         default:
           string message = string.Format(CultureInfo.InvariantCulture, "The SurfaceFormat {0} cannot be converted to DataFormat.", format);

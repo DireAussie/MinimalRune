@@ -129,7 +129,7 @@ namespace DigitalRune.Geometry
   ///     private Shape _shape;
   /// 
   /// 
-  ///     public Vector3F Scale
+  ///     public Vector3 Scale
   ///     {
   ///       get 
   ///       {
@@ -144,7 +144,7 @@ namespace DigitalRune.Geometry
   ///         }
   ///       }
   ///     }
-  ///     private Vector3F _scale;
+  ///     private Vector3 _scale;
   /// 
   /// 
   ///     public event EventHandler<EventArgs> PoseChanged;
@@ -161,7 +161,7 @@ namespace DigitalRune.Geometry
   ///     public GeometricObject()
   ///     {
   ///       _shape = Shape.Empty;
-  ///       _scale = Vector3F.One;
+  ///       _scale = Vector3.One;
   ///       _pose = Pose.Identity;
   ///     }
   ///     #endregion
@@ -324,7 +324,7 @@ namespace DigitalRune.Geometry
     /// Changing this property raises the <see cref="ShapeChanged"/> event.
     /// </para>
     /// </remarks>
-    Vector3F Scale { get; }
+    Vector3 Scale { get; }
 
 
     /// <summary>

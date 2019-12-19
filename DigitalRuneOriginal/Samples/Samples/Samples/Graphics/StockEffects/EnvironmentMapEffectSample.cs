@@ -1,4 +1,4 @@
-﻿#if !ANDROID && !LINUX && !MACOS && !IOS    // saucer model uses .dds cube map which is not supported in OpenGL.
+﻿
 using DigitalRune.Geometry;
 using DigitalRune.Graphics.SceneGraph;
 using DigitalRune.Mathematics;
@@ -21,7 +21,7 @@ namespace Samples.Graphics
       SampleFramework.IsMouseVisible = false;
       GraphicsScreen.ClearBackground = true;
       GraphicsScreen.BackgroundColor = Color.CornflowerBlue;
-      SetCamera(new Vector3F(8, 6, 8), ConstantsF.PiOver4, -0.4f);
+      SetCamera(new Vector3(8, 6, 8), ConstantsF.PiOver4, -0.4f);
 
       // Load the saucer model. This model is processed using the DigitalRune Model 
       // Processor - not the default XNA model processor!
@@ -37,8 +37,8 @@ namespace Samples.Graphics
       model = model.Clone();
 
       // Position the model and add it to the scene.
-      model.PoseWorld = new Pose(RandomHelper.Random.NextQuaternionF());
-      model.ScaleLocal = new Vector3F(0.4f);
+      model.PoseWorld = new Pose(RandomHelper.Random.NextQuaternion());
+      model.ScaleLocal = new Vector3(0.4f);
       GraphicsScreen.Scene.Children.Add(model);
 
       //// Here is another example showing how you can change material properties 
@@ -56,4 +56,3 @@ namespace Samples.Graphics
     }
   }
 }
-#endif

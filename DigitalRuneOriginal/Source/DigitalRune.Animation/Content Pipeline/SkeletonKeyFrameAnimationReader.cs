@@ -19,7 +19,7 @@ namespace DigitalRune.Animation.Content
   /// </remarks>
   public class SkeletonKeyFrameAnimationReader : ContentTypeReader<SkeletonKeyFrameAnimation>
   {
-#if !MONOGAME
+
     /// <summary>
     /// Determines if deserialization into an existing object is possible.
     /// </summary>
@@ -27,7 +27,7 @@ namespace DigitalRune.Animation.Content
     {
       get { return true; }
     }
-#endif
+
 
 
     /// <summary>
@@ -93,7 +93,7 @@ namespace DigitalRune.Animation.Content
             keyFrames[keyFrameIndex] = new BoneKeyFrameR
             {
               Time = input.ReadRawObject<TimeSpan>(),
-              Rotation = input.ReadRawObject<QuaternionF>(),
+              Rotation = input.ReadRawObject<Quaternion>(),
             };
           }
 
@@ -107,8 +107,8 @@ namespace DigitalRune.Animation.Content
             keyFrames[keyFrameIndex] = new BoneKeyFrameRT
             {
               Time = input.ReadRawObject<TimeSpan>(),
-              Rotation = input.ReadRawObject<QuaternionF>(),
-              Translation = input.ReadRawObject<Vector3F>(),
+              Rotation = input.ReadRawObject<Quaternion>(),
+              Translation = input.ReadRawObject<Vector3>(),
             };
           }
 
@@ -123,9 +123,9 @@ namespace DigitalRune.Animation.Content
             {
               Time = input.ReadRawObject<TimeSpan>(),
               Transform = new SrtTransform(
-                input.ReadRawObject<Vector3F>(), 
-                input.ReadRawObject<QuaternionF>(), 
-                input.ReadRawObject<Vector3F>())
+                input.ReadRawObject<Vector3>(), 
+                input.ReadRawObject<Quaternion>(), 
+                input.ReadRawObject<Vector3>())
             };
           }
 

@@ -26,23 +26,23 @@ namespace DigitalRune.Graphics.Tests
 
       // We are pretty confident that the Projection.CreateProjectionXxx() works. 
       // Use Projection.CreateProjectionXxx() to test GetWidthAndHeight().
-      Matrix44F projection = Matrix44F.CreatePerspectiveFieldOfView(MathHelper.ToRadians(60), 16.0f / 9.0f, 1, 10);
-      Matrix44F projection2 = Matrix44F.CreatePerspective(width, height, 1, 10);
-      Assert.IsTrue(Matrix44F.AreNumericallyEqual(projection, projection2));
+      Matrix projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(60), 16.0f / 9.0f, 1, 10);
+      Matrix projection2 = Matrix.CreatePerspective(width, height, 1, 10);
+      Assert.IsTrue(Matrix.AreNumericallyEqual(projection, projection2));
     }
 
     [Test]
     public void PerspectiveTest()
     {
-      Vector3F position = new Vector3F(1, 2, 3);
-      QuaternionF orientation = QuaternionF.CreateRotation(new Vector3F(2, 3, 6), 0.123f);
+      Vector3 position = new Vector3(1, 2, 3);
+      Quaternion orientation = Quaternion.CreateRotation(new Vector3(2, 3, 6), 0.123f);
       CameraInstance cameraInstance = new CameraInstance(new Camera(new PerspectiveProjection()))
       {
         PoseLocal = new Pose(position, orientation),
       };
 
       ((PerspectiveProjection)cameraInstance.Camera.Projection).SetFieldOfView(MathHelper.ToRadians(60), 16.0f / 10.0f, 1, 10);
-      Matrix44F projection = Matrix44F.CreatePerspectiveFieldOfView(MathHelper.ToRadians(60), 16.0f / 10.0f, 1, 10);
+      Matrix projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(60), 16.0f / 10.0f, 1, 10);
       Assert.AreEqual(position, cameraInstance.PoseWorld.Position);
       Assert.AreEqual(orientation.ToRotationMatrix33(), cameraInstance.PoseWorld.Orientation);
       Assert.AreEqual(MathHelper.ToRadians(60), cameraInstance.Camera.Projection.FieldOfViewY);
@@ -57,8 +57,8 @@ namespace DigitalRune.Graphics.Tests
       Assert.IsTrue(Numeric.AreEqual(-0.5773503f, cameraInstance.Camera.Projection.Bottom));
       Assert.IsTrue(Numeric.AreEqual(0.5773503f, cameraInstance.Camera.Projection.Top));
       Assert.AreEqual(9, cameraInstance.Camera.Projection.Depth);
-      Assert.IsTrue(Matrix44F.AreNumericallyEqual(projection, cameraInstance.Camera.Projection));
-      Assert.IsTrue(Matrix44F.AreNumericallyEqual(projection.Inverse, cameraInstance.Camera.Projection.Inverse));
+      Assert.IsTrue(Matrix.AreNumericallyEqual(projection, cameraInstance.Camera.Projection));
+      Assert.IsTrue(Matrix.AreNumericallyEqual(projection.Inverse, cameraInstance.Camera.Projection.Inverse));
       Assert.IsNotNull(cameraInstance.BoundingShape);
 
       // Test shape using collision detection. Remove rotation to simplify test.
@@ -68,54 +68,54 @@ namespace DigitalRune.Graphics.Tests
       CollisionObject pointCollisionObject = new CollisionObject(new GeometricObject(point));
       CollisionObject cameraCollisionObject = new CollisionObject(cameraInstance);
 
-      point.Position = position + new Vector3F(0, 0, -1);
+      point.Position = position + new Vector3(0, 0, -1);
       Assert.IsTrue(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
-      point.Position = position + new Vector3F(0, 0, -10);
+      point.Position = position + new Vector3(0, 0, -10);
       Assert.IsTrue(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
-      point.Position = position + new Vector3F(0, 0, -0.9f);
+      point.Position = position + new Vector3(0, 0, -0.9f);
       Assert.IsFalse(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
-      point.Position = position + new Vector3F(0, 0, -10.1f);
+      point.Position = position + new Vector3(0, 0, -10.1f);
       Assert.IsFalse(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
 
-      point.Position = position + new Vector3F(-0.9237604f, -0.5773f, -1);
+      point.Position = position + new Vector3(-0.9237604f, -0.5773f, -1);
       Assert.IsTrue(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
-      point.Position = position + new Vector3F(-0.924f, -0.5773f, -1);
+      point.Position = position + new Vector3(-0.924f, -0.5773f, -1);
       Assert.IsFalse(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
-      point.Position = position + new Vector3F(-0.9237604f, -0.58f, -1);
+      point.Position = position + new Vector3(-0.9237604f, -0.58f, -1);
       Assert.IsFalse(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
-      point.Position = position + new Vector3F(0.9237604f, 0.5773f, -1);
+      point.Position = position + new Vector3(0.9237604f, 0.5773f, -1);
       Assert.IsTrue(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
-      point.Position = position + new Vector3F(0.924f, 0.5773f, -1);
+      point.Position = position + new Vector3(0.924f, 0.5773f, -1);
       Assert.IsFalse(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
-      point.Position = position + new Vector3F(0.9237604f, 0.58f, -1);
+      point.Position = position + new Vector3(0.9237604f, 0.58f, -1);
       Assert.IsFalse(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
 
-      point.Position = position + new Vector3F(-9.237604f, -5.773f, -10);
+      point.Position = position + new Vector3(-9.237604f, -5.773f, -10);
       Assert.IsTrue(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
-      point.Position = position + new Vector3F(-9.24f, -5.773f, -10);
+      point.Position = position + new Vector3(-9.24f, -5.773f, -10);
       Assert.IsFalse(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
-      point.Position = position + new Vector3F(-9.237604f, -5.8f, -10);
+      point.Position = position + new Vector3(-9.237604f, -5.8f, -10);
       Assert.IsFalse(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
-      point.Position = position + new Vector3F(9.237604f, 5.773f, -10);
+      point.Position = position + new Vector3(9.237604f, 5.773f, -10);
       Assert.IsTrue(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
-      point.Position = position + new Vector3F(9.24f, 5.773f, -10);
+      point.Position = position + new Vector3(9.24f, 5.773f, -10);
       Assert.IsFalse(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
-      point.Position = position + new Vector3F(9.237604f, 5.8f, -10);
+      point.Position = position + new Vector3(9.237604f, 5.8f, -10);
       Assert.IsFalse(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
     }
 
     [Test]
     public void PerspectiveOffCenterTest()
     {
-      Vector3F position = new Vector3F(1, 2, 3);
-      QuaternionF orientation = QuaternionF.CreateRotation(new Vector3F(2, 3, 6), 0.123f);
+      Vector3 position = new Vector3(1, 2, 3);
+      Quaternion orientation = Quaternion.CreateRotation(new Vector3(2, 3, 6), 0.123f);
       CameraInstance cameraInstance = new CameraInstance(new Camera(new PerspectiveProjection()))
       {
         PoseLocal = new Pose(position, orientation),
       };
       ((PerspectiveProjection)cameraInstance.Camera.Projection).SetOffCenter(1, 5, 2, 5, 1, 10);
 
-      Matrix44F projection = Matrix44F.CreatePerspectiveOffCenter(1, 5, 2, 5, 1, 10);
+      Matrix projection = Matrix.CreatePerspectiveOffCenter(1, 5, 2, 5, 1, 10);
       Assert.AreEqual(position, cameraInstance.PoseWorld.Position);
       Assert.AreEqual(orientation.ToRotationMatrix33(), cameraInstance.PoseWorld.Orientation);
       Assert.IsTrue(Numeric.AreEqual(MathHelper.ToRadians(33.690067f), cameraInstance.Camera.Projection.FieldOfViewX));
@@ -130,8 +130,8 @@ namespace DigitalRune.Graphics.Tests
       Assert.AreEqual(1, cameraInstance.Camera.Projection.Near);
       Assert.AreEqual(10, cameraInstance.Camera.Projection.Far);
       Assert.AreEqual(9, cameraInstance.Camera.Projection.Depth);
-      Assert.IsTrue(Matrix44F.AreNumericallyEqual(projection, cameraInstance.Camera.Projection));
-      Assert.IsTrue(Matrix44F.AreNumericallyEqual(projection.Inverse, cameraInstance.Camera.Projection.Inverse));
+      Assert.IsTrue(Matrix.AreNumericallyEqual(projection, cameraInstance.Camera.Projection));
+      Assert.IsTrue(Matrix.AreNumericallyEqual(projection.Inverse, cameraInstance.Camera.Projection.Inverse));
       Assert.IsNotNull(cameraInstance.BoundingShape);
 
       // Test shape using collision detection. Remove rotation to simplify test.
@@ -141,39 +141,39 @@ namespace DigitalRune.Graphics.Tests
       CollisionObject pointCollisionObject = new CollisionObject(new GeometricObject(point));
       CollisionObject cameraCollisionObject = new CollisionObject(cameraInstance);
 
-      point.Position = position + new Vector3F(3, 3, -1);
+      point.Position = position + new Vector3(3, 3, -1);
       Assert.IsTrue(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
-      point.Position = position + new Vector3F(30, 30, -10);
+      point.Position = position + new Vector3(30, 30, -10);
       Assert.IsTrue(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
-      point.Position = position + new Vector3F(3, 3, -0.9f);
+      point.Position = position + new Vector3(3, 3, -0.9f);
       Assert.IsFalse(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
-      point.Position = position + new Vector3F(30, 30, -10.1f);
+      point.Position = position + new Vector3(30, 30, -10.1f);
       Assert.IsFalse(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
 
-      point.Position = position + new Vector3F(1, 2, -1);
+      point.Position = position + new Vector3(1, 2, -1);
       Assert.IsTrue(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
-      point.Position = position + new Vector3F(0.9f, 2, -1);
+      point.Position = position + new Vector3(0.9f, 2, -1);
       Assert.IsFalse(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
-      point.Position = position + new Vector3F(1, 1.9f, -1);
+      point.Position = position + new Vector3(1, 1.9f, -1);
       Assert.IsFalse(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
-      point.Position = position + new Vector3F(5, 5, -1);
+      point.Position = position + new Vector3(5, 5, -1);
       Assert.IsTrue(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
-      point.Position = position + new Vector3F(5.1f, 5, -1);
+      point.Position = position + new Vector3(5.1f, 5, -1);
       Assert.IsFalse(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
-      point.Position = position + new Vector3F(5, 5.1f, -1);
+      point.Position = position + new Vector3(5, 5.1f, -1);
       Assert.IsFalse(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
 
-      point.Position = position + new Vector3F(10, 20, -10);
+      point.Position = position + new Vector3(10, 20, -10);
       Assert.IsTrue(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
-      point.Position = position + new Vector3F(9.9f, 20, -10);
+      point.Position = position + new Vector3(9.9f, 20, -10);
       Assert.IsFalse(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
-      point.Position = position + new Vector3F(10, 19.9f, -10);
+      point.Position = position + new Vector3(10, 19.9f, -10);
       Assert.IsFalse(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
-      point.Position = position + new Vector3F(50, 50, -10);
+      point.Position = position + new Vector3(50, 50, -10);
       Assert.IsTrue(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
-      point.Position = position + new Vector3F(50.1f, 50, -10);
+      point.Position = position + new Vector3(50.1f, 50, -10);
       Assert.IsFalse(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
-      point.Position = position + new Vector3F(50, 50.1f, -10);
+      point.Position = position + new Vector3(50, 50.1f, -10);
       Assert.IsFalse(collisionDetection.HaveContact(pointCollisionObject, cameraCollisionObject));
     }
 
@@ -198,10 +198,10 @@ namespace DigitalRune.Graphics.Tests
         Far = 10,
       };
 
-      Matrix44F expected = Matrix44F.CreatePerspective(4, 3, 2, 10);
-      Assert.IsTrue(Matrix44F.AreNumericallyEqual(expected, projection));
-      Assert.IsTrue(Matrix44F.AreNumericallyEqual(expected, projection2));
-      Assert.IsTrue(Matrix44F.AreNumericallyEqual(expected, projection3.ToMatrix44F()));
+      Matrix expected = Matrix.CreatePerspective(4, 3, 2, 10);
+      Assert.IsTrue(Matrix.AreNumericallyEqual(expected, projection));
+      Assert.IsTrue(Matrix.AreNumericallyEqual(expected, projection2));
+      Assert.IsTrue(Matrix.AreNumericallyEqual(expected, projection3.ToMatrix()));
     }
 
     [Test]
@@ -225,10 +225,10 @@ namespace DigitalRune.Graphics.Tests
         Far = 10,
       };
 
-      Matrix44F expected = Matrix44F.CreatePerspectiveFieldOfView(MathHelper.ToRadians(60), 16.0f / 9.0f, 1, 10);
-      Assert.IsTrue(Matrix44F.AreNumericallyEqual(expected, projection));
-      Assert.IsTrue(Matrix44F.AreNumericallyEqual(expected, projection2));
-      Assert.IsTrue(Matrix44F.AreNumericallyEqual(expected, projection3.ToMatrix44F()));
+      Matrix expected = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(60), 16.0f / 9.0f, 1, 10);
+      Assert.IsTrue(Matrix.AreNumericallyEqual(expected, projection));
+      Assert.IsTrue(Matrix.AreNumericallyEqual(expected, projection2));
+      Assert.IsTrue(Matrix.AreNumericallyEqual(expected, projection3.ToMatrix()));
     }
 
     [Test]
@@ -242,9 +242,9 @@ namespace DigitalRune.Graphics.Tests
       projection2.Near = 2;
       projection2.Far = 10;
 
-      Matrix44F expected = Matrix44F.CreatePerspectiveOffCenter(0, 4, 1, 4, 2, 10);
-      Assert.IsTrue(Matrix44F.AreNumericallyEqual(expected, projection));
-      Assert.IsTrue(Matrix44F.AreNumericallyEqual(expected, projection2.ToMatrix44F()));
+      Matrix expected = Matrix.CreatePerspectiveOffCenter(0, 4, 1, 4, 2, 10);
+      Assert.IsTrue(Matrix.AreNumericallyEqual(expected, projection));
+      Assert.IsTrue(Matrix.AreNumericallyEqual(expected, projection2.ToMatrix()));
     }  
   }
 }

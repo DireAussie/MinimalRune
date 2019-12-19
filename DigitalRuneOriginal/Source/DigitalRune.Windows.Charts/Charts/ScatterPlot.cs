@@ -49,7 +49,7 @@ namespace DigitalRune.Windows.Charts
 
         //--------------------------------------------------------------
 
-#if SILVERLIGHT
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ScatterPlot"/> class.
         /// </summary>
@@ -65,7 +65,7 @@ namespace DigitalRune.Windows.Charts
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ScatterPlot), new FrameworkPropertyMetadata(typeof(ScatterPlot)));
         }
-#endif
+
 
 
 
@@ -133,11 +133,11 @@ namespace DigitalRune.Windows.Charts
                 double y = yAxis.GetPosition(data.Y);
                 marker.Tag = new Point(x, y);
 
-#if SILVERLIGHT
+
                 // Silverlight: Position marker immediately, because some elements do not raise a 
                 // SizeChanged event.
                 PositionMarker(marker);
-#endif
+
 
                 // Position the marker as soon as it is measured.
                 marker.SizeChanged += MarkerSizeChanged;

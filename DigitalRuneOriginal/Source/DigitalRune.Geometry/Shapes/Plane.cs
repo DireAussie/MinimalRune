@@ -30,9 +30,9 @@ namespace DigitalRune.Geometry.Shapes
   /// <see cref="DistanceFromOrigin"/> are equal.
   /// </para>
   /// </remarks>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
+
   public struct Plane : IEquatable<Plane>
   {
     //--------------------------------------------------------------
@@ -46,7 +46,7 @@ namespace DigitalRune.Geometry.Shapes
     /// This vector points away from solid half-space into the empty half-space.
     /// </remarks>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-    public Vector3F Normal;
+    public Vector3 Normal;
 
 
     /// <summary>
@@ -91,7 +91,7 @@ namespace DigitalRune.Geometry.Shapes
     /// <param name="distanceFromOrigin">
     /// The distance from the origin.
     /// </param>
-    public Plane(Vector3F normal, float distanceFromOrigin)
+    public Plane(Vector3 normal, float distanceFromOrigin)
     {
       Normal = normal;
       DistanceFromOrigin = distanceFromOrigin;
@@ -114,13 +114,13 @@ namespace DigitalRune.Geometry.Shapes
     /// The result is undefined if the points lie on a line.
     /// </para>
     /// </remarks>
-    public Plane(Vector3F point0, Vector3F point1, Vector3F point2)
+    public Plane(Vector3 point0, Vector3 point1, Vector3 point2)
     {
       // Compute normal vector.
-      Normal = Vector3F.Cross(point1 - point0, point2 - point0).Normalized;
+      Normal = Vector3.Cross(point1 - point0, point2 - point0).Normalized;
 
       // Compute the distance from the origin.
-      DistanceFromOrigin = Vector3F.Dot(point0, Normal);
+      DistanceFromOrigin = Vector3.Dot(point0, Normal);
     }
 
 
@@ -132,10 +132,10 @@ namespace DigitalRune.Geometry.Shapes
     /// The normalized, outward pointing normal vector of the plane.
     /// </param>
     /// <param name="pointOnPlane">A point on the plane.</param>
-    public Plane(Vector3F normal, Vector3F pointOnPlane)
+    public Plane(Vector3 normal, Vector3 pointOnPlane)
     {
       Normal = normal;
-      DistanceFromOrigin = Vector3F.Dot(pointOnPlane, Normal);
+      DistanceFromOrigin = Vector3.Dot(pointOnPlane, Normal);
     }
 
 
@@ -330,7 +330,7 @@ namespace DigitalRune.Geometry.Shapes
     /// <paramref name="scale"/> is a non-uniform scaling. Non-uniform scaling of planes is not 
     /// supported.
     /// </exception>
-    internal void Scale(ref Vector3F scale)
+    internal void Scale(ref Vector3 scale)
     {
       if (scale.X != scale.Y || scale.Y != scale.Z)
         throw new NotSupportedException("Computing collisions for planes with non-uniform scaling is not supported.");
@@ -363,10 +363,10 @@ namespace DigitalRune.Geometry.Shapes
       Normal = pose.ToWorldDirection(Normal);
 
       // Calculate a point on the new plane.
-      Vector3F pointOnPlane = pose.Position + Normal * DistanceFromOrigin;
+      Vector3 pointOnPlane = pose.Position + Normal * DistanceFromOrigin;
 
       // Project point on to normal vector to get the new DistanceFromOrigin.
-      DistanceFromOrigin = Vector3F.Dot(pointOnPlane, Normal);
+      DistanceFromOrigin = Vector3.Dot(pointOnPlane, Normal);
     }
 
 
@@ -381,10 +381,10 @@ namespace DigitalRune.Geometry.Shapes
 
       // TODO: Simplify: This should be the same as:
       // NormalLocal = pose.ToLocalDirection(worldPlane.Normal),
-      // DistanceFromOriginLocal = DistanceFromOrigin - Vector3F.Dot(worldPlane.Normal, pose.Position),
+      // DistanceFromOriginLocal = DistanceFromOrigin - Vector3.Dot(worldPlane.Normal, pose.Position),
 
       // Calculate a point on the new plane.
-      Vector3F pointOnPlane = Normal * DistanceFromOrigin;
+      Vector3 pointOnPlane = Normal * DistanceFromOrigin;
 
       // Transform normal.
       Normal = pose.ToLocalDirection(Normal);
@@ -393,7 +393,7 @@ namespace DigitalRune.Geometry.Shapes
       pointOnPlane = pose.ToLocalPosition(pointOnPlane);
 
       // Project point on to normal vector to get the new DistanceFromOrigin.
-      DistanceFromOrigin = Vector3F.Dot(pointOnPlane, Normal);
+      DistanceFromOrigin = Vector3.Dot(pointOnPlane, Normal);
     }
 
   }

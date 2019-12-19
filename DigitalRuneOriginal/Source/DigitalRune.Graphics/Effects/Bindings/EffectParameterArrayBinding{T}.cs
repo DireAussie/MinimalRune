@@ -30,7 +30,7 @@ namespace DigitalRune.Graphics.Effects
     // Note: XNA does not support arrays of objects (Texture, string, etc.). 
     // Therefore we do not have to check for null values.
     //
-    // T cannot be a DigitalRune type like Matrix44F because that would require
+    // T cannot be a DigitalRune type like Matrix because that would require
     // to copy the array each time the value is applied - and it could create garbage.
 
     //--------------------------------------------------------------

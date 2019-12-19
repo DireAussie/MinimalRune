@@ -6,10 +6,10 @@ using System;
 using System.Collections.Generic;
 using DigitalRune.Mathematics.Algebra;
 
-#if XNA || MONOGAME
+
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-#endif
+
 
 
 namespace DigitalRune.Animation.Character
@@ -19,7 +19,7 @@ namespace DigitalRune.Animation.Character
   /// </summary>
   public static class SkeletonHelper
   {
-#if XNA || MONOGAME
+
     /// <summary>
     /// Draws the skeleton bones, bone space axes and bone names for debugging. 
     /// (Only available in the XNA-compatible build.)
@@ -128,12 +128,12 @@ namespace DigitalRune.Animation.Character
       
       effect.VertexColorEnabled = oldVertexColorEnabled;
     }
-#endif
 
 
-    //public static void RotateBoneWorld(this SkeletonPose SkeletonPose, int boneIndex, QuaternionF rotation, Matrix44F world)
+
+    //public static void RotateBoneWorld(this SkeletonPose SkeletonPose, int boneIndex, Quaternion rotation, Matrix world)
     //{
-    //  QuaternionF worldRotation = QuaternionF.CreateRotation(world.Minor);
+    //  Quaternion worldRotation = Quaternion.CreateRotation(world.Minor);
     //  RotateBoneAbsolute(SkeletonPose, boneIndex, worldRotation.Conjugated * rotation);
     //}
 
@@ -148,7 +148,7 @@ namespace DigitalRune.Animation.Character
     ///// <exception cref="ArgumentNullException">
     ///// <paramref name="skeletonPose" /> is <see langword="null"/>.
     ///// </exception>
-    //public static void RotateBoneLocal(this SkeletonPose skeletonPose, int boneIndex, QuaternionF rotation)
+    //public static void RotateBoneLocal(this SkeletonPose skeletonPose, int boneIndex, Quaternion rotation)
     //{
     //  if (skeletonPose == null)
     //    throw new ArgumentNullException("skeletonPose");
@@ -168,7 +168,7 @@ namespace DigitalRune.Animation.Character
     /// <exception cref="ArgumentNullException">
     /// <paramref name="skeletonPose" /> is <see langword="null"/>.
     /// </exception>
-    public static void RotateBoneAbsolute(this SkeletonPose skeletonPose, int boneIndex, QuaternionF rotation)
+    public static void RotateBoneAbsolute(this SkeletonPose skeletonPose, int boneIndex, Quaternion rotation)
     {
       if (skeletonPose == null)
         throw new ArgumentNullException("skeletonPose");
@@ -211,7 +211,7 @@ namespace DigitalRune.Animation.Character
     /// <exception cref="ArgumentNullException">
     /// <paramref name="skeletonPose" /> is <see langword="null"/>.
     /// </exception>
-    public static void SetBoneRotationAbsolute(this SkeletonPose skeletonPose, int boneIndex, QuaternionF rotation)
+    public static void SetBoneRotationAbsolute(this SkeletonPose skeletonPose, int boneIndex, Quaternion rotation)
     {
       if (skeletonPose == null)
         throw new ArgumentNullException("skeletonPose");
@@ -507,11 +507,11 @@ namespace DigitalRune.Animation.Character
       {
         var boneTransform = skeletonPose.GetBoneTransform(boneIndex);
         if (resetScale)
-          boneTransform.Scale = Vector3F.One;
+          boneTransform.Scale = Vector3.One;
         if (resetRotation)
-          boneTransform.Rotation = QuaternionF.Identity;
+          boneTransform.Rotation = Quaternion.Identity;
         if (resetTranslation)
-          boneTransform.Translation = Vector3F.Zero;
+          boneTransform.Translation = Vector3.Zero;
 
         skeletonPose.SetBoneTransform(boneIndex, boneTransform);
 
@@ -554,11 +554,11 @@ namespace DigitalRune.Animation.Character
 
       var boneTransform = skeletonPose.GetBoneTransform(boneIndex);
       if (resetScale)
-        boneTransform.Scale = Vector3F.One;
+        boneTransform.Scale = Vector3.One;
       if (resetRotation)
-        boneTransform.Rotation = QuaternionF.Identity;
+        boneTransform.Rotation = Quaternion.Identity;
       if (resetTranslation)
-        boneTransform.Translation = Vector3F.Zero;
+        boneTransform.Translation = Vector3.Zero;
 
       skeletonPose.SetBoneTransform(boneIndex, boneTransform);
 

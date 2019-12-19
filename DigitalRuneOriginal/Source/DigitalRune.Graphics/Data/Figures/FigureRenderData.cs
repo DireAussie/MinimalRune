@@ -27,7 +27,7 @@ namespace DigitalRune.Graphics
   internal class FigureRenderData : ITriangleMesh
   {
     /// <summary>The points of the flattened figure.</summary>
-    public ArrayList<Vector3F> Vertices;
+    public ArrayList<Vector3> Vertices;
 
     /// <summary>The indices of the fill areas (triangle list).</summary>
     public ArrayList<int> FillIndices;
@@ -43,7 +43,7 @@ namespace DigitalRune.Graphics
     {
       BoundingShape = new TransformedShape
       {
-        Child = new GeometricObject(new BoxShape(new Vector3F(Single.MaxValue)))
+        Child = new GeometricObject(new BoxShape(new Vector3(Single.MaxValue)))
       };
 
       // The HitShape is created on demand.
@@ -73,7 +73,7 @@ namespace DigitalRune.Graphics
       if (Vertices != null)
         Vertices.Clear();
       else
-        Vertices = new ArrayList<Vector3F>(2);
+        Vertices = new ArrayList<Vector3>(2);
 
       if (StrokeIndices != null)
         StrokeIndices.Clear();
@@ -104,7 +104,7 @@ namespace DigitalRune.Graphics
     private void ResetBoundingShape()
     {
       // Set bounding shape to infinity.
-      ((BoxShape)BoundingShape.Child.Shape).Extent = new Vector3F(Single.MaxValue);
+      ((BoxShape)BoundingShape.Child.Shape).Extent = new Vector3(Single.MaxValue);
     }
 
 
@@ -130,7 +130,7 @@ namespace DigitalRune.Graphics
       {
         // Set an "empty" shape.
         boxObject.Pose = Pose.Identity;
-        boxShape.Extent = Vector3F.Zero;
+        boxShape.Extent = Vector3.Zero;
       }
     }
 

@@ -4,10 +4,10 @@
 
 using DigitalRune.Geometry.Shapes;
 using Microsoft.Xna.Framework.Content;
-#if ANIMATION
+
 using System.Collections.Generic;
 using DigitalRune.Animation.Character;
-#endif
+
 
 
 namespace DigitalRune.Graphics.Content
@@ -17,7 +17,7 @@ namespace DigitalRune.Graphics.Content
   /// </summary>
   public class MeshReader : ContentTypeReader<Mesh>
   {
-#if !MONOGAME
+
     /// <summary>
     /// Determines if deserialization into an existing object is possible.
     /// </summary>
@@ -29,7 +29,7 @@ namespace DigitalRune.Graphics.Content
     {
       get { return true; }
     }
-#endif
+
 
 
     /// <summary>
@@ -70,27 +70,27 @@ namespace DigitalRune.Graphics.Content
       bool hasSkeleton = input.ReadBoolean();
       if (hasSkeleton)
       {
-#if ANIMATION
+
         using (var helper = AssetLoadHelper.Get(input.AssetName))
         {
           input.ReadSharedResource(helper.Fixup<Skeleton>(s => existingInstance.Skeleton = s));
         }
 #else
         throw new ContentLoadException("Mesh contains a skeleton, but this build of DigitalRune Graphics does not support animations.");
-#endif
+
       }
 
       var hasAnimations = input.ReadBoolean();
       if (hasAnimations)
       {
-#if ANIMATION
+
         using (var helper = AssetLoadHelper.Get(input.AssetName))
         {
           input.ReadSharedResource(helper.Fixup<Dictionary<string, SkeletonKeyFrameAnimation>>(a => existingInstance.Animations = a));
         }
 #else
         throw new ContentLoadException("Mesh contains animations, but this build of DigitalRune Graphics does not support animations.");
-#endif
+
       }
 
       input.ReadSharedResource<object>(userData => existingInstance.UserData = userData);

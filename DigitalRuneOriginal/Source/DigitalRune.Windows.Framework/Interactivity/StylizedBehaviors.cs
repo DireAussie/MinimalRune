@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !SILVERLIGHT && !WINDOWS_PHONE  // Behavior.Clone() is not available.
+
 using System;
 using System.Collections.ObjectModel;
 using System.Windows;
@@ -117,4 +117,4 @@ namespace DigitalRune.Windows.Framework
         }
     }
 }
-#endif
+

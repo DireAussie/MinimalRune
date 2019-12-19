@@ -87,9 +87,9 @@
 
 using System;
 using System.Collections.Generic;
-#if NETFX_CORE || NET45
+
 using System.Reflection;
-#endif
+
 
 
 namespace DigitalRune
@@ -184,11 +184,11 @@ namespace DigitalRune
             _delegates.RemoveAt(i);
           }
           else if (target == @delegate.Target 
-#if !NETFX_CORE && !NET45
+
                   && weakDelegate.MethodInfo.Equals(@delegate.Method))
 #else
                   && weakDelegate.MethodInfo.Equals(@delegate.GetMethodInfo()))
-#endif
+
 
           {
             // Remove matching entry.
@@ -200,11 +200,11 @@ namespace DigitalRune
         {
           // The delegate method is a class method.
           if (@delegate.Target == null
-#if !NETFX_CORE && !NET45
+
               && weakDelegate.MethodInfo.Equals(@delegate.Method))
 #else
               && weakDelegate.MethodInfo.Equals(@delegate.GetMethodInfo()))
-#endif
+
           {
             // Remove matching entry.
             _delegates.RemoveAt(i);

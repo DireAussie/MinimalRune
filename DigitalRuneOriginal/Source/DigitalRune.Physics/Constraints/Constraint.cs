@@ -191,11 +191,11 @@ namespace DigitalRune.Physics.Constraints
 
 
     /// <inheritdoc/>
-    public abstract Vector3F LinearConstraintImpulse { get; }
+    public abstract Vector3 LinearConstraintImpulse { get; }
 
 
     /// <inheritdoc/>
-    public abstract Vector3F AngularConstraintImpulse { get; }
+    public abstract Vector3 AngularConstraintImpulse { get; }
 
 
 

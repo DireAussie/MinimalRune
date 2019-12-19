@@ -28,8 +28,8 @@ namespace DigitalRune.Physics.Constraints
 
     //--------------------------------------------------------------
 
-    private Vector3F _minImpulseLimits;
-    private Vector3F _maxImpulseLimits;
+    private Vector3 _minImpulseLimits;
+    private Vector3 _maxImpulseLimits;
     private readonly Constraint1D[] _constraints =
     {
       new Constraint1D(), 
@@ -74,7 +74,7 @@ namespace DigitalRune.Physics.Constraints
     /// The constraint anchor position on <see cref="Constraint.BodyB"/> in local space of 
     /// <see cref="Constraint.BodyB"/>.
     /// </value>
-    public Vector3F AnchorPositionBLocal
+    public Vector3 AnchorPositionBLocal
     {
       get { return _anchorPositionBLocal; }
       set
@@ -86,7 +86,7 @@ namespace DigitalRune.Physics.Constraints
         }
       }
     }
-    private Vector3F _anchorPositionBLocal;
+    private Vector3 _anchorPositionBLocal;
 
 
     /// <summary>
@@ -98,7 +98,7 @@ namespace DigitalRune.Physics.Constraints
     /// This target position is the target position the constraint anchor on the second body
     /// relative to the constraint anchor position and constraint anchor axes on the first body.
     /// </remarks>
-    public Vector3F TargetPosition
+    public Vector3 TargetPosition
     {
       get { return _targetPosition; }
       set
@@ -110,7 +110,7 @@ namespace DigitalRune.Physics.Constraints
         }
       }
     }
-    private Vector3F _targetPosition;
+    private Vector3 _targetPosition;
 
 
     /// <summary>
@@ -174,7 +174,7 @@ namespace DigitalRune.Physics.Constraints
 
 
     /// <inheritdoc/>
-    public override Vector3F LinearConstraintImpulse
+    public override Vector3 LinearConstraintImpulse
     {
       get
       {
@@ -186,11 +186,11 @@ namespace DigitalRune.Physics.Constraints
 
 
     /// <inheritdoc/>
-    public override Vector3F AngularConstraintImpulse
+    public override Vector3 AngularConstraintImpulse
     {
       get
       {
-        return Vector3F.Zero;
+        return Vector3.Zero;
       }
     }
 
@@ -205,7 +205,7 @@ namespace DigitalRune.Physics.Constraints
     /// </exception>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
-    public Vector3F RelativePosition
+    public Vector3 RelativePosition
     {
       get
       {
@@ -216,10 +216,10 @@ namespace DigitalRune.Physics.Constraints
 
         // Get positions/poses in world space.
         Pose anchorPoseA = BodyA.Pose * AnchorPoseALocal;
-        Vector3F anchorPositionB = BodyB.Pose.ToWorldPosition(AnchorPositionBLocal);
+        Vector3 anchorPositionB = BodyB.Pose.ToWorldPosition(AnchorPositionBLocal);
 
         // Compute anchor pose of B relative to anchor pose of A.
-        Vector3F relativePosition = anchorPoseA.ToLocalPosition(anchorPositionB);
+        Vector3 relativePosition = anchorPoseA.ToLocalPosition(anchorPositionB);
 
         return relativePosition;
       }
@@ -301,16 +301,16 @@ namespace DigitalRune.Physics.Constraints
     {
       // Anchor pose/position in world space.
       Pose anchorPoseA = BodyA.Pose * AnchorPoseALocal;
-      Vector3F anchorPositionB = BodyB.Pose.ToWorldPosition(AnchorPositionBLocal);
+      Vector3 anchorPositionB = BodyB.Pose.ToWorldPosition(AnchorPositionBLocal);
 
       // Compute anchor pose of B relative to anchor pose of A.
-      Vector3F relativePosition = anchorPoseA.ToLocalPosition(anchorPositionB);
+      Vector3 relativePosition = anchorPoseA.ToLocalPosition(anchorPositionB);
 
       // The linear constraint axes are the fixed anchor axes of A!
-      Matrix33F anchorOrientation = anchorPoseA.Orientation;
+      Matrix anchorOrientation = anchorPoseA.Orientation;
 
-      Vector3F rA = anchorPoseA.Position - BodyA.PoseCenterOfMass.Position;
-      Vector3F rB = anchorPositionB - BodyB.PoseCenterOfMass.Position;
+      Vector3 rA = anchorPoseA.Position - BodyA.PoseCenterOfMass.Position;
+      Vector3 rB = anchorPositionB - BodyB.PoseCenterOfMass.Position;
 
       var deltaTime = Simulation.Settings.Timing.FixedTimeStep;
       float errorReduction = ConstraintHelper.ComputeErrorReduction(deltaTime, SpringConstant, DampingConstant);
@@ -327,7 +327,7 @@ namespace DigitalRune.Physics.Constraints
         var axis = TargetPosition - relativePosition;
         var deviation = axis.Length;
         if (Numeric.IsZero(deviation))
-          axis = Vector3F.UnitX;
+          axis = Vector3.UnitX;
         else
           axis.Normalize();
 
@@ -341,8 +341,8 @@ namespace DigitalRune.Physics.Constraints
     }
 
 
-    private void SetupConstraint(int index, float position, float targetPosition, Vector3F axis,
-                                 Vector3F rA, Vector3F rB, float deltaTime, float errorReduction, float softness)
+    private void SetupConstraint(int index, float position, float targetPosition, Vector3 axis,
+                                 Vector3 rA, Vector3 rB, float deltaTime, float errorReduction, float softness)
     {
       // Note: Cached constraint impulses are reset in Warmstart() if necessary.
 
@@ -379,7 +379,7 @@ namespace DigitalRune.Physics.Constraints
       _maxImpulseLimits[index] = impulseLimit;
 
       constraint.Softness = softness / deltaTime;
-      constraint.Prepare(BodyA, BodyB, -axis, -Vector3F.Cross(rA, axis), axis, Vector3F.Cross(rB, axis));
+      constraint.Prepare(BodyA, BodyB, -axis, -Vector3.Cross(rA, axis), axis, Vector3.Cross(rB, axis));
     }
 
 
@@ -388,7 +388,7 @@ namespace DigitalRune.Physics.Constraints
     {
       if (!UseSingleAxisMode)
       {
-        Vector3F impulse = new Vector3F();
+        Vector3 impulse = new Vector3();
         impulse.X = ApplyImpulse(0);
         impulse.Y = ApplyImpulse(1);
         impulse.Z = ApplyImpulse(2);

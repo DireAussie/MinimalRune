@@ -145,7 +145,7 @@ namespace ICSharpCode.AvalonEdit.Rendering
 			}
 		}
 		
-		#if DEBUG
+
 		public override string ToString()
 		{
 			return "[HeightTreeNode "
@@ -165,6 +165,6 @@ namespace ICSharpCode.AvalonEdit.Rendering
 				            list.ConvertAll(cs=>cs.ID).ToArray())
 				+ "}";
 		}
-		#endif
+
 	}
 }

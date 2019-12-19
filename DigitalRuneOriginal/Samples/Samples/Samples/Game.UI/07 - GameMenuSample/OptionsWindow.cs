@@ -1,4 +1,4 @@
-#if !WP7 && !WP8
+
 using System;
 using DigitalRune.Game;
 using DigitalRune.Game.UI;
@@ -304,4 +304,3 @@ namespace Samples.Game.UI
     }
   }
 }
-#endif

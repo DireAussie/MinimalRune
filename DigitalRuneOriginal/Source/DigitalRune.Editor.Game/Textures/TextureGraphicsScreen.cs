@@ -80,7 +80,7 @@ namespace DigitalRune.Editor.Textures
         public float Scale { get; set; }
         public float InputGamma { get; set; }
         public float OutputGamma { get; set; }
-        public Matrix44F ColorTransform { get; set; }
+        public Matrix ColorTransform { get; set; }
         public Vector4F ColorOffset { get; set; }
         public bool IsPremultiplied { get; set; }
         public float MipLevel { get; set; }

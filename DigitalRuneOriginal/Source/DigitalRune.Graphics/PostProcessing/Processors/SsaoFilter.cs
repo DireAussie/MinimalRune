@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !WP7
+
 using System;
 using DigitalRune.Mathematics;
 using DigitalRune.Mathematics.Algebra;
@@ -274,14 +274,14 @@ namespace DigitalRune.Graphics.PostProcessing
 
       // 16 random vectors for Crytek-style point samples.
       //for (int i = 0; i < vectors.Length; i++)
-      //  vectors[i] = (Vector3)random.NextQuaternionF().Rotate(Vector3F.One).Normalized;
+      //  vectors[i] = (Vector3)random.NextQuaternion().Rotate(Vector3.One).Normalized;
       //    //* random.NextFloat(0.5f, 1) // Note: StarCraft 2 uses varying length to vary the sample offset length.
 
       // We create rotated random vectors with uniform distribution in 360°. Each random vector
       // is further rotated with small random angle.
       float jitterAngle = ConstantsF.TwoPi / vectors.Length / 4;
       for (int i = 0; i < vectors.Length; i++)
-        vectors[i] = (Vector3)(Matrix33F.CreateRotationZ(ConstantsF.TwoPi * i / vectors.Length + random.NextFloat(-jitterAngle, jitterAngle)) * new Vector3F(1, 0, 0)).Normalized;
+        vectors[i] = (Vector3)(Matrix.CreateRotationZ(ConstantsF.TwoPi * i / vectors.Length + random.NextFloat(-jitterAngle, jitterAngle)) * new Vector3(1, 0, 0)).Normalized;
 
       // Permute randomVectors.
       for (int i = 0; i < vectors.Length; i++)
@@ -500,4 +500,4 @@ namespace DigitalRune.Graphics.PostProcessing
 
   }
 }
-#endif
+

@@ -143,8 +143,8 @@ namespace DigitalRune.Animation.Character
       {
         var current = context.UncompressedKeyFrames[i];
         float parameter = (current.Time.Ticks - start.Time.Ticks) / ticks;
-        QuaternionF lerpedRotation = InterpolationHelper.Lerp(start.Transform.Rotation, end.Transform.Rotation, parameter);
-        float error = QuaternionF.GetAngle(current.Transform.Rotation, lerpedRotation);
+        Quaternion lerpedRotation = InterpolationHelper.Lerp(start.Transform.Rotation, end.Transform.Rotation, parameter);
+        float error = Quaternion.GetAngle(current.Transform.Rotation, lerpedRotation);
         if (error > maxError)
         {
           maxError = error;
@@ -165,7 +165,7 @@ namespace DigitalRune.Animation.Character
       {
         var current = context.UncompressedKeyFrames[i];
         float parameter = (current.Time.Ticks - start.Time.Ticks) / ticks;
-        Vector3F lerpedTranslation = InterpolationHelper.Lerp(start.Transform.Translation, end.Transform.Translation, parameter);
+        Vector3 lerpedTranslation = InterpolationHelper.Lerp(start.Transform.Translation, end.Transform.Translation, parameter);
         float error = (current.Transform.Translation - lerpedTranslation).Length;
         if (error > maxError)
         {
@@ -187,7 +187,7 @@ namespace DigitalRune.Animation.Character
       {
         var current = context.UncompressedKeyFrames[i];
         float parameter = (current.Time.Ticks - start.Time.Ticks) / ticks;
-        Vector3F lerpedScale = InterpolationHelper.Lerp(start.Transform.Scale, end.Transform.Scale, parameter);
+        Vector3 lerpedScale = InterpolationHelper.Lerp(start.Transform.Scale, end.Transform.Scale, parameter);
         float error = (current.Transform.Scale - lerpedScale).Length;
         if (error > maxError)
         {

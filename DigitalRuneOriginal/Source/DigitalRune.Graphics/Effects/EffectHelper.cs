@@ -145,113 +145,113 @@ namespace DigitalRune.Graphics.Effects
 
 
     ///// <summary>
-    ///// Gets the value of the effect parameter as <see cref="Matrix33F"/>. 
+    ///// Gets the value of the effect parameter as <see cref="Matrix"/>. 
     ///// </summary>
     ///// <param name="parameter">The effect parameter.</param>
     ///// <returns>
-    ///// The value of the effect parameter as <see cref="Matrix33F"/>.
+    ///// The value of the effect parameter as <see cref="Matrix"/>.
     ///// </returns>
     ///// <exception cref="InvalidCastException">
-    ///// Unable to cast this effect parameter to <see cref="Matrix33F"/>.
+    ///// Unable to cast this effect parameter to <see cref="Matrix"/>.
     ///// </exception>
-    //public static Matrix33F GetValueMatrix33F(this EffectParameter parameter)
+    //public static Matrix GetValueMatrix(this EffectParameter parameter)
     //{
     //  throw new NotImplementedException();
     //}
 
 
     ///// <summary>
-    ///// Gets the value of the effect parameter as an array of <see cref="Matrix33F"/>. 
+    ///// Gets the value of the effect parameter as an array of <see cref="Matrix"/>. 
     ///// </summary>
     ///// <param name="parameter">The effect parameter.</param>
     ///// <param name="count">The number of elements in the array.</param>
     ///// <returns>
-    ///// The value of the effect parameter as an array of <see cref="Matrix33F"/>.
+    ///// The value of the effect parameter as an array of <see cref="Matrix"/>.
     ///// </returns>
     ///// <exception cref="InvalidCastException">
-    ///// Unable to cast this effect parameter to <see cref="Matrix33F"/>.
+    ///// Unable to cast this effect parameter to <see cref="Matrix"/>.
     ///// </exception>
-    //public static Matrix33F[] GetValueMatrix33FArray(this EffectParameter parameter, int count)
+    //public static Matrix[] GetValueMatrixArray(this EffectParameter parameter, int count)
     //{
     //  throw new NotImplementedException();
     //}
 
 
     ///// <summary>
-    ///// Gets the value of the effect parameter as <see cref="Matrix44F"/>. 
+    ///// Gets the value of the effect parameter as <see cref="Matrix"/>. 
     ///// </summary>
     ///// <param name="parameter">The effect parameter.</param>
     ///// <returns>
-    ///// The value of the effect parameter as <see cref="Matrix44F"/>.
+    ///// The value of the effect parameter as <see cref="Matrix"/>.
     ///// </returns>
     ///// <exception cref="InvalidCastException">
-    ///// Unable to cast this effect parameter to <see cref="Matrix44F"/>.
+    ///// Unable to cast this effect parameter to <see cref="Matrix"/>.
     ///// </exception>
-    //public static Matrix44F GetValueMatrix44F(this EffectParameter parameter)
+    //public static Matrix GetValueMatrix(this EffectParameter parameter)
     //{
-    //  return (Matrix44F)parameter.GetValueMatrix();
+    //  return (Matrix)parameter.GetValueMatrix();
     //}
 
 
     ///// <summary>
-    ///// Gets the value of the effect parameter as an array of <see cref="Matrix44F"/>. 
+    ///// Gets the value of the effect parameter as an array of <see cref="Matrix"/>. 
     ///// </summary>
     ///// <param name="parameter">The effect parameter.</param>
     ///// <param name="count">The number of elements in the array.</param>
     ///// <returns>
-    ///// The value of the effect parameter as an array of <see cref="Matrix44F"/>.
+    ///// The value of the effect parameter as an array of <see cref="Matrix"/>.
     ///// </returns>
     ///// <exception cref="InvalidCastException">
-    ///// Unable to cast this effect parameter to <see cref="Matrix44F"/>.
+    ///// Unable to cast this effect parameter to <see cref="Matrix"/>.
     ///// </exception>
-    //public static Matrix44F[] GetValueMatrix44FArray(this EffectParameter parameter, int count)
+    //public static Matrix[] GetValueMatrixArray(this EffectParameter parameter, int count)
     //{
     //  Matrix[] value = parameter.GetValueMatrixArray(count);
 
     //  var arrayLength = value.Length;
-    //  Matrix44F[] convertedValue = new Matrix44F[arrayLength];
+    //  Matrix[] convertedValue = new Matrix[arrayLength];
     //  for (int i = 0; i < arrayLength; i++)
-    //    convertedValue[i] = (Matrix44F)value[i];
+    //    convertedValue[i] = (Matrix)value[i];
 
     //  return convertedValue;
     //}
 
 
     ///// <summary>
-    ///// Gets the value of the effect parameter as <see cref="QuaternionF"/>. 
+    ///// Gets the value of the effect parameter as <see cref="Quaternion"/>. 
     ///// </summary>
     ///// <param name="parameter">The effect parameter.</param>
     ///// <returns>
-    ///// The value of the effect parameter as <see cref="QuaternionF"/>.
+    ///// The value of the effect parameter as <see cref="Quaternion"/>.
     ///// </returns>
     ///// <exception cref="InvalidCastException">
-    ///// Unable to cast this effect parameter to <see cref="QuaternionF"/>.
+    ///// Unable to cast this effect parameter to <see cref="Quaternion"/>.
     ///// </exception>
-    //public static QuaternionF GetValueQuaternionF(this EffectParameter parameter)
+    //public static Quaternion GetValueQuaternion(this EffectParameter parameter)
     //{
-    //  return (QuaternionF)parameter.GetValueQuaternion();
+    //  return (Quaternion)parameter.GetValueQuaternion();
     //}
 
 
     ///// <summary>
-    ///// Gets the value of the effect parameter as an array of <see cref="QuaternionF"/>. 
+    ///// Gets the value of the effect parameter as an array of <see cref="Quaternion"/>. 
     ///// </summary>
     ///// <param name="parameter">The effect parameter.</param>
     ///// <param name="count">The number of elements in the array.</param>
     ///// <returns>
-    ///// The value of the effect parameter as an array of <see cref="QuaternionF"/>.
+    ///// The value of the effect parameter as an array of <see cref="Quaternion"/>.
     ///// </returns>
     ///// <exception cref="InvalidCastException">
-    ///// Unable to cast this effect parameter to <see cref="QuaternionF"/>.
+    ///// Unable to cast this effect parameter to <see cref="Quaternion"/>.
     ///// </exception>
-    //public static QuaternionF[] GetValueQuaternionFArray(this EffectParameter parameter, int count)
+    //public static Quaternion[] GetValueQuaternionArray(this EffectParameter parameter, int count)
     //{
     //  Quaternion[] value = parameter.GetValueQuaternionArray(count);
 
     //  var arrayLength = value.Length;
-    //  QuaternionF[] convertedValue = new QuaternionF[arrayLength];
+    //  Quaternion[] convertedValue = new Quaternion[arrayLength];
     //  for (int i = 0; i < arrayLength; i++)
-    //    convertedValue[i] = (QuaternionF)value[i];
+    //    convertedValue[i] = (Quaternion)value[i];
 
     //  return convertedValue;
     //}
@@ -298,40 +298,40 @@ namespace DigitalRune.Graphics.Effects
 
 
     ///// <summary>
-    ///// Gets the value of the effect parameter as <see cref="Vector3F"/>. 
+    ///// Gets the value of the effect parameter as <see cref="Vector3"/>. 
     ///// </summary>
     ///// <param name="parameter">The effect parameter.</param>
     ///// <returns>
-    ///// The value of the effect parameter as <see cref="Vector3F"/>.
+    ///// The value of the effect parameter as <see cref="Vector3"/>.
     ///// </returns>
     ///// <exception cref="InvalidCastException">
-    ///// Unable to cast this effect parameter to <see cref="Vector3F"/>.
+    ///// Unable to cast this effect parameter to <see cref="Vector3"/>.
     ///// </exception>
-    //public static Vector3F GetValueVector3F(this EffectParameter parameter)
+    //public static Vector3 GetValueVector3(this EffectParameter parameter)
     //{
-    //  return (Vector3F)parameter.GetValueVector3();
+    //  return (Vector3)parameter.GetValueVector3();
     //}
 
 
     ///// <summary>
-    ///// Gets the value of the effect parameter as an array of <see cref="Vector3F"/>. 
+    ///// Gets the value of the effect parameter as an array of <see cref="Vector3"/>. 
     ///// </summary>
     ///// <param name="parameter">The effect parameter.</param>
     ///// <param name="count">The number of elements in the array.</param>
     ///// <returns>
-    ///// The value of the effect parameter as an array of <see cref="Vector3F"/>.
+    ///// The value of the effect parameter as an array of <see cref="Vector3"/>.
     ///// </returns>
     ///// <exception cref="InvalidCastException">
-    ///// Unable to cast this effect parameter to <see cref="Vector3F"/>.
+    ///// Unable to cast this effect parameter to <see cref="Vector3"/>.
     ///// </exception>
-    //public static Vector3F[] GetValueVector3FArray(this EffectParameter parameter, int count)
+    //public static Vector3[] GetValueVector3Array(this EffectParameter parameter, int count)
     //{
     //  Vector3[] value = parameter.GetValueVector3Array(count);
 
     //  var arrayLength = value.Length;
-    //  Vector3F[] convertedValue = new Vector3F[arrayLength];
+    //  Vector3[] convertedValue = new Vector3[arrayLength];
     //  for (int i = 0; i < arrayLength; i++)
-    //    convertedValue[i] = (Vector3F)value[i];
+    //    convertedValue[i] = (Vector3)value[i];
 
     //  return convertedValue;
     //}
@@ -411,9 +411,9 @@ namespace DigitalRune.Graphics.Effects
     ///// <param name="parameter">The effect parameter.</param>
     ///// <param name="value">The value to assign to the effect parameter.</param>
     ///// <exception cref="InvalidCastException">
-    ///// Unable to cast this effect parameter to <see cref="Matrix33F"/>.
+    ///// Unable to cast this effect parameter to <see cref="Matrix"/>.
     ///// </exception>
-    //public static void SetValue(this EffectParameter parameter, Matrix33F value)
+    //public static void SetValue(this EffectParameter parameter, Matrix value)
     //{
     //  throw new NotImplementedException();
     //}
@@ -425,9 +425,9 @@ namespace DigitalRune.Graphics.Effects
     ///// <param name="parameter">The effect parameter.</param>
     ///// <param name="value">The value to assign to the effect parameter.</param>
     ///// <exception cref="InvalidCastException">
-    ///// Unable to cast this effect parameter to <see cref="Matrix33F"/>.
+    ///// Unable to cast this effect parameter to <see cref="Matrix"/>.
     ///// </exception>
-    //public static void SetValue(this EffectParameter parameter, Matrix33F[] value)
+    //public static void SetValue(this EffectParameter parameter, Matrix[] value)
     //{
     //  throw new NotImplementedException();
     //}
@@ -439,9 +439,9 @@ namespace DigitalRune.Graphics.Effects
     ///// <param name="parameter">The effect parameter.</param>
     ///// <param name="value">The value to assign to the effect parameter.</param>
     ///// <exception cref="InvalidCastException">
-    ///// Unable to cast this effect parameter to <see cref="Matrix44F"/>.
+    ///// Unable to cast this effect parameter to <see cref="Matrix"/>.
     ///// </exception>
-    //public static void SetValue(this EffectParameter parameter, Matrix44F value)
+    //public static void SetValue(this EffectParameter parameter, Matrix value)
     //{
     //  parameter.SetValue((Matrix)value);
     //}
@@ -453,9 +453,9 @@ namespace DigitalRune.Graphics.Effects
     ///// <param name="parameter">The effect parameter.</param>
     ///// <param name="value">The value to assign to the effect parameter.</param>
     ///// <exception cref="InvalidCastException">
-    ///// Unable to cast this effect parameter to <see cref="Matrix44F"/>.
+    ///// Unable to cast this effect parameter to <see cref="Matrix"/>.
     ///// </exception>
-    //public static void SetValue(this EffectParameter parameter, Matrix44F[] value)
+    //public static void SetValue(this EffectParameter parameter, Matrix[] value)
     //{
     //  if (value != null)
     //  {
@@ -475,9 +475,9 @@ namespace DigitalRune.Graphics.Effects
     ///// <param name="parameter">The effect parameter.</param>
     ///// <param name="value">The value to assign to the effect parameter.</param>
     ///// <exception cref="InvalidCastException">
-    ///// Unable to cast this effect parameter to <see cref="QuaternionF"/>.
+    ///// Unable to cast this effect parameter to <see cref="Quaternion"/>.
     ///// </exception>
-    //public static void SetValue(this EffectParameter parameter, QuaternionF value)
+    //public static void SetValue(this EffectParameter parameter, Quaternion value)
     //{
     //  parameter.SetValue((Quaternion)value);
     //}
@@ -489,9 +489,9 @@ namespace DigitalRune.Graphics.Effects
     ///// <param name="parameter">The effect parameter.</param>
     ///// <param name="value">The value to assign to the effect parameter.</param>
     ///// <exception cref="InvalidCastException">
-    ///// Unable to cast this effect parameter to <see cref="QuaternionF"/>.
+    ///// Unable to cast this effect parameter to <see cref="Quaternion"/>.
     ///// </exception>
-    //public static void SetValue(this EffectParameter parameter, QuaternionF[] value)
+    //public static void SetValue(this EffectParameter parameter, Quaternion[] value)
     //{
     //  if (value != null)
     //  {
@@ -547,9 +547,9 @@ namespace DigitalRune.Graphics.Effects
     ///// <param name="parameter">The effect parameter.</param>
     ///// <param name="value">The value to assign to the effect parameter.</param>
     ///// <exception cref="InvalidCastException">
-    ///// Unable to cast this effect parameter to <see cref="Vector3F"/>.
+    ///// Unable to cast this effect parameter to <see cref="Vector3"/>.
     ///// </exception>
-    //public static void SetValue(this EffectParameter parameter, Vector3F value)
+    //public static void SetValue(this EffectParameter parameter, Vector3 value)
     //{
     //  parameter.SetValue((Vector3)value);
     //}
@@ -561,9 +561,9 @@ namespace DigitalRune.Graphics.Effects
     ///// <param name="parameter">The effect parameter.</param>
     ///// <param name="value">The value to assign to the effect parameter.</param>
     ///// <exception cref="InvalidCastException">
-    ///// Unable to cast this effect parameter to <see cref="Vector3F"/>.
+    ///// Unable to cast this effect parameter to <see cref="Vector3"/>.
     ///// </exception>
-    //public static void SetValue(this EffectParameter parameter, Vector3F[] value)
+    //public static void SetValue(this EffectParameter parameter, Vector3[] value)
     //{
     //  if (value != null)
     //  {
@@ -712,27 +712,27 @@ namespace DigitalRune.Graphics.Effects
 
     /// <summary>
     /// Gets the value of the effect parameter as a RGB color represented as
-    /// <see cref="Vector3F"/>. 
+    /// <see cref="Vector3"/>. 
     /// </summary>
     /// <param name="parameter">The effect parameter.</param>
     /// <returns>
     /// The value of the effect parameter as a RGB color represented as
-    /// <see cref="Vector3F"/>.
+    /// <see cref="Vector3"/>.
     /// </returns>
     /// <exception cref="InvalidCastException">
-    /// Unable to cast this effect parameter to <see cref="Vector3F"/>.
+    /// Unable to cast this effect parameter to <see cref="Vector3"/>.
     /// </exception>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", Justification = "Performance")]
-    public static Vector3F GetColorVector3F(this EffectParameter parameter)
+    public static Vector3 GetColorVector3(this EffectParameter parameter)
     {
       if (parameter.ColumnCount == 4)
       {
         Vector4 value = parameter.GetValueVector4();
-        return new Vector3F(value.X, value.Y, value.Z);
+        return new Vector3(value.X, value.Y, value.Z);
       }
       else
       {
-        return (Vector3F)parameter.GetValueVector3();
+        return (Vector3)parameter.GetValueVector3();
       }
     }
 
@@ -741,12 +741,12 @@ namespace DigitalRune.Graphics.Effects
     /// Sets the value of the effect parameter to a RGB color.
     /// </summary>
     /// <param name="parameter">The parameter.</param>
-    /// <param name="color">The color given as <see cref="Vector3F"/>.</param>
+    /// <param name="color">The color given as <see cref="Vector3"/>.</param>
     /// <exception cref="InvalidCastException">
-    /// Unable to cast this effect parameter to <see cref="Vector3F"/>.
+    /// Unable to cast this effect parameter to <see cref="Vector3"/>.
     /// </exception>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", Justification = "Performance")]
-    public static void SetColor(this EffectParameter parameter, Vector3F color)
+    public static void SetColor(this EffectParameter parameter, Vector3 color)
     {
       if (parameter.ColumnCount == 4)
       {
@@ -919,28 +919,28 @@ namespace DigitalRune.Graphics.Effects
 
     /// <summary>
     /// Gets the value of the effect parameter as a position vector represented as
-    /// <see cref="Vector3F"/>. 
+    /// <see cref="Vector3"/>. 
     /// </summary>
     /// <param name="parameter">The effect parameter.</param>
     /// <returns>
     /// The value of the effect parameter as a position vector represented as
-    /// <see cref="Vector3F"/>.
+    /// <see cref="Vector3"/>.
     /// </returns>
     /// <exception cref="InvalidCastException">
-    /// Unable to cast this effect parameter to <see cref="Vector3F"/>.
+    /// Unable to cast this effect parameter to <see cref="Vector3"/>.
     /// </exception>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", Justification = "Performance")]
-    public static Vector3F GetPositionVector3F(this EffectParameter parameter)
+    public static Vector3 GetPositionVector3(this EffectParameter parameter)
     {
       if (parameter.ColumnCount == 4)
       {
         Vector4 value = parameter.GetValueVector4();
         CheckPositionVector(parameter, value);
-        return new Vector3F(value.X, value.Y, value.Z);
+        return new Vector3(value.X, value.Y, value.Z);
       }
       else
       {
-        return (Vector3F)parameter.GetValueVector3();
+        return (Vector3)parameter.GetValueVector3();
       }
     }
 
@@ -949,12 +949,12 @@ namespace DigitalRune.Graphics.Effects
     /// Sets the value of the effect parameter to a position vector.
     /// </summary>
     /// <param name="parameter">The parameter.</param>
-    /// <param name="position">The position given as <see cref="Vector3F"/>.</param>
+    /// <param name="position">The position given as <see cref="Vector3"/>.</param>
     /// <exception cref="InvalidCastException">
-    /// Unable to cast this effect parameter to <see cref="Vector3F"/>.
+    /// Unable to cast this effect parameter to <see cref="Vector3"/>.
     /// </exception>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", Justification = "Performance")]
-    public static void SetPosition(this EffectParameter parameter, Vector3F position)
+    public static void SetPosition(this EffectParameter parameter, Vector3 position)
     {
       if (parameter.ColumnCount == 4)
       {
@@ -1133,28 +1133,28 @@ namespace DigitalRune.Graphics.Effects
 
     /// <summary>
     /// Gets the value of the effect parameter as a direction vector represented as
-    /// <see cref="Vector3F"/>. 
+    /// <see cref="Vector3"/>. 
     /// </summary>
     /// <param name="parameter">The effect parameter.</param>
     /// <returns>
     /// The value of the effect parameter as a direction vector represented as
-    /// <see cref="Vector3F"/>.
+    /// <see cref="Vector3"/>.
     /// </returns>
     /// <exception cref="InvalidCastException">
-    /// Unable to cast this effect parameter to <see cref="Vector3F"/>.
+    /// Unable to cast this effect parameter to <see cref="Vector3"/>.
     /// </exception>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", Justification = "Performance")]
-    public static Vector3F GetDirectionVector3F(this EffectParameter parameter)
+    public static Vector3 GetDirectionVector3(this EffectParameter parameter)
     {
       if (parameter.ColumnCount == 4)
       {
         Vector4 value = parameter.GetValueVector4();
         CheckDirectionVector(parameter, value);
-        return new Vector3F(value.X, value.Y, value.Z);
+        return new Vector3(value.X, value.Y, value.Z);
       }
       else
       {
-        return (Vector3F)parameter.GetValueVector3();
+        return (Vector3)parameter.GetValueVector3();
       }
     }
 
@@ -1163,12 +1163,12 @@ namespace DigitalRune.Graphics.Effects
     /// Sets the value of the effect parameter to a direction vector.
     /// </summary>
     /// <param name="parameter">The parameter.</param>
-    /// <param name="direction">The direction given as <see cref="Vector3F"/>.</param>
+    /// <param name="direction">The direction given as <see cref="Vector3"/>.</param>
     /// <exception cref="InvalidCastException">
-    /// Unable to cast this effect parameter to <see cref="Vector3F"/>.
+    /// Unable to cast this effect parameter to <see cref="Vector3"/>.
     /// </exception>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", Justification = "Performance")]
-    public static void SetDirection(this EffectParameter parameter, Vector3F direction)
+    public static void SetDirection(this EffectParameter parameter, Vector3 direction)
     {
       if (parameter.ColumnCount == 4)
       {

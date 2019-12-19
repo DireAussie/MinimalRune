@@ -718,11 +718,11 @@ namespace DigitalRune.Graphics.Content
       // Write pixels.
       using (var sourceStream = new MemoryStream(image.Data, false))
       using (var reader = new BinaryReader(sourceStream))
-#if NET45
+
       using (var writer = new BinaryWriter(stream, Encoding.Default, true))
 #else
       using (var writer = new BinaryWriter(stream, Encoding.Default))   // Warning: Closes the stream!
-#endif
+
       {
         for (int y = 0; y < image.Height; y++)
         {

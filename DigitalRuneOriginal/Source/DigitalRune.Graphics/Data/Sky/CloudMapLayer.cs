@@ -62,9 +62,9 @@ namespace DigitalRune.Graphics
     /// </summary>
     /// <value>
     /// The matrix used to transform the texture coordinates. The default value is 
-    /// <see cref="Matrix33F.Identity"/>.
+    /// <see cref="Matrix.Identity"/>.
     /// </value>
-    public Matrix33F TextureMatrix { get; set; }
+    public Matrix TextureMatrix { get; set; }
 
 
     /// <summary>
@@ -126,7 +126,7 @@ namespace DigitalRune.Graphics
     /// Initializes a new instance of the <see cref="CloudMapLayer"/> class with default settings.
     /// </summary>
     public CloudMapLayer()
-      : this(null, Matrix33F.Identity, 0, 1, 0)
+      : this(null, Matrix.Identity, 0, 1, 0)
     {
     }
 
@@ -139,7 +139,7 @@ namespace DigitalRune.Graphics
     /// <param name="densityOffset">The <see cref="DensityOffset" />.</param>
     /// <param name="densityScale">The <see cref="DensityScale" />.</param>
     /// <param name="animationSpeed">The <see cref="AnimationSpeed"/>.</param>
-    public CloudMapLayer(Texture2D texture, Matrix33F textureMatrix, float densityOffset, float densityScale, float animationSpeed)
+    public CloudMapLayer(Texture2D texture, Matrix textureMatrix, float densityOffset, float densityScale, float animationSpeed)
     {
       Texture = texture;
       TextureMatrix = textureMatrix;

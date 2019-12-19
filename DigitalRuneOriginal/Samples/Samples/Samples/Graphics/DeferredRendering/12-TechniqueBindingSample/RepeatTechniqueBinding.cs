@@ -1,4 +1,4 @@
-﻿#if !MONOGAME && !WP7 && !WP8
+﻿
 // TODO: Add annotation support to MonoGame.
 
 using System;
@@ -116,4 +116,3 @@ namespace Samples.Graphics
     }
   }
 }
-#endif

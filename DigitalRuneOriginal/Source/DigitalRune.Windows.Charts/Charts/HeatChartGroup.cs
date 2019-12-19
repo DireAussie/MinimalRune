@@ -68,7 +68,7 @@ namespace DigitalRune.Windows.Charts
         /// Identifies the <see cref="FillPalette"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty FillPaletteProperty =
-#if SILVERLIGHT
+
             DependencyProperty.Register(
                 "FillPalette",
                 typeof(Palette),
@@ -78,7 +78,7 @@ namespace DigitalRune.Windows.Charts
             HeatChart.FillPaletteProperty.AddOwner(
                 typeof(HeatChartGroup),
                 new PropertyMetadata(null, OnRelevantPropertyChanged));
-#endif
+
 
         /// <summary>
         /// Gets or sets the palette for used to fill the heat chart.
@@ -102,7 +102,7 @@ namespace DigitalRune.Windows.Charts
         /// Identifies the <see cref="StrokePalette"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty StrokePaletteProperty =
-#if SILVERLIGHT
+
             DependencyProperty.Register(
                 "StrokePalette",
                 typeof(Palette),
@@ -112,7 +112,7 @@ namespace DigitalRune.Windows.Charts
             HeatChart.StrokePaletteProperty.AddOwner(
                 typeof(HeatChartGroup),
                 new PropertyMetadata(null, OnRelevantPropertyChanged));
-#endif
+
 
         /// <summary>
         /// Gets or sets the palette used to fill the outline of the heat chart. This is a
@@ -137,7 +137,7 @@ namespace DigitalRune.Windows.Charts
 
         //--------------------------------------------------------------
 
-#if SILVERLIGHT
+
         /// <summary>
         /// Initializes a new instance of the <see cref="HeatChartGroup"/> class.
         /// </summary>
@@ -151,7 +151,7 @@ namespace DigitalRune.Windows.Charts
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(HeatChartGroup), new FrameworkPropertyMetadata(typeof(HeatChartGroup)));
         }
-#endif
+
 
 
 

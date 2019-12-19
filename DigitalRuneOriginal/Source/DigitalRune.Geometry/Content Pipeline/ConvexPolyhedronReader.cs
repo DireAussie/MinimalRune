@@ -15,7 +15,7 @@ namespace DigitalRune.Geometry.Content
   /// </summary>
   public class ConvexPolyhedronReader : ContentTypeReader<ConvexPolyhedron>
   {
-#if !MONOGAME
+
     /// <summary>
     /// Determines if deserialization into an existing object is possible.
     /// </summary>
@@ -27,7 +27,7 @@ namespace DigitalRune.Geometry.Content
     {
       get { return true; }
     }
-#endif
+
 
 
     /// <summary>
@@ -43,12 +43,12 @@ namespace DigitalRune.Geometry.Content
         existingInstance = new ConvexPolyhedron();
 
       int numberOfVertices = input.ReadInt32();
-      Vector3F[] vertices = new Vector3F[numberOfVertices];
+      Vector3[] vertices = new Vector3[numberOfVertices];
       for (int i = 0; i < numberOfVertices; i++)
-        vertices[i] = input.ReadRawObject<Vector3F>();
+        vertices[i] = input.ReadRawObject<Vector3>();
 
       Aabb aabb = input.ReadRawObject<Aabb>();
-      Vector3F innerPoint = input.ReadRawObject<Vector3F>();
+      Vector3 innerPoint = input.ReadRawObject<Vector3>();
       var directionalLookupTable = input.ReadObject<DirectionalLookupTableUInt16F>();
       VertexAdjacency vertexAdjacency = input.ReadObject<VertexAdjacency>();
 

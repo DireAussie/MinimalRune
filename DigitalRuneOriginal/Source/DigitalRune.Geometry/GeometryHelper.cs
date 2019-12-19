@@ -9,9 +9,9 @@ using DigitalRune.Geometry.Shapes;
 using DigitalRune.Mathematics.Algebra;
 using Plane = DigitalRune.Geometry.Shapes.Plane;
 
-#if XNA || MONOGAME
+
 using Microsoft.Xna.Framework;
-#endif
+
 
 
 namespace DigitalRune.Geometry
@@ -22,9 +22,9 @@ namespace DigitalRune.Geometry
   /// <remarks>
   /// This class is a collection of several helper methods to compute bounding volumes (see 
   /// <see cref="CreateBoundingShape"/>, 
-  /// <see cref="ComputeBoundingBox(IList{Vector3F}, out Vector3F, out Pose)"/> and
+  /// <see cref="ComputeBoundingBox(IList{Vector3}, out Vector3, out Pose)"/> and
   /// <see cref="ComputeBoundingSphere"/>) and convex hulls (see 
-  /// <see cref="CreateConvexHull(IEnumerable{Vector3F})"/>). The other methods will not be needed
+  /// <see cref="CreateConvexHull(IEnumerable{Vector3})"/>). The other methods will not be needed
   /// in most situations. For general collision detection tasks use the types in the namespace 
   /// <see cref="DigitalRune.Geometry.Collisions"/>.
   /// </remarks>
@@ -47,7 +47,7 @@ namespace DigitalRune.Geometry
     /// <exception cref="ArgumentException">
     /// <paramref name="points"/> is empty.
     /// </exception>
-    public static Shape CreateBoundingShape(IList<Vector3F> points)
+    public static Shape CreateBoundingShape(IList<Vector3> points)
     {
       if (points == null)
         throw new ArgumentNullException("points");
@@ -55,7 +55,7 @@ namespace DigitalRune.Geometry
         throw new ArgumentException("The list of 'points' is empty.");
 
       // Compute minimal sphere.
-      Vector3F center;
+      Vector3 center;
       float radius;
       ComputeBoundingSphere(points, out radius, out center);
       SphereShape sphere = new SphereShape(radius);
@@ -69,7 +69,7 @@ namespace DigitalRune.Geometry
       float capsuleVolume = capsule.GetVolume();
 
       // Compute minimal box.
-      Vector3F boxExtent;
+      Vector3 boxExtent;
       Pose boxPose;
       ComputeBoundingBox(points, out boxExtent, out boxPose);
       var box = new BoxShape(boxExtent);
@@ -114,11 +114,11 @@ namespace DigitalRune.Geometry
     /// The returned mesh describes the convex hull. All faces are convex polygons.
     /// </para>
     /// <para>
-    /// This method calls <see cref="CreateConvexHull(IEnumerable{Vector3F},int,float)"/> with
+    /// This method calls <see cref="CreateConvexHull(IEnumerable{Vector3},int,float)"/> with
     /// no vertex limit and 0 skin width.
     /// </para>
     /// </remarks>
-    public static DcelMesh CreateConvexHull(IEnumerable<Vector3F> points)
+    public static DcelMesh CreateConvexHull(IEnumerable<Vector3> points)
     {
       return CreateConvexHull(points, int.MaxValue, 0);
     }
@@ -154,7 +154,7 @@ namespace DigitalRune.Geometry
     /// used to increase or decrease the size of the convex hull. 
     /// </para>
     /// </remarks>
-    public static DcelMesh CreateConvexHull(IEnumerable<Vector3F> points, int vertexLimit, float skinWidth)
+    public static DcelMesh CreateConvexHull(IEnumerable<Vector3> points, int vertexLimit, float skinWidth)
     {
       // Nothing to do for empty input.
       if (points == null)
@@ -185,7 +185,7 @@ namespace DigitalRune.Geometry
     /// <param name="azimuth">
     /// The azimuth angle [-π, π] measured from the Cartesian x-axis.
     /// </param>
-    internal static void ToSphericalCoordinates(Vector3F v, out float radius, out float inclination, out float azimuth)
+    internal static void ToSphericalCoordinates(Vector3 v, out float radius, out float inclination, out float azimuth)
     {
       radius = v.Length;
       if (radius == 0.0f)
@@ -212,16 +212,16 @@ namespace DigitalRune.Geometry
     /// The azimuth angle [-π, π] measured from the Cartesian x-axis.
     /// </param>
     /// <returns>The Cartesian coordinates.</returns>
-    internal static Vector3F ToCartesianCoordinates(float radius, float inclination, float azimuth)
+    internal static Vector3 ToCartesianCoordinates(float radius, float inclination, float azimuth)
     {
       if (radius == 0.0)
-        return new Vector3F();
+        return new Vector3();
 
       float sinφ = (float)Math.Sin(azimuth);
       float cosφ = (float)Math.Cos(azimuth);
       float sinθ = (float)Math.Sin(inclination);
       float cosθ = (float)Math.Cos(inclination);
-      return new Vector3F(
+      return new Vector3(
         radius * sinθ * cosφ,
         radius * sinθ * sinφ,
         radius * cosθ);
@@ -256,7 +256,7 @@ namespace DigitalRune.Geometry
     /// <paramref name="planes"/> is <see langword="null"/>.
     /// </exception>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", Justification = "Performance")]
-    public static void ExtractPlanes(Matrix44F projection, IList<Plane> planes, bool normalize)
+    public static void ExtractPlanes(Matrix projection, IList<Plane> planes, bool normalize)
     {
       // See "Fast Extraction of Viewing Frustum Planes from the World-View-Projection Matrix",
       // http://crazyjoke.free.fr/doc/3D/plane%20extraction.pdf.
@@ -265,7 +265,7 @@ namespace DigitalRune.Geometry
       // is the normal and d is -DistanceToOrigin. The normals in the paper point 
       // inside, but in our implementation the normals need to point outside!
 
-      Vector3F normal;
+      Vector3 normal;
       float distance;
 
       // Near plane
@@ -334,7 +334,7 @@ namespace DigitalRune.Geometry
     }
 
 
-#if XNA || MONOGAME
+
     /// <summary>
     /// Extracts the viewing frustum planes of a world-view-projection matrix. (Only available in
     /// the XNA-compatible build.)
@@ -364,7 +364,7 @@ namespace DigitalRune.Geometry
       // is the normal and d = -DistanceToOrigin. The normal points inside.
       // Our implementation: The normals point outside!
 
-      Vector3F normal;
+      Vector3 normal;
       float distance;
 
       // Near plane
@@ -419,7 +419,7 @@ namespace DigitalRune.Geometry
         }
       }
     }
-#endif
+
 
   }
 }

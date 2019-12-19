@@ -54,7 +54,7 @@ namespace InteropSample
       // Get the standard XNA window.
       _gameForm = Control.FromHandle(Window.Handle) as Form;
 
-#if MONOGAME
+
       // Create a "virtual file system" for reading game assets.
       var titleStorage = new TitleStorage("Content");
       var assetsStorage = new ZipStorage(titleStorage, "Content.zip");
@@ -67,7 +67,7 @@ namespace InteropSample
       Content = new StorageContentManager(Services, vfsStorage);
 #else
       Content.RootDirectory = "Content";
-#endif
+
       // Create the DigitalRune GraphicsManager.
       _graphicsManager = new GraphicsManager(GraphicsDevice, Window, Content);
 

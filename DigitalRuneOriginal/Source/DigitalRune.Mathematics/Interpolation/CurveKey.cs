@@ -16,12 +16,12 @@ namespace DigitalRune.Mathematics.Interpolation
   /// The type of the curve parameter (usually <see cref="float"/> or <see cref="double"/>).
   /// </typeparam>
   /// <typeparam name="TPoint">
-  /// The type of the curve points (such as <see cref="Vector2F"/>, <see cref="Vector3F"/>, etc.).
+  /// The type of the curve points (such as <see cref="Vector2F"/>, <see cref="Vector3"/>, etc.).
   /// </typeparam>
   /// <inheritdoc cref="PiecewiseCurve{TParam,TPoint,TCurveKey}"/>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
+
   [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
   [DebuggerDisplay("{GetType().Name,nq}(Parameter = {Parameter}, Point = {Point}, TangentIn = {TangentIn}, TangentOut = {TangentOut}, Interpolation = {Interpolation})")]
   public abstract class CurveKey<TParam, TPoint>
@@ -96,7 +96,7 @@ namespace DigitalRune.Mathematics.Interpolation
     /// <see cref="SplineInterpolation.Bezier"/>
     /// </term>
     /// <description>
-    /// Bézier splines require additional control points. Therefore, this property defines the 
+    /// Bï¿½zier splines require additional control points. Therefore, this property defines the 
     /// control point before this curve key.
     /// </description>
     /// </item>
@@ -146,7 +146,7 @@ namespace DigitalRune.Mathematics.Interpolation
     /// <see cref="SplineInterpolation.Bezier"/>
     /// </term>
     /// <description>
-    /// Bézier splines require additional control points. Therefore, this property defines the 
+    /// Bï¿½zier splines require additional control points. Therefore, this property defines the 
     /// control point after this curve key.
     /// </description>
     /// </item>

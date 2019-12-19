@@ -27,11 +27,11 @@ namespace DigitalRune.Graphics
   /// time. This is useful for the <see cref="DebugRenderer"/>, which get the submeshes regularly.
   /// </para>
   /// </remarks>
-#if SILVERLIGHT || WP7
+
   public       // WeakEvent handler (OnClearingResourcePools) must be public on WP7.
 #else
   internal
-#endif
+
   sealed class ShapeMeshCache : IDisposable
   {
     // Note:
@@ -55,7 +55,7 @@ namespace DigitalRune.Graphics
       public readonly WeakReference SubmeshWeak;  // WeakReference.Target is set on demand.
 
       // An SRT matrix which has to be applied to the submesh.
-      public Matrix44F Matrix;
+      public Matrix Matrix;
 
       // Describes how long the submesh hasn't been drawn.
       // 0 if the cached submesh was used in the last frame. x if cached submesh was not
@@ -279,11 +279,11 @@ namespace DigitalRune.Graphics
     }
 
 
-#if SILVERLIGHT || WP7
+
     public 
 #else
     private
-#endif
+
     void OnClearingResourcePools(object sender, EventArgs eventArgs)
     {
       // We release all strong references, when the resource pools are cleared. This usually
@@ -358,7 +358,7 @@ namespace DigitalRune.Graphics
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", Justification = "Class is for internal use only.")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "submesh")]
-    public void GetMesh(Shape shape, out Submesh submesh, out Matrix44F matrix)
+    public void GetMesh(Shape shape, out Submesh submesh, out Matrix matrix)
     {
       ThrowIfDisposed();
       if (shape == null)
@@ -472,7 +472,7 @@ namespace DigitalRune.Graphics
     }
 
 
-    private void CreateMesh(Shape shape, out Submesh submesh, out Matrix44F matrix)
+    private void CreateMesh(Shape shape, out Submesh submesh, out Matrix matrix)
     {
       // Use a special shared submesh for box shapes.
       var boxShape = shape as BoxShape;
@@ -482,7 +482,7 @@ namespace DigitalRune.Graphics
           _boxSubmesh = MeshHelper.GetBox(_graphicsService);
 
         submesh = _boxSubmesh;
-        matrix = Matrix44F.CreateScale(boxShape.Extent);
+        matrix = Matrix.CreateScale(boxShape.Extent);
         return;
       }
 
@@ -495,7 +495,7 @@ namespace DigitalRune.Graphics
 
         submesh = _boxSubmesh;
         matrix = transformedShape.Child.Pose
-                 * Matrix44F.CreateScale(transformedShape.Child.Scale * boxShape.Extent);
+                 * Matrix.CreateScale(transformedShape.Child.Scale * boxShape.Extent);
         return;
       }
 
@@ -506,7 +506,7 @@ namespace DigitalRune.Graphics
         NormalAngleLimit);
 
       submesh = newSubmesh ?? EmptySubmesh;
-      matrix = Matrix44F.Identity;
+      matrix = Matrix.Identity;
     }
 
 
@@ -514,7 +514,7 @@ namespace DigitalRune.Graphics
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", Justification = "Class is for internal use only.")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "submesh")]
-    public static void GetMesh(IGraphicsService graphicsService, Shape shape, out Submesh submesh, out Matrix44F matrix)
+    public static void GetMesh(IGraphicsService graphicsService, Shape shape, out Submesh submesh, out Matrix matrix)
     {
       // Update submesh.
       var graphicsManager = graphicsService as GraphicsManager;
@@ -527,7 +527,7 @@ namespace DigitalRune.Graphics
         // This happens if the user has implemented his own graphics manager - 
         // which is very unlikely.
         submesh = MeshHelper.CreateSubmesh(graphicsService.GraphicsDevice, shape.GetMesh(0.05f, 4), MathHelper.ToRadians(70));
-        matrix = Matrix44F.Identity;
+        matrix = Matrix.Identity;
       }
     }
 

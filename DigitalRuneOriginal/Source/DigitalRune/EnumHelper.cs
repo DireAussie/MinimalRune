@@ -29,7 +29,7 @@ namespace DigitalRune
     /// </exception>
     public static object[] GetValues(Type enumType)
     {
-#if !NETFX_CORE && !NET45
+
       if (enumType == null)
         throw new ArgumentNullException("enumType");
 
@@ -42,7 +42,7 @@ namespace DigitalRune
                      .ToArray();
 #else
       return Enum.GetValues(enumType).Cast<object>().ToArray();
-#endif
+
     }
 
 

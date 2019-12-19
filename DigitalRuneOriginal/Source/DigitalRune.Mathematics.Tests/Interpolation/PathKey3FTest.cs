@@ -19,9 +19,9 @@ namespace DigitalRune.Mathematics.Interpolation.Tests
       {
         Interpolation = SplineInterpolation.Bezier,
         Parameter = 56.7f,
-        Point = new Vector3F(1.2f, 3.4f, 5.6f),
-        TangentIn = new Vector3F(0.7f, 2.6f, 5.1f),
-        TangentOut = new Vector3F(1.9f, 3.3f, 5.9f)
+        Point = new Vector3(1.2f, 3.4f, 5.6f),
+        TangentIn = new Vector3(0.7f, 2.6f, 5.1f),
+        TangentOut = new Vector3(1.9f, 3.3f, 5.9f)
       };
       PathKey3F pathKey2;
 
@@ -50,9 +50,9 @@ namespace DigitalRune.Mathematics.Interpolation.Tests
       {
         Interpolation = SplineInterpolation.Bezier,
         Parameter = 56.7f,
-        Point = new Vector3F(1.2f, 3.4f, 5.6f),
-        TangentIn = new Vector3F(0.7f, 2.6f, 5.1f),
-        TangentOut = new Vector3F(1.9f, 3.3f, 5.9f)
+        Point = new Vector3(1.2f, 3.4f, 5.6f),
+        TangentIn = new Vector3(0.7f, 2.6f, 5.1f),
+        TangentOut = new Vector3(1.9f, 3.3f, 5.9f)
       };
       PathKey3F pathKey2;
 

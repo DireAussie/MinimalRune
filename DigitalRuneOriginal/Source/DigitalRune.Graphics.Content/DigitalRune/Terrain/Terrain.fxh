@@ -8,20 +8,20 @@
 //
 //-----------------------------------------------------------------------------
 
-#ifndef DIGITALRUNE_TERRAIN_FXH
+
 #define DIGITALRUNE_TERRAIN_FXH
 
-#ifndef DIGITALRUNE_COMMON_FXH
+
 #error "Common.fxh required. Please include Common.fxh before including Terrain.fxh."
-#endif
 
-#ifndef DIGITALRUNE_ENCODING_FXH
+
+
 #error "Encoding.fxh required. Please include Encoding.fxh before including Terrain.fxh."
-#endif
 
-#ifndef MAX_ANISOTROPY
+
+
 #define MAX_ANISOTROPY 8
-#endif
+
 
 
 //float4 Debug : DEBUG;
@@ -44,7 +44,7 @@ float2 GetAtlasTexCoords(float2 texCoord, int level, int numberOfLevels, int num
   // for the last level.)
   texCoord = clamp(texCoord, 0.0001, 0.9999);
   
-#if SM4
+
   uint numberOfRows = ((uint)numberOfLevels - 1) / (uint)numberOfColumns + 1;
   uint row = (uint)((uint)level / (uint)numberOfColumns);
   uint column = (uint)level % (uint)numberOfColumns;
@@ -53,7 +53,7 @@ float2 GetAtlasTexCoords(float2 texCoord, int level, int numberOfLevels, int num
   int row = (int)(level / (float)numberOfColumns);
   // int column = level % numberOfColumns;  // Integer modulo creates garbage on DX9+AMD.
   float column = level - row * numberOfColumns;
-#endif
+
   
   texCoord.x = (texCoord.x + column) / numberOfColumns;
   texCoord.y = (texCoord.y + row) / numberOfRows;
@@ -244,10 +244,10 @@ float4 ParallaxOcclusionMapping(float2 texCoord, sampler2D heightSampler,
     // we lerp between minNumberOfSamples and maxNumberOfSamples.
     int numberOfSteps = (int) lerp(maxNumberOfSamples, minNumberOfSamples, abs(viewDirection.z));
     
-#if !SM4
+
     // XNA compiler problems make it hard to compile shader for arbitrary loop limit. :-(
     numberOfSteps = 4;
-#endif
+
     
     // Size of a step (relative to 1).
     float stepSize = 1.0 / (float) numberOfSteps;
@@ -555,4 +555,4 @@ void ComputeTerrainMaterial(sampler materialSampler0, sampler materialSampler1, 
   //diffuse = FromHsv(float3(((int)m) / 7.0, 1, 1)) * (m %1);
 //#endif
 }
-#endif
+

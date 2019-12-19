@@ -9,15 +9,15 @@ using DigitalRune.Mathematics.Algebra;
 namespace DigitalRune.Animation
 {
   /// <summary>
-  /// Animates a <see langword="QuaternionF"/> value from/to/by a certain value.
+  /// Animates a <see langword="Quaternion"/> value from/to/by a certain value.
   /// </summary>
   /// <inheritdoc/>
-  public class QuaternionFFromToByAnimation : FromToByAnimation<QuaternionF>
+  public class QuaternionFromToByAnimation : FromToByAnimation<Quaternion>
   {
     /// <inheritdoc/>
-    public override IAnimationValueTraits<QuaternionF> Traits
+    public override IAnimationValueTraits<Quaternion> Traits
     {
-      get { return QuaternionFTraits.Instance; }
+      get { return QuaternionTraits.Instance; }
     }
   }
 }

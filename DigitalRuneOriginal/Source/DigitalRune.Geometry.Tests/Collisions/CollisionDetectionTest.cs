@@ -29,12 +29,12 @@ namespace DigitalRune.Geometry.Collisions.Tests
       _objectB = new CollisionObject(new GeometricObject
       {
         Shape = new SphereShape(1),
-        Pose = new Pose(new Vector3F(2, 0, 0), QuaternionF.Identity),
+        Pose = new Pose(new Vector3(2, 0, 0), Quaternion.Identity),
       });
       _objectC = new CollisionObject(new GeometricObject
       {
         Shape = new SphereShape(1),
-        Pose = new Pose(new Vector3F(10, 0, 0), QuaternionF.Identity),
+        Pose = new Pose(new Vector3(10, 0, 0), Quaternion.Identity),
       });
     }
 
@@ -196,7 +196,7 @@ namespace DigitalRune.Geometry.Collisions.Tests
       Assert.AreEqual(_objectB, set.ObjectB);
 
       set = ContactSet.Create(_objectA, _objectC);
-      set.Add(ContactHelper.CreateContact(set, new Vector3F(1, 0, 0), new Vector3F(1, 0, 0), 0, false));
+      set.Add(ContactHelper.CreateContact(set, new Vector3(1, 0, 0), new Vector3(1, 0, 0), 0, false));
       _collisionDetection.UpdateContacts(set, 0);
       Assert.AreEqual(0, set.Count);
       Assert.AreEqual(_objectA, set.ObjectA);
@@ -222,7 +222,7 @@ namespace DigitalRune.Geometry.Collisions.Tests
       Assert.AreEqual(_objectB, set.ObjectB);
 
       set = ContactSet.Create(_objectA, _objectC);
-      set.Add(ContactHelper.CreateContact(set, new Vector3F(1, 0, 0), new Vector3F(1, 0, 0), -10, false));
+      set.Add(ContactHelper.CreateContact(set, new Vector3(1, 0, 0), new Vector3(1, 0, 0), -10, false));
       _collisionDetection.UpdateClosestPoints(set, 0);
       Assert.AreEqual(1, set.Count);
       Assert.AreEqual(_objectA, set.ObjectA);

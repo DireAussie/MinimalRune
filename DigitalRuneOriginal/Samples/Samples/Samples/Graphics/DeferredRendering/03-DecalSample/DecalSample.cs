@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using DigitalRune.Geometry;
 using DigitalRune.Graphics.Rendering;
 using DigitalRune.Graphics.SceneGraph;
@@ -49,7 +49,7 @@ namespace Samples.Graphics
 
       // Add some static objects.
       GameObjectService.Objects.Add(new StaticObject(Services, "Barrier/Barrier", 1, Pose.Identity));
-      GameObjectService.Objects.Add(new StaticObject(Services, "Barrier/Cylinder", 1, new Pose(new Vector3F(3, 0, 1), QuaternionF.CreateRotationY(MathHelper.ToRadians(-20)))));
+      GameObjectService.Objects.Add(new StaticObject(Services, "Barrier/Cylinder", 1, new Pose(new Vector3(3, 0, 1), Quaternion.CreateRotationY(MathHelper.ToRadians(-20)))));
 
       // Add a dynamic object.
       GameObjectService.Objects.Add(new DynamicObject(Services, 1));
@@ -66,4 +66,3 @@ namespace Samples.Graphics
     }
   }
 }
-#endif

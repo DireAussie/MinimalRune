@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using System;
 using DigitalRune.Geometry;
 using DigitalRune.Geometry.Shapes;
@@ -75,8 +75,8 @@ Press <K> to trigger nova effect.")]
 
       //GameObjectService.Objects.Add(new GroundObject(Services));
       // Add a ground plane with some detail to see the water refractions.
-      Simulation.RigidBodies.Add(new RigidBody(new PlaneShape(new Vector3F(0, 1, 0), 0)));
-      GameObjectService.Objects.Add(new StaticObject(Services, "Gravel/Gravel", 1, new Pose(new Vector3F(0, 0.001f, 0))));
+      Simulation.RigidBodies.Add(new RigidBody(new PlaneShape(new Vector3(0, 1, 0), 0)));
+      GameObjectService.Objects.Add(new StaticObject(Services, "Gravel/Gravel", 1, new Pose(new Vector3(0, 0.001f, 0))));
 
       GameObjectService.Objects.Add(new DudeObject(Services));
       GameObjectService.Objects.Add(new DynamicObject(Services, 1));
@@ -94,8 +94,8 @@ Press <K> to trigger nova effect.")]
       Random random = new Random(12345);
       for (int i = 0; i < 10; i++)
       {
-        Vector3F position = new Vector3F(random.NextFloat(-3, -8), 0, random.NextFloat(0, -5));
-        Matrix33F orientation = Matrix33F.CreateRotationY(random.NextFloat(0, ConstantsF.TwoPi));
+        Vector3 position = new Vector3(random.NextFloat(-3, -8), 0, random.NextFloat(0, -5));
+        Matrix orientation = Matrix.CreateRotationY(random.NextFloat(0, ConstantsF.TwoPi));
         float scale = random.NextFloat(0.5f, 1.2f);
         GameObjectService.Objects.Add(new StaticObject(Services, "PalmTree/palm_tree", scale, new Pose(position, orientation)));
       }
@@ -109,21 +109,21 @@ Press <K> to trigger nova effect.")]
       // The ParticleSystemNodes are added to the Scene of the DistortionFilter - not the usual Scene!
       _fireDistortionParticleSystemNode = new ParticleSystemNode(CreateFireDistortionParticleSystem())
       {
-        PoseLocal = new Pose(new Vector3F(0, 0f, -1), Matrix33F.CreateRotationX(ConstantsF.PiOver2)),
+        PoseLocal = new Pose(new Vector3(0, 0f, -1), Matrix.CreateRotationX(ConstantsF.PiOver2)),
       };
       ParticleSystemService.ParticleSystems.Add(_fireDistortionParticleSystemNode.ParticleSystem);
       _distortionFilter.Scene.Children.Add(_fireDistortionParticleSystemNode);
 
       _explosionDistortionParticleSystemNode = new ParticleSystemNode(CreateExplosionDistortionParticleSystem())
       {
-        PoseLocal = new Pose(new Vector3F(0, 0, -1)),
+        PoseLocal = new Pose(new Vector3(0, 0, -1)),
       };
       ParticleSystemService.ParticleSystems.Add(_explosionDistortionParticleSystemNode.ParticleSystem);
       _distortionFilter.Scene.Children.Add(_explosionDistortionParticleSystemNode);
 
       _novaDistortionParticleSystemNode = new ParticleSystemNode(CreateNovaDistortionParticleSystem())
       {
-        PoseLocal = new Pose(new Vector3F(0, 0.5f, -1), Matrix33F.CreateRotationX(ConstantsF.PiOver2)),
+        PoseLocal = new Pose(new Vector3(0, 0.5f, -1), Matrix.CreateRotationX(ConstantsF.PiOver2)),
       };
       ParticleSystemService.ParticleSystems.Add(_novaDistortionParticleSystemNode.ParticleSystem);
       _distortionFilter.Scene.Children.Add(_novaDistortionParticleSystemNode);
@@ -152,7 +152,7 @@ Press <K> to trigger nova effect.")]
       ps.Effectors.Add(new StreamEmitter { DefaultEmissionRate = 5, });
 
       // Position
-      ps.Parameters.AddVarying<Vector3F>(ParticleParameterNames.Position);
+      ps.Parameters.AddVarying<Vector3>(ParticleParameterNames.Position);
       ps.Effectors.Add(new StartPositionEffector
       {
         Parameter = ParticleParameterNames.Position,
@@ -160,7 +160,7 @@ Press <K> to trigger nova effect.")]
       });
 
       // Velocity
-      ps.Parameters.AddUniform<Vector3F>(ParticleParameterNames.Direction).DefaultValue = Vector3F.Forward;
+      ps.Parameters.AddUniform<Vector3>(ParticleParameterNames.Direction).DefaultValue = Vector3.Forward;
       ps.Parameters.AddVarying<float>(ParticleParameterNames.LinearSpeed);
       ps.Effectors.Add(new StartValueEffector<float>
       {
@@ -174,7 +174,7 @@ Press <K> to trigger nova effect.")]
       ps.Effectors.Add(new SingleDampingEffector());
 
       // Wind
-      ps.Parameters.AddUniform<Vector3F>("Wind").DefaultValue = new Vector3F(-1, -0.5f, -3);//new Vector3F(-1, 3, -0.5f);
+      ps.Parameters.AddUniform<Vector3>("Wind").DefaultValue = new Vector3(-1, -0.5f, -3);//new Vector3(-1, 3, -0.5f);
       ps.Effectors.Add(new LinearAccelerationEffector { AccelerationParameter = "Wind" });
 
       // Angle
@@ -216,7 +216,7 @@ Press <K> to trigger nova effect.")]
       ps.Parameters.AddUniform<float>(ParticleParameterNames.Softness).DefaultValue = float.NaN; // NaN = automatic
 
       // Bounding shape
-      ps.Shape = new TransformedShape(new GeometricObject(new BoxShape(2.5f, 2.5f, 4f), new Pose(new Vector3F(0, 0, -1))));
+      ps.Shape = new TransformedShape(new GeometricObject(new BoxShape(2.5f, 2.5f, 4f), new Pose(new Vector3(0, 0, -1))));
 
       return ps;
     }
@@ -236,15 +236,15 @@ Press <K> to trigger nova effect.")]
       ps.Parameters.AddUniform<float>(ParticleParameterNames.Lifetime).DefaultValue = 0.5f;
 
       // Position
-      ps.Parameters.AddVarying<Vector3F>(ParticleParameterNames.Position);
+      ps.Parameters.AddVarying<Vector3>(ParticleParameterNames.Position);
       ps.Effectors.Add(new StartPositionEffector
       {
         Parameter = ParticleParameterNames.Position,
-        DefaultValue = Vector3F.Zero,
+        DefaultValue = Vector3.Zero,
       });
 
       // Velocity
-      ps.Parameters.AddVarying<Vector3F>(ParticleParameterNames.Direction);
+      ps.Parameters.AddVarying<Vector3>(ParticleParameterNames.Direction);
       ps.Effectors.Add(new StartDirectionEffector
       {
         Parameter = ParticleParameterNames.Direction,
@@ -339,15 +339,15 @@ Press <K> to trigger nova effect.")]
       ps.Parameters.AddUniform<float>(ParticleParameterNames.Lifetime).DefaultValue = 0.3f;
 
       // Position
-      ps.Parameters.AddVarying<Vector3F>(ParticleParameterNames.Position);
+      ps.Parameters.AddVarying<Vector3>(ParticleParameterNames.Position);
       ps.Effectors.Add(new StartPositionEffector
       {
         Parameter = ParticleParameterNames.Position,
-        DefaultValue = Vector3F.Zero,
+        DefaultValue = Vector3.Zero,
       });
 
       // Velocity
-      ps.Parameters.AddVarying<Vector3F>(ParticleParameterNames.Direction);
+      ps.Parameters.AddVarying<Vector3>(ParticleParameterNames.Direction);
       ps.Effectors.Add(new StartDirectionEffector
       {
         Parameter = ParticleParameterNames.Direction,
@@ -424,4 +424,3 @@ Press <K> to trigger nova effect.")]
     }
   }
 }
-#endif

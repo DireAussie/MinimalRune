@@ -32,17 +32,17 @@ namespace DigitalRune.Windows.Framework
 
         private readonly Action<T> _execute;
         private readonly Func<T, bool> _canExecute;
-#if !NET45
+
         private readonly WeakEvent<EventHandler> _canExecuteChangedEvent;
-#endif
 
 
 
-        //--------------------------------------------------------------
 
         //--------------------------------------------------------------
 
-#if NET45
+        //--------------------------------------------------------------
+
+
         /// <summary>
         /// Occurs when changes occur that affect whether or not the command should execute.
         /// </summary>
@@ -70,7 +70,7 @@ namespace DigitalRune.Windows.Framework
                     _canExecuteChangedEvent.Remove(value);
             }
         }
-#endif
+
 
 
 
@@ -97,9 +97,9 @@ namespace DigitalRune.Windows.Framework
             if (canExecute != null)
             {
                 _canExecute = canExecute;
-#if !NET45
+
                 _canExecuteChangedEvent = new WeakEvent<EventHandler>();
-#endif
+
             }
         }
 
@@ -192,7 +192,7 @@ namespace DigitalRune.Windows.Framework
         /// </summary>
         protected virtual void OnCanExecuteChanged()
         {
-#if NET45
+
             CanExecuteChanged?.Invoke(this, EventArgs.Empty);
 #else
             if (_canExecuteChangedEvent != null && _canExecuteChangedEvent.Count > 0)
@@ -202,7 +202,7 @@ namespace DigitalRune.Windows.Framework
                     _canExecuteChangedEvent.Invoke(this, EventArgs.Empty);
                 });
             }
-#endif
+
         }
 
     }

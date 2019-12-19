@@ -75,28 +75,28 @@ struct VSOutput
   float4 Dash : TEXCOORD2;
   float3 Edge0 : TEXCOORD3;
   float3 Edge1 : TEXCOORD4;
-#if CAPS
+
   float3 Edge2 : TEXCOORD5;
   float3 Edge3 : TEXCOORD6;
-#endif
+
 };
 
 struct PSInput
 {
-#if !MGFX
+
   float2 Position : VPOS;         // VPOS must be used instead of SV_Position on Xbox.
 #else
   float4 Position : SV_Position;
-#endif
+
   float2 Distance : TEXCOORD0;
   float4 Color : TEXCOORD1;
   float4 Dash : TEXCOORD2;
   float3 Edge0 : TEXCOORD3;
   float3 Edge1 : TEXCOORD4;
-#if CAPS
+
   float3 Edge2 : TEXCOORD5;
   float3 Edge3 : TEXCOORD6;
-#endif
+
 };
 
 
@@ -167,10 +167,10 @@ VSOutput VS(VSInput input)
   // thickness / 2 + FilterRadius, which is where the anti-aliased pixels start.
   output.Edge0 = -float3(k * (y0 - y1), k * (x1 - x0), k * (x0 * y1 - x1 * y0) + (thickness / 2 - FilterRadius));
   output.Edge1 = -float3(k * (y1 - y0), k * (x0 - x1), k * (x1 * y0 - x0 * y1) + (thickness / 2 - FilterRadius));
-#if CAPS
+
   output.Edge2 = -float3(k * (x1 - x0), k * (y1 - y0), k * (x0 * x0 + y0 * y0 - x0 * x1 - y0 * y1) + (thickness / 2 - FilterRadius));
   output.Edge3 = -float3(k * (x0 - x1), k * (y0 - y1), k * (x1 * x1 + y1 * y1 - x0 * x1 - y0 * y1) + (thickness / 2 - FilterRadius));
-#endif
+
   
   // ----- Code for a line where the width is constant in world-space.
   //float3 direction = normalize(endView.xyz - startView.xyz);
@@ -226,9 +226,9 @@ float4 PS(PSInput input) : COLOR0
   // Pixels with d in [0, 2 * FilterRadius] must be filtered.
   float3 pos = float3(input.Position.x, input.Position.y, 1);
   float4 d = float4(dot(input.Edge0, pos), dot(input.Edge1, pos), 0, 0);
-#if CAPS
+
   d.zw = float2(dot(input.Edge2, pos), dot(input.Edge3, pos));
-#endif
+
   
   // Using the lookup table of [1]
   //d = d  / (2 * FilterRadius);
@@ -245,14 +245,14 @@ float4 PS(PSInput input) : COLOR0
   if (any(d > 2))
     clip(-1);
   d = max(d, 0);
-#if CAPS == 0
+
   float e = (max(d.x, d.y));
   float alpha = exp2(-2 * e * e * e);
 #else
   float2 e = float2(max(d.x, d.y), max(d.z, d.w));
   float2 a = exp2(-2 * e * e * e);
   float alpha = a.x * a.y;
-#endif
+
   
   return input.Color * alpha;
 }
@@ -262,13 +262,13 @@ float4 PS(PSInput input) : COLOR0
 // Techniques
 //-----------------------------------------------------------------------------
 
-#if !SM4
+
 #define VSTARGET vs_3_0
 #define PSTARGET ps_3_0
 #else
 #define VSTARGET vs_4_0
 #define PSTARGET ps_4_0
-#endif
+
 
 technique
 {

@@ -23,9 +23,9 @@ namespace DigitalRune.Physics.Constraints
     //--------------------------------------------------------------
 
     private float _deltaTime;
-    private Vector3F _ra;
-    private Vector3F _rb;
-    private Vector3F _axis;
+    private Vector3 _ra;
+    private Vector3 _rb;
+    private Vector3 _axis;
     private bool _minLimitIsActive;
     private bool _maxLimitIsActive;
 
@@ -45,7 +45,7 @@ namespace DigitalRune.Physics.Constraints
     /// The constraint anchor position on <see cref="Constraint.BodyA"/> in local space of 
     /// <see cref="Constraint.BodyA"/>.
     /// </value>
-    public Vector3F AnchorPositionALocal
+    public Vector3 AnchorPositionALocal
     {
       get { return _anchorPositionALocal; }
       set
@@ -54,7 +54,7 @@ namespace DigitalRune.Physics.Constraints
         OnChanged();
       }
     }
-    private Vector3F _anchorPositionALocal;
+    private Vector3 _anchorPositionALocal;
 
 
     /// <summary>
@@ -65,7 +65,7 @@ namespace DigitalRune.Physics.Constraints
     /// The constraint anchor position on <see cref="Constraint.BodyB"/> in local space of 
     /// <see cref="Constraint.BodyB"/>.
     /// </value>
-    public Vector3F AnchorPositionBLocal
+    public Vector3 AnchorPositionBLocal
     {
       get { return _anchorPositionBLocal; }
       set
@@ -74,7 +74,7 @@ namespace DigitalRune.Physics.Constraints
         OnChanged();
       }
     }
-    private Vector3F _anchorPositionBLocal;
+    private Vector3 _anchorPositionBLocal;
 
 
     /// <summary>
@@ -126,16 +126,16 @@ namespace DigitalRune.Physics.Constraints
 
 
     /// <inheritdoc/>
-    public override Vector3F LinearConstraintImpulse
+    public override Vector3 LinearConstraintImpulse
     {
       get { return _constraint.ConstraintImpulse * _constraint.JLinB; }
     }
 
 
     /// <inheritdoc/>
-    public override Vector3F AngularConstraintImpulse
+    public override Vector3 AngularConstraintImpulse
     {
-      get { return Vector3F.Zero; }
+      get { return Vector3.Zero; }
     }
 
 
@@ -258,7 +258,7 @@ namespace DigitalRune.Physics.Constraints
       _constraint.TargetRelativeVelocity = MathHelper.Clamp(_constraint.TargetRelativeVelocity, -maxErrorCorrectionVelocity, maxErrorCorrectionVelocity);
 
       _constraint.Softness = Softness / _deltaTime;
-      _constraint.Prepare(BodyA, BodyB, -_axis, -Vector3F.Cross(_ra, _axis), _axis, Vector3F.Cross(_rb, _axis));
+      _constraint.Prepare(BodyA, BodyB, -_axis, -Vector3.Cross(_ra, _axis), _axis, Vector3.Cross(_rb, _axis));
 
       // To keep it simple we do not warmstart. Warmstarting can only be done if the same limit
       // was active the last time.

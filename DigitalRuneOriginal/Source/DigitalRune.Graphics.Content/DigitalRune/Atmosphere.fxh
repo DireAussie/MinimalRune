@@ -20,7 +20,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#ifndef DIGITALRUNE_ATMOSPHERE_FXH
+
 #define DIGITALRUNE_ATMOSPHERE_FXH
 
 
@@ -28,9 +28,9 @@
 // Constants
 //-----------------------------------------------------------------------------
 
-#ifndef DIGITALRUNE_COMMON_FXH
+
 static const float Pi = 3.1415926535897932384626433832795;
-#endif
+
 
 
 //-----------------------------------------------------------------------------
@@ -190,11 +190,11 @@ void ComputeAtmosphericScattering(float3 rayStart, float3 rayDirection, float ra
   float cosSun = dot(zenith, sunDirection);
   float lastSunDepth = GetOpticalDepthSchueler(h, H, radiusGround, cosSun);
   
-#ifdef XBOX
+
   // XBox HLSL compiler problem: If numberOfSamples is defined by an effect parameter
   // and is not constant, the code does not work...
   numberOfSamples = 3;
-#endif
+
   
   float segmentLength = rayLength / numberOfSamples;
   float3 T = 1;   // The ray transmittance (camera to sky/terrain).
@@ -277,12 +277,12 @@ void ComputeAtmosphericScatteringOld(float3 rayStart, float3 rayDirection, float
   float cosZenith = dot(neg * rayDirection, normalize(rayStart));
   
   // Optical depth of the whole ray (camera to sky or terrain to sky if hitTerrain is true).
-#if USE_ONEIL
+
   float HRelative = H / (radiusAtmosphere - radiusGround);
   float depthRayToSky = GetOpticalDepthONeil(h, H, HRelative, cosZenith);
 #else
   float depthRayToSky = GetOpticalDepthSchueler(h, H, radiusGround, cosZenith);
-#endif
+
 
   // The length of one integration segment on the ray.
   float sampleLengthAbsolute = rayLength / numberOfSamples;
@@ -306,22 +306,22 @@ void ComputeAtmosphericScatteringOld(float3 rayStart, float3 rayDirection, float
     float cosSun = dot(sunDirection, samplePoint) / radiusSample;
         
     // Optical depth from sample to sun.
-#if USE_ONEIL
+
     float depthSampleToSun = GetOpticalDepthONeil(h, H, HRelative, cosSun);
 #else
     float depthSampleToSun = GetOpticalDepthSchueler(h, H, radiusGround, cosSun);
-#endif
+
     
     // Cosine of angle between zenith and ray direction.
     float cosRay = dot(neg * rayDirection, samplePoint) / radiusSample;
     
     // Optical depth from camera to sample =
     //    depth of camera to sky - depth of sample to sky.
-#if USE_ONEIL
+
     float depthSampleToCamera = depthRayToSky - GetOpticalDepthONeil(h, H, HRelative, cosRay);
 #else
     float depthSampleToCamera = depthRayToSky - GetOpticalDepthSchueler(h, H, radiusGround, cosRay);
-#endif
+
     
     // Optical depth from camera to sample to sun.
     float depthCameraToSun = depthSampleToSun + neg * depthSampleToCamera;
@@ -377,4 +377,4 @@ float PhaseFunction(float cosTheta, float g)
   //return 1 / (4 * Pi) * (1.0 - gSquared) /
   //       pow(1.0 + gSquared - 2.0 * g * cosTheta, 1.5);
 }
-#endif
+

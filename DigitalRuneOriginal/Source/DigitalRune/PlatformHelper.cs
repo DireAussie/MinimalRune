@@ -4,7 +4,7 @@
 
 using System;
 using System.IO;
-#if WINDOWS
+
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -13,7 +13,7 @@ using System.Windows.Forms;
 using Windows.ApplicationModel.DataTransfer;
 #elif WINDOWS_PHONE || SILVERLIGHT
 using System.Windows;
-#endif
+
 
 
 namespace DigitalRune
@@ -29,12 +29,12 @@ namespace DigitalRune
   /// </remarks>
   public static class PlatformHelper
   {
-#if WINDOWS
+
     private static bool User32DllNotFound;
-#endif
 
 
-#if WINDOWS
+
+
     /// <summary>
     /// Determines whether [is running on mac].
     /// </summary>
@@ -67,7 +67,7 @@ namespace DigitalRune
       }
       return false;
     }
-#endif
+
 
 
     /// <summary>
@@ -82,11 +82,11 @@ namespace DigitalRune
     {
       get
       {
-#if WINDOWS
+
         return Cursors.Arrow;
 #else
         return null;
-#endif
+
       }
     }
 
@@ -111,7 +111,7 @@ namespace DigitalRune
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId = "fileName")]
     public static object CreateCursor(string fileName)
     {
-#if !WINDOWS
+
       return null;
 #else
       if (string.IsNullOrEmpty(fileName))
@@ -144,7 +144,7 @@ namespace DigitalRune
 
       // Fall back to Cursor constructor which does not support animated cursors.
       return new Cursor(fileName);
-#endif
+
     }
 
 
@@ -163,7 +163,7 @@ namespace DigitalRune
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId = "stream")]
     public static object CreateCursor(Stream stream)
     {
-#if !WINDOWS
+
       return null;
 #else
       if (stream == null)
@@ -214,7 +214,7 @@ namespace DigitalRune
 
       stream.Seek(0, SeekOrigin.Begin);
       return new Cursor(stream);
-#endif
+
     }
 
 
@@ -225,7 +225,7 @@ namespace DigitalRune
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId = "cursor")]
     public static void DestroyCursor(object cursor)
     {
-#if WINDOWS
+
       var cursorTyped = cursor as Cursor;
       if (cursorTyped == null)
         throw new ArgumentException("Parameter cursor must be of type System.Windows.Forms.Cursor");
@@ -242,7 +242,7 @@ namespace DigitalRune
         // User32.dll is not available on the current platform (e.g. Linux, MacOS).
         User32DllNotFound = true;
       }
-#endif
+
     }
 
 
@@ -259,11 +259,11 @@ namespace DigitalRune
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId = "handle")]
     public static object GetForm(IntPtr handle)
     {
-#if WINDOWS
+
       return Control.FromHandle(handle) as Form;
 #else
       return null;
-#endif
+
     }
 
 
@@ -285,14 +285,14 @@ namespace DigitalRune
       if (form == null)
         throw new ArgumentNullException("form");
 
-#if PORTABLE
+
       throw Portable.NotImplementedException;
 #elif WINDOWS
       var formTyped = ((Form)form);
       return formTyped.Visible;
 #else
       throw new NotSupportedException();
-#endif
+
     }
 
 
@@ -307,7 +307,7 @@ namespace DigitalRune
       if (form == null)
         return;
 
-#if PORTABLE
+
       throw Portable.NotImplementedException;
 #elif WINDOWS
       var formTyped = ((Form)form);
@@ -318,7 +318,7 @@ namespace DigitalRune
       // ReSharper disable once RedundantCheckBeforeAssignment
       if (formTyped.Cursor != cursorTyped)
         formTyped.Cursor = cursorTyped;
-#endif
+
     }
 
 
@@ -339,11 +339,11 @@ namespace DigitalRune
       get
       {
 //#if WINDOWS || NETFX_CORE || WINDOWS_PHONE || SILVERLIGHT
-#if WINDOWS || WINDOWS_PHONE || SILVERLIGHT     // TODO: Clipboard is not yet available in Windows Store Universal apps.
+
         return true;
 #else
         return false;
-#endif
+
       }
     }
 
@@ -356,7 +356,7 @@ namespace DigitalRune
     public static string GetClipboardText()
     {
       string data = null;
-#if WINDOWS
+
       Thread thread = new Thread(() =>
       {
         data = Clipboard.GetText();
@@ -375,7 +375,7 @@ namespace DigitalRune
       // causes a SecurityException.
 #elif SILVERLIGHT
       data = Clipboard.GetText();
-#endif
+
       return data;
     }
 
@@ -392,7 +392,7 @@ namespace DigitalRune
       if (text == null)
         throw new ArgumentNullException("text");
 
-#if WINDOWS
+
       text = text.Replace("\n", Environment.NewLine);
       Thread thread = new Thread(() =>
       {
@@ -408,7 +408,7 @@ namespace DigitalRune
 //      Clipboard.SetContent(dataPackage);
 #elif WINDOWS_PHONE || SILVERLIGHT
       Clipboard.SetText(text);
-#endif
+
     }
 
 
@@ -427,11 +427,11 @@ namespace DigitalRune
     {
       get
       {
-#if WINDOWS
+
         return SystemInformation.MouseWheelScrollDelta;
 #else
         return 120;
-#endif
+
       }
     }
 
@@ -447,11 +447,11 @@ namespace DigitalRune
     {
       get
       {
-#if WINDOWS
+
         return SystemInformation.MouseWheelScrollLines;
 #else
         return 1;
-#endif
+
       }
     }
 
@@ -461,7 +461,7 @@ namespace DigitalRune
 
     //--------------------------------------------------------------
 
-#if WINDOWS
+
     [Flags]
     internal enum ModifierKeys
     {
@@ -471,7 +471,7 @@ namespace DigitalRune
       Shift = 4,
       ControlAlt = Control | Alt,
     }
-#endif
+
 
 
     /// <summary>
@@ -507,12 +507,12 @@ namespace DigitalRune
     /// <exception cref="ArgumentNullException">
     /// <paramref name="virtualKeyCodes"/> is <see langword="null"/>.
     /// </exception>
-#if !WINDOWS
+
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters")]
-#endif
+
     public static KeyMapping[] GetKeyMap(int[] virtualKeyCodes)
     {
-#if WINDOWS
+
       if (User32DllNotFound)
         return null;
 
@@ -564,12 +564,12 @@ namespace DigitalRune
         // User32.dll is not available on the current platform (e.g. Linux, MacOS).
         User32DllNotFound = true;
       }
-#endif
+
 
       return null;
     }
 
-#if WINDOWS
+
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1806:DoNotIgnoreMethodResults")]
     private static void AddKeyMapEntry(List<KeyMapping> keyMap, int virtualKeyCode, uint scanCode, byte[] keyStates, ModifierKeys modifierKeys, IntPtr layout)
     {
@@ -589,7 +589,7 @@ namespace DigitalRune
         });
       }
     }
-#endif
+
 
   }
 }

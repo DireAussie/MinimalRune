@@ -21,7 +21,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCulture("")]
 [assembly: NeutralResourcesLanguage("en")]
 
-#if !PORTABLE
+
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
 // COM, set the ComVisible attribute to true on that type.
@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("84ea4fbe-fbb0-4989-ab28-d6b29716e4cf")]
-#endif
+
 
 // Version information for an assembly consists of the following four values:
 //
@@ -42,12 +42,11 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.4.0.0")]
-#if !XBOX
+
 [assembly: AssemblyFileVersion("1.4.0.$WCREV$")]
-#endif
+
 [assembly: CLSCompliant(true)]
 
 // Make internals visible to the unit test project.
-#if !XBOX && !WINDOWS_PHONE
+
 [assembly: InternalsVisibleTo("DigitalRune.Game.Tests")]
-#endif

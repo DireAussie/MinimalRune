@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if WINDOWS && MONOGAME
+
 using System;
 using System.Diagnostics;
 using System.Windows;
@@ -260,11 +260,11 @@ namespace DigitalRune.Graphics.Interop
         // The back buffer is still empty, however we need to set a valid back buffer
         // for the layout logic. Otherwise, the size of the D3D11Image is (0, 0).
         Lock();
-#if NET45
+
         SetBackBuffer(D3DResourceType.IDirect3DSurface9, _surface9.NativePointer, true);
 #else
         SetBackBuffer(D3DResourceType.IDirect3DSurface9, _surface9.NativePointer);
-#endif
+
         Unlock();
 
         if (IsSynchronized)
@@ -291,11 +291,11 @@ namespace DigitalRune.Graphics.Interop
 
       // Unassign back buffer from D3DImage.
       Lock();
-#if NET45
+
       SetBackBuffer(D3DResourceType.IDirect3DSurface9, IntPtr.Zero, true);
 #else
       SetBackBuffer(D3DResourceType.IDirect3DSurface9, IntPtr.Zero);
-#endif
+
       Unlock();
 
       // Dispose resources.
@@ -409,11 +409,11 @@ namespace DigitalRune.Graphics.Interop
         }
 
         // Note: Redundant calls to SetBackBuffer() are a no-op.
-#if NET45
+
         SetBackBuffer(D3DResourceType.IDirect3DSurface9, _surface9.NativePointer, true);
 #else
         SetBackBuffer(D3DResourceType.IDirect3DSurface9, _surface9.NativePointer);
-#endif
+
 
         if (IsSynchronized)
         {
@@ -496,4 +496,4 @@ namespace DigitalRune.Graphics.Interop
 
   }
 }
-#endif
+

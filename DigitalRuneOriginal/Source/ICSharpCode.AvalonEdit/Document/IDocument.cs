@@ -20,7 +20,7 @@ using System;
 
 namespace ICSharpCode.AvalonEdit.Document
 {
-	#if !NREFACTORY
+
 	/// <summary>
 	/// A document representing a source code file for refactoring.
 	/// Line and column counting starts at 1.
@@ -28,12 +28,12 @@ namespace ICSharpCode.AvalonEdit.Document
 	/// </summary>
 	public interface IDocument : ITextSource, IServiceProvider
 	{
-		#if NREFACTORY
+
 		/// <summary>
 		/// Creates an immutable snapshot of this document.
 		/// </summary>
 		IDocument CreateDocumentSnapshot();
-		#endif
+
 		
 		/// <summary>
 		/// Gets/Sets the text of the whole document..
@@ -339,5 +339,5 @@ namespace ICSharpCode.AvalonEdit.Document
 			return new TextChangeEventArgs(offset, insertedText, removedText);
 		}
 	}
-	#endif
+
 }

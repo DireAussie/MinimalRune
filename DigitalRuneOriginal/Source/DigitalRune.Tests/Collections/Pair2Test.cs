@@ -4,9 +4,9 @@ using System.Text;
 using System.Xml.Serialization;
 using NUnit.Framework;
 
-#if !SILVERLIGHT
+
 using System.Runtime.Serialization.Formatters.Binary;
-#endif
+
 
 
 namespace DigitalRune.Collections.Tests
@@ -108,7 +108,7 @@ namespace DigitalRune.Collections.Tests
     }
 
 
-#if !SILVERLIGHT
+
     [Test]
     public void BinarySerialization()
     {
@@ -123,7 +123,7 @@ namespace DigitalRune.Collections.Tests
       Pair<float, object> p2 = (Pair<float, object>)formatter.Deserialize(stream);
       Assert.AreEqual(p, p2);
     }
-#endif
+
 
 
     [Test]

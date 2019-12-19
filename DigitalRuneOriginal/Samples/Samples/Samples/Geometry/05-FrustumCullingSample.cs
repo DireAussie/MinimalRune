@@ -39,11 +39,11 @@ performance improvement. (Hold <F4> to show/reset profiling data.)",
   public class FrustumCullingSample : BasicSample
   {
     // A few constants.
-#if WINDOWS_PHONE || ANDROID || IOS
+
     private const int NumberOfObjects = 1000;  // The number of random objects in the scene.
 #else
     private const int NumberOfObjects = 2000; // The number of random objects in the scene.
-#endif
+
     private const float LevelSize = 1000;     // The size of the level in meter.
 
     // The collision domain that manages collision objects.
@@ -58,7 +58,7 @@ performance improvement. (Hold <F4> to show/reset profiling data.)",
     private readonly List<Plane> _planes = new List<Plane>(6);
 
     // A few parameters to create a random camera movement. 
-    private Vector3F _cameraTargetMovement = Vector3F.Zero;  // The random movement vector of the camera.
+    private Vector3 _cameraTargetMovement = Vector3.Zero;  // The random movement vector of the camera.
     private float _cameraTargetRotation;                     // The random rotation vector of the camera.
     private float _cameraTargetUpdateTime = float.MaxValue;  // The time since the target movement/rotation was updated.
 
@@ -83,7 +83,7 @@ performance improvement. (Hold <F4> to show/reset profiling data.)",
       var topDownCamera = new Camera(orthographicProjection);
       _topDownCameraNode = new CameraNode(topDownCamera)
       {
-        View = Matrix44F.CreateLookAt(new Vector3F(0, 1000, 0), new Vector3F(0, 0, 0), -Vector3F.UnitZ),
+        View = Matrix.CreateLookAt(new Vector3(0, 1000, 0), new Vector3(0, 0, 0), -Vector3.UnitZ),
       };
 
       // The perspective camera moving through the scene.
@@ -118,16 +118,16 @@ performance improvement. (Hold <F4> to show/reset profiling data.)",
         // (We could also use an other shape, such as a bounding sphere.)
 
         // Create a random box.
-        Shape randomShape = new BoxShape(RandomHelper.Random.NextVector3F(1, 10));
+        Shape randomShape = new BoxShape(RandomHelper.Random.NextVector3(1, 10));
 
         // Create a random position.
-        Vector3F randomPosition;
+        Vector3 randomPosition;
         randomPosition.X = RandomHelper.Random.NextFloat(-LevelSize / 2, LevelSize / 2);
         randomPosition.Y = RandomHelper.Random.NextFloat(0, 2);
         randomPosition.Z = RandomHelper.Random.NextFloat(-LevelSize / 2, LevelSize / 2);
 
         // Create a random orientation.
-        QuaternionF randomOrientation = RandomHelper.Random.NextQuaternionF();
+        Quaternion randomOrientation = RandomHelper.Random.NextQuaternion();
 
         // Create object and add it to collision domain.
         var geometricObject = new GeometricObject(randomShape, new Pose(randomPosition, randomOrientation));
@@ -200,7 +200,7 @@ performance improvement. (Hold <F4> to show/reset profiling data.)",
       // Update the camera movement. We move a fraction of the targetMovement / targetRotation.
       _sceneCameraNode.PoseWorld = new Pose(
         currentPosition + _cameraTargetMovement * timeStep / cameraTargetUpdateInterval,
-        Matrix33F.CreateRotationY(_cameraTargetRotation * timeStep / cameraTargetUpdateInterval) * currentOrientation);
+        Matrix.CreateRotationY(_cameraTargetRotation * timeStep / cameraTargetUpdateInterval) * currentOrientation);
 
       // When the cameraTargetUpdateInterval has passed, we choose a new random movement
       // vector and rotation angle.
@@ -216,7 +216,7 @@ performance improvement. (Hold <F4> to show/reset profiling data.)",
         // that does not move the camera outside of the level boundaries.
         do
         {
-          _cameraTargetMovement = RandomHelper.Random.NextVector3F(-LevelSize, LevelSize);
+          _cameraTargetMovement = RandomHelper.Random.NextVector3(-LevelSize, LevelSize);
           _cameraTargetMovement.Y = 0;
 
         } while (Math.Abs(_sceneCameraNode.PoseWorld.Position.X + _cameraTargetMovement.X) > LevelSize / 2
@@ -264,7 +264,7 @@ performance improvement. (Hold <F4> to show/reset profiling data.)",
         Profiler.Start("WithCull");
 
         // Get the combined WorldViewProjection matrix of the camera.
-        Matrix44F worldViewProjection = _sceneCameraNode.Camera.Projection.ToMatrix44F() * _sceneCameraNode.PoseWorld.Inverse;
+        Matrix worldViewProjection = _sceneCameraNode.Camera.Projection.ToMatrix() * _sceneCameraNode.PoseWorld.Inverse;
 
         // Extract the frustum planes of the camera.
         _planes.Clear();

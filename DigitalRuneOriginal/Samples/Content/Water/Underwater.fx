@@ -42,11 +42,11 @@ VSOutput VSPostProcess(VSInput input)
   output.Position = input.Position;
   output.TexCoord = input.TexCoord;
   
-#if !SM4
+
   // Apply half pixel offset.
   // See also http://drilian.com/2008/11/25/understanding-half-pixel-and-half-texel-offsets/
   output.Position.xy -= 0.5;
-#endif
+
 
   // Now transform screen space coordinate into projection space.
   // Screen space: Left top = (0, 0), right bottom = (ScreenSize.x - 1, ScreenSize.y - 1).
@@ -89,12 +89,12 @@ technique
 {
   pass 
   {
-#if !SM4
+
     VertexShader = compile vs_3_0 VSPostProcess();
     PixelShader = compile ps_3_0 PSPostProcess();
 #else
     VertexShader = compile vs_4_0 VSPostProcess();
     PixelShader = compile ps_4_0 PSPostProcess();
-#endif
+
   }
 }

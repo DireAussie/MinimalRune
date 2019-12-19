@@ -72,22 +72,22 @@ namespace DigitalRune.Graphics
     /// Gets the extraterrestrial sunlight intensity based on NASA data.
     /// </summary>
     /// <value>The sunlight intensity outside the earth's atmosphere in [lux].</value>
-    public static Vector3F ExtraterrestrialSunlight
+    public static Vector3 ExtraterrestrialSunlight
     {
       get
       {
         if (!_extraterrestrialSunlight.HasValue)
         {
           _spectrum.SetSolarSpectrum();
-          Vector3F sunlightXyz = _spectrum.ToXYZ();
-          Vector3F sunlightRgb = GraphicsHelper.XYZToRGB * sunlightXyz;
+          Vector3 sunlightXyz = _spectrum.ToXYZ();
+          Vector3 sunlightRgb = GraphicsHelper.XYZToRGB * sunlightXyz;
           _extraterrestrialSunlight = sunlightRgb;
         }
 
         return _extraterrestrialSunlight.Value;
       }
     }
-    private static Vector3F? _extraterrestrialSunlight;
+    private static Vector3? _extraterrestrialSunlight;
 
 
     /// <summary>
@@ -124,14 +124,14 @@ namespace DigitalRune.Graphics
     /// </remarks>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters")]
     public static void GetSunlight(float altitude, float turbidity, Vector3D sunDirection,
-                                   out Vector3F directSunlight, out Vector3F scatteredSunlight)
+                                   out Vector3 directSunlight, out Vector3 scatteredSunlight)
     {
       _spectrum.SetSolarSpectrum();
 
       sunDirection.TryNormalize();
       double cosZenith = sunDirection.Y;
 
-      Vector3F direct, indirect;
+      Vector3 direct, indirect;
       if (cosZenith > 0)
       {
         // Daylight - Sun is above horizon.
@@ -173,8 +173,8 @@ namespace DigitalRune.Graphics
 
         // Blend between table values and sunset light.
         float blend = MathHelper.Clamp(-solarAltitude / 5.0f, 0, 1);
-        direct =  InterpolationHelper.Lerp(direct, new Vector3F(0, 0, 0), blend);
-        indirect = InterpolationHelper.Lerp(indirect, new Vector3F(X, Y, Z), blend);
+        direct =  InterpolationHelper.Lerp(direct, new Vector3(0, 0, 0), blend);
+        indirect = InterpolationHelper.Lerp(indirect, new Vector3(X, Y, Z), blend);
       }
 
       // Convert XYZ to RGB.
@@ -207,7 +207,7 @@ namespace DigitalRune.Graphics
     /// <inheritdoc cref="GetSunlight"/>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters")]
     public static void GetMoonlight(float altitude, float turbidity, Vector3D moonPosition, float phaseAngle,
-                                    out Vector3F directMoonlight, out Vector3F scatteredMoonlight)
+                                    out Vector3 directMoonlight, out Vector3 scatteredMoonlight)
     {
       Vector3D moonDirection = moonPosition.Normalized;
       double cosZenith = moonDirection.Y;
@@ -258,7 +258,7 @@ namespace DigitalRune.Graphics
 
 
     // For reference: Here is a simpler method to approximate the sun color.
-    //private static Vector3F UpdateSunColor(Vector3F lightDirection, float turbidity)
+    //private static Vector3 UpdateSunColor(Vector3 lightDirection, float turbidity)
     //{
     //  // turbidity = 2;
 
@@ -270,10 +270,10 @@ namespace DigitalRune.Graphics
     //  // Ratio of small to large particle sizes. (0:4, usually 1.3)
     //  const float alpha = 1.3f;
 
-    //  //float cosineTheta = Math.Min(1, 0.2f + Vector3F.Dot(Vector3F.UnitY, -lightDirection));
+    //  //float cosineTheta = Math.Min(1, 0.2f + Vector3.Dot(Vector3.UnitY, -lightDirection));
     //  float cosineTheta = -lightDirection.Y;
 
-    //  Vector3F lightColor = new Vector3F();
+    //  Vector3 lightColor = new Vector3();
     //  if (!(cosineTheta < 0))
     //  {
     //    float theta = (float)Math.Acos(cosineTheta);
@@ -303,7 +303,7 @@ namespace DigitalRune.Graphics
     //      // TODO: if m < 0 tau[i] == 0?
     //    }
 
-    //    lightColor = new Vector3F(tau[0], tau[1], tau[2]);
+    //    lightColor = new Vector3(tau[0], tau[1], tau[2]);
     //  }
 
     //  return lightColor;

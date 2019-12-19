@@ -28,7 +28,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#ifndef DIGITALRUNE_PARALLAX_FXH
+
   #define DIGITALRUNE_PARALLAX_FXH
 
 //-----------------------------------------------------------------------------
@@ -154,7 +154,7 @@ float4 ParallaxOcclusionMapping(float2 texCoord, sampler2D heightSampler,
   int lodThreshold, int minNumberOfSamples, int maxNumberOfSamples, float3 lightDirection,
   float shadowScale, int shadowSamples, float shadowFalloff, float shadowStrength)
 {
-#ifndef XBOX
+
   float height = 0;
   float shadow = 0;
   if (mipLevel < (float) lodThreshold && heightScale > 0)
@@ -264,6 +264,6 @@ float4 ParallaxOcclusionMapping(float2 texCoord, sampler2D heightSampler,
   return float4(texCoord, height, shadow);
 #else
   return float4(texCoord, 0, 0);
-#endif
+
 }
-#endif
+

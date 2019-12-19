@@ -1,7 +1,7 @@
-﻿#if SILVERLIGHT || WINDOWS_PHONE
+﻿
 using System.Globalization;
 using DigitalRune.Windows.Tests;
-#if NETFX_CORE || WINDOWS_PHONE
+
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 using TestFixtureAttribute = Microsoft.VisualStudio.TestPlatform.UnitTestFramework.TestClassAttribute;
 using TestFixtureSetUp = Microsoft.VisualStudio.TestPlatform.UnitTestFramework.ClassInitializeAttribute;
@@ -11,7 +11,7 @@ using TearDownAttribute = Microsoft.VisualStudio.TestPlatform.UnitTestFramework.
 using TestAttribute = Microsoft.VisualStudio.TestPlatform.UnitTestFramework.TestMethodAttribute;
 #else
 using NUnit.Framework;
-#endif
+
 
 
 namespace System.Windows.Tests
@@ -111,4 +111,4 @@ namespace System.Windows.Tests
         }
     }
 }
-#endif
+

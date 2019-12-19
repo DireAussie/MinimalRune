@@ -400,11 +400,11 @@ namespace DigitalRune.Graphics
       JitterResolution = 2048;
       FadeOutRange = 0.1f;
       ShadowFog = 0;
-#if XBOX
+
       CascadeSelection = ShadowCascadeSelection.Fast;
 #else
       CascadeSelection = ShadowCascadeSelection.Best;
-#endif
+
       IsCascadeLocked = new[] { false, false, false, false };
 #pragma warning disable 618
       SplitDistribution = 0.9f;

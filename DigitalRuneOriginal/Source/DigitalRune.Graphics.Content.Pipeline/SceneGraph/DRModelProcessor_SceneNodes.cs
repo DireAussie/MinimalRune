@@ -31,7 +31,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
       // In most cases the root node is an empty node, which can be ignored.
       if (root.GetType() == typeof(DRSceneNodeContent)
           && root.PoseLocal == Pose.Identity
-          && root.ScaleLocal == Vector3F.One
+          && root.ScaleLocal == Vector3.One
           && root.UserData == null)
       {
         // Throw away root, only use children.
@@ -102,7 +102,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
       {
         sceneNode.Name = node.Name;
         Pose pose;
-        Vector3F scale;
+        Vector3 scale;
         DecomposeTransform(node, out pose, out scale);
         sceneNode.PoseLocal = pose;
         sceneNode.ScaleLocal = scale;
@@ -142,14 +142,14 @@ namespace DigitalRune.Graphics.Content.Pipeline
     }
 
 
-    private static void DecomposeTransform(NodeContent node, out Pose pose, out Vector3F scale)
+    private static void DecomposeTransform(NodeContent node, out Pose pose, out Vector3 scale)
     {
       // Get local transform of node.
-      Matrix44F transform = (Matrix44F)node.Transform;
+      Matrix transform = (Matrix)node.Transform;
 
       // Decompose transform into scale, rotation, and translation.
-      Matrix33F rotation;
-      Vector3F translation;
+      Matrix rotation;
+      Vector3 translation;
       transform.Decompose(out scale, out rotation, out translation);
 
       // Return pose (position + orientation).

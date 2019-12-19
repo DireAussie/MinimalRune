@@ -421,7 +421,7 @@ namespace DigitalRune.Graphics.Content
       private ColourSet _colours;
       private SquishFlags _flags;
       private int _iterationCount;
-      private Vector3F _principle;
+      private Vector3 _principle;
       private byte[] _order;
       private Vector4F[] _points_weights;
       private Vector4F _xsum_wsum;
@@ -436,7 +436,7 @@ namespace DigitalRune.Graphics.Content
       }
 
 
-      public void Initialize(ColourSet colours, SquishFlags flags, Vector3F? metric)
+      public void Initialize(ColourSet colours, SquishFlags flags, Vector3? metric)
       {
         _colours = colours;
         _flags = flags;
@@ -456,7 +456,7 @@ namespace DigitalRune.Graphics.Content
 
         // cache some values
         int count = _colours.Count;
-        Vector3F[] values = _colours.Points;
+        Vector3[] values = _colours.Points;
 
         // get the covariance matrix
         Sym3x3 covariance = ComputeWeightedCovariance(count, values, _colours.Weights);
@@ -466,11 +466,11 @@ namespace DigitalRune.Graphics.Content
       }
 
 
-      private unsafe bool ConstructOrdering(Vector3F axis, int iteration)
+      private unsafe bool ConstructOrdering(Vector3 axis, int iteration)
       {
         // cache some values
         int count = _colours.Count;
-        Vector3F[] values = _colours.Points;
+        Vector3[] values = _colours.Points;
 
         // build the list of dot products
         float* dps = stackalloc float[16];
@@ -479,7 +479,7 @@ namespace DigitalRune.Graphics.Content
           byte* order = pOrder + 16 * iteration;
           for (int i = 0; i < count; ++i)
           {
-            dps[i] = Vector3F.Dot(values[i], axis);
+            dps[i] = Vector3.Dot(values[i], axis);
             order[i] = (byte)i;
           }
 
@@ -511,7 +511,7 @@ namespace DigitalRune.Graphics.Content
           }
 
           // copy the ordering and weight all the points
-          Vector3F[] unweighted = _colours.Points;
+          Vector3[] unweighted = _colours.Points;
           float[] weights = _colours.Weights;
           _xsum_wsum = new Vector4F(0.0f);
           for (int i = 0; i < count; ++i)
@@ -642,7 +642,7 @@ namespace DigitalRune.Graphics.Content
             break;
 
           // stop if a new iteration is an ordering that has already been tried
-          Vector3F axis = (bestend - beststart).XYZ;
+          Vector3 axis = (bestend - beststart).XYZ;
           if (!ConstructOrdering(axis, iterationIndex))
             break;
         }
@@ -790,7 +790,7 @@ namespace DigitalRune.Graphics.Content
             break;
 
           // stop if a new iteration is an ordering that has already been tried
-          Vector3F axis = (bestend - beststart).XYZ;
+          Vector3 axis = (bestend - beststart).XYZ;
           if (!ConstructOrdering(axis, iterationIndex))
             break;
         }
@@ -830,7 +830,7 @@ namespace DigitalRune.Graphics.Content
 
     //--------------------------------------------------------------
 
-    private static int FloatTo565(Vector3F colour)
+    private static int FloatTo565(Vector3 colour)
     {
       // get the components in the correct range
       int r = FloatToInt(31.0f * colour.X, 31);
@@ -880,7 +880,7 @@ namespace DigitalRune.Graphics.Content
     }
 
 
-    private static unsafe void WriteColourBlock3(Vector3F start, Vector3F end, byte* indices, byte* block)
+    private static unsafe void WriteColourBlock3(Vector3 start, Vector3 end, byte* indices, byte* block)
     {
       // get the packed values
       int a = FloatTo565(start);
@@ -914,7 +914,7 @@ namespace DigitalRune.Graphics.Content
     }
 
 
-    private static unsafe void WriteColourBlock4(Vector3F start, Vector3F end, byte* indices, byte* block)
+    private static unsafe void WriteColourBlock4(Vector3 start, Vector3 end, byte* indices, byte* block)
     {
       // get the packed values
       int a = FloatTo565(start);
@@ -1010,7 +1010,7 @@ namespace DigitalRune.Graphics.Content
     private class ColourSet
     {
       private int _count;
-      private readonly Vector3F[] _points;
+      private readonly Vector3[] _points;
       private readonly float[] _weights;
       private readonly int[] _remap;
       private bool _transparent;
@@ -1022,7 +1022,7 @@ namespace DigitalRune.Graphics.Content
       }
 
 
-      public Vector3F[] Points
+      public Vector3[] Points
       {
         get { return _points; }
       }
@@ -1042,7 +1042,7 @@ namespace DigitalRune.Graphics.Content
 
       public ColourSet()
       {
-        _points = new Vector3F[16];
+        _points = new Vector3[16];
         _weights = new float[16];
         _remap = new int[16];
       }
@@ -1091,7 +1091,7 @@ namespace DigitalRune.Graphics.Content
               float w = (rgba[4 * i + 3] + 1) / 256.0f;
 
               // add the point
-              _points[_count] = new Vector3F(x, y, z);
+              _points[_count] = new Vector3(x, y, z);
               _weights[_count] = (weightByAlpha ? w : 1.0f);
               _remap[i] = _count;
 
@@ -1184,9 +1184,9 @@ namespace DigitalRune.Graphics.Content
     }
 
 
-    private static Vector3F Truncate(Vector3F v)
+    private static Vector3 Truncate(Vector3 v)
     {
-      return new Vector3F((float)Math.Truncate(v.X),
+      return new Vector3((float)Math.Truncate(v.X),
                           (float)Math.Truncate(v.Y),
                           (float)Math.Truncate(v.Z));
     }
@@ -1207,11 +1207,11 @@ namespace DigitalRune.Graphics.Content
     }
 
 
-    private static Sym3x3 ComputeWeightedCovariance(int n, Vector3F[] points, float[] weights)
+    private static Sym3x3 ComputeWeightedCovariance(int n, Vector3[] points, float[] weights)
     {
       // compute the centroid
       float total = 0.0f;
-      Vector3F centroid = new Vector3F(0.0f);
+      Vector3 centroid = new Vector3(0.0f);
       for (int i = 0; i < n; ++i)
       {
         total += weights[i];
@@ -1224,8 +1224,8 @@ namespace DigitalRune.Graphics.Content
       Sym3x3 covariance = new Sym3x3();
       for (int i = 0; i < n; ++i)
       {
-        Vector3F a = points[i] - centroid;
-        Vector3F b = weights[i] * a;
+        Vector3 a = points[i] - centroid;
+        Vector3 b = weights[i] * a;
 
         covariance.M0 += a.X * b.X;
         covariance.M1 += a.X * b.Y;
@@ -1240,7 +1240,7 @@ namespace DigitalRune.Graphics.Content
     }
 
 
-    private static Vector3F ComputePrincipleComponent(Sym3x3 matrix)
+    private static Vector3 ComputePrincipleComponent(Sym3x3 matrix)
     {
       Vector4F row0 = new Vector4F(matrix.M0, matrix.M1, matrix.M2, 0.0f);
       Vector4F row1 = new Vector4F(matrix.M1, matrix.M3, matrix.M4, 0.0f);
@@ -1275,13 +1275,13 @@ namespace DigitalRune.Graphics.Content
     {
       private ColourSet _colours;
       private SquishFlags _flags;
-      private Vector3F _metric;
-      private Vector3F _start;
-      private Vector3F _end;
+      private Vector3 _metric;
+      private Vector3 _start;
+      private Vector3 _end;
       private float _besterror;
 
 
-      public void Initialize(ColourSet colours, SquishFlags flags, Vector3F? metric)
+      public void Initialize(ColourSet colours, SquishFlags flags, Vector3? metric)
       {
         _colours = colours;
         _flags = flags;
@@ -1290,35 +1290,35 @@ namespace DigitalRune.Graphics.Content
         if (metric.HasValue)
           _metric = metric.Value;
         else
-          _metric = new Vector3F(1.0f);
+          _metric = new Vector3(1.0f);
 
         // initialise the best error
         _besterror = float.MaxValue;
 
         // cache some values
         int count = _colours.Count;
-        Vector3F[] values = _colours.Points;
+        Vector3[] values = _colours.Points;
         float[] weights = _colours.Weights;
 
         // get the covariance matrix
         Sym3x3 covariance = ComputeWeightedCovariance(count, values, weights);
 
         // compute the principle component
-        Vector3F principle = ComputePrincipleComponent(covariance);
+        Vector3 principle = ComputePrincipleComponent(covariance);
 
         // get the min and max range as the codebook endpoints
-        Vector3F start = new Vector3F(0.0f);
-        Vector3F end = new Vector3F(0.0f);
+        Vector3 start = new Vector3(0.0f);
+        Vector3 end = new Vector3(0.0f);
         if (count > 0)
         {
           float min, max;
 
           // compute the range
           start = end = values[0];
-          min = max = Vector3F.Dot(values[0], principle);
+          min = max = Vector3.Dot(values[0], principle);
           for (int i = 1; i < count; ++i)
           {
-            float val = Vector3F.Dot(values[i], principle);
+            float val = Vector3.Dot(values[i], principle);
             if (val < min)
             {
               start = values[i];
@@ -1333,13 +1333,13 @@ namespace DigitalRune.Graphics.Content
         }
 
         // clamp the output to [0, 1]
-        start = Vector3F.Clamp(start, 0, 1);
-        end = Vector3F.Clamp(end, 0, 1);
+        start = Vector3.Clamp(start, 0, 1);
+        end = Vector3.Clamp(end, 0, 1);
 
         // clamp to the grid and save
-        Vector3F grid = new Vector3F(31.0f, 63.0f, 31.0f);
-        Vector3F gridrcp = new Vector3F(1.0f / 31.0f, 1.0f / 63.0f, 1.0f / 31.0f);
-        Vector3F half = new Vector3F(0.5f);
+        Vector3 grid = new Vector3(31.0f, 63.0f, 31.0f);
+        Vector3 gridrcp = new Vector3(1.0f / 31.0f, 1.0f / 63.0f, 1.0f / 31.0f);
+        Vector3 half = new Vector3(0.5f);
         _start = Truncate(grid * start + half) * gridrcp;
         _end = Truncate(grid * end + half) * gridrcp;
       }
@@ -1363,10 +1363,10 @@ namespace DigitalRune.Graphics.Content
       {
         // cache some values
         int count = _colours.Count;
-        Vector3F[] values = _colours.Points;
+        Vector3[] values = _colours.Points;
 
         // create a codebook
-        Vector3F* codes = stackalloc Vector3F[3];
+        Vector3* codes = stackalloc Vector3[3];
         codes[0] = _start;
         codes[1] = _end;
         codes[2] = 0.5f * _start + 0.5f * _end;
@@ -1416,10 +1416,10 @@ namespace DigitalRune.Graphics.Content
       {
         // cache some values
         int count = _colours.Count;
-        Vector3F[] values = _colours.Points;
+        Vector3[] values = _colours.Points;
 
         // create a codebook
-        Vector3F* codes = stackalloc Vector3F[4];
+        Vector3* codes = stackalloc Vector3[4];
         codes[0] = _start;
         codes[1] = _end;
         codes[2] = (2.0f / 3.0f) * _start + (1.0f / 3.0f) * _end;
@@ -2556,8 +2556,8 @@ namespace DigitalRune.Graphics.Content
       private SquishFlags _flags;
       private ColourSet _colours;
       private byte[] _colour;
-      private Vector3F _start;
-      private Vector3F _end;
+      private Vector3 _start;
+      private Vector3 _end;
       private byte _index;
       private int _error;
       private int _besterror;
@@ -2592,7 +2592,7 @@ namespace DigitalRune.Graphics.Content
         _flags = flags;
 
         // grab the single colour
-        Vector3F[] values = _colours.Points;
+        Vector3[] values = _colours.Points;
         _colour[0] = (byte)FloatToInt(255.0f * values[0].X, 255);
         _colour[1] = (byte)FloatToInt(255.0f * values[0].Y, 255);
         _colour[2] = (byte)FloatToInt(255.0f * values[0].Z, 255);
@@ -2686,12 +2686,12 @@ namespace DigitalRune.Graphics.Content
           // keep it if the error is lower
           if (error < _error)
           {
-            _start = new Vector3F(
+            _start = new Vector3(
               sources[0].Start / 31.0f,
               sources[1].Start / 63.0f,
               sources[2].Start / 31.0f
               );
-            _end = new Vector3F(
+            _end = new Vector3(
               sources[0].End / 31.0f,
               sources[1].End / 63.0f,
               sources[2].End / 31.0f
@@ -2791,7 +2791,7 @@ namespace DigitalRune.Graphics.Content
     /// values (0.2126, 0.7152, 0.0722).
     /// </para>
     /// </remarks>
-    private static unsafe void CompressMasked(byte* rgba, int mask, byte* block, SquishFlags flags, Vector3F? metric, Context context)
+    private static unsafe void CompressMasked(byte* rgba, int mask, byte* block, SquishFlags flags, Vector3? metric, Context context)
     {
       // fix any bad flags
       flags = FixFlags(flags);
@@ -2963,7 +2963,7 @@ namespace DigitalRune.Graphics.Content
     /// to allocate for the compressed output.
     /// </para>
     /// </remarks>
-    public static unsafe void CompressImage(byte[] rgba, int width, int height, byte[] blocks, SquishFlags flags, Vector3F? metric = null)
+    public static unsafe void CompressImage(byte[] rgba, int width, int height, byte[] blocks, SquishFlags flags, Vector3? metric = null)
     {
       // fix any bad flags
       flags = FixFlags(flags);
@@ -2981,7 +2981,7 @@ namespace DigitalRune.Graphics.Content
         int bytesPerBlock = ((flags & SquishFlags.Dxt1) != 0) ? 8 : 16;
 
         // loop over blocks
-#if SINGLE_THREADED
+
         var context = new Context();
         for (int i = 0; i < numberOfBlocks; i++)
         {
@@ -2999,12 +2999,12 @@ namespace DigitalRune.Graphics.Content
           CompressImageBlock(pRgba, x, y, width, height, targetBlock, flags, metric, context);
           return context;
         }, context => { });
-#endif
+
       }
     }
 
 
-    private static unsafe void CompressImageBlock(byte* rgba, int x, int y, int width, int height, byte* block, SquishFlags flags, Vector3F? metric, Context context)
+    private static unsafe void CompressImageBlock(byte* rgba, int x, int y, int width, int height, byte* block, SquishFlags flags, Vector3? metric, Context context)
     {
       // build the 4x4 block of pixels
       byte* sourceRgba = stackalloc byte[16 * 4];
@@ -3084,7 +3084,7 @@ namespace DigitalRune.Graphics.Content
         int bytesPerBlock = ((flags & SquishFlags.Dxt1) != 0) ? 8 : 16;
 
         // loop over blocks
-#if SINGLE_THREADED
+
         for (int i = 0; i < numberOfBlocks; i++)
         {
           int x = (i % columns) * 4;
@@ -3100,7 +3100,7 @@ namespace DigitalRune.Graphics.Content
           byte* sourceBlock = pBlocks + i * bytesPerBlock;
           DecompressImageBlock(sourceBlock, pRgba, x, y, width, height, flags);
         });
-#endif
+
       }
     }
 

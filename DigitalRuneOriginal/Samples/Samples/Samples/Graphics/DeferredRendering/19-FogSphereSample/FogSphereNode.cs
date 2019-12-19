@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using DigitalRune.Geometry.Shapes;
 using DigitalRune.Graphics.SceneGraph;
 using DigitalRune.Mathematics.Algebra;
@@ -25,7 +25,7 @@ namespace Samples.Graphics
     /// Gets or sets the fog color.
     /// </summary>
     /// <value>The fog color. The default value is (1, 1, 1).</value>
-    public Vector3F Color { get; set; }
+    public Vector3 Color { get; set; }
 
 
     /// <summary>
@@ -82,7 +82,7 @@ namespace Samples.Graphics
       IsRenderable = true;
       Shape = new SphereShape(1);
 
-      Color = new Vector3F(1, 1, 1);
+      Color = new Vector3(1, 1, 1);
       Density = 0.6f;
       BlendMode = 0;
       Falloff = 5;
@@ -130,4 +130,3 @@ namespace Samples.Graphics
 
   }
 }
-#endif

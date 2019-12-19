@@ -19,9 +19,9 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-#if XBOX
+
 using Microsoft.Xna.Framework.GamerServices;
-#endif
+
 
 
 namespace Samples
@@ -74,14 +74,14 @@ namespace Samples
 
     public SampleGame()
     {
-#if MONOGAME && DEBUG
+
       // Optional: Enable Direct3D debug layer to get additional debug information during development.
       //GraphicsAdapter.UseDebugDevice = true;
-#endif
+
 
       _graphicsDeviceManager = new GraphicsDeviceManager(this)
       {
-#if WINDOWS_PHONE || IOS
+
         PreferredBackBufferWidth = 800,
         PreferredBackBufferHeight = 480,
         IsFullScreen = true,   // Set fullscreen to hide the Windows Phone status bar.
@@ -99,15 +99,15 @@ namespace Samples
 #else
         PreferredBackBufferWidth = 1280,
         PreferredBackBufferHeight = 720,
-#endif
+
         PreferredDepthStencilFormat = DepthFormat.Depth24Stencil8,
         PreferMultiSampling = false,
         SynchronizeWithVerticalRetrace = true,
-#if !WINDOWS && !WINDOWS_UWP && !XBOX
+
         // The DigitalRune builds for Windows, Universal Windows Apps and Xbox 360 support
         // HiDef effects. The other platforms support currently only Reach.
         GraphicsProfile = GraphicsProfile.Reach,
-#endif
+
       };
 
       IsMouseVisible = false;
@@ -118,7 +118,7 @@ namespace Samples
     // Initializes services and adds game components.
     protected override void Initialize()
     {
-#if WINDOWS || WINDOWS_UWP || XBOX
+
       if (GraphicsDevice.GraphicsProfile == GraphicsProfile.Reach)
       {
         throw new NotSupportedException(
@@ -126,7 +126,7 @@ namespace Samples
           "designed for the HiDef graphics profile. A graphics cards supporting DirectX 10.0 or better " +
           "is required.");
       }
-#endif
+
 
       // ----- Service Container
       // The DigitalRune ServiceContainer is an "inversion of control" container.
@@ -186,18 +186,18 @@ namespace Samples
       // --> Create a TitleStorage that reads files from "<gameLocation>/Content".
       var titleStorage = new TitleStorage("Content");
 
-#if MONOGAME
+
       // A ZipStorage can be used to access files inside a ZIP archive.
       // --> Mount the sample assets to the root of the virtual file system.
       var assetsStorage = new ZipStorage(titleStorage, "Content.zip");
       vfsStorage.MountInfos.Add(new VfsMountInfo(assetsStorage, null));
 
-#if !ANDROID && !IOS && !LINUX && !MACOS
+
       // --> Mount the DigitalRune assets to the root of the virtual file system.
       var drStorage = new ZipStorage(titleStorage, "DigitalRune.zip");
       vfsStorage.MountInfos.Add(new VfsMountInfo(drStorage, null));
-#endif
-#endif
+
+
 
       // Finally, map the TitleStorage to the root of the virtual file system.
       // (The TitleStorage is added as the last mount point. The ZIP archives
@@ -220,11 +220,11 @@ namespace Samples
       _services.Register(typeof(ContentManager), null, Content);
 
       // Create and register content manager that will be used to load the GUI.
-#if !MONOGAME
+
       var uiContentManager = new ContentManager(_services, "Content");
 #else
       var uiContentManager = new StorageContentManager(_services, assetsStorage);
-#endif
+
       _services.Register(typeof(ContentManager), "UIContent", uiContentManager);
 
       // Create content manager that will be used exclusively by the graphics service
@@ -239,17 +239,17 @@ namespace Samples
       _services.Register(typeof(Microsoft.Xna.Framework.Game), null, this);
       _services.Register(typeof(SampleGame), null, this);
 
-#if XBOX
+
       // On Xbox, we use the XNA gamer services (e.g. for text input).
       Components.Add(new GamerServicesComponent(this));
-#endif
+
 
       // Input
-#if XBOX
+
       const bool useGamerServices = true;
 #else
       const bool useGamerServices = false;
-#endif
+
       _inputManager = new InputManager(useGamerServices);
       _services.Register(typeof(IInputService), null, _inputManager);
 
@@ -290,13 +290,13 @@ namespace Samples
       // SampleFramework
       // The SampleFramework automatically discovers all samples using reflection, provides 
       // controls for switching samples and starts the initial sample.
-#if KINECT
+
       var initialSample = typeof(Kinect.KinectSkeletonMappingSample);
 #elif WINDOWS || WINDOWS_UWP
       var initialSample = typeof(Graphics.DeferredLightingSample);
 #else
       var initialSample = typeof(Graphics.BasicEffectSample);
-#endif
+
       _sampleFramework = new SampleFramework(this, initialSample);
       _services.Register(typeof(SampleFramework), null, _sampleFramework);
 

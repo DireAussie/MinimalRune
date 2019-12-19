@@ -51,12 +51,12 @@ float CameraFar : CAMERAFAR;
 // the effect parameter and sets the value as the BlendFactor.)
 float SpecularPower : SPECULARPOWER;
 DECLARE_UNIFORM_DIFFUSETEXTURE
-#if ALPHA_TEST
+
 float ReferenceAlpha = 0.9f;
-#endif
-#if NORMAL_MAP
+
+
 DECLARE_UNIFORM_NORMALTEXTURE
-#endif
+
 
 
 //-----------------------------------------------------------------------------
@@ -112,13 +112,13 @@ float4 PS(PSInput input) : COLOR
   
   // Sample decal alpha.
   float alpha = tex2D(DiffuseSampler, uvDecal).a * DecalAlpha;
-#if ALPHA_TEST
+
   clip(alpha - ReferenceAlpha);
-#endif
+
   
   float4 gBuffer1;
   gBuffer1.a = alpha;
-#if NORMAL_MAP
+
   // Sample decal normal.
   float3 normal = GetNormalDxt5nm(NormalSampler, uvDecal);
   
@@ -158,7 +158,7 @@ float4 PS(PSInput input) : COLOR
 #else
   // Keep normal in GBuffer1.
   gBuffer1.xyz = tex2Dlod(GBuffer1Sampler, float4(uvScreen, 0, 0)).xyz;
-#endif
+
   
   return gBuffer1;
 }
@@ -168,21 +168,21 @@ float4 PS(PSInput input) : COLOR
 // Techniques
 //-----------------------------------------------------------------------------
 
-#if !SM4
+
 #define VSTARGET vs_3_0
 #define PSTARGET ps_3_0
 #else
 #define VSTARGET vs_4_0
 #define PSTARGET ps_4_0
-#endif
+
 
 technique Default
 {
   pass
   {
-#if ALPHA_TEST
+
     AlphaBlendEnable = false;
-#endif
+
     
     VertexShader = compile VSTARGET VS();
     PixelShader = compile PSTARGET PS();

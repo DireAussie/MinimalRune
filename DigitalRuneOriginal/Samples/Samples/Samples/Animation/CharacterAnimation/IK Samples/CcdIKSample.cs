@@ -20,7 +20,7 @@ Limits are used to keep the palm of the hand parallel to the ground.",
   {
     private readonly MeshNode _meshNode;
 
-    private Vector3F _targetPosition = new Vector3F(0.3f, 1, 0.3f);
+    private Vector3 _targetPosition = new Vector3(0.3f, 1, 0.3f);
     private readonly CcdIKSolver _ikSolver;
 
 
@@ -29,7 +29,7 @@ Limits are used to keep the palm of the hand parallel to the ground.",
     {
       var modelNode = ContentManager.Load<ModelNode>("Dude/Dude");
       _meshNode = modelNode.GetSubtree().OfType<MeshNode>().First().Clone();
-      _meshNode.PoseLocal = new Pose(new Vector3F(0, 0, 0));
+      _meshNode.PoseLocal = new Pose(new Vector3(0, 0, 0));
       SampleHelper.EnablePerPixelLighting(_meshNode);
       GraphicsScreen.Scene.Children.Add(_meshNode);
 
@@ -46,7 +46,7 @@ Limits are used to keep the palm of the hand parallel to the ground.",
         TipBoneIndex = 15,
 
         // The offset from the hand center to the hand origin.
-        TipOffset = new Vector3F(0.1f, 0, 0),
+        TipOffset = new Vector3(0.1f, 0, 0),
 
         // We can set a bone gain less than 1 to get a "smoother" result in most cases -
         // at the cost of more iterations.
@@ -79,8 +79,8 @@ Limits are used to keep the palm of the hand parallel to the ground.",
       // to the ground plane - as if the character wants to grab a horizontal bar or as 
       // if it wants to place the hand on horizontal plane.
       SrtTransform bonePoseAbsolute = _meshNode.SkeletonPose.GetBonePoseAbsolute(15);
-      Vector3F palmAxis = bonePoseAbsolute.ToParentDirection(-Vector3F.UnitY);
-      bonePoseAbsolute.Rotation = QuaternionF.CreateRotation(palmAxis, Vector3F.UnitY) * bonePoseAbsolute.Rotation;
+      Vector3 palmAxis = bonePoseAbsolute.ToParentDirection(-Vector3.UnitY);
+      bonePoseAbsolute.Rotation = Quaternion.CreateRotation(palmAxis, Vector3.UnitY) * bonePoseAbsolute.Rotation;
       _meshNode.SkeletonPose.SetBonePoseAbsolute(15, bonePoseAbsolute);
     }
 
@@ -92,7 +92,7 @@ Limits are used to keep the palm of the hand parallel to the ground.",
       float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
       // ----- Move target if <NumPad4-9> are pressed.
-      Vector3F translation = new Vector3F();
+      Vector3 translation = new Vector3();
       if (InputService.IsDown(Keys.NumPad4))
         translation.X -= 1;
       if (InputService.IsDown(Keys.NumPad6))
@@ -110,7 +110,7 @@ Limits are used to keep the palm of the hand parallel to the ground.",
       _targetPosition += translation;
 
       // Convert target world space position to model space. - The IK solvers work in model space.
-      Vector3F localTargetPosition = _meshNode.PoseWorld.ToLocalPosition(_targetPosition);
+      Vector3 localTargetPosition = _meshNode.PoseWorld.ToLocalPosition(_targetPosition);
 
       // Reset the affected bones. This is optional. It removes unwanted twist from the bones.
       _meshNode.SkeletonPose.ResetBoneTransforms(_ikSolver.RootBoneIndex, _ikSolver.TipBoneIndex);

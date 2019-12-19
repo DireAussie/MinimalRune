@@ -96,7 +96,7 @@ namespace DigitalRune.Game.UI
 
     //--------------------------------------------------------------
 
-#if !SILVERLIGHT
+
     /// <summary>
     /// Initializes a new instance of the <see cref="UIManager"/> class.
     /// </summary>
@@ -142,7 +142,7 @@ namespace DigitalRune.Game.UI
       KeyMap = KeyMap.AutoKeyMap;
       Screens = new UIScreenCollection(this);
     }
-#endif
+
 
 
 

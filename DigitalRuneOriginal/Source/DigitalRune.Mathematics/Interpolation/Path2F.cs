@@ -35,9 +35,9 @@ namespace DigitalRune.Mathematics.Interpolation
   /// <see cref="CurveKey{TParam,TValue}.TangentOut"/>.
   /// </para>
   /// </remarks>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
+
   [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
   public class Path2F : PiecewiseCurveF<Vector2F, PathKey2F>, IXmlSerializable
   {

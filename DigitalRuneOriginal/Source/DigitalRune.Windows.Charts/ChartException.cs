@@ -3,9 +3,9 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-#if !SILVERLIGHT
+
 using System.Runtime.Serialization;
-#endif
+
 
 
 namespace DigitalRune.Windows.Charts
@@ -13,9 +13,9 @@ namespace DigitalRune.Windows.Charts
     /// <summary>
     /// The exception that is raised for charts-specific errors.
     /// </summary>
-#if !SILVERLIGHT
+
     [Serializable]
-#endif
+
     public class ChartException : Exception
     {
         /// <overloads>
@@ -59,7 +59,7 @@ namespace DigitalRune.Windows.Charts
         }
 
 
-#if !SILVERLIGHT
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ChartException"/> class with serialized
         /// data.
@@ -82,6 +82,6 @@ namespace DigitalRune.Windows.Charts
             : base(info, context)
         {
         }
-#endif
+
     }
 }

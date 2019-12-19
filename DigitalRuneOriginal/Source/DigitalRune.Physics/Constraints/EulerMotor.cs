@@ -23,7 +23,7 @@ namespace DigitalRune.Physics.Constraints
   /// <para>
   /// The target orientation is defined using Euler angles. In contrast, 
   /// <see cref="QuaternionMotor"/> is a motor that controls the orientation where the target 
-  /// orientation is defined using a <see cref="QuaternionF"/>.
+  /// orientation is defined using a <see cref="Quaternion"/>.
   /// </para>
   /// <para>
   /// <strong>Euler Angles:</strong>
@@ -49,8 +49,8 @@ namespace DigitalRune.Physics.Constraints
 
     //--------------------------------------------------------------
 
-    private Vector3F _minImpulseLimits;
-    private Vector3F _maxImpulseLimits;
+    private Vector3 _minImpulseLimits;
+    private Vector3 _maxImpulseLimits;
     private readonly Constraint1D[] _constraints =
     {
       new Constraint1D(), 
@@ -72,7 +72,7 @@ namespace DigitalRune.Physics.Constraints
     /// The constraint anchor orientation on <see cref="Constraint.BodyA"/> in local space of 
     /// <see cref="Constraint.BodyA"/>.
     /// </value>
-    public Matrix33F AnchorOrientationALocal
+    public Matrix AnchorOrientationALocal
     {
       get { return _anchorOrientationALocal; }
       set
@@ -84,7 +84,7 @@ namespace DigitalRune.Physics.Constraints
         }
       }
     }
-    private Matrix33F _anchorOrientationALocal = Matrix33F.Identity;
+    private Matrix _anchorOrientationALocal = Matrix.Identity;
 
 
     /// <summary>
@@ -95,7 +95,7 @@ namespace DigitalRune.Physics.Constraints
     /// The constraint anchor orientation on <see cref="Constraint.BodyB"/> in local space of 
     /// <see cref="Constraint.BodyB"/>.
     /// </value>
-    public Matrix33F AnchorOrientationBLocal
+    public Matrix AnchorOrientationBLocal
     {
       get { return _anchorOrientationBLocal; }
       set
@@ -107,7 +107,7 @@ namespace DigitalRune.Physics.Constraints
         }
       }
     }
-    private Matrix33F _anchorOrientationBLocal = Matrix33F.Identity;
+    private Matrix _anchorOrientationBLocal = Matrix.Identity;
 
 
     /// <summary>
@@ -136,7 +136,7 @@ namespace DigitalRune.Physics.Constraints
     /// rotation.
     /// </para>
     /// </remarks>
-    public Vector3F TargetAngles
+    public Vector3 TargetAngles
     {
       get { return _targetAngles; }
       set
@@ -148,7 +148,7 @@ namespace DigitalRune.Physics.Constraints
         }
       }
     }
-    private Vector3F _targetAngles;
+    private Vector3 _targetAngles;
 
 
     /// <summary>
@@ -212,17 +212,17 @@ namespace DigitalRune.Physics.Constraints
 
 
     /// <inheritdoc/>
-    public override Vector3F LinearConstraintImpulse
+    public override Vector3 LinearConstraintImpulse
     {
       get
       {
-        return Vector3F.Zero; 
+        return Vector3.Zero; 
       }
     }
 
 
     /// <inheritdoc/>
-    public override Vector3F AngularConstraintImpulse
+    public override Vector3 AngularConstraintImpulse
     {
       get
       {        
@@ -277,18 +277,18 @@ namespace DigitalRune.Physics.Constraints
       float softness = ConstraintHelper.ComputeSoftness(deltaTime, SpringConstant, DampingConstant);
 
       // Get anchor orientations in world space.
-      Matrix33F anchorOrientationA = BodyA.Pose.Orientation * AnchorOrientationALocal;
-      Matrix33F anchorOrientationB = BodyB.Pose.Orientation * AnchorOrientationBLocal;
+      Matrix anchorOrientationA = BodyA.Pose.Orientation * AnchorOrientationALocal;
+      Matrix anchorOrientationB = BodyB.Pose.Orientation * AnchorOrientationBLocal;
 
-      Matrix33F relativeOrientation = anchorOrientationA.Transposed * anchorOrientationB;
-      Vector3F angles = ConstraintHelper.GetEulerAngles(relativeOrientation);
+      Matrix relativeOrientation = anchorOrientationA.Transposed * anchorOrientationB;
+      Vector3 angles = ConstraintHelper.GetEulerAngles(relativeOrientation);
 
       // The constraint axes: See OneNote for a detailed derivation of these non-intuitive axes.
       var xA = anchorOrientationA.GetColumn(0);  // Anchor x-axis on A.
       var zB = anchorOrientationB.GetColumn(2);  // Anchor z-axis on B.
-      Vector3F constraintAxisY = Vector3F.Cross(zB, xA);
-      Vector3F constraintAxisX = Vector3F.Cross(constraintAxisY, zB);
-      Vector3F constraintAxisZ = Vector3F.Cross(xA, constraintAxisY);
+      Vector3 constraintAxisY = Vector3.Cross(zB, xA);
+      Vector3 constraintAxisX = Vector3.Cross(constraintAxisY, zB);
+      Vector3 constraintAxisZ = Vector3.Cross(xA, constraintAxisY);
 
       SetupConstraint(0, angles[0], TargetAngles[0], constraintAxisX, deltaTime, errorReduction, softness);
       SetupConstraint(1, angles[1], TargetAngles[1], constraintAxisY, deltaTime, errorReduction, softness);
@@ -301,7 +301,7 @@ namespace DigitalRune.Physics.Constraints
     }
 
 
-    private void SetupConstraint(int index, float angle, float targetAngle, Vector3F axis,
+    private void SetupConstraint(int index, float angle, float targetAngle, Vector3 axis,
                                  float deltaTime, float errorReduction, float softness)
     {
       // Note: Cached constraint impulses are reset in Warmstart() if necessary.
@@ -343,14 +343,14 @@ namespace DigitalRune.Physics.Constraints
       // Note: Softness must be set before!
       // TODO: Add softness to parameters.
       constraint.Softness = softness / deltaTime;
-      constraint.Prepare(BodyA, BodyB, Vector3F.Zero, -axis, Vector3F.Zero, axis);
+      constraint.Prepare(BodyA, BodyB, Vector3.Zero, -axis, Vector3.Zero, axis);
     }
 
 
     /// <inheritdoc/>
     protected override bool OnApplyImpulse()
     {
-      Vector3F impulse = new Vector3F();
+      Vector3 impulse = new Vector3();
       impulse.X = ApplyImpulse(0);
       impulse.Y = ApplyImpulse(1);
       impulse.Z = ApplyImpulse(2);

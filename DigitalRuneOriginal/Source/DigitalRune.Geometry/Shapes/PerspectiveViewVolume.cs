@@ -28,9 +28,9 @@ namespace DigitalRune.Geometry.Shapes
   /// (<see cref="ViewVolume.Near"/> ≤ <see cref="ViewVolume.Far"/>).
   /// </para>
   /// </remarks>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
+
   public class PerspectiveViewVolume : ViewVolume
   {
     //--------------------------------------------------------------
@@ -38,14 +38,14 @@ namespace DigitalRune.Geometry.Shapes
     //--------------------------------------------------------------
 
     // Cached vertices.
-    private Vector3F _nearBottomLeftVertex;
-    private Vector3F _nearBottomRightVertex;
-    private Vector3F _nearTopLeftVertex;
-    private Vector3F _nearTopRightVertex;
-    private Vector3F _farBottomLeftVertex;
-    private Vector3F _farBottomRightVertex;
-    private Vector3F _farTopLeftVertex;
-    private Vector3F _farTopRightVertex;
+    private Vector3 _nearBottomLeftVertex;
+    private Vector3 _nearBottomRightVertex;
+    private Vector3 _nearTopLeftVertex;
+    private Vector3 _nearTopRightVertex;
+    private Vector3 _farBottomLeftVertex;
+    private Vector3 _farBottomRightVertex;
+    private Vector3 _farTopLeftVertex;
+    private Vector3 _farTopRightVertex;
 
 
 
@@ -60,11 +60,11 @@ namespace DigitalRune.Geometry.Shapes
     /// <remarks>
     /// This point is a "deep" inner point of the shape (in local space).
     /// </remarks>
-    public override Vector3F InnerPoint
+    public override Vector3 InnerPoint
     {
       get { return _innerPoint; }
     }
-    private Vector3F _innerPoint;
+    private Vector3 _innerPoint;
 
 
     /// <summary>
@@ -203,7 +203,7 @@ namespace DigitalRune.Geometry.Shapes
     /// from the center regarding the given direction. This point is not necessarily unique.
     /// </para>
     /// </remarks>
-    public override Vector3F GetSupportPoint(Vector3F direction)
+    public override Vector3 GetSupportPoint(Vector3 direction)
     {
       if (direction.X > 0)
       {
@@ -212,7 +212,7 @@ namespace DigitalRune.Geometry.Shapes
         if (direction.Y > 0)
         {
           // Get a top right vertex.
-          if (Vector3F.Dot(_nearTopRightVertex, direction) > Vector3F.Dot(_farTopRightVertex, direction))
+          if (Vector3.Dot(_nearTopRightVertex, direction) > Vector3.Dot(_farTopRightVertex, direction))
             return _nearTopRightVertex;
           else
             return _farTopRightVertex;
@@ -220,7 +220,7 @@ namespace DigitalRune.Geometry.Shapes
         else
         {
           // Get a bottom right vertex;
-          if (Vector3F.Dot(_nearBottomRightVertex, direction) > Vector3F.Dot(_farBottomRightVertex, direction))
+          if (Vector3.Dot(_nearBottomRightVertex, direction) > Vector3.Dot(_farBottomRightVertex, direction))
             return _nearBottomRightVertex;
           else
             return _farBottomRightVertex;
@@ -233,7 +233,7 @@ namespace DigitalRune.Geometry.Shapes
         if (direction.Y > 0)
         {
           // Get a top left vertex.
-          if (Vector3F.Dot(_nearTopLeftVertex, direction) > Vector3F.Dot(_farTopLeftVertex, direction))
+          if (Vector3.Dot(_nearTopLeftVertex, direction) > Vector3.Dot(_farTopLeftVertex, direction))
             return _nearTopLeftVertex;
           else
             return _farTopLeftVertex;
@@ -241,7 +241,7 @@ namespace DigitalRune.Geometry.Shapes
         else
         {
           // Get a bottom left vertex;
-          if (Vector3F.Dot(_nearBottomLeftVertex, direction) > Vector3F.Dot(_farBottomLeftVertex, direction))
+          if (Vector3.Dot(_nearBottomLeftVertex, direction) > Vector3.Dot(_farBottomLeftVertex, direction))
             return _nearBottomLeftVertex;
           else
             return _farBottomLeftVertex;
@@ -262,7 +262,7 @@ namespace DigitalRune.Geometry.Shapes
     /// A support point regarding a direction is an extreme point of the shape that is furthest away
     /// from the center regarding the given direction. This point is not necessarily unique.
     /// </remarks>
-    public override Vector3F GetSupportPointNormalized(Vector3F directionNormalized)
+    public override Vector3 GetSupportPointNormalized(Vector3 directionNormalized)
     {
       if (directionNormalized.X > 0)
       {
@@ -271,7 +271,7 @@ namespace DigitalRune.Geometry.Shapes
         if (directionNormalized.Y > 0)
         {
           // Get a top right vertex.
-          if (Vector3F.Dot(_nearTopRightVertex, directionNormalized) > Vector3F.Dot(_farTopRightVertex, directionNormalized))
+          if (Vector3.Dot(_nearTopRightVertex, directionNormalized) > Vector3.Dot(_farTopRightVertex, directionNormalized))
             return _nearTopRightVertex;
           else
             return _farTopRightVertex;
@@ -279,7 +279,7 @@ namespace DigitalRune.Geometry.Shapes
         else
         {
           // Get a bottom right vertex;
-          if (Vector3F.Dot(_nearBottomRightVertex, directionNormalized) > Vector3F.Dot(_farBottomRightVertex, directionNormalized))
+          if (Vector3.Dot(_nearBottomRightVertex, directionNormalized) > Vector3.Dot(_farBottomRightVertex, directionNormalized))
             return _nearBottomRightVertex;
           else
             return _farBottomRightVertex;
@@ -292,7 +292,7 @@ namespace DigitalRune.Geometry.Shapes
         if (directionNormalized.Y > 0)
         {
           // Get a top left vertex.
-          if (Vector3F.Dot(_nearTopLeftVertex, directionNormalized) > Vector3F.Dot(_farTopLeftVertex, directionNormalized))
+          if (Vector3.Dot(_nearTopLeftVertex, directionNormalized) > Vector3.Dot(_farTopLeftVertex, directionNormalized))
             return _nearTopLeftVertex;
           else
             return _farTopLeftVertex;
@@ -300,7 +300,7 @@ namespace DigitalRune.Geometry.Shapes
         else
         {
           // Get a bottom left vertex;
-          if (Vector3F.Dot(_nearBottomLeftVertex, directionNormalized) > Vector3F.Dot(_farBottomLeftVertex, directionNormalized))
+          if (Vector3.Dot(_nearBottomLeftVertex, directionNormalized) > Vector3.Dot(_farBottomLeftVertex, directionNormalized))
             return _nearBottomLeftVertex;
           else
             return _farBottomLeftVertex;
@@ -368,85 +368,85 @@ namespace DigitalRune.Geometry.Shapes
       // -y face
       mesh.Add(new Triangle
       {
-        Vertex0 = new Vector3F(leftNear, bottomNear, near), 
-        Vertex1 = new Vector3F(leftFar, bottomFar, far),
-        Vertex2 = new Vector3F(rightFar, bottomFar, far),
+        Vertex0 = new Vector3(leftNear, bottomNear, near), 
+        Vertex1 = new Vector3(leftFar, bottomFar, far),
+        Vertex2 = new Vector3(rightFar, bottomFar, far),
       }, true);
       mesh.Add(new Triangle
       {
-        Vertex0 = new Vector3F(rightFar, bottomFar, far),
-        Vertex1 = new Vector3F(rightNear, bottomNear, near),
-        Vertex2 = new Vector3F(leftNear, bottomNear, near),
+        Vertex0 = new Vector3(rightFar, bottomFar, far),
+        Vertex1 = new Vector3(rightNear, bottomNear, near),
+        Vertex2 = new Vector3(leftNear, bottomNear, near),
       }, true);
 
       // +x face
       mesh.Add(new Triangle
       {
-        Vertex0 = new Vector3F(rightNear, topNear, near),
-        Vertex1 = new Vector3F(rightNear, bottomNear, near),
-        Vertex2 = new Vector3F(rightFar, bottomFar, far),
+        Vertex0 = new Vector3(rightNear, topNear, near),
+        Vertex1 = new Vector3(rightNear, bottomNear, near),
+        Vertex2 = new Vector3(rightFar, bottomFar, far),
       }, true);
       mesh.Add(new Triangle
       {
-        Vertex0 = new Vector3F(rightFar, bottomFar, far),
-        Vertex1 = new Vector3F(rightFar, topFar, far),
-        Vertex2 = new Vector3F(rightNear, topNear, near),
+        Vertex0 = new Vector3(rightFar, bottomFar, far),
+        Vertex1 = new Vector3(rightFar, topFar, far),
+        Vertex2 = new Vector3(rightNear, topNear, near),
       }, true);
 
       // -z face
       mesh.Add(new Triangle
       {
-        Vertex0 = new Vector3F(rightFar, topFar, far),
-        Vertex1 = new Vector3F(rightFar, bottomFar, far),
-        Vertex2 = new Vector3F(leftFar, bottomFar, far),
+        Vertex0 = new Vector3(rightFar, topFar, far),
+        Vertex1 = new Vector3(rightFar, bottomFar, far),
+        Vertex2 = new Vector3(leftFar, bottomFar, far),
       }, true);
       mesh.Add(new Triangle
       {
-        Vertex0 = new Vector3F(leftFar, bottomFar, far),
-        Vertex1 = new Vector3F(leftFar, topFar, far),
-        Vertex2 = new Vector3F(rightFar, topFar, far),
+        Vertex0 = new Vector3(leftFar, bottomFar, far),
+        Vertex1 = new Vector3(leftFar, topFar, far),
+        Vertex2 = new Vector3(rightFar, topFar, far),
       }, true);
 
       // -x face
       mesh.Add(new Triangle
       {
-        Vertex0 = new Vector3F(leftFar, topFar, far),
-        Vertex1 = new Vector3F(leftFar, bottomFar, far),
-        Vertex2 = new Vector3F(leftNear, bottomNear, near),
+        Vertex0 = new Vector3(leftFar, topFar, far),
+        Vertex1 = new Vector3(leftFar, bottomFar, far),
+        Vertex2 = new Vector3(leftNear, bottomNear, near),
       }, true);
       mesh.Add(new Triangle
       {
-        Vertex0 = new Vector3F(leftNear, bottomNear, near),
-        Vertex1 = new Vector3F(leftNear, topNear, near),
-        Vertex2 = new Vector3F(leftFar, topFar, far),
+        Vertex0 = new Vector3(leftNear, bottomNear, near),
+        Vertex1 = new Vector3(leftNear, topNear, near),
+        Vertex2 = new Vector3(leftFar, topFar, far),
       }, true);
       
       // +z face
       mesh.Add(new Triangle
       {
-        Vertex0 = new Vector3F(leftNear, topNear, near),
-        Vertex1 = new Vector3F(leftNear, bottomNear, near),
-        Vertex2 = new Vector3F(rightNear, bottomNear, near),
+        Vertex0 = new Vector3(leftNear, topNear, near),
+        Vertex1 = new Vector3(leftNear, bottomNear, near),
+        Vertex2 = new Vector3(rightNear, bottomNear, near),
       }, true);
       mesh.Add(new Triangle
       {
-        Vertex0 = new Vector3F(rightNear, bottomNear, near),
-        Vertex1 = new Vector3F(rightNear, topNear, near),
-        Vertex2 = new Vector3F(leftNear, topNear, near),
+        Vertex0 = new Vector3(rightNear, bottomNear, near),
+        Vertex1 = new Vector3(rightNear, topNear, near),
+        Vertex2 = new Vector3(leftNear, topNear, near),
       }, true);
 
       // +y face
       mesh.Add(new Triangle
       {
-        Vertex0 = new Vector3F(leftFar, topFar, far),
-        Vertex1 = new Vector3F(leftNear, topNear, near),
-        Vertex2 = new Vector3F(rightNear, topNear, near),
+        Vertex0 = new Vector3(leftFar, topFar, far),
+        Vertex1 = new Vector3(leftNear, topNear, near),
+        Vertex2 = new Vector3(rightNear, topNear, near),
       }, true);
       mesh.Add(new Triangle
       {
-        Vertex0 = new Vector3F(rightNear, topNear, near),
-        Vertex1 = new Vector3F(rightFar, topFar, far),
-        Vertex2 = new Vector3F(leftFar, topFar, far),
+        Vertex0 = new Vector3(rightNear, topNear, near),
+        Vertex1 = new Vector3(rightFar, topFar, far),
+        Vertex2 = new Vector3(leftFar, topFar, far),
       }, true);
 
       return mesh;
@@ -482,10 +482,10 @@ namespace DigitalRune.Geometry.Shapes
         MathHelper.Swap(ref near, ref far);
 
       // Update near view rectangle.
-      _nearBottomLeftVertex = new Vector3F(left, bottom, -near);
-      _nearBottomRightVertex = new Vector3F(right, bottom, -near);
-      _nearTopLeftVertex = new Vector3F(left, top, -near);
-      _nearTopRightVertex= new Vector3F(right, top, -near);
+      _nearBottomLeftVertex = new Vector3(left, bottom, -near);
+      _nearBottomRightVertex = new Vector3(right, bottom, -near);
+      _nearTopLeftVertex = new Vector3(left, top, -near);
+      _nearTopRightVertex= new Vector3(right, top, -near);
 
       // Update far view rectangle.
       float factor = far / near;
@@ -494,12 +494,12 @@ namespace DigitalRune.Geometry.Shapes
       bottom = bottom * factor;
       top = top * factor;
 
-      _farBottomLeftVertex = new Vector3F(left, bottom, -far);
-      _farBottomRightVertex = new Vector3F(right, bottom, -far);
-      _farTopLeftVertex = new Vector3F(left, top, -far);
-      _farTopRightVertex = new Vector3F(right, top, -far);
+      _farBottomLeftVertex = new Vector3(left, bottom, -far);
+      _farBottomRightVertex = new Vector3(right, bottom, -far);
+      _farTopLeftVertex = new Vector3(left, top, -far);
+      _farTopRightVertex = new Vector3(right, top, -far);
 
-      _innerPoint = new Vector3F(left + right, bottom + top, -near - far) * 0.5f;
+      _innerPoint = new Vector3(left + right, bottom + top, -near - far) * 0.5f;
     }
 
 

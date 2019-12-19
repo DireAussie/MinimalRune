@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !WP7
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -353,7 +353,7 @@ namespace DigitalRune.Graphics.Rendering
 
       //var cameraNode = context.CameraNode;
       //var pose = cameraNode.PoseWorld;
-      //var forward = pose.ToWorldDirection(Vector3F.Forward);
+      //var forward = pose.ToWorldDirection(Vector3.Forward);
       //var forwardAbsolute = forward;
       //forwardAbsolute.Absolute();
       //var indexOfLargestComponent = forwardAbsolute.IndexOfLargestComponent;
@@ -395,4 +395,4 @@ namespace DigitalRune.Graphics.Rendering
 
   }
 }
-#endif
+

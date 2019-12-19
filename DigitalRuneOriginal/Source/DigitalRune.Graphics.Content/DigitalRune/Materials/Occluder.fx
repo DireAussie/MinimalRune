@@ -33,9 +33,9 @@ float4x4 View : VIEW;
 float4x4 Projection : PROJECTION;
 float2 ViewportSize : VIEWPORTSIZE;
 
-#if SKINNING
+
 float4x3 Bones[72];
-#endif
+
 
 
 //-----------------------------------------------------------------------------
@@ -45,10 +45,10 @@ float4x3 Bones[72];
 struct VSInput
 {
   float4 Position : POSITION0;
-#if SKINNING
+
   uint4 BoneIndices : BLENDINDICES0;  // uint4 instead of int4 because XNA content pipeline only has Byte4 (R8G8B8A_UInt), but no R8G8B8A_SInt.
   float4 BoneWeights : BLENDWEIGHT0;
-#endif
+
 };
 
 
@@ -72,14 +72,14 @@ struct PSInput
 VSOutput VS(VSInput input, float4x4 world)
 {
   VSOutput output = (VSOutput)0;
-#if SKINNING
+
   float4x3 skinningMatrix = 0;
   skinningMatrix += Bones[input.BoneIndices.x] * input.BoneWeights.x;
   skinningMatrix += Bones[input.BoneIndices.y] * input.BoneWeights.y;
   skinningMatrix += Bones[input.BoneIndices.z] * input.BoneWeights.z;
   skinningMatrix += Bones[input.BoneIndices.w] * input.BoneWeights.w;
   input.Position.xyz = mul(input.Position, skinningMatrix);
-#endif
+
   
   float4 positionView = mul(input.Position, mul(world, View));
   output.Position = mul(positionView, Projection);
@@ -129,37 +129,37 @@ float4 PS(PSInput input) : COLOR0
 //-----------------------------------------------------------------------------
 
 technique Default
-#if !SKINNING && !MGFX           // TODO: Add Annotation support to MonoGame.
+
 < string InstancingTechnique = "DefaultInstancing"; >
-#endif
+
 {
   pass
   {
     CullMode = NONE;
     
-#if !SM4
+
     VertexShader = compile vs_2_0 VSNoInstancing();
     PixelShader = compile ps_2_0 PS();
 #elif SM4
     VertexShader = compile vs_4_0_level_9_1 VSNoInstancing();
     PixelShader = compile ps_4_0_level_9_1 PS();
-#endif
+
   }
 }
 
-#if !SKINNING
+
 technique DefaultInstancing
 {
   pass
   {
     CullMode = NONE;
-#if !SM4
+
     VertexShader = compile vs_3_0 VSInstancing();
     PixelShader = compile ps_3_0 PS();
 #else
     VertexShader = compile vs_4_0 VSInstancing();
     PixelShader = compile ps_4_0 PS();
-#endif
+
   }
 }
-#endif
+

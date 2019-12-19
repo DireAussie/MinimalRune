@@ -247,11 +247,11 @@ GameComponent with a StateMachine.",
     private void LoadAssets()
     {
       // To simulate a loading process we simply wait for 2 seconds.
-#if NETFX_CORE
+
       System.Threading.Tasks.Task.Delay(TimeSpan.FromSeconds(2)).Wait();
 #else
       System.Threading.Thread.Sleep(TimeSpan.FromSeconds(2));
-#endif
+
 
       // Set flag to enable the transition from "Loading" state to "Start" state.
       _allAssetsLoaded = true;
@@ -890,11 +890,11 @@ GameComponent with a StateMachine.",
       // Now we apply the "storyboard" to the group of UI controls. The animation system
       // will automatically assign individual animations to the right objects and 
       // properties.
-#if !XBOX && !WP7
+
       var animationController = AnimationService.StartAnimation(storyboard, controls);
 #else
       var animationController = AnimationService.StartAnimation(storyboard, controls.Cast<IAnimatableObject>());
-#endif
+
 
       animationController.UpdateAndApply();
 

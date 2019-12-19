@@ -238,7 +238,7 @@ namespace DigitalRune.Windows.Charts
 
         //--------------------------------------------------------------
 
-#if !SILVERLIGHT
+
         /// <summary>
         /// Identifies the <see cref="PreviewMouseDoubleClick"/> routed event. (Not available in
         /// Silverlight.)
@@ -269,15 +269,15 @@ namespace DigitalRune.Windows.Charts
             add { AddHandler(MouseDoubleClickEvent, value); }
             remove { RemoveHandler(MouseDoubleClickEvent, value); }
         }
-#endif
 
 
 
-        //--------------------------------------------------------------
 
         //--------------------------------------------------------------
 
-#if !SILVERLIGHT
+        //--------------------------------------------------------------
+
+
         /// <summary>
         /// Initializes static members of the <see cref="ChartPanel"/> class.
         /// </summary>
@@ -292,7 +292,7 @@ namespace DigitalRune.Windows.Charts
             EventManager.RegisterClassHandler(typeof(ChartPanel), PreviewMouseRightButtonDownEvent, new MouseButtonEventHandler(HandleDoubleClick), true);
             EventManager.RegisterClassHandler(typeof(ChartPanel), MouseRightButtonDownEvent, new MouseButtonEventHandler(HandleDoubleClick), true);
         }
-#endif
+
 
 
         /// <summary>
@@ -310,7 +310,7 @@ namespace DigitalRune.Windows.Charts
 
         //--------------------------------------------------------------
 
-#if !SILVERLIGHT
+
 
 
         /// <summary>
@@ -384,7 +384,7 @@ namespace DigitalRune.Windows.Charts
             RaiseEvent(eventArgs);
         }
 
-#endif
+
 
 
         private void OnLayoutUpdated(object sender, EventArgs eventArgs)
@@ -477,7 +477,7 @@ namespace DigitalRune.Windows.Charts
         }
 
 
-#if !SILVERLIGHT
+
         /// <summary>
         /// Returns a geometry for a clipping mask. The mask applies if the layout system attempts
         /// to arrange an element that is larger than the available display space.
@@ -493,7 +493,7 @@ namespace DigitalRune.Windows.Charts
 
             return null;
         }
-#endif
+
 
 
         /// <summary>
@@ -1086,13 +1086,13 @@ namespace DigitalRune.Windows.Charts
         /// <param name="eventArgs">
         /// The <see cref="EventArgs"/> instance containing the event data.
         /// </param>
-#if SILVERLIGHT
+
         // Note: Axis.Updated is a weak event. Therefore the event handler OnAxisChanged needs to be
         // public, because weak events require full trust.
         public
 #else
         private
-#endif
+
         void OnAxisChanged(object sender, EventArgs eventArgs)
         {
             InvalidateArrange();

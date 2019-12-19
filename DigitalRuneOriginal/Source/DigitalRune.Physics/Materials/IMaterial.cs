@@ -38,6 +38,6 @@ namespace DigitalRune.Physics.Materials
     /// The <see cref="MaterialProperties"/> of the given rigid body at the given position and 
     /// child feature.
     /// </returns>
-    MaterialProperties GetProperties(RigidBody body, Vector3F positionLocal, int featureIndex);
+    MaterialProperties GetProperties(RigidBody body, Vector3 positionLocal, int featureIndex);
   }
 }

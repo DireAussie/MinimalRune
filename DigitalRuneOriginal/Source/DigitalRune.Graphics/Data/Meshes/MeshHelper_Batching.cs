@@ -36,7 +36,7 @@ namespace DigitalRune.Graphics
     private struct MergeJob
     {
       public Pose Pose;
-      public Vector3F Scale;
+      public Vector3 Scale;
       public Submesh Submesh;
       public byte MergedMaterialIndex;
       public byte VertexDeclarationIndex;
@@ -101,7 +101,7 @@ namespace DigitalRune.Graphics
         // For indices we only need one counter because we use only one shared index buffer.
         int indexCount = 0;
 
-        var mergedAabb = new Aabb(new Vector3F(float.MaxValue), new Vector3F(float.MinValue));
+        var mergedAabb = new Aabb(new Vector3(float.MaxValue), new Vector3(float.MinValue));
 
         // Merge materials, create job list, merge AABBs, check if there is an occluder.
         bool hasOccluder = false;
@@ -109,10 +109,10 @@ namespace DigitalRune.Graphics
         {
           var mesh = meshNode.Mesh;
 
-#if ANIMATION
+
           if (mesh.Skeleton != null)
             throw new NotSupportedException("Cannot merge skinned meshes.");
-#endif
+
 
           foreach (var submesh in mesh.Submeshes)
           {
@@ -272,22 +272,22 @@ namespace DigitalRune.Graphics
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId = "mesh")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId = "scales")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId = "poses")]
-    public static Mesh Merge(Mesh mesh, IList<Vector3F> scales, IList<Pose> poses)
+    public static Mesh Merge(Mesh mesh, IList<Vector3> scales, IList<Pose> poses)
     {
       if (mesh == null)
         throw new ArgumentNullException("mesh");
-#if ANIMATION
+
       if (mesh.Skeleton != null)
         throw new NotSupportedException("Cannot merge skinned meshes.");
-#endif
+
       if (poses == null)
         throw new ArgumentNullException("poses");
 
       if (scales == null)
       {
-        var array = new Vector3F[poses.Count];
+        var array = new Vector3[poses.Count];
         for (int i = 0; i < array.Length; i++)
-          array[i] = Vector3F.One;
+          array[i] = Vector3.One;
 
         scales = array;
       }
@@ -387,7 +387,7 @@ namespace DigitalRune.Graphics
         }
 
         // Merge AABBs.
-        var mergedAabb = new Aabb(new Vector3F(float.MaxValue), new Vector3F(float.MinValue));
+        var mergedAabb = new Aabb(new Vector3(float.MaxValue), new Vector3(float.MinValue));
         for (int instanceIndex = 0; instanceIndex < poses.Count; instanceIndex++)
         {
           mergedAabb = Aabb.Merge(
@@ -571,10 +571,10 @@ namespace DigitalRune.Graphics
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "Binormal")]
     private static void TransformVertices(byte[] buffer, int startVertex, int vertexCount,
                                           VertexDeclaration vertexDeclaration,
-                                          Vector3F scale, Pose pose)
+                                          Vector3 scale, Pose pose)
     {
       // If the transform does not have a scale/rotation/translation, we can abort.
-      bool hasScale = Vector3F.AreNumericallyEqual(scale, Vector3F.One);
+      bool hasScale = Vector3.AreNumericallyEqual(scale, Vector3.One);
       if (!pose.HasRotation && !pose.HasTranslation && !hasScale)
         return;
 
@@ -599,7 +599,7 @@ namespace DigitalRune.Graphics
 
       int vertexStride = vertexDeclaration.VertexStride;
 
-#if WINDOWS || WINDOWS_UWP || XBOX           // Some PCL profiles can use unsafe. Profile328 cannot.
+
       unsafe
       {
         fixed (byte* pBuffer = buffer)
@@ -686,11 +686,11 @@ namespace DigitalRune.Graphics
           }
         }
       }
-#endif
+
     }
 
 
-#if !(WINDOWS || WINDOWS_UWP || XBOX)
+
     private static Vector3 ReadVector3(BinaryReader reader, int startIndex)
     {
       // Does endianness play a role? - It should not. DirectX vertex and index buffers are little 
@@ -714,14 +714,14 @@ namespace DigitalRune.Graphics
       writer.Write(vector.Y);
       writer.Write(vector.Z);
     }
-#endif
+
 
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "Occluders")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "occluders")]
     private static Occluder MergeOccluders(IEnumerable<MeshNode> meshNodes)
     {
-      var mergedVertices = new List<Vector3F>();
+      var mergedVertices = new List<Vector3>();
       var mergedIndices = new List<ushort>();
 
       foreach (var meshNode in meshNodes)
@@ -737,7 +737,7 @@ namespace DigitalRune.Graphics
         if (occluder == null)
           continue;
 
-        Vector3F[] vertices = occluder.Vertices;
+        Vector3[] vertices = occluder.Vertices;
         ushort[] indices = occluder.Indices;
 
         if (mergedVertices.Count + vertices.Length > ushort.MaxValue)
@@ -746,7 +746,7 @@ namespace DigitalRune.Graphics
         int currentVertexCount = mergedVertices.Count;
 
         // Transform vertices to world space and merge into list.
-        if (scale == Vector3F.One)
+        if (scale == Vector3.One)
         {
           for (int i = 0; i < vertices.Length; i++)
             mergedVertices.Add(pose.ToWorldPosition(vertices[i]));
@@ -768,7 +768,7 @@ namespace DigitalRune.Graphics
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "Occluders")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "occluders")]
-    private static Occluder MergeOccluders(Mesh mesh, IList<Vector3F> scales, IList<Pose> poses)
+    private static Occluder MergeOccluders(Mesh mesh, IList<Vector3> scales, IList<Pose> poses)
     {
       Debug.Assert(mesh != null);
       Debug.Assert(mesh.Occluder != null);
@@ -777,15 +777,15 @@ namespace DigitalRune.Graphics
       Debug.Assert(poses.Count == scales.Count);
 
       var occluder = mesh.Occluder;
-      var mergedVertices = new List<Vector3F>();
+      var mergedVertices = new List<Vector3>();
       var mergedIndices = new List<ushort>();
 
       for (int instanceIndex = 0; instanceIndex < poses.Count; instanceIndex++)
       {
         Pose pose = poses[instanceIndex];
-        Vector3F scale = scales[instanceIndex];
+        Vector3 scale = scales[instanceIndex];
 
-        Vector3F[] vertices = occluder.Vertices;
+        Vector3[] vertices = occluder.Vertices;
         ushort[] indices = occluder.Indices;
 
         if (mergedVertices.Count + vertices.Length > ushort.MaxValue)
@@ -794,7 +794,7 @@ namespace DigitalRune.Graphics
         int currentVertexCount = mergedVertices.Count;
 
         // Transform vertices to world space and merge into list.
-        if (scale == Vector3F.One)
+        if (scale == Vector3.One)
         {
           for (int i = 0; i < vertices.Length; i++)
             mergedVertices.Add(pose.ToWorldPosition(vertices[i]));

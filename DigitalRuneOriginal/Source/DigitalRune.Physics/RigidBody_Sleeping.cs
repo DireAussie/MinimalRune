@@ -142,8 +142,8 @@ namespace DigitalRune.Physics
       if (CanSleep)
       {
         IsSleeping = true;
-        _linearVelocity = Vector3F.Zero;
-        _angularVelocity = Vector3F.Zero;
+        _linearVelocity = Vector3.Zero;
+        _angularVelocity = Vector3.Zero;
         _noMovementTime = float.PositiveInfinity;
       }
     }
@@ -199,8 +199,8 @@ namespace DigitalRune.Physics
         {
           // Kinematic bodies are set to sleep immediately!
           IsSleeping = true;
-          _linearVelocity = Vector3F.Zero;
-          _angularVelocity = Vector3F.Zero;
+          _linearVelocity = Vector3.Zero;
+          _angularVelocity = Vector3.Zero;
           _noMovementTime = float.PositiveInfinity;
         }
         else

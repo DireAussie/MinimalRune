@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using System;
 using System.Linq;
 using DigitalRune.Game;
@@ -75,8 +75,7 @@ namespace Samples
     private void OnDirectionalLightNodeChanged(object sender, SceneChangedEventArgs eventArgs)
     {
       _godRayFilter.Enabled = _directionalLightNode.IsEnabled;
-      _godRayFilter.LightDirection = _directionalLightNode.PoseWorld.ToWorldDirection(Vector3F.Forward);
+      _godRayFilter.LightDirection = _directionalLightNode.PoseWorld.ToWorldDirection(Vector3.Forward);
     }
   }
 }
-#endif

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Threading;
-#if NETFX_CORE || WINDOWS_PHONE
+
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 using TestFixtureAttribute = Microsoft.VisualStudio.TestPlatform.UnitTestFramework.TestClassAttribute;
 using TestFixtureSetUp = Microsoft.VisualStudio.TestPlatform.UnitTestFramework.ClassInitializeAttribute;
@@ -19,7 +19,7 @@ using TearDownAttribute = Microsoft.VisualStudio.TestTools.UnitTesting.TestClean
 using TestAttribute = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
 #else
 using NUnit.Framework;
-#endif
+
 
 
 namespace DigitalRune.Windows.Charts.Tests

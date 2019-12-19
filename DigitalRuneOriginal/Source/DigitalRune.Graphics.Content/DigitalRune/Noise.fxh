@@ -22,7 +22,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#ifndef DIGITALRUNE_NOISE_FXH
+
 #define DIGITALRUNE_NOISE_FXH
 
 // The DitherNxN methods can be used for "ordered dithering".
@@ -74,7 +74,7 @@ float Dither4x4(float2 p)
 }
 
 
-#if USE_DITHER16X16
+
 texture DitherTexture : DITHERMAP;
 sampler DitherSampler = sampler_state
 {
@@ -96,7 +96,7 @@ float Dither16x16(float2 p)
   // The 16x16 dither values need to be in the range 1 / 257 - 256 / 257.
   return tex2D(DitherSampler, p / 16).a * 255 / 257 + 1 / 257;
 }
-#endif
+
 
 
 /// Returns a value in the range [0, 1] of a regular dither pattern.
@@ -165,4 +165,4 @@ float Noise2(float3 p)
   
   return abs(randomB);
 }
-#endif
+

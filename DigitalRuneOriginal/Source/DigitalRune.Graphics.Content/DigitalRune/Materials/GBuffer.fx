@@ -55,29 +55,29 @@ float CameraFar : CAMERAFAR;
 
 float SpecularPower : SPECULARPOWER;
 
-#if ALPHA_TEST
+
 float ReferenceAlpha = 0.9f;
 DECLARE_UNIFORM_DIFFUSETEXTURE
-#endif
-#if TRANSPARENT
+
+
 float InstanceAlpha : INSTANCEALPHA = 1;
-#endif
 
-#if NORMAL_MAP
+
+
 DECLARE_UNIFORM_NORMALTEXTURE
-#endif
 
-#if MORPHING
+
+
 float MorphWeight0 : MORPHWEIGHT0;
 float MorphWeight1 : MORPHWEIGHT1;
 float MorphWeight2 : MORPHWEIGHT2;
 float MorphWeight3 : MORPHWEIGHT3;
 float MorphWeight4 : MORPHWEIGHT4;
-#endif
 
-#if SKINNING
+
+
 float4x3 Bones[72];
-#endif
+
 
 float SceneNodeType : SCENENODETYPE;
 
@@ -89,17 +89,17 @@ float SceneNodeType : SCENENODETYPE;
 struct VSInput
 {
   float4 Position : POSITION0;
-#if ALPHA_TEST || NORMAL_MAP
+
   float2 TexCoord : TEXCOORD0;
-#endif
+
   float3 Normal : NORMAL0;
-#if NORMAL_MAP
+
   float3 Tangent : TANGENT0;
-#if !MORPHING   // Exclude binormal when morphing is enabled.
+
   float3 Binormal : BINORMAL0;
-#endif
-#endif
-#if MORPHING
+
+
+
   float3 MorphPosition0 : POSITION1;
   float3 MorphNormal0 : NORMAL1;
   float3 MorphPosition1 : POSITION2;
@@ -110,25 +110,25 @@ struct VSInput
   float3 MorphNormal3: NORMAL4;
   float3 MorphPosition4 : POSITION5;
   float3 MorphNormal4 : NORMAL5;
-#endif
-#if SKINNING
+
+
   uint4 BoneIndices : BLENDINDICES0;
   float4 BoneWeights : BLENDWEIGHT0;
-#endif
+
 };
 
 
 struct VSOutput
 {
-#if ALPHA_TEST || NORMAL_MAP
+
   float2 TexCoord : TEXCOORD0;
-#endif
+
   float Depth : TEXCOORD1;
   float3 Normal : TEXCOORD2;
-#if NORMAL_MAP
+
   float3 Tangent : TEXCOORD3;
   float3 Binormal : TEXCOORD4;
-#endif
+
   float4 InstanceColorAndAlpha : TEXCOORD5;
   float4 Position : SV_Position;
 };
@@ -136,26 +136,26 @@ struct VSOutput
 
 struct PSInput
 {
-#if ALPHA_TEST || NORMAL_MAP
+
   float2 TexCoord : TEXCOORD0;
-#endif
+
   float Depth : TEXCOORD1;
   float3 Normal : TEXCOORD2;
-#if NORMAL_MAP
+
   float3 Tangent : TEXCOORD3;
   float3 Binormal : TEXCOORD4;
-#endif
+
   float4 InstanceColorAndAlpha : TEXCOORD5;
-#if TRANSPARENT
-#if SM4
+
+
   float4 VPos : SV_Position;
 #else
   float2 VPos : VPOS;
-#endif
-#endif
-#if ALPHA_TEST
+
+
+
   float Face : VFACE;
-#endif
+
 };
 
 
@@ -167,14 +167,14 @@ VSOutput VS(VSInput input, float4x4 world, float alpha)
 {
   float4 position = input.Position;
   float3 normal = input.Normal;
-#if NORMAL_MAP
+
   float3 tangent = input.Tangent;
-#if !MORPHING
+
   float3 binormal = input.Binormal;
-#endif
-#endif
+
+
   
-#if MORPHING
+
   // ----- Apply morph targets.
   position.xyz += MorphWeight0 * input.MorphPosition0;
   position.xyz += MorphWeight1 * input.MorphPosition1;
@@ -189,15 +189,15 @@ VSOutput VS(VSInput input, float4x4 world, float alpha)
   normal += MorphWeight4 * input.MorphNormal4;
   normal = normalize(normal);
   
-#if NORMAL_MAP
+
   // Orthonormalize the neutral tangent against the new normal. (Subtract the
   // collinear elements of the new normal from the neutral tangent and normalize.)
   tangent = tangent - dot(tangent, normal) * normal;
   //tangent = normalize(tangent); Tangent is normalized in pixel shader.
-#endif
-#endif
+
+
   
-#if SKINNING
+
   // ----- Apply skinning matrix.
   float4x3 skinningMatrix = (float4x3)0;
   skinningMatrix += Bones[input.BoneIndices.x] * input.BoneWeights.x;
@@ -206,13 +206,13 @@ VSOutput VS(VSInput input, float4x4 world, float alpha)
   skinningMatrix += Bones[input.BoneIndices.w] * input.BoneWeights.w;
   position.xyz = mul(position, skinningMatrix);
   normal = mul(normal, (float3x3)skinningMatrix);
-#if NORMAL_MAP
+
   tangent = mul(tangent, (float3x3)skinningMatrix);
-#if !MORPHING
+
   binormal = mul(binormal, (float3x3)skinningMatrix);
-#endif
-#endif
-#endif
+
+
+
   
   // ----- Apply world, view, projection transformation.
   float4 positionWorld = mul(position, world);
@@ -220,29 +220,29 @@ VSOutput VS(VSInput input, float4x4 world, float alpha)
   float4 positionProj = mul(positionView, Projection);
   float normalizedDepth = -positionView.z / CameraFar;
   float3 normalWorld = mul(normal, (float3x3)world);
-#if NORMAL_MAP
+
   float3 tangentWorld = mul(tangent, (float3x3)world);
-#if !MORPHING
+
   float3 binormalWorld = mul(binormal, (float3x3)world);
 #else
   // Derive binormal from normal and tangent.
   float3 binormalWorld = cross(normalWorld, tangentWorld);
   //binormalWorld = normalize(binormalWorld); Binormal is normalized in pixel shader.
-#endif
-#endif
+
+
   
   // ----- Output
   VSOutput output = (VSOutput)0;
   output.Position = positionProj;
-#if ALPHA_TEST || NORMAL_MAP
+
   output.TexCoord = input.TexCoord;
-#endif
+
   output.Depth = normalizedDepth;
   output.Normal = normalWorld;
-#if NORMAL_MAP
+
   output.Tangent = tangentWorld;
   output.Binormal = binormalWorld;
-#endif
+
   output.InstanceColorAndAlpha = float4(0, 0, 0, alpha);
   return output;
 }
@@ -250,11 +250,11 @@ VSOutput VS(VSInput input, float4x4 world, float alpha)
 
 VSOutput VSNoInstancing(VSInput input)
 {
-#if TRANSPARENT
+
   return VS(input, World, InstanceAlpha);
 #else
   return VS(input, World, 1);
-#endif
+
 }
 
 
@@ -279,11 +279,11 @@ VSOutput VSInstancing(VSInput input,
 
 void PS(PSInput input, out float4 depthBuffer : COLOR0, out float4 normalBuffer : COLOR1)
 {
-#if ALPHA_TEST
+
   float4 diffuse = tex2D(DiffuseSampler, input.TexCoord);
   clip(diffuse.a - ReferenceAlpha);
-#endif
-#if TRANSPARENT
+
+
   // Screen-door transparency
   float c = input.InstanceColorAndAlpha.a - Dither4x4(input.VPos.xy);
   // The alpha can be negative, which means the dither pattern is inverted.
@@ -291,27 +291,27 @@ void PS(PSInput input, out float4 depthBuffer : COLOR0, out float4 normalBuffer 
     c = -(c + 1);
   
   clip(c);
-#endif
+
   
   // Normalize tangent space vectors.
   float3 normal = normalize(input.Normal);
-#if NORMAL_MAP
+
   float3 tangent = normalize(input.Tangent);
   float3 binormal = normalize(input.Binormal);
   
   // Normals maps are encoded using DXT5nm.
   float3 normalMapSample = GetNormalDxt5nm(NormalSampler, input.TexCoord);
   normal = normal * normalMapSample.z + tangent * normalMapSample.x - binormal * normalMapSample.y;
-#endif
+
   
-#if ALPHA_TEST
+
   normal = normal * sign(input.Face);
-#endif
+
   
   depthBuffer = 1;
   normalBuffer = float4(0, 0, 0, 1);
 
-#if !MGFX
+
   // Hack (XNA only): The following multiplication is completely unnecessary,
   // however there is a bug in XNA's fx compiler that prevents the code from
   // compiling otherwise.
@@ -319,7 +319,7 @@ void PS(PSInput input, out float4 depthBuffer : COLOR0, out float4 normalBuffer 
 #else
   // The correct line:
   float sceneNodeType = SceneNodeType;
-#endif
+
   
   SetGBufferDepth(input.Depth, sceneNodeType, depthBuffer);
   SetGBufferNormal(normal.xyz, normalBuffer);
@@ -331,24 +331,24 @@ void PS(PSInput input, out float4 depthBuffer : COLOR0, out float4 normalBuffer 
 // Techniques
 //-----------------------------------------------------------------------------
 
-#if !SKINNING && !MORPHING
+
 #define SUPPORTS_INSTANCING 1
-#endif
+
 
 technique Default
-#if !MGFX && SUPPORTS_INSTANCING     // TODO: Add Annotation support to MonoGame.
+
 < string InstancingTechnique = "DefaultInstancing"; >
-#endif
+
 {
   pass
   {
-#if ALPHA_TEST
+
     CullMode = NONE;
 #else
     CullMode = CCW;
-#endif
+
     
-#if !SM4 && !ALPHA_TEST && !TRANSPARENT
+
     VertexShader = compile vs_2_0 VSNoInstancing();
     PixelShader = compile ps_2_0 PS();
 #elif !SM4
@@ -360,28 +360,28 @@ technique Default
 #else
     VertexShader = compile vs_4_0 VSNoInstancing();
     PixelShader = compile ps_4_0 PS();
-#endif
+
   }
 }
 
-#if SUPPORTS_INSTANCING
+
 technique DefaultInstancing
 {
   pass
   {
-#if ALPHA_TEST
+
     CullMode = NONE;
 #else
     CullMode = CCW;
-#endif
+
     
-#if !SM4
+
     VertexShader = compile vs_3_0 VSInstancing();
     PixelShader = compile ps_3_0 PS();
 #else
     VertexShader = compile vs_4_0 VSInstancing();
     PixelShader = compile ps_4_0 PS();
-#endif
+
   }
 }
-#endif
+

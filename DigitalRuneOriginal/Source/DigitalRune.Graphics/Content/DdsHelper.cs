@@ -1514,11 +1514,11 @@ namespace DigitalRune.Graphics.Content
       if (stream == null)
         throw new ArgumentNullException("stream");
 
-#if NET45
+
       using (var writer = new BinaryWriter(stream, Encoding.Default, true))
 #else
       using (var writer = new BinaryWriter(stream, Encoding.Default))   // Warning: Closes the stream!
-#endif
+
       {
         var description = texture.Description;
         EncodeDDSHeader(writer, description, flags);

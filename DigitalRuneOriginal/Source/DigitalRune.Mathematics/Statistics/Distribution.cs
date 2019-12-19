@@ -3,9 +3,9 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-#if XNA || MONOGAME
+
 using Microsoft.Xna.Framework.Content;
-#endif
+
 
 
 namespace DigitalRune.Mathematics.Statistics
@@ -25,9 +25,9 @@ namespace DigitalRune.Mathematics.Statistics
     /// different random number generator can be set. Set this value to <see langword="null"/> to 
     /// use the default random number generator (see <see cref="RandomHelper.Random"/>).
     /// </remarks>
-#if XNA || MONOGAME
+
     [ContentSerializerIgnore]
-#endif
+
     [Obsolete(
       "The properties Random and NextValue have been declared obsolete because the .NET class "
       + "Random is not thread-safe, which can lead to problems in multithreaded applications. "

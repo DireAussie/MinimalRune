@@ -919,13 +919,13 @@ namespace ICSharpCode.AvalonEdit.Editing
 			if (this.Document == null)
 				throw ThrowUtil.NoDocumentAssigned();
 			selection.ReplaceSelectionWithText(string.Empty);
-			#if DEBUG
+
 			if (!selection.IsEmpty) {
 				foreach (ISegment s in selection.Segments) {
 					Debug.Assert(this.ReadOnlySectionProvider.GetDeletableSegments(s).Count() == 0);
 				}
 			}
-			#endif
+
 		}
 		
 		internal void ReplaceSelectionWithText(string newText)
@@ -1060,11 +1060,11 @@ namespace ICSharpCode.AvalonEdit.Editing
 			this.MouseEnter += delegate { ShowMouseCursor(); };
 			this.MouseLeave += delegate { ShowMouseCursor(); };
 			this.PreviewMouseMove += delegate { ShowMouseCursor(); };
-			#if DOTNET4
+
 			this.TouchEnter += delegate { ShowMouseCursor(); };
 			this.TouchLeave += delegate { ShowMouseCursor(); };
 			this.PreviewTouchMove += delegate { ShowMouseCursor(); };
-			#endif
+
 		}
 		
 		void ShowMouseCursor()

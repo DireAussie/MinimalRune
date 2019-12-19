@@ -41,7 +41,7 @@ namespace DigitalRune.Animation.Character
     private bool _isDirty = true;
 
     // Converts from A space to B space. Only rotations.
-    private QuaternionF _rotationAToB;
+    private Quaternion _rotationAToB;
 
 
 
@@ -143,7 +143,7 @@ namespace DigitalRune.Animation.Character
     public float ScaleAToB { get; set; }
 
 
-    // TODO: public QuaternionF RotationOffset { get; set; }
+    // TODO: public Quaternion RotationOffset { get; set; }
     // Offset from BoneA to BoneB. This could be used to correct the Archer - Dude mapping.
     // The archer is in T-Pose. The Dude has lowered arms. The rotation offset rotates from
     // horizontal arms to lowered arms.
@@ -300,7 +300,7 @@ namespace DigitalRune.Animation.Character
     /// <summary>
     /// Perform mapping in absolute space.
     /// </summary>
-    private static void MapAbsolute(bool mapTranslations, SkeletonPose skeletonA, int boneIndexA, SkeletonPose skeletonB, int boneIndexB, float scaleAToB, QuaternionF rotationBToA, QuaternionF rotationAToB)
+    private static void MapAbsolute(bool mapTranslations, SkeletonPose skeletonA, int boneIndexA, SkeletonPose skeletonB, int boneIndexB, float scaleAToB, Quaternion rotationBToA, Quaternion rotationAToB)
     {
       // The current absolute bone pose of bone A.
       var boneAActualRotationAbsolute = skeletonA.GetBonePoseAbsolute(boneIndexA).Rotation;
@@ -329,12 +329,12 @@ namespace DigitalRune.Animation.Character
     /// <summary>
     /// Perform mapping in local bone space.
     /// </summary>
-    private static void MapLocal(bool mapTranslations, SkeletonPose skeletonA, int boneIndexA, SkeletonPose skeletonB, int boneIndexB, float scaleAToB, QuaternionF rotationBToA, QuaternionF rotationAToB)
+    private static void MapLocal(bool mapTranslations, SkeletonPose skeletonA, int boneIndexA, SkeletonPose skeletonB, int boneIndexB, float scaleAToB, Quaternion rotationBToA, Quaternion rotationAToB)
     {
       var boneTransform = skeletonA.GetBoneTransform(boneIndexA);
 
       // Remove any scaling.
-      boneTransform.Scale = Vector3F.One;
+      boneTransform.Scale = Vector3.One;
 
       // Rotation: Using similarity transformation: (Read from right to left.)
       // Rotate from bone B space to bone A space.
@@ -347,7 +347,7 @@ namespace DigitalRune.Animation.Character
       if (mapTranslations)
         boneTransform.Translation = rotationAToB.Rotate(boneTransform.Translation * scaleAToB);
       else
-        boneTransform.Translation = Vector3F.Zero;
+        boneTransform.Translation = Vector3.Zero;
 
       // Apply new bone transform to B.
       skeletonB.SetBoneTransform(boneIndexB, boneTransform);

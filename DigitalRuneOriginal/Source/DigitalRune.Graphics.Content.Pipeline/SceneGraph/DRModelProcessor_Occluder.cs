@@ -31,7 +31,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
       {
         if (occluderNode.Parent is DRMeshNodeContent
             && Pose.AreNumericallyEqual(occluderNode.PoseLocal, Pose.Identity)
-            && Vector3F.AreNumericallyEqual(occluderNode.ScaleLocal, Vector3F.One)
+            && Vector3.AreNumericallyEqual(occluderNode.ScaleLocal, Vector3.One)
             && (occluderNode.Children == null || occluderNode.Children.Count == 0))
         {
           var meshNode = (DRMeshNodeContent)occluderNode.Parent;
@@ -49,7 +49,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
       MergeDuplicatePositions(mesh, Numeric.EpsilonF);
 
       // Get all positions in mesh.
-      var meshPositions = mesh.Positions.Select(p => (Vector3F)p).ToList();
+      var meshPositions = mesh.Positions.Select(p => (Vector3)p).ToList();
 
       // Get all triangles in mesh.
       var meshIndices = new List<int>();

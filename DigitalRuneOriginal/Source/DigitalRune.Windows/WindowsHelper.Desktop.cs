@@ -539,9 +539,9 @@ namespace DigitalRune.Windows
         /// In async methods (.NET 4.5) use 
         /// <c>await Dispatcher.Yield(DispatcherPriority.Background)</c> instead.
         /// </remarks>
-#if NET45
+
         [Obsolete("In .NET 4.5 use 'await Dispatcher.Yield(DispatcherPriority.Background)' instead of DoEvents().")]
-#endif
+
         public static void DoEvents()
         {
             // See blog post: http://kentb.blogspot.com/2008/04/dispatcher-frames.html

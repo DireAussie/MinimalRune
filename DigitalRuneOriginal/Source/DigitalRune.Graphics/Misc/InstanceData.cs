@@ -34,7 +34,7 @@ namespace DigitalRune.Graphics
   /// <see cref="DefaultEffectParameterSemantics.InstanceAlpha"/>.
   /// </para>
   /// <para>
-  /// <sup>1</sup> If the world matrix is stored in a <see cref="Matrix44F"/> (DigitalRune data
+  /// <sup>1</sup> If the world matrix is stored in a <see cref="Matrix"/> (DigitalRune data
   /// type), <see cref="Register0"/> to <see cref="Register2"/> store the first 3 rows of the world
   /// matrix. If we are talking about a world matrix in a <see cref="Matrix"/> (XNA data type),
   /// <see cref="Register0"/> to <see cref="Register2"/> store the first 3 columns of the world
@@ -48,9 +48,9 @@ namespace DigitalRune.Graphics
   /// knows how to interpret the data.
   /// </para>
   /// </remarks>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !PORTABLE
+
   [Serializable]
-#endif
+
   [StructLayout(LayoutKind.Sequential)]
   public struct InstanceData : IVertexType
   {
@@ -181,7 +181,7 @@ namespace DigitalRune.Graphics
     /// The first three columns of the world matrix is stored in <see cref="Register0"/> to
     /// <see cref="Register2"/>. The color is stored in <see cref="Register3"/>.
     ///  </remarks>
-    public InstanceData(Vector3F scale, Pose pose, Vector4F color)
+    public InstanceData(Vector3 scale, Pose pose, Vector4F color)
     {
       Matrix world = pose;
       world.M11 *= scale.X; world.M12 *= scale.X; world.M13 *= scale.X;

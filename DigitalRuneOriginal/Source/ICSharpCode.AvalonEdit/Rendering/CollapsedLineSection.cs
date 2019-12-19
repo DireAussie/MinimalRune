@@ -31,23 +31,23 @@ namespace ICSharpCode.AvalonEdit.Rendering
 		DocumentLine start, end;
 		HeightTree heightTree;
 		
-		#if DEBUG
+
 		internal string ID;
 		static int nextId;
 		#else
 		const string ID = "";
-		#endif
+
 		
 		internal CollapsedLineSection(HeightTree heightTree, DocumentLine start, DocumentLine end)
 		{
 			this.heightTree = heightTree;
 			this.start = start;
 			this.end = end;
-			#if DEBUG
+
 			unchecked {
 				this.ID = " #" + (nextId++);
 			}
-			#endif
+
 		}
 		
 		/// <summary>
@@ -89,9 +89,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 				return;
 			
 			heightTree.Uncollapse(this);
-			#if DEBUG
+
 			heightTree.CheckProperties();
-			#endif
+
 			
 			start = null;
 			end = null;

@@ -24,18 +24,18 @@ namespace DigitalRune.Mathematics.Interpolation
   /// returns the end point <see cref="Point2"/>.
   /// </para>
   /// </remarks>
-  public class LineSegment3F : ICurve<float, Vector3F>, IRecyclable
+  public class LineSegment3F : ICurve<float, Vector3>, IRecyclable
   {
     /// <summary>
     /// Gets or sets the start point.
     /// </summary>
-    public Vector3F Point1 { get; set; }
+    public Vector3 Point1 { get; set; }
 
 
     /// <summary>
     /// Gets or sets the end point.
     /// </summary>
-    public Vector3F Point2 { get; set; }
+    public Vector3 Point2 { get; set; }
 
     
     /// <summary>
@@ -43,14 +43,14 @@ namespace DigitalRune.Mathematics.Interpolation
     /// </summary>
     /// <param name="parameter">The curve parameter.</param>
     /// <returns>The curve point.</returns>
-    public Vector3F GetPoint(float parameter)
+    public Vector3 GetPoint(float parameter)
     {
       return InterpolationHelper.Lerp(Point1, Point2, parameter);
     }
 
 
     /// <inheritdoc/>
-    public Vector3F GetTangent(float parameter)
+    public Vector3 GetTangent(float parameter)
     {
       return Point2 - Point1;
     }
@@ -65,7 +65,7 @@ namespace DigitalRune.Mathematics.Interpolation
 
     /// <inheritdoc/>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods")]
-    public void Flatten(ICollection<Vector3F> points, int maxNumberOfIterations, float tolerance)
+    public void Flatten(ICollection<Vector3> points, int maxNumberOfIterations, float tolerance)
     {
       points.Add(Point1);
       points.Add(Point2);
@@ -110,8 +110,8 @@ namespace DigitalRune.Mathematics.Interpolation
     /// <inheritdoc/>
     public void Recycle()
     {
-      Point1 = new Vector3F();
-      Point2 = new Vector3F();
+      Point1 = new Vector3();
+      Point2 = new Vector3();
 
       Pool.Recycle(this);
     }

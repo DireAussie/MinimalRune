@@ -27,7 +27,7 @@ namespace Samples.Animation
     {
       var modelNode = ContentManager.Load<ModelNode>("Dude/Dude");
       _meshNode = modelNode.GetSubtree().OfType<MeshNode>().First().Clone();
-      _meshNode.PoseLocal = new Pose(new Vector3F(-0.5f, 0, 0));
+      _meshNode.PoseLocal = new Pose(new Vector3(-0.5f, 0, 0));
       SampleHelper.EnablePerPixelLighting(_meshNode);
 
       GraphicsScreen.Scene.Children.Add(_meshNode);
@@ -55,7 +55,7 @@ namespace Samples.Animation
       int upperArmIndex = skeleton.GetIndex("L_UpperArm");
 
       // Define the desired bone transform.
-      SrtTransform boneTransform = new SrtTransform(QuaternionF.CreateRotationY(_upperArmAngle));
+      SrtTransform boneTransform = new SrtTransform(Quaternion.CreateRotationY(_upperArmAngle));
 
       // Set the new bone transform.
       var skeletonPose = _meshNode.SkeletonPose;
@@ -65,7 +65,7 @@ namespace Samples.Animation
       // One is SetBoneRotationAbsolute() which sets the orientation of a bone relative 
       // to model space. 
       int handIndex = skeleton.GetIndex("L_Hand");
-      SkeletonHelper.SetBoneRotationAbsolute(skeletonPose, handIndex, QuaternionF.CreateRotationX(ConstantsF.Pi));
+      SkeletonHelper.SetBoneRotationAbsolute(skeletonPose, handIndex, Quaternion.CreateRotationX(ConstantsF.Pi));
     }
   }
 }

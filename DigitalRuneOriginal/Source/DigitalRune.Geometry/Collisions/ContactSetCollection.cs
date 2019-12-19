@@ -691,7 +691,7 @@ namespace DigitalRune.Geometry.Collisions
     /// </returns>
     public IEnumerable<ContactSet> GetContacts(CollisionObject collisionObject)
     {
-#if !POOL_ENUMERABLES
+
       if (_ownedByDomain)
       {
         // Contact sets are stored in linked lists per collision object.
@@ -717,11 +717,11 @@ namespace DigitalRune.Geometry.Collisions
         return GetContactsWork0.Create(collisionObject);
 
       return GetContactsWork1.Create(this, collisionObject);
-#endif
+
     }
 
 
-#if POOL_ENUMERABLES
+
     private sealed class GetContactsWork0 : PooledEnumerable<ContactSet>
     {
       private static readonly ResourcePool<GetContactsWork0> Pool = new ResourcePool<GetContactsWork0>(() => new GetContactsWork0(), x => x.Initialize(), null);
@@ -807,7 +807,7 @@ namespace DigitalRune.Geometry.Collisions
         Pool.Recycle(this);
       }
     }
-#endif
+
 
 
     /// <overloads>

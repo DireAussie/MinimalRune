@@ -10,9 +10,9 @@ using DigitalRune.Geometry.Shapes;
 using DigitalRune.Mathematics;
 using DigitalRune.Mathematics.Algebra;
 using DigitalRune.Mathematics.Interpolation;
-#if XNA || MONOGAME
+
 using Microsoft.Xna.Framework;
-#endif
+
 
 
 namespace DigitalRune.Geometry
@@ -47,12 +47,12 @@ namespace DigitalRune.Geometry
   /// in place".</i>
   /// </para>
   /// </remarks>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
-#if !XBOX && !UNITY
+
+
   [DataContract]
-#endif
+
   public struct Pose : IEquatable<Pose>
   {
     //--------------------------------------------------------------
@@ -62,7 +62,7 @@ namespace DigitalRune.Geometry
     /// <summary>
     /// A pose with no translation and no rotation.
     /// </summary>
-    public static readonly Pose Identity = new Pose(Vector3F.Zero, Matrix33F.Identity);
+    public static readonly Pose Identity = new Pose(Vector3.Zero, Matrix.Identity);
 
 
 
@@ -73,11 +73,11 @@ namespace DigitalRune.Geometry
     /// <summary>
     /// The position.
     /// </summary>
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-    public Vector3F Position;
+    public Vector3 Position;
 
 
     /// <summary>
@@ -86,11 +86,11 @@ namespace DigitalRune.Geometry
     /// <remarks>
     /// The orientation is stored as a 3x3 matrix. The matrix must represent a rotation.
     /// </remarks>
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-    public Matrix33F Orientation;
+    public Matrix Orientation;
 
 
 
@@ -164,7 +164,7 @@ namespace DigitalRune.Geometry
     /// </summary>
     /// <param name="position">The position.</param>
     /// <param name="orientation">The orientation.</param>
-    public Pose(Vector3F position, Matrix33F orientation)
+    public Pose(Vector3 position, Matrix orientation)
     {
       Position = position;
       Orientation = orientation;
@@ -175,10 +175,10 @@ namespace DigitalRune.Geometry
     /// Initializes a new instance of the <see cref="Pose"/> class from position.
     /// </summary>
     /// <param name="position">The position.</param>
-    public Pose(Vector3F position)
+    public Pose(Vector3 position)
     {
       Position = position;
-      Orientation = Matrix33F.Identity;
+      Orientation = Matrix.Identity;
     }
 
 
@@ -186,9 +186,9 @@ namespace DigitalRune.Geometry
     /// Initializes a new instance of the <see cref="Pose"/> class from orientation.
     /// </summary>
     /// <param name="orientation">The orientation.</param>
-    public Pose(Matrix33F orientation)
+    public Pose(Matrix orientation)
     {
-      Position = Vector3F.Zero;
+      Position = Vector3.Zero;
       Orientation = orientation;
     }
 
@@ -198,7 +198,7 @@ namespace DigitalRune.Geometry
     /// </summary>
     /// <param name="position">The position.</param>
     /// <param name="orientation">The orientation.</param>
-    public Pose(Vector3F position, QuaternionF orientation)
+    public Pose(Vector3 position, Quaternion orientation)
     {
       Position = position;
       Orientation = orientation.ToRotationMatrix33();
@@ -209,9 +209,9 @@ namespace DigitalRune.Geometry
     /// Initializes a new instance of the <see cref="Pose"/> class from orientation.
     /// </summary>
     /// <param name="orientation">The orientation.</param>
-    public Pose(QuaternionF orientation)
+    public Pose(Quaternion orientation)
     {
-      Position = Vector3F.Zero;
+      Position = Vector3.Zero;
       Orientation = orientation.ToRotationMatrix33();
     }
 
@@ -276,12 +276,12 @@ namespace DigitalRune.Geometry
     /// This method can be used to transform direction vectors. It applies only the rotation to the 
     /// vector. The translation is ignored. 
     /// </remarks>
-    public Vector3F ToWorldDirection(Vector3F localDirection)
+    public Vector3 ToWorldDirection(Vector3 localDirection)
     {
       // return Orientation * localDirection;
 
       // ----- Optimized version:
-      Vector3F result;
+      Vector3 result;
       result.X = Orientation.M00 * localDirection.X + Orientation.M01 * localDirection.Y + Orientation.M02 * localDirection.Z;
       result.Y = Orientation.M10 * localDirection.X + Orientation.M11 * localDirection.Y + Orientation.M12 * localDirection.Z;
       result.Z = Orientation.M20 * localDirection.X + Orientation.M21 * localDirection.Y + Orientation.M22 * localDirection.Z;
@@ -301,12 +301,12 @@ namespace DigitalRune.Geometry
     /// This method can be used to transform direction vectors. It applies only the rotation to the 
     /// vector. The translation is ignored. 
     /// </remarks>
-    public Vector3F ToLocalDirection(Vector3F worldDirection)
+    public Vector3 ToLocalDirection(Vector3 worldDirection)
     {
-      //return Matrix33F.MultiplyTransposed(Orientation, worldDirection);
+      //return Matrix.MultiplyTransposed(Orientation, worldDirection);
 
       // ----- Optimized version:
-      Vector3F result;
+      Vector3 result;
       result.X = Orientation.M00 * worldDirection.X + Orientation.M10 * worldDirection.Y + Orientation.M20 * worldDirection.Z;
       result.Y = Orientation.M01 * worldDirection.X + Orientation.M11 * worldDirection.Y + Orientation.M21 * worldDirection.Z;
       result.Z = Orientation.M02 * worldDirection.X + Orientation.M12 * worldDirection.Y + Orientation.M22 * worldDirection.Z;
@@ -322,12 +322,12 @@ namespace DigitalRune.Geometry
     /// <returns>
     /// The position in world space (or the parent space for nested coordinate spaces).
     /// </returns>
-    public Vector3F ToWorldPosition(Vector3F localPosition)
+    public Vector3 ToWorldPosition(Vector3 localPosition)
     {
       //return Orientation * localPosition + Position;
 
       // ----- Optimized version:
-      Vector3F result;
+      Vector3 result;
       result.X = Orientation.M00 * localPosition.X + Orientation.M01 * localPosition.Y + Orientation.M02 * localPosition.Z + Position.X;
       result.Y = Orientation.M10 * localPosition.X + Orientation.M11 * localPosition.Y + Orientation.M12 * localPosition.Z + Position.Y;
       result.Z = Orientation.M20 * localPosition.X + Orientation.M21 * localPosition.Y + Orientation.M22 * localPosition.Z + Position.Z;
@@ -343,16 +343,16 @@ namespace DigitalRune.Geometry
     /// The position vector in world space (or the parent space for nested coordinate spaces).
     /// </param>
     /// <returns>The position in local space.</returns>
-    public Vector3F ToLocalPosition(Vector3F worldPosition)
+    public Vector3 ToLocalPosition(Vector3 worldPosition)
     {
-      //return Matrix33F.MultiplyTransposed(Orientation, worldPosition - Position);
+      //return Matrix.MultiplyTransposed(Orientation, worldPosition - Position);
 
       // ----- Optimized version:
-      Vector3F diff;
+      Vector3 diff;
       diff.X = worldPosition.X - Position.X;
       diff.Y = worldPosition.Y - Position.Y;
       diff.Z = worldPosition.Z - Position.Z;
-      Vector3F result;
+      Vector3 result;
       result.X = Orientation.M00 * diff.X + Orientation.M10 * diff.Y + Orientation.M20 * diff.Z;
       result.Y = Orientation.M01 * diff.X + Orientation.M11 * diff.Y + Orientation.M21 * diff.Z;
       result.Z = Orientation.M02 * diff.X + Orientation.M12 * diff.Y + Orientation.M22 * diff.Z;
@@ -369,13 +369,13 @@ namespace DigitalRune.Geometry
     /// <paramref name="poseMatrix"/> must only contain rotations and translations, otherwise the
     /// result is undefined.
     /// </remarks>
-    public static Pose FromMatrix(Matrix44F poseMatrix)
+    public static Pose FromMatrix(Matrix poseMatrix)
     {
       Debug.Assert(IsValid(poseMatrix), "Matrix is not a valid pose matrix. Pose matrix must only contain rotations and translations.");
 
       return new Pose(
-        new Vector3F(poseMatrix.M03, poseMatrix.M13, poseMatrix.M23),
-        new Matrix33F(poseMatrix.M00, poseMatrix.M01, poseMatrix.M02,
+        new Vector3(poseMatrix.M03, poseMatrix.M13, poseMatrix.M23),
+        new Matrix(poseMatrix.M00, poseMatrix.M01, poseMatrix.M02,
                       poseMatrix.M10, poseMatrix.M11, poseMatrix.M12,
                       poseMatrix.M20, poseMatrix.M21, poseMatrix.M22));
     }
@@ -397,13 +397,13 @@ namespace DigitalRune.Geometry
     /// <returns>
     /// A 4x4-matrix that represents the same transformation as the pose.
     /// </returns>
-    public Matrix44F ToMatrix44F()
+    public Matrix ToMatrix()
     {
       return this;
     }
 
 
-#if XNA || MONOGAME
+
     /// <overloads>
     /// <summary>
     /// Creates a <see cref="Pose"/> from a matrix that contains a translation and a rotation.
@@ -427,11 +427,11 @@ namespace DigitalRune.Geometry
     /// </remarks>
     public static Pose FromMatrix(Matrix poseMatrix)
     {
-      Debug.Assert(IsValid((Matrix44F)poseMatrix), "Matrix is not a valid pose matrix. Pose matrix must only contain rotations and translations.");
+      Debug.Assert(IsValid((Matrix)poseMatrix), "Matrix is not a valid pose matrix. Pose matrix must only contain rotations and translations.");
 
       return new Pose(
-        new Vector3F(poseMatrix.M41, poseMatrix.M42, poseMatrix.M43),
-        new Matrix33F(poseMatrix.M11, poseMatrix.M21, poseMatrix.M31,
+        new Vector3(poseMatrix.M41, poseMatrix.M42, poseMatrix.M43),
+        new Matrix(poseMatrix.M11, poseMatrix.M21, poseMatrix.M31,
                       poseMatrix.M12, poseMatrix.M22, poseMatrix.M32,
                       poseMatrix.M13, poseMatrix.M23, poseMatrix.M33));
     }
@@ -450,13 +450,13 @@ namespace DigitalRune.Geometry
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
     public Matrix ToXna()
     {
-      Matrix33F m = Orientation;
+      Matrix m = Orientation;
       return new Matrix(m.M00, m.M10, m.M20, 0,
                         m.M01, m.M11, m.M21, 0,
                         m.M02, m.M12, m.M22, 0,
                         Position.X, Position.Y, Position.Z, 1);
     }
-#endif
+
 
 
 
@@ -550,8 +550,8 @@ namespace DigitalRune.Geometry
 
       // Slerp orientation.
       var interpolatedOrientation = InterpolationHelper.Lerp(
-        QuaternionF.CreateRotation(startPose.Orientation),
-        QuaternionF.CreateRotation(endPose.Orientation),
+        Quaternion.CreateRotation(startPose.Orientation),
+        Quaternion.CreateRotation(endPose.Orientation),
         parameter);
 
       return new Pose(interpolatedPosition, interpolatedOrientation);
@@ -569,7 +569,7 @@ namespace DigitalRune.Geometry
     /// <remarks>
     /// This method makes a simple, low-performance test.
     /// </remarks>
-    public static bool IsValid(Matrix44F matrix)
+    public static bool IsValid(Matrix matrix)
     {
       Vector4F v1 = matrix * Vector4F.UnitX;
       Vector4F v2 = matrix * Vector4F.UnitY;
@@ -760,7 +760,7 @@ namespace DigitalRune.Geometry
     /// </remarks>
     public static Vector4F operator *(Pose pose, Vector4F vector)
     {
-      return pose.ToMatrix44F() * vector;
+      return pose.ToMatrix() * vector;
     }
 
 
@@ -776,7 +776,7 @@ namespace DigitalRune.Geometry
     /// </remarks>
     public static Vector4F Multiply(Pose pose, Vector4F vector)
     {
-      return pose.ToMatrix44F() * vector;
+      return pose.ToMatrix() * vector;
     }
 
 
@@ -826,18 +826,18 @@ namespace DigitalRune.Geometry
     /// </summary>
     /// <param name="pose">The pose.</param>
     /// <returns>A 4x4-matrix that represents the same transformation as the pose.</returns>
-    public static implicit operator Matrix44F(Pose pose)
+    public static implicit operator Matrix(Pose pose)
     {
-      Vector3F v = pose.Position;
-      Matrix33F m = pose.Orientation;
-      return new Matrix44F(m.M00, m.M01, m.M02, v.X,
+      Vector3 v = pose.Position;
+      Matrix m = pose.Orientation;
+      return new Matrix(m.M00, m.M01, m.M02, v.X,
                            m.M10, m.M11, m.M12, v.Y,
                            m.M20, m.M21, m.M22, v.Z,
                            0, 0, 0, 1);
     }
 
 
-#if XNA || MONOGAME
+
     /// <summary>
     /// Converts a pose to a 4x4 transformation matrix (XNA Framework). (Only available in the 
     /// XNA-compatible build.)
@@ -851,14 +851,14 @@ namespace DigitalRune.Geometry
     /// </remarks>
     public static implicit operator Matrix(Pose pose)
     {
-      Vector3F v = pose.Position;
-      Matrix33F m = pose.Orientation;
+      Vector3 v = pose.Position;
+      Matrix m = pose.Orientation;
       return new Matrix(m.M00, m.M10, m.M20, 0,
                         m.M01, m.M11, m.M21, 0,
                         m.M02, m.M12, m.M22, 0,
                         v.X, v.Y, v.Z, 1);
     }
-#endif
+
 
   }
 }

@@ -25,7 +25,7 @@ using System.Windows.Markup;
 [assembly: ComVisible(false)]
 [assembly: NeutralResourcesLanguage("en")]
 
-#if !SILVERLIGHT && !WINDOWS_PHONE
+
 [assembly: ThemeInfo(
     ResourceDictionaryLocation.None, //where theme specific resource dictionaries are located
     //(used if a resource is not found in the page, 
@@ -34,7 +34,7 @@ using System.Windows.Markup;
     //(used if a resource is not found in the page, 
     // app, or any theme specific resource dictionaries)
     )]
-#endif
+
 
 // Version information for an assembly consists of the following four values:
 //

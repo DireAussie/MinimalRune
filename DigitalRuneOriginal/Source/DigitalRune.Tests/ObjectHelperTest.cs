@@ -4,9 +4,9 @@ using System.Text.RegularExpressions;
 using DigitalRune.Mathematics;
 using NUnit.Framework;
 
-#if !NETFX_CORE && !SILVERLIGHT
+
 using System.Drawing;
-#endif
+
 
 
 namespace DigitalRune.Tests
@@ -122,14 +122,14 @@ namespace DigitalRune.Tests
     }
 
 
-#if !NETFX_CORE && !SILVERLIGHT
+
     [Test]
     public void GetTypeConverter()
     {
       var converter = ObjectHelper.GetTypeConverter(typeof(Size));
       Assert.IsNotNull(converter);
     }
-#endif
+
 
 
     [Flags]
@@ -160,11 +160,11 @@ namespace DigitalRune.Tests
       Assert.IsTrue(Numeric.AreEqual(va.X, 1.01f));
       Assert.IsTrue(Numeric.AreEqual(va.Y, 2.02f));
 
-#if WINDOWS_PHONE
+
       var vb = (VectorB)ObjectHelper.Parse(typeof(VectorB), "(1.01; 2.02)");
 #else
       var vb = (VectorB)ObjectHelper.Parse(typeof(VectorB), "(1,01; 2,02)");      // Use this if culture in the test is de.
-#endif
+
       Assert.IsTrue(Numeric.AreEqual(vb.X, 1.01f));
       Assert.IsTrue(Numeric.AreEqual(vb.Y, 2.02f));
 
@@ -172,7 +172,7 @@ namespace DigitalRune.Tests
     }
     
 
-#if !NETFX_CORE && !SILVERLIGHT
+
     [Test]
     public void ParseWithTypeConverter()
     {
@@ -181,6 +181,6 @@ namespace DigitalRune.Tests
       Assert.AreEqual(10, parsedSize.Width);
       Assert.AreEqual(20, parsedSize.Height);
     }
-#endif
+
   }
 }

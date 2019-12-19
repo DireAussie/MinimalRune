@@ -59,9 +59,9 @@ namespace DigitalRune.Graphics
   /// };
   /// var figureNode1 = new FigureNode(boxFigure1)
   /// {
-  ///   StrokeColor = new Vector3F(0, 0, 0),
+  ///   StrokeColor = new Vector3(0, 0, 0),
   ///   StrokeThickness = 2,
-  ///   FillColor = new Vector3F(0.5f, 0.5f, 0.5f)
+  ///   FillColor = new Vector3(0.5f, 0.5f, 0.5f)
   /// };
   /// 
   /// // Box where top and bottom edges are stroked.
@@ -81,9 +81,9 @@ namespace DigitalRune.Graphics
   /// };
   /// var figureNode2 = new FigureNode(boxFigure2)
   /// {
-  ///   StrokeColor = new Vector3F(0, 0, 0),
+  ///   StrokeColor = new Vector3(0, 0, 0),
   ///   StrokeThickness = 2,
-  ///   FillColor = new Vector3F(0.5f, 0.5f, 0.5f)
+  ///   FillColor = new Vector3(0.5f, 0.5f, 0.5f)
   /// };
   /// ]]>
   /// </code>
@@ -160,7 +160,7 @@ namespace DigitalRune.Graphics
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
-    internal override void Flatten(ArrayList<Vector3F> vertices, ArrayList<int> strokeIndices, ArrayList<int> fillIndices)
+    internal override void Flatten(ArrayList<Vector3> vertices, ArrayList<int> strokeIndices, ArrayList<int> fillIndices)
     {
       Triangulator triangulator = null;
       var segmentVertices = ResourcePools<Vector2F>.Lists.Obtain();
@@ -216,7 +216,7 @@ namespace DigitalRune.Graphics
         {
           int numberOfSegments = segmentStartIndices.Count;
           var vertexArray = vertices.Array;
-          Vector3F v = new Vector3F(segmentEndVertex.X, segmentEndVertex.Y, 0);
+          Vector3 v = new Vector3(segmentEndVertex.X, segmentEndVertex.Y, 0);
           for (int i = 0; i < numberOfSegments; i++)
           {
             int startIndex = segmentStartIndices[i];
@@ -261,13 +261,13 @@ namespace DigitalRune.Graphics
     }
 
 
-    private static void CommitVertices(List<Vector2F> segmentVertices, bool isNewShape, bool isClosedShape, ArrayList<Vector3F> vertices)
+    private static void CommitVertices(List<Vector2F> segmentVertices, bool isNewShape, bool isClosedShape, ArrayList<Vector3> vertices)
     {
       if (isNewShape)
       {
         // Add start vertex.
         Vector2F v = segmentVertices[0];
-        vertices.Add(new Vector3F(v.X, v.Y, 0));
+        vertices.Add(new Vector3(v.X, v.Y, 0));
       }
 
       int numberOfVertices = segmentVertices.Count;
@@ -281,7 +281,7 @@ namespace DigitalRune.Graphics
       for (int i = 1; i < numberOfVertices; i += 2)
       {
         Vector2F v = segmentVertices[i];
-        vertices.Add(new Vector3F(v.X, v.Y, 0));
+        vertices.Add(new Vector3(v.X, v.Y, 0));
       }
     }
 
@@ -307,7 +307,7 @@ namespace DigitalRune.Graphics
     }
 
 
-    private static void Fill(ArrayList<Vector3F> vertices, int startIndex, ArrayList<int> fillIndices, ref Triangulator triangulator)
+    private static void Fill(ArrayList<Vector3> vertices, int startIndex, ArrayList<int> fillIndices, ref Triangulator triangulator)
     {
       if (triangulator == null)
         triangulator = Triangulator.Create();

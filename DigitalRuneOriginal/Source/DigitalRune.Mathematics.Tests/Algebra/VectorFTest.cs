@@ -1201,25 +1201,25 @@ namespace DigitalRune.Mathematics.Algebra.Tests
       VectorF unitZ = new VectorF(new float[] { 0, 0, 1, 0 });
       VectorF unitW = new VectorF(new float[] { 0, 0, 0, 1 });
 
-      // 0°
+      // 0ï¿½
       Assert.AreEqual(1.0f, VectorF.Dot(unitX, unitX));
       Assert.AreEqual(1.0f, VectorF.Dot(unitY, unitY));
       Assert.AreEqual(1.0f, VectorF.Dot(unitZ, unitZ));
       Assert.AreEqual(1.0f, VectorF.Dot(unitW, unitW));
 
-      // 180°
+      // 180ï¿½
       Assert.AreEqual(-1.0f, VectorF.Dot(unitX, -unitX));
       Assert.AreEqual(-1.0f, VectorF.Dot(unitY, -unitY));
       Assert.AreEqual(-1.0f, VectorF.Dot(unitZ, -unitZ));
       Assert.AreEqual(-1.0f, VectorF.Dot(unitW, -unitW));
 
-      // 90°
+      // 90ï¿½
       Assert.AreEqual(0.0f, VectorF.Dot(unitX, unitY));
       Assert.AreEqual(0.0f, VectorF.Dot(unitY, unitZ));
       Assert.AreEqual(0.0f, VectorF.Dot(unitZ, unitW));
       Assert.AreEqual(0.0f, VectorF.Dot(unitW, unitX));
 
-      // 45°
+      // 45ï¿½
       float angle = (float)Math.Acos(VectorF.Dot(new VectorF(new float[] { 1, 1, 0, 0 }).Normalized, unitX));
       Assert.IsTrue(Numeric.AreEqual(MathHelper.ToRadians(45), angle));
       angle = (float)Math.Acos(VectorF.Dot(new VectorF(new float[] { 0, 1, 1, 0 }).Normalized, unitY));
@@ -1364,10 +1364,10 @@ namespace DigitalRune.Mathematics.Algebra.Tests
 
 
     [Test]
-    public void ExplicitCastToVector3F()
+    public void ExplicitCastToVector3()
     {
       VectorF v = new VectorF(new[] { 1.1f, 2.2f, 3.3f });
-      Vector3F u = (Vector3F)v;
+      Vector3 u = (Vector3)v;
 
       Assert.AreEqual(1.1f, u[0]);
       Assert.AreEqual(2.2f, u[1]);
@@ -1376,10 +1376,10 @@ namespace DigitalRune.Mathematics.Algebra.Tests
 
 
     [Test]
-    public void ToVector3F()
+    public void ToVector3()
     {
       VectorF v = new VectorF(new[] { 1.1f, 2.2f, 3.3f });
-      Vector3F u = v.ToVector3F();
+      Vector3 u = v.ToVector3();
 
       Assert.AreEqual(1.1f, u[0]);
       Assert.AreEqual(2.2f, u[1]);
@@ -1389,19 +1389,19 @@ namespace DigitalRune.Mathematics.Algebra.Tests
 
     [Test]
     [ExpectedException(typeof(ArgumentNullException))]
-    public void ExplicitCastToVector3FException1()
+    public void ExplicitCastToVector3Exception1()
     {
       VectorF v = null;
-      Vector3F u = (Vector3F)v;
+      Vector3 u = (Vector3)v;
     }
 
 
     [Test]
     [ExpectedException(typeof(InvalidCastException))]
-    public void ExplicitCastToVector3FException2()
+    public void ExplicitCastToVector3Exception2()
     {
       VectorF v = new VectorF(new[] { 1.1f, 2.2f, 3.3f, 4.4f, 5.5f });
-      Vector3F u = (Vector3F)v;
+      Vector3 u = (Vector3)v;
     }
 
 

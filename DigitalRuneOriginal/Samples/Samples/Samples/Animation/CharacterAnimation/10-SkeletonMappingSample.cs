@@ -30,7 +30,7 @@ Dude skeleton (left) to the Marine skeleton (right).",
       // Get dude model and start animation on the dude.
       var modelNode = ContentManager.Load<ModelNode>("Dude/Dude");
       _dudeMeshNode = modelNode.GetSubtree().OfType<MeshNode>().First().Clone();
-      _dudeMeshNode.PoseLocal = new Pose(new Vector3F(-0.5f, 0, 0), Matrix33F.CreateRotationY(ConstantsF.Pi));
+      _dudeMeshNode.PoseLocal = new Pose(new Vector3(-0.5f, 0, 0), Matrix.CreateRotationY(ConstantsF.Pi));
       SampleHelper.EnablePerPixelLighting(_dudeMeshNode);
       GraphicsScreen.Scene.Children.Add(_dudeMeshNode);
 
@@ -45,7 +45,7 @@ Dude skeleton (left) to the Marine skeleton (right).",
       // Get marine model - do not start any animations on the marine model.
       modelNode = ContentManager.Load<ModelNode>("Marine/PlayerMarine");
       _marineMeshNode = modelNode.GetSubtree().OfType<MeshNode>().First().Clone();
-      _marineMeshNode.PoseLocal = new Pose(new Vector3F(0.5f, 0, 0), Matrix33F.CreateRotationY(ConstantsF.Pi));
+      _marineMeshNode.PoseLocal = new Pose(new Vector3(0.5f, 0, 0), Matrix.CreateRotationY(ConstantsF.Pi));
       SampleHelper.EnablePerPixelLighting(_marineMeshNode);
       GraphicsScreen.Scene.Children.Add(_marineMeshNode);
 

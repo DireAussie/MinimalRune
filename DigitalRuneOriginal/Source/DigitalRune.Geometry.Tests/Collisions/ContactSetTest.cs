@@ -16,9 +16,9 @@ namespace DigitalRune.Geometry.Collisions.Tests
       CollisionObject b = new CollisionObject();
 
       ContactSet set = ContactSet.Create(a, b);
-      set.Add(ContactHelper.CreateContact(set, new Vector3F(1, 2, 3), new Vector3F(0, 0, 1), 10, false));
-      set.Add(ContactHelper.CreateContact(set, new Vector3F(4, 5, 6), new Vector3F(0, 0, 1), 10, false));
-      set.Add(ContactHelper.CreateContact(set, new Vector3F(7, 8, 9), new Vector3F(0, 0, 1), 10, false));
+      set.Add(ContactHelper.CreateContact(set, new Vector3(1, 2, 3), new Vector3(0, 0, 1), 10, false));
+      set.Add(ContactHelper.CreateContact(set, new Vector3(4, 5, 6), new Vector3(0, 0, 1), 10, false));
+      set.Add(ContactHelper.CreateContact(set, new Vector3(7, 8, 9), new Vector3(0, 0, 1), 10, false));
 
       ContactSet swapped = set.Swapped;
       Assert.AreEqual(set.ObjectA, swapped.ObjectB);
@@ -60,9 +60,9 @@ namespace DigitalRune.Geometry.Collisions.Tests
     //  CollisionObject b = new CollisionObject { Name = "b" };
 
     //  ContactSet set = ContactSet.Create(a, b);
-    //  set.Add(ContactHelper.CreateContact(set, new Vector3F(1, 2, 3), new Vector3F(0, 0, 1), 10, false));
-    //  set.Add(ContactHelper.CreateContact(set, new Vector3F(4, 5, 6), new Vector3F(0, 0, 1), 10, false));
-    //  set.Add(ContactHelper.CreateContact(set, new Vector3F(7, 8, 9), new Vector3F(0, 0, 1), 10, false));
+    //  set.Add(ContactHelper.CreateContact(set, new Vector3(1, 2, 3), new Vector3(0, 0, 1), 10, false));
+    //  set.Add(ContactHelper.CreateContact(set, new Vector3(4, 5, 6), new Vector3(0, 0, 1), 10, false));
+    //  set.Add(ContactHelper.CreateContact(set, new Vector3(7, 8, 9), new Vector3(0, 0, 1), 10, false));
 
     //  Assert.AreEqual("ContactSet{ObjectA=\"a\", ObjectB=\"b\", Count=3}", set.ToString());
     //}

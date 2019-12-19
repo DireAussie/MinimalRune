@@ -110,12 +110,12 @@ namespace Samples.Physics.Specialized
       Pose pose = _characterControllerObject.Pose;
 
       // Create offset vector from player to the camera.
-      Matrix33F orientation = pose.Orientation;
-      Vector3F thirdPersonDistance = orientation * new Vector3F(0, 0, _thirdPersonDistance);
+      Matrix orientation = pose.Orientation;
+      Vector3 thirdPersonDistance = orientation * new Vector3(0, 0, _thirdPersonDistance);
 
       // Compute camera position. 
-      Vector3F eyeHeight = new Vector3F(0, _characterControllerObject.CharacterController.Height - 0.12f, 0);
-      Vector3F position = pose.Position + eyeHeight + thirdPersonDistance;
+      Vector3 eyeHeight = new Vector3(0, _characterControllerObject.CharacterController.Height - 0.12f, 0);
+      Vector3 position = pose.Position + eyeHeight + thirdPersonDistance;
 
       // Update SceneNode.LastPoseWorld - this is required for some effects, like
       // camera motion blur. 

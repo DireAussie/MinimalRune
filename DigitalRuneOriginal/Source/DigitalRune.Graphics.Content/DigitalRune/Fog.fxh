@@ -39,7 +39,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#ifndef DIGITALRUNE_FOG_FXH
+
 #define DIGITALRUNE_FOG_FXH
 
 
@@ -197,4 +197,4 @@ float3 FogPhaseFunction(float cosTheta, float3 g)
   // want to keep the overall fog brightness. That means the average value in each
   // direction should be 1.
 }
-#endif
+

@@ -98,7 +98,7 @@ namespace DigitalRune.Editor
 
             DockStrategy.Show(dockTabItem);
 
-#if DEBUG
+
             // Validation
             var activatable = dockTabItem as IActivatable;
             if (activatable != null)
@@ -111,7 +111,7 @@ namespace DigitalRune.Editor
             var screen = dockTabItem as IScreen;
             if (screen != null)
                 Debug.Assert(screen.Conductor == this);
-#endif
+
         }
 
 
@@ -128,7 +128,7 @@ namespace DigitalRune.Editor
 
             DockStrategy.Close(dockTabItem);
 
-#if DEBUG
+
             // Validation
             var activatable = dockTabItem as IActivatable;
             if (activatable != null)
@@ -141,7 +141,7 @@ namespace DigitalRune.Editor
             var screen = dockTabItem as IScreen;
             if (screen != null)
                 Debug.Assert(screen.Conductor == null);
-#endif
+
 
             return TaskHelper.FromResult(true);
         }

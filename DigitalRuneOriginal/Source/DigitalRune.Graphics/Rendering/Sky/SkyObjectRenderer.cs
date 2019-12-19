@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !WP7
+
 using System;
 using System.Collections.Generic;
 using DigitalRune.Geometry;
@@ -139,7 +139,7 @@ namespace DigitalRune.Graphics.Rendering
       // Camera properties
       var cameraNode = context.CameraNode;
       Pose cameraPose = cameraNode.PoseWorld;
-      Matrix view = (Matrix)new Matrix44F(cameraPose.Orientation.Transposed, new Vector3F(0));
+      Matrix view = (Matrix)new Matrix(cameraPose.Orientation.Transposed, new Vector3(0));
       Matrix projection = cameraNode.Camera.Projection;
       _effectParameterViewProjection.SetValue(view * projection);
 
@@ -157,11 +157,11 @@ namespace DigitalRune.Graphics.Rendering
         node.LastFrame = frame;
 
         // Get billboard axes from scene node pose.
-        Matrix33F orientation = node.PoseWorld.Orientation;
-        Vector3F right = orientation.GetColumn(0);
-        Vector3F up = orientation.GetColumn(1);
-        Vector3F normal = orientation.GetColumn(2);
-        Vector3F forward = -normal;
+        Matrix orientation = node.PoseWorld.Orientation;
+        Vector3 right = orientation.GetColumn(0);
+        Vector3 up = orientation.GetColumn(1);
+        Vector3 normal = orientation.GetColumn(2);
+        Vector3 forward = -normal;
 
         _effectParameterNormal.SetValue((Vector3)(normal));
 
@@ -248,4 +248,4 @@ namespace DigitalRune.Graphics.Rendering
 
   }
 }
-#endif
+

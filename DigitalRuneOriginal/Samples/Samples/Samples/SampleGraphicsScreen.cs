@@ -94,7 +94,7 @@ namespace Samples
       var camera = new Camera(projection);
       _cameraNode2D = new CameraNode(camera)
       {
-        PoseWorld = new Pose(new Vector3F(0, 0, 1000)),
+        PoseWorld = new Pose(new Vector3(0, 0, 1000)),
       };
 
       // Initialize renderers.

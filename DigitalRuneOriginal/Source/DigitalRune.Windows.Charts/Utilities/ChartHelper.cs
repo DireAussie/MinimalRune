@@ -29,11 +29,11 @@ namespace DigitalRune.Windows.Charts
             CultureInfo culture;
             try
             {
-#if SILVERLIGHT
+
                 culture = new CultureInfo(element.Language.IetfLanguageTag);
 #else
                 culture = element.Language.GetSpecificCulture();
-#endif
+
             }
             catch (InvalidOperationException)
             {
@@ -99,7 +99,7 @@ namespace DigitalRune.Windows.Charts
         }
 
 
-#if !SILVERLIGHT
+
         /// <summary>
         /// Defers the specified action until the application is idle.
         /// </summary>
@@ -127,6 +127,6 @@ namespace DigitalRune.Windows.Charts
                 dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, action);
             }
         }
-#endif
+
     }
 }

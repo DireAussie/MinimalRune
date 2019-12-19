@@ -17,12 +17,12 @@ namespace Samples.Animation
 
 
     // The fixed point on the bone in model space.
-    private Vector3F _fixedPointPosition;
-    private Vector3F _fixedPointVelocity;
+    private Vector3 _fixedPointPosition;
+    private Vector3 _fixedPointVelocity;
 
     // The particle connected to the fixed point (in model space).
-    private Vector3F _particlePosition;
-    private Vector3F _particleVelocity;
+    private Vector3 _particlePosition;
+    private Vector3 _particleVelocity;
 
 
     public SkeletonPose SkeletonPose { get; private set; }
@@ -30,14 +30,14 @@ namespace Samples.Animation
     public int BoneIndex { get; private set; }
 
     // The offset of the "fixed point" in bone space.
-    public Vector3F Offset { get; set; }
+    public Vector3 Offset { get; set; }
 
     // Spring and damping strengths.
     public float Spring { get; set; }
     public float Damping { get; set; }
 
 
-    public BoneJiggler(SkeletonPose skeletonPose, int boneIndex, Vector3F offset)
+    public BoneJiggler(SkeletonPose skeletonPose, int boneIndex, Vector3 offset)
     {
       if (skeletonPose == null)
         throw new ArgumentNullException("skeletonPose");
@@ -60,15 +60,15 @@ namespace Samples.Animation
 
     public void Reset()
     {
-      _fixedPointPosition = new Vector3F(float.NaN);
-      _fixedPointVelocity = new Vector3F(float.NaN);
+      _fixedPointPosition = new Vector3(float.NaN);
+      _fixedPointVelocity = new Vector3(float.NaN);
 
-      _particlePosition = new Vector3F(float.NaN);
-      _particleVelocity = new Vector3F(float.NaN);
+      _particlePosition = new Vector3(float.NaN);
+      _particleVelocity = new Vector3(float.NaN);
     }
 
 
-    public void Update(float deltaTime, Matrix44F world)
+    public void Update(float deltaTime, Matrix world)
     {
       if (deltaTime <= 0)
         return;
@@ -113,7 +113,7 @@ namespace Samples.Animation
       var particleLocal = bonePoseWorld.Inverse.TransformPosition(_particlePosition);
 
       // Create rotation between the fixed point vector and the particle vector.
-      var boneTransform = new SrtTransform(QuaternionF.CreateRotation(Offset, particleLocal));
+      var boneTransform = new SrtTransform(Quaternion.CreateRotation(Offset, particleLocal));
       SkeletonPose.SetBoneTransform(BoneIndex, boneTransform);
     }
   }

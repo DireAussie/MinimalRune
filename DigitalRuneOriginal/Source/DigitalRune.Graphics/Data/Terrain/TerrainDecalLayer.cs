@@ -31,9 +31,9 @@ namespace DigitalRune.Graphics
   /// </para>
   /// <code lang="csharp">
   /// <![CDATA[
-  /// var position = new Vector3F(positionX, 0, positionZ);
-  /// var orientation = Matrix33F.CreateRotationY(rotationAngle) * 
-  ///                   Matrix33F.CreateRotationX(-ConstantsF.PiOver2);
+  /// var position = new Vector3(positionX, 0, positionZ);
+  /// var orientation = Matrix.CreateRotationY(rotationAngle) * 
+  ///                   Matrix.CreateRotationX(-ConstantsF.PiOver2);
   /// myDecalLayer.Pose = new Pose(position, orientation);
   /// ]]>
   /// </code>
@@ -150,9 +150,9 @@ namespace DigitalRune.Graphics
     /// This is material parameter. Changing this property affects all terrain layers that share
     /// the same material.
     /// </remarks>
-    public Vector3F DiffuseColor
+    public Vector3 DiffuseColor
     {
-      get { return (Vector3F)GetParameter<Vector3>(true, "DiffuseColor"); }
+      get { return (Vector3)GetParameter<Vector3>(true, "DiffuseColor"); }
       set { SetParameter(true, "DiffuseColor", (Vector3)value); }
     }
 
@@ -165,9 +165,9 @@ namespace DigitalRune.Graphics
     /// This is material parameter. Changing this property affects all terrain layers that share
     /// the same material.
     /// </remarks>
-    public Vector3F SpecularColor
+    public Vector3 SpecularColor
     {
-      get { return (Vector3F)GetParameter<Vector3>(true, "SpecularColor"); }
+      get { return (Vector3)GetParameter<Vector3>(true, "SpecularColor"); }
       set { SetParameter(true, "SpecularColor", (Vector3)value); }
     }
 
@@ -341,7 +341,7 @@ namespace DigitalRune.Graphics
         throw new ArgumentNullException("graphicService");
 
       // Use a down orientation per default.
-      Pose = new Pose(Matrix33F.CreateRotationX(-ConstantsF.PiOver2));
+      Pose = new Pose(Matrix.CreateRotationX(-ConstantsF.PiOver2));
 
       var effect = graphicService.Content.Load<Effect>("DigitalRune/Terrain/TerrainDecalLayer");
       Material = new Material
@@ -353,8 +353,8 @@ namespace DigitalRune.Graphics
       FadeOutEnd = int.MaxValue;
       Width = 1;
       Height = 1;
-      DiffuseColor = new Vector3F(1, 1, 1);
-      SpecularColor = new Vector3F(1, 1, 1);
+      DiffuseColor = new Vector3(1, 1, 1);
+      SpecularColor = new Vector3(1, 1, 1);
       SpecularPower = 10;
       Alpha = 1;
       DiffuseTexture = graphicService.GetDefaultTexture2DWhite();
@@ -381,7 +381,7 @@ namespace DigitalRune.Graphics
         throw new ArgumentNullException("material");
 
       // Use a down orientation per default.
-      Pose = new Pose(Matrix33F.CreateRotationX(-ConstantsF.PiOver2));
+      Pose = new Pose(Matrix.CreateRotationX(-ConstantsF.PiOver2));
 
       Material = material;
       UpdateAabb();
@@ -397,20 +397,20 @@ namespace DigitalRune.Graphics
     {
       // Note: This code was copied from BoxShape. See BoxShape.cs for detailed comments.
 
-      Vector3F halfExtent = new Vector3F(Width / 2, Height / 2, 0);
+      Vector3 halfExtent = new Vector3(Width / 2, Height / 2, 0);
 
-      Matrix33F rotationMatrix = _pose.Orientation;
-      Vector3F worldX = rotationMatrix.GetRow(0);
-      Vector3F worldY = rotationMatrix.GetRow(1);
-      Vector3F worldZ = rotationMatrix.GetRow(2);
+      Matrix rotationMatrix = _pose.Orientation;
+      Vector3 worldX = rotationMatrix.GetRow(0);
+      Vector3 worldY = rotationMatrix.GetRow(1);
+      Vector3 worldZ = rotationMatrix.GetRow(2);
 
-      worldX = Vector3F.Absolute(worldX);
-      worldY = Vector3F.Absolute(worldY);
-      worldZ = Vector3F.Absolute(worldZ);
+      worldX = Vector3.Absolute(worldX);
+      worldY = Vector3.Absolute(worldY);
+      worldZ = Vector3.Absolute(worldZ);
 
-      Vector3F halfExtentWorld = new Vector3F(Vector3F.Dot(halfExtent, worldX),
-                                              Vector3F.Dot(halfExtent, worldY),
-                                              Vector3F.Dot(halfExtent, worldZ));
+      Vector3 halfExtentWorld = new Vector3(Vector3.Dot(halfExtent, worldX),
+                                              Vector3.Dot(halfExtent, worldY),
+                                              Vector3.Dot(halfExtent, worldZ));
 
       Aabb = new Aabb(_pose.Position - halfExtentWorld, _pose.Position + halfExtentWorld);
     }
@@ -423,10 +423,10 @@ namespace DigitalRune.Graphics
       // can draw outside the given rectangle.
       float halfWidth = Width / 2;
       float halfHeight = Height / 2;
-      Vector3F decalTopLeftWorld = _pose.ToWorldPosition(new Vector3F(-halfWidth, -halfHeight, 0));
-      Vector3F decalTopRightWorld = _pose.ToWorldPosition(new Vector3F(halfWidth, -halfHeight, 0));
-      Vector3F decalBottomLeftWorld = _pose.ToWorldPosition(new Vector3F(-halfWidth, halfHeight, 0));
-      Vector3F decalBottomRightWorld = _pose.ToWorldPosition(new Vector3F(halfWidth, halfHeight, 0));
+      Vector3 decalTopLeftWorld = _pose.ToWorldPosition(new Vector3(-halfWidth, -halfHeight, 0));
+      Vector3 decalTopRightWorld = _pose.ToWorldPosition(new Vector3(halfWidth, -halfHeight, 0));
+      Vector3 decalBottomLeftWorld = _pose.ToWorldPosition(new Vector3(-halfWidth, halfHeight, 0));
+      Vector3 decalBottomRightWorld = _pose.ToWorldPosition(new Vector3(halfWidth, halfHeight, 0));
 
       // We store XZ position in the POSITION attribute.
       // The TEXCOORD0 attribute already contains the decal texture coordinates.

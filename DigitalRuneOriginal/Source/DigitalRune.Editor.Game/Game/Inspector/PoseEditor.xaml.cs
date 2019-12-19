@@ -334,8 +334,8 @@ namespace DigitalRune.Editor.Game
             {
                 if (_valueType == typeof(Pose))
                 {
-                    Value = new Pose(new Vector3F((float)X, (float)Y, (float)Z),
-                                     new Matrix33F((float)M00, (float)M01, (float)M02,
+                    Value = new Pose(new Vector3((float)X, (float)Y, (float)Z),
+                                     new Matrix((float)M00, (float)M01, (float)M02,
                                                    (float)M10, (float)M11, (float)M12,
                                                    (float)M20, (float)M21, (float)M22));
                 }

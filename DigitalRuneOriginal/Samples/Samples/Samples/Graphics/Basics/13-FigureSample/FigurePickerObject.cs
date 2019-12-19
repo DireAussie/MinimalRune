@@ -65,7 +65,7 @@ namespace Samples.Graphics
         pickingShape = new TransformedShape(
           new GeometricObject(
             new CylinderShape(radius, projection.Far),
-            new Pose(new Vector3F(0, 0, -projection.Far / 2), Matrix33F.CreateRotationX(ConstantsF.PiOver2))));
+            new Pose(new Vector3(0, 0, -projection.Far / 2), Matrix.CreateRotationX(ConstantsF.PiOver2))));
       }
       else
       {
@@ -76,7 +76,7 @@ namespace Samples.Graphics
         // Compute the radius at the far plane that projects to 10 pixels in screen space.
         float radius = viewport.Unproject(
           new Vector3(viewport.Width / 2.0f + pickingRadius, viewport.Height / 2.0f, 1),
-          (Matrix)_cameraObject.CameraNode.Camera.Projection.ToMatrix44F(),
+          (Matrix)_cameraObject.CameraNode.Camera.Projection.ToMatrix(),
           Matrix.Identity,
           Matrix.Identity).X;
 
@@ -84,7 +84,7 @@ namespace Samples.Graphics
         pickingShape = new TransformedShape(
           new GeometricObject(
             new ConeShape(radius, projection.Far),
-            new Pose(new Vector3F(0, 0, -projection.Far), Matrix33F.CreateRotationX(ConstantsF.PiOver2))));
+            new Pose(new Vector3(0, 0, -projection.Far), Matrix.CreateRotationX(ConstantsF.PiOver2))));
       }
 
       // Create collision object with the picking shape.
@@ -136,8 +136,8 @@ namespace Samples.Graphics
         // Figure nodes which were picked, have the color info in the UserData. 
         if (figureNode.UserData != null)
         {
-          figureNode.StrokeColor = ((Pair<Vector3F>)figureNode.UserData).First;
-          figureNode.FillColor = ((Pair<Vector3F>)figureNode.UserData).Second;
+          figureNode.StrokeColor = ((Pair<Vector3>)figureNode.UserData).First;
+          figureNode.FillColor = ((Pair<Vector3>)figureNode.UserData).Second;
           figureNode.UserData = null;
         }
       }
@@ -152,10 +152,10 @@ namespace Samples.Graphics
           _debugRenderer.DrawText("Picked node: " + figureNode.Name);
 
           // Store original color in UserData.
-          figureNode.UserData = new Pair<Vector3F>(figureNode.StrokeColor, figureNode.FillColor);
+          figureNode.UserData = new Pair<Vector3>(figureNode.StrokeColor, figureNode.FillColor);
           // Change color.
-          figureNode.StrokeColor = new Vector3F(0.8f, 0.6f, 0.08f);
-          figureNode.FillColor = new Vector3F(1, 0.7f, 0.1f);
+          figureNode.StrokeColor = new Vector3(0.8f, 0.6f, 0.08f);
+          figureNode.FillColor = new Vector3(1, 0.7f, 0.1f);
         }
       }
 

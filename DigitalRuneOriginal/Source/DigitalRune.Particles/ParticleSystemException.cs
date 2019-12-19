@@ -80,7 +80,7 @@ namespace DigitalRune.Particles
 
 
 /*
-#if !NETFX_CORE && !WP7 && !WP8 && !XBOX
+
     /// <summary>
     /// Initializes a new instance of the <see cref="ParticleSystemException"/> class with
     /// serialized data.
@@ -103,7 +103,7 @@ namespace DigitalRune.Particles
       : base(info, context)
     {
     }
-#endif
+
 */
   }
 }

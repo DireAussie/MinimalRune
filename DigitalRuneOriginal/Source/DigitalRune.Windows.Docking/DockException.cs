@@ -3,9 +3,9 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX
+
 using System.Runtime.Serialization;
-#endif
+
 
 
 namespace DigitalRune.Windows.Docking
@@ -13,9 +13,9 @@ namespace DigitalRune.Windows.Docking
     /// <summary>
     /// The exception that is thrown when a general error in the docking library occurs.
     /// </summary>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX
+
     [Serializable]
-#endif
+
     public class DockException : Exception
     {
         /// <overloads>
@@ -59,7 +59,7 @@ namespace DigitalRune.Windows.Docking
         }
 
 
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX
+
         /// <summary>
         /// Initializes a new instance of the <see cref="DockException"/> class with serialized
         /// data.
@@ -82,6 +82,6 @@ namespace DigitalRune.Windows.Docking
             : base(info, context)
         {
         }
-#endif
+
     }
 }

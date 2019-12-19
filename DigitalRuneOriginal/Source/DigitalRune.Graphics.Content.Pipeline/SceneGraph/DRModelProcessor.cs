@@ -13,9 +13,9 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Content.Pipeline.Graphics;
 using Microsoft.Xna.Framework.Content.Pipeline.Processors;
-#if ANIMATION
+
 using DigitalRune.Animation.Character;
-#endif
+
 
 
 namespace DigitalRune.Graphics.Content.Pipeline
@@ -53,10 +53,10 @@ namespace DigitalRune.Graphics.Content.Pipeline
 
     // Skeleton and animations
     private BoneContent _rootBone;
-#if ANIMATION
+
     private Skeleton _skeleton;
     private Dictionary<string, SkeletonKeyFrameAnimation> _animations;
-#endif
+
 
     // Vertex and index buffers
     private List<VertexBufferContent> _vertexBuffers;     // One vertex buffer for each VertexDeclaration.
@@ -242,15 +242,15 @@ namespace DigitalRune.Graphics.Content.Pipeline
         _rootBone = MeshHelper.FindSkeleton(input);
         if (_rootBone != null)
         {
-#if ANIMATION
+
           MergeAnimationFiles();
-#endif
+
           BakeTransforms(input);
           TransformModel();
-#if ANIMATION
+
           BuildSkeleton();
           BuildAnimations();
-#endif
+
           SetSkinnedMaterial();
         }
         else

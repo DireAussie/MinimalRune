@@ -65,7 +65,7 @@ namespace DigitalRune.Windows
 
     //--------------------------------------------------------------
 
-#if !SILVERLIGHT && !WINDOWS_PHONE
+
     private void Loaded(object sender, RoutedEventArgs e)
     {
       _targetElement.Loaded -= Loaded;
@@ -90,7 +90,7 @@ namespace DigitalRune.Windows
       }
 
     }
-#endif
+
 
 
     /// <summary>
@@ -108,7 +108,7 @@ namespace DigitalRune.Windows
     {
       _targetElement = element;
 
-#if !SILVERLIGHT && !WINDOWS_PHONE
+
       _targetElement.Loaded += Loaded;
 #else
       foreach (MultiBinding multiBinding in Bindings)
@@ -146,7 +146,7 @@ namespace DigitalRune.Windows
         Binding binding = new Binding("ConvertedValue") { Source = multiBinding };
         element.SetBinding(targetDependencyProperty, binding);
       }
-#endif
+
     }
 
   }

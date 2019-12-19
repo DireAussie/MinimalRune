@@ -1,4 +1,4 @@
-﻿#if !SILVERLIGHT && !WINDOWS_PHONE
+﻿
 using System;
 using System.Globalization;
 using System.Windows;
@@ -74,4 +74,4 @@ namespace DigitalRune.Windows.Tests
         }
     }
 }
-#endif
+

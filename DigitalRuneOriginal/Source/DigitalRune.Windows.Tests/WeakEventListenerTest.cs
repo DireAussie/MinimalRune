@@ -1,4 +1,4 @@
-﻿#if !SILVERLIGHT && !WINDOWS_PHONE
+﻿
 using System;
 using System.ComponentModel;
 using NUnit.Framework;
@@ -72,4 +72,4 @@ namespace DigitalRune.Windows.Tests
         }
     }
 }
-#endif
+

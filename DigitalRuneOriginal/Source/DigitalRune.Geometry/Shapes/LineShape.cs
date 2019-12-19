@@ -25,9 +25,9 @@ namespace DigitalRune.Geometry.Shapes
   /// is always stored as a normalized vector.
   /// </para>
   /// </remarks>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
+
   public class LineShape : Shape
   {
     //--------------------------------------------------------------
@@ -45,7 +45,7 @@ namespace DigitalRune.Geometry.Shapes
     /// </summary>
     /// <value>A point on the line.</value>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly", MessageId = "OnLine")]
-    public Vector3F PointOnLine
+    public Vector3 PointOnLine
     {
       get { return _pointOnLine; }
       set
@@ -57,7 +57,7 @@ namespace DigitalRune.Geometry.Shapes
         }
       }
     }
-    private Vector3F _pointOnLine;
+    private Vector3 _pointOnLine;
 
 
     /// <summary>
@@ -67,7 +67,7 @@ namespace DigitalRune.Geometry.Shapes
     /// <exception cref="ArgumentException">
     /// <paramref name="value"/> is not normalized.
     /// </exception>
-    public Vector3F Direction
+    public Vector3 Direction
     {
       get { return _direction; }
       set
@@ -82,14 +82,14 @@ namespace DigitalRune.Geometry.Shapes
         }
       }
     }
-    private Vector3F _direction;
+    private Vector3 _direction;
 
 
     /// <summary>
     /// Gets an inner point.
     /// </summary>
     /// <value>An inner point - same as <see cref="PointOnLine"/>.</value>
-    public override Vector3F InnerPoint
+    public override Vector3 InnerPoint
     {
       get { return _pointOnLine; }
     }
@@ -132,7 +132,7 @@ namespace DigitalRune.Geometry.Shapes
     /// Creates a line through the origin in x-axis direction.
     /// </remarks>
     public LineShape()
-      : this(Vector3F.Zero, Vector3F.UnitX)
+      : this(Vector3.Zero, Vector3.UnitX)
     {
     }
 
@@ -146,7 +146,7 @@ namespace DigitalRune.Geometry.Shapes
     /// <paramref name="direction"/> is not normalized.
     /// </exception>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly", MessageId = "OnLine")]
-    public LineShape(Vector3F pointOnLine, Vector3F direction)
+    public LineShape(Vector3 pointOnLine, Vector3 direction)
     {
       if (!direction.IsNumericallyNormalized)
         throw new ArgumentException("The line direction must be normalized.", "direction");
@@ -198,16 +198,16 @@ namespace DigitalRune.Geometry.Shapes
 
 
     /// <inheritdoc/>
-    public override Aabb GetAabb(Vector3F scale, Pose pose)
+    public override Aabb GetAabb(Vector3 scale, Pose pose)
     {
       // Note: Compute AABB in world space.
-      Vector3F direction = pose.ToWorldDirection(_direction * scale);
-      Vector3F pointOnLine = pose.ToWorldPosition(_pointOnLine * scale);
+      Vector3 direction = pose.ToWorldDirection(_direction * scale);
+      Vector3 pointOnLine = pose.ToWorldPosition(_pointOnLine * scale);
 
       // Most of the time the AABB fills the whole space. Only when the line is axis-aligned then
       // the AABB is different.
-      Vector3F minimum = new Vector3F(float.NegativeInfinity);
-      Vector3F maximum = new Vector3F(float.PositiveInfinity);
+      Vector3 minimum = new Vector3(float.NegativeInfinity);
+      Vector3 maximum = new Vector3(float.PositiveInfinity);
 
       // Using numerical comparison we "clamp" the line into an axis-aligned plane if possible.
       if (Numeric.IsZero(direction.X))
@@ -255,8 +255,8 @@ namespace DigitalRune.Geometry.Shapes
     /// </remarks>
     protected override TriangleMesh OnGetMesh(float absoluteDistanceThreshold, int iterationLimit)
     {
-      Vector3F start = PointOnLine - Direction * (MeshSize / 2);
-      Vector3F end = PointOnLine + Direction * (MeshSize / 2);
+      Vector3 start = PointOnLine - Direction * (MeshSize / 2);
+      Vector3 end = PointOnLine + Direction * (MeshSize / 2);
       // Make a mesh with 1 degenerate triangle
       TriangleMesh mesh = new TriangleMesh();
       mesh.Add(new Triangle

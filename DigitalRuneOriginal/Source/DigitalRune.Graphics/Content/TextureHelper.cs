@@ -3450,12 +3450,12 @@ namespace DigitalRune.Graphics.Content
       if (texture == null)
         throw new ArgumentNullException("texture");
 
-#if SINGLE_THREADED
+
       foreach (var image in texture.Images)
         FlipX(image);
 #else
       Parallel.ForEach(texture.Images, FlipX);
-#endif
+
     }
 
 
@@ -3509,12 +3509,12 @@ namespace DigitalRune.Graphics.Content
       if (texture == null)
         throw new ArgumentNullException("texture");
 
-#if SINGLE_THREADED
+
       foreach (var image in texture.Images)
         FlipY(image);
 #else
       Parallel.ForEach(texture.Images, FlipY);
-#endif
+
     }
 
 
@@ -3637,12 +3637,12 @@ namespace DigitalRune.Graphics.Content
 
       var rotatedTexture = new Texture(description);
 
-#if SINGLE_THREADED
+
       for (int i = 0; i < texture.Images.Count; i++)
         Rotate(texture.Images[i], rotatedTexture.Images[i], degrees);
 #else
       Parallel.For(0, texture.Images.Count, i => Rotate(texture.Images[i], rotatedTexture.Images[i], degrees));
-#endif
+
 
       return rotatedTexture;
     }
@@ -3744,12 +3744,12 @@ namespace DigitalRune.Graphics.Content
         throw new ArgumentException(message, "gamma");
       }
 
-#if SINGLE_THREADED
+
       foreach (var image in texture.Images)
         GammaToLinear(image, gamma);
 #else
       Parallel.ForEach(texture.Images, image => GammaToLinear(image, gamma));
-#endif
+
     }
 
 
@@ -3781,11 +3781,11 @@ namespace DigitalRune.Graphics.Content
       // ReSharper disable AccessToDisposedClosure
       using (var image4F = new ImageAccessor(image))
       {
-#if SINGLE_THREADED
+
         for (int y = 0; y < image4F.Height; y++)
 #else
         Parallel.For(0, image4F.Height, y =>
-#endif
+
         {
           for (int x = 0; x < image4F.Width; x++)
           {
@@ -3796,9 +3796,9 @@ namespace DigitalRune.Graphics.Content
             image4F.SetPixel(x, y, color);
           }
         }
-#if !SINGLE_THREADED
+
         );
-#endif
+
       }
       // ReSharper restore AccessToDisposedClosure
     }
@@ -3835,12 +3835,12 @@ namespace DigitalRune.Graphics.Content
         throw new ArgumentException(message, "gamma");
       }
 
-#if SINGLE_THREADED
+
       foreach (var image in texture.Images)
         LinearToGamma(image, gamma);
 #else
       Parallel.ForEach(texture.Images, image => LinearToGamma(image, gamma));
-#endif
+
     }
 
 
@@ -3874,11 +3874,11 @@ namespace DigitalRune.Graphics.Content
       // ReSharper disable AccessToDisposedClosure
       using (var image4F = new ImageAccessor(image))
       {
-#if SINGLE_THREADED
+
         for (int y = 0; y < image4F.Height; y++)
 #else
         Parallel.For(0, image4F.Height, y =>
-#endif
+
         {
           for (int x = 0; x < image4F.Width; x++)
           {
@@ -3889,9 +3889,9 @@ namespace DigitalRune.Graphics.Content
             image4F.SetPixel(x, y, color);
           }
         }
-#if !SINGLE_THREADED
+
 );
-#endif
+
       }
       // ReSharper restore AccessToDisposedClosure
     }
@@ -3921,12 +3921,12 @@ namespace DigitalRune.Graphics.Content
       if (BitsPerPixel(texture.Description.Format) != 32)
         throw new NotSupportedException(string.Format("The texture format ({0}) is not supported.", texture.Description.Format));
 
-#if SINGLE_THREADED
+
       foreach (var image in texture.Images)
         ApplyColorKey(image, r, g, b, a);
 #else
       Parallel.ForEach(texture.Images, image => ApplyColorKey(image, r, g, b, a));
-#endif
+
     }
 
 
@@ -3996,12 +3996,12 @@ namespace DigitalRune.Graphics.Content
       if (texture == null)
         throw new ArgumentNullException("texture");
 
-#if SINGLE_THREADED
+
       foreach (var image in texture.Images)
         ApplyColorKey(image, colorKey);
 #else
       Parallel.ForEach(texture.Images, image => ApplyColorKey(image, colorKey));
-#endif
+
     }
 
 
@@ -4021,11 +4021,11 @@ namespace DigitalRune.Graphics.Content
       // ReSharper disable AccessToDisposedClosure
       using (var image4F = new ImageAccessor(image))
       {
-#if SINGLE_THREADED
+
         for (int y = 0; y < image4F.Height; y++)
 #else
         Parallel.For(0, image4F.Height, y =>
-#endif
+
         {
           for (int x = 0; x < image4F.Width; x++)
           {
@@ -4034,9 +4034,9 @@ namespace DigitalRune.Graphics.Content
               image4F.SetPixel(x, y, new Vector4F(color.X, color.Y, color.Z, 0));
           }
         }
-#if !SINGLE_THREADED
+
         );
-#endif
+
       }
     }
 
@@ -4059,12 +4059,12 @@ namespace DigitalRune.Graphics.Content
       if (texture == null)
         throw new ArgumentNullException("texture");
 
-#if SINGLE_THREADED
+
       foreach (var image in texture.Images)
         PremultiplyAlpha(image);
 #else
       Parallel.ForEach(texture.Images, PremultiplyAlpha);
-#endif
+
     }
 
 
@@ -4083,11 +4083,11 @@ namespace DigitalRune.Graphics.Content
       // ReSharper disable AccessToDisposedClosure
       using (var image4F = new ImageAccessor(image))
       {
-#if SINGLE_THREADED
+
         for (int y = 0; y < image4F.Height; y++)
 #else
         Parallel.For(0, image4F.Height, y =>
-#endif
+
         {
           for (int x = 0; x < image4F.Width; x++)
           {
@@ -4101,9 +4101,9 @@ namespace DigitalRune.Graphics.Content
             }
           }
         }
-#if !SINGLE_THREADED
+
         );
-#endif
+
       }
       // ReSharper restore AccessToDisposedClosure
     }
@@ -4328,31 +4328,31 @@ namespace DigitalRune.Graphics.Content
 
       int mipLevels = texture.Description.MipLevels;
       int arraySize = texture.Description.ArraySize;
-#if SINGLE_THREADED
+
       for (int arrayIndex = 0; arrayIndex < arraySize; arrayIndex++)
 #else
       Parallel.For(0, arraySize, arrayIndex =>
-#endif
+
       {
         int index0 = texture.GetImageIndex(0, arrayIndex, 0);
         float coverage = GetAlphaTestCoverage(texture.Images[index0], referenceAlpha);
 
-#if SINGLE_THREADED
+
         for (int mipIndex = 0; mipIndex < mipLevels; mipIndex++)
 #else
         Parallel.For(1, mipLevels, mipIndex =>
-#endif
+
         {
           int index = texture.GetImageIndex(mipIndex, arrayIndex, 0);
           ScaleAlphaToCoverage(texture.Images[index], referenceAlpha, coverage, premultipliedAlpha);
         }
-#if !SINGLE_THREADED
+
         );
-#endif
+
       }
-#if !SINGLE_THREADED
+
       );
-#endif
+
     }
 
 
@@ -4402,11 +4402,11 @@ namespace DigitalRune.Graphics.Content
         // ReSharper disable AccessToDisposedClosure
         using (var image4F = new ImageAccessor(image))
         {
-#if SINGLE_THREADED
+
           for (int y = 0; y < image4F.Height; y++)
 #else
           Parallel.For(0, image4F.Height, y =>
-#endif
+
           {
             for (int x = 0; x < image4F.Width; x++)
             {
@@ -4432,9 +4432,9 @@ namespace DigitalRune.Graphics.Content
               image4F.SetPixel(x, y, color);
             }
           }
-#if !SINGLE_THREADED
+
           );
-#endif
+
         }
         // ReSharper restore AccessToDisposedClosure
       }
@@ -4443,11 +4443,11 @@ namespace DigitalRune.Graphics.Content
         // ReSharper disable AccessToDisposedClosure
         using (var image4F = new ImageAccessor(image))
         {
-#if SINGLE_THREADED
+
           for (int y = 0; y < image4F.Height; y++)
 #else
           Parallel.For(0, image4F.Height, y =>
-#endif
+
           {
             for (int x = 0; x < image4F.Width; x++)
             {
@@ -4456,9 +4456,9 @@ namespace DigitalRune.Graphics.Content
               image4F.SetPixel(x, y, color);
             }
           }
-#if !SINGLE_THREADED
+
           );
-#endif
+
         }
         // ReSharper restore AccessToDisposedClosure
       }
@@ -4485,12 +4485,12 @@ namespace DigitalRune.Graphics.Content
       if (texture == null)
         throw new ArgumentNullException("texture");
 
-#if SINGLE_THREADED
+
       foreach (var image in texture.Images)
         UnpackNormals(image);
 #else
       Parallel.ForEach(texture.Images, UnpackNormals);
-#endif
+
     }
 
 
@@ -4510,11 +4510,11 @@ namespace DigitalRune.Graphics.Content
       // ReSharper disable AccessToDisposedClosure
       using (var image4F = new ImageAccessor(image))
       {
-#if SINGLE_THREADED
+
         for (int y = 0; y < image4F.Height; y++)
 #else
         Parallel.For(0, image4F.Height, y =>
-#endif
+
         {
           for (int x = 0; x < image4F.Width; x++)
           {
@@ -4526,9 +4526,9 @@ namespace DigitalRune.Graphics.Content
             image4F.SetPixel(x, y, color);
           }
         }
-#if !SINGLE_THREADED
+
         );
-#endif
+
       }
       // ReSharper restore AccessToDisposedClosure
     }
@@ -4553,12 +4553,12 @@ namespace DigitalRune.Graphics.Content
       if (texture == null)
         throw new ArgumentNullException("texture");
 
-#if SINGLE_THREADED
+
       foreach (var image in texture.Images)
         ProcessNormals(image, invertY);
 #else
       Parallel.ForEach(texture.Images, image => ProcessNormals(image, invertY));
-#endif
+
     }
 
 
@@ -4580,20 +4580,20 @@ namespace DigitalRune.Graphics.Content
       // ReSharper disable AccessToDisposedClosure
       using (var image4F = new ImageAccessor(image))
       {
-#if SINGLE_THREADED
+
         for (int y = 0; y < image4F.Height; y++)
 #else
         Parallel.For(0, image4F.Height, y =>
-#endif
+
         {
           for (int x = 0; x < image4F.Width; x++)
           {
             Vector4F v = image4F.GetPixel(x, y);
-            Vector3F normal = new Vector3F(v.X, v.Y, v.Z);
+            Vector3 normal = new Vector3(v.X, v.Y, v.Z);
 
             // Renormalize normals. (Important for higher mipmap levels.)
             if (!normal.TryNormalize())
-              normal = new Vector3F(0, 0, 1);
+              normal = new Vector3(0, 0, 1);
 
             // Convert to DXT5nm (xGxR).
             v.X = 0.0f;
@@ -4604,9 +4604,9 @@ namespace DigitalRune.Graphics.Content
             image4F.SetPixel(x, y, v);
           }
         }
-#if !SINGLE_THREADED
+
         );
-#endif
+
       }
       // ReSharper restore AccessToDisposedClosure
     }

@@ -109,22 +109,22 @@ namespace Samples.Particles
         DefaultEmissionRate = 60,
       });
 
-      ps.Parameters.AddVarying<Vector3F>(ParticleParameterNames.Position);
+      ps.Parameters.AddVarying<Vector3>(ParticleParameterNames.Position);
       ps.Effectors.Add(new StartPositionEffector
       {
         Parameter = ParticleParameterNames.Position,
         Distribution = new BoxDistribution
         {
-          MinValue = new Vector3F(-0.6f, 0.0f, -0.6f),
-          MaxValue = new Vector3F(0.6f, 3.0f, 0.6f)
+          MinValue = new Vector3(-0.6f, 0.0f, -0.6f),
+          MaxValue = new Vector3(0.6f, 3.0f, 0.6f)
         }
       });
 
-      ps.Parameters.AddVarying<Vector3F>(ParticleParameterNames.Direction);
+      ps.Parameters.AddVarying<Vector3>(ParticleParameterNames.Direction);
       ps.Effectors.Add(new StartDirectionEffector
       {
         Parameter = ParticleParameterNames.Direction,
-        DefaultValue = Vector3F.Up,
+        DefaultValue = Vector3.Up,
       });
 
       ps.Parameters.AddVarying<float>(ParticleParameterNames.LinearSpeed);
@@ -136,8 +136,8 @@ namespace Samples.Particles
 
       ps.Effectors.Add(new LinearVelocityEffector());
 
-      ps.Parameters.AddUniform<Vector3F>(ParticleParameterNames.LinearAcceleration).DefaultValue =
-        new Vector3F(0, 2, 0);
+      ps.Parameters.AddUniform<Vector3>(ParticleParameterNames.LinearAcceleration).DefaultValue =
+        new Vector3(0, 2, 0);
 
       ps.Effectors.Add(new LinearAccelerationEffector());
 
@@ -153,8 +153,8 @@ namespace Samples.Particles
         Value2 = 0.1f,
       });
 
-      ps.Parameters.AddUniform<Vector3F>(ParticleParameterNames.Color).DefaultValue =
-        new Vector3F(0.0f, 1.0f, 1.0f);
+      ps.Parameters.AddUniform<Vector3>(ParticleParameterNames.Color).DefaultValue =
+        new Vector3(0.0f, 1.0f, 1.0f);
 
       ps.Parameters.AddVarying<float>(ParticleParameterNames.Alpha);
       ps.Effectors.Add(new SingleLinearSegment3Effector
@@ -194,14 +194,14 @@ namespace Samples.Particles
         DefaultEmissionRate = 20,
       });
 
-      ps.Parameters.AddVarying<Vector3F>(ParticleParameterNames.Position);
+      ps.Parameters.AddVarying<Vector3>(ParticleParameterNames.Position);
       ps.Effectors.Add(new StartPositionEffector
       {
         Parameter = ParticleParameterNames.Position,
         Distribution = new BoxDistribution
         {
-          MinValue = new Vector3F(-0.6f, 1.4f, -0.6f),
-          MaxValue = new Vector3F(0.6f, 2.1f, 0.6f)
+          MinValue = new Vector3(-0.6f, 1.4f, -0.6f),
+          MaxValue = new Vector3(0.6f, 2.1f, 0.6f)
         }
       });
 
@@ -209,8 +209,8 @@ namespace Samples.Particles
       ps.Parameters.AddUniform<float>(ParticleParameterNames.SizeX).DefaultValue = 0.4f;
       ps.Parameters.AddUniform<float>(ParticleParameterNames.SizeY).DefaultValue = 4.0f;
 
-      ps.Parameters.AddUniform<Vector3F>(ParticleParameterNames.Color).DefaultValue =
-        new Vector3F(0.0f, 1, 1);
+      ps.Parameters.AddUniform<Vector3>(ParticleParameterNames.Color).DefaultValue =
+        new Vector3(0.0f, 1, 1);
 
       ps.Parameters.AddVarying<float>(ParticleParameterNames.Alpha);
       ps.Effectors.Add(new SingleLinearSegment3Effector
@@ -254,27 +254,27 @@ namespace Samples.Particles
         DefaultEmissionRate = 6,
       });
 
-      ps.Parameters.AddVarying<Vector3F>(ParticleParameterNames.Position);
+      ps.Parameters.AddVarying<Vector3>(ParticleParameterNames.Position);
       ps.Effectors.Add(new StartPositionEffector
       {
         Parameter = ParticleParameterNames.Position,
         Distribution = new BoxDistribution
         {
-          MinValue = new Vector3F(-0.6f, 1.5f, -0.6f),
-          MaxValue = new Vector3F(0.6f, 2.0f, 0.6f)
+          MinValue = new Vector3(-0.6f, 1.5f, -0.6f),
+          MaxValue = new Vector3(0.6f, 2.0f, 0.6f)
         }
       });
 
       ps.Parameters.AddUniform<float>(ParticleParameterNames.SizeX).DefaultValue = 0.5f;
 
-      ps.Parameters.AddVarying<Vector3F>(ParticleParameterNames.Color);
-      ps.Effectors.Add(new StartValueEffector<Vector3F>
+      ps.Parameters.AddVarying<Vector3>(ParticleParameterNames.Color);
+      ps.Effectors.Add(new StartValueEffector<Vector3>
       {
         Parameter = ParticleParameterNames.Color,
         Distribution = new LineSegmentDistribution
         {
-          Start = new Vector3F(0, 0.5f, 0.45f),
-          End = new Vector3F(0, 0.5f, 0.55f)
+          Start = new Vector3(0, 0.5f, 0.45f),
+          End = new Vector3(0, 0.5f, 0.55f)
         },
       });
 

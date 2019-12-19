@@ -65,7 +65,7 @@ namespace Samples.Physics
       SphereShape sphereShape = new SphereShape(0.5f);
       for (int i = 0; i < 30; i++)
       {
-        Vector3F position = RandomHelper.Random.NextVector3F(-30, 30);
+        Vector3 position = RandomHelper.Random.NextVector3(-30, 30);
         position.Y = 20;
 
         RigidBody body = new RigidBody(sphereShape)
@@ -78,7 +78,7 @@ namespace Samples.Physics
       BoxShape boxShape = new BoxShape(1, 1, 1);
       for (int i = 0; i < 30; i++)
       {
-        Vector3F position = RandomHelper.Random.NextVector3F(-30, 30);
+        Vector3 position = RandomHelper.Random.NextVector3(-30, 30);
         position.Y = 20;
 
         RigidBody body = new RigidBody(boxShape)

@@ -4,9 +4,9 @@
 
 using System;
 using System.Globalization;
-#if NETFX_CORE || NET45
+
 using System.Reflection;
-#endif
+
 
 
 namespace DigitalRune.ServiceLocation
@@ -47,11 +47,11 @@ namespace DigitalRune.ServiceLocation
             if (instance == null)
                 throw new ArgumentNullException(nameof(instance));
 
-#if !NETFX_CORE && !NET45
+
             if (!serviceType.IsInstanceOfType(instance))
 #else
             if (!serviceType.GetTypeInfo().IsAssignableFrom(instance.GetType().GetTypeInfo()))
-#endif
+
             {
                 string message = string.Format(
                     CultureInfo.InvariantCulture, 
@@ -170,11 +170,11 @@ namespace DigitalRune.ServiceLocation
             if (instanceType == null)
                 throw new ArgumentNullException(nameof(instanceType));
 
-#if !NETFX_CORE && !NET45
+
             if (!serviceType.IsAssignableFrom(instanceType))
 #else
       if (!serviceType.GetTypeInfo().IsAssignableFrom(instanceType.GetTypeInfo()))
-#endif
+
             {
                 string message = string.Format(
                     CultureInfo.InvariantCulture, 

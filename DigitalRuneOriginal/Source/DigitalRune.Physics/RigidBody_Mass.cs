@@ -83,12 +83,12 @@ namespace DigitalRune.Physics
     /// Gets the world space inertia matrix.
     /// </summary>
     /// <value>The world space inertia matrix.</value>
-    internal Matrix33F InertiaWorld
+    internal Matrix InertiaWorld
     {
       get
       {
-        Matrix33F orientationCOM = PoseCenterOfMass.Orientation;
-        return orientationCOM * Matrix33F.CreateScale(MassFrame.Inertia) * orientationCOM.Transposed;
+        Matrix orientationCOM = PoseCenterOfMass.Orientation;
+        return orientationCOM * Matrix.CreateScale(MassFrame.Inertia) * orientationCOM.Transposed;
       }
     }
 
@@ -109,12 +109,12 @@ namespace DigitalRune.Physics
     /// <see cref="Constraint"/>s.
     /// </para>
     /// </remarks>
-    public Matrix33F InertiaInverseWorld
+    public Matrix InertiaInverseWorld
     {
       get { return _inertiaInverseWorld; }
       private set { _inertiaInverseWorld = value; }
     }
-    private Matrix33F _inertiaInverseWorld;
+    private Matrix _inertiaInverseWorld;
 
 
     /// <summary>
@@ -287,7 +287,7 @@ namespace DigitalRune.Physics
       // TODO: Maybe set MassInverse to dirty and do lazy evaluation?
 
       MassInverse = (MotionType == MotionType.Dynamic) ? MassFrame.MassInverse : 0;
-      Vector3F inertiaInverse = (MotionType == MotionType.Dynamic) ? MassFrame.InertiaInverse : Vector3F.Zero;
+      Vector3 inertiaInverse = (MotionType == MotionType.Dynamic) ? MassFrame.InertiaInverse : Vector3.Zero;
 
       if (LockRotationX)
         inertiaInverse.X = 0;
@@ -297,8 +297,8 @@ namespace DigitalRune.Physics
         inertiaInverse.Z = 0;
 
       // TODO: make faster multiplication. Do not convert inertia vector to diagonal matrix with a lot of 0s.
-      Matrix33F orientationCOM = _poseCenterOfMass.Orientation;
-      InertiaInverseWorld = orientationCOM * Matrix33F.CreateScale(inertiaInverse) * orientationCOM.Transposed;
+      Matrix orientationCOM = _poseCenterOfMass.Orientation;
+      InertiaInverseWorld = orientationCOM * Matrix.CreateScale(inertiaInverse) * orientationCOM.Transposed;
     }
 
   }

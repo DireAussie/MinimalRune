@@ -276,11 +276,11 @@ namespace ICSharpCode.AvalonEdit.Utils
 					Debug.Assert(this.left.contents != null);
 					// steal buffer from left side
 					this.contents = this.left.contents;
-					#if DEBUG
+
 					// In debug builds, explicitly mark left node as 'damaged' - but no one else should be using it
 					// because it's not shared.
 					this.left.contents = Empty<T>.Array;
-					#endif
+
 				}
 				this.left = null;
 				right.CopyTo(0, this.contents, lengthOnLeftSide, this.right.length);
@@ -500,7 +500,7 @@ namespace ICSharpCode.AvalonEdit.Utils
 		}
 		
 
-		#if DEBUG
+
 		internal virtual void AppendTreeToString(StringBuilder b, int indent)
 		{
 			b.AppendLine(ToString());
@@ -536,7 +536,7 @@ namespace ICSharpCode.AvalonEdit.Utils
 			AppendTreeToString(b, 0);
 			return b.ToString();
 		}
-		#endif
+
 
 		
 		/// <summary>
@@ -595,7 +595,7 @@ namespace ICSharpCode.AvalonEdit.Utils
 			}
 		}
 		
-		#if DEBUG
+
 		internal override void AppendTreeToString(StringBuilder b, int indent)
 		{
 			RopeNode<T> resultNode;
@@ -615,6 +615,6 @@ namespace ICSharpCode.AvalonEdit.Utils
 		{
 			return "[FunctionNode length=" + length + " initializerRan=" + (initializer == null) + "]";
 		}
-		#endif
+
 	}
 }

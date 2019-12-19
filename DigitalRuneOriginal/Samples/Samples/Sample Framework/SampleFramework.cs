@@ -215,7 +215,7 @@ namespace Samples
     {
       // Automatically find all samples using reflection. Samples are derived from 
       // GameComponent and have a SampleAttribute.
-#if NETFX_CORE
+
       _samples = GetType().GetTypeInfo()
                           .Assembly
                           .DefinedTypes
@@ -229,7 +229,7 @@ namespace Samples
                          .Where(t => typeof(GameComponent).IsAssignableFrom(t)
                                      && SampleAttribute.GetSampleAttribute(t) != null)
                          .ToList();
-#endif
+
 
       _samples.Sort(CompareSamples);
 
@@ -263,11 +263,11 @@ namespace Samples
 
     private void InitializeController()
     {
-#if WINDOWS_PHONE || ANDROID
+
       // Set logical player 1 to first gamepad. On WP the first gamepad is used
       // to check the Windows Phone's Back button.
       _inputService.SetLogicalPlayer(LogicalPlayerIndex.One, PlayerIndex.One);
-#endif
+
     }
 
 
@@ -326,7 +326,7 @@ namespace Samples
       };
       _infoPanel.Children.Add(_controllerTextBlock);
 
-#if XBOX
+
       _buttonsPanel = new StackPanel(); // Not used.
       var infoTextBlock = new TextBlock
       {
@@ -358,10 +358,10 @@ namespace Samples
       AddButton(_buttonsPanel, "Help (F1)", ShowHelpWindow);
       AddButton(_buttonsPanel, "Profile (F3)", ShowProfilerWindow);
       AddButton(_buttonsPanel, "Options (F4)", ShowOptionsWindow);
-#if !NETFX_CORE && !IOS
+
       AddButton(_buttonsPanel, "Exit (Alt-F4)", _game.Exit);
-#endif
-#endif
+
+
 
       // ----- FPS Counter (top right)
       _fpsPanel = new StackPanel
@@ -408,9 +408,9 @@ namespace Samples
       if (panel.Children.Count > 0)
         button.Margin = (panel.Orientation == Orientation.Horizontal) ? new Vector4F(3, 0, 0, 0) : new Vector4F(0, 3, 0, 0);
 
-#if WINDOWS_PHONE || ANDROID || IOS
+
       button.Padding = new Vector4F(15);
-#endif
+
 
       if (clickHandler != null)
         button.Click += (s, e) => clickHandler();
@@ -467,9 +467,9 @@ namespace Samples
       AddButton(buttonsPanel, "Help (F1)", ShowHelpWindow);
       AddButton(buttonsPanel, "Profile (F3)", ShowProfilerWindow);
       AddButton(buttonsPanel, "Options (F4)", ShowOptionsWindow);
-#if !NETFX_CORE && !IOS
+
       AddButton(buttonsPanel, "Exit (Alt-F4)", _game.Exit);
-#endif
+
 
       var label = new TextBlock
       {
@@ -482,11 +482,11 @@ namespace Samples
       {
         Margin = new Vector4F(0, 3, 0, 0),
         Width = 580,
-#if WINDOWS_PHONE || ANDROID || IOS
+
         Height = 300
 #else
         Height = 400
-#endif
+
       };
       panel.Children.Add(tabControl);
 
@@ -533,11 +533,11 @@ namespace Samples
           {
             Content = new TextBlock { Text = title },
             Width = 200,
-#if WINDOWS_PHONE || ANDROID || IOS
+
             Padding = new Vector4F(10),
 #else
             Padding = new Vector4F(0, 5, 0, 5),
-#endif
+
           };
           int sampleIndex = _samples.IndexOf(sample);
           button.Click += (s, e) =>
@@ -784,7 +784,7 @@ namespace Samples
         }
       }
 
-#if !WINDOWS_PHONE && !ANDROID && !IOS
+
       if (!_inputService.IsKeyboardHandled
          // Ignore game pad handled flag otherwise some samples cannot be switched.
          // && !_inputService.IsGamePadHandled(LogicalPlayerIndex.Any)   
@@ -802,7 +802,7 @@ namespace Samples
         if (_inputService.IsPressed(Keys.PageDown, true) || _inputService.IsPressed(Buttons.DPadRight, true, LogicalPlayerIndex.One))
           LoadNextSample();
       }
-#endif
+
     }
 
 
@@ -996,7 +996,7 @@ namespace Samples
 
     private void UpdateController()
     {
-#if !WINDOWS_PHONE && !ANDROID && !IOS
+
       // Check if controller is connected.
       bool controllerIsConnected = _inputService.GetGamePadState(LogicalPlayerIndex.One).IsConnected;
       if (!controllerIsConnected)
@@ -1022,7 +1022,7 @@ namespace Samples
 
       // Show/hide message text.
       _controllerTextBlock.IsVisible = !controllerIsConnected;
-#endif
+
     }
 
 
@@ -1079,7 +1079,7 @@ namespace Samples
     {
       _stringBuilder.Clear();
       _stringBuilder.AppendLine("PROFILE\n\n");
-#if DIGITALRUNE_PROFILE
+
       // Dump profiler.
       _stringBuilder.AppendLine("-------------------------------------------------------------------------------");
       _stringBuilder.AppendLine("Profiler:");
@@ -1101,7 +1101,7 @@ namespace Samples
       }
 #else
       _stringBuilder.Append("Profiling is disabled. To enable profiling, define the conditional compilation symbol 'DIGITALRUNE_PROFILE' in the project.");
-#endif
+
 
       _profilerTextBlock.Text = _stringBuilder.ToString();
     }

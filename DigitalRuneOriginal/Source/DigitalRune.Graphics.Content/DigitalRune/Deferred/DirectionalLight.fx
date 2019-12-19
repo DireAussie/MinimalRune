@@ -170,13 +170,13 @@ void PSShadowTextureAlpha(float2 texCoord : TEXCOORD0, float3 frustumRay : TEXCO
 // Techniques
 //-----------------------------------------------------------------------------
 
-#if !SM4
+
 #define VSTARGET vs_2_0
 #define PSTARGET ps_2_0
 #else
 #define VSTARGET vs_4_0_level_9_3
 #define PSTARGET ps_4_0_level_9_3
-#endif
+
 
 technique
 {

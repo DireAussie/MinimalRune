@@ -8,7 +8,7 @@ using DigitalRune.Mathematics.Algebra;
 namespace DigitalRune.Animation.Traits
 {
   /// <summary>
-  /// Describes the properties of a <see cref="QuaternionF"/>.
+  /// Describes the properties of a <see cref="Quaternion"/>.
   /// </summary>
   /// <remarks>
   /// <para>
@@ -16,50 +16,50 @@ namespace DigitalRune.Animation.Traits
   /// interpolation (SLERP) is not used because it is slower and the difference to LERP is minor.
   /// </para>
   /// </remarks>
-  public class QuaternionFTraits : Singleton<QuaternionFTraits>, IAnimationValueTraits<QuaternionF>
+  public class QuaternionTraits : Singleton<QuaternionTraits>, IAnimationValueTraits<Quaternion>
   {
     /// <inheritdoc/>
-    public void Create(ref QuaternionF reference, out QuaternionF value)
+    public void Create(ref Quaternion reference, out Quaternion value)
     {
-      value = new QuaternionF();
+      value = new Quaternion();
     }
 
 
     /// <inheritdoc/>
-    public void Recycle(ref QuaternionF value)
+    public void Recycle(ref Quaternion value)
     {
     }
 
 
     /// <inheritdoc/>
-    public void Copy(ref QuaternionF source, ref QuaternionF target)
+    public void Copy(ref Quaternion source, ref Quaternion target)
     {
       target = source;
     }
 
 
     /// <inheritdoc/>
-    public void Set(ref QuaternionF value, IAnimatableProperty<QuaternionF> property)
+    public void Set(ref Quaternion value, IAnimatableProperty<Quaternion> property)
     {
       property.AnimationValue = value;
     }
 
 
     /// <inheritdoc/>
-    public void Reset(IAnimatableProperty<QuaternionF> property)
+    public void Reset(IAnimatableProperty<Quaternion> property)
     {
     }
 
 
     /// <inheritdoc/>
-    public void SetIdentity(ref QuaternionF identity)
+    public void SetIdentity(ref Quaternion identity)
     {
-      identity = QuaternionF.Identity;
+      identity = Quaternion.Identity;
     }
 
 
     /// <inheritdoc/>
-    public void Invert(ref QuaternionF value, ref QuaternionF inverse)
+    public void Invert(ref Quaternion value, ref Quaternion inverse)
     {
       // Since it is a unit vector, we can return Conjugated instead of Inverse.
       inverse = value;
@@ -68,14 +68,14 @@ namespace DigitalRune.Animation.Traits
 
 
     /// <inheritdoc/>
-    public void Add(ref QuaternionF value0, ref QuaternionF value1, ref QuaternionF result)
+    public void Add(ref Quaternion value0, ref Quaternion value1, ref Quaternion result)
     {
       result = value1 * value0;
     }
 
 
     /// <inheritdoc/>
-    public void Multiply(ref QuaternionF value, int factor, ref QuaternionF result)
+    public void Multiply(ref Quaternion value, int factor, ref Quaternion result)
     {
       result = value;
       result.Power(factor);
@@ -83,13 +83,13 @@ namespace DigitalRune.Animation.Traits
 
 
     /// <inheritdoc/>
-    public void Interpolate(ref QuaternionF source, ref QuaternionF target, float parameter, ref QuaternionF result)
+    public void Interpolate(ref Quaternion source, ref Quaternion target, float parameter, ref Quaternion result)
     {
       //result = InterpolationHelper.Lerp(source, target, parameter);
 
       // Optimized by inlining:
       // Get angle between quaternions
-      //float cosθ = QuaternionF.Dot(sourceRotation, targetRotation);
+      //float cosθ = Quaternion.Dot(sourceRotation, targetRotation);
       float cosθ = source.W * target.W + source.X * target.X + source.Y * target.Y + source.Z * target.Z;
 
       // Invert one quaternion if we would move along the long arc of interpolation.
@@ -117,17 +117,17 @@ namespace DigitalRune.Animation.Traits
 
 
     /// <inheritdoc/>
-    public void BeginBlend(ref QuaternionF value)
+    public void BeginBlend(ref Quaternion value)
     {
-      value = new QuaternionF();
+      value = new Quaternion();
     }
 
 
     /// <inheritdoc/>
-    public void BlendNext(ref QuaternionF value, ref QuaternionF nextValue, float normalizedWeight)
+    public void BlendNext(ref Quaternion value, ref Quaternion nextValue, float normalizedWeight)
     {
       // Get angle between quaternions:
-      //float cosθ = QuaternionF.Dot(value, nextValue);
+      //float cosθ = Quaternion.Dot(value, nextValue);
       float cosθ = value.W * nextValue.W + value.X * nextValue.X + value.Y * nextValue.Y + value.Z * nextValue.Z;
 
       // Invert one quaternion if we would move along the long arc of interpolation.
@@ -151,7 +151,7 @@ namespace DigitalRune.Animation.Traits
 
 
     /// <inheritdoc/>
-    public void EndBlend(ref QuaternionF value)
+    public void EndBlend(ref Quaternion value)
     {
       value.Normalize();
     }

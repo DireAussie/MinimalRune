@@ -9,13 +9,13 @@ using System.Globalization;
 using System.Runtime.Serialization;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
-#if !NETFX_CORE && !PORTABLE
+
 using DigitalRune.Mathematics.Algebra.Design;
-#endif
-#if XNA || MONOGAME
+
+
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
-#endif
+
 
 
 namespace DigitalRune.Mathematics.Algebra
@@ -26,15 +26,15 @@ namespace DigitalRune.Mathematics.Algebra
   /// <remarks>
   /// The four components (x, y, z, w) are stored with double-precision.
   /// </remarks>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
-#if !NETFX_CORE && !PORTABLE
+
+
   [TypeConverter(typeof(Vector4DConverter))]
-#endif
-#if !XBOX && !UNITY
+
+
   [DataContract]
-#endif
+
   public struct Vector4D : IEquatable<Vector4D>
   {
     //--------------------------------------------------------------
@@ -82,9 +82,9 @@ namespace DigitalRune.Mathematics.Algebra
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public double X;
 
     /// <summary>
@@ -92,9 +92,9 @@ namespace DigitalRune.Mathematics.Algebra
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public double Y;
 
     /// <summary>
@@ -102,9 +102,9 @@ namespace DigitalRune.Mathematics.Algebra
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public double Z;
 
     /// <summary>
@@ -112,9 +112,9 @@ namespace DigitalRune.Mathematics.Algebra
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public double W;
 
 
@@ -218,9 +218,9 @@ namespace DigitalRune.Mathematics.Algebra
     /// The vector has a length of 0. The length cannot be changed.
     /// </exception>
     [XmlIgnore]
-#if XNA || MONOGAME
+
     [ContentSerializerIgnore]
-#endif
+
     public double Length
     {
       get
@@ -1092,7 +1092,7 @@ namespace DigitalRune.Mathematics.Algebra
     }
 
 
-#if XNA || MONOGAME
+
     /// <summary>
     /// Performs an conversion from <see cref="Vector4"/> (XNA Framework) to <see cref="Vector4D"/>
     /// (DigitalRune Mathematics).
@@ -1156,7 +1156,7 @@ namespace DigitalRune.Mathematics.Algebra
     {
       return new Vector4((float)X, (float)Y, (float)Z, (float)W);
     }
-#endif
+
 
 
 

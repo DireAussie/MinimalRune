@@ -3,9 +3,9 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-#if !PORTABLE
+
 using BclPath = System.IO.Path;
-#endif
+
 
 namespace DigitalRune.Storages
 {
@@ -26,14 +26,14 @@ namespace DigitalRune.Storages
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline")]
     static Path()
     {
-#if PORTABLE
+
       DirectorySeparatorChar = '\\';
       throw Portable.NotImplementedException;
 #elif NETFX_CORE
       DirectorySeparatorChar = '\\';
 #else
       DirectorySeparatorChar = BclPath.DirectorySeparatorChar;
-#endif
+
     }
 
 
@@ -50,11 +50,11 @@ namespace DigitalRune.Storages
     /// </returns>
     public static string ChangeExtension(string path, string extension)
     {
-#if PORTABLE
+
       throw Portable.NotImplementedException;
 #else
       return BclPath.ChangeExtension(path, extension);
-#endif
+
     }
 
 
@@ -70,11 +70,11 @@ namespace DigitalRune.Storages
     /// </returns>
     public static string Combine(string path1, string path2)
     {
-#if PORTABLE
+
       throw Portable.NotImplementedException;
 #else
       return BclPath.Combine(path1, path2);
-#endif
+
     }
 
 
@@ -85,7 +85,7 @@ namespace DigitalRune.Storages
     /// <returns>A string that contains the combined paths. </returns>
     public static string Combine(params string[] paths)
     {
-#if PORTABLE
+
       throw Portable.NotImplementedException;
 #elif WP7 || XBOX || UNITY
       //  WP7 only implements Path.Combine with two arguments.
@@ -102,7 +102,7 @@ namespace DigitalRune.Storages
       return result;
 #else
       return BclPath.Combine(paths);
-#endif
+
     }
 
 
@@ -117,11 +117,11 @@ namespace DigitalRune.Storages
     /// </returns>
     public static string GetDirectoryName(string path)
     {
-#if PORTABLE
+
       throw Portable.NotImplementedException;
 #else
       return BclPath.GetDirectoryName(path);
-#endif
+
     }
 
 
@@ -138,13 +138,13 @@ namespace DigitalRune.Storages
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId = "path")]
     public static string GetFullPath(string path)
     {
-#if PORTABLE
+
       throw Portable.NotImplementedException;
 #elif NETFX_CORE || WP7 || WP8 || XBOX
       throw new NotSupportedException();
 #else
       return BclPath.GetFullPath(path);
-#endif
+
     }
 
 
@@ -158,11 +158,11 @@ namespace DigitalRune.Storages
     /// </returns>
     public static bool IsPathRooted(string path)
     {
-#if PORTABLE
+
       throw Portable.NotImplementedException;
 #else
       return BclPath.IsPathRooted(path);
-#endif
+
     }
 
 

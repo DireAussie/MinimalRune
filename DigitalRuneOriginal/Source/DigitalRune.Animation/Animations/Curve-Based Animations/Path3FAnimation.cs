@@ -13,12 +13,12 @@ namespace DigitalRune.Animation
   /// Animates a point in 3D space that follows a predefined path.
   /// </summary>
   /// <inheritdoc/>
-  public class Path3FAnimation : PathAnimation<Vector3F, PathKey3F, Path3F>
+  public class Path3FAnimation : PathAnimation<Vector3, PathKey3F, Path3F>
   {
     /// <inheritdoc/>
-    public override IAnimationValueTraits<Vector3F> Traits
+    public override IAnimationValueTraits<Vector3> Traits
     {
-      get { return Vector3FTraits.Instance; }
+      get { return Vector3Traits.Instance; }
     }
   
 

@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !WP7
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -291,7 +291,7 @@ namespace DigitalRune.Graphics.Rendering
     //--------------------------------------------------------------
 
     // A RenderBatch is used to render occluders.
-    private readonly RenderBatch<Vector3F, ushort> _renderBatch;
+    private readonly RenderBatch<Vector3, ushort> _renderBatch;
 
     // Effect "OcclusionCulling.fx"
     private readonly Effect _effect;
@@ -337,7 +337,7 @@ namespace DigitalRune.Graphics.Rendering
     // Light frustum for rendering light HZB.
     private readonly PerspectiveViewVolume _splitVolume;
     private readonly CameraNode _orthographicCameraNode;
-    private readonly Vector3F[] _frustumCorners = new Vector3F[8];
+    private readonly Vector3[] _frustumCorners = new Vector3[8];
     private bool _lightHzbAvailable;
 
 
@@ -508,12 +508,12 @@ namespace DigitalRune.Graphics.Rendering
       // Vertex buffer size:
       // - In the worst case n triangles need n * 3 vertices.
       // - The max size is limited to 65536 because 16-bit indices are used.
-      var vertices = new Vector3F[Math.Min(bufferSize * 3, ushort.MaxValue + 1)];
+      var vertices = new Vector3[Math.Min(bufferSize * 3, ushort.MaxValue + 1)];
 
       // Index buffer size: number of triangles * 3
       var indices = new ushort[bufferSize * 3];
 
-      _renderBatch = new RenderBatch<Vector3F, ushort>(
+      _renderBatch = new RenderBatch<Vector3, ushort>(
         graphicsDevice,
         VertexPosition.VertexDeclaration,
         vertices, true,
@@ -560,7 +560,7 @@ namespace DigitalRune.Graphics.Rendering
 
 /*
       // By default, enable multithreading on multi-core systems.
-#if WP7 || UNITY
+
       // Cannot access Environment.ProcessorCount in phone app. (Security issue.)
       EnableMultithreading = false;
 #else
@@ -570,7 +570,7 @@ namespace DigitalRune.Graphics.Rendering
       // Multithreading works but Parallel.For of Xamarin.Android/iOS is very inefficient.
       if (GlobalSettings.PlatformID == PlatformID.Android || GlobalSettings.PlatformID == PlatformID.iOS)
         EnableMultithreading = false;
-#endif
+
 */
       // Disable multithreading by default. Multithreading causes massive lags in the
       // XNA version, but the MonoGame version is not affected!?
@@ -814,18 +814,18 @@ namespace DigitalRune.Graphics.Rendering
         _splitVolume.SetFieldOfView(cameraProjection.FieldOfViewY, cameraProjection.AspectRatio, cameraProjection.Near, Math.Min(cameraProjection.Far, maxShadowDistance));
 
         // Find the bounding sphere of the camera frustum.
-        Vector3F center;
+        Vector3 center;
         float radius;
         GetBoundingSphere(_splitVolume, out center, out radius);
 
-        Matrix33F orientation = lightNode.PoseWorld.Orientation;
-        Vector3F lightBackward = orientation.GetColumn(2);
+        Matrix orientation = lightNode.PoseWorld.Orientation;
+        Vector3 lightBackward = orientation.GetColumn(2);
         var orthographicProjection = (OrthographicProjection)_orthographicCameraNode.Camera.Projection;
 
         // Create a tight orthographic frustum around the cascade's bounding sphere.
         orthographicProjection.SetOffCenter(-radius, radius, -radius, radius, 0, 2 * radius);
         center = cameraNode.PoseWorld.ToWorldPosition(center);
-        Vector3F cameraPosition = center + radius * lightBackward;
+        Vector3 cameraPosition = center + radius * lightBackward;
         Pose frustumPose = new Pose(cameraPosition, orientation);
 
         // For rendering the shadow map, move near plane back by MinLightDistance 
@@ -863,7 +863,7 @@ namespace DigitalRune.Graphics.Rendering
       {
         // Enable distance culling.
         _parameterCameraPosition.SetValue((Vector3)lodCameraNode.PoseWorld.Position);
-        float yScale = Math.Abs(lodCameraNode.Camera.Projection.ToMatrix44F().M11);
+        float yScale = Math.Abs(lodCameraNode.Camera.Projection.ToMatrix().M11);
         _parameterNormalizationFactor.SetValue(1.0f / yScale * cameraNode.LodBias * context.LodBias);
       }
       else
@@ -980,7 +980,7 @@ namespace DigitalRune.Graphics.Rendering
     }
 
 
-    private void GetBoundingSphere(ViewVolume viewVolume, out Vector3F center, out float radius)
+    private void GetBoundingSphere(ViewVolume viewVolume, out Vector3 center, out float radius)
     {
       float left = viewVolume.Left;
       float top = viewVolume.Top;
@@ -989,10 +989,10 @@ namespace DigitalRune.Graphics.Rendering
       float near = viewVolume.Near;
       float far = viewVolume.Far;
 
-      _frustumCorners[0] = new Vector3F(left, top, -near);
-      _frustumCorners[1] = new Vector3F(right, top, -near);
-      _frustumCorners[2] = new Vector3F(left, bottom, -near);
-      _frustumCorners[3] = new Vector3F(right, bottom, -near);
+      _frustumCorners[0] = new Vector3(left, top, -near);
+      _frustumCorners[1] = new Vector3(right, top, -near);
+      _frustumCorners[2] = new Vector3(left, bottom, -near);
+      _frustumCorners[3] = new Vector3(right, bottom, -near);
 
       float farOverNear = far / near;
       left *= farOverNear;
@@ -1000,10 +1000,10 @@ namespace DigitalRune.Graphics.Rendering
       right *= farOverNear;
       bottom *= farOverNear;
 
-      _frustumCorners[4] = new Vector3F(left, top, -far);
-      _frustumCorners[5] = new Vector3F(right, top, -far);
-      _frustumCorners[6] = new Vector3F(left, bottom, -far);
-      _frustumCorners[7] = new Vector3F(right, bottom, -far);
+      _frustumCorners[4] = new Vector3(left, top, -far);
+      _frustumCorners[5] = new Vector3(right, top, -far);
+      _frustumCorners[6] = new Vector3(left, bottom, -far);
+      _frustumCorners[7] = new Vector3(right, bottom, -far);
 
       GeometryHelper.ComputeBoundingSphere(_frustumCorners, out radius, out center);
     }
@@ -1266,11 +1266,11 @@ namespace DigitalRune.Graphics.Rendering
       _effect.CurrentTechnique = _techniqueQuery;
       _techniqueQuery.Passes[0].Apply();
 
-#if MONOGAME
+
       var primitiveType = PrimitiveType.PointList;
 #else
       var primitiveType = PrimitiveType.LineStrip;
-#endif
+
 
       graphicsDevice.DrawUserPrimitives(primitiveType, _queryData, 0, actualNumberOfNodes);
 
@@ -1631,4 +1631,4 @@ namespace DigitalRune.Graphics.Rendering
 
   }
 }
-#endif
+

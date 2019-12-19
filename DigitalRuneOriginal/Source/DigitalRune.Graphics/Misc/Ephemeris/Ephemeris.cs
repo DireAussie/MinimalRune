@@ -289,11 +289,11 @@ namespace DigitalRune.Graphics
       Longitude = 122;
       Altitude = 100;
 
-#if XBOX
+
       Time = new DateTimeOffset(DateTime.Now.Ticks, TimeSpan.Zero);
 #else
       Time = DateTimeOffset.UtcNow;
-#endif
+
     }
 
 

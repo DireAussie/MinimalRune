@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if PARTICLES
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -156,7 +156,7 @@ namespace DigitalRune.Graphics.SceneGraph
   /// The axis vector of a particle.
   /// </para>
   /// <para>
-  /// Parameter type: varying or uniform, value type: <see cref="Vector3F"/>
+  /// Parameter type: varying or uniform, value type: <see cref="Vector3"/>
   /// </para>
   /// <para>
   /// This parameter is optional.
@@ -199,7 +199,7 @@ namespace DigitalRune.Graphics.SceneGraph
   /// The particle tint color.
   /// </para>
   /// <para>
-  /// Parameter type: varying or uniform, value type: <see cref="Vector3F"/>
+  /// Parameter type: varying or uniform, value type: <see cref="Vector3"/>
   /// </para>
   /// <para>
   /// This parameter is optional.
@@ -245,7 +245,7 @@ namespace DigitalRune.Graphics.SceneGraph
   /// The normal vector of a particle.
   /// </para>
   /// <para>
-  /// Parameter type: varying or uniform, value type: <see cref="Vector3F"/>
+  /// Parameter type: varying or uniform, value type: <see cref="Vector3"/>
   /// </para>
   /// <para>
   /// This parameter is optional.
@@ -274,7 +274,7 @@ namespace DigitalRune.Graphics.SceneGraph
   /// The particle position.
   /// </para>
   /// <para>
-  /// Parameter type: varying, value type: <see cref="Vector3F"/>
+  /// Parameter type: varying, value type: <see cref="Vector3"/>
   /// </para>
   /// <para>
   /// This parameter is optional.
@@ -446,7 +446,7 @@ namespace DigitalRune.Graphics.SceneGraph
     /// Gets or sets the tint color of the particle system instance.
     /// </summary>
     /// <value>The tint color (non-premultiplied). The default value is white (1, 1, 1).</value>
-    public Vector3F Color { get; set; }
+    public Vector3 Color { get; set; }
 
 
     /// <summary>
@@ -486,7 +486,7 @@ namespace DigitalRune.Graphics.SceneGraph
 
       IsRenderable = true;
       _particleSystem = particleSystem;
-      Color = new Vector3F(1, 1, 1);
+      Color = new Vector3(1, 1, 1);
       Alpha = 1.0f;
 
       SynchronizeShape();
@@ -644,7 +644,7 @@ namespace DigitalRune.Graphics.SceneGraph
         }
 
         geometricObject.Shape = ParticleSystem.Shape;
-        geometricObject.Scale = Vector3F.One / ScaleWorld;
+        geometricObject.Scale = Vector3.One / ScaleWorld;
       }
     }
 
@@ -673,4 +673,4 @@ namespace DigitalRune.Graphics.SceneGraph
 
   }
 }
-#endif
+

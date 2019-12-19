@@ -13,10 +13,10 @@ namespace DigitalRune.Mathematics.Interpolation.Tests
     {
       BSplineSegment3F b = new BSplineSegment3F
       {
-        Point1 = new Vector3F(1, 2, 3),
-        Point2 = new Vector3F(4, 5, 6),
-        Point3 = new Vector3F(7, 8, 19),
-        Point4 = new Vector3F(10, 2, 12),
+        Point1 = new Vector3(1, 2, 3),
+        Point2 = new Vector3(4, 5, 6),
+        Point3 = new Vector3(7, 8, 19),
+        Point4 = new Vector3(10, 2, 12),
       };
 
       float lowerBound = (b.Point2 - b.Point1).Length;
@@ -42,12 +42,12 @@ namespace DigitalRune.Mathematics.Interpolation.Tests
     {
       var s = new BSplineSegment3F
       {
-        Point1 = new Vector3F(1, 2, 3),
-        Point2 = new Vector3F(4, 5, 6),
-        Point3 = new Vector3F(7, 8, 19),
-        Point4 = new Vector3F(10, 2, 12),
+        Point1 = new Vector3(1, 2, 3),
+        Point2 = new Vector3(4, 5, 6),
+        Point3 = new Vector3(7, 8, 19),
+        Point4 = new Vector3(10, 2, 12),
       };
-      var points = new List<Vector3F>();
+      var points = new List<Vector3>();
       var tolerance = 0.01f;
       s.Flatten(points, 10, tolerance);
       Assert.IsTrue(points.Contains(s.GetPoint(0)));

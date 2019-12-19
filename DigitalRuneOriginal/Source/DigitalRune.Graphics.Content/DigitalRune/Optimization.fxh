@@ -10,7 +10,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#ifndef DIGITALRUNE_OPTIMIZATION_FXH
+
 #define DIGITALRUNE_OPTIMIZATION_FXH
 
 //-----------------------------------------------------------------------------
@@ -49,4 +49,4 @@ float SinFast(float x)
   return dot(p, c);
 }
 
-#endif
+

@@ -14,7 +14,7 @@ namespace DigitalRune.Geometry.Content
   /// </summary>
   public class GeometricObjectReader : ContentTypeReader<GeometricObject>
   {
-#if !MONOGAME
+
     /// <summary>
     /// Determines if deserialization into an existing object is possible.
     /// </summary>
@@ -26,7 +26,7 @@ namespace DigitalRune.Geometry.Content
     {
       get { return true; }
     }
-#endif
+
 
 
     /// <summary>
@@ -43,7 +43,7 @@ namespace DigitalRune.Geometry.Content
 
       existingInstance.Pose = input.ReadRawObject<Pose>();
       input.ReadSharedResource<Shape>(shape => existingInstance.Shape = shape);
-      existingInstance.Scale = input.ReadRawObject<Vector3F>();
+      existingInstance.Scale = input.ReadRawObject<Vector3>();
       return existingInstance;
     }
   }

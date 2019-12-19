@@ -57,7 +57,7 @@
 */
 
 
-#if !NETFX_CORE && !PORTABLE && !USE_TPL
+
 using System;
 using System.Collections.Generic;
 
@@ -84,13 +84,13 @@ namespace DigitalRune.Threading
     /// core) on Windows, and 3 threads on the Xbox 360 (on the hardware threads 3, 4 and 5).
     /// </remarks>
     public WorkStealingScheduler()
-#if XBOX
+
       : this(3)
 #elif WP7
       : this(1)
 #else
       : this(Environment.ProcessorCount)
-#endif
+
     {
     }
 
@@ -165,4 +165,4 @@ namespace DigitalRune.Threading
     }
   }
 }
-#endif
+

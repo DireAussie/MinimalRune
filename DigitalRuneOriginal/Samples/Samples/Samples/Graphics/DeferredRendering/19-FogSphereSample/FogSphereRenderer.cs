@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using System;
 using System.Collections.Generic;
 using DigitalRune.Geometry;
@@ -184,4 +184,3 @@ namespace Samples.Graphics
 
   }
 }
-#endif

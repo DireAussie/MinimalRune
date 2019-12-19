@@ -17,9 +17,9 @@ namespace DigitalRune.Windows
     /// The converter returns <see langword="true"/> if the value is <see langword="null"/>;
     /// otherwise <see langword="false"/>.
     /// </remarks>
-#if !SILVERLIGHT && !WINDOWS_PHONE
+
     [ValueConversion(typeof(object), typeof(bool))]
-#endif
+
     public class IsNullConverter : IValueConverter
     {
         /// <summary>

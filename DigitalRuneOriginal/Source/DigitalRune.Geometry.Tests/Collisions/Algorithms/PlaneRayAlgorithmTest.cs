@@ -27,15 +27,15 @@ namespace DigitalRune.Geometry.Collisions.Algorithms.Tests
       // Plane in xz plane.
       CollisionObject a = new CollisionObject(new GeometricObject
       {
-        Shape = new PlaneShape(Vector3F.UnitY, 1),
-        Pose = new Pose(new Vector3F(0, -1, 0)),
+        Shape = new PlaneShape(Vector3.UnitY, 1),
+        Pose = new Pose(new Vector3(0, -1, 0)),
       });
 
       // Ray
       CollisionObject b = new CollisionObject(new GeometricObject
       {
-        Shape = new RayShape(new Vector3F(0, 0, 0), new Vector3F(-1, 0, 0), 100),
-        Pose = new Pose(new Vector3F(0, 1, 0)),
+        Shape = new RayShape(new Vector3(0, 0, 0), new Vector3(-1, 0, 0), 100),
+        Pose = new Pose(new Vector3(0, 1, 0)),
       });
 
       // Separated
@@ -45,14 +45,14 @@ namespace DigitalRune.Geometry.Collisions.Algorithms.Tests
       Assert.AreEqual(-1, algo.GetClosestPoints(a, b)[0].PenetrationDepth);
 
       // Contained
-      ((GeometricObject)b.GeometricObject).Pose = new Pose(new Vector3F(0, -1, 0));
+      ((GeometricObject)b.GeometricObject).Pose = new Pose(new Vector3(0, -1, 0));
       Assert.AreEqual(true, algo.HaveContact(a, b));
       Assert.AreEqual(true, algo.HaveContact(b, a));
       Assert.AreEqual(1, algo.GetContacts(a, b).Count);
       Assert.AreEqual(0, algo.GetClosestPoints(a, b)[0].PenetrationDepth);
 
       // Touching
-      ((GeometricObject)b.GeometricObject).Pose = new Pose(new Vector3F(0, 0, 0));
+      ((GeometricObject)b.GeometricObject).Pose = new Pose(new Vector3(0, 0, 0));
       Assert.AreEqual(true, algo.HaveContact(a, b));
       Assert.AreEqual(true, algo.HaveContact(b, a));
       Assert.AreEqual(1, algo.GetContacts(a, b).Count);
@@ -60,10 +60,10 @@ namespace DigitalRune.Geometry.Collisions.Algorithms.Tests
 
 
       // Shooting into plane.
-      ((GeometricObject)b.GeometricObject).Pose = new Pose(new Vector3F(0, 1, 0), QuaternionF.CreateRotationZ(ConstantsF.PiOver2));
+      ((GeometricObject)b.GeometricObject).Pose = new Pose(new Vector3(0, 1, 0), Quaternion.CreateRotationZ(ConstantsF.PiOver2));
       Assert.AreEqual(1, algo.GetContacts(a, b).Count);
       Assert.AreEqual(1, algo.GetContacts(b, a)[0].PenetrationDepth);
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(new Vector3F(-1, 0, 0), algo.GetContacts(b, a)[0].PositionALocal));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(new Vector3(-1, 0, 0), algo.GetContacts(b, a)[0].PositionALocal));
       Assert.AreEqual(1, algo.GetClosestPoints(a, b)[0].PenetrationDepth);
     }
 
@@ -78,15 +78,15 @@ namespace DigitalRune.Geometry.Collisions.Algorithms.Tests
       // Plane in xz plane.
       CollisionObject plane = new CollisionObject(new GeometricObject
       {
-        Shape = new PlaneShape(Vector3F.UnitY, 1),
-        Pose = new Pose(new Vector3F(0, -1, 0)),
+        Shape = new PlaneShape(Vector3.UnitY, 1),
+        Pose = new Pose(new Vector3(0, -1, 0)),
       });
 
       // Ray
       CollisionObject ray = new CollisionObject(new GeometricObject
       {
-        Shape = new RayShape(new Vector3F(0, 0, 0), new Vector3F(0, -1, 0), 10),
-        Pose = new Pose(new Vector3F(0, 10, 0)),
+        Shape = new RayShape(new Vector3(0, 0, 0), new Vector3(0, -1, 0), 10),
+        Pose = new Pose(new Vector3(0, 10, 0)),
       });
 
       ContactSet contacts = algo.GetContacts(plane, ray);
@@ -95,7 +95,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms.Tests
       Assert.AreEqual(10, contacts[0].PenetrationDepth);
 
       // Move plane less than contact position tolerance, but into a separated state.
-      ((GeometricObject)plane.GeometricObject).Pose = new Pose(new Vector3F(0, -1.001f, 0));
+      ((GeometricObject)plane.GeometricObject).Pose = new Pose(new Vector3(0, -1.001f, 0));
       algo.UpdateClosestPoints(contacts, 0);
       Assert.AreEqual(false, contacts.HaveContact);
       Assert.AreEqual(1, contacts.Count);

@@ -17,9 +17,9 @@ namespace DigitalRune.Windows
     /// <remarks>
     /// This converter can also be used for values that can be parsed <see cref="Double"/> values.
     /// </remarks>
-#if !SILVERLIGHT && !WINDOWS_PHONE
+
     [ValueConversion(typeof(double), typeof(double), ParameterType = typeof(double))]
-#endif
+
     public class MaxValueConverter : IValueConverter
     {
         /// <summary>

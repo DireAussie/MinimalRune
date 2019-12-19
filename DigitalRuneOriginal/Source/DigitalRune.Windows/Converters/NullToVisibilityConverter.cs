@@ -18,9 +18,9 @@ namespace DigitalRune.Windows
     /// A valid reference is converted to <see cref="Visibility.Visible"/>. A null reference is
     /// converted to <see cref="Visibility.Collapsed"/>.
     /// </remarks>
-#if !SILVERLIGHT && !WINDOWS_PHONE
+
     [ValueConversion(typeof(object), typeof(Visibility))]
-#endif
+
     public class NullToVisibilityConverter : IValueConverter
     {
         /// <summary>

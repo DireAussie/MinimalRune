@@ -57,7 +57,7 @@
 */
 
 
-#if !NETFX_CORE && !PORTABLE && !USE_TPL
+
 using System;
 using System.Threading;
 using DigitalRune.Collections;
@@ -67,16 +67,16 @@ namespace DigitalRune.Threading
 {
   internal sealed class Worker
   {
-#if WP7
+
     // Cannot access Environment.ProcessorCount in phone app. (Security issue).
     private static readonly SynchronizedHashtable<int, Worker> Workers = new SynchronizedHashtable<int, Worker>(1);
 #else
     private static readonly SynchronizedHashtable<int, Worker> Workers = new SynchronizedHashtable<int, Worker>(Environment.ProcessorCount);
-#endif
 
-#if XBOX
+
+
     private static int _affinityIndex;
-#endif
+
 
     private readonly Thread _thread;
     private readonly WorkStealingQueue<Task> _tasks;
@@ -127,11 +127,11 @@ namespace DigitalRune.Threading
     // ReSharper disable FunctionNeverReturns
     private void Work()
     {
-#if XBOX
+
       int i = Interlocked.Increment(ref _affinityIndex) - 1;
       int affinity = Parallel.ProcessorAffinity[i % Parallel.ProcessorAffinity.Length];
       Thread.CurrentThread.SetProcessorAffinity(affinity);
-#endif
+
 
       Task task;
       while (true)
@@ -191,4 +191,4 @@ namespace DigitalRune.Threading
     }
   }
 }
-#endif
+

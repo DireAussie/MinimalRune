@@ -54,7 +54,7 @@ namespace DigitalRune.Graphics
     /// Gets or sets the center of the first tile in world space.
     /// </summary>
     /// <inheritdoc cref="WaterWaves.TileCenter"/>
-    public new Vector3F TileCenter
+    public new Vector3 TileCenter
     {
       get { return base.TileCenter; }
       set { base.TileCenter = value; }

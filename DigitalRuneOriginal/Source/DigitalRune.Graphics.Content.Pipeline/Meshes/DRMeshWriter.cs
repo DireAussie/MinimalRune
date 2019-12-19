@@ -65,7 +65,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
       if (hasOccluder)
         output.WriteSharedResource(value.Occluder);
 
-#if ANIMATION
+
       bool hasSkeleton = (value.Skeleton != null);
       output.Write(hasSkeleton);
       if (hasSkeleton)
@@ -78,7 +78,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
 #else
       output.Write(false);  // hasSkeleton = false
       output.Write(false);  // hasAnimations = false
-#endif
+
 
       output.WriteSharedResource(value.UserData);
     }

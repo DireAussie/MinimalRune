@@ -47,7 +47,7 @@ namespace Samples
     {
       _services = services;
       _assetName = assetName;
-      _defaultPose = new Pose(new Vector3F(-1, 0, 0), Matrix33F.CreateRotationY(ConstantsF.Pi));
+      _defaultPose = new Pose(new Vector3(-1, 0, 0), Matrix.CreateRotationY(ConstantsF.Pi));
     }
 
 

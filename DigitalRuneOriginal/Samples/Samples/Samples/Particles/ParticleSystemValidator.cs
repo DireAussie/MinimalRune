@@ -158,11 +158,11 @@ namespace Samples.Particles
 
     private static IEnumerable<PropertyInfo> GetProperties(object obj)
     {
-#if NETFX_CORE
+
       return obj.GetType().GetRuntimeProperties();
 #else
       return obj.GetType().GetProperties();
-#endif
+
     }
   }
 }

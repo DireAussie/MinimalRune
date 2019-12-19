@@ -19,9 +19,9 @@ using System;
 using System.Globalization;
 using System.IO;
 
-#if PORTABLE
+
 #pragma warning disable 1574  // Disable warning "reference not found in XML comments"
-#endif
+
 
 
 namespace DigitalRune.Ionic.Zip
@@ -349,7 +349,7 @@ namespace DigitalRune.Ionic.Zip
 
         internal void VerifyCrcAfterExtract(Int32 calculatedCrc32, EncryptionAlgorithm encryptionAlgorithm, int expectedCrc32, Stream archiveStream, long uncompressedSize)
         {
-#if AESCRYPTO
+
             // After extracting, Validate the CRC32
             if (calculatedCrc32 != expectedCrc32)
             {
@@ -379,7 +379,7 @@ namespace DigitalRune.Ionic.Zip
             if (calculatedCrc32 != expectedCrc32)
                 throw new BadCrcException("CRC error: the file being extracted appears to be corrupted. " +
                                           String.Format(CultureInfo.InvariantCulture, "Expected 0x{0:X8}, Actual 0x{1:X8}", expectedCrc32, calculatedCrc32));
-#endif
+
         }
 
 
@@ -463,10 +463,10 @@ namespace DigitalRune.Ionic.Zip
                     return input2;
                 case (short)CompressionMethod.Deflate:
                     return new Zlib.DeflateStream(input2, true);
-#if BZIP
+
                 case (short)CompressionMethod.BZip2:
                     return new BZip2.BZip2InputStream(input2, true);
-#endif
+
             }
 
             throw new NotSupportedException(string.Format(CultureInfo.InvariantCulture,
@@ -481,11 +481,11 @@ namespace DigitalRune.Ionic.Zip
             if (_Encryption_FromZipFile == EncryptionAlgorithm.PkzipWeak)
                 input2 = new ZipCipherStream(input, _zipCrypto_forExtract);
 
-#if AESCRYPTO
+
             else if (_Encryption_FromZipFile == EncryptionAlgorithm.WinZipAes128 ||
                 _Encryption_FromZipFile == EncryptionAlgorithm.WinZipAes256)
                 input2 = new WinZipAesCipherStream(input, _aesCrypto_forExtract, _CompressedFileDataSize);
-#endif
+
 
             else
                 input2 = input;
@@ -592,10 +592,10 @@ namespace DigitalRune.Ionic.Zip
         private static void ValidateEncryption(EncryptionAlgorithm encryptionAlgorithm, string fileName, uint unsupportedAlgorithmId)
         {
             if (encryptionAlgorithm != EncryptionAlgorithm.PkzipWeak &&
-#if AESCRYPTO
+
                 encryptionAlgorithm != EncryptionAlgorithm.WinZipAes128 &&
                 encryptionAlgorithm != EncryptionAlgorithm.WinZipAes256 &&
-#endif
+
                 encryptionAlgorithm != EncryptionAlgorithm.None)
             {
                 // workitem 7968
@@ -613,9 +613,9 @@ namespace DigitalRune.Ionic.Zip
         {
             if ((compressionMethod != (short)CompressionMethod.None) &&
                 (compressionMethod != (short)CompressionMethod.Deflate)
-#if BZIP
+
                 && (compressionMethod != (short)CompressionMethod.BZip2)
-#endif
+
                 )
                 throw new ZipException(String.Format(CultureInfo.InvariantCulture,
                                                      "Entry {0} uses an unsupported compression method (0x{1:X2}, {2})",
@@ -637,7 +637,7 @@ namespace DigitalRune.Ionic.Zip
                 _zipCrypto_forExtract = ZipCrypto.ForRead(password, this);
             }
 
-#if AESCRYPTO
+
             else if (_Encryption_FromZipFile == EncryptionAlgorithm.WinZipAes128 ||
                  _Encryption_FromZipFile == EncryptionAlgorithm.WinZipAes256)
             {
@@ -658,7 +658,7 @@ namespace DigitalRune.Ionic.Zip
                     _aesCrypto_forExtract = WinZipAesCrypto.ReadFromStream(password, keystrength, this.ArchiveStream);
                 }
             }
-#endif
+
         }
 
 

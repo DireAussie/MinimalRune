@@ -94,16 +94,16 @@ namespace DigitalRune.Physics.Specialized
     // It also makes the character move with moving ground.
     private readonly CharacterControllerForceEffect _forceEffect;
 
-    private Vector3F _gravityVelocity;   // Current velocity from gravity.
-    private Vector3F _jumpVelocity;      // Current velocity from jumping.
-    private Vector3F _oldPosition;       // The last valid position (set at the beginning of Move()).
-    private Vector3F _desiredPosition;   // The desired target position (set in Move()).
+    private Vector3 _gravityVelocity;   // Current velocity from gravity.
+    private Vector3 _jumpVelocity;      // Current velocity from jumping.
+    private Vector3 _oldPosition;       // The last valid position (set at the beginning of Move()).
+    private Vector3 _desiredPosition;   // The desired target position (set in Move()).
 
     private bool _hadGroundContact;      // true if the last move ended with ground contact.
     private bool _isSteppingUp;          // Are we currently stepping up?
     private bool _isSteppingDown;        // Are we currently stepping down?
     
-    internal Vector3F _lastDesiredVelocity;    
+    internal Vector3 _lastDesiredVelocity;    
 
 
 
@@ -203,7 +203,7 @@ namespace DigitalRune.Physics.Specialized
     /// <remarks>
     /// This property is updated in <see cref="Move"/>.
     /// </remarks>
-    public Vector3F Velocity { get; private set; }
+    public Vector3 Velocity { get; private set; }
     
 
     /// <summary>
@@ -310,7 +310,7 @@ namespace DigitalRune.Physics.Specialized
     /// </summary>
     /// <param name="simulation">The simulation.</param>
     public KinematicCharacterController(Simulation simulation)
-      : this(simulation, Vector3F.UnitY)
+      : this(simulation, Vector3.UnitY)
     {
     }
 
@@ -323,7 +323,7 @@ namespace DigitalRune.Physics.Specialized
     /// <exception cref="ArgumentNullException">
     /// <paramref name="simulation" /> is <see langword="null"/>.
     /// </exception>
-    public KinematicCharacterController(Simulation simulation, Vector3F upVector)
+    public KinematicCharacterController(Simulation simulation, Vector3 upVector)
     {
       if (simulation == null)
         throw new ArgumentNullException("simulation");
@@ -371,22 +371,22 @@ namespace DigitalRune.Physics.Specialized
     /// If the <paramref name="moveVelocity"/> is a zero vector, only gravity will be applied. 
     /// </para>
     /// </remarks>
-    public void Move(Vector3F moveVelocity, float jumpVelocity, float deltaTime)
+    public void Move(Vector3 moveVelocity, float jumpVelocity, float deltaTime)
     {
       if (!Enabled)
         return;
 
       // Remove any velocities that were added by the simulation.
-      Body.LinearVelocity = Vector3F.Zero;
+      Body.LinearVelocity = Vector3.Zero;
 
       _oldPosition = Position;
-      Vector3F desiredMovement = moveVelocity * deltaTime;
+      Vector3 desiredMovement = moveVelocity * deltaTime;
       
       if (Gravity == 0)
       {
         // ----- Flying
-        _gravityVelocity = Vector3F.Zero;
-        _jumpVelocity = Vector3F.Zero;
+        _gravityVelocity = Vector3.Zero;
+        _jumpVelocity = Vector3.Zero;
 
         desiredMovement += jumpVelocity * UpVector * deltaTime;
 
@@ -415,7 +415,7 @@ namespace DigitalRune.Physics.Specialized
         {
           // The character is on ground or in a situation where it has support.
           _jumpVelocity = jumpVelocity * UpVector;
-          _gravityVelocity = Vector3F.Zero;
+          _gravityVelocity = Vector3.Zero;
 
           // Add jump velocity to the desired movement.
           desiredMovement += _jumpVelocity * deltaTime;
@@ -436,24 +436,24 @@ namespace DigitalRune.Physics.Specialized
           //
           // Depending on maneuverability, we lerp between the old lateral velocity and the
           // new lateral velocity. 
-          Vector3F lastMovement = Velocity * deltaTime;
-          lastMovement -= Vector3F.ProjectTo(lastMovement, UpVector);        // Remove vertical component.
-          desiredMovement -= Vector3F.ProjectTo(desiredMovement, UpVector);  // Remove vertical component.
+          Vector3 lastMovement = Velocity * deltaTime;
+          lastMovement -= Vector3.ProjectTo(lastMovement, UpVector);        // Remove vertical component.
+          desiredMovement -= Vector3.ProjectTo(desiredMovement, UpVector);  // Remove vertical component.
           desiredMovement = InterpolationHelper.Lerp(lastMovement, desiredMovement, JumpManeuverability);
 
           // Add jump velocity to the desired movement.
-          _jumpVelocity = Vector3F.Max(jumpVelocity * UpVector, _jumpVelocity);
+          _jumpVelocity = Vector3.Max(jumpVelocity * UpVector, _jumpVelocity);
           desiredMovement += _jumpVelocity * deltaTime;
 
           if (jumpVelocity > 0)
           {
             // Jump button is still pressed. Do not apply gravity yet.
-            _gravityVelocity = Vector3F.Zero;
+            _gravityVelocity = Vector3.Zero;
           }
           else
           {
             // Apply gravity velocity using the exact equation of motion.
-            Vector3F lastGravityVelocity = _gravityVelocity;
+            Vector3 lastGravityVelocity = _gravityVelocity;
 
             // v' = v + g∙t
             _gravityVelocity += -UpVector * Gravity * deltaTime;
@@ -499,7 +499,7 @@ namespace DigitalRune.Physics.Specialized
         // If we did not move up and we are not jumping, try a down step.
         if (!_isSteppingUp
           && (_hadGroundContact || _isSteppingDown)
-          && _jumpVelocity == Vector3F.Zero
+          && _jumpVelocity == Vector3.Zero
           && !IsClimbing)
         {
           // Method 1: Keep stepping down as long as we touch any ground.
@@ -534,7 +534,7 @@ namespace DigitalRune.Physics.Specialized
         if (!_isSteppingDown)
           maxMovementLength = desiredMovementLength;
 
-        Vector3F actualMovement = Position - _oldPosition;
+        Vector3 actualMovement = Position - _oldPosition;
         float actualMovementLength = actualMovement.Length;
         if (actualMovementLength > maxMovementLength)
         {
@@ -551,16 +551,16 @@ namespace DigitalRune.Physics.Specialized
 
         // If we stand on ground or if we moved up without jumping, then the gravity 
         // velocity must be reset.
-        if (_jumpVelocity == Vector3F.Zero && Vector3F.Dot(actualMovement, UpVector) > 0)
+        if (_jumpVelocity == Vector3.Zero && Vector3.Dot(actualMovement, UpVector) > 0)
         {
-          _gravityVelocity = Vector3F.Zero;
+          _gravityVelocity = Vector3.Zero;
         }
       }
 
       _lastDesiredVelocity = desiredMovement / deltaTime;
       Velocity = (Position - _oldPosition) / deltaTime;
 
-      Body.LinearVelocity = Vector3F.Zero;
+      Body.LinearVelocity = Vector3.Zero;
     }
 
   }

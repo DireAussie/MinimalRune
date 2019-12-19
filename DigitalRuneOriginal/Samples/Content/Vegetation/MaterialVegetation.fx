@@ -94,11 +94,11 @@ struct PSInput
   float3 Normal : TEXCOORD3;
   float3 VertexColor : TEXCOORD4;
   float Alpha : TEXCOORD5;
-#if SM4
+
   float4 VPos : SV_Position;
 #else
   float2 VPos : VPOS;
-#endif
+
   float Face : VFACE;
 };
 
@@ -133,13 +133,13 @@ VSOutput VS(VSInput input, float4x4 world)
   output.TexCoord = input.TexCoord;
   output.VertexColor = input.Color;
   
-#if !MGFX
+
   // This is a near-1 value which can be multiplied to effect parameters to
   // workaround a DX9 HLSL compiler preshader bug.
   float dummy1 = 1 + positionWorld.y * 1e-30f;
 #else
   float dummy1 = 1;
-#endif
+
   
   // Compute alpha value for LOD fade in/out.
   float3 plantPosition = world._m30_m31_m32;  // = mul(float4(0, 0, 0, 1), world)
@@ -246,20 +246,20 @@ float4 PS(PSInput input) : COLOR0
 //-----------------------------------------------------------------------------
 
 technique Default
-#if !MGFX     // TODO: Add Annotation support to MonoGame.
+
 < string InstancingTechnique = "DefaultInstancing"; >
-#endif
+
 {
   pass
   {
     CullMode = NONE;
-#if !SM4
+
     VertexShader = compile vs_3_0 VSNoInstancing();
     PixelShader = compile ps_3_0 PS();
 #else
     VertexShader = compile vs_4_0 VSNoInstancing();
     PixelShader = compile ps_4_0 PS();
-#endif
+
   }
 }
 
@@ -268,12 +268,12 @@ technique DefaultInstancing
   pass
   {
     CullMode = NONE;
-#if !SM4
+
     VertexShader = compile vs_3_0 VSInstancing();
     PixelShader = compile ps_3_0 PS();
 #else
     VertexShader = compile vs_4_0 VSInstancing();
     PixelShader = compile ps_4_0 PS();
-#endif
+
   }
 }

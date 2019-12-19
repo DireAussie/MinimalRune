@@ -4,9 +4,9 @@
 
 using System;
 
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX
+
 using System.Runtime.Serialization;
-#endif
+
 
 
 namespace DigitalRune.Windows.Charts
@@ -14,9 +14,9 @@ namespace DigitalRune.Windows.Charts
     /// <summary>
     /// The exception is thrown by <see cref="Palette"/> when a operation fails.
     /// </summary>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX
+
     [Serializable]
-#endif
+
     public class PaletteException : Exception
     {
         /// <overloads>
@@ -60,7 +60,7 @@ namespace DigitalRune.Windows.Charts
         }
 
 
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX
+
         /// <summary>
         /// Initializes a new instance of the <see cref="PaletteException"/> class with serialized
         /// data.
@@ -84,6 +84,6 @@ namespace DigitalRune.Windows.Charts
             : base(info, context)
         {
         }
-#endif
+
     }
 }

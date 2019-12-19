@@ -540,8 +540,8 @@ namespace DigitalRune.Physics.Specialized
         Pose bodyPose = Pose * ((Pose)skeletonPose.GetBonePoseAbsolute(i)) * offset;
 
         body.Pose = bodyPose;
-        body.LinearVelocity = Vector3F.Zero;
-        body.AngularVelocity = Vector3F.Zero;
+        body.LinearVelocity = Vector3.Zero;
+        body.AngularVelocity = Vector3.Zero;
       }
     }
 
@@ -574,8 +574,8 @@ namespace DigitalRune.Physics.Specialized
       Pose bodyPose = Pose * ((Pose)skeletonPose.GetBonePoseAbsolute(boneIndex)) * offset;
 
       body.Pose = bodyPose;
-      body.LinearVelocity = Vector3F.Zero;
-      body.AngularVelocity = Vector3F.Zero;
+      body.LinearVelocity = Vector3.Zero;
+      body.AngularVelocity = Vector3.Zero;
     }
 
   }

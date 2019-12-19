@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using DigitalRune.Graphics;
 using DigitalRune.Graphics.SceneGraph;
 using Microsoft.Practices.ServiceLocation;
@@ -96,4 +96,3 @@ namespace Samples
     }
   }
 }
-#endif

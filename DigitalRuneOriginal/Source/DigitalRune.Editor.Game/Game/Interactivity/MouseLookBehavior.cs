@@ -32,7 +32,7 @@ namespace DigitalRune.Editor.Game
 
         private CameraNode _cameraNode;
         private Point _lastMousePosition;
-        private Matrix33F _originalOrientation;
+        private Matrix _originalOrientation;
 
 
 
@@ -268,12 +268,12 @@ namespace DigitalRune.Editor.Game
             pitch -= (float)delta.Y * speed;
 
             // Set new camera orientation.
-            pose.Orientation = Matrix33F.CreateRotationY(yaw) * Matrix33F.CreateRotationX(pitch);
+            pose.Orientation = Matrix.CreateRotationY(yaw) * Matrix.CreateRotationX(pitch);
             _cameraNode.PoseWorld = pose;
         }
 
 
-        private static void GetYawPitch(Matrix33F matrix, out float yaw, out float pitch)
+        private static void GetYawPitch(Matrix matrix, out float yaw, out float pitch)
         {
             yaw = (float)Math.Atan2(-matrix.M20, matrix.M00);
             pitch = (float)Math.Asin(-matrix.M12);

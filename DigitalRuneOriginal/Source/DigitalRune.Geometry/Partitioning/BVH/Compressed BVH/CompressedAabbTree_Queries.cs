@@ -7,10 +7,10 @@ using System.Collections.Generic;
 using DigitalRune.Collections;
 using DigitalRune.Geometry.Shapes;
 
-#if !POOL_ENUMERABLES
+
 using DigitalRune.Mathematics;
 using DigitalRune.Mathematics.Algebra;
-#endif
+
 
 
 namespace DigitalRune.Geometry.Partitioning
@@ -30,7 +30,7 @@ namespace DigitalRune.Geometry.Partitioning
     {
       // This method avoids the Update() call!
 
-#if !POOL_ENUMERABLES
+
       if (_numberOfItems == 0)
         yield break;
       
@@ -62,7 +62,7 @@ namespace DigitalRune.Geometry.Partitioning
 #else
       // Avoiding garbage:
       return GetOverlapsWork.Create(this, ref aabb);
-#endif
+
     }
 
 
@@ -83,7 +83,7 @@ namespace DigitalRune.Geometry.Partitioning
 
       Update(false);
 
-#if !POOL_ENUMERABLES
+
       if (_numberOfItems == 0)
         yield break;
 
@@ -115,7 +115,7 @@ namespace DigitalRune.Geometry.Partitioning
 #else
       // Avoiding garbage:
       return GetLeafNodesWork.Create(this, ref aabb);
-#endif
+
     }
 
 
@@ -132,7 +132,7 @@ namespace DigitalRune.Geometry.Partitioning
     /// </remarks>
     public IEnumerable<int> GetOverlaps(int item)
     {
-#if !POOL_ENUMERABLES
+
       var aabb = GetAabbForItem(item);
 
       foreach (var touchedItem in GetOverlaps(aabb))
@@ -143,7 +143,7 @@ namespace DigitalRune.Geometry.Partitioning
 #else
       // Avoiding garbage:
       return GetOverlapsWithItemWork.Create(this, item);
-#endif
+
     }
 
 
@@ -152,11 +152,11 @@ namespace DigitalRune.Geometry.Partitioning
     {
       Update(false);
 
-#if !POOL_ENUMERABLES
+
       if (_numberOfItems == 0)
         yield break;
 
-      var rayDirectionInverse = new Vector3F(
+      var rayDirectionInverse = new Vector3(
             1 / ray.Direction.X,
             1 / ray.Direction.Y,
             1 / ray.Direction.Z);
@@ -191,7 +191,7 @@ namespace DigitalRune.Geometry.Partitioning
 #else
       // Avoiding garbage:
       return GetOverlapsWithRayWork.Create(this, ref ray);
-#endif
+
     }
 
 

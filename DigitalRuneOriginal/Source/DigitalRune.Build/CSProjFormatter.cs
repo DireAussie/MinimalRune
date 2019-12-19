@@ -70,13 +70,13 @@ namespace DigitalRune.Build
         }
 
 
-#if DEBUG
+
         public static void Test()
         {
             //ProcessFile(@"X:\DigitalRune\Samples\Samples\Platforms\MonoGame-WindowsPhone\Samples-MonoGame-WindowsPhone.csproj");
             ProcessFolder(@"X:\DigitalRune\Samples\Samples", true);
         }
-#endif
+
 
 
         /// <summary>

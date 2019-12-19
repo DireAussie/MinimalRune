@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using DigitalRune.Game.UI;
 using Microsoft.Xna.Framework;
 
@@ -66,4 +66,3 @@ with a StateMachine.",
     }
   }
 }
-#endif

@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if NETFX_CORE || PORTABLE || USE_TPL
+
 using System;
 using System.Collections.Generic;
 
@@ -442,7 +442,7 @@ namespace DigitalRune.Threading
     /// </exception>
     public static void Do(Action action1, Action action2)
     {
-#if PORTABLE
+
         throw Portable.NotImplementedException;
 #else
       try
@@ -453,7 +453,7 @@ namespace DigitalRune.Threading
       {
         throw new TaskException(exception);
       }
-#endif
+
     }
 
 
@@ -467,7 +467,7 @@ namespace DigitalRune.Threading
     /// </exception>
     public static void Do(params Action[] actions)
     {
-#if PORTABLE
+
         throw Portable.NotImplementedException;
 #else
       try
@@ -478,7 +478,7 @@ namespace DigitalRune.Threading
       {
         throw new TaskException(exception);
       }
-#endif
+
     }
 
 
@@ -501,7 +501,7 @@ namespace DigitalRune.Threading
     /// </exception>
     public static void For(int startInclusive, int endExclusive, Action<int> body)
     {
-#if PORTABLE
+
         throw Portable.NotImplementedException;
 #else
       try
@@ -512,7 +512,7 @@ namespace DigitalRune.Threading
       {
         throw new TaskException(exception);
       }
-#endif
+
     }
 
 
@@ -550,7 +550,7 @@ namespace DigitalRune.Threading
     /// </exception>
     public static void ForEach<T>(IEnumerable<T> collection, Action<T> action)
     {
-#if PORTABLE
+
         throw Portable.NotImplementedException;
 #else
       try
@@ -561,8 +561,8 @@ namespace DigitalRune.Threading
       {
         throw new TaskException(exception);
       }
-#endif
+
     }
   }
 }
-#endif
+

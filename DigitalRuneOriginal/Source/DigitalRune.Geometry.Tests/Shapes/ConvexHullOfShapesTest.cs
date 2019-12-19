@@ -14,8 +14,8 @@ namespace DigitalRune.Geometry.Shapes.Tests
     [SetUp]
     public void SetUp()
     {
-      child0 = new GeometricObject(new CircleShape(3), new Pose(new Vector3F(0, 5, 0), QuaternionF.CreateRotationX(ConstantsF.PiOver2)));
-      child1 = new GeometricObject(new CircleShape(3), new Pose(new Vector3F(0, -5, 0), QuaternionF.CreateRotationX(ConstantsF.PiOver2)));
+      child0 = new GeometricObject(new CircleShape(3), new Pose(new Vector3(0, 5, 0), Quaternion.CreateRotationX(ConstantsF.PiOver2)));
+      child1 = new GeometricObject(new CircleShape(3), new Pose(new Vector3(0, -5, 0), Quaternion.CreateRotationX(ConstantsF.PiOver2)));
 
       cs = new ConvexHullOfShapes();
       cs.Children.Add(child0);
@@ -33,29 +33,29 @@ namespace DigitalRune.Geometry.Shapes.Tests
     [Test]
     public void InnerPoint()
     {
-      Assert.AreEqual(new Vector3F(0, 0, 0), new ConvexHullOfShapes().InnerPoint);
-      Assert.AreEqual(new Vector3F(0, 0, 0), cs.InnerPoint);
-      cs.Children.Add(new GeometricObject(new PointShape(new Vector3F(5, 0, 0)), new Pose(new Vector3F(1, 0, 0), QuaternionF.Identity)));
-      Assert.AreEqual(new Vector3F(2, 0, 0), cs.InnerPoint);
+      Assert.AreEqual(new Vector3(0, 0, 0), new ConvexHullOfShapes().InnerPoint);
+      Assert.AreEqual(new Vector3(0, 0, 0), cs.InnerPoint);
+      cs.Children.Add(new GeometricObject(new PointShape(new Vector3(5, 0, 0)), new Pose(new Vector3(1, 0, 0), Quaternion.Identity)));
+      Assert.AreEqual(new Vector3(2, 0, 0), cs.InnerPoint);
     }
 
 
     [Test]
     public void GetSupportPoint()
     {
-      Assert.AreEqual(new Vector3F(0, 0, 0), new ConvexHullOfShapes().GetSupportPoint(new Vector3F(1, 0, 0)));
-      Assert.AreEqual(new Vector3F(0, 0, 0), new ConvexHullOfShapes().GetSupportPoint(new Vector3F(0, 1, 0)));
-      Assert.AreEqual(new Vector3F(0, 0, 0), new ConvexHullOfShapes().GetSupportPoint(new Vector3F(0, 0, 1)));
-      Assert.AreEqual(new Vector3F(0, 0, 0), new ConvexHullOfShapes().GetSupportPoint(new Vector3F(1, 1, 1)));
+      Assert.AreEqual(new Vector3(0, 0, 0), new ConvexHullOfShapes().GetSupportPoint(new Vector3(1, 0, 0)));
+      Assert.AreEqual(new Vector3(0, 0, 0), new ConvexHullOfShapes().GetSupportPoint(new Vector3(0, 1, 0)));
+      Assert.AreEqual(new Vector3(0, 0, 0), new ConvexHullOfShapes().GetSupportPoint(new Vector3(0, 0, 1)));
+      Assert.AreEqual(new Vector3(0, 0, 0), new ConvexHullOfShapes().GetSupportPoint(new Vector3(1, 1, 1)));
 
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(new Vector3F(3, 5, 0), cs.GetSupportPoint(new Vector3F(1, 0, 0))));
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(new Vector3F(3, 5, 0), cs.GetSupportPoint(new Vector3F(0, 1, 0))));
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(new Vector3F(0, 5, 3), cs.GetSupportPoint(new Vector3F(0, 0, 1))));
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(new Vector3F(-3, 5, 0), cs.GetSupportPoint(new Vector3F(-1, 0, 0))));
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(new Vector3F(3, -5, 0), cs.GetSupportPoint(new Vector3F(0, -1, 0))));
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(new Vector3F(0, 5, -3), cs.GetSupportPoint(new Vector3F(0, 0, -1))));
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(new Vector3F(0, 5, 0) + 3 * new Vector3F(1, 0, 1).Normalized, cs.GetSupportPoint(new Vector3F(1, 1, 1))));
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(new Vector3F(0, -5, 0) + 3 * new Vector3F(-1, 0, -1).Normalized, cs.GetSupportPoint(new Vector3F(-1, -1, -1))));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(new Vector3(3, 5, 0), cs.GetSupportPoint(new Vector3(1, 0, 0))));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(new Vector3(3, 5, 0), cs.GetSupportPoint(new Vector3(0, 1, 0))));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(new Vector3(0, 5, 3), cs.GetSupportPoint(new Vector3(0, 0, 1))));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(new Vector3(-3, 5, 0), cs.GetSupportPoint(new Vector3(-1, 0, 0))));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(new Vector3(3, -5, 0), cs.GetSupportPoint(new Vector3(0, -1, 0))));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(new Vector3(0, 5, -3), cs.GetSupportPoint(new Vector3(0, 0, -1))));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(new Vector3(0, 5, 0) + 3 * new Vector3(1, 0, 1).Normalized, cs.GetSupportPoint(new Vector3(1, 1, 1))));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(new Vector3(0, -5, 0) + 3 * new Vector3(-1, 0, -1).Normalized, cs.GetSupportPoint(new Vector3(-1, -1, -1))));
     }
 
 
@@ -72,7 +72,7 @@ namespace DigitalRune.Geometry.Shapes.Tests
       ConvexHullOfShapes convexHullOfShapes = new ConvexHullOfShapes();
       for (int i = 0; i < 10; i++)
       {
-        Pose pose = new Pose(new Vector3F(i, i, i));
+        Pose pose = new Pose(new Vector3(i, i, i));
         PointShape point = new PointShape(i, i, i);
         GeometricObject geometry = new GeometricObject(point, pose);
         convexHullOfShapes.Children.Add(geometry);

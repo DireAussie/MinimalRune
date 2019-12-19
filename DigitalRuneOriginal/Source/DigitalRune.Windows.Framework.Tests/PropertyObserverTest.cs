@@ -144,7 +144,7 @@ namespace DigitalRune.Windows.Framework.Tests
         }
 
 
-#if DEBUG
+
         [Test]
         [ExpectedException(typeof(ArgumentException))]
         public void RegisterShouldThrowWhenPropertyIsWrong()
@@ -153,7 +153,7 @@ namespace DigitalRune.Windows.Framework.Tests
             PropertyObserver<DummyClass> observer = new PropertyObserver<DummyClass>(source);
             observer.RegisterHandler("Misspelled Property", src => { });
         }
-#endif
+
 
 
         [Test]

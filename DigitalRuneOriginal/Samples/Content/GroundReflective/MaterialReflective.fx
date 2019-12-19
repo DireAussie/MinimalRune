@@ -146,7 +146,7 @@ float4 PS(PSInput input) : COLOR0
   // Compute a world space lookup position which we can use to sample the
   // reflection map. The lookup position is modified by the normal map to
   // create "bumpy" reflections.
-#if 1
+
   // Advanced perturbation method: 
   // Assume that reflection image is the image of a plane with a certain distance.
   // Compute perturbed lookup position that is exact for this plane.
@@ -168,7 +168,7 @@ float4 PS(PSInput input) : COLOR0
   float3 normalInPlane = normal - normal * dot(normal, ReflectionNormal);
   float3 offset = normalInPlane * ReflectionBumpStrength * 100;
   float3 lookupPosition = input.PositionWorld + offset;
-#endif
+
   
   // Convert world space lookup position to texture space.
   float4 reflectionTexCoord = mul(float4(lookupPosition, 1), ReflectionMatrix);
@@ -178,7 +178,7 @@ float4 PS(PSInput input) : COLOR0
   //float3 reflection = tex2Dproj(ReflectionSampler, reflectionTexCoord);
   float3 reflection = SampleLinear(ReflectionSampler, reflectionTexCoord.xy / reflectionTexCoord.w, ReflectionTextureSize).rgb;
     
-#if 1
+
   // ------ Handling reflectionTexCoords outside [0,1].
   reflectionTexCoord.xy /= reflectionTexCoord.w;
   // If a single reflection is rendered, the texture coordinates will be in [0,1].
@@ -196,7 +196,7 @@ float4 PS(PSInput input) : COLOR0
   //  ReflectionBorderColor, 
   //  reflection,
   //  FadeBorders(reflectionTexCoord.x, 0.1) * FadeBorders(reflectionTexCoord.y, 0.1) * (reflectionTexCoord.w >= 0));
-#endif 
+
 
   // Compute approximate Fresnel term and use it to scale reflection.
   //float3 viewDirection = normalize(input.PositionWorld.xyz - CameraPosition);
@@ -229,12 +229,12 @@ technique Default
 {
   pass
   {
-#if !SM4
+
     VertexShader = compile vs_3_0 VS();
     PixelShader = compile ps_3_0 PS();
 #else
     VertexShader = compile vs_4_0_level_9_3 VS();
     PixelShader = compile ps_4_0_level_9_3 PS();
-#endif
+
   }
 }

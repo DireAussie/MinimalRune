@@ -31,18 +31,18 @@ namespace DigitalRune.Graphics.Rendering
     };
 
     // Note: Cube map faces are left-handed! Therefore +Z is actually -Z.
-    private static readonly Vector3F[] CubeMapForwardVectors =
+    private static readonly Vector3[] CubeMapForwardVectors =
     { 
-      Vector3F.UnitX, -Vector3F.UnitX, 
-      Vector3F.UnitY, -Vector3F.UnitY,
-      -Vector3F.UnitZ, Vector3F.UnitZ   // Switch Z because cube maps are left handed
+      Vector3.UnitX, -Vector3.UnitX, 
+      Vector3.UnitY, -Vector3.UnitY,
+      -Vector3.UnitZ, Vector3.UnitZ   // Switch Z because cube maps are left handed
     };
 
-    private static readonly Vector3F[] CubeMapUpVectors =
+    private static readonly Vector3[] CubeMapUpVectors =
     { 
-      Vector3F.UnitY, Vector3F.UnitY,
-      Vector3F.UnitZ, -Vector3F.UnitZ,
-      Vector3F.UnitY, Vector3F.UnitY
+      Vector3.UnitY, Vector3.UnitY,
+      Vector3.UnitZ, -Vector3.UnitZ,
+      Vector3.UnitY, Vector3.UnitY
     };
 
 
@@ -206,7 +206,7 @@ namespace DigitalRune.Graphics.Rendering
 
           graphicsDevice.Clear(Color.White);
 
-          _perspectiveCameraNode.View = Matrix44F.CreateLookAt(
+          _perspectiveCameraNode.View = Matrix.CreateLookAt(
             pose.Position,
             pose.ToWorldPosition(CubeMapForwardVectors[side]),
             pose.ToWorldDirection(CubeMapUpVectors[side]));

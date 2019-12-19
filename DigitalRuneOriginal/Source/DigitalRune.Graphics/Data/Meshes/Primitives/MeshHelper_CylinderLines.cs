@@ -78,20 +78,20 @@ namespace DigitalRune.Graphics
         PrimitiveType = PrimitiveType.LineList,
       };
 
-      var vertices = new List<Vector3F>();
+      var vertices = new List<Vector3>();
 
       // Top circle.
       for (int i = 0; i < numberOfSegments; i++)
       {
         float angle = i * ConstantsF.TwoPi / numberOfSegments;
-        vertices.Add(new Vector3F((float)Math.Cos(angle), 1, -(float)Math.Sin(angle)));
+        vertices.Add(new Vector3((float)Math.Cos(angle), 1, -(float)Math.Sin(angle)));
       }
 
       // Bottom circle.
       for (int i = 0; i < numberOfSegments; i++)
       {
-        Vector3F p = vertices[i];
-        vertices.Add(new Vector3F(p.X, -1, p.Z));
+        Vector3 p = vertices[i];
+        vertices.Add(new Vector3(p.X, -1, p.Z));
       }
 
       submesh.VertexBuffer = new VertexBuffer(

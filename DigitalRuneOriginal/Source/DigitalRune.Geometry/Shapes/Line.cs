@@ -23,9 +23,9 @@ namespace DigitalRune.Geometry.Shapes
   /// <see cref="Direction"/> are equal.
   /// </para>
   /// </remarks>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
+
   public struct Line : IEquatable<Line>
   {
     //--------------------------------------------------------------
@@ -37,14 +37,14 @@ namespace DigitalRune.Geometry.Shapes
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly", MessageId = "OnLine")]
-    public Vector3F PointOnLine;
+    public Vector3 PointOnLine;
 
 
     /// <summary>
     /// The normalized direction vector.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-    public Vector3F Direction;
+    public Vector3 Direction;
 
 
 
@@ -70,7 +70,7 @@ namespace DigitalRune.Geometry.Shapes
     /// <param name="pointOnLine">A point on the line.</param>
     /// <param name="direction">The direction. (Must be normalized.)</param>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly", MessageId = "OnLine")]
-    public Line(Vector3F pointOnLine, Vector3F direction)
+    public Line(Vector3 pointOnLine, Vector3 direction)
     {
       PointOnLine = pointOnLine;
       Direction = direction;
@@ -215,7 +215,7 @@ namespace DigitalRune.Geometry.Shapes
     /// <paramref name="scale"/> is a non-uniform scaling. Non-uniform scaling of lines is not 
     /// supported.
     /// </exception>
-    internal void Scale(ref Vector3F scale)
+    internal void Scale(ref Vector3 scale)
     {
       if (scale.X != scale.Y || scale.Y != scale.Z)
         throw new NotSupportedException("Computing collisions for lines with non-uniform scaling is not supported.");

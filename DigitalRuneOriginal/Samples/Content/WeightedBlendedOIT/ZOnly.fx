@@ -55,13 +55,13 @@ float4 PS() : COLOR0
 //-----------------------------------------------------------------------------
 
 technique Default
-#if !MGFX
+
 < string InstancingTechnique = "DefaultInstancing"; >
-#endif
+
 {
   pass
   {
-#if !SM4
+
     // XNA
     VertexShader = compile vs_2_0 VSNoInstancing();
     PixelShader = compile ps_2_0 PS();
@@ -69,7 +69,7 @@ technique Default
     // MonoGame
     VertexShader = compile vs_4_0_level_9_1 VSNoInstancing();
     PixelShader = compile ps_4_0_level_9_1 PS();
-#endif
+
   }
 }
 
@@ -78,7 +78,7 @@ technique DefaultInstancing
 {
   pass
   {
-#if !SM4
+
     // XNA
     VertexShader = compile vs_3_0 VSInstancing();
     PixelShader = compile ps_3_0 PS();
@@ -86,6 +86,6 @@ technique DefaultInstancing
     // MonoGame
     VertexShader = compile vs_4_0 VSInstancing();
     PixelShader = compile ps_4_0 PS();
-#endif
+
   }
 }

@@ -223,9 +223,9 @@ namespace DigitalRune.Graphics.SceneGraph
     /// Gets or sets the name of this scene node.
     /// </summary>
     /// <value>The name of the scene node. The default value is <see langword="null"/>.</value>
-#if !PORTABLE && !NETFX_CORE
+
     [Category("Common")]
-#endif
+
     public string Name { get; set; }
 
 
@@ -233,9 +233,9 @@ namespace DigitalRune.Graphics.SceneGraph
     /// Gets the parent scene node.
     /// </summary>
     /// <value>The parent scene node.</value>
-#if !PORTABLE && !NETFX_CORE
+
     [Category("Hierarchy")]
-#endif
+
     public SceneNode Parent
     {
       get { return _parent; }
@@ -296,9 +296,9 @@ namespace DigitalRune.Graphics.SceneGraph
     /// </example>
     /// </remarks>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-#if !PORTABLE && !NETFX_CORE
+
     [Category("Hierarchy")]
-#endif
+
     public SceneNodeCollection Children
     {
       get { return _children; }
@@ -326,9 +326,9 @@ namespace DigitalRune.Graphics.SceneGraph
     /// <see langword="true"/> if this scene node has been disposed of; otherwise, 
     /// <see langword="false"/>.
     /// </value>
-#if !PORTABLE && !NETFX_CORE
+
     [Category("Common")]
-#endif
+
     public bool IsDisposed
     {
       get { return GetFlag(SceneNodeFlags.IsDisposed); }
@@ -376,9 +376,9 @@ namespace DigitalRune.Graphics.SceneGraph
     /// show up in the query results.
     /// </para>
     /// </remarks>
-#if !PORTABLE && !NETFX_CORE
+
     [Category("Common")]
-#endif
+
     public bool IsEnabled
     {
       get { return GetFlag(SceneNodeFlags.IsEnabled); }
@@ -400,9 +400,9 @@ namespace DigitalRune.Graphics.SceneGraph
     /// <see langword="true"/> if this scene node and its ancestors are enabled; otherwise, 
     /// <see langword="false"/>.
     /// </value>
-#if !PORTABLE && !NETFX_CORE
+
     [Category("Common")]
-#endif
+
     public bool ActualIsEnabled
     {
       get
@@ -433,9 +433,9 @@ namespace DigitalRune.Graphics.SceneGraph
     /// should not be modified. It is possible to move static scene nodes, but it may a cause a 
     /// performance hit.
     /// </remarks>
-#if !PORTABLE && !NETFX_CORE
+
     [Category("Common")]
-#endif
+
     public bool IsStatic
     {
       get { return GetFlag(SceneNodeFlags.IsStatic); }
@@ -456,9 +456,9 @@ namespace DigitalRune.Graphics.SceneGraph
     /// Renderers should ignore the scene node if this property is <see langword="false"/>.
     /// </remarks>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-#if !PORTABLE && !NETFX_CORE
+
     [Category("Graphics")]
-#endif
+
     public bool IsRenderable
     {
       get { return GetFlag(SceneNodeFlags.IsRenderable); }
@@ -473,9 +473,9 @@ namespace DigitalRune.Graphics.SceneGraph
     /// <see langword="true"/> if this scene node casts shadows; otherwise, <see langword="false"/>.
     /// The default value depends on the scene node type.
     /// </value>
-#if !PORTABLE && !NETFX_CORE
+
     [Category("Graphics")]
-#endif
+
     public bool CastsShadows
     {
       get { return GetFlag(SceneNodeFlags.CastsShadows); }
@@ -497,9 +497,9 @@ namespace DigitalRune.Graphics.SceneGraph
     /// <see langword="true"/> and the scene node does not need to be rendered into the shadow map.
     /// This is only valid for the directional light which set during occlusion culling.
     /// </remarks>
-#if !PORTABLE && !NETFX_CORE
+
     [Category("Graphics")]
-#endif
+
     public bool IsShadowCasterCulled
     {
       get { return GetFlag(SceneNodeFlags.IsShadowCasterCulled); }
@@ -512,9 +512,9 @@ namespace DigitalRune.Graphics.SceneGraph
     /// </summary>
     /// <value>A 16-bit value containing user-defined information.</value>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1726:UsePreferredTerms")]
-#if !PORTABLE && !NETFX_CORE
+
     [Category("Misc")]
-#endif
+
     public short UserFlags
     {
       get { return (short)((uint)_flags >> 16); }
@@ -535,7 +535,7 @@ namespace DigitalRune.Graphics.SceneGraph
     /// The <see cref="MaxDistance"/> determines the distance up to which the scene node is visible.
     /// The value stored in this property is a <i>view-normalized distance</i> as described here:
     /// <see cref="GraphicsHelper.GetViewNormalizedDistance(SceneNode,CameraNode)"/>. The method
-    /// <see cref="GraphicsHelper.GetViewNormalizedDistance(float, Matrix44F)"/> can be used to
+    /// <see cref="GraphicsHelper.GetViewNormalizedDistance(float, Matrix)"/> can be used to
     /// convert a distance to a view-normalized distance. The resulting value is independent of the
     /// current field-of-view and can be used for "distance culling".
     /// </para>
@@ -544,9 +544,9 @@ namespace DigitalRune.Graphics.SceneGraph
     /// node. It does not affect the visibility of child nodes.
     /// </para>
     /// </remarks>
-#if !PORTABLE && !NETFX_CORE
+
     [Category("Level of detail")]
-#endif
+
     public float MaxDistance { get; set; }
 
 
@@ -578,9 +578,9 @@ namespace DigitalRune.Graphics.SceneGraph
     /// in the query results.
     /// </para>
     /// </remarks>
-#if !PORTABLE && !NETFX_CORE
+
     [Category("Hierarchy")]
-#endif
+
     public SceneNode Proxy { get; set; }
 
 
@@ -596,9 +596,9 @@ namespace DigitalRune.Graphics.SceneGraph
     /// updated in the next frame.
     /// </remarks>
     /// <seealso cref="IGraphicsService.Frame"/>
-#if !PORTABLE && !NETFX_CORE
+
     [Category("Graphics")]
-#endif
+
     public int LastFrame { get; set; }
 
 
@@ -617,9 +617,9 @@ namespace DigitalRune.Graphics.SceneGraph
     /// together with the scene node.
     /// </para>
     /// </remarks>
-#if !PORTABLE && !NETFX_CORE
+
     [Category("Graphics")]
-#endif
+
     public object RenderData { get; set; }
 
 
@@ -639,9 +639,9 @@ namespace DigitalRune.Graphics.SceneGraph
     /// together with the scene node.
     /// </para>
     /// </remarks>
-#if !PORTABLE && !NETFX_CORE
+
     [Category("Misc")]
-#endif
+
     public object SceneData { get; set; }
 
 
@@ -658,9 +658,9 @@ namespace DigitalRune.Graphics.SceneGraph
     /// overwritten by the graphics engine.)
     /// </para>
     /// </remarks>
-#if !PORTABLE && !NETFX_CORE
+
     [Category("Misc")]
-#endif
+
     public float SortTag { get; set; }
 
 
@@ -679,9 +679,9 @@ namespace DigitalRune.Graphics.SceneGraph
     /// together with the scene node.
     /// </para>
     /// </remarks>
-#if !PORTABLE && !NETFX_CORE
+
     [Category("Misc")]
-#endif
+
     public object UserData { get; set; }
 
 

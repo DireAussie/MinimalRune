@@ -128,9 +128,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
       //Debug.WriteLine("HeightTree will have height: " + height);    // [DIGITALRUNE] No debug output.
 			root = BuildTree(nodes, 0, nodes.Length, height);
 			root.color = BLACK;
-			#if DEBUG
+
 			CheckProperties();
-			#endif
+
 		}
 		
 		/// <summary>
@@ -190,9 +190,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 		void ILineTracker.LineInserted(DocumentLine insertionPos, DocumentLine newLine)
 		{
 			InsertAfter(GetNode(insertionPos), newLine);
-			#if DEBUG
+
 			CheckProperties();
-			#endif
+
 		}
 		
 		HeightTreeNode InsertAfter(HeightTreeNode node, DocumentLine newLine)
@@ -544,9 +544,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 				throw new ArgumentException("start must be a line before end");
 			CollapsedLineSection section = new CollapsedLineSection(this, start, end);
 			AddCollapsedSection(section, length);
-			#if DEBUG
+
 			CheckProperties();
-			#endif
+
 			return section;
 		}
 
@@ -590,7 +590,7 @@ namespace ICSharpCode.AvalonEdit.Rendering
 
 		
 
-		#if DEBUG
+
 		[Conditional("DATACONSISTENCYTEST")]
 		internal void CheckProperties()
 		{
@@ -726,7 +726,7 @@ namespace ICSharpCode.AvalonEdit.Rendering
 				AppendTreeToString(node.right, b, indent);
 			}
 		}
-		#endif
+
 
 		
 

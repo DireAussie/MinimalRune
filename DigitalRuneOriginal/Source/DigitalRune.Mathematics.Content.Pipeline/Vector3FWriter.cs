@@ -10,10 +10,10 @@ using Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler;
 namespace DigitalRune.Mathematics.Content.Pipeline
 {
   /// <summary>
-  /// Writes a <see cref="Vector3F"/> to binary format.
+  /// Writes a <see cref="Vector3"/> to binary format.
   /// </summary>
   [ContentTypeWriter]
-  public class Vector3FWriter : ContentTypeWriter<Vector3F>
+  public class Vector3Writer : ContentTypeWriter<Vector3>
   {
     /// <summary>
     /// Gets the assembly qualified name of the runtime target type.
@@ -22,7 +22,7 @@ namespace DigitalRune.Mathematics.Content.Pipeline
     /// <returns>The qualified name.</returns>
     public override string GetRuntimeType(TargetPlatform targetPlatform)
     {
-      return typeof(Vector3F).AssemblyQualifiedName;
+      return typeof(Vector3).AssemblyQualifiedName;
     }
 
 
@@ -33,7 +33,7 @@ namespace DigitalRune.Mathematics.Content.Pipeline
     /// <returns>Name of the runtime loader.</returns>
     public override string GetRuntimeReader(TargetPlatform targetPlatform)
     {
-      return typeof(Vector3FReader).AssemblyQualifiedName;
+      return typeof(Vector3Reader).AssemblyQualifiedName;
     }
 
 
@@ -43,7 +43,7 @@ namespace DigitalRune.Mathematics.Content.Pipeline
     /// <param name="output">The content writer serializing the value.</param>
     /// <param name="value">The value to write.</param>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods")]
-    protected override void Write(ContentWriter output, Vector3F value)
+    protected override void Write(ContentWriter output, Vector3 value)
     {
       output.Write(value.X);
       output.Write(value.Y);

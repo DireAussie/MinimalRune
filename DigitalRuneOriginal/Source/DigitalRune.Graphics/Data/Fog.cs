@@ -269,7 +269,7 @@ namespace DigitalRune.Graphics
     /// orange/reddish appearance when looking into the sun and a blueish appearance opposite the
     /// sun.
     /// </remarks>
-    public Vector3F ScatteringSymmetry { get; set; }
+    public Vector3 ScatteringSymmetry { get; set; }
 
 
 
@@ -434,7 +434,7 @@ namespace DigitalRune.Graphics
     /// <exception cref="ArgumentNullException">
     /// <paramref name="fogNode"/> or <paramref name="cameraNode"/> is <see langword="null"/>.
     /// </exception>
-    public float GetIntensity(FogNode fogNode, CameraNode cameraNode, Vector3F targetPosition)
+    public float GetIntensity(FogNode fogNode, CameraNode cameraNode, Vector3 targetPosition)
     {
       if (fogNode == null)
         throw new ArgumentNullException("fogNode");
@@ -453,16 +453,16 @@ namespace DigitalRune.Graphics
     /// <param name="targetPosition">The target position.</param>
     /// <returns>The fog intensity (0 = no fog; 1 = full fog, nothing else visible).</returns>
     /*protected virtual*/
-    private float OnGetIntensity(FogNode fogNode, CameraNode cameraNode, Vector3F targetPosition)
+    private float OnGetIntensity(FogNode fogNode, CameraNode cameraNode, Vector3 targetPosition)
     {
       // These computations are the same as in FogRenderer and the Fog shader files.
 
       if (Numeric.IsZero(Density))
         return 0;
 
-      Vector3F cameraToPosition = targetPosition - cameraNode.PoseWorld.Position;
+      Vector3 cameraToPosition = targetPosition - cameraNode.PoseWorld.Position;
       float distance = cameraToPosition.Length; // The distance traveled inside the fog.
-      Vector3F cameraToPositionDirection = cameraToPosition / distance;
+      Vector3 cameraToPositionDirection = cameraToPosition / distance;
       
       // Compute a value that is 0 at Start and 1 at End.
       float ramp = (distance - Start) / (End - Start);
@@ -495,7 +495,7 @@ namespace DigitalRune.Graphics
     }
 
 
-    private static float GetOpticalLengthInHeightFog(float dist, float cameraDensity, Vector3F cameraToPosition, float heightFalloff)
+    private static float GetOpticalLengthInHeightFog(float dist, float cameraDensity, Vector3 cameraToPosition, float heightFalloff)
     {
       float opticalLength = dist * cameraDensity;
       const float SlopeThreshold = 0.00001f;

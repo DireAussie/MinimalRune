@@ -28,9 +28,9 @@ namespace DigitalRune.Windows
     /// </code>
     /// In this example 'MessageType' is a user-defined enumeration.
     /// </example>
-#if !SILVERLIGHT && !WINDOWS_PHONE
+
     [ValueConversion(typeof(object), typeof(Visibility))]
-#endif
+
     public class ComparisonToVisibilityConverter : IValueConverter
     {
         /// <summary>

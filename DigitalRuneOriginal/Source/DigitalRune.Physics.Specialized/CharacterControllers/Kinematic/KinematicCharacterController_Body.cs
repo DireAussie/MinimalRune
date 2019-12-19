@@ -60,7 +60,7 @@ namespace DigitalRune.Physics.Specialized
     /// This vector is normalized and defines the direction of the character capsule. Gravity will
     /// act against this direction.
     /// </remarks>
-    public Vector3F UpVector { get; private set; }
+    public Vector3 UpVector { get; private set; }
 
     
     /// <summary>
@@ -107,7 +107,7 @@ namespace DigitalRune.Physics.Specialized
     /// <remarks>
     /// The <see cref="Position"/> is the bottom position (the lowest point of the character's body).
     /// </remarks>
-    public Vector3F Position
+    public Vector3 Position
     {
       get
       {
@@ -127,7 +127,7 @@ namespace DigitalRune.Physics.Specialized
 
     //--------------------------------------------------------------
 
-    private void InitializeBody(Vector3F upVector)
+    private void InitializeBody(Vector3 upVector)
     {
       if (!upVector.TryNormalize())
         throw new ArgumentException("The up vector must not be a zero vector.");
@@ -166,7 +166,7 @@ namespace DigitalRune.Physics.Specialized
         Name = "CharacterController",
         
         Pose = new Pose(shape.Height / 2 * upVector, 
-                        QuaternionF.CreateRotation(Vector3F.UnitY, upVector)),
+                        Quaternion.CreateRotation(Vector3.UnitY, upVector)),
       };
 
       // When the user changes the shape, we must re-compute all contacts.

@@ -58,7 +58,7 @@ namespace Samples
       // instance stored in the content manager.
       _modelNode = sharedModelNode.Clone();
 
-      _modelNode.PoseWorld = new Pose(Vector3F.Zero, Matrix33F.CreateRotationY(-ConstantsF.PiOver2));
+      _modelNode.PoseWorld = new Pose(Vector3.Zero, Matrix.CreateRotationY(-ConstantsF.PiOver2));
 
       // The collision shape is stored in the UserData.
       var shape = (Shape)_modelNode.UserData;

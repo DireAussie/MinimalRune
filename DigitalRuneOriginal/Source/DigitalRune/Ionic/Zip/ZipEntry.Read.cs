@@ -246,7 +246,7 @@ namespace DigitalRune.Ionic.Zip
             // bit 0 set indicates that some kind of encryption is in use
             if ((ze._BitField & 0x01) == 0x01)
             {
-#if AESCRYPTO
+
                 if (ze.Encryption == EncryptionAlgorithm.WinZipAes128 ||
                     ze.Encryption == EncryptionAlgorithm.WinZipAes256)
                 {
@@ -259,7 +259,7 @@ namespace DigitalRune.Ionic.Zip
                     ze._LengthOfTrailer += 10;  // MAC
                 }
                 else
-#endif
+
                 {
                     // read in the header data for "weak" encryption
                     ze._WeakEncryptionHeader = new byte[12];
@@ -487,12 +487,12 @@ namespace DigitalRune.Ionic.Zip
                             j = ProcessExtraFieldZip64(buffer, j, dataSize, posn);
                             break;
 
-#if AESCRYPTO
+
                         case 0x9901: // WinZip AES encryption is in use.  (workitem 6834)
                             // we will handle this extra field only  if compressionmethod is 0x63
                             j = ProcessExtraFieldWinZipAes(buffer, j, dataSize, posn);
                             break;
-#endif
+
                         case 0x0017: // workitem 7968: handle PKWare Strong encryption header
                             j = ProcessExtraFieldPkwareStrongEncryption(buffer, j);
                             break;
@@ -533,7 +533,7 @@ namespace DigitalRune.Ionic.Zip
         }
 
 
-#if AESCRYPTO
+
         private int ProcessExtraFieldWinZipAes(byte[] buffer, int j, UInt16 dataSize, long posn)
         {
             if (this._CompressionMethod == 0x0063)
@@ -577,7 +577,7 @@ namespace DigitalRune.Ionic.Zip
             return j;
         }
 
-#endif
+
 
         private delegate T Func<T>();
 

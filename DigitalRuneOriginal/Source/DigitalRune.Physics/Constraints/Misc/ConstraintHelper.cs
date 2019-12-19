@@ -97,18 +97,18 @@ namespace DigitalRune.Physics.Constraints
     /// <exception cref="ArgumentNullException">
     /// <paramref name="body"/> is <see langword="null"/>.
     /// </exception>
-    public static Matrix33F ComputeKMatrix(this RigidBody body, Vector3F positionWorld)
+    public static Matrix ComputeKMatrix(this RigidBody body, Vector3 positionWorld)
     {
       if (body == null)
         throw new ArgumentNullException("body");
 
       if (body.MotionType != MotionType.Dynamic)
-        return Matrix33F.Zero;
+        return Matrix.Zero;
 
-      Vector3F radiusVector = positionWorld - body.PoseCenterOfMass.Position;
-      Matrix33F skewR = radiusVector.ToCrossProductMatrix();
-      Matrix33F massMatrixInverse = Matrix33F.CreateScale(body.MassInverse);
-      Matrix33F kMatrix = massMatrixInverse - skewR * body.InertiaInverseWorld * skewR;
+      Vector3 radiusVector = positionWorld - body.PoseCenterOfMass.Position;
+      Matrix skewR = radiusVector.ToCrossProductMatrix();
+      Matrix massMatrixInverse = Matrix.CreateScale(body.MassInverse);
+      Matrix kMatrix = massMatrixInverse - skewR * body.InertiaInverseWorld * skewR;
       return kMatrix;
     }
 
@@ -122,12 +122,12 @@ namespace DigitalRune.Physics.Constraints
     /// <exception cref="ArgumentNullException">
     /// <paramref name="body"/> is <see langword="null"/>.
     /// </exception>
-    public static void SetVelocityOfWorldPoint(this RigidBody body, Vector3F positionWorld, Vector3F velocityWorld)
+    public static void SetVelocityOfWorldPoint(this RigidBody body, Vector3 positionWorld, Vector3 velocityWorld)
     {
       if (body == null)
         throw new ArgumentNullException("body");
 
-      Vector3F oldVelocityWorld = body.GetVelocityOfWorldPoint(positionWorld);
+      Vector3 oldVelocityWorld = body.GetVelocityOfWorldPoint(positionWorld);
       var matrixK = ComputeKMatrix(body, positionWorld);
       var constraintImpulse = matrixK.Inverse * ((velocityWorld - oldVelocityWorld));
       body.ApplyImpulse(constraintImpulse, positionWorld);
@@ -153,10 +153,10 @@ namespace DigitalRune.Physics.Constraints
     /// second angle is [-90°, 90°].
     /// </para>
     /// </remarks>
-    public static Vector3F GetEulerAngles(Matrix33F rotation)
+    public static Vector3 GetEulerAngles(Matrix rotation)
     {
       // See book Geometric Tools, "Factoring Rotation Matrices as RxRyRz", pp. 848.
-      Vector3F result = new Vector3F();
+      Vector3 result = new Vector3();
 
       float sinY = rotation.M02;
       if (sinY < 1.0f)

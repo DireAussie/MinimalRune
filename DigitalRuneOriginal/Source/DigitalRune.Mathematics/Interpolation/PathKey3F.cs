@@ -12,10 +12,10 @@ namespace DigitalRune.Mathematics.Interpolation
   /// Defines a waypoint of a 3-dimensional path (singe-precision).
   /// </summary>
   /// <inheritdoc cref="Path3F"/>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
-  public class PathKey3F : CurveKey<float, Vector3F>
+
+  public class PathKey3F : CurveKey<float, Vector3>
   {
     private float _parameter;
 

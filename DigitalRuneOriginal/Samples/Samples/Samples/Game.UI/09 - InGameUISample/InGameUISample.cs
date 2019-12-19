@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using DigitalRune.Game.Input;
 using DigitalRune.Game.UI.Controls;
 using DigitalRune.Game.UI.Rendering;
@@ -234,4 +234,3 @@ When the user presses <Esc>, the mouse is released.",
     }
   }
 }
-#endif

@@ -17,7 +17,7 @@ namespace DigitalRune.Editor.Game
     /// </summary>
     /// <remarks>
     /// The property <see cref="Value"/> contains the 3-dimensional vector. Supported types are:
-    /// <see cref="Vector3"/> (XNA/MonoGame), <see cref="Vector3F"/> (DigitalRune) and 
+    /// <see cref="Vector3"/> (XNA/MonoGame), <see cref="Vector3"/> (DigitalRune) and 
     /// <see cref="Vector3D"/> (DigitalRune).
     /// </remarks>
     internal partial class Vector3Editor
@@ -160,9 +160,9 @@ namespace DigitalRune.Editor.Game
                     Y = SafeConvertToDouble(v.Y);
                     Z = SafeConvertToDouble(v.Z);
                 }
-                else if (_vectorType == typeof(Vector3F))
+                else if (_vectorType == typeof(Vector3))
                 {
-                    var v = (Vector3F)Value;
+                    var v = (Vector3)Value;
                     X = SafeConvertToDouble(v.X);
                     Y = SafeConvertToDouble(v.Y);
                     Z = SafeConvertToDouble(v.Z);
@@ -177,7 +177,7 @@ namespace DigitalRune.Editor.Game
                 else
                 {
                     if (Value != null)
-                        throw new NotSupportedException("Vector3Editor.Value must be a Vector3, Vector3F or Vector3D.");
+                        throw new NotSupportedException("Vector3Editor.Value must be a Vector3, Vector3 or Vector3D.");
 
                     X = 0;
                     Y = 0;
@@ -208,8 +208,8 @@ namespace DigitalRune.Editor.Game
             {
                 if (_vectorType == typeof(Vector3))
                     Value = new Vector3((float)X, (float)Y, (float)Z);
-                else if (_vectorType == typeof(Vector3F))
-                    Value = new Vector3F((float)X, (float)Y, (float)Z);
+                else if (_vectorType == typeof(Vector3))
+                    Value = new Vector3((float)X, (float)Y, (float)Z);
                 else if (_vectorType == typeof(Vector3D))
                     Value = new Vector3D(X, Y, Z);
             }

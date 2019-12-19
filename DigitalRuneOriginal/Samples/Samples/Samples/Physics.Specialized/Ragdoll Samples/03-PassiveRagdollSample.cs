@@ -43,7 +43,7 @@ a lot of unwanted jitter.",
 
       var modelNode = ContentManager.Load<ModelNode>("Dude/Dude");
       _meshNode = modelNode.GetSubtree().OfType<MeshNode>().First().Clone();
-      _meshNode.PoseLocal = new Pose(new Vector3F(0, 0, 0));
+      _meshNode.PoseLocal = new Pose(new Vector3(0, 0, 0));
       SampleHelper.EnablePerPixelLighting(_meshNode);
       GraphicsScreen.Scene.Children.Add(_meshNode);
 
@@ -86,7 +86,7 @@ a lot of unwanted jitter.",
       var box = new RigidBody(new BoxShape(0.4f, 0.4f, 0.4f))
       {
         Name = "Box",
-        Pose = new Pose(new Vector3F(0, 3, 0)),
+        Pose = new Pose(new Vector3(0, 3, 0)),
       };
       Simulation.RigidBodies.Add(box);
     }

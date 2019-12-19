@@ -125,7 +125,7 @@ namespace DigitalRune.Animation.Character
     /// the hand center. Then the target will be grabbed correctly with the hand center and not the
     /// wrist.
     /// </remarks>
-    public Vector3F TipOffset
+    public Vector3 TipOffset
     {
       get { return _tipOffset; }
       set
@@ -137,7 +137,7 @@ namespace DigitalRune.Animation.Character
         }
       }
     }
-    private Vector3F _tipOffset;
+    private Vector3 _tipOffset;
 
 
     /// <summary>
@@ -266,7 +266,7 @@ namespace DigitalRune.Animation.Character
       VectorF force = new VectorF(6);
 
       // The rotation axes of the bones.
-      Vector3F[] axes = new Vector3F[numberOfBones];
+      Vector3[] axes = new Vector3[numberOfBones];
 
       float toleranceSquared = AllowedDeviation * AllowedDeviation;
 
@@ -296,14 +296,14 @@ namespace DigitalRune.Animation.Character
           i--;
 
           // Compute rotation axis. 
-          Vector3F currentJointAbsolute = SkeletonPose.GetBonePoseAbsolute(currentBoneIndex).Translation;
-          Vector3F jointToTarget = Target - currentJointAbsolute;
-          Vector3F jointToTip = tipAbsolute - currentJointAbsolute;
-          axes[i] = Vector3F.Cross(jointToTarget, jointToTip);
+          Vector3 currentJointAbsolute = SkeletonPose.GetBonePoseAbsolute(currentBoneIndex).Translation;
+          Vector3 jointToTarget = Target - currentJointAbsolute;
+          Vector3 jointToTip = tipAbsolute - currentJointAbsolute;
+          axes[i] = Vector3.Cross(jointToTarget, jointToTip);
           if (!axes[i].TryNormalize())
-            axes[i] = Vector3F.UnitX;   // TODO: What should we really do in this case?
+            axes[i] = Vector3.UnitX;   // TODO: What should we really do in this case?
 
-          Vector3F jacobianColumnUpperPart = Vector3F.Cross(jointToTip, axes[i]);
+          Vector3 jacobianColumnUpperPart = Vector3.Cross(jointToTip, axes[i]);
 
           // Fill J.
           jacobianTransposed[i, 0] = jacobianColumnUpperPart.X;
@@ -338,12 +338,12 @@ namespace DigitalRune.Animation.Character
           i--;
 
           // Rotation axis for this bone.
-          Vector3F axis = axes[i];
+          Vector3 axis = axes[i];
           // Angle is computed using Euler integration with an arbitrary step size.
           float angle = velocities[i] * StepSize;
 
           // Apply rotation.
-          QuaternionF rotationChange = QuaternionF.CreateRotation(axis, angle);
+          Quaternion rotationChange = Quaternion.CreateRotation(axis, angle);
           SkeletonPose.RotateBoneAbsolute(currentBoneIndex, rotationChange);
 
           currentBoneIndex = skeleton.GetParent(currentBoneIndex);

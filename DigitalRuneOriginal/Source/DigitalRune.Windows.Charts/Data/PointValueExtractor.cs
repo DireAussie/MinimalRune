@@ -17,11 +17,11 @@ namespace DigitalRune.Windows.Charts
     /// Extracts <see cref="Point"/> values from a given collection.
     /// </summary>
     internal class PointValueExtractor
-#if SILVERLIGHT
+
         : FrameworkElement
 #else
         : Freezable
-#endif
+
     {
         //--------------------------------------------------------------
 
@@ -144,7 +144,7 @@ namespace DigitalRune.Windows.Charts
 
         //--------------------------------------------------------------
 
-#if !SILVERLIGHT
+
         /// <summary>
         /// When implemented in a derived class, creates a new instance of the <see cref="Freezable"/> 
         /// derived class.
@@ -154,7 +154,7 @@ namespace DigitalRune.Windows.Charts
         {
             return new PointValueExtractor();
         }
-#endif
+
 
         /// <summary>
         /// Extracts <see cref="Point"/> values from the collection.
@@ -183,7 +183,7 @@ namespace DigitalRune.Windows.Charts
         private void CreateBinding(object data)
         {
 
-#if SILVERLIGHT
+
             var binding = new Binding
             {
                 Source = data,
@@ -212,7 +212,7 @@ namespace DigitalRune.Windows.Charts
                 binding.Path = ValuePath;
 
             BindingOperations.SetBinding(this, ValueHolderProperty, binding);
-#endif
+
         }
 
     }

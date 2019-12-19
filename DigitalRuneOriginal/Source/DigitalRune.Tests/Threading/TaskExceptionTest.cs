@@ -1,10 +1,10 @@
 ﻿using System;
 using NUnit.Framework;
 
-#if !NETFX_CORE && !SILVERLIGHT
+
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-#endif
+
 
 
 namespace DigitalRune.Threading.Tests
@@ -27,7 +27,7 @@ namespace DigitalRune.Threading.Tests
     }
 
 
-#if !NETFX_CORE && !SILVERLIGHT && !ANDROID
+
     [Test]
     public void SerializationBinary()
     {
@@ -54,6 +54,6 @@ namespace DigitalRune.Threading.Tests
       Assert.AreEqual(exception0.Message, deserializedException.InnerExceptions[0].Message);
       Assert.AreEqual(exception1.Message, deserializedException.InnerExceptions[1].Message);
     }
-#endif
+
   }
 }

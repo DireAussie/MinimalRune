@@ -3,9 +3,9 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY
+
 using System.Runtime.Serialization;
-#endif
+
 
 
 namespace DigitalRune.Geometry
@@ -14,14 +14,14 @@ namespace DigitalRune.Geometry
   /// <summary>
   /// The exception that is thrown when an error in the geometry library occurs.
   /// </summary>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
+
   public class GeometryException : Exception
   {
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
     [NonSerialized]
-#endif
+
     private object _context;
 
 
@@ -110,7 +110,7 @@ namespace DigitalRune.Geometry
     }
 
 
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
     /// <summary>
     /// Initializes a new instance of the <see cref="GeometryException"/> class with serialized
     /// data.
@@ -133,6 +133,6 @@ namespace DigitalRune.Geometry
       : base(info, context)
     {
     }
-#endif
+
   }
 }

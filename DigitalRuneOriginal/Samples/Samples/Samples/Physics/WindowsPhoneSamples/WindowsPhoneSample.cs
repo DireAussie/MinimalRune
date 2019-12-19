@@ -1,4 +1,4 @@
-﻿#if WP7
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,7 +57,7 @@ collision is detected.",
     private const float MinCameraDistance = 10.0f;
     private const float MaxCameraDistance = 200.0f;
     private float _cameraDistance = 30.0f;
-    private Vector3F _cameraPosition;
+    private Vector3 _cameraPosition;
 
 
     /// <summary>
@@ -85,18 +85,18 @@ collision is detected.",
         GraphicsService.GraphicsDevice.Viewport.AspectRatio,
         1f,
         1000.0f);
-      Vector3F cameraTarget = new Vector3F(0, 1, 0);
-      Vector3F cameraPosition = new Vector3F(0, 12, 0);
-      Vector3F cameraUpVector = new Vector3F(0, 0, -1);
+      Vector3 cameraTarget = new Vector3(0, 1, 0);
+      Vector3 cameraPosition = new Vector3(0, 12, 0);
+      Vector3 cameraUpVector = new Vector3(0, 0, -1);
       GraphicsScreen.CameraNode = new CameraNode(new Camera(projection))
       {
-        View = Matrix44F.CreateLookAt(cameraPosition, cameraTarget, cameraUpVector),
+        View = Matrix.CreateLookAt(cameraPosition, cameraTarget, cameraUpVector),
       };
 
       // We use the accelerometer to control the camera view. The accelerometer registers every 
       // little change, but we do not want a shaky camera. We can use a low-pass filter to smooth
       // the sensor signal. 
-      _lowPassFilter = new LowPassFilter(new Vector3F(0, -1, 0))
+      _lowPassFilter = new LowPassFilter(new Vector3(0, -1, 0))
       {
         TimeConstant = 0.15f, // Let's try a time constant of 0.15 seconds.
         // When increasing the time constant the camera becomes more stable,
@@ -155,11 +155,11 @@ collision is detected.",
       //_simulation.Settings.Constraints.NumberOfConstraintIterations = 10;
       
       // Add the typical force effect for gravity and damping.
-      Simulation.ForceEffects.Add(new Gravity { Acceleration = new Vector3F(0, -10, 0) });
+      Simulation.ForceEffects.Add(new Gravity { Acceleration = new Vector3(0, -10, 0) });
       Simulation.ForceEffects.Add(new Damping());
 
       // Add a ground plane (static object).
-      var groundPlane = new RigidBody(new PlaneShape(Vector3F.UnitY, 0))
+      var groundPlane = new RigidBody(new PlaneShape(Vector3.UnitY, 0))
       {
         Name = "GroundPlane",
         MotionType = MotionType.Static,
@@ -176,20 +176,20 @@ collision is detected.",
       _shapes.Add(new SphereShape(0.6f));
 
       // Add convex shape.
-      var randomPoints = new List<Vector3F>();
+      var randomPoints = new List<Vector3>();
       for (int i = 0; i < 20; i++)
-        randomPoints.Add(RandomHelper.Random.NextVector3F(-1, 1));
+        randomPoints.Add(RandomHelper.Random.NextVector3(-1, 1));
       _shapes.Add(new ConvexPolyhedron(randomPoints));
 
       // Add a composite shape looking like table.
       var board = new BoxShape(2.0f, 0.3f, 1.2f);
       var leg = new BoxShape(0.2f, 1f, 0.2f);
       var table = new CompositeShape();
-      table.Children.Add(new GeometricObject(board, new Pose(new Vector3F(0.0f, 1.0f, 0.0f))));
-      table.Children.Add(new GeometricObject(leg, new Pose(new Vector3F(-0.7f, 0.5f, -0.4f))));
-      table.Children.Add(new GeometricObject(leg, new Pose(new Vector3F(-0.7f, 0.5f, 0.4f))));
-      table.Children.Add(new GeometricObject(leg, new Pose(new Vector3F(0.7f, 0.5f, 0.4f))));
-      table.Children.Add(new GeometricObject(leg, new Pose(new Vector3F(0.7f, 0.5f, -0.4f))));
+      table.Children.Add(new GeometricObject(board, new Pose(new Vector3(0.0f, 1.0f, 0.0f))));
+      table.Children.Add(new GeometricObject(leg, new Pose(new Vector3(-0.7f, 0.5f, -0.4f))));
+      table.Children.Add(new GeometricObject(leg, new Pose(new Vector3(-0.7f, 0.5f, 0.4f))));
+      table.Children.Add(new GeometricObject(leg, new Pose(new Vector3(0.7f, 0.5f, 0.4f))));
+      table.Children.Add(new GeometricObject(leg, new Pose(new Vector3(0.7f, 0.5f, -0.4f))));
       _shapes.Add(table);
     }
 
@@ -287,8 +287,8 @@ collision is detected.",
 
         // pWorld is point on the near clip plane of the camera.
         // Set the origin and direction of the ray for hit-testing.
-        Vector3F rayOrigin = _cameraPosition;
-        Vector3F rayDirection = ((Vector3F)pWorld - _cameraPosition).Normalized;
+        Vector3 rayOrigin = _cameraPosition;
+        Vector3 rayDirection = ((Vector3)pWorld - _cameraPosition).Normalized;
 
         if (touchLocation.State == TouchLocationState.Pressed)
         {
@@ -333,7 +333,7 @@ collision is detected.",
 
               // Get the position where the ray hits the other object.
               // (The position is defined in the local space of the object.)
-              Vector3F hitPositionLocal = (contactSet.ObjectA == _rayCollisionObject)
+              Vector3 hitPositionLocal = (contactSet.ObjectA == _rayCollisionObject)
                                             ? contact.PositionBLocal
                                             : contact.PositionALocal;
 
@@ -395,7 +395,7 @@ collision is detected.",
       Shape shape = _shapes[index];
       RigidBody body = new RigidBody(shape)
       {
-        Pose = new Pose(new Vector3F(0, 10, 0))
+        Pose = new Pose(new Vector3(0, 10, 0))
       };
       Simulation.RigidBodies.Add(body);
     }
@@ -427,7 +427,7 @@ collision is detected.",
       Explosion explosion = new Explosion
       {
         Force = 5e5f,
-        Position = RandomHelper.Random.NextVector3F(-2, 2),
+        Position = RandomHelper.Random.NextVector3(-2, 2),
         Radius = 12
       };
       Simulation.ForceEffects.Add(explosion);
@@ -491,43 +491,43 @@ collision is detected.",
     private void TiltCamera(TimeSpan deltaTime)
     {
       // (Note: We use DigitalRune Mathematics instead of the XNA math types - mainly because 
-      // DigitalRune Mathematics provides a 3x3 matrix to describe rotations and the QuaternionF 
+      // DigitalRune Mathematics provides a 3x3 matrix to describe rotations and the Quaternion 
       // provides a nice helper function to create a rotation from two given vectors.
       // 
       // Please note that DigitalRune Mathematics uses column vectors whereas XNA uses row vectors.
-      // When using Vector3F and Matrix33F we need to multiple them in this order: v' = M * v.
+      // When using Vector3 and Matrix we need to multiple them in this order: v' = M * v.
       // When using Vector3 and Matrix we need to multiple them in this order: v' = v * M.)
 
       // Get accelerometer value transformed into world space.
-      Vector3F accelerometerVector = new Vector3F(
+      Vector3 accelerometerVector = new Vector3(
         -InputService.AccelerometerValue.Y,
         InputService.AccelerometerValue.Z,
         -InputService.AccelerometerValue.X);
 
       // Run the accelerometer signal through a low-pass filter to remove noise and jitter.
-      Vector3F currentGravityDirection = _lowPassFilter.Filter(accelerometerVector, (float)deltaTime.TotalSeconds);
+      Vector3 currentGravityDirection = _lowPassFilter.Filter(accelerometerVector, (float)deltaTime.TotalSeconds);
 
-      Matrix33F cameraTilt;
+      Matrix cameraTilt;
       if (!currentGravityDirection.IsNumericallyZero)
       {
         // We have some valid sensor readings.
         // Let's compute the tilt of the camera. When the phone is lying flat on a table the camera
         // looks down onto the scene. When the phone is tilted we want to rotate the position of
-        // the camera. QuaternionF contains a useful helper function that creates a rotation from
+        // the camera. Quaternion contains a useful helper function that creates a rotation from
         // two given directions - exactly what we need here.
-        cameraTilt = QuaternionF.CreateRotation(currentGravityDirection, new Vector3F(0, -1, 0)).ToRotationMatrix33();
+        cameraTilt = Quaternion.CreateRotation(currentGravityDirection, new Vector3(0, -1, 0)).ToRotationMatrix33();
       }
       else
       {
         // Current acceleration is nearly (0, 0, 0). We cannot infer any useful direction from
         // this vector. Reset the camera tilt.
-        cameraTilt = Matrix33F.Identity;
+        cameraTilt = Matrix.Identity;
       }
 
       // ----- Set up the view matrix (= the position and orientation of the camera).
-      Vector3F cameraTarget = new Vector3F(0, 2, 0);                  // That's were the camera is looking at.
-      Vector3F cameraPosition = new Vector3F(0, _cameraDistance, 0);  // That's the default position of the camera.
-      Vector3F cameraUpVector = new Vector3F(0, 0, -1);               // That's the up-vector of the camera.
+      Vector3 cameraTarget = new Vector3(0, 2, 0);                  // That's were the camera is looking at.
+      Vector3 cameraPosition = new Vector3(0, _cameraDistance, 0);  // That's the default position of the camera.
+      Vector3 cameraUpVector = new Vector3(0, 0, -1);               // That's the up-vector of the camera.
 
       // Apply the camera tilt to the position and orientation.
       cameraPosition = cameraTilt * cameraPosition;
@@ -537,11 +537,10 @@ collision is detected.",
       cameraPosition.Y = Math.Max(0.5f, cameraPosition.Y);
 
       // Create the view matrix from these points.
-      GraphicsScreen.CameraNode.View = Matrix44F.CreateLookAt(cameraPosition, cameraTarget, cameraUpVector);
+      GraphicsScreen.CameraNode.View = Matrix.CreateLookAt(cameraPosition, cameraTarget, cameraUpVector);
 
       // Save the camera position because it is required for hit-testing in DragBodies().
       _cameraPosition = cameraPosition;
     }
   }
 }
-#endif

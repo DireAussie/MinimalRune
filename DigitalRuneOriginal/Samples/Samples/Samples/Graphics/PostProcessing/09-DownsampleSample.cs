@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using System;
 using DigitalRune.Game.Input;
 using DigitalRune.Graphics;
@@ -62,4 +62,3 @@ namespace Samples.Graphics
     }
   }
 }
-#endif

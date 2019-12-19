@@ -8,9 +8,9 @@ using System.Threading;
 using DigitalRune.Collections;
 using DigitalRune.Mathematics.Algebra;
 
-#if XNA || MONOGAME
+
 using Microsoft.Xna.Framework;
-#endif
+
 
 
 namespace DigitalRune.Animation.Character
@@ -67,10 +67,10 @@ namespace DigitalRune.Animation.Character
     private SrtTransform[] _bonePoseAbsolute;
     private FastBitArray _isBonePoseAbsoluteDirty;
 
-    private volatile Matrix44F[] _skinningMatrices;
-#if XNA || MONOGAME
+    private volatile Matrix[] _skinningMatrices;
+
     private volatile Matrix[] _skinningMatricesXna;
-#endif
+
     private FastBitArray _isSkinningMatrixDirty;
 
     // Object to lock when updating stuff in reads.
@@ -83,7 +83,7 @@ namespace DigitalRune.Animation.Character
     //--------------------------------------------------------------
 
     // Array must not be modified by user!
-    public Matrix44F[] SkinningMatrices
+    public Matrix[] SkinningMatrices
     {
       get
       {
@@ -95,7 +95,7 @@ namespace DigitalRune.Animation.Character
             {
               _isDirty = true;
               _isSkinningMatrixDirty.SetAll(true);
-              _skinningMatrices = new Matrix44F[_bonePoseRelative.Length];
+              _skinningMatrices = new Matrix[_bonePoseRelative.Length];
             }
           }
         }
@@ -106,7 +106,7 @@ namespace DigitalRune.Animation.Character
     }
 
 
-#if XNA || MONOGAME
+
     // Array must not be modified by user!
     public Matrix[] SkinningMatricesXna
     {
@@ -129,7 +129,7 @@ namespace DigitalRune.Animation.Character
         return _skinningMatricesXna;
       }
     }
-#endif
+
 
 
 
@@ -355,7 +355,7 @@ namespace DigitalRune.Animation.Character
                                     out _bonePoseAbsolute[i]);
             }
 
-            // ----- Update skinning matrices (either the Matrix44F or the XNA variant).
+            // ----- Update skinning matrices (either the Matrix or the XNA variant).
             if (_skinningMatrices != null)
             {
               for (int i = 0; i < numberOfBones; i++)
@@ -366,7 +366,7 @@ namespace DigitalRune.Animation.Character
               }
             }
 
-#if XNA || MONOGAME
+
             if (_skinningMatricesXna != null)
             {
               if (_skinningMatrices != null)
@@ -384,13 +384,13 @@ namespace DigitalRune.Animation.Character
                 }
               }
             }
-#endif
 
-#if !NETFX_CORE && !NET45
+
+
             Thread.MemoryBarrier();
 #else
             Interlocked.MemoryBarrier();
-#endif
+
 
             _isBonePoseRelativeDirty.SetAll(false);
             _isBonePoseAbsoluteDirty.SetAll(false);
@@ -418,11 +418,11 @@ namespace DigitalRune.Animation.Character
             SrtTransform.Multiply(ref _skeletonPose.Skeleton.BindPosesRelative[boneIndex],
                                   ref _skeletonPose.BoneTransforms[boneIndex], out _bonePoseRelative[boneIndex]);
 
-#if !NETFX_CORE && !NET45
+
             Thread.MemoryBarrier();
 #else
             Interlocked.MemoryBarrier();
-#endif
+
 
             _isBonePoseRelativeDirty[boneIndex] = false;
           }
@@ -462,11 +462,11 @@ namespace DigitalRune.Animation.Character
                                     out _bonePoseAbsolute[boneIndex]);
             }
 
-#if !NETFX_CORE && !NET45
+
             Thread.MemoryBarrier();
 #else
             Interlocked.MemoryBarrier();
-#endif
+
 
             _isBonePoseAbsoluteDirty[boneIndex] = false;
           }

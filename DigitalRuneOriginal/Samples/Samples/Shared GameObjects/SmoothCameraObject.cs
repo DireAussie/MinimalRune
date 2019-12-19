@@ -9,9 +9,9 @@ using DigitalRune.Mathematics.Algebra;
 using DigitalRune.Mathematics.SignalProcessing;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Xna.Framework.Input;
-#if MONOGAME || WINDOWS_PHONE
+
 using Microsoft.Xna.Framework.Input.Touch;
-#endif
+
 using MathHelper = DigitalRune.Mathematics.MathHelper;
 
 
@@ -42,7 +42,7 @@ namespace Samples
     private float _farDistance;
 
     // Position and Orientation of camera.
-    private Vector3F _defaultPosition = new Vector3F(0, 2, 5);
+    private Vector3 _defaultPosition = new Vector3(0, 2, 5);
     private float _defaultYaw;
     private float _defaultPitch;
 
@@ -108,9 +108,9 @@ namespace Samples
       IsEnabled = true;
       _farDistance = farDistance;
 
-#if MONOGAME || WINDOWS_PHONE
+
       TouchPanel.EnabledGestures |= GestureType.FreeDrag;
-#endif
+
     }
 
 
@@ -184,7 +184,7 @@ namespace Samples
     }
 
 
-    public void ResetPose(Vector3F position, float yaw, float pitch)
+    public void ResetPose(Vector3 position, float yaw, float pitch)
     {
       _defaultPosition = position;
       _defaultYaw = yaw;
@@ -212,7 +212,7 @@ namespace Samples
 
         CameraNode.PoseWorld = new Pose(
           _defaultPosition,
-          QuaternionF.CreateRotationY(_defaultYaw) * QuaternionF.CreateRotationX(_defaultPitch));
+          Quaternion.CreateRotationY(_defaultYaw) * Quaternion.CreateRotationX(_defaultPitch));
       }
     }
 
@@ -250,7 +250,7 @@ namespace Samples
       Vector2F mousePositionDelta = _inputService.MousePositionDelta;
       GamePadState gamePadState = _inputService.GetGamePadState(LogicalPlayerIndex.One);
       Vector2F touchDelta = Vector2F.Zero;
-#if MONOGAME || WINDOWS_PHONE
+
       foreach (var gesture in _inputService.Gestures)
       {
         if (gesture.GestureType == GestureType.FreeDrag)
@@ -261,12 +261,12 @@ namespace Samples
           mousePositionDelta = Vector2F.Zero;
         }
       }
-#endif
 
-#if WINDOWS_PHONE || IOS
+
+
       // On Windows Phone touch input also sets the mouse input. --> Ignore mouse data.
       mousePositionDelta = Vector2F.Zero;
-#endif
+
 
       float deltaYaw = -mousePositionDelta.X - touchDelta.X - gamePadState.ThumbSticks.Right.X * ThumbStickFactor;
       orientationFilter.RawValue[0] += deltaYaw * deltaTimeF * AngularVelocityMagnitude;
@@ -285,12 +285,12 @@ namespace Samples
       }
 
       // Compute new orientation of the camera.
-      QuaternionF orientation = QuaternionF.CreateRotationY(orientationFilter.RawValue[0]) * QuaternionF.CreateRotationX(orientationFilter.RawValue[1]);
+      Quaternion orientation = Quaternion.CreateRotationY(orientationFilter.RawValue[0]) * Quaternion.CreateRotationX(orientationFilter.RawValue[1]);
 
       // Create velocity from <W>, <A>, <S>, <D> and <R>, <F> keys. 
       // <R> or DPad up is used to move up ("rise"). 
       // <F> or DPad down is used to move down ("fall").
-      Vector3F velocity = Vector3F.Zero;
+      Vector3 velocity = Vector3.Zero;
       KeyboardState keyboardState = _inputService.KeyboardState;
       if (keyboardState.IsKeyDown(Keys.W))
         velocity.Z--;
@@ -316,7 +316,7 @@ namespace Samples
         velocity *= SpeedBoost;
 
       // Multiply the velocity by time to get the translation for this frame.
-      Vector3F translation = velocity * LinearVelocityMagnitude * deltaTimeF;
+      Vector3 translation = velocity * LinearVelocityMagnitude * deltaTimeF;
 
       positionFilter.RawValue[0] += translation.X;
       positionFilter.RawValue[1] += translation.Y;
@@ -331,8 +331,8 @@ namespace Samples
 
       // Set the new (filtered) camera pose.
       CameraNode.PoseWorld = new Pose(
-        new Vector3F(positionFilter.FilteredValue[0], positionFilter.FilteredValue[1], positionFilter.FilteredValue[2]),
-        QuaternionF.CreateRotationY(orientationFilter.FilteredValue[0]) * QuaternionF.CreateRotationX(orientationFilter.FilteredValue[1]));
+        new Vector3(positionFilter.FilteredValue[0], positionFilter.FilteredValue[1], positionFilter.FilteredValue[2]),
+        Quaternion.CreateRotationY(orientationFilter.FilteredValue[0]) * Quaternion.CreateRotationX(orientationFilter.FilteredValue[1]));
     }
   }
 }

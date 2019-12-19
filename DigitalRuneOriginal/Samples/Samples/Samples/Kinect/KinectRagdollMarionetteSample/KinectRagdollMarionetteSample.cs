@@ -1,4 +1,4 @@
-﻿#if KINECT
+﻿
 using System.Linq;
 using DigitalRune.Animation.Character;
 using DigitalRune.Geometry;
@@ -81,7 +81,7 @@ We could also add more constraints to stabilize the ragdoll.",
     public KinectRagdollMarionetteSample(Game game)
       : base(game)
     {
-      SetCamera(new Vector3F(0, 1, 1), 0, 0);
+      SetCamera(new Vector3(0, 1, 1), 0, 0);
 
       // Add a background object.
       GameObjectService.Objects.Add(new SandboxObject(Services));
@@ -101,7 +101,7 @@ We could also add more constraints to stabilize the ragdoll.",
       var contentManager = Services.GetInstance<ContentManager>();
       var dudeModelNode = contentManager.Load<ModelNode>("Dude/Dude");
       _meshNode = dudeModelNode.GetSubtree().OfType<MeshNode>().First().Clone();
-      _meshNode.PoseLocal = new Pose(new Vector3F(0, 0, 0));
+      _meshNode.PoseLocal = new Pose(new Vector3(0, 0, 0));
       SampleHelper.EnablePerPixelLighting(_meshNode);
       GraphicsScreen.Scene.Children.Add(_meshNode);
 
@@ -285,7 +285,7 @@ We could also add more constraints to stabilize the ragdoll.",
         // The Kinect position (0, 0, 0) is at the Kinect sensor and not on the floor. In this
         // sample the floor is at height 0. Therefore, we add a vertical offset to the Kinect 
         // positions.
-        var offset = new Vector3F(0, _kinectSensorHeight, 0);
+        var offset = new Vector3(0, _kinectSensorHeight, 0);
 
         // The new pelvis position. (We keep the original rotation and use the Kinect position.)
         var kinectSkeletonPose = _kinectWrapper.SkeletonPoseA;
@@ -340,15 +340,15 @@ We could also add more constraints to stabilize the ragdoll.",
 
       // Change y offset of Kinect skeleton data.
       if (InputService.IsDown(Keys.NumPad8))
-        _kinectWrapper.Offset = _kinectWrapper.Offset + new Vector3F(0, 0.1f * deltaTime, 0);
+        _kinectWrapper.Offset = _kinectWrapper.Offset + new Vector3(0, 0.1f * deltaTime, 0);
       if (InputService.IsDown(Keys.NumPad5))
-        _kinectWrapper.Offset = _kinectWrapper.Offset - new Vector3F(0, 0.1f * deltaTime, 0);
+        _kinectWrapper.Offset = _kinectWrapper.Offset - new Vector3(0, 0.1f * deltaTime, 0);
 
       // Change scale of Kinect skeleton data.
       if (InputService.IsDown(Keys.NumPad9))
-        _kinectWrapper.Scale = _kinectWrapper.Scale + new Vector3F(0.1f * deltaTime);
+        _kinectWrapper.Scale = _kinectWrapper.Scale + new Vector3(0.1f * deltaTime);
       if (InputService.IsDown(Keys.NumPad6))
-        _kinectWrapper.Scale = _kinectWrapper.Scale - new Vector3F(0.1f * deltaTime);
+        _kinectWrapper.Scale = _kinectWrapper.Scale - new Vector3(0.1f * deltaTime);
 
       // Toggle drawing of model.
       if (InputService.IsPressed(Keys.NumPad0, false))
@@ -408,8 +408,8 @@ We could also add more constraints to stabilize the ragdoll.",
       // Draw Kinect skeletons for debugging.
       if (_drawKinectSkeletons)
       {
-        var pose = new Pose(new Vector3F(0, _kinectSensorHeight, 0));
-        debugRenderer.DrawSkeleton(_kinectWrapper.SkeletonPoseA, pose, Vector3F.One, 0.1f, Color.Orange, true);
+        var pose = new Pose(new Vector3(0, _kinectSensorHeight, 0));
+        debugRenderer.DrawSkeleton(_kinectWrapper.SkeletonPoseA, pose, Vector3.One, 0.1f, Color.Orange, true);
       }
 
       // Draw model skeletons of tracked players for debugging.
@@ -431,4 +431,3 @@ We could also add more constraints to stabilize the ragdoll.",
     }
   }
 }
-#endif

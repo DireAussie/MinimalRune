@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System.Globalization;
-#if ANIMATION
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -156,7 +156,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
         // Log warning for invalid transform matrices - but not too many warnings.
         if (numberOfWarnings < 2)
         {
-          if (!SrtTransform.IsValid((Matrix44F)bone.Transform))
+          if (!SrtTransform.IsValid((Matrix)bone.Transform))
           {
             if (numberOfWarnings < 1)
               _context.Logger.LogWarning(null, _input.Identity, "Bone transform is not supported. Bone transform matrices may only contain scaling, rotation and translation.");
@@ -331,4 +331,4 @@ namespace DigitalRune.Graphics.Content.Pipeline
 
   }
 }
-#endif
+

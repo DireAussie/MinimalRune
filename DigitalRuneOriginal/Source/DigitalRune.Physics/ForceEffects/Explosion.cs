@@ -65,7 +65,7 @@ namespace DigitalRune.Physics.ForceEffects
     /// Gets or sets the position of the center of the explosion.
     /// </summary>
     /// <value>The position of the explosion center. The default is <c>(0, 0, 0)</c>.</value>
-    public Vector3F Position { get; set; }
+    public Vector3 Position { get; set; }
 
 
     /// <summary>
@@ -179,7 +179,7 @@ namespace DigitalRune.Physics.ForceEffects
         throw new ArgumentNullException("body", "Rigid body in area of effect must not be null.");
 
       // Calculate distance to explosion center.
-      Vector3F explosionToBody = body.PoseCenterOfMass.Position - Position;
+      Vector3 explosionToBody = body.PoseCenterOfMass.Position - Position;
       float distanceSquared = explosionToBody.LengthSquared;
 
       float radiusSquared = Radius * Radius;
@@ -190,7 +190,7 @@ namespace DigitalRune.Physics.ForceEffects
       float attenuation = 1 - distanceSquared / radiusSquared; 
 
       if (!explosionToBody.TryNormalize())
-        explosionToBody = Vector3F.UnitY;
+        explosionToBody = Vector3.UnitY;
 
       // Apply force in direction of distance. Force fades off with the distance.
       var force = Force * attenuation * explosionToBody;

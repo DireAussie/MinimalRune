@@ -28,7 +28,7 @@ namespace DigitalRune.Windows.Charts
         }
 
 
-#if WINDOWS_PHONE
+
         /// <summary>
         /// Initializes a new instance of the <see cref="TextLabelCollection"/> class with the given
         /// text labels.
@@ -58,10 +58,10 @@ namespace DigitalRune.Windows.Charts
             : base(textLabels)
         {
         }
-#endif
 
 
-#if WINDOWS_PHONE
+
+
         /// <summary>
         /// Initializes a new instance of the <see cref="TextLabelCollection"/> class with the given
         /// list of text labels.
@@ -86,6 +86,6 @@ namespace DigitalRune.Windows.Charts
             : base(textLabels)
         {
         }
-#endif
+
     }
 }

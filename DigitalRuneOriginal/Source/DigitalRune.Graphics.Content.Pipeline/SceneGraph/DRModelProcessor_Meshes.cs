@@ -211,10 +211,10 @@ namespace DigitalRune.Graphics.Content.Pipeline
         Name = mesh.Name,
         BoundingShape = boundingShape,
         Submeshes = submeshes,
-#if ANIMATION
+
         Skeleton = _skeleton,
         Animations = _animations,
-#endif
+
       };
     }
 
@@ -458,10 +458,10 @@ namespace DigitalRune.Graphics.Content.Pipeline
         if (_modelDescription != null && _modelDescription.AabbEnabled)
         {
           // We assume that the AABB is given in the local space.
-          Vector3F aabbMinimum = (Vector3F)_modelDescription.AabbMinimum;
-          Vector3F aabbMaximum = (Vector3F)_modelDescription.AabbMaximum;
-          Vector3F center = (aabbMaximum + aabbMinimum) / 2;
-          Vector3F extent = aabbMaximum - aabbMinimum;
+          Vector3 aabbMinimum = (Vector3)_modelDescription.AabbMinimum;
+          Vector3 aabbMaximum = (Vector3)_modelDescription.AabbMaximum;
+          Vector3 center = (aabbMaximum + aabbMinimum) / 2;
+          Vector3 extent = aabbMaximum - aabbMinimum;
           if (center.IsNumericallyZero)
             boundingShape = new BoxShape(extent);
           else
@@ -485,19 +485,19 @@ namespace DigitalRune.Graphics.Content.Pipeline
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
     private static Shape ComputeBestFitBoundingShape(MeshContent mesh)
     {
-      List<Vector3F> points = mesh.Positions.Select(position => (Vector3F)position).ToList();
+      List<Vector3> points = mesh.Positions.Select(position => (Vector3)position).ToList();
 
       var boundingShape = GeometryHelper.CreateBoundingShape(points);
 
       //  // Compute minimal sphere.
-      //  Vector3F center;
+      //  Vector3 center;
       //  float radius;
       //  GeometryHelper.ComputeBoundingSphere(points, out radius, out center);
       //  SphereShape sphere = new SphereShape(radius);
       //  float sphereVolume = sphere.GetVolume();
 
       //  // Compute minimal box.
-      //  Vector3F boxExtent;
+      //  Vector3 boxExtent;
       //  Pose boxPose;
       //  GeometryHelper.ComputeBoundingBox(points, out boxExtent, out boxPose);
       //  var box = new BoxShape(boxExtent);
@@ -533,12 +533,12 @@ namespace DigitalRune.Graphics.Content.Pipeline
     {
       Debug.Assert(mesh.Positions.Count > 0);
 
-      List<Vector3F> points = mesh.Positions.Select(position => (Vector3F)position).ToList();
+      List<Vector3> points = mesh.Positions.Select(position => (Vector3)position).ToList();
 
       var boundingShape = GeometryHelper.CreateBoundingShape(points);
 
       // Compute minimal sphere.
-      Vector3F center;
+      Vector3 center;
       float radius;
       GeometryHelper.ComputeBoundingSphere(points, out radius, out center);
       SphereShape sphere = new SphereShape(radius);

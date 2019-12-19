@@ -1,4 +1,4 @@
-#if XNA
+
 
 // This file extends the CustomAvatarAnimationProcessor.cs from the 
 // AppHub Custom Avatar Animation Sample which is licensed under the.
@@ -464,4 +464,3 @@ namespace Samples.Content.Pipeline
 
   }
 }
-#endif

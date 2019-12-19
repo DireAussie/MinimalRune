@@ -163,7 +163,7 @@ namespace DigitalRune.Windows.Charts
 
         //--------------------------------------------------------------
 
-#if SILVERLIGHT
+
         /// <summary>
         /// Initializes a new instance of the <see cref="BarChartGroup"/> class.
         /// </summary>
@@ -180,7 +180,7 @@ namespace DigitalRune.Windows.Charts
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(BarChartGroup), new FrameworkPropertyMetadata(typeof(BarChartGroup)));
         }
-#endif
+
 
 
 
@@ -222,11 +222,11 @@ namespace DigitalRune.Windows.Charts
                 int zIndex = Items.Count;
                 foreach (var chart in Charts)
                 {
-#if SILVERLIGHT
+
                     Canvas.SetZIndex(chart, zIndex);
 #else
                     Panel.SetZIndex(chart, zIndex);
-#endif
+
                     --zIndex;
                 }
             }

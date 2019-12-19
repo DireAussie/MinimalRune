@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !NETFX_CORE && !PORTABLE
+
 
 using System;
 using System.ComponentModel;
@@ -15,11 +15,11 @@ namespace DigitalRune.Mathematics.Algebra.Design
   /// Converts a <see cref="Vector2F"/> to and from string representation.
   /// </summary>
   public class Vector2FConverter 
-#if !SILVERLIGHT && !WP7 && !WP8 && !XBOX
+
     : ExpandableObjectConverter
 #else
     : TypeConverter
-#endif
+
   {
     /// <summary>
     /// Returns whether this converter can convert an object of the given type to the type of this
@@ -109,4 +109,4 @@ namespace DigitalRune.Mathematics.Algebra.Design
     }
   }
 }
-#endif
+

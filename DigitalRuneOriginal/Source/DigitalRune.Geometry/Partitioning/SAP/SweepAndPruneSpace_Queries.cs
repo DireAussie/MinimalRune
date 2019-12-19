@@ -62,7 +62,7 @@ namespace DigitalRune.Geometry.Partitioning
         }
       }
 
-#if !POOL_ENUMERABLES
+
       foreach (var candidate in overlapCandidates)
       {
         if (GeometryHelper.HaveContact(candidate.Aabb, aabb))
@@ -73,11 +73,11 @@ namespace DigitalRune.Geometry.Partitioning
 #else
       // Avoiding garbage:
       return GetOverlapsWork.Create(overlapCandidates, ref aabb);
-#endif
+
     }
 
 
-#if POOL_ENUMERABLES
+
     private sealed class GetOverlapsWork : PooledEnumerable<T>
     {
       // ReSharper disable StaticFieldInGenericType
@@ -118,6 +118,6 @@ namespace DigitalRune.Geometry.Partitioning
         Pool.Recycle(this);
       }
     }
-#endif
+
   }
 }

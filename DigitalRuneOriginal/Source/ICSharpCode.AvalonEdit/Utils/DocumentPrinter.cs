@@ -32,7 +32,7 @@ namespace ICSharpCode.AvalonEdit.Utils
 	/// </summary>
 	public static class DocumentPrinter
 	{
-		#if NREFACTORY
+
 		/// <summary>
 		/// Converts a readonly TextDocument to a Block and applies the provided highlighting definition.
 		/// </summary>
@@ -45,7 +45,7 @@ namespace ICSharpCode.AvalonEdit.Utils
 				highlighter = null;
 			return ConvertTextDocumentToBlock(document, highlighter);
 		}
-		#endif
+
 		
 		/// <summary>
 		/// Converts an IDocument to a Block and applies the provided highlighter.
@@ -70,7 +70,7 @@ namespace ICSharpCode.AvalonEdit.Utils
 			return p;
 		}
 		
-		#if NREFACTORY
+
 		/// <summary>
 		/// Converts a readonly TextDocument to a RichText and applies the provided highlighting definition.
 		/// </summary>
@@ -83,7 +83,7 @@ namespace ICSharpCode.AvalonEdit.Utils
 				highlighter = null;
 			return ConvertTextDocumentToRichText(document, highlighter);
 		}
-		#endif
+
 		
 		/// <summary>
 		/// Converts an IDocument to a RichText and applies the provided highlighter.

@@ -71,8 +71,8 @@ namespace DigitalRune.Geometry.Content.Pipeline
         object items = internals.Items;
         int numberOfNodes = internals.NumberOfNodes;
         int[] data = internals.Data;
-        Vector3F quantizationFactor = internals.QuantizationFactor;
-        Vector3F dequantizationFactor = internals.DequantizationFactor;
+        Vector3 quantizationFactor = internals.QuantizationFactor;
+        Vector3 dequantizationFactor = internals.DequantizationFactor;
 
         output.Write(state);
         output.Write(numberOfItems);

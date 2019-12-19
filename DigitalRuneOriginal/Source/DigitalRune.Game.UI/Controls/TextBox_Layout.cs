@@ -10,9 +10,9 @@ using DigitalRune.Mathematics;
 using DigitalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework.Graphics;
 
-#if WP7 || XBOX || PORTABLE
+
 using DigitalRune.Text;
-#endif
+
 
 
 namespace DigitalRune.Game.UI.Controls
@@ -606,7 +606,7 @@ namespace DigitalRune.Game.UI.Controls
     }
 
 
-#if !WP7 && !XBOX
+
     /// <summary>
     /// Gets the nearest index of the caret for a given screen position (e.g. for a mouse click).
     /// </summary>
@@ -667,7 +667,7 @@ namespace DigitalRune.Game.UI.Controls
 
       return lineEndIndex;
     }
-#endif
+
 
 
     // ----- Not used.

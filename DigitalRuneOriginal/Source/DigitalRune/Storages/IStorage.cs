@@ -218,7 +218,7 @@ namespace DigitalRune.Storages
     Stream OpenFile(string path);
 
 
-#if STORAGE_READ_WRITE
+
 
     // TODO: Failure behavior needs to be defined:
     // What happens if the file or directory does not exist? What happens if the
@@ -472,6 +472,6 @@ namespace DigitalRune.Storages
     /// <param name="path">The file for which to determine the size.</param>
     /// <returns>The size of the file in bytes.</returns>
     long GetFileSize(string path);
-#endif
+
   }
 }

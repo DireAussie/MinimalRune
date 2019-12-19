@@ -193,7 +193,7 @@ namespace DigitalRune.Graphics
       else
       {
         graphicsDevice.Indices = indexBuffer;
-#if MONOGAME
+
         graphicsDevice.DrawIndexedPrimitives(
           submesh.PrimitiveType,
           submesh.StartVertex,
@@ -207,7 +207,7 @@ namespace DigitalRune.Graphics
           submesh.VertexCount,
           submesh.StartIndex,
           submesh.PrimitiveCount);
-#endif
+
       }
     }
 
@@ -333,7 +333,7 @@ namespace DigitalRune.Graphics
         var v1 = mesh.Vertices[i1];
         var v2 = mesh.Vertices[i2];
 
-        Vector3F n0, n1, n2;
+        Vector3 n0, n1, n2;
         if (angleLimit < 0)
         {
           // If the angle limit is negative, ComputeNormals() returns one normal per vertex.
@@ -398,10 +398,10 @@ namespace DigitalRune.Graphics
     {
       switch (primitiveType)
       {
-#if MONOGAME
+
         case PrimitiveType.PointList:
           return primitiveCount;
-#endif
+
         case PrimitiveType.LineList:
           return primitiveCount * 2;
         case PrimitiveType.LineStrip:
@@ -538,7 +538,7 @@ namespace DigitalRune.Graphics
       if (submesh.VertexBuffer == null)
         return;
       if (triangleMesh.Vertices == null)
-        triangleMesh.Vertices = new List<Vector3F>(submesh.VertexCount);
+        triangleMesh.Vertices = new List<Vector3>(submesh.VertexCount);
       if (triangleMesh.Indices == null)
         triangleMesh.Indices = new List<int>(submesh.PrimitiveCount * 3);
 
@@ -566,7 +566,7 @@ namespace DigitalRune.Graphics
 
         // Add the vertices of the current modelMeshPart.
         foreach (Vector3 p in positions)
-          triangleMesh.Vertices.Add((Vector3F)p);
+          triangleMesh.Vertices.Add((Vector3)p);
 
         // Get indices.
         int indexElementSize = (submesh.IndexBuffer.IndexElementSize == IndexElementSize.SixteenBits) ? 2 : 4;
@@ -624,9 +624,9 @@ namespace DigitalRune.Graphics
         int vertexCount = triangleMesh.Vertices.Count;
         for (int i = 0; i < submesh.VertexCount; i += 3)
         {
-          triangleMesh.Vertices.Add((Vector3F)positions[i]);
-          triangleMesh.Vertices.Add((Vector3F)positions[i + 1]);
-          triangleMesh.Vertices.Add((Vector3F)positions[i + 2]);
+          triangleMesh.Vertices.Add((Vector3)positions[i]);
+          triangleMesh.Vertices.Add((Vector3)positions[i + 1]);
+          triangleMesh.Vertices.Add((Vector3)positions[i + 2]);
 
           triangleMesh.Indices.Add(i + vertexCount);
           triangleMesh.Indices.Add(i + 2 + vertexCount);     // DigitalRune Geometry uses other winding order!

@@ -15,13 +15,13 @@ namespace DigitalRune.Geometry.Shapes.Tests
     [Test]
     public void Constructor()
     {
-      Assert.AreEqual(new Vector3F(), new RayShape().Origin);
-      Assert.AreEqual(new Vector3F(1, 0, 0), new RayShape().Direction);
+      Assert.AreEqual(new Vector3(), new RayShape().Origin);
+      Assert.AreEqual(new Vector3(1, 0, 0), new RayShape().Direction);
       Assert.AreEqual(100, new RayShape().Length);
       Assert.AreEqual(false, new RayShape().StopsAtFirstHit);
 
-      Vector3F origin = new Vector3F(1, 2, 3);
-      Vector3F direction = new Vector3F(4, 5, 6).Normalized;
+      Vector3 origin = new Vector3(1, 2, 3);
+      Vector3 direction = new Vector3(4, 5, 6).Normalized;
       float length = 10;
       Assert.AreEqual(origin, new RayShape(origin, direction, length).Origin);
       Assert.AreEqual(direction, new RayShape(origin, direction, length).Direction);
@@ -38,7 +38,7 @@ namespace DigitalRune.Geometry.Shapes.Tests
     [ExpectedException(typeof(ArgumentException))]
     public void ConstructorException()
     {
-      new RayShape(new Vector3F(1, 2, 3), new Vector3F(), 10);
+      new RayShape(new Vector3(1, 2, 3), new Vector3(), 10);
     }
 
 
@@ -46,15 +46,15 @@ namespace DigitalRune.Geometry.Shapes.Tests
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void ConstructorException2()
     {
-      new RayShape(new Vector3F(1, 2, 3), new Vector3F(1, 0, 0), float.NegativeInfinity);
+      new RayShape(new Vector3(1, 2, 3), new Vector3(1, 0, 0), float.NegativeInfinity);
     }
 
 
     [Test]
     public void InnerPoint()
     {
-      Vector3F origin = new Vector3F(1, 2, 3);
-      Vector3F direction = new Vector3F(3, 2, 1).Normalized;
+      Vector3 origin = new Vector3(1, 2, 3);
+      Vector3 direction = new Vector3(3, 2, 1).Normalized;
       Assert.AreEqual(origin + direction * 5, new RayShape(origin, direction, 10).InnerPoint);
     }
 
@@ -63,26 +63,26 @@ namespace DigitalRune.Geometry.Shapes.Tests
     public void TestProperties()
     {
       RayShape l = new RayShape();
-      Assert.AreEqual(new Vector3F(), l.Origin);
-      Assert.AreEqual(new Vector3F(1, 0, 0), l.Direction);
+      Assert.AreEqual(new Vector3(), l.Origin);
+      Assert.AreEqual(new Vector3(1, 0, 0), l.Direction);
 
-      l.Origin = new Vector3F(1, 2, 3);
-      Assert.AreEqual(new Vector3F(1, 2, 3), l.Origin);
-      Assert.AreEqual(new Vector3F(1, 0, 0), l.Direction);
+      l.Origin = new Vector3(1, 2, 3);
+      Assert.AreEqual(new Vector3(1, 2, 3), l.Origin);
+      Assert.AreEqual(new Vector3(1, 0, 0), l.Direction);
 
-      l.Direction = new Vector3F(4, 5, 6).Normalized;
-      Assert.AreEqual(new Vector3F(1, 2, 3), l.Origin);
-      Assert.AreEqual(new Vector3F(4, 5, 6).Normalized, l.Direction);
+      l.Direction = new Vector3(4, 5, 6).Normalized;
+      Assert.AreEqual(new Vector3(1, 2, 3), l.Origin);
+      Assert.AreEqual(new Vector3(4, 5, 6).Normalized, l.Direction);
 
       l.Length = 11;
-      Assert.AreEqual(new Vector3F(1, 2, 3), l.Origin);
-      Assert.AreEqual(new Vector3F(4, 5, 6).Normalized, l.Direction);
+      Assert.AreEqual(new Vector3(1, 2, 3), l.Origin);
+      Assert.AreEqual(new Vector3(4, 5, 6).Normalized, l.Direction);
       Assert.AreEqual(11, l.Length);
       Assert.AreEqual(false, l.StopsAtFirstHit);
 
       l.StopsAtFirstHit = true;
-      Assert.AreEqual(new Vector3F(1, 2, 3), l.Origin);
-      Assert.AreEqual(new Vector3F(4, 5, 6).Normalized, l.Direction);
+      Assert.AreEqual(new Vector3(1, 2, 3), l.Origin);
+      Assert.AreEqual(new Vector3(4, 5, 6).Normalized, l.Direction);
       Assert.AreEqual(11, l.Length);
       Assert.AreEqual(true, l.StopsAtFirstHit);
     }
@@ -93,7 +93,7 @@ namespace DigitalRune.Geometry.Shapes.Tests
     public void DirectionException()
     {
       RayShape l = new RayShape();
-      l.Direction = new Vector3F();
+      l.Direction = new Vector3();
     }
 
     [Test]
@@ -117,17 +117,17 @@ namespace DigitalRune.Geometry.Shapes.Tests
     [Test]
     public void GetAxisAlignedBoundingBox()
     {
-      Assert.AreEqual(new Aabb(new Vector3F(0, 0, 0), new Vector3F(100, 0, 0)), new RayShape().GetAabb(Pose.Identity));
-      Assert.AreEqual(new Aabb(new Vector3F(11, 102, 1003), new Vector3F(11, 112, 1003)),
-                     new RayShape(new Vector3F(1, 2, 3), new Vector3F(0, 1, 0), 10).GetAabb(new Pose(new Vector3F(10, 100, 1000),
-                                                                         QuaternionF.Identity)));
+      Assert.AreEqual(new Aabb(new Vector3(0, 0, 0), new Vector3(100, 0, 0)), new RayShape().GetAabb(Pose.Identity));
+      Assert.AreEqual(new Aabb(new Vector3(11, 102, 1003), new Vector3(11, 112, 1003)),
+                     new RayShape(new Vector3(1, 2, 3), new Vector3(0, 1, 0), 10).GetAabb(new Pose(new Vector3(10, 100, 1000),
+                                                                         Quaternion.Identity)));
     }
 
 
     [Test]
     public void GetMesh()
     {
-      var r = new RayShape(new Vector3F(1, 2, 3), Vector3F.UnitY, 10);
+      var r = new RayShape(new Vector3(1, 2, 3), Vector3.UnitY, 10);
       
       var m = r.GetMesh(0, 1);
       Assert.AreEqual(1, m.NumberOfTriangles);
@@ -141,26 +141,26 @@ namespace DigitalRune.Geometry.Shapes.Tests
     [Test]
     public void GetSupportPoint()
     {
-      RayShape r = new RayShape(new Vector3F(1, 0, 0), new Vector3F(1, 1, 0).Normalized, 10);
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(new Vector3F(1, 0, 0), r.GetSupportPointNormalized(new Vector3F(-1, 0, 0))));
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(r.Origin + r.Direction * r.Length, r.GetSupportPointNormalized(new Vector3F(1, 0, 0))));
+      RayShape r = new RayShape(new Vector3(1, 0, 0), new Vector3(1, 1, 0).Normalized, 10);
+      Assert.IsTrue(Vector3.AreNumericallyEqual(new Vector3(1, 0, 0), r.GetSupportPointNormalized(new Vector3(-1, 0, 0))));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(r.Origin + r.Direction * r.Length, r.GetSupportPointNormalized(new Vector3(1, 0, 0))));
 
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(new Vector3F(1, 0, 0), r.GetSupportPoint(new Vector3F(-2, 0, 0))));
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(r.Origin + r.Direction * r.Length, r.GetSupportPoint(new Vector3F(2, 0, 0))));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(new Vector3(1, 0, 0), r.GetSupportPoint(new Vector3(-2, 0, 0))));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(r.Origin + r.Direction * r.Length, r.GetSupportPoint(new Vector3(2, 0, 0))));
     }
 
 
     [Test]
     public void ToStringTest()
     {
-      Assert.AreEqual("RayShape { Origin = (1; 2; 3), Direction = (0; 1; 0), Length = 10, StopsAtFirstHit = False }", new RayShape(new Vector3F(1, 2, 3), new Vector3F(0, 1, 0), 10).ToString());
+      Assert.AreEqual("RayShape { Origin = (1; 2; 3), Direction = (0; 1; 0), Length = 10, StopsAtFirstHit = False }", new RayShape(new Vector3(1, 2, 3), new Vector3(0, 1, 0), 10).ToString());
     }
 
 
     [Test]
     public void Clone()
     {
-      RayShape ray = new RayShape(new Vector3F(1, 2, 3), new Vector3F(2, 3, 4).Normalized, 1234.567f);
+      RayShape ray = new RayShape(new Vector3(1, 2, 3), new Vector3(2, 3, 4).Normalized, 1234.567f);
       RayShape clone = ray.Clone() as RayShape;
       Assert.IsNotNull(clone);
       Assert.AreEqual(ray.Origin, clone.Origin);
@@ -174,7 +174,7 @@ namespace DigitalRune.Geometry.Shapes.Tests
     [Test]
     public void SerializationXml()
     {
-      var a = new RayShape(new Vector3F(1, 2, 3), new Vector3F(2, 3, 4).Normalized, 1234.567f);
+      var a = new RayShape(new Vector3(1, 2, 3), new Vector3(2, 3, 4).Normalized, 1234.567f);
       a.StopsAtFirstHit = true;
 
       // Serialize object.
@@ -203,7 +203,7 @@ namespace DigitalRune.Geometry.Shapes.Tests
     [Ignore("Binary serialization not supported in PCL version.")]
     public void SerializationBinary()
     {
-      var a = new RayShape(new Vector3F(1, 2, 3), new Vector3F(2, 3, 4).Normalized, 1234.567f);
+      var a = new RayShape(new Vector3(1, 2, 3), new Vector3(2, 3, 4).Normalized, 1234.567f);
       a.StopsAtFirstHit = true;
 
       // Serialize object.

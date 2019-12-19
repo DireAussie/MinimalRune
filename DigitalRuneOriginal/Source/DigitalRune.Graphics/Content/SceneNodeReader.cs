@@ -15,7 +15,7 @@ namespace DigitalRune.Graphics.Content
   /// </summary>
   public class SceneNodeReader : ContentTypeReader<SceneNode>
   {
-#if !MONOGAME
+
     /// <summary>
     /// Determines if deserialization into an existing object is possible.
     /// </summary>
@@ -27,7 +27,7 @@ namespace DigitalRune.Graphics.Content
     {
       get { return true; }
     }
-#endif
+
 
 
     /// <summary>
@@ -54,7 +54,7 @@ namespace DigitalRune.Graphics.Content
 
       existingInstance.Name = input.ReadString();
       existingInstance.PoseLocal = input.ReadRawObject<Pose>();
-      existingInstance.ScaleLocal = input.ReadRawObject<Vector3F>();
+      existingInstance.ScaleLocal = input.ReadRawObject<Vector3>();
       existingInstance.MaxDistance = input.ReadSingle();
       input.ReadSharedResource<object>(userData => existingInstance.UserData = userData);
 

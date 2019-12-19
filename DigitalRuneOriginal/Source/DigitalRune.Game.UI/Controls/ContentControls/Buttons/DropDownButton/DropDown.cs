@@ -7,9 +7,9 @@ using System.ComponentModel;
 using DigitalRune.Game.Input;
 using DigitalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework.Input;
-#if SILVERLIGHT
+
 using Keys = System.Windows.Input.Key;
-#endif
+
 
 
 namespace DigitalRune.Game.UI.Controls
@@ -85,9 +85,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <summary> 
     /// The ID of the <see cref="DropDownItemStyle"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int DropDownItemStylePropertyId = CreateProperty(
       typeof(DropDown), "DropDownItemStyle", GamePropertyCategories.Style, null, "DropDownItem",
       UIPropertyOptions.None);
@@ -109,9 +109,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <summary> 
     /// The ID of the <see cref="TitleTextBlockStyle"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int TitleTextBlockStylePropertyId = CreateProperty(
       typeof(DropDown), "TitleTextBlockStyle", GamePropertyCategories.Style, null,
       "TitleTextBlock", UIPropertyOptions.None);
@@ -264,25 +264,25 @@ namespace DigitalRune.Game.UI.Controls
         Close();
       }
 
-#if !SILVERLIGHT
+
       // BACK on gamepad --> Close drop-down.
       if (inputService.IsPressed(Buttons.Back, false, context.AllowedPlayer))
       {
         inputService.SetGamePadHandled(context.AllowedPlayer, true);
 
-#if WP7 || PORTABLE
+
         // Special: The SelectedIndex needs to be set to the item that has focus.
         // (Only on Windows Phone.)
-#if PORTABLE
+
         if (GlobalSettings.PlatformID == PlatformID.WindowsPhone8)
-#endif
+
         {
           var focusedControl = Screen.FocusManager.FocusedControl;
           int index = _itemsPanel.Children.IndexOf(focusedControl);
           if (index >= 0)
             Owner.SelectedIndex = index;
         }
-#endif
+
 
         Close();
       }
@@ -293,7 +293,7 @@ namespace DigitalRune.Game.UI.Controls
         inputService.SetGamePadHandled(context.AllowedPlayer, true);
         Close();
       }
-#endif
+
 
       // If another control is opened above this popup, then this popup closes. 
       // Exception: Tooltips are okay above the popup.

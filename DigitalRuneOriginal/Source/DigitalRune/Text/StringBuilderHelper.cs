@@ -333,7 +333,7 @@ namespace DigitalRune.Text
     }
 
 
-#if SILVERLIGHT || WP7 || XBOX
+
     /// <summary>
     /// Removes all characters from the <see cref="StringBuilder"/> instance.
     /// </summary>
@@ -348,6 +348,6 @@ namespace DigitalRune.Text
 
     builder.Remove(0, builder.Length);
     }
-#endif
+
   }
 }

@@ -181,7 +181,7 @@ namespace DigitalRune.Windows.Charts
 
         //--------------------------------------------------------------
 
-#if SILVERLIGHT
+
         /// <summary>
         /// Initializes a new instance of the <see cref="HeatChart"/> class.
         /// </summary>
@@ -195,7 +195,7 @@ namespace DigitalRune.Windows.Charts
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(HeatChart), new FrameworkPropertyMetadata(typeof(HeatChart)));
         }
-#endif
+
 
 
 

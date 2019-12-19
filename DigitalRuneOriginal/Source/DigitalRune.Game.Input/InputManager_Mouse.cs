@@ -5,12 +5,12 @@
 using System;
 using Microsoft.Xna.Framework.Input;
 
-#if USE_DIGITALRUNE_MATHEMATICS
+
 using DigitalRune.Mathematics.Algebra;
 #else
 using Vector2F = Microsoft.Xna.Framework.Vector2;
-using Vector3F = Microsoft.Xna.Framework.Vector3;
-#endif
+using Vector3 = Microsoft.Xna.Framework.Vector3;
+
 
 
 namespace DigitalRune.Game.Input
@@ -38,9 +38,9 @@ namespace DigitalRune.Game.Input
 
         _enableMouseCentering = value;
 
-#if MONOGAME
+
         Mouse.IsRelative = value;
-#endif
+
         
         if (_enableMouseCentering)
         {
@@ -94,11 +94,11 @@ namespace DigitalRune.Game.Input
         if (!EnableMouseCentering)
           return new Vector2F(_newMouseState.X - _previousMouseState.X, _newMouseState.Y - _previousMouseState.Y);
 
-#if MONOGAME
+
         return new Vector2F(_newMouseState.DeltaX, _newMouseState.DeltaY);
 #else
         return new Vector2F(_newMouseState.X - Settings.MouseCenter.X, _newMouseState.Y - Settings.MouseCenter.Y);
-#endif
+
       }
     }
 

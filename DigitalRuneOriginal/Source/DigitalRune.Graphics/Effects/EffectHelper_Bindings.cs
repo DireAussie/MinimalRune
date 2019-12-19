@@ -187,8 +187,8 @@ namespace DigitalRune.Graphics.Effects
           {
             if (value is Vector3)
               binding = new ConstParameterBinding<Vector3>(effect, parameter, (Vector3)value);
-            else if (value is Vector3F)
-              binding = new ConstParameterBinding<Vector3F>(effect, parameter, (Vector3F)value);
+            else if (value is Vector3)
+              binding = new ConstParameterBinding<Vector3>(effect, parameter, (Vector3)value);
           }
           else if (parameter.ColumnCount == 4 || parameter.RowCount == 4)
           {
@@ -207,15 +207,15 @@ namespace DigitalRune.Graphics.Effects
           }
           else if (parameter.ColumnCount == 3 && parameter.RowCount == 3)
           {
-            if (value is Matrix33F)
-              binding = new ConstParameterBinding<Matrix33F>(effect, parameter, (Matrix33F)value);
+            if (value is Matrix)
+              binding = new ConstParameterBinding<Matrix>(effect, parameter, (Matrix)value);
           }
           else if (parameter.ColumnCount == 4 || parameter.RowCount == 4)
           {
             if (value is Matrix)
               binding = new ConstParameterBinding<Matrix>(effect, parameter, (Matrix)value);
-            else if (value is Matrix44F)
-              binding = new ConstParameterBinding<Matrix44F>(effect, parameter, (Matrix44F)value);
+            else if (value is Matrix)
+              binding = new ConstParameterBinding<Matrix>(effect, parameter, (Matrix)value);
           }
         }
         else if (parameter.ParameterClass == EffectParameterClass.Object)
@@ -262,8 +262,8 @@ namespace DigitalRune.Graphics.Effects
           {
             if (value is Vector3[])
               binding = new ConstParameterArrayBinding<Vector3>(effect, parameter, (Vector3[])value);
-            else if (value is Vector3F[])
-              binding = new ConstParameterArrayBinding<Vector3F>(effect, parameter, (Vector3F[])value);
+            else if (value is Vector3[])
+              binding = new ConstParameterArrayBinding<Vector3>(effect, parameter, (Vector3[])value);
           }
           else if (parameter.ColumnCount == 4 || parameter.RowCount == 4)
           {
@@ -277,7 +277,7 @@ namespace DigitalRune.Graphics.Effects
                  parameter.ParameterType == EffectParameterType.Single)
         {
           //#if !XBOX
-          // The type Matrix22F[], Matrix33F[], Matrix44F[] caused a MissingMethodException at runtime on Xbox 360 in XNA 3.1.
+          // The type Matrix22F[], Matrix[], Matrix[] caused a MissingMethodException at runtime on Xbox 360 in XNA 3.1.
           // See also: EffectParameterBinding<T>.SetValueMethods!
           if (parameter.ColumnCount == 2 && parameter.RowCount == 2)
           {
@@ -286,8 +286,8 @@ namespace DigitalRune.Graphics.Effects
           }
           else if (parameter.ColumnCount == 3 && parameter.RowCount == 3)
           {
-            if (value is Matrix33F[])
-              binding = new ConstParameterArrayBinding<Matrix33F>(effect, parameter, (Matrix33F[])value);
+            if (value is Matrix[])
+              binding = new ConstParameterArrayBinding<Matrix>(effect, parameter, (Matrix[])value);
           }
           else
             //#endif
@@ -296,8 +296,8 @@ namespace DigitalRune.Graphics.Effects
               if (value is Matrix[])
                 binding = new ConstParameterArrayBinding<Matrix>(effect, parameter, (Matrix[])value);
               //#if !XBOX
-              else if (value is Matrix44F[])
-                binding = new ConstParameterArrayBinding<Matrix44F>(effect, parameter, (Matrix44F[])value);
+              else if (value is Matrix[])
+                binding = new ConstParameterArrayBinding<Matrix>(effect, parameter, (Matrix[])value);
               //#endif
             }
         }
@@ -628,13 +628,13 @@ namespace DigitalRune.Graphics.Effects
                  && parameter.ParameterType == EffectParameterType.Single)
         {
           // Matrix value.
-#if !MONOGAME
+
           value = parameter.GetValueMatrix();
 #else
           // MonoGame throws exception if following condition is not met.
           if (parameter.RowCount == 4 || parameter.ColumnCount == 4)       
             value = parameter.GetValueMatrix();
-#endif
+
         }
         else if (parameter.ParameterClass == EffectParameterClass.Object)
         {
@@ -657,7 +657,7 @@ namespace DigitalRune.Graphics.Effects
 
         if (parameter.ParameterClass == EffectParameterClass.Scalar)
         {
-#if !MONOGAME
+
           // Scalar value bindings.
           if (parameter.ParameterType == EffectParameterType.Bool)
             value = parameter.GetValueBooleanArray(length);
@@ -665,24 +665,24 @@ namespace DigitalRune.Graphics.Effects
             value = parameter.GetValueInt32Array(length);
           else if (parameter.ParameterType == EffectParameterType.Single)
             value = parameter.GetValueSingleArray(length);
-#endif
+
         }
         else if (parameter.ParameterClass == EffectParameterClass.Vector && parameter.ParameterType == EffectParameterType.Single)
         {
-#if !MONOGAME
+
           if (parameter.ColumnCount == 2 || parameter.RowCount == 2)
             value = parameter.GetValueVector2Array(length);
           else if (parameter.ColumnCount == 3 || parameter.RowCount == 3)
             value = parameter.GetValueVector3Array(length);
           else if (parameter.ColumnCount == 4 || parameter.RowCount == 4)
             value = parameter.GetValueVector4Array(length);
-#endif
+
         }
         else if (parameter.ParameterClass == EffectParameterClass.Matrix && parameter.ParameterType == EffectParameterType.Single)
         {
-#if !MONOGAME
+
           value = parameter.GetValueMatrixArray(length);
-#endif
+
         }
         else if (parameter.ParameterClass == EffectParameterClass.Object)
         {

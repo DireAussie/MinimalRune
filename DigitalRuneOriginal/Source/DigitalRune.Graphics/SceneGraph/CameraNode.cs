@@ -46,7 +46,7 @@ namespace DigitalRune.Graphics.SceneGraph
   /// </item>
   /// <item>
   /// <description>
-  /// By calling the method <see cref="SceneHelper.LookAt(SceneNode,Vector3F,Vector3F)"/>.
+  /// By calling the method <see cref="SceneHelper.LookAt(SceneNode,Vector3,Vector3)"/>.
   /// </description>
   /// </item>
   /// </list>
@@ -134,12 +134,12 @@ namespace DigitalRune.Graphics.SceneGraph
     /// </summary>
     /// <value>
     /// The view transformation in world space. The default value is 
-    /// <see cref="Matrix44F.Identity"/>.
+    /// <see cref="Matrix.Identity"/>.
     /// </value>
     /// <remarks>
     /// Setting <see cref="View"/> automatically updates <see cref="ViewInverse"/>.
     /// </remarks>
-    public Matrix44F View
+    public Matrix View
     {
       get
       {
@@ -153,7 +153,7 @@ namespace DigitalRune.Graphics.SceneGraph
         PoseWorld = Pose.FromMatrix(value).Inverse;
       }
     }
-    private Matrix44F _view = Matrix44F.Identity;
+    private Matrix _view = Matrix.Identity;
 
 
     /// <summary>
@@ -161,12 +161,12 @@ namespace DigitalRune.Graphics.SceneGraph
     /// </summary>
     /// <value>
     /// The inverse view transformation in world space. The default value is 
-    /// <see cref="Matrix44F.Identity"/>.
+    /// <see cref="Matrix.Identity"/>.
     /// </value>
     /// <remarks>
     /// Setting <see cref="ViewInverse"/> automatically updates <see cref="View"/>.
     /// </remarks>
-    public Matrix44F ViewInverse
+    public Matrix ViewInverse
     {
       get
       {
@@ -180,7 +180,7 @@ namespace DigitalRune.Graphics.SceneGraph
         PoseWorld = Pose.FromMatrix(value);
       }
     }
-    private Matrix44F _viewInverse = Matrix44F.Identity;
+    private Matrix _viewInverse = Matrix.Identity;
 
 
     /// <summary>

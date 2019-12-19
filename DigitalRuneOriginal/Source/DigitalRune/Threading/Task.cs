@@ -57,7 +57,7 @@
 */
 
 
-#if !NETFX_CORE && !PORTABLE && !USE_TPL
+
 using System;
 
 
@@ -237,4 +237,4 @@ namespace DigitalRune.Threading
 
   }
 }
-#endif
+

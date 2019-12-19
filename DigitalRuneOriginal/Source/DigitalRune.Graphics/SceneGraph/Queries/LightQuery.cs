@@ -39,10 +39,10 @@ namespace DigitalRune.Graphics.SceneGraph
     //--------------------------------------------------------------
 
     // Reference position for calculating light contribution.
-    private Vector3F? _referencePosition;
+    private Vector3? _referencePosition;
 
     // LOD computations:
-    private Vector3F _cameraPosition;
+    private Vector3 _cameraPosition;
     private float _lodBiasOverYScale;
 
     // Clip geometry tests:
@@ -173,10 +173,10 @@ namespace DigitalRune.Graphics.SceneGraph
 
       int numberOfNodes = nodes.Count;
 
-#if DEBUG
+
       for (int i = 0; i < numberOfNodes; i++)
         Debug.Assert(nodes[i].ActualIsEnabled, "Scene query contains disabled nodes.");
-#endif
+
 
       if (context.LodCameraNode == null)
       {
@@ -194,7 +194,7 @@ namespace DigitalRune.Graphics.SceneGraph
         // Get values for LOD computations.
         var cameraNode = context.LodCameraNode;
         _cameraPosition = cameraNode.PoseLocal.Position;
-        _lodBiasOverYScale = 1 / Math.Abs(cameraNode.Camera.Projection.ToMatrix44F().M11)
+        _lodBiasOverYScale = 1 / Math.Abs(cameraNode.Camera.Projection.ToMatrix().M11)
                              * cameraNode.LodBias * context.LodBias;
 
         // Add nodes and evaluate LOD groups.
@@ -235,7 +235,7 @@ namespace DigitalRune.Graphics.SceneGraph
       // Note: If we have no reference node, it still makes sense to sort the objects
       // by their contribution. We choose to get the light contribution at the position
       // of each light.
-      Vector3F position = _referencePosition ?? lightNode.PoseWorld.Position;
+      Vector3 position = _referencePosition ?? lightNode.PoseWorld.Position;
       //lightNode.SortTag = lightNode.GetLightContribution(position, 0.7f);
 
       // Or simpler: Sort light nodes by distance. --> Use for image-based lights.
@@ -282,7 +282,7 @@ namespace DigitalRune.Graphics.SceneGraph
     }
 
 
-    private bool HaveContact(IGeometricObject clipGeometry, Vector3F position)
+    private bool HaveContact(IGeometricObject clipGeometry, Vector3 position)
     {
       // Use a shared collision detection instance.
       var collisionDetection = SceneHelper.CollisionDetection;

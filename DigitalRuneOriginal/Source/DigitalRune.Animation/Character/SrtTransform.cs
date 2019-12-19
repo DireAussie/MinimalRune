@@ -8,10 +8,10 @@ using DigitalRune.Geometry;
 using DigitalRune.Mathematics;
 using DigitalRune.Mathematics.Algebra;
 
-#if XNA || MONOGAME
+
 using System.Diagnostics;
 using Microsoft.Xna.Framework;
-#endif
+
 
 
 namespace DigitalRune.Animation.Character
@@ -50,9 +50,9 @@ namespace DigitalRune.Animation.Character
   /// </code>
   /// </para>
   /// </remarks>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !PORTABLE
+
   [Serializable]
-#endif
+
   public struct SrtTransform : IEquatable<SrtTransform>
   {
     //--------------------------------------------------------------
@@ -63,11 +63,11 @@ namespace DigitalRune.Animation.Character
     /// An SRT transform with no scale, rotation and translation.
     /// </summary>
     /// <remarks>
-    /// The scale is set to <see cref="Vector3F.One"/>, the rotation is set to 
-    /// <see cref="QuaternionF.Identity"/>, and the translation is set to 
-    /// <see cref="Vector3F.Zero"/>.
+    /// The scale is set to <see cref="Vector3.One"/>, the rotation is set to 
+    /// <see cref="Quaternion.Identity"/>, and the translation is set to 
+    /// <see cref="Vector3.Zero"/>.
     /// </remarks>
-    public static readonly SrtTransform Identity = new SrtTransform(Vector3F.One, QuaternionF.Identity, Vector3F.Zero);
+    public static readonly SrtTransform Identity = new SrtTransform(Vector3.One, Quaternion.Identity, Vector3.Zero);
 
 
 
@@ -78,19 +78,19 @@ namespace DigitalRune.Animation.Character
     /// <summary>
     /// The scale.
     /// </summary>
-    public Vector3F Scale;
+    public Vector3 Scale;
 
     
     /// <summary>
     /// The rotation.
     /// </summary>
-    public QuaternionF Rotation;
+    public Quaternion Rotation;
 
 
     /// <summary>
     /// The translation.
     /// </summary>
-    public Vector3F Translation;
+    public Vector3 Translation;
 
 
 
@@ -184,11 +184,11 @@ namespace DigitalRune.Animation.Character
     /// Initializes a new instance of the <see cref="SrtTransform"/> struct with the given rotation.
     /// </summary>
     /// <param name="rotation">The rotation.</param>
-    public SrtTransform(QuaternionF rotation)
+    public SrtTransform(Quaternion rotation)
     {
-      Scale = Vector3F.One;
+      Scale = Vector3.One;
       Rotation = rotation;
-      Translation = Vector3F.Zero;
+      Translation = Vector3.Zero;
     }
 
 
@@ -196,11 +196,11 @@ namespace DigitalRune.Animation.Character
     /// Initializes a new instance of the <see cref="SrtTransform"/> struct with the given rotation.
     /// </summary>
     /// <param name="rotation">The rotation.</param>
-    public SrtTransform(Matrix33F rotation)
+    public SrtTransform(Matrix rotation)
     {
-      Scale = Vector3F.One;
-      Rotation = QuaternionF.CreateRotation(rotation);
-      Translation = Vector3F.Zero;
+      Scale = Vector3.One;
+      Rotation = Quaternion.CreateRotation(rotation);
+      Translation = Vector3.Zero;
     }
 
 
@@ -210,9 +210,9 @@ namespace DigitalRune.Animation.Character
     /// </summary>
     /// <param name="rotation">The rotation.</param>
     /// <param name="translation">The translation.</param>
-    public SrtTransform(QuaternionF rotation, Vector3F translation)
+    public SrtTransform(Quaternion rotation, Vector3 translation)
     {
-      Scale = Vector3F.One;
+      Scale = Vector3.One;
       Rotation = rotation;
       Translation = translation;
     }
@@ -224,10 +224,10 @@ namespace DigitalRune.Animation.Character
     /// </summary>
     /// <param name="rotation">The rotation.</param>
     /// <param name="translation">The translation.</param>
-    public SrtTransform(Matrix33F rotation, Vector3F translation)
+    public SrtTransform(Matrix rotation, Vector3 translation)
     {
-      Scale = Vector3F.One;
-      Rotation = QuaternionF.CreateRotation(rotation);
+      Scale = Vector3.One;
+      Rotation = Quaternion.CreateRotation(rotation);
       Translation = translation;
     }    
 
@@ -239,7 +239,7 @@ namespace DigitalRune.Animation.Character
     /// <param name="scale">The scale.</param>
     /// <param name="rotation">The rotation.</param>
     /// <param name="translation">The translation.</param>
-    public SrtTransform(Vector3F scale, QuaternionF rotation, Vector3F translation)
+    public SrtTransform(Vector3 scale, Quaternion rotation, Vector3 translation)
     {
       Scale = scale;
       Rotation = rotation;
@@ -254,10 +254,10 @@ namespace DigitalRune.Animation.Character
     /// <param name="scale">The scale.</param>
     /// <param name="rotation">The rotation.</param>
     /// <param name="translation">The translation.</param>
-    public SrtTransform(Vector3F scale, Matrix33F rotation, Vector3F translation)
+    public SrtTransform(Vector3 scale, Matrix rotation, Vector3 translation)
     {
       Scale = scale;
-      Rotation = QuaternionF.CreateRotation(rotation);
+      Rotation = Quaternion.CreateRotation(rotation);
       Translation = translation;
     }
 
@@ -305,7 +305,7 @@ namespace DigitalRune.Animation.Character
     /// This method can be used to transform direction vectors. It applies only the rotation to the 
     /// vector. The scale and translation are ignored. 
     /// </remarks>
-    public Vector3F ToParentDirection(Vector3F localDirection)
+    public Vector3 ToParentDirection(Vector3 localDirection)
     {
       return Rotation.Rotate(localDirection);
     }
@@ -320,7 +320,7 @@ namespace DigitalRune.Animation.Character
     /// This method can be used to transform direction vectors. It applies only the rotation to the 
     /// vector. The scale and translation are ignored. 
     /// </remarks>
-    public Vector3F ToLocalDirection(Vector3F worldDirection)
+    public Vector3 ToLocalDirection(Vector3 worldDirection)
     {
       return Rotation.Conjugated.Rotate(worldDirection);
     }
@@ -331,7 +331,7 @@ namespace DigitalRune.Animation.Character
     /// </summary>
     /// <param name="localPosition">The position in local space.</param>
     /// <returns>The position in parent space.</returns>
-    public Vector3F ToParentPosition(Vector3F localPosition)
+    public Vector3 ToParentPosition(Vector3 localPosition)
     {
       return Translation + Rotation.Rotate(Scale * localPosition);
     }
@@ -342,9 +342,9 @@ namespace DigitalRune.Animation.Character
     /// </summary>
     /// <param name="worldPosition">The position in parent space.</param>
     /// <returns>The position in local space.</returns>
-    public Vector3F ToLocalPosition(Vector3F worldPosition)
+    public Vector3 ToLocalPosition(Vector3 worldPosition)
     {
-      return Rotation.Conjugated.Rotate(worldPosition - Translation) * new Vector3F(1 / Scale.X, 1 / Scale.Y, 1 / Scale.Z);
+      return Rotation.Conjugated.Rotate(worldPosition - Translation) * new Vector3(1 / Scale.X, 1 / Scale.Y, 1 / Scale.Z);
     }
 
 
@@ -360,7 +360,7 @@ namespace DigitalRune.Animation.Character
     /// <paramref name="srtMatrix"/> must only contain scaling, rotations and translations - 
     /// otherwise the result is undefined.
     /// </remarks>
-    public static SrtTransform FromMatrix(Matrix44F srtMatrix)
+    public static SrtTransform FromMatrix(Matrix srtMatrix)
     {
       SrtTransform srtTransform = new SrtTransform();
       srtMatrix.DecomposeFast(out srtTransform.Scale, out srtTransform.Rotation, out srtTransform.Translation);
@@ -374,13 +374,13 @@ namespace DigitalRune.Animation.Character
     /// <returns>
     /// A 4x4-matrix that represents the same transformation as the SRT transform.
     /// </returns>
-    public Matrix44F ToMatrix44F()
+    public Matrix ToMatrix()
     {
       return this;
     }
 
 
-#if XNA || MONOGAME
+
     /// <overloads>
     /// <summary>
     /// Creates an <see cref="SrtTransform"/> from a matrix that contains a scale, a rotation and 
@@ -408,7 +408,7 @@ namespace DigitalRune.Animation.Character
     public static SrtTransform FromMatrix(Matrix srtMatrix)
     {
       SrtTransform srtTransform = new SrtTransform();
-      var m = (Matrix44F)srtMatrix;
+      var m = (Matrix)srtMatrix;
       bool success = m.Decompose(out srtTransform.Scale, out srtTransform.Rotation, out srtTransform.Translation);
 
       //Debug.Assert(success, "Matrix is not a valid SRT matrix. SRT matrix must only contain scaling, rotations and translations.");
@@ -431,15 +431,15 @@ namespace DigitalRune.Animation.Character
     /// </remarks>
     public Matrix ToXna()
     {
-      Vector3F s = Scale;
-      Matrix33F r = Rotation.ToRotationMatrix33();
-      Vector3F t = Translation;
+      Vector3 s = Scale;
+      Matrix r = Rotation.ToRotationMatrix33();
+      Vector3 t = Translation;
       return new Matrix(s.X * r.M00, s.X * r.M10, s.X * r.M20, 0,
                         s.Y * r.M01, s.Y * r.M11, s.Y * r.M21, 0,
                         s.Z * r.M02, s.Z * r.M12, s.Z * r.M22, 0,
                         t.X, t.Y, t.Z, 1);
     }
-#endif
+
 
 
 
@@ -486,9 +486,9 @@ namespace DigitalRune.Animation.Character
     /// </returns>
     public static bool AreNumericallyEqual(SrtTransform srtA, SrtTransform srtB)
     {
-      return QuaternionF.AreNumericallyEqual(srtA.Rotation, srtB.Rotation)
-             && Vector3F.AreNumericallyEqual(srtA.Translation, srtB.Translation)
-             && Vector3F.AreNumericallyEqual(srtA.Scale, srtB.Scale);
+      return Quaternion.AreNumericallyEqual(srtA.Rotation, srtB.Rotation)
+             && Vector3.AreNumericallyEqual(srtA.Translation, srtB.Translation)
+             && Vector3.AreNumericallyEqual(srtA.Scale, srtB.Scale);
     }
 
 
@@ -516,11 +516,11 @@ namespace DigitalRune.Animation.Character
     public static SrtTransform Interpolate(SrtTransform startTransform, SrtTransform endTransform, float parameter)
     {
       // Lerp rotation.
-      QuaternionF sourceRotation = startTransform.Rotation;
-      QuaternionF targetRotation = endTransform.Rotation;
+      Quaternion sourceRotation = startTransform.Rotation;
+      Quaternion targetRotation = endTransform.Rotation;
 
       // Get angle between quaternions:
-      //float cosθ = QuaternionF.Dot(sourceRotation, targetRotation);
+      //float cosθ = Quaternion.Dot(sourceRotation, targetRotation);
       float cosθ = sourceRotation.W * targetRotation.W + sourceRotation.X * targetRotation.X + sourceRotation.Y * targetRotation.Y + sourceRotation.Z * targetRotation.Z;
 
       // Invert one quaternion if we would move along the long arc of interpolation.
@@ -532,7 +532,7 @@ namespace DigitalRune.Animation.Character
         targetRotation.Z = -targetRotation.Z;
       }
 
-      QuaternionF resultRotation;
+      Quaternion resultRotation;
       resultRotation.W = sourceRotation.W + (targetRotation.W - sourceRotation.W) * parameter;
       resultRotation.X = sourceRotation.X + (targetRotation.X - sourceRotation.X) * parameter;
       resultRotation.Y = sourceRotation.Y + (targetRotation.Y - sourceRotation.Y) * parameter;
@@ -543,11 +543,11 @@ namespace DigitalRune.Animation.Character
       resultRotation.Normalize();
 
       return new SrtTransform(
-        new Vector3F(startTransform.Scale.X + (endTransform.Scale.X - startTransform.Scale.X) * parameter,
+        new Vector3(startTransform.Scale.X + (endTransform.Scale.X - startTransform.Scale.X) * parameter,
                      startTransform.Scale.Y + (endTransform.Scale.Y - startTransform.Scale.Y) * parameter,
                      startTransform.Scale.Z + (endTransform.Scale.Z - startTransform.Scale.Z) * parameter),
         resultRotation,
-        new Vector3F(startTransform.Translation.X + (endTransform.Translation.X - startTransform.Translation.X) * parameter,
+        new Vector3(startTransform.Translation.X + (endTransform.Translation.X - startTransform.Translation.X) * parameter,
                      startTransform.Translation.Y + (endTransform.Translation.Y - startTransform.Translation.Y) * parameter,
                      startTransform.Translation.Z + (endTransform.Translation.Z - startTransform.Translation.Z) * parameter));
     }
@@ -581,11 +581,11 @@ namespace DigitalRune.Animation.Character
       result.Translation.Z = startTransform.Translation.Z + (endTransform.Translation.Z - startTransform.Translation.Z) * parameter;
 
       // Lerp rotation.
-      QuaternionF sourceRotation = startTransform.Rotation;
-      QuaternionF targetRotation = endTransform.Rotation;
+      Quaternion sourceRotation = startTransform.Rotation;
+      Quaternion targetRotation = endTransform.Rotation;
 
       // Get angle between quaternions:
-      //float cosθ = QuaternionF.Dot(sourceRotation, targetRotation);
+      //float cosθ = Quaternion.Dot(sourceRotation, targetRotation);
       float cosθ = sourceRotation.W * targetRotation.W + sourceRotation.X * targetRotation.X + sourceRotation.Y * targetRotation.Y + sourceRotation.Z * targetRotation.Z;
 
       // Invert one quaternion if we would move along the long arc of interpolation.
@@ -620,10 +620,10 @@ namespace DigitalRune.Animation.Character
     /// <see langword="true"/> if the specified matrix is a valid SRT matrix; otherwise, 
     /// <see langword="false"/>.
     /// </returns>
-    public static bool IsValid(Matrix44F matrix)
+    public static bool IsValid(Matrix matrix)
     {
-      Vector3F s, t;
-      Matrix33F r;
+      Vector3 s, t;
+      Matrix r;
       return matrix.Decompose(out s, out r, out t);
     }
 
@@ -751,7 +751,7 @@ namespace DigitalRune.Animation.Character
       result.Rotation.Z = srt1.Rotation.W * srt2.Rotation.Z + srt1.Rotation.X * srt2.Rotation.Y - srt1.Rotation.Y * srt2.Rotation.X + srt1.Rotation.Z * srt2.Rotation.W;
 
       // Quaternion rotation:
-      Vector3F localV = srt1.Rotation.V;
+      Vector3 localV = srt1.Rotation.V;
       float localW = srt1.Rotation.W;
       float w = -(localV.X * srt2.Translation.X + localV.Y * srt2.Translation.Y + localV.Z * srt2.Translation.Z);
       float vX = localV.Y * srt2.Translation.Z - localV.Z * srt2.Translation.Y + localW * srt2.Translation.X;
@@ -820,7 +820,7 @@ namespace DigitalRune.Animation.Character
       //               srt1.Translation + srt1.Scale * srt1.Rotation.Rotate(srt2.Translation));
 
       // Inlined:
-      Vector3F localV = srt1.Rotation.V;
+      Vector3 localV = srt1.Rotation.V;
       float localW = srt1.Rotation.W;
       float w = -(localV.X * srt2.Translation.X + localV.Y * srt2.Translation.Y + localV.Z * srt2.Translation.Z);
       float vX = localV.Y * srt2.Translation.Z - localV.Z * srt2.Translation.Y + localW * srt2.Translation.X;
@@ -850,7 +850,7 @@ namespace DigitalRune.Animation.Character
     }
 
 
-#if XNA || MONOGAME
+
     /// <summary>
     /// Multiplies two SRT transforms. (Only available in the XNA-compatible build.)
     /// </summary>
@@ -878,7 +878,7 @@ namespace DigitalRune.Animation.Character
       // Inlined:
       SrtTransform srtResult;
 
-      Vector3F localV = srt1.Rotation.V;
+      Vector3 localV = srt1.Rotation.V;
       float localW = srt1.Rotation.W;
       float w = -(localV.X * srt2.Translation.X + localV.Y * srt2.Translation.Y + localV.Z * srt2.Translation.Z);
       float vX = localV.Y * srt2.Translation.Z - localV.Z * srt2.Translation.Y + localW * srt2.Translation.X;
@@ -909,7 +909,7 @@ namespace DigitalRune.Animation.Character
 
       result = srtResult;
     }
-#endif
+
 
 
     /// <summary>
@@ -927,7 +927,7 @@ namespace DigitalRune.Animation.Character
     /// <paramref name="srt1"/>.
     /// </para>
     /// </remarks>
-    public static void Multiply(ref SrtTransform srt1, ref SrtTransform srt2, out Matrix44F result)
+    public static void Multiply(ref SrtTransform srt1, ref SrtTransform srt2, out Matrix result)
     {
       //return new SrtTransform(srt1.Scale * srt2.Scale,
       //               srt1.Rotation * srt2.Rotation,
@@ -936,7 +936,7 @@ namespace DigitalRune.Animation.Character
       // Inlined:
       SrtTransform srtResult;
 
-      Vector3F localV = srt1.Rotation.V;
+      Vector3 localV = srt1.Rotation.V;
       float localW = srt1.Rotation.W;
       float w = -(localV.X * srt2.Translation.X + localV.Y * srt2.Translation.Y + localV.Z * srt2.Translation.Z);
       float vX = localV.Y * srt2.Translation.Z - localV.Z * srt2.Translation.Y + localW * srt2.Translation.X;
@@ -981,7 +981,7 @@ namespace DigitalRune.Animation.Character
     /// </remarks>
     public static Vector4F operator *(SrtTransform srt, Vector4F vector)
     {
-      return srt.ToMatrix44F() * vector;
+      return srt.ToMatrix() * vector;
     }
 
 
@@ -997,7 +997,7 @@ namespace DigitalRune.Animation.Character
     /// </remarks>
     public static Vector4F Multiply(SrtTransform srt, Vector4F vector)
     {
-      return srt.ToMatrix44F() * vector;
+      return srt.ToMatrix() * vector;
     }
 
 
@@ -1040,12 +1040,12 @@ namespace DigitalRune.Animation.Character
     /// <returns>
     /// A 4x4-matrix that represents the same transformation as the SRT transform.
     /// </returns>
-    public static implicit operator Matrix44F(SrtTransform srt)
+    public static implicit operator Matrix(SrtTransform srt)
     {
-      //Vector3F s = srt.Scale;
-      //Matrix33F r = srt.Rotation.ToRotationMatrix33();
-      //Vector3F t = srt.Translation;
-      //return new Matrix44F(s.X * r.M00, s.Y * r.M01, s.Z * r.M02, t.X,
+      //Vector3 s = srt.Scale;
+      //Matrix r = srt.Rotation.ToRotationMatrix33();
+      //Vector3 t = srt.Translation;
+      //return new Matrix(s.X * r.M00, s.Y * r.M01, s.Z * r.M02, t.X,
       //                     s.X * r.M10, s.Y * r.M11, s.Z * r.M12, t.Y,
       //                     s.X * r.M20, s.Y * r.M21, s.Z * r.M22, t.Z,
       //                     0, 0, 0, 1);
@@ -1063,7 +1063,7 @@ namespace DigitalRune.Animation.Character
       float twoXW = twoX * srt.Rotation.W;
       float twoYW = twoY * srt.Rotation.W;
       float twoZW = twoZ * srt.Rotation.W;
-      return new Matrix44F(srt.Scale.X * (1 - (twoYY + twoZZ)), srt.Scale.Y * (twoXY - twoZW),       srt.Scale.Z * (twoYW + twoXZ),       srt.Translation.X,
+      return new Matrix(srt.Scale.X * (1 - (twoYY + twoZZ)), srt.Scale.Y * (twoXY - twoZW),       srt.Scale.Z * (twoYW + twoXZ),       srt.Translation.X,
                            srt.Scale.X * (twoXY + twoZW),       srt.Scale.Y * (1 - (twoXX + twoZZ)), srt.Scale.Z * (twoYZ - twoXW),       srt.Translation.Y,
                            srt.Scale.X * (twoXZ - twoYW),       srt.Scale.Y * (twoXW + twoYZ),       srt.Scale.Z * (1 - (twoXX + twoYY)), srt.Translation.Z,
                            0,                                   0,                                   0,                                   1);
@@ -1097,7 +1097,7 @@ namespace DigitalRune.Animation.Character
     }
 
 
-#if XNA || MONOGAME
+
     /// <summary>
     /// Converts a SRT transform to a 4x4 transformation matrix (XNA Framework). 
     /// (Only available in the XNA-compatible build.)
@@ -1113,9 +1113,9 @@ namespace DigitalRune.Animation.Character
     /// </remarks>
     public static implicit operator Matrix(SrtTransform srt)
     {
-      //Vector3F s = srt.Scale;
-      //Matrix33F r = srt.Rotation.ToRotationMatrix33();
-      //Vector3F t = srt.Translation;
+      //Vector3 s = srt.Scale;
+      //Matrix r = srt.Rotation.ToRotationMatrix33();
+      //Vector3 t = srt.Translation;
       //return new Matrix(s.X * r.M00, s.X * r.M10, s.X * r.M20, 0,
       //                  s.Y * r.M01, s.Y * r.M11, s.Y * r.M21, 0,
       //                  s.Z * r.M02, s.Z * r.M12, s.Z * r.M22, 0,
@@ -1140,7 +1140,7 @@ namespace DigitalRune.Animation.Character
                         srt.Scale.Z *(twoYW + twoXZ),        srt.Scale.Z * (twoYZ - twoXW),       srt.Scale.Z * (1 - (twoXX + twoYY)), 0,
                         srt.Translation.X,                   srt.Translation.Y,                   srt.Translation.Z,                   1);
     }
-#endif
+
 
   }
 }

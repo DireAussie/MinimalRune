@@ -82,11 +82,11 @@ struct PSInput
   float Depth : TEXCOORD1;
   float3 Normal : TEXCOORD2;
   float Alpha : TEXCOORD5;
-#if SM4
+
   float4 VPos : SV_Position;
 #else
   float2 VPos : VPOS;
-#endif
+
   float Face : VFACE;
 };
 
@@ -134,13 +134,13 @@ VSOutput VS(VSInput input, float4x4 world)
     output.Normal = mul(float3(0, 1, 0), (float3x3)world);
   }
   
-#if !MGFX
+
   // This is a near-1 value which can be multiplied to effect parameters to
   // workaround a DX9 HLSL compiler preshader bug.
   float dummy1 = 1 + positionWorld.y * 1e-30f;
 #else
   float dummy1 = 1;
-#endif
+
   
   // Compute alpha value for LOD fade in/out.
   // We use the camera distance with randomization to hide fade out border.
@@ -218,21 +218,21 @@ void PS(PSInput input, out float4 depthBuffer : COLOR0, out float4 normalBuffer 
 //-----------------------------------------------------------------------------
 
 technique Default
-#if !MGFX
+
 < string InstancingTechnique = "DefaultInstancing"; >
-#endif
+
 {
   pass
   {
     CullMode = NONE;
     
-#if !SM4
+
     VertexShader = compile vs_3_0 VSNoInstancing();
     PixelShader = compile ps_3_0 PS();
 #else
     VertexShader = compile vs_4_0 VSNoInstancing();
     PixelShader = compile ps_4_0 PS();
-#endif
+
   }
 }
 
@@ -242,12 +242,12 @@ technique DefaultInstancing
   {
     CullMode = NONE;
     
-#if !SM4
+
     VertexShader = compile vs_3_0 VSInstancing();
     PixelShader = compile ps_3_0 PS();
 #else
     VertexShader = compile vs_4_0 VSInstancing();
     PixelShader = compile ps_4_0 PS();
-#endif
+
   }
 }

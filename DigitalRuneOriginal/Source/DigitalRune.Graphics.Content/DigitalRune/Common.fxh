@@ -9,7 +9,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#ifndef DIGITALRUNE_COMMON_FXH
+
 #define DIGITALRUNE_COMMON_FXH
 
 
@@ -20,9 +20,9 @@
 // The gamma value.
 // Use 2.0 for approximate gamma (default) and 2.2 for exact gamma.
 // See also comments in FromGamma/ToGamma().
-#ifndef DR_GAMMA
+
 #define DR_GAMMA 2.0
-#endif
+
 
 
 //-----------------------------------------------------------------------------
@@ -120,13 +120,13 @@ float3 ToGamma(float3 colorLinear)
 /// \return The position in projection space.
 float2 ScreenToProjection(float2 position, float2 viewportSize)
 {
-#if !SM4
+
   // Subtract a half pixel so that the edge of the primitive is between screen pixels.
   // Thus, the first texel lies exactly on the first pixel.
   // See also http://drilian.com/2008/11/25/understanding-half-pixel-and-half-texel-offsets/
   // for a good description of this DirectX 9 problem.
   position -= 0.5;
-#endif
+
   
   // Now transform screen space coordinate into projection space.
   // Screen space: Left top = (0, 0), right bottom = (ScreenSize.x - 1, ScreenSize.y - 1).
@@ -172,9 +172,9 @@ float2 ProjectionToScreen(float4 position, float2 viewportSize)
   
   // The position (0, 0) is the center of the first screen pixel. We have
   // to add half a texel to sample the center of the first texel.
-#if !SM4
+
   position.xy += 0.5f / viewportSize;
-#endif
+
   
   return position.xy;
 }
@@ -578,4 +578,4 @@ float Log(float base, float y)
 {
   return log(y) / log(base);
 }
-#endif
+

@@ -242,8 +242,8 @@ namespace DigitalRune.Physics.Specialized
         DampingConstant = 1000000,
         SpringConstant = 10000000,
         MaxForce = float.PositiveInfinity,
-        AnchorOrientationALocal = Matrix33F.Identity,
-        AnchorOrientationBLocal = Matrix33F.Identity,
+        AnchorOrientationALocal = Matrix.Identity,
+        AnchorOrientationBLocal = Matrix.Identity,
 
         // Single-axis mode is faster but less stable. In single-axis mode, 1 DOF (degree of 
         // freedom) constraint is applied along the rotation axis. If single-axis mode is turned 
@@ -381,7 +381,7 @@ namespace DigitalRune.Physics.Specialized
 
         // Set the relative motor target.
         var rotationMatrix = parentPose.Orientation.Transposed * childPose.Orientation;
-        _quaternionMotor.TargetOrientation = QuaternionF.CreateRotation(rotationMatrix);
+        _quaternionMotor.TargetOrientation = Quaternion.CreateRotation(rotationMatrix);
       }
     }
 

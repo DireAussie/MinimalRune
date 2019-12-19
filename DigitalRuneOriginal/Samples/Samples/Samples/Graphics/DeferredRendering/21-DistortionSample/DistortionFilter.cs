@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using DigitalRune.Graphics;
 using DigitalRune.Graphics.PostProcessing;
 using DigitalRune.Graphics.Rendering;
@@ -126,4 +126,3 @@ namespace Samples.Graphics
     }
   }
 }
-#endif

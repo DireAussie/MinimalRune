@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using System;
 using System.Linq;
 using DigitalRune.Game;
@@ -83,7 +83,7 @@ To focus on shadows, the other lights and the materials are not rendered when th
       _standardShadow = new StandardShadow();
       _spotlightNode = new LightNode(_spotlight)
       {
-        PoseWorld = new Pose(new Vector3F(0, 1f, -2)),
+        PoseWorld = new Pose(new Vector3(0, 1f, -2)),
         Shadow = _standardShadow,
         IsEnabled = true,
       };
@@ -93,7 +93,7 @@ To focus on shadows, the other lights and the materials are not rendered when th
       _pointLight = new PointLight { Range = 10, };
       _pointLightNode = new LightNode(_pointLight)
       {
-        PoseWorld = new Pose(new Vector3F(0, 1f, -2)),
+        PoseWorld = new Pose(new Vector3(0, 1f, -2)),
         Shadow = _cubeMapShadow,
         IsEnabled = false,
       };
@@ -137,12 +137,12 @@ To focus on shadows, the other lights and the materials are not rendered when th
       var sphereMesh = SampleHelper.CreateMesh(content, graphicsService, new SphereShape(1));
       for (int i = 0; i < 100; i++)
       {
-        Vector3F position = new Vector3F(random.NextFloat(-100, 100), random.NextFloat(0, 3), random.NextFloat(-100, 100));
+        Vector3 position = new Vector3(random.NextFloat(-100, 100), random.NextFloat(0, 3), random.NextFloat(-100, 100));
         float scale = random.NextFloat(0.5f, 3f);
         var meshNode = new MeshNode(sphereMesh)
         {
           PoseLocal = new Pose(position),
-          ScaleLocal = new Vector3F(scale),
+          ScaleLocal = new Vector3(scale),
           IsStatic = true,
         };
         graphicsScreen.Scene.Children.Add(meshNode);
@@ -152,9 +152,9 @@ To focus on shadows, the other lights and the materials are not rendered when th
       var boxMesh = SampleHelper.CreateMesh(content, graphicsService, new BoxShape(1, 1, 1));
       for (int i = 0; i < 100; i++)
       {
-        Vector3F position = new Vector3F(random.NextFloat(-100, 100), random.NextFloat(0, 3), random.NextFloat(-100, 100));
-        QuaternionF orientation = random.NextQuaternionF();
-        Vector3F scale = random.NextVector3F(0.1f, 4f);
+        Vector3 position = new Vector3(random.NextFloat(-100, 100), random.NextFloat(0, 3), random.NextFloat(-100, 100));
+        Quaternion orientation = random.NextQuaternion();
+        Vector3 scale = random.NextVector3(0.1f, 4f);
         var meshNode = new MeshNode(boxMesh)
         {
           PoseLocal = new Pose(position, orientation),
@@ -189,8 +189,8 @@ To focus on shadows, the other lights and the materials are not rendered when th
       var heightFieldMesh = SampleHelper.CreateMesh(content, graphicsService, heightField);
       var heightFieldMeshNode = new MeshNode(heightFieldMesh)
       {
-        PoseLocal = new Pose(new Vector3F(20, 0, -20)),
-        ScaleLocal = new Vector3F(1, 2, 1),
+        PoseLocal = new Pose(new Vector3(20, 0, -20)),
+        ScaleLocal = new Vector3(1, 2, 1),
         IsStatic = true,
       };
       graphicsScreen.Scene.Children.Add(heightFieldMeshNode);
@@ -198,16 +198,16 @@ To focus on shadows, the other lights and the materials are not rendered when th
       // Dudes.
       for (int i = 0; i < 10; i++)
       {
-        Vector3F position = new Vector3F(random.NextFloat(-20, 20), 0, random.NextFloat(-20, 20));
-        Matrix33F orientation = Matrix33F.CreateRotationY(random.NextFloat(0, ConstantsF.TwoPi));
+        Vector3 position = new Vector3(random.NextFloat(-20, 20), 0, random.NextFloat(-20, 20));
+        Matrix orientation = Matrix.CreateRotationY(random.NextFloat(0, ConstantsF.TwoPi));
         gameObjectService.Objects.Add(new DudeObject(services) { Pose = new Pose(position, orientation) });
       }
 
       // Palm trees.
       for (int i = 0; i < 100; i++)
       {
-        Vector3F position = new Vector3F(random.NextFloat(-80, 80), 0, random.NextFloat(-100, 100));
-        Matrix33F orientation = Matrix33F.CreateRotationY(random.NextFloat(0, ConstantsF.TwoPi));
+        Vector3 position = new Vector3(random.NextFloat(-80, 80), 0, random.NextFloat(-100, 100));
+        Matrix orientation = Matrix.CreateRotationY(random.NextFloat(0, ConstantsF.TwoPi));
         float scale = random.NextFloat(0.5f, 1.2f);
         gameObjectService.Objects.Add(new StaticObject(services, "PalmTree/palm_tree", scale, new Pose(position, orientation)));
       }
@@ -215,8 +215,8 @@ To focus on shadows, the other lights and the materials are not rendered when th
       // Rocks
       for (int i = 0; i < 100; i++)
       {
-        Vector3F position = new Vector3F(random.NextFloat(-80, 80), 1, random.NextFloat(-100, 100));
-        QuaternionF orientation = RandomHelper.Random.NextQuaternionF();
+        Vector3 position = new Vector3(random.NextFloat(-80, 80), 1, random.NextFloat(-100, 100));
+        Quaternion orientation = RandomHelper.Random.NextQuaternion();
         float scale = random.NextFloat(0.5f, 1.2f);
         gameObjectService.Objects.Add(new StaticObject(services, "Rock/rock_05", scale, new Pose(position, orientation)));
       }
@@ -224,8 +224,8 @@ To focus on shadows, the other lights and the materials are not rendered when th
       // Grass
       for (int i = 0; i < 100; i++)
       {
-        Vector3F position = new Vector3F(random.NextFloat(-20, 20), 0, random.NextFloat(-20, 20));
-        Matrix33F orientation = Matrix33F.CreateRotationY(random.NextFloat(0, ConstantsF.TwoPi));
+        Vector3 position = new Vector3(random.NextFloat(-20, 20), 0, random.NextFloat(-20, 20));
+        Matrix orientation = Matrix.CreateRotationY(random.NextFloat(0, ConstantsF.TwoPi));
         float scale = random.NextFloat(0.5f, 1.2f);
         gameObjectService.Objects.Add(new StaticObject(services, "Grass/Grass", scale, new Pose(position, orientation)));
       }
@@ -233,8 +233,8 @@ To focus on shadows, the other lights and the materials are not rendered when th
       // More plants
       for (int i = 0; i < 100; i++)
       {
-        Vector3F position = new Vector3F(random.NextFloat(-20, 20), 0, random.NextFloat(-20, 20));
-        Matrix33F orientation = Matrix33F.CreateRotationY(random.NextFloat(0, ConstantsF.TwoPi));
+        Vector3 position = new Vector3(random.NextFloat(-20, 20), 0, random.NextFloat(-20, 20));
+        Matrix orientation = Matrix.CreateRotationY(random.NextFloat(0, ConstantsF.TwoPi));
         float scale = random.NextFloat(0.5f, 1.2f);
         gameObjectService.Objects.Add(new StaticObject(services, "Parviflora/Parviflora", scale, new Pose(position, orientation)));
       }
@@ -242,9 +242,9 @@ To focus on shadows, the other lights and the materials are not rendered when th
       // "Skyscrapers"
       for (int i = 0; i < 20; i++)
       {
-        Vector3F position = new Vector3F(random.NextFloat(90, 100), 0, random.NextFloat(-100, 100));
-        Matrix33F orientation = Matrix33F.CreateRotationY(random.NextFloat(0, ConstantsF.TwoPi));
-        Vector3F scale = new Vector3F(random.NextFloat(6, 20), random.NextFloat(10, 100), random.NextFloat(6, 20));
+        Vector3 position = new Vector3(random.NextFloat(90, 100), 0, random.NextFloat(-100, 100));
+        Matrix orientation = Matrix.CreateRotationY(random.NextFloat(0, ConstantsF.TwoPi));
+        Vector3 scale = new Vector3(random.NextFloat(6, 20), random.NextFloat(10, 100), random.NextFloat(6, 20));
         var meshNode = new MeshNode(boxMesh)
         {
           PoseLocal = new Pose(position, orientation),
@@ -258,8 +258,8 @@ To focus on shadows, the other lights and the materials are not rendered when th
       // "Hills"
       for (int i = 0; i < 20; i++)
       {
-        Vector3F position = new Vector3F(random.NextFloat(-90, -100), 0, random.NextFloat(-100, 100));
-        Vector3F scale = new Vector3F(random.NextFloat(10, 20), random.NextFloat(10, 30), random.NextFloat(10, 20));
+        Vector3 position = new Vector3(random.NextFloat(-90, -100), 0, random.NextFloat(-100, 100));
+        Vector3 scale = new Vector3(random.NextFloat(10, 20), random.NextFloat(10, 30), random.NextFloat(10, 20));
         var meshNode = new MeshNode(sphereMesh)
         {
           PoseLocal = new Pose(position),
@@ -331,7 +331,7 @@ To focus on shadows, the other lights and the materials are not rendered when th
         value =>
         {
           var pose = _spotlightNode.PoseWorld;
-          pose.Orientation = Matrix33F.CreateRotationX(MathHelper.ToRadians(value));
+          pose.Orientation = Matrix.CreateRotationX(MathHelper.ToRadians(value));
           _spotlightNode.PoseWorld = pose;
         });
 
@@ -444,4 +444,3 @@ To focus on shadows, the other lights and the materials are not rendered when th
     }
   }
 }
-#endif

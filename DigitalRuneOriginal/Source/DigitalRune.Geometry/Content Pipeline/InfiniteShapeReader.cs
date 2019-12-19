@@ -13,7 +13,7 @@ namespace DigitalRune.Geometry.Content
   /// </summary>
   public class InfiniteShapeReader : ContentTypeReader<InfiniteShape>
   {
-#if !MONOGAME
+
     /// <summary>
     /// Determines if deserialization into an existing object is possible.
     /// </summary>
@@ -25,7 +25,7 @@ namespace DigitalRune.Geometry.Content
     {
       get { return true; }
     }
-#endif
+
 
 
     /// <summary>

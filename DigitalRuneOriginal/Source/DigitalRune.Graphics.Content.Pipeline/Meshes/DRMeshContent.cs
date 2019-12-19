@@ -5,9 +5,9 @@
 using System.Collections.Generic;
 using DigitalRune.Geometry.Shapes;
 using Microsoft.Xna.Framework.Content;
-#if ANIMATION
+
 using DigitalRune.Animation.Character;
-#endif
+
 
 
 namespace DigitalRune.Graphics.Content.Pipeline
@@ -50,7 +50,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
     public DROccluderContent Occluder { get; set; }
 
 
-#if ANIMATION
+
     /// <summary>
     /// Gets or sets the skeleton.
     /// </summary>
@@ -66,7 +66,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
     [ContentSerializer(ElementName = "Animations", SharedResource = true)]
     public Dictionary<string, SkeletonKeyFrameAnimation> Animations { get; set; }
-#endif
+
 
 
     /// <summary>

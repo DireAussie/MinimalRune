@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using System.Collections.Generic;
 using DigitalRune.Graphics.Effects;
 using DigitalRune;
@@ -113,7 +113,7 @@ window.",
       // Add a new game object which controls the wind velocity and "Wind" parameters in effects.
       GameObjectService.Objects.Add(new WindObject(Services));
 
-#if MONOGAME    // TODO: Test if MonoGame supports effect annotations.
+
       // The vegetation effects use an effect parameter named "LodDistances". By default all
       // effect parameters are shared per "Material". However, we want to change the parameter
       // per instance. Therefore, the effect declares the parameter like this:
@@ -126,7 +126,7 @@ window.",
         defaultEffectInterpreter.ParameterDescriptions.Add(
           "LodDistances",
           (parameter, i) => new EffectParameterDescription(parameter, "LodDistances", i, EffectParameterHint.PerInstance));
-#endif
+
 
       // Load three different plant models.
       // The palm tree consists of a single mesh. It uses the *Vegetation.fx effects.
@@ -151,20 +151,20 @@ window.",
       // (However, this is inefficient for large amounts of plants.)
       _graphicsScreen.Scene.Children.Add(new MeshNode(palmMesh)
       {
-        PoseLocal = new Pose(new Vector3F(-2, 0, 0))
+        PoseLocal = new Pose(new Vector3(-2, 0, 0))
       });
       plantLodGroupNode.PoseLocal = Pose.Identity;
       _graphicsScreen.Scene.Children.Add(plantLodGroupNode);
       _graphicsScreen.Scene.Children.Add(new MeshNode(grassMesh)
       {
-        PoseLocal = new Pose(new Vector3F(2, 0, 0))
+        PoseLocal = new Pose(new Vector3(2, 0, 0))
       });
 
-#if WINDOWS
+
       int numberOfInstancesPerCell = 100;
 #else
       int numberOfInstancesPerCell = 10;
-#endif
+
 
       // It is more efficient to group instances in batches and render them using mesh instancing.
       // This is handled by the VegetationObject class.
@@ -465,4 +465,4 @@ window.",
     }
   }
 }
-#endif
+

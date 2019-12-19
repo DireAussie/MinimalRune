@@ -122,7 +122,7 @@ float2 TerrainDetailClipmapOffsets[9];
 float TerrainDetailFadeRange;
 float TerrainEnableAnisotropicFiltering;
 
-#if PARALLAX_MAPPING
+
 float3 CameraPosition : CAMERAPOSITION;
 float3 DirectionalLightDirection : DIRECTIONALLIGHTDIRECTION;
 int ParallaxMinNumberOfSamples = 4;
@@ -134,7 +134,7 @@ float ParallaxShadowScale = 0.08;
 float ParallaxNumberOfShadowSamples = 4;
 float ParallaxShadowFalloff = 0.5;
 float ParallaxShadowStrength = 200;
-#endif
+
 
 
 //-----------------------------------------------------------------------------
@@ -152,10 +152,10 @@ struct VSOutput
   float4 PositionProj : TEXCOORD0;
   float LOD : TEXCOORD1;
   float3 PositionWorld: TEXCOORD2;
-#if PARALLAX_MAPPING
+
   float3 ViewDirectionTangent : TEXCOORD3; // View direction in tangent space.
   float3 LightDirectionTangent : TEXCOORD4;  // LightDirection in tangent space.
-#endif
+
   float4 Position : SV_Position;
 };
 
@@ -165,10 +165,10 @@ struct PSInput
   float4 PositionProj : TEXCOORD0;
   float LOD : TEXCOORD1;
   float3 PositionWorld: TEXCOORD2;
-#if PARALLAX_MAPPING
+
   float3 ViewDirectionTangent : TEXCOORD3; // View direction in tangent space.
   float3 LightDirectionTangent : TEXCOORD4;  // LightDirection in tangent space.
-#endif
+
 };
 
 
@@ -178,11 +178,11 @@ struct PSInput
 
 VSOutput VS(VSInput input, uniform bool isWireFrame)
 {
-#if PIXEL_HOLES
+
   float holeThreshold = -1;
 #else
   float holeThreshold = TerrainHoleThreshold;
-#endif
+
   
   float3 position = input.Position.xyz;
   float3 normal;
@@ -209,7 +209,7 @@ VSOutput VS(VSInput input, uniform bool isWireFrame)
   output.LOD = clod;
   output.PositionWorld = position;
   
-#if PARALLAX_MAPPING
+
   float3 tangent = cross(normal, float3(0, 0, 1));
   float3 binormal = cross(tangent, normal);
   // Matrix that transforms column(!) vectors from world space to tangent space.
@@ -217,7 +217,7 @@ VSOutput VS(VSInput input, uniform bool isWireFrame)
   float3 viewDirectionWorld = output.PositionWorld - CameraPosition;
   output.ViewDirectionTangent = mul(worldToTangent, viewDirectionWorld);
   output.LightDirectionTangent = mul(worldToTangent, DirectionalLightDirection);
-#endif
+
   
   return output;
 }
@@ -256,7 +256,7 @@ float4 PS(PSInput input, uniform bool isWireFrame) : COLOR0
   
   float specularPower, alpha = 0;
   float3 normal = 0, diffuse = 0, specular = 0;
-#if PARALLAX_MAPPING
+
   ComputeTerrainMaterial(
     TerrainDetailClipmapSampler0,
     TerrainDetailClipmapSampler1,
@@ -282,11 +282,11 @@ float4 PS(PSInput input, uniform bool isWireFrame) : COLOR0
     TerrainEnableAnisotropicFiltering,
     positionWorld, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     normal, specularPower, diffuse, alpha, specular);
-#endif
+
   
-#if PIXEL_HOLES
+
   clip(alpha - TerrainHoleThreshold);
-#endif
+
   
   // Get the screen space texture coordinate for this position.
   float2 texCoordScreen = ProjectionToScreen(input.PositionProj, ViewportSize);
@@ -314,13 +314,13 @@ technique Default
 {
   pass Default
   {
-#if !SM4
+
     VertexShader = compile vs_3_0 VSDefault();
     PixelShader = compile ps_3_0 PSDefault();
 #else
     VertexShader = compile vs_4_0 VSDefault();
     PixelShader = compile ps_4_0 PSDefault();
-#endif
+
   }
   
   
@@ -329,13 +329,13 @@ technique Default
     CullMode = CCW;
     FillMode = WIREFRAME;
     
-#if !SM4
+
     VertexShader = compile vs_3_0 VSWireFrame();
     PixelShader = compile ps_3_0 PSWireFrame();
 #else
     VertexShader = compile vs_4_0 VSWireFrame();
     PixelShader = compile ps_4_0 PSWireFrame();
-#endif
+
   }
   
   pass Restore

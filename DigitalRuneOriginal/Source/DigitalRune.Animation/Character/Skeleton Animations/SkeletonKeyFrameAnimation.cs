@@ -7,12 +7,12 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using DigitalRune.Animation.Traits;
 using DigitalRune.Mathematics.Algebra;
-#if !PORTABLE
+
 using System.ComponentModel;
-#endif
-#if PORTABLE || WINDOWS
+
+
 using System.Dynamic;
-#endif
+
 
 
 namespace DigitalRune.Animation.Character
@@ -205,11 +205,11 @@ namespace DigitalRune.Animation.Character
     }
 
 
-#if PORTABLE || WINDOWS
+
     /// <exclude/>
-#if !PORTABLE
+
     [Browsable(false)]
-#endif
+
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     public /*dynamic*/ object Internals
     {
@@ -262,7 +262,7 @@ namespace DigitalRune.Animation.Character
         return internals;
       }
     }
-#endif
+
 
 
 
@@ -1033,9 +1033,9 @@ namespace DigitalRune.Animation.Character
 
         var keyFrame = keyFrames[keyFrameIndex];
         time = keyFrame.Time;
-        transform.Scale = Vector3F.One;
+        transform.Scale = Vector3.One;
         transform.Rotation = keyFrame.Rotation;
-        transform.Translation = Vector3F.Zero;
+        transform.Translation = Vector3.Zero;
       }
       else if (boneKeyFrameType == BoneKeyFrameType.RT)
       {
@@ -1043,7 +1043,7 @@ namespace DigitalRune.Animation.Character
 
         var keyFrame = keyFrames[keyFrameIndex];
         time = keyFrame.Time;
-        transform.Scale = Vector3F.One;
+        transform.Scale = Vector3.One;
         transform.Rotation = keyFrame.Rotation;
         transform.Translation = keyFrame.Translation;
       }
@@ -1080,15 +1080,15 @@ namespace DigitalRune.Animation.Character
 
         var keyFrame = keyFrames[keyFrameIndex];
         time0 = keyFrame.Time;
-        transform0.Scale = Vector3F.One;
+        transform0.Scale = Vector3.One;
         transform0.Rotation = keyFrame.Rotation;
-        transform0.Translation = Vector3F.Zero;
+        transform0.Translation = Vector3.Zero;
 
         keyFrame = keyFrames[keyFrameIndex + 1];
         time1 = keyFrame.Time;
-        transform1.Scale = Vector3F.One;
+        transform1.Scale = Vector3.One;
         transform1.Rotation = keyFrame.Rotation;
-        transform1.Translation = Vector3F.Zero;
+        transform1.Translation = Vector3.Zero;
       }
       else if (boneKeyFrameType == BoneKeyFrameType.RT)
       {
@@ -1096,13 +1096,13 @@ namespace DigitalRune.Animation.Character
 
         var keyFrame = keyFrames[keyFrameIndex];
         time0 = keyFrame.Time;
-        transform0.Scale = Vector3F.One;
+        transform0.Scale = Vector3.One;
         transform0.Rotation = keyFrame.Rotation;
         transform0.Translation = keyFrame.Translation;
 
         keyFrame = keyFrames[keyFrameIndex + 1];
         time1 = keyFrame.Time;
-        transform1.Scale = Vector3F.One;
+        transform1.Scale = Vector3.One;
         transform1.Rotation = keyFrame.Rotation;
         transform1.Translation = keyFrame.Translation;
       }

@@ -46,8 +46,8 @@ namespace Samples
         // position and shoots forward (-z direction).
         var cameraGameObject = (CameraObject)_gameObjectService.Objects["Camera"];
         var cameraNode = cameraGameObject.CameraNode;
-        Vector3F cameraPosition = cameraNode.PoseWorld.Position;
-        Vector3F cameraDirection = cameraNode.PoseWorld.ToWorldDirection(Vector3F.Forward);
+        Vector3 cameraPosition = cameraNode.PoseWorld.Position;
+        Vector3 cameraDirection = cameraNode.PoseWorld.ToWorldDirection(Vector3.Forward);
 
         // Create a ray for hit-testing.
         var ray = new RayShape(cameraPosition, cameraDirection, 1000);

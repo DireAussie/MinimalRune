@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !WP7
+
 using System;
 using System.Collections.Generic;
 using DigitalRune.Graphics.SceneGraph;
@@ -136,7 +136,7 @@ namespace DigitalRune.Graphics.Rendering
 
       // Camera properties
       var cameraNode = context.CameraNode;
-      Matrix view = (Matrix)new Matrix44F(cameraNode.PoseWorld.Orientation.Transposed, new Vector3F());
+      Matrix view = (Matrix)new Matrix(cameraNode.PoseWorld.Orientation.Transposed, new Vector3());
       _parameterView.SetValue(view);
       Matrix projection = cameraNode.Camera.Projection;
       _parameterProjection.SetValue(projection);
@@ -195,4 +195,4 @@ namespace DigitalRune.Graphics.Rendering
 
   }
 }
-#endif
+

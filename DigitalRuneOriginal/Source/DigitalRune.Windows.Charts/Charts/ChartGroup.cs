@@ -147,7 +147,7 @@ namespace DigitalRune.Windows.Charts
 
         //--------------------------------------------------------------
 
-#if SILVERLIGHT
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ChartGroup"/> class.
         /// </summary>
@@ -164,7 +164,7 @@ namespace DigitalRune.Windows.Charts
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ChartGroup), new FrameworkPropertyMetadata(typeof(ChartGroup)));
         }
-#endif
+
 
 
 
@@ -257,7 +257,7 @@ namespace DigitalRune.Windows.Charts
         }
 
 
-#if SILVERLIGHT
+
         /// <exclude/>
         public void OnAxisUpdated(object sender, EventArgs eventArgs)
         {
@@ -268,7 +268,7 @@ namespace DigitalRune.Windows.Charts
         {
             Invalidate();
         }
-#endif
+
 
 
         /// <summary>
@@ -341,12 +341,12 @@ namespace DigitalRune.Windows.Charts
             if (IsValid)
                 return;
 
-#if !SILVERLIGHT
+
             // Ensure that the children (BarCharts, LineCharts, ...) have been generated.
             bool containersGenerated = this.EnsureItemContainers();
             if (!containersGenerated)
                 return;
-#endif
+
 
             var xAxis = XAxis;
             var yAxis = YAxis;
@@ -411,7 +411,7 @@ namespace DigitalRune.Windows.Charts
                 chart.UpdateDataSource();
             }
 
-#if DEBUG
+
             if (!WindowsHelper.IsInDesignMode && charts.All(c => c.IsValid && c.XAxis != null && c.YAxis != null))
             {
                 // Validate data.
@@ -427,7 +427,7 @@ namespace DigitalRune.Windows.Charts
                 //     invalid, even if everything is set correctly in XAML.)
                 ValidateData();
             }
-#endif
+
 
             // Draw charts.
             foreach (var chart in charts)

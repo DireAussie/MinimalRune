@@ -14,9 +14,9 @@ namespace DigitalRune.Graphics.Rendering
   /// <summary>
   /// Vertex format used in "OcclusionCulling.fx".
   /// </summary>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !PORTABLE
+
   [Serializable]
-#endif
+
   [StructLayout(LayoutKind.Sequential)]
   internal struct OcclusionVertex : IVertexType
   {
@@ -41,12 +41,12 @@ namespace DigitalRune.Graphics.Rendering
 
     // See OcclusionCulling.fx for description.
     public Vector2F Pixel;
-    public Vector3F Minimum;
-    public Vector3F Maximum;
+    public Vector3 Minimum;
+    public Vector3 Maximum;
 
     // For LOD metric and distance culling.
-    public Vector3F Position;
-    public Vector3F Scale;
+    public Vector3 Position;
+    public Vector3 Scale;
     public float MaxDistance;
 
 

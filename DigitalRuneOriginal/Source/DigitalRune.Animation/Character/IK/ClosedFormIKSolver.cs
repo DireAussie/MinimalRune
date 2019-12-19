@@ -111,7 +111,7 @@ namespace DigitalRune.Animation.Character
     /// the hand center. Then the target will be grabbed correctly with the hand center and not the
     /// wrist.
     /// </remarks>
-    public Vector3F TipOffset
+    public Vector3 TipOffset
     {
       get { return _tipOffset; }
       set
@@ -123,7 +123,7 @@ namespace DigitalRune.Animation.Character
         }
       }
     }
-    private Vector3F _tipOffset;
+    private Vector3 _tipOffset;
 
 
 
@@ -228,7 +228,7 @@ namespace DigitalRune.Animation.Character
       // If TipOffset is not 0, then we can rotate the last bone.
       // If TipOffset is 0, then the last bone defines the tip but is not rotated.
       // --> numberOfBones is set to the number of affected bones.
-      Vector3F tipAbsolute;
+      Vector3 tipAbsolute;
       if (TipOffset.IsNumericallyZero)
       {
         numberOfBones--;
@@ -240,8 +240,8 @@ namespace DigitalRune.Animation.Character
       }
 
       // The root bone rotation that aligns the whole chain with the target.
-      QuaternionF chainRotation = QuaternionF.Identity;
-      Vector3F boneToTarget, boneToTip;
+      Quaternion chainRotation = Quaternion.Identity;
+      Vector3 boneToTarget, boneToTip;
       float remainingChainLength = _totalChainLength;
 
       // Apply the soft limit to the distance to the IK goal
@@ -249,7 +249,7 @@ namespace DigitalRune.Animation.Character
       //distToIkGoal = vecToIkGoal.Length;
       //// Limit the extension to 98% and ramp it up over 5% of the chains length
       //vecToIkGoal *= (LimitValue(distToIkGoal, _totalChainLength * 0.98f, _totalChainLength * 0.08f)) / distToIkGoal;
-      //Vector3F goalPosition = _bones[0].Translation + vecToIkGoal;
+      //Vector3 goalPosition = _bones[0].Translation + vecToIkGoal;
 
       var targetAbsolute = Target;
 
@@ -285,7 +285,7 @@ namespace DigitalRune.Animation.Character
         {
           // This is the first bone: Compute rotation that aligns the whole initial chain with
           // the target.
-          chainRotation = QuaternionF.CreateRotation(boneToTip, boneToTarget);
+          chainRotation = Quaternion.CreateRotation(boneToTip, boneToTarget);
 
           // Update tip.
           tipAbsolute = _bones[i].Translation + (boneToTarget * boneToTipLength);
@@ -301,7 +301,7 @@ namespace DigitalRune.Animation.Character
           // TODO: Find an explanation/derivation of this additional rotation.
           _bones[i] = new SrtTransform(
             _bones[i].Scale, 
-            QuaternionF.CreateRotation(boneToTip, boneToTarget) * chainRotation * _bones[i].Rotation, 
+            Quaternion.CreateRotation(boneToTip, boneToTarget) * chainRotation * _bones[i].Rotation, 
             _bones[i].Translation);
         }
 
@@ -315,7 +315,7 @@ namespace DigitalRune.Animation.Character
           remainingChainLength -= _boneLengths[i];
 
           // The direction of the current bone. For the tip bone we use the TipOffset.
-          Vector3F boneDirection;
+          Vector3 boneDirection;
           if (i != TipBoneIndex)
             boneDirection = _bones[i].Rotation.Rotate(skeleton.GetBindPoseRelative(_boneIndices[i + 1]).Translation);
           else
@@ -326,12 +326,12 @@ namespace DigitalRune.Animation.Character
 
           // The bone rotates around an axis normal to the bone to target direction and the bone
           // vector.
-          Vector3F rotationAxis = Vector3F.Cross(boneToTarget, boneDirection);
+          Vector3 rotationAxis = Vector3.Cross(boneToTarget, boneDirection);
           if (!rotationAxis.TryNormalize())
             continue;       // TODO: If this happens, can we choose a useful direction?
 
           // The current angle between bone direction and bone to target vector.
-          float currentAngle = (float)Math.Acos(MathHelper.Clamp(Vector3F.Dot(boneDirection, boneToTarget), -1, 1));
+          float currentAngle = (float)Math.Acos(MathHelper.Clamp(Vector3.Dot(boneDirection, boneToTarget), -1, 1));
 
           // Side lengths of the involved triangles.
           var a = _boneLengths[i];
@@ -391,7 +391,7 @@ namespace DigitalRune.Animation.Character
           // Apply the rotation to the current bones 
           _bones[i] = new SrtTransform(
             _bones[i].Scale, 
-            (QuaternionF.CreateRotation(rotationAxis, deltaAngle) * _bones[i].Rotation).Normalized, 
+            (Quaternion.CreateRotation(rotationAxis, deltaAngle) * _bones[i].Rotation).Normalized, 
             _bones[i].Translation);
         }
       }

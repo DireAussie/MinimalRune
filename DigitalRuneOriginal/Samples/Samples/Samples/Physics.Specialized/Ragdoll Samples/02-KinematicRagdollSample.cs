@@ -44,7 +44,7 @@ target positions. Ragdoll joints and limits are not used.",
 
       var modelNode = ContentManager.Load<ModelNode>("Dude/Dude");
       _meshNode = modelNode.GetSubtree().OfType<MeshNode>().First().Clone();
-      _meshNode.PoseLocal = new Pose(new Vector3F(0, 0, 0), Matrix33F.CreateRotationY(ConstantsF.Pi));
+      _meshNode.PoseLocal = new Pose(new Vector3(0, 0, 0), Matrix.CreateRotationY(ConstantsF.Pi));
       SampleHelper.EnablePerPixelLighting(_meshNode);
       GraphicsScreen.Scene.Children.Add(_meshNode);
 
@@ -97,7 +97,7 @@ target positions. Ragdoll joints and limits are not used.",
       var box = new RigidBody(new BoxShape(0.4f, 0.4f, 0.4f))
       {
         Name = "Box",
-        Pose = new Pose(new Vector3F(0, 3, 0)),
+        Pose = new Pose(new Vector3(0, 3, 0)),
       };
       Simulation.RigidBodies.Add(box);
     }

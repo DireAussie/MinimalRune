@@ -29,7 +29,7 @@ namespace Samples.Geometry
     {
       SampleFramework.IsMouseVisible = false;
       GraphicsScreen.ClearBackground = true;
-      SetCamera(new Vector3F(0, 1, 10), 0, 0);
+      SetCamera(new Vector3(0, 1, 10), 0, 0);
 
       CreateObjects();
 
@@ -62,7 +62,7 @@ namespace Samples.Geometry
         : new Color(200, 220, 200, 255);
 
       // Move one object with keyboard NumPad.
-      var translation = new Vector3F();
+      var translation = new Vector3();
       if (InputService.IsDown(Keys.NumPad4))
         translation.X -= 1;
       if (InputService.IsDown(Keys.NumPad6))
@@ -97,15 +97,15 @@ namespace Samples.Geometry
     {
       // Create two collision objects with triangle mesh shapes.
       var meshA = new TriangleMesh();
-      meshA.Add(new Triangle(new Vector3F(0, 1, 0), new Vector3F(0, 1, 0), new Vector3F(0, 1, 0)));
-      meshA.Add(new Triangle(new Vector3F(0, 1, 0), new Vector3F(0, 1, 0), new Vector3F(0, 1, 0)));
+      meshA.Add(new Triangle(new Vector3(0, 1, 0), new Vector3(0, 1, 0), new Vector3(0, 1, 0)));
+      meshA.Add(new Triangle(new Vector3(0, 1, 0), new Vector3(0, 1, 0), new Vector3(0, 1, 0)));
       var shapeA = new TriangleMeshShape() { Partition = new CompressedAabbTree() }; 
-      var poseA = new Pose(new Vector3F(-1, 0, 0));
+      var poseA = new Pose(new Vector3(-1, 0, 0));
       _objectA = new CollisionObject(new GeometricObject(shapeA, poseA));
 
       var meshB = new BoxShape(0.2f, 2, 1f).GetMesh(0.05f, 4);
       var shapeB = new TriangleMeshShape(meshB, true) { Partition = new CompressedAabbTree() };
-      var poseB = new Pose(new Vector3F(0.1f, 0, 0));
+      var poseB = new Pose(new Vector3(0.1f, 0, 0));
       _objectB = new CollisionObject(new GeometricObject(shapeB, poseB)); 
     }
   }

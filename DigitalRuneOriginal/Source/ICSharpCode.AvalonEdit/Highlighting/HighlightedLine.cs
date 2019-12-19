@@ -98,10 +98,10 @@ namespace ICSharpCode.AvalonEdit.Highlighting
 		{
 			if (additionalLine == null)
 				return;
-			#if DEBUG
+
 			ValidateInvariants();
 			additionalLine.ValidateInvariants();
-			#endif
+
 			
 			int pos = 0;
 			Stack<int> activeSectionEndOffsets = new Stack<int>();
@@ -143,9 +143,9 @@ namespace ICSharpCode.AvalonEdit.Highlighting
 				Insert(ref i, ref newSectionStart, newSection.Offset + newSection.Length, newSection.Color, insertionStack);
 			}
 			
-			#if DEBUG
+
 			ValidateInvariants();
-			#endif
+
 		}
 		
 		void Insert(ref int pos, ref int newSectionStart, int insertionEndPos, HighlightingColor color, Stack<int> insertionStack)

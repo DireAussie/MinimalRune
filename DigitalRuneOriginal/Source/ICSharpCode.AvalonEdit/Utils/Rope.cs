@@ -615,11 +615,11 @@ namespace ICSharpCode.AvalonEdit.Utils
 		
 		internal string GetTreeAsString()
 		{
-			#if DEBUG
+
 			return root.GetTreeAsString();
 			#else
 			return "Not available in release build.";
-			#endif
+
 		}
 
 		

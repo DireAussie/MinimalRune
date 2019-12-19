@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if WINDOWS
+
 using System;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -176,4 +176,4 @@ namespace DigitalRune
     public static extern int uname(IntPtr buffer);
   }
 }
-#endif
+

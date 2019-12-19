@@ -86,11 +86,11 @@ namespace Samples.Physics.Specialized
     //--------------------------------------------------------------
 
     // A "CharacterController" controls the character that can collide with other objects.
-#if USE_DYNAMIC_CHARACTER_CONTROLLER
+
     public DynamicCharacterController CharacterController { get; private set; }
 #else
     public KinematicCharacterController CharacterController { get; private set; }
-#endif
+
 
 
     /// <summary>
@@ -104,8 +104,8 @@ namespace Samples.Physics.Specialized
     {
       get
       {
-        Vector3F position = CharacterController.Position;
-        QuaternionF orientation = QuaternionF.CreateRotationY(_yaw) * QuaternionF.CreateRotationX(_pitch);
+        Vector3 position = CharacterController.Position;
+        Quaternion orientation = Quaternion.CreateRotationY(_yaw) * Quaternion.CreateRotationX(_pitch);
         return new Pose(position, orientation);
       }
     }
@@ -125,13 +125,13 @@ namespace Samples.Physics.Specialized
       _simulation = services.GetInstance<Simulation>();
 
       // Create character controller.
-#if USE_DYNAMIC_CHARACTER_CONTROLLER
+
       CharacterController = new DynamicCharacterController(_simulation);
 #else
       CharacterController = new KinematicCharacterController(_simulation);
-#endif
+
       CharacterController.Enabled = false;
-      CharacterController.Position = new Vector3F(0, 0, 10);
+      CharacterController.Position = new Vector3(0, 0, 10);
       CharacterController.Gravity = 10;   // Setting gravity to 0 switches to fly mode (instead of walking).
 
       // Special: No gravity and damping for character controller.
@@ -204,11 +204,11 @@ namespace Samples.Physics.Specialized
       UpdateOrientation(deltaTimeF);
 
       // Compute the new orientation of the camera.
-      QuaternionF orientation = QuaternionF.CreateRotationY(_yaw) * QuaternionF.CreateRotationX(_pitch);
+      Quaternion orientation = Quaternion.CreateRotationY(_yaw) * Quaternion.CreateRotationX(_pitch);
 
       // ----- Compute translation
       // Create velocity from <W>, <A>, <S>, <D> and gamepad sticks.       
-      Vector3F moveDirection = Vector3F.Zero;
+      Vector3 moveDirection = Vector3.Zero;
       if (Keyboard.GetState().IsKeyDown(Keys.W))
         moveDirection.Z--;
       if (Keyboard.GetState().IsKeyDown(Keys.S))
@@ -244,7 +244,7 @@ namespace Samples.Physics.Specialized
 
       // ----- Moving
       moveDirection.TryNormalize();
-      Vector3F moveVelocity = moveDirection * LinearVelocityMagnitude;
+      Vector3 moveVelocity = moveDirection * LinearVelocityMagnitude;
 
       // ----- Jumping
       if ((_inputService.IsPressed(Keys.Space, false) || _inputService.IsPressed(Buttons.A, false, LogicalPlayerIndex.One))
@@ -325,9 +325,9 @@ namespace Samples.Physics.Specialized
       // Only the KinematicCharacterController has a PushForce property. The push force of the 
       // DynamicCharacterController is proportional to its mass.
       CharacterController.Body.MassFrame.Mass = _isHulk ? 500 : 80;
-#if !USE_DYNAMIC_CHARACTER_CONTROLLER
+
       CharacterController.PushForce = _isHulk ? 100000 : 10000;
-#endif
+
     }
 
 
@@ -348,7 +348,7 @@ namespace Samples.Physics.Specialized
       // room to stand up. To check this we position a smaller capsule in this area and
       // test for collisions.
       CapsuleShape testCapsule = new CapsuleShape(0.38f, 1.6f);
-      GeometricObject testObject = new GeometricObject(testCapsule, new Pose(CharacterController.Position + 1.0f * Vector3F.UnitY));
+      GeometricObject testObject = new GeometricObject(testCapsule, new Pose(CharacterController.Position + 1.0f * Vector3.UnitY));
       CollisionObject testCollisionObject = new CollisionObject(testObject)
       {
         CollisionGroup = 4,                 // Should not collide with the character.
@@ -396,7 +396,7 @@ namespace Samples.Physics.Specialized
       BoxShape box = new BoxShape(CharacterController.Width + 0.2f, 0.1f, CharacterController.Width + 0.2f);
       GeometricObject geometricObject = new GeometricObject(box)
       {
-        Pose = new Pose(CharacterController.Position + new Vector3F(0, 1.6f, 0))
+        Pose = new Pose(CharacterController.Position + new Vector3(0, 1.6f, 0))
       };
       var collisionObject = new CollisionObject(geometricObject)
       {
@@ -409,7 +409,7 @@ namespace Samples.Physics.Specialized
         return false;
 
       // Second test:
-      geometricObject.Pose = new Pose(CharacterController.Position + new Vector3F(0, 1.5f, 0));
+      geometricObject.Pose = new Pose(CharacterController.Position + new Vector3(0, 1.5f, 0));
       if (_simulation.CollisionDomain.HasContact(collisionObject))
         return true;
 

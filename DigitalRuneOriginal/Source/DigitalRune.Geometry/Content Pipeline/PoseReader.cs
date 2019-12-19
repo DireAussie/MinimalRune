@@ -22,8 +22,8 @@ namespace DigitalRune.Geometry.Content
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods")]
     protected override Pose Read(ContentReader input, Pose existingInstance)
     {
-      Vector3F position = input.ReadRawObject<Vector3F>();
-      Matrix33F orientation = input.ReadRawObject<Matrix33F>();
+      Vector3 position = input.ReadRawObject<Vector3>();
+      Matrix orientation = input.ReadRawObject<Matrix>();
       return new Pose(position, orientation);
     }
   }

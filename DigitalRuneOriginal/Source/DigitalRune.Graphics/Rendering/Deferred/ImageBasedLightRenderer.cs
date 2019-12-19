@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !WP7
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -289,14 +289,14 @@ namespace DigitalRune.Graphics.Rendering
         // Get extent of bounding box. For infinite shapes we simply set a large value.
         var boundingBoxExtent = boundingBoxShape != null
                               ? boundingBoxShape.Extent * lightNode.ScaleWorld
-                              : new Vector3F(1e20f);
+                              : new Vector3(1e20f);
 
         // Falloff can only be used for box shapes but not for infinite shapes.
         float falloffRange = (boundingBoxShape != null) ? light.FalloffRange : 0;
 
         // AABB for localization in local space.
         // Use invalid min and max (min > max) to disable localization.
-        Aabb projectionAabb = new Aabb(new Vector3F(1), new Vector3F(-1));
+        Aabb projectionAabb = new Aabb(new Vector3(1), new Vector3(-1));
         if (light.EnableLocalizedReflection)
         {
           if (light.LocalizedReflectionBox.HasValue)
@@ -345,7 +345,7 @@ namespace DigitalRune.Graphics.Rendering
 
         // Convert frustum far corners from view space to world space.
         for (int j = 0; j < _frustumFarCorners.Length; j++)
-          _frustumFarCorners[j] = (Vector3)cameraPose.ToWorldDirection((Vector3F)_frustumFarCorners[j]);
+          _frustumFarCorners[j] = (Vector3)cameraPose.ToWorldDirection((Vector3)_frustumFarCorners[j]);
 
         _parameterFrustumCorners.SetValue(_frustumFarCorners);
 
@@ -412,8 +412,8 @@ namespace DigitalRune.Graphics.Rendering
           if (_boxSubmesh == null)
             _boxSubmesh = MeshHelper.GetBox(context.GraphicsService);
 
-          Matrix44F world = lightNode.PoseWorld
-                            * Matrix44F.CreateScale(lightNode.ScaleLocal * boundingBoxShape.Extent);
+          Matrix world = lightNode.PoseWorld
+                            * Matrix.CreateScale(lightNode.ScaleLocal * boundingBoxShape.Extent);
           _parameterTransform.SetValue((Matrix)world * viewProjection);
 
           _passClip.Apply();
@@ -444,4 +444,4 @@ namespace DigitalRune.Graphics.Rendering
 
   }
 }
-#endif
+

@@ -69,10 +69,10 @@ namespace DigitalRune.Game.Timing
     /// <inheritdoc/>
     public override void Update()
     {
-#if DEBUG
+
       if (!IsRunning)
         throw new InvalidOperationException("TickCountClock.Update() called, but clock is suspended.");
-#endif
+
 
       if (IsRunning)
       {

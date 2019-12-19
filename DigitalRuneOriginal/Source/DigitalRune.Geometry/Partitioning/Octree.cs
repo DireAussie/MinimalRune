@@ -231,15 +231,15 @@ namespace DigitalRune.Geometry.Partitioning
 
     private Aabb CreateChildAabb(Aabb parentAabb, int childIndex)
     {
-      Vector3F offset;
+      Vector3 offset;
       switch (childIndex % 4)
       {
-        case 0: offset = new Vector3F(0, 0, 0); break;
-        case 1: offset = new Vector3F(1, 0, 0); break;
-        case 2: offset = new Vector3F(0, 1, 0); break;
+        case 0: offset = new Vector3(0, 0, 0); break;
+        case 1: offset = new Vector3(1, 0, 0); break;
+        case 2: offset = new Vector3(0, 1, 0); break;
         default:
           Debug.Assert(childIndex % 4 == 3);
-          offset = new Vector3F(1, 1, 1);
+          offset = new Vector3(1, 1, 1);
           break;
 
       }

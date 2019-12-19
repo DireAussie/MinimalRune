@@ -16,9 +16,9 @@ namespace DigitalRune.Geometry
   /// orientation). (Default implementation of <see cref="IGeometricObject"/>.)
   /// </summary>
   /// <inheritdoc cref="IGeometricObject"/>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
+
   [DebuggerDisplay("{GetType().Name,nq}(Shape = {Shape})")]
   public class GeometricObject : IGeometricObject
   {
@@ -119,7 +119,7 @@ namespace DigitalRune.Geometry
     /// Changing this property raises the <see cref="ShapeChanged"/> event.
     /// </para>
     /// </remarks>
-    public Vector3F Scale
+    public Vector3 Scale
     {
       get { return _scale; }
       set
@@ -131,7 +131,7 @@ namespace DigitalRune.Geometry
         }
       }
     }
-    private Vector3F _scale;
+    private Vector3 _scale;
 
 
     /// <inheritdoc/>
@@ -159,7 +159,7 @@ namespace DigitalRune.Geometry
     public GeometricObject()
     {
       _shape = Shape.Empty;
-      _scale = Vector3F.One;
+      _scale = Vector3.One;
       _pose = Pose.Identity;
     }
 
@@ -181,7 +181,7 @@ namespace DigitalRune.Geometry
 
       _shape = shape;
       _shape.Changed += OnShapeChanged;
-      _scale = Vector3F.One;
+      _scale = Vector3.One;
       _pose = Pose.Identity;
     }
 
@@ -197,7 +197,7 @@ namespace DigitalRune.Geometry
     /// <exception cref="ArgumentNullException">
     /// <paramref name="shape"/> is <see langword="null"/>.
     /// </exception>
-    public GeometricObject(Shape shape, Vector3F scale)
+    public GeometricObject(Shape shape, Vector3 scale)
     {
       if (shape == null)
         throw new ArgumentNullException("shape");
@@ -228,7 +228,7 @@ namespace DigitalRune.Geometry
 
       _shape = shape;
       _shape.Changed += OnShapeChanged;
-      _scale = Vector3F.One;
+      _scale = Vector3.One;
       _pose = pose;
     }
 
@@ -246,7 +246,7 @@ namespace DigitalRune.Geometry
     /// <exception cref="ArgumentNullException">
     /// <paramref name="shape"/> is <see langword="null"/>.
     /// </exception>
-    public GeometricObject(Shape shape, Vector3F scale, Pose pose)
+    public GeometricObject(Shape shape, Vector3 scale, Pose pose)
     {
       if (shape == null)
         throw new ArgumentNullException("shape");

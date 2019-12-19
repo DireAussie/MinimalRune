@@ -8,73 +8,73 @@ using DigitalRune.Mathematics.Algebra;
 namespace DigitalRune.Animation.Traits
 {
   /// <summary>
-  /// Describes the properties of a <see cref="Vector3F"/>.
+  /// Describes the properties of a <see cref="Vector3"/>.
   /// </summary>
-  public class Vector3FTraits : Singleton<Vector3FTraits>, IAnimationValueTraits<Vector3F>
+  public class Vector3Traits : Singleton<Vector3Traits>, IAnimationValueTraits<Vector3>
   {
     /// <inheritdoc/>
-    public void Create(ref Vector3F reference, out Vector3F value)
+    public void Create(ref Vector3 reference, out Vector3 value)
     {
-      value = new Vector3F();
+      value = new Vector3();
     }
 
 
     /// <inheritdoc/>
-    public void Recycle(ref Vector3F value)
+    public void Recycle(ref Vector3 value)
     {
     }
 
 
     /// <inheritdoc/>
-    public void Copy(ref Vector3F source, ref Vector3F target)
+    public void Copy(ref Vector3 source, ref Vector3 target)
     {
       target = source;
     }
 
 
     /// <inheritdoc/>
-    public void Set(ref Vector3F value, IAnimatableProperty<Vector3F> property)
+    public void Set(ref Vector3 value, IAnimatableProperty<Vector3> property)
     {
       property.AnimationValue = value;
     }
 
 
     /// <inheritdoc/>
-    public void Reset(IAnimatableProperty<Vector3F> property)
+    public void Reset(IAnimatableProperty<Vector3> property)
     {
     }
 
 
     /// <inheritdoc/>
-    public void SetIdentity(ref Vector3F identity)
+    public void SetIdentity(ref Vector3 identity)
     {
-      identity = new Vector3F();
+      identity = new Vector3();
     }
 
 
     /// <inheritdoc/>
-    public void Invert(ref Vector3F value, ref Vector3F inverse)
+    public void Invert(ref Vector3 value, ref Vector3 inverse)
     {
       inverse = -value;
     }
 
 
     /// <inheritdoc/>
-    public void Add(ref Vector3F value0, ref Vector3F value1, ref Vector3F result)
+    public void Add(ref Vector3 value0, ref Vector3 value1, ref Vector3 result)
     {
       result = value0 + value1;
     }
 
 
     /// <inheritdoc/>
-    public void Multiply(ref Vector3F value, int factor, ref Vector3F result)
+    public void Multiply(ref Vector3 value, int factor, ref Vector3 result)
     {
       result = value * factor;
     }
 
 
     /// <inheritdoc/>
-    public void Interpolate(ref Vector3F source, ref Vector3F target, float parameter, ref Vector3F result)
+    public void Interpolate(ref Vector3 source, ref Vector3 target, float parameter, ref Vector3 result)
     {
       //result = source + (target - source) * parameter;
 
@@ -86,21 +86,21 @@ namespace DigitalRune.Animation.Traits
 
 
     /// <inheritdoc/>
-    public void BeginBlend(ref Vector3F value)
+    public void BeginBlend(ref Vector3 value)
     {
-      value = new Vector3F();
+      value = new Vector3();
     }
 
 
     /// <inheritdoc/>
-    public void BlendNext(ref Vector3F value, ref Vector3F nextValue, float normalizedWeight)
+    public void BlendNext(ref Vector3 value, ref Vector3 nextValue, float normalizedWeight)
     {
       value += normalizedWeight * nextValue;
     }
 
 
     /// <inheritdoc/>
-    public void EndBlend(ref Vector3F value)
+    public void EndBlend(ref Vector3 value)
     {
     }
   }

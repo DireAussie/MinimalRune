@@ -173,11 +173,11 @@ namespace Samples.Graphics
           context.Viewport.Width,
           context.Viewport.Height,
           false,
-#if MONOGAME
+
           SurfaceFormat.HalfSingle,
 #else
           SurfaceFormat.HdrBlendable,
-#endif
+
           DepthFormat.None));
 
       _renderTargetBindings[0] = new RenderTargetBinding(renderTargetA);

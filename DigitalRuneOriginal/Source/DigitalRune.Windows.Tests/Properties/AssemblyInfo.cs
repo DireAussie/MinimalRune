@@ -36,6 +36,6 @@ using System.Threading;
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
-#if !SILVERLIGHT && !WINDOWS_PHONE
+
 [assembly: NUnit.Framework.Apartment(ApartmentState.STA)]
-#endif
+

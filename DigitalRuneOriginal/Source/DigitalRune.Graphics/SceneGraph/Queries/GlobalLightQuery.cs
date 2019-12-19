@@ -138,7 +138,7 @@ namespace DigitalRune.Graphics.SceneGraph
           }
 
           // Sort by estimated light contribution.
-          lightNode.SortTag = lightNode.GetLightContribution(Vector3F.Zero, 0.7f);
+          lightNode.SortTag = lightNode.GetLightContribution(Vector3.Zero, 0.7f);
 
           // Or simpler: Sort light nodes by distance.
           // (We use distance², because it is faster.)

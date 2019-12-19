@@ -61,16 +61,16 @@ namespace DigitalRune.Animation
         TargetProperty = animation.TargetProperty,
       };
 
-      Vector3FKeyFrameAnimation scaleAnimation = null;
-      QuaternionFKeyFrameAnimation rotationAnimation = null;
-      Vector3FKeyFrameAnimation translationAnimation = null;
+      Vector3KeyFrameAnimation scaleAnimation = null;
+      QuaternionKeyFrameAnimation rotationAnimation = null;
+      Vector3KeyFrameAnimation translationAnimation = null;
 
       // Create Scale channel if required.
       foreach (var keyFrame in keyFrames)
       {
-        if (!Vector3F.AreNumericallyEqual(keyFrame.Value.Scale, Vector3F.One))
+        if (!Vector3.AreNumericallyEqual(keyFrame.Value.Scale, Vector3.One))
         {
-          scaleAnimation = new Vector3FKeyFrameAnimation();
+          scaleAnimation = new Vector3KeyFrameAnimation();
           break;
         }
       }
@@ -78,9 +78,9 @@ namespace DigitalRune.Animation
       // Create Rotation channel if required.
       foreach (var keyFrame in keyFrames)
       {
-        if (!QuaternionF.AreNumericallyEqual(keyFrame.Value.Rotation, QuaternionF.Identity))
+        if (!Quaternion.AreNumericallyEqual(keyFrame.Value.Rotation, Quaternion.Identity))
         {
-          rotationAnimation = new QuaternionFKeyFrameAnimation();
+          rotationAnimation = new QuaternionKeyFrameAnimation();
           break;
         }
       }
@@ -90,7 +90,7 @@ namespace DigitalRune.Animation
       {
         if (!keyFrame.Value.Translation.IsNumericallyZero)
         {
-          translationAnimation = new Vector3FKeyFrameAnimation();
+          translationAnimation = new Vector3KeyFrameAnimation();
           break;
         }
       }
@@ -99,7 +99,7 @@ namespace DigitalRune.Animation
       {
         // The animation does not contain any transformations. However, the keyframe times (start
         // and end) may be relevant.
-        translationAnimation = new Vector3FKeyFrameAnimation();
+        translationAnimation = new Vector3KeyFrameAnimation();
       }
 
       if (keyFrames.Count <= 2)
@@ -110,13 +110,13 @@ namespace DigitalRune.Animation
 
           var keyFrame = keyFrames[0];
           if (scaleAnimation != null)
-            scaleAnimation.KeyFrames.Add(new KeyFrame<Vector3F>(keyFrame.Time, keyFrame.Value.Scale));
+            scaleAnimation.KeyFrames.Add(new KeyFrame<Vector3>(keyFrame.Time, keyFrame.Value.Scale));
 
           if (rotationAnimation != null)
-            rotationAnimation.KeyFrames.Add(new KeyFrame<QuaternionF>(keyFrame.Time, keyFrame.Value.Rotation));
+            rotationAnimation.KeyFrames.Add(new KeyFrame<Quaternion>(keyFrame.Time, keyFrame.Value.Rotation));
 
           if (translationAnimation != null)
-            translationAnimation.KeyFrames.Add(new KeyFrame<Vector3F>(keyFrame.Time, keyFrame.Value.Translation));
+            translationAnimation.KeyFrames.Add(new KeyFrame<Vector3>(keyFrame.Time, keyFrame.Value.Translation));
         }
 
         // Add second (last) keyframe.
@@ -126,13 +126,13 @@ namespace DigitalRune.Animation
 
           var keyFrame = keyFrames[1];
           if (scaleAnimation != null)
-            scaleAnimation.KeyFrames.Add(new KeyFrame<Vector3F>(keyFrame.Time, keyFrame.Value.Scale));
+            scaleAnimation.KeyFrames.Add(new KeyFrame<Vector3>(keyFrame.Time, keyFrame.Value.Scale));
 
           if (rotationAnimation != null)
-            rotationAnimation.KeyFrames.Add(new KeyFrame<QuaternionF>(keyFrame.Time, keyFrame.Value.Rotation));
+            rotationAnimation.KeyFrames.Add(new KeyFrame<Quaternion>(keyFrame.Time, keyFrame.Value.Rotation));
 
           if (translationAnimation != null)
-            translationAnimation.KeyFrames.Add(new KeyFrame<Vector3F>(keyFrame.Time, keyFrame.Value.Translation));
+            translationAnimation.KeyFrames.Add(new KeyFrame<Vector3>(keyFrame.Time, keyFrame.Value.Translation));
         }
       }
       else
@@ -278,17 +278,17 @@ namespace DigitalRune.Animation
     }
 
 
-    private static float ComputeError(Vector3F current, Vector3F start, Vector3F end, float parameter)
+    private static float ComputeError(Vector3 current, Vector3 start, Vector3 end, float parameter)
     {
-      Vector3F lerpedValue = InterpolationHelper.Lerp(start, end, parameter);
+      Vector3 lerpedValue = InterpolationHelper.Lerp(start, end, parameter);
       return (current - lerpedValue).Length;
     }
 
 
-    private static float ComputeError(QuaternionF current, QuaternionF start, QuaternionF end, float parameter)
+    private static float ComputeError(Quaternion current, Quaternion start, Quaternion end, float parameter)
     {
-      QuaternionF lerpedValue = InterpolationHelper.Lerp(start, end, parameter);
-      return QuaternionF.GetAngle(current, lerpedValue);
+      Quaternion lerpedValue = InterpolationHelper.Lerp(start, end, parameter);
+      return Quaternion.GetAngle(current, lerpedValue);
     }
   }
 }

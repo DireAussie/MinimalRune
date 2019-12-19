@@ -255,7 +255,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
       // Note: The material may be defined in an external XML file. The validation 
       // below only checks local materials.
 
-#if ANIMATION
+
       // Check if SkinnedEffect is used and SkinnedEffect.MaxBones is exceeded.
       if (_skeleton != null && _skeleton.NumberOfBones > SkinnedEffect.MaxBones)
       {
@@ -276,7 +276,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
           throw new InvalidContentException(message, _rootBone.Identity);
         }
       }
-#endif
+
 
       // Check LOD group nodes.
       var lodGroupNodes = _model.GetSubtree().OfType<DRLodGroupNodeContent>();

@@ -146,17 +146,17 @@ namespace DigitalRune.Graphics
 
       // Initialize with 8 octaves of static noise.
       Layers = new CloudMapLayer[8];
-      var scale = new Matrix33F(0.2f, 0, 0,
+      var scale = new Matrix(0.2f, 0, 0,
                                 0, 0.2f, 0,
                                 0, 0, 1);
-      Layers[0] = new CloudMapLayer(null, scale * new Matrix33F(1, 0, 0, 0, 1, 0, 0, 0, 1), -0.5f, 1.0f, 0);
-      Layers[1] = new CloudMapLayer(null, scale * new Matrix33F(2, 0, 0, 0, 2, 0, 0, 0, 1), -0.5f, 1.0f / 2.0f, 0);
-      Layers[2] = new CloudMapLayer(null, scale * new Matrix33F(4, 0, 0, 0, 4, 0, 0, 0, 1), -0.5f, 1.0f / 4.0f, 0);
-      Layers[3] = new CloudMapLayer(null, scale * new Matrix33F(8, 0, 0, 0, 8, 0, 0, 0, 1), -0.5f, 1.0f / 8.0f, 0);
-      Layers[4] = new CloudMapLayer(null, scale * new Matrix33F(16, 0, 0, 0, 16, 0, 0, 0, 1), -0.5f, 1.0f / 16.0f, 0);
-      Layers[5] = new CloudMapLayer(null, scale * new Matrix33F(32, 0, 0, 0, 32, 0, 0, 0, 1), -0.5f, 1.0f / 32.0f, 0);
-      Layers[6] = new CloudMapLayer(null, scale * new Matrix33F(64, 0, 0, 0, 64, 0, 0, 0, 1), -0.5f, 1.0f / 64.0f, 0);
-      Layers[7] = new CloudMapLayer(null, scale * new Matrix33F(128, 0, 0, 0, 128, 0, 0, 0, 1), -0.5f, 1.0f / 128.0f, 0);
+      Layers[0] = new CloudMapLayer(null, scale * new Matrix(1, 0, 0, 0, 1, 0, 0, 0, 1), -0.5f, 1.0f, 0);
+      Layers[1] = new CloudMapLayer(null, scale * new Matrix(2, 0, 0, 0, 2, 0, 0, 0, 1), -0.5f, 1.0f / 2.0f, 0);
+      Layers[2] = new CloudMapLayer(null, scale * new Matrix(4, 0, 0, 0, 4, 0, 0, 0, 1), -0.5f, 1.0f / 4.0f, 0);
+      Layers[3] = new CloudMapLayer(null, scale * new Matrix(8, 0, 0, 0, 8, 0, 0, 0, 1), -0.5f, 1.0f / 8.0f, 0);
+      Layers[4] = new CloudMapLayer(null, scale * new Matrix(16, 0, 0, 0, 16, 0, 0, 0, 1), -0.5f, 1.0f / 16.0f, 0);
+      Layers[5] = new CloudMapLayer(null, scale * new Matrix(32, 0, 0, 0, 32, 0, 0, 0, 1), -0.5f, 1.0f / 32.0f, 0);
+      Layers[6] = new CloudMapLayer(null, scale * new Matrix(64, 0, 0, 0, 64, 0, 0, 0, 1), -0.5f, 1.0f / 64.0f, 0);
+      Layers[7] = new CloudMapLayer(null, scale * new Matrix(128, 0, 0, 0, 128, 0, 0, 0, 1), -0.5f, 1.0f / 128.0f, 0);
     }
 
 

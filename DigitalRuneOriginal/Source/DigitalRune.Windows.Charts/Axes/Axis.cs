@@ -512,9 +512,9 @@ namespace DigitalRune.Windows.Charts
         /// "Axis".
         /// </remarks>
         [Description("Gets or sets the title of the axis.")]
-#if !SILVERLIGHT
+
         [TypeConverter(typeof(StringConverter))]
-#endif
+
         [Category(ChartCategories.Default)]
         public object Title
         {
@@ -670,9 +670,9 @@ namespace DigitalRune.Windows.Charts
         /// default value.
         /// </value>
         [Description("Gets or sets length of the axis.")]
-#if !SILVERLIGHT
+
         [TypeConverter(typeof(LengthConverter))]
-#endif
+
         [Category(ChartCategories.Default)]
         public double Length
         {
@@ -857,7 +857,7 @@ namespace DigitalRune.Windows.Charts
 
         //--------------------------------------------------------------
 
-#if SILVERLIGHT
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Axis"/> class.
         /// </summary>
@@ -874,7 +874,7 @@ namespace DigitalRune.Windows.Charts
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(Axis), new FrameworkPropertyMetadata(typeof(Axis)));
         }
-#endif
+
 
 
 
@@ -924,11 +924,11 @@ namespace DigitalRune.Windows.Charts
             {
                 // Create an invisible rectangle that is used only for hit-testing.
                 _hitRectangle = new Rectangle { Fill = new SolidColorBrush(Colors.Transparent) };
-#if SILVERLIGHT
+
                 Canvas.SetZIndex(_hitRectangle, -1);
 #else
                 Panel.SetZIndex(_hitRectangle, -1);
-#endif
+
                 _canvas.Children.Add(_hitRectangle);
             }
 
@@ -1468,9 +1468,9 @@ namespace DigitalRune.Windows.Charts
             }
 
             tickLabel.Text = text;
-#if !SILVERLIGHT
+
             tickLabel.SnapsToDevicePixels = SnapsToDevicePixels;
-#endif
+
             tickLabel.Style = LabelStyle;
             tickLabel.Tag = value;
             tickLabel.ClearValue(VisibilityProperty);

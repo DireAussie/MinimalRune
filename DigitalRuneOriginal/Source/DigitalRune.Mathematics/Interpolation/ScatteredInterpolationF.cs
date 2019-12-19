@@ -3,11 +3,11 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-#if !UNITY
+
 using System.Collections.ObjectModel;
 #else
 using DigitalRune.Collections.ObjectModel;
-#endif
+
 using DigitalRune.Collections;
 using DigitalRune.Mathematics.Algebra;
 

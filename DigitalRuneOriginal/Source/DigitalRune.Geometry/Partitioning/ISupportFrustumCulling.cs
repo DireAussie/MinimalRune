@@ -59,7 +59,7 @@ namespace DigitalRune.Geometry.Partitioning
     /// items that do not touch the bounding volume!)
     /// </returns>
     /// <remarks>
-    /// Hint: The method <see cref="GeometryHelper.ExtractPlanes(Matrix44F,IList{Plane},bool)"/> can
+    /// Hint: The method <see cref="GeometryHelper.ExtractPlanes(Matrix,IList{Plane},bool)"/> can
     /// be called to extract the viewing frustum planes of a world-view-projection matrix.
     /// </remarks>
     /// <remarks>

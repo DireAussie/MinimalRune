@@ -23,9 +23,9 @@ namespace DigitalRune.Geometry.Shapes
   /// swapped.)
   /// </para>
   /// </remarks>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
+
   public struct LineSegment : IEquatable<LineSegment>
   {
     //--------------------------------------------------------------
@@ -36,14 +36,14 @@ namespace DigitalRune.Geometry.Shapes
     /// The start point.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-    public Vector3F Start;
+    public Vector3 Start;
 
 
     /// <summary>
     /// The end point.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-    public Vector3F End;
+    public Vector3 End;
 
 
 
@@ -87,7 +87,7 @@ namespace DigitalRune.Geometry.Shapes
     /// </summary>
     /// <param name="start">The start point.</param>
     /// <param name="end">The end point.</param>
-    public LineSegment(Vector3F start, Vector3F end)
+    public LineSegment(Vector3 start, Vector3 end)
     {
       Start = start;
       End = end;

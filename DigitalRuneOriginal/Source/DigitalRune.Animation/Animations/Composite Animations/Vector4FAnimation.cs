@@ -5,9 +5,9 @@
 using System;
 using DigitalRune.Animation.Traits;
 using DigitalRune.Mathematics.Algebra;
-#if XNA || MONOGAME
+
 using Microsoft.Xna.Framework.Content;
-#endif
+
 
 
 
@@ -40,9 +40,9 @@ namespace DigitalRune.Animation
     /// Gets or sets the animation of the <see cref="Vector4F.X"/> component.
     /// </summary>
     /// <value>The animation of the <see cref="Vector4F.X"/> component.</value>
-#if XNA || MONOGAME
+
     [ContentSerializer(SharedResource = true)]
-#endif
+
     public IAnimation<float> X { get; set; }
 
 
@@ -50,9 +50,9 @@ namespace DigitalRune.Animation
     /// Gets or sets the animation of the <see cref="Vector4F.Y"/> component.
     /// </summary>
     /// <value>The animation of the <see cref="Vector4F.Y"/> component.</value>
-#if XNA || MONOGAME
+
     [ContentSerializer(SharedResource = true)]
-#endif
+
     public IAnimation<float> Y { get; set; }
 
 
@@ -60,9 +60,9 @@ namespace DigitalRune.Animation
     /// Gets or sets the animation of the <see cref="Vector4F.Z"/> component.
     /// </summary>
     /// <value>The animation of the <see cref="Vector4F.Z"/> component.</value>
-#if XNA || MONOGAME
+
     [ContentSerializer(SharedResource = true)]
-#endif
+
     public IAnimation<float> Z { get; set; }
 
 
@@ -70,9 +70,9 @@ namespace DigitalRune.Animation
     /// Gets or sets the animation of the <see cref="Vector4F.W"/> component.
     /// </summary>
     /// <value>The animation of the <see cref="Vector4F.W"/> component.</value>
-#if XNA || MONOGAME
+
     [ContentSerializer(SharedResource = true)]
-#endif
+
     public IAnimation<float> W { get; set; }
 
 

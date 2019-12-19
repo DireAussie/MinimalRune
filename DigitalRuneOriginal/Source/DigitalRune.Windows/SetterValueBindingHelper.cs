@@ -12,7 +12,7 @@
 
 
 
-#if SILVERLIGHT
+
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -349,7 +349,7 @@ namespace DigitalRune.Windows
         // Start with the System.Windows assembly (home of all core controls)
         yield return typeof(Control).Assembly;
 
-#if SILVERLIGHT && !WINDOWS_PHONE
+
         // Fall back by trying each of the assemblies in the Deployment's Parts list
         foreach (var part in Deployment.Current.Parts)
         {
@@ -359,10 +359,10 @@ namespace DigitalRune.Windows
             yield return part.Load(stream);
           }
         }
-#endif
+
       }
     }
 
   }
 }
-#endif
+

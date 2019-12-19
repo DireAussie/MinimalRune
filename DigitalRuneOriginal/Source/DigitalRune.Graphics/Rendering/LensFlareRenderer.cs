@@ -303,11 +303,11 @@ namespace DigitalRune.Graphics.Rendering
       // Camera properties
       var cameraNode = context.CameraNode;
       var cameraPose = cameraNode.PoseWorld;
-      Vector3F cameraRight = cameraPose.Orientation.GetColumn(0);    // 1st column vector
-      Vector3F cameraUp = cameraPose.Orientation.GetColumn(1);       // 2nd column vector
-      Vector3F cameraForward = -cameraPose.Orientation.GetColumn(2); // 3rd column vector (negated)
-      Matrix44F view = cameraNode.View;
-      Matrix44F projection = cameraNode.Camera.Projection;
+      Vector3 cameraRight = cameraPose.Orientation.GetColumn(0);    // 1st column vector
+      Vector3 cameraUp = cameraPose.Orientation.GetColumn(1);       // 2nd column vector
+      Vector3 cameraForward = -cameraPose.Orientation.GetColumn(2); // 3rd column vector (negated)
+      Matrix view = cameraNode.View;
+      Matrix projection = cameraNode.Camera.Projection;
       bool isOrthographic = (projection.M33 != 0);
 
       // The following factors are used to estimate the size of a quad in screen space.
@@ -387,8 +387,8 @@ namespace DigitalRune.Graphics.Rendering
 
           // Directional lights are positioned at infinite distance and are not affected
           // by the position of the camera.
-          Vector3F lightDirectionWorld = -node.PoseWorld.Orientation.GetColumn(2);  // 3rd column vector (negated)
-          Vector3F lightDirectionView = cameraPose.ToLocalDirection(lightDirectionWorld);
+          Vector3 lightDirectionWorld = -node.PoseWorld.Orientation.GetColumn(2);  // 3rd column vector (negated)
+          Vector3 lightDirectionView = cameraPose.ToLocalDirection(lightDirectionWorld);
           if (lightDirectionView.Z < 0)
           {
             // Light comes from behind camera.
@@ -397,7 +397,7 @@ namespace DigitalRune.Graphics.Rendering
           }
 
           // Project position to viewport.
-          Vector3F screenPosition = viewport.ProjectToViewport(-lightDirectionView, projection);
+          Vector3 screenPosition = viewport.ProjectToViewport(-lightDirectionView, projection);
 
           // LensFlare.QuerySize is the size relative to viewport.
           querySize = lensFlare.QuerySize * viewport.Height;
@@ -433,9 +433,9 @@ namespace DigitalRune.Graphics.Rendering
           // ----- Local lights
 
           // Determine planar distance to camera.
-          Vector3F position = node.PoseWorld.Position;
-          Vector3F cameraToNode = position - cameraPose.Position;
-          float distance = Vector3F.Dot(cameraToNode, cameraForward);
+          Vector3 position = node.PoseWorld.Position;
+          Vector3 cameraToNode = position - cameraPose.Position;
+          float distance = Vector3.Dot(cameraToNode, cameraForward);
           if (distance < cameraNode.Camera.Projection.Near)
           {
             // Light is behind near plane.
@@ -470,8 +470,8 @@ namespace DigitalRune.Graphics.Rendering
 
           // Draw screen-aligned quad in world space.
           querySize /= 2;
-          Vector3F upVector = querySize * cameraUp;
-          Vector3F rightVector = querySize * cameraRight;
+          Vector3 upVector = querySize * cameraUp;
+          Vector3 rightVector = querySize * cameraRight;
 
           // Offset quad by half its size towards the camera. Otherwise, the geometry 
           // of the light source could obstruct the query geometry.
@@ -525,9 +525,9 @@ namespace DigitalRune.Graphics.Rendering
       // Camera properties
       var cameraNode = context.CameraNode;
       var cameraPose = cameraNode.PoseWorld;
-      Vector3F cameraForward = -cameraPose.Orientation.GetColumn(2); // 3rd column vector (negated)
-      Matrix44F view = cameraNode.View;
-      Matrix44F projection = cameraNode.Camera.Projection;
+      Vector3 cameraForward = -cameraPose.Orientation.GetColumn(2); // 3rd column vector (negated)
+      Matrix view = cameraNode.View;
+      Matrix projection = cameraNode.Camera.Projection;
 
       // The flares are positioned on a line from the origin through the center of 
       // the screen.
@@ -537,8 +537,8 @@ namespace DigitalRune.Graphics.Rendering
       if (_transformParameter != null)
       {
         // ----- Original:
-        // Matrix matrix = (Matrix)(Matrix44F.CreateOrthographicOffCenter(0, viewport.Width, viewport.Height, 0, 0, 1)
-        //                 * Matrix44F.CreateTranslation(-0.5f, -0.5f, 0)); // Half-pixel offset (only for Direct3D 9).
+        // Matrix matrix = (Matrix)(Matrix.CreateOrthographicOffCenter(0, viewport.Width, viewport.Height, 0, 0, 1)
+        //                 * Matrix.CreateTranslation(-0.5f, -0.5f, 0)); // Half-pixel offset (only for Direct3D 9).
         // ----- Inlined:
         Matrix matrix = new Matrix();
         float oneOverW = 1.0f / viewport.Width;
@@ -547,14 +547,14 @@ namespace DigitalRune.Graphics.Rendering
         matrix.M22 = -oneOverH * 2f;
         matrix.M33 = -1f;
         matrix.M44 = 1f;
-#if MONOGAME
+
         matrix.M41 = -1f;
         matrix.M42 = 1f;
 #else
         // Direct3D 9: half-pixel offset
         matrix.M41 = -oneOverW - 1f;
         matrix.M42 = oneOverH + 1f;
-#endif
+
 
         _transformParameter.SetValue(matrix);
       }
@@ -604,8 +604,8 @@ namespace DigitalRune.Graphics.Rendering
         if (lensFlare.IsDirectional)
         {
           // ----- Directional lights
-          Vector3F lightDirectionWorld = -node.PoseWorld.Orientation.GetColumn(2);  // 3rd column vector (negated)
-          Vector3F lightDirectionView = cameraPose.ToLocalDirection(lightDirectionWorld);
+          Vector3 lightDirectionWorld = -node.PoseWorld.Orientation.GetColumn(2);  // 3rd column vector (negated)
+          Vector3 lightDirectionView = cameraPose.ToLocalDirection(lightDirectionWorld);
 
           // In Reach profile check light direction for visibility.
           // (In HiDef profile this check is done UpdateOcclusion().)
@@ -615,20 +615,20 @@ namespace DigitalRune.Graphics.Rendering
             continue;
           }
 
-          Vector3F position = viewport.ProjectToViewport(-lightDirectionView, projection);
+          Vector3 position = viewport.ProjectToViewport(-lightDirectionView, projection);
           screenPosition = new Vector2F(position.X, position.Y);
         }
         else
         {
           // ----- Local lights
-          Vector3F position = node.PoseWorld.Position;
+          Vector3 position = node.PoseWorld.Position;
 
           // In Reach profile check light direction for visibility.
           // (In HiDef profile this check is done UpdateOcclusion().)
           if (!hiDef)
           {
-            Vector3F cameraToNode = position - cameraPose.Position;
-            float distance = Vector3F.Dot(cameraToNode, cameraForward);
+            Vector3 cameraToNode = position - cameraPose.Position;
+            float distance = Vector3.Dot(cameraToNode, cameraForward);
             if (distance < cameraNode.Camera.Projection.Near)
             {
               // Light is behind near plane.

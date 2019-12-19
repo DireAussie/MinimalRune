@@ -65,9 +65,9 @@ VSOutput VS(VSInput input)
   VSOutput output = (VSOutput)0;
   output.Position = input.Position;
   output.TexCoord = input.TexCoord;
-#if !SM4
+
   output.Position.xy -= 0.5;
-#endif
+
   output.Position.xy /= ViewportSize;
   output.Position.xy *= float2(2, -2);
   output.Position.xy -= float2(1, -1);
@@ -109,12 +109,12 @@ technique Technique0
 {
   pass Pass0
   {
-#if !SM4
+
     VertexShader = compile vs_2_0 VS();
     PixelShader = compile ps_2_0 PS();
 #else
     VertexShader = compile vs_4_0_level_9_1 VS();
     PixelShader = compile ps_4_0_level_9_1 PS();
-#endif
+
   }
 }

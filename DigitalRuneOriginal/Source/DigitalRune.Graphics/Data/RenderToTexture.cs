@@ -70,7 +70,7 @@ namespace DigitalRune.Graphics
     /// be the identity matrix.
     /// </para>
     /// </remarks>
-    public Matrix44F TextureMatrix { get; internal set; }
+    public Matrix TextureMatrix { get; internal set; }
 
 
     /// <summary>

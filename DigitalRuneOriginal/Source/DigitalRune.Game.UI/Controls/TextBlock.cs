@@ -11,9 +11,9 @@ using DigitalRune.Mathematics;
 using DigitalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework.Graphics;
 
-#if WP7 || XBOX
+
 using DigitalRune.Text;
-#endif
+
 
 
 namespace DigitalRune.Game.UI.Controls
@@ -89,9 +89,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <summary> 
     /// The ID of the <see cref="UseEllipsis"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int UseEllipsisPropertyId = CreateProperty(
       typeof(TextBlock), "UseEllipsis", GamePropertyCategories.Appearance, null, false,
       UIPropertyOptions.AffectsRender);
@@ -114,9 +114,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <summary> 
     /// The ID of the <see cref="WrapText"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int WrapTextPropertyId = CreateProperty(
       typeof(TextBlock), "WrapText", GamePropertyCategories.Layout, null, false,
       UIPropertyOptions.AffectsMeasure);
@@ -139,9 +139,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <summary> 
     /// The ID of the <see cref="Text"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int TextPropertyId = CreateProperty(
       typeof(TextBlock), "Text", GamePropertyCategories.Common, null, string.Empty,
       UIPropertyOptions.AffectsMeasure);

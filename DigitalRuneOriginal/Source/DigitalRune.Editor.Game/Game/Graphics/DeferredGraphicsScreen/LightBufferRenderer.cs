@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using System;
 using System.Collections.Generic;
 using DigitalRune;
@@ -212,4 +212,4 @@ namespace Samples
 
   }
 }
-#endif
+

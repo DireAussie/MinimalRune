@@ -24,9 +24,9 @@ namespace DigitalRune.Geometry.Shapes
   /// <see cref="Direction"/> and <see cref="Length"/> are equal.
   /// </para>
   /// </remarks>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
+
   public struct Ray : IEquatable<Ray>
   {
     //--------------------------------------------------------------
@@ -37,14 +37,14 @@ namespace DigitalRune.Geometry.Shapes
     /// The origin of the ray.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-    public Vector3F Origin;
+    public Vector3 Origin;
 
 
     /// <summary>
     /// The normalized direction of the ray.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-    public Vector3F Direction;
+    public Vector3 Direction;
 
 
     /// <summary>
@@ -77,7 +77,7 @@ namespace DigitalRune.Geometry.Shapes
     /// <param name="origin">The origin.</param>
     /// <param name="direction">The direction.</param>
     /// <param name="length">The finite length.</param>
-    public Ray(Vector3F origin, Vector3F direction, float length)
+    public Ray(Vector3 origin, Vector3 direction, float length)
     {
       Origin = origin;
       Direction = direction;
@@ -229,7 +229,7 @@ namespace DigitalRune.Geometry.Shapes
     /// <paramref name="scale"/> is a non-uniform scaling. Non-uniform scaling of rays is not 
     /// supported.
     /// </exception>
-    internal void Scale(ref Vector3F scale)
+    internal void Scale(ref Vector3 scale)
     {
       if (scale.X == scale.Y && scale.Y == scale.Z)
       {

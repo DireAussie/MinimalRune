@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8 && !XBOX
+﻿
 using DigitalRune.Graphics;
 using DigitalRune.Graphics.Effects;
 using DigitalRune.Graphics.Rendering;
@@ -38,7 +38,7 @@ namespace Samples.Graphics
 
       // Add standard game objects.
       var cameraGameObject = new CameraObject(Services, 5000);
-      cameraGameObject.ResetPose(new Vector3F(0, 2, 0), 0, 0);
+      cameraGameObject.ResetPose(new Vector3(0, 2, 0), 0, 0);
       GameObjectService.Objects.Add(cameraGameObject);
       _graphicsScreen.ActiveCameraNode = cameraGameObject.CameraNode;
 
@@ -67,8 +67,8 @@ namespace Samples.Graphics
 
           var materialPavement = new TerrainMaterialLayer(GraphicsService)
           {
-            DiffuseColor = new Vector3F(1),
-            SpecularColor = new Vector3F(5),
+            DiffuseColor = new Vector3(1),
+            SpecularColor = new Vector3(5),
             SpecularPower = 20,
             DiffuseTexture = ContentManager.Load<Texture2D>("Parallax/AgedPavement_diffuse"),
             NormalTexture = ContentManager.Load<Texture2D>("Parallax/AgedPavement_normal"),
@@ -138,4 +138,4 @@ namespace Samples.Graphics
     }
   }
 }
-#endif
+

@@ -4,9 +4,9 @@
 
 using System;
 
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX
+
 using System.Runtime.Serialization;
-#endif
+
 
 
 namespace DigitalRune.Windows
@@ -14,9 +14,9 @@ namespace DigitalRune.Windows
     /// <summary>
     /// Occurs when no more items are available or the specified item is not available.
     /// </summary>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX
+
     [Serializable]
-#endif
+
     public class ItemNotAvailableException : Exception
     {
         /// <overloads>
@@ -60,7 +60,7 @@ namespace DigitalRune.Windows
         }
 
 
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemNotAvailableException"/> class with
         /// serialized data.
@@ -83,6 +83,6 @@ namespace DigitalRune.Windows
             : base(info, context)
         {
         }
-#endif
+
     }
 }

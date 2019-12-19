@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE && !ANDROID && !IOS
+
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -391,4 +391,4 @@ namespace DigitalRune.Collections
 
   }
 }
-#endif
+

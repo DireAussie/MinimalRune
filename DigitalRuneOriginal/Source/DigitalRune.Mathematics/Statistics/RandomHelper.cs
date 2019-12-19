@@ -76,19 +76,19 @@ namespace DigitalRune.Mathematics.Statistics
 
 
     /// <summary>
-    /// Gets a random unit <see cref="QuaternionF"/>.
+    /// Gets a random unit <see cref="Quaternion"/>.
     /// </summary>
     /// <param name="random">
     /// The random number generator. If this parameter is <see langword="null"/>, the global random
     /// number generator (see <see cref="RandomHelper.Random"/>) is used.
     /// </param>
-    /// <returns>A random unit <see cref="QuaternionF"/>.</returns>
-    public static QuaternionF NextQuaternionF(this Random random)
+    /// <returns>A random unit <see cref="Quaternion"/>.</returns>
+    public static Quaternion NextQuaternion(this Random random)
     {
       if (random == null)
         random = Random;
 
-      return QuaternionF.CreateRotation(NextVector3F(random, -1, 1), NextFloat(random, 0, ConstantsF.TwoPi));
+      return Quaternion.CreateRotation(NextVector3(random, -1, 1), NextFloat(random, 0, ConstantsF.TwoPi));
     }
 
 
@@ -215,7 +215,7 @@ namespace DigitalRune.Mathematics.Statistics
 
     
     /// <summary>
-    /// Gets a random <see cref="Vector3F"/>.
+    /// Gets a random <see cref="Vector3"/>.
     /// </summary>
     /// <param name="random">
     /// The random number generator. If this parameter is <see langword="null"/>, the global random
@@ -223,13 +223,13 @@ namespace DigitalRune.Mathematics.Statistics
     /// </param>
     /// <param name="min">The minimal allowed value for a vector element.</param>
     /// <param name="max">The maximal allowed value for a vector element.</param>
-    /// <returns>A random <see cref="Vector3F"/>.</returns>
-    public static Vector3F NextVector3F(this Random random, float min, float max)
+    /// <returns>A random <see cref="Vector3"/>.</returns>
+    public static Vector3 NextVector3(this Random random, float min, float max)
     {
       if (random == null)
         random = Random;
 
-      return new Vector3F(NextFloat(random, min, max),
+      return new Vector3(NextFloat(random, min, max),
                           NextFloat(random, min, max),
                           NextFloat(random, min, max));
     }
@@ -385,7 +385,7 @@ namespace DigitalRune.Mathematics.Statistics
 
 
     /// <summary>
-    /// Gets a random <see cref="Matrix33F"/>.
+    /// Gets a random <see cref="Matrix"/>.
     /// </summary>
     /// <param name="random">
     /// The random number generator. If this parameter is <see langword="null"/>, the global random
@@ -393,13 +393,13 @@ namespace DigitalRune.Mathematics.Statistics
     /// </param>
     /// <param name="min">The minimal allowed value for a matrix element.</param>
     /// <param name="max">The maximal allowed value for a matrix element.</param>
-    /// <returns>A random <see cref="Matrix33F"/>.</returns>
-    public static Matrix33F NextMatrix33F(this Random random, float min, float max)
+    /// <returns>A random <see cref="Matrix"/>.</returns>
+    public static Matrix NextMatrix(this Random random, float min, float max)
     {
       if (random == null)
         random = Random;
 
-      return new Matrix33F(NextFloat(random, min, max), NextFloat(random, min, max), NextFloat(random, min, max),
+      return new Matrix(NextFloat(random, min, max), NextFloat(random, min, max), NextFloat(random, min, max),
                            NextFloat(random, min, max), NextFloat(random, min, max), NextFloat(random, min, max),
                            NextFloat(random, min, max), NextFloat(random, min, max), NextFloat(random, min, max));
     }
@@ -427,7 +427,7 @@ namespace DigitalRune.Mathematics.Statistics
 
 
     /// <summary>
-    /// Gets a random <see cref="Matrix44F"/>.
+    /// Gets a random <see cref="Matrix"/>.
     /// </summary>
     /// <param name="random">
     /// The random number generator. If this parameter is <see langword="null"/>, the global random
@@ -435,13 +435,13 @@ namespace DigitalRune.Mathematics.Statistics
     /// </param>
     /// <param name="min">The minimal allowed value for a matrix element.</param>
     /// <param name="max">The maximal allowed value for a matrix element.</param>
-    /// <returns>A random <see cref="Matrix44F"/>.</returns>
-    public static Matrix44F NextMatrix44F(this Random random, float min, float max)
+    /// <returns>A random <see cref="Matrix"/>.</returns>
+    public static Matrix NextMatrix(this Random random, float min, float max)
     {
       if (random == null)
         random = Random;
 
-      return new Matrix44F(NextFloat(random, min, max), NextFloat(random, min, max), NextFloat(random, min, max), NextFloat(random, min, max),
+      return new Matrix(NextFloat(random, min, max), NextFloat(random, min, max), NextFloat(random, min, max), NextFloat(random, min, max),
                            NextFloat(random, min, max), NextFloat(random, min, max), NextFloat(random, min, max), NextFloat(random, min, max),
                            NextFloat(random, min, max), NextFloat(random, min, max), NextFloat(random, min, max), NextFloat(random, min, max),
                            NextFloat(random, min, max), NextFloat(random, min, max), NextFloat(random, min, max), NextFloat(random, min, max));

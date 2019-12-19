@@ -179,8 +179,8 @@ namespace DigitalRune.Graphics.Rendering
         Renderers[i].Id = (uint)(i & 0xff);  // ID = index clamped to [0, 255].
 
       // Get camera properties for calculating the distance between scene node and camera.
-      Vector3F cameraPosition = new Vector3F();
-      Vector3F lookDirection = new Vector3F();
+      Vector3 cameraPosition = new Vector3();
+      Vector3 lookDirection = new Vector3();
       bool sortByDistance = (order == RenderOrder.FrontToBack || order == RenderOrder.BackToFront);
       bool backToFront = (order == RenderOrder.BackToFront);
       if (sortByDistance)
@@ -216,8 +216,8 @@ namespace DigitalRune.Graphics.Rendering
         if (sortByDistance)
         {
           // Determine distance to camera.
-          Vector3F cameraToNode = node.PoseWorld.Position - cameraPosition;
-          distance = Vector3F.Dot(cameraToNode, lookDirection);
+          Vector3 cameraToNode = node.PoseWorld.Position - cameraPosition;
+          distance = Vector3.Dot(cameraToNode, lookDirection);
           if (backToFront)
             distance = -distance;
         }

@@ -72,7 +72,7 @@ namespace ICSharpCode.AvalonEdit.Highlighting
 			InvalidateHighlighting();
 		}
 		
-		#if NREFACTORY
+
 		/// <summary>
 		/// Creates a new DocumentHighlighter instance.
 		/// </summary>
@@ -87,7 +87,7 @@ namespace ICSharpCode.AvalonEdit.Highlighting
 			this.engine = new HighlightingEngine(definition.MainRuleSet);
 			InvalidateHighlighting();
 		}
-		#endif
+
 		
 		/// <summary>
 		/// Disposes the document highlighter.

@@ -76,7 +76,7 @@ namespace DigitalRune.Windows
         public const string Data = "Data";
 
 
-#if SILVERLIGHT || WINDOWS_PHONE
+
         /// <summary>
         /// Properties that are grouped in a default category.
         /// </summary>
@@ -88,7 +88,7 @@ namespace DigitalRune.Windows
         /// </summary>
         /// <seealso cref="CategoryAttribute.Default"/>
         public const string Default = "Misc";
-#endif
+
 
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace DigitalRune.Windows
         public const string Design = "Design";
 
 
-#if SILVERLIGHT || WINDOWS_PHONE
+
         /// <summary>
         /// Properties related to drag-and-drop operations.
         /// </summary>
@@ -110,7 +110,7 @@ namespace DigitalRune.Windows
         /// </summary>
         /// <seealso cref="CategoryAttribute.DragDrop"/>
         public const string DragDrop = "Drag Drop";
-#endif
+
 
         /// <summary>
         /// Properties related to focus.
@@ -153,7 +153,7 @@ namespace DigitalRune.Windows
         public const string Transform = "Transform";
 
 
-#if SILVERLIGHT || WINDOWS_PHONE
+
         /// <summary>
         /// Properties related to the window style of top-level forms.
         /// </summary>
@@ -165,6 +165,6 @@ namespace DigitalRune.Windows
         /// </summary>
         /// <seealso cref="CategoryAttribute.WindowStyle"/>
         public const string WindowStyle = "Window Style";
-#endif
+
     }
 }

@@ -20,9 +20,9 @@ namespace DigitalRune.Geometry.Shapes
   /// </para>
   /// </remarks>
   // Not much to do in this class because the ConvexShape implements the correct support mapping.
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
+
   public class ConvexHullOfShapes : ConvexShape
   {
     //--------------------------------------------------------------
@@ -54,14 +54,14 @@ namespace DigitalRune.Geometry.Shapes
     /// <remarks>
     /// This point is a "deep" inner point of the shape (in local space). 
     /// </remarks>
-    public override Vector3F InnerPoint
+    public override Vector3 InnerPoint
     {
       get
       {
         int numberOfGeometries = Children.Count;
 
         // Return the average of child inner points.
-        Vector3F innerPoint = Vector3F.Zero;
+        Vector3 innerPoint = Vector3.Zero;
         if (numberOfGeometries == 0)
           return innerPoint;
 
@@ -126,7 +126,7 @@ namespace DigitalRune.Geometry.Shapes
     /// A support point regarding a direction is an extreme point of the shape that is furthest away
     /// from the center regarding the given direction. This point is not necessarily unique.
     /// </remarks>
-    public override Vector3F GetSupportPointNormalized(Vector3F directionNormalized)
+    public override Vector3 GetSupportPointNormalized(Vector3 directionNormalized)
     {
       // The direction vector does not need to be normalized: Below we project the points onto
       // the direction vector and measure the length of the projection. However, we do not need
@@ -134,15 +134,15 @@ namespace DigitalRune.Geometry.Shapes
 
       // Get support vertices of children and return the one with the largest distance.
       float maxDistance = Single.NegativeInfinity;
-      Vector3F supportVertex = new Vector3F();
+      Vector3 supportVertex = new Vector3();
       int numberOfGeometries = Children.Count;
       for (int i = 0; i < numberOfGeometries; i++)
       {
         Pose pose = Children[i].Pose;
-        Vector3F directionLocal = pose.ToLocalDirection(directionNormalized);
-        Vector3F childSupportVertexLocal = ((ConvexShape)Children[i].Shape).GetSupportPointNormalized(directionLocal);
-        Vector3F childSupportVertex = pose.ToWorldPosition(childSupportVertexLocal);
-        float distance = Vector3F.Dot(childSupportVertex, directionNormalized);
+        Vector3 directionLocal = pose.ToLocalDirection(directionNormalized);
+        Vector3 childSupportVertexLocal = ((ConvexShape)Children[i].Shape).GetSupportPointNormalized(directionLocal);
+        Vector3 childSupportVertex = pose.ToWorldPosition(childSupportVertexLocal);
+        float distance = Vector3.Dot(childSupportVertex, directionNormalized);
         if (distance > maxDistance)
         {
           supportVertex = childSupportVertex;

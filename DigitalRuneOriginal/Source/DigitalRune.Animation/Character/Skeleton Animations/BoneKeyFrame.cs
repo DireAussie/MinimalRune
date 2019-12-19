@@ -22,15 +22,15 @@ namespace DigitalRune.Animation.Character
   internal struct BoneKeyFrameR
   {
     public TimeSpan Time;
-    public QuaternionF Rotation;
+    public Quaternion Rotation;
   }
 
 
   internal struct BoneKeyFrameRT
   {
     public TimeSpan Time;
-    public QuaternionF Rotation;
-    public Vector3F Translation;
+    public Quaternion Rotation;
+    public Vector3 Translation;
   }
 
 

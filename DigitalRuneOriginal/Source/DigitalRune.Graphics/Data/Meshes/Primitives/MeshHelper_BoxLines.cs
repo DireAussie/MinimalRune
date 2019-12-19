@@ -70,14 +70,14 @@ namespace DigitalRune.Graphics
 
       var vertices = new[]
       {
-        new Vector3F(-0.5f, -0.5f, +0.5f),
-        new Vector3F(+0.5f, -0.5f, +0.5f),
-        new Vector3F(+0.5f, +0.5f, +0.5f),
-        new Vector3F(-0.5f, +0.5f, +0.5f),
-        new Vector3F(-0.5f, -0.5f, -0.5f),
-        new Vector3F(+0.5f, -0.5f, -0.5f),
-        new Vector3F(+0.5f, +0.5f, -0.5f),
-        new Vector3F(-0.5f, +0.5f, -0.5f)
+        new Vector3(-0.5f, -0.5f, +0.5f),
+        new Vector3(+0.5f, -0.5f, +0.5f),
+        new Vector3(+0.5f, +0.5f, +0.5f),
+        new Vector3(-0.5f, +0.5f, +0.5f),
+        new Vector3(-0.5f, -0.5f, -0.5f),
+        new Vector3(+0.5f, -0.5f, -0.5f),
+        new Vector3(+0.5f, +0.5f, -0.5f),
+        new Vector3(-0.5f, +0.5f, -0.5f)
       };
 
       submesh.VertexBuffer = new VertexBuffer(

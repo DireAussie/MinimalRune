@@ -4,10 +4,10 @@ using System.Xml.Linq;
 using DigitalRune.Game.UI;
 using DigitalRune.Game.UI.Controls;
 using DigitalRune.Mathematics.Algebra;
-#if MONOGAME
+
 using DigitalRune.Storages;
 using Microsoft.Practices.ServiceLocation;
-#endif
+
 
 
 namespace Samples.Game.UI
@@ -97,12 +97,12 @@ namespace Samples.Game.UI
     {
       // ----- Load a dialog from an XML file.
       // Load the XML file that contains a layout that the LayoutSerializer can read.
-#if MONOGAME
+
       var storage = ServiceLocator.Current.GetInstance<IStorage>();
       var xDocument = XDocument.Load(storage.OpenFile("Layout.xml"));
 #else
       var xDocument = XDocument.Load("Content/Layout.xml");
-#endif
+
 
       // Deserialize the objects in the XML document.
       var serializer = new LayoutSerializer();

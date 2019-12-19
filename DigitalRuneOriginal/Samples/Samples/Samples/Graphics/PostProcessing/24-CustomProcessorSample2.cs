@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using DigitalRune.Game.Input;
 using DigitalRune.Graphics.Effects;
 using DigitalRune.Graphics.PostProcessing;
@@ -66,4 +66,3 @@ bindings, so you do not have to derive a new PostProcessor class.",
     }
   }
 }
-#endif

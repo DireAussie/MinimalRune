@@ -350,7 +350,7 @@ namespace DigitalRune.Windows.Charts
         }
 
 
-#if SILVERLIGHT
+
         private static IEnumerable<UIElement> GetVisualsAt(UIElement reference, Point point, double tolerance)
         {
             // Silverlight computes hit-tests in host coordinates.
@@ -383,7 +383,7 @@ namespace DigitalRune.Windows.Charts
 
             return visualHits;
         }
-#endif
+
 
     }
 }

@@ -173,10 +173,10 @@ namespace DigitalRune.Geometry.Partitioning.Tests
       Assert.AreEqual(0, partition.GetOverlaps(0).Count());
       Assert.AreEqual(0, partition.GetOverlaps(new Aabb()).Count());
       Assert.AreEqual(0, partition.GetOverlaps(_partition2).Count());
-      Assert.AreEqual(0, partition.GetOverlaps(Vector3F.One, Pose.Identity, _partition2, Vector3F.One, Pose.Identity).Count());
+      Assert.AreEqual(0, partition.GetOverlaps(Vector3.One, Pose.Identity, _partition2, Vector3.One, Pose.Identity).Count());
 
 
-      var testObject = new TestObject(new Aabb(new Vector3F(10), new Vector3F(10)));
+      var testObject = new TestObject(new Aabb(new Vector3(10), new Vector3(10)));
       _testObjects.Add(testObject);
       partition.Add(testObject.Id);
 
@@ -283,8 +283,8 @@ namespace DigitalRune.Geometry.Partitioning.Tests
 
     private Aabb GetRandomAabb()
     {
-      var point = RandomHelper.Random.NextVector3F(0, 100);
-      var point2 = RandomHelper.Random.NextVector3F(0, 100);
+      var point = RandomHelper.Random.NextVector3(0, 100);
+      var point2 = RandomHelper.Random.NextVector3(0, 100);
       var newAabb = new Aabb(point, point);
       newAabb.Grow(point2);
       return newAabb;
@@ -317,8 +317,8 @@ namespace DigitalRune.Geometry.Partitioning.Tests
       else
       {
         // The AABB should be identical.
-        Assert.IsTrue(Vector3F.AreNumericallyEqual(desiredAabb.Minimum, partition.Aabb.Minimum));
-        Assert.IsTrue(Vector3F.AreNumericallyEqual(desiredAabb.Maximum, partition.Aabb.Maximum));        
+        Assert.IsTrue(Vector3.AreNumericallyEqual(desiredAabb.Minimum, partition.Aabb.Minimum));
+        Assert.IsTrue(Vector3.AreNumericallyEqual(desiredAabb.Maximum, partition.Aabb.Maximum));        
       }
     }
 
@@ -370,7 +370,7 @@ namespace DigitalRune.Geometry.Partitioning.Tests
       var aabb = GetRandomAabb();
       var ray = new Ray(aabb.Minimum, aabb.Extent.Normalized, aabb.Extent.Length);
 
-      ray.Direction = RandomHelper.Random.NextVector3F(-1, 1).Normalized;
+      ray.Direction = RandomHelper.Random.NextVector3(-1, 1).Normalized;
 
       // Compute desired result.
       var desiredResults = new List<int>();
@@ -438,8 +438,8 @@ namespace DigitalRune.Geometry.Partitioning.Tests
     private void TestGetOverlaps5(ISpatialPartition<int> partition)
     {
       // Get random pose for _partition2
-      var pose = new Pose(GetRandomAabb().Center, RandomHelper.Random.NextQuaternionF());
-      var scale = RandomHelper.Random.NextVector3F(0.1f, 3f);
+      var pose = new Pose(GetRandomAabb().Center, RandomHelper.Random.NextQuaternion());
+      var scale = RandomHelper.Random.NextVector3(0.1f, 3f);
 
       // Compute desired result.
       var desiredResults = new List<Pair<int>>();
@@ -460,7 +460,7 @@ namespace DigitalRune.Geometry.Partitioning.Tests
         }
       }
 
-      var results = partition.GetOverlaps(Vector3F.One, Pose.Identity, _partition2, scale, pose).ToList();
+      var results = partition.GetOverlaps(Vector3.One, Pose.Identity, _partition2, scale, pose).ToList();
 
       if (desiredResults.Count > results.Count)
         Debugger.Break();

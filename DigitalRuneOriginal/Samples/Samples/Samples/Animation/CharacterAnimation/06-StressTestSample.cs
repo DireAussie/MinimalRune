@@ -20,11 +20,11 @@ namespace Samples.Animation
   Press <Space> to start next animation.")]
   public class StressTestSample : CharacterAnimationSample
   {
-#if WINDOWS_PHONE || ANDROID || IOS
+
     private const int NumberOfModels = 20;
 #else
     private const int NumberOfModels = 100;
-#endif
+
     private readonly MeshNode[] _meshNodes;
     private readonly ITimeline[] _animations;
     private int _currentAnimationIndex;
@@ -59,7 +59,7 @@ namespace Samples.Animation
         var rowLength = (int)Math.Sqrt(NumberOfModels);
         var x = (i % rowLength) - rowLength / 2;
         var z = -i / rowLength;
-        var position = new Vector3F(x, 0, z) * 1.5f;
+        var position = new Vector3(x, 0, z) * 1.5f;
 
         _meshNodes[i] = meshNode.Clone();
         _meshNodes[i].PoseWorld = new Pose(position);

@@ -43,9 +43,9 @@ namespace DigitalRune.Graphics.SceneGraph
     /// The AABB is automatically determined based on <see cref="Shape"/> and 
     /// <see cref="PoseWorld"/>.
     /// </remarks>
-#if !PORTABLE && !NETFX_CORE
+
     [Category("Geometry")]
-#endif
+
     public Aabb Aabb
     {
       get
@@ -69,7 +69,7 @@ namespace DigitalRune.Graphics.SceneGraph
     /// The total effective scale (which incorporates the scale factors of parent scene nodes).
     /// </value>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes")]
-    Vector3F IGeometricObject.Scale
+    Vector3 IGeometricObject.Scale
     {
       get { return ScaleWorld; }
     }
@@ -92,10 +92,10 @@ namespace DigitalRune.Graphics.SceneGraph
     /// <value>
     /// The total effective scale (which incorporates the scale factors of parent scene nodes).
     /// </value>
-#if !PORTABLE && !NETFX_CORE
+
     [Category("Geometry")]
-#endif
-    public Vector3F ScaleWorld
+
+    public Vector3 ScaleWorld
     {
       get
       {
@@ -105,7 +105,7 @@ namespace DigitalRune.Graphics.SceneGraph
         return _scaleWorld;
       }
     }
-    private Vector3F _scaleWorld;
+    private Vector3 _scaleWorld;
 
 
     /// <summary>
@@ -117,9 +117,9 @@ namespace DigitalRune.Graphics.SceneGraph
     /// Changing this property raises the <see cref="IGeometricObject.PoseChanged"/> event.
     /// </para>
     /// </remarks>
-#if !PORTABLE && !NETFX_CORE
+
     [Category("Geometry")]
-#endif
+
     public Pose PoseWorld
     {
       get
@@ -161,10 +161,10 @@ namespace DigitalRune.Graphics.SceneGraph
     /// Changing this property raises the <see cref="IGeometricObject.ShapeChanged"/> event.
     /// </para>
     /// </remarks>
-#if !PORTABLE && !NETFX_CORE
+
     [Category("Geometry")]
-#endif
-    public Vector3F ScaleLocal
+
+    public Vector3 ScaleLocal
     {
       get { return _scaleLocal; }
       set
@@ -177,7 +177,7 @@ namespace DigitalRune.Graphics.SceneGraph
         }
       }
     }
-    private Vector3F _scaleLocal;
+    private Vector3 _scaleLocal;
 
 
     /// <summary>
@@ -189,9 +189,9 @@ namespace DigitalRune.Graphics.SceneGraph
     /// Changing this property raises the <see cref="IGeometricObject.PoseChanged"/> event.
     /// </para>
     /// </remarks>
-#if !PORTABLE && !NETFX_CORE
+
     [Category("Geometry")]
-#endif
+
     public Pose PoseLocal
     {
       get { return _poseLocal; }
@@ -229,12 +229,12 @@ namespace DigitalRune.Graphics.SceneGraph
     /// application logic whenever the transformation of the scene node is changed.
     /// </para>
     /// </remarks>
-#if !PORTABLE && !NETFX_CORE
+
     [Category("Geometry")]
-#endif
-    public Vector3F? LastScaleWorld
+
+    public Vector3? LastScaleWorld
     {
-      get { return GetFlag(SceneNodeFlags.HasLastScaleWorld) ? _lastScaleWorld : (Vector3F?)null; }
+      get { return GetFlag(SceneNodeFlags.HasLastScaleWorld) ? _lastScaleWorld : (Vector3?)null; }
       set
       {
         if (value.HasValue)
@@ -248,7 +248,7 @@ namespace DigitalRune.Graphics.SceneGraph
         }
       }
     }
-    private Vector3F _lastScaleWorld;
+    private Vector3 _lastScaleWorld;
 
 
     /// <summary>
@@ -258,9 +258,9 @@ namespace DigitalRune.Graphics.SceneGraph
     /// <see cref="PoseWorld"/> of the last frame in world space. Can be <see langword="null"/>.
     /// </value>
     /// <inheritdoc cref="LastScaleWorld"/>
-#if !PORTABLE && !NETFX_CORE
+
     [Category("Geometry")]
-#endif
+
     public Pose? LastPoseWorld
     {
       get { return GetFlag(SceneNodeFlags.HasLastPoseWorld) ? _lastPoseWorld : (Pose?)null; }
@@ -323,9 +323,9 @@ namespace DigitalRune.Graphics.SceneGraph
     /// <exception cref="ArgumentNullException">
     /// <paramref name="value"/> is <see langword="null"/>.
     /// </exception>
-#if !PORTABLE && !NETFX_CORE
+
     [Category("Geometry")]
-#endif
+
     public Shape Shape
     {
       get { return _shape; }
@@ -375,8 +375,8 @@ namespace DigitalRune.Graphics.SceneGraph
       _poseWorld = Pose.Identity;
       _poseLocal = Pose.Identity;
 
-      _scaleWorld = Vector3F.One;
-      _scaleLocal = Vector3F.One;
+      _scaleWorld = Vector3.One;
+      _scaleLocal = Vector3.One;
 
       _shape = Shape.Empty;
     }
@@ -447,7 +447,7 @@ namespace DigitalRune.Graphics.SceneGraph
     {
       if (Parent != null)
       {
-        if (Parent.ScaleWorld == Vector3F.One)
+        if (Parent.ScaleWorld == Vector3.One)
         {
           _poseWorld = Parent.PoseWorld * _poseLocal;
         }
@@ -475,7 +475,7 @@ namespace DigitalRune.Graphics.SceneGraph
 
       if (Parent != null)
       {
-        Vector3F sParent = Parent.ScaleWorld;
+        Vector3 sParent = Parent.ScaleWorld;
         if (sParent.X == sParent.Y && sParent.Y == sParent.Z)
         {
           // ----- Uniform scaling
@@ -508,7 +508,7 @@ namespace DigitalRune.Graphics.SceneGraph
           //         = (R^-1 Sp R) S
           //
           // This means, if Sp applies a transformation in parent space ...
-          //Matrix33F scaleParent = Matrix33F.CreateScale(sParent);
+          //Matrix scaleParent = Matrix.CreateScale(sParent);
 
           // ... then (R^-1 Sp R) applies the same transformation in local space
           // (= similarity transformation).
@@ -520,7 +520,7 @@ namespace DigitalRune.Graphics.SceneGraph
           //_scaleWorld.Z = scaleParent.M22 * _scaleLocal.Z;
 
           // ----- Optimized:
-          Matrix33F o = _poseLocal.Orientation;
+          Matrix o = _poseLocal.Orientation;
           _scaleWorld.X = (o.M00 * o.M00 * sParent.X + o.M10 * o.M10 * sParent.Y + o.M20 * o.M20 * sParent.Z) * _scaleLocal.X;
           _scaleWorld.Y = (o.M01 * o.M01 * sParent.X + o.M11 * o.M11 * sParent.Y + o.M21 * o.M21 * sParent.Z) * _scaleLocal.Y;
           _scaleWorld.Z = (o.M02 * o.M02 * sParent.X + o.M12 * o.M12 * sParent.Y + o.M22 * o.M22 * sParent.Z) * _scaleLocal.Z;

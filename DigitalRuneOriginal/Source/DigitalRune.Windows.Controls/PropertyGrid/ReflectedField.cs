@@ -25,7 +25,7 @@ namespace DigitalRune.Windows.Controls
     {
         // Exception handling:
         // Reading the Value can cause exceptions in some cases, e.g. the Normalized property
-        // of a zero Vector3F throws an exception. Therefore we catch the exceptions from the
+        // of a zero Vector3 throws an exception. Therefore we catch the exceptions from the
         // Value getter.
 
 

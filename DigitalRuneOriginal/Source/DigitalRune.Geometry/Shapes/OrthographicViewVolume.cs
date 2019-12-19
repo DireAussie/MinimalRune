@@ -20,16 +20,16 @@ namespace DigitalRune.Geometry.Shapes
   /// <see cref="ViewVolume.Far"/> specify the distance from the origin (observer) to the near and 
   /// far clip planes (<see cref="ViewVolume.Near"/> &lt; <see cref="ViewVolume.Far"/>).
   /// </remarks>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
+
   public class OrthographicViewVolume : ViewVolume
   {
     //--------------------------------------------------------------
 
     //--------------------------------------------------------------
 
-    private Vector3F _boxCenter;
+    private Vector3 _boxCenter;
     private readonly BoxShape _box;
 
 
@@ -45,7 +45,7 @@ namespace DigitalRune.Geometry.Shapes
     /// <remarks>
     /// This point is a "deep" inner point of the shape (in local space).
     /// </remarks>
-    public override Vector3F InnerPoint
+    public override Vector3 InnerPoint
     {
       get { return _boxCenter + _box.InnerPoint; }
     }
@@ -113,7 +113,7 @@ namespace DigitalRune.Geometry.Shapes
     /// </exception>
     public OrthographicViewVolume(float width, float height, float near, float far)
     {
-      _boxCenter = Vector3F.Zero;
+      _boxCenter = Vector3.Zero;
       _box = new BoxShape();
 
       SetWidthAndHeight(width, height, near, far);
@@ -144,7 +144,7 @@ namespace DigitalRune.Geometry.Shapes
     /// </exception>
     public OrthographicViewVolume(float left, float right, float bottom, float top, float near, float far)
     {
-      _boxCenter = Vector3F.Zero;
+      _boxCenter = Vector3.Zero;
       _box = new BoxShape();
 
       Set(left, right, bottom, top, near, far);
@@ -175,7 +175,7 @@ namespace DigitalRune.Geometry.Shapes
 
 
     /// <inheritdoc/>
-    public override Aabb GetAabb(Vector3F scale, Pose pose)
+    public override Aabb GetAabb(Vector3 scale, Pose pose)
     {
       return _box.GetAabb(scale, pose * new Pose(_boxCenter * scale));
     }
@@ -212,10 +212,10 @@ namespace DigitalRune.Geometry.Shapes
     /// from the center regarding the given direction. This point is not necessarily unique.
     /// </para>
     /// </remarks>
-    public override Vector3F GetSupportPoint(Vector3F direction)
+    public override Vector3 GetSupportPoint(Vector3 direction)
     {
-      Vector3F localDirection = direction;
-      Vector3F localVertex = _box.GetSupportPoint(localDirection);
+      Vector3 localDirection = direction;
+      Vector3 localVertex = _box.GetSupportPoint(localDirection);
       return _boxCenter + localVertex;
     }
 
@@ -233,10 +233,10 @@ namespace DigitalRune.Geometry.Shapes
     /// A support point regarding a direction is an extreme point of the shape that is furthest away
     /// from the center regarding the given direction. This point is not necessarily unique.
     /// </remarks>
-    public override Vector3F GetSupportPointNormalized(Vector3F directionNormalized)
+    public override Vector3 GetSupportPointNormalized(Vector3 directionNormalized)
     {
-      Vector3F localDirection = directionNormalized;
-      Vector3F localVertex = _box.GetSupportPointNormalized(localDirection);
+      Vector3 localDirection = directionNormalized;
+      Vector3 localVertex = _box.GetSupportPointNormalized(localDirection);
       return _boxCenter + localVertex;
     }
 
@@ -289,85 +289,85 @@ namespace DigitalRune.Geometry.Shapes
       // -y face
       mesh.Add(new Triangle
       {
-        Vertex0 = new Vector3F(left, bottom, near),
-        Vertex1 = new Vector3F(left, bottom, far),
-        Vertex2 = new Vector3F(right, bottom, far),
+        Vertex0 = new Vector3(left, bottom, near),
+        Vertex1 = new Vector3(left, bottom, far),
+        Vertex2 = new Vector3(right, bottom, far),
       }, true);
       mesh.Add(new Triangle
       {
-        Vertex0 = new Vector3F(right, bottom, far),
-        Vertex1 = new Vector3F(right, bottom, near),
-        Vertex2 = new Vector3F(left, bottom, near),
+        Vertex0 = new Vector3(right, bottom, far),
+        Vertex1 = new Vector3(right, bottom, near),
+        Vertex2 = new Vector3(left, bottom, near),
       }, true);
       
       // +x face
       mesh.Add(new Triangle
       {
-        Vertex0 = new Vector3F(right, top, near),
-        Vertex1 = new Vector3F(right, bottom, near),
-        Vertex2 = new Vector3F(right, bottom, far),
+        Vertex0 = new Vector3(right, top, near),
+        Vertex1 = new Vector3(right, bottom, near),
+        Vertex2 = new Vector3(right, bottom, far),
       }, true);
       mesh.Add(new Triangle
       {
-        Vertex0 = new Vector3F(right, bottom, far),
-        Vertex1 = new Vector3F(right, top, far),
-        Vertex2 = new Vector3F(right, top, near),
+        Vertex0 = new Vector3(right, bottom, far),
+        Vertex1 = new Vector3(right, top, far),
+        Vertex2 = new Vector3(right, top, near),
       }, true);
         
       // -z face
       mesh.Add(new Triangle
       {
-        Vertex0 = new Vector3F(right, top, far),
-        Vertex1 = new Vector3F(right, bottom, far),
-        Vertex2 = new Vector3F(left, bottom, far),
+        Vertex0 = new Vector3(right, top, far),
+        Vertex1 = new Vector3(right, bottom, far),
+        Vertex2 = new Vector3(left, bottom, far),
       }, true);
       mesh.Add(new Triangle
       {
-        Vertex0 = new Vector3F(left, bottom, far),
-        Vertex1 = new Vector3F(left, top, far),
-        Vertex2 = new Vector3F(right, top, far),
+        Vertex0 = new Vector3(left, bottom, far),
+        Vertex1 = new Vector3(left, top, far),
+        Vertex2 = new Vector3(right, top, far),
       }, true);
 
       // -x face
       mesh.Add(new Triangle
       {
-        Vertex0 = new Vector3F(left, top, far),
-        Vertex1 = new Vector3F(left, bottom, far),
-        Vertex2 = new Vector3F(left, bottom, near),
+        Vertex0 = new Vector3(left, top, far),
+        Vertex1 = new Vector3(left, bottom, far),
+        Vertex2 = new Vector3(left, bottom, near),
       }, true);
       mesh.Add(new Triangle
       {
-        Vertex0 = new Vector3F(left, bottom, near),
-        Vertex1 = new Vector3F(left, top, near),
-        Vertex2 = new Vector3F(left, top, far),
+        Vertex0 = new Vector3(left, bottom, near),
+        Vertex1 = new Vector3(left, top, near),
+        Vertex2 = new Vector3(left, top, far),
       }, true);
 
       // +z face
       mesh.Add(new Triangle
       {
-        Vertex0 = new Vector3F(left, top, near),
-        Vertex1 = new Vector3F(left, bottom, near),
-        Vertex2 = new Vector3F(right, bottom, near),
+        Vertex0 = new Vector3(left, top, near),
+        Vertex1 = new Vector3(left, bottom, near),
+        Vertex2 = new Vector3(right, bottom, near),
       }, true);
       mesh.Add(new Triangle
       {
-        Vertex0 = new Vector3F(right, bottom, near),
-        Vertex1 = new Vector3F(right, top, near),
-        Vertex2 = new Vector3F(left, top, near),
+        Vertex0 = new Vector3(right, bottom, near),
+        Vertex1 = new Vector3(right, top, near),
+        Vertex2 = new Vector3(left, top, near),
       }, true);
 
       // +y face
       mesh.Add(new Triangle
       {
-        Vertex0 = new Vector3F(left, top, far),
-        Vertex1 = new Vector3F(left, top, near),
-        Vertex2 = new Vector3F(right, top, near),
+        Vertex0 = new Vector3(left, top, far),
+        Vertex1 = new Vector3(left, top, near),
+        Vertex2 = new Vector3(right, top, near),
       }, true);
       mesh.Add(new Triangle
       {
-        Vertex0 = new Vector3F(right, top, near),
-        Vertex1 = new Vector3F(right, top, far),
-        Vertex2 = new Vector3F(left, top, far),
+        Vertex0 = new Vector3(right, top, near),
+        Vertex1 = new Vector3(right, top, far),
+        Vertex2 = new Vector3(left, top, far),
       }, true);
 
       return mesh;
@@ -429,7 +429,7 @@ namespace DigitalRune.Geometry.Shapes
       float centerX = left + width / 2.0f;
       float centerY = bottom + height / 2.0f;
       float centerZ = -(near + depth / 2.0f);
-      _boxCenter = new Vector3F(centerX, centerY, centerZ);
+      _boxCenter = new Vector3(centerX, centerY, centerZ);
     }
 
   }

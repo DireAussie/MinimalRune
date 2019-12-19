@@ -258,7 +258,7 @@ namespace DigitalRune.Windows.Charts
         }
 
 
-#if SILVERLIGHT
+
         /// <exclude/>
         public void OnAxisUpdated(object sender, EventArgs eventArgs)
         {
@@ -269,7 +269,7 @@ namespace DigitalRune.Windows.Charts
         {
             Invalidate();
         }
-#endif
+
 
 
         /// <inheritdoc/>

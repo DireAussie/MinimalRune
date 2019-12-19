@@ -13,7 +13,7 @@ namespace DigitalRune.Geometry.Content.Pipeline
   /// </summary>
   public class VertexAdjacencyReader : ContentTypeReader<VertexAdjacency>
   {
-#if !MONOGAME
+
     /// <summary>
     /// Determines if deserialization into an existing object is possible.
     /// </summary>
@@ -25,7 +25,7 @@ namespace DigitalRune.Geometry.Content.Pipeline
     {
       get { return true; }
     }
-#endif
+
 
 
     /// <summary>

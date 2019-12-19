@@ -20,7 +20,7 @@ namespace DigitalRune.Graphics.Rendering
 
     // A cached submesh for water rendering. Created and used by the WaterRenderer.
     public Submesh Submesh;
-    public Matrix44F SubmeshMatrix;
+    public Matrix SubmeshMatrix;
 
 
     public void UpdateSubmesh(IGraphicsService graphicsService, WaterNode node)

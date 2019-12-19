@@ -8,10 +8,10 @@ using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Content.Pipeline.Graphics;
-#if ANIMATION
+
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Graphics.PackedVector;
-#endif
+
 
 
 namespace DigitalRune.Graphics.Content.Pipeline
@@ -130,7 +130,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
     // Byte4 indices + Vector4 weights
     private void ProcessWeightsChannel(GeometryContent geometry, int vertexChannelIndex)
     {
-#if ANIMATION
+
       if (_skeleton == null)
       {
         // No skeleton? Remove BoneWeightCollection.
@@ -208,11 +208,11 @@ namespace DigitalRune.Graphics.Content.Pipeline
       channels.Insert(vertexChannelIndex + 1, blendIndices, boneIndices);
       channels.Insert(vertexChannelIndex + 2, blendWeights, boneWeights);
       channels.RemoveAt(vertexChannelIndex);
-#endif
+
     }
 
 
-#if ANIMATION
+
     // Convert BoneWeightCollection to Byte4 (bone indices) and Vector4 (bone weights).
     private void ConvertBoneWeights(BoneWeightCollection boneWeightCollection, Byte4[] boneIndices, Vector4[] boneWeights, int vertexIndex, GeometryContent geometry)
     {
@@ -247,7 +247,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
       boneIndices[vertexIndex] = new Byte4(_tempIndices[0], _tempIndices[1], _tempIndices[2], _tempIndices[3]);
       boneWeights[vertexIndex] = new Vector4(_tempWeights[0], _tempWeights[1], _tempWeights[2], _tempWeights[3]);
     }
-#endif
+
 
   }
 }

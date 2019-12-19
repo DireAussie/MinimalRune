@@ -64,8 +64,8 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
       if (boxShape == null || sphereShape == null)
         throw new ArgumentException("The contact set must contain a box and a sphere.", "contactSet");
 
-      Vector3F scaleBox = Vector3F.Absolute(boxObject.Scale);
-      Vector3F scaleSphere = Vector3F.Absolute(sphereObject.Scale);
+      Vector3 scaleBox = Vector3.Absolute(boxObject.Scale);
+      Vector3 scaleSphere = Vector3.Absolute(sphereObject.Scale);
 
       // Call other algorithm for non-uniformly scaled spheres.
       if (scaleSphere.X != scaleSphere.Y || scaleSphere.Y != scaleSphere.Z)
@@ -78,23 +78,23 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
       }
 
       // Apply scale.
-      Vector3F boxExtent = boxShape.Extent * scaleBox;
+      Vector3 boxExtent = boxShape.Extent * scaleBox;
       float sphereRadius = sphereShape.Radius * scaleSphere.X;
 
       // ----- First transform sphere center into the local space of the box.
       Pose boxPose = boxObject.Pose;
-      Vector3F sphereCenterWorld = sphereObject.Pose.Position;
-      Vector3F sphereCenter = boxPose.ToLocalPosition(sphereCenterWorld);
+      Vector3 sphereCenterWorld = sphereObject.Pose.Position;
+      Vector3 sphereCenter = boxPose.ToLocalPosition(sphereCenterWorld);
 
-      Vector3F p = Vector3F.Zero;
+      Vector3 p = Vector3.Zero;
       bool sphereCenterIsContainedInBox = true;
 
       // When sphere center is on a box surface we have to choose a suitable normal.
       // otherwise the normal will be computed later.
-      Vector3F normal = Vector3F.Zero;
+      Vector3 normal = Vector3.Zero;
 
 
-      Vector3F boxHalfExtent = 0.5f * boxExtent;
+      Vector3 boxHalfExtent = 0.5f * boxExtent;
 
       // x component
       if (sphereCenter.X < -boxHalfExtent.X)
@@ -149,7 +149,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
         // Special case: Sphere center is within box. In this case p == center.
         // Lets return a point on the surface of the box.
         // Lets find the axis with the smallest way out (penetration depth).        
-        Vector3F diff = boxHalfExtent - Vector3F.Absolute(sphereCenter);
+        Vector3 diff = boxHalfExtent - Vector3.Absolute(sphereCenter);
         if (diff.X <= diff.Y && diff.X <= diff.Z)
         {
           // Point on one of the x surfaces is nearest.
@@ -160,7 +160,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
           if (Numeric.IsZero(diff.X))
           {
             // Sphere center is on box surface.
-            normal = positive ? Vector3F.UnitX : -Vector3F.UnitX;
+            normal = positive ? Vector3.UnitX : -Vector3.UnitX;
           }
         }
         else if (diff.Y <= diff.X && diff.Y <= diff.Z)
@@ -173,7 +173,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
           if (Numeric.IsZero(diff.Y))
           {
             // Sphere center is on box surface.
-            normal = positive ? Vector3F.UnitY : -Vector3F.UnitY;
+            normal = positive ? Vector3.UnitY : -Vector3.UnitY;
           }
         }
         else
@@ -186,7 +186,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
           if (Numeric.IsZero(diff.Z))
           {
             // Sphere center is on box surface.
-            normal = positive ? Vector3F.UnitZ : -Vector3F.UnitZ;
+            normal = positive ? Vector3.UnitZ : -Vector3.UnitZ;
           }
         }
       }
@@ -194,7 +194,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
       
       // ----- Convert back to world space
       p = boxPose.ToWorldPosition(p);
-      Vector3F sphereCenterToP = p - sphereCenterWorld;
+      Vector3 sphereCenterToP = p - sphereCenterWorld;
 
       // Compute penetration depth.
       float penetrationDepth = sphereCenterIsContainedInBox
@@ -211,7 +211,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
 
       // ----- Create collision info.
       // Compute normal if we haven't set one yet.
-      if (normal == Vector3F.Zero)
+      if (normal == Vector3.Zero)
       {
         Debug.Assert(!sphereCenterToP.IsNumericallyZero, "When the center of the sphere lies on the box surface a normal should be have been set explicitly.");
         normal = sphereCenterIsContainedInBox ? sphereCenterToP : -sphereCenterToP;
@@ -223,7 +223,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
       }
 
       // Position = point between sphere and box surface.
-      Vector3F position = p - normal * (penetrationDepth / 2);
+      Vector3 position = p - normal * (penetrationDepth / 2);
       if (swapped)
         normal = -normal;
 

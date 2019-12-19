@@ -40,7 +40,7 @@ namespace DigitalRune.Graphics
     /// (x, y) coordinates in clip space range from (-1, -1) at the bottom left to (1, 1) at the top
     /// right. For texturing the top left should be (0, 0) and the bottom right should be (1, 1).
     /// </remarks>
-    public static readonly Matrix44F ProjectorBiasMatrix = new Matrix44F(0.5f,     0,   0,  0.5f,
+    public static readonly Matrix ProjectorBiasMatrix = new Matrix(0.5f,     0,   0,  0.5f,
                                                                             0, -0.5f,   0,  0.5f,
                                                                             0,     0,   1,     0,
                                                                             0,     0,   0,     1);
@@ -96,7 +96,7 @@ namespace DigitalRune.Graphics
     /// </summary>
     /// <param name="color">The color in gamma space.</param>
     /// <returns>The color value in linear space.</returns>
-    internal static Vector3F FromGamma(Vector3F color)
+    internal static Vector3 FromGamma(Vector3 color)
     {
       color.X = FromGamma(color.X);
       color.Y = FromGamma(color.Y);
@@ -141,7 +141,7 @@ namespace DigitalRune.Graphics
     /// </summary>
     /// <param name="color">The color in linear space.</param>
     /// <returns>The color value in gamma space.</returns>
-    internal static Vector3F ToGamma(Vector3F color)
+    internal static Vector3 ToGamma(Vector3 color)
     {
       color.X = ToGamma(color.X);
       color.Y = ToGamma(color.Y);
@@ -168,7 +168,7 @@ namespace DigitalRune.Graphics
     /// A matrix which converts colors from the CIE XYZ color space to the sRGB color space.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", Justification = "Case of XYZ is important.")]
-    public static readonly Matrix33F XYZToRGB = new Matrix33F(3.240479f, -1.53715f, -0.49853f,
+    public static readonly Matrix XYZToRGB = new Matrix(3.240479f, -1.53715f, -0.49853f,
                                                               -0.969256f,  1.875991f, 0.041556f,
                                                                0.055648f, -0.204043f, 1.057311f);
 
@@ -177,7 +177,7 @@ namespace DigitalRune.Graphics
     /// A matrix which converts colors from the sRGB color space to the CIE XYZ color space.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", Justification = "Case of XYZ is important.")]
-    public static readonly Matrix33F RGBToXYZ = new Matrix33F(0.412453f, 0.357579f, 0.180420f,
+    public static readonly Matrix RGBToXYZ = new Matrix(0.412453f, 0.357579f, 0.180420f,
                                                               0.212671f, 0.715159f, 0.072167f,
                                                               0.019333f, 0.119193f, 0.950226f);
     // See also http://www.brucelindbloom.com/index.html?Eqn_RGB_XYZ_Matrix.html.
@@ -188,9 +188,9 @@ namespace DigitalRune.Graphics
     /// </summary>
     /// <remarks>
     /// These weights were chosen according to ITU Rec 709 (HDTV; same as sRGB). To convert a color
-    /// to luminance use the dot product: <c>Vector3F.Dot(color, LuminanceWeights)</c>
+    /// to luminance use the dot product: <c>Vector3.Dot(color, LuminanceWeights)</c>
     /// </remarks>
-    public static readonly Vector3F LuminanceWeights = new Vector3F(0.2126f, 0.7152f, 0.0722f);
+    public static readonly Vector3 LuminanceWeights = new Vector3(0.2126f, 0.7152f, 0.0722f);
 
 
     /// <summary>
@@ -200,7 +200,7 @@ namespace DigitalRune.Graphics
     /// <param name="Y">Y.</param>
     /// <param name="x">x.</param>
     /// <param name="y">y.</param>
-    internal static void ConvertXYZToYxy(Vector3F XYZ, out float Y, out float x, out float y)
+    internal static void ConvertXYZToYxy(Vector3 XYZ, out float Y, out float x, out float y)
     {
       float X = XYZ.X;
       Y = XYZ.Y;
@@ -218,9 +218,9 @@ namespace DigitalRune.Graphics
     /// <param name="x">The x.</param>
     /// <param name="y">The y.</param>
     /// <returns>The XYZ color value.</returns>
-    internal static Vector3F ConvertYxyToXYZ(float Y, float x, float y)
+    internal static Vector3 ConvertYxyToXYZ(float Y, float x, float y)
     {
-      Vector3F result;
+      Vector3 result;
       result.X = x * Y / y;
       result.Y = Y;
       result.Z = (1 - x - y) * Y / y;
@@ -244,10 +244,10 @@ namespace DigitalRune.Graphics
         return Color.Black;
 
       int hashCode = obj.GetHashCode();
-#if XBOX || WP7
+
       // Xbox objects hash codes are not chaotic enough. Make them more chaotic.
       hashCode = hashCode ^ (hashCode * 37777) ^ (hashCode * 197) ^ (hashCode / 177) ^ (hashCode / 19977);
-#endif
+
       byte r = (byte)((hashCode & 0x00ff0000) >> 16);
       byte g = (byte)((hashCode & 0x0000ff00) >> 8);
       byte b = (byte)((hashCode & 0x000000ff));
@@ -335,7 +335,7 @@ namespace DigitalRune.Graphics
     }
 
 
-#if !MONOGAME
+
     /// <summary>
     /// Creates a texture containing the content of the current back buffer.
     /// (Only available in the HiDef profile.)
@@ -371,7 +371,7 @@ namespace DigitalRune.Graphics
 
       return texture;
     }
-#endif
+
 
 
     /// <summary>

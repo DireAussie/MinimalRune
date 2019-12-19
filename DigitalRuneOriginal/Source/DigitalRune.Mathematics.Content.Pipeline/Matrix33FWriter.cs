@@ -10,10 +10,10 @@ using Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler;
 namespace DigitalRune.Mathematics.Content.Pipeline
 {
   /// <summary>
-  /// Writes a <see cref="Matrix33F"/> to binary format.
+  /// Writes a <see cref="Matrix"/> to binary format.
   /// </summary>
   [ContentTypeWriter]
-  public class Matrix33FWriter : ContentTypeWriter<Matrix33F>
+  public class MatrixWriter : ContentTypeWriter<Matrix>
   {
     /// <summary>
     /// Gets the assembly qualified name of the runtime target type.
@@ -22,7 +22,7 @@ namespace DigitalRune.Mathematics.Content.Pipeline
     /// <returns>The qualified name.</returns>
     public override string GetRuntimeType(TargetPlatform targetPlatform)
     {
-      return typeof(Matrix33F).AssemblyQualifiedName;
+      return typeof(Matrix).AssemblyQualifiedName;
     }
 
 
@@ -33,7 +33,7 @@ namespace DigitalRune.Mathematics.Content.Pipeline
     /// <returns>Name of the runtime loader.</returns>
     public override string GetRuntimeReader(TargetPlatform targetPlatform)
     {
-      return typeof(Matrix33FReader).AssemblyQualifiedName;
+      return typeof(MatrixReader).AssemblyQualifiedName;
     }
 
 
@@ -43,7 +43,7 @@ namespace DigitalRune.Mathematics.Content.Pipeline
     /// <param name="output">The content writer serializing the value.</param>
     /// <param name="value">The value to write.</param>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods")]
-    protected override void Write(ContentWriter output, Matrix33F value)
+    protected override void Write(ContentWriter output, Matrix value)
     {
       output.Write(value.M00);
       output.Write(value.M01);

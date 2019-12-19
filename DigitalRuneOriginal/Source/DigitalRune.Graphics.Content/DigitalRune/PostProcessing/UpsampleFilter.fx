@@ -456,13 +456,13 @@ void PSCombineNearestDepthAndRebuildZ(in float2 texCoord : TEXCOORD0, in float2 
 // Techniques
 //-----------------------------------------------------------------------------
 
-#if !SM4
+
 #define VSTARGET vs_3_0
 #define PSTARGET ps_3_0
 #else
 #define VSTARGET vs_4_0
 #define PSTARGET ps_4_0
-#endif
+
 
 // Technique 0: Point upsampling.
 // Technique 1: Bilinear upsampling.

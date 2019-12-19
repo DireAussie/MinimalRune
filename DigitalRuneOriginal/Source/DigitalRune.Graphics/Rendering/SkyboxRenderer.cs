@@ -62,7 +62,7 @@ namespace DigitalRune.Graphics.Rendering
     /// <exception cref="ArgumentNullException">
     /// <paramref name="texture"/> or <paramref name="context"/> is <see langword="null"/>.
     /// </exception>
-    public void Render(TextureCube texture, Matrix33F orientation, float exposure, RenderContext context)
+    public void Render(TextureCube texture, Matrix orientation, float exposure, RenderContext context)
     {
       if (texture == null)
         throw new ArgumentNullException("texture");
@@ -108,7 +108,7 @@ namespace DigitalRune.Graphics.Rendering
     }
 
 
-    private void RenderReach(TextureCube texture, Matrix33F orientation, float exposure, RenderContext context)
+    private void RenderReach(TextureCube texture, Matrix orientation, float exposure, RenderContext context)
     {
       var graphicsDevice = context.GraphicsService.GraphicsDevice;
 
@@ -126,7 +126,7 @@ namespace DigitalRune.Graphics.Rendering
 
       var cameraNode = context.CameraNode;
       var view = cameraNode.View;
-      view.Translation = Vector3F.Zero;
+      view.Translation = Vector3.Zero;
       var projection = cameraNode.Camera.Projection;
 
       var basicEffect = (BasicEffect)_effect;
@@ -143,31 +143,31 @@ namespace DigitalRune.Graphics.Rendering
 
       // Positive X
       basicEffect.Texture = GetTexture2D(graphicsDevice, texture, CubeMapFace.PositiveX);
-      basicEffect.World = (Matrix)new Matrix44F(orientation * scale, Vector3F.Zero);
+      basicEffect.World = (Matrix)new Matrix(orientation * scale, Vector3.Zero);
       basicEffect.CurrentTechnique.Passes[0].Apply();
       graphicsDevice.DrawUserPrimitives(PrimitiveType.TriangleStrip, _faceVertices, 0, 2);
 
       // Negative X      
       // transform = scale * rotY(180°)
-      var transform = new Matrix33F(-scale, 0, 0, 0, scale, 0, 0, 0, -scale);
+      var transform = new Matrix(-scale, 0, 0, 0, scale, 0, 0, 0, -scale);
       basicEffect.Texture = GetTexture2D(graphicsDevice, texture, CubeMapFace.NegativeX);
-      basicEffect.World = (Matrix)new Matrix44F(orientation * transform, Vector3F.Zero);
+      basicEffect.World = (Matrix)new Matrix(orientation * transform, Vector3.Zero);
       basicEffect.CurrentTechnique.Passes[0].Apply();
       graphicsDevice.DrawUserPrimitives(PrimitiveType.TriangleStrip, _faceVertices, 0, 2);
 
       // Positive Y
       // transform = scale * rotX(90°) * rotY(90°)
-      transform = new Matrix33F(0, 0, scale, scale, 0, 0, 0, scale, 0);
+      transform = new Matrix(0, 0, scale, scale, 0, 0, 0, scale, 0);
       basicEffect.Texture = GetTexture2D(graphicsDevice, texture, CubeMapFace.PositiveY);
-      basicEffect.World = (Matrix)new Matrix44F(orientation * transform, Vector3F.Zero);
+      basicEffect.World = (Matrix)new Matrix(orientation * transform, Vector3.Zero);
       basicEffect.CurrentTechnique.Passes[0].Apply();
       graphicsDevice.DrawUserPrimitives(PrimitiveType.TriangleStrip, _faceVertices, 0, 2);
 
       // Negative Y
       // transform = scale * rotX(-90°) * rotY(90°)
-      transform = new Matrix33F(0, 0, scale, -scale, 0, 0, 0, -scale, 0);
+      transform = new Matrix(0, 0, scale, -scale, 0, 0, 0, -scale, 0);
       basicEffect.Texture = GetTexture2D(graphicsDevice, texture, CubeMapFace.NegativeY);
-      basicEffect.World = (Matrix)new Matrix44F(orientation * transform, Vector3F.Zero);
+      basicEffect.World = (Matrix)new Matrix(orientation * transform, Vector3.Zero);
       basicEffect.CurrentTechnique.Passes[0].Apply();
       graphicsDevice.DrawUserPrimitives(PrimitiveType.TriangleStrip, _faceVertices, 0, 2);
 
@@ -175,17 +175,17 @@ namespace DigitalRune.Graphics.Rendering
 
       // Positive Z (= negative Z in world space)
       // transform = scale * rotY(90°)
-      transform = new Matrix33F(0, 0, scale, 0, scale, 0, -scale, 0, 0);
+      transform = new Matrix(0, 0, scale, 0, scale, 0, -scale, 0, 0);
       basicEffect.Texture = GetTexture2D(graphicsDevice, texture, CubeMapFace.PositiveZ);
-      basicEffect.World = (Matrix)new Matrix44F(orientation * transform, Vector3F.Zero);
+      basicEffect.World = (Matrix)new Matrix(orientation * transform, Vector3.Zero);
       basicEffect.CurrentTechnique.Passes[0].Apply();
       graphicsDevice.DrawUserPrimitives(PrimitiveType.TriangleStrip, _faceVertices, 0, 2);
 
       // Negative Z (= positive Z in world space)
       // transform = scale * rotY(-90°)
-      transform = new Matrix33F(0, 0, -scale, 0, scale, 0, scale, 0, 0);
+      transform = new Matrix(0, 0, -scale, 0, scale, 0, scale, 0, 0);
       basicEffect.Texture = GetTexture2D(graphicsDevice, texture, CubeMapFace.NegativeZ);
-      basicEffect.World = (Matrix)new Matrix44F(orientation * transform, Vector3F.Zero);
+      basicEffect.World = (Matrix)new Matrix(orientation * transform, Vector3.Zero);
       basicEffect.CurrentTechnique.Passes[0].Apply();
       graphicsDevice.DrawUserPrimitives(PrimitiveType.TriangleStrip, _faceVertices, 0, 2);
 
@@ -277,7 +277,7 @@ namespace DigitalRune.Graphics.Rendering
     }
 
 
-    private void RenderHiDef(TextureCube texture, Matrix33F orientation, float exposure, RenderContext context)
+    private void RenderHiDef(TextureCube texture, Matrix orientation, float exposure, RenderContext context)
     {
       var graphicsDevice = context.GraphicsService.GraphicsDevice;
 
@@ -287,14 +287,14 @@ namespace DigitalRune.Graphics.Rendering
       graphicsDevice.BlendState = BlendState.Opaque;
 
       var cameraNode = context.CameraNode;
-      Matrix44F view = cameraNode.View;
-      Matrix44F projection = cameraNode.Camera.Projection;
+      Matrix view = cameraNode.View;
+      Matrix projection = cameraNode.Camera.Projection;
 
       // Cube maps are left handed --> Sample with inverted z. (Otherwise, the 
       // cube map and objects or texts in it are mirrored.)
-      var mirrorZ = Matrix44F.CreateScale(1, 1, -1);
+      var mirrorZ = Matrix.CreateScale(1, 1, -1);
       _parameterWorldViewProjection.SetValue(
-        (Matrix)(projection * view * new Matrix44F(orientation, Vector3F.Zero) * mirrorZ));
+        (Matrix)(projection * view * new Matrix(orientation, Vector3.Zero) * mirrorZ));
       _parameterExposure.SetValue(new Vector4(exposure, exposure, exposure, 1));
       _textureParameter.SetValue(texture);
 

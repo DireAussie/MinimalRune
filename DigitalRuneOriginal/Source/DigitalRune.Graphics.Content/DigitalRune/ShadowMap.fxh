@@ -33,25 +33,25 @@
 //
 //-----------------------------------------------------------------------------
 
-#ifndef DIGITALRUNE_SHADOWMAP_FXH
+
 #define DIGITALRUNE_SHADOWMAP_FXH
 
-#ifndef DIGITALRUNE_COMMON_FXH
-#error "Common.fxh required. Please include Common.fxh before including ShadowMap.fxh."
-#endif
 
-#ifndef DIGITALRUNE_NOISE_FXH
+#error "Common.fxh required. Please include Common.fxh before including ShadowMap.fxh."
+
+
+
 #error "Noise.fxh required. Please include Noise.fxh before including ShadowMap.fxh."
-#endif
+
 
 
 //-----------------------------------------------------------------------------
 // Defines
 //-----------------------------------------------------------------------------
 
-#ifndef MAX_NUMBER_OF_PCF_SAMPLES
+
 #define MAX_NUMBER_OF_PCF_SAMPLES 32
-#endif
+
 
 #define CASCADE_SELECTION_FAST 0
 #define CASCADE_SELECTION_BEST 1
@@ -204,9 +204,9 @@ float SampleShadowMap(sampler2D shadowMap, float2 texCoord, float2 offset, float
   texCoord = texCoord + offset;
   
   // Clamp texture coordinates to the allowed rectangle of the texture atlas.
-#if CLAMP_TEXCOORDS_TO_SHADOW_MAP_BOUNDS
+
   texCoord = clamp(texCoord, shadowMapBounds.xy, shadowMapBounds.zw);
-#endif
+
   
   return tex2Dlod(shadowMap, float4(texCoord, 0, 0)).r;
 }
@@ -1397,4 +1397,4 @@ void ComputeCsmCascadeInterpolated(float4 position,
   shadowTexCoords[0] = GetShadowTexCoord(position, shadowMatrices[cascades[0]]);
   shadowTexCoords[1] = GetShadowTexCoord(position, shadowMatrices[cascades[1]]);
 }
-#endif
+

@@ -3,11 +3,11 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-#if WINDOWS_UWP
+
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Microsoft.Xna.Framework.Graphics;
-#endif
+
 
 
 namespace DigitalRune.Graphics.Interop
@@ -27,16 +27,16 @@ namespace DigitalRune.Graphics.Interop
   /// </remarks>
   [CLSCompliant(false)]
   public class SwapChainPresentationTarget :
-#if WINDOWS_UWP
+
     SwapChainPanel, 
-#endif
+
     IPresentationTarget
   {
     //--------------------------------------------------------------
 
     //--------------------------------------------------------------
 
-#if WINDOWS_UWP
+
     private readonly object _dummyLock = new object();
     private bool _rendering;
     private SwapChainRenderTarget _renderTarget;
@@ -45,15 +45,15 @@ namespace DigitalRune.Graphics.Interop
     private float _compositionScaleX;
     private float _compositionScaleY;
     private bool _requiresResize;
-#endif
 
 
 
-    //--------------------------------------------------------------
 
     //--------------------------------------------------------------
 
-#if WINDOWS_UWP
+    //--------------------------------------------------------------
+
+
     /// <inheritdoc/>
     IGraphicsService IPresentationTarget.GraphicsService
     {
@@ -162,7 +162,7 @@ namespace DigitalRune.Graphics.Interop
     {
       get { throw new NotImplementedException("Only available on Universal Windows Platform."); }
     }
-#endif
+
 
 
     /// <summary>
@@ -181,7 +181,7 @@ namespace DigitalRune.Graphics.Interop
 
     //--------------------------------------------------------------
 
-#if WINDOWS_UWP
+
     /// <summary>
     /// Initializes a new instance of the <see cref="SwapChainPresentationTarget"/> class.
     /// </summary>
@@ -207,15 +207,15 @@ namespace DigitalRune.Graphics.Interop
         _renderTarget = null;
       }
     }
-#endif
 
 
 
-    //--------------------------------------------------------------
 
     //--------------------------------------------------------------
 
-#if WINDOWS_UWP
+    //--------------------------------------------------------------
+
+
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
     private void OnGraphicsServiceChanged(IGraphicsService oldGraphicsService, IGraphicsService newGraphicsService)
     {
@@ -328,7 +328,7 @@ namespace DigitalRune.Graphics.Interop
     {
       throw new NotImplementedException("Only available on Universal Windows Platform.");
     }
-#endif
+
 
   }
 }

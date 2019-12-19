@@ -1,4 +1,4 @@
-﻿#if !ANDROID
+﻿
 using System.IO;
 using DigitalRune.Ionic.Zip;
 using NUnit.Framework;
@@ -95,4 +95,3 @@ namespace DigitalRune.Ionic.Tests
     }
   }
 }
-#endif

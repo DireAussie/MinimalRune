@@ -45,7 +45,7 @@ namespace DigitalRune.Windows.Charts
 
         //--------------------------------------------------------------
 
-#if SILVERLIGHT
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ChartBackground"/> class.
         /// </summary>
@@ -61,7 +61,7 @@ namespace DigitalRune.Windows.Charts
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ChartBackground), new FrameworkPropertyMetadata(typeof(ChartBackground)));
         }
-#endif
+
 
 
 

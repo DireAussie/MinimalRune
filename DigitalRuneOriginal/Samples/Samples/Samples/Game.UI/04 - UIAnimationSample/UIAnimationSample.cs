@@ -205,11 +205,11 @@ The DigitalRune Animation library is used to animate the GUI controls.",
       timelineGroup.FillBehavior = FillBehavior.Stop;
 
       // Start the animation.
-#if !XBOX && !WP7
+
       var animationController = AnimationService.StartAnimation(timelineGroup, (IEnumerable<IAnimatableObject>)_buttonStackPanel.Children.OfType<Button>());
 #else
       var animationController = AnimationService.StartAnimation(timelineGroup, _buttonStackPanel.Children.OfType<Button>().Cast<IAnimatableObject>());
-#endif
+
 
       // Note: The animation effectively starts when AnimationManager.Update() and Apply() are
       // called. To start the animation immediately we can call UpdateAndApply() manually.
@@ -251,11 +251,11 @@ The DigitalRune Animation library is used to animate the GUI controls.",
 
       // Start the animation and keep the animation controller. We need it to query the
       // state of the animation in Update().
-#if !XBOX && !WP7
+
       _exitAnimationController = AnimationService.StartAnimation(timelineGroup, _buttonStackPanel.Children.OfType<Button>());
 #else
       _exitAnimationController = AnimationService.StartAnimation(timelineGroup, _buttonStackPanel.Children.OfType<Button>().Cast<IAnimatableObject>());
-#endif
+
     }
 
 

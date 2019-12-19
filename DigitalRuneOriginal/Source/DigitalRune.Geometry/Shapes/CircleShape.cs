@@ -18,9 +18,9 @@ namespace DigitalRune.Geometry.Shapes
   /// <remarks>
   /// The front face is visible from the positive z half-space.
   /// </remarks>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
+
   public class CircleShape : ConvexShape
   {
     // TODO: Optimize: AABB could be more efficiently than the default implementation.
@@ -42,9 +42,9 @@ namespace DigitalRune.Geometry.Shapes
     /// <remarks>
     /// This point is a "deep" inner point of the shape (in local space). 
     /// </remarks>
-    public override Vector3F InnerPoint
+    public override Vector3 InnerPoint
     {
-      get { return Vector3F.Zero; }
+      get { return Vector3.Zero; }
     }
 
 
@@ -135,30 +135,30 @@ namespace DigitalRune.Geometry.Shapes
 
 
     /// <inheritdoc/>
-    public override Aabb GetAabb(Vector3F scale, Pose pose)
+    public override Aabb GetAabb(Vector3 scale, Pose pose)
     {
       if (scale.X == scale.Y && scale.Y == scale.Z)
       {
         // Uniform scaling.
 
         // Get world axes in local space. They are equal to the rows of the orientation matrix.
-        Matrix33F rotationMatrix = pose.Orientation;
-        Vector3F worldX = rotationMatrix.GetRow(0);
-        Vector3F worldY = rotationMatrix.GetRow(1);
-        Vector3F worldZ = rotationMatrix.GetRow(2);
+        Matrix rotationMatrix = pose.Orientation;
+        Vector3 worldX = rotationMatrix.GetRow(0);
+        Vector3 worldY = rotationMatrix.GetRow(1);
+        Vector3 worldZ = rotationMatrix.GetRow(2);
 
         // Get extreme points along positive axes.
-        Vector3F halfExtent = Vector3F.Absolute(
-          new Vector3F(
-            Vector3F.Dot(GetSupportPointNormalized(worldX), worldX),
-            Vector3F.Dot(GetSupportPointNormalized(worldY), worldY),
-            Vector3F.Dot(GetSupportPointNormalized(worldZ), worldZ)));
+        Vector3 halfExtent = Vector3.Absolute(
+          new Vector3(
+            Vector3.Dot(GetSupportPointNormalized(worldX), worldX),
+            Vector3.Dot(GetSupportPointNormalized(worldY), worldY),
+            Vector3.Dot(GetSupportPointNormalized(worldZ), worldZ)));
 
         // Apply scale.
         halfExtent *= Math.Abs(scale.X);
 
-        Vector3F minimum = pose.Position - halfExtent;
-        Vector3F maximum = pose.Position + halfExtent;
+        Vector3 minimum = pose.Position - halfExtent;
+        Vector3 maximum = pose.Position + halfExtent;
 
         Debug.Assert(minimum <= maximum);
 
@@ -186,12 +186,12 @@ namespace DigitalRune.Geometry.Shapes
     /// from the center regarding the given direction. This point is not necessarily unique.
     /// </para>
     /// </remarks>
-    public override Vector3F GetSupportPoint(Vector3F direction)
+    public override Vector3 GetSupportPoint(Vector3 direction)
     {
       direction.Z = 0;
 
       if (!direction.TryNormalize())
-        direction = Vector3F.UnitX;
+        direction = Vector3.UnitX;
 
       return direction * _radius;
     }
@@ -208,12 +208,12 @@ namespace DigitalRune.Geometry.Shapes
     /// A support point regarding a direction is an extreme point of the shape that is furthest away
     /// from the center regarding the given direction. This point is not necessarily unique.
     /// </remarks>
-    public override Vector3F GetSupportPointNormalized(Vector3F directionNormalized)
+    public override Vector3 GetSupportPointNormalized(Vector3 directionNormalized)
     {
       directionNormalized.Z = 0;
 
       if (!directionNormalized.TryNormalize())
-        directionNormalized = Vector3F.UnitX;
+        directionNormalized = Vector3.UnitX;
 
       return directionNormalized * _radius;
     }
@@ -246,18 +246,18 @@ namespace DigitalRune.Geometry.Shapes
       int numberOfSegments = (int)Math.Ceiling(ConstantsF.TwoPi / alpha);
       alpha = ConstantsF.TwoPi / numberOfSegments;
 
-      Vector3F r0 = new Vector3F(_radius, 0, 0);
-      QuaternionF rotation = QuaternionF.CreateRotationZ(alpha);
+      Vector3 r0 = new Vector3(_radius, 0, 0);
+      Quaternion rotation = Quaternion.CreateRotationZ(alpha);
 
       TriangleMesh mesh = new TriangleMesh();
 
       for (int i = 1; i <= numberOfSegments; i++)
       {
-        Vector3F r1 = rotation.Rotate(r0);
+        Vector3 r1 = rotation.Rotate(r0);
 
         mesh.Add(new Triangle
         {
-          Vertex0 = Vector3F.Zero,
+          Vertex0 = Vector3.Zero,
           Vertex1 = r0,
           Vertex2 = r1,
         }, true);

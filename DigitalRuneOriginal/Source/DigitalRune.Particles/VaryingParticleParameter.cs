@@ -5,9 +5,9 @@
 using System;
 using System.Diagnostics;
 
-#if XNA || MONOGAME
+
 using Microsoft.Xna.Framework.Content;
-#endif
+
 
 
 namespace DigitalRune.Particles
@@ -26,9 +26,9 @@ namespace DigitalRune.Particles
     /// Gets the name of the particle parameter.
     /// </summary>
     /// <value>The name of the particle parameter.</value>
-#if XNA || MONOGAME
+
     [ContentSerializer]
-#endif
+
     public string Name { get; private set; }
 
 

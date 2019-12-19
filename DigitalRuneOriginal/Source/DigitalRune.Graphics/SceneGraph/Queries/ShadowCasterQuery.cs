@@ -42,7 +42,7 @@ namespace DigitalRune.Graphics.SceneGraph
     //--------------------------------------------------------------
 
     private bool _checkShadowCusterCulling;
-    private Vector3F _cameraPosition;
+    private Vector3 _cameraPosition;
     private float _lodBiasOverYScale;
 
 
@@ -106,10 +106,10 @@ namespace DigitalRune.Graphics.SceneGraph
 
       int numberOfNodes = nodes.Count;
 
-#if DEBUG
+
       for (int i = 0; i < numberOfNodes; i++)
         Debug.Assert(nodes[i].ActualIsEnabled, "Scene query contains disabled nodes.");
-#endif
+
 
       if (context.LodCameraNode == null)
       {
@@ -127,7 +127,7 @@ namespace DigitalRune.Graphics.SceneGraph
         // Get values for LOD computations.
         var cameraNode = context.LodCameraNode;
         _cameraPosition = cameraNode.PoseLocal.Position;
-        _lodBiasOverYScale = 1 / Math.Abs(cameraNode.Camera.Projection.ToMatrix44F().M11)
+        _lodBiasOverYScale = 1 / Math.Abs(cameraNode.Camera.Projection.ToMatrix().M11)
                              * cameraNode.LodBias * context.LodBias;
 
         // Add nodes and evaluate LOD groups.
@@ -187,12 +187,12 @@ namespace DigitalRune.Graphics.SceneGraph
       }
       else
       {
-#if !WINDOWS_PHONE && !XBOX360
+
         return node.GetFlag(SceneNodeFlags.CastsShadows)
                && !(node is TerrainNode);      // Terrain node is only rendered into directional light shadow.
 #else
         return node.GetFlag(SceneNodeFlags.CastsShadows);
-#endif
+
       }
     }
 

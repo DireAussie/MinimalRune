@@ -23,13 +23,13 @@ namespace DigitalRune.Mathematics.Algebra
   /// </code>
   /// </para>
   /// </remarks>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
   [TypeConverter(typeof(ExpandableObjectConverter))]
-#endif
-#if !XBOX && !UNITY
+
+
   [DataContract]
-#endif
+
   public struct Matrix22D : IEquatable<Matrix22D>
   {
     //--------------------------------------------------------------
@@ -64,36 +64,36 @@ namespace DigitalRune.Mathematics.Algebra
     /// The element in first row, first column.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public double M00;
 
     /// <summary>
     /// The element in first row, second column.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public double M01;
 
     /// <summary>
     /// The element in second row, first column.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public double M10;
 
     /// <summary>
     /// The element in second row, second column.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public double M11;
 
 

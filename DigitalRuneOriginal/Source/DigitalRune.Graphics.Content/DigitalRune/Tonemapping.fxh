@@ -9,13 +9,13 @@
 //
 //-----------------------------------------------------------------------------
 
-#ifndef DIGITALRUNE_TONEMAPPING_FXH
+
 #define DIGITALRUNE_TONEMAPPING_FXH
 
 // Common.fxh is required for the luminance weights.
-#ifndef DIGITALRUNE_COMMON_FXH
+
 #error "Common.fxh required. Please include Common.fxh before including Tonemapping.fxh."
-#endif
+
 
 
 //-----------------------------------------------------------------------------
@@ -262,4 +262,4 @@ float3 ToneMapDragoLogarithmic(float3 color, float white, float bias)
          / log10(1 + white)
          / log10(2 + 8 * pow(0.000001 + ((color / white)), log10(bias) / log10(0.5f)));
 }
-#endif
+

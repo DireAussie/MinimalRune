@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using System;
 using DigitalRune.Geometry;
 using DigitalRune.Graphics;
@@ -65,16 +65,16 @@ namespace Samples.Graphics
       GameObjectService.Objects.Add(new ObjectCreatorObject(Services));
       GameObjectService.Objects.Add(new LavaBallsObject(Services));
       GameObjectService.Objects.Add(new FogObject(Services));
-      GameObjectService.Objects.Add(new StaticObject(Services, "Barrier/Barrier", 0.9f, new Pose(new Vector3F(0, 0, -2))));
-      GameObjectService.Objects.Add(new StaticObject(Services, "Barrier/Cylinder", 0.9f, new Pose(new Vector3F(3, 0, 0), QuaternionF.CreateRotationY(MathHelper.ToRadians(-20)))));
+      GameObjectService.Objects.Add(new StaticObject(Services, "Barrier/Barrier", 0.9f, new Pose(new Vector3(0, 0, -2))));
+      GameObjectService.Objects.Add(new StaticObject(Services, "Barrier/Cylinder", 0.9f, new Pose(new Vector3(3, 0, 0), Quaternion.CreateRotationY(MathHelper.ToRadians(-20)))));
       GameObjectService.Objects.Add(new StaticSkyObject(Services));
 
       // Add a few palm trees.
       Random random = new Random(12345);
       for (int i = 0; i < 10; i++)
       {
-        Vector3F position = new Vector3F(random.NextFloat(-3, -8), 0, random.NextFloat(0, -5));
-        Matrix33F orientation = Matrix33F.CreateRotationY(random.NextFloat(0, ConstantsF.TwoPi));
+        Vector3 position = new Vector3(random.NextFloat(-3, -8), 0, random.NextFloat(0, -5));
+        Matrix orientation = Matrix.CreateRotationY(random.NextFloat(0, ConstantsF.TwoPi));
         float scale = random.NextFloat(0.5f, 1.2f);
         GameObjectService.Objects.Add(new StaticObject(Services, "PalmTree/palm_tree", scale, new Pose(position, orientation)));
       }
@@ -100,9 +100,8 @@ namespace Samples.Graphics
 
       // A second camera for player B.
       var totalTime = (float)gameTime.TotalGameTime.TotalSeconds;
-      var position = Matrix33F.CreateRotationY(totalTime * 0.1f) * new Vector3F(4, 2, 4);
-      _cameraNodeB.View = Matrix44F.CreateLookAt(position, new Vector3F(0, 0, 0), new Vector3F(0, 1, 0));
+      var position = Matrix.CreateRotationY(totalTime * 0.1f) * new Vector3(4, 2, 4);
+      _cameraNodeB.View = Matrix.CreateLookAt(position, new Vector3(0, 0, 0), new Vector3(0, 1, 0));
     }
   }
 }
-#endif

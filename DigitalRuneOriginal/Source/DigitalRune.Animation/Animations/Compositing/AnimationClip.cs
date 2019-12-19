@@ -6,9 +6,9 @@ using System;
 using System.Diagnostics;
 using DigitalRune.Animation.Traits;
 using DigitalRune.Mathematics;
-#if XNA || MONOGAME
+
 using Microsoft.Xna.Framework.Content;
-#endif
+
 
 
 namespace DigitalRune.Animation
@@ -88,9 +88,9 @@ namespace DigitalRune.Animation
     /// Gets or sets the original animation from which a clip is played back.
     /// </summary>
     /// <value>The original animation from which a clip is played back.</value>
-#if XNA || MONOGAME
+
     [ContentSerializer(SharedResource = true)]
-#endif
+
     public IAnimation<T> Animation { get; set; }
 
 

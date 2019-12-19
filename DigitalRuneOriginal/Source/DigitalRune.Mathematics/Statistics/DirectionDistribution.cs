@@ -4,9 +4,9 @@
 
 using System;
 using DigitalRune.Mathematics.Algebra;
-#if XNA || MONOGAME
+
 using Microsoft.Xna.Framework.Content;
-#endif
+
 
 
 namespace DigitalRune.Mathematics.Statistics
@@ -26,7 +26,7 @@ namespace DigitalRune.Mathematics.Statistics
   /// standard deviation angle in radians.
   /// </para>
   /// </remarks>
-  public class DirectionDistribution : Distribution<Vector3F>
+  public class DirectionDistribution : Distribution<Vector3>
   {
     /// <summary>
     /// Gets or sets the direction of the cone (the central vector in the cone).
@@ -35,7 +35,7 @@ namespace DigitalRune.Mathematics.Statistics
     /// <exception cref="ArgumentException">
     /// The vector is not a valid direction. The length is 0.
     /// </exception>
-    public Vector3F Direction
+    public Vector3 Direction
     {
       get { return _direction; }
       set
@@ -55,9 +55,9 @@ namespace DigitalRune.Mathematics.Statistics
         }
       }
     }
-    private Vector3F _direction = Vector3F.UnitY;
-    private Vector3F _normalizedDirection = Vector3F.UnitY;  // For optimization.
-    private Vector3F _orthonormal = Vector3F.UnitZ;
+    private Vector3 _direction = Vector3.UnitY;
+    private Vector3 _normalizedDirection = Vector3.UnitY;  // For optimization.
+    private Vector3 _orthonormal = Vector3.UnitZ;
 
 
     /// <summary>
@@ -84,9 +84,9 @@ namespace DigitalRune.Mathematics.Statistics
     /// For the Gaussian distribution an approximated Gaussian distribution is used similar to 
     /// <see cref="FastGaussianDistributionF"/>.
     /// </remarks>
-#if XNA || MONOGAME
+
     [ContentSerializer(Optional = true)]
-#endif
+
     public bool IsUniform
     {
       get { return _isUniform; }
@@ -97,7 +97,7 @@ namespace DigitalRune.Mathematics.Statistics
 
     
     /// <inheritdoc/>
-    public override Vector3F Next(Random random)
+    public override Vector3 Next(Random random)
     {
       if (random == null)
         throw new ArgumentNullException("random");
@@ -113,7 +113,7 @@ namespace DigitalRune.Mathematics.Statistics
       float angle2 = (float)random.NextDouble() * ConstantsF.TwoPi;
 
       // TODO: Optimize!
-      return (QuaternionF.CreateRotation(_normalizedDirection, angle2) * QuaternionF.CreateRotation(_orthonormal, angle1)).Rotate(_normalizedDirection);
+      return (Quaternion.CreateRotation(_normalizedDirection, angle2) * Quaternion.CreateRotation(_orthonormal, angle1)).Rotate(_normalizedDirection);
     }
   }
 }

@@ -4,9 +4,9 @@
 
 using DigitalRune.Mathematics.Algebra;
 using DigitalRune.Mathematics.Interpolation;
-#if XNA || MONOGAME
+
 using Microsoft.Xna.Framework.Content;
-#endif
+
 
 
 namespace DigitalRune.Mathematics.Content
@@ -20,7 +20,7 @@ namespace DigitalRune.Mathematics.Content
   /// </remarks>
   public class PathKey2FReader : ContentTypeReader<PathKey2F>
   {
-#if !MONOGAME
+
     /// <summary>
     /// Determines if deserialization into an existing object is possible.
     /// </summary>
@@ -32,7 +32,7 @@ namespace DigitalRune.Mathematics.Content
     {
       get { return true; }
     }
-#endif
+
 
 
     /// <summary>

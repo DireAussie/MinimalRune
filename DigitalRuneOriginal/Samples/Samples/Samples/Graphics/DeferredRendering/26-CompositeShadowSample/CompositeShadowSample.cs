@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using System.Collections.Generic;
 using System.Linq;
 using DigitalRune.Geometry.Shapes;
@@ -35,7 +35,7 @@ Press <F4> to show the Options window where you can disable shadow map caching."
     private readonly CascadedShadow _dynamicCascadedShadow;
 
     private bool _enableShadowMapCaching = true;
-    private Matrix33F _lastLightOrientation;
+    private Matrix _lastLightOrientation;
     private LightNode _lightNode;
     private List<SceneNode> _tempList = new List<SceneNode>();
 
@@ -81,7 +81,7 @@ Press <F4> to show the Options window where you can disable shadow map caching."
         MaxDistance = 200,
         FadeOutRange = 0,
         ShadowFog = 0,
-        TargetArea = new Aabb(new Vector3F(-100, 0, -100), new Vector3F(100, 50, 100))
+        TargetArea = new Aabb(new Vector3(-100, 0, -100), new Vector3(100, 50, 100))
       };
       _vsmShadow.Filter = new Blur(GraphicsService);
       _vsmShadow.Filter.NumberOfPasses = 1;
@@ -223,4 +223,3 @@ Press <F4> to show the Options window where you can disable shadow map caching."
     }
   }
 }
-#endif

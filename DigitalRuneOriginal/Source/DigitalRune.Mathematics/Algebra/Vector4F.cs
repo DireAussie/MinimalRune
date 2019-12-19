@@ -9,13 +9,13 @@ using System.Globalization;
 using System.Runtime.Serialization;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
-#if !NETFX_CORE && !PORTABLE
+
 using DigitalRune.Mathematics.Algebra.Design;
-#endif
-#if XNA || MONOGAME
+
+
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
-#endif
+
 
 
 namespace DigitalRune.Mathematics.Algebra
@@ -26,15 +26,15 @@ namespace DigitalRune.Mathematics.Algebra
   /// <remarks>
   /// The four components (x, y, z, w) are stored with single-precision.
   /// </remarks>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
-#if !NETFX_CORE && !PORTABLE
+
+
   [TypeConverter(typeof(Vector4FConverter))]
-#endif
-#if !XBOX && !UNITY
+
+
   [DataContract]
-#endif
+
   public struct Vector4F : IEquatable<Vector4F>
   {
     //--------------------------------------------------------------
@@ -82,9 +82,9 @@ namespace DigitalRune.Mathematics.Algebra
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public float X;
 
     /// <summary>
@@ -92,9 +92,9 @@ namespace DigitalRune.Mathematics.Algebra
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public float Y;
 
     /// <summary>
@@ -102,9 +102,9 @@ namespace DigitalRune.Mathematics.Algebra
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public float Z;
 
     /// <summary>
@@ -112,9 +112,9 @@ namespace DigitalRune.Mathematics.Algebra
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public float W;
 
 
@@ -218,9 +218,9 @@ namespace DigitalRune.Mathematics.Algebra
     /// The vector has a length of 0. The length cannot be changed.
     /// </exception>
     [XmlIgnore]
-#if XNA || MONOGAME
+
     [ContentSerializerIgnore]
-#endif
+
     public float Length
     {
       get
@@ -278,13 +278,13 @@ namespace DigitalRune.Mathematics.Algebra
 
 
     /// <summary>
-    /// Gets or sets the components x, y and z as a <see cref="Vector3F"/>.
+    /// Gets or sets the components x, y and z as a <see cref="Vector3"/>.
     /// </summary>
     /// <value>The 3-dimensional vector (x, y, z).</value>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly")]
-    public Vector3F XYZ
+    public Vector3 XYZ
     {
-      get { return new Vector3F(X, Y, Z); }
+      get { return new Vector3(X, Y, Z); }
       set
       {
         X = value.X;
@@ -496,7 +496,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="vector">The vector (x, y, z).</param>
     /// <param name="w">The w component.</param>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-    public Vector4F(Vector3F vector, float w)
+    public Vector4F(Vector3 vector, float w)
     {
       X = vector.X;
       Y = vector.Y;
@@ -1098,7 +1098,7 @@ namespace DigitalRune.Mathematics.Algebra
     }
 
 
-#if XNA || MONOGAME
+
     /// <summary>
     /// Performs an conversion from <see cref="Vector4"/> (XNA Framework) to <see cref="Vector4F"/>
     /// (DigitalRune Mathematics).
@@ -1162,7 +1162,7 @@ namespace DigitalRune.Mathematics.Algebra
     {
       return new Vector4(X, Y, Z, W);
     }
-#endif
+
 
 
 
@@ -1478,15 +1478,15 @@ namespace DigitalRune.Mathematics.Algebra
     /// <exception cref="DivideByZeroException">
     /// Component W is 0.
     /// </exception>
-    public static Vector3F HomogeneousDivide(Vector4F vector)
+    public static Vector3 HomogeneousDivide(Vector4F vector)
     {
       float w = vector.W;
 
       if (w == 1.0f)
-        return new Vector3F(vector.X, vector.Y, vector.Z);
+        return new Vector3(vector.X, vector.Y, vector.Z);
 
       float oneOverW = 1 / w;
-      return new Vector3F(vector.X * oneOverW, vector.Y * oneOverW, vector.Z * oneOverW);
+      return new Vector3(vector.X * oneOverW, vector.Y * oneOverW, vector.Z * oneOverW);
     }
 
 

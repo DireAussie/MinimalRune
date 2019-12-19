@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !WP7
+
 using DigitalRune.Graphics.Rendering;
 using DigitalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
@@ -267,7 +267,7 @@ namespace DigitalRune.Graphics.PostProcessing
         }
 
         // Compute biased projection for restoring the z-buffer.
-        var biasedProjection = Matrix44F.CreatePerspectiveOffCenter(
+        var biasedProjection = Matrix.CreatePerspectiveOffCenter(
           projection.Left,
           projection.Right,
           projection.Bottom,
@@ -318,4 +318,4 @@ namespace DigitalRune.Graphics.PostProcessing
 
   }
 }
-#endif
+

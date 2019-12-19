@@ -69,7 +69,7 @@ namespace Samples.Kinect
       var numberOfBones = SkeletonPose.Skeleton.NumberOfBones;
       for (int i = 0; i < numberOfBones; i++)
       {
-        QuaternionF quaternion = SkeletonPose.GetBoneTransform(i).Rotation;
+        Quaternion quaternion = SkeletonPose.GetBoneTransform(i).Rotation;
         values[i * 4 + 0] = quaternion.W;
         values[i * 4 + 1] = quaternion.X;
         values[i * 4 + 2] = quaternion.Y;
@@ -84,7 +84,7 @@ namespace Samples.Kinect
       var numberOfBones = SkeletonPose.Skeleton.NumberOfBones;
       for (int i = 0; i < numberOfBones; i++)
       {
-        QuaternionF quaternion = new QuaternionF(
+        Quaternion quaternion = new Quaternion(
           values[i * 4 + 0],
           values[i * 4 + 1],
           values[i * 4 + 2],

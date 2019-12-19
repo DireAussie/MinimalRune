@@ -13,10 +13,10 @@ namespace DigitalRune.Mathematics.Interpolation.Tests
     {
       CatmullRomSegment3F c = new CatmullRomSegment3F
       {
-        Point1 = new Vector3F(1, 2, 3),
-        Point2 = new Vector3F(10, 3, 6),
-        Point3 = new Vector3F(7, 8, 19),
-        Point4 = new Vector3F(10, 2, 12),
+        Point1 = new Vector3(1, 2, 3),
+        Point2 = new Vector3(10, 3, 6),
+        Point3 = new Vector3(7, 8, 19),
+        Point4 = new Vector3(10, 2, 12),
       };
 
       HermiteSegment3F h = new HermiteSegment3F
@@ -27,9 +27,9 @@ namespace DigitalRune.Mathematics.Interpolation.Tests
         Point2 = c.Point3,
       };
 
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(c.Point2, c.GetPoint(0)));
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(c.Point3, c.GetPoint(1)));
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(h.GetPoint(0.33f), c.GetPoint(0.33f)));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(c.Point2, c.GetPoint(0)));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(c.Point3, c.GetPoint(1)));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(h.GetPoint(0.33f), c.GetPoint(0.33f)));
     }
 
 
@@ -38,10 +38,10 @@ namespace DigitalRune.Mathematics.Interpolation.Tests
     {
       CatmullRomSegment3F c = new CatmullRomSegment3F
       {
-        Point1 = new Vector3F(1, 2, 3),
-        Point2 = new Vector3F(10, 3, 6),
-        Point3 = new Vector3F(7, 8, 19),
-        Point4 = new Vector3F(10, 2, 12),
+        Point1 = new Vector3(1, 2, 3),
+        Point2 = new Vector3(10, 3, 6),
+        Point3 = new Vector3(7, 8, 19),
+        Point4 = new Vector3(10, 2, 12),
       };
 
       HermiteSegment3F h = new HermiteSegment3F
@@ -52,9 +52,9 @@ namespace DigitalRune.Mathematics.Interpolation.Tests
         Point2 = c.Point3,
       };
 
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(h.Tangent1, c.GetTangent(0)));
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(h.Tangent2, c.GetTangent(1)));
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(h.GetTangent(0.7f), c.GetTangent(0.7f)));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(h.Tangent1, c.GetTangent(0)));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(h.Tangent2, c.GetTangent(1)));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(h.GetTangent(0.7f), c.GetTangent(0.7f)));
     }
 
 
@@ -63,10 +63,10 @@ namespace DigitalRune.Mathematics.Interpolation.Tests
     {
       CatmullRomSegment3F c = new CatmullRomSegment3F
       {
-        Point1 = new Vector3F(1, 2, 3),
-        Point2 = new Vector3F(10, 3, 6),
-        Point3 = new Vector3F(7, 8, 19),
-        Point4 = new Vector3F(10, 2, 12),
+        Point1 = new Vector3(1, 2, 3),
+        Point2 = new Vector3(10, 3, 6),
+        Point3 = new Vector3(7, 8, 19),
+        Point4 = new Vector3(10, 2, 12),
       };
 
       HermiteSegment3F h = new HermiteSegment3F
@@ -97,12 +97,12 @@ namespace DigitalRune.Mathematics.Interpolation.Tests
     {
       var s = new CatmullRomSegment3F
       {
-        Point1 = new Vector3F(1, 2, 3),
-        Point2 = new Vector3F(10, 3, 6),
-        Point3 = new Vector3F(7, 8, 19),
-        Point4 = new Vector3F(10, 2, 12),
+        Point1 = new Vector3(1, 2, 3),
+        Point2 = new Vector3(10, 3, 6),
+        Point3 = new Vector3(7, 8, 19),
+        Point4 = new Vector3(10, 2, 12),
       };
-      var points = new List<Vector3F>();
+      var points = new List<Vector3>();
       var tolerance = 0.01f;
       s.Flatten(points, 10, tolerance);
       Assert.IsTrue(points.Contains(s.Point2));

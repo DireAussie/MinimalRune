@@ -249,7 +249,7 @@ namespace ICSharpCode.AvalonEdit.Highlighting
 			internal void RegisterHighlighting(string name, string[] extensions, string resourceName)
 			{
 				try {
-					#if DEBUG
+
 					// don't use lazy-loading in debug builds, show errors immediately
 					Xshd.XshdSyntaxDefinition xshd;
 					using (Stream s = Resources.OpenStream(resourceName)) {
@@ -279,7 +279,7 @@ namespace ICSharpCode.AvalonEdit.Highlighting
 					RegisterHighlighting(name, extensions, Xshd.HighlightingLoader.Load(xshd, this));
 					#else
 					RegisterHighlighting(name, extensions, LoadHighlighting(resourceName));
-					#endif
+
 				} catch (HighlightingDefinitionInvalidException ex) {
 					throw new InvalidOperationException("The built-in highlighting '" + name + "' is invalid.", ex);
 				}

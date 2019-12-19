@@ -17,12 +17,12 @@
 //
 //-----------------------------------------------------------------------------
 
-#ifndef DIGITALRUNE_VEGETATION_FXH
+
 #define DIGITALRUNE_VEGETATION_FXH
 
-#ifndef DIGITALRUNE_NOISE_FXH
+
 #error "Noise.fxh required. Please include Noise.fxh before including Vegetation.fxh."
-#endif
+
 
 /*
 // Wind and sway parameters.
@@ -65,13 +65,13 @@ float3 ComputeTrunkSwayOffset(
   float3 plantPosition, float3 vertexPosition, float modelScale,
   float3 wind, float2 windWaveParameters, float time, float frequency, float amplitude)
 {
-#if !MGFX
+
   // This is a near-0 value which can be added to effect parameters to
   // workaround a DX9 HLSL compiler preshader bug.
   float dummy = vertexPosition.y * 1e-30f;
 #else
   float dummy = 0;
-#endif
+
   
   // ----- Phase variation to create waves in grass fields.
   // Without phase variation all meshes sway synchronously. By varying the phase
@@ -226,4 +226,4 @@ float3 ComputeSwayOffset(
   
   return trunkSwayOffset + branchSwayOffset;
 }
-#endif
+

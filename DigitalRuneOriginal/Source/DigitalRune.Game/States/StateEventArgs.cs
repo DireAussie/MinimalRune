@@ -11,9 +11,9 @@ namespace DigitalRune.Game.States
   /// Provides arguments for the <see cref="State.Enter"/>, <see cref="State.Update"/> and
   /// <see cref="State.Exit"/> events of a <see cref="State"/>.
   /// </summary>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !PORTABLE
+
   [Serializable]
-#endif
+
   public class StateEventArgs : EventArgs
   {
     /// <summary>

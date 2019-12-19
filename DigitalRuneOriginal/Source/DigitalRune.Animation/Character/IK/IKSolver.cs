@@ -93,7 +93,7 @@ namespace DigitalRune.Animation.Character
     /// Gets or sets the target position in model space.
     /// </summary>
     /// <value>The target position in model space.</value>
-    public Vector3F Target { get; set; }
+    public Vector3 Target { get; set; }
 
 
     /// <summary>
@@ -270,7 +270,7 @@ namespace DigitalRune.Animation.Character
         var rotationChange = targetTransform.Rotation * originalTransform.Rotation.Conjugated;
 
         // Make sure we rotate around the shortest arc.
-        if (QuaternionF.Dot(originalTransform.Rotation, targetTransform.Rotation) < 0)
+        if (Quaternion.Dot(originalTransform.Rotation, targetTransform.Rotation) < 0)
           rotationChange = -rotationChange;
 
         if (rotationChange.Angle > maxRotationAngle && !rotationChange.V.IsNumericallyZero)

@@ -20,9 +20,9 @@ namespace DigitalRune.Animation.Tests
     [Test]
     public void GetTotalDurationTest()
     {
-      var animation = new AnimationClip<Vector3F>
+      var animation = new AnimationClip<Vector3>
       {
-        Animation = new Vector3FFromToByAnimation
+        Animation = new Vector3FromToByAnimation
         {
           Duration = TimeSpan.FromSeconds(6.0),
         },
@@ -31,9 +31,9 @@ namespace DigitalRune.Animation.Tests
         FillBehavior = FillBehavior.Hold,
       };
 
-      var animation2 = new AnimationClip<QuaternionF>
+      var animation2 = new AnimationClip<Quaternion>
       {
-        Animation = new QuaternionFFromToByAnimation
+        Animation = new QuaternionFromToByAnimation
         {
           Duration = TimeSpan.FromSeconds(5.0),
         },

@@ -55,11 +55,11 @@ namespace Samples.Particles
 
       ps.Parameters.AddUniform<float>(ParticleParameterNames.Lifetime).DefaultValue = 0.3f;
 
-      ps.Parameters.AddVarying<Vector3F>(ParticleParameterNames.Position);
+      ps.Parameters.AddVarying<Vector3>(ParticleParameterNames.Position);
       ps.Effectors.Add(new StartPositionEffector
       {
         Parameter = ParticleParameterNames.Position,
-        DefaultValue = Vector3F.Zero,
+        DefaultValue = Vector3.Zero,
       });
 
       ps.Parameters.AddVarying<float>(ParticleParameterNames.Size);
@@ -86,8 +86,8 @@ namespace Samples.Particles
         FadeOutEnd = 1.0f,
       });
 
-      ps.Parameters.AddUniform<Vector3F>(ParticleParameterNames.Color).DefaultValue =
-        new Vector3F(1, 1, 216.0f / 255.0f);
+      ps.Parameters.AddUniform<Vector3>(ParticleParameterNames.Color).DefaultValue =
+        new Vector3(1, 1, 216.0f / 255.0f);
 
       ps.Parameters.AddUniform<Texture2D>(ParticleParameterNames.Texture).DefaultValue =
         contentManager.Load<Texture2D>("Particles/Flash");
@@ -112,14 +112,14 @@ namespace Samples.Particles
 
       ps.Parameters.AddUniform<float>(ParticleParameterNames.Lifetime).DefaultValue = 1.0f;
 
-      ps.Parameters.AddVarying<Vector3F>(ParticleParameterNames.Position);
+      ps.Parameters.AddVarying<Vector3>(ParticleParameterNames.Position);
       ps.Effectors.Add(new StartPositionEffector
       {
         Parameter = ParticleParameterNames.Position,
-        DefaultValue = Vector3F.Zero,
+        DefaultValue = Vector3.Zero,
       });
 
-      ps.Parameters.AddVarying<Vector3F>(ParticleParameterNames.Direction);
+      ps.Parameters.AddVarying<Vector3>(ParticleParameterNames.Direction);
       ps.Effectors.Add(new StartDirectionEffector
       {
         Parameter = ParticleParameterNames.Direction,
@@ -223,14 +223,14 @@ namespace Samples.Particles
 
       ps.Parameters.AddUniform<float>(ParticleParameterNames.Lifetime).DefaultValue = 4.0f;
 
-      ps.Parameters.AddVarying<Vector3F>(ParticleParameterNames.Position);
+      ps.Parameters.AddVarying<Vector3>(ParticleParameterNames.Position);
       ps.Effectors.Add(new StartPositionEffector
       {
         Parameter = ParticleParameterNames.Position,
-        DefaultValue = Vector3F.Zero,
+        DefaultValue = Vector3.Zero,
       });
 
-      ps.Parameters.AddVarying<Vector3F>(ParticleParameterNames.Direction);
+      ps.Parameters.AddVarying<Vector3>(ParticleParameterNames.Direction);
       ps.Effectors.Add(new StartDirectionEffector
       {
         Parameter = ParticleParameterNames.Direction,
@@ -300,8 +300,8 @@ namespace Samples.Particles
         EndParameter = "EndSize",
       });
 
-      ps.Parameters.AddUniform<Vector3F>(ParticleParameterNames.Color).DefaultValue =
-        new Vector3F(88.0f / 255.0f, 88.0f / 255.0f, 88.0f / 255.0f);
+      ps.Parameters.AddUniform<Vector3>(ParticleParameterNames.Color).DefaultValue =
+        new Vector3(88.0f / 255.0f, 88.0f / 255.0f, 88.0f / 255.0f);
 
       ps.Parameters.AddVarying<float>(ParticleParameterNames.Alpha);
       ps.Parameters.AddUniform<float>("TargetAlpha").DefaultValue = 1.0f;

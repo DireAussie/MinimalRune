@@ -13,9 +13,9 @@ namespace DigitalRune.Diagnostics
   /// </summary>
   public class Stopwatch
   {
-#if !PORTABLE && !SILVERLIGHT
+
     private System.Diagnostics.Stopwatch _stopwatch;
-#endif
+
 
     /// <summary>
     /// Gets the total elapsed time measured by the current instance.
@@ -28,13 +28,13 @@ namespace DigitalRune.Diagnostics
     {
       get
       {
-#if PORTABLE
+
         throw Portable.NotImplementedException;
 #elif SILVERLIGHT
         throw new NotSupportedException();
 #else
         return _stopwatch.Elapsed;
-#endif
+
       }
     }
 
@@ -49,13 +49,13 @@ namespace DigitalRune.Diagnostics
     {
       get
       {
-#if PORTABLE
+
         throw Portable.NotImplementedException;
 #elif SILVERLIGHT
         throw new NotSupportedException();
 #else
         return _stopwatch.IsRunning;
-#endif
+
       }
     }
 
@@ -65,13 +65,13 @@ namespace DigitalRune.Diagnostics
     /// </summary>
     public Stopwatch()
     {
-#if PORTABLE
+
       throw Portable.NotImplementedException;
 #elif SILVERLIGHT
       throw new NotSupportedException();
 #else
       _stopwatch = new System.Diagnostics.Stopwatch();
-#endif
+
     }
 
 
@@ -80,13 +80,13 @@ namespace DigitalRune.Diagnostics
     /// </summary>
     public void Start()
     {
-#if PORTABLE
+
       throw Portable.NotImplementedException;
 #elif SILVERLIGHT
       throw new NotSupportedException();
 #else
       _stopwatch.Start();
-#endif
+
     }
 
 
@@ -111,13 +111,13 @@ namespace DigitalRune.Diagnostics
     /// </summary>
     public void Stop()
     {
-#if PORTABLE
+
       throw Portable.NotImplementedException;
 #elif SILVERLIGHT
       throw new NotSupportedException();
 #else
       _stopwatch.Stop();
-#endif
+
     }
 
 
@@ -126,13 +126,13 @@ namespace DigitalRune.Diagnostics
     /// </summary>
     public void Reset()
     {
-#if PORTABLE
+
       throw Portable.NotImplementedException;
 #elif SILVERLIGHT
       throw new NotSupportedException();
 #else
       _stopwatch.Reset();
-#endif
+
     }
   }
 }

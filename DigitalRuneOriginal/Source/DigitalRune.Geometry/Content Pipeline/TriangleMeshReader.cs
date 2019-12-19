@@ -14,7 +14,7 @@ namespace DigitalRune.Geometry.Content
   /// </summary>
   public class TriangleMeshReader : ContentTypeReader<TriangleMesh>
   {
-#if !MONOGAME
+
     /// <summary>
     /// Determines if deserialization into an existing object is possible.
     /// </summary>
@@ -26,7 +26,7 @@ namespace DigitalRune.Geometry.Content
     {
       get { return true; }
     }
-#endif
+
 
 
     /// <summary>
@@ -50,7 +50,7 @@ namespace DigitalRune.Geometry.Content
 
       int numberOfVertices = input.ReadInt32();
       for (int i = 0; i < numberOfVertices; i++)
-        existingInstance.Vertices.Add(input.ReadRawObject<Vector3F>());
+        existingInstance.Vertices.Add(input.ReadRawObject<Vector3>());
 
       int numberOfIndices = input.ReadInt32();
       for (int i = 0; i < numberOfIndices; i++)

@@ -16,7 +16,7 @@ namespace DigitalRune.Mathematics.Interpolation
   /// The type of the curve parameter (usually <see cref="float"/> or <see cref="double"/>).
   /// </typeparam>
   /// <typeparam name="TPoint">
-  /// The type of the curve points (such as <see cref="Vector2F"/>, <see cref="Vector3F"/>, etc.).
+  /// The type of the curve points (such as <see cref="Vector2F"/>, <see cref="Vector3"/>, etc.).
   /// </typeparam>
   /// <remarks>
   /// <para>

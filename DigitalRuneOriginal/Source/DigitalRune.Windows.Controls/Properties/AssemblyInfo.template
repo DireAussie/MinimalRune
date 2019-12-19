@@ -7,9 +7,9 @@ using System.Runtime.InteropServices;
 using System.Resources;
 using System.Windows.Markup;
 
-#if !SILVERLIGHT
+
 using System.Windows;
-#endif
+
 
 
 // General Information about an assembly is controlled through the following 
@@ -39,7 +39,7 @@ using System.Windows;
 
 //[assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.Satellite)]
 
-#if !SILVERLIGHT
+
 [assembly: ThemeInfo(
     ResourceDictionaryLocation.None, //where theme specific resource dictionaries are located
                                      //(used if a resource is not found in the page, 
@@ -48,7 +48,7 @@ using System.Windows;
                                               //(used if a resource is not found in the page, 
                                               // app, or any theme specific resource dictionaries)
 )]
-#endif
+
 
 
 [assembly: NeutralResourcesLanguageAttribute("en")]

@@ -88,10 +88,10 @@ namespace DigitalRune.Windows
                             return false;
                         case Visibility.Collapsed:
                             return true;
-#if !SILVERLIGHT && !WINDOWS_PHONE
+
                         case Visibility.Hidden:
                             return DependencyProperty.UnsetValue;
-#endif
+
                     }
                 }
             }

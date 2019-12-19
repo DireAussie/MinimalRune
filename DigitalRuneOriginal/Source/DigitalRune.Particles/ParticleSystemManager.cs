@@ -96,7 +96,7 @@ namespace DigitalRune.Particles
     {
       _updateParticleSystem = UpdateParticleSystem;
 
-#if WP7 || UNITY
+
       // Cannot access Environment.ProcessorCount in phone app. (Security issue.)
       EnableMultithreading = false;
 #else
@@ -106,7 +106,7 @@ namespace DigitalRune.Particles
       // Multithreading works but Parallel.For of Xamarin.Android/iOS is very inefficient.
       if (GlobalSettings.PlatformID == PlatformID.Android || GlobalSettings.PlatformID == PlatformID.iOS)
         EnableMultithreading = false;
-#endif
+
 
       ParticleSystems = new ParticleSystemCollection();
       ParticleSystems.CollectionChanged += OnParticleSystemsChanged;

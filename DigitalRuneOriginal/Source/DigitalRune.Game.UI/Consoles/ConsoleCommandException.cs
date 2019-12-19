@@ -3,9 +3,9 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !PORTABLE
+
 using System.Runtime.Serialization;
-#endif
+
 
 
 namespace DigitalRune.Game.UI.Consoles
@@ -13,9 +13,9 @@ namespace DigitalRune.Game.UI.Consoles
   /// <summary>
   /// Is raised when a console command needs to report errors.
   /// </summary>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !PORTABLE
+
   [Serializable]
-#endif
+
   public class ConsoleCommandException : Exception
   {
     /// <summary>The default error message for an invalid argument.</summary>
@@ -84,7 +84,7 @@ namespace DigitalRune.Game.UI.Consoles
     }
 
 
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !PORTABLE
+
     /// <summary>
     /// Initializes a new instance of the <see cref="ConsoleCommandException"/> class with
     /// serialized data.
@@ -107,6 +107,6 @@ namespace DigitalRune.Game.UI.Consoles
       : base(info, context)
     {
     }
-#endif
+
   }
 }

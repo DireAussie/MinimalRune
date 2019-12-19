@@ -28,8 +28,8 @@ namespace Samples.Physics.Specialized
     // Note:
     // To reset the vehicle position, simply call:
     //  _vehicle.Chassis.Pose = myPose;
-    //  _vehicle.Chassis.LinearVelocity = Vector3F.Zero;
-    //  _vehicle.Chassis.AngularVelocity = Vector3F.Zero;
+    //  _vehicle.Chassis.LinearVelocity = Vector3.Zero;
+    //  _vehicle.Chassis.AngularVelocity = Vector3.Zero;
 
 
     //--------------------------------------------------------------
@@ -98,7 +98,7 @@ namespace Samples.Physics.Specialized
                                       .First(mn => mn.Name == "Car");
       var mesh = MeshHelper.ToTriangleMesh(meshNode.Mesh);
       // Apply the transformation of the mesh node.
-      mesh.Transform(meshNode.PoseWorld * Matrix44F.CreateScale(meshNode.ScaleWorld));
+      mesh.Transform(meshNode.PoseWorld * Matrix.CreateScale(meshNode.ScaleWorld));
 
       // 2. (Optional) Create simplified convex hull from mesh.
       // We could also skip this step and directly create a convex polyhedron from the mesh using
@@ -116,7 +116,7 @@ namespace Samples.Physics.Specialized
       // Samples.)
 
       // The mass properties of the car. We use a mass of 800 kg.
-      var mass = MassFrame.FromShapeAndMass(chassisShape, Vector3F.One, 800, 0.1f, 1);
+      var mass = MassFrame.FromShapeAndMass(chassisShape, Vector3.One, 800, 0.1f, 1);
 
       // Trick: We artificially modify the center of mass of the rigid body. Lowering the center
       // of mass makes the car more stable against rolling in tight curves. 
@@ -137,7 +137,7 @@ namespace Samples.Physics.Specialized
 
       var chassis = new RigidBody(chassisShape, mass, material)
       {
-        Pose = new Pose(new Vector3F(0, 2, 0)),  // Start position
+        Pose = new Pose(new Vector3(0, 2, 0)),  // Start position
         UserData = "NoDraw",                     // (Remove this line to render the collision model.)
       };
 
@@ -145,10 +145,10 @@ namespace Samples.Physics.Specialized
       Vehicle = new Vehicle(_simulation, chassis);
 
       // Add 4 wheels.
-      Vehicle.Wheels.Add(new Wheel { Offset = new Vector3F(-0.9f, 0.6f, -2.0f), Radius = 0.36f, SuspensionRestLength = 0.55f, MinSuspensionLength = 0.25f, Friction = 2 });  // Front left
-      Vehicle.Wheels.Add(new Wheel { Offset = new Vector3F(0.9f, 0.6f, -2.0f), Radius = 0.36f, SuspensionRestLength = 0.55f, MinSuspensionLength = 0.25f, Friction = 2 });   // Front right
-      Vehicle.Wheels.Add(new Wheel { Offset = new Vector3F(-0.9f, 0.6f, 0.98f), Radius = 0.36f, SuspensionRestLength = 0.55f, MinSuspensionLength = 0.25f, Friction = 1.8f });// Back left
-      Vehicle.Wheels.Add(new Wheel { Offset = new Vector3F(0.9f, 0.6f, 0.98f), Radius = 0.36f, SuspensionRestLength = 0.55f, MinSuspensionLength = 0.25f, Friction = 1.8f }); // Back right
+      Vehicle.Wheels.Add(new Wheel { Offset = new Vector3(-0.9f, 0.6f, -2.0f), Radius = 0.36f, SuspensionRestLength = 0.55f, MinSuspensionLength = 0.25f, Friction = 2 });  // Front left
+      Vehicle.Wheels.Add(new Wheel { Offset = new Vector3(0.9f, 0.6f, -2.0f), Radius = 0.36f, SuspensionRestLength = 0.55f, MinSuspensionLength = 0.25f, Friction = 2 });   // Front right
+      Vehicle.Wheels.Add(new Wheel { Offset = new Vector3(-0.9f, 0.6f, 0.98f), Radius = 0.36f, SuspensionRestLength = 0.55f, MinSuspensionLength = 0.25f, Friction = 1.8f });// Back left
+      Vehicle.Wheels.Add(new Wheel { Offset = new Vector3(0.9f, 0.6f, 0.98f), Radius = 0.36f, SuspensionRestLength = 0.55f, MinSuspensionLength = 0.25f, Friction = 1.8f }); // Back right
 
       // Vehicles are disabled per default. This way we can create the vehicle and the simulation
       // objects are only added when needed.
@@ -225,7 +225,7 @@ namespace Samples.Physics.Specialized
         if (Vehicle.Wheels[i].Offset.X < 0)
         {
           // Left wheel.
-          pose.Orientation = pose.Orientation * Matrix33F.CreateRotationY(ConstantsF.Pi);
+          pose.Orientation = pose.Orientation * Matrix.CreateRotationY(ConstantsF.Pi);
         }
         _wheelModelNodes[i].SetLastPose(true);
         _wheelModelNodes[i].PoseWorld = pose;

@@ -58,12 +58,12 @@
 
 
 using System;
-#if NETFX_CORE || PORTABLE || USE_TPL
+
 using System.Linq;
-#endif
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY
+
+
 using System.Runtime.Serialization;
-#endif
+
 
 
 namespace DigitalRune.Threading
@@ -71,9 +71,9 @@ namespace DigitalRune.Threading
   /// <summary>
   /// Occurs when an unhandled exception is thrown within a <see cref="Task"/>.
   /// </summary>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
+
   public class TaskException : Exception
   {
     /// <summary>
@@ -127,16 +127,16 @@ namespace DigitalRune.Threading
     }
 
 
-#if NETFX_CORE || PORTABLE || USE_TPL
+
     internal TaskException(AggregateException aggregateException)
       : base(aggregateException.Message)
     {
       InnerExceptions = aggregateException.InnerExceptions.ToArray();
     }
-#endif
 
 
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
+
     /// <summary>
     /// Initializes a new instance of the <see cref="TaskException"/> class.
     /// </summary>
@@ -184,6 +184,6 @@ namespace DigitalRune.Threading
       base.GetObjectData(info, context);
       info.AddValue("InnerExceptions", InnerExceptions, typeof(Exception[]));
     }
-#endif
+
   }
 }

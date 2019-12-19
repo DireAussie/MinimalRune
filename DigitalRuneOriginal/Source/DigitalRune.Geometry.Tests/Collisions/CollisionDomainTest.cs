@@ -53,22 +53,22 @@ namespace DigitalRune.Geometry.Collisions.Tests
       CollisionDomain cd = new CollisionDomain(new CollisionDetection());
       CollisionObject a = new CollisionObject();
       ((GeometricObject)a.GeometricObject).Shape = new SphereShape(1);
-      ((GeometricObject)a.GeometricObject).Pose = new Pose(new Vector3F(0, 0, 0));
+      ((GeometricObject)a.GeometricObject).Pose = new Pose(new Vector3(0, 0, 0));
       //a.Name = "a";
 
       CollisionObject b = new CollisionObject();
       ((GeometricObject)b.GeometricObject).Shape = new SphereShape(1);
-      ((GeometricObject)b.GeometricObject).Pose = new Pose(new Vector3F(4, 0, 2f));
+      ((GeometricObject)b.GeometricObject).Pose = new Pose(new Vector3(4, 0, 2f));
       //b.Name = "b";
 
       CollisionObject c = new CollisionObject();
       ((GeometricObject)c.GeometricObject).Shape = new SphereShape(1);
-      ((GeometricObject)c.GeometricObject).Pose = new Pose(new Vector3F(6, 2, 2f));
+      ((GeometricObject)c.GeometricObject).Pose = new Pose(new Vector3(6, 2, 2f));
       //c.Name = "c";
 
       CollisionObject d = new CollisionObject();
       ((GeometricObject)d.GeometricObject).Shape = new SphereShape(1);
-      ((GeometricObject)d.GeometricObject).Pose = new Pose(new Vector3F(8, 3f, 4f));
+      ((GeometricObject)d.GeometricObject).Pose = new Pose(new Vector3(8, 3f, 4f));
       //d.Name = "d";
 
       Assert.AreEqual(0, cd.CollisionObjects.Count);
@@ -88,28 +88,28 @@ namespace DigitalRune.Geometry.Collisions.Tests
       cd.Update(0.01f);
       Assert.AreEqual(0, cd.ContactSets.Count);
 
-      ((GeometricObject)a.GeometricObject).Pose = new Pose(((GeometricObject)a.GeometricObject).Pose.Position + new Vector3F(3.5f, 0, 0.5f));
+      ((GeometricObject)a.GeometricObject).Pose = new Pose(((GeometricObject)a.GeometricObject).Pose.Position + new Vector3(3.5f, 0, 0.5f));
       cd.Update(0.01f);
       Assert.AreEqual(1, cd.ContactSets.Count);
 
-      ((GeometricObject)c.GeometricObject).Pose = new Pose(((GeometricObject)c.GeometricObject).Pose.Position + new Vector3F(2, 1, 0));
+      ((GeometricObject)c.GeometricObject).Pose = new Pose(((GeometricObject)c.GeometricObject).Pose.Position + new Vector3(2, 1, 0));
       cd.Update(0.01f);
       Assert.AreEqual(2, cd.ContactSets.Count);
 
-      ((GeometricObject)a.GeometricObject).Pose = new Pose(((GeometricObject)a.GeometricObject).Pose.Position + new Vector3F(3, 0, 0));
-      ((GeometricObject)b.GeometricObject).Pose = new Pose(((GeometricObject)b.GeometricObject).Pose.Position + new Vector3F(2, 0, 0));
+      ((GeometricObject)a.GeometricObject).Pose = new Pose(((GeometricObject)a.GeometricObject).Pose.Position + new Vector3(3, 0, 0));
+      ((GeometricObject)b.GeometricObject).Pose = new Pose(((GeometricObject)b.GeometricObject).Pose.Position + new Vector3(2, 0, 0));
       cd.Update(0.01f);
       Assert.AreEqual(2, cd.ContactSets.Count);
 
-      ((GeometricObject)d.GeometricObject).Pose = new Pose(((GeometricObject)d.GeometricObject).Pose.Position + new Vector3F(-0.5f, 0, 0));
-      ((GeometricObject)b.GeometricObject).Pose = new Pose(((GeometricObject)b.GeometricObject).Pose.Position + new Vector3F(0, 1, 0));
+      ((GeometricObject)d.GeometricObject).Pose = new Pose(((GeometricObject)d.GeometricObject).Pose.Position + new Vector3(-0.5f, 0, 0));
+      ((GeometricObject)b.GeometricObject).Pose = new Pose(((GeometricObject)b.GeometricObject).Pose.Position + new Vector3(0, 1, 0));
       cd.Update(0.01f);
       Assert.AreEqual(1, cd.ContactSets.Count);
 
-      ((GeometricObject)a.GeometricObject).Pose = new Pose(new Vector3F(0, 0, 0));
-      ((GeometricObject)b.GeometricObject).Pose = new Pose(new Vector3F(0, 0, 0));
-      ((GeometricObject)c.GeometricObject).Pose = new Pose(new Vector3F(1, 0, 1));
-      ((GeometricObject)d.GeometricObject).Pose = new Pose(new Vector3F(0, 1, 0));
+      ((GeometricObject)a.GeometricObject).Pose = new Pose(new Vector3(0, 0, 0));
+      ((GeometricObject)b.GeometricObject).Pose = new Pose(new Vector3(0, 0, 0));
+      ((GeometricObject)c.GeometricObject).Pose = new Pose(new Vector3(1, 0, 1));
+      ((GeometricObject)d.GeometricObject).Pose = new Pose(new Vector3(0, 1, 0));
       cd.Update(0.01f);
       Assert.AreEqual(6, cd.ContactSets.Count);
     }
@@ -123,12 +123,12 @@ namespace DigitalRune.Geometry.Collisions.Tests
 
       CollisionObject a = new CollisionObject();
       ((GeometricObject)a.GeometricObject).Shape = new SphereShape(1);
-      ((GeometricObject)a.GeometricObject).Pose = new Pose(new Vector3F(0, 0, 0));
+      ((GeometricObject)a.GeometricObject).Pose = new Pose(new Vector3(0, 0, 0));
       //a.Name = "a";
 
       CollisionObject b = new CollisionObject();
       ((GeometricObject)b.GeometricObject).Shape = new SphereShape(1);
-      ((GeometricObject)b.GeometricObject).Pose = new Pose(new Vector3F(1, 0, 0f));
+      ((GeometricObject)b.GeometricObject).Pose = new Pose(new Vector3(1, 0, 0f));
       //b.Name = "b";
 
       domain.CollisionObjects.Add(a);
@@ -164,17 +164,17 @@ namespace DigitalRune.Geometry.Collisions.Tests
 
       CollisionObject a = new CollisionObject();
       ((GeometricObject)a.GeometricObject).Shape = new SphereShape(1);
-      ((GeometricObject)a.GeometricObject).Pose = new Pose(new Vector3F(0, 0, 0));
+      ((GeometricObject)a.GeometricObject).Pose = new Pose(new Vector3(0, 0, 0));
       //a.Name = "a";
 
       CollisionObject b = new CollisionObject();
       ((GeometricObject)b.GeometricObject).Shape = new SphereShape(1);
-      ((GeometricObject)b.GeometricObject).Pose = new Pose(new Vector3F(1, 0, 0f));
+      ((GeometricObject)b.GeometricObject).Pose = new Pose(new Vector3(1, 0, 0f));
       //b.Name = "b";
 
       CollisionObject c = new CollisionObject();
       ((GeometricObject)c.GeometricObject).Shape = new SphereShape(1);
-      ((GeometricObject)c.GeometricObject).Pose = new Pose(new Vector3F(1, 0, 0f));
+      ((GeometricObject)c.GeometricObject).Pose = new Pose(new Vector3(1, 0, 0f));
       //c.Name = "c";
 
       domain.CollisionObjects.Add(a);
@@ -280,7 +280,7 @@ namespace DigitalRune.Geometry.Collisions.Tests
       CollisionDomain domain = new CollisionDomain(new CollisionDetection());
 
       CollisionObject ray = new CollisionObject();
-      ((GeometricObject)ray.GeometricObject).Shape = new RayShape(new Vector3F(), new Vector3F(1, 0, 0), 100) 
+      ((GeometricObject)ray.GeometricObject).Shape = new RayShape(new Vector3(), new Vector3(1, 0, 0), 100) 
       { 
         StopsAtFirstHit = true,
       };
@@ -288,27 +288,27 @@ namespace DigitalRune.Geometry.Collisions.Tests
 
       CollisionObject b = new CollisionObject();
       ((GeometricObject)b.GeometricObject).Shape = new SphereShape(1);
-      ((GeometricObject)b.GeometricObject).Pose = new Pose(new Vector3F(-10, 0, 0f));
+      ((GeometricObject)b.GeometricObject).Pose = new Pose(new Vector3(-10, 0, 0f));
       //b.Name = "b";
 
       CollisionObject c = new CollisionObject();
       ((GeometricObject)c.GeometricObject).Shape = new SphereShape(1);
-      ((GeometricObject)c.GeometricObject).Pose = new Pose(new Vector3F(0, 0, 0f));
+      ((GeometricObject)c.GeometricObject).Pose = new Pose(new Vector3(0, 0, 0f));
       //c.Name = "c";
 
       CollisionObject d = new CollisionObject();
       ((GeometricObject)d.GeometricObject).Shape = new SphereShape(1);
-      ((GeometricObject)d.GeometricObject).Pose = new Pose(new Vector3F(10, 0, 0f));
+      ((GeometricObject)d.GeometricObject).Pose = new Pose(new Vector3(10, 0, 0f));
       //d.Name = "d";
 
       CollisionObject e = new CollisionObject();
       ((GeometricObject)e.GeometricObject).Shape = new SphereShape(1);
-      ((GeometricObject)e.GeometricObject).Pose = new Pose(new Vector3F(20, 0, 0f));
+      ((GeometricObject)e.GeometricObject).Pose = new Pose(new Vector3(20, 0, 0f));
       //e.Name = "e";
 
       CollisionObject f = new CollisionObject();
       ((GeometricObject)f.GeometricObject).Shape = new SphereShape(1);
-      ((GeometricObject)f.GeometricObject).Pose = new Pose(new Vector3F(110, 0, 0f));
+      ((GeometricObject)f.GeometricObject).Pose = new Pose(new Vector3(110, 0, 0f));
       //f.Name = "f";
 
       // Positions: b=-10, c=0, d=10, e=20, f=110
@@ -323,39 +323,39 @@ namespace DigitalRune.Geometry.Collisions.Tests
       Assert.AreEqual(1, domain.GetContacts(ray).Count());
       Assert.AreEqual(true, domain.HaveContact(ray, c));
 
-      ((GeometricObject)c.GeometricObject).Pose = new Pose(new Vector3F(30));
+      ((GeometricObject)c.GeometricObject).Pose = new Pose(new Vector3(30));
       // Positions: b=-10, d=10, e=20, c=30, f=110
       domain.Update(0.01f);
       Assert.AreEqual(1, domain.GetContacts(ray).Count());
       Assert.AreEqual(true, domain.HaveContact(ray, d));
 
-      ((GeometricObject)d.GeometricObject).Pose = new Pose(new Vector3F(40));
+      ((GeometricObject)d.GeometricObject).Pose = new Pose(new Vector3(40));
       // Positions: b=-10, e=20, c=30, d=40, f=110
       domain.Update(0.01f);
       Assert.AreEqual(1, domain.GetContacts(ray).Count());
       Assert.AreEqual(true, domain.HaveContact(ray, e));
 
-      ((GeometricObject)ray.GeometricObject).Pose = new Pose(((GeometricObject)ray.GeometricObject).Pose.Position, QuaternionF.CreateRotationZ(ConstantsF.PiOver2));
+      ((GeometricObject)ray.GeometricObject).Pose = new Pose(((GeometricObject)ray.GeometricObject).Pose.Position, Quaternion.CreateRotationZ(ConstantsF.PiOver2));
       domain.Update(0.01f);
       Assert.AreEqual(0, domain.GetContacts(ray).Count());
 
-      ((GeometricObject)ray.GeometricObject).Pose = new Pose(((GeometricObject)ray.GeometricObject).Pose.Position, QuaternionF.CreateRotationZ(ConstantsF.Pi));
+      ((GeometricObject)ray.GeometricObject).Pose = new Pose(((GeometricObject)ray.GeometricObject).Pose.Position, Quaternion.CreateRotationZ(ConstantsF.Pi));
       domain.Update(0.01f);
       Assert.AreEqual(1, domain.GetContacts(ray).Count());
       Assert.AreEqual(true, domain.HaveContact(ray, b));
 
-      ((GeometricObject)ray.GeometricObject).Pose = new Pose(((GeometricObject)ray.GeometricObject).Pose.Position, QuaternionF.Identity);
+      ((GeometricObject)ray.GeometricObject).Pose = new Pose(((GeometricObject)ray.GeometricObject).Pose.Position, Quaternion.Identity);
       domain.Update(0.01f);
 
       // Positions: b=-10, e=20, c=30, d=40, f=110
       CollisionObject gNotInDomain = new CollisionObject();
       ((GeometricObject)gNotInDomain.GeometricObject).Shape = new SphereShape(1);
-      ((GeometricObject)gNotInDomain.GeometricObject).Pose = new Pose(new Vector3F(10, 0, 0f));
+      ((GeometricObject)gNotInDomain.GeometricObject).Pose = new Pose(new Vector3(10, 0, 0f));
       Assert.AreEqual(true, domain.HaveContact(ray, gNotInDomain));
       Assert.AreEqual(1, domain.GetContacts(gNotInDomain).Count());
       Assert.AreEqual(1, domain.GetContacts(ray, gNotInDomain).Count);
       Assert.AreEqual(true, domain.HasContact(gNotInDomain));
-      ((GeometricObject)gNotInDomain.GeometricObject).Pose = new Pose(new Vector3F(25, 0, 0f)); // behind e
+      ((GeometricObject)gNotInDomain.GeometricObject).Pose = new Pose(new Vector3(25, 0, 0f)); // behind e
       Assert.AreEqual(false, domain.HaveContact(ray, gNotInDomain));
       Assert.AreEqual(false, domain.HaveContact(gNotInDomain, ray));
       Assert.AreEqual(false, domain.HasContact(gNotInDomain));
@@ -386,7 +386,7 @@ namespace DigitalRune.Geometry.Collisions.Tests
 
       // 1 ray: at origin shooting into +x
       CollisionObject ray = new CollisionObject();
-      ((GeometricObject)ray.GeometricObject).Shape = new RayShape(new Vector3F(), new Vector3F(1, 0, 0), 100)
+      ((GeometricObject)ray.GeometricObject).Shape = new RayShape(new Vector3(), new Vector3(1, 0, 0), 100)
       {
         StopsAtFirstHit = true,
       };
@@ -395,11 +395,11 @@ namespace DigitalRune.Geometry.Collisions.Tests
       // 2 spheres: at at x=10, b at x=20
       CollisionObject a = new CollisionObject();
       ((GeometricObject)a.GeometricObject).Shape = new SphereShape(1);
-      ((GeometricObject)a.GeometricObject).Pose = new Pose(new Vector3F(10, 0, 0f));
+      ((GeometricObject)a.GeometricObject).Pose = new Pose(new Vector3(10, 0, 0f));
       //a.Name = "b";
       CollisionObject b = new CollisionObject();
       ((GeometricObject)b.GeometricObject).Shape = new SphereShape(1);
-      ((GeometricObject)b.GeometricObject).Pose = new Pose(new Vector3F(20, 0, 0f));
+      ((GeometricObject)b.GeometricObject).Pose = new Pose(new Vector3(20, 0, 0f));
       //b.Name = "c";
 
       domain.CollisionObjects.Add(ray);
@@ -444,7 +444,7 @@ namespace DigitalRune.Geometry.Collisions.Tests
       var co = new CollisionObject(geometricObject);
 
       // No exception with validation level 0.
-      geometricObject.Pose = new Pose(new Vector3F(float.NaN, 0, 0));
+      geometricObject.Pose = new Pose(new Vector3(float.NaN, 0, 0));
       cd.CollisionObjects.Add(co);
     }
 
@@ -475,7 +475,7 @@ namespace DigitalRune.Geometry.Collisions.Tests
       var geometricObject = new GeometricObject(shape, Pose.Identity);
       var co = new CollisionObject(geometricObject);
 
-      geometricObject.Pose = new Pose(new Vector3F(float.NaN, 0, 0));
+      geometricObject.Pose = new Pose(new Vector3(float.NaN, 0, 0));
       Assert.Throws<GeometryException>(() => cd.CollisionObjects.Add(co));
     }
 
@@ -490,7 +490,7 @@ namespace DigitalRune.Geometry.Collisions.Tests
       var geometricObject = new GeometricObject(shape, Pose.Identity);
       var co = new CollisionObject(geometricObject);
 
-      geometricObject.Scale = new Vector3F(1, float.NaN, 1);
+      geometricObject.Scale = new Vector3(1, float.NaN, 1);
       Assert.Throws<GeometryException>(() => cd.CollisionObjects.Add(co));
     }
 
@@ -522,9 +522,9 @@ namespace DigitalRune.Geometry.Collisions.Tests
 
       cd.CollisionObjects.Add(co);
 
-      var matrix = Matrix33F.Identity;
+      var matrix = Matrix.Identity;
       matrix.M11 = float.NaN;
-      Assert.Throws<GeometryException>(() => geometricObject.Pose = new Pose(new Vector3F(), matrix));
+      Assert.Throws<GeometryException>(() => geometricObject.Pose = new Pose(new Vector3(), matrix));
     }
 
 
@@ -539,7 +539,7 @@ namespace DigitalRune.Geometry.Collisions.Tests
       var co = new CollisionObject(geometricObject);
 
       cd.CollisionObjects.Add(co);
-      Assert.Throws<GeometryException>(() => geometricObject.Scale = new Vector3F(1, 1, float.NaN));
+      Assert.Throws<GeometryException>(() => geometricObject.Scale = new Vector3(1, 1, float.NaN));
     }
 
     [Test]
@@ -574,7 +574,7 @@ namespace DigitalRune.Geometry.Collisions.Tests
       cd.CollisionObjects.Add(coB);
 
       // not touching
-      goB.Pose = new Pose(new Vector3F(3, 3, 0));
+      goB.Pose = new Pose(new Vector3(3, 3, 0));
       cd.Update(0);
       Assert.AreEqual(0, cd.ContactSets.Count);
 
@@ -584,7 +584,7 @@ namespace DigitalRune.Geometry.Collisions.Tests
       Assert.AreEqual(0, cd.ContactSets.Count);
 
       // touching, disabled
-      goB.Pose = new Pose(new Vector3F(1, 1, 1));
+      goB.Pose = new Pose(new Vector3(1, 1, 1));
       cd.Update(0);
       Assert.AreEqual(0, cd.ContactSets.Count);
 
@@ -594,7 +594,7 @@ namespace DigitalRune.Geometry.Collisions.Tests
       Assert.AreEqual(1, cd.ContactSets.Count);
 
       // not touching - but broadphase overlap, enabled
-      goB.Pose = new Pose(new Vector3F(1.8f, 1.8f, 0));
+      goB.Pose = new Pose(new Vector3(1.8f, 1.8f, 0));
       cd.Update(0);
       Assert.AreEqual(0, cd.ContactSets.Count);
 
@@ -604,7 +604,7 @@ namespace DigitalRune.Geometry.Collisions.Tests
       Assert.AreEqual(0, cd.ContactSets.Count);
 
       // touching, disabled
-      goB.Pose = new Pose(new Vector3F(1, 1, 1));
+      goB.Pose = new Pose(new Vector3(1, 1, 1));
       cd.Update(0);
       Assert.AreEqual(0, cd.ContactSets.Count);
 
@@ -649,7 +649,7 @@ namespace DigitalRune.Geometry.Collisions.Tests
           domain.Update(0);
 
           if (RandomHelper.Random.NextFloat(0, 1) > 0.5f)
-            geometricObjects[j].Pose = new Pose(RandomHelper.Random.NextVector3F(-2, 2));
+            geometricObjects[j].Pose = new Pose(RandomHelper.Random.NextVector3(-2, 2));
 
           domain.Update(0);
         }

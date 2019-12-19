@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if XBOX || WP7
+
 using DigitalRune.Collections;
 
 
@@ -62,4 +62,4 @@ namespace System.Collections.Generic
     }
   }
 }
-#endif
+

@@ -33,7 +33,7 @@ namespace DigitalRune.Graphics.SceneGraph
   /// distances stored in the <see cref="LodCollection"/> are <i>view-normalized</i> distances,
   /// which means that distance values are corrected based on the camera's field-of-view. The
   /// resulting LOD distances are independent of the current field-of-view. See 
-  /// <see cref="GraphicsHelper.GetViewNormalizedDistance(float, Matrix44F)"/> for more information.
+  /// <see cref="GraphicsHelper.GetViewNormalizedDistance(float, Matrix)"/> for more information.
   /// </para>
   /// <para>
   /// The camera that serves as reference for LOD distance computations needs to be stored in the
@@ -258,7 +258,7 @@ namespace DigitalRune.Graphics.SceneGraph
       SetProxy(node, null);
       node.SceneChanged -= OnLodSceneChanged;
       node.PoseLocal = Pose.Identity;
-      node.ScaleLocal = Vector3F.One;
+      node.ScaleLocal = Vector3.One;
     }
 
 
@@ -290,7 +290,7 @@ namespace DigitalRune.Graphics.SceneGraph
     }
 
 
-    internal void SetScale(Vector3F scale)
+    internal void SetScale(Vector3 scale)
     {
       _ignoreChanges = true;
 

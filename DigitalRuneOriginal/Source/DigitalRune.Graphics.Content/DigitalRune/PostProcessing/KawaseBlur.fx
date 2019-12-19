@@ -110,13 +110,13 @@ float4 PS(PSInput input) : COLOR
 // Techniques
 //-----------------------------------------------------------------------------
 
-#if !SM4
+
 #define VSTARGET vs_2_0
 #define PSTARGET ps_2_0
 #else
 #define VSTARGET vs_4_0_level_9_1
 #define PSTARGET ps_4_0_level_9_1
-#endif
+
 
 technique
 {

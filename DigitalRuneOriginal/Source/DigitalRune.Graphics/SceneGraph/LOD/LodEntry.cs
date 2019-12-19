@@ -26,7 +26,7 @@ namespace DigitalRune.Graphics.SceneGraph
     /// <remarks>
     /// The value stored in this property is a <i>view-normalized distance</i> as described here:
     /// <see cref="GraphicsHelper.GetViewNormalizedDistance(SceneNode,CameraNode)"/>. The method
-    /// <see cref="GraphicsHelper.GetViewNormalizedDistance(float, Matrix44F)"/> can be used to
+    /// <see cref="GraphicsHelper.GetViewNormalizedDistance(float, Matrix)"/> can be used to
     /// convert a distance to a view-normalized distance. The resulting value is independent of the
     /// camera's field-of-view.
     /// </remarks>

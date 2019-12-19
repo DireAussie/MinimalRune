@@ -8,12 +8,12 @@ using DigitalRune.Collections;
 using DigitalRune.Game.Input;
 using DigitalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework.Input;
-#if WP7 || PORTABLE
+
 using Microsoft.Xna.Framework.Input.Touch;
-#endif
-#if SILVERLIGHT
+
+
 using Keys = System.Windows.Input.Key;
-#endif
+
 
 
 namespace DigitalRune.Game.UI.Controls
@@ -101,9 +101,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <summary> 
     /// The ID of the <see cref="Offset"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int OffsetPropertyId = CreateProperty(
       typeof(ContextMenu), "Offset", GamePropertyCategories.Layout, null, 0.0f, 
       UIPropertyOptions.None);
@@ -123,9 +123,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <summary> 
     /// The ID of the <see cref="IsOpen"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int IsOpenPropertyId = CreateProperty(
       typeof(ContextMenu), "IsOpen", GamePropertyCategories.Default, null, false, 
       UIPropertyOptions.None);
@@ -171,9 +171,9 @@ namespace DigitalRune.Game.UI.Controls
       Items = new NotifyingCollection<UIControl>(false, false);
       Items.CollectionChanged += OnItemsChanged;
 
-#if WP7 || PORTABLE
+
       TouchPanel.EnabledGestures |= GestureType.Hold;
-#endif
+
     }    
 
 
@@ -289,7 +289,7 @@ namespace DigitalRune.Game.UI.Controls
         Close();
       }
 
-#if !SILVERLIGHT
+
       // Same for BACK or B on gamepad.
       if (inputService.IsPressed(Buttons.Back, false, context.AllowedPlayer) 
           || inputService.IsPressed(Buttons.B, false, context.AllowedPlayer))
@@ -297,7 +297,7 @@ namespace DigitalRune.Game.UI.Controls
         inputService.SetGamePadHandled(context.AllowedPlayer, true);
         Close();
       }
-#endif
+
 
       // If another control is opened above this popup, then this popup closes.
       // Exception: Tooltips are okay above the popup.
@@ -383,10 +383,10 @@ namespace DigitalRune.Game.UI.Controls
       X = x;
       Y = y;
 
-#if WP7 || PORTABLE
-#if PORTABLE
+
+
       if (GlobalSettings.PlatformID == PlatformID.WindowsPhone8)
-#endif
+
       {
         // Imitate position of Silverlight WP7 context menus.
         if (screen.ActualHeight >= screen.ActualWidth)
@@ -415,7 +415,7 @@ namespace DigitalRune.Game.UI.Controls
           }
         }
       }
-#endif
+
 
       screen.FocusManager.Focus(this);
       IsOpen = true;
@@ -444,13 +444,13 @@ namespace DigitalRune.Game.UI.Controls
     }
 
 
-#if WP7 || PORTABLE
+
     /// <inheritdoc/>
     protected override void OnUpdate(TimeSpan deltaTime)
     {
-#if PORTABLE
+
       if (GlobalSettings.PlatformID == PlatformID.WindowsPhone8)
-#endif
+
       {
         // Close if orientation of Screen has changed. (Default behavior of Silverlight context menus.)
         bool isScreenPortrait = (Screen.ActualHeight >= Screen.ActualWidth);
@@ -464,7 +464,7 @@ namespace DigitalRune.Game.UI.Controls
 
       base.OnUpdate(deltaTime);
     }
-#endif
+
 
   }
 }

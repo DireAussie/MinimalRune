@@ -10,9 +10,9 @@ using DigitalRune.Graphics.Rendering;
 using DigitalRune.Mathematics;
 using DigitalRune.Mathematics.Algebra;
 using DigitalRune.Graphics.Interop;
-#if !WP7
+
 using DigitalRune.Graphics.PostProcessing;
-#endif
+
 using DigitalRune.Graphics.SceneGraph;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -504,7 +504,7 @@ namespace DigitalRune.Graphics
     /// <para>
     /// The value stored in this property is a <i>view-normalized distance</i> as described here: 
     /// <see cref="GraphicsHelper.GetViewNormalizedDistance(SceneGraph.SceneNode,SceneGraph.CameraNode)"/>. 
-    /// The method <see cref="GraphicsHelper.GetViewNormalizedDistance(float, Matrix44F)"/> can be 
+    /// The method <see cref="GraphicsHelper.GetViewNormalizedDistance(float, Matrix)"/> can be 
     /// used to convert a distance to a view-normalized distance. The resulting value is independent
     /// of the current field-of-view.
     /// </para>

@@ -10,7 +10,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#ifndef XBOX
+
 #define PARALLAX_MAPPING 1
-#endif
+
 #include "TerrainMaterial.fx"

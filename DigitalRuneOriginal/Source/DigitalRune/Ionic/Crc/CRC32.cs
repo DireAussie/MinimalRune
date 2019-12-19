@@ -263,7 +263,7 @@ namespace DigitalRune.Ionic.Crc
                 } while (i!=0);
             }
 
-#if VERBOSE
+
             Console.WriteLine();
             Console.WriteLine("private static readonly UInt32[] crc32Table = {");
             for (int i = 0; i < crc32Table.Length; i+=4)
@@ -277,7 +277,7 @@ namespace DigitalRune.Ionic.Crc
             }
             Console.WriteLine("};");
             Console.WriteLine();
-#endif
+
         }
 
 

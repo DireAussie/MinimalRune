@@ -562,7 +562,7 @@ float4 PSSoftGamma(PSInputSoft input) : COLOR { return PSSoft(input, true); }
 // Techniques
 //-----------------------------------------------------------------------------
 
-#if !SM4
+
 #define VSTARGET vs_2_0
 #define PSTARGET ps_2_0
 #define VSTARGET_3_0 vs_3_0
@@ -577,7 +577,7 @@ float4 PSSoftGamma(PSInputSoft input) : COLOR { return PSSoft(input, true); }
 
 #define VSTARGET_3_0 vs_4_0
 #define PSTARGET_3_0 ps_4_0
-#endif
+
 
 // (Hard) particles, no gamma correction.
 technique HardLinear

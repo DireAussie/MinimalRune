@@ -23,7 +23,7 @@ namespace DigitalRune.Graphics
   /// <para>
   /// <strong>Notes to Inheritors: </strong><br/>
   /// Derived classes must initialize <see cref="ViewVolume"/> and provide the implementation of the
-  /// <see cref="Set"/> method. The base class caches a <see cref="Matrix44F"/> which describes the
+  /// <see cref="Set"/> method. The base class caches a <see cref="Matrix"/> which describes the
   /// projection. Therefore, derived classes must call <see cref="Invalidate"/> if the projection is
   /// changed. The <see cref="Projection"/> base class will call <see cref="ComputeProjection"/> of
   /// derived classes to get and cache the new projection matrix when needed.
@@ -35,7 +35,7 @@ namespace DigitalRune.Graphics
 
     //--------------------------------------------------------------
 
-    private Matrix44F _projection = Matrix44F.Identity;
+    private Matrix _projection = Matrix.Identity;
     private bool _projectionNeedsToBeUpdated;
 
 
@@ -225,7 +225,7 @@ namespace DigitalRune.Graphics
     /// <remarks>
     /// Setting <see cref="Inverse"/> automatically updates the <see cref="Projection"/>.
     /// </remarks>
-    public Matrix44F Inverse
+    public Matrix Inverse
     {
       get
       {
@@ -238,8 +238,8 @@ namespace DigitalRune.Graphics
       {
         if (_projectionInverse != value)
         {
-          Matrix44F projectionInverse = value;
-          Matrix44F projection = value.Inverse;
+          Matrix projectionInverse = value;
+          Matrix projection = value.Inverse;
           Set(projection);
           _projection = projection;
           _projectionInverse = projectionInverse;
@@ -247,7 +247,7 @@ namespace DigitalRune.Graphics
         }
       }
     }
-    private Matrix44F _projectionInverse = Matrix44F.Identity;
+    private Matrix _projectionInverse = Matrix.Identity;
 
 
     /// <summary>
@@ -353,8 +353,8 @@ namespace DigitalRune.Graphics
     /// </summary>
     /// <remarks>
     /// <see cref="Invalidate"/> causes a lazy update: An internal flag is set that indicates that
-    /// the matrices need to be recalculated. The calculation is done when <see cref="ToMatrix44F"/>,
-    /// or an implicit cast to <see cref="Matrix44F"/> is performed or when <see cref="Inverse"/> is
+    /// the matrices need to be recalculated. The calculation is done when <see cref="ToMatrix"/>,
+    /// or an implicit cast to <see cref="Matrix"/> is performed or when <see cref="Inverse"/> is
     /// accessed.
     /// </remarks>
     protected void Invalidate()
@@ -384,7 +384,7 @@ namespace DigitalRune.Graphics
     /// how to compute a projection matrix. The classes deriving from <see cref="Projection"/> need
     /// to implement <see cref="ComputeProjection"/> and return a valid projection matrix.
     /// </remarks>
-    protected abstract Matrix44F ComputeProjection();
+    protected abstract Matrix ComputeProjection();
 
 
     /// <summary>
@@ -392,14 +392,14 @@ namespace DigitalRune.Graphics
     /// </summary>
     /// <param name="projection">The projection matrix.</param>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1716:IdentifiersShouldNotMatchKeywords")]
-    public abstract void Set(Matrix44F projection);
+    public abstract void Set(Matrix projection);
 
 
     /// <summary>
     /// Converts a projection to a 4x4 transformation matrix.
     /// </summary>
     /// <returns>A 4x4-matrix that represents the same transformation as the projection.</returns>
-    public Matrix44F ToMatrix44F()
+    public Matrix ToMatrix()
     {
       if (_projectionNeedsToBeUpdated)
         Update();
@@ -432,9 +432,9 @@ namespace DigitalRune.Graphics
     /// <param name="projection">The projection.</param>
     /// <returns>A 4x4-matrix that represents the same transformation as the projection.</returns>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods")]
-    public static implicit operator Matrix44F(Projection projection)
+    public static implicit operator Matrix(Projection projection)
     {
-      // return projection.ToMatrix44F();
+      // return projection.ToMatrix();
 
       // Inlined
       if (projection._projectionNeedsToBeUpdated)

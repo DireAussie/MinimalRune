@@ -22,7 +22,7 @@ namespace Samples
   {
     private readonly IServiceLocator _services;
     private readonly string _assetName;
-    private readonly Vector3F _scale;
+    private readonly Vector3 _scale;
     private readonly Pose _pose;
     private readonly bool _castsShadows;
     private readonly bool _addRigidBody;
@@ -31,12 +31,12 @@ namespace Samples
 
 
     public StaticObject(IServiceLocator services, string assetName, float scale, Pose pose)
-      : this(services, assetName, new Vector3F(scale), pose, true, false)
+      : this(services, assetName, new Vector3(scale), pose, true, false)
     {
     }
 
 
-    public StaticObject(IServiceLocator services, string assetName, Vector3F scale, Pose pose, bool castsShadows, bool addRigidBody)
+    public StaticObject(IServiceLocator services, string assetName, Vector3 scale, Pose pose, bool castsShadows, bool addRigidBody)
     {
       _services = services;
       _assetName = assetName;
@@ -91,7 +91,7 @@ namespace Samples
         }
 
         // Apply the transformation of the mesh node.
-        subTriangleMesh.Transform(meshNode.PoseWorld * Matrix44F.CreateScale(meshNode.ScaleWorld));
+        subTriangleMesh.Transform(meshNode.PoseWorld * Matrix.CreateScale(meshNode.ScaleWorld));
 
         // Combine into final triangle mesh.
         triangleMesh.Add(subTriangleMesh);

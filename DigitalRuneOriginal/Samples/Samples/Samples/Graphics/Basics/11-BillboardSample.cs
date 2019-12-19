@@ -70,7 +70,7 @@ namespace Samples.Graphics
       // View plane-aligned billboards are rendered parallel to the screen.
       // The up-axis of the BillboardNode determines the up direction of the 
       // billboard.
-      var pose0 = new Pose(new Vector3F(-9, 1.0f, 1.5f));
+      var pose0 = new Pose(new Vector3(-9, 1.0f, 1.5f));
       var pose1 = pose0;
       var billboard = new ImageBillboard(texture);
       var billboardNode = new BillboardNode(billboard);
@@ -81,21 +81,21 @@ namespace Samples.Graphics
       pose1.Position.Z -= 1;
       billboardNode = new BillboardNode(billboard);
       billboardNode.PoseWorld = pose1;
-      billboardNode.Color = new Vector3F(1, 0, 0);
+      billboardNode.Color = new Vector3(1, 0, 0);
       billboardNode.Alpha = 0.9f;
       _scene.Children.Add(billboardNode);
 
       pose1.Position.Z -= 1;
       billboardNode = new BillboardNode(billboard);
       billboardNode.PoseWorld = pose1;
-      billboardNode.Color = new Vector3F(0, 1, 0);
+      billboardNode.Color = new Vector3(0, 1, 0);
       billboardNode.Alpha = 0.7f;
       _scene.Children.Add(billboardNode);
 
       pose1.Position.Z -= 1;
       billboardNode = new BillboardNode(billboard);
       billboardNode.PoseWorld = pose1;
-      billboardNode.Color = new Vector3F(0, 0, 1);
+      billboardNode.Color = new Vector3(0, 0, 1);
       billboardNode.Alpha = 0.3f;
       _scene.Children.Add(billboardNode);
 
@@ -171,28 +171,28 @@ namespace Samples.Graphics
       billboardNode = new BillboardNode(billboard);
       billboardNode.Name = "View plane-aligned\nVarying scale\nVarying rotation";
       billboardNode.PoseWorld = pose1;
-      billboardNode.ScaleLocal = new Vector3F(0.4f);
+      billboardNode.ScaleLocal = new Vector3(0.4f);
       _scene.Children.Add(billboardNode);
 
       pose1.Position.Z -= 1;
       billboardNode = billboardNode.Clone();
       billboardNode.Name = null;
-      billboardNode.PoseWorld = pose1 * new Pose(Matrix33F.CreateRotationZ(MathHelper.ToRadians(-15)));
-      billboardNode.ScaleLocal = new Vector3F(0.6f);
+      billboardNode.PoseWorld = pose1 * new Pose(Matrix.CreateRotationZ(MathHelper.ToRadians(-15)));
+      billboardNode.ScaleLocal = new Vector3(0.6f);
       _scene.Children.Add(billboardNode);
 
       pose1.Position.Z -= 1;
       billboardNode = billboardNode.Clone();
       billboardNode.Name = null;
-      billboardNode.PoseWorld = pose1 * new Pose(Matrix33F.CreateRotationZ(MathHelper.ToRadians(-30)));
-      billboardNode.ScaleLocal = new Vector3F(0.8f);
+      billboardNode.PoseWorld = pose1 * new Pose(Matrix.CreateRotationZ(MathHelper.ToRadians(-30)));
+      billboardNode.ScaleLocal = new Vector3(0.8f);
       _scene.Children.Add(billboardNode);
 
       pose1.Position.Z -= 1;
       billboardNode = billboardNode.Clone();
       billboardNode.Name = null;
-      billboardNode.PoseWorld = pose1 * new Pose(Matrix33F.CreateRotationZ(MathHelper.ToRadians(-45)));
-      billboardNode.ScaleLocal = new Vector3F(1.0f);
+      billboardNode.PoseWorld = pose1 * new Pose(Matrix.CreateRotationZ(MathHelper.ToRadians(-45)));
+      billboardNode.ScaleLocal = new Vector3(1.0f);
       _scene.Children.Add(billboardNode);
 
       // ----- Viewpoint-oriented billboards
@@ -309,7 +309,7 @@ namespace Samples.Graphics
       // orientation is determine by the BillboardNode.
       pose0.Position.X += 2;
       pose1 = pose0;
-      pose1.Orientation *= Matrix33F.CreateRotationY(0.2f);
+      pose1.Orientation *= Matrix.CreateRotationY(0.2f);
       billboard = new ImageBillboard(texture);
       billboard.Orientation = BillboardOrientation.WorldOriented;
       billboardNode = new BillboardNode(billboard);
@@ -318,21 +318,21 @@ namespace Samples.Graphics
       _scene.Children.Add(billboardNode);
 
       pose1.Position.Z -= 1;
-      pose1.Orientation *= Matrix33F.CreateRotationY(0.2f);
+      pose1.Orientation *= Matrix.CreateRotationY(0.2f);
       billboardNode = new BillboardNode(billboard);
-      billboardNode.PoseWorld = pose1 * new Pose(Matrix33F.CreateRotationZ(MathHelper.ToRadians(15)));
+      billboardNode.PoseWorld = pose1 * new Pose(Matrix.CreateRotationZ(MathHelper.ToRadians(15)));
       _scene.Children.Add(billboardNode);
 
       pose1.Position.Z -= 1;
-      pose1.Orientation *= Matrix33F.CreateRotationY(0.2f);
+      pose1.Orientation *= Matrix.CreateRotationY(0.2f);
       billboardNode = new BillboardNode(billboard);
-      billboardNode.PoseWorld = pose1 * new Pose(Matrix33F.CreateRotationZ(MathHelper.ToRadians(30)));
+      billboardNode.PoseWorld = pose1 * new Pose(Matrix.CreateRotationZ(MathHelper.ToRadians(30)));
       _scene.Children.Add(billboardNode);
 
       pose1.Position.Z -= 1;
-      pose1.Orientation *= Matrix33F.CreateRotationY(0.2f);
+      pose1.Orientation *= Matrix.CreateRotationY(0.2f);
       billboardNode = new BillboardNode(billboard);
-      billboardNode.PoseWorld = pose1 * new Pose(Matrix33F.CreateRotationZ(MathHelper.ToRadians(45)));
+      billboardNode.PoseWorld = pose1 * new Pose(Matrix.CreateRotationZ(MathHelper.ToRadians(45)));
       _scene.Children.Add(billboardNode);
 
       // ----- Animated billboards
@@ -363,7 +363,7 @@ namespace Samples.Graphics
 
       // Use DebugRenderer to draw node names above billboard nodes.
       foreach (var node in _scene.GetDescendants().OfType<BillboardNode>())
-        _debugRenderer.DrawText(node.Name, node.PoseWorld.Position + new Vector3F(0, 1, 0), new Vector2F(0.5f), Color.Yellow, false);
+        _debugRenderer.DrawText(node.Name, node.PoseWorld.Position + new Vector3(0, 1, 0), new Vector2F(0.5f), Color.Yellow, false);
     }
 
 

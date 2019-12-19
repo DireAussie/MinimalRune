@@ -3,9 +3,9 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX
+
 using System.Runtime.Serialization;
-#endif
+
 
 
 namespace DigitalRune.Game.UI
@@ -13,9 +13,9 @@ namespace DigitalRune.Game.UI
   /// <summary>
   /// Occurs when an exception in the game UI occurs.
   /// </summary>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !PORTABLE
+
   [Serializable]
-#endif
+
   public class UIException : Exception
   {
     /// <overloads>
@@ -58,7 +58,7 @@ namespace DigitalRune.Game.UI
     }
 
 
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !PORTABLE
+
     /// <summary>
     /// Initializes a new instance of the <see cref="UIException"/> class with serialized data.
     /// </summary>
@@ -80,6 +80,6 @@ namespace DigitalRune.Game.UI
       : base(info, context)
     {
     }
-#endif
+
   }
 }

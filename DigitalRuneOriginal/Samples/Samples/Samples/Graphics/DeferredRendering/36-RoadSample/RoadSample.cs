@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8 && !XBOX
+﻿
 using System.Linq;
 using DigitalRune.Geometry;
 using DigitalRune.Geometry.Shapes;
@@ -53,7 +53,7 @@ This sample also uses the vehicle of one of the vehicle samples.",
 
       // Add a custom game object which controls the camera.
       var cameraGameObject = new CameraObject(Services, 5000);
-      cameraGameObject.ResetPose(new Vector3F(0, 2, 5), 0, 0);
+      cameraGameObject.ResetPose(new Vector3(0, 2, 5), 0, 0);
       GameObjectService.Objects.Add(cameraGameObject);
 
       // Add the vehicle object from the vehicle sample.
@@ -119,8 +119,8 @@ This sample also uses the vehicle of one of the vehicle samples.",
       // The road itself is defined by a mesh which is set later.
       _roadLayer = new TerrainRoadLayer(GraphicsService)
       {
-        DiffuseColor = new Vector3F(0.5f),
-        SpecularColor = new Vector3F(1),
+        DiffuseColor = new Vector3(0.5f),
+        SpecularColor = new Vector3(1),
         DiffuseTexture = ContentManager.Load<Texture2D>("Terrain/Road-Asphalt-Diffuse"),
         NormalTexture = ContentManager.Load<Texture2D>("Terrain/Road-Asphalt-Normal"),
         SpecularTexture = ContentManager.Load<Texture2D>("Terrain/Road-Asphalt-Specular"),
@@ -143,13 +143,13 @@ This sample also uses the vehicle of one of the vehicle samples.",
       };
 
       // The position of the next path key.
-      Vector3F position = new Vector3F(
+      Vector3 position = new Vector3(
         RandomHelper.Random.NextFloat(-20, 20),
         0,
         RandomHelper.Random.NextFloat(-20, 20));
 
       // The direction to the next path key.
-      Vector3F direction = QuaternionF.CreateRotationY(RandomHelper.Random.NextFloat(0, 10)).Rotate(Vector3F.Forward);
+      Vector3 direction = Quaternion.CreateRotationY(RandomHelper.Random.NextFloat(0, 10)).Rotate(Vector3.Forward);
 
       // Add path keys.
       for (int j = 0; j < 10; j++)
@@ -175,7 +175,7 @@ This sample also uses the vehicle of one of the vehicle samples.",
         // Get next random position and direction.
         position += direction * RandomHelper.Random.NextFloat(20, 40);
         position.Y += RandomHelper.Random.NextFloat(-2, 2);
-        direction = QuaternionF.CreateRotationY(RandomHelper.Random.NextFloat(-1, 1))
+        direction = Quaternion.CreateRotationY(RandomHelper.Random.NextFloat(-1, 1))
                                .Rotate(direction);
       }
 
@@ -281,7 +281,7 @@ This sample also uses the vehicle of one of the vehicle samples.",
       _graphicsScreen.DebugRenderer.Clear();
 
       // Visualize the road path for debugging.
-      //Vector3F? lastPoint = null;
+      //Vector3? lastPoint = null;
       //foreach (var key in _roadPath)
       //{
       //  _graphicsScreen.DebugRenderer.DrawAxes(new Pose(key.Point), 1, false);
@@ -294,4 +294,4 @@ This sample also uses the vehicle of one of the vehicle samples.",
     }
   }
 }
-#endif
+

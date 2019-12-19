@@ -45,11 +45,11 @@ namespace DigitalRune.Windows.Charts.Interactivity
             "Color",
             typeof(Color),
             typeof(MouseGuidesBehavior),
-#if SILVERLIGHT
+
             new PropertyMetadata(Color.FromArgb(196, 0, 0, 0), OnPropertyChanged));
 #else
             new PropertyMetadata(Color.FromArgb(255, 0, 0, 0), OnPropertyChanged));
-#endif
+
 
         /// <summary>
         /// Gets or sets the color of the lines.
@@ -58,9 +58,9 @@ namespace DigitalRune.Windows.Charts.Interactivity
         /// <value>The color of the lines.</value>
         [Description("Gets or sets the color of the lines.")]
         [Category(Categories.Appearance)]
-#if !SILVERLIGHT
+
         [TypeConverter(typeof(ColorConverter))]
-#endif
+
         public Color Color
         {
             get { return (Color)GetValue(ColorProperty); }
@@ -101,11 +101,11 @@ namespace DigitalRune.Windows.Charts.Interactivity
             "Thickness",
             typeof(double),
             typeof(MouseGuidesBehavior),
-#if SILVERLIGHT
+
             new PropertyMetadata(1.0, OnPropertyChanged));
 #else
             new PropertyMetadata(0.8, OnPropertyChanged));
-#endif
+
 
         /// <summary>
         /// Gets or sets the thickness of the lines.
@@ -254,13 +254,13 @@ namespace DigitalRune.Windows.Charts.Interactivity
                 };
 
                 // Position lines in front.
-#if SILVERLIGHT
+
                 Canvas.SetZIndex(_horizontalLine, 1000);
                 Canvas.SetZIndex(_verticalLine, 1000);
 #else
                 Panel.SetZIndex(_horizontalLine, 1000);
                 Panel.SetZIndex(_verticalLine, 1000);
-#endif
+
 
                 // Add lines to canvas.
                 chartPanel.Children.Add(_horizontalLine);
@@ -275,9 +275,9 @@ namespace DigitalRune.Windows.Charts.Interactivity
         private SolidColorBrush GetStrokeBrush()
         {
             var stroke = new SolidColorBrush(Color);
-#if !SILVERLIGHT
+
             stroke.Freeze();
-#endif
+
             return stroke;
         }
 

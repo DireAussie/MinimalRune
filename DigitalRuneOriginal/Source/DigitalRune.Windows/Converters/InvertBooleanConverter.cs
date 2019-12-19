@@ -13,9 +13,9 @@ namespace DigitalRune.Windows
     /// <summary>
     /// Inverts a <see cref="bool"/> value.
     /// </summary>
-#if !SILVERLIGHT && !WINDOWS_PHONE
+
     [ValueConversion(typeof(object), typeof(bool))]
-#endif
+
     public class InvertBooleanConverter : IValueConverter
     {
         /// <summary>

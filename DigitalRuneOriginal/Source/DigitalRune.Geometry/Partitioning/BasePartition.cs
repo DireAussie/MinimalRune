@@ -747,7 +747,7 @@ namespace DigitalRune.Geometry.Partitioning
           bool rebuild = forceRebuild || _needsRebuild;
 
           // Set invalid aabb.
-          _aabb = new Aabb(Vector3F.One, Vector3F.Zero);
+          _aabb = new Aabb(Vector3.One, Vector3.Zero);
           Debug.Assert(_aabb.Minimum > _aabb.Maximum);
 
           EnsureSet(ref _addedItems);

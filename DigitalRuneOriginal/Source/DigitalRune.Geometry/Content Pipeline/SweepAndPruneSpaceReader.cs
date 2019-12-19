@@ -14,7 +14,7 @@ namespace DigitalRune.Geometry.Content
   /// <typeparam name="T">The type of item in the spatial partition.</typeparam>
   public class SweepAndPruneSpaceReader<T> : ContentTypeReader<SweepAndPruneSpace<T>>
   {
-#if !MONOGAME
+
     /// <summary>
     /// Determines if deserialization into an existing object is possible.
     /// </summary>
@@ -26,7 +26,7 @@ namespace DigitalRune.Geometry.Content
     {
       get { return true; }
     }
-#endif
+
 
 
     /// <summary>

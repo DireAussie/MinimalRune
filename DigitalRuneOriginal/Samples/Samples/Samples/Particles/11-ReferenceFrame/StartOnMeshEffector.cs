@@ -11,7 +11,7 @@ namespace Samples.Particles
   // triangle mesh. The start positions are transformed by the particle system's pose.
   public class StartOnMeshEffector : ParticleEffector
   {
-    private IParticleParameter<Vector3F> _parameter;
+    private IParticleParameter<Vector3> _parameter;
 
     [ParticleParameter(ParticleParameterUsage.Out)]
     public string Parameter { get; set; }
@@ -48,7 +48,7 @@ namespace Samples.Particles
 
     protected override void OnRequeryParameters()
     {
-      _parameter = ParticleSystem.Parameters.Get<Vector3F>(Parameter);
+      _parameter = ParticleSystem.Parameters.Get<Vector3>(Parameter);
     }
 
 
@@ -113,10 +113,10 @@ namespace Samples.Particles
     }
 
 
-    private Vector3F GetRandomPositionOnMesh()
+    private Vector3 GetRandomPositionOnMesh()
     {
       if (Mesh == null)
-        return new Vector3F();
+        return new Vector3();
 
       int numberOfTriangles = Mesh.NumberOfTriangles;
 

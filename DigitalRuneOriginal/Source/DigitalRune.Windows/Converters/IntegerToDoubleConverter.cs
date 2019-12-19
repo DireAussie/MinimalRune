@@ -14,9 +14,9 @@ namespace DigitalRune.Windows
     /// Converts a floating-point double precision <see cref="double"/> to an integer 
     /// (<see cref="byte"/>, <see cref="short"/>, <see cref="int"/>, etc.) and back.
     /// </summary>
-#if !SILVERLIGHT && !WINDOWS_PHONE
+
     //[ValueConversion(typeof(int), typeof(double))]
-#endif
+
     public class IntegerToDoubleConverter : IValueConverter
     {
         /// <summary>

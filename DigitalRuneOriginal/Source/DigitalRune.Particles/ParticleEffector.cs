@@ -5,9 +5,9 @@
 using System;
 using System.Diagnostics;
 
-#if XNA || MONOGAME
+
 using Microsoft.Xna.Framework.Content;
-#endif
+
 
 
 namespace DigitalRune.Particles
@@ -98,9 +98,9 @@ namespace DigitalRune.Particles
     /// Cannot change the name because the particle effector has already been added to a particle 
     /// system.
     /// </exception>
-#if XNA || MONOGAME
+
     [ContentSerializer(Optional = true)]
-#endif
+
     public string Name
     {
       get { return _name; }
@@ -126,9 +126,9 @@ namespace DigitalRune.Particles
     /// This property is automatically set when the effector is added to a particle system (see
     /// property <see cref="DigitalRune.Particles.ParticleSystem.Effectors"/>).
     /// </remarks>
-#if XNA || MONOGAME
+
     [ContentSerializerIgnore]
-#endif
+
     public ParticleSystem ParticleSystem { get; set; }
 
 
@@ -144,9 +144,9 @@ namespace DigitalRune.Particles
     /// <see cref="OnBeginUpdate"/>, <see cref="OnUpdateParticles"/>, <see cref="OnEndUpdate"/> and 
     /// <see cref="OnInitializeParticles"/>.
     /// </remarks>
-#if XNA || MONOGAME
+
     [ContentSerializer(Optional = true)]
-#endif
+
     public bool Enabled { get; set; }
 
 

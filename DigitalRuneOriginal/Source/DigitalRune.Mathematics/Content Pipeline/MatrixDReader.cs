@@ -5,9 +5,9 @@
 using System;
 using System.Globalization;
 using DigitalRune.Mathematics.Algebra;
-#if XNA || MONOGAME
+
 using Microsoft.Xna.Framework.Content;
-#endif
+
 
 namespace DigitalRune.Mathematics.Content
 {

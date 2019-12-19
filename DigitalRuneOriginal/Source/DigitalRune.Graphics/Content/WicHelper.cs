@@ -132,9 +132,9 @@ namespace DigitalRune.Graphics.Content
 
       new WicTranslate(PixelFormat.FormatBlackWhite, DataFormat.R1_UNORM, false),
 
-#if DIRECTX11_1
+
       new WicTranslate(PixelFormat.Format96bppRGBFloat, DataFormat.R32G32B32_Float, false),
-#endif
+
     };
 
 
@@ -197,10 +197,10 @@ namespace DigitalRune.Graphics.Content
         case DataFormat.B8G8R8X8_UNORM_SRGB:
           return PixelFormat.Format32bppBGR;
 
-#if DIRECTX11_1
+
       case DataFormat.R32G32B32_Float:
           return PixelFormat.Format96bppRGBFloat;
-#endif
+
 
         default:
           for (int i = 0; i < WicFormats.Length; i++)
@@ -281,7 +281,7 @@ namespace DigitalRune.Graphics.Content
       new WICConvert(PixelFormat.Format40bppCMYKAlpha, PixelFormat.Format64bppRGBA), // DXGI_FORMAT_R16G16B16A16_UNORM
       new WICConvert(PixelFormat.Format80bppCMYKAlpha, PixelFormat.Format64bppRGBA), // DXGI_FORMAT_R16G16B16A16_UNORM
 
-#if DIRECTX11_1   // (_WIN32_WINNT >= _WIN32_WINNT_WIN8) || defined(_WIN7_PLATFORM_UPDATE)
+
                   // WIC2 is available on Windows 8 and Windows 7 SP1 with KB 2670838 installed
                   // SharpDX: ImagingFactory2 is only available in Windows 8 build.
       new WICConvert(PixelFormat.Format32bppRGB, PixelFormat.Format32bppRGBA ), // DXGI_FORMAT_R8G8B8A8_UNORM
@@ -290,7 +290,7 @@ namespace DigitalRune.Graphics.Content
       new WICConvert(PixelFormat.Format96bppRGBFixedPoint, PixelFormat.Format96bppRGBFloat ), // DXGI_FORMAT_R32G32B32_FLOAT
 #else
       new WICConvert(PixelFormat.Format96bppRGBFixedPoint, PixelFormat.Format128bppRGBAFloat), // DXGI_FORMAT_R32G32B32A32_FLOAT
-#endif
+
 
       // We don't support n-channel formats
     };

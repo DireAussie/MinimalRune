@@ -216,7 +216,7 @@ namespace DigitalRune.Graphics.Rendering
               // garbage when mipmaps are created.
               var cubeMapFace = (CubeMapFace)(5 - side);
               var position = cameraNode.PoseWorld.Position;
-              cameraNode.View = Matrix44F.CreateLookAt(
+              cameraNode.View = Matrix.CreateLookAt(
                 position,
                 position + originalCameraPose.ToWorldDirection(GraphicsHelper.GetCubeMapForwardDirection(cubeMapFace)),
                 originalCameraPose.ToWorldDirection(GraphicsHelper.GetCubeMapUpDirection(cubeMapFace)));

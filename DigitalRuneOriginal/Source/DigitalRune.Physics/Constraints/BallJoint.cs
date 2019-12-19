@@ -26,10 +26,10 @@ namespace DigitalRune.Physics.Constraints
     //--------------------------------------------------------------
 
     private float _deltaTime;
-    private Vector3F _anchorAWorld;
-    private Vector3F _anchorBWorld;
-    private Matrix33F _kInverse;
-    private Vector3F _targetVelocity;
+    private Vector3 _anchorAWorld;
+    private Vector3 _anchorBWorld;
+    private Matrix _kInverse;
+    private Vector3 _targetVelocity;
 
 
 
@@ -45,7 +45,7 @@ namespace DigitalRune.Physics.Constraints
     /// The constraint anchor position on <see cref="Constraint.BodyA"/> in local space of 
     /// <see cref="Constraint.BodyA"/>.
     /// </value>
-    public Vector3F AnchorPositionALocal
+    public Vector3 AnchorPositionALocal
     {
       get { return _anchorPositionALocal; }
       set
@@ -54,7 +54,7 @@ namespace DigitalRune.Physics.Constraints
         OnChanged();
       }
     }
-    private Vector3F _anchorPositionALocal;
+    private Vector3 _anchorPositionALocal;
 
 
     /// <summary>
@@ -65,7 +65,7 @@ namespace DigitalRune.Physics.Constraints
     /// The constraint anchor position on <see cref="Constraint.BodyB"/> in local space of 
     /// <see cref="Constraint.BodyB"/>.
     /// </value>
-    public Vector3F AnchorPositionBLocal
+    public Vector3 AnchorPositionBLocal
     {
       get { return _anchorPositionBLocal; }
       set
@@ -74,26 +74,26 @@ namespace DigitalRune.Physics.Constraints
         OnChanged();
       }
     }
-    private Vector3F _anchorPositionBLocal;
+    private Vector3 _anchorPositionBLocal;
 
 
     /// <inheritdoc/>
-    public override Vector3F LinearConstraintImpulse
+    public override Vector3 LinearConstraintImpulse
     {
       get
       {
         return _constraintImpulse;
       }
     }
-    private Vector3F _constraintImpulse;
+    private Vector3 _constraintImpulse;
 
 
     /// <inheritdoc/>
-    public override Vector3F AngularConstraintImpulse
+    public override Vector3 AngularConstraintImpulse
     {
       get
       {
-        return Vector3F.Zero;
+        return Vector3.Zero;
       }
     }
 
@@ -220,15 +220,15 @@ namespace DigitalRune.Physics.Constraints
     protected override bool OnApplyImpulse()
     {
       // Compute relative velocity.
-      Vector3F vA = BodyA.GetVelocityOfWorldPoint(_anchorAWorld);
-      Vector3F vB = BodyB.GetVelocityOfWorldPoint(_anchorBWorld);
-      Vector3F relativeVelocity = (vB - vA);
+      Vector3 vA = BodyA.GetVelocityOfWorldPoint(_anchorAWorld);
+      Vector3 vB = BodyB.GetVelocityOfWorldPoint(_anchorBWorld);
+      Vector3 relativeVelocity = (vB - vA);
 
       // Compute constraint impulse.
-      Vector3F impulse = _kInverse * (_targetVelocity - relativeVelocity - Softness / _deltaTime * _constraintImpulse);
+      Vector3 impulse = _kInverse * (_targetVelocity - relativeVelocity - Softness / _deltaTime * _constraintImpulse);
 
       // Impulse accumulation and clamping.
-      Vector3F oldConstraintImpulse = _constraintImpulse;
+      Vector3 oldConstraintImpulse = _constraintImpulse;
       _constraintImpulse += impulse;
       float impulseMagnitude = _constraintImpulse.Length;
       float maxImpulseMagnitude = MaxForce * _deltaTime;
@@ -250,7 +250,7 @@ namespace DigitalRune.Physics.Constraints
     protected override void OnChanged()
     {
       // Delete cached data.
-      _constraintImpulse = Vector3F.Zero;
+      _constraintImpulse = Vector3.Zero;
 
       base.OnChanged();
     }

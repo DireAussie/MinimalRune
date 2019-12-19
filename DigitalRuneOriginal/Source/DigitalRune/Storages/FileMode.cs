@@ -1,4 +1,4 @@
-﻿#if STORAGE_READ_WRITE
+﻿
 
 // DigitalRune Engine - Copyright (C) DigitalRune GmbH
 // This file is subject to the terms and conditions defined in
@@ -72,4 +72,4 @@ namespace DigitalRune.Storages
     Append = 6,
   }
 }
-#endif
+

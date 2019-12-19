@@ -34,7 +34,7 @@ namespace Samples.Particles
       };
 
       // This EmitterVelocity parameter can be used by all child particle systems.
-      Parameters.AddUniform<Vector3F>(ParticleParameterNames.EmitterVelocity);
+      Parameters.AddUniform<Vector3>(ParticleParameterNames.EmitterVelocity);
 
       // The ParticleSystemRecycler recycles this instance into the resource pool when all 
       // particles are dead.

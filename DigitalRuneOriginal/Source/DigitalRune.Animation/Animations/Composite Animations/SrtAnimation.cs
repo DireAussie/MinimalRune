@@ -6,9 +6,9 @@ using System;
 using DigitalRune.Animation.Character;
 using DigitalRune.Animation.Traits;
 using DigitalRune.Mathematics.Algebra;
-#if XNA || MONOGAME
+
 using Microsoft.Xna.Framework.Content;
-#endif
+
 
 
 namespace DigitalRune.Animation
@@ -40,30 +40,30 @@ namespace DigitalRune.Animation
     /// Gets or sets the animation of the <see cref="SrtTransform.Scale"/> value.
     /// </summary>
     /// <value>The animation of the <see cref="SrtTransform.Scale"/> value.</value>
-#if XNA || MONOGAME
+
     [ContentSerializer(SharedResource = true)]
-#endif
-    public IAnimation<Vector3F> Scale { get; set; }
+
+    public IAnimation<Vector3> Scale { get; set; }
 
 
     /// <summary>
     /// Gets or sets the animation of the <see cref="SrtTransform.Rotation"/> value.
     /// </summary>
     /// <value>The animation of the <see cref="SrtTransform.Rotation"/> value.</value>
-#if XNA || MONOGAME
+
     [ContentSerializer(SharedResource = true)]
-#endif
-    public IAnimation<QuaternionF> Rotation { get; set; }
+
+    public IAnimation<Quaternion> Rotation { get; set; }
 
 
     /// <summary>
     /// Gets or sets the animation of the <see cref="SrtTransform.Translation"/> value.
     /// </summary>
     /// <value>The animation of the <see cref="SrtTransform.Translation"/> value.</value>
-#if XNA || MONOGAME
+
     [ContentSerializer(SharedResource = true)]
-#endif
-    public IAnimation<Vector3F> Translation { get; set; }
+
+    public IAnimation<Vector3> Translation { get; set; }
 
 
 
@@ -92,7 +92,7 @@ namespace DigitalRune.Animation
     /// <param name="scale">The animation of the <see cref="SrtTransform.Scale"/> component.</param>
     /// <param name="rotation">The animation of the <see cref="SrtTransform.Rotation"/> component.</param>
     /// <param name="translation">The animation of the <see cref="SrtTransform.Translation"/> component.</param>
-    public SrtAnimation(IAnimation<Vector3F> scale, IAnimation<QuaternionF> rotation, IAnimation<Vector3F> translation)
+    public SrtAnimation(IAnimation<Vector3> scale, IAnimation<Quaternion> rotation, IAnimation<Vector3> translation)
     {
       Scale = scale;
       Rotation = rotation;

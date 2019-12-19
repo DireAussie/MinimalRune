@@ -47,11 +47,11 @@ struct PixelShaderInput
 {
   float4 Color : COLOR0;
   float2 TextureCoordinate : TEXCOORD0;
-#if SM4
+
   float4 VPos : SV_Position;
 #else
   float2 VPos : VPOS;
-#endif
+
 };
 
 
@@ -138,22 +138,22 @@ float4 PixelShaderFunction(PixelShaderInput input) : COLOR0
 
 // For rendering without instancing.
 technique Default
-#if !MGFX
+
 <
   // There is an equivalent of this technique that supports hardware instancing.
   string InstancingTechnique = "DefaultInstancing";
 >
-#endif
+
 {
   pass 
   {
-#if !SM4
+
     VertexShader = compile vs_3_0 NoInstancingVertexShader();
     PixelShader = compile ps_3_0 PixelShaderFunction();
 #else
     VertexShader = compile vs_4_0 NoInstancingVertexShader();
     PixelShader = compile ps_4_0 PixelShaderFunction();
-#endif
+
   }
 }
 
@@ -163,12 +163,12 @@ technique DefaultInstancing
 {
   pass 
   {
-#if !SM4
+
     VertexShader = compile vs_3_0 HardwareInstancingVertexShader();
     PixelShader = compile ps_3_0 PixelShaderFunction();
 #else
     VertexShader = compile vs_4_0 HardwareInstancingVertexShader();
     PixelShader = compile ps_4_0 PixelShaderFunction();
-#endif
+
   }
 }

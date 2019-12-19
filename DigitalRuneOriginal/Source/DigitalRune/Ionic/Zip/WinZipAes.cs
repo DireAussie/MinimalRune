@@ -14,7 +14,7 @@
 //
 // ------------------------------------------------------------------
 
-#if AESCRYPTO
+
 using System;
 using System.IO;
 using System.Security.Cryptography;
@@ -533,4 +533,4 @@ namespace DigitalRune.Ionic.Zip
         }
     }
 }
-#endif
+

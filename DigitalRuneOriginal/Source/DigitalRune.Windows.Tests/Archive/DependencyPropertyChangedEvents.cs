@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-#if NETFX_CORE || WINDOWS_PHONE
+
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 using TestFixtureAttribute = Microsoft.VisualStudio.TestPlatform.UnitTestFramework.TestClassAttribute;
 using TestFixtureSetUp = Microsoft.VisualStudio.TestPlatform.UnitTestFramework.ClassInitializeAttribute;
@@ -10,7 +10,7 @@ using TearDownAttribute = Microsoft.VisualStudio.TestPlatform.UnitTestFramework.
 using TestAttribute = Microsoft.VisualStudio.TestPlatform.UnitTestFramework.TestMethodAttribute;
 #else
 using NUnit.Framework;
-#endif
+
 
 
 namespace DigitalRune.Windows.Tests
@@ -54,7 +54,7 @@ namespace DigitalRune.Windows.Tests
     }
 
 
-#if !SILVERLIGHT && !WINDOWS_PHONE
+
     [TestFixture]
     public class DependencyPropertyChangedEventsTest_WPF
     {
@@ -80,5 +80,5 @@ namespace DigitalRune.Windows.Tests
             Assert.IsTrue(eventHandlerCalled);
         }
     }
-#endif
+
 }

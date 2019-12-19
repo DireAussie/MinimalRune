@@ -294,7 +294,7 @@ namespace DigitalRune.Animation.Character
       directionA = SkeletonMapper.RotationOffset.Rotate(directionA);
 
       // Compute and apply rotation between the two direction vectors.
-      var rotation = QuaternionF.CreateRotation(directionB, directionA);
+      var rotation = Quaternion.CreateRotation(directionB, directionA);
       skeletonInstanceB.RotateBoneAbsolute(RootBoneIndexB, rotation);
     }
 
@@ -332,7 +332,7 @@ namespace DigitalRune.Animation.Character
 
       directionB = SkeletonMapper.RotationOffset.Conjugated.Rotate(directionB);
 
-      var rotation = QuaternionF.CreateRotation(directionA, directionB);
+      var rotation = Quaternion.CreateRotation(directionA, directionB);
       skeletonInstanceA.RotateBoneAbsolute(RootBoneIndexA, rotation);
     }
 

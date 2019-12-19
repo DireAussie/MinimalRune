@@ -57,7 +57,7 @@
 */
 
 
-#if !NETFX_CORE && !PORTABLE && !USE_TPL
+
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -127,7 +127,7 @@ namespace DigitalRune.Threading
     private int IncrementIndex()
     {
 #pragma warning disable 0420
-#if !SILVERLIGHT && !WP7 && !XBOX
+
         return Interlocked.Add(ref _index, _stride) - _stride;
 #else
       // Important: Interlocked.Add() does exist in .NET Compact Framework. But it does not work
@@ -138,7 +138,7 @@ namespace DigitalRune.Threading
         x = _index;
       } while (Interlocked.CompareExchange(ref _index, x + _stride, x) != x);
       return x;
-#endif
+
     }
   }
 
@@ -212,4 +212,4 @@ namespace DigitalRune.Threading
     }
   }
 }
-#endif
+

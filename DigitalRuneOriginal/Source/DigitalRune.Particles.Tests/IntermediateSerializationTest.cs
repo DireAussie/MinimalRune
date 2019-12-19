@@ -49,7 +49,7 @@ namespace DigitalRune.Particles.Tests
       Assert.IsTrue(udd0.MinValue == udd1.MinValue);
       Assert.IsTrue(udd0.MaxValue == udd1.MaxValue);
 
-      var cdd0 = new DirectionDistribution { Deviation = 1.001f, Direction = new Vector3F(1, 2, 3) };
+      var cdd0 = new DirectionDistribution { Deviation = 1.001f, Direction = new Vector3(1, 2, 3) };
       var cdd1 = Serialize(cdd0);
       Assert.IsTrue(cdd0.Deviation == cdd1.Deviation);
       Assert.IsTrue(cdd0.Direction == cdd1.Direction);
@@ -84,7 +84,7 @@ namespace DigitalRune.Particles.Tests
         PreloadDuration = new TimeSpan(893274893457389),
         ReferenceFrame = ParticleReferenceFrame.Local,
         TimeScaling = 1.2f,
-        Pose = new Pose(new Vector3F(1, 2, 3), new QuaternionF(1, 2, 3, 5).Normalized),
+        Pose = new Pose(new Vector3(1, 2, 3), new Quaternion(1, 2, 3, 5).Normalized),
         Random = new Random(123),
         RenderData = 123,
         UserData = "aslfjk",
@@ -144,12 +144,12 @@ namespace DigitalRune.Particles.Tests
 
       // ----- Children property.
       ps0 = new ParticleSystem();
-      ps0.Parameters.AddUniform<Vector3F>("Vector").DefaultValue = new Vector3F(1, 2, 3);
+      ps0.Parameters.AddUniform<Vector3>("Vector").DefaultValue = new Vector3(1, 2, 3);
       ps0.Parameters.AddVarying<float>("Strength");
       ps1 = Serialize(ps0);
       Assert.IsTrue(ps1.Parameters.Count() == 2);
       Assert.IsTrue(ps1.Parameters.ToArray()[0].Name == "Vector");
-      Assert.IsTrue(ps1.Parameters.Get<Vector3F>("Vector").DefaultValue == new Vector3F(1, 2, 3));
+      Assert.IsTrue(ps1.Parameters.Get<Vector3>("Vector").DefaultValue == new Vector3(1, 2, 3));
       Assert.IsTrue(ps1.Parameters.ToArray()[1].Name == "Strength");
     }
   }

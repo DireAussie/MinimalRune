@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !NETFX_CORE && !WP7 && !XBOX
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -430,11 +430,11 @@ namespace DigitalRune.Geometry.Meshes
       }
 
       // Initialize vertex normals.
-      var normals = new Vector3F[triangleMesh.Vertices.Count];    // Vertex normals.
+      var normals = new Vector3[triangleMesh.Vertices.Count];    // Vertex normals.
       var neighborCounts = new int[triangleMesh.Vertices.Count];  // Numbers of triangles that touch each vertex.
       for (int i = 0; i < triangleMesh.Vertices.Count; i++)
       {
-        normals[i] = Vector3F.Zero;
+        normals[i] = Vector3.Zero;
         neighborCounts[i] = 0;
       }
 
@@ -740,4 +740,4 @@ namespace DigitalRune.Geometry.Meshes
 
   }
 }
-#endif
+

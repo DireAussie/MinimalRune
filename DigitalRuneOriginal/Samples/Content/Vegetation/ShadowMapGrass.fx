@@ -175,11 +175,11 @@ float4 PS(PSInput input, uniform int depthType, uniform int smType) : COLOR
   }
   else if (smType == SMTypeVsm)
   {
-#if VSM_BIAS
+
     bool useBias = true;
 #else
     bool useBias = false;
-#endif
+
     float2 moments = GetDepthMoments(depth, useBias);
     return float4(moments.x, moments.y, 0, 1);
   }
@@ -214,7 +214,7 @@ float4 PSLinearDefault(PSInput input) : COLOR { return PS(input, DepthTypeLinear
 // Techniques
 //-----------------------------------------------------------------------------
 
-#if !SM4
+
 #define VSTARGET_2_0 vs_2_0
 #define PSTARGET_2_0 ps_2_0
 #define VSTARGET_3_0 vs_3_0
@@ -224,13 +224,13 @@ float4 PSLinearDefault(PSInput input) : COLOR { return PS(input, DepthTypeLinear
 #define PSTARGET_2_0 ps_4_0_level_9_1
 #define VSTARGET_3_0 vs_4_0_level_9_3
 #define PSTARGET_3_0 ps_4_0_level_9_3
-#endif
+
 
 
 technique Default
-#if !MGFX
+
 < string InstancingTechnique = "DefaultInstancing"; >
-#endif
+
 {
   pass
   {
@@ -253,9 +253,9 @@ technique DefaultInstancing
 
 
 technique Directional
-#if !MGFX
+
 < string InstancingTechnique = "DirectionalInstancing"; >
-#endif
+
 {
   pass
   {
@@ -278,9 +278,9 @@ technique DirectionalInstancing
 
 
 technique DirectionalVsm
-#if !MGFX
+
 < string InstancingTechnique = "DirectionalVsmInstancing"; >
-#endif
+
 {
   pass
   {
@@ -303,9 +303,9 @@ technique DirectionalVsmInstancing
 
 
 technique Omnidirectional
-#if !MGFX
+
 < string InstancingTechnique = "OmnidirectionalInstancing"; >
-#endif
+
 {
   pass
   {

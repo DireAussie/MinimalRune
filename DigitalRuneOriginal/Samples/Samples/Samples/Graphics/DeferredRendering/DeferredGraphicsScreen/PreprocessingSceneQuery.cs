@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using System.Collections.Generic;
 using DigitalRune.Graphics;
 using DigitalRune.Graphics.SceneGraph;
@@ -47,10 +47,10 @@ namespace Samples.Graphics
 
       for (int i = 0; i < nodes.Count; i++)
       {
-#if !XBOX360
+
         if (nodes[i] is TerrainNode)
           TerrainNodes.Add(nodes[i]);
-#endif
+
         if (nodes[i] is CloudLayerNode)
           CloudLayerNodes.Add(nodes[i]);
         else if (nodes[i] is WaterNode)
@@ -63,4 +63,3 @@ namespace Samples.Graphics
     }
   }
 }
-#endif

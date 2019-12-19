@@ -202,9 +202,9 @@ namespace DigitalRune.Windows.Charts
         /// major tick will be placed at <see cref="MinDateTime"/>. All subsequent ticks will be
         /// placed at a distance of <see cref="MajorTickStep"/>.
         /// </remarks>
-#if !SILVERLIGHT
+
         [TypeConverter(typeof(TimeSpanConverter))]
-#endif
+
         public TimeSpan MajorTickStep
         {
             get { return _majorTickStepAsTimeSpan; }
@@ -260,9 +260,9 @@ namespace DigitalRune.Windows.Charts
         /// Gets the <see cref="AxisScale.Min"/> limit as a <see cref="DateTime"/> value.
         /// </summary>
         /// <value>The <see cref="AxisScale.Min"/> as a <see cref="DateTime"/> value.</value>
-#if !SILVERLIGHT
+
         [TypeConverter(typeof(DateTimeConverter))]
-#endif
+
         public DateTime MinDateTime
         {
             get { return _rangeDateTime.Min; }
@@ -273,9 +273,9 @@ namespace DigitalRune.Windows.Charts
         /// Gets the <see cref="AxisScale.Max"/> limit as a <see cref="DateTime"/> value.
         /// </summary>
         /// <value>The <see cref="AxisScale.Max"/> as a <see cref="DateTime"/> value.</value>
-#if !SILVERLIGHT
+
         [TypeConverter(typeof(DateTimeConverter))]
-#endif
+
         public DateTime MaxDateTime
         {
             get { return _rangeDateTime.Max; }
@@ -348,10 +348,10 @@ namespace DigitalRune.Windows.Charts
             get { return _timeZone; }
             set
             {
-#if SILVERLIGHT
+
                 if (value != null && value != TimeZoneInfo.Local && value != TimeZoneInfo.Utc)
                     throw new ArgumentException("TimeZone must be either Local, Utc or null.", "value");
-#endif
+
                 // ReSharper disable once PossibleUnintendedReferenceComparison
                 if (_timeZone == value)
                     return;
@@ -934,7 +934,7 @@ namespace DigitalRune.Windows.Charts
             // Add half an hour for rounding.
             localTime = localTime.AddMinutes(30);
 
-#if SILVERLIGHT
+
             // Silverlight supports only conversion Local <-> UTC:
             localTime = new DateTime(localTime.Year, localTime.Month, localTime.Day, localTime.Hour, 0, 0, DateTimeKind.Local);
             while (timeZone.IsInvalidTime(localTime))
@@ -995,7 +995,7 @@ namespace DigitalRune.Windows.Charts
             {
                 time = TimeZoneInfo.ConvertTime(localTime, timeZone, TimeZoneInfo.Utc);
             }
-#endif
+
 
             return time;
         }
@@ -1032,7 +1032,7 @@ namespace DigitalRune.Windows.Charts
             // Add a half day for safety.
             localTime = localTime.AddHours(12);
 
-#if SILVERLIGHT
+
             // Silverlight supports only conversion Local <-> UTC:
             localTime = new DateTime(localTime.Year, localTime.Month, localTime.Day, 0, 0, 0, DateTimeKind.Local);
             while (timeZone.IsInvalidTime(localTime))
@@ -1045,7 +1045,7 @@ namespace DigitalRune.Windows.Charts
                 localTime = localTime.AddHours(1);
 
             time = TimeZoneInfo.ConvertTime(localTime, timeZone, TimeZoneInfo.Utc);
-#endif
+
 
             return time;
         }
@@ -1072,7 +1072,7 @@ namespace DigitalRune.Windows.Charts
             // Add a half month for safety and then round down. (See RoundToYear for comments.)
             time = time.AddDays(15);
 
-#if SILVERLIGHT
+
             // Silverlight supports only conversion Local <-> UTC:
             var localTime = new DateTime(time.Year, time.Month, 1, 0, 0, 0, DateTimeKind.Local);
             while (timeZone.IsInvalidTime(localTime))
@@ -1085,7 +1085,7 @@ namespace DigitalRune.Windows.Charts
                 localTime = localTime.AddHours(1);
 
             time = TimeZoneInfo.ConvertTime(localTime, timeZone, TimeZoneInfo.Utc);
-#endif
+
 
             return time;
         }
@@ -1114,7 +1114,7 @@ namespace DigitalRune.Windows.Charts
             // month for safety and then round down.
             time = time.AddMonths(1);
 
-#if SILVERLIGHT
+
             // Silverlight supports only conversion Local <-> UTC:
             var localTime = new DateTime(time.Year, 1, 1, 0, 0, 0, DateTimeKind.Local);
 
@@ -1135,7 +1135,7 @@ namespace DigitalRune.Windows.Charts
                 localTime = localTime.AddHours(1);
 
             time = TimeZoneInfo.ConvertTime(localTime, timeZone, TimeZoneInfo.Utc);
-#endif
+
 
             return time;
         }

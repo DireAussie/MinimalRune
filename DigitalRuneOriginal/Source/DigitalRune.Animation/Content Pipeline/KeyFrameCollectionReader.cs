@@ -17,7 +17,7 @@ namespace DigitalRune.Animation.Content
   /// </remarks>
   public class KeyFrameCollectionReader<T> : ContentTypeReader<KeyFrameCollection<T>>
   {
-#if !MONOGAME
+
     /// <summary>
     /// Determines if deserialization into an existing object is possible.
     /// </summary>
@@ -25,7 +25,7 @@ namespace DigitalRune.Animation.Content
     {
       get { return true; }
     }
-#endif
+
 
 
       /// <summary>

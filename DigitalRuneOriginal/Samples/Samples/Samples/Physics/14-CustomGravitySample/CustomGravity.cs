@@ -13,7 +13,7 @@ namespace Samples.Physics
     public override void Apply(RigidBody body)
     {
       // Gravity forces act on the center of mass.
-      Vector3F centerOfMass = body.PoseCenterOfMass.Position;
+      Vector3 centerOfMass = body.PoseCenterOfMass.Position;
 
       // Normalize the vector.
       if (!centerOfMass.TryNormalize())
@@ -23,7 +23,7 @@ namespace Samples.Physics
       }
 
       // The gravity should act from the center of mass to the origin.
-      Vector3F gravityDirection = -centerOfMass;
+      Vector3 gravityDirection = -centerOfMass;
 
       // Add gravity force with an acceleration of 9.81 m/s².
       // (force = mass * acceleration)

@@ -1,5 +1,5 @@
 ﻿using DigitalRune;
-#if !WP7 && !WP8
+
 using DigitalRune.Game.UI.Controls;
 using DigitalRune.Graphics;
 using DigitalRune.Graphics.Rendering;
@@ -269,4 +269,3 @@ updates over several frames and to update distant cascades less often.",
     }
   }
 }
-#endif

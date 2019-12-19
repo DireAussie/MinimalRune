@@ -17,11 +17,11 @@ namespace DigitalRune.Windows.Charts
     /// Provides functions to create a list of data points from other data sources.
     /// (For internal use only.)
     /// </summary>
-#if SILVERLIGHT
+
     public      // Type needs to be public for Silverlight unit testing.
 #else
     internal
-#endif
+
  static class ChartDataHelper
     {
         /// <summary>

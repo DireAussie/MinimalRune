@@ -278,9 +278,9 @@ namespace DigitalRune.Windows.Charts
         /// </remarks>
         [Description("Gets or sets the space that is reserved for the axes if AutoAxisSpacing is false.")]
         [Category(ChartCategories.Default)]
-#if !SILVERLIGHT
+
         [TypeConverter(typeof(ThicknessConverter))]
-#endif
+
         public Thickness AxisSpacing
         {
             get { return (Thickness)GetValue(AxisSpacingProperty); }
@@ -293,7 +293,7 @@ namespace DigitalRune.Windows.Charts
 
         //--------------------------------------------------------------
 
-#if !SILVERLIGHT
+
         /// <summary>
         /// Initializes static members of the <see cref="DefaultChartPanel"/> class.
         /// </summary>
@@ -302,7 +302,7 @@ namespace DigitalRune.Windows.Charts
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(DefaultChartPanel), new FrameworkPropertyMetadata(typeof(DefaultChartPanel)));
         }
-#endif
+
 
 
         /// <summary>
@@ -327,7 +327,7 @@ namespace DigitalRune.Windows.Charts
             YAxis2.SetBinding(StyleProperty, binding);
 
             // Set z-index of axes (usually 0).
-#if SILVERLIGHT
+
             Canvas.SetZIndex(XAxis1, AxisZIndex);
             Canvas.SetZIndex(YAxis1, AxisZIndex);
             Canvas.SetZIndex(XAxis2, AxisZIndex);
@@ -337,7 +337,7 @@ namespace DigitalRune.Windows.Charts
             SetZIndex(YAxis1, AxisZIndex);
             SetZIndex(XAxis2, AxisZIndex);
             SetZIndex(YAxis2, AxisZIndex);
-#endif
+
 
             // Add axes as the first children of the panel.
             Children.Add(XAxis1);
@@ -364,7 +364,7 @@ namespace DigitalRune.Windows.Charts
         }
 
 
-#if SILVERLIGHT
+
         /// <exclude/>
         public void OnAxisInvalidated(object sender, EventArgs eventArgs)
         {
@@ -377,7 +377,7 @@ namespace DigitalRune.Windows.Charts
             if (!_positioningAxes && AutoAxisSpacing)
                 Dispatcher.BeginInvoke(new Action(InvalidateMeasure));
         }
-#endif
+
 
 
         /// <inheritdoc/>

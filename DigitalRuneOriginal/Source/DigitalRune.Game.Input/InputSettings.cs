@@ -5,12 +5,12 @@
 using System;
 using Microsoft.Xna.Framework.Input;
 
-#if USE_DIGITALRUNE_MATHEMATICS
+
 using DigitalRune.Mathematics.Algebra;
 #else
 using Vector2F = Microsoft.Xna.Framework.Vector2;
-using Vector3F = Microsoft.Xna.Framework.Vector3;
-#endif
+using Vector3 = Microsoft.Xna.Framework.Vector3;
+
 
 
 namespace DigitalRune.Game.Input
@@ -101,7 +101,7 @@ namespace DigitalRune.Game.Input
     public float TriggerThreshold { get; set; }
 
 
-#if !SILVERLIGHT
+
     /// <summary>
     /// Gets or sets the type of gamepad dead zone processing that is used for analog sticks
     /// of the gamepads. (Not available in Silverlight.)
@@ -112,7 +112,7 @@ namespace DigitalRune.Game.Input
     /// </value>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly", MessageId = "GamePad")]
     public GamePadDeadZone GamePadDeadZone { get; set; }
-#endif
+
 
 
     /// <summary>
@@ -141,9 +141,9 @@ namespace DigitalRune.Game.Input
       RepetitionInterval = new TimeSpan(0, 0, 0, 0, 100); // 100 ms
       ThumbstickThreshold = 0.5f;
       TriggerThreshold = 0.2f;
-#if !SILVERLIGHT
+
       GamePadDeadZone = GamePadDeadZone.IndependentAxes;
-#endif
+
     }
   }
 }

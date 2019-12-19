@@ -200,11 +200,11 @@ namespace DigitalRune.Graphics.Rendering
       float near = projection.Near * NearBias;
       float far = projection.Far * FarBias;
       var biasedProjection = isPerspective
-                               ? Matrix44F.CreatePerspectiveOffCenter(
+                               ? Matrix.CreatePerspectiveOffCenter(
                                  projection.Left, projection.Right,
                                  projection.Bottom, projection.Top,
                                  near, far)
-                               : Matrix44F.CreateOrthographicOffCenter(
+                               : Matrix.CreateOrthographicOffCenter(
                                  projection.Left, projection.Right,
                                  projection.Bottom, projection.Top,
                                  near, far);

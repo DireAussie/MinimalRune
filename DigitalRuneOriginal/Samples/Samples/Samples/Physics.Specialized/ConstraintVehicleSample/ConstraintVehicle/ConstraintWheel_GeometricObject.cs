@@ -46,9 +46,9 @@ namespace DigitalRune.Physics.Specialized
     }
 
 
-    Vector3F IGeometricObject.Scale
+    Vector3 IGeometricObject.Scale
     {
-      get { return Vector3F.One; }
+      get { return Vector3.One; }
     }
 
 

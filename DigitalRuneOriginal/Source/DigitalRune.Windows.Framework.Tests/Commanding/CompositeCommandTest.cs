@@ -137,7 +137,7 @@ namespace DigitalRune.Windows.Framework.Tests.MVVM
         }
 
 
-#if !NET45
+
         [Test]
         public void CanExecuteChangedEventShouldBeWeak()
         {
@@ -157,7 +157,7 @@ namespace DigitalRune.Windows.Framework.Tests.MVVM
             command2.RaiseCanExecuteChanged();
             Assert.IsFalse(EventConsumer.EventCalled);
         }
-#endif
+
 
 
         internal class EventConsumer

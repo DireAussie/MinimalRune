@@ -69,11 +69,11 @@ namespace DigitalRune
       get { return ValidationLevelInternal; }
       set { ValidationLevelInternal = value; }
     }
-#if DEBUG
+
     internal static int ValidationLevelInternal = ValidationLevelDebug;
 #else
     internal static int ValidationLevelInternal = ValidationLevelNone;
-#endif
+
 
 
 //#if WINDOWS
@@ -110,10 +110,10 @@ namespace DigitalRune
       {
         // We do not use #if ... #elif to get a compiler error if two symbols are 
         // defined in the same build.
-#if PORTABLE
+
         return PlatformID.Portable;
-#endif
-#if WINDOWS
+
+
         if ((int)_platformID == -1)
         {
           if (Environment.OSVersion.Platform == System.PlatformID.MacOSX)
@@ -134,37 +134,37 @@ namespace DigitalRune
           }
         }
         return _platformID;
-#endif
-#if WINDOWS_UWP
+
+
         return PlatformID.WindowsUniversal;
 #elif NETFX_CORE
         return PlatformID.WindowsStore;
-#endif
-#if WP7
+
+
         return PlatformID.WindowsPhone7;
-#endif
-#if WP8
+
+
         return PlatformID.WindowsPhone8;
-#endif
-#if XBOX360
+
+
         return PlatformID.Xbox360;
-#endif
-#if SILVERLIGHT
+
+
         return PlatformID.Silverlight;
-#endif
-#if UNITY
+
+
         return PlatformID.Unity;
-#endif
-#if ANDROID
+
+
         return PlatformID.Android;
-#endif
-#if IOS
+
+
         return PlatformID.iOS;
-#endif
+
       }
     }
-#if WINDOWS
+
     private static PlatformID _platformID = (PlatformID) -1;
-#endif
+
   }
 }

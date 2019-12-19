@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if WINDOWS
+
 using System;
 using System.Diagnostics;
 using System.Threading;
@@ -189,7 +189,7 @@ namespace DigitalRune.Graphics.Interop
           || message == WindowMessages.WM_SYSCHAR
           || message == WindowMessages.WM_SYSDEADCHAR
           || message == WindowMessages.WM_MOUSEWHEEL
-#if MONOGAME
+
           || message == WindowMessages.WM_MOUSEMOVE
           || message == WindowMessages.WM_LBUTTONDOWN
           || message == WindowMessages.WM_LBUTTONUP
@@ -200,7 +200,7 @@ namespace DigitalRune.Graphics.Interop
           || message == WindowMessages.WM_RBUTTONDOWN
           || message == WindowMessages.WM_RBUTTONUP
           || message == WindowMessages.WM_RBUTTONDBLCLK
-#endif
+
         )
       {
         NativeMethods.PostMessage(Handle, msg.message, msg.wParam, msg.lParam);
@@ -209,4 +209,4 @@ namespace DigitalRune.Graphics.Interop
 
   }
 }
-#endif
+

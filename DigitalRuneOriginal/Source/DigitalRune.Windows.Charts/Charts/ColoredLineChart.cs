@@ -137,7 +137,7 @@ namespace DigitalRune.Windows.Charts
 
         //--------------------------------------------------------------
 
-#if SILVERLIGHT
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ColoredLineChart"/> class.
         /// </summary>
@@ -151,7 +151,7 @@ namespace DigitalRune.Windows.Charts
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ColoredLineChart), new FrameworkPropertyMetadata(typeof(ColoredLineChart)));
         }
-#endif
+
 
 
 
@@ -359,13 +359,13 @@ namespace DigitalRune.Windows.Charts
             var areaPath = new Path
             {
                 Data = new PathGeometry { Figures = areaFigures },
-#if SILVERLIGHT
+
                 // Note: Clip is a copy of the clip geometry. 
                 // Silverlight crashes if we reuse the existing AreaClipGeometry multiple times.
                 Clip = new RectangleGeometry { Rect = AreaClipGeometry.Rect },
 #else
                 Clip = AreaClipGeometry,
-#endif
+
                 Style = AreaStyle
             };
 
@@ -374,22 +374,22 @@ namespace DigitalRune.Windows.Charts
             if (fill != null)
                 areaPath.Fill = fill;
 
-#if SILVERLIGHT
+
             Canvas.SetZIndex(areaPath, -1); // Filled area should be in the background.
 #else
             Panel.SetZIndex(areaPath, -1); // Filled area should be in the background.
-#endif
+
 
             Canvas.Children.Add(areaPath);
 
             var linePath = new Path
             {
                 Data = new PathGeometry { Figures = lineFigures },
-#if SILVERLIGHT
+
                 Clip = new RectangleGeometry { Rect = LineClipGeometry.Rect },
 #else
                 Clip = LineClipGeometry,
-#endif
+
                 Style = LineStyle
             };
 

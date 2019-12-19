@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !WP7
+
 using System;
 using DigitalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
@@ -111,7 +111,7 @@ namespace DigitalRune.Graphics.PostProcessing
     /// <remarks>
     /// The direction of the light rays (pointing away from the light source).
     /// </remarks>
-    public Vector3F LightDirection { get; set; }
+    public Vector3 LightDirection { get; set; }
 
 
     /// <summary>
@@ -136,7 +136,7 @@ namespace DigitalRune.Graphics.PostProcessing
     /// This is an overall factor that applied to the light shaft image. It can be used like
     /// an exposure factor or a tint color.
     /// </remarks>
-    public Vector3F Intensity { get; set; }
+    public Vector3 Intensity { get; set; }
 
 
     /// <summary>
@@ -254,9 +254,9 @@ namespace DigitalRune.Graphics.PostProcessing
       _downsampleFilter = graphicsService.GetDownsampleFilter();
 
       Scale = 1;
-      LightDirection = new Vector3F(0, -1, 0);
+      LightDirection = new Vector3(0, -1, 0);
       LightRadius = 0.2f;
-      Intensity = new Vector3F(1, 1, 1);
+      Intensity = new Vector3(1, 1, 1);
       DownsampleFactor = 4;
       NumberOfSamples = 8;
       NumberOfPasses = 2;
@@ -302,16 +302,16 @@ namespace DigitalRune.Graphics.PostProcessing
 
       // Get view and view-projection transforms.
       var cameraNode = context.CameraNode;
-      Matrix44F projection = cameraNode.Camera.Projection.ToMatrix44F();
-      Matrix44F view = cameraNode.View;
-      Matrix44F viewProjection = projection * view;
+      Matrix projection = cameraNode.Camera.Projection.ToMatrix();
+      Matrix view = cameraNode.View;
+      Matrix viewProjection = projection * view;
 
       // We simply place the light source "far away" in opposite light ray direction.
       Vector4F lightPositionWorld = new Vector4F(-LightDirection * 10000, 1);
 
       // Convert to clip space.
       Vector4F lightPositionProj = viewProjection * lightPositionWorld;
-      Vector3F lightPositionClip = Vector4F.HomogeneousDivide(lightPositionProj);
+      Vector3 lightPositionClip = Vector4F.HomogeneousDivide(lightPositionProj);
 
       // Convert from clip space [-1, 1] to texture space [0, 1].
       Vector2 lightPosition = new Vector2(lightPositionClip.X * 0.5f + 0.5f, -lightPositionClip.Y * 0.5f + 0.5f);
@@ -383,4 +383,4 @@ namespace DigitalRune.Graphics.PostProcessing
 
   }
 }
-#endif
+

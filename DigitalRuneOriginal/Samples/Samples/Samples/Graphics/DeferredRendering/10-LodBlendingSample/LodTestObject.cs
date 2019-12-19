@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using System;
 using System.Linq;
 using DigitalRune.Game;
@@ -72,11 +72,11 @@ namespace Samples
 
 
       // Set a random pose.
-      var randomPosition = new Vector3F(
+      var randomPosition = new Vector3(
         RandomHelper.Random.NextFloat(-10, 10),
         RandomHelper.Random.NextFloat(2, 5),
         RandomHelper.Random.NextFloat(-10, 0));
-      _rigidBody.Pose = new Pose(randomPosition, RandomHelper.Random.NextQuaternionF());
+      _rigidBody.Pose = new Pose(randomPosition, RandomHelper.Random.NextQuaternion());
       _modelNode0.PoseWorld = _rigidBody.Pose;
       _modelNode1.PoseWorld = _rigidBody.Pose;
 
@@ -117,4 +117,3 @@ namespace Samples
     }
   }
 }
-#endif

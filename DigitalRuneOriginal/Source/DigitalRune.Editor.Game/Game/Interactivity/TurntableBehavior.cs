@@ -64,7 +64,7 @@ namespace DigitalRune.Editor.Game
         //--------------------------------------------------------------
 
         private CameraNode _cameraNode;
-        private Matrix44F _originalViewMatrix;
+        private Matrix _originalViewMatrix;
 
         private float _upDirection;
         private Point _lastMousePosition;
@@ -129,9 +129,9 @@ namespace DigitalRune.Editor.Game
         /// </summary>
         public static readonly DependencyProperty CameraTargetProperty = DependencyProperty.Register(
             "CameraTarget",
-            typeof(Vector3F),
+            typeof(Vector3),
             typeof(TurntableBehavior),
-            new PropertyMetadata(Vector3F.Zero, OnCameraTargetChanged));
+            new PropertyMetadata(Vector3.Zero, OnCameraTargetChanged));
 
         /// <summary>
         /// Gets or sets the center around which the camera is orbiting.
@@ -140,9 +140,9 @@ namespace DigitalRune.Editor.Game
         /// <value>The center around which the camera is orbiting.</value>
         [Description("Gets or sets the center around which the camera is orbiting.")]
         [Category(Categories.Behavior)]
-        public Vector3F CameraTarget
+        public Vector3 CameraTarget
         {
-            get { return (Vector3F)GetValue(CameraTargetProperty); }
+            get { return (Vector3)GetValue(CameraTargetProperty); }
             set { SetValue(CameraTargetProperty, value); }
         }
 
@@ -188,8 +188,8 @@ namespace DigitalRune.Editor.Game
         private static void OnCameraTargetChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
         {
             var behavior = (TurntableBehavior)dependencyObject;
-            Vector3F oldValue = (Vector3F)eventArgs.OldValue;
-            Vector3F newValue = (Vector3F)eventArgs.NewValue;
+            Vector3 oldValue = (Vector3)eventArgs.OldValue;
+            Vector3 newValue = (Vector3)eventArgs.NewValue;
             behavior.OnCameraTargetChanged(oldValue, newValue);
         }
 
@@ -198,7 +198,7 @@ namespace DigitalRune.Editor.Game
         /// </summary>
         /// <param name="oldValue">The old value.</param>
         /// <param name="newValue">The new value.</param>
-        protected virtual void OnCameraTargetChanged(Vector3F oldValue, Vector3F newValue)
+        protected virtual void OnCameraTargetChanged(Vector3 oldValue, Vector3 newValue)
         {
             //var cameraNode = CameraNode;
             //if (cameraNode != null)
@@ -271,7 +271,7 @@ namespace DigitalRune.Editor.Game
             // camera orientation. The direction is set when the manipulation starts
             // and is fixed during the manipulation. (This is necessary to avoid instant
             // switches when the camera turns upside down.)
-            Vector3F up = _cameraNode.PoseWorld.ToWorldDirection(Vector3F.Up);
+            Vector3 up = _cameraNode.PoseWorld.ToWorldDirection(Vector3.Up);
             _upDirection = Math.Sign(up.Y);
 
             AssociatedObject.PreviewKeyDown += OnKeyDown;
@@ -350,11 +350,11 @@ namespace DigitalRune.Editor.Game
 
                 // Rotation around y-axis in world space
                 float angle0 = (float)delta.X * speed * _upDirection;
-                Pose rotation0 = new Pose(Matrix33F.CreateRotationY(angle0));
+                Pose rotation0 = new Pose(Matrix.CreateRotationY(angle0));
 
                 // Rotation around x-axis in view space.
                 float angle1 = (float)delta.Y * speed;
-                Pose rotation1 = new Pose(Matrix33F.CreateRotationX(angle1));
+                Pose rotation1 = new Pose(Matrix.CreateRotationX(angle1));
                 float distance = (CameraTarget - _cameraNode.PoseWorld.Position).Length;
 
                 // Variant #1: Set camera pose.
@@ -362,9 +362,9 @@ namespace DigitalRune.Editor.Game
                            * rotation0.Inverse
                            * new Pose(-target)
                            * _cameraNode.PoseWorld
-                           * new Pose(new Vector3F(0, 0, -distance))
+                           * new Pose(new Vector3(0, 0, -distance))
                            * rotation1.Inverse
-                           * new Pose(new Vector3F(0, 0, distance));
+                           * new Pose(new Vector3(0, 0, distance));
 
                 // Re-orthogonalize to remove numerical errors which could add up.
                 var orientation = pose.Orientation;

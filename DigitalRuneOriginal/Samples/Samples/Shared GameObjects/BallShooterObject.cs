@@ -87,7 +87,7 @@ namespace Samples
         var cameraGameObject = (CameraObject)_gameObjectService.Objects["Camera"];
         var cameraNode = cameraGameObject.CameraNode;
         Pose cameraPose = cameraNode.PoseWorld;
-        Vector3F forward = cameraPose.ToWorldDirection(Vector3F.Forward);
+        Vector3 forward = cameraPose.ToWorldDirection(Vector3.Forward);
 
         // Place the ball at the position of the camera and shoot forward by directly
         // setting the velocity.

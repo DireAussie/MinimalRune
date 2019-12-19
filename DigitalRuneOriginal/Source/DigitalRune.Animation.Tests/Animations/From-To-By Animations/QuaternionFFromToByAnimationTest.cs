@@ -8,7 +8,7 @@ using NUnit.Framework;
 namespace DigitalRune.Animation.Tests
 {
   [TestFixture]
-  public class QuaternionFFromToByAnimationTest
+  public class QuaternionFromToByAnimationTest
   {
     private Random _random;
 
@@ -23,7 +23,7 @@ namespace DigitalRune.Animation.Tests
     [Test]
     public void CheckDefaultValues()
     {
-      var animation = new QuaternionFFromToByAnimation();
+      var animation = new QuaternionFromToByAnimation();
       Assert.AreEqual(TimeSpan.FromSeconds(1.0), animation.Duration);
       Assert.AreEqual(FillBehavior.Hold, animation.FillBehavior);
       Assert.IsNull(animation.TargetProperty);
@@ -38,15 +38,15 @@ namespace DigitalRune.Animation.Tests
     [Test]
     public void AnimateUsingDefaults()
     {
-      var defaultSource = _random.NextQuaternionF();
-      var defaultTarget = _random.NextQuaternionF();
+      var defaultSource = _random.NextQuaternion();
+      var defaultTarget = _random.NextQuaternion();
 
-      var animation = new QuaternionFFromToByAnimation();
+      var animation = new QuaternionFromToByAnimation();
       animation.From = null;
       animation.To = null;
       animation.By = null;
       Assert.AreEqual(defaultSource, animation.GetValue(TimeSpan.FromSeconds(0.0), defaultSource, defaultTarget));
-      Assert.IsTrue(QuaternionF.AreNumericallyEqual(InterpolationHelper.Lerp(defaultSource, defaultTarget, 0.75f), animation.GetValue(TimeSpan.FromSeconds(0.75), defaultSource, defaultTarget)));
+      Assert.IsTrue(Quaternion.AreNumericallyEqual(InterpolationHelper.Lerp(defaultSource, defaultTarget, 0.75f), animation.GetValue(TimeSpan.FromSeconds(0.75), defaultSource, defaultTarget)));
       Assert.AreEqual(defaultTarget, animation.GetValue(TimeSpan.FromSeconds(1.0), defaultSource, defaultTarget));
     }
 
@@ -54,16 +54,16 @@ namespace DigitalRune.Animation.Tests
     [Test]
     public void AnimateFrom()
     {
-      var defaultSource = _random.NextQuaternionF();
-      var defaultTarget = _random.NextQuaternionF();
-      var from = _random.NextQuaternionF();
+      var defaultSource = _random.NextQuaternion();
+      var defaultTarget = _random.NextQuaternion();
+      var from = _random.NextQuaternion();
 
-      var animation = new QuaternionFFromToByAnimation();
+      var animation = new QuaternionFromToByAnimation();
       animation.From = from;
       animation.To = null;
       animation.By = null;
       Assert.AreEqual(from, animation.GetValue(TimeSpan.FromSeconds(0.0), defaultSource, defaultTarget));
-      Assert.IsTrue(QuaternionF.AreNumericallyEqual(InterpolationHelper.Lerp(from, defaultSource, 0.75f), animation.GetValue(TimeSpan.FromSeconds(0.75), defaultSource, defaultTarget)));
+      Assert.IsTrue(Quaternion.AreNumericallyEqual(InterpolationHelper.Lerp(from, defaultSource, 0.75f), animation.GetValue(TimeSpan.FromSeconds(0.75), defaultSource, defaultTarget)));
       Assert.AreEqual(defaultSource, animation.GetValue(TimeSpan.FromSeconds(1.0), defaultSource, defaultTarget));
     }
 
@@ -71,16 +71,16 @@ namespace DigitalRune.Animation.Tests
     [Test]
     public void AnimateTo()
     {
-      var defaultSource = _random.NextQuaternionF();
-      var defaultTarget = _random.NextQuaternionF();
-      var to = _random.NextQuaternionF();
+      var defaultSource = _random.NextQuaternion();
+      var defaultTarget = _random.NextQuaternion();
+      var to = _random.NextQuaternion();
 
-      var animation = new QuaternionFFromToByAnimation();
+      var animation = new QuaternionFromToByAnimation();
       animation.From = null;
       animation.To = to;
       animation.By = null;
       Assert.AreEqual(defaultSource, animation.GetValue(TimeSpan.FromSeconds(0.0), defaultSource, defaultTarget));
-      Assert.IsTrue(QuaternionF.AreNumericallyEqual(InterpolationHelper.Lerp(defaultSource, to, 0.75f), animation.GetValue(TimeSpan.FromSeconds(0.75), defaultSource, defaultTarget)));
+      Assert.IsTrue(Quaternion.AreNumericallyEqual(InterpolationHelper.Lerp(defaultSource, to, 0.75f), animation.GetValue(TimeSpan.FromSeconds(0.75), defaultSource, defaultTarget)));
       Assert.AreEqual(to, animation.GetValue(TimeSpan.FromSeconds(1.0), defaultSource, defaultTarget));
     }
 
@@ -88,18 +88,18 @@ namespace DigitalRune.Animation.Tests
     [Test]
     public void AnimateFromTo()
     {
-      var defaultSource = _random.NextQuaternionF();
-      var defaultTarget = _random.NextQuaternionF();
-      var from = _random.NextQuaternionF();
-      var to = _random.NextQuaternionF();
-      var by = _random.NextQuaternionF();
+      var defaultSource = _random.NextQuaternion();
+      var defaultTarget = _random.NextQuaternion();
+      var from = _random.NextQuaternion();
+      var to = _random.NextQuaternion();
+      var by = _random.NextQuaternion();
 
-      var animation = new QuaternionFFromToByAnimation();
+      var animation = new QuaternionFromToByAnimation();
       animation.From = from;
       animation.To = to;
       animation.By = null;
       Assert.AreEqual(from, animation.GetValue(TimeSpan.FromSeconds(0.0), defaultSource, defaultTarget));
-      Assert.IsTrue(QuaternionF.AreNumericallyEqual(InterpolationHelper.Lerp(from, to, 0.75f), animation.GetValue(TimeSpan.FromSeconds(0.75), defaultSource, defaultTarget)));
+      Assert.IsTrue(Quaternion.AreNumericallyEqual(InterpolationHelper.Lerp(from, to, 0.75f), animation.GetValue(TimeSpan.FromSeconds(0.75), defaultSource, defaultTarget)));
       Assert.AreEqual(to, animation.GetValue(TimeSpan.FromSeconds(1.0), defaultSource, defaultTarget));
     }
 
@@ -107,18 +107,18 @@ namespace DigitalRune.Animation.Tests
     [Test]
     public void ShouldIgnoreByIfFromToIsSet()
     {
-      var defaultSource = _random.NextQuaternionF();
-      var defaultTarget = _random.NextQuaternionF();
-      var from = _random.NextQuaternionF();
-      var to = _random.NextQuaternionF();
-      var by = _random.NextQuaternionF();
+      var defaultSource = _random.NextQuaternion();
+      var defaultTarget = _random.NextQuaternion();
+      var from = _random.NextQuaternion();
+      var to = _random.NextQuaternion();
+      var by = _random.NextQuaternion();
 
-      var animation = new QuaternionFFromToByAnimation();
+      var animation = new QuaternionFromToByAnimation();
       animation.From = from;
       animation.To = to;
       animation.By = by;
       Assert.AreEqual(from, animation.GetValue(TimeSpan.FromSeconds(0.0), defaultSource, defaultTarget));
-      Assert.IsTrue(QuaternionF.AreNumericallyEqual(InterpolationHelper.Lerp(from, to, 0.75f), animation.GetValue(TimeSpan.FromSeconds(0.75), defaultSource, defaultTarget)));
+      Assert.IsTrue(Quaternion.AreNumericallyEqual(InterpolationHelper.Lerp(from, to, 0.75f), animation.GetValue(TimeSpan.FromSeconds(0.75), defaultSource, defaultTarget)));
       Assert.AreEqual(to, animation.GetValue(TimeSpan.FromSeconds(1.0), defaultSource, defaultTarget));
     }
 
@@ -126,17 +126,17 @@ namespace DigitalRune.Animation.Tests
     [Test]
     public void ShouldIgnoreByIfToIsSet()
     {
-      var defaultSource = _random.NextQuaternionF();
-      var defaultTarget = _random.NextQuaternionF();
-      var to = _random.NextQuaternionF();
-      var by = _random.NextQuaternionF();
+      var defaultSource = _random.NextQuaternion();
+      var defaultTarget = _random.NextQuaternion();
+      var to = _random.NextQuaternion();
+      var by = _random.NextQuaternion();
 
-      var animation = new QuaternionFFromToByAnimation();
+      var animation = new QuaternionFromToByAnimation();
       animation.From = null;
       animation.To = to;
       animation.By = by;
       Assert.AreEqual(defaultSource, animation.GetValue(TimeSpan.FromSeconds(0.0), defaultSource, defaultTarget));
-      Assert.IsTrue(QuaternionF.AreNumericallyEqual(InterpolationHelper.Lerp(defaultSource, to, 0.75f), animation.GetValue(TimeSpan.FromSeconds(0.75), defaultSource, defaultTarget)));
+      Assert.IsTrue(Quaternion.AreNumericallyEqual(InterpolationHelper.Lerp(defaultSource, to, 0.75f), animation.GetValue(TimeSpan.FromSeconds(0.75), defaultSource, defaultTarget)));
       Assert.AreEqual(to, animation.GetValue(TimeSpan.FromSeconds(1.0), defaultSource, defaultTarget));
     }
 
@@ -144,22 +144,22 @@ namespace DigitalRune.Animation.Tests
     [Test]
     public void AnimateFromBy()
     {
-      var defaultSource = _random.NextQuaternionF();
-      var defaultTarget = _random.NextQuaternionF();
-      var from = _random.NextQuaternionF();
-      var by = _random.NextQuaternionF();
+      var defaultSource = _random.NextQuaternion();
+      var defaultTarget = _random.NextQuaternion();
+      var from = _random.NextQuaternion();
+      var by = _random.NextQuaternion();
 
-      var animation = new QuaternionFFromToByAnimation();
+      var animation = new QuaternionFromToByAnimation();
       animation.From = from;
       animation.To = null;
       animation.By = by;
       Assert.AreEqual(from, animation.GetValue(TimeSpan.FromSeconds(0.0), defaultSource, defaultTarget));
-      Assert.IsTrue(QuaternionF.AreNumericallyEqual(InterpolationHelper.Lerp(from, by * from, 0.75f), animation.GetValue(TimeSpan.FromSeconds(0.75), defaultSource, defaultTarget)));
+      Assert.IsTrue(Quaternion.AreNumericallyEqual(InterpolationHelper.Lerp(from, by * from, 0.75f), animation.GetValue(TimeSpan.FromSeconds(0.75), defaultSource, defaultTarget)));
       Assert.AreEqual(by * from, animation.GetValue(TimeSpan.FromSeconds(1.0), defaultSource, defaultTarget));
 
       animation.By = by.Inverse;
       Assert.AreEqual(from, animation.GetValue(TimeSpan.FromSeconds(0.0), defaultSource, defaultTarget));
-      Assert.IsTrue(QuaternionF.AreNumericallyEqual(InterpolationHelper.Lerp(from, by.Inverse * from, 0.75f), animation.GetValue(TimeSpan.FromSeconds(0.75), defaultSource, defaultTarget)));
+      Assert.IsTrue(Quaternion.AreNumericallyEqual(InterpolationHelper.Lerp(from, by.Inverse * from, 0.75f), animation.GetValue(TimeSpan.FromSeconds(0.75), defaultSource, defaultTarget)));
       Assert.AreEqual(by.Inverse * from, animation.GetValue(TimeSpan.FromSeconds(1.0), defaultSource, defaultTarget));
     }
 
@@ -167,21 +167,21 @@ namespace DigitalRune.Animation.Tests
     [Test]
     public void AnimateBy()
     {
-      var defaultSource = _random.NextQuaternionF();
-      var defaultTarget = _random.NextQuaternionF();
-      var by = _random.NextQuaternionF();
+      var defaultSource = _random.NextQuaternion();
+      var defaultTarget = _random.NextQuaternion();
+      var by = _random.NextQuaternion();
 
-      var animation = new QuaternionFFromToByAnimation();
+      var animation = new QuaternionFromToByAnimation();
       animation.From = null;
       animation.To = null;
       animation.By = by;
       Assert.AreEqual(defaultSource, animation.GetValue(TimeSpan.FromSeconds(0.0), defaultSource, defaultTarget));
-      Assert.IsTrue(QuaternionF.AreNumericallyEqual(InterpolationHelper.Lerp(defaultSource, by * defaultSource, 0.75f), animation.GetValue(TimeSpan.FromSeconds(0.75), defaultSource, defaultTarget)));
+      Assert.IsTrue(Quaternion.AreNumericallyEqual(InterpolationHelper.Lerp(defaultSource, by * defaultSource, 0.75f), animation.GetValue(TimeSpan.FromSeconds(0.75), defaultSource, defaultTarget)));
       Assert.AreEqual(by * defaultSource, animation.GetValue(TimeSpan.FromSeconds(1.0), defaultSource, defaultTarget));
 
       animation.By = by.Inverse;
       Assert.AreEqual(defaultSource, animation.GetValue(TimeSpan.FromSeconds(0.0), defaultSource, defaultTarget));
-      Assert.IsTrue(QuaternionF.AreNumericallyEqual(InterpolationHelper.Lerp(defaultSource, by.Inverse * defaultSource, 0.75f), animation.GetValue(TimeSpan.FromSeconds(0.75), defaultSource, defaultTarget)));
+      Assert.IsTrue(Quaternion.AreNumericallyEqual(InterpolationHelper.Lerp(defaultSource, by.Inverse * defaultSource, 0.75f), animation.GetValue(TimeSpan.FromSeconds(0.75), defaultSource, defaultTarget)));
       Assert.AreEqual(by.Inverse * defaultSource, animation.GetValue(TimeSpan.FromSeconds(1.0), defaultSource, defaultTarget));
     }
   }

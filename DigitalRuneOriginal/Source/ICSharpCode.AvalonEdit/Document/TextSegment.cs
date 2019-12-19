@@ -18,9 +18,9 @@
 
 using System;
 using System.Diagnostics;
-#if NREFACTORY
+
 using ICSharpCode.NRefactory.Editor;
-#endif
+
 
 namespace ICSharpCode.AvalonEdit.Document
 {
@@ -249,13 +249,13 @@ namespace ICSharpCode.AvalonEdit.Document
 			}
 		}
 		
-		#if DEBUG
+
 		internal string ToDebugString()
 		{
 			return "[nodeLength=" + nodeLength + " totalNodeLength=" + totalNodeLength
 				+ " distanceToMaxEnd=" + distanceToMaxEnd + " MaxEndOffset=" + (StartOffset + distanceToMaxEnd) + "]";
 		}
-		#endif
+
 		
 		/// <inheritdoc/>
 		public override string ToString()

@@ -43,7 +43,7 @@ namespace DigitalRune.Graphics.SceneGraph
   /// <see cref="SelectLod"/>). The LOD distances stored in the <see cref="LodCollection"/> are 
   /// <i>view-normalized</i> distances. This means that distance values are corrected based on the 
   /// camera's field-of-view. The resulting LOD distances are independent of the current 
-  /// field-of-view. See <see cref="GraphicsHelper.GetViewNormalizedDistance(float, Matrix44F)"/> 
+  /// field-of-view. See <see cref="GraphicsHelper.GetViewNormalizedDistance(float, Matrix)"/> 
   /// for more information.
   /// </para>
   /// <para>
@@ -253,7 +253,7 @@ namespace DigitalRune.Graphics.SceneGraph
       Aabb? aabb = null;
       bool isInfinite = false;
       Levels.SetPose(Pose.Identity);     // AABB has to be relative to local space!
-      Levels.SetScale(Vector3F.One);     // AABB has to be relative to local space!
+      Levels.SetScale(Vector3.One);     // AABB has to be relative to local space!
       foreach (var lod in Levels)
         isInfinite |= SceneHelper.GetSubtreeAabbInternal(lod.Node, ref aabb);
       Levels.SetPose(PoseWorld);

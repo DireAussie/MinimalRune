@@ -26,8 +26,8 @@ namespace DigitalRune.Physics.Constraints
 
     //--------------------------------------------------------------
 
-    private Vector3F _minImpulseLimits;
-    private Vector3F _maxImpulseLimits;
+    private Vector3 _minImpulseLimits;
+    private Vector3 _maxImpulseLimits;
     private readonly Constraint1D[] _constraints =
     {
       new Constraint1D(), 
@@ -49,7 +49,7 @@ namespace DigitalRune.Physics.Constraints
     /// The constraint anchor position on <see cref="Constraint.BodyA"/> in local space of 
     /// <see cref="Constraint.BodyA"/>.
     /// </value>
-    public Vector3F AnchorPositionALocal
+    public Vector3 AnchorPositionALocal
     {
       get { return _anchorPositionALocal; }
       set
@@ -61,7 +61,7 @@ namespace DigitalRune.Physics.Constraints
         }
       }
     }
-    private Vector3F _anchorPositionALocal;
+    private Vector3 _anchorPositionALocal;
 
 
     /// <summary>
@@ -72,7 +72,7 @@ namespace DigitalRune.Physics.Constraints
     /// The constraint anchor position on <see cref="Constraint.BodyB"/> in local space of 
     /// <see cref="Constraint.BodyB"/>.
     /// </value>
-    public Vector3F AnchorPositionBLocal
+    public Vector3 AnchorPositionBLocal
     {
       get { return _anchorPositionBLocal; }
       set
@@ -84,7 +84,7 @@ namespace DigitalRune.Physics.Constraints
         }
       }
     }
-    private Vector3F _anchorPositionBLocal;
+    private Vector3 _anchorPositionBLocal;
 
 
     /// <summary>
@@ -104,7 +104,7 @@ namespace DigitalRune.Physics.Constraints
     /// is a zero vector, the motor is enabled and cancels all rotational velocities. 
     /// </para>
     /// </remarks>
-    public Vector3F AxisALocal
+    public Vector3 AxisALocal
     {
       get { return _axisALocal; }
       set
@@ -113,13 +113,13 @@ namespace DigitalRune.Physics.Constraints
         {
           _axisALocal = value;
           if (!_axisALocal.TryNormalize())
-            _axisALocal = Vector3F.Zero;
+            _axisALocal = Vector3.Zero;
 
           OnChanged();
         }
       }
     }
-    private Vector3F _axisALocal = Vector3F.UnitX;
+    private Vector3 _axisALocal = Vector3.UnitX;
 
 
     /// <summary>
@@ -193,7 +193,7 @@ namespace DigitalRune.Physics.Constraints
 
 
     /// <inheritdoc/>
-    public override Vector3F LinearConstraintImpulse
+    public override Vector3 LinearConstraintImpulse
     {
       get
       {
@@ -205,11 +205,11 @@ namespace DigitalRune.Physics.Constraints
 
 
     /// <inheritdoc/>
-    public override Vector3F AngularConstraintImpulse
+    public override Vector3 AngularConstraintImpulse
     {
       get
       {
-        return Vector3F.Zero;
+        return Vector3.Zero;
       }
     }
 
@@ -264,13 +264,13 @@ namespace DigitalRune.Physics.Constraints
     protected override void OnSetup()
     {
       Pose anchorPoseA = BodyA.Pose;
-      Vector3F anchorPositionB = BodyB.Pose.ToWorldPosition(AnchorPositionBLocal);
+      Vector3 anchorPositionB = BodyB.Pose.ToWorldPosition(AnchorPositionBLocal);
 
       // The linear constraint axes are the fixed anchor axes of A!
-      Matrix33F anchorOrientation = anchorPoseA.Orientation;
+      Matrix anchorOrientation = anchorPoseA.Orientation;
 
-      Vector3F rA = anchorPoseA.Position - BodyA.PoseCenterOfMass.Position;
-      Vector3F rB = anchorPositionB - BodyB.PoseCenterOfMass.Position;
+      Vector3 rA = anchorPoseA.Position - BodyA.PoseCenterOfMass.Position;
+      Vector3 rB = anchorPositionB - BodyB.PoseCenterOfMass.Position;
 
       var deltaTime = Simulation.Settings.Timing.FixedTimeStep;
 
@@ -306,7 +306,7 @@ namespace DigitalRune.Physics.Constraints
     }
 
 
-    private void SetupConstraint(int index, float targetVelocity, Vector3F axis, Vector3F rA, Vector3F rB, float deltaTime)
+    private void SetupConstraint(int index, float targetVelocity, Vector3 axis, Vector3 rA, Vector3 rB, float deltaTime)
     {
       Constraint1D constraint = _constraints[index];
 
@@ -319,7 +319,7 @@ namespace DigitalRune.Physics.Constraints
 
       // Note: Softness must be set before!
       constraint.Softness = Softness / deltaTime;
-      constraint.Prepare(BodyA, BodyB, -axis, -Vector3F.Cross(rA, axis), axis, Vector3F.Cross(rB, axis));
+      constraint.Prepare(BodyA, BodyB, -axis, -Vector3.Cross(rA, axis), axis, Vector3.Cross(rB, axis));
     }
 
 
@@ -328,7 +328,7 @@ namespace DigitalRune.Physics.Constraints
     {
       if (!UseSingleAxisMode)
       {
-        Vector3F impulse = new Vector3F();
+        Vector3 impulse = new Vector3();
         impulse.X = ApplyImpulse(0);
         impulse.Y = ApplyImpulse(1);
         impulse.Z = ApplyImpulse(2);

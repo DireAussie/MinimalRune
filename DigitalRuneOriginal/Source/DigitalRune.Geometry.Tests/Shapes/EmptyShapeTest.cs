@@ -15,8 +15,8 @@ namespace DigitalRune.Geometry.Shapes.Tests
     public void GetAxisAlignedBoundingBox()
     {
       Assert.AreEqual(new Aabb(), Shape.Empty.GetAabb(Pose.Identity));
-      Assert.AreEqual(new Aabb(new Vector3F(11, 12, -13), new Vector3F(11, 12, -13)),
-                      Shape.Empty.GetAabb(new Pose(new Vector3F(11, 12, -13), QuaternionF.CreateRotation(new Vector3F(1, 1, 1), 0.7f))));
+      Assert.AreEqual(new Aabb(new Vector3(11, 12, -13), new Vector3(11, 12, -13)),
+                      Shape.Empty.GetAabb(new Pose(new Vector3(11, 12, -13), Quaternion.CreateRotation(new Vector3(1, 1, 1), 0.7f))));
     }
 
 

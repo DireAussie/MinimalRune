@@ -1,4 +1,4 @@
-﻿#if !ANDROID
+﻿
 using System;
 using System.Collections.Generic;
 using NUnit.Framework;
@@ -297,4 +297,3 @@ namespace DigitalRune.Collections.Tests
     }
   }
 }
-#endif

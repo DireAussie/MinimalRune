@@ -11,9 +11,9 @@
 
 using System;
 
-#if SILVERLIGHT || WINDOWS_PHONE
+
 using System.Threading.Tasks;
-#endif
+
 
 
 namespace DigitalRune.Windows.Framework
@@ -23,7 +23,7 @@ namespace DigitalRune.Windows.Framework
     /// </summary>
     public interface IWindowService
     {
-#if WINDOWS_PHONE
+
         /// <summary>
         /// Shows a modal dialog for the specified view model.
         /// </summary>
@@ -80,10 +80,10 @@ namespace DigitalRune.Windows.Framework
         /// <paramref name="viewModel"/> is <see langword="null"/>.
         /// </exception>
         bool? ShowDialog(object viewModel, object context = null);
-#endif
 
 
-#if SILVERLIGHT
+
+
         /// <summary>
         /// Shows a toast notification for the specified view model.
         /// </summary>
@@ -99,10 +99,10 @@ namespace DigitalRune.Windows.Framework
         /// <paramref name="viewModel"/> is <see langword="null"/>.
         /// </exception>
         void ShowNotification(object viewModel, object context = null, int durationInMilliseconds = 7000);
-#endif
 
 
-#if !SILVERLIGHT && !WINDOWS_PHONE
+
+
         /// <summary>
         /// Shows a non-modal window for the specified view model.
         /// </summary>
@@ -118,6 +118,6 @@ namespace DigitalRune.Windows.Framework
         /// <paramref name="viewModel"/> is <see langword="null"/>.
         /// </exception>
         void ShowWindow(object viewModel, object context = null, bool asChildWindow = true);
-#endif
+
     }
 }

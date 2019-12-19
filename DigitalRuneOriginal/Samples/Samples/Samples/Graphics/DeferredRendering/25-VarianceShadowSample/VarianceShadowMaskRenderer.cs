@@ -1,4 +1,4 @@
-﻿#if !WP7
+﻿
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -185,4 +185,4 @@ namespace DigitalRune.Graphics.Rendering
 
   }
 }
-#endif
+

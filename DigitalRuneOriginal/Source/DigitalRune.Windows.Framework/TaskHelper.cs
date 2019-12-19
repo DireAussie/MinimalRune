@@ -22,11 +22,11 @@ namespace DigitalRune.Windows.Framework
         /// <returns>The successfully completed task.</returns>
         public static Task Completed()
         {
-#if SILVERLIGHT || WINDOWS_PHONE
+
             return TaskEx.FromResult<object>(null);
 #else
             return Task.FromResult<object>(null);
-#endif
+
         }
 
 
@@ -39,11 +39,11 @@ namespace DigitalRune.Windows.Framework
         /// <returns>The successfully completed task.</returns>
         public static Task<T> FromResult<T>(T result)
         {
-#if SILVERLIGHT || WINDOWS_PHONE
+
             return TaskEx.FromResult(result);
 #else
             return Task.FromResult(result);
-#endif
+
         }
 
 

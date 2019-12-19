@@ -14,7 +14,7 @@ namespace DigitalRune.Geometry.Content
   /// </summary>
   public class ConvexHullOfPointsReader : ContentTypeReader<ConvexHullOfPoints>
   {
-#if !MONOGAME
+
     /// <summary>
     /// Determines if deserialization into an existing object is possible.
     /// </summary>
@@ -26,7 +26,7 @@ namespace DigitalRune.Geometry.Content
     {
       get { return true; }
     }
-#endif
+
 
 
     /// <summary>
@@ -45,7 +45,7 @@ namespace DigitalRune.Geometry.Content
 
       int numberOfPoints = input.ReadInt32();
       for (int i = 0; i < numberOfPoints; i++)
-        existingInstance.Points.Add(input.ReadRawObject<Vector3F>());
+        existingInstance.Points.Add(input.ReadRawObject<Vector3>());
 
       return existingInstance;
     }

@@ -46,7 +46,7 @@ namespace DigitalRune.Geometry.Shapes.Tests
     [Test]
     public void InnerPoint()
     {
-      Assert.AreEqual(new Vector3F(0, 5, 0), new ConeShape(2, 10).InnerPoint);    
+      Assert.AreEqual(new Vector3(0, 5, 0), new ConeShape(2, 10).InnerPoint);    
     }
 
 
@@ -89,12 +89,12 @@ namespace DigitalRune.Geometry.Shapes.Tests
     public void GetAxisAlignedBoundingBox()
     {
       Assert.AreEqual(new Aabb(), new ConeShape().GetAabb(Pose.Identity));
-      Assert.AreEqual(new Aabb(new Vector3F(10, 100, -13), new Vector3F(10, 100, -13)),
-                     new ConeShape().GetAabb(new Pose(new Vector3F(10, 100, -13),
-                                                                         QuaternionF.CreateRotation(new Vector3F(1, 1, 1), 0.7f))));
-      Assert.AreEqual(new Aabb(new Vector3F(0, 100, 990), new Vector3F(20, 140, 1010)),
-                     new ConeShape(10, 40).GetAabb(new Pose(new Vector3F(10, 100, 1000),
-                                                                   QuaternionF.Identity)));
+      Assert.AreEqual(new Aabb(new Vector3(10, 100, -13), new Vector3(10, 100, -13)),
+                     new ConeShape().GetAabb(new Pose(new Vector3(10, 100, -13),
+                                                                         Quaternion.CreateRotation(new Vector3(1, 1, 1), 0.7f))));
+      Assert.AreEqual(new Aabb(new Vector3(0, 100, 990), new Vector3(20, 140, 1010)),
+                     new ConeShape(10, 40).GetAabb(new Pose(new Vector3(10, 100, 1000),
+                                                                   Quaternion.Identity)));
       // TODO: Test rotations.
     }
 
@@ -102,43 +102,43 @@ namespace DigitalRune.Geometry.Shapes.Tests
     [Test]
     public void GetSupportPoint()
     {
-      Assert.AreEqual(new Vector3F(0, 0, 0), new ConeShape().GetSupportPoint(new Vector3F(1, 0, 0)));
-      Assert.AreEqual(new Vector3F(0, 0, 0), new ConeShape().GetSupportPoint(new Vector3F(0, 1, 0)));
-      Assert.AreEqual(new Vector3F(0, 0, 0), new ConeShape().GetSupportPoint(new Vector3F(0, 0, 1)));
-      Assert.AreEqual(new Vector3F(0, 0, 0), new ConeShape().GetSupportPoint(new Vector3F(1, 1, 1)));
+      Assert.AreEqual(new Vector3(0, 0, 0), new ConeShape().GetSupportPoint(new Vector3(1, 0, 0)));
+      Assert.AreEqual(new Vector3(0, 0, 0), new ConeShape().GetSupportPoint(new Vector3(0, 1, 0)));
+      Assert.AreEqual(new Vector3(0, 0, 0), new ConeShape().GetSupportPoint(new Vector3(0, 0, 1)));
+      Assert.AreEqual(new Vector3(0, 0, 0), new ConeShape().GetSupportPoint(new Vector3(1, 1, 1)));
 
-      Assert.AreEqual(new Vector3F(10, 0, 0), new ConeShape(10, 30).GetSupportPoint(new Vector3F(1, 0, 0)));
-      Assert.AreEqual(new Vector3F(0, 30, 0), new ConeShape(10, 30).GetSupportPoint(new Vector3F(0, 1, 0)));
-      Assert.AreEqual(new Vector3F(0, 0, 10), new ConeShape(10, 30).GetSupportPoint(new Vector3F(0, 0, 1)));
-      Assert.AreEqual(new Vector3F(-10, 0, 0), new ConeShape(10, 30).GetSupportPoint(new Vector3F(-1, 0, 0)));
-      Assert.AreEqual(new Vector3F(10, 0, 0), new ConeShape(10, 30).GetSupportPoint(new Vector3F(0, -1, 0)));
-      Assert.AreEqual(new Vector3F(0, 0, -10), new ConeShape(10, 30).GetSupportPoint(new Vector3F(0, 0, -1)));
-      Assert.AreEqual(new Vector3F(0, 30, 0), new ConeShape(10, 30).GetSupportPoint(new Vector3F(1, 1, 1)));
-      Assert.AreEqual(10 * new Vector3F(-1, 0, -1).Normalized, new ConeShape(10, 30).GetSupportPoint(new Vector3F(-1, -1, -1)));
+      Assert.AreEqual(new Vector3(10, 0, 0), new ConeShape(10, 30).GetSupportPoint(new Vector3(1, 0, 0)));
+      Assert.AreEqual(new Vector3(0, 30, 0), new ConeShape(10, 30).GetSupportPoint(new Vector3(0, 1, 0)));
+      Assert.AreEqual(new Vector3(0, 0, 10), new ConeShape(10, 30).GetSupportPoint(new Vector3(0, 0, 1)));
+      Assert.AreEqual(new Vector3(-10, 0, 0), new ConeShape(10, 30).GetSupportPoint(new Vector3(-1, 0, 0)));
+      Assert.AreEqual(new Vector3(10, 0, 0), new ConeShape(10, 30).GetSupportPoint(new Vector3(0, -1, 0)));
+      Assert.AreEqual(new Vector3(0, 0, -10), new ConeShape(10, 30).GetSupportPoint(new Vector3(0, 0, -1)));
+      Assert.AreEqual(new Vector3(0, 30, 0), new ConeShape(10, 30).GetSupportPoint(new Vector3(1, 1, 1)));
+      Assert.AreEqual(10 * new Vector3(-1, 0, -1).Normalized, new ConeShape(10, 30).GetSupportPoint(new Vector3(-1, -1, -1)));
 
       ConeShape c= new ConeShape(10, 30);
       c.Radius = 0;
-      Assert.AreEqual(new Vector3F(0, 0, 0), c.GetSupportPoint(new Vector3F(1, 0, 0)));
+      Assert.AreEqual(new Vector3(0, 0, 0), c.GetSupportPoint(new Vector3(1, 0, 0)));
       c.Height = 0;
-      Assert.AreEqual(new Vector3F(0, 0, 0), c.GetSupportPoint(new Vector3F(0, 1, 0)));
+      Assert.AreEqual(new Vector3(0, 0, 0), c.GetSupportPoint(new Vector3(0, 1, 0)));
       c.Radius = 0;
-      Assert.AreEqual(new Vector3F(0, 0, 0), c.GetSupportPoint(new Vector3F(0, 1, 0)));
+      Assert.AreEqual(new Vector3(0, 0, 0), c.GetSupportPoint(new Vector3(0, 1, 0)));
     }
 
 
     //[Test]
     //public void GetSupportPointDistance()
     //{
-    //  Assert.AreEqual(0, new ConeShape().GetSupportPointDistance(new Vector3F(1, 0, 0)));
-    //  Assert.AreEqual(0, new ConeShape().GetSupportPointDistance(new Vector3F(0, 1, 0)));
-    //  Assert.AreEqual(0, new ConeShape().GetSupportPointDistance(new Vector3F(0, 0, 1)));
-    //  Assert.AreEqual(0, new ConeShape().GetSupportPointDistance(new Vector3F(1, 1, 1)));
+    //  Assert.AreEqual(0, new ConeShape().GetSupportPointDistance(new Vector3(1, 0, 0)));
+    //  Assert.AreEqual(0, new ConeShape().GetSupportPointDistance(new Vector3(0, 1, 0)));
+    //  Assert.AreEqual(0, new ConeShape().GetSupportPointDistance(new Vector3(0, 0, 1)));
+    //  Assert.AreEqual(0, new ConeShape().GetSupportPointDistance(new Vector3(1, 1, 1)));
 
-    //  Assert.IsTrue(Numeric.AreEqual(10, new ConeShape(10, 30).GetSupportPointDistance(new Vector3F(1, 0, 0))));
-    //  Assert.IsTrue(Numeric.AreEqual(30, new ConeShape(10, 30).GetSupportPointDistance(new Vector3F(0, 1, 0))));
-    //  Assert.IsTrue(Numeric.AreEqual(10, new ConeShape(10, 30).GetSupportPointDistance(new Vector3F(0, 0, 1))));
-    //  Assert.IsTrue(Numeric.AreEqual(10, new ConeShape(10, 30).GetSupportPointDistance(new Vector3F(-1, 0, -1))));
-    //  Assert.IsTrue(Numeric.AreEqual(Vector3F.ProjectTo(new Vector3F(0, 30, 0), new Vector3F(1, 1, 1)).Length, new ConeShape(10, 30).GetSupportPointDistance(new Vector3F(1, 1, 1))));
+    //  Assert.IsTrue(Numeric.AreEqual(10, new ConeShape(10, 30).GetSupportPointDistance(new Vector3(1, 0, 0))));
+    //  Assert.IsTrue(Numeric.AreEqual(30, new ConeShape(10, 30).GetSupportPointDistance(new Vector3(0, 1, 0))));
+    //  Assert.IsTrue(Numeric.AreEqual(10, new ConeShape(10, 30).GetSupportPointDistance(new Vector3(0, 0, 1))));
+    //  Assert.IsTrue(Numeric.AreEqual(10, new ConeShape(10, 30).GetSupportPointDistance(new Vector3(-1, 0, -1))));
+    //  Assert.IsTrue(Numeric.AreEqual(Vector3.ProjectTo(new Vector3(0, 30, 0), new Vector3(1, 1, 1)).Length, new ConeShape(10, 30).GetSupportPointDistance(new Vector3(1, 1, 1))));
     //}
 
 

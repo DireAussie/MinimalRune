@@ -29,14 +29,14 @@ namespace DigitalRune.Graphics.Effects
       { typeof(Matrix),       ValidateMatrix      },
       // Not implemented yet:
       //{ typeof(Matrix22F),  },
-      //{ typeof(Matrix33F),  },
-      { typeof(Matrix44F),    ValidateMatrix      },
+      //{ typeof(Matrix),  },
+      { typeof(Matrix),    ValidateMatrix      },
       { typeof(Quaternion),   ValidateVector4     },
-      { typeof(QuaternionF),  ValidateVector4     },
+      { typeof(Quaternion),  ValidateVector4     },
       { typeof(float),        ValidateSingle      },
-#if !MONOGAME
+
       { typeof(string),       ValidateString      },
-#endif
+
       { typeof(Texture),      ValidateTexture     },
       { typeof(Texture2D),    ValidateTexture2D   },
       { typeof(Texture3D),    ValidateTexture3D   },
@@ -45,7 +45,7 @@ namespace DigitalRune.Graphics.Effects
       { typeof(Vector3),      ValidateVector3     },
       { typeof(Vector4),      ValidateVector4     },
       { typeof(Vector2F),     ValidateVector2     },
-      { typeof(Vector3F),     ValidateVector3     },
+      { typeof(Vector3),     ValidateVector3     },
       { typeof(Vector4F),     ValidateVector4     },
     };
 
@@ -60,14 +60,14 @@ namespace DigitalRune.Graphics.Effects
       { typeof(Matrix),      (Action<EffectParameter, Matrix>)     ((parameter, value) => parameter.SetValue(value))             },
       // Not implemented yet:
       //{ typeof(Matrix22F),   (Action<EffectParameter, Matrix22F>)  ((parameter, value) => parameter.SetValue(value))             },
-      //{ typeof(Matrix33F),   (Action<EffectParameter, Matrix33F>)  ((parameter, value) => parameter.SetValue(value))             },
-      { typeof(Matrix44F),   (Action<EffectParameter, Matrix44F>)  ((parameter, value) => parameter.SetValue((Matrix)value))     },
+      //{ typeof(Matrix),   (Action<EffectParameter, Matrix>)  ((parameter, value) => parameter.SetValue(value))             },
+      { typeof(Matrix),   (Action<EffectParameter, Matrix>)  ((parameter, value) => parameter.SetValue((Matrix)value))     },
       { typeof(Quaternion),  (Action<EffectParameter, Quaternion>) ((parameter, value) => parameter.SetValue(value))             },
-      { typeof(QuaternionF), (Action<EffectParameter, QuaternionF>)((parameter, value) => parameter.SetValue((Quaternion)value)) },
+      { typeof(Quaternion), (Action<EffectParameter, Quaternion>)((parameter, value) => parameter.SetValue((Quaternion)value)) },
       { typeof(float),       (Action<EffectParameter, float>)      ((parameter, value) => parameter.SetValue(value))             },
-#if !MONOGAME
+
       { typeof(string),      (Action<EffectParameter, string>)     ((parameter, value) => parameter.SetValue(value))             },
-#endif
+
       { typeof(Texture),     (Action<EffectParameter, Texture>)    ((parameter, value) => parameter.SetValue(value))             },
       { typeof(Texture2D),   (Action<EffectParameter, Texture2D>)  ((parameter, value) => parameter.SetValue(value))             },
       { typeof(Texture3D),   (Action<EffectParameter, Texture3D>)  ((parameter, value) => parameter.SetValue(value))             },
@@ -76,7 +76,7 @@ namespace DigitalRune.Graphics.Effects
       { typeof(Vector3),     (Action<EffectParameter, Vector3>)    ((parameter, value) => parameter.SetValue(value))             },
       { typeof(Vector4),     (Action<EffectParameter, Vector4>)    ((parameter, value) => parameter.SetValue(value))             },
       { typeof(Vector2F),    (Action<EffectParameter, Vector2F>)   ((parameter, value) => parameter.SetValue((Vector2)value))    },
-      { typeof(Vector3F),    (Action<EffectParameter, Vector3F>)   ((parameter, value) => parameter.SetValue((Vector3)value))    },
+      { typeof(Vector3),    (Action<EffectParameter, Vector3>)   ((parameter, value) => parameter.SetValue((Vector3)value))    },
       { typeof(Vector4F),    (Action<EffectParameter, Vector4F>)   ((parameter, value) => parameter.SetValue((Vector4)value))    },
     };
 
@@ -88,29 +88,29 @@ namespace DigitalRune.Graphics.Effects
     {
       // DigitalRune data types are not supported at the moment because we have to copy the
       // array each time (slow + garbage).
-#if !MONOGAME
+
       { typeof(bool),        (Action<EffectParameter, bool[]>)       ((parameter, value) => parameter.SetValue(value)) },
       { typeof(int),         (Action<EffectParameter, int[]>)        ((parameter, value) => parameter.SetValue(value)) },
-#endif
+
       { typeof(Matrix),      (Action<EffectParameter, Matrix[]>)     ((parameter, value) => parameter.SetValue(value)) },
-#if !MONOGAME
+
       { typeof(Quaternion),  (Action<EffectParameter, Quaternion[]>) ((parameter, value) => parameter.SetValue(value)) },
-#endif
-      //{ typeof(QuaternionF), (Action<EffectParameter, QuaternionF[]>)((parameter, value) => parameter.SetValue(value)) },
+
+      //{ typeof(Quaternion), (Action<EffectParameter, Quaternion[]>)((parameter, value) => parameter.SetValue(value)) },
       { typeof(float),       (Action<EffectParameter, float[]>)      ((parameter, value) => parameter.SetValue(value)) },
       { typeof(Vector2),     (Action<EffectParameter, Vector2[]>)    ((parameter, value) => parameter.SetValue(value)) },
       { typeof(Vector3),     (Action<EffectParameter, Vector3[]>)    ((parameter, value) => parameter.SetValue(value)) },
       { typeof(Vector4),     (Action<EffectParameter, Vector4[]>)    ((parameter, value) => parameter.SetValue(value)) },
       //{ typeof(Vector2F),    (Action<EffectParameter, Vector2F[]>)   ((parameter, value) => parameter.SetValue(value)) },
-      //{ typeof(Vector3F),    (Action<EffectParameter, Vector3F[]>)   ((parameter, value) => parameter.SetValue(value)) },
+      //{ typeof(Vector3),    (Action<EffectParameter, Vector3[]>)   ((parameter, value) => parameter.SetValue(value)) },
       //{ typeof(Vector4F),    (Action<EffectParameter, Vector4F[]>)   ((parameter, value) => parameter.SetValue(value)) },
 
 // Following methods cause garbage!
 ////#if !XBOX
 //      // The following types caused a MissingMethodException at runtime (during jitting) on Xbox 360 in XNA 3.1.
 //      { typeof(Matrix22F), (Action<EffectParameter, Matrix22F[]>)((parameter, value) => parameter.SetValue(value)) },
-//      { typeof(Matrix33F), (Action<EffectParameter, Matrix33F[]>)((parameter, value) => parameter.SetValue(value)) },
-//      { typeof(Matrix44F), (Action<EffectParameter, Matrix44F[]>)((parameter, value) => parameter.SetValue(value)) },
+//      { typeof(Matrix), (Action<EffectParameter, Matrix[]>)((parameter, value) => parameter.SetValue(value)) },
+//      { typeof(Matrix), (Action<EffectParameter, Matrix[]>)((parameter, value) => parameter.SetValue(value)) },
 ////#endif
     };
 
@@ -225,12 +225,12 @@ namespace DigitalRune.Graphics.Effects
               if (parameter.ColumnCount == 2 && parameter.RowCount == 1)
                 return "Vector2, Vector2F";
               if (parameter.ColumnCount == 3 && parameter.RowCount == 1)
-                return "Vector3, Vector3F";
+                return "Vector3, Vector3";
               if (parameter.ColumnCount == 4 && parameter.RowCount == 1)
                 return "Vector4, Vector4F, Quaternion, Quaternion4F";
               break;
             case EffectParameterClass.Matrix:
-              return "Matrix, Matrix44F";
+              return "Matrix, Matrix";
           }
           break;
         case EffectParameterType.String:
@@ -311,12 +311,12 @@ namespace DigitalRune.Graphics.Effects
     }
 
 
-#if !MONOGAME
+
     private static bool ValidateString(EffectParameter parameter)
     {
       return parameter.ParameterType == EffectParameterType.String;
     }
-#endif
+
 
 
     private static bool ValidateTexture(EffectParameter parameter)

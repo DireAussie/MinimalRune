@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using System;
 using System.Collections.Generic;
 using DigitalRune.Graphics;
@@ -116,7 +116,7 @@ namespace Samples.Graphics
       GraphicsHelper.GetFrustumFarCorners(cameraNode.Camera.Projection, _cameraFrustumFarCorners);
       // Convert frustum far corners from view space to world space.
       for (int j = 0; j < _cameraFrustumFarCorners.Length; j++)
-        _cameraFrustumFarCorners[j] = (Vector3)cameraNode.PoseWorld.ToWorldDirection((Vector3F)_cameraFrustumFarCorners[j]);
+        _cameraFrustumFarCorners[j] = (Vector3)cameraNode.PoseWorld.ToWorldDirection((Vector3)_cameraFrustumFarCorners[j]);
       _parameterFrustumCorners.SetValue(_cameraFrustumFarCorners);
 
       // The current render pipeline is a HDR pipeline if the light buffer is HdrBlendable.
@@ -130,7 +130,7 @@ namespace Samples.Graphics
           continue;
 
         var light = lightNode.Light as EnvironmentLight;
-        if (light == null || light.EnvironmentMap == null || light.Color == new Vector3F(0)
+        if (light == null || light.EnvironmentMap == null || light.Color == new Vector3(0)
             || (light.DiffuseIntensity == 0 && light.SpecularIntensity == 0))
           continue;
 
@@ -151,4 +151,3 @@ namespace Samples.Graphics
 
   }
 }
-#endif

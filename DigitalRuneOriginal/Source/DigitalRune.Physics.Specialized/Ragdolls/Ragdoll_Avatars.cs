@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if XNA && (WINDOWS || XBOX)
+
 
 using System;
 using DigitalRune.Animation.Character;
@@ -93,7 +93,7 @@ namespace DigitalRune.Physics.Specialized
       // - It is better to avoid large mass differences. Therefore, all limbs have the same mass.
       // - Capsule shapes have a low inertia value about their height axis. This causes instability
       //   and it is better to use larger inertia values.
-      var massFrame = MassFrame.FromShapeAndMass(new SphereShape(0.2f), Vector3F.One, 4, 0.1f, 1);
+      var massFrame = MassFrame.FromShapeAndMass(new SphereShape(0.2f), Vector3.One, 4, 0.1f, 1);
 
       // Use standard material.
       var material = new UniformMaterial();
@@ -106,40 +106,40 @@ namespace DigitalRune.Physics.Specialized
       // The collar bones are special, they use dummy shapes and are only used to connect the
       // shoulder bones.
       ragdoll.Bodies[(int)AvatarBone.Root] = new RigidBody(new BoxShape(0.22f, 0.16f, 0.16f), massFrame, material);
-      ragdoll.BodyOffsets[(int)AvatarBone.Root] = new Pose(new Vector3F(0, -0.08f, -0.01f), QuaternionF.CreateRotationX(-0.0f));
+      ragdoll.BodyOffsets[(int)AvatarBone.Root] = new Pose(new Vector3(0, -0.08f, -0.01f), Quaternion.CreateRotationX(-0.0f));
       ragdoll.Bodies[(int)AvatarBone.BackLower] = new RigidBody(new BoxShape(0.22f, 0.16f, 0.16f), massFrame, material);
-      ragdoll.BodyOffsets[(int)AvatarBone.BackLower] = new Pose(new Vector3F(0, 0.08f, -0.01f), QuaternionF.CreateRotationX(-0.0f));
+      ragdoll.BodyOffsets[(int)AvatarBone.BackLower] = new Pose(new Vector3(0, 0.08f, -0.01f), Quaternion.CreateRotationX(-0.0f));
       ragdoll.Bodies[(int)AvatarBone.BackUpper] = new RigidBody(new BoxShape(0.22f, 0.16f, 0.16f), massFrame, material);
-      ragdoll.BodyOffsets[(int)AvatarBone.BackUpper] = new Pose(new Vector3F(0, 0.08f, -0.01f), QuaternionF.CreateRotationX(-0.1f));
+      ragdoll.BodyOffsets[(int)AvatarBone.BackUpper] = new Pose(new Vector3(0, 0.08f, -0.01f), Quaternion.CreateRotationX(-0.1f));
       ragdoll.Bodies[(int)AvatarBone.Neck] = new RigidBody(new CapsuleShape(0.04f, 0.09f), massFrame, material);
       ragdoll.Bodies[(int)AvatarBone.Head] = new RigidBody(new SphereShape(0.15f), massFrame, material);
-      ragdoll.BodyOffsets[(int)AvatarBone.Head] = new Pose(new Vector3F(0, 0.1f, 0));
+      ragdoll.BodyOffsets[(int)AvatarBone.Head] = new Pose(new Vector3(0, 0.1f, 0));
       ragdoll.Bodies[(int)AvatarBone.CollarLeft] = new RigidBody(Shape.Empty, massFrame, material);
       ragdoll.Bodies[(int)AvatarBone.CollarRight] = new RigidBody(Shape.Empty, massFrame, material);
       ragdoll.Bodies[(int)AvatarBone.ShoulderLeft] = new RigidBody(new CapsuleShape(0.04f, 0.25f), massFrame, material);
-      ragdoll.BodyOffsets[(int)AvatarBone.ShoulderLeft] = new Pose(new Vector3F(0.08f, 0, -0.02f), QuaternionF.CreateRotationZ(ConstantsF.PiOver2));
+      ragdoll.BodyOffsets[(int)AvatarBone.ShoulderLeft] = new Pose(new Vector3(0.08f, 0, -0.02f), Quaternion.CreateRotationZ(ConstantsF.PiOver2));
       ragdoll.Bodies[(int)AvatarBone.ShoulderRight] = new RigidBody(new CapsuleShape(0.04f, 0.25f), massFrame, material);
-      ragdoll.BodyOffsets[(int)AvatarBone.ShoulderRight] = new Pose(new Vector3F(-0.08f, 0, -0.02f), QuaternionF.CreateRotationZ(ConstantsF.PiOver2));
+      ragdoll.BodyOffsets[(int)AvatarBone.ShoulderRight] = new Pose(new Vector3(-0.08f, 0, -0.02f), Quaternion.CreateRotationZ(ConstantsF.PiOver2));
       ragdoll.Bodies[(int)AvatarBone.ElbowLeft] = new RigidBody(new CapsuleShape(0.04f, 0.21f), massFrame, material);
-      ragdoll.BodyOffsets[(int)AvatarBone.ElbowLeft] = new Pose(new Vector3F(0.06f, 0, -0.02f), QuaternionF.CreateRotationZ(ConstantsF.PiOver2));
+      ragdoll.BodyOffsets[(int)AvatarBone.ElbowLeft] = new Pose(new Vector3(0.06f, 0, -0.02f), Quaternion.CreateRotationZ(ConstantsF.PiOver2));
       ragdoll.Bodies[(int)AvatarBone.ElbowRight] = new RigidBody(new CapsuleShape(0.04f , 0.21f), massFrame, material);
-      ragdoll.BodyOffsets[(int)AvatarBone.ElbowRight] = new Pose(new Vector3F(-0.06f, 0, -0.02f), QuaternionF.CreateRotationZ(ConstantsF.PiOver2));
+      ragdoll.BodyOffsets[(int)AvatarBone.ElbowRight] = new Pose(new Vector3(-0.06f, 0, -0.02f), Quaternion.CreateRotationZ(ConstantsF.PiOver2));
       ragdoll.Bodies[(int)AvatarBone.WristLeft] = new RigidBody(new BoxShape(0.1f, 0.04f, 0.1f), massFrame, material);
-      ragdoll.BodyOffsets[(int)AvatarBone.WristLeft] = new Pose(new Vector3F(0.06f, -0.02f, -0.01f), QuaternionF.CreateRotationZ(0.0f));
+      ragdoll.BodyOffsets[(int)AvatarBone.WristLeft] = new Pose(new Vector3(0.06f, -0.02f, -0.01f), Quaternion.CreateRotationZ(0.0f));
       ragdoll.Bodies[(int)AvatarBone.WristRight] = new RigidBody(new BoxShape(0.1f, 0.04f, 0.1f), massFrame, material);
-      ragdoll.BodyOffsets[(int)AvatarBone.WristRight] = new Pose(new Vector3F(-0.06f, -0.02f, -0.01f), QuaternionF.CreateRotationZ(0.0f));
+      ragdoll.BodyOffsets[(int)AvatarBone.WristRight] = new Pose(new Vector3(-0.06f, -0.02f, -0.01f), Quaternion.CreateRotationZ(0.0f));
       ragdoll.Bodies[(int)AvatarBone.HipLeft] = new RigidBody(new CapsuleShape(0.06f, 0.34f), massFrame, material);
-      ragdoll.BodyOffsets[(int)AvatarBone.HipLeft] = new Pose(new Vector3F(0, -0.14f, -0.02f), QuaternionF.CreateRotationX(0.1f));
+      ragdoll.BodyOffsets[(int)AvatarBone.HipLeft] = new Pose(new Vector3(0, -0.14f, -0.02f), Quaternion.CreateRotationX(0.1f));
       ragdoll.Bodies[(int)AvatarBone.HipRight] = new RigidBody(new CapsuleShape(0.06f, 0.34f), massFrame, material);
-      ragdoll.BodyOffsets[(int)AvatarBone.HipRight] = new Pose(new Vector3F(0, -0.14f, -0.02f), QuaternionF.CreateRotationX(0.1f));
+      ragdoll.BodyOffsets[(int)AvatarBone.HipRight] = new Pose(new Vector3(0, -0.14f, -0.02f), Quaternion.CreateRotationX(0.1f));
       ragdoll.Bodies[(int)AvatarBone.KneeLeft] = new RigidBody(new CapsuleShape(0.06f, 0.36f), massFrame, material);
-      ragdoll.BodyOffsets[(int)AvatarBone.KneeLeft] = new Pose(new Vector3F(0, -0.18f, -0.04f), QuaternionF.CreateRotationX(0.1f));
+      ragdoll.BodyOffsets[(int)AvatarBone.KneeLeft] = new Pose(new Vector3(0, -0.18f, -0.04f), Quaternion.CreateRotationX(0.1f));
       ragdoll.Bodies[(int)AvatarBone.KneeRight] = new RigidBody(new CapsuleShape(0.06f, 0.36f), massFrame, material);
-      ragdoll.BodyOffsets[(int)AvatarBone.KneeRight] = new Pose(new Vector3F(0, -0.18f, -0.04f), QuaternionF.CreateRotationX(0.1f));
+      ragdoll.BodyOffsets[(int)AvatarBone.KneeRight] = new Pose(new Vector3(0, -0.18f, -0.04f), Quaternion.CreateRotationX(0.1f));
       ragdoll.Bodies[(int)AvatarBone.AnkleLeft] = new RigidBody(new BoxShape(0.1f, 0.06f, 0.22f), massFrame, material);
-      ragdoll.BodyOffsets[(int)AvatarBone.AnkleLeft] = new Pose(new Vector3F(0, -0.07f, 0.05f), QuaternionF.CreateRotationZ(0));
+      ragdoll.BodyOffsets[(int)AvatarBone.AnkleLeft] = new Pose(new Vector3(0, -0.07f, 0.05f), Quaternion.CreateRotationZ(0));
       ragdoll.Bodies[(int)AvatarBone.AnkleRight] = new RigidBody(new BoxShape(0.1f, 0.06f, 0.22f), massFrame, material);
-      ragdoll.BodyOffsets[(int)AvatarBone.AnkleRight] = new Pose(new Vector3F(0, -0.07f, 0.05f), QuaternionF.CreateRotationZ(0));
+      ragdoll.BodyOffsets[(int)AvatarBone.AnkleRight] = new Pose(new Vector3(0, -0.07f, 0.05f), Quaternion.CreateRotationZ(0));
 
       // ----- Add joint constraints.
       const float jointErrorReduction = 0.2f;
@@ -173,49 +173,49 @@ namespace DigitalRune.Physics.Specialized
       AddAngularLimit(ragdoll, skeleton, AvatarBone.Root, AvatarBone.BackLower,
         skeleton.GetBindPoseAbsoluteInverse((int)AvatarBone.BackLower).Rotation.Conjugated.ToRotationMatrix33(),
         skeleton.GetBindPoseAbsoluteInverse((int)AvatarBone.BackLower).Rotation.Conjugated.ToRotationMatrix33(), 
-        new Vector3F(-0.3f, 0, 0), new Vector3F(0.3f, 0, 0));
+        new Vector3(-0.3f, 0, 0), new Vector3(0.3f, 0, 0));
 
       AddAngularLimit(ragdoll, skeleton, AvatarBone.BackLower, AvatarBone.BackUpper,
         skeleton.GetBindPoseAbsoluteInverse((int)AvatarBone.BackUpper).Rotation.Conjugated.ToRotationMatrix33(),
         skeleton.GetBindPoseAbsoluteInverse((int)AvatarBone.BackUpper).Rotation.Conjugated.ToRotationMatrix33(), 
-        new Vector3F(-0.3f, 0, 0), new Vector3F(0.4f, 0, 0));
+        new Vector3(-0.3f, 0, 0), new Vector3(0.4f, 0, 0));
 
-      var rotationZ90Degrees = Matrix33F.CreateRotationZ(ConstantsF.PiOver2);
-      AddTwistSwingLimit(ragdoll, skeleton, AvatarBone.BackUpper, AvatarBone.Neck, rotationZ90Degrees, rotationZ90Degrees, new Vector3F(-0.1f, -0.3f, -0.3f), new Vector3F(+0.1f, +0.3f, +0.3f));
+      var rotationZ90Degrees = Matrix.CreateRotationZ(ConstantsF.PiOver2);
+      AddTwistSwingLimit(ragdoll, skeleton, AvatarBone.BackUpper, AvatarBone.Neck, rotationZ90Degrees, rotationZ90Degrees, new Vector3(-0.1f, -0.3f, -0.3f), new Vector3(+0.1f, +0.3f, +0.3f));
 
-      AddTwistSwingLimit(ragdoll, skeleton, AvatarBone.Neck, AvatarBone.Head, rotationZ90Degrees, rotationZ90Degrees, new Vector3F(-0.1f, -0.6f, -0.6f), new Vector3F(+0.1f, +0.6f, +0.6f));
+      AddTwistSwingLimit(ragdoll, skeleton, AvatarBone.Neck, AvatarBone.Head, rotationZ90Degrees, rotationZ90Degrees, new Vector3(-0.1f, -0.6f, -0.6f), new Vector3(+0.1f, +0.6f, +0.6f));
 
       AddTwistSwingLimit(ragdoll, skeleton, AvatarBone.BackUpper, AvatarBone.CollarLeft,
         skeleton.GetBindPoseAbsoluteInverse((int)AvatarBone.CollarLeft).Rotation.Conjugated.ToRotationMatrix33(),
         skeleton.GetBindPoseAbsoluteInverse((int)AvatarBone.CollarLeft).Rotation.Conjugated.ToRotationMatrix33(), 
-        new Vector3F(0), new Vector3F(0));
+        new Vector3(0), new Vector3(0));
 
       AddTwistSwingLimit(ragdoll, skeleton, AvatarBone.BackUpper, AvatarBone.CollarRight,
         skeleton.GetBindPoseAbsoluteInverse((int)AvatarBone.CollarRight).Rotation.Conjugated.ToRotationMatrix33(),
         skeleton.GetBindPoseAbsoluteInverse((int)AvatarBone.CollarRight).Rotation.Conjugated.ToRotationMatrix33(), 
-        new Vector3F(0), new Vector3F(0));
+        new Vector3(0), new Vector3(0));
 
-      AddTwistSwingLimit(ragdoll, skeleton, AvatarBone.CollarLeft, AvatarBone.ShoulderLeft, Matrix33F.Identity, Matrix33F.CreateRotationY(0.7f), new Vector3F(-0.7f, -1.2f, -1.2f), new Vector3F(+0.7f, +1.2f, +1.2f));
-      AddTwistSwingLimit(ragdoll, skeleton, AvatarBone.CollarRight, AvatarBone.ShoulderRight, Matrix33F.Identity, Matrix33F.CreateRotationY(-0.7f), new Vector3F(-0.7f, -1.2f, -1.2f), new Vector3F(+0.7f, +1.2f, +1.2f));
-      AddTwistSwingLimit(ragdoll, skeleton, AvatarBone.ShoulderLeft, AvatarBone.ElbowLeft, Matrix33F.Identity, Matrix33F.CreateRotationY(1.2f), new Vector3F(-0.7f, -1.2f, -1.2f), new Vector3F(+0.7f, +1.2f, +1.2f));
-      AddTwistSwingLimit(ragdoll, skeleton, AvatarBone.ShoulderRight, AvatarBone.ElbowRight, Matrix33F.Identity, Matrix33F.CreateRotationY(-1.2f), new Vector3F(-0.7f, -1.2f, -1.2f), new Vector3F(+0.7f, +1.2f, +1.2f));
-      AddTwistSwingLimit(ragdoll, skeleton, AvatarBone.ElbowLeft, AvatarBone.WristLeft, Matrix33F.Identity, Matrix33F.Identity, new Vector3F(-0.7f, -0.7f, -0.7f), new Vector3F(+0.7f, +0.7f, +0.7f));
-      AddTwistSwingLimit(ragdoll, skeleton, AvatarBone.ElbowRight, AvatarBone.WristRight, Matrix33F.Identity, Matrix33F.Identity, new Vector3F(-0.7f, -0.7f, -0.7f), new Vector3F(+0.7f, +0.7f, +0.7f));
-      AddTwistSwingLimit(ragdoll, skeleton, AvatarBone.Root, AvatarBone.HipLeft, rotationZ90Degrees, Matrix33F.CreateRotationX(-1.2f) * Matrix33F.CreateRotationZ(ConstantsF.PiOver2 + 0.2f), new Vector3F(-0.1f, -1.5f, -0.7f), new Vector3F(+0.1f, +1.5f, +0.7f));
-      AddTwistSwingLimit(ragdoll, skeleton, AvatarBone.Root, AvatarBone.HipRight, rotationZ90Degrees, Matrix33F.CreateRotationX(-1.2f) * Matrix33F.CreateRotationZ(ConstantsF.PiOver2 - 0.2f), new Vector3F(-0.1f, -1.5f, -0.7f), new Vector3F(+0.1f, +1.5f, +0.7f));
+      AddTwistSwingLimit(ragdoll, skeleton, AvatarBone.CollarLeft, AvatarBone.ShoulderLeft, Matrix.Identity, Matrix.CreateRotationY(0.7f), new Vector3(-0.7f, -1.2f, -1.2f), new Vector3(+0.7f, +1.2f, +1.2f));
+      AddTwistSwingLimit(ragdoll, skeleton, AvatarBone.CollarRight, AvatarBone.ShoulderRight, Matrix.Identity, Matrix.CreateRotationY(-0.7f), new Vector3(-0.7f, -1.2f, -1.2f), new Vector3(+0.7f, +1.2f, +1.2f));
+      AddTwistSwingLimit(ragdoll, skeleton, AvatarBone.ShoulderLeft, AvatarBone.ElbowLeft, Matrix.Identity, Matrix.CreateRotationY(1.2f), new Vector3(-0.7f, -1.2f, -1.2f), new Vector3(+0.7f, +1.2f, +1.2f));
+      AddTwistSwingLimit(ragdoll, skeleton, AvatarBone.ShoulderRight, AvatarBone.ElbowRight, Matrix.Identity, Matrix.CreateRotationY(-1.2f), new Vector3(-0.7f, -1.2f, -1.2f), new Vector3(+0.7f, +1.2f, +1.2f));
+      AddTwistSwingLimit(ragdoll, skeleton, AvatarBone.ElbowLeft, AvatarBone.WristLeft, Matrix.Identity, Matrix.Identity, new Vector3(-0.7f, -0.7f, -0.7f), new Vector3(+0.7f, +0.7f, +0.7f));
+      AddTwistSwingLimit(ragdoll, skeleton, AvatarBone.ElbowRight, AvatarBone.WristRight, Matrix.Identity, Matrix.Identity, new Vector3(-0.7f, -0.7f, -0.7f), new Vector3(+0.7f, +0.7f, +0.7f));
+      AddTwistSwingLimit(ragdoll, skeleton, AvatarBone.Root, AvatarBone.HipLeft, rotationZ90Degrees, Matrix.CreateRotationX(-1.2f) * Matrix.CreateRotationZ(ConstantsF.PiOver2 + 0.2f), new Vector3(-0.1f, -1.5f, -0.7f), new Vector3(+0.1f, +1.5f, +0.7f));
+      AddTwistSwingLimit(ragdoll, skeleton, AvatarBone.Root, AvatarBone.HipRight, rotationZ90Degrees, Matrix.CreateRotationX(-1.2f) * Matrix.CreateRotationZ(ConstantsF.PiOver2 - 0.2f), new Vector3(-0.1f, -1.5f, -0.7f), new Vector3(+0.1f, +1.5f, +0.7f));
 
       AddAngularLimit(ragdoll, skeleton, AvatarBone.HipLeft, AvatarBone.KneeLeft,
         skeleton.GetBindPoseAbsoluteInverse((int)AvatarBone.KneeLeft).Rotation.Conjugated.ToRotationMatrix33(),
         skeleton.GetBindPoseAbsoluteInverse((int)AvatarBone.KneeLeft).Rotation.Conjugated.ToRotationMatrix33(), 
-        new Vector3F(0, 0, 0), new Vector3F(2.2f, 0, 0));
+        new Vector3(0, 0, 0), new Vector3(2.2f, 0, 0));
 
       AddAngularLimit(ragdoll, skeleton, AvatarBone.HipRight, AvatarBone.KneeRight,
         skeleton.GetBindPoseAbsoluteInverse((int)AvatarBone.KneeRight).Rotation.Conjugated.ToRotationMatrix33(),
         skeleton.GetBindPoseAbsoluteInverse((int)AvatarBone.KneeRight).Rotation.Conjugated.ToRotationMatrix33(), 
-        new Vector3F(0, 0, 0), new Vector3F(2.2f, 0, 0));
+        new Vector3(0, 0, 0), new Vector3(2.2f, 0, 0));
 
-      AddTwistSwingLimit(ragdoll, skeleton, AvatarBone.KneeLeft, AvatarBone.AnkleLeft, rotationZ90Degrees, rotationZ90Degrees, new Vector3F(-0.1f, -0.7f, -0.3f), new Vector3F(+0.1f, +0.7f, +0.3f));
-      AddTwistSwingLimit(ragdoll, skeleton, AvatarBone.KneeRight, AvatarBone.AnkleRight, rotationZ90Degrees, rotationZ90Degrees, new Vector3F(-0.1f, -0.7f, -0.3f), new Vector3F(+0.1f, +0.7f, +0.3f));
+      AddTwistSwingLimit(ragdoll, skeleton, AvatarBone.KneeLeft, AvatarBone.AnkleLeft, rotationZ90Degrees, rotationZ90Degrees, new Vector3(-0.1f, -0.7f, -0.3f), new Vector3(+0.1f, +0.7f, +0.3f));
+      AddTwistSwingLimit(ragdoll, skeleton, AvatarBone.KneeRight, AvatarBone.AnkleRight, rotationZ90Degrees, rotationZ90Degrees, new Vector3(-0.1f, -0.7f, -0.3f), new Vector3(+0.1f, +0.7f, +0.3f));
 
       // ----- Add motors
       // We use QuaternionMotors to create forces that rotate the bones into desired poses.
@@ -288,7 +288,7 @@ namespace DigitalRune.Physics.Specialized
     }
 
 
-    private static void AddTwistSwingLimit(Ragdoll ragdoll, Skeleton skeleton, AvatarBone parentBone, AvatarBone childBone, Matrix33F orientationA, Matrix33F orientationB, Vector3F minimum, Vector3F maximum)
+    private static void AddTwistSwingLimit(Ragdoll ragdoll, Skeleton skeleton, AvatarBone parentBone, AvatarBone childBone, Matrix orientationA, Matrix orientationB, Vector3 minimum, Vector3 maximum)
     {
       int parentIndex = (int)parentBone;
       int childIndex = (int)childBone;
@@ -300,7 +300,7 @@ namespace DigitalRune.Physics.Specialized
       //
       // To define orientationA/B:
       // The anchor x-axis is the twist axis. That means, this is already the correct axis
-      // for the hands (wrist joints) and orientationA/B are therefore Matrix33F.Identity.
+      // for the hands (wrist joints) and orientationA/B are therefore Matrix.Identity.
       // For the Head, the twist axis must point up. Therefore orientationA/B must be a 90°
       // rotation about z to rotate the twist axis up.
       // For the shoulder-elbow connection, orientationA is Matrix.Identity. The swing cone must
@@ -332,7 +332,7 @@ namespace DigitalRune.Physics.Specialized
     }
 
 
-    private static void AddAngularLimit(Ragdoll ragdoll, Skeleton skeleton, AvatarBone parentBone, AvatarBone childBone, Matrix33F orientationA, Matrix33F orientationB, Vector3F minimum, Vector3F maximum)
+    private static void AddAngularLimit(Ragdoll ragdoll, Skeleton skeleton, AvatarBone parentBone, AvatarBone childBone, Matrix orientationA, Matrix orientationB, Vector3 minimum, Vector3 maximum)
     {
       // Similar to AddTwistSwingLimit
 
@@ -347,8 +347,8 @@ namespace DigitalRune.Physics.Specialized
         AnchorOrientationBLocal = ragdoll.BodyOffsets[childIndex].Orientation.Transposed * skeleton.GetBindPoseAbsoluteInverse(childIndex).Rotation.ToRotationMatrix33() * orientationB,
         Minimum = minimum,
         Maximum = maximum,
-        ErrorReduction = new Vector3F(0.2f),
-        Softness = new Vector3F(0.001f)
+        ErrorReduction = new Vector3(0.2f),
+        Softness = new Vector3(0.001f)
       };
       ragdoll.Limits[childIndex] = limit;
     }
@@ -380,4 +380,4 @@ namespace DigitalRune.Physics.Specialized
     }
   }
 }
-#endif
+

@@ -50,11 +50,11 @@ namespace DigitalRune.Windows.Charts
         private PathRenderer _lineRenderer;
         private PathRenderer _areaRenderer;
 
-#if !SILVERLIGHT
+
         private bool _updatePending;
         private CacheMode _cacheMode;
         private EdgeMode _edgeMode;
-#endif
+
 
         // Visible data points:
         // - _startIndex is the first point on/inside the chart area.
@@ -266,7 +266,7 @@ namespace DigitalRune.Windows.Charts
         }
 
 
-#if !SILVERLIGHT
+
         /// <summary>
         /// Identifies the <see cref="RenderMode"/> dependency property. 
         /// (Not available in Silverlight.)
@@ -292,7 +292,7 @@ namespace DigitalRune.Windows.Charts
             get { return (ChartRenderMode)GetValue(RenderModeProperty); }
             set { SetValue(RenderModeProperty, value); }
         }
-#endif
+
 
 
         /// <summary>
@@ -345,7 +345,7 @@ namespace DigitalRune.Windows.Charts
 
         //--------------------------------------------------------------
 
-#if SILVERLIGHT
+
         /// <summary>
         /// Initializes a new instance of the <see cref="LineChart"/> class.
         /// </summary>
@@ -362,7 +362,7 @@ namespace DigitalRune.Windows.Charts
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(LineChart), new FrameworkPropertyMetadata(typeof(LineChart)));
         }
-#endif
+
 
 
 
@@ -438,7 +438,7 @@ namespace DigitalRune.Windows.Charts
                 FindVisibleDataPoints();
                 CachePositions();
 
-#if SILVERLIGHT
+
                 OnUpdateLines(_startIndex, _endIndexExclusive, _xPositions, _basePositions, _yPositions);
                 UpdateMarkers();
 #else
@@ -478,12 +478,12 @@ namespace DigitalRune.Windows.Charts
                         // Do nothing.
                         break;
                 }
-#endif
+
             }
         }
 
 
-#if !SILVERLIGHT
+
         private void ClearCacheMode()
         {
             _cacheMode = CacheMode;
@@ -509,7 +509,7 @@ namespace DigitalRune.Windows.Charts
         {
             RenderOptions.SetEdgeMode(this, _edgeMode);
         }
-#endif
+
 
 
         /// <summary>
@@ -602,14 +602,14 @@ namespace DigitalRune.Windows.Charts
             bool filled = Filled;
             var interpolation = EffectiveInterpolation;
 
-#if !SILVERLIGHT
+
             // Perform the large data optimization (see below) if the line chart contains vertical lines.
             bool largeDataOptimization = interpolation == ChartInterpolation.Linear
                                          || interpolation == ChartInterpolation.CenteredSteps && verticalStepLineVisible
                                          || interpolation == ChartInterpolation.LeftSteps && verticalStepLineVisible
                                          || interpolation == ChartInterpolation.RightSteps && verticalStepLineVisible;
             double pixelSize = WindowsHelper.GetPixelSize(this).Width;
-#endif
+
 
             using (var lineRenderContext = _lineRenderer.Open())
             using (var areaRenderContext = _areaRenderer.Open())
@@ -628,7 +628,7 @@ namespace DigitalRune.Windows.Charts
                     if (Numeric.IsNaN(xPositions[i]) || Numeric.IsNaN(yPositions[i]))
                         continue;
 
-#if !SILVERLIGHT
+
                     if (largeDataOptimization)
                     {
                         // Draw a single vertical line for all data points that lie on the same pixel column.
@@ -675,7 +675,7 @@ namespace DigitalRune.Windows.Charts
                                 continue;
                         }
                     }
-#endif
+
 
                     Point previousPoint; //, previousPointBase;
                     Point point, pointBase;
@@ -889,11 +889,11 @@ namespace DigitalRune.Windows.Charts
                 // Alternatively, we could set the property as an attached property.
                 marker.Tag = i;
 
-#if SILVERLIGHT
+
                 // In Silverlight: Position marker immediately, because some elements do not raise a 
                 // SizeChanged event.
                 PositionMarker(marker);
-#endif
+
 
                 // Position the marker as soon as it is measured.
                 marker.SizeChanged += MarkerSizeChanged;

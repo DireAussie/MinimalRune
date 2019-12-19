@@ -16,7 +16,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using DigitalRune.Linq;
 
-#if WINDOWS_PHONE
+
 using Window = DigitalRune.Windows.Framework.DialogHost;
 using ClosingEventHandler = System.EventHandler<System.ComponentModel.CancelEventArgs>;
 using ClosedEventHandler = System.EventHandler<System.EventArgs>;
@@ -28,7 +28,7 @@ using ClosedEventHandler = System.EventHandler;
 using Window = System.Windows.Window;
 using ClosingEventHandler = System.ComponentModel.CancelEventHandler;
 using ClosedEventHandler = System.EventHandler;
-#endif
+
 
 
 namespace DigitalRune.Windows.Framework
@@ -152,7 +152,7 @@ namespace DigitalRune.Windows.Framework
             _view.Closing -= OnViewClosing;
             _view.Closed -= OnViewClosed;
 
-#if !SILVERLIGHT && !WINDOWS_PHONE
+
             // Move focus back to parent window.
             // (Ideally, we do this only if the window was active before closing. However,
             // we cannot check _view.IsActive because this view is already closed. We could 
@@ -162,7 +162,7 @@ namespace DigitalRune.Windows.Framework
             {
                 owner.Activate();
             }
-#endif
+
 
             if (_deactivateFromViewModel)
             {
@@ -320,13 +320,13 @@ namespace DigitalRune.Windows.Framework
                 return tcs.Task;
             }
 
-#if SILVERLIGHT || WINDOWS_PHONE
+
             throw new InvalidOperationException("Temporarily hiding a window or dialog in Silverlight is not supported.");
 #else
             _view.Hide();
             (_viewModel as IActivatable)?.OnDeactivate(false);
             return TaskHelper.FromResult(true);
-#endif
+
         }
 
     }

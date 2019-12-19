@@ -39,12 +39,12 @@ namespace DigitalRune.Ionic.Zip
             _CompressionMethod = (Int16)CompressionMethod.Deflate;
             _Encryption = EncryptionAlgorithm.None;
             _Source = ZipEntrySource.None;
-#if !WINDOWS
+
             // See https://dotnetzip.codeplex.com/workitem/14049
             AlternateEncoding = System.Text.Encoding.GetEncoding("UTF-8");
 #else
             AlternateEncoding = System.Text.Encoding.GetEncoding("IBM437");
-#endif
+
             AlternateEncodingUsage = ZipOption.Never;
         }
 
@@ -362,7 +362,7 @@ namespace DigitalRune.Ionic.Zip
             }
         }
 
-#if !PORTABLE
+
         /// <summary>
         ///   The file attributes for the entry.
         /// </summary>
@@ -418,7 +418,7 @@ namespace DigitalRune.Ionic.Zip
         /// </para>
         ///
         /// </remarks>
-#if NETFX_CORE
+
         public global::Windows.Storage.FileAttributes Attributes
         {
           // workitem 7071
@@ -430,8 +430,8 @@ namespace DigitalRune.Ionic.Zip
           // workitem 7071
           get { return (System.IO.FileAttributes)_ExternalFileAttrs; }
         }
-#endif
-#endif
+
+
 
 
         /// <summary>
@@ -1240,21 +1240,21 @@ namespace DigitalRune.Ionic.Zip
         }
 
 
-#if AESCRYPTO
+
         private static int GetKeyStrengthInBits(EncryptionAlgorithm a)
         {
             if (a == EncryptionAlgorithm.WinZipAes256) return 256;
             else if (a == EncryptionAlgorithm.WinZipAes128) return 128;
             return -1;
         }
-#endif
+
 
         internal static int GetLengthOfCryptoHeaderBytes(EncryptionAlgorithm a)
         {
             //if ((_BitField & 0x01) != 0x01) return 0;
             if (a == EncryptionAlgorithm.None) return 0;
 
-#if AESCRYPTO
+
             if (a == EncryptionAlgorithm.WinZipAes128 ||
                 a == EncryptionAlgorithm.WinZipAes256)
             {
@@ -1262,7 +1262,7 @@ namespace DigitalRune.Ionic.Zip
                 int sizeOfSaltAndPv = ((KeyStrengthInBits / 8 / 2) + 2);
                 return sizeOfSaltAndPv;
             }
-#endif
+
 
             if (a == EncryptionAlgorithm.PkzipWeak)
                 return 12;
@@ -1283,10 +1283,10 @@ namespace DigitalRune.Ionic.Zip
 
 
         private ZipCrypto _zipCrypto_forExtract;
-#if AESCRYPTO
+
         private WinZipAesCrypto _aesCrypto_forExtract;
         private Int16 _WinZipAesMethod;
-#endif
+
 
         internal DateTime _LastModified;
         private DateTime _Mtime, _Atime, _Ctime;  // workitem 6878: NTFS quantities
@@ -1444,12 +1444,12 @@ namespace DigitalRune.Ionic.Zip
         /// </summary>
         Deflate = 8,
 
-#if BZIP
+
         /// <summary>
         ///   BZip2 compression, a compression algorithm developed by Julian Seward.
         ///   For COM environments, the value is 12.
         /// </summary>
         BZip2 = 12,
-#endif
+
     }
 }

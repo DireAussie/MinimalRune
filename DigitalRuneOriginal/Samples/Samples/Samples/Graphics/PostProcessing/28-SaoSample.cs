@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using System;
 using DigitalRune.Game.Input;
 using DigitalRune.Graphics.PostProcessing;
@@ -133,4 +133,3 @@ the SSAO algorithm used in the SsaoFilter.",
     }
   }
 }
-#endif

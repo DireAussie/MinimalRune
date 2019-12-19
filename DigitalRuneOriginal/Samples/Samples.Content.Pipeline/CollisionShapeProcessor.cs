@@ -149,11 +149,11 @@ namespace Samples.Content.Pipeline
       // define the box. We use the Aabb struct to find the extents for us.
 
       // Create an AABB that contains the first vertex.
-      Aabb aabb = new Aabb((Vector3F)mesh.Positions[0], (Vector3F)mesh.Positions[0]);
+      Aabb aabb = new Aabb((Vector3)mesh.Positions[0], (Vector3)mesh.Positions[0]);
 
       // Extend the AABB to include the other 7 vertices.
       for (int i = 1; i < mesh.Positions.Count; i++)
-        aabb.Grow((Vector3F)mesh.Positions[i]);
+        aabb.Grow((Vector3)mesh.Positions[i]);
 
       // If the box is not centered on the node, add a translation to the pose.
       pose = pose * new Pose(aabb.Center);
@@ -193,8 +193,8 @@ namespace Samples.Content.Pipeline
         mesh.Positions[i] = Vector3.Transform(mesh.Positions[i], transform);
 
       // Convert the vertices from Microsoft.Xna.Framework.Vector3 to 
-      // DigitalRune.Mathematics.Algebra.Vector3F.
-      IEnumerable<Vector3F> vertices = mesh.Positions.Select(pos => (Vector3F)pos);
+      // DigitalRune.Mathematics.Algebra.Vector3.
+      IEnumerable<Vector3> vertices = mesh.Positions.Select(pos => (Vector3)pos);
 
       // Return a ConvexPolyhedron (convex hull) consisting of the mesh vertices.
       shape = new ConvexPolyhedron(vertices);
@@ -220,7 +220,7 @@ namespace Samples.Content.Pipeline
           mesh.Positions[i] = Vector3.Transform(mesh.Positions[i], scaling);
       }
 
-      return new Pose((Vector3F)translation, (QuaternionF)rotation);
+      return new Pose((Vector3)translation, (Quaternion)rotation);
     }
   }
 }

@@ -4,9 +4,9 @@
 
 using System;
 using DigitalRune.Mathematics.Algebra;
-#if XNA || MONOGAME
+
 using Microsoft.Xna.Framework.Content;
-#endif
+
 
 
 namespace DigitalRune.Mathematics.Statistics
@@ -21,18 +21,18 @@ namespace DigitalRune.Mathematics.Statistics
   /// values from the area of this ring are created.
   /// </para>
   /// </remarks>
-  public class CircleDistribution : Distribution<Vector3F>
+  public class CircleDistribution : Distribution<Vector3>
   {
     /// <summary>
     /// Gets or sets the center of the circle.
     /// </summary>
     /// <value>The center position. The default is (0, 0, 0).</value>
-    public Vector3F Center
+    public Vector3 Center
     {
       get { return _center; }
       set { _center = value; }
     }
-    private Vector3F _center;
+    private Vector3 _center;
 
 
     /// <summary>
@@ -97,9 +97,9 @@ namespace DigitalRune.Mathematics.Statistics
     /// Gets or sets the scale factors that are multiplied to the random position.
     /// </summary>
     /// <value>The scale factors in x and y direction. The default value is (1, 1).</value>
-#if XNA || MONOGAME
+
     [ContentSerializer(Optional = true)]
-#endif
+
     public Vector2F Scale
     {
       get { return _scale; }
@@ -109,7 +109,7 @@ namespace DigitalRune.Mathematics.Statistics
 
 
     /// <inheritdoc/>
-    public override Vector3F Next(Random random)
+    public override Vector3 Next(Random random)
     {
       if (random == null)
         throw new ArgumentNullException("random");
@@ -123,7 +123,7 @@ namespace DigitalRune.Mathematics.Statistics
       float x = (float)Math.Cos(angle) * radius;
       float y = (float)Math.Sqrt(radius * radius - x * x) * Math.Sign(angle);
 
-      return _center + new Vector3F(x * _scale.X, y * _scale.Y, 0);
+      return _center + new Vector3(x * _scale.X, y * _scale.Y, 0);
     }
   }
 }

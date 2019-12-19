@@ -52,7 +52,7 @@ namespace DigitalRune.Physics.Constraints
     /// The constraint anchor orientation on <see cref="Constraint.BodyA"/> in local space of 
     /// <see cref="Constraint.BodyA"/>.
     /// </value>
-    public Matrix33F AnchorOrientationALocal
+    public Matrix AnchorOrientationALocal
     {
       get { return _angularLimit.AnchorOrientationALocal; }
       set
@@ -74,7 +74,7 @@ namespace DigitalRune.Physics.Constraints
     /// The constraint anchor orientation on <see cref="Constraint.BodyB"/> in local space of 
     /// <see cref="Constraint.BodyB"/>.
     /// </value>
-    public Matrix33F AnchorOrientationBLocal
+    public Matrix AnchorOrientationBLocal
     {
       get { return _angularLimit.AnchorOrientationBLocal; }
       set
@@ -105,7 +105,7 @@ namespace DigitalRune.Physics.Constraints
       {
         if (value != ErrorReduction)
         {
-          _angularLimit.ErrorReduction = new Vector3F(value);
+          _angularLimit.ErrorReduction = new Vector3(value);
           OnChanged();
         }
       }
@@ -129,7 +129,7 @@ namespace DigitalRune.Physics.Constraints
       {
         if (value != Softness)
         {
-          _angularLimit.Softness = new Vector3F(value);
+          _angularLimit.Softness = new Vector3(value);
           OnChanged();
         }
       }
@@ -150,7 +150,7 @@ namespace DigitalRune.Physics.Constraints
       {
         if (value != MaxForce)
         {
-          _angularLimit.MaxForce = new Vector3F(value);
+          _angularLimit.MaxForce = new Vector3(value);
           OnChanged();
         }
       }
@@ -158,17 +158,17 @@ namespace DigitalRune.Physics.Constraints
 
 
     /// <inheritdoc/>
-    public override Vector3F LinearConstraintImpulse
+    public override Vector3 LinearConstraintImpulse
     {
       get
       {
-        return Vector3F.Zero;
+        return Vector3.Zero;
       }
     }
 
 
     /// <inheritdoc/>
-    public override Vector3F AngularConstraintImpulse
+    public override Vector3 AngularConstraintImpulse
     {
       get
       {
@@ -189,8 +189,8 @@ namespace DigitalRune.Physics.Constraints
     {
       _angularLimit = new AngularLimit
       {
-        Minimum = new Vector3F(0, 0, 0),
-        Maximum = new Vector3F(0, 0, 0),
+        Minimum = new Vector3(0, 0, 0),
+        Maximum = new Vector3(0, 0, 0),
       };
     }
 

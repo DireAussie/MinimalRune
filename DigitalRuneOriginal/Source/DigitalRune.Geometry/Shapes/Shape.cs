@@ -44,9 +44,9 @@ namespace DigitalRune.Geometry.Shapes
   /// copy of the shape - except when documented otherwise (see description of derived classes).
   /// </para>
   /// </remarks>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
+
   [XmlInclude(typeof(BoxShape))]
   [XmlInclude(typeof(CapsuleShape))]
   [XmlInclude(typeof(CircleShape))]
@@ -109,7 +109,7 @@ namespace DigitalRune.Geometry.Shapes
     /// This property returns a random point of the shape. If possible, a point in the center of the 
     /// shape is returned. If not possible, a surface point is returned.
     /// </remarks>
-    public abstract Vector3F InnerPoint { get; }
+    public abstract Vector3 InnerPoint { get; }
 
 
     /// <summary>
@@ -245,7 +245,7 @@ namespace DigitalRune.Geometry.Shapes
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
     public Aabb GetAabb()
     {
-      return GetAabb(Vector3F.One, Pose.Identity);
+      return GetAabb(Vector3.One, Pose.Identity);
     }
 
 
@@ -266,7 +266,7 @@ namespace DigitalRune.Geometry.Shapes
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
     public Aabb GetAabb(Pose pose)
     {
-      return GetAabb(Vector3F.One, pose);
+      return GetAabb(Vector3.One, pose);
     }
 
 
@@ -287,7 +287,7 @@ namespace DigitalRune.Geometry.Shapes
     /// The AABB is axis-aligned to the axes of the world space (or the parent coordinate space).
     /// </remarks>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-    public abstract Aabb GetAabb(Vector3F scale, Pose pose);
+    public abstract Aabb GetAabb(Vector3 scale, Pose pose);
 
 
     /// <summary>

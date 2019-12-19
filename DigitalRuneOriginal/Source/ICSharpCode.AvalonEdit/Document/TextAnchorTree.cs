@@ -21,9 +21,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using ICSharpCode.AvalonEdit.Utils;
-#if NREFACTORY
+
 using ICSharpCode.NRefactory.Editor;
-#endif
+
 
 namespace ICSharpCode.AvalonEdit.Document
 {
@@ -675,7 +675,7 @@ namespace ICSharpCode.AvalonEdit.Document
 		[Conditional("DATACONSISTENCYTEST")]
 		internal void CheckProperties()
 		{
-			#if DEBUG
+
 			if (root != null) {
 				CheckProperties(root);
 				
@@ -683,10 +683,10 @@ namespace ICSharpCode.AvalonEdit.Document
 				int blackCount = -1;
 				CheckNodeProperties(root, null, RED, 0, ref blackCount);
 			}
-			#endif
+
 		}
 		
-		#if DEBUG
+
 		void CheckProperties(TextAnchorNode node)
 		{
 			int totalLength = node.length;
@@ -730,11 +730,11 @@ namespace ICSharpCode.AvalonEdit.Document
 			CheckNodeProperties(node.left, node, node.color, blackCount, ref expectedBlackCount);
 			CheckNodeProperties(node.right, node, node.color, blackCount, ref expectedBlackCount);
 		}
-		#endif
+
 
 		
 
-		#if DEBUG
+
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
 		public string GetTreeAsString()
 		{
@@ -764,7 +764,7 @@ namespace ICSharpCode.AvalonEdit.Document
 				AppendTreeToString(node.right, b, indent);
 			}
 		}
-		#endif
+
 
 	}
 }

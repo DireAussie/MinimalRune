@@ -21,9 +21,9 @@ namespace DigitalRune.Geometry.Shapes
   /// representation of a line segment (avoids allocating memory on the heap).
   /// </para>
   /// </remarks>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
+
   public class LineSegmentShape : ConvexShape
   {
     //--------------------------------------------------------------
@@ -43,7 +43,7 @@ namespace DigitalRune.Geometry.Shapes
     /// <remarks>
     /// This point is a "deep" inner point of the shape (in local space). 
     /// </remarks>
-    public override Vector3F InnerPoint
+    public override Vector3 InnerPoint
     {
       get { return (_start + _end) / 2; }
     }
@@ -53,7 +53,7 @@ namespace DigitalRune.Geometry.Shapes
     /// Gets or sets the start point.
     /// </summary>
     /// <value>The start point.</value>
-    public Vector3F Start
+    public Vector3 Start
     {
       get { return _start; }
       set
@@ -65,14 +65,14 @@ namespace DigitalRune.Geometry.Shapes
         }
       }
     }
-    private Vector3F _start;
+    private Vector3 _start;
 
 
     /// <summary>
     /// Gets or sets the end point.
     /// </summary>
     /// <value>The end point.</value>
-    public Vector3F End
+    public Vector3 End
     {
       get { return _end; }
       set
@@ -84,7 +84,7 @@ namespace DigitalRune.Geometry.Shapes
         }
       }
     }
-    private Vector3F _end;
+    private Vector3 _end;
 
 
     /// <summary>
@@ -125,7 +125,7 @@ namespace DigitalRune.Geometry.Shapes
     /// Creates a line segment where <see cref="Start"/> and <see cref="End"/> are (0, 0, 0).
     /// </remarks>
     public LineSegmentShape()
-      : this (Vector3F.Zero, Vector3F.Zero)
+      : this (Vector3.Zero, Vector3.Zero)
     {
     }
 
@@ -135,7 +135,7 @@ namespace DigitalRune.Geometry.Shapes
     /// </summary>
     /// <param name="start">The start point.</param>
     /// <param name="end">The end point.</param>
-    public LineSegmentShape(Vector3F start, Vector3F end)
+    public LineSegmentShape(Vector3 start, Vector3 end)
     {
       _start = start;
       _end = end;
@@ -181,12 +181,12 @@ namespace DigitalRune.Geometry.Shapes
 
 
     /// <inheritdoc/>
-    public override Aabb GetAabb(Vector3F scale, Pose pose)
+    public override Aabb GetAabb(Vector3 scale, Pose pose)
     {
-      Vector3F worldStart = pose.ToWorldPosition(_start * scale);
-      Vector3F worldEnd = pose.ToWorldPosition(_end * scale);
-      Vector3F minimum = Vector3F.Min(worldStart, worldEnd);
-      Vector3F maximum = Vector3F.Max(worldStart, worldEnd);
+      Vector3 worldStart = pose.ToWorldPosition(_start * scale);
+      Vector3 worldEnd = pose.ToWorldPosition(_end * scale);
+      Vector3 minimum = Vector3.Min(worldStart, worldEnd);
+      Vector3 maximum = Vector3.Max(worldStart, worldEnd);
       return new Aabb(minimum, maximum);
     }
 
@@ -207,9 +207,9 @@ namespace DigitalRune.Geometry.Shapes
     /// from the center regarding the given direction. This point is not necessarily unique.
     /// </para>
     /// </remarks>
-    public override Vector3F GetSupportPoint(Vector3F direction)
+    public override Vector3 GetSupportPoint(Vector3 direction)
     {
-      if (Vector3F.Dot(_start, direction) > Vector3F.Dot(_end, direction))
+      if (Vector3.Dot(_start, direction) > Vector3.Dot(_end, direction))
         return _start;
       else
         return _end;
@@ -227,9 +227,9 @@ namespace DigitalRune.Geometry.Shapes
     /// A support point regarding a direction is an extreme point of the shape that is furthest away
     /// from the center regarding the given direction. This point is not necessarily unique.
     /// </remarks>
-    public override Vector3F GetSupportPointNormalized(Vector3F directionNormalized)
+    public override Vector3 GetSupportPointNormalized(Vector3 directionNormalized)
     {
-      if (Vector3F.Dot(_start, directionNormalized) > Vector3F.Dot(_end, directionNormalized))
+      if (Vector3.Dot(_start, directionNormalized) > Vector3.Dot(_end, directionNormalized))
         return _start;
       else
         return _end;

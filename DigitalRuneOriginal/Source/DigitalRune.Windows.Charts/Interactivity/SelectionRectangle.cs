@@ -29,7 +29,7 @@ namespace DigitalRune.Windows.Charts.Interactivity
 
         //--------------------------------------------------------------
 
-#if SILVERLIGHT
+
         /// <summary>
         /// Initializes a new instance of the <see cref="SelectionRectangle"/> class.
         /// </summary>
@@ -45,7 +45,7 @@ namespace DigitalRune.Windows.Charts.Interactivity
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(SelectionRectangle), new FrameworkPropertyMetadata(typeof(SelectionRectangle)));
         }
-#endif
+
 
 
 

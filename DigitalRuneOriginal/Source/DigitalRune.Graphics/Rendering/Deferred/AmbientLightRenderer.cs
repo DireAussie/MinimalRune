@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !WP7
+
 using System;
 using System.Collections.Generic;
 using DigitalRune.Graphics.SceneGraph;
@@ -137,7 +137,7 @@ namespace DigitalRune.Graphics.Rendering
         _parameterLightColor.SetValue((Vector3)light.Color * light.Intensity * hdrScale);
         _parameterHemisphericAttenuation.SetValue(light.HemisphericAttenuation);
 
-        Vector3F upWorld = lightNode.PoseWorld.ToWorldDirection(Vector3F.Up);
+        Vector3 upWorld = lightNode.PoseWorld.ToWorldDirection(Vector3.Up);
         _parameterUp.SetValue((Vector3)upWorld);
 
         if (lightNode.Clip != null)
@@ -177,4 +177,4 @@ namespace DigitalRune.Graphics.Rendering
 
   }
 }
-#endif
+

@@ -110,7 +110,7 @@ namespace DigitalRune.Animation.Character
     /// the hand center. Then the target will be grabbed correctly with the hand center and not the
     /// wrist.
     /// </remarks>
-    public Vector3F TipOffset
+    public Vector3 TipOffset
     {
       get { return _tipOffset; }
       set
@@ -122,7 +122,7 @@ namespace DigitalRune.Animation.Character
         }
       }
     }
-    private Vector3F _tipOffset;
+    private Vector3 _tipOffset;
 
 
     /// <summary>
@@ -154,7 +154,7 @@ namespace DigitalRune.Animation.Character
     /// The hinge axis relative to the root bone. The vector must not be a zero length
     /// vector. The default is (0, 1, 0).
     /// </value>
-    public Vector3F HingeAxis
+    public Vector3 HingeAxis
     {
       get { return _hingeAxis; }
       set
@@ -168,7 +168,7 @@ namespace DigitalRune.Animation.Character
         }
       }
     }
-    private Vector3F _hingeAxis;
+    private Vector3 _hingeAxis;
 
 
     /// <summary>
@@ -207,7 +207,7 @@ namespace DigitalRune.Animation.Character
     /// according to the orientation of the bar.
     /// </para>
     /// </remarks>
-    public QuaternionF? TipBoneOrientation { get; set; }
+    public Quaternion? TipBoneOrientation { get; set; }
 
 
 
@@ -220,7 +220,7 @@ namespace DigitalRune.Animation.Character
     /// </summary>
     public TwoJointIKSolver()
     {
-      HingeAxis = Vector3F.UnitY;
+      HingeAxis = Vector3.UnitY;
       MinHingeAngle = 0;
       MaxHingeAngle = 3 * ConstantsF.PiOver4;
     }
@@ -271,7 +271,7 @@ namespace DigitalRune.Animation.Character
       var tipBonePoseAbsolute = SkeletonPose.GetBonePoseAbsolute(TipBoneIndex);
 
       // Get tip position in model space.
-      Vector3F tipAbsolute;
+      Vector3 tipAbsolute;
       if (TipBoneOrientation != null)
       {
         // If the user has specified an absolute tip rotation, then we consider this rotation and
@@ -287,7 +287,7 @@ namespace DigitalRune.Animation.Character
       }
 
       // Abort if we already touch the target.
-      if (Vector3F.AreNumericallyEqual(tipAbsolute, Target))
+      if (Vector3.AreNumericallyEqual(tipAbsolute, Target))
         return;
 
       // Root to target vector.
@@ -305,7 +305,7 @@ namespace DigitalRune.Animation.Character
       {
         rootToTip /= rootToTipLength;
         
-        var rotation = QuaternionF.CreateRotation(rootToTip, rootToTarget);
+        var rotation = Quaternion.CreateRotation(rootToTip, rootToTarget);
         if (rotation.Angle > Numeric.EpsilonF)
         {
           // Apply rotation to root bone.
@@ -325,8 +325,8 @@ namespace DigitalRune.Animation.Character
 
       // Project vectors to hinge plane. Everything should be in a plane for the following 
       // computations.
-      rootToHinge -= hingeAxis * Vector3F.Dot(rootToHinge, hingeAxis);
-      hingeToTip -= hingeAxis * Vector3F.Dot(hingeToTip, hingeAxis);
+      rootToHinge -= hingeAxis * Vector3.Dot(rootToHinge, hingeAxis);
+      hingeToTip -= hingeAxis * Vector3.Dot(hingeToTip, hingeAxis);
 
       // Get lengths.
       float rootToHingeLength = rootToHinge.Length;
@@ -340,10 +340,10 @@ namespace DigitalRune.Animation.Character
       hingeToTip /= hingeToTipLength;
 
       // Compute current hinge angle (angle between root bone and hinge bone).
-      float currentHingeAngle = (float)Math.Acos(MathHelper.Clamp(Vector3F.Dot(rootToHinge, hingeToTip), -1, 1));
+      float currentHingeAngle = (float)Math.Acos(MathHelper.Clamp(Vector3.Dot(rootToHinge, hingeToTip), -1, 1));
 
       // Make sure the computed angle is about the hingeAxis and not about -hingeAxis.
-      if (Vector3F.Dot(Vector3F.Cross(rootToHinge, hingeToTip), hingeAxis) < 0)
+      if (Vector3.Dot(Vector3.Cross(rootToHinge, hingeToTip), hingeAxis) < 0)
         currentHingeAngle = -currentHingeAngle;
 
       // Using law of cosines to compute the desired hinge angle using the triangle lengths.
@@ -359,7 +359,7 @@ namespace DigitalRune.Animation.Character
 
       // Compute delta rotation between current and desired angle.
       float deltaAngle = desiredHingeAngle - currentHingeAngle;
-      var hingeRotation = QuaternionF.CreateRotation(hingeAxis, deltaAngle);
+      var hingeRotation = Quaternion.CreateRotation(hingeAxis, deltaAngle);
       hingeBonePoseAbsolute.Rotation = hingeRotation * hingeBonePoseAbsolute.Rotation;
 
       // Update tip position.
@@ -373,7 +373,7 @@ namespace DigitalRune.Animation.Character
       if (!Numeric.IsZero(rootToTipLength))
       {
         rootToTip /= rootToTipLength;
-        var rotation = QuaternionF.CreateRotation(rootToTip, rootToTarget);
+        var rotation = Quaternion.CreateRotation(rootToTip, rootToTarget);
         rootBonePoseAbsolute.Rotation = rotation * rootBonePoseAbsolute.Rotation;
         hingeBonePoseAbsolute.Rotation = rotation * hingeBonePoseAbsolute.Rotation;
       }

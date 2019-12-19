@@ -5,22 +5,22 @@
 using System;
 using System.Collections.Generic;
 using DigitalRune.Mathematics.Algebra;
-#if !PORTABLE
+
 using System.ComponentModel;
-#endif
-#if PORTABLE || WINDOWS
+
+
 using System.Diagnostics;
 using System.Dynamic;
-#endif
+
 
 
 namespace DigitalRune.Geometry
 {
   /// <exclude/>
   [CLSCompliant(false)]
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
+
   public class DirectionalLookupTableUInt16F : DirectionalLookupTableF<ushort>
   {
     internal DirectionalLookupTableUInt16F(ushort[,,] cubeMap) : base(cubeMap)
@@ -42,9 +42,9 @@ namespace DigitalRune.Geometry
   /// <remarks>
   /// The directional lookup table internally uses a cube map to store the data.
   /// </remarks>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
+
   public class DirectionalLookupTableF<T>
   {
     // Note: DirectionalLookupTableF<T> is only binary serializable, not xml-serializable.
@@ -85,7 +85,7 @@ namespace DigitalRune.Geometry
     /// </summary>
     /// <value>The direction vector.</value>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1043:UseIntegralOrStringArgumentForIndexers")]
-    public T this[Vector3F direction]
+    public T this[Vector3 direction]
     {
       get
       {
@@ -112,11 +112,11 @@ namespace DigitalRune.Geometry
     }
 
 
-#if PORTABLE || WINDOWS
+
     /// <exclude/>
-#if !PORTABLE
+
     [Browsable(false)]
-#endif
+
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     public /*dynamic*/ object Internals
     {
@@ -135,7 +135,7 @@ namespace DigitalRune.Geometry
         return internals;
       }
     }
-#endif
+
 
 
 
@@ -176,14 +176,14 @@ namespace DigitalRune.Geometry
     /// <param name="x">The x index.</param>
     /// <param name="y">The y index.</param>
     /// <param name="face">The face index.</param>
-    private void GetIndices(ref Vector3F direction, out int x, out int y, out int face)
+    private void GetIndices(ref Vector3 direction, out int x, out int y, out int face)
     {
       // Precompute factor used for lookup.
       int width = CubeMap.GetLength(1);
       float s = 0.5f * width;
 
       // Convert the direction vector to indices.
-      Vector3F abs = Vector3F.Absolute(direction);
+      Vector3 abs = Vector3.Absolute(direction);
       if (abs.X >= abs.Y && abs.X >= abs.Z)
       {
         float oneOverX = 1.0f / abs.X;
@@ -254,7 +254,7 @@ namespace DigitalRune.Geometry
     /// lookup table with data or read all entries.
     /// </remarks>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
-    public IEnumerable<Vector3F> GetSampleDirections()
+    public IEnumerable<Vector3> GetSampleDirections()
     {
       int width = CubeMap.GetLength(1);
 
@@ -265,7 +265,7 @@ namespace DigitalRune.Geometry
         for (int j = 0; j < width; j++)
         {
           float x = (j + 0.5f) / width * 2.0f - 1.0f;
-          yield return new Vector3F(1.0f, x, y);
+          yield return new Vector3(1.0f, x, y);
         }
       }
 
@@ -276,7 +276,7 @@ namespace DigitalRune.Geometry
         for (int j = 0; j < width; j++)
         {
           float x = (j + 0.5f) / width * 2.0f - 1.0f;
-          yield return new Vector3F(-1.0f, x, y);
+          yield return new Vector3(-1.0f, x, y);
         }
       }
 
@@ -287,7 +287,7 @@ namespace DigitalRune.Geometry
         for (int j = 0; j < width; j++)
         {
           float x = (j + 0.5f) / width * 2.0f - 1.0f;
-          yield return new Vector3F(x, 1.0f, y);
+          yield return new Vector3(x, 1.0f, y);
         }
       }
 
@@ -298,7 +298,7 @@ namespace DigitalRune.Geometry
         for (int j = 0; j < width; j++)
         {
           float x = (j + 0.5f) / width * 2.0f - 1.0f;
-          yield return new Vector3F(x, -1.0f, y);
+          yield return new Vector3(x, -1.0f, y);
         }
       }
 
@@ -309,7 +309,7 @@ namespace DigitalRune.Geometry
         for (int j = 0; j < width; j++)
         {
           float x = (j + 0.5f) / width * 2.0f - 1.0f;
-          yield return new Vector3F(x, y, 1.0f);
+          yield return new Vector3(x, y, 1.0f);
         }
       }
 
@@ -320,7 +320,7 @@ namespace DigitalRune.Geometry
         for (int j = 0; j < width; j++)
         {
           float x = (j + 0.5f) / width * 2.0f - 1.0f;
-          yield return new Vector3F(x, y, -1.0f);
+          yield return new Vector3(x, y, -1.0f);
         }
       }
     }

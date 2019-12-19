@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using System;
 using System.Linq;
 using DigitalRune.Game.UI.Rendering;
@@ -79,13 +79,13 @@ from the player camera to make best use of the texture resolution.",
       Random random = new Random(12345);
       for (int i = 0; i < 10; i++)
       {
-        Vector3F position = new Vector3F(random.NextFloat(-3, -8), 0, random.NextFloat(0, -5));
-        Matrix33F orientation = Matrix33F.CreateRotationY(random.NextFloat(0, ConstantsF.TwoPi));
+        Vector3 position = new Vector3(random.NextFloat(-3, -8), 0, random.NextFloat(0, -5));
+        Matrix orientation = Matrix.CreateRotationY(random.NextFloat(0, ConstantsF.TwoPi));
         float scale = random.NextFloat(0.5f, 1.2f);
         GameObjectService.Objects.Add(new StaticObject(Services, "PalmTree/palm_tree", scale, new Pose(position, orientation)));
       }
 
-#if MONOGAME
+
       // ----- Workaround for missing effect parameter semantics in MonoGame.
       // The effect used by the reflecting ground object defines some new effect
       // parameters and sets the EffectParameterHint to "PerInstance", e.g.:
@@ -103,7 +103,7 @@ from the player camera to make best use of the texture resolution.",
         effectInterpreter.ParameterDescriptions.Add("ReflectionMatrix", (parameter, index) => new EffectParameterDescription(parameter, "ReflectionMatrix", index, EffectParameterHint.PerInstance));
         effectInterpreter.ParameterDescriptions.Add("ReflectionNormal", (parameter, index) => new EffectParameterDescription(parameter, "ReflectionNormal", index, EffectParameterHint.PerInstance));
       }
-#endif
+
 
       // Get a ground model which can render a planar reflection. See 
       // GroundReflective/MaterialReflective.fx.
@@ -111,13 +111,13 @@ from the player camera to make best use of the texture resolution.",
 
       // Use the reflective mesh as the ground.
       var groundMesh = groundModel.GetSubtree().OfType<MeshNode>().First().Clone();
-      groundMesh.PoseWorld = new Pose(new Vector3F(0, 0.01f, 0));  // Small y offset to draw above the default ground model from GroundObject.
+      groundMesh.PoseWorld = new Pose(new Vector3(0, 0.01f, 0));  // Small y offset to draw above the default ground model from GroundObject.
       _graphicsScreen.Scene.Children.Add(groundMesh);
 
       // Use another instance of the mesh as a wall.
       var wallMesh = groundMesh.Clone();
-      wallMesh.ScaleLocal = new Vector3F(0.2f, 1, 0.1f);
-      wallMesh.PoseWorld = new Pose(new Vector3F(5, 2, -5), Matrix33F.CreateRotationY(-0.7f) * Matrix33F.CreateRotationX(ConstantsF.PiOver2));
+      wallMesh.ScaleLocal = new Vector3(0.2f, 1, 0.1f);
+      wallMesh.PoseWorld = new Pose(new Vector3(5, 2, -5), Matrix.CreateRotationY(-0.7f) * Matrix.CreateRotationX(ConstantsF.PiOver2));
       _graphicsScreen.Scene.Children.Add(wallMesh);
 
       // Create a PlanarReflectionNode and add it to the children of the first ground mesh.
@@ -136,7 +136,7 @@ from the player camera to make best use of the texture resolution.",
         Shape = groundMesh.Shape,
 
         // The normal of the reflection plane.
-        NormalLocal = new Vector3F(0, 1, 0),
+        NormalLocal = new Vector3(0, 1, 0),
       };
       groundMesh.Children = new SceneNodeCollection(1) { _planarReflectionNode0 };
 
@@ -151,7 +151,7 @@ from the player camera to make best use of the texture resolution.",
       _planarReflectionNode1 = new PlanarReflectionNode(renderToTexture1)
       {
         Shape = groundMesh.Shape,
-        NormalLocal = new Vector3F(0, 1, 0),
+        NormalLocal = new Vector3(0, 1, 0),
       };
       wallMesh.Children = new SceneNodeCollection(1) { _planarReflectionNode1 };
       
@@ -196,4 +196,3 @@ from the player camera to make best use of the texture resolution.",
     }
   }
 }
-#endif

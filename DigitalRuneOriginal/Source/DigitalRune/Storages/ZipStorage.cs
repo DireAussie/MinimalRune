@@ -38,10 +38,10 @@ namespace DigitalRune.Storages
     private readonly Stream _zipStream;
     private readonly ZipFile _zipFile;
 
-#if ANDROID
+
     // A list of all temp files created in this session.
     private static List<string> _tempFiles = new List<string>();
-#endif
+
 
 
 
@@ -123,12 +123,12 @@ namespace DigitalRune.Storages
       catch
       {
         _zipStream.Dispose();
-#if !ANDROID
+
         throw;
-#endif
+
       }
 
-#if ANDROID
+
       // Android asset streams do not support Stream.Length/Position or seeking.
       // We need to copy the asset first to normal file.
       string tempFileName = storage.GetRealPath(fileName) ?? fileName;
@@ -165,7 +165,7 @@ namespace DigitalRune.Storages
         _zipStream.Dispose();
         throw;
       }
-#endif
+
     }
 
 
@@ -217,11 +217,11 @@ namespace DigitalRune.Storages
       if (stream != null)
         return stream;
 
-#if SILVERLIGHT || WP7 || XBOX || PORTABLE 
+
       throw new FileNotFoundException("The file was not found in the ZIP archive.");
 #else
       throw new FileNotFoundException("The file was not found in the ZIP archive.", path);
-#endif
+
     }
 
 

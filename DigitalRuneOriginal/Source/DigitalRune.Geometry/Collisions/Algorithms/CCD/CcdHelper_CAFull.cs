@@ -54,18 +54,18 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
 
       // qEnd = ∆q * qStart 
       // => ∆q = qEnd * qStart.Inverse
-      QuaternionF qA = QuaternionF.CreateRotation(targetPoseA.Orientation * startPoseA.Orientation.Transposed);
+      Quaternion qA = Quaternion.CreateRotation(targetPoseA.Orientation * startPoseA.Orientation.Transposed);
 
       // ω = ∆α / ∆t, ∆t = 1
       // => ω = ∆α
       float ωA = qA.Angle;                                                        // Magnitude |ω|
-      Vector3F ωAxisA = (!Numeric.AreEqual(qA.W, 1)) ? qA.Axis : Vector3F.UnitX;  // Rotation axis of ω
+      Vector3 ωAxisA = (!Numeric.AreEqual(qA.W, 1)) ? qA.Axis : Vector3.UnitX;  // Rotation axis of ω
 
       // Get angular velocity ω of object B (as magnitude + rotation axis).
       // (Same as above.)
-      QuaternionF qB = QuaternionF.CreateRotation(targetPoseB.Orientation * startPoseB.Orientation.Transposed);
+      Quaternion qB = Quaternion.CreateRotation(targetPoseB.Orientation * startPoseB.Orientation.Transposed);
       float ωB = qB.Angle;                                                        // Magnitude |ω|
-      Vector3F ωAxisB = (!Numeric.AreEqual(qB.W, 1)) ? qB.Axis : Vector3F.UnitX;  // Rotation axis of ω
+      Vector3 ωAxisB = (!Numeric.AreEqual(qB.W, 1)) ? qB.Axis : Vector3.UnitX;  // Rotation axis of ω
 
       // Bounding sphere radii.
       float rMaxA = GetBoundingRadius(geometricObjectA);
@@ -76,9 +76,9 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
 
       // Compute relative linear velocity.
       // (linearRelVel ∙ normal > 0 if objects are getting closer.)
-      Vector3F linearVelocityA = targetPoseA.Position - startPoseA.Position;
-      Vector3F linearVelocityB = targetPoseB.Position - startPoseB.Position;
-      Vector3F linearVelocityRelative = linearVelocityA - linearVelocityB;
+      Vector3 linearVelocityA = targetPoseA.Position - startPoseA.Position;
+      Vector3 linearVelocityB = targetPoseB.Position - startPoseB.Position;
+      Vector3 linearVelocityRelative = linearVelocityA - linearVelocityB;
 
       // Abort if relative movement is zero.
       if (Numeric.IsZero(linearVelocityRelative.Length + angularVelocityProjected))
@@ -115,7 +115,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
           return 1;
         }
 
-        Vector3F normal = testContactSet[0].Normal;
+        Vector3 normal = testContactSet[0].Normal;
         float distance = -testContactSet[0].PenetrationDepth;
 
         float λ = 0;
@@ -124,11 +124,11 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
         for (int i = 0; i < MaxNumberOfIterations && distance > 0; i++)
         {
           // |v∙n|
-          float linearVelocityProject = Vector3F.Dot(linearVelocityRelative, normal);
+          float linearVelocityProject = Vector3.Dot(linearVelocityRelative, normal);
 
           // |n x ω| * rMax
-          angularVelocityProjected = Vector3F.Cross(normal, ωAxisA).Length * ωA * rMaxA
-                                     + Vector3F.Cross(normal, ωAxisB).Length * ωB * rMaxB;
+          angularVelocityProjected = Vector3.Cross(normal, ωAxisA).Length * ωA * rMaxA
+                                     + Vector3.Cross(normal, ωAxisB).Length * ωB * rMaxB;
 
           // Total projected velocity.
           float velocityProjected = linearVelocityProject + angularVelocityProjected;
@@ -150,12 +150,12 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
             break;
 
           // Get new interpolated poses.
-          Vector3F positionA = startPoseA.Position + λ * (targetPoseA.Position - startPoseA.Position);
-          Matrix33F rotationA = Matrix33F.CreateRotation(ωAxisA, λ * ωA);
+          Vector3 positionA = startPoseA.Position + λ * (targetPoseA.Position - startPoseA.Position);
+          Matrix rotationA = Matrix.CreateRotation(ωAxisA, λ * ωA);
           testGeometricObjectA.Pose = new Pose(positionA, rotationA * startPoseA.Orientation);
 
-          Vector3F positionB = startPoseB.Position + λ * (targetPoseB.Position - startPoseB.Position);
-          Matrix33F rotationB = Matrix33F.CreateRotation(ωAxisB, λ * ωB);
+          Vector3 positionB = startPoseB.Position + λ * (targetPoseB.Position - startPoseB.Position);
+          Matrix rotationB = Matrix.CreateRotation(ωAxisB, λ * ωB);
           testGeometricObjectB.Pose = new Pose(positionB, rotationB * startPoseB.Orientation);
 
           // Get new closest point distance.

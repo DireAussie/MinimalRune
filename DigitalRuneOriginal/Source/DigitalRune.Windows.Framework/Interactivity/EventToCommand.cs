@@ -242,7 +242,7 @@ namespace DigitalRune.Windows.Framework
         }
 
 
-#if SILVERLIGHT || WINDOWS_PHONE
+
         private Control GetAssociatedObject()
         {
             return AssociatedObject as Control;
@@ -256,7 +256,7 @@ namespace DigitalRune.Windows.Framework
         {
             return AssociatedObject as FrameworkElement;
         }
-#endif
+
 
 
         /// <summary>
@@ -326,21 +326,21 @@ namespace DigitalRune.Windows.Framework
 
             if (e.OldValue != null)
             {
-#if NET45
+
                 CanExecuteChangedEventManager.RemoveHandler((ICommand)e.OldValue, element.OnCommandCanExecuteChanged);
 #else
                 ((ICommand)e.OldValue).CanExecuteChanged -= element.OnCommandCanExecuteChanged;
-#endif
+
             }
 
             var command = (ICommand)e.NewValue;
             if (command != null)
             {
-#if NET45
+
                 CanExecuteChangedEventManager.AddHandler(command, element.OnCommandCanExecuteChanged);
 #else
                 command.CanExecuteChanged += element.OnCommandCanExecuteChanged;
-#endif
+
             }
 
             element.EnableDisableElement();
@@ -367,7 +367,7 @@ namespace DigitalRune.Windows.Framework
         }
 
 
-#if SILVERLIGHT || WINDOWS_PHONE
+
         // The CanExecuteChanged handler needs to be public because of security restrictions in 
         // Silverlight. (The CanExecuteChanged event is usually implemented as a weak-event which 
         // requires reflection.)
@@ -376,7 +376,7 @@ namespace DigitalRune.Windows.Framework
         public
 #else
         private
-#endif
+
         void OnCommandCanExecuteChanged(object sender, EventArgs e)
         {
             EnableDisableElement();

@@ -166,18 +166,18 @@ namespace DigitalRune.Geometry.Shapes.Tests
       PerspectiveViewVolume frustum = new PerspectiveViewVolume();
       frustum.Set(-1, 1, -1, 1, 2, 5);
       Aabb aabb = frustum.GetAabb(Pose.Identity);
-      Assert.AreEqual(new Vector3F(-2.5f, -2.5f, -5), aabb.Minimum);
-      Assert.AreEqual(new Vector3F(2.5f, 2.5f, -2), aabb.Maximum);
+      Assert.AreEqual(new Vector3(-2.5f, -2.5f, -5), aabb.Minimum);
+      Assert.AreEqual(new Vector3(2.5f, 2.5f, -2), aabb.Maximum);
 
       frustum.Set(0, 2, 0, 2, 1, 5);
       aabb = frustum.GetAabb(Pose.Identity);
-      Assert.AreEqual(new Vector3F(0f, 0, -5), aabb.Minimum);
-      Assert.AreEqual(new Vector3F(10, 10, -1), aabb.Maximum);
+      Assert.AreEqual(new Vector3(0f, 0, -5), aabb.Minimum);
+      Assert.AreEqual(new Vector3(10, 10, -1), aabb.Maximum);
 
       frustum.Set(1, 2, 1, 2, 1, 5);
       aabb = frustum.GetAabb(Pose.Identity);
-      Assert.AreEqual(new Vector3F(1, 1, -5), aabb.Minimum);
-      Assert.AreEqual(new Vector3F(10, 10, -1), aabb.Maximum);
+      Assert.AreEqual(new Vector3(1, 1, -5), aabb.Minimum);
+      Assert.AreEqual(new Vector3(10, 10, -1), aabb.Maximum);
     }
 
 
@@ -440,7 +440,7 @@ namespace DigitalRune.Geometry.Shapes.Tests
     {
       PerspectiveViewVolume frustum = new PerspectiveViewVolume();
       frustum.SetWidthAndHeight(1, 1, 1, 10);
-      Vector3F innerPoint = frustum.InnerPoint;
+      Vector3 innerPoint = frustum.InnerPoint;
       Assert.AreEqual(0, innerPoint.X);
       Assert.AreEqual(0, innerPoint.Y);
       Assert.AreEqual(-5.5f, innerPoint.Z);

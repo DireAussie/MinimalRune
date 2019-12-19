@@ -14,7 +14,7 @@ namespace DigitalRune.Graphics.Content
   /// </summary>
   public class MaterialReader : ContentTypeReader<Material>
   {
-#if !MONOGAME
+
     /// <summary>
     /// Determines if deserialization into an existing object is possible.
     /// </summary>
@@ -26,7 +26,7 @@ namespace DigitalRune.Graphics.Content
     {
       get { return true; }
     }
-#endif
+
 
 
     /// <summary>

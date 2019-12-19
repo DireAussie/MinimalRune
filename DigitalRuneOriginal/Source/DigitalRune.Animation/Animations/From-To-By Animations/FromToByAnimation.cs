@@ -6,9 +6,9 @@ using System;
 using System.Diagnostics;
 using DigitalRune.Animation.Easing;
 using DigitalRune.Mathematics;
-#if XNA || MONOGAME
+
 using Microsoft.Xna.Framework.Content;
-#endif
+
 
 
 namespace DigitalRune.Animation
@@ -199,9 +199,9 @@ namespace DigitalRune.Animation
     /// <see cref="ElasticEase"/> can be used to create special animation effects, such as bounces
     /// or oscillations.
     /// </remarks>
-#if XNA || MONOGAME
+
     [ContentSerializer(SharedResource = true)]
-#endif
+
     public IEasingFunction EasingFunction { get; set; }
 
 

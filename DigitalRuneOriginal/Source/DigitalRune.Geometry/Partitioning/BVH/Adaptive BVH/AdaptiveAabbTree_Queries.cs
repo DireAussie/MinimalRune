@@ -6,10 +6,10 @@ using System;
 using System.Collections.Generic;
 using DigitalRune.Geometry.Shapes;
 
-#if !POOL_ENUMERABLES
+
 using DigitalRune.Mathematics;
 using DigitalRune.Mathematics.Algebra;
-#endif
+
 
 
 namespace DigitalRune.Geometry.Partitioning
@@ -21,7 +21,7 @@ namespace DigitalRune.Geometry.Partitioning
     {
       UpdateInternal();
 
-#if !POOL_ENUMERABLES
+
       if (_root == null)
         yield break;
 
@@ -51,7 +51,7 @@ namespace DigitalRune.Geometry.Partitioning
 #else
       // Avoiding garbage:
       return GetOverlapsWork.Create(this, ref aabb);
-#endif
+
     }
 
 
@@ -120,7 +120,7 @@ namespace DigitalRune.Geometry.Partitioning
 
       UpdateInternal();
 
-#if !POOL_ENUMERABLES
+
       if (_root == null)
         yield break;
 
@@ -150,7 +150,7 @@ namespace DigitalRune.Geometry.Partitioning
 #else
       // Avoiding garbage:
       return GetLeafNodesWork.Create(this, ref aabb);
-#endif
+
     }
 
 
@@ -159,11 +159,11 @@ namespace DigitalRune.Geometry.Partitioning
     {
       UpdateInternal();
 
-#if !POOL_ENUMERABLES
+
       if (_root == null)
         yield break;
 
-      var rayDirectionInverse = new Vector3F(
+      var rayDirectionInverse = new Vector3(
             1 / ray.Direction.X,
             1 / ray.Direction.Y,
             1 / ray.Direction.Z);
@@ -196,7 +196,7 @@ namespace DigitalRune.Geometry.Partitioning
 #else
       // Avoiding garbage:
       return GetOverlapsWithRayWork.Create(this, ref ray);
-#endif
+
     }
 
 

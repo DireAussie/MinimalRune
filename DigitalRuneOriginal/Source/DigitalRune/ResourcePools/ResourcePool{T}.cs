@@ -29,7 +29,7 @@ namespace DigitalRune
     //   https://github.com/mono/monkeywrench/blob/master/ServiceStack/src/ServiceStack.Common/Net30/ObjectPool.cs
 
 
-#if (NETFX_CORE || (!SILVERLIGHT && !WP7 && !XBOX && !UNITY))
+
 
     //--------------------------------------------------------------
 
@@ -109,11 +109,11 @@ namespace DigitalRune
       if (Enabled)
       {
         // Get queue that pools items for the current thread.
-#if NETFX_CORE || NET45
+
         int threadId = Environment.CurrentManagedThreadId;
 #else
         int threadId = Thread.CurrentThread.ManagedThreadId;
-#endif
+
         WorkStealingQueue<T> queue;
         if (_queues.TryGet(threadId, out queue))
         {
@@ -175,11 +175,11 @@ namespace DigitalRune
       if (Enabled)
       {
         // Get queue that pools items for the current thread.
-#if NETFX_CORE || NET45
+
         int threadId = Environment.CurrentManagedThreadId;
 #else
         int threadId = Thread.CurrentThread.ManagedThreadId;
-#endif
+
         WorkStealingQueue<T> queue;
         if (!_queues.TryGet(threadId, out queue))
         {
@@ -318,6 +318,6 @@ namespace DigitalRune
     }
 
 
-#endif
+
   }
 }

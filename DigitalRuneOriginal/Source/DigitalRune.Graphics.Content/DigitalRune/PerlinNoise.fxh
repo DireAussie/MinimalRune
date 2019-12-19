@@ -9,7 +9,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#ifndef DIGITALRUNE_PERLINNOISE_FXH
+
 #define DIGITALRUNE_PERLINNOISE_FXH
 
 
@@ -309,4 +309,4 @@ float PerlinNoise4D(float4 p)
         f.z),
       f.w);
 }
-#endif
+

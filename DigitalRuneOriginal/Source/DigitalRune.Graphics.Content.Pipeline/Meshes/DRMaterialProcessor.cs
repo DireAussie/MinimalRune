@@ -595,14 +595,14 @@ namespace DigitalRune.Graphics.Content.Pipeline
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods")]
     protected virtual ExternalReference<CompiledEffectContent> OnBuildEffect(ExternalReference<EffectContent> effect, ContentProcessorContext context)
     {
-#if MONOGAME
+
       return context.BuildAsset<EffectContent, CompiledEffectContent>(effect, typeof(EffectProcessor).Name);
 #else
       if (string.IsNullOrEmpty(ContentHelper.GetMonoGamePlatform()))
         return context.BuildAsset<EffectContent, CompiledEffectContent>(effect, typeof(EffectProcessor).Name);
       else
         return context.BuildAsset<EffectContent, CompiledEffectContent>(effect, "MGEffectProcessor");
-#endif
+
     }
 
 

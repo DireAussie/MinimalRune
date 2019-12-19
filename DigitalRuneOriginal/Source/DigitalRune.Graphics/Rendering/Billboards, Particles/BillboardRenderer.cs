@@ -7,16 +7,16 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using DigitalRune.Collections;
 using DigitalRune.Geometry;
-#if !WP7
+
 using DigitalRune.Graphics.PostProcessing;
-#endif
+
 using DigitalRune.Graphics.SceneGraph;
 using DigitalRune.Mathematics;
 using DigitalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework.Graphics;
-#if PARTICLES
+
 using DigitalRune.Particles;
-#endif
+
 
 
 namespace DigitalRune.Graphics.Rendering
@@ -201,12 +201,12 @@ namespace DigitalRune.Graphics.Rendering
       /// </summary>
       public SceneNode Node;
 
-#if PARTICLES
+
       /// <summary>
       /// The render data of the particle system.
       /// </summary>
       public ParticleSystemData ParticleSystemData;
-#endif
+
     }
 
 
@@ -251,8 +251,8 @@ namespace DigitalRune.Graphics.Rendering
 
     // Camera information extracted from the view matrix.
     private Pose _cameraPose;         // The position and orientation of the camera in world space.
-    private Vector3F _cameraForward;  // The camera forward vector in world space.
-    private Vector3F _defaultNormal;  // The default normal vector.
+    private Vector3 _cameraForward;  // The camera forward vector in world space.
+    private Vector3 _defaultNormal;  // The default normal vector.
 
 
 
@@ -335,7 +335,7 @@ namespace DigitalRune.Graphics.Rendering
     public bool EnableOffscreenRendering { get; set; }
 
 
-#if !WP7
+
     /// <summary>
     /// Gets or sets the upsampling filter that is used for combining the off-screen buffer with 
     /// the scene.
@@ -363,7 +363,7 @@ namespace DigitalRune.Graphics.Rendering
     /// </value>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
     public UpsamplingMode UpsamplingMode { get; set; }
-#endif
+
 
 
     /// <summary>
@@ -477,9 +477,9 @@ namespace DigitalRune.Graphics.Rendering
       GraphicsService = graphicsService;
       BufferSize = bufferSize;
       DepthThreshold = 1;
-#if !WP7
+
       UpsamplingMode = UpsamplingMode.NearestDepth;
-#endif
+
 
       // Start with a reasonably large capacity to avoid frequent re-allocations.
       _jobs = new ArrayList<Job>(32);
@@ -515,9 +515,9 @@ namespace DigitalRune.Graphics.Rendering
     public override bool CanRender(SceneNode node, RenderContext context)
     {
       return node is BillboardNode 
-#if PARTICLES
+
              || node is ParticleSystemNode
-#endif
+
              ;
     }
 
@@ -580,7 +580,7 @@ namespace DigitalRune.Graphics.Rendering
           continue;
         }
 
-#if PARTICLES
+
         var particleSystemNode = node as ParticleSystemNode;
         if (particleSystemNode != null)
         {
@@ -590,7 +590,7 @@ namespace DigitalRune.Graphics.Rendering
           AddJob(particleSystemNode, sortByDistance, backToFront);
           continue;
         }
-#endif
+
       }
 
       if (_jobs.Count > 0 && order != RenderOrder.UserDefined)
@@ -610,10 +610,10 @@ namespace DigitalRune.Graphics.Rendering
       if (sortByDistance)
       {
         // Determine distance to camera.
-        Vector3F cameraToNode = node.PoseWorld.Position - _cameraPose.Position;
+        Vector3 cameraToNode = node.PoseWorld.Position - _cameraPose.Position;
 
         // Planar distance: Project vector onto look direction.
-        distance = Vector3F.Dot(cameraToNode, _cameraForward);
+        distance = Vector3.Dot(cameraToNode, _cameraForward);
 
         // Use linear distance for viewpoint-oriented and world-oriented billboards.
         if (billboard.Orientation.Normal != BillboardNormal.ViewPlaneAligned)
@@ -646,7 +646,7 @@ namespace DigitalRune.Graphics.Rendering
     }
 
 
-#if PARTICLES
+
     // Creates the draw jobs for a particle system node.
     private void AddJob(ParticleSystemNode node, bool sortByDistance, bool backToFront)
     {
@@ -673,16 +673,16 @@ namespace DigitalRune.Graphics.Rendering
       if (sortByDistance)
       {
         // Position relative to ParticleSystemNode (root particle system).
-        Vector3F position = particleSystemData.Pose.Position;
+        Vector3 position = particleSystemData.Pose.Position;
 
         // Position in world space.
         position = node.PoseWorld.ToWorldPosition(position);
 
         // Determine distance to camera.
-        Vector3F cameraToNode = position - _cameraPose.Position;
+        Vector3 cameraToNode = position - _cameraPose.Position;
 
         // Planar distance: Project vector onto look direction.
-        distance = Vector3F.Dot(cameraToNode, _cameraForward);
+        distance = Vector3.Dot(cameraToNode, _cameraForward);
 
         // Use linear distance for viewpoint-oriented and world-oriented billboards.
         if (particleSystemData.BillboardOrientation.Normal != BillboardNormal.ViewPlaneAligned)
@@ -703,7 +703,7 @@ namespace DigitalRune.Graphics.Rendering
       };
       _jobs.Add(ref job);
     }
-#endif
+
 
 
     /// <summary>
@@ -811,7 +811,7 @@ namespace DigitalRune.Graphics.Rendering
           }
         }
 
-#if PARTICLES
+
         var particleSystemNode = node as ParticleSystemNode;
         if (particleSystemNode != null)
         {
@@ -837,7 +837,7 @@ namespace DigitalRune.Graphics.Rendering
             }
           }
         }
-#endif
+
       }
     }
 

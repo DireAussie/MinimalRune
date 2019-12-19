@@ -14,7 +14,7 @@ namespace DigitalRune.Mathematics.Statistics.Tests
     [ExpectedException(typeof(ArgumentNullException))]
     public void ComputeCovarianceMatrix3FWithArgumentNull()
     {
-      StatisticsHelper.ComputeCovarianceMatrix((List<Vector3F>)null);
+      StatisticsHelper.ComputeCovarianceMatrix((List<Vector3>)null);
     }
 
 
@@ -45,7 +45,7 @@ namespace DigitalRune.Mathematics.Statistics.Tests
     [Test]
     public void ComputeCovarianceMatrix3FWithEmptyList()
     {
-      var result = StatisticsHelper.ComputeCovarianceMatrix(new List<Vector3F>());
+      var result = StatisticsHelper.ComputeCovarianceMatrix(new List<Vector3>());
       foreach (var element in result.ToList(MatrixOrder.RowMajor))
         Assert.IsNaN(element);
     }
@@ -109,15 +109,15 @@ namespace DigitalRune.Mathematics.Statistics.Tests
     public void ComputeCovarianceMatrix3F()
     {
       // Make a random list.
-      List<Vector3F> points3F = new List<Vector3F>(new[]
+      List<Vector3> points3F = new List<Vector3>(new[]
       {
-        new Vector3F(-1, -2, 1),
-        new Vector3F(1, 0, 2),
-        new Vector3F(2, -1, 3),
-        new Vector3F(2, -1, 2),
+        new Vector3(-1, -2, 1),
+        new Vector3(1, 0, 2),
+        new Vector3(2, -1, 3),
+        new Vector3(2, -1, 2),
       });
 
-      Matrix33F cov3F = StatisticsHelper.ComputeCovarianceMatrix(points3F);
+      Matrix cov3F = StatisticsHelper.ComputeCovarianceMatrix(points3F);
       Assert.AreEqual(3f / 2, cov3F[0, 0]);
       Assert.AreEqual(1f / 2, cov3F[0, 1]);
       Assert.AreEqual(3f / 4, cov3F[0, 2]);

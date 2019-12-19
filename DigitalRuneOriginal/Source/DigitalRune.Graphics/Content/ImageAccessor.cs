@@ -113,10 +113,10 @@ namespace DigitalRune.Graphics.Content
     /// <returns>The pixel color.</returns>
     public Vector4F GetPixel(int x, int y)
     {
-#if DEBUG
+
       if ((uint)x >= (uint)_width || (uint)y >= (uint)_height)
         throw new ArgumentOutOfRangeException();
-#endif
+
 
       return GetPixel(y * _width + x);
     }
@@ -159,10 +159,10 @@ namespace DigitalRune.Graphics.Content
     /// <param name="color">The pixel color.</param>
     public void SetPixel(int x, int y, Vector4F color)
     {
-#if DEBUG
+
       if ((uint)x >= (uint)_width || (uint)y >= (uint)_height)
         throw new ArgumentOutOfRangeException();
-#endif
+
 
       SetPixel(y * _width + x, color);
     }
@@ -291,10 +291,10 @@ namespace DigitalRune.Graphics.Content
     /// <param name="color">The pixel color.</param>
     public void SetPixel(int x, int y, int z, Vector4F color)
     {
-#if DEBUG
+
       if ((uint)x >= (uint)_width || (uint)y >= (uint)_height || (uint)z >= (uint)_depth)
         throw new ArgumentOutOfRangeException();
-#endif
+
 
       unsafe
       {

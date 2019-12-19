@@ -94,11 +94,11 @@ namespace DigitalRune.Graphics.Content.Pipeline
           || (elementType == typeof(Vector3))
           || (elementType == typeof(Vector4))
           || (elementType == typeof(Matrix22F))
-          || (elementType == typeof(Matrix33F))
-          || (elementType == typeof(Matrix44F))
-          || (elementType == typeof(QuaternionF))
+          || (elementType == typeof(Matrix))
+          || (elementType == typeof(Matrix))
+          || (elementType == typeof(Quaternion))
           || (elementType == typeof(Vector2F))
-          || (elementType == typeof(Vector3F))
+          || (elementType == typeof(Vector3))
           || (elementType == typeof(Vector4F)))
       {
         return true;

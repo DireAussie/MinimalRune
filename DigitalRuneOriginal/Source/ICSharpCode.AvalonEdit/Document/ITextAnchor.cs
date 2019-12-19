@@ -21,7 +21,7 @@ using ICSharpCode.NRefactory;
 
 namespace ICSharpCode.AvalonEdit.Document
 {
-	#if !NREFACTORY
+
 	/// <summary>
 	/// The TextAnchor class references an offset (a position between two characters).
 	/// It automatically updates the offset when text is inserted/removed in front of the anchor.
@@ -138,5 +138,5 @@ namespace ICSharpCode.AvalonEdit.Document
 		/// </summary>
 		AfterInsertion
 	}
-	#endif
+
 }

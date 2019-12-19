@@ -126,7 +126,7 @@ namespace DigitalRune.Graphics.Content
   /// advanced lighting techniques.
   /// </para>
   /// <para>
-  /// See: <see cref="ComputeNormals"/>, <see cref="ComputeTangentFrame(IList{int},IList{Vector3F},IList{Vector3F},IList{Vector2F},out Vector3F[],out Vector3F[])"/>
+  /// See: <see cref="ComputeNormals"/>, <see cref="ComputeTangentFrame(IList{int},IList{Vector3},IList{Vector3},IList{Vector2F},out Vector3[],out Vector3[])"/>
   /// </para>
   /// <para>
   /// <strong>Adjacency computation:</strong><br/>
@@ -267,7 +267,7 @@ namespace DigitalRune.Graphics.Content
 
     private class VertexHashEntry
     {
-      public Vector3F V;
+      public Vector3 V;
       public int Index;
       public VertexHashEntry Next;
     }
@@ -283,7 +283,7 @@ namespace DigitalRune.Graphics.Content
     }
 
 
-    private static void MakeXHeap(Vector3F[] positions, out int[] indices)
+    private static void MakeXHeap(Vector3[] positions, out int[] indices)
     {
       int numberOfVertices = positions.Length;
       indices = Enumerable.Range(0, numberOfVertices).ToArray();
@@ -397,7 +397,7 @@ namespace DigitalRune.Graphics.Content
     /// The number of indices is 0 or not a multiple of 3.<br/>
     /// Or, the number of positions is 0.
     /// </exception>
-    public static void GenerateAdjacencyAndPointReps(IList<int> indices, IList<Vector3F> positions, float epsilon, out int[] pointRep, out int[] adjacency)
+    public static void GenerateAdjacencyAndPointReps(IList<int> indices, IList<Vector3> positions, float epsilon, out int[] pointRep, out int[] adjacency)
     {
       if (indices == null)
         throw new ArgumentNullException("indices");
@@ -415,13 +415,13 @@ namespace DigitalRune.Graphics.Content
     }
 
 
-    private static void GeneratePointReps(IList<int> indices, IList<Vector3F> positions, float epsilon, out int[] pointRep)
+    private static void GeneratePointReps(IList<int> indices, IList<Vector3> positions, float epsilon, out int[] pointRep)
     {
       int numberOfVertices = positions.Count;
       int numberOfFaces = indices.Count / 3;
 
       // Cast/convert positions to array for faster access.
-      var positionsArray = positions as Vector3F[] ?? positions.ToArray();
+      var positionsArray = positions as Vector3[] ?? positions.ToArray();
 
       pointRep = new int[numberOfVertices];
 
@@ -545,7 +545,7 @@ namespace DigitalRune.Graphics.Content
           {
             pointRep[tailIndex] = tailIndex;
 
-            Vector3F outer = positionsArray[tailIndex];
+            Vector3 outer = positionsArray[tailIndex];
 
             for (int current = tail + 1; current < head; current++)
             {
@@ -555,7 +555,7 @@ namespace DigitalRune.Graphics.Content
               // If the point is already assigned, ignore it.
               if (pointRep[curIndex] == -1)
               {
-                Vector3F inner = positionsArray[curIndex];
+                Vector3 inner = positionsArray[curIndex];
 
                 float diff = (inner - outer).LengthSquared;
 
@@ -638,7 +638,7 @@ namespace DigitalRune.Graphics.Content
     /// Or, <paramref name="positions"/> is empty.<br/>
     /// Or, <paramref name="pointRep"/> does not match the number of vertices.
     /// </exception>
-    public static void ConvertPointRepToAdjacency(IList<int> indices, IList<Vector3F> positions, IList<int> pointRep, out int[] adjacency)
+    public static void ConvertPointRepToAdjacency(IList<int> indices, IList<Vector3> positions, IList<int> pointRep, out int[] adjacency)
     {
       if (indices == null)
         throw new ArgumentNullException("indices");
@@ -785,42 +785,42 @@ namespace DigitalRune.Graphics.Content
             {
               if ((current.V2 == vb) && (current.V1 == va))
               {
-                Vector3F pB1 = positions[vb];
-                Vector3F pB2 = positions[va];
-                Vector3F pB3 = positions[vOther];
+                Vector3 pB1 = positions[vb];
+                Vector3 pB2 = positions[va];
+                Vector3 pB3 = positions[vOther];
 
-                Vector3F v12 = pB1 - pB2;
-                Vector3F v13 = pB1 - pB3;
+                Vector3 v12 = pB1 - pB2;
+                Vector3 v13 = pB1 - pB3;
 
-                Vector3F bnormal =  Normalize(Vector3F.Cross(v12, v13));
+                Vector3 bnormal =  Normalize(Vector3.Cross(v12, v13));
 
                 // ReSharper disable once CompareOfFloatsByEqualityOperator
                 if (bestDiff == -2.0f)
                 {
-                  Vector3F pA1 = positions[found.V1];
-                  Vector3F pA2 = positions[found.V2];
-                  Vector3F pA3 = positions[found.VOther];
+                  Vector3 pA1 = positions[found.V1];
+                  Vector3 pA2 = positions[found.V2];
+                  Vector3 pA3 = positions[found.VOther];
 
                   v12 = pA1 - pA2;
                   v13 = pA1 - pA3;
 
-                  Vector3F anormal = Normalize(Vector3F.Cross(v12, v13));
+                  Vector3 anormal = Normalize(Vector3.Cross(v12, v13));
 
-                  bestDiff = Vector3F.Dot(anormal, bnormal);
+                  bestDiff = Vector3.Dot(anormal, bnormal);
                 }
 
                 float diff;
                 {
-                  Vector3F pA1 = positions[current.V1];
-                  Vector3F pA2 = positions[current.V2];
-                  Vector3F pA3 = positions[current.VOther];
+                  Vector3 pA1 = positions[current.V1];
+                  Vector3 pA2 = positions[current.V2];
+                  Vector3 pA3 = positions[current.VOther];
 
                   v12 = pA1 - pA2;
                   v13 = pA1 - pA3;
 
-                  Vector3F anormal = Normalize(Vector3F.Cross(v12, v13));
+                  Vector3 anormal = Normalize(Vector3.Cross(v12, v13));
 
-                  diff = Vector3F.Dot(anormal, bnormal);
+                  diff = Vector3.Dot(anormal, bnormal);
                 }
 
                 // If face normals are closer, use new match.
@@ -904,11 +904,11 @@ namespace DigitalRune.Graphics.Content
 
               if (point2 < 3)
               {
-#if DEBUG
+
                 int testPoint = indices[foundFace * 3 + ((point2 + 1) % 3)];
                 testPoint = pointRep[testPoint];
                 Debug.Assert(testPoint == vb);
-#endif
+
                 Debug.Assert(adjacency[foundFace * 3 + point2] == -1);
 
                 // Update neighbor to point back to this face match edge.
@@ -1541,10 +1541,10 @@ namespace DigitalRune.Graphics.Content
 
         Debug.Assert((numberOfVertices + dupVerts.Count) == curNewVert);
 
-#if DEBUG
+
         foreach (int i in dupVerts)
           Debug.Assert(i < numberOfVertices);
-#endif
+
       }
 
       if ((long)numberOfVertices + dupVerts.Count >= int.MaxValue)
@@ -1597,7 +1597,7 @@ namespace DigitalRune.Graphics.Content
     /// <exception cref="IndexOutOfRangeException">
     /// A vertex index exceeds the number of vertices.
     /// </exception>
-    public static Vector3F[] ComputeNormals(IList<int> indices, IList<Vector3F> positions, bool clockwiseOrder, VertexNormalAlgorithm normalAlgorithm)
+    public static Vector3[] ComputeNormals(IList<int> indices, IList<Vector3> positions, bool clockwiseOrder, VertexNormalAlgorithm normalAlgorithm)
     {
       // References:
       // - S Jin, R R Lewis, and D West: "A comparison of algorithms for vertex normal computation"
@@ -1628,11 +1628,11 @@ namespace DigitalRune.Graphics.Content
     }
 
 
-    private static Vector3F[] ComputeNormalsWeightedByAngle(IList<Vector3F> positions, IList<int> indices, bool clockwiseOrder)
+    private static Vector3[] ComputeNormalsWeightedByAngle(IList<Vector3> positions, IList<int> indices, bool clockwiseOrder)
     {
       int numberOfVertices = positions.Count;
       int numberOfFaces = indices.Count / 3;
-      Vector3F[] normals = new Vector3F[numberOfVertices];
+      Vector3[] normals = new Vector3[numberOfVertices];
 
       for (int face = 0; face < numberOfFaces; face++)
       {
@@ -1646,33 +1646,33 @@ namespace DigitalRune.Graphics.Content
         if (i0 >= numberOfVertices || i1 >= numberOfVertices || i2 >= numberOfVertices)
           throw new IndexOutOfRangeException("Index exceeds number of vertices.");
 
-        Vector3F p0 = positions[i0];
-        Vector3F p1 = positions[i1];
-        Vector3F p2 = positions[i2];
+        Vector3 p0 = positions[i0];
+        Vector3 p1 = positions[i1];
+        Vector3 p2 = positions[i2];
 
-        Vector3F u = p1 - p0;
-        Vector3F v = p2 - p0;
+        Vector3 u = p1 - p0;
+        Vector3 v = p2 - p0;
 
-        Vector3F n = Normalize(Vector3F.Cross(u, v));
+        Vector3 n = Normalize(Vector3.Cross(u, v));
 
         // Corner 0:
-        Vector3F a = Normalize(u);
-        Vector3F b = Normalize(v);
-        float w0 = Vector3F.Dot(a, b);
+        Vector3 a = Normalize(u);
+        Vector3 b = Normalize(v);
+        float w0 = Vector3.Dot(a, b);
         w0 = MathHelper.Clamp(w0, -1, 1);
         w0 = (float)Math.Acos(w0);
 
         // Corner 1:
-        Vector3F c = Normalize(p2 - p1);
-        Vector3F d = Normalize(p0 - p1);
-        float w1 = Vector3F.Dot(c, d);
+        Vector3 c = Normalize(p2 - p1);
+        Vector3 d = Normalize(p0 - p1);
+        float w1 = Vector3.Dot(c, d);
         w1 = MathHelper.Clamp(w1, -1, 1);
         w1 = (float)Math.Acos(w1);
 
         // Corner 2:
-        Vector3F e = Normalize(p0 - p2);
-        Vector3F f = Normalize(p1 - p2);
-        float w2 = Vector3F.Dot(e, f);
+        Vector3 e = Normalize(p0 - p2);
+        Vector3 f = Normalize(p1 - p2);
+        float w2 = Vector3.Dot(e, f);
         w2 = MathHelper.Clamp(w2, -1, 1);
         w2 = (float)Math.Acos(w2);
 
@@ -1686,11 +1686,11 @@ namespace DigitalRune.Graphics.Content
     }
 
 
-    private static Vector3F[] ComputeNormalsWeightedByArea(IList<Vector3F> positions, IList<int> indices, bool clockwiseOrder)
+    private static Vector3[] ComputeNormalsWeightedByArea(IList<Vector3> positions, IList<int> indices, bool clockwiseOrder)
     {
       int numberOfVertices = positions.Count;
       int numberOfFaces = indices.Count / 3;
-      var normals = new Vector3F[numberOfVertices];
+      var normals = new Vector3[numberOfVertices];
 
       for (int face = 0; face < numberOfFaces; face++)
       {
@@ -1704,27 +1704,27 @@ namespace DigitalRune.Graphics.Content
         if (i0 >= numberOfVertices || i1 >= numberOfVertices || i2 >= numberOfVertices)
           throw new IndexOutOfRangeException("Index exceeds number of vertices.");
 
-        Vector3F p0 = positions[i0];
-        Vector3F p1 = positions[i1];
-        Vector3F p2 = positions[i2];
+        Vector3 p0 = positions[i0];
+        Vector3 p1 = positions[i1];
+        Vector3 p2 = positions[i2];
 
-        Vector3F u = p1 - p0;
-        Vector3F v = p2 - p0;
+        Vector3 u = p1 - p0;
+        Vector3 v = p2 - p0;
 
-        Vector3F n = Normalize(Vector3F.Cross(u, v));
+        Vector3 n = Normalize(Vector3.Cross(u, v));
 
         // Corner 0
-        float w0 = Vector3F.Cross(u, v).Length;
+        float w0 = Vector3.Cross(u, v).Length;
 
         // Corner 1:
-        Vector3F c = p2 - p1;
-        Vector3F d = p0 - p1;
-        float w1 = Vector3F.Cross(c, d).Length;
+        Vector3 c = p2 - p1;
+        Vector3 d = p0 - p1;
+        float w1 = Vector3.Cross(c, d).Length;
 
         // Corner 2:
-        Vector3F e = p0 - p2;
-        Vector3F f = p1 - p2;
-        float w2 = Vector3F.Cross(e, f).Length;
+        Vector3 e = p0 - p2;
+        Vector3 f = p1 - p2;
+        float w2 = Vector3.Cross(e, f).Length;
 
         normals[i0] += n * w0;
         normals[i1] += n * w1;
@@ -1736,11 +1736,11 @@ namespace DigitalRune.Graphics.Content
     }
 
 
-    private static Vector3F[] ComputeNormalsWeighedEqually(IList<Vector3F> positions, IList<int> indices, bool clockwiseOrder)
+    private static Vector3[] ComputeNormalsWeighedEqually(IList<Vector3> positions, IList<int> indices, bool clockwiseOrder)
     {
       int numberOfVertices = positions.Count;
       int numberOfFaces = indices.Count / 3;
-      var normals = new Vector3F[numberOfVertices];
+      var normals = new Vector3[numberOfVertices];
 
       for (int face = 0; face < numberOfFaces; face++)
       {
@@ -1754,14 +1754,14 @@ namespace DigitalRune.Graphics.Content
         if (i0 >= numberOfVertices || i1 >= numberOfVertices || i2 >= numberOfVertices)
           throw new IndexOutOfRangeException("Index exceeds number of vertices.");
 
-        Vector3F p0 = positions[i0];
-        Vector3F p1 = positions[i1];
-        Vector3F p2 = positions[i2];
+        Vector3 p0 = positions[i0];
+        Vector3 p1 = positions[i1];
+        Vector3 p2 = positions[i2];
 
-        Vector3F u = p1 - p0;
-        Vector3F v = p2 - p0;
+        Vector3 u = p1 - p0;
+        Vector3 v = p2 - p0;
 
-        Vector3F n = Normalize(Vector3F.Cross(u, v));
+        Vector3 n = Normalize(Vector3.Cross(u, v));
 
         normals[i0] += n;
         normals[i1] += n;
@@ -1773,7 +1773,7 @@ namespace DigitalRune.Graphics.Content
     }
 
 
-    private static void StoreNormals(Vector3F[] normals, bool clockwiseOrder)
+    private static void StoreNormals(Vector3[] normals, bool clockwiseOrder)
     {
       if (clockwiseOrder)
       {
@@ -1835,7 +1835,7 @@ namespace DigitalRune.Graphics.Content
     /// <exception cref="InvalidDataException">
     /// <paramref name="normals"/> contains an invalid normal (length = 0).
     /// </exception>
-    public static void ComputeTangentFrame(IList<int> indices, IList<Vector3F> positions, IList<Vector3F> normals, IList<Vector2F> textureCoordinates, out Vector3F[] tangents, out Vector3F[] bitangents)
+    public static void ComputeTangentFrame(IList<int> indices, IList<Vector3> positions, IList<Vector3> normals, IList<Vector2F> textureCoordinates, out Vector3[] tangents, out Vector3[] bitangents)
     {
 
       if (indices == null)
@@ -1856,8 +1856,8 @@ namespace DigitalRune.Graphics.Content
         throw new ArgumentNullException("textureCoordinates");
 
       int numberOfVertices = positions.Count;
-      tangents = new Vector3F[numberOfVertices];
-      bitangents = new Vector3F[numberOfVertices];
+      tangents = new Vector3[numberOfVertices];
+      bitangents = new Vector3[numberOfVertices];
 
       ComputeTangentFrame(indices, positions, normals, textureCoordinates, null, tangents, bitangents);
     }
@@ -1917,7 +1917,7 @@ namespace DigitalRune.Graphics.Content
     /// <exception cref="InvalidDataException">
     /// <paramref name="normals"/> contains an invalid normal (length = 0).
     /// </exception>
-    public static void ComputeTangentFrame(IList<int> indices, IList<Vector3F> positions, IList<Vector3F> normals, IList<Vector2F> textureCoordinates, out Vector4F[] tangentsAndHandedness)
+    public static void ComputeTangentFrame(IList<int> indices, IList<Vector3> positions, IList<Vector3> normals, IList<Vector2F> textureCoordinates, out Vector4F[] tangentsAndHandedness)
     {
       // References:
       // - Lengyel, Eric: “Computing Tangent Space Basis Vectors for an Arbitrary Mesh”. Terathon
@@ -1949,7 +1949,7 @@ namespace DigitalRune.Graphics.Content
     }
 
 
-    private static void ComputeTangentFrame(IList<int> indices, IList<Vector3F> positions, IList<Vector3F> normals, IList<Vector2F> textureCoordinates, Vector4F[] tangentsAndHandedness, Vector3F[] tangents, Vector3F[] bitangents)
+    private static void ComputeTangentFrame(IList<int> indices, IList<Vector3> positions, IList<Vector3> normals, IList<Vector2F> textureCoordinates, Vector4F[] tangentsAndHandedness, Vector3[] tangents, Vector3[] bitangents)
     {
       // References:
       // - Lengyel, Eric: “Computing Tangent Space Basis Vectors for an Arbitrary Mesh”. Terathon
@@ -1963,8 +1963,8 @@ namespace DigitalRune.Graphics.Content
       int numberOfVertices = positions.Count;
       int numberOfFaces = indices.Count / 3;
 
-      var tangents0 = new Vector3F[numberOfVertices];
-      var tangents1 = new Vector3F[numberOfVertices];
+      var tangents0 = new Vector3[numberOfVertices];
+      var tangents1 = new Vector3[numberOfVertices];
 
       for (int face = 0; face < numberOfFaces; face++)
       {
@@ -1997,7 +1997,7 @@ namespace DigitalRune.Graphics.Content
         s *= d;
         s = s * sFlips;
 
-        Matrix44F m0 = new Matrix44F(s.W, s.Z, 0, 0,
+        Matrix m0 = new Matrix(s.W, s.Z, 0, 0,
                                      s.Y, s.X, 0, 0,
                                      0, 0, 0, 0,
                                      0, 0, 0, 0);
@@ -2006,15 +2006,15 @@ namespace DigitalRune.Graphics.Content
         Vector4F p1 = new Vector4F(positions[i1], 0);
         Vector4F p2 = new Vector4F(positions[i2], 0);
 
-        Matrix44F m1 = new Matrix44F();
+        Matrix m1 = new Matrix();
         m1.SetRow(0, p1 - p0);
         m1.SetRow(1, p2 - p0);
         //m1.SetRow(2, Vector4F.Zero);
         //m1.SetRow(3, Vector4F.Zero);
 
-        Matrix44F uv = m0 * m1;
+        Matrix uv = m0 * m1;
 
-        Vector3F sDir = uv.GetRow(0).XYZ;
+        Vector3 sDir = uv.GetRow(0).XYZ;
         tangents0[i0] += sDir;
         tangents0[i1] += sDir;
         tangents0[i2] += sDir;
@@ -2028,15 +2028,15 @@ namespace DigitalRune.Graphics.Content
       for (int i = 0; i < numberOfVertices; i++)
       {
         // Gram-Schmidt orthonormalization.
-        Vector3F b0 = normals[i];
+        Vector3 b0 = normals[i];
         b0 = Normalize(b0);
 
-        Vector3F tan0 = tangents0[i];
-        Vector3F b1 = tan0 - Vector3F.Dot(b0, tan0) * b0;
+        Vector3 tan0 = tangents0[i];
+        Vector3 b1 = tan0 - Vector3.Dot(b0, tan0) * b0;
         b1 = Normalize(b1);
 
-        Vector3F tan1 = tangents1[i];
-        Vector3F b2 = tan1 - Vector3F.Dot(b0, tan1) * b0 - Vector3F.Dot(b1, tan1) * b1;
+        Vector3 tan1 = tangents1[i];
+        Vector3 b2 = tan1 - Vector3.Dot(b0, tan1) * b0 - Vector3.Dot(b1, tan1) * b1;
         b2 = Normalize(b2);
 
         // Handle degenerate vectors.
@@ -2048,44 +2048,44 @@ namespace DigitalRune.Graphics.Content
           if (length1 > 0.5f)
           {
             // Reset bi-tangent from tangent and normal.
-            b2 = Vector3F.Cross(b0, b1);
+            b2 = Vector3.Cross(b0, b1);
           }
           else if (length2 > 0.5f)
           {
             // Reset tangent from bi-tangent and normal.
-            b1 = Vector3F.Cross(b2, b0);
+            b1 = Vector3.Cross(b2, b0);
           }
           else
           {
-            Vector3F axis;
+            Vector3 axis;
 
             // Reset both tangent and bi-tangent from normal.
-            float d0 = Math.Abs(Vector3F.Dot(Vector3F.UnitX, b0));
-            float d1 = Math.Abs(Vector3F.Dot(Vector3F.UnitY, b0));
-            float d2 = Math.Abs(Vector3F.Dot(Vector3F.UnitZ, b0));
+            float d0 = Math.Abs(Vector3.Dot(Vector3.UnitX, b0));
+            float d1 = Math.Abs(Vector3.Dot(Vector3.UnitY, b0));
+            float d2 = Math.Abs(Vector3.Dot(Vector3.UnitZ, b0));
             if (d0 < d1)
             {
-              axis = (d0 < d2) ? Vector3F.UnitX : Vector3F.UnitZ;
+              axis = (d0 < d2) ? Vector3.UnitX : Vector3.UnitZ;
             }
             else if (d1 < d2)
             {
-              axis = Vector3F.UnitY;
+              axis = Vector3.UnitY;
             }
             else
             {
-              axis = Vector3F.UnitZ;
+              axis = Vector3.UnitZ;
             }
 
-            b1 = Vector3F.Cross(b0, axis);
-            b2 = Vector3F.Cross(b0, b1);
+            b1 = Vector3.Cross(b0, axis);
+            b2 = Vector3.Cross(b0, b1);
           }
         }
 
         if (tangentsAndHandedness != null)
         {
           // Calculate handedness.
-          Vector3F bi = Vector3F.Cross(b0, tan0);
-          float w = (Vector3F.Dot(bi, tan1) < 0) ? 1.0f : 1.0f;
+          Vector3 bi = Vector3.Cross(b0, tan0);
+          float w = (Vector3.Dot(bi, tan1) < 0) ? 1.0f : 1.0f;
           tangentsAndHandedness[i] = new Vector4F(b1, w);
         }
 
@@ -5076,7 +5076,7 @@ namespace DigitalRune.Graphics.Content
 
     //--------------------------------------------------------------
 
-    private static Vector3F Normalize(Vector3F v)
+    private static Vector3 Normalize(Vector3 v)
     {
       float length = v.Length;
       if (length > 0)

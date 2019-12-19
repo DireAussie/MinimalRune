@@ -2,15 +2,15 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if WINDOWS
+
 using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.Xna.Framework.Graphics;
-#if !MONOGAME
+
 using Rectangle = Microsoft.Xna.Framework.Rectangle;
-#endif
+
 
 
 namespace DigitalRune.Graphics.Interop
@@ -30,9 +30,9 @@ namespace DigitalRune.Graphics.Interop
     //--------------------------------------------------------------
 
     private bool _rendering;
-#if MONOGAME
+
     private SwapChainRenderTarget _renderTarget;
-#endif
+
 
 
 
@@ -127,9 +127,9 @@ namespace DigitalRune.Graphics.Interop
       {
         if (disposing)
         {
-#if MONOGAME
+
           _renderTarget.SafeDispose();
-#endif
+
         }
       }
 
@@ -145,13 +145,13 @@ namespace DigitalRune.Graphics.Interop
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
     private void OnGraphicsServiceChanged(IGraphicsService oldGraphicsService, IGraphicsService newGraphicsService)
     {
-#if MONOGAME
+
       if (oldGraphicsService != null)
       {
         _renderTarget.SafeDispose();
         _renderTarget = null;
       }
-#endif
+
     }
 
 
@@ -165,7 +165,7 @@ namespace DigitalRune.Graphics.Interop
       int width = ClientSize.Width;
       int height = ClientSize.Height;
 
-#if MONOGAME
+
       if (_renderTarget == null
           || _renderTarget.GraphicsDevice != graphicsDevice
           || _renderTarget.Width != width
@@ -211,7 +211,7 @@ namespace DigitalRune.Graphics.Interop
           return false;
         }
       }
-#endif
+
 
       context.Viewport = new Viewport(0, 0, width, height);
       _rendering = true;
@@ -231,7 +231,7 @@ namespace DigitalRune.Graphics.Interop
       {
         var graphicsDevice = GraphicsService.GraphicsDevice;
 
-#if MONOGAME
+
         graphicsDevice.SetRenderTarget(null);
         context.RenderTarget = null;
         _renderTarget.Present();
@@ -240,7 +240,7 @@ namespace DigitalRune.Graphics.Interop
         int height = ClientSize.Height;
         var sourceRectangle = new Rectangle(0, 0, width, height);
         graphicsDevice.Present(sourceRectangle, null, Handle);
-#endif
+
       }
       catch (Exception)
       {
@@ -332,4 +332,4 @@ namespace DigitalRune.Graphics.Interop
 
   }
 }
-#endif
+

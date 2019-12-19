@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8 && !XBOX
+﻿
 using System.Linq;
 using DigitalRune;
 using DigitalRune.Geometry.Shapes;
@@ -57,7 +57,7 @@ collision detection resolution is never 'per-pixel'.",
 
       // Add standard game objects.
       var cameraGameObject = new CameraObject(Services, 5000);
-      cameraGameObject.ResetPose(new Vector3F(0, 2, 0), 0, 0);
+      cameraGameObject.ResetPose(new Vector3(0, 2, 0), 0, 0);
       GameObjectService.Objects.Add(cameraGameObject);
       _graphicsScreen.ActiveCameraNode = cameraGameObject.CameraNode;
 
@@ -243,4 +243,4 @@ collision detection resolution is never 'per-pixel'.",
     }
   }
 }
-#endif
+

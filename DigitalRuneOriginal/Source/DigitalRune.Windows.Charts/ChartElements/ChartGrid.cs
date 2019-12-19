@@ -69,11 +69,11 @@ namespace DigitalRune.Windows.Charts
         private PathRenderer _verticalMajorLinesRenderer;
         private PathRenderer _verticalMinorLinesRenderer;
 
-#if !SILVERLIGHT
+
         private bool _updatePending;
         private CacheMode _cacheMode;
         private EdgeMode _edgeMode;
-#endif
+
 
 
 
@@ -192,7 +192,7 @@ namespace DigitalRune.Windows.Charts
 
 
 
-#if !SILVERLIGHT
+
         /// <summary>
         /// Identifies the <see cref="RenderMode"/> dependency property. 
         /// (Not available in Silverlight.)
@@ -218,15 +218,15 @@ namespace DigitalRune.Windows.Charts
             get { return (ChartRenderMode)GetValue(RenderModeProperty); }
             set { SetValue(RenderModeProperty, value); }
         }
-#endif
 
 
 
-        //--------------------------------------------------------------
 
         //--------------------------------------------------------------
 
-#if SILVERLIGHT
+        //--------------------------------------------------------------
+
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ChartGrid"/> class.
         /// </summary>
@@ -243,7 +243,7 @@ namespace DigitalRune.Windows.Charts
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ChartGrid), new FrameworkPropertyMetadata(typeof(ChartGrid)));
         }
-#endif
+
 
 
 
@@ -305,7 +305,7 @@ namespace DigitalRune.Windows.Charts
             _verticalMinorLinesRenderer.Clear();
             _horizontalMinorLinesRenderer.Clear();
 
-#if SILVERLIGHT
+
             UpdateMajorGridLines();
             UpdateMinorGridLines();
 #else
@@ -345,7 +345,7 @@ namespace DigitalRune.Windows.Charts
                     // Do nothing.
                     break;
             }
-#endif
+
 
             base.OnUpdate();
         }
@@ -441,7 +441,7 @@ namespace DigitalRune.Windows.Charts
         }
 
 
-#if !SILVERLIGHT
+
         private void ClearCacheMode()
         {
             _cacheMode = CacheMode;
@@ -467,7 +467,7 @@ namespace DigitalRune.Windows.Charts
         {
             RenderOptions.SetEdgeMode(this, _edgeMode);
         }
-#endif
+
 
 
         /// <inheritdoc/>

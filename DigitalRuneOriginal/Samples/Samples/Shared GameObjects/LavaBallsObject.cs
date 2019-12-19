@@ -57,7 +57,7 @@ namespace Samples
       // veins (cube map texture) onto the environment.
       _pointLight = new PointLight
       {
-        Color = new Vector3F(1, 1, 1),
+        Color = new Vector3(1, 1, 1),
         DiffuseIntensity = 2,
         SpecularIntensity = 2,
         Range = 1.5f,
@@ -113,11 +113,11 @@ namespace Samples
       var body = _bodyPrototype.Clone();
 
       // Spawn at random position.
-      var randomPosition = new Vector3F(
+      var randomPosition = new Vector3(
         RandomHelper.Random.NextFloat(-10, 10),
         RandomHelper.Random.NextFloat(2, 5),
         RandomHelper.Random.NextFloat(-20, 0));
-      body.Pose = new Pose(randomPosition, RandomHelper.Random.NextQuaternionF());
+      body.Pose = new Pose(randomPosition, RandomHelper.Random.NextQuaternion());
       model.PoseWorld = _bodyPrototype.Pose;
       scene.Children.Add(model);
       simulation.RigidBodies.Add(body);

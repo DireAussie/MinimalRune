@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using System.Collections.Generic;
 using System.Diagnostics;
 using DigitalRune.Graphics;
@@ -135,4 +135,3 @@ namespace Samples.Graphics
     }
   }
 }
-#endif

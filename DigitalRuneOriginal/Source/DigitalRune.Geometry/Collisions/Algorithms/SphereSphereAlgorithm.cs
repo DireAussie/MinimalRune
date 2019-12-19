@@ -49,8 +49,8 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
       if (sphereShapeA == null || sphereShapeB == null)
         throw new ArgumentException("The contact set must contain sphere shapes.", "contactSet");
 
-      Vector3F scaleA = Vector3F.Absolute(sphereObjectA.Scale);
-      Vector3F scaleB = Vector3F.Absolute(sphereObjectB.Scale);
+      Vector3 scaleA = Vector3.Absolute(sphereObjectA.Scale);
+      Vector3 scaleB = Vector3.Absolute(sphereObjectB.Scale);
 
       // Call MPR for non-uniformly scaled spheres.
       if (scaleA.X != scaleA.Y || scaleA.Y != scaleA.Z 
@@ -68,9 +68,9 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
       float radiusB = sphereShapeB.Radius * scaleB.X;
 
       // Vector from center of A to center of B.
-      Vector3F centerA = sphereObjectA.Pose.Position;
-      Vector3F centerB = sphereObjectB.Pose.Position;
-      Vector3F aToB = centerB - centerA; 
+      Vector3 centerA = sphereObjectA.Pose.Position;
+      Vector3 centerB = sphereObjectB.Pose.Position;
+      Vector3 aToB = centerB - centerA; 
       float lengthAToB = aToB.Length;
 
       // Check radius of spheres.
@@ -85,13 +85,13 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
       }
 
       // ----- Create contact information.
-      Vector3F normal;
+      Vector3 normal;
       if (Numeric.IsZero(lengthAToB))
       {
         // Spheres are on the same position, we can choose any normal vector.
         // Possibly it would be better to consider the object movement (velocities), but 
         // it is not important since this case should be VERY rare.
-        normal = Vector3F.UnitY;
+        normal = Vector3.UnitY;
       }
       else
       {
@@ -99,7 +99,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
       }
 
       // The contact point lies in the middle of the intersecting volume.
-      Vector3F position = centerA + normal * (radiusA - penetrationDepth / 2);
+      Vector3 position = centerA + normal * (radiusA - penetrationDepth / 2);
 
       // Update contact set.
       Contact contact = ContactHelper.CreateContact(contactSet, position, normal, penetrationDepth, false);

@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !NETFX_CORE && !WP7 && !XBOX
+
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -47,7 +47,7 @@ namespace DigitalRune.Geometry.Meshes
     public readonly Aabb Aabb;
 
     // The hull vertices of the hull over IslandA + IslandB.
-    public Vector3F[] Vertices;
+    public Vector3[] Vertices;
 
     // Either null or an the convex hull of the island.
     public ConvexHullBuilder ConvexHullBuilder;
@@ -126,7 +126,7 @@ namespace DigitalRune.Geometry.Meshes
         // Add area of triangle.
         var edge0 = triangle.Vertices[1] - triangle.Vertices[0];
         var edge1 = triangle.Vertices[2] - triangle.Vertices[0];
-        area += Vector3F.Cross(edge0, edge1).Length / 2;
+        area += Vector3.Cross(edge0, edge1).Length / 2;
       }
 
       float aspectRatio = perimeter * perimeter / (4 * ConstantsF.Pi * area);
@@ -266,7 +266,7 @@ namespace DigitalRune.Geometry.Meshes
 
               // Shoot a ray from outside the hull mesh to the vertex. 
               float hitDistance;
-              Vector3F rayOrigin = position + normal * aabbExtent;
+              Vector3 rayOrigin = position + normal * aabbExtent;
               float rayLength = (position - rayOrigin).Length;
               var ray = new Ray(rayOrigin, -normal, rayLength);
               if (partition != null)
@@ -310,7 +310,7 @@ namespace DigitalRune.Geometry.Meshes
 
             // Shoot a ray from outside the hull mesh to the vertex. 
             float hitDistance;
-            Vector3F rayOrigin = center + normal * aabbExtent;
+            Vector3 rayOrigin = center + normal * aabbExtent;
             float rayLength = (center - rayOrigin).Length;
             var ray = new Ray(rayOrigin, -normal, rayLength);
             if (partition != null)
@@ -355,4 +355,4 @@ namespace DigitalRune.Geometry.Meshes
 
   }
 }
-#endif
+

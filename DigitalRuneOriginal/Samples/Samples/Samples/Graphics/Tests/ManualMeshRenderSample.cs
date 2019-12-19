@@ -48,7 +48,7 @@ MeshRenderer class.",
 
       _model = ContentManager.Load<ModelNode>("Dude/Dude").Clone();
       var meshNode = _model.GetSubtree().OfType<MeshNode>().First();
-      meshNode.ScaleLocal = new Vector3F(1, 2, 1);
+      meshNode.ScaleLocal = new Vector3(1, 2, 1);
       var mesh = meshNode.Mesh;
       var timeline = new TimelineClip(mesh.Animations.Values.First())
       {

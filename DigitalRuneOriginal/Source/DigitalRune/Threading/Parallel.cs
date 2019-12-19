@@ -57,7 +57,7 @@
 */
 
 
-#if !NETFX_CORE && !PORTABLE && !USE_TPL
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -278,14 +278,14 @@ namespace DigitalRune.Threading
   /// </example>
   public static class Parallel
   {
-#if !UNITY
+
     private static readonly ResourcePool<List<Task>> TaskListPool = new ResourcePool<List<Task>>(
       () => new List<Task>(),   // Create
       null,                     // Initialize
       list => list.Clear());    // Uninitialize
 
     private static readonly List<WorkItem> CallbackBuffer = new List<WorkItem>();
-#endif
+
 
     /// <summary>
     /// Executes all task callbacks on a single thread.
@@ -304,7 +304,7 @@ namespace DigitalRune.Threading
     /// </remarks>
     public static void RunCallbacks()
     {
-#if !UNITY
+
       if (WorkItem.AwaitingCallbacks.Count > 0)
       {
         lock (WorkItem.AwaitingCallbacks)
@@ -328,7 +328,7 @@ namespace DigitalRune.Threading
       CallbackBuffer.Clear();
 #else
       throw new NotSupportedException("Unity builds do not yet support multithreading.");
-#endif
+
     }
 
 
@@ -373,13 +373,13 @@ namespace DigitalRune.Threading
         if (value.Any(id => id < 0))
           throw new ArgumentException("The processor affinity must not be negative.", "value");
 
-#if XBOX
+
         if (value.Any(id => id == 0 || id == 2))
           throw new ArgumentException("The hardware threads 0 and 2 are reserved and should not be used on Xbox 360.", "value");
 
         if (value.Any(id => id > 5))
           throw new ArgumentException("Invalid value. The Xbox 360 has max. 6 hardware threads.", "value");
-#endif
+
 
         _processorAffinity = value;
       }
@@ -463,7 +463,7 @@ namespace DigitalRune.Threading
     /// </exception>
     public static Task StartBackground(IWork work, Action completionCallback)
     {
-#if !UNITY      
+
       if (work == null)
         throw new ArgumentNullException("work");
 
@@ -477,7 +477,7 @@ namespace DigitalRune.Threading
       return task;
 #else
       throw new NotSupportedException("Unity builds do not yet support multithreading.");
-#endif
+
     }
 
 
@@ -566,7 +566,7 @@ namespace DigitalRune.Threading
     /// </exception>
     public static Task Start(IWork work, Action completionCallback)
     {
-#if !UNITY
+
       if (work == null)
         throw new ArgumentNullException("work");
 
@@ -580,7 +580,7 @@ namespace DigitalRune.Threading
       return task;
 #else
       throw new NotSupportedException("Unity builds do not yet support multithreading.");
-#endif
+
     }
 
 
@@ -657,7 +657,7 @@ namespace DigitalRune.Threading
     /// </exception>
     public static Task Start(Action action, WorkOptions options, Action completionCallback)
     {
-#if !UNITY
+
       if (options.MaximumThreads < 1)
         throw new ArgumentException("options.MaximumThreads cannot be less than 1.", "options");
 
@@ -667,7 +667,7 @@ namespace DigitalRune.Threading
       return Start(work, completionCallback);
 #else
       throw new NotSupportedException("Unity builds do not yet support multithreading.");
-#endif
+
     }
 
 
@@ -752,7 +752,7 @@ namespace DigitalRune.Threading
     /// </exception>
     public static Task<T> Start<T>(Func<T> function, WorkOptions options, Action completionCallback)
     {
-#if !UNITY
+
       if (options.MaximumThreads < 1)
         throw new ArgumentException("options.MaximumThreads cannot be less than 1.", "options");
 
@@ -763,7 +763,7 @@ namespace DigitalRune.Threading
       return new Task<T>(task, work);
 #else
       throw new NotSupportedException("Unity builds do not yet support multithreading.");
-#endif
+
     }
 
 
@@ -778,7 +778,7 @@ namespace DigitalRune.Threading
     /// </exception>
     public static void Do(IWork work0, IWork work1)
     {
-#if !UNITY
+
       if (work0 == null)
         throw new ArgumentNullException("work0");
       if (work1 == null)
@@ -789,7 +789,7 @@ namespace DigitalRune.Threading
       task.Wait();
 #else
       throw new NotSupportedException("Unity builds do not yet support multithreading.");
-#endif
+
     }
 
 
@@ -803,7 +803,7 @@ namespace DigitalRune.Threading
     /// </exception>
     public static void Do(params IWork[] work)
     {
-#if !UNITY
+
       if (work == null)
         throw new ArgumentNullException("work");
 
@@ -819,7 +819,7 @@ namespace DigitalRune.Threading
       TaskListPool.Recycle(tasks);
 #else
       throw new NotSupportedException("Unity builds do not yet support multithreading.");
-#endif
+
     }
 
 
@@ -841,7 +841,7 @@ namespace DigitalRune.Threading
     /// </exception>
     public static void Do(Action action1, Action action2)
     {
-#if !UNITY
+
       if (action1 == null)
         throw new ArgumentNullException("action1");
       if (action2 == null)
@@ -855,7 +855,7 @@ namespace DigitalRune.Threading
       task.Wait();
 #else
       throw new NotSupportedException("Unity builds do not yet support multithreading.");
-#endif
+
     }
 
 
@@ -869,7 +869,7 @@ namespace DigitalRune.Threading
     /// </exception>
     public static void Do(params Action[] actions)
     {
-#if !UNITY
+
       if (actions == null)
         throw new ArgumentNullException("actions");
 
@@ -890,7 +890,7 @@ namespace DigitalRune.Threading
       TaskListPool.Recycle(tasks);
 #else
       throw new NotSupportedException("Unity builds do not yet support multithreading.");
-#endif
+
     }
 
 
@@ -928,7 +928,7 @@ namespace DigitalRune.Threading
     /// <param name="stride">The number of iterations that each processor takes at a time.</param>
     public static void For(int startInclusive, int endExclusive, Action<int> body, int stride)
     {
-#if !UNITY
+
       var work = ForLoopWork.Create();
       work.Prepare(body, startInclusive, endExclusive, stride);
       var task = Start(work);
@@ -936,7 +936,7 @@ namespace DigitalRune.Threading
       work.Recycle();
 #else
       throw new NotSupportedException("Unity builds do not yet support multithreading.");
-#endif
+
     }
 
 
@@ -959,7 +959,7 @@ namespace DigitalRune.Threading
     /// </exception>
     public static void ForEach<T>(IEnumerable<T> collection, Action<T> action)
     {
-#if !UNITY
+
       if (collection == null)
         throw new ArgumentNullException("collection");
 
@@ -978,8 +978,8 @@ namespace DigitalRune.Threading
       }
 #else
       throw new NotSupportedException("Unity builds do not yet support multithreading.");
-#endif
+
     }
   }
 }
-#endif
+

@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using DigitalRune.Game.Input;
 using DigitalRune.Graphics.PostProcessing;
 using Microsoft.Xna.Framework;
@@ -45,4 +45,3 @@ namespace Samples.Graphics
     }
   }
 }
-#endif

@@ -93,7 +93,7 @@ namespace DigitalRune.Windows.Framework.Tests
         }
 
 
-#if !NET45
+
         [Test]
         public void CanExecuteChangedEventShouldBeWeak()
         {
@@ -128,6 +128,6 @@ namespace DigitalRune.Windows.Framework.Tests
                 EventCalled = true;
             }
         }
-#endif
+
     }
 }

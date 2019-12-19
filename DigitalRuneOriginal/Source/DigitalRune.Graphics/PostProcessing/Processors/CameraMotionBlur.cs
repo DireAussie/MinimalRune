@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !WP7
+
 using System;
 using DigitalRune.Geometry;
 using DigitalRune.Mathematics.Algebra;
@@ -109,13 +109,13 @@ namespace DigitalRune.Graphics.PostProcessing
       var projection = camera.Projection;
 
       // Get required matrices.
-      Matrix44F view = cameraNode.View;
-      Matrix44F viewInverse = view.Inverse;
+      Matrix view = cameraNode.View;
+      Matrix viewInverse = view.Inverse;
 
       Pose lastPoseWorld = cameraNode.LastPoseWorld ?? cameraNode.PoseWorld;
-      Matrix44F lastView = lastPoseWorld.Inverse;
-      Matrix44F lastProjection = camera.LastProjection ?? projection;
-      Matrix44F lastViewProjection = lastProjection * lastView;
+      Matrix lastView = lastPoseWorld.Inverse;
+      Matrix lastProjection = camera.LastProjection ?? projection;
+      Matrix lastViewProjection = lastProjection * lastView;
 
       if (TextureHelper.IsFloatingPointFormat(context.SourceTexture.Format))
         graphicsDevice.SamplerStates[0] = SamplerState.PointClamp;
@@ -145,4 +145,4 @@ namespace DigitalRune.Graphics.PostProcessing
 
   }
 }
-#endif
+

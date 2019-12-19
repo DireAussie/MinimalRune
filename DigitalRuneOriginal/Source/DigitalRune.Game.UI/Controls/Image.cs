@@ -75,9 +75,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <summary> 
     /// The ID of the <see cref="Texture"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int TexturePropertyId = CreateProperty<Texture2D>(
       typeof(Image), "Texture", GamePropertyCategories.Appearance, null, null,
       UIPropertyOptions.AffectsMeasure);
@@ -94,13 +94,13 @@ namespace DigitalRune.Game.UI.Controls
     }
 
 
-#if !WINDOWS_UWP
+
     /// <summary> 
     /// The ID of the <see cref="SourceRectangle"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int SourceRectanglePropertyId = CreateProperty<Rectangle?>(
       typeof(Image), "SourceRectangle", GamePropertyCategories.Appearance, null, null,
       UIPropertyOptions.AffectsMeasure);
@@ -160,7 +160,7 @@ namespace DigitalRune.Game.UI.Controls
       get { return GetValue<Rectangle>(SourceRectanglePropertyId); }
       set { SetValue(SourceRectanglePropertyId, value); }
     }
-#endif
+
 
 
 
@@ -216,11 +216,11 @@ namespace DigitalRune.Game.UI.Controls
       }
       else
       {
-#if !WINDOWS_UWP
+
         int imageWidth = (SourceRectangle != null) ? SourceRectangle.Value.Width : Texture.Width;
 #else
         int imageWidth = (SourceRectangle != Rectangle.Empty) ? SourceRectangle.Width : Texture.Width;
-#endif
+
         desiredSize.X = padding.X + padding.Z + imageWidth;
       }
 
@@ -230,11 +230,11 @@ namespace DigitalRune.Game.UI.Controls
       }
       else
       {
-#if !WINDOWS_UWP
+
         int imageHeight = (SourceRectangle != null) ? SourceRectangle.Value.Height : Texture.Height;
 #else
         int imageHeight = (SourceRectangle != Rectangle.Empty) ? SourceRectangle.Height : Texture.Height;
-#endif
+
         desiredSize.Y = padding.Y + padding.W + imageHeight;
       }
 

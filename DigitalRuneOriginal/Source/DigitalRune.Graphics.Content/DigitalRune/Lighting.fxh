@@ -16,12 +16,12 @@
 //
 //-----------------------------------------------------------------------------
 
-#ifndef DIGITALRUNE_LIGHTING_FXH
+
 #define DIGITALRUNE_LIGHTING_FXH
 
-#ifndef DIGITALRUNE_COMMON_FXH
+
 #error "Common.fxh required. Please include Common.fxh before including Lighting.fxh."
-#endif
+
 
 
 //--------------------------------------------------------
@@ -291,4 +291,4 @@ void ComputeProjectorLight(float3 diffuse, float3 specular,
   
   resultSpecular = specular * blinnPhong * selfShadowingTerm * distanceAttenuation * textureColor;
 }
-#endif
+

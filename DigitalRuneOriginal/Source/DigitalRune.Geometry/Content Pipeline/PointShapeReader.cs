@@ -14,7 +14,7 @@ namespace DigitalRune.Geometry.Content
   /// </summary>
   public class PointShapeReader : ContentTypeReader<PointShape>
   {
-#if !MONOGAME
+
     /// <summary>
     /// Determines if deserialization into an existing object is possible.
     /// </summary>
@@ -26,7 +26,7 @@ namespace DigitalRune.Geometry.Content
     {
       get { return true; }
     }
-#endif
+
 
 
     /// <summary>
@@ -41,7 +41,7 @@ namespace DigitalRune.Geometry.Content
       if (existingInstance == null)
         existingInstance = new PointShape();
 
-      existingInstance.Position = input.ReadRawObject<Vector3F>();
+      existingInstance.Position = input.ReadRawObject<Vector3>();
 
       return existingInstance;
     }

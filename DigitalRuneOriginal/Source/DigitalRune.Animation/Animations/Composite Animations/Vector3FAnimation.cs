@@ -5,18 +5,18 @@
 using System;
 using DigitalRune.Animation.Traits;
 using DigitalRune.Mathematics.Algebra;
-#if XNA || MONOGAME
+
 using Microsoft.Xna.Framework.Content;
-#endif
+
 
 
 namespace DigitalRune.Animation
 {
   /// <summary>
-  /// Animates a <see cref="Vector3F"/> value by applying an animation to each component of the
+  /// Animates a <see cref="Vector3"/> value by applying an animation to each component of the
   /// vector.
   /// </summary>
-  public class Vector3FAnimation : Animation<Vector3F>
+  public class Vector3Animation : Animation<Vector3>
   {
     //--------------------------------------------------------------
 
@@ -29,39 +29,39 @@ namespace DigitalRune.Animation
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
-    public override IAnimationValueTraits<Vector3F> Traits
+    public override IAnimationValueTraits<Vector3> Traits
     {
-      get { return Vector3FTraits.Instance; }
+      get { return Vector3Traits.Instance; }
     }
 
 
     /// <summary>
-    /// Gets or sets the animation of the <see cref="Vector3F.X"/> component.
+    /// Gets or sets the animation of the <see cref="Vector3.X"/> component.
     /// </summary>
-    /// <value>The animation of the <see cref="Vector3F.X"/> component.</value>
-#if XNA || MONOGAME
+    /// <value>The animation of the <see cref="Vector3.X"/> component.</value>
+
     [ContentSerializer(SharedResource = true)]
-#endif
+
     public IAnimation<float> X { get; set; }
 
 
     /// <summary>
-    /// Gets or sets the animation of the <see cref="Vector3F.Y"/> component.
+    /// Gets or sets the animation of the <see cref="Vector3.Y"/> component.
     /// </summary>
-    /// <value>The animation of the <see cref="Vector3F.Y"/> component.</value>
-#if XNA || MONOGAME
+    /// <value>The animation of the <see cref="Vector3.Y"/> component.</value>
+
     [ContentSerializer(SharedResource = true)]
-#endif
+
     public IAnimation<float> Y { get; set; }
 
 
     /// <summary>
-    /// Gets or sets the animation of the <see cref="Vector3F.Z"/> component.
+    /// Gets or sets the animation of the <see cref="Vector3.Z"/> component.
     /// </summary>
-    /// <value>The animation of the <see cref="Vector3F.Z"/> component.</value>
-#if XNA || MONOGAME
+    /// <value>The animation of the <see cref="Vector3.Z"/> component.</value>
+
     [ContentSerializer(SharedResource = true)]
-#endif
+
     public IAnimation<float> Z { get; set; }
 
 
@@ -72,26 +72,26 @@ namespace DigitalRune.Animation
     
     /// <overloads>
     /// <summary>
-    /// Initializes a new instance of the <see cref="Vector3FAnimation"/> class.
+    /// Initializes a new instance of the <see cref="Vector3Animation"/> class.
     /// </summary>
     /// </overloads>
     /// 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Vector3FAnimation"/> class.
+    /// Initializes a new instance of the <see cref="Vector3Animation"/> class.
     /// </summary>
-    public Vector3FAnimation()
+    public Vector3Animation()
     {
     }
 
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Vector3FAnimation"/> class with the specified
+    /// Initializes a new instance of the <see cref="Vector3Animation"/> class with the specified
     /// animations.
     /// </summary>
-    /// <param name="x">The animation of the <see cref="Vector3F.X"/> component.</param>
-    /// <param name="y">The animation of the <see cref="Vector3F.Y"/> component.</param>
-    /// <param name="z">The animation of the <see cref="Vector3F.Z"/> component.</param>
-    public Vector3FAnimation(IAnimation<float> x, IAnimation<float> y, IAnimation<float> z)
+    /// <param name="x">The animation of the <see cref="Vector3.X"/> component.</param>
+    /// <param name="y">The animation of the <see cref="Vector3.Y"/> component.</param>
+    /// <param name="z">The animation of the <see cref="Vector3.Z"/> component.</param>
+    public Vector3Animation(IAnimation<float> x, IAnimation<float> y, IAnimation<float> z)
     {
       X = x;
       Y = y;
@@ -123,7 +123,7 @@ namespace DigitalRune.Animation
 
 
     /// <inheritdoc/>
-    protected override void GetValueCore(TimeSpan time, ref Vector3F defaultSource, ref Vector3F defaultTarget, ref Vector3F result)
+    protected override void GetValueCore(TimeSpan time, ref Vector3 defaultSource, ref Vector3 defaultTarget, ref Vector3 result)
     {
       if (X != null)
         X.GetValue(time, ref defaultSource.X, ref defaultTarget.X, ref result.X);

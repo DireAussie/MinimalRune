@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !WP7
+
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
@@ -183,7 +183,7 @@ namespace DigitalRune.Graphics.Rendering
 
         if (node.Stars != null && node.Stars.Count > 0)
         {
-          Matrix world = (Matrix)new Matrix44F(node.PoseWorld.Orientation, Vector3F.Zero);
+          Matrix world = (Matrix)new Matrix(node.PoseWorld.Orientation, Vector3.Zero);
           _effectParameterWorldViewProjection.SetValue(world * viewProjection);
 
           // In [ZFX] the star luminance of the precomputed star data is scaled with 
@@ -292,4 +292,4 @@ namespace DigitalRune.Graphics.Rendering
 
   }
 }
-#endif
+

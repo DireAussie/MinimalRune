@@ -5,11 +5,11 @@
 using System;
 using DigitalRune.Game.Input;
 using DigitalRune.Game.UI.Controls;
-#if !SILVERLIGHT
+
 using Keys = Microsoft.Xna.Framework.Input.Keys;
 #else
 using Keys = System.Windows.Input.Key;
-#endif
+
 
 
 namespace DigitalRune.Game.UI

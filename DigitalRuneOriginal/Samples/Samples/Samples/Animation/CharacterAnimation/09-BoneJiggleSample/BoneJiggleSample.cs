@@ -34,7 +34,7 @@ other jiggle effects. ;-)",
     {
       var modelNode = ContentManager.Load<ModelNode>("Dude/Dude");
       _meshNode = modelNode.GetSubtree().OfType<MeshNode>().First().Clone();
-      _meshNode.PoseLocal = new Pose(new Vector3F(0, 0, 0), Matrix33F.CreateRotationY(ConstantsF.Pi));
+      _meshNode.PoseLocal = new Pose(new Vector3(0, 0, 0), Matrix.CreateRotationY(ConstantsF.Pi));
       SampleHelper.EnablePerPixelLighting(_meshNode);
       GraphicsScreen.Scene.Children.Add(_meshNode);
 
@@ -48,7 +48,7 @@ other jiggle effects. ;-)",
       _walkAnimationController.AutoRecycle();
 
       // Create a BoneJiggler instance for the head bone (bone index 7).
-      _boneJiggler = new BoneJiggler(_meshNode.SkeletonPose, 7, new Vector3F(1.1f, 0, 0))
+      _boneJiggler = new BoneJiggler(_meshNode.SkeletonPose, 7, new Vector3(1.1f, 0, 0))
       {
         Spring = 100,
         Damping = 3,

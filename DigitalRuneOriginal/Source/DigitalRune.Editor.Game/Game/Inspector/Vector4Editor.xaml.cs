@@ -18,7 +18,7 @@ namespace DigitalRune.Editor.Game
     /// The property <see cref="Value"/> contains the 4-dimensional vector. Supported types are:
     /// <see cref="Vector4"/> (XNA/MonoGame), <see cref="Quaternion"/> (XNA/MonoGame),
     /// <see cref="Vector4F"/> (DigitalRune), <see cref="Vector4D"/> (DigitalRune), 
-    /// <see cref="QuaternionF"/> (DigitalRune) and <see cref="QuaternionD"/> (DigitalRune).
+    /// <see cref="Quaternion"/> (DigitalRune) and <see cref="QuaternionD"/> (DigitalRune).
     /// </remarks>
     internal partial class Vector4Editor
     {
@@ -198,9 +198,9 @@ namespace DigitalRune.Editor.Game
                     Z = v.Z;
                     W = v.W;
                 }
-                else if (_vectorType == typeof(QuaternionF))
+                else if (_vectorType == typeof(Quaternion))
                 {
-                    var v = (QuaternionF)Value;
+                    var v = (Quaternion)Value;
                     X = Vector3Editor.SafeConvertToDouble(v.X);
                     Y = Vector3Editor.SafeConvertToDouble(v.Y);
                     Z = Vector3Editor.SafeConvertToDouble(v.Z);
@@ -217,7 +217,7 @@ namespace DigitalRune.Editor.Game
                 else
                 {
                     if (Value != null)
-                        throw new NotSupportedException("Vector4Editor.Value must be a Vector4, Quaternion, Vector4F, Vector4D, QuaternionF of QuaternionD.");
+                        throw new NotSupportedException("Vector4Editor.Value must be a Vector4, Quaternion, Vector4F, Vector4D, Quaternion of QuaternionD.");
 
                     X = 0;
                     Y = 0;
@@ -254,8 +254,8 @@ namespace DigitalRune.Editor.Game
                     Value = new Vector4F((float)X, (float)Y, (float)Z, (float)W);
                 else if (_vectorType == typeof(Vector4D))
                     Value = new Vector4D(X, Y, Z, W);
-                else if (_vectorType == typeof(QuaternionF))
-                    Value = new QuaternionF((float)W, (float)X, (float)Y, (float)Z);
+                else if (_vectorType == typeof(Quaternion))
+                    Value = new Quaternion((float)W, (float)X, (float)Y, (float)Z);
                 else if (_vectorType == typeof(QuaternionD))
                     Value = new QuaternionD(W, X, Y, Z);
             }

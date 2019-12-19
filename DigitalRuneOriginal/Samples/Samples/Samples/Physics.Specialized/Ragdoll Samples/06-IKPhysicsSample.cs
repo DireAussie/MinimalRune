@@ -46,7 +46,7 @@ button) to grab the bodies and move them.",
       // Add Dude model.
       var modelNode = ContentManager.Load<ModelNode>("Dude/Dude");
       _meshNode = modelNode.GetSubtree().OfType<MeshNode>().First().Clone();
-      _meshNode.PoseLocal = new Pose(new Vector3F(0, 0, 0));
+      _meshNode.PoseLocal = new Pose(new Vector3(0, 0, 0));
       SampleHelper.EnablePerPixelLighting(_meshNode);
       GraphicsScreen.Scene.Children.Add(_meshNode);
 
@@ -109,7 +109,7 @@ button) to grab the bodies and move them.",
         {
           AnchorPositionALocal = ragdollBody.Pose.Position,
           BodyA = Simulation.World,
-          AnchorPositionBLocal = Vector3F.Zero,
+          AnchorPositionBLocal = Vector3.Zero,
           BodyB = ragdollBody,
           CollisionEnabled = false,
           MaxForce = 1000,

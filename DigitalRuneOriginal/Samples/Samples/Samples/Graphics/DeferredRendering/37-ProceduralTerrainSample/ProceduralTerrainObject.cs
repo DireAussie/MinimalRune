@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8 && !XBOX
+﻿
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -223,7 +223,7 @@ namespace Samples.Graphics
         DiffuseTexture = content.Load<Texture2D>("Terrain/Gravel-Diffuse"),
         NormalTexture = content.Load<Texture2D>("Terrain/Gravel-Normal"),
         SpecularTexture = content.Load<Texture2D>("Terrain/Gravel-Specular"),
-        DiffuseColor = new Vector3F(1 / 0.246f, 1 / 0.205f, 1 / 0.171f) * new Vector3F(0.042f, 0.039f, 0.027f),
+        DiffuseColor = new Vector3(1 / 0.246f, 1 / 0.205f, 1 / 0.171f) * new Vector3(0.042f, 0.039f, 0.027f),
         TileSize = DetailCellSize * 512,
       };
       _terrainTile.Layers.Add(materialGravel);
@@ -233,7 +233,7 @@ namespace Samples.Graphics
         DiffuseTexture = content.Load<Texture2D>("Terrain/Grass-Dry-Diffuse"),
         NormalTexture = content.Load<Texture2D>("Terrain/Grass-Dry-Normal"),
         SpecularTexture = content.Load<Texture2D>("Terrain/Grass-Dry-Specular"),
-        DiffuseColor = new Vector3F(0.17f, 0.20f, 0.11f),
+        DiffuseColor = new Vector3(0.17f, 0.20f, 0.11f),
         TileSize = DetailCellSize * 1024,
         TerrainHeightMin = -1000,
         TerrainHeightMax = 40,
@@ -247,7 +247,7 @@ namespace Samples.Graphics
         DiffuseTexture = content.Load<Texture2D>("Terrain/Grass-Dry-Diffuse"),
         NormalTexture = content.Load<Texture2D>("Terrain/Grass-Dry-Normal"),
         SpecularTexture = content.Load<Texture2D>("Terrain/Grass-Dry-Specular"),
-        DiffuseColor = new Vector3F(0.15f, 0.18f, 0.12f),
+        DiffuseColor = new Vector3(0.15f, 0.18f, 0.12f),
         TileSize = DetailCellSize * 1024,
         TerrainHeightMin = -1000,
         TerrainHeightMax = 60,
@@ -264,8 +264,8 @@ namespace Samples.Graphics
         SpecularTexture = content.Load<Texture2D>("Terrain/Rock-02-Specular"),
         HeightTexture = content.Load<Texture2D>("Terrain/Rock-02-Height"),
         TileSize = DetailCellSize * 1024 * 10,
-        DiffuseColor = new Vector3F(0.15f, 0.15f, 0.12f),
-        SpecularColor = new Vector3F(2),
+        DiffuseColor = new Vector3(0.15f, 0.15f, 0.12f),
+        SpecularColor = new Vector3(2),
         SpecularPower = 100,
         TerrainHeightMin = -1000,
         TerrainHeightMax = 1000,
@@ -281,8 +281,8 @@ namespace Samples.Graphics
         SpecularTexture = content.Load<Texture2D>("Terrain/Rock-02-Specular"),
         HeightTexture = content.Load<Texture2D>("Terrain/Rock-02-Height"),
         TileSize = DetailCellSize * 1024,
-        DiffuseColor = new Vector3F(0.15f, 0.15f, 0.13f),
-        SpecularColor = new Vector3F(0.5f),
+        DiffuseColor = new Vector3(0.15f, 0.15f, 0.13f),
+        SpecularColor = new Vector3(0.5f),
         SpecularPower = 20,
         Alpha = 0.7f,
         FadeOutStart = 4,
@@ -302,8 +302,8 @@ namespace Samples.Graphics
         NormalTexture = content.Load<Texture2D>("Terrain/Snow-Normal"),
         SpecularTexture = content.Load<Texture2D>("Terrain/Snow-Specular"),
         TileSize = DetailCellSize * 512,
-        DiffuseColor = new Vector3F(1),
-        SpecularColor = new Vector3F(1),
+        DiffuseColor = new Vector3(1),
+        SpecularColor = new Vector3(1),
         SpecularPower = 100,
         TerrainHeightMin = 60,
         TerrainHeightMax = 1000,
@@ -324,7 +324,7 @@ namespace Samples.Graphics
       TerrainNode.DetailClipmap.CellSizes[0] = DetailCellSize;
 
       var projection = _cameraObject.CameraNode.Camera.Projection;
-      Vector3F nearCorner = new Vector3F(projection.Left, projection.Bottom, projection.Near);
+      Vector3 nearCorner = new Vector3(projection.Left, projection.Bottom, projection.Near);
       var maxViewDistance = (nearCorner / projection.Near * projection.Far).Length;
       var maxTerrainSize = 2 * maxViewDistance;
       var terrainExtent = TerrainNode.Terrain.Aabb.Extent;
@@ -422,4 +422,4 @@ namespace Samples.Graphics
 
   }
 }
-#endif
+

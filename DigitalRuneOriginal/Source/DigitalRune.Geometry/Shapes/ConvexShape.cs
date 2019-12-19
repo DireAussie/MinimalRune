@@ -15,9 +15,9 @@ namespace DigitalRune.Geometry.Shapes
   /// <summary>
   /// Represents a convex shape. 
   /// </summary>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
+
   public abstract class ConvexShape : Shape
   {
     //--------------------------------------------------------------
@@ -65,29 +65,29 @@ namespace DigitalRune.Geometry.Shapes
     /// be overridden in derived classes.
     /// </para>
     /// </remarks>
-    public override Aabb GetAabb(Vector3F scale, Pose pose)
+    public override Aabb GetAabb(Vector3 scale, Pose pose)
     {
       if (scale.X == scale.Y && scale.Y == scale.Z)
       {
         // Uniform scaling.
 
         // Get world axes in local space. They are equal to the rows of the orientation matrix.
-        Matrix33F rotationMatrix = pose.Orientation;
-        Vector3F worldX = rotationMatrix.GetRow(0);
-        Vector3F worldY = rotationMatrix.GetRow(1);
-        Vector3F worldZ = rotationMatrix.GetRow(2);
+        Matrix rotationMatrix = pose.Orientation;
+        Vector3 worldX = rotationMatrix.GetRow(0);
+        Vector3 worldY = rotationMatrix.GetRow(1);
+        Vector3 worldZ = rotationMatrix.GetRow(2);
 
         // Get extreme points along all axes.
-        Vector3F minimum = new Vector3F(
-          Vector3F.Dot(GetSupportPointNormalized(-worldX), worldX),
-          Vector3F.Dot(GetSupportPointNormalized(-worldY), worldY),
-          Vector3F.Dot(GetSupportPointNormalized(-worldZ), worldZ));
+        Vector3 minimum = new Vector3(
+          Vector3.Dot(GetSupportPointNormalized(-worldX), worldX),
+          Vector3.Dot(GetSupportPointNormalized(-worldY), worldY),
+          Vector3.Dot(GetSupportPointNormalized(-worldZ), worldZ));
         minimum = minimum * scale.X + pose.Position;
 
-        Vector3F maximum = new Vector3F(
-          Vector3F.Dot(GetSupportPointNormalized(worldX), worldX),
-          Vector3F.Dot(GetSupportPointNormalized(worldY), worldY),
-          Vector3F.Dot(GetSupportPointNormalized(worldZ), worldZ));
+        Vector3 maximum = new Vector3(
+          Vector3.Dot(GetSupportPointNormalized(worldX), worldX),
+          Vector3.Dot(GetSupportPointNormalized(worldY), worldY),
+          Vector3.Dot(GetSupportPointNormalized(worldZ), worldZ));
         maximum = maximum * scale.X + pose.Position;
 
         // Check minimum and maximum because scaling could be negative.
@@ -101,21 +101,21 @@ namespace DigitalRune.Geometry.Shapes
         // Non-uniform scaling.
 
         // Get world axes in local space. They are equal to the rows of the orientation matrix.
-        Matrix33F rotationMatrix = pose.Orientation;
-        Vector3F worldX = rotationMatrix.GetRow(0);
-        Vector3F worldY = rotationMatrix.GetRow(1);
-        Vector3F worldZ = rotationMatrix.GetRow(2);
+        Matrix rotationMatrix = pose.Orientation;
+        Vector3 worldX = rotationMatrix.GetRow(0);
+        Vector3 worldY = rotationMatrix.GetRow(1);
+        Vector3 worldZ = rotationMatrix.GetRow(2);
 
         // Get extreme points along all axes.
-        Vector3F minimum = new Vector3F(
-          Vector3F.Dot(GetSupportPoint(-worldX, scale), worldX),
-          Vector3F.Dot(GetSupportPoint(-worldY, scale), worldY),
-          Vector3F.Dot(GetSupportPoint(-worldZ, scale), worldZ));
+        Vector3 minimum = new Vector3(
+          Vector3.Dot(GetSupportPoint(-worldX, scale), worldX),
+          Vector3.Dot(GetSupportPoint(-worldY, scale), worldY),
+          Vector3.Dot(GetSupportPoint(-worldZ, scale), worldZ));
 
-        Vector3F maximum = new Vector3F(
-          Vector3F.Dot(GetSupportPoint(worldX, scale), worldX),
-          Vector3F.Dot(GetSupportPoint(worldY, scale), worldY),
-          Vector3F.Dot(GetSupportPoint(worldZ, scale), worldZ));
+        Vector3 maximum = new Vector3(
+          Vector3.Dot(GetSupportPoint(worldX, scale), worldX),
+          Vector3.Dot(GetSupportPoint(worldY, scale), worldY),
+          Vector3.Dot(GetSupportPoint(worldZ, scale), worldZ));
 
         minimum += pose.Position;
         maximum += pose.Position;
@@ -164,10 +164,10 @@ namespace DigitalRune.Geometry.Shapes
     /// <paramref name="direction"/> if required.
     /// </para>
     /// </remarks>
-    public virtual Vector3F GetSupportPoint(Vector3F direction)
+    public virtual Vector3 GetSupportPoint(Vector3 direction)
     {
       if (!direction.TryNormalize())
-        direction = Vector3F.UnitX;
+        direction = Vector3.UnitX;
 
       return GetSupportPointNormalized(direction);
     }
@@ -193,11 +193,11 @@ namespace DigitalRune.Geometry.Shapes
     /// </para>
     /// <para>
     /// If only a uniform scale should be applied, it is faster to call 
-    /// <see cref="GetSupportPoint(Vector3F)"/> or <see cref="GetSupportPointNormalized"/> and
+    /// <see cref="GetSupportPoint(Vector3)"/> or <see cref="GetSupportPointNormalized"/> and
     /// scale the resulting support point position. 
     /// </para>
     /// </remarks>
-    public Vector3F GetSupportPoint(Vector3F direction, Vector3F scale)
+    public Vector3 GetSupportPoint(Vector3 direction, Vector3 scale)
     {
       // We need to find the support point in the scaled space. Shape.GetSupportPoint() can 
       // compute the support point for the unscaled space. We have to transform the support 
@@ -228,7 +228,7 @@ namespace DigitalRune.Geometry.Shapes
     /// from the center regarding the given direction. This point is not necessarily unique.
     /// </para>
     /// </remarks>
-    public abstract Vector3F GetSupportPointNormalized(Vector3F directionNormalized);
+    public abstract Vector3 GetSupportPointNormalized(Vector3 directionNormalized);
 
 
     /// <summary>
@@ -247,7 +247,7 @@ namespace DigitalRune.Geometry.Shapes
     protected override TriangleMesh OnGetMesh(float absoluteDistanceThreshold, int iterationLimit)
     {
       // Use SupportMappingSampler to get surface points.
-      IList<Vector3F> points = GeometryHelper.SampleConvexShape(this, absoluteDistanceThreshold, iterationLimit);
+      IList<Vector3> points = GeometryHelper.SampleConvexShape(this, absoluteDistanceThreshold, iterationLimit);
       DcelMesh mesh = GeometryHelper.CreateConvexHull(points);
       return mesh.ToTriangleMesh();
     }

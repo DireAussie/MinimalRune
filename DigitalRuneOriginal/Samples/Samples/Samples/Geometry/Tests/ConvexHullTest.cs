@@ -1,4 +1,4 @@
-﻿#if WINDOWS
+﻿
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
@@ -23,7 +23,7 @@ namespace Samples.Geometry
   {
     const int MaxFileIndex = 0; // Test files have been removed.
 
-    private List<Vector3F> _points;
+    private List<Vector3> _points;
     private TriangleMesh _mesh;
     private GeometricObject _geometricObject;
 
@@ -40,7 +40,7 @@ namespace Samples.Geometry
       SampleFramework.IsMouseVisible = false;
       GraphicsScreen.ClearBackground = true;
       GraphicsScreen.BackgroundColor = Color.CornflowerBlue;
-      SetCamera(new Vector3F(0, 1, 10), 0, 0);
+      SetCamera(new Vector3(0, 1, 10), 0, 0);
 
       //var model = Game.Content.Load<Model>("Pedestal_crane_30t_braccio2");
       //var points = TriangleMesh.FromModel(model).Vertices;
@@ -64,10 +64,10 @@ namespace Samples.Geometry
         //_points = TriangleMesh.FromModel(model).Vertices;
 
         //RandomHelper.Random = new Random(_fileIndex);
-        _points = new List<Vector3F>();
+        _points = new List<Vector3>();
         for (int i = 0; i < 12000; i++)
         {
-          _points.Add(new Vector3F(
+          _points.Add(new Vector3(
             RandomHelper.Random.NextFloat(-10, -9),
             RandomHelper.Random.NextFloat(100, 101),
             RandomHelper.Random.NextFloat(-10.001f, -10)));
@@ -81,10 +81,10 @@ namespace Samples.Geometry
         //_points = TriangleMesh.FromModel(model).Vertices;
 
         //RandomHelper.Random = new Random(_fileIndex);
-        _points = new List<Vector3F>();
+        _points = new List<Vector3>();
         for (int i = 0; i < 12000; i++)
         {
-          _points.Add(new Vector3F(
+          _points.Add(new Vector3(
             RandomHelper.Random.NextFloat(-10, -9),
             RandomHelper.Random.NextFloat(100, 101),
             RandomHelper.Random.NextFloat(-10f, -10)));
@@ -101,7 +101,7 @@ namespace Samples.Geometry
       foreach (var point in _points)
         aabb.Grow(point);
 
-      SetCamera(aabb.Center - aabb.Extent.Length * Vector3F.Forward * 2, 0, 0);
+      SetCamera(aabb.Center - aabb.Extent.Length * Vector3.Forward * 2, 0, 0);
     }
 
 
@@ -163,18 +163,18 @@ namespace Samples.Geometry
     }
 
 
-    public static List<Vector3F> LoadPoints(string file)
+    public static List<Vector3> LoadPoints(string file)
     {
-      List<Vector3F> points = new List<Vector3F>();
+      List<Vector3> points = new List<Vector3>();
       var doc = XDocument.Load(file);
       var root = doc.Elements().First();
       foreach (var e in root.Elements())
-        points.Add(Vector3F.Parse(e.Value));
+        points.Add(Vector3.Parse(e.Value));
       return points;
     }
 
 
-    public static void SavePoints(IEnumerable<Vector3F> points, string file)
+    public static void SavePoints(IEnumerable<Vector3> points, string file)
     {
       var doc = new XDocument();
       var root = new XElement("Vertices");
@@ -185,4 +185,3 @@ namespace Samples.Geometry
     }
   }
 }
-#endif

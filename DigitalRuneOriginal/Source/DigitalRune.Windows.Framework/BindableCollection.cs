@@ -27,18 +27,18 @@ namespace DigitalRune.Windows.Framework
     /// All <see cref="INotifyCollectionChanged.CollectionChanged"/> events are raised synchronously
     /// on the UI thread.
     /// </remarks>
-#if !SILVERLIGHT && !WINDOWS_PHONE
+
     [Serializable]
-#endif
+
     public class BindableCollection<T> : ObservableCollection<T>
     {
         //--------------------------------------------------------------
 
         //--------------------------------------------------------------
 
-#if !SILVERLIGHT && !WINDOWS_PHONE
+
         [field: NonSerialized]
-#endif
+
         // Default value is false. Otherwise, we need to initialize correctly in constructor and
         // on deserialization.
         private bool _suppressNotifications;
@@ -273,7 +273,7 @@ namespace DigitalRune.Windows.Framework
         }
 
 
-#if !SILVERLIGHT && !WINDOWS_PHONE
+
         /// <summary>
         /// Moves the item at the specified index to a new location in the collection. (Sealed)
         /// </summary>
@@ -310,7 +310,7 @@ namespace DigitalRune.Windows.Framework
         {
             base.MoveItem(oldIndex, newIndex);
         }
-#endif
+
 
 
         /// <summary>

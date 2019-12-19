@@ -71,11 +71,11 @@ namespace Samples
     /// <returns>The sample attribute.</returns>
     public static SampleAttribute GetSampleAttribute(Type type)
     {
-#if NETFX_CORE
+
       return type.GetTypeInfo().GetCustomAttribute<SampleAttribute>();
 #else
       return type.GetCustomAttributes(false).OfType<SampleAttribute>().FirstOrDefault();
-#endif
+
     }
   }
 }

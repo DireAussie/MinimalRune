@@ -101,7 +101,7 @@ float2 TerrainDetailClipmapOffsets[9];
 float TerrainDetailFadeRange;
 float TerrainEnableAnisotropicFiltering;
 
-#if PARALLAX_MAPPING
+
 float3 CameraPosition : CAMERAPOSITION;
 float3 DirectionalLightDirection : DIRECTIONALLIGHTDIRECTION;
 int ParallaxMinNumberOfSamples = 4;
@@ -113,7 +113,7 @@ float ParallaxShadowScale = 0.08;
 float ParallaxNumberOfShadowSamples = 4;
 float ParallaxShadowFalloff = 0.5;
 float ParallaxShadowStrength = 200;
-#endif
+
 
 
 //-----------------------------------------------------------------------------
@@ -130,10 +130,10 @@ struct VSOutput
 {
   float Depth : TEXCOORD0;
   float3 PositionWorld: TEXCOORD1;
-#if PARALLAX_MAPPING
+
   float3 ViewDirectionTangent : TEXCOORD2; // View direction in tangent space.
   float3 LightDirectionTangent : TEXCOORD3;  // LightDirection in tangent space.
-#endif
+
   float4 Position : SV_Position;
 };
 
@@ -142,10 +142,10 @@ struct PSInput
 {
   float Depth : TEXCOORD0;
   float3 PositionWorld: TEXCOORD1;
-#if PARALLAX_MAPPING
+
   float3 ViewDirectionTangent : TEXCOORD2; // View direction in tangent space.
   float3 LightDirectionTangent : TEXCOORD3;  // LightDirection in tangent space.
-#endif
+
 };
 
 
@@ -155,11 +155,11 @@ struct PSInput
 
 VSOutput VS(VSInput input)
 {
-#if PIXEL_HOLES
+
   float holeThreshold = -1;
 #else
   float holeThreshold = TerrainHoleThreshold;
-#endif
+
 
   float3 position = input.Position.xyz;
   float3 normal;
@@ -182,7 +182,7 @@ VSOutput VS(VSInput input)
   output.PositionWorld = position;
   output.Position = positionProj;
   
-#if PARALLAX_MAPPING
+
   float3 tangent = cross(normal, float3(0, 0, 1));
   float3 binormal = cross(tangent, normal);
   // Matrix that transforms column(!) vectors from world space to tangent space.
@@ -190,7 +190,7 @@ VSOutput VS(VSInput input)
   float3 viewDirectionWorld = output.PositionWorld - CameraPosition;
   output.ViewDirectionTangent = mul(worldToTangent, viewDirectionWorld);
   output.LightDirectionTangent = mul(worldToTangent, DirectionalLightDirection);
-#endif
+
    
   return output;
 }
@@ -205,7 +205,7 @@ void PS(PSInput input, out float4 depthBuffer : COLOR0, out float4 normalBuffer 
 
   float specularPower = 0, alpha;
   float3 normal, diffuse, specularIntensity;
-#if PARALLAX_MAPPING
+
   ComputeTerrainMaterial(
     TerrainDetailClipmapSampler0,
     TerrainDetailClipmapSampler0,   // Dummy value. Not needed here.
@@ -231,11 +231,11 @@ void PS(PSInput input, out float4 depthBuffer : COLOR0, out float4 normalBuffer 
     TerrainEnableAnisotropicFiltering,
     positionWorld, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,  
     normal, specularPower, diffuse, alpha, specularIntensity);
-#endif
+
   
-#if PIXEL_HOLES
+
   clip(alpha - TerrainHoleThreshold);
-#endif
+
   
   SetGBufferDepth(input.Depth, 1, depthBuffer);
   SetGBufferNormal(normal.xyz, normalBuffer);
@@ -251,12 +251,12 @@ technique Default
 {
   pass Default
   {
-#if !SM4
+
     VertexShader = compile vs_3_0 VS();
     PixelShader = compile ps_3_0 PS();
 #else
     VertexShader = compile vs_4_0 VS();
     PixelShader = compile ps_4_0 PS();
-#endif
+
   }
 }

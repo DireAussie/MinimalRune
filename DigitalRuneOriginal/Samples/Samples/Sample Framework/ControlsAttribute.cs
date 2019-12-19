@@ -45,11 +45,11 @@ namespace Samples
     /// <returns>The controls attributes.</returns>
     public static IEnumerable<ControlsAttribute> GetControlsAttribute(Type type)
     {
-#if NETFX_CORE
+
       return type.GetTypeInfo().GetCustomAttributes<ControlsAttribute>();
 #else
       return type.GetCustomAttributes(true).OfType<ControlsAttribute>();
-#endif
+
     }
   }
 }

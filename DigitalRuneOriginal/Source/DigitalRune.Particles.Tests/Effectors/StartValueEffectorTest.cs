@@ -29,9 +29,9 @@ namespace DigitalRune.Particles.Tests.Effectors
     public void Uninitialize()
     {
       var ps = new ParticleSystem();
-      var wp0 = new WeakReference(ps.Parameters.AddVarying<Vector3F>(ParticleParameterNames.Direction));
+      var wp0 = new WeakReference(ps.Parameters.AddVarying<Vector3>(ParticleParameterNames.Direction));
 
-      var e = new StartValueEffector<Vector3F> 
+      var e = new StartValueEffector<Vector3> 
       { 
         ParticleSystem = ps,
         Parameter = ParticleParameterNames.Direction

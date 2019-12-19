@@ -20,7 +20,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
     /// <value>The triangle vertices.</value>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-    public List<Vector3F> Vertices { get; set; }
+    public List<Vector3> Vertices { get; set; }
 
 
     /// <summary>

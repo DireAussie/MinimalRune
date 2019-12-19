@@ -332,7 +332,7 @@ namespace DigitalRune.Geometry.Tests
     public void ToPose()
     {
       PoseD poseD = new PoseD(new Vector3D(1, 2, 3), new Matrix33D(4, 5, 6, 7, 8, 9, 10, 11, 12));
-      Pose pose = new Pose(new Vector3F(1, 2, 3), new Matrix33F(4, 5, 6, 7, 8, 9, 10, 11, 12));
+      Pose pose = new Pose(new Vector3(1, 2, 3), new Matrix(4, 5, 6, 7, 8, 9, 10, 11, 12));
 
       Assert.AreEqual(pose, (Pose)poseD);
       Assert.AreEqual(pose, poseD.ToPose());

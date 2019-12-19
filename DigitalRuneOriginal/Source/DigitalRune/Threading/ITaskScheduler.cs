@@ -58,7 +58,7 @@
 
 
 
-#if !NETFX_CORE && !PORTABLE && !USE_TPL
+
 namespace DigitalRune.Threading
 {
   /// <summary>
@@ -73,4 +73,4 @@ namespace DigitalRune.Threading
     void Schedule(Task task);
   }
 }
-#endif
+

@@ -9,16 +9,16 @@
 //
 //-----------------------------------------------------------------------------
 
-#ifndef DIGITALRUNE_DECAL_FXH
+
 #define DIGITALRUNE_DECAL_FXH
 
-#ifndef DIGITALRUNE_COMMON_FXH
-#error "Common.fxh required. Please include Common.fxh before including Deferred.fxh."
-#endif
 
-#ifndef DIGITALRUNE_DEFERRED_FXH
+#error "Common.fxh required. Please include Common.fxh before including Deferred.fxh."
+
+
+
 #error "Deferred.fxh required. Please include Deferred.fxh before including Decal.fxh."
-#endif
+
 
 
 //-----------------------------------------------------------------------------
@@ -132,4 +132,4 @@ void DeferredDecal(inout float4 positionView,
   // Decal texture coordinate.
   uvDecal = float2(positionLocal.x + 0.5, 0.5 - positionLocal.y);
 }
-#endif
+

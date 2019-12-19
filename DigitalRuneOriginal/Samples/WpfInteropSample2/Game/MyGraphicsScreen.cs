@@ -49,7 +49,7 @@ namespace WpfInteropSample2
       CameraNode = new CameraNode(new Camera(projection))
       {
         Name = "CameraPerspective",
-        PoseWorld = Pose.FromMatrix(Matrix44F.CreateLookAt(new Vector3F(10, 5, 10), new Vector3F(0, 1, 0), new Vector3F(0, 1, 0)).Inverse),
+        PoseWorld = Pose.FromMatrix(Matrix.CreateLookAt(new Vector3(10, 5, 10), new Vector3(0, 1, 0), new Vector3(0, 1, 0)).Inverse),
       };
       Scene.Children.Add(CameraNode);
     }

@@ -127,18 +127,18 @@ float2 GetK(float2 p)
 
 
 void PSSpectrum(
-#if !MGFX
+
   float4 vPos : VPOS,
 #else
   float4 vPos : SV_Position,
-#endif
+
   out float4 color0 : COLOR0,
   out float4 color1 : COLOR1)
 {
   int n = Size;
-#if MGFX
+
   vPos.xy = (int2)vPos;
-#endif
+
   
   // vPos is the index in the FFT spectral image is
   
@@ -323,13 +323,13 @@ float4 PSCopyNormal(float2 texCoord : TEXCOORD0) : COLOR0
 // Techniques
 //--------------------------------------------------------
 
-#if !SM4
+
 #define VSTARGET vs_3_0
 #define PSTARGET ps_3_0
 #else
 #define VSTARGET vs_4_0
 #define PSTARGET ps_4_0
-#endif
+
 
 
 technique

@@ -23,7 +23,7 @@ disables joints where the constraint force was too high - the joint breaks.",
       Simulation.ForceEffects.Add(new Damping());
 
       // Add a ground plane.
-      RigidBody groundPlane = new RigidBody(new PlaneShape(Vector3F.UnitY, 0))
+      RigidBody groundPlane = new RigidBody(new PlaneShape(Vector3.UnitY, 0))
       {
         Name = "GroundPlane",            // Names are not required but helpful for debugging.
         MotionType = MotionType.Static,
@@ -33,7 +33,7 @@ disables joints where the constraint force was too high - the joint breaks.",
       // Add ragdolls. We use the Ragdoll-creation method of Sample21.
       for (int i = 0; i < 5; i++)
       {
-        Vector3F position = RandomHelper.Random.NextVector3F(-3, 3);
+        Vector3 position = RandomHelper.Random.NextVector3(-3, 3);
         position.Y = 1 + i;
         RagdollSample.AddRagdoll(Simulation, 2f, position, 0.0001f, false);
       }

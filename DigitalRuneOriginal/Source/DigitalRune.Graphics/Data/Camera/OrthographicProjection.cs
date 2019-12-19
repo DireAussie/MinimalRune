@@ -27,7 +27,7 @@ namespace DigitalRune.Graphics
   /// </item>
   /// <item>
   /// <description>
-  /// By setting assigning a projection matrix using <see cref="Set(Matrix44F)"/> or the property 
+  /// By setting assigning a projection matrix using <see cref="Set(Matrix)"/> or the property 
   /// <see cref="Projection.Inverse"/>.
   /// </description>
   /// </item>
@@ -36,7 +36,7 @@ namespace DigitalRune.Graphics
   /// By calling on of the following methods: 
   /// <see cref="Set(float,float)"/>, 
   /// <see cref="Set(float,float,float,float)"/>, 
-  /// <see cref="Set(Matrix44F)"/>, 
+  /// <see cref="Set(Matrix)"/>, 
   /// <see cref="SetOffCenter(float,float,float,float)"/>, 
   /// <see cref="SetOffCenter(float,float,float,float,float,float)"/>, 
   /// </description>
@@ -230,7 +230,7 @@ namespace DigitalRune.Graphics
     /// Sets the orthographic projection from the given projection matrix.
     /// </summary>
     /// <param name="projection">The orthographic projection matrix.</param>
-    public override void Set(Matrix44F projection)
+    public override void Set(Matrix projection)
     {
       string message = "Given matrix is not a valid orthographic projection matrix.";
       Debug.Assert(Numeric.IsZero(projection.M01), message);
@@ -270,9 +270,9 @@ namespace DigitalRune.Graphics
 
 
     /// <inheritdoc/>
-    protected override Matrix44F ComputeProjection()
+    protected override Matrix ComputeProjection()
     {
-      return Matrix44F.CreateOrthographicOffCenter(Left, Right, Bottom, Top, Near, Far);
+      return Matrix.CreateOrthographicOffCenter(Left, Right, Bottom, Top, Near, Far);
     }
 
 
@@ -281,7 +281,7 @@ namespace DigitalRune.Graphics
     /// </summary>
     /// <param name="matrix">The projection matrix.</param>
     /// <returns>The orthographic projection.</returns>
-    public static explicit operator OrthographicProjection(Matrix44F matrix)
+    public static explicit operator OrthographicProjection(Matrix matrix)
     {
       var projection = new OrthographicProjection();
       projection.Set(matrix);
@@ -294,7 +294,7 @@ namespace DigitalRune.Graphics
     /// </summary>
     /// <param name="matrix">The projection matrix.</param>
     /// <returns>The orthographic projection.</returns>
-    public static OrthographicProjection FromMatrix(Matrix44F matrix)
+    public static OrthographicProjection FromMatrix(Matrix matrix)
     {
       var projection = new OrthographicProjection();
       projection.Set(matrix);

@@ -286,7 +286,7 @@ namespace DigitalRune.Animation.Character
     }
 
 
-    private static void DoWork(QuaternionF skeletonOffset, SkeletonPose skeletonA, SkeletonPose skeletonB, int boneIndexA, int neckBoneIndexA, int leftShoulderBoneIndexA, int rightShoulderBoneIndexA, int boneIndexB, int neckBoneIndexB, int leftShoulderBoneIndexB, int rightShoulderBoneIndexB)
+    private static void DoWork(Quaternion skeletonOffset, SkeletonPose skeletonA, SkeletonPose skeletonB, int boneIndexA, int neckBoneIndexA, int leftShoulderBoneIndexA, int rightShoulderBoneIndexA, int boneIndexB, int neckBoneIndexB, int leftShoulderBoneIndexB, int rightShoulderBoneIndexB)
     {
       // Reset root bone.
       skeletonB.ResetBoneTransforms(boneIndexB, boneIndexB, false, true, false);
@@ -302,12 +302,12 @@ namespace DigitalRune.Animation.Character
       var rightShoulderB = skeletonB.GetBonePoseAbsolute(rightShoulderBoneIndexB).Translation;
 
       // Abort if any bone to bone distance is 0.
-      if (Vector3F.AreNumericallyEqual(boneA, neckA)
-          || Vector3F.AreNumericallyEqual(boneA, rightShoulderA)
-          || Vector3F.AreNumericallyEqual(leftShoulderA, rightShoulderA)
-          || Vector3F.AreNumericallyEqual(boneB, neckB)
-          || Vector3F.AreNumericallyEqual(boneB, rightShoulderB)
-          || Vector3F.AreNumericallyEqual(leftShoulderB, rightShoulderB))
+      if (Vector3.AreNumericallyEqual(boneA, neckA)
+          || Vector3.AreNumericallyEqual(boneA, rightShoulderA)
+          || Vector3.AreNumericallyEqual(leftShoulderA, rightShoulderA)
+          || Vector3.AreNumericallyEqual(boneB, neckB)
+          || Vector3.AreNumericallyEqual(boneB, rightShoulderB)
+          || Vector3.AreNumericallyEqual(leftShoulderB, rightShoulderB))
       {
         return;
       }
@@ -318,7 +318,7 @@ namespace DigitalRune.Animation.Character
       var shoulderAxisB = rightShoulderB - leftShoulderB;
 
       // Create a twist rotation from the shoulder vectors.
-      var shoulderRotation = QuaternionF.CreateRotation(shoulderAxisB, shoulderAxisA);
+      var shoulderRotation = Quaternion.CreateRotation(shoulderAxisB, shoulderAxisA);
 
       // Apply this twist to the spine. (Modifies the neckB position.)
       neckB = boneB + shoulderRotation.Rotate(neckB - boneB);
@@ -329,7 +329,7 @@ namespace DigitalRune.Animation.Character
       var spineAxisB = neckB - boneB;
 
       // Create swing rotation from spine vectors.
-      var spineRotation = QuaternionF.CreateRotation(spineAxisB, spineAxisA);
+      var spineRotation = Quaternion.CreateRotation(spineAxisB, spineAxisA);
 
       // Apply the shoulder twist rotation followed by the spine swing rotation.
       skeletonB.RotateBoneAbsolute(boneIndexB, spineRotation * shoulderRotation);

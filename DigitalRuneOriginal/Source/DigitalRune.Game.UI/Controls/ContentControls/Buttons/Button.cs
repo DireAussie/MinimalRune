@@ -5,9 +5,9 @@
 using System.ComponentModel;
 using DigitalRune.Game.Input;
 using Microsoft.Xna.Framework.Input;
-#if SILVERLIGHT
+
 using Keys = System.Windows.Input.Key;
-#endif
+
 
 
 namespace DigitalRune.Game.UI.Controls
@@ -57,9 +57,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <summary> 
     /// The ID of the <see cref="IsCancel"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int IsCancelPropertyId = CreateProperty(
       typeof(Button), "IsCancel", GamePropertyCategories.Behavior, null, false, 
       UIPropertyOptions.None);
@@ -86,9 +86,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <summary> 
     /// The ID of the <see cref="IsDefault"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int IsDefaultPropertyId = CreateProperty(
       typeof(Button), "IsDefault", GamePropertyCategories.Behavior, null, false, 
       UIPropertyOptions.None);
@@ -115,9 +115,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <summary> 
     /// The ID of the <see cref="IsRepeatButton"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int IsRepeatButtonPropertyId = CreateProperty(
       typeof(Button), "IsRepeatButton", GamePropertyCategories.Behavior, null, false, 
       UIPropertyOptions.None);
@@ -209,7 +209,7 @@ namespace DigitalRune.Game.UI.Controls
             IsClicked = true;
           }
 
-#if !SILVERLIGHT
+
           // Repeat button behavior and gamepad.
           if (!inputService.IsGamePadHandled(context.AllowedPlayer)
               && inputService.IsPressed(Buttons.A, true, context.AllowedPlayer))
@@ -217,7 +217,7 @@ namespace DigitalRune.Game.UI.Controls
             inputService.SetGamePadHandled(context.AllowedPlayer, true);
             IsClicked = true;
           }
-#endif
+
         }
       }
 
@@ -237,7 +237,7 @@ namespace DigitalRune.Game.UI.Controls
           }
         }
 
-#if !SILVERLIGHT
+
         // Handling IsDefault, IsCancel and gamepad.
         if (!inputService.IsGamePadHandled(context.AllowedPlayer))
         {
@@ -250,7 +250,7 @@ namespace DigitalRune.Game.UI.Controls
             IsClicked = true;
           }
         }
-#endif
+
       }
     }
 

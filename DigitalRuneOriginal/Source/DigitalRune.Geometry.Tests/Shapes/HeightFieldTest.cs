@@ -121,24 +121,24 @@ namespace DigitalRune.Geometry.Shapes.Tests
     [Test]
     public void GetAxisAlignedBoundingBox()
     {
-      Assert.AreEqual(new Aabb(new Vector3F(0, -100, 0), new Vector3F(1000, 0, 1000)), 
+      Assert.AreEqual(new Aabb(new Vector3(0, -100, 0), new Vector3(1000, 0, 1000)), 
                       new HeightField().GetAabb(Pose.Identity));
-      Assert.AreEqual(new Aabb(new Vector3F(1000, -101, 2000), new Vector3F(1100, 5, 2200)), 
+      Assert.AreEqual(new Aabb(new Vector3(1000, -101, 2000), new Vector3(1100, 5, 2200)), 
                       _field.GetAabb(Pose.Identity));
-      Assert.AreEqual(new Aabb(new Vector3F(0, -1, 0), new Vector3F(10, 5, 20)), 
+      Assert.AreEqual(new Aabb(new Vector3(0, -1, 0), new Vector3(10, 5, 20)), 
                       new HeightField(0, 0, 10, 20, _samples, 3, 8) { Depth = 0 }.GetAabb(Pose.Identity));
 
       // Now with pose.
-      QuaternionF rotation = QuaternionF.CreateRotationX(0.2f);
-      Pose pose = new Pose(new Vector3F(1, 1, 1), rotation);
+      Quaternion rotation = Quaternion.CreateRotationX(0.2f);
+      Pose pose = new Pose(new Vector3(1, 1, 1), rotation);
       _field.Depth = 0;
       var box = new TransformedShape(
-        new GeometricObject(new BoxShape(100, 6, 200), new Pose(new Vector3F(1050, 2, 2100))));
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(box.GetAabb(pose).Minimum, _field.GetAabb(pose).Minimum));
+        new GeometricObject(new BoxShape(100, 6, 200), new Pose(new Vector3(1050, 2, 2100))));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(box.GetAabb(pose).Minimum, _field.GetAabb(pose).Minimum));
       _field.Depth = 4;
       box = new TransformedShape(
-        new GeometricObject(new BoxShape(100, 10, 200), new Pose(new Vector3F(1000, 0, 2000))));
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(box.GetAabb(pose).Minimum + rotation.Rotate(new Vector3F(50, 0, 100)), _field.GetAabb(pose).Minimum));
+        new GeometricObject(new BoxShape(100, 10, 200), new Pose(new Vector3(1000, 0, 2000))));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(box.GetAabb(pose).Minimum + rotation.Rotate(new Vector3(50, 0, 100)), _field.GetAabb(pose).Minimum));
     }
 
 

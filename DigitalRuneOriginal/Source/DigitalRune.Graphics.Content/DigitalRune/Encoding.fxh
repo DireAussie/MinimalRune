@@ -9,7 +9,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#ifndef DIGITALRUNE_ENCODING_FXH
+
 #define DIGITALRUNE_ENCODING_FXH
 
 // Notes:
@@ -367,4 +367,4 @@ float DecodeSpecularPower(float encodedSpecularPower)
   return exp2(encodedSpecularPower * 17.6f);
   //return exp2(encodedSpecularPower * 19.0f - 1);
 }
-#endif
+

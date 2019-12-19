@@ -27,18 +27,18 @@ namespace Samples.Particles
         DefaultEmissionRate = 1200,
       });
 
-      ps.Parameters.AddVarying<Vector3F>(ParticleParameterNames.Position);
+      ps.Parameters.AddVarying<Vector3>(ParticleParameterNames.Position);
       ps.Effectors.Add(new StartPositionEffector
       {
         Parameter = ParticleParameterNames.Position,
-        Distribution = new BoxDistribution { MinValue = new Vector3F(-20, 15, -20), MaxValue = new Vector3F(20, 15, 20) }
+        Distribution = new BoxDistribution { MinValue = new Vector3(-20, 15, -20), MaxValue = new Vector3(20, 15, 20) }
       });
 
-      ps.Parameters.AddVarying<Vector3F>(ParticleParameterNames.Direction);
+      ps.Parameters.AddVarying<Vector3>(ParticleParameterNames.Direction);
       ps.Effectors.Add(new StartDirectionEffector
       {
         Parameter = ParticleParameterNames.Direction,
-        Distribution = new DirectionDistribution { Deviation = 0f, Direction = -Vector3F.UnitY },
+        Distribution = new DirectionDistribution { Deviation = 0f, Direction = -Vector3.UnitY },
       });
 
       ps.Parameters.AddVarying<float>(ParticleParameterNames.LinearSpeed);
@@ -58,7 +58,7 @@ namespace Samples.Particles
         Distribution = new UniformDistributionF(0.5f, 1.5f),
       });
 
-      ps.Parameters.AddUniform<Vector3F>(ParticleParameterNames.Color).DefaultValue = new Vector3F(0.5f, 0.7f, 0.9f);
+      ps.Parameters.AddUniform<Vector3>(ParticleParameterNames.Color).DefaultValue = new Vector3(0.5f, 0.7f, 0.9f);
 
       ps.Parameters.AddUniform<float>(ParticleParameterNames.Alpha).DefaultValue = 0.5f;
 

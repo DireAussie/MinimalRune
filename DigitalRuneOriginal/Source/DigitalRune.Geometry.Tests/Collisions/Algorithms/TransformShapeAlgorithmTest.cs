@@ -26,7 +26,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms.Tests
         GeometricObject = new GeometricObject
          {
            Pose = Pose.Identity,
-           Shape = new PlaneShape(new Vector3F(0, 1, 0), 0),
+           Shape = new PlaneShape(new Vector3(0, 1, 0), 0),
          },
       };
       CollisionObject transformShape = new CollisionObject
@@ -38,7 +38,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms.Tests
           {
             Child = new GeometricObject
              {
-                Pose = new Pose(new Vector3F(1, 2, 0)),
+                Pose = new Pose(new Vector3(1, 2, 0)),
                 Shape = new SphereShape(1),
              },
           },
@@ -51,16 +51,16 @@ namespace DigitalRune.Geometry.Collisions.Algorithms.Tests
       if (set.ObjectA != plane)
         set = set.Swapped;
       Assert.AreEqual(1, set.Count);
-      Assert.AreEqual(new Vector3F(1, 0, 0), set[0].PositionAWorld);
-      Assert.AreEqual(new Vector3F(1, 1, 0), set[0].PositionBWorld);
+      Assert.AreEqual(new Vector3(1, 0, 0), set[0].PositionAWorld);
+      Assert.AreEqual(new Vector3(1, 1, 0), set[0].PositionBWorld);
 
       Assert.AreEqual(false, algo.HaveContact(plane, transformShape));
 
-      ((GeometricObject)transformShape.GeometricObject).Pose = new Pose(new Vector3F(-1, -5, 4));
+      ((GeometricObject)transformShape.GeometricObject).Pose = new Pose(new Vector3(-1, -5, 4));
       algo.UpdateContacts(set, 0);
       Assert.AreEqual(1, set.Count);
-      Assert.AreEqual(new Vector3F(0, 0, 4), set[0].PositionAWorld);
-      Assert.AreEqual(new Vector3F(0, -4, 4), set[0].PositionBWorld);
+      Assert.AreEqual(new Vector3(0, 0, 4), set[0].PositionAWorld);
+      Assert.AreEqual(new Vector3(0, -4, 4), set[0].PositionBWorld);
 
     }
   }

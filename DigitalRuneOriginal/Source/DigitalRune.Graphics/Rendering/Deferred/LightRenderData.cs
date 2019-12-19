@@ -14,7 +14,7 @@ namespace DigitalRune.Graphics.Rendering
   {
     // The Clip submesh and its world matrix.
     public Submesh ClipSubmesh;
-    public Matrix44F ClipMatrix;
+    public Matrix ClipMatrix;
 
 
     public void UpdateClipSubmesh(IGraphicsService graphicsService, LightNode node)
@@ -31,7 +31,7 @@ namespace DigitalRune.Graphics.Rendering
         ShapeMeshCache.GetMesh(graphicsService, clip.Shape, out ClipSubmesh, out ClipMatrix);
 
         // Add transform of Clip.
-        ClipMatrix = clip.Pose * Matrix44F.CreateScale(clip.Scale) * ClipMatrix;
+        ClipMatrix = clip.Pose * Matrix.CreateScale(clip.Scale) * ClipMatrix;
       }
     }
 

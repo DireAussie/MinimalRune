@@ -23,7 +23,7 @@ namespace DigitalRune.Particles.Effectors
   /// <item>
   /// <term><see cref="DirectionParameter"/></term>
   /// <description>
-  /// A normalized <see cref="Vector3F"/> parameter that defines the movement direction (direction 
+  /// A normalized <see cref="Vector3"/> parameter that defines the movement direction (direction 
   /// of the linear velocity vector). This parameter is modified by applying the acceleration.
   /// Per default, the parameter "Direction" is used.
   /// </description>
@@ -39,7 +39,7 @@ namespace DigitalRune.Particles.Effectors
   /// <item>
   /// <term><see cref="AccelerationParameter"/></term>
   /// <description>
-  /// A <see cref="Vector3F"/> parameter that defines the acceleration vector. The direction of the 
+  /// A <see cref="Vector3"/> parameter that defines the acceleration vector. The direction of the 
   /// vector defines the acceleration direction. The length of the vector defines the magnitude of 
   /// the acceleration. Per default, the parameter "LinearAcceleration" is used.
   /// </description>
@@ -53,9 +53,9 @@ namespace DigitalRune.Particles.Effectors
 
     //--------------------------------------------------------------
 
-    private IParticleParameter<Vector3F> _directionParameter;
+    private IParticleParameter<Vector3> _directionParameter;
     private IParticleParameter<float> _linearSpeedParameter;
-    private IParticleParameter<Vector3F> _linearAccelerationParameter;
+    private IParticleParameter<Vector3> _linearAccelerationParameter;
 
 
 
@@ -65,11 +65,11 @@ namespace DigitalRune.Particles.Effectors
 
     /// <summary>
     /// Gets or sets the name of the parameter that defines the movement direction.
-    /// (A varying or uniform parameter of type <see cref="Vector3F"/>.)
+    /// (A varying or uniform parameter of type <see cref="Vector3"/>.)
     /// </summary>
     /// <value>
     /// The name of the parameter that defines the movement direction.
-    /// (Parameter type: varying or uniform, value type: <see cref="Vector3F"/>) <br/>
+    /// (Parameter type: varying or uniform, value type: <see cref="Vector3"/>) <br/>
     /// The default value is "Direction".
     /// </value>
     /// <remarks>
@@ -99,11 +99,11 @@ namespace DigitalRune.Particles.Effectors
 
     /// <summary>
     /// Gets or sets the name of the parameter that defines the acceleration vector.
-    /// (A varying or uniform parameter of type <see cref="Vector3F"/>.)
+    /// (A varying or uniform parameter of type <see cref="Vector3"/>.)
     /// </summary>
     /// <value>
     /// The name of the parameter that defines the acceleration vector.
-    /// (Parameter type: varying or uniform, value type: <see cref="Vector3F"/>) <br/>
+    /// (Parameter type: varying or uniform, value type: <see cref="Vector3"/>) <br/>
     /// The default value is "LinearAcceleration".
     /// </value>
     /// <remarks>
@@ -159,9 +159,9 @@ namespace DigitalRune.Particles.Effectors
     /// <inheritdoc/>
     protected override void OnRequeryParameters()
     {
-      _directionParameter = ParticleSystem.Parameters.Get<Vector3F>(DirectionParameter);
+      _directionParameter = ParticleSystem.Parameters.Get<Vector3>(DirectionParameter);
       _linearSpeedParameter = ParticleSystem.Parameters.Get<float>(SpeedParameter);
-      _linearAccelerationParameter = ParticleSystem.Parameters.Get<Vector3F>(AccelerationParameter);
+      _linearAccelerationParameter = ParticleSystem.Parameters.Get<Vector3>(AccelerationParameter);
     }
 
 
@@ -188,7 +188,7 @@ namespace DigitalRune.Particles.Effectors
       if (_linearSpeedParameter.Values == null || _directionParameter.Values == null)
       {
         float dt = (float)deltaTime.TotalSeconds;
-        Vector3F velocity = _directionParameter.DefaultValue * _linearSpeedParameter.DefaultValue;
+        Vector3 velocity = _directionParameter.DefaultValue * _linearSpeedParameter.DefaultValue;
         velocity += _linearAccelerationParameter.DefaultValue * dt;
 
         // Set new speed.
@@ -213,9 +213,9 @@ namespace DigitalRune.Particles.Effectors
       }
 
       // Update varying parameters.
-      Vector3F[] directions = _directionParameter.Values;
+      Vector3[] directions = _directionParameter.Values;
       float[] speeds = _linearSpeedParameter.Values;
-      Vector3F[] accelerations = _linearAccelerationParameter.Values;
+      Vector3[] accelerations = _linearAccelerationParameter.Values;
       float dt = (float)deltaTime.TotalSeconds;
 
       if (directions != null && speeds != null && accelerations != null)
@@ -223,7 +223,7 @@ namespace DigitalRune.Particles.Effectors
         // Optimized case: Direction, Speed, and Acceleration are varying parameters.
         for (int i = startIndex; i < startIndex + count; i++)
         {
-          Vector3F velocity = directions[i] * speeds[i];
+          Vector3 velocity = directions[i] * speeds[i];
           velocity += accelerations[i] * dt;
           speeds[i] = velocity.Length;
           if (!Numeric.IsZero(speeds[i]))
@@ -233,10 +233,10 @@ namespace DigitalRune.Particles.Effectors
       else if (directions != null && speeds != null)
       {
         // Optimized case: Direction and Speed are varying parameters, Acceleration is uniform.
-        Vector3F acceleration = _linearAccelerationParameter.DefaultValue;
+        Vector3 acceleration = _linearAccelerationParameter.DefaultValue;
         for (int i = startIndex; i < startIndex + count; i++)
         {
-          Vector3F velocity = directions[i] * speeds[i];
+          Vector3 velocity = directions[i] * speeds[i];
           velocity += acceleration * dt;
           speeds[i] = velocity.Length;
           if (!Numeric.IsZero(speeds[i]))
@@ -247,10 +247,10 @@ namespace DigitalRune.Particles.Effectors
       {
         // General case: Either Direction or Speed is varying parameter.
         // This path does not make sense much sense. - But maybe someone has an idea how to use it.
-        Vector3F acceleration = _linearAccelerationParameter.DefaultValue;
+        Vector3 acceleration = _linearAccelerationParameter.DefaultValue;
         for (int i = startIndex; i < startIndex + count; i++)
         {
-          Vector3F velocity = _directionParameter.GetValue(i) * _linearSpeedParameter.GetValue(i);
+          Vector3 velocity = _directionParameter.GetValue(i) * _linearSpeedParameter.GetValue(i);
           velocity += acceleration * dt;
           var newSpeed = velocity.Length;
           _linearSpeedParameter.SetValue(i, newSpeed);

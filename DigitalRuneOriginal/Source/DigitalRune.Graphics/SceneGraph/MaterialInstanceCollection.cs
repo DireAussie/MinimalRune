@@ -278,7 +278,7 @@ namespace DigitalRune.Graphics.SceneGraph
       PassHashes = hashes.ToArray();
       ResourcePools<int>.Lists.Recycle(hashes);
 
-#if DEBUG
+
       // Just for debugging: 
       // For optimal performance hash values should not collide. 
       var dictionary = new Dictionary<int, string>();
@@ -297,7 +297,7 @@ namespace DigitalRune.Graphics.SceneGraph
           dictionary[hash] = pass;
         }
       }
-#endif
+
     }
 
 

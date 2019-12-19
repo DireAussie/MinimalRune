@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCulture("")]
 [assembly: NeutralResourcesLanguage("en")]
 
-#if !PORTABLE
+
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
 // COM, set the ComVisible attribute to true on that type. Only Windows
@@ -31,7 +31,7 @@ using System.Runtime.InteropServices;
 // project is exposed to COM. On other platforms, it unique identifies the
 // title storage container when deploying this assembly to the device.
 [assembly: Guid("737df9a4-1704-4f25-a401-7b2e3cc811f2")]
-#endif
+
 
 // Version information for an assembly consists of the following four values:
 //
@@ -44,9 +44,9 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.4.0.0")]
-#if !XBOX
+
 [assembly: AssemblyFileVersion("1.4.1.$WCREV$")]
-#endif
+
 [assembly: CLSCompliant(true)]
 
 [assembly: InternalsVisibleTo("DigitalRune.Animation.Tests")]

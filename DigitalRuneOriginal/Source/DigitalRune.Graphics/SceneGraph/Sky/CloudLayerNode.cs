@@ -112,16 +112,16 @@ namespace DigitalRune.Graphics.SceneGraph
     /// </summary>
     /// <value>
     /// The matrix used to transform the texture coordinates. The default value is 
-    /// <see cref="Matrix33F.Identity"/>.
+    /// <see cref="Matrix.Identity"/>.
     /// </value>
-    public Matrix33F TextureMatrix { get; set; }
+    public Matrix TextureMatrix { get; set; }
 
 
     /// <summary>
     /// Gets or sets the direction to the sun.
     /// </summary>
     /// <value>The direction to the sun. This vector is automatically normalized.</value>
-    public Vector3F SunDirection
+    public Vector3 SunDirection
     {
       get { return _sunDirection; }
       set
@@ -130,7 +130,7 @@ namespace DigitalRune.Graphics.SceneGraph
         _sunDirection.TryNormalize();
       }
     }
-    private Vector3F _sunDirection;
+    private Vector3 _sunDirection;
 
 
     /// <summary>
@@ -138,14 +138,14 @@ namespace DigitalRune.Graphics.SceneGraph
     /// </summary>
     /// <value>The intensity of the sun light.</value>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly")]
-    public Vector3F SunLight { get; set; }
+    public Vector3 SunLight { get; set; }
 
 
     /// <summary>
     /// Gets or sets the ambient light intensity used to shade the clouds.
     /// </summary>
     /// <value>The intensity of the ambient light used to shade the clouds.</value>
-    public Vector3F AmbientLight { get; set; }
+    public Vector3 AmbientLight { get; set; }
 
 
     /// <summary>
@@ -304,10 +304,10 @@ namespace DigitalRune.Graphics.SceneGraph
 
       _cloudMap = cloudMap;
       SkyCurvature = 0.9f;
-      TextureMatrix = Matrix33F.Identity;
-      SunDirection = new Vector3F(1, 1, 1);
-      SunLight = new Vector3F(0.6f);
-      AmbientLight = new Vector3F(0.8f);
+      TextureMatrix = Matrix.Identity;
+      SunDirection = new Vector3(1, 1, 1);
+      SunLight = new Vector3(0.6f);
+      AmbientLight = new Vector3(0.8f);
       NumberOfSamples = 8;
       SampleDistance = 0.004f;
       ForwardScatterExponent = 5;
@@ -392,7 +392,7 @@ namespace DigitalRune.Graphics.SceneGraph
     /// The texture coordinates of the cloud texture. (The result is undefined if 
     /// <paramref name="direction"/> does not point towards the sky.)
     /// </returns>
-    public Vector2F GetTextureCoordinates(Vector3F direction)
+    public Vector2F GetTextureCoordinates(Vector3 direction)
     {
       float x = direction.X;
       float y = direction.Y + HorizonBias;
@@ -407,7 +407,7 @@ namespace DigitalRune.Graphics.SceneGraph
         new Vector2F(x / (2 + 2 * y), z / (2 + 2 * y)),
         SkyCurvature);
 
-      Vector3F texCoord3F = new Vector3F(texCoord.X, texCoord.Y, 1);
+      Vector3 texCoord3F = new Vector3(texCoord.X, texCoord.Y, 1);
       texCoord3F = TextureMatrix * texCoord3F;
       return new Vector2F(texCoord3F.X + 0.5f, texCoord3F.Y + 0.5f);
     }

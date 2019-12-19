@@ -58,7 +58,7 @@
 
 
 
-#if !NETFX_CORE && !PORTABLE && !USE_TPL
+
 namespace DigitalRune.Threading
 {
   /// <summary>
@@ -78,4 +78,4 @@ namespace DigitalRune.Threading
     WorkOptions Options { get; }
   }
 }
-#endif
+

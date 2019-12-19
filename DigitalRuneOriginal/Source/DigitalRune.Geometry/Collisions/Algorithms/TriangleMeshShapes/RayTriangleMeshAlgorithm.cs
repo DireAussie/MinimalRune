@@ -74,9 +74,9 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
       contactSet.HaveContact = false;
 
       // Get transformations.
-      Vector3F rayScale = rayObject.Scale;
+      Vector3 rayScale = rayObject.Scale;
       Pose rayPose = rayObject.Pose;
-      Vector3F meshScale = meshObject.Scale;
+      Vector3 meshScale = meshObject.Scale;
       Pose meshPose = meshObject.Pose;
 
       // Ray in world space.
@@ -90,7 +90,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
 
       // Ray in local unscaled space of the mesh.
       Ray rayUnscaled = ray;
-      var inverseCompositeScale = Vector3F.One / meshScale;
+      var inverseCompositeScale = Vector3.One / meshScale;
       rayUnscaled.Scale(ref inverseCompositeScale);
 
       ITriangleMesh triangleMesh = meshShape.Mesh;
@@ -112,7 +112,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
       else
       {
         // ----- Mesh vs. Ray -----
-        var rayUnscaledDirectionInverse = new Vector3F(
+        var rayUnscaledDirectionInverse = new Vector3(
         1 / rayUnscaled.Direction.X,
         1 / rayUnscaled.Direction.Y,
         1 / rayUnscaled.Direction.Z);
@@ -148,39 +148,39 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
                             ref Triangle triangle,        // The unscaled triangle in the mesh space.
                             int triangleIndex, 
                             ref Pose trianglePose,
-                            ref Vector3F triangleScale, 
+                            ref Vector3 triangleScale, 
                             bool isTwoSided)
     {
       // This code is from GeometryHelper_Triangles.cs. Sync changes!
 
-      Vector3F v0 = triangle.Vertex0 * triangleScale;
-      Vector3F v1 = triangle.Vertex1 * triangleScale;
-      Vector3F v2 = triangle.Vertex2 * triangleScale;
+      Vector3 v0 = triangle.Vertex0 * triangleScale;
+      Vector3 v1 = triangle.Vertex1 * triangleScale;
+      Vector3 v2 = triangle.Vertex2 * triangleScale;
 
-      Vector3F d1 = (v1 - v0);
-      Vector3F d2 = (v2 - v0);
-      Vector3F n = Vector3F.Cross(d1, d2);
+      Vector3 d1 = (v1 - v0);
+      Vector3 d2 = (v2 - v0);
+      Vector3 n = Vector3.Cross(d1, d2);
 
       // Tolerance value, see SOLID, Bergen: "Collision Detection in Interactive 3D Environments".
       float ε = n.Length * Numeric.EpsilonFSquared;
 
-      Vector3F r = rayInMesh.Direction * rayInMesh.Length;
+      Vector3 r = rayInMesh.Direction * rayInMesh.Length;
 
-      float δ = -Vector3F.Dot(r, n);
+      float δ = -Vector3.Dot(r, n);
 
       // Degenerate triangle --> No hit.
       if (ε == 0.0f || Numeric.IsZero(δ, ε))
         return;
 
-      Vector3F triangleToRayOrigin = rayInMesh.Origin - v0;
-      float λ = Vector3F.Dot(triangleToRayOrigin, n) / δ;
+      Vector3 triangleToRayOrigin = rayInMesh.Origin - v0;
+      float λ = Vector3.Dot(triangleToRayOrigin, n) / δ;
       if (λ < 0 || λ > 1)
         return;
 
       // The ray hit the triangle plane.
-      Vector3F u = Vector3F.Cross(triangleToRayOrigin, r);
-      float μ1 = Vector3F.Dot(d2, u) / δ;
-      float μ2 = Vector3F.Dot(-d1, u) / δ;
+      Vector3 u = Vector3.Cross(triangleToRayOrigin, r);
+      float μ1 = Vector3.Dot(d2, u) / δ;
+      float μ2 = Vector3.Dot(-d1, u) / δ;
       if (μ1 + μ2 <= 1 + ε && μ1 >= -ε && μ2 >= -ε)
       {
         // Hit!
@@ -195,7 +195,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
         float penetrationDepth = λ * rayInMesh.Length;
 
         // Create contact info.
-        Vector3F position = rayWorld.Origin + rayWorld.Direction * penetrationDepth;
+        Vector3 position = rayWorld.Origin + rayWorld.Direction * penetrationDepth;
         n = trianglePose.ToWorldDirection(n);
 
         Debug.Assert(!n.IsNumericallyZero, "Degenerate cases of ray vs. triangle should be treated above.");

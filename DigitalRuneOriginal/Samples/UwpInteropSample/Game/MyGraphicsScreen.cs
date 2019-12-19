@@ -61,10 +61,10 @@ namespace UwpInteropSample
     {
       // Rotate camera around origin.
       _cameraRotation += 0.1f * (float)deltaTime.TotalSeconds;
-      var cameraPosition = Matrix33F.CreateRotationY(_cameraRotation) * new Vector3F(10, 5, 10);
-      var targetPosition = new Vector3F(0, 1, 0);
-      var up = new Vector3F(0, 1, 0);
-      var viewMatrix = Matrix44F.CreateLookAt(cameraPosition, targetPosition, up);
+      var cameraPosition = Matrix.CreateRotationY(_cameraRotation) * new Vector3(10, 5, 10);
+      var targetPosition = new Vector3(0, 1, 0);
+      var up = new Vector3(0, 1, 0);
+      var viewMatrix = Matrix.CreateLookAt(cameraPosition, targetPosition, up);
       CameraNode.PoseWorld = Pose.FromMatrix(viewMatrix.Inverse);
 
       Scene.Update(deltaTime);

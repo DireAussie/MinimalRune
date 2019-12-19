@@ -1,4 +1,4 @@
-﻿#if SILVERLIGHT
+﻿
 using NUnit.Framework;
 
 
@@ -9,4 +9,4 @@ namespace DigitalRune.Windows.Tests
     {
     }
 }
-#endif
+

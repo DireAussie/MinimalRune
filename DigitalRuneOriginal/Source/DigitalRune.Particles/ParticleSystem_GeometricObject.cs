@@ -7,9 +7,9 @@ using DigitalRune.Geometry;
 using DigitalRune.Geometry.Shapes;
 using DigitalRune.Mathematics.Algebra;
 
-#if XNA || MONOGAME
+
 using Microsoft.Xna.Framework.Content;
-#endif
+
 
 
 namespace DigitalRune.Particles
@@ -33,7 +33,7 @@ namespace DigitalRune.Particles
       {
         if (_aabbIsValid == false)
         {
-          _aabb = Shape.GetAabb(Vector3F.One, Pose);
+          _aabb = Shape.GetAabb(Vector3.One, Pose);
           _aabbIsValid = true;
         }
 
@@ -59,9 +59,9 @@ namespace DigitalRune.Particles
     /// Changing this property raises the <see cref="PoseChanged"/> event.
     /// </para>
     /// </remarks>
-#if XNA || MONOGAME
+
     [ContentSerializer(Optional = true)]
-#endif
+
     public Pose Pose
     {
       get { return _pose; }
@@ -118,9 +118,9 @@ namespace DigitalRune.Particles
     /// <exception cref="ArgumentNullException">
     /// <paramref name="value"/> is <see langword="null"/>.
     /// </exception>
-#if XNA || MONOGAME
+
     [ContentSerializer(SharedResource = true, Optional = true)]
-#endif
+
     public Shape Shape
     {
       get { return _shape; }
@@ -144,9 +144,9 @@ namespace DigitalRune.Particles
     /// <value>Always returns (1, 1, 1).
     /// </value>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes")]
-    Vector3F IGeometricObject.Scale
+    Vector3 IGeometricObject.Scale
     {
-      get { return Vector3F.One; }
+      get { return Vector3.One; }
     }
 
 

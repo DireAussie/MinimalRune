@@ -50,7 +50,7 @@ namespace DigitalRune.Physics.Constraints
     /// <exception cref="ArgumentException">
     /// <paramref name="value"/> is a zero vector.
     /// </exception>
-    public Vector3F XAxisALocal
+    public Vector3 XAxisALocal
     {
       get { return _linearLimit.AnchorPoseALocal.Orientation.GetColumn(0); }
       set
@@ -64,7 +64,7 @@ namespace DigitalRune.Physics.Constraints
           Pose anchorPoseALocal = new Pose(AnchorPositionALocal);
           anchorPoseALocal.Orientation.SetColumn(0, value);
           anchorPoseALocal.Orientation.SetColumn(1, YAxisALocal);
-          anchorPoseALocal.Orientation.SetColumn(2, Vector3F.Cross(value, YAxisALocal));
+          anchorPoseALocal.Orientation.SetColumn(2, Vector3.Cross(value, YAxisALocal));
           _linearLimit.AnchorPoseALocal = anchorPoseALocal;
 
           OnChanged();
@@ -85,7 +85,7 @@ namespace DigitalRune.Physics.Constraints
     /// <exception cref="ArgumentException">
     /// <paramref name="value"/> is a zero vector.
     /// </exception>
-    public Vector3F YAxisALocal
+    public Vector3 YAxisALocal
     {
       get { return _linearLimit.AnchorPoseALocal.Orientation.GetColumn(1); }
       set
@@ -99,7 +99,7 @@ namespace DigitalRune.Physics.Constraints
           Pose anchorPoseALocal = new Pose(AnchorPositionALocal);
           anchorPoseALocal.Orientation.SetColumn(0, XAxisALocal);
           anchorPoseALocal.Orientation.SetColumn(1, value);
-          anchorPoseALocal.Orientation.SetColumn(2, Vector3F.Cross(XAxisALocal, value));
+          anchorPoseALocal.Orientation.SetColumn(2, Vector3.Cross(XAxisALocal, value));
           _linearLimit.AnchorPoseALocal = anchorPoseALocal;
 
           OnChanged();
@@ -116,7 +116,7 @@ namespace DigitalRune.Physics.Constraints
     /// The constraint anchor position on <see cref="Constraint.BodyA"/> in local space of 
     /// <see cref="Constraint.BodyA"/>.
     /// </value>
-    public Vector3F AnchorPositionALocal
+    public Vector3 AnchorPositionALocal
     {
       get { return _linearLimit.AnchorPoseALocal.Position; }
       set
@@ -138,7 +138,7 @@ namespace DigitalRune.Physics.Constraints
     /// The constraint anchor position on <see cref="Constraint.BodyB"/> in local space of 
     /// <see cref="Constraint.BodyB"/>.
     /// </value>
-    public Vector3F AnchorPositionBLocal
+    public Vector3 AnchorPositionBLocal
     {
       get { return _linearLimit.AnchorPositionBLocal; }
       set
@@ -169,7 +169,7 @@ namespace DigitalRune.Physics.Constraints
       {
         if (value != ErrorReduction)
         {
-          _linearLimit.ErrorReduction = new Vector3F(value);
+          _linearLimit.ErrorReduction = new Vector3(value);
           OnChanged();
         }
       }
@@ -193,7 +193,7 @@ namespace DigitalRune.Physics.Constraints
       {
         if (value != Softness)
         {
-          _linearLimit.Softness = new Vector3F(value);
+          _linearLimit.Softness = new Vector3(value);
           OnChanged();
         }
       }
@@ -216,7 +216,7 @@ namespace DigitalRune.Physics.Constraints
         var oldMin = _linearLimit.Minimum;
         if (value.X != oldMin.X && value.Y != oldMin.Y)
         {
-          _linearLimit.Minimum = new Vector3F(value.X, value.Y, 0);
+          _linearLimit.Minimum = new Vector3(value.X, value.Y, 0);
           OnChanged();
         }
       }
@@ -239,7 +239,7 @@ namespace DigitalRune.Physics.Constraints
         var oldMax = _linearLimit.Maximum;
         if (value.X != oldMax.X && value.Y != oldMax.Y)
         {
-          _linearLimit.Maximum = new Vector3F(value.X, value.Y, 0);
+          _linearLimit.Maximum = new Vector3(value.X, value.Y, 0);
           OnChanged();
         }
       }
@@ -262,7 +262,7 @@ namespace DigitalRune.Physics.Constraints
       {
         if (value != Restitution)
         {
-          _linearLimit.Restitution = new Vector3F(value);
+          _linearLimit.Restitution = new Vector3(value);
           OnChanged();
         }
       }
@@ -283,7 +283,7 @@ namespace DigitalRune.Physics.Constraints
       {
         if (value != Restitution)
         {
-          _linearLimit.MaxForce = new Vector3F(value);
+          _linearLimit.MaxForce = new Vector3(value);
           OnChanged();
         }
       }
@@ -291,7 +291,7 @@ namespace DigitalRune.Physics.Constraints
 
 
     /// <inheritdoc/>
-    public override Vector3F LinearConstraintImpulse
+    public override Vector3 LinearConstraintImpulse
     {
       get
       {
@@ -301,11 +301,11 @@ namespace DigitalRune.Physics.Constraints
 
 
     /// <inheritdoc/>
-    public override Vector3F AngularConstraintImpulse
+    public override Vector3 AngularConstraintImpulse
     {
       get
       {
-        return Vector3F.Zero;
+        return Vector3.Zero;
       }
     }
 
@@ -322,7 +322,7 @@ namespace DigitalRune.Physics.Constraints
     {
       get
       {
-        Vector3F relativePosition = _linearLimit.RelativePosition;
+        Vector3 relativePosition = _linearLimit.RelativePosition;
         return new Vector2F(relativePosition.X, relativePosition.Y);
       }
     }
@@ -340,8 +340,8 @@ namespace DigitalRune.Physics.Constraints
     {
       _linearLimit = new LinearLimit
       {
-        Minimum = new Vector3F(float.NegativeInfinity, float.NegativeInfinity, 0),
-        Maximum = new Vector3F(float.PositiveInfinity, float.PositiveInfinity, 0),
+        Minimum = new Vector3(float.NegativeInfinity, float.NegativeInfinity, 0),
+        Maximum = new Vector3(float.PositiveInfinity, float.PositiveInfinity, 0),
       };
     }
 

@@ -362,7 +362,7 @@ namespace DigitalRune.Graphics.Effects
       return (Vector3)(-context.CameraNode.ViewInverse.GetColumn(2).XYZ);
 
       // Same as
-      //return context.CameraNode.PoseWorld.ToWorldDirection(Vector3F.Forward);
+      //return context.CameraNode.PoseWorld.ToWorldDirection(Vector3.Forward);
     }
 
 
@@ -824,14 +824,14 @@ namespace DigitalRune.Graphics.Effects
     private static readonly Func<LightNode, Matrix> GetDirectionalLightTextureMatrix_ = lightNode =>
     {
       var light = (DirectionalLight)lightNode.Light;
-      var textureProjection = Matrix44F.CreateOrthographicOffCenter(
+      var textureProjection = Matrix.CreateOrthographicOffCenter(
         -light.TextureOffset.X,
         -light.TextureOffset.X + Math.Abs(light.TextureScale.X),
         light.TextureOffset.Y,
         light.TextureOffset.Y + Math.Abs(light.TextureScale.Y),
         1, // Not relevant
         2); // Not relevant.
-      var scale = Matrix44F.CreateScale(Math.Sign(light.TextureScale.X), Math.Sign(light.TextureScale.Y), 1);
+      var scale = Matrix.CreateScale(Math.Sign(light.TextureScale.X), Math.Sign(light.TextureScale.Y), 1);
 
       return (Matrix)(GraphicsHelper.ProjectorBiasMatrix * scale * textureProjection * lightNode.PoseWorld.Inverse);
     };
@@ -1177,7 +1177,7 @@ namespace DigitalRune.Graphics.Effects
     {
       // Cube maps are left handed --> Sample with inverted z. (Otherwise, the 
       // cube map and objects or texts in it are mirrored.)
-      var mirrorZ = Matrix44F.CreateScale(1, 1, -1);
+      var mirrorZ = Matrix.CreateScale(1, 1, -1);
       return (Matrix)(mirrorZ * lightNode.PoseWorld.Inverse);
     };
 
@@ -1400,7 +1400,7 @@ namespace DigitalRune.Graphics.Effects
     private static readonly Func<LightNode, Matrix> GetSpotlightTextureMatrix_ = lightNode =>
     {
       var light = (Spotlight)lightNode.Light;
-      var projection = Matrix44F.CreatePerspectiveFieldOfView(light.CutoffAngle * 2 * lightNode.ScaleWorld.Y, 1, 1, 100);
+      var projection = Matrix.CreatePerspectiveFieldOfView(light.CutoffAngle * 2 * lightNode.ScaleWorld.Y, 1, 1, 100);
       return (Matrix)(GraphicsHelper.ProjectorBiasMatrix * projection * lightNode.PoseWorld.Inverse);
     };
 
@@ -1430,7 +1430,7 @@ namespace DigitalRune.Graphics.Effects
     private static readonly Func<ProjectorLight, Vector4> GetProjectorLightSpecularHdr4 = light => new Vector4((Vector3)light.Color * light.SpecularIntensity * light.HdrScale, 1);
     private static readonly Func<ProjectorLight, float> GetProjectorLightRangeF = light => light.Projection.Far;
     private static readonly Func<ProjectorLight, float> GetProjectorLightAttenuationF = light => light.Attenuation;
-    private static readonly Func<LightNode, Matrix> GetProjectorLightViewProjection_ = lightNode => (Matrix)(((ProjectorLight)lightNode.Light).Projection.ToMatrix44F() * lightNode.PoseWorld.Inverse);
+    private static readonly Func<LightNode, Matrix> GetProjectorLightViewProjection_ = lightNode => (Matrix)(((ProjectorLight)lightNode.Light).Projection.ToMatrix() * lightNode.PoseWorld.Inverse);
     private static readonly Func<ProjectorLight, Texture> GetProjectorLightTexture_ = light => light.Texture;
     private static readonly Func<ProjectorLight, Texture2D> GetProjectorLightTexture2D = light => light.Texture;
     // Note: In .NET 4.0 we only need Func<ProjectorLight, Texture2D>. But .NET 3.5 does not support co- and contra-variance!
@@ -1731,7 +1731,7 @@ namespace DigitalRune.Graphics.Effects
     {
       // Cube maps are left handed --> Sample with inverted z. (Otherwise, the 
       // cube map and objects or texts in it are mirrored.)
-      var mirrorZ = Matrix44F.CreateScale(1, 1, -1);
+      var mirrorZ = Matrix.CreateScale(1, 1, -1);
       return (Matrix)(mirrorZ * lightNode.PoseWorld.Inverse);
     };
 
@@ -1936,7 +1936,7 @@ namespace DigitalRune.Graphics.Effects
         return Matrix.Identity;
 
       Matrix world = node.PoseWorld;
-      Vector3F scale = node.ScaleWorld;
+      Vector3 scale = node.ScaleWorld;
       world.M11 *= scale.X; world.M12 *= scale.X; world.M13 *= scale.X;
       world.M21 *= scale.Y; world.M22 *= scale.Y; world.M23 *= scale.Y;
       world.M31 *= scale.Z; world.M32 *= scale.Z; world.M33 *= scale.Z;
@@ -2153,7 +2153,7 @@ namespace DigitalRune.Graphics.Effects
         return Matrix.Identity;
 
       Matrix world = node.LastPoseWorld.HasValue ? node.LastPoseWorld.Value : node.PoseWorld;
-      Vector3F scale = node.LastScaleWorld.HasValue ? node.LastScaleWorld.Value : node.ScaleWorld;
+      Vector3 scale = node.LastScaleWorld.HasValue ? node.LastScaleWorld.Value : node.ScaleWorld;
       world.M11 *= scale.X; world.M12 *= scale.X; world.M13 *= scale.X;
       world.M21 *= scale.Y; world.M22 *= scale.Y; world.M23 *= scale.Y;
       world.M31 *= scale.Z; world.M32 *= scale.Z; world.M33 *= scale.Z;

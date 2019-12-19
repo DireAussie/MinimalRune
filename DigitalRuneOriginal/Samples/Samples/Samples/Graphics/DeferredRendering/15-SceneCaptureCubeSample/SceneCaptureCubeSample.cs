@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using System;
 using System.Linq;
 using DigitalRune.Geometry;
@@ -69,8 +69,8 @@ on the model.",
       Random random = new Random(12345);
       for (int i = 0; i < 10; i++)
       {
-        Vector3F position = new Vector3F(random.NextFloat(-3, -8), 0, random.NextFloat(0, -5));
-        Matrix33F orientation = Matrix33F.CreateRotationY(random.NextFloat(0, ConstantsF.TwoPi));
+        Vector3 position = new Vector3(random.NextFloat(-3, -8), 0, random.NextFloat(0, -5));
+        Matrix orientation = Matrix.CreateRotationY(random.NextFloat(0, ConstantsF.TwoPi));
         float scale = random.NextFloat(0.5f, 1.2f);
         GameObjectService.Objects.Add(new StaticObject(Services, "PalmTree/palm_tree", scale, new Pose(position, orientation)));
       }
@@ -78,7 +78,7 @@ on the model.",
       // Load the "Bubble" mesh and place it at a fixed position in the scene.
       var modelNode = ContentManager.Load<ModelNode>("Bubble/Bubble");
       var meshNode = modelNode.GetDescendants().OfType<MeshNode>().First().Clone();
-      meshNode.PoseWorld = new Pose(new Vector3F(0, 1, 0));
+      meshNode.PoseWorld = new Pose(new Vector3(0, 1, 0));
       _graphicsScreen.Scene.Children.Add(meshNode);
 
       // Surface of the mesh should reflect the scene in real-time. Reflections are
@@ -146,4 +146,3 @@ on the model.",
     }
   }
 }
-#endif

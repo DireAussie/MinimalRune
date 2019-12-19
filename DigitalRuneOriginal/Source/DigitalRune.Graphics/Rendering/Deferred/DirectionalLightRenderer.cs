@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !WP7
+
 using System;
 using System.Collections.Generic;
 using DigitalRune.Geometry;
@@ -142,7 +142,7 @@ namespace DigitalRune.Graphics.Rendering
       
       // Convert frustum far corners from view space to world space.
       for (int i = 0; i < _cameraFrustumFarCorners.Length; i++)
-        _cameraFrustumFarCorners[i] = (Vector3)cameraPose.ToWorldDirection((Vector3F)_cameraFrustumFarCorners[i]);
+        _cameraFrustumFarCorners[i] = (Vector3)cameraPose.ToWorldDirection((Vector3)_cameraFrustumFarCorners[i]);
 
       _parameterFrustumCorners.SetValue(_cameraFrustumFarCorners);
 
@@ -170,7 +170,7 @@ namespace DigitalRune.Graphics.Rendering
         _parameterSpecularColor.SetValue((Vector3)light.Color * light.SpecularIntensity * hdrScale);
 
         Pose lightPose = lightNode.PoseWorld;
-        Vector3F lightDirectionWorld = lightPose.ToWorldDirection(Vector3F.Forward);
+        Vector3 lightDirectionWorld = lightPose.ToWorldDirection(Vector3.Forward);
         _parameterLightDirection.SetValue((Vector3)lightDirectionWorld);
 
         bool hasShadow = (lightNode.Shadow != null && lightNode.Shadow.ShadowMask != null);
@@ -190,14 +190,14 @@ namespace DigitalRune.Graphics.Rendering
         bool hasTexture = (light.Texture != null);
         if (hasTexture)
         {
-          var textureProjection = Matrix44F.CreateOrthographicOffCenter(
+          var textureProjection = Matrix.CreateOrthographicOffCenter(
             -light.TextureOffset.X,
             -light.TextureOffset.X + Math.Abs(light.TextureScale.X),
             light.TextureOffset.Y,
             light.TextureOffset.Y + Math.Abs(light.TextureScale.Y),
             1,  // Not relevant
             2); // Not relevant.
-          var scale = Matrix44F.CreateScale(Math.Sign(light.TextureScale.X), Math.Sign(light.TextureScale.Y), 1);
+          var scale = Matrix.CreateScale(Math.Sign(light.TextureScale.X), Math.Sign(light.TextureScale.Y), 1);
 
           _parameterTextureMatrix.SetValue((Matrix)(GraphicsHelper.ProjectorBiasMatrix * scale * textureProjection * lightPose.Inverse));
 
@@ -269,4 +269,4 @@ namespace DigitalRune.Graphics.Rendering
 
   }
 }
-#endif
+

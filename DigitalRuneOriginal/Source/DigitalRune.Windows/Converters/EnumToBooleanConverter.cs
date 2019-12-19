@@ -17,9 +17,9 @@ namespace DigitalRune.Windows
     /// The <see cref="Enum"/> value is converted to <see langword="true"/> if it matches the
     /// converter parameter.
     /// </remarks>
-#if !SILVERLIGHT && !WINDOWS_PHONE
+
     [ValueConversion(typeof(Enum), typeof(bool), ParameterType = typeof(Enum))]
-#endif
+
     public class EnumToBooleanConverter : IValueConverter
     {
         /// <summary>

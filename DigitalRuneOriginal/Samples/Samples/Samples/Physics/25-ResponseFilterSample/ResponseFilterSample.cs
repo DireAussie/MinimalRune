@@ -32,7 +32,7 @@ a custom filter class.",
       Simulation.ResponseFilter = new MyCollisionResponseFilter();
 
       // Add a ground plane.
-      RigidBody groundPlane = new RigidBody(new PlaneShape(Vector3F.UnitY, 0))
+      RigidBody groundPlane = new RigidBody(new PlaneShape(Vector3.UnitY, 0))
       {
         Name = "GroundPlane",           // Names are not required but helpful for debugging.
         MotionType = MotionType.Static,
@@ -43,9 +43,9 @@ a custom filter class.",
       BoxShape boxShape = new BoxShape(0.5f, 0.8f, 1.2f);
       for (int i = 0; i < 20; i++)
       {
-        Vector3F position = RandomHelper.Random.NextVector3F(-3, 3);
+        Vector3 position = RandomHelper.Random.NextVector3(-3, 3);
         position.Y = 5;
-        QuaternionF orientation = RandomHelper.Random.NextQuaternionF();
+        Quaternion orientation = RandomHelper.Random.NextQuaternion();
 
         RigidBody body = new RigidBody(boxShape)
         {
@@ -58,9 +58,9 @@ a custom filter class.",
       CapsuleShape capsuleShape = new CapsuleShape(0.3f, 1.2f);
       for (int i = 0; i < 20; i++)
       {
-        Vector3F position = RandomHelper.Random.NextVector3F(-3, 3);
+        Vector3 position = RandomHelper.Random.NextVector3(-3, 3);
         position.Y = 5;
-        QuaternionF orientation = RandomHelper.Random.NextQuaternionF();
+        Quaternion orientation = RandomHelper.Random.NextQuaternion();
 
         RigidBody body = new RigidBody(capsuleShape)
         {

@@ -1,4 +1,4 @@
-﻿#if XBOX
+﻿
 using System;
 using DigitalRune.Animation;
 using DigitalRune.Animation.Character;
@@ -53,4 +53,3 @@ namespace Samples.Animation
     }
   }
 }
-#endif

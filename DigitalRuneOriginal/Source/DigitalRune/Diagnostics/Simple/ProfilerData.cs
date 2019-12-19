@@ -119,13 +119,13 @@ namespace DigitalRune.Diagnostics
     
     internal void Start()
     {
-#if PORTABLE
+
       throw Portable.NotImplementedException;
 #elif SILVERLIGHT
       throw new NotSupportedException();
 #else
       _startTime = Profiler.Stopwatch.Elapsed.TotalSeconds;
-#endif
+
     }
 
 
@@ -138,10 +138,10 @@ namespace DigitalRune.Diagnostics
         return;
 // ReSharper restore CompareOfFloatsByEqualityOperator
 
-#if !PORTABLE && !SILVERLIGHT
+
       var stopTime = Profiler.Stopwatch.Elapsed.TotalSeconds;
       AddValue(stopTime - _startTime);
-#endif
+
       _startTime = -1;
     }
 

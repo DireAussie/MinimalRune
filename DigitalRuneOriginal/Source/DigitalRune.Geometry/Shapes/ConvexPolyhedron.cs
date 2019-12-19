@@ -11,12 +11,12 @@ using System.Linq;
 using System.Xml.Serialization;
 using DigitalRune.Geometry.Meshes;
 using DigitalRune.Mathematics.Algebra;
-#if !PORTABLE
+
 using System.ComponentModel;
-#endif
-#if PORTABLE || WINDOWS
+
+
 using System.Dynamic;
-#endif
+
 
 
 namespace DigitalRune.Geometry.Shapes
@@ -36,9 +36,9 @@ namespace DigitalRune.Geometry.Shapes
   /// runtime.
   /// </para>
   /// </remarks>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
+
   public class ConvexPolyhedron : ConvexShape
   {
     // ConvexPolyhedron uses a directional lookup table (LUT) and vertex adjacency lists for support 
@@ -197,7 +197,7 @@ namespace DigitalRune.Geometry.Shapes
     //--------------------------------------------------------------
 
     // The cached local space AABB
-    private Aabb _aabbLocal = new Aabb(new Vector3F(float.NaN), new Vector3F(float.NaN));
+    private Aabb _aabbLocal = new Aabb(new Vector3(float.NaN), new Vector3(float.NaN));
 
 
 
@@ -215,11 +215,11 @@ namespace DigitalRune.Geometry.Shapes
     /// <remarks>
     /// This point is a "deep" inner point of the shape (in local space).
     /// </remarks>
-    public override Vector3F InnerPoint
+    public override Vector3 InnerPoint
     {
       get { return _innerPoint; }
     }
-    private Vector3F _innerPoint = new Vector3F(float.NaN);
+    private Vector3 _innerPoint = new Vector3(float.NaN);
 
 
     /// <summary>
@@ -229,18 +229,18 @@ namespace DigitalRune.Geometry.Shapes
     /// A read-only list with the vertices of the convex polyhedron.
     /// </value>
     [XmlIgnore]
-    public ReadOnlyCollection<Vector3F> Vertices
+    public ReadOnlyCollection<Vector3> Vertices
     {
       get
       {
         if (_verticesReadOnly == null)
-         _verticesReadOnly = new ReadOnlyCollection<Vector3F>(_vertices);
+         _verticesReadOnly = new ReadOnlyCollection<Vector3>(_vertices);
 
         return _verticesReadOnly;
       }
     }
-    private Vector3F[] _vertices;
-    private ReadOnlyCollection<Vector3F> _verticesReadOnly;
+    private Vector3[] _vertices;
+    private ReadOnlyCollection<Vector3> _verticesReadOnly;
 
 
     /// <summary>
@@ -265,11 +265,11 @@ namespace DigitalRune.Geometry.Shapes
     private VertexAdjacency _vertexAdjacency;
 
 
-#if PORTABLE || WINDOWS
+
     /// <exclude/>
-#if !PORTABLE
+
     [Browsable(false)]
-#endif
+
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     public /*dynamic*/ object Internals
     {
@@ -288,7 +288,7 @@ namespace DigitalRune.Geometry.Shapes
         return internals;
       }
     }
-#endif
+
 
 
 
@@ -318,7 +318,7 @@ namespace DigitalRune.Geometry.Shapes
     /// <exception cref="NotSupportedException">
     /// Too many vertices in convex hull. Max. 65534 vertices in a convex polyhedron are supported.
     /// </exception>
-    public ConvexPolyhedron(IEnumerable<Vector3F> points)
+    public ConvexPolyhedron(IEnumerable<Vector3> points)
     {
       BuildConvexPolyhedron(points);
     }
@@ -329,7 +329,7 @@ namespace DigitalRune.Geometry.Shapes
 
     //--------------------------------------------------------------
 
-    internal void Set(Vector3F[] vertices, Aabb aabb, Vector3F innerPoint, DirectionalLookupTableUInt16F directionalLookupTable, VertexAdjacency vertexAdjacency)
+    internal void Set(Vector3[] vertices, Aabb aabb, Vector3 innerPoint, DirectionalLookupTableUInt16F directionalLookupTable, VertexAdjacency vertexAdjacency)
     {
       _vertices = vertices;
       _aabbLocal = aabb;
@@ -364,7 +364,7 @@ namespace DigitalRune.Geometry.Shapes
 
 
     /// <inheritdoc/>
-    public override Aabb GetAabb(Vector3F scale, Pose pose)
+    public override Aabb GetAabb(Vector3 scale, Pose pose)
     {
       // Apply scale and pose to AABB.
       return _aabbLocal.GetAabb(scale, pose);
@@ -385,7 +385,7 @@ namespace DigitalRune.Geometry.Shapes
     /// from the center regarding the given direction. This point is not necessarily unique.
     /// </para>
     /// </remarks>
-    public override Vector3F GetSupportPoint(Vector3F direction)
+    public override Vector3 GetSupportPoint(Vector3 direction)
     {
       return GetSupportPointInternal(ref direction);
     }
@@ -404,15 +404,15 @@ namespace DigitalRune.Geometry.Shapes
     /// from the center regarding the given direction. This point is not necessarily unique.
     /// </para>
     /// </remarks>
-    public override Vector3F GetSupportPointNormalized(Vector3F directionNormalized)
+    public override Vector3 GetSupportPointNormalized(Vector3 directionNormalized)
     {
       return GetSupportPointInternal(ref directionNormalized);
     }
 
 
-    private Vector3F GetSupportPointInternal(ref Vector3F direction)
+    private Vector3 GetSupportPointInternal(ref Vector3 direction)
     {
-      Vector3F supportVertex = new Vector3F();
+      Vector3 supportVertex = new Vector3();
       if (_directionLookupTable != null)
       {
         GetSupportPointLut(ref direction, out supportVertex);
@@ -424,8 +424,8 @@ namespace DigitalRune.Geometry.Shapes
         float maxDistance = float.NegativeInfinity;
         for (int i = 0; i < _vertices.Length; i++)
         {
-          Vector3F vertex = _vertices[i];
-          float distance = Vector3F.Dot(vertex, direction);
+          Vector3 vertex = _vertices[i];
+          float distance = Vector3.Dot(vertex, direction);
           if (distance > maxDistance)
           {
             supportVertex = vertex;
@@ -471,7 +471,7 @@ namespace DigitalRune.Geometry.Shapes
     /// <exception cref="NotSupportedException">
     /// Too many vertices in convex hull. Max. 65534 vertices in a convex polyhedron are supported.
     /// </exception>
-    private void BuildConvexPolyhedron(IEnumerable<Vector3F> points)
+    private void BuildConvexPolyhedron(IEnumerable<Vector3> points)
     {
       // Build convex hull and throw away inner points.
       DcelMesh convexHull = GeometryHelper.CreateConvexHull(points);
@@ -479,7 +479,7 @@ namespace DigitalRune.Geometry.Shapes
       if (numberOfVertices >= ushort.MaxValue)
         throw new NotSupportedException("Too many vertices in convex hull. Max. 65534 vertices in convex hull are supported.");
 
-      _vertices = (convexHull != null) ? convexHull.Vertices.Select(v => v.Position).ToArray() : new Vector3F[0];
+      _vertices = (convexHull != null) ? convexHull.Vertices.Select(v => v.Position).ToArray() : new Vector3[0];
       CacheAabb();
       CacheInnerPoint();
 
@@ -495,7 +495,7 @@ namespace DigitalRune.Geometry.Shapes
 
     private void CacheAabb()
     {
-      _aabbLocal = base.GetAabb(Vector3F.One, Pose.Identity);
+      _aabbLocal = base.GetAabb(Vector3.One, Pose.Identity);
     }
 
 
@@ -503,12 +503,12 @@ namespace DigitalRune.Geometry.Shapes
     {
       // Compute the average of all points.
       int numberOfPoints = _vertices.Length;
-      Vector3F innerPoint = new Vector3F();
+      Vector3 innerPoint = new Vector3();
       if (numberOfPoints > 0)
       {
         for (int i = 0; i < numberOfPoints; i++)
         {
-          Vector3F point = _vertices[i];
+          Vector3 point = _vertices[i];
           innerPoint += point;
         }
 
@@ -523,7 +523,7 @@ namespace DigitalRune.Geometry.Shapes
     {
       // Compute center and radius of the sphere where points are sampled.
       float polyhedronRadius;
-      Vector3F center;
+      Vector3 center;
       GeometryHelper.ComputeBoundingSphere(_vertices, out polyhedronRadius, out center);
       float radius = polyhedronRadius * RadiusFactor;
 
@@ -533,16 +533,16 @@ namespace DigitalRune.Geometry.Shapes
       // Sample points on the sphere and determine the indices of the closest vertices on the 
       // convex polyhedron. The indices of the closest vertices are the entries in the lookup
       // table.
-      foreach (Vector3F direction in _directionLookupTable.GetSampleDirections())
+      foreach (Vector3 direction in _directionLookupTable.GetSampleDirections())
       {
         direction.Normalize();
-        Vector3F samplePoint = direction * radius;
+        Vector3 samplePoint = direction * radius;
         _directionLookupTable[direction] = GetClosestVertex(samplePoint);
       }
     }
 
 
-    private ushort GetClosestVertex(Vector3F samplePoint)
+    private ushort GetClosestVertex(Vector3 samplePoint)
     {
       // Brute force search for closest vertex.
       int minIndex = -1;
@@ -571,9 +571,9 @@ namespace DigitalRune.Geometry.Shapes
     // JIT Optimization BUG!!! When the JIT compiler compiles this code with optimizations,
     // it removes the adjacentDistance = ... code and creates an endless loop!!!! This is a serious 
     // JIT optimization bug. The bug does not occur when JIT optimization is turned off or when we 
-    // inline Vector3F.Dot() below.
+    // inline Vector3.Dot() below.
     //[MethodImpl(MethodImplOptions.NoOptimization)]
-    private void GetSupportPointLut(ref Vector3F direction, out Vector3F supportVertex)
+    private void GetSupportPointLut(ref Vector3 direction, out Vector3 supportVertex)
     {
       // The direction vector does not need to be normalized: Below we project the points onto
       // the direction vector and measure the length of the projection. We do not need the correct 
@@ -583,8 +583,8 @@ namespace DigitalRune.Geometry.Shapes
       ushort index = _directionLookupTable[direction];
 
       // The index from the directional lookup table is our initial guess.
-      Vector3F vertex = _vertices[index];
-      float distance = Vector3F.Dot(vertex, direction);
+      Vector3 vertex = _vertices[index];
+      float distance = Vector3.Dot(vertex, direction);
       ushort maxIndex = index;
       ushort lastIndex = ushort.MaxValue;
       do
@@ -606,10 +606,10 @@ namespace DigitalRune.Geometry.Shapes
             continue;
 
           // Check whether the adjacent vertex is a better support point.
-          Vector3F adjacent = _vertices[adjacentIndex];
+          Vector3 adjacent = _vertices[adjacentIndex];
 
           // JIT Optimization Bug!!! See comment above.
-          //float adjacentDistance = Vector3F.Dot(adjacent, direction);
+          //float adjacentDistance = Vector3.Dot(adjacent, direction);
           float adjacentDistance = adjacent.X * direction.X + adjacent.Y * direction.Y + adjacent.Z * direction.Z;
 
           if (adjacentDistance > distance)

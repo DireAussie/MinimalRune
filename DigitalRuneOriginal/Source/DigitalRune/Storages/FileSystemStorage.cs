@@ -80,7 +80,7 @@ namespace DigitalRune.Storages
     /// </param>
     public FileSystemStorage(string rootDirectory)
     {
-#if PORTABLE
+
       RootDirectory = rootDirectory;  // Set RootDirectory to remove code analysis warning.
       throw Portable.NotImplementedException;
 #elif NETFX_CORE || WP7 || WP8 || XBOX
@@ -91,7 +91,7 @@ namespace DigitalRune.Storages
         RootDirectory = Directory.GetCurrentDirectory();
       else
         RootDirectory = Path.GetFullPath(rootDirectory);
-#endif
+
     }
 
 
@@ -103,7 +103,7 @@ namespace DigitalRune.Storages
     /// <inheritdoc/>
     public override string GetRealPath(string path)
     {
-#if PORTABLE
+
       throw Portable.NotImplementedException;
 #elif NETFX_CORE || WP7 || WP8 || XBOX
       throw new NotSupportedException();
@@ -113,21 +113,21 @@ namespace DigitalRune.Storages
         return StorageHelper.SwitchDirectorySeparator(path, DirectorySeparator);
 
       return null;
-#endif
+
     }
 
 
     /// <inheritdoc/>
     public override Stream OpenFile(string path)
     {
-#if PORTABLE
+
       throw Portable.NotImplementedException;
 #elif NETFX_CORE || WP7 || WP8 || XBOX
       throw new NotSupportedException();
 #else
       path = Path.Combine(RootDirectory, path);
       return File.OpenRead(path);
-#endif
+
     }
 
 
@@ -135,14 +135,14 @@ namespace DigitalRune.Storages
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
     Stream IStorageInternal.TryOpenFile(string path)
     {
-#if PORTABLE
+
       throw Portable.NotImplementedException;
 #elif NETFX_CORE || WP7 || WP8 || XBOX
       throw new NotSupportedException();
 #else
       path = Path.Combine(RootDirectory, path);
       return File.Exists(path) ? File.OpenRead(path) : null;
-#endif
+
     }
 
   }

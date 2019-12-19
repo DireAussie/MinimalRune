@@ -11,19 +11,19 @@ namespace DigitalRune.Graphics
   partial class GraphicsHelper
   {
     // Note: Cube map faces are left-handed! Therefore +Z is actually -Z.
-    private static readonly Vector3F[] CubeMapForwardDirections =
+    private static readonly Vector3[] CubeMapForwardDirections =
     { 
-      Vector3F.UnitX, -Vector3F.UnitX, 
-      Vector3F.UnitY, -Vector3F.UnitY,
-      -Vector3F.UnitZ, Vector3F.UnitZ   // Switch Z because cube maps are left-handed.
+      Vector3.UnitX, -Vector3.UnitX, 
+      Vector3.UnitY, -Vector3.UnitY,
+      -Vector3.UnitZ, Vector3.UnitZ   // Switch Z because cube maps are left-handed.
     };
 
 
-    private static readonly Vector3F[] CubeMapUpDirections =
+    private static readonly Vector3[] CubeMapUpDirections =
     { 
-      Vector3F.UnitY, Vector3F.UnitY,
-      Vector3F.UnitZ, -Vector3F.UnitZ,
-      Vector3F.UnitY, Vector3F.UnitY
+      Vector3.UnitY, Vector3.UnitY,
+      Vector3.UnitZ, -Vector3.UnitZ,
+      Vector3.UnitY, Vector3.UnitY
     };
 
 
@@ -35,7 +35,7 @@ namespace DigitalRune.Graphics
     /// The camera forward direction required to render the content of the
     /// given cube map face.
     /// </returns>
-    public static Vector3F GetCubeMapForwardDirection(CubeMapFace cubeMapFace)
+    public static Vector3 GetCubeMapForwardDirection(CubeMapFace cubeMapFace)
     {
       return CubeMapForwardDirections[(int)cubeMapFace];
     }
@@ -49,7 +49,7 @@ namespace DigitalRune.Graphics
     /// The camera up direction required to render the content of the
     /// given cube map face.
     /// </returns>
-    public static Vector3F GetCubeMapUpDirection(CubeMapFace cubeMapFace)
+    public static Vector3 GetCubeMapUpDirection(CubeMapFace cubeMapFace)
     {
       return CubeMapUpDirections[(int)cubeMapFace];
     }

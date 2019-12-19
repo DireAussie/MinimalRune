@@ -60,7 +60,7 @@
 using System;
 
 
-#if !NETFX_CORE && !PORTABLE && !USE_TPL
+
 namespace DigitalRune.Threading
 {
   /// <summary>
@@ -209,4 +209,4 @@ namespace DigitalRune.Threading
 
   }
 }
-#endif
+

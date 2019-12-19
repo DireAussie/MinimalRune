@@ -262,12 +262,12 @@ namespace DigitalRune.Editor.Game
 
             // Get direction vectors from camera.
             Pose pose = cameraNode.PoseWorld;
-            Vector3F forward = pose.ToWorldDirection(Vector3F.Forward);
-            Vector3F right = pose.ToWorldDirection(Vector3F.Right);
-            Vector3F up = pose.ToWorldDirection(Vector3F.Up);
+            Vector3 forward = pose.ToWorldDirection(Vector3.Forward);
+            Vector3 right = pose.ToWorldDirection(Vector3.Right);
+            Vector3 up = pose.ToWorldDirection(Vector3.Up);
 
             // Determine navigation direction.
-            Vector3F direction = Vector3F.Zero;
+            Vector3 direction = Vector3.Zero;
             if (wDown)
                 direction += forward;
             if (aDown)
@@ -289,7 +289,7 @@ namespace DigitalRune.Editor.Game
 
             // Move camera.
             direction.TryNormalize();
-            Vector3F offset = direction * (float)Speed * dt * modifier;
+            Vector3 offset = direction * (float)Speed * dt * modifier;
             pose.Position += offset;
             cameraNode.PoseWorld = pose;
         }

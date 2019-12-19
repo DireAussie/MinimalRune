@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !WP7
+
 using System;
 using System.Collections.Generic;
 using DigitalRune.Graphics.SceneGraph;
@@ -186,7 +186,7 @@ namespace DigitalRune.Graphics.Rendering
 
       var cameraNode = context.CameraNode;
       var view = cameraNode.View;
-      view.Translation = Vector3F.Zero;
+      view.Translation = Vector3.Zero;
       var projection = cameraNode.Camera.Projection;
 
       var basicEffect = (BasicEffect)_effect;
@@ -206,31 +206,31 @@ namespace DigitalRune.Graphics.Rendering
 
       // Positive X
       basicEffect.Texture = GetTexture2D(graphicsDevice, node.Texture, CubeMapFace.PositiveX);
-      basicEffect.World = (Matrix)new Matrix44F(orientation * scale, Vector3F.Zero);
+      basicEffect.World = (Matrix)new Matrix(orientation * scale, Vector3.Zero);
       basicEffect.CurrentTechnique.Passes[0].Apply();
       graphicsDevice.DrawUserPrimitives(PrimitiveType.TriangleStrip, _faceVertices, 0, 2);
 
       // Negative X      
       // transform = scale * rotY(180°)
-      var transform = new Matrix33F(-scale, 0, 0, 0, scale, 0, 0, 0, -scale);
+      var transform = new Matrix(-scale, 0, 0, 0, scale, 0, 0, 0, -scale);
       basicEffect.Texture = GetTexture2D(graphicsDevice, node.Texture, CubeMapFace.NegativeX);
-      basicEffect.World = (Matrix)new Matrix44F(orientation * transform, Vector3F.Zero);
+      basicEffect.World = (Matrix)new Matrix(orientation * transform, Vector3.Zero);
       basicEffect.CurrentTechnique.Passes[0].Apply();
       graphicsDevice.DrawUserPrimitives(PrimitiveType.TriangleStrip, _faceVertices, 0, 2);
 
       // Positive Y
       // transform = scale * rotX(90°) * rotY(90°)
-      transform = new Matrix33F(0, 0, scale, scale, 0, 0, 0, scale, 0);
+      transform = new Matrix(0, 0, scale, scale, 0, 0, 0, scale, 0);
       basicEffect.Texture = GetTexture2D(graphicsDevice, node.Texture, CubeMapFace.PositiveY);
-      basicEffect.World = (Matrix)new Matrix44F(orientation * transform, Vector3F.Zero);
+      basicEffect.World = (Matrix)new Matrix(orientation * transform, Vector3.Zero);
       basicEffect.CurrentTechnique.Passes[0].Apply();
       graphicsDevice.DrawUserPrimitives(PrimitiveType.TriangleStrip, _faceVertices, 0, 2);
 
       // Negative Y
       // transform = scale * rotX(-90°) * rotY(90°)
-      transform = new Matrix33F(0, 0, scale, -scale, 0, 0, 0, -scale, 0);
+      transform = new Matrix(0, 0, scale, -scale, 0, 0, 0, -scale, 0);
       basicEffect.Texture = GetTexture2D(graphicsDevice, node.Texture, CubeMapFace.NegativeY);
-      basicEffect.World = (Matrix)new Matrix44F(orientation * transform, Vector3F.Zero);
+      basicEffect.World = (Matrix)new Matrix(orientation * transform, Vector3.Zero);
       basicEffect.CurrentTechnique.Passes[0].Apply();
       graphicsDevice.DrawUserPrimitives(PrimitiveType.TriangleStrip, _faceVertices, 0, 2);
 
@@ -238,17 +238,17 @@ namespace DigitalRune.Graphics.Rendering
 
       // Positive Z (= negative Z in world space)
       // transform = scale * rotY(90°)
-      transform = new Matrix33F(0, 0, scale, 0, scale, 0, -scale, 0, 0);
+      transform = new Matrix(0, 0, scale, 0, scale, 0, -scale, 0, 0);
       basicEffect.Texture = GetTexture2D(graphicsDevice, node.Texture, CubeMapFace.PositiveZ);
-      basicEffect.World = (Matrix)new Matrix44F(orientation * transform, Vector3F.Zero);
+      basicEffect.World = (Matrix)new Matrix(orientation * transform, Vector3.Zero);
       basicEffect.CurrentTechnique.Passes[0].Apply();
       graphicsDevice.DrawUserPrimitives(PrimitiveType.TriangleStrip, _faceVertices, 0, 2);
 
       // Negative Z (= positive Z in world space)
       // transform = scale * rotY(-90°)
-      transform = new Matrix33F(0, 0, -scale, 0, scale, 0, scale, 0, 0);
+      transform = new Matrix(0, 0, -scale, 0, scale, 0, scale, 0, 0);
       basicEffect.Texture = GetTexture2D(graphicsDevice, node.Texture, CubeMapFace.NegativeZ);
-      basicEffect.World = (Matrix)new Matrix44F(orientation * transform, Vector3F.Zero);
+      basicEffect.World = (Matrix)new Matrix(orientation * transform, Vector3.Zero);
       basicEffect.CurrentTechnique.Passes[0].Apply();
       graphicsDevice.DrawUserPrimitives(PrimitiveType.TriangleStrip, _faceVertices, 0, 2);
 
@@ -358,14 +358,14 @@ namespace DigitalRune.Graphics.Rendering
         graphicsDevice.SamplerStates[0] = SamplerState.LinearClamp;
 
       var cameraNode = context.CameraNode;
-      Matrix44F view = cameraNode.View;
-      Matrix44F projection = cameraNode.Camera.Projection;
+      Matrix view = cameraNode.View;
+      Matrix projection = cameraNode.Camera.Projection;
 
       // Cube maps are left handed --> Sample with inverted z. (Otherwise, the 
       // cube map and objects or texts in it are mirrored.)
-      var mirrorZ = Matrix44F.CreateScale(1, 1, -1);
-      Matrix33F orientation = node.PoseWorld.Orientation;
-      _parameterWorldViewProjection.SetValue((Matrix)(projection * view * new Matrix44F(orientation, Vector3F.Zero) * mirrorZ));
+      var mirrorZ = Matrix.CreateScale(1, 1, -1);
+      Matrix orientation = node.PoseWorld.Orientation;
+      _parameterWorldViewProjection.SetValue((Matrix)(projection * view * new Matrix(orientation, Vector3.Zero) * mirrorZ));
 
       Vector4 color = node.EnableAlphaBlending
                       ? new Vector4((Vector3)node.Color * node.Alpha, node.Alpha) // Premultiplied
@@ -418,4 +418,4 @@ namespace DigitalRune.Graphics.Rendering
 
   }
 }
-#endif
+

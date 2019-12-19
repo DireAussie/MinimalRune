@@ -1,4 +1,4 @@
-﻿#if NETFX_CORE || WINDOWS_PHONE
+﻿
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 using TestFixtureAttribute = Microsoft.VisualStudio.TestPlatform.UnitTestFramework.TestClassAttribute;
 using TestFixtureSetUp = Microsoft.VisualStudio.TestPlatform.UnitTestFramework.ClassInitializeAttribute;
@@ -9,7 +9,7 @@ using TestAttribute = Microsoft.VisualStudio.TestPlatform.UnitTestFramework.Test
 #else
 using System.Windows;
 using NUnit.Framework;
-#endif
+
 
 
 namespace DigitalRune.Windows.Tests
@@ -17,7 +17,7 @@ namespace DigitalRune.Windows.Tests
     [TestFixture]
     public class WindowsHelperTest
     {
-#if !NETFX_CORE && !WINDOWS_PHONE && !SILVERLIGHT
+
         [Test]
         public void RoundToDevicePixelsTest()
         {
@@ -99,6 +99,6 @@ namespace DigitalRune.Windows.Tests
             Assert.AreEqual(1.5, WindowsHelper.RoundToDevicePixelsOdd(1.9, 0.5));
             Assert.AreEqual(2.5, WindowsHelper.RoundToDevicePixelsOdd(2.0, 0.5));
         }
-#endif
+
     }
 }

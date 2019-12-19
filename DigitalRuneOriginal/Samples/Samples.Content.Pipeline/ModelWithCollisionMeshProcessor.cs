@@ -68,9 +68,9 @@ namespace Samples.Content.Pipeline
             int index1 = geometry.Indices[3 * i + 2]; // Note: DigitalRune Geometry uses a different winding
             int index2 = geometry.Indices[3 * i + 1]; // order. Therefore, the indices need to be swapped.
 
-            Vector3F vertex0 = (Vector3F)geometry.Vertices.Positions[index0];
-            Vector3F vertex1 = (Vector3F)geometry.Vertices.Positions[index1];
-            Vector3F vertex2 = (Vector3F)geometry.Vertices.Positions[index2];
+            Vector3 vertex0 = (Vector3)geometry.Vertices.Positions[index0];
+            Vector3 vertex1 = (Vector3)geometry.Vertices.Positions[index1];
+            Vector3 vertex2 = (Vector3)geometry.Vertices.Positions[index2];
 
             triangleMesh.Add(new Triangle(vertex0, vertex1, vertex2), false, Numeric.EpsilonF, true);
           }

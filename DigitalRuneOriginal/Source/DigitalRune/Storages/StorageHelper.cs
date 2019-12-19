@@ -21,7 +21,7 @@ namespace DigitalRune.Storages
     {
       get
       {
-#if PORTABLE
+
         throw Portable.NotImplementedException;
 #elif NETFX_CORE || WP8
         return global::Windows.ApplicationModel.Package.Current.InstalledLocation.Path;
@@ -37,7 +37,7 @@ namespace DigitalRune.Storages
         return "/Application";
 #else
         return AppDomain.CurrentDomain.BaseDirectory;
-#endif
+
       }
     }
 
@@ -177,7 +177,7 @@ namespace DigitalRune.Storages
     }
 
 
-#if STORAGE_READ_WRITE
+
 
     /// <overloads>
     /// <summary>
@@ -315,6 +315,6 @@ namespace DigitalRune.Storages
     // OpenRead(string)
     // OpenWrite(string)
     // ReplaceFile(string, string, string)
-#endif
+
   }
 }

@@ -191,11 +191,11 @@ namespace DigitalRune.Graphics.Content
         case DataFormat.B5G6R5_UNORM:
           content = new PixelBitmapContent<Bgr565>(image.Width, image.Height);
           break;
-#if !MONOGAME
+
         case DataFormat.B5G5R5A1_UNORM:
           content = new PixelBitmapContent<Bgra5551>(image.Width, image.Height);
           break;
-#endif
+
         case DataFormat.B4G4R4A4_UNORM:
           content = new PixelBitmapContent<Bgra4444>(image.Width, image.Height);
           break;
@@ -217,7 +217,7 @@ namespace DigitalRune.Graphics.Content
         case DataFormat.R8G8B8A8_SNORM:
             content = new PixelBitmapContent<NormalizedByte4>(image.Width, image.Height);
             break;
-#if !MONOGAME
+
         case DataFormat.R10G10B10A2_UNORM:
           content = new PixelBitmapContent<Rgba1010102>(image.Width, image.Height);
           break;
@@ -231,7 +231,7 @@ namespace DigitalRune.Graphics.Content
         case DataFormat.R8_UNORM:
           content = new PixelBitmapContent<Alpha8>(image.Width, image.Height);
           break;
-#endif
+
         case DataFormat.R32_FLOAT:
             content = new PixelBitmapContent<float>(image.Width, image.Height);
             break;
@@ -250,7 +250,7 @@ namespace DigitalRune.Graphics.Content
         case DataFormat.R16G16B16A16_FLOAT:
             content = new PixelBitmapContent<HalfVector4>(image.Width, image.Height);
             break;
-#if MONOGAME
+
         case DataFormat.PVRTCI_2bpp_RGB:
             content = new PvrtcRgb2BitmapContent(image.Width, image.Height);
             break;
@@ -275,7 +275,7 @@ namespace DigitalRune.Graphics.Content
         case DataFormat.ATC_RGBA_INTERPOLATED_ALPHA:
             content = new AtcInterpolatedBitmapContent(image.Width, image.Height);
             break;
-#endif
+
 
         default:
           string message = string.Format("The texture format {0} is not supported in MonoGame.", image.Format);
@@ -289,10 +289,10 @@ namespace DigitalRune.Graphics.Content
       }
 
       Debug.Assert(content != null);
-#if !MONOGAME
+
       // content.GetPixelData() is null in MonoGame.
       Debug.Assert(image.Data.Length == content.GetPixelData().Length);
-#endif
+
 
       content.SetPixelData(image.Data);
       return content;

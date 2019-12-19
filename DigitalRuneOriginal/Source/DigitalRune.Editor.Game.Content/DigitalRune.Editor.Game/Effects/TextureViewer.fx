@@ -29,9 +29,9 @@ void VS(inout float2 texCoord : TEXCOORD0,
         inout float4 position : SV_POSITION)
 {
   // Convert position from screen space to projection space.
-#if !SM4
+
   position.xy -= 0.5;
-#endif
+
   position.xy /= ViewportSize;
   position.xy *= float2(2, -2);
   position.xy -= float2(1, -1);
@@ -87,23 +87,23 @@ technique
 {
   pass StraightAlpha
   {
-#if !SM4
+
     VertexShader = compile vs_3_0 VS();
     PixelShader = compile ps_3_0 PSStraightAlpha();
 #else
     VertexShader = compile vs_4_0 VS();
     PixelShader = compile ps_4_0 PSStraightAlpha();
-#endif
+
   }
 
   pass PremultipliedAlpha
   {
-#if !SM4
+
     VertexShader = compile vs_3_0 VS();
     PixelShader = compile ps_3_0 PSPremultipliedAlpha();
 #else
     VertexShader = compile vs_4_0 VS();
     PixelShader = compile ps_4_0 PSPremultipliedAlpha();
-#endif
+
   }
 }

@@ -180,7 +180,7 @@ namespace DigitalRune.Windows.Charts
         }
 
 
-#if SILVERLIGHT
+
         /// <summary>
         /// Identifies the <see cref="ActualHoleRadius"/> dependency property.
         /// </summary>
@@ -224,7 +224,7 @@ namespace DigitalRune.Windows.Charts
             get { return (double)GetValue(ActualHoleRadiusProperty); }
             private set { SetValue(ActualHoleRadiusPropertyKey, value); }
         }
-#endif
+
 
 
         /// <summary>
@@ -255,7 +255,7 @@ namespace DigitalRune.Windows.Charts
 
         //--------------------------------------------------------------
 
-#if SILVERLIGHT
+
         /// <summary>
         /// Initializes a new instance of the <see cref="PieChart"/> class.
         /// </summary>
@@ -272,7 +272,7 @@ namespace DigitalRune.Windows.Charts
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(PieChart), new FrameworkPropertyMetadata(typeof(PieChart)));
         }
-#endif
+
 
 
 

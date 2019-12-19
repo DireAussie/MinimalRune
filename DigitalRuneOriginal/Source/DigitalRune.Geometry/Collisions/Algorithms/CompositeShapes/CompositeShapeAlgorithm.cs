@@ -102,8 +102,8 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
       // Assume no contact.
       contactSet.HaveContact = false;
 
-      Vector3F scaleA = geometricObjectA.Scale;
-      Vector3F scaleB = geometricObjectB.Scale;
+      Vector3 scaleA = geometricObjectA.Scale;
+      Vector3 scaleB = geometricObjectB.Scale;
 
       // Check if transforms are supported.
       if (compositeShapeA != null                                           // When object A is a CompositeShape
@@ -226,7 +226,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
               scaleB, geometricObjectA.Pose.Inverse * geometricObjectB.Pose);
 
             // Apply inverse scaling to do the AABB checks in the unscaled local space of A.
-            aabbBInA.Scale(Vector3F.One / scaleA);
+            aabbBInA.Scale(Vector3.One / scaleA);
 
             if (type != CollisionQueryType.ClosestPoints)
             {
@@ -280,7 +280,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
           Aabb aabbBInA = geometricObjectB.Shape.GetAabb(scaleB, geometricObjectA.Pose.Inverse * geometricObjectB.Pose);
           
           // Apply inverse scaling to do the AABB checks in the unscaled local space of A.
-          aabbBInA.Scale(Vector3F.One / scaleA);
+          aabbBInA.Scale(Vector3.One / scaleA);
 
           // Go through list of children and find contacts.
           int numberOfChildGeometries = compositeShapeA.Children.Count;
@@ -351,7 +351,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
       CollisionObject collisionObjectB = (swapped) ? contactSet.ObjectA : contactSet.ObjectB;
       IGeometricObject geometricObjectA = collisionObjectA.GeometricObject;
       IGeometricObject geometricObjectB = collisionObjectB.GeometricObject;
-      Vector3F scaleA = geometricObjectA.Scale;
+      Vector3 scaleA = geometricObjectA.Scale;
       IGeometricObject childA = ((CompositeShape)geometricObjectA.Shape).Children[childIndex];
 
       // Find collision algorithm. 
@@ -464,8 +464,8 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
       IGeometricObject geometricObjectB = collisionObjectB.GeometricObject;
       CompositeShape shapeA = (CompositeShape)geometricObjectA.Shape;
       CompositeShape shapeB = (CompositeShape)geometricObjectB.Shape;
-      Vector3F scaleA = geometricObjectA.Scale;
-      Vector3F scaleB = geometricObjectB.Scale;
+      Vector3 scaleA = geometricObjectA.Scale;
+      Vector3 scaleB = geometricObjectB.Scale;
       IGeometricObject childA = shapeA.Children[childIndexA];
       IGeometricObject childB = shapeB.Children[childIndexB];
 
@@ -590,7 +590,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
 
       IGeometricObject geometricObjectB = objectB.GeometricObject;
       Pose poseB = geometricObjectB.Pose;
-      Vector3F scaleB = geometricObjectB.Scale;
+      Vector3 scaleB = geometricObjectB.Scale;
 
       // Note: Non-uniform scaling for rotated child objects is not supported
       // but we might still get a usable TOI query result.

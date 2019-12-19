@@ -14,15 +14,15 @@ namespace DigitalRune.Mathematics.Interpolation
   /// (Single-precision)
   /// </summary>
   /// <typeparam name="TPoint">
-  /// The type of the curve points (such as <see cref="Vector2F"/>, <see cref="Vector3F"/>, etc.).
+  /// The type of the curve points (such as <see cref="Vector2F"/>, <see cref="Vector3"/>, etc.).
   /// </typeparam>
   /// <typeparam name="TCurveKey">
   /// The type of the curve key. (A type derived from <see cref="CurveKey{TParam,TPoint}"/>.)
   /// </typeparam>
   /// <inheritdoc cref="PiecewiseCurve{TParam,TPoint,TCurveKey}"/>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
+
   [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
   public abstract class PiecewiseCurveF<TPoint, TCurveKey> 
     : PiecewiseCurve<float, TPoint, TCurveKey>

@@ -100,7 +100,7 @@ namespace DigitalRune.Graphics.SceneGraph
     public float Width
     {
       get { return ScaleLocal.X; }
-      set { ScaleLocal = new Vector3F(value, ScaleLocal.Y, ScaleLocal.Z); }
+      set { ScaleLocal = new Vector3(value, ScaleLocal.Y, ScaleLocal.Z); }
     }
 
 
@@ -112,7 +112,7 @@ namespace DigitalRune.Graphics.SceneGraph
     public float Height
     {
       get { return ScaleLocal.Y; }
-      set { ScaleLocal = new Vector3F(ScaleLocal.X, value, ScaleLocal.Z); }
+      set { ScaleLocal = new Vector3(ScaleLocal.X, value, ScaleLocal.Z); }
     }
 
 
@@ -124,7 +124,7 @@ namespace DigitalRune.Graphics.SceneGraph
     public float Depth
     {
       get { return ScaleLocal.Z; }
-      set { ScaleLocal = new Vector3F(ScaleLocal.X, ScaleLocal.Y, value); }
+      set { ScaleLocal = new Vector3(ScaleLocal.X, ScaleLocal.Y, value); }
     }
 
 

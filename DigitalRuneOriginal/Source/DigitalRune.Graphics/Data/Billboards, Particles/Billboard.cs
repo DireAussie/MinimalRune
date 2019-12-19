@@ -93,7 +93,7 @@ namespace DigitalRune.Graphics
     /// Gets or sets the tint color of the billboard.
     /// </summary>
     /// <value>The tint color (non-premultiplied). The default value is white (1, 1, 1).</value>
-    public Vector3F Color { get; set; }
+    public Vector3 Color { get; set; }
 
 
     /// <summary>
@@ -115,7 +115,7 @@ namespace DigitalRune.Graphics
     {
       Shape = new SphereShape(0);
       Orientation = BillboardOrientation.ViewPlaneAligned;
-      Color = new Vector3F(1, 1, 1);
+      Color = new Vector3(1, 1, 1);
       Alpha = 1;
     }
 

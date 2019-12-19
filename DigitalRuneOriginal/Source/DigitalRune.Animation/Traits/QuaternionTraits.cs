@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !UNITY
+
 using DigitalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 
@@ -83,7 +83,7 @@ namespace DigitalRune.Animation.Traits
     /// <inheritdoc/>
     public void Multiply(ref Quaternion value, int factor, ref Quaternion result)
     {
-      QuaternionF q = (QuaternionF)value;
+      Quaternion q = (Quaternion)value;
       q.Power(factor);
       result = (Quaternion)q;
     }
@@ -107,7 +107,7 @@ namespace DigitalRune.Animation.Traits
     public void BlendNext(ref Quaternion value, ref Quaternion nextValue, float normalizedWeight)
     {
       // Get angle between quaternions:
-      //float cosθ = QuaternionF.Dot(value, nextValue);
+      //float cosθ = Quaternion.Dot(value, nextValue);
       float cosθ = value.W * nextValue.W + value.X * nextValue.X + value.Y * nextValue.Y + value.Z * nextValue.Z;
 
       // Invert one quaternion if we would move along the long arc of interpolation.
@@ -137,4 +137,4 @@ namespace DigitalRune.Animation.Traits
     }
   }
 }
-#endif
+

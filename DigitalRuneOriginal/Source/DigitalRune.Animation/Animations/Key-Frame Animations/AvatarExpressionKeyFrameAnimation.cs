@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if XNA && (WINDOWS || XBOX)
+
 using DigitalRune.Animation.Traits;
 using Microsoft.Xna.Framework.GamerServices;
 
@@ -40,4 +40,4 @@ namespace DigitalRune.Animation
     }
   }
 }
-#endif
+

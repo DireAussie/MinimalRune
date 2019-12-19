@@ -1,4 +1,4 @@
-﻿#if !ANDROID && !IOS
+﻿
 using System.Linq;
 using DigitalRune.Geometry;
 using DigitalRune.Graphics;
@@ -50,7 +50,7 @@ and search the sky!",
       _scene.Children.Add(ground);
 
       var box = ContentManager.Load<ModelNode>("MetalGrateBox/MetalGrateBox").Clone();
-      box.PoseLocal = new Pose(new Vector3F(0.5f, 0.5f, 0.5f), Matrix33F.CreateRotationY(0.1f));
+      box.PoseLocal = new Pose(new Vector3(0.5f, 0.5f, 0.5f), Matrix.CreateRotationY(0.1f));
       _scene.Children.Add(box);
 
       // Add some lights to the scene which have the same properties as the lights 
@@ -138,7 +138,7 @@ and search the sky!",
 
       // Position the lens flare near the origin.
       lensFlareNode = new LensFlareNode(lensFlare);
-      lensFlareNode.PoseWorld = new Pose(new Vector3F(-0.5f, 1, 0));
+      lensFlareNode.PoseWorld = new Pose(new Vector3(-0.5f, 1, 0));
       _scene.Children.Add(lensFlareNode);
 
       // In this example we need two renderers:
@@ -216,4 +216,3 @@ and search the sky!",
     }
   }
 }
-#endif

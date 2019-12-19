@@ -1,4 +1,4 @@
-﻿#if WINDOWS
+﻿
 using System;
 using System.Globalization;
 using System.IO;
@@ -33,12 +33,12 @@ contacts. This works only for a contact set of two triangle mesh shapes!",
       // Create two collision objects with triangle mesh shapes.
       var meshA = new SphereShape(1).GetMesh(0.01f, 4);
       var shapeA = new TriangleMeshShape(meshA, true) { Partition = new CompressedAabbTree() };
-      var poseA = new Pose(new Vector3F(-1, 0, 0), RandomHelper.Random.NextQuaternionF());
+      var poseA = new Pose(new Vector3(-1, 0, 0), RandomHelper.Random.NextQuaternion());
       var collisionObjectA = new CollisionObject(new GeometricObject(shapeA, poseA));
 
       var meshB = new BoxShape(0.2f, 2, 1f).GetMesh(0.01f, 4);
       var shapeB = new TriangleMeshShape(meshB, true) { Partition = new CompressedAabbTree() };
-      var poseB = new Pose(new Vector3F(0.1f, 0, 0), RandomHelper.Random.NextQuaternionF());
+      var poseB = new Pose(new Vector3(0.1f, 0, 0), RandomHelper.Random.NextQuaternion());
       var collisionObjectB = new CollisionObject(new GeometricObject(shapeB, poseB));
 
       // Explicitly create a contact set. (Normally you would get the contact set
@@ -90,7 +90,7 @@ namespace Samples.Geometry
       : base(game)
     {
       GraphicsScreen.ClearBackground = true;
-      SetCamera(new Vector3F(0, 1, 10), 0, 0);
+      SetCamera(new Vector3(0, 1, 10), 0, 0);
 
       CreateObjects();
       _contactSet = _collisionDetection.GetContacts(_objectA, _objectB);
@@ -122,7 +122,7 @@ namespace Samples.Geometry
         : new Color(200, 220, 200, 255);
 
       // Move one object with keyboard NumPad.
-      var translation = new Vector3F();
+      var translation = new Vector3();
       if (InputService.IsDown(Keys.NumPad4))
         translation.X -= 1;
       if (InputService.IsDown(Keys.NumPad6))
@@ -193,7 +193,7 @@ namespace Samples.Geometry
         var pose = new Pose(");
       Append(text, co.GeometricObject.Pose.Position);
       text.Append(", ");
-      Append(text, QuaternionF.CreateRotation(co.GeometricObject.Pose.Orientation));
+      Append(text, Quaternion.CreateRotation(co.GeometricObject.Pose.Orientation));
       text.Append(@");
         var scale = ");
       Append(text, co.GeometricObject.Scale);
@@ -229,16 +229,16 @@ namespace Samples.Geometry
     }
 
 
-    private static void Append(StringBuilder text, Vector3F v)
+    private static void Append(StringBuilder text, Vector3 v)
     {
-      text.Append(string.Format(CultureInfo.InvariantCulture, "new Vector3F({0}f, {1}f, {2}f)", 
+      text.Append(string.Format(CultureInfo.InvariantCulture, "new Vector3({0}f, {1}f, {2}f)", 
         v.X, v.Y, v.Z));
     }
 
 
-    private static void Append(StringBuilder text, QuaternionF q)
+    private static void Append(StringBuilder text, Quaternion q)
     {
-      text.Append(string.Format(CultureInfo.InvariantCulture, "new QuaternionF({0}f, {1}f, {2}f, {3}f)",
+      text.Append(string.Format(CultureInfo.InvariantCulture, "new Quaternion({0}f, {1}f, {2}f, {3}f)",
         q.W, q.X, q.Y, q.Z));
     }
 
@@ -249,4 +249,3 @@ namespace Samples.Geometry
     }
   }
 }
-#endif

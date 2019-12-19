@@ -48,10 +48,10 @@ namespace DigitalRune.Graphics.Content.Pipeline
 
         if (texture != null)
         {
-#if !MONOGAME
+
           // When using the XNA content pipeline, check for MonoGame content.
           if (!string.IsNullOrEmpty(ContentHelper.GetMonoGamePlatform()))
-#endif
+
           {
             // These formats are not (yet) available in MonoGame.
             switch (texture.Description.Format)

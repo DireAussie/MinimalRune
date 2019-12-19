@@ -24,7 +24,7 @@ rope or a chain.",
       Simulation.ForceEffects.Add(new Damping());
 
       // Add a ground plane.
-      RigidBody groundPlane = new RigidBody(new PlaneShape(Vector3F.UnitY, 0))
+      RigidBody groundPlane = new RigidBody(new PlaneShape(Vector3.UnitY, 0))
       {
         Name = "GroundPlane",           // Names are not required but helpful for debugging.
         MotionType = MotionType.Static,
@@ -38,7 +38,7 @@ rope or a chain.",
         // A segment of the rope:
         RigidBody body = new RigidBody(shape)
         {
-          Pose = new Pose(new Vector3F(0, 1 + i * capsuleHeight, 0)),
+          Pose = new Pose(new Vector3(0, 1 + i * capsuleHeight, 0)),
         };
         Simulation.RigidBodies.Add(body);
 
@@ -58,16 +58,16 @@ rope or a chain.",
             // -z axis in the second column. The third column is y axis about which no rotation
             // is allowed. 
             // (All three columns are orthonormal and form a valid rotation matrix.)
-            AnchorPoseALocal = new Pose(new Vector3F(0, capsuleHeight / 2, 0),
-                                        new Matrix33F(1, 0, 0,
+            AnchorPoseALocal = new Pose(new Vector3(0, capsuleHeight / 2, 0),
+                                        new Matrix(1, 0, 0,
                                                       0, 0, 1,
                                                       0, -1, 0)),
 
             BodyB = body,
             // This attachment point is at the bottom of the second capsule.
             // The anchor orientation is defined as above.
-            AnchorPoseBLocal = new Pose(new Vector3F(0, -capsuleHeight / 2, 0),
-                                        new Matrix33F(1, 0, 0,
+            AnchorPoseBLocal = new Pose(new Vector3(0, -capsuleHeight / 2, 0),
+                                        new Matrix(1, 0, 0,
                                                       0, 0, 1,
                                                       0, -1, 0)),
 
@@ -89,7 +89,7 @@ rope or a chain.",
         {
           // This is the first body. There is no former body to link too. 
           // We set a velocity for this body to give the rope an initial movement.
-          body.LinearVelocity = new Vector3F(1, 0, 0);
+          body.LinearVelocity = new Vector3(1, 0, 0);
         }
       }
     }

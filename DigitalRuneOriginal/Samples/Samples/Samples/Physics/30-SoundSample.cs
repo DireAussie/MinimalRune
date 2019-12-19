@@ -86,7 +86,7 @@ namespace Samples.Physics
       Simulation.ForceEffects.Add(new Damping());
 
       // Add a ground plane.
-      RigidBody groundPlane = new RigidBody(new PlaneShape(Vector3F.UnitY, 0))
+      RigidBody groundPlane = new RigidBody(new PlaneShape(Vector3.UnitY, 0))
       {
         Name = "GroundPlane",
         MotionType = MotionType.Static,
@@ -98,7 +98,7 @@ namespace Samples.Physics
       {
         Name = "Wall0",
         MotionType = MotionType.Static,
-        Pose = new Pose(new Vector3F(0, 1, -5))
+        Pose = new Pose(new Vector3(0, 1, -5))
       };
       Simulation.RigidBodies.Add(wall0);
 
@@ -106,7 +106,7 @@ namespace Samples.Physics
       {
         Name = "Wall1",
         MotionType = MotionType.Static,
-        Pose = new Pose(new Vector3F(0, 1, 5))
+        Pose = new Pose(new Vector3(0, 1, 5))
       };
       Simulation.RigidBodies.Add(wall1);
 
@@ -114,7 +114,7 @@ namespace Samples.Physics
       {
         Name = "Wall2",
         MotionType = MotionType.Static,
-        Pose = new Pose(new Vector3F(-5, 1, 0))
+        Pose = new Pose(new Vector3(-5, 1, 0))
       };
       Simulation.RigidBodies.Add(wall2);
 
@@ -122,7 +122,7 @@ namespace Samples.Physics
       {
         Name = "Wall3",
         MotionType = MotionType.Static,
-        Pose = new Pose(new Vector3F(5, 1, 0))
+        Pose = new Pose(new Vector3(5, 1, 0))
       };
       Simulation.RigidBodies.Add(wall3);
 
@@ -130,7 +130,7 @@ namespace Samples.Physics
       RigidBody sphere = new RigidBody(new SphereShape(0.4f))
       {
         Name = "Sphere",
-        Pose = new Pose(new Vector3F(1, 1, 1)),
+        Pose = new Pose(new Vector3(1, 1, 1)),
       };
       Simulation.RigidBodies.Add(sphere);
 
@@ -141,7 +141,7 @@ namespace Samples.Physics
 
       // Optional: Use a small overlap between boxes to improve the stability.
       float overlap = Simulation.Settings.Constraints.AllowedPenetration * 0.5f;
-      Vector3F position = new Vector3F(0, boxSize / 2 - overlap, 0);
+      Vector3 position = new Vector3(0, boxSize / 2 - overlap, 0);
       for (int i = 0; i < numberOfBoxes; i++)
       {
         RigidBody box = new RigidBody(boxShape)
@@ -194,23 +194,23 @@ namespace Samples.Physics
       float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
       // Update the position of the audio listener.
-      _listener.Forward = (Vector3)_cameraNode.PoseWorld.ToWorldDirection(Vector3F.Forward);
+      _listener.Forward = (Vector3)_cameraNode.PoseWorld.ToWorldDirection(Vector3.Forward);
       _listener.Position = (Vector3)_cameraNode.PoseWorld.Position;
 
       // In the loop below, we investigate the current contacts of the simulation. We collect
       // information about the number of contacts, the accumulated impulse, contact speeds, 
       // and positions.
       int numberOfHits = 0;
-      Vector3F hitCenter = Vector3F.Zero;
+      Vector3 hitCenter = Vector3.Zero;
       float hitForce = 0;
 
       int numberOfScratchingContacts = 0;
-      Vector3F scratchCenter = Vector3F.Zero;
+      Vector3 scratchCenter = Vector3.Zero;
       float scratchSpeed = 0;
       float scratchImpulse = 0;
 
       int numberOfRollingContacts = 0;
-      Vector3F rollCenter = Vector3F.Zero;
+      Vector3 rollCenter = Vector3.Zero;
       float rollSpeed = 0;
 
       // Now, loop over all contact constraints of the simulation and collection information.
@@ -230,7 +230,7 @@ namespace Samples.Physics
         // The relative velocity of the contact points.
         var relativeVelocity = contactConstraint.BodyA.GetVelocityOfWorldPoint(contact.PositionAWorld) - contactConstraint.BodyB.GetVelocityOfWorldPoint(contact.PositionBWorld);
         // The relative velocity in normal vector direction.
-        var relativeNormalVelocity = Vector3F.Dot(relativeVelocity, normal);
+        var relativeNormalVelocity = Vector3.Dot(relativeVelocity, normal);
         // The relative tangential velocity.
         var relativeTangentVelocity = (relativeVelocity - normal * relativeNormalVelocity).Length;
         // The contact force (force = impulse / time).
@@ -254,7 +254,7 @@ namespace Samples.Physics
         // The rolling velocity is the angular velocity minus any components in normal vector
         // direction. (A rotation around the normal vector is a twist and should not play
         // the rolling sound.)
-        var rollingVelocity = (relativeAngularVelocity - Vector3F.ProjectTo(relativeAngularVelocity, normal)).Length;
+        var rollingVelocity = (relativeAngularVelocity - Vector3.ProjectTo(relativeAngularVelocity, normal)).Length;
         if ((contactConstraint.BodyA.Shape is SphereShape || contactConstraint.BodyB.Shape is SphereShape)
             && rollingVelocity > 1)
         {
@@ -324,7 +324,7 @@ namespace Samples.Physics
         // ----- Play rolling sound.
 
         // Set the sound emitter to the average rolling contact position.
-        var currentPosition = (Vector3F)_rollEmitter.Position;
+        var currentPosition = (Vector3)_rollEmitter.Position;
         var newPosition = rollCenter / numberOfRollingContacts;
         var change = newPosition - currentPosition;
         // If the sound is already playing, then we only change the position gradually.
@@ -354,7 +354,7 @@ namespace Samples.Physics
       {
         // ----- Play scratching sound.
 
-        var currentPosition = (Vector3F)_scratchEmitter.Position;
+        var currentPosition = (Vector3)_scratchEmitter.Position;
         var newPosition = scratchCenter / numberOfScratchingContacts;
         var change = newPosition - currentPosition;
         if (_scratchSoundInstance.State == SoundState.Playing && change.Length > 1f)

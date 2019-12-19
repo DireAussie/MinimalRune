@@ -285,11 +285,11 @@ namespace DigitalRune.Windows.Charts.Interactivity
             if (affectedAxes.Count <= 0)
                 return;
 
-#if SILVERLIGHT
+
             const int mouseWheelDeltaForOneLine = 120;
 #else
             const int mouseWheelDeltaForOneLine = Mouse.MouseWheelDeltaForOneLine;
-#endif
+
             double zoomFactor = ZoomFactor * eventArgs.Delta / mouseWheelDeltaForOneLine;
             if (zoomFactor < MinZoomFactor)
                 zoomFactor = MinZoomFactor;

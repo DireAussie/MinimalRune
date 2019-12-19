@@ -384,7 +384,7 @@ VSOutput VS(float4 position : POSITION,
   }
   
   // ----- Apply displacement map.
-#if !OPENGL
+
   if (enableDisplacement)
   {
     // Wave map texture coordinates.
@@ -433,7 +433,7 @@ VSOutput VS(float4 position : POSITION,
     float clampedHeight = clamp(output.PositionWorld.y, CameraClearLowerLimit, CameraClearUpperLimit);
     output.PositionWorld.y = lerp(clampedHeight, output.PositionWorld.y, cameraClearArea);
   }
-#endif
+
   
   float4 positionView = mul(float4(output.PositionWorld, 1), View);
   output.Position = mul(positionView, Projection);
@@ -978,7 +978,7 @@ float4 PSUnderwaterCaustics(PSUnderwaterInput input) : COLOR { return PSUnderwat
 // Techniques
 //-----------------------------------------------------------------------------
 
-#if !SM4
+
 
 #define PASS(NAME, VS, PS) \
   pass NAME\
@@ -996,7 +996,7 @@ float4 PSUnderwaterCaustics(PSUnderwaterInput input) : COLOR { return PSUnderwat
     PixelShader = compile ps_4_0 PS(); \
   }
   
-#endif
+
 
 
 technique

@@ -272,7 +272,7 @@ namespace DigitalRune.Windows.Charts
 
         //--------------------------------------------------------------
 
-#if SILVERLIGHT
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Chart"/> class.
         /// </summary>
@@ -289,7 +289,7 @@ namespace DigitalRune.Windows.Charts
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(Chart), new FrameworkPropertyMetadata(typeof(Chart)));
         }
-#endif
+
 
 
 
@@ -453,7 +453,7 @@ namespace DigitalRune.Windows.Charts
 
             UpdateDataSource();
 
-#if !SILVERLIGHT
+
             // Clear BitmapCache to ensure that everything is redrawn.
             var cacheMode = CacheMode;
             if (cacheMode != null)
@@ -461,7 +461,7 @@ namespace DigitalRune.Windows.Charts
                 CacheMode = null;
                 CacheMode = cacheMode;
             }
-#endif
+
 
             base.OnUpdate();
         }
@@ -492,9 +492,9 @@ namespace DigitalRune.Windows.Charts
 
             Data = ChartDataHelper.CreateChartDataSource(DataSource, XValuePath, YValuePath, XYValuePath, culture, xLabels, yLabels);
 
-#if DEBUG
+
             ValidateData();
-#endif
+
 
             _isDataSourceValid = true;
 

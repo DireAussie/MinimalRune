@@ -354,13 +354,13 @@ float4 PSAnisotropicBilateral_MinorAxis23(float2 texCoord : TEXCOORD0, float3 fr
 // Techniques
 //--------------------------------------------------------
 
-#if !SM4
+
 #define VSTARGET vs_3_0
 #define PSTARGET ps_3_0
 #else
 #define VSTARGET vs_4_0
 #define PSTARGET ps_4_0
-#endif
+
 
 
 #define TECHNIQUE(techniqueName, vsName, psName) \

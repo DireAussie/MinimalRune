@@ -895,18 +895,18 @@ namespace DigitalRune.Editor.Textures
             _textureGraphicsScreen.InputGamma = 2.2f;
             _textureGraphicsScreen.OutputGamma = 2.2f;
 
-            Matrix44F colorTransform;
+            Matrix colorTransform;
             Vector4F colorOffset;
             if (EnableRedChannel && EnableGreenChannel && EnableBlueChannel && EnableAlphaChannel)
             {
                 // RGBA
-                colorTransform = Matrix44F.Identity;
+                colorTransform = Matrix.Identity;
                 colorOffset = Vector4F.Zero;
             }
             else if (EnableRedChannel && EnableGreenChannel && EnableBlueChannel && !EnableAlphaChannel)
             {
                 // RGB-
-                colorTransform = new Matrix44F(1, 0, 0, 0,
+                colorTransform = new Matrix(1, 0, 0, 0,
                                                0, 1, 0, 0,
                                                0, 0, 1, 0,
                                                0, 0, 0, 0);
@@ -915,7 +915,7 @@ namespace DigitalRune.Editor.Textures
             else if (EnableRedChannel && !EnableGreenChannel && !EnableBlueChannel && !EnableAlphaChannel)
             {
                 // R---
-                colorTransform = new Matrix44F(1, 0, 0, 0,
+                colorTransform = new Matrix(1, 0, 0, 0,
                                                1, 0, 0, 0,
                                                1, 0, 0, 0,
                                                0, 0, 0, 0);
@@ -924,7 +924,7 @@ namespace DigitalRune.Editor.Textures
             else if (!EnableRedChannel && EnableGreenChannel && !EnableBlueChannel && !EnableAlphaChannel)
             {
                 // -G--
-                colorTransform = new Matrix44F(0, 1, 0, 0,
+                colorTransform = new Matrix(0, 1, 0, 0,
                                                0, 1, 0, 0,
                                                0, 1, 0, 0,
                                                0, 0, 0, 0);
@@ -933,7 +933,7 @@ namespace DigitalRune.Editor.Textures
             else if (!EnableRedChannel && !EnableGreenChannel && EnableBlueChannel && !EnableAlphaChannel)
             {
                 // --B-
-                colorTransform = new Matrix44F(0, 0, 1, 0,
+                colorTransform = new Matrix(0, 0, 1, 0,
                                                0, 0, 1, 0,
                                                0, 0, 1, 0,
                                                0, 0, 0, 0);
@@ -942,7 +942,7 @@ namespace DigitalRune.Editor.Textures
             else if (!EnableRedChannel && !EnableGreenChannel && !EnableBlueChannel && EnableAlphaChannel)
             {
                 // ---A
-                colorTransform = new Matrix44F(0, 0, 0, 1,
+                colorTransform = new Matrix(0, 0, 0, 1,
                                                0, 0, 0, 1,
                                                0, 0, 0, 1,
                                                0, 0, 0, 0);
@@ -951,7 +951,7 @@ namespace DigitalRune.Editor.Textures
             else if (EnableRedChannel && EnableGreenChannel && !EnableBlueChannel && !EnableAlphaChannel)
             {
                 // RG--
-                colorTransform = new Matrix44F(1, 0, 0, 0,
+                colorTransform = new Matrix(1, 0, 0, 0,
                                                0, 1, 0, 0,
                                                0, 0, 0, 0,
                                                0, 0, 0, 0);
@@ -960,7 +960,7 @@ namespace DigitalRune.Editor.Textures
             else if (EnableRedChannel && !EnableGreenChannel && EnableBlueChannel && !EnableAlphaChannel)
             {
                 // R-B-
-                colorTransform = new Matrix44F(1, 0, 0, 0,
+                colorTransform = new Matrix(1, 0, 0, 0,
                                                0, 0, 0, 0,
                                                0, 0, 1, 0,
                                                0, 0, 0, 0);
@@ -969,7 +969,7 @@ namespace DigitalRune.Editor.Textures
             else if (EnableRedChannel && !EnableGreenChannel && !EnableBlueChannel && EnableAlphaChannel)
             {
                 // R--A
-                colorTransform = new Matrix44F(1, 0, 0, 0,
+                colorTransform = new Matrix(1, 0, 0, 0,
                                                0, 0, 0, 0,
                                                0, 0, 0, 0,
                                                0, 0, 0, 1);
@@ -978,7 +978,7 @@ namespace DigitalRune.Editor.Textures
             else if (EnableRedChannel && EnableGreenChannel && !EnableBlueChannel && EnableAlphaChannel)
             {
                 // RG-A
-                colorTransform = new Matrix44F(1, 0, 0, 0,
+                colorTransform = new Matrix(1, 0, 0, 0,
                                                0, 1, 0, 0,
                                                0, 0, 0, 0,
                                                0, 0, 0, 1);
@@ -987,7 +987,7 @@ namespace DigitalRune.Editor.Textures
             else if (EnableRedChannel && !EnableGreenChannel && EnableBlueChannel && EnableAlphaChannel)
             {
                 // R-BA
-                colorTransform = new Matrix44F(1, 0, 0, 0,
+                colorTransform = new Matrix(1, 0, 0, 0,
                                                0, 0, 0, 0,
                                                0, 0, 1, 0,
                                                0, 0, 0, 1);
@@ -996,7 +996,7 @@ namespace DigitalRune.Editor.Textures
             else if (!EnableRedChannel && EnableGreenChannel && EnableBlueChannel && !EnableAlphaChannel)
             {
                 // -GB-
-                colorTransform = new Matrix44F(0, 0, 0, 0,
+                colorTransform = new Matrix(0, 0, 0, 0,
                                                0, 1, 0, 0,
                                                0, 0, 1, 0,
                                                0, 0, 0, 0);
@@ -1005,7 +1005,7 @@ namespace DigitalRune.Editor.Textures
             else if (!EnableRedChannel && EnableGreenChannel && !EnableBlueChannel && EnableAlphaChannel)
             {
                 // -G-A
-                colorTransform = new Matrix44F(0, 0, 0, 0,
+                colorTransform = new Matrix(0, 0, 0, 0,
                                                0, 1, 0, 0,
                                                0, 0, 0, 0,
                                                0, 0, 0, 1);
@@ -1014,7 +1014,7 @@ namespace DigitalRune.Editor.Textures
             else if (!EnableRedChannel && EnableGreenChannel && EnableBlueChannel && EnableAlphaChannel)
             {
                 // -GBA
-                colorTransform = new Matrix44F(0, 0, 0, 0,
+                colorTransform = new Matrix(0, 0, 0, 0,
                                                0, 1, 0, 0,
                                                0, 0, 1, 0,
                                                0, 0, 0, 1);
@@ -1023,7 +1023,7 @@ namespace DigitalRune.Editor.Textures
             else if (!EnableRedChannel && !EnableGreenChannel && EnableBlueChannel && EnableAlphaChannel)
             {
                 // --BA
-                colorTransform = new Matrix44F(0, 0, 0, 0,
+                colorTransform = new Matrix(0, 0, 0, 0,
                                                0, 0, 0, 0,
                                                0, 0, 1, 0,
                                                0, 0, 0, 1);
@@ -1032,7 +1032,7 @@ namespace DigitalRune.Editor.Textures
             else
             {
                 // -
-                colorTransform = Matrix44F.Zero;
+                colorTransform = Matrix.Zero;
                 colorOffset = Vector4F.Zero;
             }
 

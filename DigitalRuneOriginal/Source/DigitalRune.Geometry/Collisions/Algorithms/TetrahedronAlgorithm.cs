@@ -16,7 +16,7 @@
 //    /// <param name="vertices">The vertex array.</param>
 //    /// <returns><c>true</c> if the point could be computed; <c>false</c> if the 
 //    /// triangle is degenerated.</returns>
-//    public bool UpdateClosestPointToOrigin(List<Vector3F> vertices)
+//    public bool UpdateClosestPointToOrigin(List<Vector3> vertices)
 //    {
 //      // Lets compute lambda1 and lambda2 such that the closest point to the origin x of Triangle (a, b, c)
 //      // is:  a + lambda1 * ab + lambda2 * ac = x
@@ -26,23 +26,23 @@
 //      // ac * x = 0
 //      // Now we substitute x with a + lambda1 * ab + lambda2 * ac.
 //      // We solve the linear system of equations with Cramer's rule... -->
-//      // det = ab²*ac² - (ab*ac)²
-//      // lambda1 = ((a*ac)(ab*ac) - (a*ab)*ac²) / det
-//      // lambda2 = ((ab*ac)(a*ab) - ab²*(a*ac)) / det
+//      // det = abï¿½*acï¿½ - (ab*ac)ï¿½
+//      // lambda1 = ((a*ac)(ab*ac) - (a*ab)*acï¿½) / det
+//      // lambda2 = ((ab*ac)(a*ab) - abï¿½*(a*ac)) / det
 //      // The closest point is in the triangle if lambda1 + lambda2 <= 1
 //      // To avoid the division by det we store det and do not divide the lambdas by det.
 //      // Then the closest point is in the triangle if lambda1 + lambda2 <= det.
 
-//      Vector3F a = vertices[_indices[0]];
-//      Vector3F b = vertices[_indices[1]];
-//      Vector3F c = vertices[_indices[2]];
-//      Vector3F ab = b - a;
-//      Vector3F ac = c - a;
+//      Vector3 a = vertices[_indices[0]];
+//      Vector3 b = vertices[_indices[1]];
+//      Vector3 c = vertices[_indices[2]];
+//      Vector3 ab = b - a;
+//      Vector3 ac = c - a;
 //      float ab2 = ab.LengthSquared;
 //      float ac2 = ac.LengthSquared;
-//      float aDotAb = Vector3F.Dot(a, ab);
-//      float aDotAc = Vector3F.Dot(a, ac);
-//      float abDotAc = Vector3F.Dot(ab, ac);
+//      float aDotAb = Vector3.Dot(a, ab);
+//      float aDotAc = Vector3.Dot(a, ac);
+//      float abDotAc = Vector3.Dot(ab, ac);
 
 //      _det = ab2 * ac2 - abDotAc * abDotAc;
 //      _lambda1 = aDotAc * abDotAc - aDotAb * ac2;

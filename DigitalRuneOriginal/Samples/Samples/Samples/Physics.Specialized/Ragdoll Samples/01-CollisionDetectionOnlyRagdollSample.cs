@@ -36,7 +36,7 @@ background color changes to red.",
       : base(game)
     {
       GraphicsScreen.DrawReticle = true;
-      SetCamera(new Vector3F(0, 1, 6), 0, 0);
+      SetCamera(new Vector3(0, 1, 6), 0, 0);
 
       // Add a game object which allows to shoot balls.
       _ballShooterObject = new BallShooterObject(Services);
@@ -44,7 +44,7 @@ background color changes to red.",
 
       var modelNode = ContentManager.Load<ModelNode>("Dude/Dude");
       _meshNode = modelNode.GetSubtree().OfType<MeshNode>().First().Clone();
-      _meshNode.PoseLocal = new Pose(new Vector3F(0, 0, 0), Matrix33F.CreateRotationY(ConstantsF.Pi));
+      _meshNode.PoseLocal = new Pose(new Vector3(0, 0, 0), Matrix.CreateRotationY(ConstantsF.Pi));
       SampleHelper.EnablePerPixelLighting(_meshNode);
       GraphicsScreen.Scene.Children.Add(_meshNode);
 
@@ -122,8 +122,8 @@ background color changes to red.",
       }
 
       // Move model in a circle.
-      var rotation = Matrix33F.CreateRotationY((float)gameTime.TotalGameTime.TotalSeconds * 0.3f);
-      _meshNode.PoseWorld = new Pose(rotation * new Vector3F(3, 0, 0), rotation);
+      var rotation = Matrix.CreateRotationY((float)gameTime.TotalGameTime.TotalSeconds * 0.3f);
+      _meshNode.PoseWorld = new Pose(rotation * new Vector3(3, 0, 0), rotation);
 
       // Sync pose with ragdoll.
       _ragdoll.Pose = _meshNode.PoseWorld;

@@ -86,7 +86,7 @@ namespace DigitalRune.Physics.Constraints
     /// <see cref="AngularConstraintImpulse"/>.
     /// </para>
     /// </remarks>
-    Vector3F LinearConstraintImpulse { get; }
+    Vector3 LinearConstraintImpulse { get; }
 
 
     /// <summary>
@@ -104,7 +104,7 @@ namespace DigitalRune.Physics.Constraints
     /// <see cref="LinearConstraintImpulse"/>.
     /// </para>
     /// </remarks>
-    Vector3F AngularConstraintImpulse { get; }
+    Vector3 AngularConstraintImpulse { get; }
 
 
     /// <summary>

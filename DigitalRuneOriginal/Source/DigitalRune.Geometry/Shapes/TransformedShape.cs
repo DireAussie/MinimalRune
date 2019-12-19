@@ -21,9 +21,9 @@ namespace DigitalRune.Geometry.Shapes
   /// <see cref="Child"/>.
   /// </para>
   /// </remarks>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
+
   public class TransformedShape : Shape
   {
     //--------------------------------------------------------------
@@ -80,7 +80,7 @@ namespace DigitalRune.Geometry.Shapes
     /// <remarks>
     /// This point is a "deep" inner point of the shape (in local space).
     /// </remarks>
-    public override Vector3F InnerPoint
+    public override Vector3 InnerPoint
     {
       get
       {
@@ -160,7 +160,7 @@ namespace DigitalRune.Geometry.Shapes
 
 
     /// <inheritdoc/>
-    public override Aabb GetAabb(Vector3F scale, Pose pose)
+    public override Aabb GetAabb(Vector3 scale, Pose pose)
     {
       // Note: 
       // Uniform scaling is no problem. The scale can be applied anytime in the process.
@@ -192,7 +192,7 @@ namespace DigitalRune.Geometry.Shapes
     /// <inheritdoc/>
     public override float GetVolume(float relativeError, int iterationLimit)
     {
-      Vector3F scale = Vector3F.Absolute(Child.Scale);
+      Vector3 scale = Vector3.Absolute(Child.Scale);
       return Child.Shape.GetVolume(relativeError, iterationLimit) * scale.X * scale.Y * scale.Z;
     }
 
@@ -232,7 +232,7 @@ namespace DigitalRune.Geometry.Shapes
     protected override TriangleMesh OnGetMesh(float absoluteDistanceThreshold, int iterationLimit)
     {
       // Convert absolute error to relative error.
-      Vector3F extents = GetAabb(Vector3F.One, Pose.Identity).Extent;
+      Vector3 extents = GetAabb(Vector3.One, Pose.Identity).Extent;
       float maxExtent = extents.LargestComponent;
       float relativeThreshold = !Numeric.IsZero(maxExtent) 
                                 ? absoluteDistanceThreshold / maxExtent
@@ -242,7 +242,7 @@ namespace DigitalRune.Geometry.Shapes
       TriangleMesh mesh = _child.Shape.GetMesh(relativeThreshold, iterationLimit);
 
       // Transform child mesh into local space of this parent shape.
-      mesh.Transform(_child.Pose.ToMatrix44F() * Matrix44F.CreateScale(_child.Scale));
+      mesh.Transform(_child.Pose.ToMatrix() * Matrix.CreateScale(_child.Scale));
       return mesh;
     }
 

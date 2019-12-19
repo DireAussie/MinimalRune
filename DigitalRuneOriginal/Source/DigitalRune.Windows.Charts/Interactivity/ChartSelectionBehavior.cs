@@ -11,9 +11,9 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Interactivity;
 using System.Windows.Media;
-#if SILVERLIGHT
+
 using System.Windows.Controls.Primitives;
-#endif
+
 
 
 namespace DigitalRune.Windows.Charts.Interactivity
@@ -67,11 +67,11 @@ namespace DigitalRune.Windows.Charts.Interactivity
         private Point _mouseDownPosition;
         private SelectionRectangle _selectionRectangle;
 
-#if SILVERLIGHT
+
         private Popup _popup;
 #else
         private Adorner _adorner;
-#endif
+
 
 
 
@@ -190,11 +190,11 @@ namespace DigitalRune.Windows.Charts.Interactivity
             "IsSelected",
             typeof(bool),
             typeof(ChartSelectionBehavior),
-#if SILVERLIGHT
+
             new PropertyMetadata(Boxed.BooleanFalse));
 #else
             new FrameworkPropertyMetadata(Boxed.BooleanFalse, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
-#endif
+
 
         /// <summary>
         /// Gets the value of the
@@ -389,14 +389,14 @@ namespace DigitalRune.Windows.Charts.Interactivity
             if (chartPanel != null)
             {
                 chartPanel.MouseLeftButtonDown += OnMouseLeftButtonDown;
-#if SILVERLIGHT
+
                 // Silverlight does not support Preview-events.
                 chartPanel.MouseLeftButtonDown += OnPreviewMouseLeftButtonDown;
                 chartPanel.MouseLeftButtonUp += OnPreviewMouseLeftButtonUp;
 #else
                 chartPanel.PreviewMouseLeftButtonDown += OnPreviewMouseLeftButtonDown;
                 chartPanel.PreviewMouseLeftButtonUp += OnPreviewMouseLeftButtonUp;
-#endif
+
             }
         }
 
@@ -417,14 +417,14 @@ namespace DigitalRune.Windows.Charts.Interactivity
             if (chartPanel != null)
             {
                 chartPanel.MouseLeftButtonDown -= OnMouseLeftButtonDown;
-#if SILVERLIGHT
+
                 // Silverlight does not support Preview-events.
                 chartPanel.MouseLeftButtonDown -= OnPreviewMouseLeftButtonDown;
                 chartPanel.MouseLeftButtonUp -= OnPreviewMouseLeftButtonUp;
 #else
                 chartPanel.PreviewMouseLeftButtonDown -= OnPreviewMouseLeftButtonDown;
                 chartPanel.PreviewMouseLeftButtonUp -= OnPreviewMouseLeftButtonUp;
-#endif
+
             }
         }
 
@@ -437,13 +437,13 @@ namespace DigitalRune.Windows.Charts.Interactivity
                 return;
             }
 
-#if !SILVERLIGHT
+
             if (Mouse.Captured != null)
             {
                 // Another interaction is active.
                 return;
             }
-#endif
+
 
             ChartPanel chartPanel = AssociatedObject;
             _mouseDownPosition = eventArgs.GetPosition(chartPanel);
@@ -489,13 +489,13 @@ namespace DigitalRune.Windows.Charts.Interactivity
                 return;
             }
 
-#if !SILVERLIGHT
+
             if (Mouse.Captured != null)
             {
                 // Another interaction is active.
                 return;
             }
-#endif
+
 
             ChartPanel chartPanel = AssociatedObject;
             _mouseDownPosition = eventArgs.GetPosition(chartPanel);
@@ -521,10 +521,10 @@ namespace DigitalRune.Windows.Charts.Interactivity
             // Important: Do not set eventArgs.Handled, because the event needs to tunnel to
             // the clicked object.
 
-#if !SILVERLIGHT
+
             if (elementHit != null)
                 elementHit.Focus();
-#endif
+
         }
 
 
@@ -545,13 +545,13 @@ namespace DigitalRune.Windows.Charts.Interactivity
         {
             AssociatedObject.LostMouseCapture += OnMouseCaptureLost;
 
-#if SILVERLIGHT
+
             AssociatedObject.KeyDown += OnPreviewKeyDown;
             AssociatedObject.MouseMove += OnPreviewMouseMove;
 #else
             AssociatedObject.PreviewKeyDown += OnPreviewKeyDown;
             AssociatedObject.PreviewMouseMove += OnPreviewMouseMove;
-#endif
+
             AssociatedObject.CaptureMouse();
 
             AddSelectionRectangle();
@@ -587,13 +587,13 @@ namespace DigitalRune.Windows.Charts.Interactivity
                 RemoveSelectionRectangle();
                 chartPanel.LostMouseCapture -= OnMouseCaptureLost;
 
-#if SILVERLIGHT
+
                 chartPanel.KeyDown -= OnPreviewKeyDown;
                 chartPanel.MouseMove -= OnPreviewMouseMove;
 #else
                 chartPanel.PreviewKeyDown -= OnPreviewKeyDown;
                 chartPanel.PreviewMouseMove -= OnPreviewMouseMove;
-#endif
+
 
                 chartPanel.ReleaseMouseCapture();
             }
@@ -620,7 +620,7 @@ namespace DigitalRune.Windows.Charts.Interactivity
             Canvas canvas = new Canvas();
             canvas.Children.Add(_selectionRectangle);
 
-#if SILVERLIGHT
+
             // Use Popup in Silverlight.
             _popup = new Popup();
             _popup.Child = canvas;
@@ -631,7 +631,7 @@ namespace DigitalRune.Windows.Charts.Interactivity
             _adorner = new SingleChildAdorner(AssociatedObject, canvas);
             AdornerLayer adornerLayer = AdornerLayer.GetAdornerLayer(AssociatedObject);
             adornerLayer.Add(_adorner);
-#endif
+
         }
 
 
@@ -640,7 +640,7 @@ namespace DigitalRune.Windows.Charts.Interactivity
             if (_selectionRectangle == null)
                 return;
 
-#if SILVERLIGHT
+
             AssociatedObject.Children.Remove(_popup);
             _selectionRectangle = null;
             _popup = null;
@@ -648,7 +648,7 @@ namespace DigitalRune.Windows.Charts.Interactivity
             AdornerLayer adornerLayer = AdornerLayer.GetAdornerLayer(AssociatedObject);
             adornerLayer.Remove(_adorner);
             _selectionRectangle = null;
-#endif
+
         }
 
 

@@ -22,9 +22,9 @@ namespace DigitalRune.Geometry.Shapes
   /// same order.
   /// </para>
   /// </remarks>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
+
   public struct Triangle : IEquatable<Triangle>
   {
     //--------------------------------------------------------------
@@ -36,21 +36,21 @@ namespace DigitalRune.Geometry.Shapes
     /// </summary>
     /// <value>The first vertex.</value>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-    public Vector3F Vertex0;
+    public Vector3 Vertex0;
 
 
     /// <summary>
     /// The second vertex.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-    public Vector3F Vertex1;
+    public Vector3 Vertex1;
 
 
     /// <summary>
     /// The third vertex.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-    public Vector3F Vertex2;
+    public Vector3 Vertex2;
 
 
 
@@ -70,8 +70,8 @@ namespace DigitalRune.Geometry.Shapes
     {
       get
       {
-        Vector3F minimum = Vector3F.Min(Vertex0, Vector3F.Min(Vertex1, Vertex2));
-        Vector3F maximum = Vector3F.Max(Vertex0, Vector3F.Max(Vertex1, Vertex2));
+        Vector3 minimum = Vector3.Min(Vertex0, Vector3.Min(Vertex1, Vertex2));
+        Vector3 maximum = Vector3.Max(Vertex0, Vector3.Max(Vertex1, Vertex2));
         return new Aabb(minimum, maximum); 
       }
     }
@@ -84,13 +84,13 @@ namespace DigitalRune.Geometry.Shapes
     /// <remarks>
     /// If the triangle is degenerate, an arbitrary normalized vector is returned.
     /// </remarks>
-    public Vector3F Normal
+    public Vector3 Normal
     {
       get
       {
-        Vector3F normal = Vector3F.Cross(Vertex1 - Vertex0, Vertex2 - Vertex0);
+        Vector3 normal = Vector3.Cross(Vertex1 - Vertex0, Vertex2 - Vertex0);
         if (!normal.TryNormalize())
-          normal = Vector3F.UnitY;
+          normal = Vector3.UnitY;
 
         return normal;
       }
@@ -105,7 +105,7 @@ namespace DigitalRune.Geometry.Shapes
     /// <exception cref="ArgumentOutOfRangeException">
     /// <paramref name="index"/> is out of range.
     /// </exception>
-    public Vector3F this[int index]
+    public Vector3 this[int index]
     {
       get
       {
@@ -149,7 +149,7 @@ namespace DigitalRune.Geometry.Shapes
     /// <param name="vertex0">The first vertex.</param>
     /// <param name="vertex1">The second vertex.</param>
     /// <param name="vertex2">The third vertex.</param>
-    public Triangle(Vector3F vertex0, Vector3F vertex1, Vector3F vertex2)
+    public Triangle(Vector3 vertex0, Vector3 vertex1, Vector3 vertex2)
     {
       Vertex0 = vertex0;
       Vertex1 = vertex1;
@@ -277,11 +277,11 @@ namespace DigitalRune.Geometry.Shapes
     {
       // Note: Compute AABB in world space
       // This code should be the same as TriangleShape.GetAabb().
-      Vector3F vertex0 = pose.ToWorldPosition(Vertex0);
-      Vector3F vertex1 = pose.ToWorldPosition(Vertex1);
-      Vector3F vertex2 = pose.ToWorldPosition(Vertex2);
-      Vector3F minimum = Vector3F.Min(vertex0, Vector3F.Min(vertex1, vertex2));
-      Vector3F maximum = Vector3F.Max(vertex0, Vector3F.Max(vertex1, vertex2));
+      Vector3 vertex0 = pose.ToWorldPosition(Vertex0);
+      Vector3 vertex1 = pose.ToWorldPosition(Vertex1);
+      Vector3 vertex2 = pose.ToWorldPosition(Vertex2);
+      Vector3 minimum = Vector3.Min(vertex0, Vector3.Min(vertex1, vertex2));
+      Vector3 maximum = Vector3.Max(vertex0, Vector3.Max(vertex1, vertex2));
       return new Aabb(minimum, maximum);
     }
 

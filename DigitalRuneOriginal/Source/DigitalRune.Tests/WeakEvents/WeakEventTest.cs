@@ -237,9 +237,9 @@ namespace DigitalRune.Tests
     // The following test will raise a MethodAccessException in Silverlight because
     // the event handler needs to be public.
     [Test]
-#if SILVERLIGHT
+
     [ExpectedException(typeof(MethodAccessException))]
-#endif
+
     public void EventWithInternalEventHandler()
     {
       var eventSource = new MockEventSource();

@@ -44,9 +44,9 @@ float SpecularPower : SPECULARPOWER;
 float ReferenceAlpha = 0.9f;
 DECLARE_UNIFORM_DIFFUSETEXTURE
 
-#if NORMAL_MAP
+
 DECLARE_UNIFORM_NORMALTEXTURE
-#endif
+
 
 float SceneNodeType : SCENENODETYPE;
 
@@ -68,10 +68,10 @@ struct VSInput
   float4 Position : POSITION;
   float2 TexCoord : TEXCOORD;
   float3 Normal : NORMAL;
-#if NORMAL_MAP
+
   float3 Tangent : TANGENT;
   float3 Binormal : BINORMAL;
-#endif
+
   float3 Color : COLOR;
 };
 
@@ -81,10 +81,10 @@ struct VSOutput
   float2 TexCoord : TEXCOORD0;
   float Depth : TEXCOORD1;
   float3 Normal : TEXCOORD2;
-#if NORMAL_MAP
+
   float3 Tangent : TEXCOORD3;
   float3 Binormal : TEXCOORD4;
-#endif
+
   float Alpha : TEXCOORD5;
   float4 Position : SV_Position;
 };
@@ -95,16 +95,16 @@ struct PSInput
   float2 TexCoord : TEXCOORD0;
   float Depth : TEXCOORD1;
   float3 Normal : TEXCOORD2;
-#if NORMAL_MAP
+
   float3 Tangent : TEXCOORD3;
   float3 Binormal : TEXCOORD4;
-#endif
+
   float Alpha : TEXCOORD5;
-#if SM4
+
   float4 VPos : SV_Position;
 #else
   float2 VPos : VPOS;
-#endif
+
   float Face : VFACE;
 };
 
@@ -117,10 +117,10 @@ VSOutput VS(VSInput input, float4x4 world)
 {
   float3 positionWorld = mul(input.Position, world).xyz;
   float3 normalWorld = mul(input.Normal, (float3x3)world);
-#if NORMAL_MAP
+
   float3 tangentWorld = mul(input.Tangent, (float3x3)world);
   float3 binormalWorld = mul(input.Binormal, (float3x3)world);
-#endif
+
   
   // Compute wind sway offset.
   float3 swayOffset = ComputeSwayOffset(
@@ -142,18 +142,18 @@ VSOutput VS(VSInput input, float4x4 world)
   output.TexCoord = input.TexCoord;
   output.Depth = normalizedDepth;
   output.Normal = normalWorld;
-#if NORMAL_MAP
+
   output.Tangent = tangentWorld;
   output.Binormal = binormalWorld;
-#endif
+
   
-#if !MGFX
+
   // This is a near-1 value which can be multiplied to effect parameters to
   // workaround a DX9 HLSL compiler preshader bug.
   float dummy1 = 1 + positionWorld.y * 1e-30f;
 #else
   float dummy1 = 1;
-#endif
+
   
   // Compute alpha value for LOD fade in/out.
   float3 plantPosition = world._m30_m31_m32;  // = mul(float4(0, 0, 0, 1), world)
@@ -213,18 +213,18 @@ void PS(PSInput input, out float4 depthBuffer : COLOR0, out float4 normalBuffer 
   
   // Normalize tangent space vectors.
   float3 normal = normalize(input.Normal);
-#if NORMAL_MAP
+
   float3 tangent = normalize(input.Tangent);
   float3 binormal = normalize(input.Binormal);
   
   // Normals maps are encoded using DXT5nm.
   float3 normalMapSample = GetNormalDxt5nm(NormalSampler, input.TexCoord);
   normal = normal * normalMapSample.z + tangent * normalMapSample.x - binormal * normalMapSample.y;
-#endif
+
   
   normal = normal * sign(input.Face);
   
-#if !MGFX
+
   // Hack (XNA only): The following multiplication is completely unnecessary,
   // however there is a bug in XNA's fx compiler that prevents the code from
   // compiling otherwise.
@@ -232,7 +232,7 @@ void PS(PSInput input, out float4 depthBuffer : COLOR0, out float4 normalBuffer 
 #else
   // The correct line:
   float sceneNodeType = SceneNodeType;
-#endif
+
   
   depthBuffer = 1;
   normalBuffer = float4(0, 0, 0, 1);
@@ -247,21 +247,21 @@ void PS(PSInput input, out float4 depthBuffer : COLOR0, out float4 normalBuffer 
 //-----------------------------------------------------------------------------
 
 technique Default
-#if !MGFX           // TODO: Add Annotation support to MonoGame.
+
 < string InstancingTechnique = "DefaultInstancing"; >
-#endif
+
 {
   pass
   {
     CullMode = NONE;
     
-#if !SM4
+
     VertexShader = compile vs_3_0 VSNoInstancing();
     PixelShader = compile ps_3_0 PS();
 #else
     VertexShader = compile vs_4_0 VSNoInstancing();
     PixelShader = compile ps_4_0 PS();
-#endif
+
   }
 }
 
@@ -271,12 +271,12 @@ technique DefaultInstancing
   {
     CullMode = NONE;
     
-#if !SM4
+
     VertexShader = compile vs_3_0 VSInstancing();
     PixelShader = compile ps_3_0 PS();
 #else
     VertexShader = compile vs_4_0 VSInstancing();
     PixelShader = compile ps_4_0 PS();
-#endif
+
   }
 }

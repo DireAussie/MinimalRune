@@ -13,9 +13,9 @@ namespace DigitalRune.Windows
     /// <summary>
     /// Returns the string representation of an <see cref="object"/>.
     /// </summary>
-#if !SILVERLIGHT && !WINDOWS_PHONE
+
     [ValueConversion(typeof(object), typeof(string))]
-#endif
+
     public class ValueToStringConverter : IValueConverter
     {
         /// <summary>

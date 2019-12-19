@@ -14,17 +14,17 @@ namespace DigitalRune.Geometry.Shapes.Tests
     [Test]
     public void Constructor()
     {
-      Assert.AreEqual(new Vector3F(), new PointShape().Position);
-      Assert.AreEqual(new Vector3F(), new PointShape(Vector3F.Zero).Position);
-      Assert.AreEqual(new Vector3F(1, 2, 3), new PointShape(new Vector3F(1, 2, 3)).Position);
-      Assert.AreEqual(new Vector3F(1, 2, 3), new PointShape(1, 2, 3).Position);
+      Assert.AreEqual(new Vector3(), new PointShape().Position);
+      Assert.AreEqual(new Vector3(), new PointShape(Vector3.Zero).Position);
+      Assert.AreEqual(new Vector3(1, 2, 3), new PointShape(new Vector3(1, 2, 3)).Position);
+      Assert.AreEqual(new Vector3(1, 2, 3), new PointShape(1, 2, 3).Position);
     }
 
 
     [Test]
     public void InnerPoint()
     {
-      Assert.AreEqual(new Vector3F(1, 2, 3), new PointShape(new Vector3F(1, 2, 3)).InnerPoint);
+      Assert.AreEqual(new Vector3(1, 2, 3), new PointShape(new Vector3(1, 2, 3)).InnerPoint);
     }
 
 
@@ -32,9 +32,9 @@ namespace DigitalRune.Geometry.Shapes.Tests
     public void Position()
     {
       PointShape p = new PointShape();
-      Assert.AreEqual(new Vector3F(), p.Position);
-      p.Position = new Vector3F(1, 2, 3);
-      Assert.AreEqual(new Vector3F(1, 2, 3), p.Position);
+      Assert.AreEqual(new Vector3(), p.Position);
+      p.Position = new Vector3(1, 2, 3);
+      Assert.AreEqual(new Vector3(1, 2, 3), p.Position);
     }
 
 
@@ -42,16 +42,16 @@ namespace DigitalRune.Geometry.Shapes.Tests
     public void GetAxisAlignedBoundingBox()
     {
       Assert.AreEqual(new Aabb(), new PointShape().GetAabb(Pose.Identity));
-      Assert.AreEqual(new Aabb(new Vector3F(10, 100, -13), new Vector3F(10, 100, -13)),
-                     new PointShape().GetAabb(new Pose(new Vector3F(10, 100, -13),
-                                                                         QuaternionF.CreateRotation(new Vector3F(1, 1, 1), 0.7f))));
-      Assert.AreEqual(new Aabb(new Vector3F(11, 102, 1003), new Vector3F(11, 102, 1003)),
-                     new PointShape(new Vector3F(1, 2, 3)).GetAabb(new Pose(new Vector3F(10, 100, 1000),
-                                                                         QuaternionF.Identity)));
-      QuaternionF rotation = QuaternionF.CreateRotation(new Vector3F(1, 1, 1), 0.7f);
-      Vector3F worldPos = rotation.Rotate(new Vector3F(1, 2, 3)) + new Vector3F(10, 100, 1000);
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(worldPos, new PointShape(new Vector3F(1, 2, 3)).GetAabb(new Pose(new Vector3F(10, 100, 1000), rotation)).Minimum));
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(worldPos, new PointShape(new Vector3F(1, 2, 3)).GetAabb(new Pose(new Vector3F(10, 100, 1000), rotation)).Maximum));
+      Assert.AreEqual(new Aabb(new Vector3(10, 100, -13), new Vector3(10, 100, -13)),
+                     new PointShape().GetAabb(new Pose(new Vector3(10, 100, -13),
+                                                                         Quaternion.CreateRotation(new Vector3(1, 1, 1), 0.7f))));
+      Assert.AreEqual(new Aabb(new Vector3(11, 102, 1003), new Vector3(11, 102, 1003)),
+                     new PointShape(new Vector3(1, 2, 3)).GetAabb(new Pose(new Vector3(10, 100, 1000),
+                                                                         Quaternion.Identity)));
+      Quaternion rotation = Quaternion.CreateRotation(new Vector3(1, 1, 1), 0.7f);
+      Vector3 worldPos = rotation.Rotate(new Vector3(1, 2, 3)) + new Vector3(10, 100, 1000);
+      Assert.IsTrue(Vector3.AreNumericallyEqual(worldPos, new PointShape(new Vector3(1, 2, 3)).GetAabb(new Pose(new Vector3(10, 100, 1000), rotation)).Minimum));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(worldPos, new PointShape(new Vector3(1, 2, 3)).GetAabb(new Pose(new Vector3(10, 100, 1000), rotation)).Maximum));
     }
 
     [Test]
@@ -72,45 +72,45 @@ namespace DigitalRune.Geometry.Shapes.Tests
     [Test]
     public void GetSupportPoint()
     {
-      Assert.AreEqual(new Vector3F(0, 0, 0), new PointShape().GetSupportPoint(new Vector3F(1, 0, 0)));
-      Assert.AreEqual(new Vector3F(0, 0, 0), new PointShape().GetSupportPoint(new Vector3F(0, 1, 0)));
-      Assert.AreEqual(new Vector3F(0, 0, 0), new PointShape().GetSupportPoint(new Vector3F(0, 0, 1)));
-      Assert.AreEqual(new Vector3F(0, 0, 0), new PointShape().GetSupportPoint(new Vector3F(1, 1, 1)));
+      Assert.AreEqual(new Vector3(0, 0, 0), new PointShape().GetSupportPoint(new Vector3(1, 0, 0)));
+      Assert.AreEqual(new Vector3(0, 0, 0), new PointShape().GetSupportPoint(new Vector3(0, 1, 0)));
+      Assert.AreEqual(new Vector3(0, 0, 0), new PointShape().GetSupportPoint(new Vector3(0, 0, 1)));
+      Assert.AreEqual(new Vector3(0, 0, 0), new PointShape().GetSupportPoint(new Vector3(1, 1, 1)));
 
-      Vector3F pos = new Vector3F(1, 2, 3);
-      Assert.AreEqual(pos, new PointShape(pos).GetSupportPoint(new Vector3F(1, 0, 0)));
-      Assert.AreEqual(pos, new PointShape(pos).GetSupportPoint(new Vector3F(0, 1, 0)));
-      Assert.AreEqual(pos, new PointShape(pos).GetSupportPoint(new Vector3F(0, 0, 1)));
-      Assert.AreEqual(pos, new PointShape(pos).GetSupportPoint(new Vector3F(1, 1, 1)));
+      Vector3 pos = new Vector3(1, 2, 3);
+      Assert.AreEqual(pos, new PointShape(pos).GetSupportPoint(new Vector3(1, 0, 0)));
+      Assert.AreEqual(pos, new PointShape(pos).GetSupportPoint(new Vector3(0, 1, 0)));
+      Assert.AreEqual(pos, new PointShape(pos).GetSupportPoint(new Vector3(0, 0, 1)));
+      Assert.AreEqual(pos, new PointShape(pos).GetSupportPoint(new Vector3(1, 1, 1)));
     }
 
 
     //[Test]
     //public void GetSupportPointDistance()
     //{
-    //  Assert.AreEqual(0, new PointShape().GetSupportPointDistance(new Vector3F(1, 0, 0)));
-    //  Assert.AreEqual(0, new PointShape().GetSupportPointDistance(new Vector3F(0, 1, 0)));
-    //  Assert.AreEqual(0, new PointShape().GetSupportPointDistance(new Vector3F(0, 0, 1)));
-    //  Assert.AreEqual(0, new PointShape().GetSupportPointDistance(new Vector3F(1, 1, 1)));
+    //  Assert.AreEqual(0, new PointShape().GetSupportPointDistance(new Vector3(1, 0, 0)));
+    //  Assert.AreEqual(0, new PointShape().GetSupportPointDistance(new Vector3(0, 1, 0)));
+    //  Assert.AreEqual(0, new PointShape().GetSupportPointDistance(new Vector3(0, 0, 1)));
+    //  Assert.AreEqual(0, new PointShape().GetSupportPointDistance(new Vector3(1, 1, 1)));
 
-    //  Assert.AreEqual(1, new PointShape(new Vector3F(1, 2, 3)).GetSupportPointDistance(new Vector3F(1, 0, 0)));
-    //  Assert.AreEqual(2, new PointShape(new Vector3F(1, 2, 3)).GetSupportPointDistance(new Vector3F(0, 1, 0)));
-    //  Assert.AreEqual(3, new PointShape(new Vector3F(1, 2, 3)).GetSupportPointDistance(new Vector3F(0, 0, 1)));
-    //  Assert.IsTrue(Numeric.AreEqual(Vector3F.ProjectTo(new Vector3F(1, 2, 3), new Vector3F(1, 1, 1)).Length, new PointShape(new Vector3F(1, 2, 3)).GetSupportPointDistance(new Vector3F(1, 1, 1))));
+    //  Assert.AreEqual(1, new PointShape(new Vector3(1, 2, 3)).GetSupportPointDistance(new Vector3(1, 0, 0)));
+    //  Assert.AreEqual(2, new PointShape(new Vector3(1, 2, 3)).GetSupportPointDistance(new Vector3(0, 1, 0)));
+    //  Assert.AreEqual(3, new PointShape(new Vector3(1, 2, 3)).GetSupportPointDistance(new Vector3(0, 0, 1)));
+    //  Assert.IsTrue(Numeric.AreEqual(Vector3.ProjectTo(new Vector3(1, 2, 3), new Vector3(1, 1, 1)).Length, new PointShape(new Vector3(1, 2, 3)).GetSupportPointDistance(new Vector3(1, 1, 1))));
     //}
 
 
     [Test]
     public void ToStringTest()
     {
-      Assert.AreEqual("PointShape { Position = (1; 2; 3) }", new PointShape(new Vector3F(1, 2, 3)).ToString());
+      Assert.AreEqual("PointShape { Position = (1; 2; 3) }", new PointShape(new Vector3(1, 2, 3)).ToString());
     }
 
 
     [Test]
     public void Clone()
     {
-      PointShape point = new PointShape(new Vector3F(1, 2, 3));
+      PointShape point = new PointShape(new Vector3(1, 2, 3));
       PointShape clone = point.Clone() as PointShape;
       Assert.IsNotNull(clone);
       Assert.AreEqual(point.Position, clone.Position);

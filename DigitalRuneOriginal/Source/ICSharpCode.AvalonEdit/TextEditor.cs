@@ -80,12 +80,12 @@ namespace ICSharpCode.AvalonEdit
 			Initialize();
 		}
 
-		#if !DOTNET4
+
 		void SetCurrentValue(DependencyProperty property, object value)
 		{
 			SetValue(property, value);
 		}
-		#endif
+
 
 		
 		/// <inheritdoc/>

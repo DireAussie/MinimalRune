@@ -230,7 +230,7 @@ namespace DigitalRune.Graphics.Content
     /// <exception cref="NotSupportedException">
     /// Format conversion to/from <see cref="DataFormat.R11G11B10_FLOAT"/> is not supported.
     /// </exception>
-    public void SetElements(Vector3F[] buffer, VertexElementSemantic semantic, int semanticIndex)
+    public void SetElements(Vector3[] buffer, VertexElementSemantic semantic, int semanticIndex)
     {
       if (buffer == null)
         throw new ArgumentNullException("buffer");
@@ -1229,7 +1229,7 @@ namespace DigitalRune.Graphics.Content
     /// <exception cref="NotSupportedException">
     /// Format conversion to/from <see cref="DataFormat.R11G11B10_FLOAT"/> is not supported.
     /// </exception>
-    public void GetElements(Vector3F[] buffer, VertexElementSemantic semantic, int semanticIndex)
+    public void GetElements(Vector3[] buffer, VertexElementSemantic semantic, int semanticIndex)
     {
       if (buffer == null)
         throw new ArgumentNullException("buffer");

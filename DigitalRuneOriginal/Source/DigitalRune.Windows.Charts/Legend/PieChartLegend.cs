@@ -176,7 +176,7 @@ namespace DigitalRune.Windows.Charts
 
         //--------------------------------------------------------------
 
-#if SILVERLIGHT
+
         /// <summary>
         /// Initializes a new instance of the <see cref="PieChartLegend"/> class.
         /// </summary>
@@ -193,7 +193,7 @@ namespace DigitalRune.Windows.Charts
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(PieChartLegend), new FrameworkPropertyMetadata(typeof(PieChartLegend)));
         }
-#endif
+
 
 
 

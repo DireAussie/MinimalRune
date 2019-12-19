@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
 
-#if !NETFX_CORE
+
 using System.Threading;
-#endif
+
 
 
 namespace DigitalRune.Threading.Tests
@@ -14,7 +14,7 @@ namespace DigitalRune.Threading.Tests
   [TestFixture]
   public class ParallelTest
   {
-#if NETFX_CORE
+
     private static void Sleep(int millisecondsTimeout)
     {
       System.Threading.Tasks.Task.Delay(millisecondsTimeout).Wait();
@@ -24,7 +24,7 @@ namespace DigitalRune.Threading.Tests
     {
       Thread.Sleep(millisecondsTimeout);
     }
-#endif
+
 
 
     private static void AssertException(string expectedMessage, Exception exception)
@@ -56,11 +56,11 @@ namespace DigitalRune.Threading.Tests
       if (taskException != null)
         return taskException.InnerExceptions;
 
-#if !WINDOWS_PHONE
+
       var aggregateException = exception as AggregateException;
       if (aggregateException != null)
         return aggregateException.InnerExceptions;
-#endif
+
 
       return null;
     }
@@ -82,7 +82,7 @@ namespace DigitalRune.Threading.Tests
     }
 
 
-#if !NETFX_CORE && !ANDROID
+
     [Test]
     public void ProcessorAffinityAndNumberOfThreads()
     {
@@ -105,12 +105,12 @@ namespace DigitalRune.Threading.Tests
         Sleep(1);
       });
 
-#if WINDOWS_PHONE
+
       // Security issues on Windows Phone: Cannot access Environment.ProcessorCount.
       var processorCount = 1;
 #else
       var processorCount = Environment.ProcessorCount;
-#endif
+
 
       if (processorCount == 4)
       {
@@ -150,7 +150,7 @@ namespace DigitalRune.Threading.Tests
     {
       Parallel.Scheduler = null;
     }
-#endif
+
 
 
     [Test]
@@ -304,11 +304,11 @@ namespace DigitalRune.Threading.Tests
     {
       var testEnumerable = new TestEnumerable();
 
-#if NETFX_CORE
+
       Parallel.ForEach(testEnumerable, i => testEnumerable.Result[i] = Environment.CurrentManagedThreadId);
 #else
       Parallel.ForEach(testEnumerable, i => testEnumerable.Result[i] = Thread.CurrentThread.ManagedThreadId);
-#endif
+
 
       Assert.IsTrue(testEnumerable.Result.All(n => n != 0));
       Assert.IsTrue(testEnumerable.EnumeratorDisposed);

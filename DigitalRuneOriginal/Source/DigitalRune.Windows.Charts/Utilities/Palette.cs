@@ -38,11 +38,11 @@ namespace DigitalRune.Windows.Charts
 
         //--------------------------------------------------------------
 
-#if SILVERLIGHT || WINDOWS_PHONE
+
         private List<PaletteEntry> _sortedPaletteEntries;
 #else
         private SortedList<double, PaletteEntry> _sortedPaletteEntries;
-#endif
+
         private Palette _convertedPalette;
 
 
@@ -235,7 +235,7 @@ namespace DigitalRune.Windows.Charts
             if (_sortedPaletteEntries != null)
             {
                 // Sorted list is available.
-#if SILVERLIGHT || WINDOWS_PHONE
+
             foreach (PaletteEntry paletteEntry in _sortedPaletteEntries)
             {
                 int result = value.CompareTo(paletteEntry.Value);
@@ -247,7 +247,7 @@ namespace DigitalRune.Windows.Charts
 #else
                 int index = _sortedPaletteEntries.IndexOfKey(value);
                 return index != -1;
-#endif
+
             }
 
             // Sorted list is not available.
@@ -302,7 +302,7 @@ namespace DigitalRune.Windows.Charts
             // Create an internal sorted list with all relevant entries.
             if (_sortedPaletteEntries == null)
             {
-#if SILVERLIGHT || WINDOWS_PHONE
+
                 _sortedPaletteEntries = new List<PaletteEntry>(this);
                 _sortedPaletteEntries.Sort((x, y) => x.Value.CompareTo(y.Value));
 #else
@@ -321,7 +321,7 @@ namespace DigitalRune.Windows.Charts
 
                     // ReSharper restore EmptyGeneralCatchClause
                 }
-#endif
+
             }
         }
 
@@ -342,11 +342,11 @@ namespace DigitalRune.Windows.Charts
                 if (numberOfEntries > 0)
                 {
                     // Insert first palette entry at -∞.
-#if SILVERLIGHT || WINDOWS_PHONE
+
                     PaletteEntry entry = _sortedPaletteEntries[0];
 #else
                     PaletteEntry entry = _sortedPaletteEntries.Values[0];
-#endif
+
                     _convertedPalette.Add(Double.NegativeInfinity, entry.Color);
                     PaletteEntry previousEntry = entry;
 
@@ -384,11 +384,11 @@ namespace DigitalRune.Windows.Charts
 
             for (int i = 0; i < _sortedPaletteEntries.Count; i++)
             {
-#if SILVERLIGHT || WINDOWS_PHONE
+
                 PaletteEntry entry = _sortedPaletteEntries[i];
 #else
                 PaletteEntry entry = _sortedPaletteEntries.Values[i];
-#endif
+
                 int comparisonResult = Numeric.Compare(entry.Value, value);
                 if (comparisonResult < 0)
                 {
@@ -467,7 +467,7 @@ namespace DigitalRune.Windows.Charts
             Color interpolatedColor;
             float f = (float)((value - lessEntry.Value) / (greaterEntry.Value - lessEntry.Value));
 
-#if SILVERLIGHT || WINDOWS_PHONE
+
               // Note: Silverlight does not support reading the ScRGB values of a Color.
               byte a = (byte)((greaterEntry.Color.A - lessEntry.Color.A) * f + lessEntry.Color.A);
               byte r = (byte)((greaterEntry.Color.R - lessEntry.Color.R) * f + lessEntry.Color.R);
@@ -491,7 +491,7 @@ namespace DigitalRune.Windows.Charts
                 byte b = (byte)((greaterEntry.Color.B - lessEntry.Color.B) * f + lessEntry.Color.B);
                 interpolatedColor = Color.FromArgb(a, r, g, b);
             }
-#endif
+
 
             return interpolatedColor;
         }
@@ -655,11 +655,11 @@ namespace DigitalRune.Windows.Charts
             List<PaletteEntry> intermediateEntries = new List<PaletteEntry>();
             for (int i = 0; i < _sortedPaletteEntries.Count; i++)
             {
-#if SILVERLIGHT || WINDOWS_PHONE
+
                 PaletteEntry entry = _sortedPaletteEntries[i];
 #else
                 PaletteEntry entry = _sortedPaletteEntries.Values[i];
-#endif
+
                 if (startValue < entry.Value && entry.Value < endValue)
                     intermediateEntries.Add(entry);
             }

@@ -1074,12 +1074,12 @@ namespace DigitalRune.Mathematics.Algebra.Tests
 
 
     [Test]
-    public void ExplicitMatrix33FCast()
+    public void ExplicitMatrixCast()
     {
       double m00 = 23.5; double m01 = 0.0; double m02 = -11.0;
       double m10 = 33.5; double m11 = 1.1; double m12 = -12.0;
       double m20 = 43.5; double m21 = 2.2; double m22 = -13.0;
-      Matrix33F matrix33F = (Matrix33F)new Matrix33D(m00, m01, m02, m10, m11, m12, m20, m21, m22);
+      Matrix matrix33F = (Matrix)new Matrix33D(m00, m01, m02, m10, m11, m12, m20, m21, m22);
       Assert.IsTrue(Numeric.AreEqual((float)m00, matrix33F[0, 0]));
       Assert.IsTrue(Numeric.AreEqual((float)m01, matrix33F[0, 1]));
       Assert.IsTrue(Numeric.AreEqual((float)m02, matrix33F[0, 2]));
@@ -1093,12 +1093,12 @@ namespace DigitalRune.Mathematics.Algebra.Tests
 
 
     [Test]
-    public void ToMatrix33F()
+    public void ToMatrix()
     {
       double m00 = 23.5; double m01 = 0.0; double m02 = -11.0;
       double m10 = 33.5; double m11 = 1.1; double m12 = -12.0;
       double m20 = 43.5; double m21 = 2.2; double m22 = -13.0;
-      Matrix33F matrix33F = new Matrix33D(m00, m01, m02, m10, m11, m12, m20, m21, m22).ToMatrix33F();
+      Matrix matrix33F = new Matrix33D(m00, m01, m02, m10, m11, m12, m20, m21, m22).ToMatrix();
       Assert.IsTrue(Numeric.AreEqual((float)m00, matrix33F[0, 0]));
       Assert.IsTrue(Numeric.AreEqual((float)m01, matrix33F[0, 1]));
       Assert.IsTrue(Numeric.AreEqual((float)m02, matrix33F[0, 2]));

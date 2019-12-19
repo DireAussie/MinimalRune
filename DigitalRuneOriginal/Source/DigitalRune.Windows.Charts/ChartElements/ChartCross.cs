@@ -141,7 +141,7 @@ namespace DigitalRune.Windows.Charts
 
         //--------------------------------------------------------------
 
-#if SILVERLIGHT
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ChartCross"/> class.
         /// </summary>
@@ -158,7 +158,7 @@ namespace DigitalRune.Windows.Charts
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ChartCross), new FrameworkPropertyMetadata(typeof(ChartCross)));
         }
-#endif
+
 
 
 

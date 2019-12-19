@@ -38,13 +38,13 @@ namespace DigitalRune.Graphics.Effects
   {
     ///// <para>
     ///// <strong>Notes for users of DigitalRune Mathematics:</strong><br/> 
-    ///// The DigitalRune vector types (see <see cref="Vector2F"/>, <see cref="Vector3F"/>, 
+    ///// The DigitalRune vector types (see <see cref="Vector2F"/>, <see cref="Vector3"/>, 
     ///// <see cref="Vector4F"/>) are column-vectors, whereas vectors in DirectX and XNA are 
     ///// row-vectors. When the DigitalRune vector types are set using an 
     ///// <see cref="EffectParameterBinding{T}"/> they are automatically converted to the corresponding 
     ///// XNA vector types and then applied using the right 
     ///// <strong>EffectParameter.SetValue()</strong>-method. Similarly, when a DigitalRune matrix type 
-    ///// (see <see cref="Matrix44F"/>) is set with an <see cref="EffectParameterBinding{T}"/> it is 
+    ///// (see <see cref="Matrix"/>) is set with an <see cref="EffectParameterBinding{T}"/> it is 
     ///// automatically transposed and converted to an XNA matrix type. 
     ///// </para>
 

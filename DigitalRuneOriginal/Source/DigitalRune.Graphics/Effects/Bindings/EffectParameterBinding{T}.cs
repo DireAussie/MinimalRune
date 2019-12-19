@@ -20,7 +20,7 @@ namespace DigitalRune.Graphics.Effects
   /// <see cref="bool"/>, 
   /// <see cref="int"/>, 
   /// <see cref="Matrix"/>, 
-  /// <see cref="Matrix44F"/>, 
+  /// <see cref="Matrix"/>, 
   /// <see cref="Quaternion"/>, 
   /// <see cref="float"/>, 
   /// <see cref="string"/>, 
@@ -32,7 +32,7 @@ namespace DigitalRune.Graphics.Effects
   /// <see cref="Vector3"/>, 
   /// <see cref="Vector4"/>, 
   /// <see cref="Vector2F"/>, 
-  /// <see cref="Vector3F"/>, 
+  /// <see cref="Vector3"/>, 
   /// <see cref="Vector4F"/>.
   /// </typeparam>
   /// <remarks>
@@ -90,7 +90,7 @@ namespace DigitalRune.Graphics.Effects
   {
     // Not yet supported value types:
     // <see cref="Matrix22F"/>, 
-    // <see cref="Matrix33F"/>
+    // <see cref="Matrix"/>
 
     //--------------------------------------------------------------
 

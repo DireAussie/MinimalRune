@@ -47,7 +47,7 @@ tank model are animated.",
       SampleFramework.IsMouseVisible = false;
       GraphicsScreen.ClearBackground = true;
       GraphicsScreen.BackgroundColor = Color.CornflowerBlue;
-      SetCamera(new Vector3F(8, 6, 8), ConstantsF.PiOver4, -0.4f);
+      SetCamera(new Vector3(8, 6, 8), ConstantsF.PiOver4, -0.4f);
 
       // Load the models. The models are processed using the DigitalRune Model 
       // Processor - not the default XNA model processor!
@@ -72,7 +72,7 @@ tank model are animated.",
       _tank = _tank.Clone();
 
       // The grid is a bit too large. We can scale it to make it smaller.
-      _grid.ScaleLocal = new Vector3F(0.3f);
+      _grid.ScaleLocal = new Vector3(0.3f);
 
       // No need to scale the tank model - the tank was already scaled by the 
       // DigitalRune Model Processor because a scale factor is defined in the 
@@ -235,12 +235,12 @@ tank model are animated.",
     public override void Update(GameTime gameTime)
     {
       // Update the poses of the animated scene nodes.
-      var frontWheelSteeringRotation = Matrix33F.CreateRotationY(_frontWheelSteeringAngle.Value);
+      var frontWheelSteeringRotation = Matrix.CreateRotationY(_frontWheelSteeringAngle.Value);
       _frontWheelLeft.PoseLocal = _frontWheelLeftRestPose * new Pose(frontWheelSteeringRotation);
       _frontWheelRight.PoseLocal = _frontWheelRightRestPose * new Pose(frontWheelSteeringRotation);
-      _hatch.PoseLocal = _hatchRestPose * new Pose(Matrix33F.CreateRotationX(_hatchAngle.Value));
-      _turret.PoseLocal = _turretRestPose * new Pose(Matrix33F.CreateRotationY(_turretAngle.Value));
-      _cannon.PoseLocal = _cannonRestPose * new Pose(Matrix33F.CreateRotationX(_cannonAngle.Value));
+      _hatch.PoseLocal = _hatchRestPose * new Pose(Matrix.CreateRotationX(_hatchAngle.Value));
+      _turret.PoseLocal = _turretRestPose * new Pose(Matrix.CreateRotationY(_turretAngle.Value));
+      _cannon.PoseLocal = _cannonRestPose * new Pose(Matrix.CreateRotationX(_cannonAngle.Value));
 
       base.Update(gameTime);
     }

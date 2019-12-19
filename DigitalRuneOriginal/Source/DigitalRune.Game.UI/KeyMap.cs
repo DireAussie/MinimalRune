@@ -9,14 +9,14 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Xml;
-#if !PORTABLE
+
 using System.Xml.Linq;
-#endif
+
 using DigitalRune.Game.Input;
 using Microsoft.Xna.Framework.Input;
-#if SILVERLIGHT
+
 using Keys = System.Windows.Input.Key;
-#endif
+
 
 
 namespace DigitalRune.Game.UI
@@ -115,7 +115,7 @@ namespace DigitalRune.Game.UI
         string cultureName = CultureInfo.CurrentCulture.EnglishName;
         bool isGerman = cultureName.Contains("German");
 
-#if !WINDOWS && !PORTABLE
+
         // Use predefined key map.
         if (isGerman)
           _autoKeyMap = EnglishKeyMapGermanChatPad;
@@ -138,7 +138,7 @@ namespace DigitalRune.Game.UI
             _autoKeyMap[(Keys)keyMapping.Key, (ModifierKeys)keyMapping.ModifierKeys] = keyMapping.Character;
 
         return _autoKeyMap;
-#endif
+
       }
     }
     private static KeyMap _autoKeyMap;
@@ -257,11 +257,11 @@ namespace DigitalRune.Game.UI
     private void LoadEmbeddedResource(string keyMapName)
     {
       // Get current assembly.
-#if !NETFX_CORE && !NET45
+
       var assembly = Assembly.GetExecutingAssembly();
 #else
       Assembly assembly = typeof(KeyMap).GetTypeInfo().Assembly;
-#endif
+
       Stream stream = assembly.GetManifestResourceStream(keyMapName);
       if (stream != null)
       {
@@ -269,16 +269,16 @@ namespace DigitalRune.Game.UI
           Load(reader);
         //Load(XDocument.Load(reader));
 
-#if NETFX_CORE || PORTABLE
+
         stream.Dispose();
 #else
         stream.Close();
-#endif
+
       }
     }
 
 
-#if !PORTABLE
+
     /// <overloads>
     /// <summary>
     /// Loads the key map entries.
@@ -358,7 +358,7 @@ namespace DigitalRune.Game.UI
       }
       return xDocument;
     }
-#endif
+
 
 
     /// <summary>

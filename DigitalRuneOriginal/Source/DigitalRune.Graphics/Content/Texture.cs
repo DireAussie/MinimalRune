@@ -413,17 +413,17 @@ namespace DigitalRune.Graphics.Content
 
         var texture = new Texture(description);
 
-#if SINGLE_THREADED
+
         for (int i = 0; i < Images.Count; i++)
 #else
         Parallel.For(0, Images.Count, i =>
-#endif
+
         {
           TextureHelper.Convert(Images[i], texture.Images[i]);
         }
-#if !SINGLE_THREADED
+
         );
-#endif
+
 
         return texture;
       }
@@ -476,9 +476,9 @@ namespace DigitalRune.Graphics.Content
         // Update Description and Images.
         var oldImages = Images;
         Description = newDescription;
-#if DEBUG
+
         ValidateTexture(newDescription);
-#endif
+
         // Recreate image collection. (Mipmap level 0 is copied from existing image collection.)
         Images = CreateImageCollection(newDescription, true);
         for (int arrayIndex = 0; arrayIndex < newDescription.ArraySize; arrayIndex++)

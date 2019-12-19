@@ -71,13 +71,13 @@ void PS4(out float4 color0 : COLOR0, out float4 color1 : COLOR1,
 // Techniques
 //-----------------------------------------------------------------------------
 
-#if !SM4
+
 #define VSTARGET vs_3_0
 #define PSTARGET ps_3_0
 #else
 #define VSTARGET vs_4_0
 #define PSTARGET ps_4_0
-#endif
+
 
 technique RenderTargets1
 {

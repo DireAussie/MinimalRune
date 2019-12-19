@@ -60,8 +60,8 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
         throw new ArgumentException("The contact set must contain a plane and a sphere.", "contactSet");
 
       // Get scalings.
-      Vector3F planeScale = planeObject.Scale;
-      Vector3F sphereScale = Vector3F.Absolute(sphereObject.Scale);
+      Vector3 planeScale = planeObject.Scale;
+      Vector3 sphereScale = Vector3.Absolute(sphereObject.Scale);
 
       // Call other algorithm for non-uniformly scaled spheres.
       if (sphereScale.X != sphereScale.Y || sphereScale.Y != sphereScale.Z)
@@ -84,8 +84,8 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
 
       // Calculate distance from plane to sphere surface.
       float sphereRadius = sphereShape.Radius * sphereScale.X;
-      Vector3F sphereCenter = spherePose.Position;
-      float planeToSphereDistance = Vector3F.Dot(sphereCenter, plane.Normal) - sphereRadius - plane.DistanceFromOrigin;
+      Vector3 sphereCenter = spherePose.Position;
+      float planeToSphereDistance = Vector3.Dot(sphereCenter, plane.Normal) - sphereRadius - plane.DistanceFromOrigin;
 
       float penetrationDepth = -planeToSphereDistance;
       contactSet.HaveContact = (penetrationDepth >= 0);
@@ -98,8 +98,8 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
       }
 
       // Compute contact details.
-      Vector3F position = sphereCenter - plane.Normal * (sphereRadius - penetrationDepth / 2);
-      Vector3F normal = (swapped) ? -plane.Normal : plane.Normal;
+      Vector3 position = sphereCenter - plane.Normal * (sphereRadius - penetrationDepth / 2);
+      Vector3 normal = (swapped) ? -plane.Normal : plane.Normal;
 
       // Update contact set.
       Contact contact = ContactHelper.CreateContact(contactSet, position, normal, penetrationDepth, false);

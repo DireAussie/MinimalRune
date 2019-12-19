@@ -5,18 +5,18 @@
 using System;
 using DigitalRune.Animation.Traits;
 using DigitalRune.Mathematics.Algebra;
-#if XNA || MONOGAME
+
 using Microsoft.Xna.Framework.Content;
-#endif
+
 
 
 namespace DigitalRune.Animation
 {
   /// <summary>
-  /// Animates a <see cref="QuaternionF"/> value by applying an animation to each component of the
+  /// Animates a <see cref="Quaternion"/> value by applying an animation to each component of the
   /// quaternion.
   /// </summary>
-  public class QuaternionFAnimation : Animation<QuaternionF>
+  public class QuaternionAnimation : Animation<Quaternion>
   {
     //--------------------------------------------------------------
 
@@ -29,49 +29,49 @@ namespace DigitalRune.Animation
     //--------------------------------------------------------------
 
     /// <inheritdoc/>
-    public override IAnimationValueTraits<QuaternionF> Traits
+    public override IAnimationValueTraits<Quaternion> Traits
     {
-      get { return QuaternionFTraits.Instance; }
+      get { return QuaternionTraits.Instance; }
     }
 
 
     /// <summary>
-    /// Gets or sets the animation of the <see cref="QuaternionF.W"/> component.
+    /// Gets or sets the animation of the <see cref="Quaternion.W"/> component.
     /// </summary>
-    /// <value>The animation of the <see cref="QuaternionF.W"/> component.</value>
-#if XNA || MONOGAME
+    /// <value>The animation of the <see cref="Quaternion.W"/> component.</value>
+
     [ContentSerializer(SharedResource = true)]
-#endif
+
     public IAnimation<float> W { get; set; }
 
 
     /// <summary>
-    /// Gets or sets the animation of the <see cref="QuaternionF.X"/> component.
+    /// Gets or sets the animation of the <see cref="Quaternion.X"/> component.
     /// </summary>
-    /// <value>The animation of the <see cref="QuaternionF.X"/> component.</value>
-#if XNA || MONOGAME
+    /// <value>The animation of the <see cref="Quaternion.X"/> component.</value>
+
     [ContentSerializer(SharedResource = true)]
-#endif
+
     public IAnimation<float> X { get; set; }
 
 
     /// <summary>
-    /// Gets or sets the animation of the <see cref="QuaternionF.Y"/> component.
+    /// Gets or sets the animation of the <see cref="Quaternion.Y"/> component.
     /// </summary>
-    /// <value>The animation of the <see cref="QuaternionF.Y"/> component.</value>
-#if XNA || MONOGAME
+    /// <value>The animation of the <see cref="Quaternion.Y"/> component.</value>
+
     [ContentSerializer(SharedResource = true)]
-#endif
+
     public IAnimation<float> Y { get; set; }
 
 
     /// <summary>
-    /// Gets or sets the animation of the <see cref="QuaternionF.Z"/> component.
+    /// Gets or sets the animation of the <see cref="Quaternion.Z"/> component.
     /// </summary>
-    /// <value>The animation of the <see cref="QuaternionF.Z"/> component.</value>
-#if XNA || MONOGAME
+    /// <value>The animation of the <see cref="Quaternion.Z"/> component.</value>
+
     [ContentSerializer(SharedResource = true)]
-#endif
+
     public IAnimation<float> Z { get; set; }
 
 
@@ -82,27 +82,27 @@ namespace DigitalRune.Animation
     
     /// <overloads>
     /// <summary>
-    /// Initializes a new instance of the <see cref="QuaternionFAnimation"/> class.
+    /// Initializes a new instance of the <see cref="QuaternionAnimation"/> class.
     /// </summary>
     /// </overloads>
     /// 
     /// <summary>
-    /// Initializes a new instance of the <see cref="QuaternionFAnimation"/> class.
+    /// Initializes a new instance of the <see cref="QuaternionAnimation"/> class.
     /// </summary>
-    public QuaternionFAnimation()
+    public QuaternionAnimation()
     {
     }
 
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="QuaternionFAnimation"/> class with the 
+    /// Initializes a new instance of the <see cref="QuaternionAnimation"/> class with the 
     /// specified animations.
     /// </summary>
-    /// <param name="w">The animation of the <see cref="QuaternionF.W"/> component.</param>
-    /// <param name="x">The animation of the <see cref="QuaternionF.X"/> component.</param>
-    /// <param name="y">The animation of the <see cref="QuaternionF.Y"/> component.</param>
-    /// <param name="z">The animation of the <see cref="QuaternionF.Z"/> component.</param>
-    public QuaternionFAnimation(IAnimation<float> w, IAnimation<float> x, IAnimation<float> y, IAnimation<float> z)
+    /// <param name="w">The animation of the <see cref="Quaternion.W"/> component.</param>
+    /// <param name="x">The animation of the <see cref="Quaternion.X"/> component.</param>
+    /// <param name="y">The animation of the <see cref="Quaternion.Y"/> component.</param>
+    /// <param name="z">The animation of the <see cref="Quaternion.Z"/> component.</param>
+    public QuaternionAnimation(IAnimation<float> w, IAnimation<float> x, IAnimation<float> y, IAnimation<float> z)
     {
       W = w;
       X = x;
@@ -138,7 +138,7 @@ namespace DigitalRune.Animation
 
 
     /// <inheritdoc/>
-    protected override void GetValueCore(TimeSpan time, ref QuaternionF defaultSource, ref QuaternionF defaultTarget, ref QuaternionF result)
+    protected override void GetValueCore(TimeSpan time, ref Quaternion defaultSource, ref Quaternion defaultTarget, ref Quaternion result)
     {
       if (W != null)
         W.GetValue(time, ref defaultSource.W, ref defaultTarget.W, ref result.W);

@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !NETFX_CORE && !PORTABLE
+
 
 using System;
 using System.ComponentModel;
@@ -12,14 +12,14 @@ using System.Globalization;
 namespace DigitalRune.Mathematics.Algebra.Design
 {
   /// <summary>
-  /// Converts a <see cref="QuaternionF"/> to and from string representation.
+  /// Converts a <see cref="Quaternion"/> to and from string representation.
   /// </summary>
-  public class QuaternionFConverter 
-#if !SILVERLIGHT && !WP7 && !WP8 && !XBOX
+  public class QuaternionConverter 
+
     : ExpandableObjectConverter
 #else
     : TypeConverter
-#endif
+
   {
     /// <summary>
     /// Returns whether this converter can convert an object of the given type to the type of this
@@ -81,7 +81,7 @@ namespace DigitalRune.Mathematics.Algebra.Design
     {
       string s = value as string;
       if (s != null)
-        return QuaternionF.Parse(s, culture);
+        return Quaternion.Parse(s, culture);
 
       return base.ConvertFrom(context, culture, value);
     }
@@ -102,11 +102,11 @@ namespace DigitalRune.Mathematics.Algebra.Design
     /// <returns>An <see cref="Object"/> that represents the converted value.</returns>
     public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
     {
-      if (destinationType == typeof(string) && value is QuaternionF)
-        return ((QuaternionF) value).ToString(culture);
+      if (destinationType == typeof(string) && value is Quaternion)
+        return ((Quaternion) value).ToString(culture);
 
       return base.ConvertTo(context, culture, value, destinationType);
     }
   }
 }
-#endif
+

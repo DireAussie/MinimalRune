@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using System;
 using System.Linq;
 using DigitalRune.Geometry;
@@ -58,8 +58,8 @@ update the new effect parameters used by Cloud.fx.",
       GameObjectService.Objects.Add(new ObjectCreatorObject(Services));
       GameObjectService.Objects.Add(new LavaBallsObject(Services));
       GameObjectService.Objects.Add(new FogObject(Services));
-      GameObjectService.Objects.Add(new StaticObject(Services, "Barrier/Barrier", 0.9f, new Pose(new Vector3F(0, 0, -2))));
-      GameObjectService.Objects.Add(new StaticObject(Services, "Barrier/Cylinder", 0.9f, new Pose(new Vector3F(3, 0, 0), QuaternionF.CreateRotationY(MathHelper.ToRadians(-20)))));
+      GameObjectService.Objects.Add(new StaticObject(Services, "Barrier/Barrier", 0.9f, new Pose(new Vector3(0, 0, -2))));
+      GameObjectService.Objects.Add(new StaticObject(Services, "Barrier/Cylinder", 0.9f, new Pose(new Vector3(3, 0, 0), Quaternion.CreateRotationY(MathHelper.ToRadians(-20)))));
 
       // The DynamicSkyObject creates the dynamic sky and lights but no clouds.
       var dynamicSkyObject = new DynamicSkyObject(Services, false, false, false);
@@ -69,8 +69,8 @@ update the new effect parameters used by Cloud.fx.",
       Random random = new Random(12345);
       for (int i = 0; i < 10; i++)
       {
-        Vector3F position = new Vector3F(random.NextFloat(-3, -8), 0, random.NextFloat(0, -5));
-        Matrix33F orientation = Matrix33F.CreateRotationY(random.NextFloat(0, ConstantsF.TwoPi));
+        Vector3 position = new Vector3(random.NextFloat(-3, -8), 0, random.NextFloat(0, -5));
+        Matrix orientation = Matrix.CreateRotationY(random.NextFloat(0, ConstantsF.TwoPi));
         float scale = random.NextFloat(0.5f, 1.2f);
         GameObjectService.Objects.Add(new StaticObject(Services, "PalmTree/palm_tree", scale, new Pose(position, orientation)));
       }
@@ -107,17 +107,17 @@ update the new effect parameters used by Cloud.fx.",
       // Add several CloudQuad models in the sky with random scales and poses.
       for (int i = 0; i < 20; i++)
       {
-        var scale = new Vector3F(
+        var scale = new Vector3(
           RandomHelper.Random.NextFloat(100, 200),
           0,
           RandomHelper.Random.NextFloat(100, 200));
 
-        var position = new Vector3F(
+        var position = new Vector3(
           RandomHelper.Random.NextFloat(-500, 500),
           RandomHelper.Random.NextFloat(100, 200),
           RandomHelper.Random.NextFloat(-500, 500));
 
-        var orientation = Matrix33F.CreateRotationY(RandomHelper.Random.NextFloat(0, ConstantsF.TwoPi));
+        var orientation = Matrix.CreateRotationY(RandomHelper.Random.NextFloat(0, ConstantsF.TwoPi));
         GameObjectService.Objects.Add(new StaticObject(Services, "CloudQuad/CloudQuad", scale, new Pose(position, orientation), false, false));
       }
     }
@@ -142,4 +142,3 @@ update the new effect parameters used by Cloud.fx.",
     }
   }
 }
-#endif

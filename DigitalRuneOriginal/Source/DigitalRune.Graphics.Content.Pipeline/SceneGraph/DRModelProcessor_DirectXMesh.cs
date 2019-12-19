@@ -31,7 +31,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
       // - Normals at submesh borders are only correct if we consider adjacent submeshes.
       // - GeometryContent.Positions contains duplicated entries if neighbor triangles do
       //   have the same texture coordinates. MeshContent.Positions are unique (no duplicates).
-      var positions = mesh.Positions.Select(p => (Vector3F)p).ToArray();
+      var positions = mesh.Positions.Select(p => (Vector3)p).ToArray();
       var indices = mesh.Geometry
                         .SelectMany(geometry => geometry.Indices.Select(i => geometry.Vertices.PositionIndices[i]))
                         .ToArray();
@@ -60,12 +60,12 @@ namespace DigitalRune.Graphics.Content.Pipeline
       Debug.Assert(!string.IsNullOrWhiteSpace(textureCoordinateChannelName));
 
       var indices = geometry.Indices;
-      var positions = geometry.Vertices.Positions.Select(p => (Vector3F)p).ToArray();
-      var normals = geometry.Vertices.Channels.Get<Vector3>(VertexChannelNames.Normal()).Select(n => (Vector3F)n).ToArray();
+      var positions = geometry.Vertices.Positions.Select(p => (Vector3)p).ToArray();
+      var normals = geometry.Vertices.Channels.Get<Vector3>(VertexChannelNames.Normal()).Select(n => (Vector3)n).ToArray();
       var textureCoordinates = geometry.Vertices.Channels.Get<Vector2>(textureCoordinateChannelName).Select(n => (Vector2F)n).ToArray();
 
-      Vector3F[] tangents;
-      Vector3F[] bitangents;
+      Vector3[] tangents;
+      Vector3[] bitangents;
       DirectXMesh.ComputeTangentFrame(indices, positions, normals, textureCoordinates, out tangents, out bitangents);
 
       if (!string.IsNullOrEmpty(tangentChannelName))
@@ -81,7 +81,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
       Debug.Assert(mesh != null);
       Debug.Assert(tolerance > 0);
 
-      var positions = mesh.Positions.Select(p => (Vector3F)p).ToList();
+      var positions = mesh.Positions.Select(p => (Vector3)p).ToList();
       int[] positionRemap;
       int numberOfDuplicates = GeometryHelper.MergeDuplicatePositions(positions, tolerance, out positionRemap);
 
@@ -110,7 +110,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
       {
         var vertices = geometry.Vertices;
         int numberOfVertices = vertices.VertexCount;
-        var positions = vertices.Positions.Select(p => (Vector3F)p).ToArray();
+        var positions = vertices.Positions.Select(p => (Vector3)p).ToArray();
         var indices = geometry.Indices.ToList();
 
         int[] vertexRemap;
@@ -195,7 +195,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
     }
 
 
-    private /*static*/ void OptimizeForCache(IList<Vector3F> positions, IList<int> indices, ContentIdentity identity)
+    private /*static*/ void OptimizeForCache(IList<Vector3> positions, IList<int> indices, ContentIdentity identity)
     {
       Debug.Assert(positions != null);
       Debug.Assert(indices != null);
@@ -211,7 +211,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
       for (int i = 0; i < vertexRemap.Length; i++)
       {
         if (vertexRemap[i] != -1)
-          positions.Add(new Vector3F());
+          positions.Add(new Vector3());
       }
 
       // Add reordered vertices.
@@ -234,7 +234,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
     }
 
 
-    private /*static*/ void OptimizeForCache(IList<Vector3F> positions,   // In: Original positions.
+    private /*static*/ void OptimizeForCache(IList<Vector3> positions,   // In: Original positions.
                                          IList<int> indices,          // In: Original indices. Out: Optimized indices.
                                          out int[] vertexRemap,       // Maps original vertex location to optimized vertex location.
                                          out int[] duplicateVertices, // Original locations of duplicate vertices.
@@ -243,11 +243,11 @@ namespace DigitalRune.Graphics.Content.Pipeline
       Debug.Assert(positions != null);
       Debug.Assert(indices != null);
 
-#if COMPUTE_VERTEX_CACHE_MISS_RATE
+
       float acmrOld;
       float atvrOld;
       DirectXMesh.ComputeVertexCacheMissRate(indices, positions.Count, DirectXMesh.OPTFACES_V_DEFAULT, out acmrOld, out atvrOld);
-#endif
+
 
       int numberOfVertices = positions.Count;
 
@@ -295,7 +295,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
 
       Debug.Assert(vertexRemap.Length == numberOfVertices + duplicateVertices.Length);
 
-#if COMPUTE_VERTEX_CACHE_MISS_RATE
+
       int newNumberOfVertices = vertexRemap.Count(i => i != -1);
       float acmrNew;
       float atvrNew;
@@ -304,7 +304,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
       _context.Logger.LogMessage(
         "Mesh optimization: Vertices before {0}, after {1}; ACMR before {2}, after {3}; ATVR before {4}, after {5}", 
         numberOfVertices, newNumberOfVertices, acmrOld, acmrNew, atvrOld, atvrNew);
-#endif
+
     }
   }
 }

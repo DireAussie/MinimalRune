@@ -819,7 +819,7 @@ namespace ICSharpCode.AvalonEdit.Utils
 		[Conditional("DATACONSISTENCYTEST")]
 		internal void CheckProperties()
 		{
-			#if DEBUG
+
 			if (root != null) {
 				CheckProperties(root);
 				
@@ -836,10 +836,10 @@ namespace ICSharpCode.AvalonEdit.Utils
 					n = p.Successor;
 				}
 			}
-			#endif
+
 		}
 		
-		#if DEBUG
+
 		void CheckProperties(Node node)
 		{
 			Debug.Assert(node.count > 0);
@@ -884,13 +884,13 @@ namespace ICSharpCode.AvalonEdit.Utils
 			CheckNodeProperties(node.left, node, node.color, blackCount, ref expectedBlackCount);
 			CheckNodeProperties(node.right, node, node.color, blackCount, ref expectedBlackCount);
 		}
-		#endif
+
 
 		
 
 		internal string GetTreeAsString()
 		{
-			#if DEBUG
+
 			if (root == null)
 				return "<empty tree>";
 			StringBuilder b = new StringBuilder();
@@ -898,10 +898,10 @@ namespace ICSharpCode.AvalonEdit.Utils
 			return b.ToString();
 			#else
 			return "Not available in release build.";
-			#endif
+
 		}
 		
-		#if DEBUG
+
 		static void AppendTreeToString(Node node, StringBuilder b, int indent)
 		{
 			if (node.color == RED)
@@ -921,7 +921,7 @@ namespace ICSharpCode.AvalonEdit.Utils
 				AppendTreeToString(node.right, b, indent);
 			}
 		}
-		#endif
+
 
 	}
 }

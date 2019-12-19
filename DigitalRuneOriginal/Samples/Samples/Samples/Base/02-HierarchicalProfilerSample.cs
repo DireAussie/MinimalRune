@@ -96,11 +96,11 @@ a single-threaded application.",
 
     private static void Sleep(float timeInMilliseconds)
     {
-#if NETFX_CORE
+
       System.Threading.Tasks.Task.Delay(TimeSpan.FromMilliseconds(timeInMilliseconds)).Wait();
 #else
       System.Threading.Thread.Sleep(TimeSpan.FromMilliseconds(timeInMilliseconds));
-#endif
+
     }
   }
 }

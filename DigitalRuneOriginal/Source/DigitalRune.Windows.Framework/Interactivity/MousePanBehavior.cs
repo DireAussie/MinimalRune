@@ -108,7 +108,7 @@ namespace DigitalRune.Windows.Framework
         }
 
 
-#if !SILVERLIGHT
+
         /// <summary>
         /// Identifies the <see cref="MouseButton"/> dependency property.
         /// </summary>
@@ -140,7 +140,7 @@ namespace DigitalRune.Windows.Framework
             get { return (MouseButton)GetValue(MouseButtonProperty); }
             set { SetValue(MouseButtonProperty, value); }
         }
-#endif
+
 
 
 
@@ -175,11 +175,11 @@ namespace DigitalRune.Windows.Framework
         {
             base.OnAttached();
 
-#if SILVERLIGHT
+
             AssociatedObject.MouseLeftButtonDown += OnMouseDown;
 #else
             AssociatedObject.MouseDown += OnMouseDown;
-#endif
+
         }
 
 
@@ -191,11 +191,11 @@ namespace DigitalRune.Windows.Framework
         {
             EndPanning(false);
 
-#if SILVERLIGHT
+
             AssociatedObject.MouseLeftButtonDown -= OnMouseDown;
 #else
             AssociatedObject.MouseDown -= OnMouseDown;
-#endif
+
 
             base.OnDetaching();
         }
@@ -203,10 +203,10 @@ namespace DigitalRune.Windows.Framework
 
         private void OnMouseDown(object sender, MouseButtonEventArgs eventArgs)
         {
-#if !SILVERLIGHT
+
             if (eventArgs.ChangedButton != MouseButton)
                 return;
-#endif
+
 
             if (IsEnabled && !eventArgs.Handled)
                 eventArgs.Handled = BeginPanning(eventArgs);
@@ -223,10 +223,10 @@ namespace DigitalRune.Windows.Framework
 
         private void OnMouseUp(object sender, MouseButtonEventArgs eventArgs)
         {
-#if !SILVERLIGHT
+
             if (eventArgs.ChangedButton != MouseButton)
                 return;
-#endif
+
 
             // Commit the panning.
             EndPanning(true);
@@ -268,11 +268,11 @@ namespace DigitalRune.Windows.Framework
             if (_scrollViewer == null)
                 return false;
 
-#if !SILVERLIGHT
+
             // Abort if mouse is captured by other control.
             if (Mouse.Captured != null && Mouse.Captured != AssociatedObject)
                 return false;
-#endif
+
 
             // Try to capture the mouse.
             if (!AssociatedObject.CaptureMouse())
@@ -282,22 +282,22 @@ namespace DigitalRune.Windows.Framework
             _mouseDownPosition = eventArgs.GetPosition(AssociatedObject);
             _originalScrollOffset = new Point(_scrollViewer.HorizontalOffset, _scrollViewer.VerticalOffset);
 
-#if !SILVERLIGHT
+
             AssociatedObject.PreviewKeyDown += OnKeyDown;
 #else
       AssociatedObject.KeyDown += OnKeyDown;
-#endif
+
             AssociatedObject.LostMouseCapture += OnLostMouseCapture;
             AssociatedObject.MouseMove += OnMouseMove;
-#if SILVERLIGHT
+
       AssociatedObject.MouseLeftButtonUp += OnMouseUp;
 #else
             AssociatedObject.MouseUp += OnMouseUp;
-#endif
 
-#if !SILVERLIGHT
+
+
             if (!AssociatedObject.IsKeyboardFocusWithin)
-#endif
+
             {
                 // Focus control to receive keyboard events.
                 AssociatedObject.Focus();
@@ -347,18 +347,18 @@ namespace DigitalRune.Windows.Framework
             _originalScrollOffset = new Point(double.NaN, double.NaN);
             _scrollViewer = null;
 
-#if !SILVERLIGHT
+
             AssociatedObject.PreviewKeyDown -= OnKeyDown;
 #else
       AssociatedObject.KeyDown -= OnKeyDown;
-#endif
+
             AssociatedObject.LostMouseCapture -= OnLostMouseCapture;
             AssociatedObject.MouseMove -= OnMouseMove;
-#if SILVERLIGHT
+
       AssociatedObject.MouseLeftButtonUp -= OnMouseUp;
 #else
             AssociatedObject.MouseUp -= OnMouseUp;
-#endif
+
 
             AssociatedObject.ReleaseMouseCapture();
 
@@ -400,7 +400,7 @@ namespace DigitalRune.Windows.Framework
         /// </returns>
         private bool MouseButtonPressed()
         {
-#if SILVERLIGHT
+
             return true;
 #else
             return (MouseButton == MouseButton.Left) == (Mouse.LeftButton == MouseButtonState.Pressed)
@@ -408,7 +408,7 @@ namespace DigitalRune.Windows.Framework
                    && (MouseButton == MouseButton.Right) == (Mouse.RightButton == MouseButtonState.Pressed)
                    && (MouseButton == MouseButton.XButton1) == (Mouse.XButton1 == MouseButtonState.Pressed)
                    && (MouseButton == MouseButton.XButton2) == (Mouse.XButton2 == MouseButtonState.Pressed);
-#endif
+
         }
 
     }

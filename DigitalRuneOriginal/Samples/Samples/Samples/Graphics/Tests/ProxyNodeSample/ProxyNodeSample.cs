@@ -53,7 +53,7 @@ namespace Samples.Graphics
 
       // Original model in scene graph.
       var modelNode = ContentManager.Load<ModelNode>("Dude/Dude").Clone();
-      modelNode.PoseLocal = new Pose(new Vector3F(-2, 0, 0));
+      modelNode.PoseLocal = new Pose(new Vector3(-2, 0, 0));
       var meshNode = modelNode.GetSubtree().OfType<MeshNode>().First();
       _scene.Children.Add(modelNode);
 
@@ -64,8 +64,8 @@ namespace Samples.Graphics
       _proxyNode = new ProxyNode(null)
       {
         Name = "Proxy",
-        PoseLocal = new Pose(new Vector3F(2, 0, 0), Matrix33F.CreateRotationY(ConstantsF.Pi)),
-        ScaleLocal = new Vector3F(0.5f),
+        PoseLocal = new Pose(new Vector3(2, 0, 0), Matrix.CreateRotationY(ConstantsF.Pi)),
+        ScaleLocal = new Vector3(0.5f),
       };
       _scene.Children.Add(_proxyNode);
       _proxyNode.Node = modelNode2;

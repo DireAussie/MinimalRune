@@ -9,21 +9,21 @@ using DigitalRune.Game.Input;
 using DigitalRune.Mathematics;
 using DigitalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
-#if !SILVERLIGHT
+
 using Keys = Microsoft.Xna.Framework.Input.Keys;
 using MathHelper = DigitalRune.Mathematics.MathHelper;
 #else
 using Keys = System.Windows.Input.Key;
-#endif
+
 using MouseButtons = DigitalRune.Game.Input.MouseButtons;
 
-#if WP7 || XBOX
+
 using System;
 using Microsoft.Xna.Framework.GamerServices;
-#endif
-#if WP7 || XBOX || PORTABLE
+
+
 using Microsoft.Xna.Framework.Input;
-#endif
+
 
 
 namespace DigitalRune.Game.UI.Controls
@@ -96,16 +96,16 @@ namespace DigitalRune.Game.UI.Controls
     // (-1 indicates that nothing is selected.)
     private int _selectionStart;
 
-#if !WP7 && !XBOX
+
     // Mouse interactions.
     private const float MinDragDistanceSquared = 4;
     private Vector2F _mouseDownPosition;
     private bool _isDraggingSelection;
-#endif
 
-#if WP7 || PORTABLE
+
+
     private bool _isPressed;
-#endif
+
 
 
 
@@ -204,9 +204,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <summary> 
     /// The ID of the <see cref="Text"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int TextPropertyId = CreateProperty(
       typeof(TextBox), "Text", GamePropertyCategories.Common, null, string.Empty,
       UIPropertyOptions.AffectsMeasure);
@@ -226,9 +226,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <summary> 
     /// The ID of the <see cref="GuideTitle"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int GuideTitlePropertyId = CreateProperty(
       typeof(TextBox), "GuideTitle", GamePropertyCategories.Default, null, (string)null,
       UIPropertyOptions.None);
@@ -248,9 +248,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <summary> 
     /// The ID of the <see cref="GuideDescription"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int GuideDescriptionPropertyId = CreateProperty(
       typeof(TextBox), "GuideDescription", GamePropertyCategories.Default, null, (string)null,
       UIPropertyOptions.None);
@@ -271,9 +271,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <summary> 
     /// The ID of the <see cref="IsReadOnly"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int IsReadOnlyPropertyId = CreateProperty(
       typeof(TextBox), "IsReadOnly", GamePropertyCategories.Behavior, null, false,
       UIPropertyOptions.AffectsArrange);
@@ -285,9 +285,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <value>
     /// <see langword="true"/> if this text box is read-only; otherwise, <see langword="false"/>.
     /// </value>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public bool IsReadOnly
     {
       get { return GetValue<bool>(IsReadOnlyPropertyId); }
@@ -298,9 +298,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <summary> 
     /// The ID of the <see cref="IsPassword"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int IsPasswordPropertyId = CreateProperty(
       typeof(TextBox), "IsPassword", GamePropertyCategories.Behavior, null, false,
       UIPropertyOptions.AffectsMeasure);
@@ -326,9 +326,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <summary> 
     /// The ID of the <see cref="PasswordCharacter"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int PasswordCharacterPropertyId = CreateProperty(
       typeof(TextBox), "PasswordCharacter", GamePropertyCategories.Behavior, null, '�',
       UIPropertyOptions.AffectsMeasure);
@@ -354,9 +354,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <summary> 
     /// The ID of the <see cref="MaxLength"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int MaxLengthPropertyId = CreateProperty(
       typeof(TextBox), "MaxLength", GamePropertyCategories.Default, null, int.MaxValue,
       UIPropertyOptions.None);
@@ -376,9 +376,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <summary> 
     /// The ID of the <see cref="MinLines"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int MinLinesPropertyId = CreateProperty(
       typeof(TextBox), "MinLines", GamePropertyCategories.Default, null, 1,
       UIPropertyOptions.AffectsMeasure);
@@ -398,9 +398,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <summary> 
     /// The ID of the <see cref="MaxLines"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int MaxLinesPropertyId = CreateProperty(
       typeof(TextBox), "MaxLines", GamePropertyCategories.Default, null, int.MaxValue,
       UIPropertyOptions.AffectsMeasure);
@@ -423,9 +423,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <summary> 
     /// The ID of the <see cref="SelectionColor"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int SelectionColorPropertyId = CreateProperty(
       typeof(TextBox), "SelectionColor", GamePropertyCategories.Appearance, null,
       new Color(51, 153, 255, 168), UIPropertyOptions.None);
@@ -447,9 +447,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <summary> 
     /// The ID of the <see cref="VerticalScrollBarVisibility"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int VerticalScrollBarVisibilityPropertyId = CreateProperty(
       typeof(TextBox), "VerticalScrollBarVisibility", GamePropertyCategories.Behavior, null,
       ScrollBarVisibility.Auto, UIPropertyOptions.AffectsMeasure);
@@ -471,9 +471,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <summary> 
     /// The ID of the <see cref="VerticalScrollBarStyle"/> game object property.
     /// </summary>
-#if !NETFX_CORE && !XBOX && !PORTABLE
+
     [Browsable(false)]
-#endif
+
     public static readonly int VerticalScrollBarStylePropertyId = CreateProperty(
       typeof(TextBox), "VerticalScrollBarStyle", GamePropertyCategories.Style, null,
       "ScrollBarVertical", UIPropertyOptions.None);
@@ -589,14 +589,14 @@ namespace DigitalRune.Game.UI.Controls
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods")]
     protected override void OnHandleInput(InputContext context)
     {
-#if !WP7 && !XBOX
-#if PORTABLE
+
+
       if (GlobalSettings.PlatformID != PlatformID.WindowsPhone8)
-#endif
+
       {
         ContinueDraggingSelection(context);
       }
-#endif
+
 
       base.OnHandleInput(context);
 
@@ -605,13 +605,13 @@ namespace DigitalRune.Game.UI.Controls
 
       var inputService = InputService;
 
-#if !WP7 && !XBOX
-#if PORTABLE
+
+
       if (GlobalSettings.PlatformID != PlatformID.WindowsStore
           && GlobalSettings.PlatformID != PlatformID.WindowsPhone8
           && GlobalSettings.PlatformID != PlatformID.Android
           && GlobalSettings.PlatformID != PlatformID.iOS)
-#endif
+
       {
         var screen = Screen;
         bool isMouseOver = IsMouseOver;
@@ -657,11 +657,11 @@ namespace DigitalRune.Game.UI.Controls
         if (!_isDraggingSelection && IsFocusWithin)
           HandleKeyboardInput();
       }
-#endif
-#if WP7 || PORTABLE
-#if PORTABLE
+
+
+
       else
-#endif
+
       {
         // Windows phone: The guide is shown when the touch is released over the box.
         bool isMouseOver = IsMouseOver;
@@ -685,9 +685,9 @@ namespace DigitalRune.Game.UI.Controls
           inputService.IsMouseOrTouchHandled = true;
         }
       }
-#endif
 
-#if XBOX
+
+
       // Xbox: Guide is shown when gamepad A is pressed.
       if (IsFocusWithin)
       {
@@ -697,11 +697,11 @@ namespace DigitalRune.Game.UI.Controls
           inputService.SetGamePadHandled(context.AllowedPlayer, true);
         }
       }
-#endif
+
     }
 
 
-#if !WP7 && !XBOX
+
     private void StartDraggingSelection(InputContext context)
     {
       if (_selectionStart < 0)
@@ -928,17 +928,17 @@ namespace DigitalRune.Game.UI.Controls
         CaretIndex++;
       }
     }
-#endif
 
 
-#if WP7 || XBOX || PORTABLE
+
+
     /// <summary>
     /// Displays the Guide keyboard.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId = "allowedPlayer", Scope = "member")]
     private void ShowGuide(PlayerIndex? allowedPlayer)
     {
-#if XNA
+
       Guide.BeginShowKeyboardInput(
         allowedPlayer.HasValue ? allowedPlayer.Value : PlayerIndex.One,
         GuideTitle ?? string.Empty,
@@ -957,10 +957,10 @@ namespace DigitalRune.Game.UI.Controls
                      if (task.Result != null)
                        Text = task.Result;
                    });
-#endif
+
     }
 
-#if XNA
+
     /// <summary>
     /// Gets the result text of the Guide keyboard.
     /// </summary>
@@ -970,8 +970,8 @@ namespace DigitalRune.Game.UI.Controls
       if (resultText != null)
         Text = resultText;
     }
-#endif
-#endif
+
+
 
   }
 }

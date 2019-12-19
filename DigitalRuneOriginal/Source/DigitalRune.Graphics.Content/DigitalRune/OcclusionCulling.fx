@@ -155,18 +155,18 @@ struct VSInputVisualizeObject
 struct VSOutputVisualizeObject
 {
   float2 TexCoord : TEXCOORD0;
-#if !SM4
+
   float One : TEXCOORD1;
-#endif
+
   float4 Position : SV_Position;
 };
 
 struct PSInputVisualObject
 {
   float2 TexCoord : TEXCOORD0;
-#if !SM4
+
   float One : TEXCOORD1;
-#endif
+
 };
 
 
@@ -587,10 +587,10 @@ VSOutputQuery VSQuery(VSInputQuery input)
   // Convert pixel position to clip space.
   float2 position = input.Pixel;
   
-#if SM4
+
   // DirectX 10+: Add half-pixel offset.
   position += float2(0.5, 0.5);
-#endif
+
   
   // Transform into the range [0, 1] x [0, 1].
   position /= TargetSize;
@@ -765,9 +765,9 @@ VSOutputVisualizeObject VSVisualizeObject(VSInputVisualizeObject input)
   VSOutputVisualizeObject output = (VSOutputVisualizeObject)0;
   output.Position = ScreenToProjection(input.Position, TargetSize);
   output.TexCoord = input.TexCoord;
-#if !SM4
+
   output.One = 1; // Workaround for FXC bug.
-#endif
+
   return output;
 }
 
@@ -775,7 +775,7 @@ VSOutputVisualizeObject VSVisualizeObject(VSInputVisualizeObject input)
 float4 PSVisualizeObject(PSInputVisualObject input) : COLOR0
 {
   float2 texCoord = input.TexCoord;
-#if !SM4
+
   // Workaround for FXC bug (XNA only):
   // Multiply shader constants with 1 from vertex shader. Otherwise, the FXC tries
   // to pull the entire code into the preshader. Preshaders can't be disabled in
@@ -785,7 +785,7 @@ float4 PSVisualizeObject(PSInputVisualObject input) : COLOR0
 #else
   float3 minimum = DebugMinimum;
   float3 maximum = DebugMaximum;
-#endif
+
   
   // Clamp AABB to reasonable size.
   ClampAabb(minimum, maximum);
@@ -862,7 +862,7 @@ float4 PSVisualizeLightHzb(float2 texCoord : TEXCOORD0) : COLOR0
 float4 PSVisualizeShadowCaster(PSInputVisualObject input) : COLOR0
 {
   float2 texCoord = input.TexCoord;
-#if !SM4
+
   // Workaround for FXC bug (XNA only):
   // Multiply shader constants with 1 from vertex shader. Otherwise, the FXC tries
   // to pull the entire code into the preshader. Preshaders can't be disabled in
@@ -872,7 +872,7 @@ float4 PSVisualizeShadowCaster(PSInputVisualObject input) : COLOR0
 #else
   float3 minimum = DebugMinimum;
   float3 maximum = DebugMaximum;
-#endif
+
   
   // Clamp AABB to reasonable size.
   ClampAabb(minimum, maximum);
@@ -918,7 +918,7 @@ float4 PSVisualizeShadowCaster(PSInputVisualObject input) : COLOR0
 float4 PSVisualizeShadowVolume(PSInputVisualObject input) : COLOR0
 {
   float2 texCoord = input.TexCoord;
-#if !SM4
+
   // Workaround for FXC bug (XNA only):
   // Multiply shader constants with 1 from vertex shader. Otherwise, the FXC tries
   // to pull the entire code into the preshader. Preshaders can't be disabled in
@@ -928,7 +928,7 @@ float4 PSVisualizeShadowVolume(PSInputVisualObject input) : COLOR0
 #else
   float3 minimum = DebugMinimum;
   float3 maximum = DebugMaximum;
-#endif
+
   
   // Clamp AABB to reasonable size.
   ClampAabb(minimum, maximum);
@@ -988,13 +988,13 @@ float4 PSVisualizeShadowVolume(PSInputVisualObject input) : COLOR0
 // Techniques
 //-----------------------------------------------------------------------------
 
-#if !SM4
+
 #define VSTARGET vs_3_0
 #define PSTARGET ps_3_0
 #else
 #define VSTARGET vs_4_0
 #define PSTARGET ps_4_0
-#endif
+
 
 
 technique Occluder

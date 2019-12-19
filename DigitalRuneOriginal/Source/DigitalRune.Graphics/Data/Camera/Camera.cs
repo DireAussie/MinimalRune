@@ -83,7 +83,7 @@ namespace DigitalRune.Graphics
     /// projection is changed.
     /// </para>
     /// </remarks>
-    public Matrix44F? LastProjection { get; set; }
+    public Matrix? LastProjection { get; set; }
 
 
 

@@ -132,10 +132,10 @@ namespace ICSharpCode.AvalonEdit.Document
 			if (textSource == null)
 				throw new ArgumentNullException("textSource");
 			
-			#if NREFACTORY
+
 			if (textSource is ReadOnlyDocument)
 				textSource = textSource.CreateSnapshot(); // retrieve underlying text source, which might be a RopeTextSource
-			#endif
+
 			
 			RopeTextSource rts = textSource as RopeTextSource;
 			if (rts != null)
@@ -363,13 +363,13 @@ namespace ICSharpCode.AvalonEdit.Document
 			}
 		}
 		
-		#if NREFACTORY
+
 		/// <inheritdoc/>
 		public IDocument CreateDocumentSnapshot()
 		{
 			return new ReadOnlyDocument(this, fileName);
 		}
-		#endif
+
 		
 		/// <inheritdoc/>
 		public ITextSourceVersion Version {
@@ -868,18 +868,18 @@ namespace ICSharpCode.AvalonEdit.Document
 				} else {
 					rope.RemoveRange(offset, length);
 					lineManager.Remove(offset, length);
-					#if DEBUG
+
 					lineTree.CheckProperties();
-					#endif
+
 					var newRopeTextSource = newText as RopeTextSource;
 					if (newRopeTextSource != null)
 						rope.InsertRange(offset, newRopeTextSource.GetRope());
 					else
 						rope.InsertText(offset, newText.Text);
 					lineManager.Insert(offset, newText);
-					#if DEBUG
+
 					lineTree.CheckProperties();
-					#endif
+
 				}
 			}
 			
@@ -1091,11 +1091,11 @@ namespace ICSharpCode.AvalonEdit.Document
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
 		internal string GetLineTreeAsString()
 		{
-			#if DEBUG
+
 			return lineTree.GetTreeAsString();
 			#else
 			return "Not available in release build.";
-			#endif
+
 		}
 		
 		/// <summary>
@@ -1105,11 +1105,11 @@ namespace ICSharpCode.AvalonEdit.Document
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
 		internal string GetTextAnchorTreeAsString()
 		{
-			#if DEBUG
+
 			return anchorTree.GetTreeAsString();
 			#else
 			return "Not available in release build.";
-			#endif
+
 		}
 
 		

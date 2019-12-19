@@ -6,19 +6,19 @@ using System;
 using System.Diagnostics;
 using System.Windows;
 
-#if SILVERLIGHT
-using System.Windows.Browser;
-#endif
 
-#if WINDOWS_PHONE
+using System.Windows.Browser;
+
+
+
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using System.Windows.Navigation;
-#endif
 
-#if !SILVERLIGHT && !WINDOWS_PHONE
+
+
 using System.Windows.Threading;
-#endif
+
 
 
 namespace DigitalRune.Windows.Framework
@@ -101,10 +101,10 @@ namespace DigitalRune.Windows.Framework
     /// </example>
     public class Bootstrapper
     {
-#if WINDOWS_PHONE
+
         private PhoneApplicationService _phoneService;
         private bool _phoneApplicationInitialized;
-#endif
+
 
 
         /// <summary>
@@ -113,13 +113,13 @@ namespace DigitalRune.Windows.Framework
         public Application Application { get; protected set; }
 
 
-#if WINDOWS_PHONE
+
         /// <summary>
         /// Gets the root frame of the phone application.
         /// </summary>
         /// <returns>The root frame of the phone application.</returns>
         public PhoneApplicationFrame RootFrame { get; private set; }
-#endif
+
 
 
         /// <summary>
@@ -148,16 +148,16 @@ namespace DigitalRune.Windows.Framework
             Application.Startup += OnStartup;
             Application.Exit += OnExit;
 
-#if !DEBUG
-#if SILVERLIGHT || WINDOWS_PHONE
+
+
             Application.UnhandledException += OnUnhandledException;
 #else
             if (!Debugger.IsAttached)
                 Application.DispatcherUnhandledException += OnUnhandledException;
-#endif
-#endif
 
-#if WINDOWS_PHONE
+
+
+
             // ----- Windows Phone-specific initialization.
             _phoneService = new PhoneApplicationService();
             _phoneService.Launching += OnLaunch;
@@ -165,12 +165,12 @@ namespace DigitalRune.Windows.Framework
             _phoneService.Deactivated += OnDeactivate;
             _phoneService.Closing += OnClose;
             Application.ApplicationLifetimeObjects.Add(_phoneService);
-#endif
+
 
             // ----- Application-specific initialization.
             OnConfigure();
 
-#if WINDOWS_PHONE
+
             // ----- Initialize navigation frame.
             // Avoid double-initialization. (I have no idea why this is necessary, but it
             // is in all Microsoft samples/templates? -- MartinG)
@@ -184,7 +184,7 @@ namespace DigitalRune.Windows.Framework
             RootFrame.NavigationFailed += OnNavigationFailed;
 
             _phoneApplicationInitialized = true;
-#endif
+
         }
 
 
@@ -200,7 +200,7 @@ namespace DigitalRune.Windows.Framework
         }
 
 
-#if WINDOWS_PHONE
+
         /// <summary>
         /// Creates the navigation frame of the Windows Phone application.
         /// </summary>
@@ -218,7 +218,7 @@ namespace DigitalRune.Windows.Framework
 
             RootFrame.Navigated -= OnNavigated;
         }
-#endif
+
 
 
         /// <summary>
@@ -233,7 +233,7 @@ namespace DigitalRune.Windows.Framework
         }
 
 
-#if SILVERLIGHT
+
         /// <summary>
         /// Called when an exception that is raised by Silverlight is not handled.
         /// </summary>
@@ -296,10 +296,10 @@ namespace DigitalRune.Windows.Framework
         protected virtual void OnUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs eventArgs)
         {
         }
-#endif
 
 
-#if SILVERLIGHT || WINDOWS_PHONE
+
+
         /// <summary>
         /// Called just before the application shuts down (cannot be canceled).
         /// </summary>
@@ -321,10 +321,10 @@ namespace DigitalRune.Windows.Framework
         protected virtual void OnExit(object sender, ExitEventArgs eventArgs)
         {
         }
-#endif
 
 
-#if WINDOWS_PHONE
+
+
         /// <summary>
         /// Called when the when the Windows Phone application is being launched.
         /// </summary>
@@ -384,6 +384,6 @@ namespace DigitalRune.Windows.Framework
         protected virtual void OnNavigationFailed(object sender, NavigationFailedEventArgs eventArgs)
         {
         }
-#endif
+
     }
 }

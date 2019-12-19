@@ -88,9 +88,9 @@ namespace DigitalRune.Windows.Framework
         //--------------------------------------------------------------
 
         private readonly List<ICommand> _registeredCommands = new List<ICommand>();
-#if !NET45
+
         private readonly WeakEvent<EventHandler> _canExecuteChangedEvent = new WeakEvent<EventHandler>();
-#endif
+
         private readonly EventHandler _onRegisteredCommandCanExecuteChangedHandler;
 
 
@@ -121,7 +121,7 @@ namespace DigitalRune.Windows.Framework
         }
 
 
-#if NET45
+
         /// <summary>
         /// Occurs when changes occur that affect whether or not the command should execute.
         /// </summary>
@@ -141,7 +141,7 @@ namespace DigitalRune.Windows.Framework
             add { _canExecuteChangedEvent.Add(value); }
             remove { _canExecuteChangedEvent.Remove(value); }
         }
-#endif
+
 
 
 
@@ -229,7 +229,7 @@ namespace DigitalRune.Windows.Framework
         }
 
 
-#if SILVERLIGHT || WINDOWS_PHONE
+
         // The CanExecuteChanged handler needs to be public because of security restrictions in
         // Silverlight. (The CanExecuteChanged event is usually implemented as a weak-event which
         // requires reflection.)
@@ -238,7 +238,7 @@ namespace DigitalRune.Windows.Framework
         public
 #else
         private
-#endif
+
         void OnRegisteredCommandCanExecuteChanged(object sender, EventArgs eventArgs)
         {
             OnCanExecuteChanged();
@@ -308,7 +308,7 @@ namespace DigitalRune.Windows.Framework
         /// </summary>
         protected virtual void OnCanExecuteChanged()
         {
-#if NET45
+
             CanExecuteChanged?.Invoke(this, EventArgs.Empty);
 #else
             if (_canExecuteChangedEvent.Count > 0)
@@ -318,7 +318,7 @@ namespace DigitalRune.Windows.Framework
                     _canExecuteChangedEvent.Invoke(this, EventArgs.Empty);
                 });
             }
-#endif
+
         }
 
     }

@@ -159,7 +159,7 @@ namespace Samples.Graphics
     private readonly List<MeshNode> _partners = new List<MeshNode>();
 
     private RenderTarget2D _intersectionImage;
-    private Vector3F _color;
+    private Vector3 _color;
     private float _alpha;
     private Rectangle _totalScissorRectangle;
 
@@ -300,7 +300,7 @@ namespace Samples.Graphics
     /// Invalid render context: Camera node needs to be set in render context.
     /// </exception>
     public void ComputeIntersection(IEnumerable<Pair<MeshNode>> meshNodePairs,
-      Vector3F color, float alpha, float maxConvexity, RenderContext context)
+      Vector3 color, float alpha, float maxConvexity, RenderContext context)
     {
       if (_isDisposed)
         throw new ObjectDisposedException("IntersectionRenderer has already been disposed.");
@@ -421,7 +421,7 @@ namespace Samples.Graphics
         if (meshNodeA == null)
           break;
 
-        var worldTransformA = (Matrix)(meshNodeA.PoseWorld * Matrix44F.CreateScale(meshNodeA.ScaleWorld));
+        var worldTransformA = (Matrix)(meshNodeA.PoseWorld * Matrix.CreateScale(meshNodeA.ScaleWorld));
 
         if (EnableScissorTest)
         {
@@ -469,7 +469,7 @@ namespace Samples.Graphics
           graphicsDevice.RasterizerState = EnableScissorTest ? CullNoneScissor : RasterizerState.CullNone;
           foreach (var partner in _partners)
           {
-            _parameterWorld.SetValue((Matrix)(partner.PoseWorld * Matrix44F.CreateScale(partner.ScaleWorld)));
+            _parameterWorld.SetValue((Matrix)(partner.PoseWorld * Matrix.CreateScale(partner.ScaleWorld)));
             _passMark.Apply();
             foreach (var submesh in partner.Mesh.Submeshes)
               submesh.Draw();

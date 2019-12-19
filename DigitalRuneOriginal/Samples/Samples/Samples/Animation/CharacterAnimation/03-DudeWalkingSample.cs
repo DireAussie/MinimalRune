@@ -29,7 +29,7 @@ namespace Samples.Animation
     {
       var modelNode = ContentManager.Load<ModelNode>("Dude/Dude");
       var meshNode = modelNode.GetSubtree().OfType<MeshNode>().First().Clone();
-      meshNode.PoseLocal = new Pose(new Vector3F(0, 0, 0), Matrix33F.CreateRotationY(ConstantsF.Pi));
+      meshNode.PoseLocal = new Pose(new Vector3(0, 0, 0), Matrix.CreateRotationY(ConstantsF.Pi));
       SampleHelper.EnablePerPixelLighting(meshNode);
       GraphicsScreen.Scene.Children.Add(meshNode);
 

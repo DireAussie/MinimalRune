@@ -47,12 +47,12 @@ DECLARE_UNIFORM_LIGHTBUFFER(LightBuffer1, 1);
 
 float3 DiffuseColor : DIFFUSECOLOR;
 float3 SpecularColor : SPECULARCOLOR;
-#if EMISSIVE
+
 float3 EmissiveColor : EMISSIVECOLOR;
-#endif
-#if ALPHA_TEST
+
+
 float ReferenceAlpha : REFERENCEALPHA = 0.9f;
-#endif
+
 DECLARE_UNIFORM_DIFFUSETEXTURE      // Diffuse (RGB) + Alpha (A)
 DECLARE_UNIFORM_SPECULARTEXTURE     // Specular (RGB) + Emissive (A)
 
@@ -112,17 +112,17 @@ float4 PS(PSInput input) : COLOR
   float4 diffuseMap = tex2D(DiffuseSampler, uvDecal);
   float3 diffuse = FromGamma(diffuseMap.rgb);
   float alpha = diffuseMap.a;
-#if ALPHA_TEST
+
   clip(alpha * DecalAlpha - ReferenceAlpha);
-#endif
+
   
   // Specular map: non-premultiplied specular color + emissive
   float4 specularMap = tex2D(SpecularSampler, uvDecal);
   specularMap *= alpha;  // Apply alpha, which is already premultiplied in the diffuse map.
   float3 specular = FromGamma(specularMap.rgb);
-#if EMISSIVE
+
   float emissive = specularMap.a;
-#endif
+
   
   // Sample diffuse and specular light intensities.
   float4 lightBuffer0Sample = tex2D(LightBuffer0Sampler, uvScreen);
@@ -138,10 +138,10 @@ float4 PS(PSInput input) : COLOR
   // Specular
   result += SpecularColor * specular * specularLight;
   
-#if EMISSIVE
+
   // Emissive
   result += EmissiveColor * diffuse * emissive;
-#endif
+
   
   // Premultiply alpha.
   result *= DecalAlpha;
@@ -154,21 +154,21 @@ float4 PS(PSInput input) : COLOR
 // Techniques
 //-----------------------------------------------------------------------------
 
-#if !SM4
+
 #define VSTARGET vs_3_0
 #define PSTARGET ps_3_0
 #else
 #define VSTARGET vs_4_0_level_9_3
 #define PSTARGET ps_4_0_level_9_3
-#endif
+
 
 technique Default
 {
   pass
   {
-#if ALPHA_TEST
+
     AlphaBlendEnable = false;
-#endif
+
     
     VertexShader = compile VSTARGET VS();
     PixelShader = compile PSTARGET PS();

@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !WP7
+
 using System;
 using System.Collections.Generic;
 using DigitalRune.Geometry;
@@ -193,7 +193,7 @@ namespace DigitalRune.Graphics.Rendering
 
           // Cube maps are left handed --> Sample with inverted z. (Otherwise, the 
           // cube map and objects or texts in it are mirrored.)
-          var mirrorZ = Matrix44F.CreateScale(1, 1, -1);
+          var mirrorZ = Matrix.CreateScale(1, 1, -1);
           _parameterTextureMatrix.SetValue((Matrix)(mirrorZ * lightPose.Inverse));
         }
 
@@ -204,7 +204,7 @@ namespace DigitalRune.Graphics.Rendering
         
         // Convert frustum far corners from view space to world space.
         for (int j = 0; j < _frustumFarCorners.Length; j++)
-          _frustumFarCorners[j] = (Vector3)cameraPose.ToWorldDirection((Vector3F)_frustumFarCorners[j]);
+          _frustumFarCorners[j] = (Vector3)cameraPose.ToWorldDirection((Vector3)_frustumFarCorners[j]);
 
         _parameterFrustumCorners.SetValue(_frustumFarCorners);
 
@@ -273,4 +273,4 @@ namespace DigitalRune.Graphics.Rendering
 
   }
 }
-#endif
+

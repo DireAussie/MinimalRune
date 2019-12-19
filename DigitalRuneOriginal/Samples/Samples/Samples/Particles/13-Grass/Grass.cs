@@ -29,11 +29,11 @@ namespace Samples.Particles
         EmissionLimit = 400,
       });
 
-      ps.Parameters.AddVarying<Vector3F>(ParticleParameterNames.Position);
+      ps.Parameters.AddVarying<Vector3>(ParticleParameterNames.Position);
       ps.Effectors.Add(new StartPositionEffector
       {
         Parameter = ParticleParameterNames.Position,
-        Distribution = new BoxDistribution { MinValue = new Vector3F(-10, 0.4f, -10), MaxValue = new Vector3F(10, 0.4f, 10) }
+        Distribution = new BoxDistribution { MinValue = new Vector3(-10, 0.4f, -10), MaxValue = new Vector3(10, 0.4f, 10) }
       });
 
       ps.Parameters.AddVarying<float>(ParticleParameterNames.SizeX);
@@ -49,11 +49,11 @@ namespace Samples.Particles
         Distribution = new UniformDistributionF(0.6f, 1),
       });
 
-      ps.Parameters.AddVarying<Vector3F>(ParticleParameterNames.Color);
-      ps.Effectors.Add(new StartValueEffector<Vector3F>
+      ps.Parameters.AddVarying<Vector3>(ParticleParameterNames.Color);
+      ps.Effectors.Add(new StartValueEffector<Vector3>
       {
         Parameter = ParticleParameterNames.Color,
-        Distribution = new LineSegmentDistribution { Start = new Vector3F(0.82f, 0.92f, 1) * 0.9f, End = new Vector3F(1, 1, 1) }
+        Distribution = new LineSegmentDistribution { Start = new Vector3(0.82f, 0.92f, 1) * 0.9f, End = new Vector3(1, 1, 1) }
       });
 
       ps.Parameters.AddUniform<Texture2D>(ParticleParameterNames.Texture).DefaultValue =

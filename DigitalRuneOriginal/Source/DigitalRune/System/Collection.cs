@@ -1,7 +1,7 @@
 ﻿// This code is based on the Collection class code of Mono. It is necessary because
 // the Collection class in the Unity Web Player does not work.
 #pragma warning disable 1591            // Missing XML comment.
-#if UNITY
+
 // -*- Mode: csharp; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*-
 //
 // System.Collections.ObjectModel.Collection
@@ -52,9 +52,9 @@ namespace DigitalRune.Collections.ObjectModel
   [Serializable]
   [DebuggerDisplay("Count={Count}")]
   public class Collection<T> : IList<T>, IList
-#if NET_4_5
+
 		, IReadOnlyList<T>
-#endif
+
   {
     IList<T> items;
 
@@ -287,4 +287,4 @@ namespace DigitalRune.Collections.ObjectModel
     }
   }
 }
-#endif
+

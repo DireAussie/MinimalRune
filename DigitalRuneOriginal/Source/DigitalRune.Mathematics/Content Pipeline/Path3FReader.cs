@@ -3,9 +3,9 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using DigitalRune.Mathematics.Interpolation;
-#if XNA || MONOGAME
+
 using Microsoft.Xna.Framework.Content;
-#endif
+
 
 
 namespace DigitalRune.Mathematics.Content
@@ -18,7 +18,7 @@ namespace DigitalRune.Mathematics.Content
   /// </remarks>
   public class Path3FReader : ContentTypeReader<Path3F>
   {
-#if !MONOGAME
+
     /// <summary>
     /// Determines if deserialization into an existing object is possible.
     /// </summary>
@@ -30,7 +30,7 @@ namespace DigitalRune.Mathematics.Content
     {
       get { return true; }
     }
-#endif
+
 
 
     /// <summary>

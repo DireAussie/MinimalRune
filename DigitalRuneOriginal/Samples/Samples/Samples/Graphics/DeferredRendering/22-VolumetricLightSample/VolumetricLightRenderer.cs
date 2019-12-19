@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using System;
 using System.Collections.Generic;
 using DigitalRune.Geometry;
@@ -351,7 +351,7 @@ namespace Samples.Graphics
 
         // Convert frustum far corners from view space to world space.
         for (int j = 0; j < _frustumFarCorners.Length; j++)
-          _frustumFarCorners[j] = (Vector3)cameraPose.ToWorldDirection((Vector3F)_frustumFarCorners[j]);
+          _frustumFarCorners[j] = (Vector3)cameraPose.ToWorldDirection((Vector3)_frustumFarCorners[j]);
 
         _parameterFrustumCorners.SetValue(_frustumFarCorners);
 
@@ -377,7 +377,7 @@ namespace Samples.Graphics
 
             // Cube maps are left handed --> Sample with inverted z. (Otherwise, the 
             // cube map and objects or texts in it are mirrored.)
-            var mirrorZ = Matrix44F.CreateScale(1, 1, -1);
+            var mirrorZ = Matrix.CreateScale(1, 1, -1);
             _parameterLightTextureMatrix.SetValue((Matrix)(mirrorZ * lightPose.Inverse));
           }
 
@@ -402,7 +402,7 @@ namespace Samples.Graphics
           _parameterLightPosition.SetValue((Vector3)(lightPose.Position - cameraPose.Position));
           _parameterLightRange.SetValue(light.Range);
           _parameterLightAttenuation.SetValue(light.Attenuation);
-          _parameterLightDirection.SetValue((Vector3)lightPose.ToWorldDirection(Vector3F.Forward));
+          _parameterLightDirection.SetValue((Vector3)lightPose.ToWorldDirection(Vector3.Forward));
           _parameterLightAngles.SetValue(new Vector2(light.FalloffAngle, light.CutoffAngle));
 
           bool hasTexture = (light.Texture != null);
@@ -410,7 +410,7 @@ namespace Samples.Graphics
           {
             _parameterLightTexture.SetValue(light.Texture);
 
-            var proj = Matrix44F.CreatePerspectiveFieldOfView(light.CutoffAngle * 2, 1, 0.1f, 100);
+            var proj = Matrix.CreatePerspectiveFieldOfView(light.CutoffAngle * 2, 1, 0.1f, 100);
             _parameterLightTextureMatrix.SetValue((Matrix)(GraphicsHelper.ProjectorBiasMatrix * proj * (lightPose.Inverse * new Pose(cameraPose.Position))));
           }
 
@@ -498,4 +498,3 @@ namespace Samples.Graphics
 
   }
 }
-#endif

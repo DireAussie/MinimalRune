@@ -43,11 +43,11 @@ namespace DigitalRune.Physics.Specialized
     // plane is d, the following formula computes a correction vector. The correction vector moves 
     // the point from inside the plane halfspace in a given direction (normalized!) towards the 
     // plane surface.
-    //   Vector3F correction = d / Vector3F.Dot(direction, plane.Normal) * direction;
+    //   Vector3 correction = d / Vector3.Dot(direction, plane.Normal) * direction;
     // Derivation: 
     // d is penetration depth in the direction of the plane normal. d * plane.Normal and correction
     // vector form a triangle with a right angle. The cosine of the angle between the normal and 
-    // the correction vector is equal to Vector3F.Dot(direction, plane.Normal). Finally, apply the 
+    // the correction vector is equal to Vector3.Dot(direction, plane.Normal). Finally, apply the 
     // cosine definition formula.
 
 
@@ -149,14 +149,14 @@ namespace DigitalRune.Physics.Specialized
       // direction and try again...
 
       // Store the initial position (in case of rollback).
-      Vector3F startPosition = Position;
+      Vector3 startPosition = Position;
 
       // Gather all obstacles in a small range and determine all contacts.
       CollectObstacles(2 * Width);
       UpdateContacts();
 
       // Abort if there are no unallowed penetrations.
-      bool hasUnallowedContact = HasUnallowedContact(Vector3F.Zero);
+      bool hasUnallowedContact = HasUnallowedContact(Vector3.Zero);
       if (!hasUnallowedContact)
       {
         // Nothing to do.
@@ -210,7 +210,7 @@ namespace DigitalRune.Physics.Specialized
           break;
 
         // Check for forbidden contacts at the new position.
-        hasUnallowedContact = HasUnallowedContact(Vector3F.Zero);
+        hasUnallowedContact = HasUnallowedContact(Vector3.Zero);
       } while (hasUnallowedContact && iterationCount < NumberOfSlideIterations);
 
       // Rollback if there was a numerical problem or if we didn't remove all penetrations.
@@ -238,7 +238,7 @@ namespace DigitalRune.Physics.Specialized
     private void Fly()
     {
       // Compute the desired movement.
-      Vector3F desiredMovement = _desiredPosition - _oldPosition;
+      Vector3 desiredMovement = _desiredPosition - _oldPosition;
       if (desiredMovement.IsNumericallyZero)
       {
         // Nothing to do.
@@ -249,7 +249,7 @@ namespace DigitalRune.Physics.Specialized
       _bounds.Clear();
 
       // Store initial position and contacts (in case of rollback).
-      Vector3F startPosition = Position;
+      Vector3 startPosition = Position;
       BackupContacts();
 
       bool hasUnallowedContacts = true;  // Assume that we do not find a valid position.
@@ -263,7 +263,7 @@ namespace DigitalRune.Physics.Specialized
 
         // The next solver iterations will try to find a valid current movement.
         // Start with the desired movement.
-        Vector3F currentMovement = desiredMovement;
+        Vector3 currentMovement = desiredMovement;
 
         bool targetPositionFound;
         int solverIterationCount = 0;
@@ -280,7 +280,7 @@ namespace DigitalRune.Physics.Specialized
 
             // Ignore the plane if its normal points into the same direction as the current 
             // movement direction.
-            if (Numeric.IsGreaterOrEqual(Vector3F.Dot(plane.Normal, currentMovement), 0))
+            if (Numeric.IsGreaterOrEqual(Vector3.Dot(plane.Normal, currentMovement), 0))
               continue;
 
             // Get normal distance (minus allowed penetration). Negative distance = penetration.
@@ -289,7 +289,7 @@ namespace DigitalRune.Physics.Specialized
             {
               // We simply recover from penetration by moving into the plane normal direction.
               // This creates a nice sliding movement.
-              Vector3F correction = plane.Normal * (-distance);
+              Vector3 correction = plane.Normal * (-distance);
               currentMovement += correction;
 
               // Target position has changed. Relaxation has to continue.
@@ -300,7 +300,7 @@ namespace DigitalRune.Physics.Specialized
 
         // Abort if the relaxation couldn't find an allowed position, or we would move backwards.
         if (solverIterationCount >= NumberOfSolverIterations
-            || Numeric.IsLessOrEqual(Vector3F.Dot(currentMovement, desiredMovement), 0))
+            || Numeric.IsLessOrEqual(Vector3.Dot(currentMovement, desiredMovement), 0))
         {
           break;
         }
@@ -341,21 +341,21 @@ namespace DigitalRune.Physics.Specialized
     private bool Slide(bool stopAtObstacle)
     {
       // Compute the desired movement.
-      Vector3F desiredMovement = _desiredPosition - Position;
+      Vector3 desiredMovement = _desiredPosition - Position;
       if (desiredMovement.IsNumericallyZero)
       {
         // Nothing to do.
         return true;
       }
 
-      Vector3F desiredMovementDirection = desiredMovement.Normalized;
-      Vector3F desiredHorizontalMovementDirection = desiredMovementDirection - Vector3F.Dot(desiredMovementDirection, UpVector) * UpVector;
+      Vector3 desiredMovementDirection = desiredMovement.Normalized;
+      Vector3 desiredHorizontalMovementDirection = desiredMovementDirection - Vector3.Dot(desiredMovementDirection, UpVector) * UpVector;
 
       // From all contacts we form a convex boundary. The capsule must stay within this boundary.
       _bounds.Clear();
 
       // Store initial position and contacts (in case of rollback).
-      Vector3F startPosition = Position;
+      Vector3 startPosition = Position;
       BackupContacts();
 
       bool blocked = false;   // true if a steep plane was hit.
@@ -373,7 +373,7 @@ namespace DigitalRune.Physics.Specialized
 
         // The next solver iterations will try to find a valid current movement.
         // Start with the desired movement.
-        Vector3F currentMovement = desiredMovement;
+        Vector3 currentMovement = desiredMovement;
 
         bool targetPositionFound;
         int solverIterationCount = 0;
@@ -390,7 +390,7 @@ namespace DigitalRune.Physics.Specialized
 
             // Ignore the plane if its normal points into the same direction as the current 
             // movement direction.
-            if (Numeric.IsGreaterOrEqual(Vector3F.Dot(plane.Normal, currentMovement), 0))
+            if (Numeric.IsGreaterOrEqual(Vector3.Dot(plane.Normal, currentMovement), 0))
               continue;
 
             // Get normal distance (minus allowed penetration). Negative distance = penetration.
@@ -399,7 +399,7 @@ namespace DigitalRune.Physics.Specialized
             {
               // Slide along the wall: We simply recover from penetration by moving into the 
               // plane normal direction.
-              Vector3F correction = plane.Normal * (-distance);
+              Vector3 correction = plane.Normal * (-distance);
 
               if (!IsAllowedSlope(plane.Normal))
               {
@@ -408,23 +408,23 @@ namespace DigitalRune.Physics.Specialized
                 if (stopAtObstacle)
                 {
                   // We should stop at obstacle: Move back until there is no penetration.
-                  correction = -distance / Vector3F.Dot(desiredMovementDirection, plane.Normal)
+                  correction = -distance / Vector3.Dot(desiredMovementDirection, plane.Normal)
                                * desiredMovementDirection;
                   blocked = true;
                 }
                 else if (noSlide)
                 {
                   // Cut lateral movement.
-                  correction = -distance / Vector3F.Dot(desiredHorizontalMovementDirection, plane.Normal)
+                  correction = -distance / Vector3.Dot(desiredHorizontalMovementDirection, plane.Normal)
                                * desiredHorizontalMovementDirection;
                 }
-                else if (onlyLateral || Vector3F.Dot(correction, UpVector) > 0)
+                else if (onlyLateral || Vector3.Dot(correction, UpVector) > 0)
                 {
                   // Slide laterally. (Don't slide "up" forbidden slopes.)
-                  Vector3F correctionDirection = plane.Normal - Vector3F.Dot(plane.Normal, UpVector) * UpVector;
+                  Vector3 correctionDirection = plane.Normal - Vector3.Dot(plane.Normal, UpVector) * UpVector;
                   if (correctionDirection.TryNormalize())
                   {
-                    correction = -distance / Vector3F.Dot(correctionDirection, plane.Normal) 
+                    correction = -distance / Vector3.Dot(correctionDirection, plane.Normal) 
                                  * correctionDirection;
                   }
                 }
@@ -471,7 +471,7 @@ namespace DigitalRune.Physics.Specialized
             // horizontal movement. This helps in a corner where to walls meet at a small angle.
             noSlide = true;
           }
-          else if (Numeric.IsLess(Vector3F.Dot(desiredMovementDirection, UpVector), 0) 
+          else if (Numeric.IsLess(Vector3.Dot(desiredMovementDirection, UpVector), 0) 
                    && desiredHorizontalMovementDirection.IsNumericallyZero)
           {
             // The solutions above didn't get us anywhere and down movement didn't get us anywhere.
@@ -492,7 +492,7 @@ namespace DigitalRune.Physics.Specialized
         // Find contacts at new position.
         UpdateContacts();
 
-        if (startedOnGround && Vector3F.Dot(currentMovement, desiredHorizontalMovementDirection) < -AllowedPenetration)
+        if (startedOnGround && Vector3.Dot(currentMovement, desiredHorizontalMovementDirection) < -AllowedPenetration)
         {
           // Abort if we started on the ground and would move backward. Backward corrections are 
           // ok if we started airborne.
@@ -506,8 +506,8 @@ namespace DigitalRune.Physics.Specialized
 
         if (commit                                                                  // Movement finished.
             && startedOnGround                                                      // We started on standing on ground.
-            && Numeric.IsZero(Vector3F.Dot(desiredMovement.Orthonormal1, UpVector)) // The desired movement is entirely "down".
-            && Vector3F.Dot(currentMovement, UpVector) <= 0)                        // The resulting movement has a "down" component.
+            && Numeric.IsZero(Vector3.Dot(desiredMovement.Orthonormal1, UpVector)) // The desired movement is entirely "down".
+            && Vector3.Dot(currentMovement, UpVector) <= 0)                        // The resulting movement has a "down" component.
         {
           // Abort. We don't want to slide down when desiredMovement was straight down (gravity!).
           // Without this check, the character will slide down on an inclined plane.
@@ -540,12 +540,12 @@ namespace DigitalRune.Physics.Specialized
     /// </remarks>
     private bool StepUp()
     {
-      Vector3F startPosition = Position;
-      Vector3F desiredMovement = _desiredPosition - startPosition;
+      Vector3 startPosition = Position;
+      Vector3 desiredMovement = _desiredPosition - startPosition;
 
       // Compute forward direction (= movement normal to the up direction). 
       // Abort if the movement is not forward directed.
-      Vector3F forward = desiredMovement - Vector3F.ProjectTo(desiredMovement, UpVector);
+      Vector3 forward = desiredMovement - Vector3.ProjectTo(desiredMovement, UpVector);
       if (!forward.TryNormalize())
         return false;
 
@@ -556,7 +556,7 @@ namespace DigitalRune.Physics.Specialized
       // for half the capsule.
       Position = Position + UpVector * StepHeight + forward * (Width / 2 - 2 * AllowedPenetration);
       UpdateContacts();
-      if (!HasUnallowedContact(Vector3F.Zero))
+      if (!HasUnallowedContact(Vector3.Zero))
       {
         // There is enough room! :-)
 
@@ -605,15 +605,15 @@ namespace DigitalRune.Physics.Specialized
       if (Numeric.IsZero(StepHeight))
         return true;
 
-      Vector3F desiredMovement = -UpVector * StepHeight;
+      Vector3 desiredMovement = -UpVector * StepHeight;
 
       // This method searches for valid ground contacts using binary search (bisecting the 
       // step height). Binary search is only performed if a down-step with full height touches
       // anything.
       bool bisect = false;
-      Vector3F startPosition = Position;
-      Vector3F safeMovement = new Vector3F();
-      Vector3F currentMovement = desiredMovement;
+      Vector3 startPosition = Position;
+      Vector3 safeMovement = new Vector3();
+      Vector3 currentMovement = desiredMovement;
 
       // From all contacts we form a convex boundary. The capsule must stay within this boundary.
       _bounds.Clear();
@@ -646,7 +646,7 @@ namespace DigitalRune.Physics.Specialized
             Plane plane = _bounds[i];
 
             // Ignore the plane if its normal points downwards.
-            if (Numeric.IsGreaterOrEqual(Vector3F.Dot(plane.Normal, -UpVector), 0, 0.001f))
+            if (Numeric.IsGreaterOrEqual(Vector3.Dot(plane.Normal, -UpVector), 0, 0.001f))
               continue;
 
             // Get normal distance (minus allowed penetration). Negative distance = penetration.
@@ -662,7 +662,7 @@ namespace DigitalRune.Physics.Specialized
             if (Numeric.IsLess(distance, 0))
             {
               // We correct the position upwards. We do not slide.
-              Vector3F correction = (-distance) / Vector3F.Dot(UpVector, plane.Normal) * UpVector;
+              Vector3 correction = (-distance) / Vector3.Dot(UpVector, plane.Normal) * UpVector;
               currentMovement += correction;
 
               // Target position has changed. Relaxation has to continue.
@@ -672,8 +672,8 @@ namespace DigitalRune.Physics.Specialized
         } while (solverIterationCount < NumberOfSolverIterations && !targetPositionFound);
 
         bool makingProgress = Numeric.IsGreater(
-          Vector3F.Dot(currentMovement, -UpVector), // The downward distance we have found in this iteration.
-          Vector3F.Dot(safeMovement, -UpVector));   // We can move at least this distance downwards.
+          Vector3.Dot(currentMovement, -UpVector), // The downward distance we have found in this iteration.
+          Vector3.Dot(safeMovement, -UpVector));   // We can move at least this distance downwards.
 
         if (iterationCount == 1 && (!targetPositionFound || !makingProgress))
         {
@@ -681,7 +681,7 @@ namespace DigitalRune.Physics.Specialized
           break;
         }
 
-        bool noPositionChange = Vector3F.AreNumericallyEqual(startPosition + currentMovement, Position);
+        bool noPositionChange = Vector3.AreNumericallyEqual(startPosition + currentMovement, Position);
 
         if (iterationCount > 1 && noPositionChange)    // noPositionChange is always true in the first iteration.
         {
@@ -712,7 +712,7 @@ namespace DigitalRune.Physics.Specialized
         Position = startPosition + currentMovement;
         UpdateContacts();
 
-        hasUnallowedContacts = HasUnallowedContact(Vector3F.Zero);
+        hasUnallowedContacts = HasUnallowedContact(Vector3.Zero);
 
         // Bilinear search is only done if any check finds contacts.
         bisect = bisect || hasUnallowedContacts;

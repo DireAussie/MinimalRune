@@ -20,7 +20,7 @@ namespace Samples.Content.Pipeline
   [ContentProcessor(DisplayName = "DigitalRune Model with Convex Hull")]
   public class ModelWithConvexHullProcessor : DRModelProcessor
   {
-    private readonly List<Vector3F> _vertices = new List<Vector3F>();
+    private readonly List<Vector3> _vertices = new List<Vector3>();
 
 
     /// <summary>
@@ -56,7 +56,7 @@ namespace Samples.Content.Pipeline
         Matrix absoluteTransform = mesh.AbsoluteTransform;
         foreach (Vector3 vertex in mesh.Positions)
         {
-          _vertices.Add((Vector3F)Vector3.Transform(vertex, absoluteTransform));
+          _vertices.Add((Vector3)Vector3.Transform(vertex, absoluteTransform));
         }
       }
 

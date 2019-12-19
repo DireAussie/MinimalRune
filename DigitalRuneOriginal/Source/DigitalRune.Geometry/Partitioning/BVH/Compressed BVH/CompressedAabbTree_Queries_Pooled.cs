@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if POOL_ENUMERABLES
+
 using System.Collections.Generic;
 using DigitalRune.Collections;
 using DigitalRune.Geometry.Shapes;
@@ -161,7 +161,7 @@ namespace DigitalRune.Geometry.Partitioning
       private static readonly ResourcePool<GetOverlapsWithRayWork> Pool = new ResourcePool<GetOverlapsWithRayWork>(() => new GetOverlapsWithRayWork(), x => x.Initialize(), null);
       private CompressedAabbTree _compressedAabbTree;
       private Ray _ray;
-      private Vector3F _rayDirectionInverse;
+      private Vector3 _rayDirectionInverse;
       private float _epsilon;
       private int _index;
 
@@ -170,7 +170,7 @@ namespace DigitalRune.Geometry.Partitioning
         var enumerable = Pool.Obtain();
         enumerable._compressedAabbTree = compressedAabbTree;
         enumerable._ray = ray;
-        enumerable._rayDirectionInverse = new Vector3F(1 / ray.Direction.X,
+        enumerable._rayDirectionInverse = new Vector3(1 / ray.Direction.X,
                                                        1 / ray.Direction.Y,
                                                        1 / ray.Direction.Z);
         enumerable._epsilon = Numeric.EpsilonF * (1 + compressedAabbTree.Aabb.Extent.Length);
@@ -212,4 +212,4 @@ namespace DigitalRune.Geometry.Partitioning
     }
   }
 }
-#endif
+

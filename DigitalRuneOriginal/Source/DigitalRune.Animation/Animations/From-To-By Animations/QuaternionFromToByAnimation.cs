@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !UNITY
+
 using DigitalRune.Animation.Traits;
 using Microsoft.Xna.Framework;
 
@@ -14,7 +14,7 @@ namespace DigitalRune.Animation
   /// (Only available in the XNA-compatible build.)
   /// </summary>
   /// <inheritdoc/>
-  public class QuaternionFromToByAnimation : FromToByAnimation<Quaternion>
+  public class QuaternionromToByAnimation : FromToByAnimation<Quaternion>
   {
     /// <inheritdoc/>
     public override IAnimationValueTraits<Quaternion> Traits
@@ -23,4 +23,4 @@ namespace DigitalRune.Animation
     }
   }
 }
-#endif
+

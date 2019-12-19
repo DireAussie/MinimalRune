@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !NETFX_CORE && !WP7 && !XBOX
+
 using System.Diagnostics;
 using DigitalRune.Geometry.Shapes;
 using DigitalRune.Mathematics.Algebra;
@@ -26,10 +26,10 @@ namespace DigitalRune.Geometry.Meshes
     public Aabb Aabb;
 
     // The convex hull vertices.
-    public Vector3F[] Vertices;
+    public Vector3[] Vertices;
 
     // The convex hull. It must be either null or up-to-date. 
     public ConvexHullBuilder ConvexHullBuilder;
   }
 }
-#endif
+

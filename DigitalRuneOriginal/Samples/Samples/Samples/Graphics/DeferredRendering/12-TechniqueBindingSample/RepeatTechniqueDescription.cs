@@ -1,4 +1,4 @@
-﻿#if !MONOGAME && !WP7 && !WP8
+﻿
 // TODO: Add annotation support to MonoGame.
 
 using DigitalRune.Graphics.Effects;
@@ -35,4 +35,3 @@ namespace Samples.Graphics
     }
   }
 }
-#endif

@@ -78,14 +78,14 @@ namespace DigitalRune.Graphics
       };
 
       // Create vertices for a circle on the floor.
-      var vertices = new Vector3F[numberOfSegments];
+      var vertices = new Vector3[numberOfSegments];
       for (int i = 0; i < numberOfSegments; i++)
       {
         float angle = i * ConstantsF.TwoPi / numberOfSegments;
 
         float x = (float)Math.Cos(angle);
         float y = (float)Math.Sin(angle);
-        vertices[i] = new Vector3F(x, y, 0);
+        vertices[i] = new Vector3(x, y, 0);
       }
 
       submesh.VertexBuffer = new VertexBuffer(

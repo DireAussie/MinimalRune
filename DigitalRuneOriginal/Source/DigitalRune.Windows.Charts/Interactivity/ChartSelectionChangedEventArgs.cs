@@ -11,9 +11,9 @@ namespace DigitalRune.Windows.Charts.Interactivity
     /// <summary>
     /// Provides arguments for the <see cref="ChartSelectionBehavior.SelectionChanged"/> event.
     /// </summary>
-#if !SILVERLIGHT
+
     [Serializable]
-#endif
+
     public class ChartSelectionChangedEventArgs : EventArgs
     {
         //--------------------------------------------------------------

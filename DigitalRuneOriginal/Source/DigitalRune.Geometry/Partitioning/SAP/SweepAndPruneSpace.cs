@@ -308,13 +308,13 @@ namespace DigitalRune.Geometry.Partitioning
       else
       {
         // Get minimum and maximum from the edge lists.
-        var minimum = new Vector3F(
+        var minimum = new Vector3(
           _edges[0][0].Position,
           _edges[1][0].Position,
           _edges[2][0].Position);
 
         var maxEdgeIndex = _edges[0].Count - 1;
-        var maximum = new Vector3F(
+        var maximum = new Vector3(
           _edges[0][maxEdgeIndex].Position,
           _edges[1][maxEdgeIndex].Position,
           _edges[2][maxEdgeIndex].Position);

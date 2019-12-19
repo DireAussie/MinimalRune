@@ -14,9 +14,9 @@ namespace DigitalRune.Geometry.Shapes
   /// <summary>
   /// Represents a sphere.
   /// </summary>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
+
   public class SphereShape : ConvexShape
   {
     //--------------------------------------------------------------
@@ -36,9 +36,9 @@ namespace DigitalRune.Geometry.Shapes
     /// <remarks>
     /// This point is a "deep" inner point of the shape (in local space).
     /// </remarks>
-    public override Vector3F InnerPoint
+    public override Vector3 InnerPoint
     {
-      get { return Vector3F.Zero; }
+      get { return Vector3.Zero; }
     }
 
 
@@ -129,12 +129,12 @@ namespace DigitalRune.Geometry.Shapes
 
 
     /// <inheritdoc/>
-    public override Aabb GetAabb(Vector3F scale, Pose pose)
+    public override Aabb GetAabb(Vector3 scale, Pose pose)
     {
       if (scale.X == scale.Y && scale.Y == scale.Z)
       {
         // Uniform scaling.
-        Vector3F halfExtent = new Vector3F(_radius * Math.Abs(scale.X));
+        Vector3 halfExtent = new Vector3(_radius * Math.Abs(scale.X));
         return new Aabb(pose.Position - halfExtent, pose.Position + halfExtent);
       }
       else
@@ -159,7 +159,7 @@ namespace DigitalRune.Geometry.Shapes
     /// A support point regarding a direction is an extreme point of the shape that is furthest away
     /// from the center regarding the given direction. This point is not necessarily unique.
     /// </remarks>
-    public override Vector3F GetSupportPointNormalized(Vector3F directionNormalized)
+    public override Vector3 GetSupportPointNormalized(Vector3 directionNormalized)
     {
       return directionNormalized * _radius;
     }
@@ -219,24 +219,24 @@ namespace DigitalRune.Geometry.Shapes
       TriangleMesh mesh = new TriangleMesh();
 
       // The world space vertices are created by rotating "radius vectors" with this rotations.
-      QuaternionF rotationY = QuaternionF.CreateRotationY(alpha);
-      QuaternionF rotationZ = QuaternionF.CreateRotationZ(alpha);
+      Quaternion rotationY = Quaternion.CreateRotationY(alpha);
+      Quaternion rotationZ = Quaternion.CreateRotationZ(alpha);
 
       // We use two nested loops: In each loop a "radius vector" is rotated further to get a 
       // new vertex.
-      Vector3F rLow = Vector3F.UnitX * _radius;   // Radius vector for the lower vertex.
+      Vector3 rLow = Vector3.UnitX * _radius;   // Radius vector for the lower vertex.
       for (int i = 1; i <= numberOfSegments / 4; i++)
       {
-        Vector3F rHigh = rotationZ.Rotate(rLow);  // Radius vector for the higher vertex.
+        Vector3 rHigh = rotationZ.Rotate(rLow);  // Radius vector for the higher vertex.
 
         // In the inner loop we create lines and triangles between 4 vertices, which are created
         // with the radius vectors rLow0, rLow1, rHigh0, rHigh1.
-        Vector3F rLow0 = rLow;
-        Vector3F rHigh0 = rHigh;
+        Vector3 rLow0 = rLow;
+        Vector3 rHigh0 = rHigh;
         for (int j = 1; j <= numberOfSegments; j++)
         {
-          Vector3F rLow1 = rotationY.Rotate(rLow0);
-          Vector3F rHigh1 = rotationY.Rotate(rHigh0);
+          Vector3 rLow1 = rotationY.Rotate(rLow0);
+          Vector3 rHigh1 = rotationY.Rotate(rHigh0);
 
           // Two top hemisphere triangles
           mesh.Add(new Triangle

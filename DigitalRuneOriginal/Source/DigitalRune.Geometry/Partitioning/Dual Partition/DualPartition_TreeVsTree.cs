@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using DigitalRune.Collections;
 using DigitalRune.Mathematics.Algebra;
 
-#if !POOL_ENUMERABLES
+
 using System.Linq;
-#endif
+
 
 
 namespace DigitalRune.Geometry.Partitioning
@@ -22,31 +22,31 @@ namespace DigitalRune.Geometry.Partitioning
       var overlapsStatic = StaticPartition.GetOverlaps(otherPartition);
       var overlapsDynamic = DynamicPartition.GetOverlaps(otherPartition);
 
-#if !POOL_ENUMERABLES
+
       return overlapsStatic.Concat(overlapsDynamic);
 #else
       return ConcatWork<Pair<T>>.Create(overlapsStatic, overlapsDynamic);
-#endif
+
     }
 
 
     /// <inheritdoc/>
-    public override IEnumerable<Pair<T>> GetOverlaps(Vector3F scale, Pose pose, ISpatialPartition<T> otherPartition, Vector3F otherScale, Pose otherPose)
+    public override IEnumerable<Pair<T>> GetOverlaps(Vector3 scale, Pose pose, ISpatialPartition<T> otherPartition, Vector3 otherScale, Pose otherPose)
     {
       UpdateInternal();
       var overlapsStatic = StaticPartition.GetOverlaps(scale, pose, otherPartition, otherScale, otherPose);
       var overlapsDynamic = DynamicPartition.GetOverlaps(scale, pose, otherPartition, otherScale, otherPose);
 
-#if !POOL_ENUMERABLES
+
       return overlapsStatic.Concat(overlapsDynamic);
 #else
       return ConcatWork<Pair<T>>.Create(overlapsStatic, overlapsDynamic);
-#endif
+
     }
   }
 
 
-#if POOL_ENUMERABLES
+
   internal sealed class ConcatWork<T> : PooledEnumerable<T>
   {
     // ReSharper disable StaticFieldInGenericType
@@ -105,5 +105,5 @@ namespace DigitalRune.Geometry.Partitioning
       Pool.Recycle(this);
     }
   }
-#endif
+
 }

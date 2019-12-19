@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !WP7
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -236,7 +236,7 @@ namespace DigitalRune.Graphics.Rendering
         _parameterDepthBias.SetValue((Vector4)shadow.EffectiveDepthBias);
         _parameterNormalOffset.SetValue((Vector4)shadow.EffectiveNormalOffset);
 
-        Vector3F lightBackwardWorld = lightNode.PoseWorld.Orientation.GetColumn(2);
+        Vector3 lightBackwardWorld = lightNode.PoseWorld.Orientation.GetColumn(2);
         _parameterLightDirection.SetValue((Vector3)cameraPose.ToLocalDirection(lightBackwardWorld));
         _parameterNumberOfCascades.SetValue(shadow.NumberOfCascades);
         _parameterShadowMap.SetValue(shadow.ShadowMap);
@@ -323,4 +323,4 @@ namespace DigitalRune.Graphics.Rendering
 
   }
 }
-#endif
+

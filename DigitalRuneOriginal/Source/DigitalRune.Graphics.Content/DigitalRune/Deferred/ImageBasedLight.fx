@@ -95,7 +95,7 @@ float3 SampleEnvironmentMap(float3 direction, float mipLevel, float mipLevelSize
   
   // In XNA we use manual bilinear filtering to filter across cube map faces.
   // DX11 hardware can do this automatically.
-#if SM4
+
   float4 color = texCUBElod(EnvironmentMapSampler, float4(direction, mipLevel));
 #else
   
@@ -130,7 +130,7 @@ float3 SampleEnvironmentMap(float3 direction, float mipLevel, float mipLevelSize
                            lerp(c101, c111, p.y),
                            p.x),
                       p.z);
-#endif
+
   
   return FromGamma(DecodeRgbm(color, RgbmMax));
 }
@@ -301,13 +301,13 @@ void PSSpecularLight(float2 texCoord : TEXCOORD0, float3 frustumRay : TEXCOORD1,
 // Techniques
 //-----------------------------------------------------------------------------
 
-#if !SM4
+
 #define VSTARGET vs_3_0
 #define PSTARGET ps_3_0
 #else
 #define VSTARGET vs_4_0
 #define PSTARGET ps_4_0
-#endif
+
 
 technique
 {

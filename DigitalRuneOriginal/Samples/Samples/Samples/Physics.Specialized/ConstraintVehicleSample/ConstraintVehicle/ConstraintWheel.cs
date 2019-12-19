@@ -206,7 +206,7 @@ namespace DigitalRune.Physics.Specialized
     /// This is a position offset in the local space of the vehicle. It determines where
     /// the suspension (the ray origin) is fixed on the car.
     /// </remarks>
-    public Vector3F Offset
+    public Vector3 Offset
     {
       get { return _offset; }
       set
@@ -216,7 +216,7 @@ namespace DigitalRune.Physics.Specialized
           OnChassisPoseChanged(null, null);
       }
     }
-    private Vector3F _offset;
+    private Vector3 _offset;
 
 
 
@@ -379,7 +379,7 @@ namespace DigitalRune.Physics.Specialized
     /// This value is only up-to-date and valid if <see cref="HasGroundContact"/> is 
     /// <see langword="true"/>.
     /// </remarks>
-    public Vector3F GroundPosition { get; internal set; }
+    public Vector3 GroundPosition { get; internal set; }
 
     /// <summary>
     /// Gets (or sets) the normal vector of the ground at the <see cref="GroundPosition"/>.
@@ -389,7 +389,7 @@ namespace DigitalRune.Physics.Specialized
     /// This value is only up-to-date and valid if <see cref="HasGroundContact"/> is 
     /// <see langword="true"/>.
     /// </remarks>
-    public Vector3F GroundNormal { get; internal set; }
+    public Vector3 GroundNormal { get; internal set; }
 
     /// <summary>
     /// Gets (or sets) the forward vector in the ground plane.
@@ -399,7 +399,7 @@ namespace DigitalRune.Physics.Specialized
     /// This value is only up-to-date and valid if <see cref="HasGroundContact"/> is 
     /// <see langword="true"/>.
     /// </remarks>
-    public Vector3F GroundForward { get; internal set; }
+    public Vector3 GroundForward { get; internal set; }
 
 
     /// <summary>
@@ -410,7 +410,7 @@ namespace DigitalRune.Physics.Specialized
     /// This value is only up-to-date and valid if <see cref="HasGroundContact"/> is 
     /// <see langword="true"/>.
     /// </remarks>
-    public Vector3F GroundRight { get; internal set; }
+    public Vector3 GroundRight { get; internal set; }
 
 
     /// <summary>
@@ -460,11 +460,11 @@ namespace DigitalRune.Physics.Specialized
         var hardpointPosition = chassisPose.Position + chassisPose.ToWorldDirection(Offset);
 
         // Add current suspension length.
-        var wheelPosition = hardpointPosition + SuspensionLength * chassisPose.ToWorldDirection(-Vector3F.UnitY);
+        var wheelPosition = hardpointPosition + SuspensionLength * chassisPose.ToWorldDirection(-Vector3.UnitY);
 
         var wheelRotation = chassisPose.Orientation
-                            * Matrix33F.CreateRotationY(SteeringAngle)
-                            * Matrix33F.CreateRotationX(-RotationAngle);
+                            * Matrix.CreateRotationY(SteeringAngle)
+                            * Matrix.CreateRotationX(-RotationAngle);
 
         return new Pose(wheelPosition, wheelRotation);
       }
@@ -527,8 +527,8 @@ namespace DigitalRune.Physics.Specialized
       Friction = 1.1f;
       RollReduction = 0.3f;
 
-      Vector3F rayOrigin = Vector3F.Zero;
-      Vector3F rayDirection = -Vector3F.UnitY;
+      Vector3 rayOrigin = Vector3.Zero;
+      Vector3 rayDirection = -Vector3.UnitY;
       float rayLength = Radius + SuspensionRestLength;
       _ray = new RayShape(rayOrigin, rayDirection, rayLength)
       {

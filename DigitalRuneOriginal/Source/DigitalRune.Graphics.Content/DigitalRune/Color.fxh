@@ -9,13 +9,13 @@
 //
 //-----------------------------------------------------------------------------
 
-#ifndef DIGITALRUNE_COLOR_FXH
+
 #define DIGITALRUNE_COLOR_FXH
 
 // Common.fxh is required for the luminance weights.
-#ifndef DIGITALRUNE_COMMON_FXH
+
 #error "Common.fxh required. Please include Common.fxh before including Color.fxh."
-#endif
+
 
 /// A matrix which converts colors from the CIE XYZ color space to the
 /// sRGB color space; must be used like this: RGB = mul(XYZ, XYZToRGB);
@@ -145,4 +145,4 @@ float3 ToHsv(float3 color)
   
   return float3(h / 360, s, v);
 }
-#endif
+

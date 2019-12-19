@@ -24,9 +24,9 @@ namespace DigitalRune.Graphics.Content
     protected override Occluder Read(ContentReader input, Occluder existingInstance)
     {
       int numberOfVertices = input.ReadInt32();
-      var vertices = new Vector3F[numberOfVertices];
+      var vertices = new Vector3[numberOfVertices];
       for (int i = 0; i < numberOfVertices; i++)
-        vertices[i] = input.ReadRawObject<Vector3F>();
+        vertices[i] = input.ReadRawObject<Vector3>();
 
       int numberOfIndices = input.ReadInt32();
       var indices = new ushort[numberOfIndices];

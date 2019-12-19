@@ -3,9 +3,9 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System.Windows;
-#if WINDOWS_PHONE
+
 using System;
-#endif
+
 
 
 namespace DigitalRune.Windows.Framework
@@ -27,7 +27,7 @@ namespace DigitalRune.Windows.Framework
         FrameworkElement GetView(object viewModel, DependencyObject parent = null, object context = null);
 
 
-#if WINDOWS_PHONE
+
         /// <summary>
         /// Resolves the URI for the specified view model in the current context.
         /// </summary>
@@ -37,6 +37,6 @@ namespace DigitalRune.Windows.Framework
         /// A <see cref="Uri"/> object initialized with the URI for the desired view.
         /// </returns>
         Uri GetUri(object viewModel, object context = null);
-#endif
+
     }
 }

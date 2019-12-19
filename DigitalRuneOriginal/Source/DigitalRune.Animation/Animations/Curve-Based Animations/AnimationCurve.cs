@@ -6,9 +6,9 @@ using System;
 using DigitalRune.Mathematics;
 using DigitalRune.Mathematics.Algebra;
 using DigitalRune.Mathematics.Interpolation;
-#if XNA || MONOGAME
+
 using Microsoft.Xna.Framework.Content;
-#endif
+
 
 
 namespace DigitalRune.Animation
@@ -20,7 +20,7 @@ namespace DigitalRune.Animation
   /// The type of the animation value.
   /// </typeparam>
   /// <typeparam name="TPoint">
-  /// The type of the curve points, such as <see cref="Vector2F"/>, <see cref="Vector3F"/>, etc.
+  /// The type of the curve points, such as <see cref="Vector2F"/>, <see cref="Vector3"/>, etc.
   /// </typeparam>
   /// <typeparam name="TCurveKey">
   /// The type of the curve key. (A type derived from <see cref="CurveKey{TParam,TPoint}"/>.)
@@ -84,9 +84,9 @@ namespace DigitalRune.Animation
     /// Gets or sets the curve that defines the animation.
     /// </summary>
     /// <value>The curve that defines the animation.</value>
-#if XNA || MONOGAME
+
     [ContentSerializer(SharedResource = true)]
-#endif
+
     public TCurve Curve { get; set; }
 
 

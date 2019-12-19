@@ -204,7 +204,7 @@ namespace DigitalRune.Diagnostics
     internal static Dictionary<string, ProfilerDataFormat> Formats { get; private set; }
 
 
-#if !PORTABLE && !SILVERLIGHT
+
     /// <summary>
     /// Gets the stopwatch.
     /// </summary>
@@ -214,7 +214,7 @@ namespace DigitalRune.Diagnostics
     /// loaded and it runs permanently.
     /// </remarks>
     internal static System.Diagnostics.Stopwatch Stopwatch { get; private set; }
-#endif
+
 
 
 
@@ -230,9 +230,9 @@ namespace DigitalRune.Diagnostics
       ClearAll();
 
       // Create and start the stopwatch.
-#if !PORTABLE && !SILVERLIGHT
+
       Stopwatch = System.Diagnostics.Stopwatch.StartNew();
-#endif
+
 
       Formats = new Dictionary<string, ProfilerDataFormat>();
     }
@@ -254,12 +254,12 @@ namespace DigitalRune.Diagnostics
     {
       // TODO: Add SynchronizedHashtable.Clear method.
 
-#if WP7
+
       // Cannot access Environment.ProcessorCount in phone app. (Security issue).
       _data = new SynchronizedHashtable<int, ProfilerDataCollection>(8);
 #else
       _data = new SynchronizedHashtable<int, ProfilerDataCollection>(Environment.ProcessorCount * 4);
-#endif
+
     }
 
 
@@ -275,11 +275,11 @@ namespace DigitalRune.Diagnostics
     /// <returns>The <see cref="ProfilerDataCollection"/> for the current thread.</returns>
     public static ProfilerDataCollection Get()
     {
-#if !NETFX_CORE && !NET45
+
       return Get(Thread.CurrentThread.ManagedThreadId);
 #else
       return Get(Environment.CurrentManagedThreadId);
-#endif
+
     }
 
 
@@ -311,7 +311,7 @@ namespace DigitalRune.Diagnostics
     }
 
 
-#if !NETFX_CORE && !PORTABLE
+
     /// <summary>
     /// Gets the <see cref="ProfilerDataCollection"/> for the specified thread. 
     /// (Not available on these platforms: WinRT)
@@ -346,7 +346,7 @@ namespace DigitalRune.Diagnostics
 
       return collection;
     }
-#endif
+
 
 
     /// <summary>
@@ -427,16 +427,16 @@ namespace DigitalRune.Diagnostics
     [Conditional("DIGITALRUNE_PROFILE")]
     public static void Reset()
     {
-#if NETFX_CORE || NET45
+
       Reset(Environment.CurrentManagedThreadId);
 #else
       Reset(Thread.CurrentThread.ManagedThreadId);
-#endif
+
 
     }
 
 
-#if !NETFX_CORE && !PORTABLE
+
     /// <summary>
     /// Resets all <see cref="ProfilerData"/> for the given thread.
     /// (Not available on these platforms: WinRT)
@@ -456,7 +456,7 @@ namespace DigitalRune.Diagnostics
     {
       Get(thread).Reset();
     }
-#endif
+
 
 
     /// <summary>
@@ -656,7 +656,7 @@ namespace DigitalRune.Diagnostics
     }
 
 
-#if !NETFX_CORE && !PORTABLE
+
     /// <summary>
     /// Returns a string that contains a table with all <see cref="ProfilerData"/> instances for the
     /// given thread.
@@ -679,7 +679,7 @@ namespace DigitalRune.Diagnostics
     {
       return Get(thread).Dump();
     }
-#endif
+
 
 
     /// <summary>

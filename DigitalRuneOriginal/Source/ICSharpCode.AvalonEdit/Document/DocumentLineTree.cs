@@ -106,9 +106,9 @@ namespace ICSharpCode.AvalonEdit.Document
 			//Debug.WriteLine("DocumentLineTree will have height: " + height);   // [DIGITALRUNE] No debug output.
 			root = BuildTree(nodes, 0, nodes.Length, height);
 			root.color = BLACK;
-			#if DEBUG
+
 			CheckProperties();
-			#endif
+
 		}
 		
 		internal static int GetTreeHeight(int size)
@@ -235,7 +235,7 @@ namespace ICSharpCode.AvalonEdit.Document
 
 		
 
-		#if DEBUG
+
 		[Conditional("DATACONSISTENCYTEST")]
 		internal void CheckProperties()
 		{
@@ -322,7 +322,7 @@ namespace ICSharpCode.AvalonEdit.Document
 				AppendTreeToString(node.right, b, indent);
 			}
 		}
-		#endif
+
 
 		
 

@@ -61,9 +61,9 @@ namespace DigitalRune.Mathematics.Interpolation
   /// are a valid. In general, the results are undefined if a curve contains invalid tangents.
   /// </para>
   /// </remarks>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
+
   [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
   public class Curve2F : PiecewiseCurveF<Vector2F, CurveKey2F>, IXmlSerializable
   {

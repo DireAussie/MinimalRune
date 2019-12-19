@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using System.Collections.Generic;
 using DigitalRune.Graphics;
 using DigitalRune.Graphics.PostProcessing;
@@ -52,9 +52,9 @@ namespace Samples
       context.GBuffer0 = renderTargetPool.Obtain2D(new RenderTargetFormat(
         width, 
         height,
-#if !XBOX
+
         true,        // Note: Only the SaoFilter for SSAO requires mipmaps to boost performance.
-#endif
+
         SurfaceFormat.Single, 
         DepthFormat.Depth24Stencil8));
       context.GBuffer1 = renderTargetPool.Obtain2D(new RenderTargetFormat(width, height, false, SurfaceFormat.Color, DepthFormat.None));
@@ -126,4 +126,4 @@ namespace Samples
     }
   }
 }
-#endif
+

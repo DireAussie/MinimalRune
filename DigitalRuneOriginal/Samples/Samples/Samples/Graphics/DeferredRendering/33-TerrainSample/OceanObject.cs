@@ -35,30 +35,30 @@ namespace Samples
       // Define the appearance of the water.
       var waterOcean = new Water
       {
-        SpecularColor = new Vector3F(20f),
+        SpecularColor = new Vector3(20f),
         SpecularPower = 500,
 
         NormalMap0 = null,
         NormalMap1 = null,
 
         RefractionDistortion = 0.1f,
-        ReflectionColor = new Vector3F(0.2f),
-        RefractionColor = new Vector3F(0.6f),
+        ReflectionColor = new Vector3(0.2f),
+        RefractionColor = new Vector3(0.6f),
 
-        //UnderwaterFogDensity = new Vector3F(1, 0.8f, 0.6f),
-        //WaterColor = new Vector3F(0.2f, 0.4f, 0.5f),
-        UnderwaterFogDensity = new Vector3F(12, 8, 8) * 0.02f,
-        WaterColor = new Vector3F(60, 30, 19) * 0.002f,
+        //UnderwaterFogDensity = new Vector3(1, 0.8f, 0.6f),
+        //WaterColor = new Vector3(0.2f, 0.4f, 0.5f),
+        UnderwaterFogDensity = new Vector3(12, 8, 8) * 0.02f,
+        WaterColor = new Vector3(60, 30, 19) * 0.002f,
 
         // Water is scattered in high waves and this makes the wave crests brighter.
         // ScatterColor defines the intensity of this effect.
-        ScatterColor = new Vector3F(0.05f, 0.1f, 0.1f),
+        ScatterColor = new Vector3(0.05f, 0.1f, 0.1f),
 
         // Foam is automatically rendered where the water intersects geometry and
         // where wave are high.
         FoamMap = content.Load<Texture2D>("Water/Foam"),
         FoamMapScale = 5,
-        FoamColor = new Vector3F(1),
+        FoamColor = new Vector3(1),
         FoamCrestMin = 0.3f,
         FoamCrestMax = 0.8f,
 
@@ -72,7 +72,7 @@ namespace Samples
       // water plane.
       _waterNode = new WaterNode(waterOcean, null)
       {
-        PoseWorld = new Pose(new Vector3F(0, -100, 0)),
+        PoseWorld = new Pose(new Vector3(0, -100, 0)),
         SkyboxReflection = scene.GetDescendants().OfType<SkyboxNode>().First(),
 
         // ExtraHeight must be set to a value greater than the max. wave height. 
@@ -87,7 +87,7 @@ namespace Samples
       {
         TextureSize = 256,
         HeightScale = 0.008f,
-        Wind = new Vector3F(10, 0, 10),
+        Wind = new Vector3(10, 0, 10),
         Directionality = 1,
         Choppiness = 1,
         TileSize = 20,

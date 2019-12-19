@@ -182,12 +182,12 @@ namespace Samples
         var titleStorage = new TitleStorage("Content");
         var vfsStorage = new VfsStorage();
         vfsStorage.MountInfos.Add(new VfsMountInfo(titleStorage, null));
-#if MONOGAME
+
         var assetsStorage = new ZipStorage(titleStorage, "Content.zip");
         vfsStorage.MountInfos.Add(new VfsMountInfo(assetsStorage, null));
         var drStorage = new ZipStorage(titleStorage, "DigitalRune.zip");
         vfsStorage.MountInfos.Add(new VfsMountInfo(drStorage, null));
-#endif
+
         Content = new StorageContentManager(Services, vfsStorage);
 
         // Load SpriteFont.

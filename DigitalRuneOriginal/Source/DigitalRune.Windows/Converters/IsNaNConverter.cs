@@ -15,10 +15,10 @@ namespace DigitalRune.Windows
     /// A value converter that returns <see langword="true"/> if the given floating-point value is
     /// NaN.
     /// </summary>
-#if !SILVERLIGHT
+
     [ValueConversion(typeof(float), typeof(bool))]
     [ValueConversion(typeof(double), typeof(bool))]
-#endif
+
     public class IsNaNConverter : IValueConverter
     {
         /// <summary>

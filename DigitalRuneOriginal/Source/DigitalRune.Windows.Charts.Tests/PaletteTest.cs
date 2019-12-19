@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Threading;
-#if NETFX_CORE || WINDOWS_PHONE
+
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 using TestFixtureAttribute = Microsoft.VisualStudio.TestPlatform.UnitTestFramework.TestClassAttribute;
 using TestFixtureSetUp = Microsoft.VisualStudio.TestPlatform.UnitTestFramework.ClassInitializeAttribute;
@@ -13,7 +13,7 @@ using TearDownAttribute = Microsoft.VisualStudio.TestPlatform.UnitTestFramework.
 using TestAttribute = Microsoft.VisualStudio.TestPlatform.UnitTestFramework.TestMethodAttribute;
 #else
 using NUnit.Framework;
-#endif
+
 
 
 
@@ -991,7 +991,7 @@ namespace DigitalRune.Windows.Charts.Tests
         }
 
 
-#if !SILVERLIGHT && !WINDOWS_PHONE
+
         [Test]
         public void ScRgbInterpolationMode()
         {
@@ -1003,6 +1003,6 @@ namespace DigitalRune.Windows.Charts.Tests
             palette.ColorInterpolationMode = ColorInterpolationMode.ScRgbLinearInterpolation;
             Assert.AreEqual(Color.FromScRgb(0.5f, 0.55f, 0.6f, 0.65f), palette.GetColor(0.5));
         }
-#endif
+
     }
 }

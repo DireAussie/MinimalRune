@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using DigitalRune.Geometry;
 using DigitalRune.Graphics.Rendering;
 using DigitalRune.Graphics.SceneGraph;
@@ -54,11 +54,11 @@ namespace Samples.Graphics
 
       for (int i = 0; i < 10; i++)
       {
-        var randomPosition = new Vector3F(
+        var randomPosition = new Vector3(
           RandomHelper.Random.NextFloat(-5, 5),
           0,
           RandomHelper.Random.NextFloat(-10, 0));
-        var randomOrientation = QuaternionF.CreateRotationY(RandomHelper.Random.NextFloat(0, ConstantsF.TwoPi));
+        var randomOrientation = Quaternion.CreateRotationY(RandomHelper.Random.NextFloat(0, ConstantsF.TwoPi));
 
         GameObjectService.Objects.Add(new DudeObject(Services)
         {
@@ -74,4 +74,3 @@ namespace Samples.Graphics
     }
   }
 }
-#endif

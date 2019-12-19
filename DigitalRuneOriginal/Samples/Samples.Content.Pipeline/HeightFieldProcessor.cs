@@ -1,4 +1,4 @@
-#if !MONOGAME
+
 using System;
 using System.ComponentModel;
 using DigitalRune.Geometry.Shapes;
@@ -157,4 +157,4 @@ namespace Samples.Content.Pipeline
     }
   }
 }
-#endif
+

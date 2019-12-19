@@ -1,4 +1,4 @@
-#if !WP7 && !WP8
+
 using System;
 using DigitalRune.Game.Input;
 using DigitalRune.Game.UI;
@@ -82,11 +82,11 @@ namespace Samples.Game.UI
       };
 
       // Simulate more loading time.
-#if NETFX_CORE
+
       System.Threading.Tasks.Task.Delay(TimeSpan.FromSeconds(2)).Wait();
 #else
       System.Threading.Thread.Sleep(TimeSpan.FromSeconds(2));
-#endif
+
     }
 
 
@@ -136,4 +136,3 @@ namespace Samples.Game.UI
     }
   }
 }
-#endif

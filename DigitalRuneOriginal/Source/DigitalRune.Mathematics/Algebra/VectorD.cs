@@ -9,15 +9,15 @@ using System.Text;
 using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
 using System.ComponentModel;
 using System.Runtime.Serialization;
 using System.Security;
 using System.Security.Permissions;
-#endif
-#if XNA || MONOGAME
+
+
 using Microsoft.Xna.Framework.Content;
-#endif
+
 
 
 namespace DigitalRune.Mathematics.Algebra
@@ -25,15 +25,15 @@ namespace DigitalRune.Mathematics.Algebra
   /// <summary>
   /// Defines an n-dimensional vector (double-precision).
   /// </summary>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
   [TypeConverter(typeof(ExpandableObjectConverter))]
-#endif
+
   public class VectorD 
     : IEquatable<VectorD>,
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
       ISerializable,
-#endif
+
       IXmlSerializable
   {
     // TODO: Remove ArgumentNullException and let runtime throw NullReferenceException. (Minor optimization)
@@ -155,9 +155,9 @@ namespace DigitalRune.Mathematics.Algebra
     /// The vector has a length of 0. The length cannot be changed.
     /// </exception>
     [XmlIgnore]
-#if XNA || MONOGAME
+
     [ContentSerializerIgnore]
-#endif
+
     public double Length
     {
       get
@@ -420,7 +420,7 @@ namespace DigitalRune.Mathematics.Algebra
     }
 
 
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
     /// <summary>
     /// Initializes a new instance of the <see cref="VectorD"/> class with serialized data.
     /// </summary>
@@ -442,7 +442,7 @@ namespace DigitalRune.Mathematics.Algebra
         throw new SerializationException("Couldn't deserialize VectorD.", exception);
       }
     }
-#endif
+
 
 
 
@@ -548,7 +548,7 @@ namespace DigitalRune.Mathematics.Algebra
 
 
 
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
     /// <summary>
     /// Populates a <see cref="SerializationInfo"/> with the data needed to serialize the target 
     /// object.
@@ -588,7 +588,7 @@ namespace DigitalRune.Mathematics.Algebra
 
       GetObjectData(info, context);
     }
-#endif
+
 
 
 

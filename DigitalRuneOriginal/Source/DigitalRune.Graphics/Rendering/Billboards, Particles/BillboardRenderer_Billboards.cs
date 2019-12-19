@@ -4,20 +4,20 @@
 
 using DigitalRune.Collections;
 using Microsoft.Xna.Framework.Content;
-#if !WP7
+
 using DigitalRune.Graphics.PostProcessing;
-#endif
+
 using DigitalRune.Graphics.SceneGraph;
 using DigitalRune.Mathematics;
 using DigitalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-#if PARTICLES
+
 using System;
 using System.Collections.Generic;
 using DigitalRune.Geometry;
 using DigitalRune.Particles;
-#endif
+
 
 
 namespace DigitalRune.Graphics.Rendering
@@ -28,7 +28,7 @@ namespace DigitalRune.Graphics.Rendering
 
     //--------------------------------------------------------------
 
-#if PARTICLES
+
     /// <summary>
     /// Stores the index of a particle and its distance for per-particle depth sorting.
     /// </summary>
@@ -36,7 +36,7 @@ namespace DigitalRune.Graphics.Rendering
     {
       public float Distance;
       public int Index;
-      public Vector3F Position;
+      public Vector3 Position;
     }
 
 
@@ -58,7 +58,7 @@ namespace DigitalRune.Graphics.Rendering
         return 0;
       }
     }
-#endif
+
 
 
 
@@ -129,18 +129,18 @@ namespace DigitalRune.Graphics.Rendering
 
     private Texture2D _depthBufferHalf;
     private RenderTarget2D _offscreenBuffer;
-#if !WP7
+
     private UpsampleFilter _upsampleFilter;
-#endif
+
 
     // true, if rendering billboards or particles. (The value is set in 
     // BeginBillboards() and reset in EndBillboards().)
     private bool _billboardMode;
 
-#if PARTICLES
+
     // For depth-sorting of particles, created on demand.
     private ArrayList<ParticleIndex> _particleIndices;
-#endif
+
 
 
 
@@ -338,7 +338,7 @@ namespace DigitalRune.Graphics.Rendering
       // Reset texture to prevent "memory leak".
       SetTexture(null);
 
-#if !WP7
+
       if (EnableOffscreenRendering)
       {
         // ----- Combine off-screen buffer with scene.
@@ -370,7 +370,7 @@ namespace DigitalRune.Graphics.Rendering
         _depthBufferHalf = null;
         _offscreenBuffer = null;
       }
-#endif
+
     }
 
 
@@ -387,12 +387,12 @@ namespace DigitalRune.Graphics.Rendering
       {
         var node = jobs[index].Node;
 
-#if PARTICLES
+
         var particleSystemData = jobs[index].ParticleSystemData;
         if (particleSystemData != null)
           Draw((ParticleSystemNode)node, particleSystemData);
         else
-#endif
+
           Draw((BillboardNode)node);
 
         index++;
@@ -407,7 +407,7 @@ namespace DigitalRune.Graphics.Rendering
       var jobs = _jobs.Array;
       PackedTexture texture;
 
-#if PARTICLES
+
       var particleSystemData = jobs[index].ParticleSystemData;
       if (particleSystemData != null)
       {
@@ -415,7 +415,7 @@ namespace DigitalRune.Graphics.Rendering
         texture = particleSystemData.Texture;
       }
       else
-#endif
+
       {
         // Billboard
         var billboardNode = (BillboardNode)jobs[index].Node;
@@ -472,11 +472,11 @@ namespace DigitalRune.Graphics.Rendering
     }
 
 
-#if PARTICLES
+
     private void Draw(ParticleSystemNode node, ParticleSystemData particleSystemData)
     {
       // Scale and pose.
-      Vector3F scale = Vector3F.One;
+      Vector3 scale = Vector3.One;
       Pose pose = Pose.Identity;
       bool requiresTransformation = (particleSystemData.ReferenceFrame == ParticleReferenceFrame.Local);
       if (requiresTransformation)
@@ -486,7 +486,7 @@ namespace DigitalRune.Graphics.Rendering
       }
 
       // Tint color and alpha.
-      Vector3F color = node.Color;
+      Vector3 color = node.Color;
       float alpha = node.Alpha;
       float angleOffset = node.AngleOffset;
 
@@ -518,7 +518,7 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    private void DrawParticlesOldToNew(ParticleSystemData particleSystemData, bool requiresTransformation, ref Vector3F scale, ref Pose pose, ref Vector3F color, float alpha, float angleOffset)
+    private void DrawParticlesOldToNew(ParticleSystemData particleSystemData, bool requiresTransformation, ref Vector3 scale, ref Pose pose, ref Vector3 color, float alpha, float angleOffset)
     {
       var b = new BillboardArgs
       {
@@ -564,7 +564,7 @@ namespace DigitalRune.Graphics.Rendering
     }
 
 
-    private void DrawParticlesBackToFront(ParticleSystemData particleSystemData, bool requiresTransformation, ref Vector3F scale, ref Pose pose, ref Vector3F color, float alpha, float angleOffset)
+    private void DrawParticlesBackToFront(ParticleSystemData particleSystemData, bool requiresTransformation, ref Vector3 scale, ref Pose pose, ref Vector3 color, float alpha, float angleOffset)
     {
       var b = new BillboardArgs
       {
@@ -602,8 +602,8 @@ namespace DigitalRune.Graphics.Rendering
             particleIndex.Position = particles[i].Position;
 
           // Planar distance: Project vector onto look direction.
-          Vector3F cameraToParticle = particleIndex.Position - _cameraPose.Position;
-          particleIndex.Distance = Vector3F.Dot(cameraToParticle, _cameraForward);
+          Vector3 cameraToParticle = particleIndex.Position - _cameraPose.Position;
+          particleIndex.Distance = Vector3.Dot(cameraToParticle, _cameraForward);
           if (useLinearDistance)
             particleIndex.Distance = cameraToParticle.Length * Math.Sign(particleIndex.Distance);
 
@@ -667,7 +667,7 @@ namespace DigitalRune.Graphics.Rendering
     // p0 and p1 can have different colors and alpha values to create color gradients 
     // or a ribbon that fades in/out.
 
-    private void DrawParticleRibbonsFixed(ParticleSystemData particleSystemData, bool requiresTransformation, ref Vector3F scale, ref Pose pose, ref Vector3F color, float alpha)
+    private void DrawParticleRibbonsFixed(ParticleSystemData particleSystemData, bool requiresTransformation, ref Vector3 scale, ref Pose pose, ref Vector3 color, float alpha)
     {
       // At least two particles are required to create a ribbon.
       int numberOfParticles = particleSystemData.Particles.Count;
@@ -761,7 +761,7 @@ namespace DigitalRune.Graphics.Rendering
     }
 
 
-    private void DrawParticleRibbonsAuto(ParticleSystemData particleSystemData, bool requiresTransformation, ref Vector3F scale, ref Pose pose, ref Vector3F color, float alpha)
+    private void DrawParticleRibbonsAuto(ParticleSystemData particleSystemData, bool requiresTransformation, ref Vector3 scale, ref Pose pose, ref Vector3 color, float alpha)
     {
       // At least two particles are required to create a ribbon.
       int numberOfParticles = particleSystemData.Particles.Count;
@@ -773,7 +773,7 @@ namespace DigitalRune.Graphics.Rendering
       // - Build cross-products of normal and tangent vectors.
 
       // Is normal uniform across all particles?
-      Vector3F? uniformNormal;
+      Vector3? uniformNormal;
       switch (particleSystemData.BillboardOrientation.Normal)
       {
         case BillboardNormal.ViewPlaneAligned:
@@ -856,13 +856,13 @@ namespace DigitalRune.Graphics.Rendering
         p0.TextureCoordinateU = 0;
 
         index++;
-        Vector3F nextPosition;
+        Vector3 nextPosition;
         if (requiresTransformation)
           nextPosition = pose.ToWorldPosition(particles[index].Position * scale);
         else
           nextPosition = particles[index].Position;
 
-        Vector3F normal;
+        Vector3 normal;
         if (uniformNormal.HasValue)
         {
           // Uniform normal.
@@ -876,8 +876,8 @@ namespace DigitalRune.Graphics.Rendering
             normal = pose.ToWorldDirection(normal);
         }
 
-        Vector3F previousDelta = nextPosition - p0.Position;
-        p0.Axis = Vector3F.Cross(normal, previousDelta);
+        Vector3 previousDelta = nextPosition - p0.Position;
+        p0.Axis = Vector3.Cross(normal, previousDelta);
         p0.Axis.TryNormalize();
 
         // Intermediate particles.
@@ -909,9 +909,9 @@ namespace DigitalRune.Graphics.Rendering
               normal = pose.ToWorldDirection(normal);
           }
 
-          Vector3F delta = nextPosition - p1.Position;
-          Vector3F tangent = delta + previousDelta; // Note: Should we normalize vectors for better average?
-          p1.Axis = Vector3F.Cross(normal, tangent);
+          Vector3 delta = nextPosition - p1.Position;
+          Vector3 tangent = delta + previousDelta; // Note: Should we normalize vectors for better average?
+          p1.Axis = Vector3.Cross(normal, tangent);
           p1.Axis.TryNormalize();
 
           p1.Color = particles[index].Color * color;
@@ -945,7 +945,7 @@ namespace DigitalRune.Graphics.Rendering
             normal = pose.ToWorldDirection(normal);
         }
 
-        p1.Axis = Vector3F.Cross(normal, previousDelta);
+        p1.Axis = Vector3.Cross(normal, previousDelta);
         p1.Axis.TryNormalize();
 
         if (requiresTransformation)
@@ -1016,7 +1016,7 @@ namespace DigitalRune.Graphics.Rendering
       return texCoordU;
     }
 
-#endif
+
 
 
   }

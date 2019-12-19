@@ -52,7 +52,7 @@ namespace DigitalRune.Graphics.SceneGraph
     /// used to tint a skybox, change its brightness or fade it in/out.
     /// </para>
     /// </remarks>
-    public Vector3F Color { get; set; }
+    public Vector3 Color { get; set; }
 
 
     /// <summary>
@@ -129,7 +129,7 @@ namespace DigitalRune.Graphics.SceneGraph
     public SkyboxNode(TextureCube texture)
     {
       Texture = texture;
-      Color = new Vector3F(1, 1, 1);
+      Color = new Vector3(1, 1, 1);
       Alpha = 1.0f;
       Encoding = ColorEncoding.SRgb;
     }

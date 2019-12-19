@@ -179,7 +179,7 @@ namespace DigitalRune.Geometry.Tests.Shapes
       var s = new CylinderShape(1, 2);
       var v0 = s.GetVolume(0.001f, 10);
 
-      var s1 = new ScaledConvexShape(new CylinderShape(10, 10), new Vector3F(0.1f, 0.2f, 0.1f));
+      var s1 = new ScaledConvexShape(new CylinderShape(10, 10), new Vector3(0.1f, 0.2f, 0.1f));
       var v1 = s1.GetVolume(0.0001f, 10);
 
       Assert.IsTrue(Numeric.AreEqual(v0, v1, 0.01f * (1 + v0)));  // 1% error is allowed.
@@ -196,13 +196,13 @@ namespace DigitalRune.Geometry.Tests.Shapes
       c.Children.Add(
         new GeometricObject(
           new BoxShape(1, 2, 3),
-          new Vector3F(10, 10, 10),
-          new Pose(new Vector3F(1, 2, 3), RandomHelper.Random.NextQuaternionF())));
+          new Vector3(10, 10, 10),
+          new Pose(new Vector3(1, 2, 3), RandomHelper.Random.NextQuaternion())));
       c.Children.Add(
         new GeometricObject(
           new BoxShape(4, 5, 6),
-          new Vector3F(2, 2, 2),
-          new Pose(new Vector3F(10, -2, 0), RandomHelper.Random.NextQuaternionF())));
+          new Vector3(2, 2, 2),
+          new Pose(new Vector3(10, -2, 0), RandomHelper.Random.NextQuaternion())));
 
       var v0 = c.GetVolume(0.001f, 10);
 
@@ -219,8 +219,8 @@ namespace DigitalRune.Geometry.Tests.Shapes
 
       c.Child = new GeometricObject(
           new BoxShape(1, 2, 3),
-          new Vector3F(10, 10, 10),
-          new Pose(new Vector3F(1, 2, 3), RandomHelper.Random.NextQuaternionF()));
+          new Vector3(10, 10, 10),
+          new Pose(new Vector3(1, 2, 3), RandomHelper.Random.NextQuaternion()));
 
       var v0 = c.GetVolume(0.001f, 10);
 
@@ -233,11 +233,11 @@ namespace DigitalRune.Geometry.Tests.Shapes
     {
       Assert.AreEqual(0, new CircleShape(1).GetVolume(0.001f, 20));
       Assert.AreEqual(0, new RectangleShape(1, 2).GetVolume(0.001f, 20));
-      Assert.AreEqual(0, new RayShape(Vector3F.Zero, Vector3F.UnitZ, 10).GetVolume(0.001f, 20));
-      Assert.AreEqual(0, new LineShape(Vector3F.Zero, Vector3F.UnitZ).GetVolume(0.001f, 20));
-      Assert.AreEqual(0, new LineSegmentShape(Vector3F.UnitY, Vector3F.UnitX).GetVolume(0.001f, 20));
-      Assert.AreEqual(0, new TriangleShape(Vector3F.UnitY, Vector3F.UnitX, Vector3F.Zero).GetVolume(0.001f, 20));
-      Assert.AreEqual(0, new PointShape(Vector3F.UnitY).GetVolume(0.001f, 20));
+      Assert.AreEqual(0, new RayShape(Vector3.Zero, Vector3.UnitZ, 10).GetVolume(0.001f, 20));
+      Assert.AreEqual(0, new LineShape(Vector3.Zero, Vector3.UnitZ).GetVolume(0.001f, 20));
+      Assert.AreEqual(0, new LineSegmentShape(Vector3.UnitY, Vector3.UnitX).GetVolume(0.001f, 20));
+      Assert.AreEqual(0, new TriangleShape(Vector3.UnitY, Vector3.UnitX, Vector3.Zero).GetVolume(0.001f, 20));
+      Assert.AreEqual(0, new PointShape(Vector3.UnitY).GetVolume(0.001f, 20));
       Assert.AreEqual(0, Shape.Empty.GetVolume(0.001f, 20));
 
       var s = new CircleShape(1);

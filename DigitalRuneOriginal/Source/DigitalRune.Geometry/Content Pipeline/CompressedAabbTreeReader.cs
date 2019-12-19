@@ -16,7 +16,7 @@ namespace DigitalRune.Geometry.Content
   [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
   public class CompressedAabbTreeReader : ContentTypeReader<CompressedAabbTree>
   {
-#if !MONOGAME
+
     /// <summary>
     /// Determines if deserialization into an existing object is possible.
     /// </summary>
@@ -28,7 +28,7 @@ namespace DigitalRune.Geometry.Content
     {
       get { return true; }
     }
-#endif
+
 
 
     /// <summary>
@@ -83,8 +83,8 @@ namespace DigitalRune.Geometry.Content
         }
 
         existingInstance._aabb = input.ReadRawObject<Aabb>();
-        existingInstance._quantizationFactor = input.ReadRawObject<Vector3F>();
-        existingInstance._dequantizationFactor = input.ReadRawObject<Vector3F>();
+        existingInstance._quantizationFactor = input.ReadRawObject<Vector3>();
+        existingInstance._dequantizationFactor = input.ReadRawObject<Vector3>();
 
         existingInstance.EnableSelfOverlaps = input.ReadBoolean();
         existingInstance.BottomUpBuildThreshold = input.ReadInt32();

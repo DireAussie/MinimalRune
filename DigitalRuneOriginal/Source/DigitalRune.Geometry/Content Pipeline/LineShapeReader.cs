@@ -14,7 +14,7 @@ namespace DigitalRune.Geometry.Content
   /// </summary>
   public class LineShapeReader : ContentTypeReader<LineShape>
   {
-#if !MONOGAME
+
     /// <summary>
     /// Determines if deserialization into an existing object is possible.
     /// </summary>
@@ -26,7 +26,7 @@ namespace DigitalRune.Geometry.Content
     {
       get { return true; }
     }
-#endif
+
 
 
     /// <summary>
@@ -41,8 +41,8 @@ namespace DigitalRune.Geometry.Content
       if (existingInstance == null)
         existingInstance = new LineShape();
 
-      existingInstance.PointOnLine = input.ReadRawObject<Vector3F>();
-      existingInstance.Direction = input.ReadRawObject<Vector3F>();
+      existingInstance.PointOnLine = input.ReadRawObject<Vector3>();
+      existingInstance.Direction = input.ReadRawObject<Vector3>();
 
       return existingInstance;
     }

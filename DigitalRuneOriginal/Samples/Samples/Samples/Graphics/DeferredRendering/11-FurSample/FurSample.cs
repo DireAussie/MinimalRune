@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 using System;
 using System.Linq;
 using DigitalRune.Geometry;
@@ -96,7 +96,7 @@ parameter is automatically set each frame using an effect parameter binding.",
       _meshNode.UserData = _rigidBody;
 
       // Set a random pose.
-      _rigidBody.Pose = new Pose(new Vector3F(0, 1, 0), RandomHelper.Random.NextQuaternionF());
+      _rigidBody.Pose = new Pose(new Vector3(0, 1, 0), RandomHelper.Random.NextQuaternion());
       _meshNode.PoseWorld = _rigidBody.Pose;
 
       // Add rigid body to physics simulation and model to scene.
@@ -112,12 +112,12 @@ parameter is automatically set each frame using an effect parameter binding.",
       float p = (((float)_time.TotalSeconds) / 5.0f);
       float deltaX = (float)(Math.Pow(Math.Sin(p), 2) + Math.Cos(16 * p) + 1) * 0.001f;
       float deltaZ = (float)Math.Cos(2 * p) * 0.002f;
-      Vector3F furDisplacement = new Vector3F(deltaX, -0.01f, deltaZ);
+      Vector3 furDisplacement = new Vector3(deltaX, -0.01f, deltaZ);
 
       // Add the current rigid body movement to the displacement.
       var meshNode = (MeshNode)context.SceneNode;
       var rigidBody = (RigidBody)meshNode.UserData;
-      furDisplacement += -Vector3F.Clamp(rigidBody.LinearVelocity * 0.1f, -0.02f, 0.02f);
+      furDisplacement += -Vector3.Clamp(rigidBody.LinearVelocity * 0.1f, -0.02f, 0.02f);
 
       return (Vector3)furDisplacement;
     }
@@ -154,4 +154,3 @@ parameter is automatically set each frame using an effect parameter binding.",
     }
   }
 }
-#endif

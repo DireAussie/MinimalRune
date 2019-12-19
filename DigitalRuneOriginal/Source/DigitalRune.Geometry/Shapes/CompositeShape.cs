@@ -60,9 +60,9 @@ namespace DigitalRune.Geometry.Shapes
   /// partition (if any is in use) will be cloned (deep copy).
   /// </para>
   /// </remarks>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
+
   public class CompositeShape : Shape
   {
     //--------------------------------------------------------------
@@ -95,7 +95,7 @@ namespace DigitalRune.Geometry.Shapes
     /// <remarks>
     /// This point is a random "deep" inner point of the shape (in local space).
     /// </remarks>
-    public override Vector3F InnerPoint
+    public override Vector3 InnerPoint
     {
       get
       {
@@ -107,7 +107,7 @@ namespace DigitalRune.Geometry.Shapes
           return child.Pose.ToWorldPosition(child.Shape.InnerPoint * child.Scale);
         }
         
-        return Vector3F.Zero;
+        return Vector3.Zero;
       }
     }
 
@@ -178,7 +178,7 @@ namespace DigitalRune.Geometry.Shapes
 
     //--------------------------------------------------------------
 
-#if XNA || MONOGAME
+
     /// <summary>
     /// Sets the spatial partition. (For use by the content pipeline only.)
     /// </summary>
@@ -214,7 +214,7 @@ namespace DigitalRune.Geometry.Shapes
         }
       }
     }
-#endif
+
 
 
 
@@ -240,7 +240,7 @@ namespace DigitalRune.Geometry.Shapes
 
 
     /// <inheritdoc/>
-    public override Aabb GetAabb(Vector3F scale, Pose pose)
+    public override Aabb GetAabb(Vector3 scale, Pose pose)
     {
       // If we have a spatial partition, we can use the AABB of the whole spatial partition to 
       // quickly get an approximate AABB.
@@ -297,7 +297,7 @@ namespace DigitalRune.Geometry.Shapes
       float volume = 0;
       foreach (var child in Children)
       {
-        var scale = Vector3F.Absolute(child.Scale);
+        var scale = Vector3.Absolute(child.Scale);
         volume += child.Shape.GetVolume(relativeError, iterationLimit) * scale.X * scale.Y * scale.Z;
       }
 
@@ -402,7 +402,7 @@ namespace DigitalRune.Geometry.Shapes
     protected override TriangleMesh OnGetMesh(float absoluteDistanceThreshold, int iterationLimit)
     {
       // Convert absolute error to relative error.
-      float maxExtent = GetAabb(Vector3F.One, Pose.Identity).Extent.LargestComponent;
+      float maxExtent = GetAabb(Vector3.One, Pose.Identity).Extent.LargestComponent;
       float relativeThreshold = !Numeric.IsZero(maxExtent)
                                 ? absoluteDistanceThreshold / maxExtent
                                 : Numeric.EpsilonF;
@@ -418,7 +418,7 @@ namespace DigitalRune.Geometry.Shapes
         var childMesh = geometricObject.Shape.GetMesh(relativeThreshold, iterationLimit);
 
         // Transform child mesh into local space of this parent shape.
-        childMesh.Transform(geometricObject.Pose.ToMatrix44F() * Matrix44F.CreateScale(geometricObject.Scale));
+        childMesh.Transform(geometricObject.Pose.ToMatrix() * Matrix.CreateScale(geometricObject.Scale));
 
         // Add to parent mesh.
         mesh.Add(childMesh, false);

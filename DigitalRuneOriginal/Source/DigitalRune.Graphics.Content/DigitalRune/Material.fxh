@@ -9,7 +9,7 @@
 //
 //-----------------------------------------------------------------------------
 
-#ifndef DIGITALRUNE_MATERIAL_FXH
+
 #define DIGITALRUNE_MATERIAL_FXH
 
 
@@ -72,4 +72,4 @@ sampler HeightSampler = sampler_state \
   MIPFILTER = LINEAR; \
 };
 
-#endif
+

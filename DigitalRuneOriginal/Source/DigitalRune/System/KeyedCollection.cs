@@ -1,7 +1,7 @@
 ﻿// This code is based on the KeyedCollection class code of Mono. It is necessary
 // because the Collection class in the Unity Web Player does not work.
 #pragma warning disable 1591            // Missing XML comment.
-#if UNITY
+
 // -*- Mode: csharp; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*-
 //
 // System.Collections.ObjectModel.KeyedCollection
@@ -263,4 +263,4 @@ namespace DigitalRune.Collections.ObjectModel
     }
   }
 }
-#endif
+

@@ -97,7 +97,7 @@ namespace DigitalRune.Geometry.Partitioning
 
             // Compute a "size" which can be used to estimate the fit of the new node. 
             // Here: volume + edges
-            Vector3F edges = mergedAabb.Extent;
+            Vector3 edges = mergedAabb.Extent;
             float size = edges.X * edges.Y * edges.Z + edges.X + edges.Y + edges.Z;
             if (size <= minSize)  // Note: We compare with ≤ because size can be ∞.
             {
@@ -224,17 +224,17 @@ namespace DigitalRune.Geometry.Partitioning
         return leaves[firstLeaf];
 
       // Compute mean of AABB centers.
-      Vector3F mean = new Vector3F();
+      Vector3 mean = new Vector3();
       for (int i = firstLeaf; i <= lastLeaf; i++)
         mean += leaves[i].Aabb.Center;
 
       mean /= numberOfNodes;
 
       // Compute variance of AABB centers.
-      Vector3F variance = new Vector3F();
+      Vector3 variance = new Vector3();
       for (int i = firstLeaf; i <= lastLeaf; i++)
       {
-        Vector3F difference = leaves[i].Aabb.Center - mean;
+        Vector3 difference = leaves[i].Aabb.Center - mean;
         variance += difference * difference;
       }
 
@@ -318,13 +318,13 @@ namespace DigitalRune.Geometry.Partitioning
 
       IAabbTreeNode<T> node = createNode();
       node.Aabb = MergeLeaveAabbs(leaves, firstLeaf, lastLeaf);
-      Vector3F center = node.Aabb.Center;
+      Vector3 center = node.Aabb.Center;
 
       // Check which split yields the most balanced tree.
       int[,] splitCount = new int[3,2];   // splitCount[number of axis, left or right]
       for (int i = firstLeaf; i <= lastLeaf; i++)
       {
-        Vector3F offset = leaves[i].Aabb.Center - center;
+        Vector3 offset = leaves[i].Aabb.Center - center;
         for (int axis = 0; axis < 3; axis++)
         {
           if (offset[axis] <= 0)

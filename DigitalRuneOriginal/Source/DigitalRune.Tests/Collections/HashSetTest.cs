@@ -1,6 +1,6 @@
 ﻿// Skip unit tests in Silverlight. Silverlight has an implementation of HashSet<T>,
 // but the implementation is missing certain methods.
-#if WINDOWS || WINDOWS_PHONE || XBOX360
+
 
 using System;
 using System.Collections.Generic;
@@ -436,4 +436,4 @@ namespace DigitalRune.Collections.Tests
     }
   }
 }
-#endif
+

@@ -13,14 +13,14 @@ namespace DigitalRune.Mathematics.Interpolation.Tests
     {
       BezierSegment3F b = new BezierSegment3F
       {
-        Point1 = new Vector3F(1, 2, 3),
-        ControlPoint1 = new Vector3F(10, 3, 6),
-        ControlPoint2 = new Vector3F(7, 8, 19),
-        Point2 = new Vector3F(10, 2, 12),
+        Point1 = new Vector3(1, 2, 3),
+        ControlPoint1 = new Vector3(10, 3, 6),
+        ControlPoint2 = new Vector3(7, 8, 19),
+        Point2 = new Vector3(10, 2, 12),
       };
 
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(b.Point1, b.GetPoint(0)));
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(b.Point2, b.GetPoint(1)));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(b.Point1, b.GetPoint(0)));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(b.Point2, b.GetPoint(1)));
     }
 
 
@@ -29,14 +29,14 @@ namespace DigitalRune.Mathematics.Interpolation.Tests
     {
       BezierSegment3F b = new BezierSegment3F
       {
-        Point1 = new Vector3F(1, 2, 3),
-        ControlPoint1 = new Vector3F(10, 3, 6),
-        ControlPoint2 = new Vector3F(7, 8, 19),
-        Point2 = new Vector3F(10, 2, 12),
+        Point1 = new Vector3(1, 2, 3),
+        ControlPoint1 = new Vector3(10, 3, 6),
+        ControlPoint2 = new Vector3(7, 8, 19),
+        Point2 = new Vector3(10, 2, 12),
       };
 
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(3 * (b.ControlPoint1 - b.Point1), b.GetTangent(0)));
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(3 * (b.Point2 - b.ControlPoint2), b.GetTangent(1)));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(3 * (b.ControlPoint1 - b.Point1), b.GetTangent(0)));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(3 * (b.Point2 - b.ControlPoint2), b.GetTangent(1)));
     }
 
 
@@ -45,10 +45,10 @@ namespace DigitalRune.Mathematics.Interpolation.Tests
     {
       BezierSegment3F b = new BezierSegment3F
       {
-        Point1 = new Vector3F(1, 2, 3),
-        ControlPoint1 = new Vector3F(4, 5, 6),
-        ControlPoint2 = new Vector3F(7, 8, 19),
-        Point2 = new Vector3F(10, 2, 12),
+        Point1 = new Vector3(1, 2, 3),
+        ControlPoint1 = new Vector3(4, 5, 6),
+        ControlPoint2 = new Vector3(7, 8, 19),
+        Point2 = new Vector3(10, 2, 12),
       };
 
       float lowerBound = (b.Point2 - b.Point1).Length;
@@ -80,12 +80,12 @@ namespace DigitalRune.Mathematics.Interpolation.Tests
     {
       var s = new BezierSegment3F
       {
-        Point1 = new Vector3F(1, 2, 3),
-        ControlPoint1 = new Vector3F(4, 5, 6),
-        ControlPoint2 = new Vector3F(7, 8, 19),
-        Point2 = new Vector3F(10, 2, 12),
+        Point1 = new Vector3(1, 2, 3),
+        ControlPoint1 = new Vector3(4, 5, 6),
+        ControlPoint2 = new Vector3(7, 8, 19),
+        Point2 = new Vector3(10, 2, 12),
       };
-      var points = new List<Vector3F>();
+      var points = new List<Vector3>();
       var tolerance = 0.01f;
       s.Flatten(points, 10, tolerance);
       Assert.IsTrue(points.Contains(s.Point1));

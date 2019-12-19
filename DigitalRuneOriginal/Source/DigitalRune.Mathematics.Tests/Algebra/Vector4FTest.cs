@@ -50,7 +50,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
       Assert.AreEqual(3.0f, v.Z);
       Assert.AreEqual(4.0f, v.W);
 
-      v = new Vector4F(new Vector3F(1.0f, 2.0f, 3.0f), 4.0f);
+      v = new Vector4F(new Vector3(1.0f, 2.0f, 3.0f), 4.0f);
       Assert.AreEqual(1.0f, v.X);
       Assert.AreEqual(2.0f, v.Y);
       Assert.AreEqual(3.0f, v.Z);
@@ -679,25 +679,25 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void DotProduct()
     {
-      // 0°
+      // 0ï¿½
       Assert.AreEqual(1.0f, Vector4F.Dot(Vector4F.UnitX, Vector4F.UnitX));
       Assert.AreEqual(1.0f, Vector4F.Dot(Vector4F.UnitY, Vector4F.UnitY));
       Assert.AreEqual(1.0f, Vector4F.Dot(Vector4F.UnitZ, Vector4F.UnitZ));
       Assert.AreEqual(1.0f, Vector4F.Dot(Vector4F.UnitW, Vector4F.UnitW));
 
-      // 180°
+      // 180ï¿½
       Assert.AreEqual(-1.0f, Vector4F.Dot(Vector4F.UnitX, -Vector4F.UnitX));
       Assert.AreEqual(-1.0f, Vector4F.Dot(Vector4F.UnitY, -Vector4F.UnitY));
       Assert.AreEqual(-1.0f, Vector4F.Dot(Vector4F.UnitZ, -Vector4F.UnitZ));
       Assert.AreEqual(-1.0f, Vector4F.Dot(Vector4F.UnitW, -Vector4F.UnitW));
 
-      // 90°
+      // 90ï¿½
       Assert.AreEqual(0.0f, Vector4F.Dot(Vector4F.UnitX, Vector4F.UnitY));
       Assert.AreEqual(0.0f, Vector4F.Dot(Vector4F.UnitY, Vector4F.UnitZ));
       Assert.AreEqual(0.0f, Vector4F.Dot(Vector4F.UnitZ, Vector4F.UnitW));
       Assert.AreEqual(0.0f, Vector4F.Dot(Vector4F.UnitW, Vector4F.UnitX));
 
-      // 45°
+      // 45ï¿½
       float angle = (float)Math.Acos(Vector4F.Dot(new Vector4F(1, 1, 0, 0).Normalized, Vector4F.UnitX));
       Assert.IsTrue(Numeric.AreEqual(MathHelper.ToRadians(45), angle));
       angle = (float)Math.Acos(Vector4F.Dot(new Vector4F(0, 1, 1, 0).Normalized, Vector4F.UnitY));
@@ -713,10 +713,10 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     public void XYZ()
     {
       Vector4F v4 = new Vector4F(1.0f, 2.0f, 3.0f, 5.0f);
-      Vector3F v3 = v4.XYZ;
-      Assert.AreEqual(new Vector3F(1.0f, 2.0f, 3.0f), v3);
+      Vector3 v3 = v4.XYZ;
+      Assert.AreEqual(new Vector3(1.0f, 2.0f, 3.0f), v3);
 
-      v4.XYZ = new Vector3F(0.1f, 0.2f, 0.3f);
+      v4.XYZ = new Vector3(0.1f, 0.2f, 0.3f);
       Assert.AreEqual(0.1f, v4.X);
       Assert.AreEqual(0.2f, v4.Y);
       Assert.AreEqual(0.3f, v4.Z);
@@ -727,12 +727,12 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     public void HomogeneousDivide()
     {
       Vector4F v4 = new Vector4F(1.0f, 2.0f, 3.0f, 1.0f);
-      Vector3F v3 = Vector4F.HomogeneousDivide(v4);
-      Assert.AreEqual(new Vector3F(1.0f, 2.0f, 3.0f), v3);
+      Vector3 v3 = Vector4F.HomogeneousDivide(v4);
+      Assert.AreEqual(new Vector3(1.0f, 2.0f, 3.0f), v3);
 
       v4 = new Vector4F(1.0f, 2.0f, 3.0f, 10.0f);
       v3 = Vector4F.HomogeneousDivide(v4);
-      Assert.AreEqual(new Vector3F(1.0f / 10.0f, 2.0f / 10.0f, 3.0f / 10.0f), v3);
+      Assert.AreEqual(new Vector3(1.0f / 10.0f, 2.0f / 10.0f, 3.0f / 10.0f), v3);
     }
 
 

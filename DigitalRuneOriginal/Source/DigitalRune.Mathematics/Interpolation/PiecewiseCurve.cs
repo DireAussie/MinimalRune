@@ -5,11 +5,11 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-#if !UNITY
+
 using System.Collections.ObjectModel;
 #else
 using DigitalRune.Collections.ObjectModel;
-#endif
+
 using System.Diagnostics;
 using System.Linq;
 using System.Xml;
@@ -26,7 +26,7 @@ namespace DigitalRune.Mathematics.Interpolation
   /// The type of the curve parameter (usually <see cref="float"/> or <see cref="double"/>).
   /// </typeparam>
   /// <typeparam name="TPoint">
-  /// The type of the curve points (such as <see cref="Vector2F"/>, <see cref="Vector3F"/>, etc.).
+  /// The type of the curve points (such as <see cref="Vector2F"/>, <see cref="Vector3"/>, etc.).
   /// </typeparam>
   /// <typeparam name="TCurveKey">
   /// The type of the curve key. (A type derived from <see cref="CurveKey{TParam,TPoint}"/>.)
@@ -56,9 +56,9 @@ namespace DigitalRune.Mathematics.Interpolation
   /// can call <see cref="Sort"/> to sort keys.
   /// </para>
   /// </remarks>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
-#endif
+
   [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1005:AvoidExcessiveParametersOnGenericTypes")]
   [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
   [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]

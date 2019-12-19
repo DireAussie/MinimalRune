@@ -7,9 +7,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq.Expressions;
 using System.Runtime.Serialization;
-#if NETFX_CORE || NET45
+
 using System.Runtime.CompilerServices;
-#endif
+
 
 
 namespace DigitalRune.Windows
@@ -122,15 +122,15 @@ namespace DigitalRune.Windows
     /// </code>
     /// </para>
     /// </remarks>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX
+
     [Serializable]
-#endif
+
     [DataContract(IsReference = true)]
     public abstract class ObservableObject : INotifyPropertyChanged
     {
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX
+
         [field: NonSerialized]
-#endif
+
         private bool _enableUIThreadMarshaling;
 
 
@@ -158,13 +158,13 @@ namespace DigitalRune.Windows
         /// <summary>
         /// Occurs when a property value changes.
         /// </summary>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX
+
         [field: NonSerialized]
-#endif
+
         public event PropertyChangedEventHandler PropertyChanged;
 
 
-#if NETFX_CORE || NET45
+
         /// <summary>
         /// Sets the value of the property and raises the <see cref="PropertyChanged"/> event. (Does
         /// nothing if the new value matches the current property value.)
@@ -189,7 +189,7 @@ namespace DigitalRune.Windows
             OnPropertyChanged(new PropertyChangedEventArgs(propertyName));
             return true;
         }
-#endif
+
 
 
         /// <overloads>
@@ -218,18 +218,18 @@ namespace DigitalRune.Windows
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1030:UseEventsWhereAppropriate")]
         protected void RaisePropertyChanged<T>(Expression<Func<T>> expression)
         {
-#if DEBUG
+
             // (Only in DEBUG to avoid double check in RELEASE.)
             if (expression == null)
                 throw new ArgumentNullException(nameof(expression), "expression cannot be null. Call RaisePropertyChanged() instead, if you want to indicate that all properties have changed.");
-#endif
+
 
             string propertyName = ObjectHelper.GetPropertyName(expression);
             OnPropertyChanged(new PropertyChangedEventArgs(propertyName));
         }
 
 
-#if NETFX_CORE || NET45
+
         /// <summary>
         /// Raises the <see cref="PropertyChanged"/> event indicating that a certain property or all
         /// properties have changed.
@@ -249,7 +249,7 @@ namespace DigitalRune.Windows
         {
             OnPropertyChanged(new PropertyChangedEventArgs(propertyName));
         }
-#endif
+
 
 
         /// <summary>

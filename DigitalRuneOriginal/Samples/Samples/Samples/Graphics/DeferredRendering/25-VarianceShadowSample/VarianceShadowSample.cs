@@ -1,5 +1,5 @@
 ﻿using DigitalRune;
-#if !WP7 && !WP8
+
 using System.Linq;
 using DigitalRune.Geometry.Shapes;
 using DigitalRune.Graphics;
@@ -31,7 +31,7 @@ Press <F4> to open the Options window where you can change shadow settings.",
     private readonly DeferredGraphicsScreen _graphicsScreen;
     private readonly VarianceShadow _varianceShadow;
     private readonly LightNode _lightNode;
-    private Matrix33F _lastLightOrientation;
+    private Matrix _lastLightOrientation;
     private bool _updateShadowMap;
 
 
@@ -73,7 +73,7 @@ Press <F4> to open the Options window where you can change shadow settings.",
       {
         // If a target area is set, the VSM covers the given area.
         // If no target area is set, the VSM covers the area in front of the camera.
-        TargetArea = new Aabb(new Vector3F(-100, 0, -100), new Vector3F(100, 50, 100)),
+        TargetArea = new Aabb(new Vector3(-100, 0, -100), new Vector3(100, 50, 100)),
       };
       _lightNode.Shadow = _varianceShadow;
 
@@ -173,4 +173,3 @@ Press <F4> to open the Options window where you can change shadow settings.",
     }
   }
 }
-#endif

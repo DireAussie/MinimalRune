@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !WP7
+
 using System;
 using DigitalRune.Mathematics;
 using DigitalRune.Mathematics.Algebra;
@@ -280,7 +280,7 @@ namespace DigitalRune.Graphics.PostProcessing
       var viewport = context.Viewport;
 
       Projection projection = cameraNode.Camera.Projection;
-      Matrix44F projMatrix = projection;
+      Matrix projMatrix = projection;
       float near = projection.Near;
       float far = projection.Far;
 
@@ -295,8 +295,8 @@ namespace DigitalRune.Graphics.PostProcessing
       // The height of a 1 unit object 1 unit in front of the camera.
       // (Compute 0.5 unit multiply by 2 and divide by 2 to convert from [-1, 1] to [0, 1] range.)
       float projectionScale =
-        projMatrix.TransformPosition(new Vector3F(0, 0.5f, -1)).Y
-        - projMatrix.TransformPosition(new Vector3F(0, 0, -1)).Y;
+        projMatrix.TransformPosition(new Vector3(0, 0.5f, -1)).Y
+        - projMatrix.TransformPosition(new Vector3(0, 0, -1)).Y;
 
       _aoParameters0.SetValue(new Vector4(
         projectionScale,
@@ -385,4 +385,4 @@ namespace DigitalRune.Graphics.PostProcessing
 
   }
 }
-#endif
+

@@ -73,7 +73,7 @@ namespace DigitalRune.Physics.Constraints
     /// The constraint anchor orientation on <see cref="Constraint.BodyA"/> in local space of 
     /// <see cref="Constraint.BodyA"/>.
     /// </value>
-    public Matrix33F AnchorOrientationALocal
+    public Matrix AnchorOrientationALocal
     {
       get { return _anchorOrientationALocal; }
       set
@@ -85,7 +85,7 @@ namespace DigitalRune.Physics.Constraints
         }
       }
     }
-    private Matrix33F _anchorOrientationALocal = Matrix33F.Identity;
+    private Matrix _anchorOrientationALocal = Matrix.Identity;
 
 
     /// <summary>
@@ -96,7 +96,7 @@ namespace DigitalRune.Physics.Constraints
     /// The constraint anchor orientation on <see cref="Constraint.BodyB"/> in local space of 
     /// <see cref="Constraint.BodyB"/>.
     /// </value>
-    public Matrix33F AnchorOrientationBLocal
+    public Matrix AnchorOrientationBLocal
     {
       get { return _anchorOrientationBLocal; }
       set
@@ -108,7 +108,7 @@ namespace DigitalRune.Physics.Constraints
         }
       }
     }
-    private Matrix33F _anchorOrientationBLocal = Matrix33F.Identity;
+    private Matrix _anchorOrientationBLocal = Matrix.Identity;
 
 
     /// <summary>
@@ -125,7 +125,7 @@ namespace DigitalRune.Physics.Constraints
     /// <exception cref="ArgumentOutOfRangeException">
     /// A minimum swing limit is positive.
     /// </exception>
-    public Vector3F Minimum
+    public Vector3 Minimum
     {
       get { return _minimum; }
       set
@@ -140,7 +140,7 @@ namespace DigitalRune.Physics.Constraints
         }
       }
     }
-    private Vector3F _minimum = new Vector3F(0, -ConstantsF.PiOver4, -ConstantsF.PiOver4);
+    private Vector3 _minimum = new Vector3(0, -ConstantsF.PiOver4, -ConstantsF.PiOver4);
 
 
     /// <summary>
@@ -159,7 +159,7 @@ namespace DigitalRune.Physics.Constraints
     /// <exception cref="ArgumentOutOfRangeException">
     /// A maximum swing limit is negative.
     /// </exception>
-    public Vector3F Maximum
+    public Vector3 Maximum
     {
       get { return _maximum; }
       set
@@ -174,7 +174,7 @@ namespace DigitalRune.Physics.Constraints
         }
       }
     }
-    private Vector3F _maximum = new Vector3F(0, ConstantsF.PiOver4, ConstantsF.PiOver4);
+    private Vector3 _maximum = new Vector3(0, ConstantsF.PiOver4, ConstantsF.PiOver4);
 
 
     /// <summary>
@@ -279,17 +279,17 @@ namespace DigitalRune.Physics.Constraints
 
 
     /// <inheritdoc/>
-    public override Vector3F LinearConstraintImpulse
+    public override Vector3 LinearConstraintImpulse
     {
       get
       {
-        return Vector3F.Zero;
+        return Vector3.Zero;
       }
     }
 
 
     /// <inheritdoc/>
-    public override Vector3F AngularConstraintImpulse
+    public override Vector3 AngularConstraintImpulse
     {
       get
       {
@@ -299,7 +299,7 @@ namespace DigitalRune.Physics.Constraints
     }
 
 
-    //public Vector3F RelativePosition
+    //public Vector3 RelativePosition
     //{
     //  get
     //  {
@@ -309,14 +309,14 @@ namespace DigitalRune.Physics.Constraints
     //      throw new PhysicsException("BodyB must not be null.");
 
     //    // Anchor orientation in world space.
-    //    Matrix33F anchorOrientationA = BodyA.Pose.Orientation * AnchorOrientationALocal;
-    //    Matrix33F anchorOrientationB = BodyB.Pose.Orientation * AnchorOrientationBLocal;
+    //    Matrix anchorOrientationA = BodyA.Pose.Orientation * AnchorOrientationALocal;
+    //    Matrix anchorOrientationB = BodyB.Pose.Orientation * AnchorOrientationBLocal;
 
     //    // Anchor orientation of B relative to A.
-    //    Matrix33F relativeOrientation = anchorOrientationA.Transposed * anchorOrientationB;
+    //    Matrix relativeOrientation = anchorOrientationA.Transposed * anchorOrientationB;
 
     //    // The Euler angles.
-    //    Vector3F angles = GetAngles(relativeOrientation);
+    //    Vector3 angles = GetAngles(relativeOrientation);
 
     //    return angles;
     //  }
@@ -338,22 +338,22 @@ namespace DigitalRune.Physics.Constraints
     protected override void OnSetup()
     {
       // Get anchor orientations in world space.
-      Matrix33F anchorOrientationA = BodyA.Pose.Orientation * AnchorOrientationALocal;
-      Matrix33F anchorOrientationB = BodyB.Pose.Orientation * AnchorOrientationBLocal;
+      Matrix anchorOrientationA = BodyA.Pose.Orientation * AnchorOrientationALocal;
+      Matrix anchorOrientationB = BodyB.Pose.Orientation * AnchorOrientationBLocal;
 
       // Get the quaternion that rotates something from anchor orientation A to 
       // anchor orientation B:
       //   QB = QTotal * QA
       //   => QTotal = QB * QA.Inverse
-      QuaternionF total = QuaternionF.CreateRotation(anchorOrientationB * anchorOrientationA.Transposed);
+      Quaternion total = Quaternion.CreateRotation(anchorOrientationB * anchorOrientationA.Transposed);
 
       // Compute swing axis and angle.
-      Vector3F xAxisA = anchorOrientationA.GetColumn(0);
-      Vector3F yAxisA = anchorOrientationA.GetColumn(1);
-      Vector3F xAxisB = anchorOrientationB.GetColumn(0);
-      QuaternionF swing = QuaternionF.CreateRotation(xAxisA, xAxisB);
+      Vector3 xAxisA = anchorOrientationA.GetColumn(0);
+      Vector3 yAxisA = anchorOrientationA.GetColumn(1);
+      Vector3 xAxisB = anchorOrientationB.GetColumn(0);
+      Quaternion swing = Quaternion.CreateRotation(xAxisA, xAxisB);
 
-      Vector3F swingAxis = new Vector3F(swing.X, swing.Y, swing.Z);
+      Vector3 swingAxis = new Vector3(swing.X, swing.Y, swing.Z);
       if (!swingAxis.TryNormalize())
         swingAxis = yAxisA;
 
@@ -361,11 +361,11 @@ namespace DigitalRune.Physics.Constraints
 
       Debug.Assert(
         0 <= swingAngle && swingAngle <= ConstantsF.Pi,
-        "QuaternionF.CreateRotation(Vector3F, Vector3F) should only create rotations along the \"short arc\".");
+        "Quaternion.CreateRotation(Vector3, Vector3) should only create rotations along the \"short arc\".");
 
       // The swing limits create a deformed cone. If we look onto the x-axis of A:
       // y-axis goes to the right. z-axis goes up. 
-      Vector3F xAxisBInAnchorA = Matrix33F.MultiplyTransposed(anchorOrientationA, xAxisB);
+      Vector3 xAxisBInAnchorA = Matrix.MultiplyTransposed(anchorOrientationA, xAxisB);
       float directionY = xAxisBInAnchorA.Y;
       float directionZ = xAxisBInAnchorA.Z;
 
@@ -402,24 +402,24 @@ namespace DigitalRune.Physics.Constraints
         // is not correct for this axis...
         // Create a swing axis from the ellipse normal.
         //float k = ellipseASquared / ellipseBSquared * directionZ / directionY;
-        //var normal = anchorOrientationA * new Vector3F(0, -k, 1).Normalized;
-        //if (Vector3F.Dot(normal, swingAxis) < 0)
+        //var normal = anchorOrientationA * new Vector3(0, -k, 1).Normalized;
+        //if (Vector3.Dot(normal, swingAxis) < 0)
         //  swingAxis = -normal;
         //else
         //  swingAxis = normal;
       }
 
-#if DEBUG
-      //Debug.Assert(QuaternionF.Dot(swing, total) >= 0);
-      var swingAxisALocal = Matrix33F.MultiplyTransposed(anchorOrientationA, swingAxis);
+
+      //Debug.Assert(Quaternion.Dot(swing, total) >= 0);
+      var swingAxisALocal = Matrix.MultiplyTransposed(anchorOrientationA, swingAxis);
       Debug.Assert(Numeric.IsZero(swingAxisALocal.X));
-#endif
+
 
       // We define our rotations like this:
       // First we twist around the x-axis of A. Then we swing.
       //   QTotal = QSwing * QTwist
       //   => QSwing.Inverse * QTotal = QTwist
-      QuaternionF twist = swing.Conjugated * total;
+      Quaternion twist = swing.Conjugated * total;
       twist.Normalize();
 
       // The quaternion returns an angle in the range [0, 2π].
@@ -434,8 +434,8 @@ namespace DigitalRune.Physics.Constraints
       }
 
       // The axis of the twist quaternion is parallel to xAxisA.
-      Vector3F twistAxis = new Vector3F(twist.X, twist.Y, twist.Z);
-      if (Vector3F.Dot(twistAxis, xAxisA) < 0)
+      Vector3 twistAxis = new Vector3(twist.X, twist.Y, twist.Z);
+      if (Vector3.Dot(twistAxis, xAxisA) < 0)
       {
         // The axis of the twist quaternion points in the opposite direction of xAxisA.
         // The twist angle need to be inverted.
@@ -456,7 +456,7 @@ namespace DigitalRune.Physics.Constraints
     }
 
 
-    private void SetupConstraint(int index, float position, Vector3F axis, float minimum, float maximum)
+    private void SetupConstraint(int index, float position, Vector3 axis, float minimum, float maximum)
     {
       // Note: Cached constraint impulses are reset in Warmstart() if necessary.
 
@@ -545,7 +545,7 @@ namespace DigitalRune.Physics.Constraints
 
       // Note: Softness must be set before!
       constraint.Softness = Softness / deltaTime;
-      constraint.Prepare(BodyA, BodyB, Vector3F.Zero, -axis, Vector3F.Zero, axis);
+      constraint.Prepare(BodyA, BodyB, Vector3.Zero, -axis, Vector3.Zero, axis);
     }
 
 
@@ -620,7 +620,7 @@ namespace DigitalRune.Physics.Constraints
     /// between 0 to 360°. Draw lines between neighbor points and the points and the cone tip. This
     /// creates a wire frame visualization of the swing limit cone.
     /// </remarks>
-    public Vector3F GetPointOnCone(float angle, Vector3F coneTip, float distanceFromTip)
+    public Vector3 GetPointOnCone(float angle, Vector3 coneTip, float distanceFromTip)
     {
       // angle = 0 is BodyA +Y axis. angles rotate around BodyA +X axis.
 
@@ -642,10 +642,10 @@ namespace DigitalRune.Physics.Constraints
         swingLimit = (float)Math.Sqrt((1 + slopeSquared) / (1 / ellipseASquared + slopeSquared / ellipseBSquared));
       }
 
-      var swingAxis = new Vector3F(0, -directionZ, directionY);
-      var swing = QuaternionF.CreateRotation(swingAxis, swingLimit);
+      var swingAxis = new Vector3(0, -directionZ, directionY);
+      var swing = Quaternion.CreateRotation(swingAxis, swingLimit);
 
-      var pointInAnchorA = swing.Rotate(new Vector3F(distanceFromTip, 0, 0));
+      var pointInAnchorA = swing.Rotate(new Vector3(distanceFromTip, 0, 0));
 
       var pointInA = AnchorOrientationALocal * pointInAnchorA;
       if (BodyA != null)

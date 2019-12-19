@@ -279,7 +279,7 @@
  * won't be used.
  */
 
-#if SMAA_PRESET_LOW == 1
+
 #define SMAA_THRESHOLD 0.15
 #define SMAA_MAX_SEARCH_STEPS 4
 #define SMAA_MAX_SEARCH_STEPS_DIAG 0
@@ -299,7 +299,7 @@
 #define SMAA_MAX_SEARCH_STEPS 32
 #define SMAA_MAX_SEARCH_STEPS_DIAG 16
 #define SMAA_CORNER_ROUNDING 25
-#endif
+
 
 //-----------------------------------------------------------------------------
 // Configurable Defines
@@ -316,18 +316,18 @@
  *   If temporal supersampling is used, 0.2 could be a reasonable value, as low
  *   contrast edges are properly filtered by just 2x.
  */
-#ifndef SMAA_THRESHOLD
+
 #define SMAA_THRESHOLD 0.1
-#endif
+
 
 /**
  * SMAA_DEPTH_THRESHOLD specifies the threshold for depth edge detection.
  * 
  * Range: depends on the depth range of the scene.
  */
-#ifndef SMAA_DEPTH_THRESHOLD
+
 #define SMAA_DEPTH_THRESHOLD (0.1 * SMAA_THRESHOLD)
-#endif
+
 
 /**
  * SMAA_MAX_SEARCH_STEPS specifies the maximum steps performed in the
@@ -339,9 +339,9 @@
  *
  * Range: [0, 98]
  */
-#ifndef SMAA_MAX_SEARCH_STEPS
+
 #define SMAA_MAX_SEARCH_STEPS 16
-#endif
+
 
 /**
  * SMAA_MAX_SEARCH_STEPS_DIAG specifies the maximum steps performed in the
@@ -353,18 +353,18 @@
  * On high-end machines it is cheap (between a 0.8x and 0.9x slower for 16 
  * steps), but it can have a significant impact on older machines.
  */
-#ifndef SMAA_MAX_SEARCH_STEPS_DIAG
+
 #define SMAA_MAX_SEARCH_STEPS_DIAG 8
-#endif
+
 
 /**
  * SMAA_CORNER_ROUNDING specifies how much sharp corners will be rounded.
  *
  * Range: [0, 100]; set it to 100 to disable corner detection.
  */
-#ifndef SMAA_CORNER_ROUNDING
+
 #define SMAA_CORNER_ROUNDING 25
-#endif
+
 
 /**
  * Predicated thresholding allows to better preserve texture details and to
@@ -380,9 +380,9 @@
  * Killzone 3, by using the light accumulation buffer. More information here:
  *     http://iryoku.com/aacourse/downloads/06-MLAA-on-PS3.pptx 
  */
-#ifndef SMAA_PREDICATION
+
 #define SMAA_PREDICATION 0
-#endif
+
 
 /**
  * Threshold to be used in the additional predication buffer. 
@@ -390,9 +390,9 @@
  * Range: depends on the input, so you'll have to find the magic number that
  * works for you.
  */
-#ifndef SMAA_PREDICATION_THRESHOLD
+
 #define SMAA_PREDICATION_THRESHOLD 0.01
-#endif
+
 
 /**
  * How much to scale the global threshold used for luma or color edge
@@ -400,18 +400,18 @@
  *
  * Range: [1, 5]
  */
-#ifndef SMAA_PREDICATION_SCALE
+
 #define SMAA_PREDICATION_SCALE 2.0
-#endif
+
 
 /**
  * How much to locally decrease the threshold.
  *
  * Range: [0, 1]
  */
-#ifndef SMAA_PREDICATION_STRENGTH
+
 #define SMAA_PREDICATION_STRENGTH 0.4
-#endif
+
 
 /**
  * Temporal reprojection allows to remove ghosting artifacts when using
@@ -424,9 +424,9 @@
  * For static geometry, saving the previous depth buffer is a viable
  * alternative.
  */
-#ifndef SMAA_REPROJECTION
+
 #define SMAA_REPROJECTION 0
-#endif
+
 
 /**
  * SMAA_REPROJECTION_WEIGHT_SCALE controls the velocity weighting. It allows to
@@ -453,37 +453,37 @@
  * It's ignored when using SMAA_HLSL_4, and of course, only has sense when
  * using sRGB read and writes on the last pass.
  */
-#ifndef SMAA_DIRECTX9_LINEAR_BLEND
+
 #define SMAA_DIRECTX9_LINEAR_BLEND 0
-#endif
+
 
 /**
  * On ATI compilers, discard cannot be used in vertex shaders. Thus, they need
  * to be compiled separately. These macros allow to easily accomplish it.
  */
-#ifndef SMAA_ONLY_COMPILE_VS
+
 #define SMAA_ONLY_COMPILE_VS 0
-#endif
-#ifndef SMAA_ONLY_COMPILE_PS
+
+
 #define SMAA_ONLY_COMPILE_PS 0
-#endif
+
 
 //-----------------------------------------------------------------------------
 // Non-Configurable Defines
 
-#ifndef SMAA_AREATEX_MAX_DISTANCE
+
 #define SMAA_AREATEX_MAX_DISTANCE 16
-#endif
-#ifndef SMAA_AREATEX_MAX_DISTANCE_DIAG
+
+
 #define SMAA_AREATEX_MAX_DISTANCE_DIAG 20
-#endif
+
 #define SMAA_AREATEX_PIXEL_SIZE (1.0 / float2(160.0, 560.0))
 #define SMAA_AREATEX_SUBTEX_SIZE (1.0 / 7.0)
 
 //-----------------------------------------------------------------------------
 // Porting Functions
 
-#if SMAA_HLSL_3 == 1
+
 #define SMAATexture2D sampler2D
 #define SMAASampleLevelZero(tex, coord) tex2Dlod(tex, float4(coord, 0.0, 0.0))
 #define SMAASampleLevelZeroPoint(tex, coord) tex2Dlod(tex, float4(coord, 0.0, 0.0))
@@ -496,8 +496,8 @@
 #define SMAAMad(a, b, c) mad(a, b, c)
 #define SMAA_FLATTEN [flatten]
 #define SMAA_BRANCH [branch]
-#endif
-#if SMAA_HLSL_4 == 1 || SMAA_HLSL_4_1 == 1
+
+
 SamplerState LinearSampler { Filter = MIN_MAG_LINEAR_MIP_POINT; AddressU = Clamp; AddressV = Clamp; };
 SamplerState PointSampler { Filter = MIN_MAG_MIP_POINT; AddressU = Clamp; AddressV = Clamp; };
 #define SMAATexture2D Texture2D
@@ -514,11 +514,11 @@ SamplerState PointSampler { Filter = MIN_MAG_MIP_POINT; AddressU = Clamp; Addres
 #define SMAA_BRANCH [branch]
 #define SMAATexture2DMS2 Texture2DMS<float4, 2>
 #define SMAALoad(tex, pos, sample) tex.Load(pos, sample)
-#endif
-#if SMAA_HLSL_4_1 == 1
+
+
 #define SMAAGather(tex, coord) tex.Gather(LinearSampler, coord, 0)
-#endif
-#if SMAA_GLSL_3 == 1 || SMAA_GLSL_4 == 1
+
+
 #define SMAATexture2D sampler2D
 #define SMAASampleLevelZero(tex, coord) textureLod(tex, coord, 0.0)
 #define SMAASampleLevelZeroPoint(tex, coord) textureLod(tex, coord, 0.0)
@@ -536,14 +536,14 @@ SamplerState PointSampler { Filter = MIN_MAG_MIP_POINT; AddressU = Clamp; Addres
 #define int2 ivec2
 #define int3 ivec3
 #define int4 ivec4
-#endif
-#if SMAA_GLSL_3 == 1
+
+
 #define SMAAMad(a, b, c) (a * b + c)
-#endif
-#if SMAA_GLSL_4 == 1
+
+
 #define SMAAMad(a, b, c) fma(a, b, c)
 #define SMAAGather(tex, coord) textureGather(tex, coord)
-#endif
+
 
 //-----------------------------------------------------------------------------
 // Misc functions
@@ -554,14 +554,14 @@ SamplerState PointSampler { Filter = MIN_MAG_MIP_POINT; AddressU = Clamp; Addres
 float3 SMAAGatherNeighbours(float2 texcoord,
                             float4 offset[3],
                             SMAATexture2D tex) {
-    #if SMAA_HLSL_4_1 == 1 || SMAA_GLSL_4 == 1
+
     return SMAAGather(tex, texcoord + SMAA_PIXEL_SIZE * float2(-0.5, -0.5)).grb;
     #else
     float P = SMAASample(tex, texcoord).r;
     float Pleft = SMAASample(tex, offset[0].xy).r;
     float Ptop  = SMAASample(tex, offset[0].zw).r;
     return float3(P, Pleft, Ptop);
-    #endif
+
 }
 
 /**
@@ -577,7 +577,7 @@ float2 SMAACalculatePredicatedThreshold(float2 texcoord,
     return SMAA_PREDICATION_SCALE * SMAA_THRESHOLD * (1.0 - SMAA_PREDICATION_STRENGTH * edges);
 }
 
-#if SMAA_ONLY_COMPILE_PS == 0
+
 //-----------------------------------------------------------------------------
 // Vertex Shaders
 
@@ -647,9 +647,9 @@ void SMAASeparateVS(float4 position,
                     inout float2 texcoord) {
     svPosition = position;
 }
-#endif // SMAA_ONLY_COMPILE_PS == 0
 
-#if SMAA_ONLY_COMPILE_VS == 0
+
+
 //-----------------------------------------------------------------------------
 // Edge Detection Pixel Shaders (First Pass)
 
@@ -662,16 +662,16 @@ void SMAASeparateVS(float4 position,
 float4 SMAALumaEdgeDetectionPS(float2 texcoord,
                                float4 offset[3],
                                SMAATexture2D colorTex
-                               #if SMAA_PREDICATION == 1
+
                                , SMAATexture2D predicationTex
-                               #endif
+
                                ) {
     // Calculate the threshold:
-    #if SMAA_PREDICATION == 1
+
     float2 threshold = SMAACalculatePredicatedThreshold(texcoord, offset, colorTex, predicationTex);
     #else
     float2 threshold = float2(SMAA_THRESHOLD, SMAA_THRESHOLD);
-    #endif
+
 
     // Calculate lumas:
     float3 weights = float3(0.2126, 0.7152, 0.0722);
@@ -729,16 +729,16 @@ float4 SMAALumaEdgeDetectionPS(float2 texcoord,
 float4 SMAAColorEdgeDetectionPS(float2 texcoord,
                                 float4 offset[3],
                                 SMAATexture2D colorTex
-                                #if SMAA_PREDICATION == 1
+
                                 , SMAATexture2D predicationTex
-                                #endif
+
                                 ) {
     // Calculate the threshold:
-    #if SMAA_PREDICATION == 1
+
     float2 threshold = SMAACalculatePredicatedThreshold(texcoord, offset, colorTex, predicationTex);
     #else
     float2 threshold = float2(SMAA_THRESHOLD, SMAA_THRESHOLD);
-    #endif
+
 
     // Calculate color deltas:
     float4 delta;
@@ -808,7 +808,7 @@ float4 SMAADepthEdgeDetectionPS(float2 texcoord,
 //-----------------------------------------------------------------------------
 // Diagonal Search Functions
 
-#if SMAA_MAX_SEARCH_STEPS_DIAG > 0 || SMAA_FORCE_DIAGONAL_DETECTION == 1
+
 
 /**
  * These functions allows to perform diagonal pattern searches.
@@ -855,11 +855,11 @@ float2 SMAAAreaDiag(SMAATexture2D areaTex, float2 dist, float2 e, float offset) 
     texcoord.y += SMAA_AREATEX_SUBTEX_SIZE * offset;
 
     // Do it!
-    #if SMAA_HLSL_3 == 1
+
     return SMAASampleLevelZero(areaTex, texcoord).ra;
     #else
     return SMAASampleLevelZero(areaTex, texcoord).rg;
-    #endif
+
 }
 
 /**
@@ -909,7 +909,7 @@ float2 SMAACalculateDiagWeights(SMAATexture2D edgesTex, SMAATexture2D areaTex, f
 
     return weights;
 }
-#endif
+
 
 //-----------------------------------------------------------------------------
 // Horizontal/Vertical Search Functions
@@ -1024,18 +1024,18 @@ float2 SMAAArea(SMAATexture2D areaTex, float2 dist, float e1, float e2, float of
     texcoord.y += SMAA_AREATEX_SUBTEX_SIZE * offset;
 
     // Do it!
-    #if SMAA_HLSL_3 == 1
+
     return SMAASampleLevelZero(areaTex, texcoord).ra;
     #else
     return SMAASampleLevelZero(areaTex, texcoord).rg;
-    #endif
+
 }
 
 //-----------------------------------------------------------------------------
 // Corner Detection Functions
 
 void SMAADetectHorizontalCornerPattern(SMAATexture2D edgesTex, inout float2 weights, float2 texcoord, float2 d) {
-    #if SMAA_CORNER_ROUNDING < 100 || SMAA_FORCE_CORNER_DETECTION == 1
+
     float4 coords = SMAAMad(float4(d.x, 0.0, d.y, 0.0),
                             SMAA_PIXEL_SIZE.xyxy, texcoord.xyxy);
     float2 e;
@@ -1047,11 +1047,11 @@ void SMAADetectHorizontalCornerPattern(SMAATexture2D edgesTex, inout float2 weig
     e.r = SMAASampleLevelZeroOffset(edgesTex, coords.zw, int2(1.0,  1.0)).r;
     e.g = SMAASampleLevelZeroOffset(edgesTex, coords.zw, int2(1.0, -2.0)).r;
     if (!left) weights *= SMAASaturate(float(SMAA_CORNER_ROUNDING) / 100.0 + 1.0 - e);
-    #endif
+
 }
 
 void SMAADetectVerticalCornerPattern(SMAATexture2D edgesTex, inout float2 weights, float2 texcoord, float2 d) {
-    #if SMAA_CORNER_ROUNDING < 100 || SMAA_FORCE_CORNER_DETECTION == 1
+
     float4 coords = SMAAMad(float4(0.0, d.x, 0.0, d.y),
                             SMAA_PIXEL_SIZE.xyxy, texcoord.xyxy);
     float2 e;
@@ -1063,7 +1063,7 @@ void SMAADetectVerticalCornerPattern(SMAATexture2D edgesTex, inout float2 weight
     e.r = SMAASampleLevelZeroOffset(edgesTex, coords.zw, int2( 1.0, 1.0)).g;
     e.g = SMAASampleLevelZeroOffset(edgesTex, coords.zw, int2(-2.0, 1.0)).g;
     if (!left) weights *= SMAASaturate(float(SMAA_CORNER_ROUNDING) / 100.0 + 1.0 - e);
-    #endif
+
 }
 
 //-----------------------------------------------------------------------------
@@ -1082,7 +1082,7 @@ float4 SMAABlendingWeightCalculationPS(float2 texcoord,
 
     SMAA_BRANCH
     if (e.g > 0.0) { // Edge at north
-        #if SMAA_MAX_SEARCH_STEPS_DIAG > 0 || SMAA_FORCE_DIAGONAL_DETECTION == 1
+
         // Diagonals have both north and west edges, so searching for them in
         // one of the boundaries is enough.
         weights.rg = SMAACalculateDiagWeights(edgesTex, areaTex, texcoord, e, subsampleIndices);
@@ -1091,7 +1091,7 @@ float4 SMAABlendingWeightCalculationPS(float2 texcoord,
         // horizontal/vertical processing.
         SMAA_BRANCH
         if (dot(weights.rg, float2(1.0, 1.0)) == 0.0) {
-        #endif
+
 
         float2 d;
 
@@ -1128,10 +1128,10 @@ float4 SMAABlendingWeightCalculationPS(float2 texcoord,
         // Fix corners:
         SMAADetectHorizontalCornerPattern(edgesTex, weights.rg, texcoord, d);
 
-        #if SMAA_MAX_SEARCH_STEPS_DIAG > 0 || SMAA_FORCE_DIAGONAL_DETECTION == 1
+
         } else
             e.r = 0.0; // Skip vertical processing.
-        #endif
+
     }
 
     SMAA_BRANCH
@@ -1204,7 +1204,7 @@ float4 SMAANeighborhoodBlendingPS(float2 texcoord,
         else
             offset.x = 0.0;
 
-        #if SMAA_REPROJECTION == 1
+
         // Fetch the opposite color and lerp by hand:
         float4 C = SMAASampleLevelZero(colorTex, texcoord);
         texcoord += sign(offset) * SMAA_PIXEL_SIZE;
@@ -1233,7 +1233,7 @@ float4 SMAANeighborhoodBlendingPS(float2 texcoord,
         float4 Cop = SMAASampleLevelZero(colorTex, texcoord);
         float s = abs(offset.x) > abs(offset.y)? abs(offset.x) : abs(offset.y);
         return SMAALerp(C, Cop, s);
-        #endif
+
     }
 }
 
@@ -1243,11 +1243,11 @@ float4 SMAANeighborhoodBlendingPS(float2 texcoord,
 float4 SMAAResolvePS(float2 texcoord,
                      SMAATexture2D colorTexCurr,
                      SMAATexture2D colorTexPrev
-                     #if SMAA_REPROJECTION == 1
+
                      , SMAATexture2D velocityTex
-                     #endif
+
                      ) {
-    #if SMAA_REPROJECTION == 1
+
     // Velocity is calculated from previous to current position, so we need to
     // inverse it:
     float2 velocity = -SMAASample(velocityTex, texcoord).rg;
@@ -1269,13 +1269,13 @@ float4 SMAAResolvePS(float2 texcoord,
     float4 current = SMAASample(colorTexCurr, texcoord);
     float4 previous = SMAASample(colorTexPrev, texcoord);
     return SMAALerp(current, previous, 0.5);
-    #endif
+
 }
 
 //-----------------------------------------------------------------------------
 // Separate Multisamples Pixel Shader (Optional Pass)
 
-#if SMAA_HLSL_4 == 1 || SMAA_HLSL_4_1 == 1
+
 void SMAASeparatePS(float4 position : SV_POSITION,
                     float2 texcoord : TEXCOORD0,
                     out float4 target0,
@@ -1285,7 +1285,7 @@ void SMAASeparatePS(float4 position : SV_POSITION,
     target0 = SMAALoad(colorTexMS, pos, 0);
     target1 = SMAALoad(colorTexMS, pos, 1);
 }
-#endif
+
 
 //-----------------------------------------------------------------------------
-#endif // SMAA_ONLY_COMPILE_VS == 0
+

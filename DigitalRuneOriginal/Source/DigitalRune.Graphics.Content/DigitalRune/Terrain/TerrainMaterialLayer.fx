@@ -54,11 +54,11 @@ sampler DiffuseSampler = sampler_state
   MINFILTER = ANISOTROPIC;
   MAGFILTER = LINEAR;
   MIPFILTER = LINEAR;
-#if SM4
+
   MIPLODBIAS = MATERIAL_MIPLODBIAS;
 #else
   MIPMAPLODBIAS = MATERIAL_MIPLODBIAS;
-#endif
+
 };
 // Specular (RGB)
 texture SpecularTexture : SPECULARTEXTURE;
@@ -70,11 +70,11 @@ sampler SpecularSampler = sampler_state
   MINFILTER = ANISOTROPIC;
   MAGFILTER = LINEAR;
   MIPFILTER = LINEAR;
-#if SM4
+
   MIPLODBIAS = MATERIAL_MIPLODBIAS;
 #else
   MIPMAPLODBIAS = MATERIAL_MIPLODBIAS;
-#endif
+
 };
 texture NormalTexture : NORMALTEXTURE;
 sampler NormalSampler = sampler_state
@@ -85,11 +85,11 @@ sampler NormalSampler = sampler_state
   MINFILTER = ANISOTROPIC;
   MAGFILTER = LINEAR;
   MIPFILTER = LINEAR;
-#if SM4
+
   MIPLODBIAS = MATERIAL_MIPLODBIAS;
 #else
   MIPMAPLODBIAS = MATERIAL_MIPLODBIAS;
-#endif
+
 };
 
 float HeightTextureScale = 1;
@@ -103,11 +103,11 @@ sampler HeightSampler = sampler_state
   MINFILTER = ANISOTROPIC;
   MAGFILTER = LINEAR;
   MIPFILTER = LINEAR;
-#if SM4
+
   MIPLODBIAS = MATERIAL_MIPLODBIAS;
 #else
   MIPMAPLODBIAS = MATERIAL_MIPLODBIAS;
-#endif
+
 };
 
 float TriplanarTightening = 0.5;
@@ -227,11 +227,11 @@ void PS(in float2 texCoordTerrain : TEXCOORD0,
         out float4 color2 : COLOR2)
 {
   // Dummy value which we use to circumvent DX9 HLSL compiler preshader bug.
-#if !SM4
+
   float dummy = texCoordTerrain.x * 0.00000001f;
 #else
   float dummy = 0;
-#endif
+
   float epsilon = 0.0001f;
   
   //color0 = float4(0.5, 0.5, 0.4, 1);
@@ -377,13 +377,13 @@ void PS(in float2 texCoordTerrain : TEXCOORD0,
 // Techniques
 //-----------------------------------------------------------------------------
 
-#if !SM4
+
 #define VSTARGET vs_3_0
 #define PSTARGET ps_3_0
 #else
 #define VSTARGET vs_4_0
 #define PSTARGET ps_4_0
-#endif
+
 
 technique
 {

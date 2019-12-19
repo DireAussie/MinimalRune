@@ -229,7 +229,7 @@ namespace DigitalRune.Geometry.Partitioning
     {
       // Compute same norm as in Bullet. (2 * Manhattan distance between the centers 
       // of the AABBs.)
-      Vector3F distance = (first.Minimum + first.Maximum) - (second.Minimum + second.Maximum);
+      Vector3 distance = (first.Minimum + first.Maximum) - (second.Minimum + second.Maximum);
       return Math.Abs(distance.X) + Math.Abs(distance.Y) + Math.Abs(distance.Z);
     }
 

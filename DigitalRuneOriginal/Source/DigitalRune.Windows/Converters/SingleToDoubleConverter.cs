@@ -19,9 +19,9 @@ namespace DigitalRune.Windows
     /// converted value is a <see cref="Single"/> value. If the input value is a
     /// <see cref="Single"/> then the converted value is a <see cref="Double"/> value.
     /// </remarks>
-#if !SILVERLIGHT && !WINDOWS_PHONE
+
     [ValueConversion(typeof(float), typeof(double))]
-#endif
+
     public class SingleToDoubleConverter : IValueConverter
     {
         /// <summary>

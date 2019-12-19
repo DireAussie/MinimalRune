@@ -41,9 +41,9 @@ namespace DigitalRune.Game.UI.Rendering
   /// the parent element has a non-uniform scaling, the child element won't be rendered correctly.)
   /// </para>
   /// </remarks>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !PORTABLE
+
   [Serializable]
-#endif
+
   public struct RenderTransform : IEquatable<RenderTransform>
   {
     //--------------------------------------------------------------
@@ -270,8 +270,8 @@ namespace DigitalRune.Game.UI.Rendering
       return position;
 
       // ----- Alternatively, using a 3x3 matrix:
-      //Vector3F p = new Vector3F(point.X, point.Y, 1);
-      //p = ToMatrix33F() * p;
+      //Vector3 p = new Vector3(point.X, point.Y, 1);
+      //p = ToMatrix() * p;
       //return new Vector2F(p.X, p.Y);
     }
 
@@ -286,8 +286,8 @@ namespace DigitalRune.Game.UI.Rendering
       if (Numeric.IsZero(Scale.X) || Numeric.IsZero(Scale.Y))
         return new Vector2F(float.NaN);
 
-      Vector3F p = new Vector3F(position.X, position.Y, 1);
-      p = ToMatrix33F().Inverse * p;
+      Vector3 p = new Vector3(position.X, position.Y, 1);
+      p = ToMatrix().Inverse * p;
       return new Vector2F(p.X, p.Y);
     }
 
@@ -417,19 +417,19 @@ namespace DigitalRune.Game.UI.Rendering
     /// <returns>
     /// A 3x3-matrix that represents the same transformation.
     /// </returns>
-    public Matrix33F ToMatrix33F()
+    public Matrix ToMatrix()
     {
-      Matrix33F t = new Matrix33F(1, 0, Translation.X,
+      Matrix t = new Matrix(1, 0, Translation.X,
                                   0, 1, Translation.Y,
                                   0, 0, 1);
-      Matrix33F o = new Matrix33F(1, 0, Origin.X,
+      Matrix o = new Matrix(1, 0, Origin.X,
                                   0, 1, Origin.Y,
                                   0, 0, 1);
-      Matrix33F s = new Matrix33F(Scale.X, 0, 0,
+      Matrix s = new Matrix(Scale.X, 0, 0,
                                   0, Scale.Y, 0,
                                   0, 0, 1);
-      Matrix33F r = Matrix33F.CreateRotationZ(Rotation);
-      Matrix33F minusO = new Matrix33F(1, 0, -Origin.X,
+      Matrix r = Matrix.CreateRotationZ(Rotation);
+      Matrix minusO = new Matrix(1, 0, -Origin.X,
                                        0, 1, -Origin.Y,
                                        0, 0, 1);
       return t * o * r * s * minusO;
@@ -459,9 +459,9 @@ namespace DigitalRune.Game.UI.Rendering
     /// <returns>
     /// A 3x3-matrix that represents the same transformation.
     /// </returns>
-    public static implicit operator Matrix33F(RenderTransform transform)
+    public static implicit operator Matrix(RenderTransform transform)
     {
-      return transform.ToMatrix33F();
+      return transform.ToMatrix();
     }
 
 

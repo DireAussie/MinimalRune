@@ -36,7 +36,7 @@ namespace DigitalRune.Geometry
     /// </exception>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters")]
-    public static void ComputeBoundingBox(IList<Vector3F> points, out Vector3F extent, out Pose pose)
+    public static void ComputeBoundingBox(IList<Vector3> points, out Vector3 extent, out Pose pose)
     {
       // PCA of the convex hull is used (see "Physics-Based Animation", pp. 483, and others.)
       // in addition to a brute force search. The optimum is returned.
@@ -86,7 +86,7 @@ namespace DigitalRune.Geometry
       EigenvalueDecompositionF evd = new EigenvalueDecompositionF(cov);
 
       // v transforms from local coordinate space of the box into world space.
-      var v = evd.V.ToMatrix33F();
+      var v = evd.V.ToMatrix();
 
       Debug.Assert(v.GetColumn(0).IsNumericallyNormalized);
       Debug.Assert(v.GetColumn(1).IsNumericallyNormalized);
@@ -94,7 +94,7 @@ namespace DigitalRune.Geometry
 
       // v is like a rotation matrix, but the coordinate system is not necessarily right handed.
       // --> Make sure it is right-handed.
-      v.SetColumn(2, Vector3F.Cross(v.GetColumn(0), v.GetColumn(1)));
+      v.SetColumn(2, Vector3.Cross(v.GetColumn(0), v.GetColumn(1)));
 
       // Another way to do this:
       //// Make sure that V is a rotation matrix. (V could be an orthogonal matrix that
@@ -103,8 +103,8 @@ namespace DigitalRune.Geometry
       //if (!v.IsRotation)
       //{
       //  // Swap two columns to create a right handed rotation matrix.
-      //  Vector3F col1 = v.GetColumn(2);
-      //  Vector3F col2 = v.GetColumn(2);
+      //  Vector3 col1 = v.GetColumn(2);
+      //  Vector3 col2 = v.GetColumn(2);
       //  v.SetColumn(1, col2);
       //  v.SetColumn(2, col1);
       //}
@@ -112,13 +112,13 @@ namespace DigitalRune.Geometry
       // If the box axes are parallel to the world axes, create a box with NO rotation.
       TryToMakeIdentityMatrix(ref v);
 
-      Vector3F center;
+      Vector3 center;
       float volume = ComputeBoundingBox(points, v, float.PositiveInfinity, out extent, out center);
 
       // Brute force search for better box.
       // This was inspired by the OBB algorithm of John Ratcliff, www.codesuppository.com.
 
-      Vector3F αBest = Vector3F.Zero;         // Search for optimal angles.
+      Vector3 αBest = Vector3.Zero;         // Search for optimal angles.
       float αMax = MathHelper.ToRadians(45);  // On each axis we rotate from -αMax to +αMax.
       float αMin = MathHelper.ToRadians(1);   // We abort when αMax == 1°.
       const float numberOfSteps = 7;          // In each iteration we divide αMax in this number of steps.
@@ -131,7 +131,7 @@ namespace DigitalRune.Geometry
         float αStep = αMax / numberOfSteps;
 
         // We test around this angle:
-        Vector3F α = αBest;
+        Vector3 α = αBest;
 
         for (float αX = α.X - αMax; αX <= α.X + αMax; αX += αStep)
         {
@@ -139,9 +139,9 @@ namespace DigitalRune.Geometry
           {
             for (float αZ = α.Z - αMax; αZ <= α.Z + αMax; αZ += αStep)
             {
-              Vector3F centerNew;
-              Vector3F boxExtentNew;
-              Matrix33F vNew = QuaternionF.CreateRotation(αX, Vector3F.UnitX, αY, Vector3F.UnitY, αZ, Vector3F.UnitZ, true).ToRotationMatrix33();
+              Vector3 centerNew;
+              Vector3 boxExtentNew;
+              Matrix vNew = Quaternion.CreateRotation(αX, Vector3.UnitX, αY, Vector3.UnitY, αZ, Vector3.UnitZ, true).ToRotationMatrix33();
               float volumeNew = ComputeBoundingBox(points, vNew, volume, out boxExtentNew, out centerNew);
               if (volumeNew < volume)
               {
@@ -150,7 +150,7 @@ namespace DigitalRune.Geometry
                 extent = boxExtentNew;
                 v = vNew;
                 volume = volumeNew;
-                αBest = new Vector3F(αX, αY, αZ);
+                αBest = new Vector3(αX, αY, αZ);
               }
             }
           }
@@ -168,9 +168,9 @@ namespace DigitalRune.Geometry
 
 
     // Computes the covariance matrix for a list of points.
-    private static MatrixF ComputeCovarianceMatrixFromPoints(IList<Vector3F> points)
+    private static MatrixF ComputeCovarianceMatrixFromPoints(IList<Vector3> points)
     {
-      // Convert IList<Vector3F> to IList<VectorF> which is required for PCA.
+      // Convert IList<Vector3> to IList<VectorF> which is required for PCA.
       int numberOfPoints = points.Count;
       List<VectorF> pointsCopy = new List<VectorF>(numberOfPoints);
       for (int i = 0; i < numberOfPoints; i++)
@@ -194,7 +194,7 @@ namespace DigitalRune.Geometry
 
       MatrixF C = new MatrixF(3, 3);          // The covariance matrix.
       float A = 0;                            // Total surface area.
-      Vector3F mS = Vector3F.Zero;            // Mean point of the entire surface.
+      Vector3 mS = Vector3.Zero;            // Mean point of the entire surface.
       for (int k = 0; k < mesh.NumberOfTriangles; k++)
       {
         var triangle = mesh.GetTriangle(k);
@@ -206,7 +206,7 @@ namespace DigitalRune.Geometry
 
         var uK = qK - pK;
         var vK = rK - pK;
-        var Ak = 0.5f * Vector3F.Cross(uK, vK).Length;
+        var Ak = 0.5f * Vector3.Cross(uK, vK).Length;
         A += Ak;
 
         mS += Ak * mK;
@@ -240,26 +240,26 @@ namespace DigitalRune.Geometry
     // Returns the volume of the new box.
     // If the new box volume is smaller than volumeLimit, the 6 extreme vertices are moved to the
     // front of the list.
-    private static float ComputeBoundingBox(IList<Vector3F> points, Matrix33F boxOrientation, float volumeLimit, out Vector3F boxExtent, out Vector3F boxCenter)
+    private static float ComputeBoundingBox(IList<Vector3> points, Matrix boxOrientation, float volumeLimit, out Vector3 boxExtent, out Vector3 boxCenter)
     {
-      boxExtent = new Vector3F(float.PositiveInfinity);
-      boxCenter = Vector3F.Zero;
+      boxExtent = new Vector3(float.PositiveInfinity);
+      boxCenter = Vector3.Zero;
       float volume = float.PositiveInfinity;
 
       // The inverse orientation.
-      Matrix33F orientationInverse = boxOrientation.Transposed;
+      Matrix orientationInverse = boxOrientation.Transposed;
 
       // The min and max points in the local box space.
-      Vector3F min = new Vector3F(float.PositiveInfinity);
-      Vector3F max = new Vector3F(float.NegativeInfinity);
+      Vector3 min = new Vector3(float.PositiveInfinity);
+      Vector3 max = new Vector3(float.NegativeInfinity);
 
       // Remember the extreme points.
-      Vector3F minX = Vector3F.Zero; 
-      Vector3F maxX = Vector3F.Zero; 
-      Vector3F minY = Vector3F.Zero; 
-      Vector3F maxY = Vector3F.Zero; 
-      Vector3F minZ = Vector3F.Zero; 
-      Vector3F maxZ = Vector3F.Zero; 
+      Vector3 minX = Vector3.Zero; 
+      Vector3 maxX = Vector3.Zero; 
+      Vector3 minY = Vector3.Zero; 
+      Vector3 maxY = Vector3.Zero; 
+      Vector3 minZ = Vector3.Zero; 
+      Vector3 maxZ = Vector3.Zero; 
 
       for (int i = 0; i < points.Count; i++)
       {
@@ -343,21 +343,21 @@ namespace DigitalRune.Geometry
       points.Insert(0, maxZ);
 
       // Compute center and convert it to world space.
-      Vector3F localCenter = (min + max) / 2;
+      Vector3 localCenter = (min + max) / 2;
       boxCenter = boxOrientation * localCenter;
 
       return volume;
     }
 
 
-    private static void TryToMakeIdentityMatrix(ref Matrix33F m)
+    private static void TryToMakeIdentityMatrix(ref Matrix m)
     {
       // If the rotated space is parallel to the world space, then we want to use
       // the identity matrix directly.
       if (Numeric.AreEqual(1, Math.Abs(m.M00) + Math.Abs(m.M10) + Math.Abs(m.M20))      // Is the first column UnitX, UnitY or UnitZ?
           && Numeric.AreEqual(1, Math.Abs(m.M01) + Math.Abs(m.M11) + Math.Abs(m.M21)))  // Is the second column UnitX, UnitY or UnitZ?
       {
-        m = Matrix33F.Identity;
+        m = Matrix.Identity;
       }
     }
 
@@ -379,12 +379,12 @@ namespace DigitalRune.Geometry
     /// </returns>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-    public static bool GetClosestPoint(Aabb aabb, Vector3F point, out Vector3F pointOnAabb)
+    public static bool GetClosestPoint(Aabb aabb, Vector3 point, out Vector3 pointOnAabb)
     {
       // Short version: Fast when using SIMD instructions.
       //pointOnAabb = point;
-      //pointOnAabb = Vector3F.Max(pointOnAabb, aabb.Minimum);
-      //pointOnAabb = Vector3F.Min(pointOnAabb, aabb.Maximum);
+      //pointOnAabb = Vector3.Max(pointOnAabb, aabb.Minimum);
+      //pointOnAabb = Vector3.Min(pointOnAabb, aabb.Maximum);
       //return (point == pointOnAabb);
 
       bool haveContact = true;
@@ -502,19 +502,19 @@ namespace DigitalRune.Geometry
     /// <param name="boxExtentB">The extent (the widths in x, y and z) of the second box.</param>
     /// <param name="poseB">The pose of second box.</param>
     /// <returns>The squared lower bound for the distance between the two oriented boxes.</returns>
-    internal static float GetDistanceLowerBoundSquared(Vector3F boxExtentA, Pose poseA, Vector3F boxExtentB, Pose poseB)
+    internal static float GetDistanceLowerBoundSquared(Vector3 boxExtentA, Pose poseA, Vector3 boxExtentB, Pose poseB)
     {
-      Vector3F aToB = poseB.Position - poseA.Position;
+      Vector3 aToB = poseB.Position - poseA.Position;
       float distanceSquared = aToB.LengthSquared;
       if (Numeric.IsZero(distanceSquared))
         return 0;
 
-      Vector3F closestPointOnB = poseB.ToWorldPosition(GetSupportPoint(boxExtentB, poseB.ToLocalDirection(-aToB)));
-      Vector3F closestPointOnA = poseA.ToWorldPosition(GetSupportPoint(boxExtentA, poseA.ToLocalDirection(aToB)));
-      Vector3F closestPointVector = closestPointOnB - closestPointOnA;
+      Vector3 closestPointOnB = poseB.ToWorldPosition(GetSupportPoint(boxExtentB, poseB.ToLocalDirection(-aToB)));
+      Vector3 closestPointOnA = poseA.ToWorldPosition(GetSupportPoint(boxExtentA, poseA.ToLocalDirection(aToB)));
+      Vector3 closestPointVector = closestPointOnB - closestPointOnA;
 
       // Use dot product to project closest-point pair vector onto center line.
-      float dot = Vector3F.Dot(aToB, closestPointVector);
+      float dot = Vector3.Dot(aToB, closestPointVector);
 
       // If dot is negative we can have contact.
       if (dot <= 0)
@@ -540,9 +540,9 @@ namespace DigitalRune.Geometry
     /// from the center regarding the given direction. This point is not necessarily unique.
     /// </para>
     /// </remarks>
-    private static Vector3F GetSupportPoint(Vector3F boxExtent, Vector3F direction)
+    private static Vector3 GetSupportPoint(Vector3 boxExtent, Vector3 direction)
     {
-      Vector3F supportVertex = new Vector3F
+      Vector3 supportVertex = new Vector3
       {
         X = ((direction.X >= 0) ? boxExtent.X / 2 : -boxExtent.X / 2),
         Y = ((direction.Y >= 0) ? boxExtent.Y / 2 : -boxExtent.Y / 2),
@@ -595,7 +595,7 @@ namespace DigitalRune.Geometry
     /// If the outcode is 0, then the point is inside the box.
     /// </remarks>
     //[CLSCompliant(false)]  // CLSCompliant is only relevant for public members!
-    internal static uint GetOutcode(Vector3F boxExtent, Vector3F point)
+    internal static uint GetOutcode(Vector3 boxExtent, Vector3 point)
     {
       float halfExtentX = 0.5f * boxExtent.X;
       float halfExtentY = 0.5f * boxExtent.Y;
@@ -653,7 +653,7 @@ namespace DigitalRune.Geometry
     /// <see langword="false"/>.
     /// </returns>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-    public static bool HaveContact(Aabb aabb, Vector3F point)
+    public static bool HaveContact(Aabb aabb, Vector3 point)
     {
       // Note: The following check is safe if one AABB is undefined (NaN).
       // Do not change the comparison operator!
@@ -688,18 +688,18 @@ namespace DigitalRune.Geometry
     /// <see langword="false"/> if the object are separated.
     /// </returns>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-    public static bool HaveContact(Aabb aabb, Vector3F boxExtent, Pose boxPose, bool makeEdgeTests)
+    public static bool HaveContact(Aabb aabb, Vector3 boxExtent, Pose boxPose, bool makeEdgeTests)
     {
-      Debug.Assert(boxExtent >= Vector3F.Zero, "Box extent must be positive.");
+      Debug.Assert(boxExtent >= Vector3.Zero, "Box extent must be positive.");
 
       // The following variables are in local space of a centered AABB.
-      Vector3F cB = boxPose.Position - aabb.Center;            // Center of box.
-      Matrix33F mB = boxPose.Orientation;                      // Orientation matrix of box.
-      Matrix33F aMB = Matrix33F.Absolute(mB);                  // Absolute of mB.
+      Vector3 cB = boxPose.Position - aabb.Center;            // Center of box.
+      Matrix mB = boxPose.Orientation;                      // Orientation matrix of box.
+      Matrix aMB = Matrix.Absolute(mB);                  // Absolute of mB.
 
       // Half extent vectors of AABB and box
-      Vector3F eA = 0.5f * aabb.Extent;
-      Vector3F eB = 0.5f * boxExtent;
+      Vector3 eA = 0.5f * aabb.Extent;
+      Vector3 eB = 0.5f * boxExtent;
 
       // ----- Separating Axis tests
       // See also: BoxBoxAlgorithm
@@ -807,11 +807,11 @@ namespace DigitalRune.Geometry
     /// <returns>
     /// <see langword="true"/> if the specified point is inside; otherwise, <see langword="false"/>.
     /// </returns>
-    public static bool HaveContact(Vector3F boxExtent, Vector3F point)
+    public static bool HaveContact(Vector3 boxExtent, Vector3 point)
     {
       // To fight numerical problems: Extrude the box.
-      Vector3F halfExtent = 0.5f * boxExtent;
-      halfExtent = halfExtent + Vector3F.Max(halfExtent, new Vector3F(1)) * Numeric.EpsilonF;
+      Vector3 halfExtent = 0.5f * boxExtent;
+      halfExtent = halfExtent + Vector3.Max(halfExtent, new Vector3(1)) * Numeric.EpsilonF;
       return point.X >= -halfExtent.X && point.X <= halfExtent.X
              && point.Y >= -halfExtent.Y && point.Y <= halfExtent.Y
              && point.Z >= -halfExtent.Z && point.Z <= halfExtent.Z;

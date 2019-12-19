@@ -10,7 +10,7 @@ namespace Samples.Particles
   public class RibbonEffector : ParticleEffector
   {
     // The index and the position of the last created particle.
-    private Vector3F _lastPosition;
+    private Vector3 _lastPosition;
 
 
     protected override ParticleEffector CreateInstanceCore()
@@ -23,7 +23,7 @@ namespace Samples.Particles
     {
       // If the particle system has moved a minimum distance, then we emit the 
       // next particle of the ribbon.
-      Vector3F newPosition = ParticleSystem.Pose.Position;
+      Vector3 newPosition = ParticleSystem.Pose.Position;
       if ((newPosition - _lastPosition).LengthSquared >= 0.3f)
       {
         ParticleSystem.AddParticles(1, this);

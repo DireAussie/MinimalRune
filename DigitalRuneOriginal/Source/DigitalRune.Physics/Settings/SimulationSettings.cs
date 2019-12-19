@@ -226,7 +226,7 @@ namespace DigitalRune.Physics.Settings
       Sleeping = new SleepingSettings();
       Timing = new TimingSettings();
       MaterialPropertyCombiner = new MaterialPropertyCombiner();
-#if WP7 || UNITY
+
       // Cannot access Environment.ProcessorCount in phone app. (Security issue).
       EnableMultithreading = false;
 #else
@@ -236,7 +236,7 @@ namespace DigitalRune.Physics.Settings
       // Multithreading works but Parallel.For of Xamarin.Android/iOS is very inefficient.
       if (GlobalSettings.PlatformID == PlatformID.Android || GlobalSettings.PlatformID == PlatformID.iOS)
         EnableMultithreading = false;
-#endif
+
     }
 
 

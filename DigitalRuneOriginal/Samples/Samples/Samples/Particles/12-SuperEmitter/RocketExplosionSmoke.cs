@@ -30,14 +30,14 @@ namespace Samples.Particles
         EmissionLimit = 30,
       });
 
-      Parameters.AddVarying<Vector3F>(ParticleParameterNames.Position);
+      Parameters.AddVarying<Vector3>(ParticleParameterNames.Position);
       Effectors.Add(new StartPositionEffector());
 
-      Parameters.AddVarying<Vector3F>(ParticleParameterNames.Direction);
+      Parameters.AddVarying<Vector3>(ParticleParameterNames.Direction);
       Effectors.Add(new StartDirectionEffector
       {
         Parameter = ParticleParameterNames.Direction,
-        Distribution = new DirectionDistribution { Deviation = ConstantsF.TwoPi, Direction = Vector3F.UnitY },
+        Distribution = new DirectionDistribution { Deviation = ConstantsF.TwoPi, Direction = Vector3.UnitY },
       });
 
       Parameters.AddVarying<float>(ParticleParameterNames.LinearSpeed);
@@ -58,7 +58,7 @@ namespace Samples.Particles
       
       Effectors.Add(new LinearVelocityEffector());
 
-      Parameters.AddUniform<Vector3F>(ParticleParameterNames.LinearAcceleration).DefaultValue = new Vector3F(0, -2.0f, 0);
+      Parameters.AddUniform<Vector3>(ParticleParameterNames.LinearAcceleration).DefaultValue = new Vector3(0, -2.0f, 0);
       Effectors.Add(new LinearAccelerationEffector());
 
       Parameters.AddUniform<float>(ParticleParameterNames.Damping).DefaultValue = 2.0f;
@@ -109,11 +109,11 @@ namespace Samples.Particles
         EndParameter = "EndSize",
       });
 
-      Parameters.AddVarying<Vector3F>(ParticleParameterNames.Color);
-      Effectors.Add(new StartValueEffector<Vector3F>
+      Parameters.AddVarying<Vector3>(ParticleParameterNames.Color);
+      Effectors.Add(new StartValueEffector<Vector3>
       {
         Parameter = ParticleParameterNames.Color,
-        Distribution = new LineSegmentDistribution { Start = new Vector3F(0.8f, 0.8f, 0.8f), End = new Vector3F(1, 1, 1) },
+        Distribution = new LineSegmentDistribution { Start = new Vector3(0.8f, 0.8f, 0.8f), End = new Vector3(1, 1, 1) },
       });
 
       Parameters.AddUniform<Texture2D>(ParticleParameterNames.Texture).DefaultValue =

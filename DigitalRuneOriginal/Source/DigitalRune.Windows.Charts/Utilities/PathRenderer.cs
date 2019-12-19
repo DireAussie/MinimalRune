@@ -13,7 +13,7 @@ using DigitalRune.Mathematics;
 
 namespace DigitalRune.Windows.Charts
 {
-#if SILVERLIGHT
+
     /// <summary>
     /// Helper class for the rendering a geometry using a <see cref="Path"/>.
     /// </summary>
@@ -367,5 +367,5 @@ namespace DigitalRune.Windows.Charts
         }
 
     }
-#endif
+
 }

@@ -22,13 +22,13 @@ namespace DigitalRune.Mathematics.Algebra
   /// M20 M21 M22
   /// </code>
   /// </remarks>
-#if !NETFX_CORE && !SILVERLIGHT && !WP7 && !WP8 && !XBOX && !UNITY && !PORTABLE
+
   [Serializable]
   [TypeConverter(typeof(ExpandableObjectConverter))]
-#endif
-#if !XBOX && !UNITY
+
+
   [DataContract]
-#endif
+
   public struct Matrix33D : IEquatable<Matrix33D>
   {
     //--------------------------------------------------------------
@@ -66,81 +66,81 @@ namespace DigitalRune.Mathematics.Algebra
     /// The element in first row, first column.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public double M00;
 
     /// <summary>
     /// The element in first row, second column.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public double M01;
 
     /// <summary>
     /// The element in first row, third column.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public double M02;
 
     /// <summary>
     /// The element in second row, first column.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public double M10;
 
     /// <summary>
     /// The element in second row, second column.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public double M11;
 
     /// <summary>
     /// The element in second row, third column.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public double M12;
 
     /// <summary>
     /// The element in third row, first column.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public double M20;
 
     /// <summary>
     /// The element in third row, second column.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public double M21;
 
     /// <summary>
     /// The element in third row, third column.
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
-#if !XBOX && !UNITY
+
     [DataMember]
-#endif
+
     public double M22;
 
 
@@ -1119,25 +1119,25 @@ namespace DigitalRune.Mathematics.Algebra
 
 
     /// <summary>
-    /// Performs an explicit conversion from <see cref="Matrix33D"/> to <see cref="Matrix33F"/>.
+    /// Performs an explicit conversion from <see cref="Matrix33D"/> to <see cref="Matrix"/>.
     /// </summary>
     /// <param name="matrix">The matrix.</param>
     /// <returns>The result of the conversion.</returns>
-    public static explicit operator Matrix33F(Matrix33D matrix)
+    public static explicit operator Matrix(Matrix33D matrix)
     {
-      return new Matrix33F((float)matrix.M00, (float)matrix.M01, (float)matrix.M02,
+      return new Matrix((float)matrix.M00, (float)matrix.M01, (float)matrix.M02,
                            (float)matrix.M10, (float)matrix.M11, (float)matrix.M12,
                            (float)matrix.M20, (float)matrix.M21, (float)matrix.M22);
     }
 
 
     /// <summary>
-    /// Converts this <see cref="Matrix33D"/> to <see cref="Matrix33F"/>.
+    /// Converts this <see cref="Matrix33D"/> to <see cref="Matrix"/>.
     /// </summary>
     /// <returns>The result of the conversion.</returns>
-    public Matrix33F ToMatrix33F()
+    public Matrix ToMatrix()
     {
-      return (Matrix33F)this;
+      return (Matrix)this;
     }
 
 

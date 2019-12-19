@@ -1137,13 +1137,13 @@ namespace DigitalRune.Mathematics.Algebra.Tests
 
 
     [Test]
-    public void ExplicitMatrix44FCast()
+    public void ExplicitMatrixCast()
     {
       double m00 = 23.5; double m01 = 0.0; double m02 = -11.0; double m03 = 0.3;
       double m10 = 33.5; double m11 = 1.1; double m12 = -12.0; double m13 = 0.4;
       double m20 = 43.5; double m21 = 2.2; double m22 = -13.0; double m23 = 0.5;
       double m30 = 53.5; double m31 = 3.3; double m32 = -14.0; double m33 = 0.6;
-      Matrix44F matrix44F = (Matrix44F)new Matrix44D(m00, m01, m02, m03, m10, m11, m12, m13, m20, m21, m22, m23, m30, m31, m32, m33);
+      Matrix matrix44F = (Matrix)new Matrix44D(m00, m01, m02, m03, m10, m11, m12, m13, m20, m21, m22, m23, m30, m31, m32, m33);
       Assert.IsTrue(Numeric.AreEqual((float)m00, matrix44F[0, 0]));
       Assert.IsTrue(Numeric.AreEqual((float)m01, matrix44F[0, 1]));
       Assert.IsTrue(Numeric.AreEqual((float)m02, matrix44F[0, 2]));
@@ -1164,13 +1164,13 @@ namespace DigitalRune.Mathematics.Algebra.Tests
 
 
     [Test]
-    public void ToMatrix44F()
+    public void ToMatrix()
     {
       double m00 = 23.5; double m01 = 0.0; double m02 = -11.0; double m03 = 0.3;
       double m10 = 33.5; double m11 = 1.1; double m12 = -12.0; double m13 = 0.4;
       double m20 = 43.5; double m21 = 2.2; double m22 = -13.0; double m23 = 0.5;
       double m30 = 53.5; double m31 = 3.3; double m32 = -14.0; double m33 = 0.6;
-      Matrix44F matrix44F = new Matrix44D(m00, m01, m02, m03, m10, m11, m12, m13, m20, m21, m22, m23, m30, m31, m32, m33).ToMatrix44F();
+      Matrix matrix44F = new Matrix44D(m00, m01, m02, m03, m10, m11, m12, m13, m20, m21, m22, m23, m30, m31, m32, m33).ToMatrix();
       Assert.IsTrue(Numeric.AreEqual((float)m00, matrix44F[0, 0]));
       Assert.IsTrue(Numeric.AreEqual((float)m01, matrix44F[0, 1]));
       Assert.IsTrue(Numeric.AreEqual((float)m02, matrix44F[0, 2]));

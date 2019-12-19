@@ -19,9 +19,9 @@ namespace DigitalRune.Graphics.Effects
   {
     private EffectParameter _parameterDiffuse;
     private EffectParameter _parameterEmissive;
-#if !MONOGAME
+
     private EffectParameter _parameterShaderIndex;
-#endif
+
     private Vector4 _effectiveDiffuse;
     private Vector3 _effectiveEmissive;
 
@@ -121,7 +121,7 @@ namespace DigitalRune.Graphics.Effects
       if (binding3 != null)
         return binding3.Value;
 
-      var binding3F = binding as EffectParameterBinding<Vector3F>;
+      var binding3F = binding as EffectParameterBinding<Vector3>;
       if (binding3F != null)
         return (Vector3)binding3F.Value;
 
@@ -143,7 +143,7 @@ namespace DigitalRune.Graphics.Effects
       if (binding3 != null)
         return new Vector4(binding3.Value, 1);
 
-      var binding3F = binding as EffectParameterBinding<Vector3F>;
+      var binding3F = binding as EffectParameterBinding<Vector3>;
       if (binding3F != null)
         return new Vector4((Vector3)binding3F.Value, 1);
 
@@ -151,7 +151,7 @@ namespace DigitalRune.Graphics.Effects
       if (bindingQ != null)
         return ToVector(bindingQ.Value);
 
-      var bindingQF = binding as EffectParameterBinding<QuaternionF>;
+      var bindingQF = binding as EffectParameterBinding<Quaternion>;
       if (bindingQF != null)
         return ToVector(bindingQF.Value);
 
@@ -165,7 +165,7 @@ namespace DigitalRune.Graphics.Effects
     }
 
 
-    private static Vector4 ToVector(QuaternionF quaternion)
+    private static Vector4 ToVector(Quaternion quaternion)
     {
       return new Vector4(quaternion.X, quaternion.Y, quaternion.Z, quaternion.W);
     }
@@ -179,20 +179,20 @@ namespace DigitalRune.Graphics.Effects
       {
         _parameterDiffuse = effect.Parameters["DiffuseColor"];
         _parameterEmissive = effect.Parameters["EmissiveColor"];
-#if !MONOGAME
+
         _parameterShaderIndex = effect.Parameters["ShaderIndex"];
-#endif
+
       }
 
       _parameterDiffuse.SetValue(_effectiveDiffuse);
       _parameterEmissive.SetValue(_effectiveEmissive);
 
-#if !MONOGAME
+
       _parameterShaderIndex.SetValue(Id);
       return effect.Techniques[0];
 #else
       return effect.Techniques[Id];
-#endif
+
     }
   }
 }

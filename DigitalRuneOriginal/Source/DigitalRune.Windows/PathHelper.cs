@@ -88,7 +88,7 @@ namespace DigitalRune.Windows
         }
 
 
-#if !SILVERLIGHT && !WINDOWS_PHONE
+
         /// <summary>
         /// Assigns a new <see cref="StreamGeometry"/> to the given <see cref="Path"/>.
         /// </summary>
@@ -149,10 +149,10 @@ namespace DigitalRune.Windows
                 streamGeometryContext.LineTo(points[i], true, false);
             }
         }
-#endif
 
 
-#if SILVERLIGHT || WINDOWS_PHONE
+
+
         /// <summary>
         /// Removes all <see cref="PathFigure"/> objects from this <see cref="PathGeometry"/>. 
         /// </summary>
@@ -174,6 +174,6 @@ namespace DigitalRune.Windows
             // Reassign figures collection - otherwise Silverlight won't update the visual.
             pathGeometry.Figures = figures;
         }
-#endif
+
     }
 }

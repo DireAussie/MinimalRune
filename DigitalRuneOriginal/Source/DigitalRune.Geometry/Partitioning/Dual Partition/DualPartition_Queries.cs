@@ -6,9 +6,9 @@ using System;
 using System.Collections.Generic;
 using DigitalRune.Geometry.Shapes;
 
-#if !POOL_ENUMERABLES
+
 using System.Linq;
-#endif
+
 
 
 namespace DigitalRune.Geometry.Partitioning
@@ -22,11 +22,11 @@ namespace DigitalRune.Geometry.Partitioning
       var overlapsStatic = StaticPartition.GetOverlaps(aabb);
       var overlapsDynamic = DynamicPartition.GetOverlaps(aabb);
 
-#if !POOL_ENUMERABLES
+
       return overlapsStatic.Concat(overlapsDynamic);
 #else
       return ConcatWork<T>.Create(overlapsStatic, overlapsDynamic);
-#endif
+
     }
 
 
@@ -37,11 +37,11 @@ namespace DigitalRune.Geometry.Partitioning
       var overlapsStatic = StaticPartition.GetOverlaps(ray);
       var overlapsDynamic = DynamicPartition.GetOverlaps(ray);
 
-#if !POOL_ENUMERABLES
+
       return overlapsStatic.Concat(overlapsDynamic);
 #else
       return ConcatWork<T>.Create(overlapsStatic, overlapsDynamic);
-#endif
+
     }
 
 
@@ -59,11 +59,11 @@ namespace DigitalRune.Geometry.Partitioning
       var overlapsStatic = staticPartition.GetOverlaps(planes);
       var overlapsDynamic = dynamicPartition.GetOverlaps(planes);
 
-#if !POOL_ENUMERABLES
+
       return overlapsStatic.Concat(overlapsDynamic);
 #else
       return ConcatWork<T>.Create(overlapsStatic, overlapsDynamic);
-#endif
+
     }
   }
 }

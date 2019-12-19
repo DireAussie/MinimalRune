@@ -169,7 +169,7 @@ namespace DigitalRune.Game.UI.Content
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters")]
     private static object LoadCursor(ContentReader input)
     {
-#if WP7 || XBOX
+
       return null;
 #else
       string filename = input.ReadString();
@@ -199,7 +199,7 @@ namespace DigitalRune.Game.UI.Content
       {
         return null;
       }
-#endif
+
     }
   }
 }

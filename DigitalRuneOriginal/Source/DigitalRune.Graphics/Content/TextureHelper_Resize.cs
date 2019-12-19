@@ -623,11 +623,11 @@ namespace DigitalRune.Graphics.Content
       using (var tempImage4F = new ImageAccessor(tmpImage))
       using (var image4F = new ImageAccessor(image))
       {
-#if SINGLE_THREADED
+
         for (int y = 0; y < height; y++)
 #else
         Parallel.For(0, height, y =>
-#endif
+
         {
           for (int x = 0; x < width; x++)
           {
@@ -646,9 +646,9 @@ namespace DigitalRune.Graphics.Content
             image4F.SetPixel(x, y, color);
           }
         }
-#if !SINGLE_THREADED
+
         );
-#endif
+
       }
       // ReSharper restore AccessToDisposedClosure
     }
@@ -906,19 +906,19 @@ namespace DigitalRune.Graphics.Content
         var kernelX = new PolyphaseKernel(filter, srcWidth, dstWidth, 32);
         var kernelY = new PolyphaseKernel(filter, srcHeight, dstHeight, 32);
 
-#if SINGLE_THREADED
+
         for (int z = 0; z < srcDepth; z++)
 #else
         Parallel.For(0, srcDepth, z =>
-#endif
+
         {
           var srcImage = srcTexture.Images[srcTexture.GetImageIndex(srcMipIndex, srcArrayOrFaceIndex, z)];
           var dstImage = dstTexture.Images[dstTexture.GetImageIndex(dstMipIndex, dstArrayOrFaceIndex, z)];
           Resize2D(srcImage, dstImage, alphaTransparency, wrapMode, kernelX, kernelY);
         }
-#if !SINGLE_THREADED
+
         );
-#endif
+
       }
       else
       {
@@ -958,11 +958,11 @@ namespace DigitalRune.Graphics.Content
           float scale = (float)tmpImage4F.Width / srcImage4F.Width;
           float inverseScale = 1.0f / scale;
 
-#if SINGLE_THREADED
+
           for (int y = 0; y < tmpImage4F.Height; y++)
 #else
           Parallel.For(0, tmpImage4F.Height, y =>
-#endif
+
           {
             // Apply polyphase kernel horizontally.
             for (int x = 0; x < tmpImage4F.Width; x++)
@@ -1015,9 +1015,9 @@ namespace DigitalRune.Graphics.Content
               tmpImage4F.SetPixel(x, y, sum);
             }
           }
-#if !SINGLE_THREADED
+
           );
-#endif
+
         }
 
         // Resize vertically: tmpImage --> dstImage
@@ -1025,11 +1025,11 @@ namespace DigitalRune.Graphics.Content
           float scale = (float)dstImage4F.Height / tmpImage4F.Height;
           float inverseScale = 1.0f / scale;
 
-#if SINGLE_THREADED
+
           for (int x = 0; x < dstImage4F.Width; x++)
 #else
           Parallel.For(0, dstImage4F.Width, x =>
-#endif
+
           {
             // Apply polyphase kernel vertically.
             for (int y = 0; y < dstImage4F.Height; y++)
@@ -1067,9 +1067,9 @@ namespace DigitalRune.Graphics.Content
               dstImage4F.SetPixel(x, y, sum);
             }
           }
-#if !SINGLE_THREADED
+
           );
-#endif
+
         }
       }
       // ReSharper restore AccessToDisposedClosure
@@ -1125,11 +1125,11 @@ namespace DigitalRune.Graphics.Content
           float scale = (float)tmpVolume.Width / srcVolume.Width;
           float inverseScale = 1.0f / scale;
 
-#if SINGLE_THREADED
+
           for (int z = 0; z < tmpVolume.Depth; z++)
 #else
           Parallel.For(0, tmpVolume.Depth, z =>
-#endif
+
           {
             for (int y = 0; y < tmpVolume.Height; y++)
             {
@@ -1170,9 +1170,9 @@ namespace DigitalRune.Graphics.Content
               }
             }
           }
-#if !SINGLE_THREADED
+
           );
-#endif
+
         }
 
         // Resize vertically: tmpVolume --> tmpVolume2
@@ -1180,11 +1180,11 @@ namespace DigitalRune.Graphics.Content
           float scale = (float)tmpVolume2.Height / tmpVolume.Height;
           float inverseScale = 1.0f / scale;
 
-#if SINGLE_THREADED
+
           for (int z = 0; z < tmpVolume2.Depth; z++)
 #else
           Parallel.For(0, tmpVolume2.Depth, z =>
-#endif
+
           {
             for (int x = 0; x < tmpVolume2.Width; x++)
             {
@@ -1225,9 +1225,9 @@ namespace DigitalRune.Graphics.Content
               }
             }
           }
-#if !SINGLE_THREADED
+
           );
-#endif
+
         }
 
         // Resize depth: tmpVolume2 --> dstVolume
@@ -1235,11 +1235,11 @@ namespace DigitalRune.Graphics.Content
           float scale = (float)dstVolume.Depth / tmpVolume2.Depth;
           float inverseScale = 1.0f / scale;
 
-#if SINGLE_THREADED
+
           for (int y = 0; y < dstVolume.Height; y++)
 #else
           Parallel.For(0, dstVolume.Height, y =>
-#endif
+
           {
             for (int x = 0; x < dstVolume.Width; x++)
             {
@@ -1280,9 +1280,9 @@ namespace DigitalRune.Graphics.Content
               }
             }
           }
-#if !SINGLE_THREADED
+
           );
-#endif
+
         }
       }
       // ReSharper restore AccessToDisposedClosure

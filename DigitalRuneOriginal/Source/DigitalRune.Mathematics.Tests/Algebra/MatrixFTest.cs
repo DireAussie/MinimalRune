@@ -602,13 +602,13 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void Determinant()
     {
-      MatrixF m = new Matrix44F(1, 2, 3, 4,
+      MatrixF m = new Matrix(1, 2, 3, 4,
                                 5, 6, 7, 8,
                                 9, 10, 11, 12,
                                 13, 14, 15, 16).ToMatrixF();
       Assert.IsTrue(Numeric.IsZero(m.Determinant));
 
-      m = new Matrix44F(1, 2, 3, 4,
+      m = new Matrix(1, 2, 3, 4,
                        -3, 4, 5, 6,
                        2, -5, 7, 4,
                        10, 2, -3, 9).ToMatrixF();
@@ -2059,19 +2059,19 @@ namespace DigitalRune.Mathematics.Algebra.Tests
 
 
     [Test]
-    public void ToMatrix33F()
+    public void ToMatrix()
     {
       float[] values = new float[] { 1.0f, 2.0f, 3.0f, 
                                      4.0f, 5.0f, 6.0f, 
                                      7.0f, 8.0f, 9.0f };
       MatrixF m = new MatrixF(3, 3, values, MatrixOrder.RowMajor);
 
-      Matrix33F m33 = m.ToMatrix33F();
+      Matrix m33 = m.ToMatrix();
       for (int i = 0; i < 3; i++)
         for (int j = 0; j < 3; j++)
           Assert.AreEqual(i * 3 + j + 1, m33[i, j]);
 
-      m33 = (Matrix33F) m;
+      m33 = (Matrix) m;
       for (int i = 0; i < 3; i++)
         for (int j = 0; j < 3; j++)
           Assert.AreEqual(i * 3 + j + 1, m33[i, j]);
@@ -2079,7 +2079,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
 
 
     [Test]
-    public void ToMatrix44F()
+    public void ToMatrix()
     {
       float[] values = new float[] { 1.0f, 2.0f, 3.0f, 4.0f, 
                                      5.0f, 6.0f, 7.0f, 8.0f, 
@@ -2087,12 +2087,12 @@ namespace DigitalRune.Mathematics.Algebra.Tests
                                      13.0f, 14.0f, 15.0f, 16.0f };
       MatrixF m = new MatrixF(4, 4, values, MatrixOrder.RowMajor);
 
-      Matrix44F m44 = m.ToMatrix44F();
+      Matrix m44 = m.ToMatrix();
       for (int i = 0; i < 4; i++)
         for (int j = 0; j < 4; j++)
           Assert.AreEqual(i * 4 + j + 1, m44[i, j]);
 
-      m44 = (Matrix44F) m;
+      m44 = (Matrix) m;
       for (int i = 0; i < 4; i++)
         for (int j = 0; j < 4; j++)
           Assert.AreEqual(i * 4 + j + 1, m44[i, j]);
@@ -2128,54 +2128,54 @@ namespace DigitalRune.Mathematics.Algebra.Tests
 
     [Test]
     [ExpectedException(typeof(ArgumentNullException))]
-    public void ToMatrix33FException1()
+    public void ToMatrixException1()
     {
       MatrixF m = null;
-      Matrix33F m33 = (Matrix33F) m;
+      Matrix m33 = (Matrix) m;
     }
 
 
     [Test]
     [ExpectedException(typeof(InvalidCastException))]
-    public void ToMatrix33FException2()
+    public void ToMatrixException2()
     {
       MatrixF m = new MatrixF(4, 3);
-      Matrix33F m33 = m.ToMatrix33F();
+      Matrix m33 = m.ToMatrix();
     }
 
 
     [Test]
     [ExpectedException(typeof(InvalidCastException))]
-    public void ToMatrix33FException3()
+    public void ToMatrixException3()
     {
       MatrixF m = new MatrixF(3, 4);
-      Matrix33F m33 = m.ToMatrix33F();
+      Matrix m33 = m.ToMatrix();
     }
 
     [Test]
     [ExpectedException(typeof (ArgumentNullException))]
-    public void ToMatrix44FException1()
+    public void ToMatrixException1()
     {
       MatrixF m = null;
-      Matrix44F m44 = (Matrix44F) m;
+      Matrix m44 = (Matrix) m;
     }
 
 
     [Test]
     [ExpectedException(typeof(InvalidCastException))]
-    public void ToMatrix44FException2()
+    public void ToMatrixException2()
     {
       MatrixF m = new MatrixF(5, 4);
-      Matrix44F m44 = m.ToMatrix44F();
+      Matrix m44 = m.ToMatrix();
     }
 
 
     [Test]
     [ExpectedException(typeof(InvalidCastException))]
-    public void ToMatrix44FException3()
+    public void ToMatrixException3()
     {
       MatrixF m = new MatrixF(4, 5);
-      Matrix44F m44 = m.ToMatrix44F();
+      Matrix m44 = m.ToMatrix();
     }
 
 

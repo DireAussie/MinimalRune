@@ -87,9 +87,9 @@ namespace EditorApp
 
             Logger.Info("Configuring editor.");
 
-#if !DEBUG
+
             PresentationTraceSources.DataBindingSource.Switch.Level = SourceLevels.Critical;
-#endif
+
 
             _serviceContainer = new ServiceContainer();
 

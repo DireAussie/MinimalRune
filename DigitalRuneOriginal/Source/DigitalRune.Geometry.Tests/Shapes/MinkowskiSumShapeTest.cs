@@ -19,8 +19,8 @@ namespace DigitalRune.Geometry.Shapes.Tests
     [SetUp]
     public void SetUp()
     {
-      child0 = new GeometricObject(new CircleShape(3), new Pose(new Vector3F(), QuaternionF.CreateRotationX(ConstantsF.PiOver2)));
-      child1 = new GeometricObject(new LineSegmentShape(new Vector3F(0, 5, 0), new Vector3F(0, -5, 0)), Pose.Identity);
+      child0 = new GeometricObject(new CircleShape(3), new Pose(new Vector3(), Quaternion.CreateRotationX(ConstantsF.PiOver2)));
+      child1 = new GeometricObject(new LineSegmentShape(new Vector3(0, 5, 0), new Vector3(0, -5, 0)), Pose.Identity);
 
       cs = new MinkowskiSumShape 
       {
@@ -33,10 +33,10 @@ namespace DigitalRune.Geometry.Shapes.Tests
     [Test]
     public void InnerPoint()
     {
-      Assert.AreEqual(new Vector3F(0, 0, 0), new ConvexHullOfShapes().InnerPoint);
-      Assert.AreEqual(new Vector3F(0, 0, 0), cs.InnerPoint);
-      cs.ObjectB = new GeometricObject(new PointShape(new Vector3F(5, 0, 0)), new Pose(new Vector3F(1, 0, 0), QuaternionF.Identity));
-      Assert.AreEqual(new Vector3F(6, 0, 0), cs.InnerPoint);
+      Assert.AreEqual(new Vector3(0, 0, 0), new ConvexHullOfShapes().InnerPoint);
+      Assert.AreEqual(new Vector3(0, 0, 0), cs.InnerPoint);
+      cs.ObjectB = new GeometricObject(new PointShape(new Vector3(5, 0, 0)), new Pose(new Vector3(1, 0, 0), Quaternion.Identity));
+      Assert.AreEqual(new Vector3(6, 0, 0), cs.InnerPoint);
     }
 
 
@@ -45,35 +45,35 @@ namespace DigitalRune.Geometry.Shapes.Tests
     //public void GetAabb()
     //{
     //  Assert.AreEqual(new Aabb(), new ConvexHullOfPoints().GetAabb(Pose.Identity));
-    //  Assert.AreEqual(new Aabb(new Vector3F(10, 100, -13), new Vector3F(10, 100, -13)),
-    //                 new ConvexHullOfPoints().GetAabb(new Pose(new Vector3F(10, 100, -13),
-    //                                                                     QuaternionF.CreateRotation(new Vector3F(1, 1, 1), 0.7f))));
-    //  Assert.AreEqual(new Aabb(new Vector3F(11, 102, 1003), new Vector3F(11, 102, 1003)),
-    //                 new ConvexHullOfPoints(new Vector3F(1, 2, 3)).GetAabb(new Pose(new Vector3F(10, 100, 1000),
-    //                                                                     QuaternionF.Identity)));
-    //  QuaternionF rotation = QuaternionF.CreateRotation(new Vector3F(1, 1, 1), 0.7f);
-    //  Vector3F worldPos = rotation.Rotate(new Vector3F(1, 2, 3)) + new Vector3F(10, 100, 1000);
-    //  Assert.IsTrue(Vector3F.AreNumericallyEqual(worldPos, new ConvexHullOfPoints(new Vector3F(1, 2, 3)).GetAabb(new Pose(new Vector3F(10, 100, 1000), rotation)).Minimum));
-    //  Assert.IsTrue(Vector3F.AreNumericallyEqual(worldPos, new ConvexHullOfPoints(new Vector3F(1, 2, 3)).GetAabb(new Pose(new Vector3F(10, 100, 1000), rotation)).Maximum));
+    //  Assert.AreEqual(new Aabb(new Vector3(10, 100, -13), new Vector3(10, 100, -13)),
+    //                 new ConvexHullOfPoints().GetAabb(new Pose(new Vector3(10, 100, -13),
+    //                                                                     Quaternion.CreateRotation(new Vector3(1, 1, 1), 0.7f))));
+    //  Assert.AreEqual(new Aabb(new Vector3(11, 102, 1003), new Vector3(11, 102, 1003)),
+    //                 new ConvexHullOfPoints(new Vector3(1, 2, 3)).GetAabb(new Pose(new Vector3(10, 100, 1000),
+    //                                                                     Quaternion.Identity)));
+    //  Quaternion rotation = Quaternion.CreateRotation(new Vector3(1, 1, 1), 0.7f);
+    //  Vector3 worldPos = rotation.Rotate(new Vector3(1, 2, 3)) + new Vector3(10, 100, 1000);
+    //  Assert.IsTrue(Vector3.AreNumericallyEqual(worldPos, new ConvexHullOfPoints(new Vector3(1, 2, 3)).GetAabb(new Pose(new Vector3(10, 100, 1000), rotation)).Minimum));
+    //  Assert.IsTrue(Vector3.AreNumericallyEqual(worldPos, new ConvexHullOfPoints(new Vector3(1, 2, 3)).GetAabb(new Pose(new Vector3(10, 100, 1000), rotation)).Maximum));
     //}
 
 
     [Test]
     public void GetSupportPoint()
     {
-      Assert.AreEqual(new Vector3F(0, 0, 0), new MinkowskiSumShape().GetSupportPoint(new Vector3F(1, 0, 0)));
-      Assert.AreEqual(new Vector3F(0, 0, 0), new MinkowskiSumShape().GetSupportPoint(new Vector3F(0, 1, 0)));
-      Assert.AreEqual(new Vector3F(0, 0, 0), new MinkowskiSumShape().GetSupportPoint(new Vector3F(0, 0, 1)));
-      Assert.AreEqual(new Vector3F(0, 0, 0), new MinkowskiSumShape().GetSupportPoint(new Vector3F(1, 1, 1)));
+      Assert.AreEqual(new Vector3(0, 0, 0), new MinkowskiSumShape().GetSupportPoint(new Vector3(1, 0, 0)));
+      Assert.AreEqual(new Vector3(0, 0, 0), new MinkowskiSumShape().GetSupportPoint(new Vector3(0, 1, 0)));
+      Assert.AreEqual(new Vector3(0, 0, 0), new MinkowskiSumShape().GetSupportPoint(new Vector3(0, 0, 1)));
+      Assert.AreEqual(new Vector3(0, 0, 0), new MinkowskiSumShape().GetSupportPoint(new Vector3(1, 1, 1)));
 
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(new Vector3F(3, -5, 0), cs.GetSupportPoint(new Vector3F(1, -1, 0))));
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(new Vector3F(3, 5, 0), cs.GetSupportPoint(new Vector3F(1, 1, 0))));
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(new Vector3F(0, -5, 3), cs.GetSupportPoint(new Vector3F(0, 0, 1))));
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(new Vector3F(-3, -5, 0), cs.GetSupportPoint(new Vector3F(-1, 0, 0))));
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(new Vector3F(3, -5, 0), cs.GetSupportPoint(new Vector3F(0, -1, 0))));
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(new Vector3F(0, -5, -3), cs.GetSupportPoint(new Vector3F(0, 0, -1))));
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(new Vector3F(0, 5, 0) + 3 * new Vector3F(1, 0, 1).Normalized, cs.GetSupportPoint(new Vector3F(1, 1, 1))));
-      Assert.IsTrue(Vector3F.AreNumericallyEqual(new Vector3F(0, -5, 0) + 3 * new Vector3F(-1, 0, -1).Normalized, cs.GetSupportPoint(new Vector3F(-1, -1, -1))));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(new Vector3(3, -5, 0), cs.GetSupportPoint(new Vector3(1, -1, 0))));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(new Vector3(3, 5, 0), cs.GetSupportPoint(new Vector3(1, 1, 0))));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(new Vector3(0, -5, 3), cs.GetSupportPoint(new Vector3(0, 0, 1))));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(new Vector3(-3, -5, 0), cs.GetSupportPoint(new Vector3(-1, 0, 0))));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(new Vector3(3, -5, 0), cs.GetSupportPoint(new Vector3(0, -1, 0))));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(new Vector3(0, -5, -3), cs.GetSupportPoint(new Vector3(0, 0, -1))));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(new Vector3(0, 5, 0) + 3 * new Vector3(1, 0, 1).Normalized, cs.GetSupportPoint(new Vector3(1, 1, 1))));
+      Assert.IsTrue(Vector3.AreNumericallyEqual(new Vector3(0, -5, 0) + 3 * new Vector3(-1, 0, -1).Normalized, cs.GetSupportPoint(new Vector3(-1, -1, -1))));
     }
 
 
@@ -87,11 +87,11 @@ namespace DigitalRune.Geometry.Shapes.Tests
     [Test]
     public void Clone()
     {
-      Pose poseA = new Pose(new Vector3F(1, 2, 3));
+      Pose poseA = new Pose(new Vector3(1, 2, 3));
       PointShape pointA = new PointShape(3, 4, 5);
       GeometricObject geometryA = new GeometricObject(pointA, poseA);
 
-      Pose poseB = new Pose(new Vector3F(1, 2, 3));
+      Pose poseB = new Pose(new Vector3(1, 2, 3));
       PointShape pointB = new PointShape(3, 4, 5);
       GeometricObject geometryB = new GeometricObject(pointB, poseB);
 
@@ -122,11 +122,11 @@ namespace DigitalRune.Geometry.Shapes.Tests
     //[Test]
     //public void SerializationXml()
     //{
-    //  Pose poseA = new Pose(new Vector3F(1, 2, 3));
+    //  Pose poseA = new Pose(new Vector3(1, 2, 3));
     //  PointShape pointA = new PointShape(3, 4, 5);
     //  GeometricObject geometryA = new GeometricObject(pointA, poseA);
 
-    //  Pose poseB = new Pose(new Vector3F(11, 22, 33));
+    //  Pose poseB = new Pose(new Vector3(11, 22, 33));
     //  PointShape pointB = new PointShape(33, 44, 55);
     //  GeometricObject geometryB = new GeometricObject(pointB, poseB);
 
@@ -158,11 +158,11 @@ namespace DigitalRune.Geometry.Shapes.Tests
     [Ignore("Binary serialization not supported in PCL version.")]
     public void SerializationBinary()
     {
-      Pose poseA = new Pose(new Vector3F(1, 2, 3));
+      Pose poseA = new Pose(new Vector3(1, 2, 3));
       PointShape pointA = new PointShape(3, 4, 5);
       GeometricObject geometryA = new GeometricObject(pointA, poseA);
 
-      Pose poseB = new Pose(new Vector3F(11, 22, 33));
+      Pose poseB = new Pose(new Vector3(11, 22, 33));
       PointShape pointB = new PointShape(33, 44, 55);
       GeometricObject geometryB = new GeometricObject(pointB, poseB);
 

@@ -19,9 +19,9 @@
 using System;
 using System.Diagnostics;
 using System.Globalization;
-#if NREFACTORY
+
 using ICSharpCode.NRefactory.Editor;
-#endif
+
 
 namespace ICSharpCode.AvalonEdit.Document
 {
@@ -43,28 +43,28 @@ namespace ICSharpCode.AvalonEdit.Document
 	public sealed partial class DocumentLine : IDocumentLine
 	{
 
-		#if DEBUG
+
 		// Required for thread safety check which is done only in debug builds.
 		// To save space, we don't store the document reference in release builds as we don't need it there.
 		readonly TextDocument document;
-		#endif
+
 		
 		internal bool isDeleted;
 		
 		internal DocumentLine(TextDocument document)
 		{
-			#if DEBUG
+
 			Debug.Assert(document != null);
 			this.document = document;
-			#endif
+
 		}
 		
 		[Conditional("DEBUG")]
 		void DebugVerifyAccess()
 		{
-			#if DEBUG
+
 			document.DebugVerifyAccess();
-			#endif
+
 		}
 
 		

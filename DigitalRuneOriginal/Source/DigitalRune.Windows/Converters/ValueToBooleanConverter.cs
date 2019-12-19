@@ -33,9 +33,9 @@ namespace DigitalRune.Windows
     /// </list>
     /// </para>
     /// </remarks>
-#if !SILVERLIGHT && !WINDOWS_PHONE
+
     [ValueConversion(typeof(object), typeof(bool), ParameterType = typeof(object))]
-#endif
+
     public class ValueToBooleanConverter : IValueConverter
     {
         /// <summary>

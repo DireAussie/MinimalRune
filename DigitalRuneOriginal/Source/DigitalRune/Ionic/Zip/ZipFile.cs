@@ -17,9 +17,9 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
-#if NETFX_CORE || PORTABLE
+
 using System.Collections.ObjectModel;
-#endif
+
 
 namespace DigitalRune.Ionic.Zip
 {
@@ -715,11 +715,11 @@ namespace DigitalRune.Ionic.Zip
                 StringComparison sc = (CaseSensitiveRetrieval) ? StringComparison.Ordinal : StringComparison.OrdinalIgnoreCase;
 
                 coll.Sort((x, y) => { return String.Compare(x.FileName, y.FileName, sc); });
-#if NETFX_CORE || PORTABLE
+
                 return new ReadOnlyCollection<ZipEntry>(coll);
 #else
                 return coll.AsReadOnly();
-#endif
+
             }
         }
 
@@ -836,19 +836,19 @@ namespace DigitalRune.Ionic.Zip
         private string _Comment;
         internal string _Password;
         private long _locEndOfCDS = -1;
-#if !WINDOWS
+
         // See https://dotnetzip.codeplex.com/workitem/14049
         private System.Text.Encoding _alternateEncoding = System.Text.Encoding.GetEncoding("UTF-8");
 #else
         private System.Text.Encoding _alternateEncoding = System.Text.Encoding.GetEncoding("IBM437"); // UTF-8
-#endif
+
         private ZipOption _alternateEncodingUsage = ZipOption.Never;
-#if !WINDOWS
+
         // See https://dotnetzip.codeplex.com/workitem/14049
         private static System.Text.Encoding _defaultEncoding = System.Text.Encoding.GetEncoding("UTF-8");
 #else
         private static System.Text.Encoding _defaultEncoding = System.Text.Encoding.GetEncoding("IBM437");
-#endif
+
 
         private int _BufferSize = BufferSizeDefault;
 

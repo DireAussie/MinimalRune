@@ -118,9 +118,9 @@ namespace DigitalRune.Windows.Charts
         /// </exception>
         [Description("Gets or sets a value indicating whether the element is clipped to the chart area.")]
         [Category(ChartCategories.Default)]
-#if !SILVERLIGHT
+
         [AttachedPropertyBrowsableForChildren]
-#endif
+
         public static bool GetClipToChartArea(DependencyObject element)
         {
             if (element == null)
@@ -199,9 +199,9 @@ namespace DigitalRune.Windows.Charts
         /// </exception>
         [Description("Gets or sets the associated x-axis.")]
         [Category(ChartCategories.Default)]
-#if !SILVERLIGHT
+
         [AttachedPropertyBrowsableForChildren]
-#endif
+
         public static Axis GetXAxis(DependencyObject element)
         {
             if (element == null)
@@ -277,9 +277,9 @@ namespace DigitalRune.Windows.Charts
         /// </exception>
         [Description("Gets or sets the associated y-axis.")]
         [Category(ChartCategories.Default)]
-#if !SILVERLIGHT
+
         [AttachedPropertyBrowsableForChildren]
-#endif
+
         public static Axis GetYAxis(DependencyObject element)
         {
             if (element == null)
@@ -342,10 +342,10 @@ namespace DigitalRune.Windows.Charts
         /// </exception>
         [Description("Gets or sets the left x-coordinate (data value).")]
         [Category(ChartCategories.Default)]
-#if !SILVERLIGHT
+
         [AttachedPropertyBrowsableForChildren]
         [TypeConverter(typeof(LengthConverter))]
-#endif
+
         public static double GetX1(DependencyObject element)
         {
             if (element == null)
@@ -406,10 +406,10 @@ namespace DigitalRune.Windows.Charts
         /// </exception>
         [Description("Gets or sets the top y-coordinate (data value).")]
         [Category(ChartCategories.Default)]
-#if !SILVERLIGHT
+
         [AttachedPropertyBrowsableForChildren]
         [TypeConverter(typeof(LengthConverter))]
-#endif
+
         public static double GetY1(DependencyObject element)
         {
             if (element == null)
@@ -470,10 +470,10 @@ namespace DigitalRune.Windows.Charts
         /// </exception>
         [Description("Gets or sets the right x-coordinate (data value).")]
         [Category(ChartCategories.Default)]
-#if !SILVERLIGHT
+
         [AttachedPropertyBrowsableForChildren]
         [TypeConverter(typeof(LengthConverter))]
-#endif
+
         public static double GetX2(DependencyObject element)
         {
             if (element == null)
@@ -534,10 +534,10 @@ namespace DigitalRune.Windows.Charts
         /// </exception>
         [Description("Gets or sets the bottom y-coordinate (data value).")]
         [Category(ChartCategories.Default)]
-#if !SILVERLIGHT
+
         [AttachedPropertyBrowsableForChildren]
         [TypeConverter(typeof(LengthConverter))]
-#endif
+
         public static double GetY2(DependencyObject element)
         {
             if (element == null)

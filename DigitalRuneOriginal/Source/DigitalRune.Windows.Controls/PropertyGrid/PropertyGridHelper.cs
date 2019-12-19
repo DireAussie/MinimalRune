@@ -191,7 +191,7 @@ namespace DigitalRune.Windows.Controls
                                    .Select(descriptor => new ReflectedProperty(instance, descriptor))
                                    .OrderBy(p => p, PropertyComparer.Instance));
 
-            // Add public fields of regular CLR objects (very important for structs like Vector3F).
+            // Add public fields of regular CLR objects (very important for structs like Vector3).
             if (isBasicObject)
             {
                 foreach (var field in instance.GetType().GetFields())

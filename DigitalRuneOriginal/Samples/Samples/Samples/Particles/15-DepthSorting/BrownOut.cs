@@ -22,7 +22,7 @@ namespace Samples.Particles
 
     public BrownOut(ContentManager contentManager)
     {
-      Pose = new Pose(Matrix33F.CreateRotationX(-ConstantsF.PiOver2));
+      Pose = new Pose(Matrix.CreateRotationX(-ConstantsF.PiOver2));
 
       // Smoke on a ring.
       var outerRingSmoke = CreateSmoke(contentManager);
@@ -56,15 +56,15 @@ namespace Samples.Particles
         MaxNumberOfParticles = 200,
       };
 
-      ps.Parameters.AddVarying<Vector3F>(ParticleParameterNames.Position);
+      ps.Parameters.AddVarying<Vector3>(ParticleParameterNames.Position);
 
-      ps.Parameters.AddVarying<Vector3F>(ParticleParameterNames.Direction);
+      ps.Parameters.AddVarying<Vector3>(ParticleParameterNames.Direction);
       ps.Effectors.Add(new StartDirectionEffector
       {
         Parameter = ParticleParameterNames.Direction,
         Distribution = new DirectionDistribution
         {
-          Direction = new Vector3F(0, 0, 1),
+          Direction = new Vector3(0, 0, 1),
           Deviation = 0.6f,
         }
       });
@@ -112,7 +112,7 @@ namespace Samples.Particles
         FactorParameter = ParticleParameterNames.NormalizedAge,
       });
 
-      ps.Parameters.AddUniform<Vector3F>(ParticleParameterNames.Color).DefaultValue = new Vector3F(0.6f, 0.5f, 0.4f);
+      ps.Parameters.AddUniform<Vector3>(ParticleParameterNames.Color).DefaultValue = new Vector3(0.6f, 0.5f, 0.4f);
 
       ps.Parameters.AddVarying<float>(ParticleParameterNames.Alpha);
       ps.Parameters.AddUniform<float>("TargetAlpha").DefaultValue = 1;

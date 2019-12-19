@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-#if !WP7
+
 using System;
 using System.Collections.Generic;
 using DigitalRune.Graphics.SceneGraph;
@@ -170,7 +170,7 @@ namespace DigitalRune.Graphics.Rendering
 
       // Convert frustum far corners from view space to world space.
       for (int i = 0; i < _cameraFrustumFarCorners.Length; i++)
-        _cameraFrustumFarCorners[i] = (Vector3)cameraPose.ToWorldDirection((Vector3F)_cameraFrustumFarCorners[i]);
+        _cameraFrustumFarCorners[i] = (Vector3)cameraPose.ToWorldDirection((Vector3)_cameraFrustumFarCorners[i]);
 
       _parameterFrustumCorners.SetValue(_cameraFrustumFarCorners);
       _parameterGBuffer0.SetValue(context.GBuffer0);
@@ -306,4 +306,4 @@ namespace DigitalRune.Graphics.Rendering
 
   }
 }
-#endif
+

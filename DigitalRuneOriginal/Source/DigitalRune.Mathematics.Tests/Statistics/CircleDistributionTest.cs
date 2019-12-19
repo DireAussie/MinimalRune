@@ -56,9 +56,9 @@ namespace DigitalRune.Mathematics.Statistics.Tests
       var random = new Random(123456);
       CircleDistribution d = new CircleDistribution { OuterRadius = 0 };
 
-      Assert.AreEqual(new Vector3F(), d.Next(random));
-      Assert.AreEqual(new Vector3F(), d.Next(random));
-      Assert.AreEqual(new Vector3F(), d.Next(random));
+      Assert.AreEqual(new Vector3(), d.Next(random));
+      Assert.AreEqual(new Vector3(), d.Next(random));
+      Assert.AreEqual(new Vector3(), d.Next(random));
     }
 
 

@@ -31,12 +31,12 @@ namespace DigitalRune.Build
         }
 
 
-#if DEBUG
+
         public static void Test()
         {
             ProcessFolder(@"X:\DigitalRune\Samples\Content", true);
         }
-#endif
+
 
 
         /// <summary>

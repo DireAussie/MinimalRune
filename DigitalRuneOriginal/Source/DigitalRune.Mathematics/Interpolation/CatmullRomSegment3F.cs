@@ -46,30 +46,30 @@ namespace DigitalRune.Mathematics.Interpolation
   /// </para>
   /// </remarks>
   [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Catmull")]
-  public class CatmullRomSegment3F : ICurve<float, Vector3F>, IRecyclable
+  public class CatmullRomSegment3F : ICurve<float, Vector3>, IRecyclable
   {
     /// <summary>
     /// Gets or sets the previous point.
     /// </summary>
-    public Vector3F Point1 { get; set; }
+    public Vector3 Point1 { get; set; }
 
 
     /// <summary>
     /// Gets or sets the start point.
     /// </summary>
-    public Vector3F Point2 { get; set; }
+    public Vector3 Point2 { get; set; }
 
 
     /// <summary>
     /// Gets or sets the end point.
     /// </summary>
-    public Vector3F Point3 { get; set; }
+    public Vector3 Point3 { get; set; }
 
 
     /// <summary>
     /// Gets or sets the subsequent point.
     /// </summary>
-    public Vector3F Point4 { get; set; }
+    public Vector3 Point4 { get; set; }
 
 
     /// <summary>
@@ -77,7 +77,7 @@ namespace DigitalRune.Mathematics.Interpolation
     /// </summary>
     /// <param name="parameter">The curve parameter.</param>
     /// <returns>The curve point.</returns>
-    public Vector3F GetPoint(float parameter)
+    public Vector3 GetPoint(float parameter)
     {
       float u = parameter;
       float u2 = u * u;
@@ -91,7 +91,7 @@ namespace DigitalRune.Mathematics.Interpolation
 
 
     /// <inheritdoc/>
-    public Vector3F GetTangent(float parameter)
+    public Vector3 GetTangent(float parameter)
     {
       float u = parameter;
       float u2 = u * u;
@@ -111,7 +111,7 @@ namespace DigitalRune.Mathematics.Interpolation
 
 
     /// <inheritdoc/>
-    public void Flatten(ICollection<Vector3F> points, int maxNumberOfIterations, float tolerance)
+    public void Flatten(ICollection<Vector3> points, int maxNumberOfIterations, float tolerance)
     {
       CurveHelper.Flatten(this, points, maxNumberOfIterations, tolerance);
     }
@@ -155,10 +155,10 @@ namespace DigitalRune.Mathematics.Interpolation
     /// <inheritdoc/>
     public void Recycle()
     {
-      Point1 = new Vector3F();
-      Point2 = new Vector3F();
-      Point3 = new Vector3F();
-      Point4 = new Vector3F();
+      Point1 = new Vector3();
+      Point2 = new Vector3();
+      Point3 = new Vector3();
+      Point4 = new Vector3();
 
       Pool.Recycle(this);
     }

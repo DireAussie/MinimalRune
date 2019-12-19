@@ -1,4 +1,4 @@
-﻿#if !WP7 && !WP8
+﻿
 namespace Samples
 {
   /// <summary>
@@ -22,4 +22,4 @@ namespace Samples
     VisualizeSpecularLightBuffer,
   };
 }
-#endif
+

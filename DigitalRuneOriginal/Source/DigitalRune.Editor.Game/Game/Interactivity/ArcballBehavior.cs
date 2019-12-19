@@ -38,10 +38,10 @@ namespace DigitalRune.Editor.Game
         //--------------------------------------------------------------
 
         private CameraNode _cameraNode;
-        private Vector3F _startVector;
-        private Matrix44F _originalTransform = Matrix44F.Identity;
-        private Matrix44F _originalViewMatrix;
-        private Matrix44F _transform = Matrix44F.Identity;
+        private Vector3 _startVector;
+        private Matrix _originalTransform = Matrix.Identity;
+        private Matrix _originalViewMatrix;
+        private Matrix _transform = Matrix.Identity;
 
 
 
@@ -104,9 +104,9 @@ namespace DigitalRune.Editor.Game
         /// </summary>
         public static readonly DependencyProperty CameraTargetProperty = DependencyProperty.Register(
             "CameraTarget",
-            typeof(Vector3F),
+            typeof(Vector3),
             typeof(ArcballBehavior),
-            new FrameworkPropertyMetadata(Vector3F.Zero, OnCameraTargetChanged));
+            new FrameworkPropertyMetadata(Vector3.Zero, OnCameraTargetChanged));
 
         /// <summary>
         /// Gets or sets the center around which the camera is orbiting.
@@ -115,9 +115,9 @@ namespace DigitalRune.Editor.Game
         /// <value>The center around which the camera is orbiting.</value>
         [Description("Gets or sets the center around which the camera is orbiting.")]
         [Category(Categories.Behavior)]
-        public Vector3F CameraTarget
+        public Vector3 CameraTarget
         {
-            get { return (Vector3F)GetValue(CameraTargetProperty); }
+            get { return (Vector3)GetValue(CameraTargetProperty); }
             set { SetValue(CameraTargetProperty, value); }
         }
 
@@ -137,8 +137,8 @@ namespace DigitalRune.Editor.Game
         private static void OnCameraTargetChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
         {
             var behavior = (ArcballBehavior)dependencyObject;
-            Vector3F oldValue = (Vector3F)eventArgs.OldValue;
-            Vector3F newValue = (Vector3F)eventArgs.NewValue;
+            Vector3 oldValue = (Vector3)eventArgs.OldValue;
+            Vector3 newValue = (Vector3)eventArgs.NewValue;
             behavior.OnCameraTargetChanged(oldValue, newValue);
         }
 
@@ -147,7 +147,7 @@ namespace DigitalRune.Editor.Game
         /// </summary>
         /// <param name="oldValue">The old value.</param>
         /// <param name="newValue">The new value.</param>
-        protected virtual void OnCameraTargetChanged(Vector3F oldValue, Vector3F newValue)
+        protected virtual void OnCameraTargetChanged(Vector3 oldValue, Vector3 newValue)
         {
             //var cameraNode = CameraNode;
             //if (cameraNode != null)
@@ -286,8 +286,8 @@ namespace DigitalRune.Editor.Game
             {
                 // Rotate view.
                 Point mousePosition = eventArgs.GetPosition(AssociatedObject);
-                Vector3F dragVector = MapToSphere(mousePosition);
-                Matrix44F rotation = QuaternionF.CreateRotation(_startVector, dragVector).ToRotationMatrix44();
+                Vector3 dragVector = MapToSphere(mousePosition);
+                Matrix rotation = Quaternion.CreateRotation(_startVector, dragVector).ToRotationMatrix44();
                 _transform = rotation * _originalTransform;
                 UpdateCamera(_cameraNode);
             }
@@ -295,7 +295,7 @@ namespace DigitalRune.Editor.Game
 
 
         // Maps the mouse position to an imaginary sphere (radius = 1).
-        private Vector3F MapToSphere(Point mousePosition)
+        private Vector3 MapToSphere(Point mousePosition)
         {
             // Map mouse position from [0, size in pixels] to [-1.5, 1.5].
             Vector2F p;
@@ -311,12 +311,12 @@ namespace DigitalRune.Editor.Game
                 // The mouse position is outside of the sphere.
                 // --> Map mouse position to point on sphere.
                 p.Normalize();
-                return new Vector3F(p.X, p.Y, 0);
+                return new Vector3(p.X, p.Y, 0);
             }
 
             // The mouse position is on the sphere.
             // --> Return point on sphere.
-            return new Vector3F(p.X, p.Y, (float)Math.Sqrt(1 - lengthSquared));
+            return new Vector3(p.X, p.Y, (float)Math.Sqrt(1 - lengthSquared));
         }
 
 
@@ -331,7 +331,7 @@ namespace DigitalRune.Editor.Game
             _transform.Minor = minor;
 
             // Create view matrix for look at origin (ignoring CameraTarget).
-            camera.View = Matrix44F.CreateTranslation(0, 0, -distance) * _transform;
+            camera.View = Matrix.CreateTranslation(0, 0, -distance) * _transform;
 
             // Apply translation to look at CameraTarget.
             var pose = camera.PoseWorld;

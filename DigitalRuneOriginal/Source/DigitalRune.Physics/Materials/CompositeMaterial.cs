@@ -131,7 +131,7 @@ namespace DigitalRune.Physics.Materials
     /// <exception cref="ArgumentNullException">
     /// <paramref name="body"/> is <see langword="null"/>.
     /// </exception>
-    public MaterialProperties GetProperties(RigidBody body, Vector3F positionLocal, int featureIndex)
+    public MaterialProperties GetProperties(RigidBody body, Vector3 positionLocal, int featureIndex)
     {
       if (body == null)
         throw new ArgumentNullException("body");

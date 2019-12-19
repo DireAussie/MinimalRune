@@ -9,15 +9,15 @@ using DigitalRune.Mathematics.Algebra;
 namespace DigitalRune.Animation
 {
   /// <summary>
-  /// Animates a <see langword="Vector3F"/> value from/to/by a certain value.
+  /// Animates a <see langword="Vector3"/> value from/to/by a certain value.
   /// </summary>
   /// <inheritdoc/>
-  public class Vector3FFromToByAnimation : FromToByAnimation<Vector3F>
+  public class Vector3FromToByAnimation : FromToByAnimation<Vector3>
   {
     /// <inheritdoc/>
-    public override IAnimationValueTraits<Vector3F> Traits
+    public override IAnimationValueTraits<Vector3> Traits
     {
-      get { return Vector3FTraits.Instance; }
+      get { return Vector3Traits.Instance; }
     }
   }
 }

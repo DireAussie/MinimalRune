@@ -24,8 +24,8 @@ namespace DigitalRune.Geometry.Content
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods")]
     protected override Aabb Read(ContentReader input, Aabb existingInstance)
     {
-      Vector3F minimum = input.ReadRawObject<Vector3F>();
-      Vector3F maximum = input.ReadRawObject<Vector3F>();
+      Vector3 minimum = input.ReadRawObject<Vector3>();
+      Vector3 maximum = input.ReadRawObject<Vector3>();
       return new Aabb(minimum, maximum);
     }
   }

@@ -31,7 +31,7 @@ for a sky dome.",
       SampleFramework.IsMouseVisible = false;
       GraphicsScreen.ClearBackground = true;
       GraphicsScreen.BackgroundColor = Color.CornflowerBlue;
-      SetCamera(new Vector3F(1, 1, 3), 0.2f, 0);
+      SetCamera(new Vector3(1, 1, 3), 0.2f, 0);
 
       // Create a sky mesh and add an instance of this mesh to the scene.
       var skyMesh = ProceduralSkyDome.CreateMesh(GraphicsService, ContentManager.Load<Texture2D>("sky"));
@@ -47,7 +47,7 @@ for a sky dome.",
       // to the content folder and have a look at the *.drmdl and *.drmat files.
       var dudeModel = ContentManager.Load<ModelNode>("Dude/Dude");
       dudeModel = dudeModel.Clone();
-      dudeModel.PoseWorld = new Pose(Matrix33F.CreateRotationY(ConstantsF.Pi));
+      dudeModel.PoseWorld = new Pose(Matrix.CreateRotationY(ConstantsF.Pi));
       GraphicsScreen.Scene.Children.Add(dudeModel);
 
       // The dude model consists of a single mesh.
