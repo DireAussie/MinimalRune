@@ -3,15 +3,15 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Interpolation;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Interpolation;
 
 using Microsoft.Xna.Framework.Content;
 
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Animates a value using an animation curve. (Base implementation.)
@@ -67,18 +67,18 @@ namespace DigitalRune.Animation
       where TCurve : PiecewiseCurve<float, TPoint, TCurveKey>
       where TValue : IEquatable<TValue>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private TimeSpan _startTime;
     private TimeSpan _endTime;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the curve that defines the animation.
@@ -160,9 +160,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the 
@@ -176,9 +176,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Determines the natural duration of the curve.

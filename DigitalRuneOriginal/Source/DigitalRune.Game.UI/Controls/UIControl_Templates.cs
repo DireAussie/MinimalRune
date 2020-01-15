@@ -7,16 +7,16 @@ using System.Collections.Generic;
 
 using System.Reflection;
 
-using DigitalRune.Game.UI.Rendering;
+using MinimalRune.Game.UI.Rendering;
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   public partial class UIControl
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Since the GameProperty and GameEvent classes are generic types. It is difficult to handle
     // them in ApplyTemplate because ApplyTemplate needs to know the type of each property/event.
@@ -81,9 +81,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Creates a game object event for a <see cref="UIControl"/>. (This method replaces

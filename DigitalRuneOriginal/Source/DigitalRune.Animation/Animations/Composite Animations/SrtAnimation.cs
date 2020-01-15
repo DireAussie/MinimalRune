@@ -3,15 +3,15 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Animation.Character;
-using DigitalRune.Animation.Traits;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Animation.Character;
+using MinimalRune.Animation.Traits;
+using MinimalRune.Mathematics.Algebra;
 
 using Microsoft.Xna.Framework.Content;
 
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Animates an <see cref="SrtTransform"/> by applying an animation to each component (scale,
@@ -19,15 +19,15 @@ namespace DigitalRune.Animation
   /// </summary>
   public class SrtAnimation : Animation<SrtTransform>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override IAnimationValueTraits<SrtTransform> Traits
@@ -67,9 +67,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
     
     /// <overloads>
     /// <summary>
@@ -101,9 +101,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override TimeSpan GetTotalDuration()

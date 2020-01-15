@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Animation.Easing
+namespace MinimalRune.Animation.Easing
 {
   /// <summary>
   /// Represents an easing function that decelerates/accelerates towards the target value using a

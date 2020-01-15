@@ -8,16 +8,16 @@ using System.Globalization;
 
 using System.Collections.ObjectModel;
 #else
-using DigitalRune.Collections.ObjectModel;
+using MinimalRune.Collections.ObjectModel;
 
 using System.Diagnostics;
 using System.Linq;
 using System.Xml;
 using System.Xml.Serialization;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Mathematics.Interpolation
+namespace MinimalRune.Mathematics.Interpolation
 {
   /// <summary>
   /// Represents a curve that is defined by piecewise interpolation of curve keys (control points).
@@ -66,15 +66,15 @@ namespace DigitalRune.Mathematics.Interpolation
     : Collection<TCurveKey>, ICurve<TParam, TPoint>
       where TCurveKey : CurveKey<TParam, TPoint>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets a value that defines how the curve looks after the last curve key.
@@ -123,15 +123,15 @@ namespace DigitalRune.Mathematics.Interpolation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public abstract TPoint GetPoint(TParam parameter);

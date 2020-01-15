@@ -3,14 +3,14 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Graphics.Rendering;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Interpolation;
+using MinimalRune.Graphics.Rendering;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Interpolation;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Renders a cloud layer into the distant sky.
@@ -60,9 +60,9 @@ namespace DigitalRune.Graphics.SceneGraph
   /// </remarks>
   public class CloudLayerNode : SkyNode
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     internal OcclusionQuery OcclusionQuery;
     internal float QuerySize;       // The total size of the occlusion query in pixels.
@@ -70,9 +70,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------    
+        
 
     /// <summary>
     /// Gets or sets the cloud map that provides the cloud texture.
@@ -286,9 +286,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="CloudLayerNode" /> class.
@@ -340,9 +340,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc cref="SceneNode.Clone"/>
     public new CloudLayerNode Clone()

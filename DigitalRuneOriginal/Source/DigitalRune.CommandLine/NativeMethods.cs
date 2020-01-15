@@ -6,7 +6,7 @@ using System;
 using System.Runtime.InteropServices;
 
 
-namespace DigitalRune.CommandLine
+namespace MinimalRune.CommandLine
 {
     internal static class NativeMethods
     {

@@ -2,11 +2,11 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Animation.Character;
-using DigitalRune.Animation.Traits;
+using MinimalRune.Animation.Character;
+using MinimalRune.Animation.Traits;
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Animates an <see cref="SrtTransform"/> using key frames.

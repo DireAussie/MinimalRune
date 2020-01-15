@@ -12,23 +12,23 @@ using System.Xml;
 
 using System.Xml.Linq;
 
-using DigitalRune.Game.Input;
+using MinimalRune.Game.Input;
 using Microsoft.Xna.Framework.Input;
 
 using Keys = System.Windows.Input.Key;
 
 
 
-namespace DigitalRune.Game.UI
+namespace MinimalRune.Game.UI
 {
   /// <summary>
   /// Maps XNA <see cref="Keys"/> (key codes) to characters (keyboard layout).
   /// </summary>
   public class KeyMap
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Note: Enumerations as dictionary keys cause boxing. Instead of 
     //   Dictionary<Keys, Dictionary<ModifierKeys, char>>
@@ -38,9 +38,9 @@ namespace DigitalRune.Game.UI
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the <see cref="System.Char"/> with the specified key and modifiers.
@@ -202,9 +202,9 @@ namespace DigitalRune.Game.UI
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -249,9 +249,9 @@ namespace DigitalRune.Game.UI
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times")]
     private void LoadEmbeddedResource(string keyMapName)

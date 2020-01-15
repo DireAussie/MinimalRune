@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   /// <summary>
   /// Specifies when the <see cref="ButtonBase.Click"/> event should be raised for a control. 

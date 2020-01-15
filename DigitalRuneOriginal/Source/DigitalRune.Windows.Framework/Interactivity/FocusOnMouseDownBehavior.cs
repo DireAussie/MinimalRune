@@ -7,7 +7,7 @@ using System.Windows.Input;
 using System.Windows.Interactivity;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Sets the focus when a mouse button is pressed over the element.

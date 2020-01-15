@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Defines the order in which in objects are rendered.

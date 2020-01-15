@@ -1,10 +1,10 @@
 ﻿
 using System.IO;
-using DigitalRune.Ionic.Zip;
+using MinimalRune.Ionic.Zip;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Ionic.Tests
+namespace MinimalRune.Ionic.Tests
 {
   [TestFixture]
   public class ZipFileTest

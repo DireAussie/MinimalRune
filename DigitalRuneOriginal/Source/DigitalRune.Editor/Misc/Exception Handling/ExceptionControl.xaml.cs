@@ -11,24 +11,24 @@ using System.Windows;
 using NLog;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// Shows the exception message.
     /// </summary>
     internal partial class ExceptionControl
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets the name of the application that threw the exception.
@@ -58,9 +58,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ExceptionControl"/> class.
@@ -73,9 +73,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Called when the window was loaded.

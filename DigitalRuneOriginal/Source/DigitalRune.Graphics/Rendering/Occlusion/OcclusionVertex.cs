@@ -5,11 +5,11 @@
 using System;
 using System.Globalization;
 using System.Runtime.InteropServices;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Vertex format used in "OcclusionCulling.fx".
@@ -20,9 +20,9 @@ namespace DigitalRune.Graphics.Rendering
   [StructLayout(LayoutKind.Sequential)]
   internal struct OcclusionVertex : IVertexType
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The vertex declaration.
@@ -51,9 +51,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the size of the <see cref="OcclusionVertex"/> structure in bytes.
@@ -66,15 +66,15 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Indicates whether this instance and a specified object are equal.

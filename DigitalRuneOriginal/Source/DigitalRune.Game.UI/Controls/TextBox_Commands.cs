@@ -4,11 +4,11 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Game.Input;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Game.Input;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   public partial class TextBox
   {

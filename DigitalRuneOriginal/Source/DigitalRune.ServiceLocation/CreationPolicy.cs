@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.ServiceLocation
+namespace MinimalRune.ServiceLocation
 {
     /// <summary>
     /// Specifies when and how a service will be instantiated.

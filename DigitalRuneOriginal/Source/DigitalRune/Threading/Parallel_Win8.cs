@@ -12,7 +12,7 @@ using Tpl = System.Threading.Tasks;
 #pragma warning disable 1574
 
 
-namespace DigitalRune.Threading
+namespace MinimalRune.Threading
 {
   /// <summary>
   /// Provides support for parallel execution of tasks.

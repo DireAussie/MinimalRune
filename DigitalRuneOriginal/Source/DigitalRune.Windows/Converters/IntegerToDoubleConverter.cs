@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Data;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
     /// Converts a floating-point double precision <see cref="double"/> to an integer 

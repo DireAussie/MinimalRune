@@ -1,10 +1,10 @@
 ﻿using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Geometry.Tests
+namespace MinimalRune.Geometry.Tests
 {
   [TestFixture]
   public class DirectionalLookupTableTest

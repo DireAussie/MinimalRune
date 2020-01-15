@@ -7,16 +7,16 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   partial class MeshHelper
   {

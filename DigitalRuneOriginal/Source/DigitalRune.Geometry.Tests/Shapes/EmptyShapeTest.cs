@@ -2,11 +2,11 @@ using System.Diagnostics;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Xml.Serialization;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Geometry.Shapes.Tests
+namespace MinimalRune.Geometry.Shapes.Tests
 {
   [TestFixture]
   public class EmptyShapeTest
@@ -16,7 +16,7 @@ namespace DigitalRune.Geometry.Shapes.Tests
     {
       Assert.AreEqual(new Aabb(), Shape.Empty.GetAabb(Pose.Identity));
       Assert.AreEqual(new Aabb(new Vector3(11, 12, -13), new Vector3(11, 12, -13)),
-                      Shape.Empty.GetAabb(new Pose(new Vector3(11, 12, -13), Quaternion.CreateRotation(new Vector3(1, 1, 1), 0.7f))));
+                      Shape.Empty.GetAabb(new Pose(new Vector3(11, 12, -13), Quaternion.CreateFromRotationMatrix(new Vector3(1, 1, 1), 0.7f))));
     }
 
 

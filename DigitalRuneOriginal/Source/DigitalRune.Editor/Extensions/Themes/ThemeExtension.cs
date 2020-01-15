@@ -8,26 +8,26 @@ using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
 using System.Windows;
-using DigitalRune.Collections;
-using DigitalRune.Editor.Options;
-using DigitalRune.Editor.Properties;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Docking;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Collections;
+using MinimalRune.Editor.Options;
+using MinimalRune.Editor.Properties;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Docking;
+using MinimalRune.Windows.Framework;
 using NLog;
 using static System.FormattableString;
 
 
-namespace DigitalRune.Editor.Themes
+namespace MinimalRune.Editor.Themes
 {
     /// <summary>
     /// Provides support for switching UI themes.
     /// </summary>
     public sealed class ThemeExtension : EditorExtension, IThemeService
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
@@ -40,9 +40,9 @@ namespace DigitalRune.Editor.Themes
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public IEnumerable<string> Themes { get; }
@@ -117,9 +117,9 @@ namespace DigitalRune.Editor.Themes
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ThemeExtension"/> class.
@@ -139,9 +139,9 @@ namespace DigitalRune.Editor.Themes
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Raises the <see cref="ThemeChanged"/> event.

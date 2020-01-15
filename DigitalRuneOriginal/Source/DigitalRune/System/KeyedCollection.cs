@@ -43,7 +43,7 @@ using System.Runtime.InteropServices;
 using System.Diagnostics;
 
 
-namespace DigitalRune.Collections.ObjectModel
+namespace MinimalRune.Collections.ObjectModel
 {
   [ComVisible(false)]
   [Serializable]

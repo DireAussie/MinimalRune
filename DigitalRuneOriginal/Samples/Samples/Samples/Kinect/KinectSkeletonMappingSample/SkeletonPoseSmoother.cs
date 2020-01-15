@@ -1,5 +1,5 @@
-﻿using DigitalRune.Animation.Character;
-using DigitalRune.Mathematics.Algebra;
+﻿using MinimalRune.Animation.Character;
+using MinimalRune.Mathematics.Algebra;
 
 
 namespace Samples.Kinect

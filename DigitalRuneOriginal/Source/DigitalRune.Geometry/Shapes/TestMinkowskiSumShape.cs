@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry.Shapes
+namespace MinimalRune.Geometry.Shapes
 {
   /// <summary>
   /// Represents a lightweight <see cref="MinkowskiSumShape"/> implementation without events.
@@ -19,9 +19,9 @@ namespace DigitalRune.Geometry.Shapes
   /// </remarks>
   internal sealed class TestMinkowskiSumShape : ConvexShape, IRecyclable
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     public static readonly ResourcePool<TestMinkowskiSumShape> Pool =
       new ResourcePool<TestMinkowskiSumShape>(
@@ -31,9 +31,9 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     public override Vector3 InnerPoint
     {
@@ -65,9 +65,9 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private TestMinkowskiSumShape()
     {
@@ -89,9 +89,9 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     protected override Shape CreateInstanceCore()
     {

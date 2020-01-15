@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-namespace DigitalRune.Physics.Materials
+namespace MinimalRune.Physics.Materials
 {
   /// <summary>
   /// The <see cref="N:DigitalRune.Physics.Materials"/> namespace provides types that define

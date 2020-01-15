@@ -5,11 +5,11 @@
 using System;
 using System.Diagnostics;
 using System.Globalization;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry.Collisions
+namespace MinimalRune.Geometry.Collisions
 {
   /// <summary>
   /// Describes a contact (or the closest points) of two objects.
@@ -93,9 +93,9 @@ namespace DigitalRune.Geometry.Collisions
     // penetrating ray all contact position should be on the surface.
 
     
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static readonly ResourcePool<Contact> Pool =
       new ResourcePool<Contact>(
@@ -105,9 +105,9 @@ namespace DigitalRune.Geometry.Collisions
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
         
     ///// <summary>
     ///// Gets or sets the application data.
@@ -345,9 +345,9 @@ namespace DigitalRune.Geometry.Collisions
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Prevents a default instance of the <see cref="Contact"/> class from being created.
@@ -398,9 +398,9 @@ namespace DigitalRune.Geometry.Collisions
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Resets this contact to default values. 

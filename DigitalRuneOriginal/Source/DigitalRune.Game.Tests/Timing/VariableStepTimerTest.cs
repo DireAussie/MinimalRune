@@ -2,7 +2,7 @@ using System;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Game.Timing.Tests
+namespace MinimalRune.Game.Timing.Tests
 {
   [TestFixture]
   public class VariableStepTimerTest
@@ -333,9 +333,9 @@ namespace DigitalRune.Game.Timing.Tests
     }
     
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     void timer_Idle(object sender, GameTimerEventArgs eventArgs)
     {

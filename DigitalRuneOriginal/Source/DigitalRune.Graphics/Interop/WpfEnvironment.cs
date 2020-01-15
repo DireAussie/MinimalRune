@@ -14,25 +14,25 @@ using Application = System.Windows.Application;
 using Message = System.Windows.Interop.MSG;
 
 
-namespace DigitalRune.Graphics.Interop
+namespace MinimalRune.Graphics.Interop
 {
   /// <summary>
   /// Provides an execution environment for a WPF application in a Windows Forms application.
   /// </summary>
   public static class WpfEnvironment
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static volatile bool _applicationStarted;   // Needs to be volatile because it is used 
                                                         // for synchronization!
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the WPF application.
@@ -69,15 +69,15 @@ namespace DigitalRune.Graphics.Interop
     
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes the WPF environment.

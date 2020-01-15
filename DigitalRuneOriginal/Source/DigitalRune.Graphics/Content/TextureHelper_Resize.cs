@@ -34,11 +34,11 @@
 using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Graphics.Content
+namespace MinimalRune.Graphics.Content
 {
   /// <summary>
   /// Defines a filter for image resizing.
@@ -68,9 +68,9 @@ namespace DigitalRune.Graphics.Content
 
   partial class TextureHelper
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Defines a filter function f(x).
@@ -586,9 +586,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Applies the a filter kernel to the specified image.
@@ -632,7 +632,7 @@ namespace DigitalRune.Graphics.Content
           for (int x = 0; x < width; x++)
           {
             // Apply 2D kernel at (x, y).
-            Vector4F color = new Vector4F();
+            Vector4 color = new Vector4();
             for (int row = 0; row < kernelSize; row++)
             {
               int srcY = y + row - kernelOffset;
@@ -655,9 +655,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Defines a 1D polyphase kernel.
@@ -974,10 +974,10 @@ namespace DigitalRune.Graphics.Content
               Debug.Assert(right - left <= kernelX.WindowSize);
 
               float totalRgbWeights = 0.0f;
-              Vector4F sum = new Vector4F();
+              Vector4 sum = new Vector4();
               for (int i = 0; i < kernelX.WindowSize; i++)
               {
-                Vector4F color = srcImage4F.GetPixel(left + i, y, wrapMode);
+                Vector4 color = srcImage4F.GetPixel(left + i, y, wrapMode);
 
                 //if (Numeric.IsNaN(color.X) || Numeric.IsNaN(color.Y) || Numeric.IsNaN(color.Z) || Numeric.IsNaN(color.W)
                 //   || color.X < 0 || color.Y < 0 || color.Z < 0 || color.W < 0
@@ -1041,10 +1041,10 @@ namespace DigitalRune.Graphics.Content
               Debug.Assert(right - left <= kernelY.WindowSize);
 
               float totalRgbWeights = 0.0f;
-              Vector4F sum = new Vector4F();
+              Vector4 sum = new Vector4();
               for (int i = 0; i < kernelY.WindowSize; i++)
               {
-                Vector4F color = tmpImage4F.GetPixel(x, left + i, wrapMode);
+                Vector4 color = tmpImage4F.GetPixel(x, left + i, wrapMode);
 
                 const float alphaEpsilon = 1.0f / 256.0f;
                 float alpha = alphaTransparency ? color.W + alphaEpsilon : 1.0f;
@@ -1143,10 +1143,10 @@ namespace DigitalRune.Graphics.Content
                 Debug.Assert(right - left <= kernelX.WindowSize);
 
                 float totalRgbWeights = 0.0f;
-                Vector4F sum = new Vector4F();
+                Vector4 sum = new Vector4();
                 for (int i = 0; i < kernelX.WindowSize; i++)
                 {
-                  Vector4F color = srcVolume.GetPixel(left + i, y, z, wrapMode);
+                  Vector4 color = srcVolume.GetPixel(left + i, y, z, wrapMode);
 
                   const float alphaEpsilon = 1.0f / 256.0f;
                   float alpha = alphaTransparency ? color.W + alphaEpsilon : 1.0f;
@@ -1198,10 +1198,10 @@ namespace DigitalRune.Graphics.Content
                 Debug.Assert(right - left <= kernelY.WindowSize);
 
                 float totalRgbWeights = 0.0f;
-                Vector4F sum = new Vector4F();
+                Vector4 sum = new Vector4();
                 for (int i = 0; i < kernelY.WindowSize; i++)
                 {
-                  Vector4F color = tmpVolume.GetPixel(x, left + i, z, wrapMode);
+                  Vector4 color = tmpVolume.GetPixel(x, left + i, z, wrapMode);
 
                   const float alphaEpsilon = 1.0f / 256.0f;
                   float alpha = alphaTransparency ? color.W + alphaEpsilon : 1.0f;
@@ -1253,10 +1253,10 @@ namespace DigitalRune.Graphics.Content
                 Debug.Assert(right - left <= kernelZ.WindowSize);
 
                 float totalRgbWeights = 0.0f;
-                Vector4F sum = new Vector4F();
+                Vector4 sum = new Vector4();
                 for (int i = 0; i < kernelZ.WindowSize; i++)
                 {
-                  Vector4F color = tmpVolume2.GetPixel(x, y, left + i, wrapMode);
+                  Vector4 color = tmpVolume2.GetPixel(x, y, left + i, wrapMode);
 
                   const float alphaEpsilon = 1.0f / 256.0f;
                   float alpha = alphaTransparency ? color.W + alphaEpsilon : 1.0f;

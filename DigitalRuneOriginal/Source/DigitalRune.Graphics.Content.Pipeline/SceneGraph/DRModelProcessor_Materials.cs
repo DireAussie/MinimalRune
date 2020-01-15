@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Content.Pipeline.Graphics;
 
 
-namespace DigitalRune.Graphics.Content.Pipeline
+namespace MinimalRune.Graphics.Content.Pipeline
 {
   partial class DRModelProcessor
   {

@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   partial class MeshHelper
   {

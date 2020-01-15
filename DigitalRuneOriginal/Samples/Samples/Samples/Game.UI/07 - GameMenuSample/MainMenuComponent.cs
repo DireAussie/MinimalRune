@@ -1,9 +1,9 @@
 
 using System.Linq;
-using DigitalRune.Game.Input;
-using DigitalRune.Game.UI;
-using DigitalRune.Game.UI.Controls;
-using DigitalRune.Graphics;
+using MinimalRune.Game.Input;
+using MinimalRune.Game.UI;
+using MinimalRune.Game.UI.Controls;
+using MinimalRune.Graphics;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Xna.Framework;
 

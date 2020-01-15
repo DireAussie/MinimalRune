@@ -2,13 +2,13 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Geometry.Meshes;
-using DigitalRune.Geometry.Shapes;
+using MinimalRune.Geometry.Meshes;
+using MinimalRune.Geometry.Shapes;
 using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler;
 
 
-namespace DigitalRune.Geometry.Content.Pipeline
+namespace MinimalRune.Geometry.Content.Pipeline
 {
   /// <summary>
   /// Writes a <see cref="ConvexPolyhedron"/> to binary format.

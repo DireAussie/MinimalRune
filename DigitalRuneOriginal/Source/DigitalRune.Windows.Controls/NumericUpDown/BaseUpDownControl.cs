@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Markup;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Represents a text box for a value with buttons to increase or decrease the value.
@@ -36,9 +36,9 @@ namespace DigitalRune.Windows.Controls
     [ContentProperty(nameof(Value))]
     public abstract class BaseUpDownControl<T> : BaseUpDownControl where T : IComparable
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private TextBox _textBox;
         private ButtonBase _buttonUp;
@@ -46,15 +46,15 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------   
+           
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="Maximum"/> dependency property.
@@ -157,15 +157,15 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// <see cref="PropertyChangedCallback"/> for <see cref="Maximum"/>.

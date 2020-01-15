@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Describes a custom vertex format structure that contains only the vertex position (no normals,
@@ -21,9 +21,9 @@ namespace DigitalRune.Graphics
   [StructLayout(LayoutKind.Sequential)]
   public struct VertexPosition : IVertexType
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The vertex declaration.
@@ -45,9 +45,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the size of the <see cref="VertexPosition"/> structure in bytes.
@@ -60,9 +60,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="VertexPosition"/> struct.
@@ -75,9 +75,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Indicates whether this instance and a specified object are equal.

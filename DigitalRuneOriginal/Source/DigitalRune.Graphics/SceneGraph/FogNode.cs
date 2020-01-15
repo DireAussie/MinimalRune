@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Geometry.Shapes;
+using MinimalRune.Geometry.Shapes;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Represents (global) fog in a scene.
@@ -36,15 +36,15 @@ namespace DigitalRune.Graphics.SceneGraph
   /// </remarks>
   public class FogNode : SceneNode
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the fog properties.
@@ -97,9 +97,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="FogNode"/> class.
@@ -119,9 +119,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

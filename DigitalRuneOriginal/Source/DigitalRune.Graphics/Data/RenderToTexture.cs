@@ -2,12 +2,12 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Represents a 2D texture or cube map that was created using render-to-texture functionality.
@@ -32,15 +32,15 @@ namespace DigitalRune.Graphics
   {
     // TODO: Add property RenderToTexture.FrameRate as possible extension.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the render target.
@@ -88,9 +88,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="RenderToTexture"/> class.
@@ -102,9 +102,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
   }
 }

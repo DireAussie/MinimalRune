@@ -6,13 +6,13 @@ using System;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
-using DigitalRune.Editor.Text;
-using DigitalRune.Editor.Documents;
-using DigitalRune.Windows.Themes;
+using MinimalRune.Editor.Text;
+using MinimalRune.Editor.Documents;
+using MinimalRune.Windows.Themes;
 using NLog;
 
 
-namespace DigitalRune.Editor.Shader
+namespace MinimalRune.Editor.Shader
 {
     /// <summary>
     /// Handles shader documents.
@@ -24,9 +24,9 @@ namespace DigitalRune.Editor.Shader
         // We re-use the TextEditorDocument and add Shader IntelliSense to the TextEditor control
         // using only event handlers.
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         internal const string FxFile = "DirectX Effect file";
         private const string CgFile = "NVIDIA Cg file";
@@ -34,9 +34,9 @@ namespace DigitalRune.Editor.Shader
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
@@ -45,15 +45,15 @@ namespace DigitalRune.Editor.Shader
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ShaderDocumentFactory" /> class.
@@ -125,9 +125,9 @@ namespace DigitalRune.Editor.Shader
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------    
+            
 
         /// <inheritdoc/>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]

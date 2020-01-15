@@ -2,10 +2,10 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Geometry.Collisions.Algorithms;
+using MinimalRune.Geometry.Collisions.Algorithms;
 
 
-namespace DigitalRune.Geometry.Collisions
+namespace MinimalRune.Geometry.Collisions
 {
   /// <summary>
   /// A filter which processes contacts in a contact set.

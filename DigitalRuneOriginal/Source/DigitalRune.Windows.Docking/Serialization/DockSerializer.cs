@@ -6,7 +6,7 @@ using System.Windows;
 using System.Xml.Linq;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     /// <summary>
     /// Serializes/Deserializes the docking layout of an <see cref="IDockControl"/> to/from an

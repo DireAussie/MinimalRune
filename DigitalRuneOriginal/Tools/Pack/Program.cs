@@ -4,11 +4,11 @@
 
 using System;
 using System.Threading;
-using DigitalRune.CommandLine;
+using MinimalRune.CommandLine;
 using Ionic.Zip;
 
 
-namespace DigitalRune.Tools
+namespace MinimalRune.Tools
 {
     partial class Program
     {

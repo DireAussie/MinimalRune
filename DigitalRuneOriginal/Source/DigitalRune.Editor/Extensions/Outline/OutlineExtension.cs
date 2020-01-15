@@ -5,23 +5,23 @@
 using System;
 using System.Windows;
 using System.Windows.Input;
-using DigitalRune.Collections;
-using DigitalRune.Windows.Docking;
-using DigitalRune.Windows.Framework;
-using DigitalRune.Windows.Themes;
+using MinimalRune.Collections;
+using MinimalRune.Windows.Docking;
+using MinimalRune.Windows.Framework;
+using MinimalRune.Windows.Themes;
 using NLog;
 
 
-namespace DigitalRune.Editor.Outlines
+namespace MinimalRune.Editor.Outlines
 {
     /// <summary>
     /// Provides the Outline window for browsing object hierarchies.
     /// </summary>
     public sealed class OutlineExtension : EditorExtension, IOutlineService
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
@@ -32,9 +32,9 @@ namespace DigitalRune.Editor.Outlines
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         EditorDockTabItemViewModel IOutlineService.OutlineViewModel
@@ -52,9 +52,9 @@ namespace DigitalRune.Editor.Outlines
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="OutlineExtension"/> class.
@@ -66,9 +66,9 @@ namespace DigitalRune.Editor.Outlines
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         protected override void OnInitialize()

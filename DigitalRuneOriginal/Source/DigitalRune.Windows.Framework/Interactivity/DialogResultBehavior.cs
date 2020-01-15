@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Interactivity;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Synchronizes a <see cref="Window"/>'s <see cref="Window.DialogResult"/> property with the
@@ -42,21 +42,21 @@ namespace DigitalRune.Windows.Framework
     /// </example>
     public class DialogResultBehavior : Behavior<Window>
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
-
-
-
-        //--------------------------------------------------------------
-
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
+
+
+
+        
+
+        
 
         /// <summary>
         /// Identifies the <see cref="DialogResult"/> dependency property.
@@ -82,15 +82,15 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Called after the behavior is attached to an <see cref="Behavior{T}.AssociatedObject"/>.

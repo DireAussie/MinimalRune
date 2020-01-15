@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Mathematics.Statistics
+namespace MinimalRune.Mathematics.Statistics
 {
   /// <summary>
   /// A distribution that returns random positions from inside a box.

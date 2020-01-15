@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Animation.Traits
+namespace MinimalRune.Animation.Traits
 {
   /// <summary>
   /// Describes the properties of a <see cref="Single"/>.

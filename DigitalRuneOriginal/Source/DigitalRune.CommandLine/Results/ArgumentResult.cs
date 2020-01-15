@@ -9,7 +9,7 @@ using System.Text;
 using static System.FormattableString;
 
 
-namespace DigitalRune.CommandLine
+namespace MinimalRune.CommandLine
 {
     /// <summary>
     /// Stores the parser result for an <see cref="Argument"/> which was found in the command line

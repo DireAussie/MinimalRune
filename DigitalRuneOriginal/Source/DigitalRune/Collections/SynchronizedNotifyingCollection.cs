@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 
-namespace DigitalRune.Collections
+namespace MinimalRune.Collections
 {
   /// <summary>
   /// Represents a collection of objects that sends notifications (events) when the collection is 
@@ -21,9 +21,9 @@ namespace DigitalRune.Collections
   /// </remarks>
   public class SynchronizedNotifyingCollection<T> : Collection<T>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// A <see cref="SynchronizedCollection{TNested}"/> with an enumerator that avoids garbage.
@@ -44,15 +44,15 @@ namespace DigitalRune.Collections
 
     
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Occurs when items were added, replaced or removed.
@@ -83,9 +83,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -121,9 +121,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Removes all elements from the <see cref="Collection{T}"/>.

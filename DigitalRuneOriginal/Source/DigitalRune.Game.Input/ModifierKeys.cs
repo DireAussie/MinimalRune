@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Game.Input
+namespace MinimalRune.Game.Input
 {
   /// <summary>
   /// Describes the pressed modifier keys.

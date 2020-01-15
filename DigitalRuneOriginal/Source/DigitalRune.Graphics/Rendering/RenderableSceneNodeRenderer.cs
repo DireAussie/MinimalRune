@@ -15,10 +15,10 @@
 
 /*
 using System.Collections.Generic;
-using DigitalRune.Graphics.SceneGraph;
+using MinimalRune.Graphics.SceneGraph;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Renders scene nodes which implement <see cref="IRenderable"/>.

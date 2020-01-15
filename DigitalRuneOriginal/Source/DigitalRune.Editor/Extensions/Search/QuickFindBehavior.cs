@@ -9,7 +9,7 @@ using System.Windows.Input;
 using System.Windows.Interactivity;
 
 
-namespace DigitalRune.Editor.Search
+namespace MinimalRune.Editor.Search
 {
     /// <summary>
     /// Handles RETURN, ESCAPE and TAB keys for the Quick Find combo box.

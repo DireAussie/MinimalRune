@@ -8,7 +8,7 @@ using System.Windows.Input;
 using System.Windows.Interactivity;
 
 
-namespace DigitalRune.Windows.Charts.Interactivity
+namespace MinimalRune.Windows.Charts.Interactivity
 {
     /// <summary>
     /// Allows the user to zoom the scale of an axis by using the mouse wheel.
@@ -22,30 +22,30 @@ namespace DigitalRune.Windows.Charts.Interactivity
     /// <seealso cref="Axis.Zoom"/>
     public class AxisZoomBehavior : Behavior<UIElement>
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private const double MinZoomFactor = -0.5;
         private const double MaxZoomFactor = 0.5;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
-
-
-
-        //--------------------------------------------------------------
-
-        //--------------------------------------------------------------    
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+            
+
+
+
+        
+
+        
 
         /// <summary>
         /// Identifies the <see cref="IsEnabled"/> dependency property.
@@ -132,15 +132,15 @@ namespace DigitalRune.Windows.Charts.Interactivity
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Called after the behavior is attached to an <see cref="Behavior{T}.AssociatedObject"/>.

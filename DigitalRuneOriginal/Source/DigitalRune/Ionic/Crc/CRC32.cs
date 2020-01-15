@@ -17,7 +17,7 @@
 
 using System;
 
-namespace DigitalRune.Ionic.Crc
+namespace MinimalRune.Ionic.Crc
 {
     /// <summary>
     ///   Computes a CRC-32. The CRC-32 algorithm is parameterized - you

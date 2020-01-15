@@ -8,13 +8,13 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
-using DigitalRune.Linq;
+using MinimalRune.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Content.Pipeline.Graphics;
 
 
-namespace DigitalRune.Graphics.Content.Pipeline
+namespace MinimalRune.Graphics.Content.Pipeline
 {
   // The model description is stored in an XML file. The XML file has the same
   // name as the model asset. Example: "Dude.fbx" --> "Dude.xml" or "Dude.drmdl"

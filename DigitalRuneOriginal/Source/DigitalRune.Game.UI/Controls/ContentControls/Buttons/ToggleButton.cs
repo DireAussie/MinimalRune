@@ -6,7 +6,7 @@ using System;
 using System.ComponentModel;
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   /// <summary>
   /// Base class for controls that can switch states, such as <see cref="CheckBox"/> or 
@@ -20,15 +20,15 @@ namespace DigitalRune.Game.UI.Controls
   /// </remarks>
   public abstract class ToggleButton : ButtonBase
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override string VisualState
@@ -53,9 +53,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary> 
     /// The ID of the <see cref="IsChecked"/> game object property.
@@ -82,9 +82,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ToggleButton"/> class.
@@ -96,9 +96,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override void OnClick(EventArgs eventArgs)

@@ -1,12 +1,12 @@
 ﻿using System.Linq;
-using DigitalRune.Game;
-using DigitalRune.Game.UI.Controls;
-using DigitalRune.Game.UI.Rendering;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics;
+using MinimalRune.Game;
+using MinimalRune.Game.UI.Controls;
+using MinimalRune.Game.UI.Rendering;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Xna.Framework;
 

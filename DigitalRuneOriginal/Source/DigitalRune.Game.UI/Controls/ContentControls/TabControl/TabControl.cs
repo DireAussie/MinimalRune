@@ -4,11 +4,11 @@
 
 using System;
 using System.ComponentModel;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 using Microsoft.Xna.Framework.Input;
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   /// <summary>
   /// Represents a control that contains multiple items that share the same space on the screen. 
@@ -23,23 +23,23 @@ namespace DigitalRune.Game.UI.Controls
   /// var tabControl = new TabControl
   /// {
   ///   HorizontalAlignment = HorizontalAlignment.Stretch,
-  ///   Margin = new Vector4F(4)
+  ///   Margin = new Vector4(4)
   /// };
   /// 
   /// // Add 3 pages to to the tab control.
   /// var tabItem0 = new TabItem
   /// {
-  ///   TabPage = new TextBlock { Margin = new Vector4F(4), Text = "Page 0" },
+  ///   TabPage = new TextBlock { Margin = new Vector4(4), Text = "Page 0" },
   ///   Content = new TextBlock { Text = "Content of page 0" }
   /// };
   /// var tabItem1 = new TabItem
   /// {
-  ///   TabPage = new TextBlock { Margin = new Vector4F(4), Text = "Page 1" },
+  ///   TabPage = new TextBlock { Margin = new Vector4(4), Text = "Page 1" },
   ///   Content = new TextBlock { Text = "Content of page 1" }
   /// };
   /// var tabItem2 = new TabItem
   /// {
-  ///   TabPage = new TextBlock { Margin = new Vector4F(4), Text = "Page 2" },
+  ///   TabPage = new TextBlock { Margin = new Vector4(4), Text = "Page 2" },
   ///   Content = new TextBlock { Text = "Content of page 2" }
   /// };
   /// tabControl.Items.Add(tabItem0);
@@ -59,17 +59,17 @@ namespace DigitalRune.Game.UI.Controls
     // Contains a panel with TabItems. In the content area the TabItem.TabPage of 
     // the selected item is displayed.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private StackPanel _itemsPanel;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the items.
@@ -79,9 +79,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary> 
     /// The ID of the <see cref="SelectedIndex"/> game object property.
@@ -133,9 +133,9 @@ namespace DigitalRune.Game.UI.Controls
 
     
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="TabControl"/> class.
@@ -155,9 +155,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override void OnLoad()

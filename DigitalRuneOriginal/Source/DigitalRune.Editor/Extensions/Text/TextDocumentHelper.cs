@@ -9,7 +9,7 @@ using System.Xml;
 using ICSharpCode.AvalonEdit;
 
 
-namespace DigitalRune.Editor.Text
+namespace MinimalRune.Editor.Text
 {
     /// <summary>
     /// Provides helper method for text documents.

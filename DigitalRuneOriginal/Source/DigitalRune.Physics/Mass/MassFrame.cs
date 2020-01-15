@@ -4,13 +4,13 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Physics
+namespace MinimalRune.Physics
 {
   /// <summary>
   /// Defines the mass properties of a rigid body.
@@ -91,15 +91,15 @@ namespace DigitalRune.Physics
     // Note:
     // The name "mass frame" is also used in COLLADA.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the mass limit. Mass values above this value are treated as infinite.
@@ -255,15 +255,15 @@ namespace DigitalRune.Physics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Creates a new <see cref="MassFrame"/> that is a clone (deep copy) of the current instance.

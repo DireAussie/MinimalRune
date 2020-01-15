@@ -6,7 +6,7 @@
 using System;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Provides common names for render context data (see property <see cref="RenderContext.Data"/>

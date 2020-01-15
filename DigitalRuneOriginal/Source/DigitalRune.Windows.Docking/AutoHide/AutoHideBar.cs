@@ -12,7 +12,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     /// <summary>
     /// Shows <see cref="IDockTabItem"/>s that are in auto-hide state as tabs.
@@ -26,23 +26,23 @@ namespace DigitalRune.Windows.Docking
     [TemplateVisualState(GroupName = "DockStates", Name = "Bottom")]
     public class AutoHideBar : ItemsControl
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly List<AutoHideOverlay> _autoHideOverlays = new List<AutoHideOverlay>();
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="Dock"/> dependency property.
@@ -98,9 +98,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="AutoHideBar"/> class.
@@ -112,9 +112,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static void OnDockPropertyChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
         {

@@ -7,7 +7,7 @@ using System.Collections.Specialized;
 using System.Configuration;
 
 
-namespace DigitalRune.Editor.Search
+namespace MinimalRune.Editor.Search
 {
     /// <summary>
     /// Describes the search settings.

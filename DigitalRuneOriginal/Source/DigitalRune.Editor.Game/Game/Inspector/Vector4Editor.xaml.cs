@@ -4,12 +4,12 @@
 
 using System;
 using System.Windows;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Windows;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Windows;
 using Microsoft.Xna.Framework;
 
 
-namespace DigitalRune.Editor.Game
+namespace MinimalRune.Editor.Game
 {
     /// <summary>
     /// Represents a control that allows to edit a 4-dimensional vectors.
@@ -17,31 +17,31 @@ namespace DigitalRune.Editor.Game
     /// <remarks>
     /// The property <see cref="Value"/> contains the 4-dimensional vector. Supported types are:
     /// <see cref="Vector4"/> (XNA/MonoGame), <see cref="Quaternion"/> (XNA/MonoGame),
-    /// <see cref="Vector4F"/> (DigitalRune), <see cref="Vector4D"/> (DigitalRune), 
+    /// <see cref="Vector4"/> (DigitalRune), <see cref="Vector4D"/> (DigitalRune), 
     /// <see cref="Quaternion"/> (DigitalRune) and <see cref="QuaternionD"/> (DigitalRune).
     /// </remarks>
     internal partial class Vector4Editor
     {
         // See Vector3Editor for more code comments.
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private bool _isUpdating;
         private Type _vectorType;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         public static readonly DependencyProperty IsReadOnlyProperty = DependencyProperty.Register(
             "IsReadOnly",
@@ -125,9 +125,9 @@ namespace DigitalRune.Editor.Game
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         public Vector4Editor()
         {
@@ -136,9 +136,9 @@ namespace DigitalRune.Editor.Game
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static void OnIsReadOnlyChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
         {
@@ -182,9 +182,9 @@ namespace DigitalRune.Editor.Game
                     Z = Vector3Editor.SafeConvertToDouble(v.Z);
                     W = Vector3Editor.SafeConvertToDouble(v.W);
                 }
-                else if (_vectorType == typeof(Vector4F))
+                else if (_vectorType == typeof(Vector4))
                 {
-                    var v = (Vector4F)Value;
+                    var v = (Vector4)Value;
                     X = Vector3Editor.SafeConvertToDouble(v.X);
                     Y = Vector3Editor.SafeConvertToDouble(v.Y);
                     Z = Vector3Editor.SafeConvertToDouble(v.Z);
@@ -217,7 +217,7 @@ namespace DigitalRune.Editor.Game
                 else
                 {
                     if (Value != null)
-                        throw new NotSupportedException("Vector4Editor.Value must be a Vector4, Quaternion, Vector4F, Vector4D, Quaternion of QuaternionD.");
+                        throw new NotSupportedException("Vector4Editor.Value must be a Vector4, Quaternion, Vector4, Vector4D, Quaternion of QuaternionD.");
 
                     X = 0;
                     Y = 0;
@@ -250,8 +250,8 @@ namespace DigitalRune.Editor.Game
                     Value = new Vector4((float)X, (float)Y, (float)Z, (float)W);
                 else if (_vectorType == typeof(Quaternion))
                     Value = new Quaternion((float)X, (float)Y, (float)Z, (float)W);
-                else if (_vectorType == typeof(Vector4F))
-                    Value = new Vector4F((float)X, (float)Y, (float)Z, (float)W);
+                else if (_vectorType == typeof(Vector4))
+                    Value = new Vector4((float)X, (float)Y, (float)Z, (float)W);
                 else if (_vectorType == typeof(Vector4D))
                     Value = new Vector4D(X, Y, Z, W);
                 else if (_vectorType == typeof(Quaternion))

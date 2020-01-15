@@ -5,12 +5,12 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Collections;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Collections;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry.Partitioning
+namespace MinimalRune.Geometry.Partitioning
 {
   /// <summary>
   /// Provides methods to build AABB trees.

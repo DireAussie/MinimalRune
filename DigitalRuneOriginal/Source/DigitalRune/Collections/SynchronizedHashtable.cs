@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Threading;
 
 
-namespace DigitalRune.Collections
+namespace MinimalRune.Collections
 {
   /// <summary>
   /// A thread-safe, fixed-size hash table.
@@ -17,9 +17,9 @@ namespace DigitalRune.Collections
   /// <typeparam name="TValue">The type of value in the hash table.</typeparam>
   internal sealed class SynchronizedHashtable<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private class Node
     {
@@ -94,9 +94,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // ReSharper disable StaticFieldInGenericType
     private static readonly EqualityComparer<TKey> KeyComparer = EqualityComparer<TKey>.Default;
@@ -107,15 +107,15 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="SynchronizedHashtable{TKey,TValue}"/> class.
@@ -139,9 +139,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Adds an item with the provided key and value to the 

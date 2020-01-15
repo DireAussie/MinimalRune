@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 
 
-namespace DigitalRune.Physics.ForceEffects
+namespace MinimalRune.Physics.ForceEffects
 {
   /// <summary>
   /// Stores the <see cref="ForceEffect"/>s of a simulation.

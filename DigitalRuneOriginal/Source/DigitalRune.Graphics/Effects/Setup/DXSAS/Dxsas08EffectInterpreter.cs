@@ -4,11 +4,11 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Text;
+using MinimalRune.Text;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Effects
+namespace MinimalRune.Graphics.Effects
 {
   /// <summary>
   /// Provides the descriptions effects using the <i>DirectX Standard Annotations and Semantics 

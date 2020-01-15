@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Text;
 
 
-namespace DigitalRune.CommandLine
+namespace MinimalRune.CommandLine
 {
     /// <summary>
     /// Describes a command line argument (also known as 'command line parameter', 'program option', 
@@ -30,15 +30,15 @@ namespace DigitalRune.CommandLine
     [DebuggerDisplay("{GetType().Name,nq}(Name = {Name})")]
     public abstract class Argument : INamedObject
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets the option category.
@@ -96,9 +96,9 @@ namespace DigitalRune.CommandLine
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Argument"/> class.
@@ -129,9 +129,9 @@ namespace DigitalRune.CommandLine
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Parses the specified command line argument.

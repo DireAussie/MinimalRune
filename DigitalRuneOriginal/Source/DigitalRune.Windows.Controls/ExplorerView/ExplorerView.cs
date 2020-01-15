@@ -7,10 +7,10 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Represents a view that displays data items similar to the Windows Explorer.
@@ -71,17 +71,17 @@ namespace DigitalRune.Windows.Controls
     /// </remarks>
     public class ExplorerView : GridView
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private bool _updating;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the object that is associated with the style for the view mode.
@@ -122,9 +122,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="IconTemplate"/> dependency property.
@@ -396,9 +396,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ExplorerView"/> class.
@@ -411,9 +411,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------    
+            
 
         private void OnMenuLoaded(object sender, RoutedEventArgs eventArgs)
         {

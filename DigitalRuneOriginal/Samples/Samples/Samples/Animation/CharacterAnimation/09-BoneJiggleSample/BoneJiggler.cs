@@ -1,6 +1,6 @@
 ﻿using System;
-using DigitalRune.Animation.Character;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Animation.Character;
+using MinimalRune.Mathematics.Algebra;
 
 
 namespace Samples.Animation
@@ -113,7 +113,7 @@ namespace Samples.Animation
       var particleLocal = bonePoseWorld.Inverse.TransformPosition(_particlePosition);
 
       // Create rotation between the fixed point vector and the particle vector.
-      var boneTransform = new SrtTransform(Quaternion.CreateRotation(Offset, particleLocal));
+      var boneTransform = new SrtTransform(Quaternion.CreateFromRotationMatrix(Offset, particleLocal));
       SkeletonPose.SetBoneTransform(BoneIndex, boneTransform);
     }
   }

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Framework;
 
 
 namespace ScreenConductionApp

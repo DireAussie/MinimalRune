@@ -3,26 +3,26 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Windows.Framework;
 using static System.FormattableString;
 
 
-namespace DigitalRune.Editor.About
+namespace MinimalRune.Editor.About
 {
     /// <summary>
     /// Represents the About dialog.
     /// </summary>
     internal class AboutViewModel : Screen
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// An <see cref="AboutViewModel"/> instance that can be used at design-time.
@@ -55,9 +55,9 @@ namespace DigitalRune.Editor.About
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AboutViewModel"/> class.
@@ -79,9 +79,9 @@ namespace DigitalRune.Editor.About
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
     }
 }

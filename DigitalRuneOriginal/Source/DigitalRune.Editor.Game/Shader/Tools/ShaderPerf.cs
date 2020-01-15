@@ -6,21 +6,21 @@ using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
-using DigitalRune.Editor.Output;
-using DigitalRune.Editor.Text;
+using MinimalRune.Editor.Output;
+using MinimalRune.Editor.Text;
 using NLog;
 
 
-namespace DigitalRune.Editor.Shader
+namespace MinimalRune.Editor.Shader
 {
     /// <summary>
     /// Analyzes a shader effect using NVShaderPerf.
     /// </summary>
     internal class ShaderPerf
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
@@ -28,15 +28,15 @@ namespace DigitalRune.Editor.Shader
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ShaderPerf"/> class.
@@ -52,9 +52,9 @@ namespace DigitalRune.Editor.Shader
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Runs NVShaderPerf for the specified document.

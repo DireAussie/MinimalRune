@@ -8,7 +8,7 @@ using System.Globalization;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Effects
+namespace MinimalRune.Graphics.Effects
 {
   partial class EffectBinding
   {

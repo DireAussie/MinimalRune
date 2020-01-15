@@ -5,11 +5,11 @@
 using System;
 using System.Diagnostics;
 using System.Globalization;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry.Shapes
+namespace MinimalRune.Geometry.Shapes
 {
   /// <summary>
   /// Defines a plane.
@@ -35,9 +35,9 @@ namespace DigitalRune.Geometry.Shapes
 
   public struct Plane : IEquatable<Plane>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The normalized, outward pointing normal vector.
@@ -65,15 +65,15 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -159,9 +159,9 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //-------------------------------------------------------------- 
+     
 
     /// <summary>
     /// Normalizes the plane.
@@ -201,7 +201,7 @@ namespace DigitalRune.Geometry.Shapes
     /// <inheritdoc cref="Normalize"/>
     public bool TryNormalize()
     {
-      float lengthSquared = Normal.LengthSquared;
+      float lengthSquared = Normal.LengthSquared();
       if (Numeric.IsZero(lengthSquared, Numeric.EpsilonFSquared))
         return false;
 

@@ -6,10 +6,10 @@ using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Interop;
-using DigitalRune.Windows.Interop;
+using MinimalRune.Windows.Interop;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     internal partial class DragManager
     {

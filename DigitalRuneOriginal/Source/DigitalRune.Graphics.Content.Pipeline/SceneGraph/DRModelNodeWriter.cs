@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler;
 
 
-namespace DigitalRune.Graphics.Content.Pipeline
+namespace MinimalRune.Graphics.Content.Pipeline
 {
   /// <summary>
   /// Writes a <see cref="DRModelNodeContent"/> to binary format that can be read by the

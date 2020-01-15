@@ -3,11 +3,11 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Geometry;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Physics.Constraints
+namespace MinimalRune.Physics.Constraints
 {
   /// <summary>
   /// Restricts a body to move in a plane that is fixed on another body.
@@ -26,17 +26,17 @@ namespace DigitalRune.Physics.Constraints
   /// </remarks>
   public class PointOnPlaneConstraint : Constraint
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly LinearLimit _linearLimit;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the x-axis in the plane that is fixed on <see cref="Constraint.BodyA"/> in 
@@ -329,9 +329,9 @@ namespace DigitalRune.Physics.Constraints
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="PointOnPlaneConstraint"/> class.
@@ -347,9 +347,9 @@ namespace DigitalRune.Physics.Constraints
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override void OnAddToSimulation()

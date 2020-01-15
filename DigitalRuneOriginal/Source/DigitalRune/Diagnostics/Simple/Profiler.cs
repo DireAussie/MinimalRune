@@ -8,10 +8,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using System.Threading;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 
 
-namespace DigitalRune.Diagnostics
+namespace MinimalRune.Diagnostics
 {
   /// <summary>
   /// Provides support for simple, non-hierarchical profiling. (Not available in Silverlight.)
@@ -60,8 +60,8 @@ namespace DigitalRune.Diagnostics
   ///  #define DIGITALRUNE_PROFILE
   ///
   ///  using System;
-  ///  using DigitalRune.Diagnostics;
-  ///  using DigitalRune.Threading;
+  ///  using MinimalRune.Diagnostics;
+  ///  using MinimalRune.Threading;
   ///
   ///  namespace ProfilingTest
   ///  {
@@ -158,15 +158,15 @@ namespace DigitalRune.Diagnostics
   /// </example>  
   public static class Profiler
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the profiler data for each thread.
@@ -218,9 +218,9 @@ namespace DigitalRune.Diagnostics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes the static members of the <see cref="Profiler"/> class.
@@ -239,9 +239,9 @@ namespace DigitalRune.Diagnostics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Removes all profiler data.

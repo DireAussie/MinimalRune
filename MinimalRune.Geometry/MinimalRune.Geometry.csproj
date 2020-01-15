@@ -52,6 +52,11 @@
       <Version>4.3.0</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\MinimalRune.Mathematics\MinimalRune.Mathematics.csproj">
+      <Project>{ccd6947c-9356-4161-b600-233b387cdbb9}</Project>
+      <Name>MinimalRune.Mathematics</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -7,7 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Represents a specialized <see cref="TextBlock"/> where the text is never clipped.

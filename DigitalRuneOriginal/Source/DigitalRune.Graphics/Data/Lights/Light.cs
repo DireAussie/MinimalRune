@@ -4,12 +4,12 @@
 
 using System;
 using System.Globalization;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Defines the properties of a light source.
@@ -37,15 +37,15 @@ namespace DigitalRune.Graphics
   /// </remarks>
   public abstract class Light : INamedObject
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the name of the light.
@@ -89,9 +89,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Light"/> class.
@@ -104,9 +104,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

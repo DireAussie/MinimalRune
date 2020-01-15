@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Defines a standard shadow that can be used for <see cref="Spotlight"/>s or 
@@ -15,9 +15,9 @@ namespace DigitalRune.Graphics
   /// </summary>
   public class StandardShadow : Shadow
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Cached values.
     internal float Near;
@@ -29,9 +29,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc cref="Shadow.ShadowMap"/>
     public new RenderTarget2D ShadowMap
@@ -177,9 +177,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="StandardShadow"/> class.
@@ -200,9 +200,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

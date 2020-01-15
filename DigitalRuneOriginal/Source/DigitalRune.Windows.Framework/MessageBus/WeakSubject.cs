@@ -7,10 +7,10 @@ using System.Linq;
 using System.Reactive.Disposables;
 using System.Reactive.Subjects;
 using System.Threading;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 
 
-namespace DigitalRune
+namespace MinimalRune
 {
     /// <summary>
     /// Represents an object that is both an observable sequence as well as an observer. All
@@ -18,9 +18,9 @@ namespace DigitalRune
     /// </summary>
     internal class WeakSubject<T> : ISubject<T>, IDisposable
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private class Subscription : IDisposable
         {
@@ -48,9 +48,9 @@ namespace DigitalRune
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private WeakCollection<IObserver<T>> _observers;
         private Exception _error;
@@ -58,9 +58,9 @@ namespace DigitalRune
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets a value indicating whether this instance has been disposed of.
@@ -73,9 +73,9 @@ namespace DigitalRune
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="WeakSubject{T}"/> class.
@@ -87,9 +87,9 @@ namespace DigitalRune
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Subscribes an observer to the subject.

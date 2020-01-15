@@ -2,11 +2,11 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Collections;
-using DigitalRune.Game.UI.Controls;
+using MinimalRune.Collections;
+using MinimalRune.Game.UI.Controls;
 
 
-namespace DigitalRune.Game.UI.Rendering
+namespace MinimalRune.Game.UI.Rendering
 {
   /// <summary>
   /// Represents a visual style of a UI control.

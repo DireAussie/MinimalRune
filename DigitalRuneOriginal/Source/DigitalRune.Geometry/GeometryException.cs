@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 
 
 
-namespace DigitalRune.Geometry
+namespace MinimalRune.Geometry
 {
 
   /// <summary>

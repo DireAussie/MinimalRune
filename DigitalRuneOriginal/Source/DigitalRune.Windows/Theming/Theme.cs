@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
    /// Describes a WPF theme which consists of a name and a resource dictionary.

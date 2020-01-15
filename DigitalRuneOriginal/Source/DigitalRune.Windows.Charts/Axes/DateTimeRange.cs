@@ -7,7 +7,7 @@ using System.ComponentModel;
 using System.Globalization;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Defines a range of date/time values.
@@ -15,18 +15,18 @@ namespace DigitalRune.Windows.Charts
     [TypeConverter(typeof(DateTimeRangeConverter))]
     public struct DateTimeRange : IEquatable<DateTimeRange>
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly DateTime _min;
         private readonly DateTime _max;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the minimum time.
@@ -49,9 +49,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DateTimeRange"/> struct.
@@ -66,9 +66,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
         /// <summary>

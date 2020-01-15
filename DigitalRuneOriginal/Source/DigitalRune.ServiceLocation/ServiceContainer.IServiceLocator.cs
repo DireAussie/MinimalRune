@@ -9,7 +9,7 @@ using System.Linq;
 using Microsoft.Practices.ServiceLocation;
 
 
-namespace DigitalRune.ServiceLocation
+namespace MinimalRune.ServiceLocation
 {
     partial class ServiceContainer : IServiceLocator
     {

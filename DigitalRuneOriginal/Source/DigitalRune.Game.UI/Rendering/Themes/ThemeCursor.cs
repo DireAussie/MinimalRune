@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-namespace DigitalRune.Game.UI.Rendering
+namespace MinimalRune.Game.UI.Rendering
 {
   /// <summary>
   /// Represents a mouse cursor of the UI theme.

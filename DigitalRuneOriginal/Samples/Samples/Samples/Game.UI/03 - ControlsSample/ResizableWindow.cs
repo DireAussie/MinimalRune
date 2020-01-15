@@ -1,5 +1,5 @@
-﻿using DigitalRune.Game.UI;
-using DigitalRune.Game.UI.Controls;
+﻿using MinimalRune.Game.UI;
+using MinimalRune.Game.UI.Controls;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 

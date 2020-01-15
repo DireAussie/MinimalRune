@@ -7,7 +7,7 @@ using System;
 using System.Windows.Forms.Integration;
 
 
-namespace DigitalRune.Graphics.Interop
+namespace MinimalRune.Graphics.Interop
 {
   /// <summary>
   /// A WPF control that implements <see cref="IPresentationTarget"/> to host a 3D view.
@@ -47,7 +47,7 @@ namespace DigitalRune.Graphics.Interop
   /// using System.ComponentModel;
   /// using System.Windows;
   /// using System.Windows.Forms;
-  /// using DigitalRune.Graphics;
+  /// using MinimalRune.Graphics;
   /// 
   /// namespace MyApplication
   /// {
@@ -89,23 +89,23 @@ namespace DigitalRune.Graphics.Interop
   /// </example>
   public class ElementPresentationTarget : WindowsFormsHost, IPresentationTarget
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly FormsPresentationTarget _formsPresentationTarget;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ElementPresentationTarget"/> class.
@@ -118,9 +118,9 @@ namespace DigitalRune.Graphics.Interop
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     IGraphicsService IPresentationTarget.GraphicsService

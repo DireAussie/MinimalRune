@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Graphics.Content
+namespace MinimalRune.Graphics.Content
 {
   /// <summary>
   /// Represents a bitmap image.
@@ -13,15 +13,15 @@ namespace DigitalRune.Graphics.Content
   /// <seealso cref="Texture"/>
   internal class Image
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the width of the image in pixels.
@@ -78,9 +78,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -161,9 +161,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
   }
 }

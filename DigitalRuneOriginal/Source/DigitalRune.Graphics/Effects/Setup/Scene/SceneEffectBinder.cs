@@ -4,23 +4,23 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Effects
+namespace MinimalRune.Graphics.Effects
 {
   /// <summary>
   /// Provides effect bindings for rendering a <see cref="IScene"/>.
   /// </summary>
   public class SceneEffectBinder : DictionaryEffectBinder
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes static members of the <see cref="SceneEffectBinder"/> class.
@@ -315,9 +315,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private float GetSceneNodeType(DelegateParameterBinding<float> binding, RenderContext context)
     {
@@ -330,9 +330,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
     private static float GetCameraNear(DelegateParameterBinding<float> binding, RenderContext context)
@@ -450,9 +450,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static readonly LightQuery EmptyLightQuery = new LightQuery();
 
@@ -1755,9 +1755,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Returns null, or a list with at least one node.
     internal static List<FogNode> QueryFogNodes(RenderContext context)
@@ -1880,9 +1880,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static float GetDecalAlpha(DelegateParameterBinding<float> binding, RenderContext context)
     {
@@ -1925,9 +1925,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static Matrix GetWorld(RenderContext context)
     {
@@ -2142,9 +2142,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static Matrix GetLastWorld(RenderContext context)
     {

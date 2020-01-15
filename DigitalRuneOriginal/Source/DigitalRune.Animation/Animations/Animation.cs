@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Animation.Traits;
+using MinimalRune.Animation.Traits;
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Provides a base implementation for animations.
@@ -29,15 +29,15 @@ namespace DigitalRune.Animation
   /// </remarks>
   public abstract class Animation<T> : IAnimation<T> 
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets a value that specifies how the animation behaves when it reaches the end of its 
@@ -89,9 +89,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Animation{T}"/> class.
@@ -106,9 +106,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public AnimationInstance CreateInstance()

@@ -8,7 +8,7 @@ using System.Collections.ObjectModel;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Effects
+namespace MinimalRune.Graphics.Effects
 {
   /// <summary>
   /// Stores an <see cref="EffectTechniqueDescription"/> for all techniques of an effect.
@@ -19,17 +19,17 @@ namespace DigitalRune.Graphics.Effects
   /// </remarks>
   public sealed class EffectTechniqueDescriptionCollection : Collection<EffectTechniqueDescription>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private bool _isReadOnly;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the <see cref="EffectTechniqueDescription"/> for the specified technique.
@@ -57,9 +57,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="EffectParameterDescriptionCollection"/> class.
@@ -81,9 +81,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes the <see cref="EffectParameterDescriptionCollection"/> for the specified effect.

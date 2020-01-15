@@ -4,11 +4,11 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 using Microsoft.Win32;
 
 
-namespace DigitalRune.Editor.Documents
+namespace MinimalRune.Editor.Documents
 {
     /// <summary>
     /// Manages documents and provides a user-interface for creating, opening, and saving documents.

@@ -7,7 +7,7 @@ using System;
 using System.Runtime.InteropServices;
 
 
-namespace DigitalRune.Graphics.Interop
+namespace MinimalRune.Graphics.Interop
 {
   /// <summary>
   /// Provides access to native methods.

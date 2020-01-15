@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Linq;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Manages a read-only collection of <see cref="MaterialInstance"/> objects.
@@ -18,9 +18,9 @@ namespace DigitalRune.Graphics.SceneGraph
   [DebuggerTypeProxy(typeof(MaterialInstanceCollectionView))]
   public class MaterialInstanceCollection : IList<MaterialInstance>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // This view is used as DebuggerTypeProxy. With this, the debugger will display 
     // a readable list of material instances for the MaterialInstanceCollection.
@@ -146,9 +146,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly MaterialInstance[] _array;
 
@@ -157,9 +157,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the number of material instances contained in the <see cref="MaterialInstanceCollection"/>.
@@ -212,9 +212,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -254,9 +254,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Stores the hash values of all supported render passes.

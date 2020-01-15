@@ -13,17 +13,17 @@ namespace ICSharpCode.AvalonEdit.Rendering
     /// </summary>
     public class MarkerRenderer : IBackgroundRenderer
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly TextView _textView;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets a value indicating whether this renderer is enabled.
@@ -81,9 +81,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MarkerRenderer"/> class.
@@ -102,9 +102,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private void OnMarkersChanged(object sender, NotifyCollectionChangedEventArgs notifyCollectionChangedEventArgs)
         {

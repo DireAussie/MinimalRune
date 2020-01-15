@@ -4,7 +4,7 @@ using System.Windows;
 using static System.FormattableString;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
     /// Provides a <see cref="ResourceDictionary"/> which loads its content only once when several

@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler;
 
 
-namespace DigitalRune.Graphics.Content.Pipeline
+namespace MinimalRune.Graphics.Content.Pipeline
 {
   /// <summary>
   /// Writes an <see cref="DREffectBindingContent"/> to a binary format that can be read by the 

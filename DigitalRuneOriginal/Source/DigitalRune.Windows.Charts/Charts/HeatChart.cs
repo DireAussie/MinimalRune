@@ -10,10 +10,10 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
 using System.Windows.Shapes;
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Represents a 1D heat chart that represents data using a color gradient.
@@ -31,15 +31,15 @@ namespace DigitalRune.Windows.Charts
     [StyleTypedProperty(Property = "DataPointStyle", StyleTargetType = typeof(Rectangle))]
     public class HeatChart : Chart
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the width of the bar.
@@ -104,9 +104,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="FillMode"/> dependency property.
@@ -177,9 +177,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
         /// <summary>
@@ -199,9 +199,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Called when a relevant property is changed and the charts needs to be updated.

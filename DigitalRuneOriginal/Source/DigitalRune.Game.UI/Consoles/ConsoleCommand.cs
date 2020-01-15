@@ -5,16 +5,16 @@
 using System;
 
 
-namespace DigitalRune.Game.UI.Consoles
+namespace MinimalRune.Game.UI.Consoles
 {
   /// <summary>
   /// Defines a game console command.
   /// </summary>
   public class ConsoleCommand : INamedObject
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the name of the command.
@@ -65,9 +65,9 @@ namespace DigitalRune.Game.UI.Consoles
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -129,9 +129,9 @@ namespace DigitalRune.Game.UI.Consoles
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
   }
 }

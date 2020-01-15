@@ -2,10 +2,10 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   /// <summary>
   /// Provides a base class for all <see cref="Panel"/> controls. Use panels to position and 
@@ -23,15 +23,15 @@ namespace DigitalRune.Game.UI.Controls
     //    each panel.)
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the children.
@@ -41,9 +41,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Panel"/> class.
@@ -58,9 +58,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private void OnChildrenChanged(object sender, CollectionChangedEventArgs<UIControl> eventArgs)
     {

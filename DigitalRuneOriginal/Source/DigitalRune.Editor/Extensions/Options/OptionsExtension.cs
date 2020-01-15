@@ -3,14 +3,14 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System.Collections.Generic;
-using DigitalRune.Collections;
-using DigitalRune.Windows.Docking;
-using DigitalRune.Windows.Framework;
-using DigitalRune.Windows.Themes;
+using MinimalRune.Collections;
+using MinimalRune.Windows.Docking;
+using MinimalRune.Windows.Framework;
+using MinimalRune.Windows.Themes;
 using NLog;
 
 
-namespace DigitalRune.Editor.Options
+namespace MinimalRune.Editor.Options
 {
     /// <summary>
     /// Shows and controls the content of the Options dialog.
@@ -26,9 +26,9 @@ namespace DigitalRune.Editor.Options
     /// </remarks>
     public sealed partial class OptionsExtension : EditorExtension, IOptionsService
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
@@ -37,9 +37,9 @@ namespace DigitalRune.Editor.Options
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private OptionsViewModel Options
         {
@@ -59,15 +59,15 @@ namespace DigitalRune.Editor.Options
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         protected override void OnInitialize()

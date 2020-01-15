@@ -13,7 +13,7 @@ using Texture = SharpDX.Direct3D9.Texture;
 using TextureFilter = SharpDX.Direct3D9.TextureFilter;
 
 
-namespace DigitalRune.Graphics.Interop
+namespace MinimalRune.Graphics.Interop
 {
   /// <summary>
   /// Represents a Direct3D 9 device required for Direct3D 11 interoperability.
@@ -29,18 +29,18 @@ namespace DigitalRune.Graphics.Interop
     // The code requires Windows Vista and up using the Windows Display Driver Model (WDDM). 
     // It does not work with the Windows 2000 Display Driver Model (XDDM).
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly Direct3DEx _direct3D;
     private readonly DeviceEx _device;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets a value indicating whether this instance has been disposed of.
@@ -53,9 +53,9 @@ namespace DigitalRune.Graphics.Interop
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="D3D9"/> class.
@@ -128,9 +128,9 @@ namespace DigitalRune.Graphics.Interop
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     [DllImport("user32.dll", SetLastError = false)]
     private static extern IntPtr GetDesktopWindow();

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Windows;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
   /// <summary>
   /// Converts an array of values into a string. 

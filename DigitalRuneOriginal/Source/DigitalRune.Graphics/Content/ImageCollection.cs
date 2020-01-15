@@ -7,7 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-namespace DigitalRune.Graphics.Content
+namespace MinimalRune.Graphics.Content
 {
   /// <summary>
   /// Manages the images of a texture.
@@ -18,17 +18,17 @@ namespace DigitalRune.Graphics.Content
   /// </remarks>
   internal class ImageCollection : IList<Image>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly Image[] _images;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the number of elements contained in the <see cref="ImageCollection" />.
@@ -82,9 +82,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ImageCollection"/> class.
@@ -101,9 +101,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns an enumerator that iterates through the collection.

@@ -6,7 +6,7 @@ using System;
 using System.ComponentModel;
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   /// <summary>
   /// Indicates the progress of an operation. 
@@ -24,7 +24,7 @@ namespace DigitalRune.Game.UI.Controls
   /// var progressBar = new ProgressBar
   /// {
   ///   IsIndeterminate = false,
-  ///   Margin = new Vector4F(4, 8, 4, 4),
+  ///   Margin = new Vector4(4, 8, 4, 4),
   ///   HorizontalAlignment = HorizontalAlignment.Stretch,
   /// };
   /// 
@@ -38,24 +38,24 @@ namespace DigitalRune.Game.UI.Controls
   /// </example>
   public class ProgressBar : RangeBase
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Current direction of cycling value in Indeterminate mode.
     private bool _forward = true;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary> 
     /// The ID of the <see cref="IsIndeterminate"/> game object property.
@@ -110,9 +110,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes static members of the <see cref="ProgressBar"/> class.
@@ -134,9 +134,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override void OnUpdate(TimeSpan deltaTime)

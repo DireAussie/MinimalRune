@@ -3,17 +3,17 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using DigitalRune.Game;
-using DigitalRune.Game.Input;
-using DigitalRune.Geometry;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.PostProcessing;
-using DigitalRune.Graphics.Rendering;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Interpolation;
-using DigitalRune.Storages;
+using MinimalRune.Game;
+using MinimalRune.Game.Input;
+using MinimalRune.Geometry;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.PostProcessing;
+using MinimalRune.Graphics.Rendering;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Interpolation;
+using MinimalRune.Storages;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
@@ -48,9 +48,9 @@ namespace Samples
   Press <F4> to show more sky controls.")]
   public class DynamicSkyObject : GameObject
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // This game object computes physically based light intensities. Since our material
     // properties and all other lights in this application are not physically based, 
@@ -66,9 +66,9 @@ namespace Samples
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly IServiceLocator _services;
 
@@ -115,9 +115,9 @@ namespace Samples
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // The direction to the sun in world space.
     public Vector3 SunDirection { get; private set; }
@@ -259,9 +259,9 @@ namespace Samples
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     public DynamicSkyObject(IServiceLocator services)
       : this(services, true, false, false)
@@ -281,9 +281,9 @@ namespace Samples
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     protected override void OnLoad()
     {
@@ -920,7 +920,7 @@ namespace Samples
       foreach (var fogNode in ((Scene)_scene).GetSubtree().OfType<FogNode>())
       {
         var fog = fogNode.Fog;
-        fog.Color0 = fog.Color1 = new Vector4F(fogColor, 1);
+        fog.Color0 = fog.Color1 = new Vector4(fogColor, 1);
         fog.ScatteringSymmetry = FogScatteringSymmetry;
       }
 

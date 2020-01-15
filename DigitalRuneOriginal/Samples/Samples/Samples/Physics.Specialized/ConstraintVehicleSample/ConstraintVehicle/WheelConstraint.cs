@@ -4,14 +4,14 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Geometry;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics.Constraints;
-using DigitalRune.Physics.Settings;
+using MinimalRune.Geometry;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics.Constraints;
+using MinimalRune.Physics.Settings;
 
 
-namespace DigitalRune.Physics.Specialized
+namespace MinimalRune.Physics.Specialized
 {
   /// <summary>
   /// Defines a complex constraints which models a wheel including suspension spring, a hard 
@@ -19,9 +19,9 @@ namespace DigitalRune.Physics.Specialized
   /// </summary>
   internal class WheelConstraint : Constraint
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly ConstraintWheel _wheel;
 
@@ -50,9 +50,9 @@ namespace DigitalRune.Physics.Specialized
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     public override Vector3 LinearConstraintImpulse
     {
@@ -73,9 +73,9 @@ namespace DigitalRune.Physics.Specialized
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     public WheelConstraint(ConstraintWheel wheel)
     {
@@ -89,9 +89,9 @@ namespace DigitalRune.Physics.Specialized
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Called when constraint should be set up for a new time step.

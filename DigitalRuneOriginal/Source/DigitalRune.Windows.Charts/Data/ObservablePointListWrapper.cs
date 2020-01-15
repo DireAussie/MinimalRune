@@ -9,7 +9,7 @@ using System.Collections.Specialized;
 using System.Windows;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Wraps an existing list of <see cref="Point"/>s for use as a chart data source. Supports
@@ -17,17 +17,17 @@ namespace DigitalRune.Windows.Charts
     /// </summary>
     internal class ObservablePointListWrapper : IList<DataPoint>, INotifyCollectionChanged
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly IList<Point> _list;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the number of elements contained in the <see cref="ICollection{T}"/>.
@@ -69,9 +69,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ObservablePointListWrapper"/> class.
@@ -102,9 +102,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Called when the wrapped list changes, raises the <see cref="CollectionChanged"/>

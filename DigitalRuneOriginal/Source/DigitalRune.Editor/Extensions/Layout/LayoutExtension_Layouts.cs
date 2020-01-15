@@ -10,11 +10,11 @@ using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Xml.Linq;
-using DigitalRune.Collections;
-using DigitalRune.Editor.Properties;
+using MinimalRune.Collections;
+using MinimalRune.Editor.Properties;
 
 
-namespace DigitalRune.Editor.Layout
+namespace MinimalRune.Editor.Layout
 {
     sealed partial class LayoutExtension
     {
@@ -25,9 +25,9 @@ namespace DigitalRune.Editor.Layout
         // - "Reset layout" ..... Delete any session data and restore factory/user preset.
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         // Folders storing the window layouts:
         // - Factory presets: "<EXECUTABLE_FOLDER>\Layouts\Presets\*.xml"
@@ -40,15 +40,15 @@ namespace DigitalRune.Editor.Layout
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the window layouts.
@@ -82,9 +82,9 @@ namespace DigitalRune.Editor.Layout
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Updates the window layout menu and toolbar items.

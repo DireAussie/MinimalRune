@@ -6,7 +6,7 @@ using System.Xml.Linq;
 using Microsoft.Xna.Framework.Content.Pipeline;
 
 
-namespace DigitalRune.Game.UI.Content.Pipeline
+namespace MinimalRune.Game.UI.Content.Pipeline
 {
   /// <summary>
   /// Imports the XML description of a UI theme.

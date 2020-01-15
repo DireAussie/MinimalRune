@@ -5,7 +5,7 @@
 using System.Collections.Generic;
 
 
-namespace DigitalRune.Editor.Search
+namespace MinimalRune.Editor.Search
 {
     /// <summary>
     /// Describes a scope that can be searched by the Search service.

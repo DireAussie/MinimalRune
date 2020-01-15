@@ -6,12 +6,12 @@ using System;
 using System.ComponentModel;
 using System.Diagnostics;
 
-using DigitalRune.Animation.Character;
+using MinimalRune.Animation.Character;
 
-using DigitalRune.Graphics.Effects;
+using MinimalRune.Graphics.Effects;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Represents an instance of a mesh in a 3D scene.
@@ -46,18 +46,18 @@ namespace DigitalRune.Graphics.SceneGraph
   /// </remarks>
   public class MeshNode : SceneNode, IOcclusionProxy
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Optimization: Store the hash values of all render passes for fast lookup.
     private int[] _passHashes;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets a collection of <see cref="MaterialInstance"/>s associated with the mesh.
@@ -217,9 +217,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="MeshNode"/> class.
@@ -312,9 +312,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

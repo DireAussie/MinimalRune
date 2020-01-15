@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.Editor.Shader
+namespace MinimalRune.Editor.Shader
 {
     /// <summary>
     /// Code completion data for keywords of the shader language.

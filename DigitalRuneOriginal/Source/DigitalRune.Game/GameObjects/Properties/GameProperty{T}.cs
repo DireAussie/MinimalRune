@@ -5,10 +5,10 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Animation;
+using MinimalRune.Animation;
 
 
-namespace DigitalRune.Game
+namespace MinimalRune.Game
 {
   /// <summary>
   /// Represents a property of a <see cref="GameObject"/>
@@ -24,18 +24,18 @@ namespace DigitalRune.Game
   [DebuggerDisplay("{GetType().Name,nq}(Name = {Name}, HasLocalValue = {HasLocalValue}, Value = {Value})")]
   public struct GameProperty<T> : IGameProperty, IEquatable<GameProperty<T>>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly GameObject _owner;
     private readonly GamePropertyMetadata<T> _metadata;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public GameObject Owner
@@ -297,9 +297,9 @@ namespace DigitalRune.Game
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="GameProperty{T}"/> struct.
@@ -317,9 +317,9 @@ namespace DigitalRune.Game
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private GamePropertyData<T> GetOrCreateLocalData()
     {

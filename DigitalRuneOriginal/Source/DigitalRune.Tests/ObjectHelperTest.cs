@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 using System.Text.RegularExpressions;
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 using NUnit.Framework;
 
 
@@ -9,7 +9,7 @@ using System.Drawing;
 
 
 
-namespace DigitalRune.Tests
+namespace MinimalRune.Tests
 {
   public struct VectorA
   {

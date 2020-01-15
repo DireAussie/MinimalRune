@@ -4,12 +4,12 @@
 
 using System;
 using System.Globalization;
-using DigitalRune.Geometry.Meshes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Meshes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry.Shapes
+namespace MinimalRune.Geometry.Shapes
 {
   /// <summary>
   /// Represents a perspective view volume (frustum).
@@ -33,9 +33,9 @@ namespace DigitalRune.Geometry.Shapes
 
   public class PerspectiveViewVolume : ViewVolume
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Cached vertices.
     private Vector3 _nearBottomLeftVertex;
@@ -49,9 +49,9 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets an inner point.
@@ -122,9 +122,9 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -165,9 +165,9 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

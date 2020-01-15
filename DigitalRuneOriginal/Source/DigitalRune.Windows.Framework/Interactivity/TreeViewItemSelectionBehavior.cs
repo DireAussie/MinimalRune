@@ -12,7 +12,7 @@ using System.Windows.Interactivity;
 using System.Windows.Media;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Provides a dependency property to bind the <see cref="TreeView.SelectedItem"/> property of a

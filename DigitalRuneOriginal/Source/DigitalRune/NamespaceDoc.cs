@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-namespace DigitalRune
+namespace MinimalRune
 {
   /// <summary>
   /// The <see cref="N:DigitalRune"/> namespace provides general helper classes for .NET.

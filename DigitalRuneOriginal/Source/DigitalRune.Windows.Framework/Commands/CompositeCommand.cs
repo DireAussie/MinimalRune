@@ -64,7 +64,7 @@ using System.Linq;
 using System.Windows.Input;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Combines one or more <see cref="ICommand"/>s.
@@ -83,9 +83,9 @@ namespace DigitalRune.Windows.Framework
     /// </remarks>
     public class CompositeCommand : ICommand
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly List<ICommand> _registeredCommands = new List<ICommand>();
 
@@ -95,9 +95,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the list of all the registered commands.
@@ -145,9 +145,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CompositeCommand"/> class.
@@ -161,9 +161,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Adds a command to the collection and signs up for the

@@ -1,12 +1,12 @@
 ﻿using System;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Geometry.Meshes;
-using DigitalRune.Geometry.Partitioning;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Statistics;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Geometry.Meshes;
+using MinimalRune.Geometry.Partitioning;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Statistics;
 
 
 namespace Samples.Geometry

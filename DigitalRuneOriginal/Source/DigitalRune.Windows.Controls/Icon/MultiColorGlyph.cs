@@ -6,7 +6,7 @@ using System.ComponentModel;
 using System.Windows.Media;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Represents a multi-color glyph. (For use with the <see cref="Icon"/>.)

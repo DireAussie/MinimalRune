@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Mathematics.Algebra.Tests
+namespace MinimalRune.Mathematics.Algebra.Tests
 {
   [TestFixture]
   public class Vector3DTest
@@ -547,16 +547,16 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void LengthSquared()
     {
-      Assert.AreEqual(1.0, Vector3D.UnitX.LengthSquared);
-      Assert.AreEqual(1.0, Vector3D.UnitY.LengthSquared);
-      Assert.AreEqual(1.0, Vector3D.UnitZ.LengthSquared);
+      Assert.AreEqual(1.0, Vector3D.UnitX.LengthSquared());
+      Assert.AreEqual(1.0, Vector3D.UnitY.LengthSquared());
+      Assert.AreEqual(1.0, Vector3D.UnitZ.LengthSquared());
 
       double x = -1.9;
       double y = 2.1;
       double z = 10.0;
       double length = x * x + y * y + z * z;
       Vector3D v = new Vector3D(x, y, z);
-      Assert.AreEqual(length, v.LengthSquared);
+      Assert.AreEqual(length, v.LengthSquared());
     }
 
 

@@ -6,7 +6,7 @@ using System;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Provides a user-defined cloud texture.

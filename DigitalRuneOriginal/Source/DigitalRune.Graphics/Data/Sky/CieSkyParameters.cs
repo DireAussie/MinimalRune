@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Defines the parameters of the CIE sky luminance distribution.

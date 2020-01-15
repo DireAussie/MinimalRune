@@ -9,7 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
     /// Represents an ordered collection of <see cref="UIElement"/>s that notifies listeners about
@@ -18,15 +18,15 @@ namespace DigitalRune.Windows
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1010:CollectionsShouldImplementGenericInterface")]
     public class ObservableUIElementCollection : UIElementCollection, INotifyCollectionChanged, INotifyPropertyChanged
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets the <see cref="UIElement"/> at the specified index.
@@ -68,9 +68,9 @@ namespace DigitalRune.Windows
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ObservableUIElementCollection"/> class.
@@ -84,9 +84,9 @@ namespace DigitalRune.Windows
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Removes all elements from a <see cref="UIElementCollection"/>.

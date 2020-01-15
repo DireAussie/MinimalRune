@@ -4,16 +4,16 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using DigitalRune;
-using DigitalRune.Diagnostics;
-using DigitalRune.Game;
-using DigitalRune.Game.Input;
-using DigitalRune.Game.UI;
-using DigitalRune.Game.UI.Controls;
-using DigitalRune.Graphics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics;
-using DigitalRune.ServiceLocation;
-using DigitalRune.Text;
+using MinimalRune.Diagnostics;
+using MinimalRune.Game;
+using MinimalRune.Game.Input;
+using MinimalRune.Game.UI;
+using MinimalRune.Game.UI.Controls;
+using MinimalRune.Graphics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics;
+using MinimalRune.ServiceLocation;
+using MinimalRune.Text;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
@@ -70,9 +70,9 @@ namespace Samples
   /// </remarks>
   public class SampleFramework
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly SampleGame _game;
     private readonly Type _initialSample;
@@ -122,9 +122,9 @@ namespace Samples
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets a value indicating whether the menu (or another window) is open.
@@ -183,9 +183,9 @@ namespace Samples
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="SampleFramework" /> class.
@@ -313,7 +313,7 @@ namespace Samples
       // ----- Info (bottom left)
       _infoPanel = new StackPanel
       {
-        Margin = new Vector4F(10),
+        Margin = new Vector4(10),
         HorizontalAlignment = HorizontalAlignment.Left,
         VerticalAlignment = VerticalAlignment.Bottom,
       };
@@ -347,7 +347,7 @@ namespace Samples
       _buttonsPanel = new StackPanel
       {
         Background = new Color(0, 0, 0, 64),
-        Padding = new Vector4F(10),
+        Padding = new Vector4(10),
         HorizontalAlignment = HorizontalAlignment.Right,
         VerticalAlignment = VerticalAlignment.Bottom,
       };
@@ -366,7 +366,7 @@ namespace Samples
       // ----- FPS Counter (top right)
       _fpsPanel = new StackPanel
       {
-        Margin = new Vector4F(10),
+        Margin = new Vector4(10),
         HorizontalAlignment = HorizontalAlignment.Right,
         VerticalAlignment = VerticalAlignment.Top,
       };
@@ -406,10 +406,10 @@ namespace Samples
       };
 
       if (panel.Children.Count > 0)
-        button.Margin = (panel.Orientation == Orientation.Horizontal) ? new Vector4F(3, 0, 0, 0) : new Vector4F(0, 3, 0, 0);
+        button.Margin = (panel.Orientation == Orientation.Horizontal) ? new Vector4(3, 0, 0, 0) : new Vector4(0, 3, 0, 0);
 
 
-      button.Padding = new Vector4F(15);
+      button.Padding = new Vector4(15);
 
 
       if (clickHandler != null)
@@ -450,7 +450,7 @@ namespace Samples
 
       var panel = new StackPanel
       {
-        Margin = new Vector4F(10),
+        Margin = new Vector4(10),
         Orientation = Orientation.Vertical,
         HorizontalAlignment = HorizontalAlignment.Stretch,
         VerticalAlignment = VerticalAlignment.Stretch
@@ -474,13 +474,13 @@ namespace Samples
       var label = new TextBlock
       {
         Text = "Select Sample:",
-        Margin = new Vector4F(2, 10, 0, 0)
+        Margin = new Vector4(2, 10, 0, 0)
       };
       panel.Children.Add(label);
 
       var tabControl = new TabControl
       {
-        Margin = new Vector4F(0, 3, 0, 0),
+        Margin = new Vector4(0, 3, 0, 0),
         Width = 580,
 
         Height = 300
@@ -514,7 +514,7 @@ namespace Samples
         var itemsPanel = new StackPanel
         {
           Orientation = Orientation.Vertical,
-          Margin = new Vector4F(5),
+          Margin = new Vector4(5),
           HorizontalAlignment = HorizontalAlignment.Stretch,
           VerticalAlignment = VerticalAlignment.Stretch
         };
@@ -534,9 +534,9 @@ namespace Samples
             Content = new TextBlock { Text = title },
             Width = 200,
 
-            Padding = new Vector4F(10),
+            Padding = new Vector4(10),
 #else
-            Padding = new Vector4F(0, 5, 0, 5),
+            Padding = new Vector4(0, 5, 0, 5),
 
           };
           int sampleIndex = _samples.IndexOf(sample);
@@ -551,7 +551,7 @@ namespace Samples
           summary = summary.Replace("\r\n", " ");
           var summaryTextBlock = new TextBlock
           {
-            Margin = new Vector4F(0, 3, 0, 12),
+            Margin = new Vector4(0, 3, 0, 12),
             Text = summary,
             WrapText = true
           };
@@ -629,7 +629,7 @@ namespace Samples
       {
         HorizontalAlignment = HorizontalAlignment.Stretch,
         VerticalAlignment = VerticalAlignment.Stretch,
-        Margin = new Vector4F(SampleHelper.Margin),
+        Margin = new Vector4(SampleHelper.Margin),
       };
       _optionsWindow.Content = _optionsTabControl;
 
@@ -702,9 +702,9 @@ namespace Samples
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Updates the sample framework. (Needs to be called in <see cref="Game.Update"/>.)

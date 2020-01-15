@@ -4,12 +4,12 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Collections;
-using DigitalRune.Geometry;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Collections;
+using MinimalRune.Geometry;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Represents a camera in a scene.
@@ -73,9 +73,9 @@ namespace DigitalRune.Graphics.SceneGraph
   /// <seealso cref="DigitalRune.Graphics.Camera"/>
   public class CameraNode : SceneNode
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>A (weak) list of all camera nodes.</summary>
     private static readonly WeakCollection<CameraNode> Instances = new WeakCollection<CameraNode>();
@@ -83,9 +83,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the camera.
@@ -215,9 +215,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="CameraNode"/> class.
@@ -258,9 +258,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

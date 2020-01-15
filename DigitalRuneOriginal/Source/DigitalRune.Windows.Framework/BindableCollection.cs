@@ -16,7 +16,7 @@ using System.Collections.Specialized;
 using System.ComponentModel;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Represents a dynamic data collection that supports change notifications and automatic UI
@@ -32,9 +32,9 @@ namespace DigitalRune.Windows.Framework
 
     public class BindableCollection<T> : ObservableCollection<T>
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
         [field: NonSerialized]
@@ -45,9 +45,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets a value indicating whether listeners are notified of changes to the
@@ -69,9 +69,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BindableCollection{T}"/> class.
@@ -96,9 +96,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets a value indicating whether the <see cref="IsNotifying"/> property should be

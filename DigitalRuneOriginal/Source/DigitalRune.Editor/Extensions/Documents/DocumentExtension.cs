@@ -8,15 +8,15 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows;
-using DigitalRune.Editor.Search;
-using DigitalRune.Editor.Status;
-using DigitalRune.Windows.Docking;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Editor.Search;
+using MinimalRune.Editor.Status;
+using MinimalRune.Windows.Docking;
+using MinimalRune.Windows.Framework;
 using Microsoft.Win32;
 using NLog;
 
 
-namespace DigitalRune.Editor.Documents
+namespace MinimalRune.Editor.Documents
 {
     /// <summary>
     /// Manages documents and provides a user-interface for creating, opening, and saving documents.
@@ -33,9 +33,9 @@ namespace DigitalRune.Editor.Documents
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling")]
     public sealed partial class DocumentExtension : EditorExtension, IDocumentService, IGuardClose
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
@@ -48,9 +48,9 @@ namespace DigitalRune.Editor.Documents
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public OpenFileDialog OpenFileDialog
@@ -136,9 +136,9 @@ namespace DigitalRune.Editor.Documents
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentExtension"/> class.
@@ -154,9 +154,9 @@ namespace DigitalRune.Editor.Documents
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         protected override void OnInitialize()

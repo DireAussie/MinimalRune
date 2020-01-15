@@ -5,16 +5,16 @@
 using System;
 using System.Windows;
 using System.Windows.Input;
-using DigitalRune.Collections;
-using DigitalRune.Editor.Documents;
-using DigitalRune.Editor.Properties;
-using DigitalRune.Windows.Docking;
-using DigitalRune.Windows.Framework;
-using DigitalRune.Windows.Themes;
+using MinimalRune.Collections;
+using MinimalRune.Editor.Documents;
+using MinimalRune.Editor.Properties;
+using MinimalRune.Windows.Docking;
+using MinimalRune.Windows.Framework;
+using MinimalRune.Windows.Themes;
 using NLog;
 
 
-namespace DigitalRune.Editor.Search
+namespace MinimalRune.Editor.Search
 {
     /// <summary>
     /// Provides an user interface to find and replace text strings in documents.
@@ -24,9 +24,9 @@ namespace DigitalRune.Editor.Search
     /// </remarks>
     public sealed partial class SearchExtension : EditorExtension, ISearchService
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
@@ -39,9 +39,9 @@ namespace DigitalRune.Editor.Search
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private FindAndReplaceViewModel FindAndReplaceViewModel
         {
@@ -57,9 +57,9 @@ namespace DigitalRune.Editor.Search
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchExtension"/> class.
@@ -71,9 +71,9 @@ namespace DigitalRune.Editor.Search
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         protected override void OnInitialize()

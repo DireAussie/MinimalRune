@@ -7,19 +7,19 @@ using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Xml.Linq;
-using DigitalRune.Editor.Documents;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Windows.Controls;
+using MinimalRune.Editor.Documents;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Windows.Controls;
 using static System.FormattableString;
 
 
-namespace DigitalRune.Editor.Models
+namespace MinimalRune.Editor.Models
 {
     partial class ModelDocument
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly ComponentResourceKey TextBlockKey = new ComponentResourceKey(typeof(PropertyGrid), "TextBlock");
         private static readonly ComponentResourceKey OpenLinkKey = new ComponentResourceKey(typeof(PropertyGrid), "OpenLink");
@@ -34,21 +34,21 @@ namespace DigitalRune.Editor.Models
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
-
-
-
-        //--------------------------------------------------------------
-
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
+
+
+
+        
+
+        
 
         private void UpdateProperties()
         {

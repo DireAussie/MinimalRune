@@ -1,9 +1,9 @@
 ﻿using System;
-using DigitalRune.Animation.Easing;
+using MinimalRune.Animation.Easing;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Animation.Tests
+namespace MinimalRune.Animation.Tests
 {
   [TestFixture]
   public class SingleFromToByAnimationTest

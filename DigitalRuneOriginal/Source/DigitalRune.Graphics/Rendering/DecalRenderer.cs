@@ -5,18 +5,18 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Collections;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics.Effects;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Interpolation;
+using MinimalRune.Collections;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics.Effects;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Interpolation;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Renders <see cref="DecalNode"/>s.
@@ -48,9 +48,9 @@ namespace DigitalRune.Graphics.Rendering
     // batching. However, the cost for determining whether decals overlap is probably 
     // too high.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     [DebuggerDisplay("Job({DrawOrder}, {MaterialKey}, Name = {Node.Name})")]
     private struct Job
@@ -89,9 +89,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private const int NumberOfVertices = 8;
     private const int NumberOfPrimitives = 12;  // Decal volume has 6 sides à 2 triangles
@@ -135,9 +135,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets a value indicating whether decals may be clipped which intersect the 
@@ -185,9 +185,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="DecalRenderer"/> class.
@@ -256,9 +256,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods")]
@@ -649,7 +649,7 @@ namespace DigitalRune.Graphics.Rendering
             Vector3 scale = decalNode.ScaleWorld;
             Pose cameraToDecalPose = decalPose.Inverse * cameraPose;
 
-            Vector4F scissor = GraphicsHelper.GetBounds(cameraNode, decalNode);
+            Vector4 scissor = GraphicsHelper.GetBounds(cameraNode, decalNode);
             // Use a bias to avoid that this quad is clipped by the near plane.
             const float bias = 1.0001f;
             float left = InterpolationHelper.Lerp(projection.Left, projection.Right, scissor.X) * bias;

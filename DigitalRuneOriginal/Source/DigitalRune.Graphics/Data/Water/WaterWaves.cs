@@ -3,12 +3,12 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Defines a displacement of the water surface to create waves.
@@ -27,15 +27,15 @@ namespace DigitalRune.Graphics
   /// </remarks>
   public abstract class WaterWaves : IDisposable
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------    
+        
 
     /// <summary>
     /// Gets (or sets) the displacement map.
@@ -101,9 +101,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="WaterWaves"/> class.
@@ -151,9 +151,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
   }
 }

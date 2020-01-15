@@ -8,7 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Interactivity;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Selects all content of the <see cref="TextBox"/> when the element receives the focus.

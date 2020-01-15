@@ -2,15 +2,15 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
 using Microsoft.Xna.Framework.Content;
 
 
 
-namespace DigitalRune.Particles.Effectors
+namespace MinimalRune.Particles.Effectors
 {
   /// <summary>
   /// Adds a bias velocity to the start velocities of particles.
@@ -57,9 +57,9 @@ namespace DigitalRune.Particles.Effectors
   /// </remarks>
   public class StartVelocityBiasEffector : ParticleEffector
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private IParticleParameter<Vector3> _directionParameter;
     private IParticleParameter<float> _linearSpeedParameter;
@@ -67,9 +67,9 @@ namespace DigitalRune.Particles.Effectors
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the name of the parameter that defines the movement direction.
@@ -140,9 +140,9 @@ namespace DigitalRune.Particles.Effectors
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="StartVelocityBiasEffector"/> class.
@@ -157,9 +157,9 @@ namespace DigitalRune.Particles.Effectors
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override ParticleEffector CreateInstanceCore()

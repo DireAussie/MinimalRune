@@ -9,7 +9,7 @@ using System.Windows.Input;
 using System.Windows.Interactivity;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Forwards a <see cref="RoutedCommand"/> to a <see cref="Framework.DelegateCommand"/>.
@@ -53,17 +53,17 @@ namespace DigitalRune.Windows.Framework
         // and uses CommandSinkBindings instead of regular CommandBindings.
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private CommandBinding _commandBinding;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets the <see cref="System.Windows.Input.RoutedCommand"/>.
@@ -83,9 +83,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="DelegateCommand"/> dependency property.
@@ -141,15 +141,15 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Called after the behavior is attached to an <see cref="Behavior{T}.AssociatedObject"/>.

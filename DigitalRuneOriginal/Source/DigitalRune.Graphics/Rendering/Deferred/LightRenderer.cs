@@ -4,10 +4,10 @@
 
 
 using System;
-using DigitalRune.Graphics.SceneGraph;
+using MinimalRune.Graphics.SceneGraph;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Renders <see cref="LightNode"/>s into the light buffer.
@@ -30,21 +30,21 @@ namespace DigitalRune.Graphics.Rendering
   /// </remarks>
   public class LightRenderer : SceneRenderer
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
-
-
-
-    //--------------------------------------------------------------
-
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
+
+
+
+    
+
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="LightRenderer"/> class.
@@ -68,9 +68,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override bool CanRender(SceneNode node, RenderContext context)

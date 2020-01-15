@@ -1,10 +1,10 @@
-﻿using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics.Constraints;
+﻿using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics.Constraints;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Physics.Tests
+namespace MinimalRune.Physics.Tests
 {
   [TestFixture]
   public class RigidBodyTest

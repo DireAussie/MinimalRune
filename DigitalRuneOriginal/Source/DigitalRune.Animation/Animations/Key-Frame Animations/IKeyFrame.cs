@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Defines the value of an animation at a certain point in time.

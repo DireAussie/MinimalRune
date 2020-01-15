@@ -1,7 +1,7 @@
 ﻿
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
 
 
 namespace Samples.Graphics
@@ -11,15 +11,15 @@ namespace Samples.Graphics
   /// </summary>
   public class FogSphereNode : SceneNode
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the fog color.
@@ -70,9 +70,9 @@ namespace Samples.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="FogSphereNode"/> class.
@@ -91,9 +91,9 @@ namespace Samples.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

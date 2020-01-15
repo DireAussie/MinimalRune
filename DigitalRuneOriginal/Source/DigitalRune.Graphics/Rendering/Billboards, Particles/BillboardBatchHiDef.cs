@@ -3,11 +3,11 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Renders billboards and particles in batches. (HiDef profile)
@@ -15,21 +15,21 @@ namespace DigitalRune.Graphics.Rendering
   /// <inheritdoc/>
   internal sealed class BillboardBatchHiDef : BillboardBatch<BillboardVertex>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
-
-
-
-    //--------------------------------------------------------------
-
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
+
+
+
+    
+
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="BillboardBatchHiDef" /> class.
@@ -50,9 +50,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
     /// <inheritdoc/>

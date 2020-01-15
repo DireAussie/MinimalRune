@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Particles.Effectors
+namespace MinimalRune.Particles.Effectors
 {
   /// <summary>
   /// Evaluates 3 piecewise linear functions consisting of 3 segments and multiplies the result with
@@ -62,9 +62,9 @@ namespace DigitalRune.Particles.Effectors
   /// </remarks>
   public class Vector3LinearSegment3Effector : ParticleEffector
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private IParticleParameter<Vector3> _inputParameter;
     private IParticleParameter<Vector3> _outputParameter;
@@ -72,9 +72,9 @@ namespace DigitalRune.Particles.Effectors
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the name of the parameter that is multiplied with the value of the piecewise 
@@ -225,9 +225,9 @@ namespace DigitalRune.Particles.Effectors
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Vector3LinearSegment3Effector"/> class.
@@ -241,9 +241,9 @@ namespace DigitalRune.Particles.Effectors
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override ParticleEffector CreateInstanceCore()

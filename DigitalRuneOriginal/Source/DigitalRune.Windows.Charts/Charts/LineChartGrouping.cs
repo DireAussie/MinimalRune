@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Describes the type of grouping (stacking) for line charts.

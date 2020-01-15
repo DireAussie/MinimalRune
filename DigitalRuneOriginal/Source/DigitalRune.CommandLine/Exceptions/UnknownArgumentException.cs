@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 using static System.FormattableString;
 
 
-namespace DigitalRune.CommandLine
+namespace MinimalRune.CommandLine
 {
     /// <summary>
     /// Occurs when the <see cref="CommandLineParser"/> encounters an unknown argument.

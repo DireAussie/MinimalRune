@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System.ComponentModel;
-using DigitalRune.Game.Input;
+using MinimalRune.Game.Input;
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   /// <summary>
   /// Represents a selectable item inside a <see cref="TabControl"/>. 
@@ -29,23 +29,23 @@ namespace DigitalRune.Game.UI.Controls
   /// var tabControl = new TabControl
   /// {
   ///   HorizontalAlignment = HorizontalAlignment.Stretch,
-  ///   Margin = new Vector4F(4)
+  ///   Margin = new Vector4(4)
   /// };
   /// 
   /// // Add 3 pages to to the tab control.
   /// var tabItem0 = new TabItem
   /// {
-  ///   TabPage = new TextBlock { Margin = new Vector4F(4), Text = "Page 0" },
+  ///   TabPage = new TextBlock { Margin = new Vector4(4), Text = "Page 0" },
   ///   Content = new TextBlock { Text = "Content of page 0" }
   /// };
   /// var tabItem1 = new TabItem
   /// {
-  ///   TabPage = new TextBlock { Margin = new Vector4F(4), Text = "Page 1" },
+  ///   TabPage = new TextBlock { Margin = new Vector4(4), Text = "Page 1" },
   ///   Content = new TextBlock { Text = "Content of page 1" }
   /// };
   /// var tabItem2 = new TabItem
   /// {
-  ///   TabPage = new TextBlock { Margin = new Vector4F(4), Text = "Page 2" },
+  ///   TabPage = new TextBlock { Margin = new Vector4(4), Text = "Page 2" },
   ///   Content = new TextBlock { Text = "Content of page 2" }
   /// };
   /// tabControl.Items.Add(tabItem0);
@@ -65,15 +65,15 @@ namespace DigitalRune.Game.UI.Controls
     // TabItem defines the appearance of a tab. It has a TabPage property, which 
     // defines the content of the TabControl when this TabItem is selected.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the control that should be displayed as <see cref="TabControl"/> content.
@@ -127,9 +127,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary> 
     /// The ID of the <see cref="IsSelected"/> game object property.
@@ -157,9 +157,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="TabItem"/> class.
@@ -181,9 +181,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override void OnHandleInput(InputContext context)

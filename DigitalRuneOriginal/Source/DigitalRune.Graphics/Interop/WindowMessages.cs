@@ -6,7 +6,7 @@
 using System;
 
 
-namespace DigitalRune.Graphics.Interop
+namespace MinimalRune.Graphics.Interop
 {
   // ReSharper disable InconsistentNaming
 

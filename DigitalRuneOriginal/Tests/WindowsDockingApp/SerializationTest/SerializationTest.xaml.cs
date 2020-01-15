@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using System.Xml.Linq;
-using DigitalRune.Windows.Docking;
+using MinimalRune.Windows.Docking;
 
 
 namespace WindowsDockingApp

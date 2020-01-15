@@ -7,11 +7,11 @@ using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
-using DigitalRune.Mathematics.Statistics;
+using MinimalRune.Mathematics.Statistics;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Mathematics.Algebra.Tests
+namespace MinimalRune.Mathematics.Algebra.Tests
 {
   [TestFixture]
   public class MatrixTest
@@ -351,10 +351,10 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     public void Determinant()
     {
       Matrix m = new Matrix(rowMajor, MatrixOrder.RowMajor);
-      Assert.AreEqual(0.0, m.Determinant);
-      Assert.AreEqual(0.0, Matrix.Zero.Determinant);
-      Assert.AreEqual(0.0, Matrix.One.Determinant);
-      Assert.AreEqual(1.0f, Matrix.Identity.Determinant);
+      Assert.AreEqual(0.0, m.Determinant());
+      Assert.AreEqual(0.0, Matrix.Zero.Determinant());
+      Assert.AreEqual(0.0, Matrix.One.Determinant());
+      Assert.AreEqual(1.0f, Matrix.Identity.Determinant());
     }
 
 
@@ -460,11 +460,11 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     public void Transpose()
     {
       Matrix m = new Matrix(rowMajor, MatrixOrder.RowMajor);
-      m.Transpose();
+      m = Matrix.Transpose(m);
       Matrix mt = new Matrix(rowMajor, MatrixOrder.ColumnMajor);
       Assert.AreEqual(mt, m);
       Matrix i = Matrix.Identity;
-      i.Transpose();
+      i = Matrix.Transpose(i);
       Assert.AreEqual(Matrix.Identity, i);
     }
 
@@ -770,7 +770,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
       Matrix m = Matrix.CreateRotationX(angle);
       Assert.IsTrue(Vector3.AreNumericallyEqual(new Vector3(0, (float) Math.Cos(angle), (float) Math.Sin(angle)), m * Vector3.UnitY));
 
-      Quaternion q = Quaternion.CreateRotation(Vector3.UnitX, angle);
+      Quaternion q = Quaternion.CreateFromRotationMatrix(Vector3.UnitX, angle);
       Assert.IsTrue(Vector3.AreNumericallyEqual(q.Rotate(Vector3.One), m * Vector3.One));
 
       Assert.IsTrue(Matrix.AreNumericallyEqual(Matrix.CreateRotation(Vector3.UnitX, angle), m));
@@ -784,7 +784,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
       Matrix m = Matrix.CreateRotationY(angle);
       Assert.IsTrue(Vector3.AreNumericallyEqual(new Vector3((float) Math.Sin(angle), 0, (float) Math.Cos(angle)), m * Vector3.UnitZ));
 
-      Quaternion q = Quaternion.CreateRotation(Vector3.UnitY, angle);
+      Quaternion q = Quaternion.CreateFromRotationMatrix(Vector3.UnitY, angle);
       Assert.IsTrue(Vector3.AreNumericallyEqual(q.Rotate(Vector3.One), m * Vector3.One));
 
       Assert.IsTrue(Matrix.AreNumericallyEqual(Matrix.CreateRotation(Vector3.UnitY, angle), m));
@@ -798,7 +798,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
       Matrix m = Matrix.CreateRotationZ(angle);
       Assert.IsTrue(Vector3.AreNumericallyEqual(new Vector3((float) Math.Cos(angle), (float) Math.Sin(angle), 0), m * Vector3.UnitX));
 
-      Quaternion q = Quaternion.CreateRotation(Vector3.UnitZ, angle);
+      Quaternion q = Quaternion.CreateFromRotationMatrix(Vector3.UnitZ, angle);
       Assert.IsTrue(Vector3.AreNumericallyEqual(q.Rotate(Vector3.One), m * Vector3.One));
 
       Assert.IsTrue(Matrix.AreNumericallyEqual(Matrix.CreateRotation(Vector3.UnitZ, angle), m));
@@ -811,7 +811,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
       float angle = -1.6f;
       Vector3 axis = new Vector3(1.0f, 2.0f, -3.0f);
       Matrix matrix = Matrix.CreateRotation(axis, angle);
-      Quaternion q = Quaternion.CreateRotation(axis, angle);
+      Quaternion q = Quaternion.CreateFromRotationMatrix(axis, angle);
       Matrix matrixFromQuaternion = Matrix.CreateRotation(q);
       Vector3 v = new Vector3(0.3f, -2.4f, 5.6f);
       Vector3 result1 = matrix * v;

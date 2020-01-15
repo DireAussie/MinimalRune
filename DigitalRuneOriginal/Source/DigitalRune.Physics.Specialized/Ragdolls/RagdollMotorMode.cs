@@ -2,10 +2,10 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Animation.Character;
+using MinimalRune.Animation.Character;
 
 
-namespace DigitalRune.Physics.Specialized
+namespace MinimalRune.Physics.Specialized
 {
   /// <summary>
   /// Defines the type of <see cref="RagdollMotor"/>.

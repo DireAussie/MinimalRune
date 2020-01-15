@@ -6,12 +6,12 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using DigitalRune.Editor.Themes;
+using MinimalRune.Editor.Themes;
 using ICSharpCode.AvalonEdit.Highlighting;
 using NLog;
 
 
-namespace DigitalRune.Editor.Text
+namespace MinimalRune.Editor.Text
 {
     /// <summary>
     /// Provides a syntax highlighting definition taking the current theme into account.
@@ -29,9 +29,9 @@ namespace DigitalRune.Editor.Text
     /// </remarks>
     internal class ThemeAwareHighlightingDefinition : IHighlightingDefinition
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
@@ -48,9 +48,9 @@ namespace DigitalRune.Editor.Text
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public string Name { get; }
@@ -78,9 +78,9 @@ namespace DigitalRune.Editor.Text
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ThemeAwareHighlightingDefinition"/> class.
@@ -110,9 +110,9 @@ namespace DigitalRune.Editor.Text
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Registers the highlighting definition for the specified theme.

@@ -5,15 +5,15 @@
 using System;
 using System.Diagnostics;
 using System.IO;
-using DigitalRune.Geometry.Meshes;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Threading;
+using MinimalRune.Geometry.Meshes;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Threading;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Graphics.PackedVector;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Represents the mesh that is used by the <see cref="TerrainRenderer"/>.
@@ -68,15 +68,15 @@ namespace DigitalRune.Graphics.Rendering
     /*/
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets a value indicating whether this instance has been disposed of.
@@ -106,9 +106,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="TerrainRendererMesh"/> class.
@@ -158,9 +158,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Creates a geo-clipmap mesh for terrain rendering.

@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Mathematics.Statistics
+namespace MinimalRune.Mathematics.Statistics
 {
   /// <summary>
   /// A class to generate random values.
@@ -88,7 +88,7 @@ namespace DigitalRune.Mathematics.Statistics
       if (random == null)
         random = Random;
 
-      return Quaternion.CreateRotation(NextVector3(random, -1, 1), NextFloat(random, 0, ConstantsF.TwoPi));
+      return Quaternion.CreateFromRotationMatrix(NextVector3(random, -1, 1), NextFloat(random, 0, ConstantsF.TwoPi));
     }
 
 
@@ -257,7 +257,7 @@ namespace DigitalRune.Mathematics.Statistics
 
 
     /// <summary>
-    /// Gets a random <see cref="Vector4F"/>.
+    /// Gets a random <see cref="Vector4"/>.
     /// </summary>
     /// <param name="random">
     /// The random number generator. If this parameter is <see langword="null"/>, the global random
@@ -265,13 +265,13 @@ namespace DigitalRune.Mathematics.Statistics
     /// </param>
     /// <param name="min">The minimal allowed value for a vector element.</param>
     /// <param name="max">The maximal allowed value for a vector element.</param>
-    /// <returns>A random <see cref="Vector4F"/>.</returns>
-    public static Vector4F NextVector4F(this Random random, float min, float max)
+    /// <returns>A random <see cref="Vector4"/>.</returns>
+    public static Vector4 NextVector4(this Random random, float min, float max)
     {
       if (random == null)
         random = Random;
 
-      return new Vector4F(NextFloat(random, min, max),
+      return new Vector4(NextFloat(random, min, max),
                           NextFloat(random, min, max),
                           NextFloat(random, min, max),
                           NextFloat(random, min, max));

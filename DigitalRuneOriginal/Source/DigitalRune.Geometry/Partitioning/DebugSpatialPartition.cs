@@ -4,11 +4,11 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using DigitalRune.Collections;
-using DigitalRune.Geometry.Shapes;
+using MinimalRune.Collections;
+using MinimalRune.Geometry.Shapes;
 
 
-namespace DigitalRune.Geometry.Partitioning
+namespace MinimalRune.Geometry.Partitioning
 {
   /// <summary>
   /// A simple brute-force partitioning method used for debugging.

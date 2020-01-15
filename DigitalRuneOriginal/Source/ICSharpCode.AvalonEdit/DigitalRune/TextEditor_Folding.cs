@@ -14,18 +14,18 @@ namespace ICSharpCode.AvalonEdit
 {
     partial class TextEditor
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private DispatcherTimer _foldingTimer;
         private bool _foldingValid;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the folding manager.
@@ -72,9 +72,9 @@ namespace ICSharpCode.AvalonEdit
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="EnableFolding"/> dependency property.
@@ -103,9 +103,9 @@ namespace ICSharpCode.AvalonEdit
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static void OnEnableFoldingChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
         {

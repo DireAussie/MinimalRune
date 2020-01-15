@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.Animation.Easing
+namespace MinimalRune.Animation.Easing
 {
   /// <summary>
   /// Defines a function that controls the pace of a transition.

@@ -3,14 +3,14 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Graphics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Graphics;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Rectangle = Microsoft.Xna.Framework.Rectangle;
 
 
-namespace DigitalRune.Editor.Textures
+namespace MinimalRune.Editor.Textures
 {
     /// <summary>
     /// Draws a single texture.
@@ -31,9 +31,9 @@ namespace DigitalRune.Editor.Textures
         //  * * * *   (r, g, b, a)  Add option: premultiplied or non-premultiplied?
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Vector4 CheckerColor0 = new Vector4(0.25f);
         private static readonly Vector4 CheckerColor1 = new Vector4(0.5f);
@@ -41,9 +41,9 @@ namespace DigitalRune.Editor.Textures
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly Effect _effect;
         private readonly EffectParameter _parameterViewportSize;
@@ -61,9 +61,9 @@ namespace DigitalRune.Editor.Textures
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         ///// <summary>
         ///// Gets a value indicating whether this instance has been disposed of.
@@ -81,15 +81,15 @@ namespace DigitalRune.Editor.Textures
         public float InputGamma { get; set; }
         public float OutputGamma { get; set; }
         public Matrix ColorTransform { get; set; }
-        public Vector4F ColorOffset { get; set; }
+        public Vector4 ColorOffset { get; set; }
         public bool IsPremultiplied { get; set; }
         public float MipLevel { get; set; }
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TextureGraphicsScreen"/> class.
@@ -151,9 +151,9 @@ namespace DigitalRune.Editor.Textures
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         protected override void OnUpdate(TimeSpan deltaTime)

@@ -3,29 +3,29 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Animation.Character;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Animation.Character;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Framework;
 
 
-namespace DigitalRune.Editor.Models
+namespace MinimalRune.Editor.Models
 {
     /// <summary>
     /// Describes a single animation value in a property grid.
     /// </summary>
     internal class AnimationPropertyViewModel : ObservableObject
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly ModelDocument _document;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         public string Name
         {
@@ -64,9 +64,9 @@ namespace DigitalRune.Editor.Models
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         public AnimationPropertyViewModel(ModelDocument document)
         {
@@ -79,9 +79,9 @@ namespace DigitalRune.Editor.Models
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private void OnToggleIsPlaying()
         {

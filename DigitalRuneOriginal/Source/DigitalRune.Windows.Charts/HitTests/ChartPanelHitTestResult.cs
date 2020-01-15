@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Media;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Represents the result of a hit test on the <see cref="ChartPanel"/>.

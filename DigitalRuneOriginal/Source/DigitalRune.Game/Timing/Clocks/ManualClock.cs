@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Game.Timing
+namespace MinimalRune.Game.Timing
 {
   /// <summary>
   /// A simple game clock that needs to be updated manually.
@@ -21,18 +21,18 @@ namespace DigitalRune.Game.Timing
   /// </remarks>
   public class ManualClock : IGameClock
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // TimeEventArgs object is reused to avoid unnecessary memory allocations.
     private readonly GameClockEventArgs _eventArgs = new GameClockEventArgs(); 
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public bool IsRunning { get; private set; }
@@ -62,9 +62,9 @@ namespace DigitalRune.Game.Timing
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ManualClock"/> class.
@@ -76,9 +76,9 @@ namespace DigitalRune.Game.Timing
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public void Start()

@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Physics.Constraints
+namespace MinimalRune.Physics.Constraints
 {
   /// <summary>
   /// Describe the state of a constraint limit.

@@ -5,7 +5,7 @@ using System;
 using Microsoft.Xna.Framework.Content;
 
 
-namespace DigitalRune.Animation.Content
+namespace MinimalRune.Animation.Content
 {
   /// <summary>
   /// Reads a <see cref="KeyFrameCollection{T}"/> from binary format. 

@@ -4,11 +4,11 @@
 
 using System;
 using System.ComponentModel;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   /// <summary>
   /// Represents a control with another <see cref="UIControl"/> as content.
@@ -20,15 +20,15 @@ namespace DigitalRune.Game.UI.Controls
   /// </remarks>
   public class ContentControl : UIControl
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the content.
@@ -63,7 +63,7 @@ namespace DigitalRune.Game.UI.Controls
     {
       get
       {
-        Vector4F padding = Padding;
+        Vector4 padding = Padding;
         return new RectangleF(
           ActualX + padding.X, 
           ActualY + padding.Y,
@@ -74,9 +74,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary> 
     /// The ID of the <see cref="ContentStyle"/> game object property.
@@ -133,9 +133,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ContentControl"/> class.
@@ -147,9 +147,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override void OnTemplateChanged(EventArgs eventArgs)
@@ -221,7 +221,7 @@ namespace DigitalRune.Game.UI.Controls
         if (child != Content)
           child.Measure(availableSize);
 
-      Vector4F padding = Padding;
+      Vector4 padding = Padding;
       if (hasContent)
       {
         availableSize.X -= padding.X + padding.Z;
@@ -267,7 +267,7 @@ namespace DigitalRune.Game.UI.Controls
 
       if (Content != null)
       {
-        Vector4F padding = Padding;
+        Vector4 padding = Padding;
         position.X += padding.X;
         position.Y += padding.Y;
         size.X -= padding.X + padding.Z;

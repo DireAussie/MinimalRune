@@ -6,10 +6,10 @@ using System;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
     /// A value converter that returns <see langword="true"/> if the given floating-point value is

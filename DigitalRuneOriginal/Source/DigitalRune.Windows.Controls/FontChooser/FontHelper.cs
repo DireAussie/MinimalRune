@@ -10,7 +10,7 @@ using System.Windows.Markup;
 using System.Windows.Media;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Helper methods for handling fonts.

@@ -4,15 +4,15 @@
 
 
 using System;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Statistics;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Statistics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MathHelper = DigitalRune.Mathematics.MathHelper;
 
 
-namespace DigitalRune.Graphics.PostProcessing
+namespace MinimalRune.Graphics.PostProcessing
 {
   /// <summary>
   /// Creates a <i>Screen-Space Ambient Occlusion</i> (SSAO) effect to approximate ambient 
@@ -31,9 +31,9 @@ namespace DigitalRune.Graphics.PostProcessing
   [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
   public class SsaoFilter : PostProcessor
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly Effect _effect;
     private readonly EffectParameter _farParameter;
@@ -58,9 +58,9 @@ namespace DigitalRune.Graphics.PostProcessing
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the strength of the ambient occlusion.
@@ -224,9 +224,9 @@ namespace DigitalRune.Graphics.PostProcessing
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="SsaoFilter"/> class.
@@ -296,9 +296,9 @@ namespace DigitalRune.Graphics.PostProcessing
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods")]

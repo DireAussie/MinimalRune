@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-namespace DigitalRune.Graphics.Content
+namespace MinimalRune.Graphics.Content
 {
   /// <summary>
   /// The <see cref="N:DigitalRune.Graphics.Content"/> namespace contains the run-time components of

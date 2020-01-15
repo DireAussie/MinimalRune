@@ -2,12 +2,12 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Animation.Character;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Animation.Character;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework.Content;
 
 
-namespace DigitalRune.Animation.Content
+namespace MinimalRune.Animation.Content
 {
   /// <summary>
   /// Reads a <see cref="SrtTransform"/> from binary format. 

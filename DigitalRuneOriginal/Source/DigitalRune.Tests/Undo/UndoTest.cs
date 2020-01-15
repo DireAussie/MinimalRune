@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Undo.Tests
+namespace MinimalRune.Undo.Tests
 {
   [TestFixture]
   public class UndoTest

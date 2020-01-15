@@ -5,10 +5,10 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using DigitalRune.Physics.Constraints;
+using MinimalRune.Physics.Constraints;
 
 
-namespace DigitalRune.Physics
+namespace MinimalRune.Physics
 {
   /// <summary>
   /// Describes a collection of rigid bodies and constraints that can be simulated independently.
@@ -40,9 +40,9 @@ namespace DigitalRune.Physics
   /// </remarks>
   public sealed class SimulationIsland
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static readonly ResourcePool<SimulationIsland> Pool =
       new ResourcePool<SimulationIsland>(
@@ -52,9 +52,9 @@ namespace DigitalRune.Physics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the simulation.
@@ -143,9 +143,9 @@ namespace DigitalRune.Physics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Prevents a default instance of the <see cref="SimulationIsland"/> class from being created.
@@ -199,9 +199,9 @@ namespace DigitalRune.Physics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Resets this simulation island.

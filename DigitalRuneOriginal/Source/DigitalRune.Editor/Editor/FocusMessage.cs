@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Windows.Framework;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// Represents the message that is broadcast over the <see cref="IMessageBus"/> when a UI

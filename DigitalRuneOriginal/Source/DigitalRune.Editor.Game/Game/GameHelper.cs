@@ -3,13 +3,13 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Geometry;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Editor.Game
+namespace MinimalRune.Editor.Game
 {
     /// <summary>
     /// Provides helper methods for game scenes.
@@ -52,13 +52,13 @@ namespace DigitalRune.Editor.Game
             {
                 Name = "KeyLight",
                 Priority = 10,   // This is the most important light.
-                PoseWorld = new Pose(Quaternion.CreateRotation(Vector3.Forward, new Vector3(-0.5265408f, -0.5735765f, -0.6275069f))),
+                PoseWorld = new Pose(Quaternion.CreateFromRotationMatrix(Vector3.Forward, new Vector3(-0.5265408f, -0.5735765f, -0.6275069f))),
                 // This light uses Cascaded Shadow Mapping.
                 Shadow = new CascadedShadow
                 {
                     PreferredSize = 1024,
                     NumberOfCascades = 4,
-                    Distances = new Vector4F(2, 4, 10, 20f),
+                    Distances = new Vector4(2, 4, 10, 20f),
                     MinLightDistance = 8,
                     FilterRadius = 2,
                     NumberOfSamples = 16,
@@ -78,7 +78,7 @@ namespace DigitalRune.Editor.Game
             var fillLightNode = new LightNode(fillLight)
             {
                 Name = "FillLight",
-                PoseWorld = new Pose(Quaternion.CreateRotation(Vector3.Forward, new Vector3(0.7198464f, 0.3420201f, 0.6040227f))),
+                PoseWorld = new Pose(Quaternion.CreateFromRotationMatrix(Vector3.Forward, new Vector3(0.7198464f, 0.3420201f, 0.6040227f))),
             };
             scene.Children.Add(fillLightNode);
 
@@ -93,7 +93,7 @@ namespace DigitalRune.Editor.Game
             var backLightNode = new LightNode(backLight)
             {
                 Name = "BackLight",
-                PoseWorld = new Pose(Quaternion.CreateRotation(Vector3.Forward, new Vector3(0.4545195f, -0.7660444f, 0.4545195f))),
+                PoseWorld = new Pose(Quaternion.CreateFromRotationMatrix(Vector3.Forward, new Vector3(0.4545195f, -0.7660444f, 0.4545195f))),
             };
             scene.Children.Add(backLightNode);
         }

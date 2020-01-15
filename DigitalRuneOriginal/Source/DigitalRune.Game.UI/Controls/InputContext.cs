@@ -4,11 +4,11 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Game.Input;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Game.Input;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   /// <summary>
   /// Provides information during processing of device input.

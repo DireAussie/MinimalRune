@@ -5,15 +5,15 @@
 using System;
 using System.Globalization;
 using System.Runtime.InteropServices;
-using DigitalRune.Geometry;
-using DigitalRune.Graphics.Effects;
-using DigitalRune.Graphics.Rendering;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry;
+using MinimalRune.Graphics.Effects;
+using MinimalRune.Graphics.Rendering;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Describes a custom vertex format that contains instance data for hardware instancing.
@@ -61,9 +61,9 @@ namespace DigitalRune.Graphics
     // IMPORTANT: The matrices need to be transposed in the shader!
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The vertex declaration.
@@ -110,9 +110,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the size of the <see cref="InstanceData"/> structure in bytes.
@@ -125,9 +125,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -181,7 +181,7 @@ namespace DigitalRune.Graphics
     /// The first three columns of the world matrix is stored in <see cref="Register0"/> to
     /// <see cref="Register2"/>. The color is stored in <see cref="Register3"/>.
     ///  </remarks>
-    public InstanceData(Vector3 scale, Pose pose, Vector4F color)
+    public InstanceData(Vector3 scale, Pose pose, Vector4 color)
     {
       Matrix world = pose;
       world.M11 *= scale.X; world.M12 *= scale.X; world.M13 *= scale.X;
@@ -195,9 +195,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Indicates whether this instance and a specified object are equal.

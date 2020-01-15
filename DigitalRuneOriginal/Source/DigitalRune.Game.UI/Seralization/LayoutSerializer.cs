@@ -16,7 +16,7 @@ using System.Xml.Linq;
 
 
 
-namespace DigitalRune.Game.UI
+namespace MinimalRune.Game.UI
 {
   /// <summary>
   /// Loads/saves objects from/to a XML file. (Currently, only loading objects is implemented!)

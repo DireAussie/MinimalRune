@@ -1,11 +1,11 @@
-﻿using DigitalRune.Geometry;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.Rendering;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Interpolation;
-using DigitalRune.Mathematics.Statistics;
+﻿using MinimalRune.Geometry;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.Rendering;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Interpolation;
+using MinimalRune.Mathematics.Statistics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MathHelper = Microsoft.Xna.Framework.MathHelper;
@@ -110,7 +110,7 @@ can be observed between the big grid and the smaller transparent figures.",
         StrokeThickness = 3,
         StrokeColor = new Vector3(0.2f, 0.3f, 0.3f),
         StrokeAlpha = 0.5f,
-        StrokeDashPattern = new Vector4F(10, 2, 3, 2),
+        StrokeDashPattern = new Vector4(10, 2, 3, 2),
         DashInWorldSpace = false,
         PoseLocal = new Pose(new Vector3(-1, 1, 0))
       };
@@ -128,7 +128,7 @@ can be observed between the big grid and the smaller transparent figures.",
         StrokeThickness = 2,
         StrokeColor = new Vector3(0.3f, 0, 0.2f),
         StrokeAlpha = 1,
-        StrokeDashPattern = new Vector4F(10, 2, 3, 2) / 100,
+        StrokeDashPattern = new Vector4(10, 2, 3, 2) / 100,
         DashInWorldSpace = true,
         FillColor = new Vector3(0.7f, 0, 0.5f),
         FillAlpha = 0.5f,
@@ -148,7 +148,7 @@ can be observed between the big grid and the smaller transparent figures.",
         StrokeThickness = 2,
         StrokeColor = new Vector3(0, 0, 0),
         StrokeAlpha = 1,
-        StrokeDashPattern = new Vector4F(1, 1, 1, 1) / 100,
+        StrokeDashPattern = new Vector4(1, 1, 1, 1) / 100,
         DashInWorldSpace = true,
         FillColor = new Vector3(0.3f, 0.3f, 0.3f),
         FillAlpha = 0.5f,
@@ -207,7 +207,7 @@ can be observed between the big grid and the smaller transparent figures.",
         StrokeThickness = 3,
         StrokeColor = new Vector3(0.2f, 0.3f, 0.3f),
         StrokeAlpha = 0.5f,
-        StrokeDashPattern = new Vector4F(10, 2, 3, 2),
+        StrokeDashPattern = new Vector4(10, 2, 3, 2),
         DashInWorldSpace = false,
         PoseLocal = new Pose(new Vector3(-1, 2, 0))
       };
@@ -225,7 +225,7 @@ can be observed between the big grid and the smaller transparent figures.",
         StrokeThickness = 2,
         StrokeColor = new Vector3(0.3f, 0, 0.2f),
         StrokeAlpha = 1,
-        StrokeDashPattern = new Vector4F(10, 2, 3, 2) / 100,
+        StrokeDashPattern = new Vector4(10, 2, 3, 2) / 100,
         DashInWorldSpace = true,
         FillColor = new Vector3(0.7f, 0, 0.5f),
         FillAlpha = 0.5f,
@@ -245,7 +245,7 @@ can be observed between the big grid and the smaller transparent figures.",
         StrokeThickness = 2,
         StrokeColor = new Vector3(0, 0, 0),
         StrokeAlpha = 1,
-        StrokeDashPattern = new Vector4F(1, 1, 1, 1) / 100,
+        StrokeDashPattern = new Vector4(1, 1, 1, 1) / 100,
         DashInWorldSpace = true,
         FillColor = new Vector3(0.3f, 0.3f, 0.3f),
         FillAlpha = 0.5f,
@@ -394,7 +394,7 @@ can be observed between the big grid and the smaller transparent figures.",
         StrokeColor = new Vector3(0.1f),
         StrokeAlpha = 1f,
         DashInWorldSpace = true,
-        StrokeDashPattern = new Vector4F(10, 4, 0, 0) / 200,
+        StrokeDashPattern = new Vector4(10, 4, 0, 0) / 200,
       };
       var gridNode = new SceneNode
       {
@@ -453,7 +453,7 @@ can be observed between the big grid and the smaller transparent figures.",
         StrokeColor = new Vector3(0.5f, 0.3f, 1),
         StrokeAlpha = 1f,
         DashInWorldSpace = true,
-        StrokeDashPattern = new Vector4F(10, 1, 1, 1) / 100,
+        StrokeDashPattern = new Vector4(10, 1, 1, 1) / 100,
       };
       _scene.Children.Add(pathLineNode);
     }

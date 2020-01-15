@@ -3,11 +3,11 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 
 
-namespace DigitalRune.Animation.Traits
+namespace MinimalRune.Animation.Traits
 {
   /// <summary>
   /// Describes the properties of a <see cref="Quaternion"/>. 

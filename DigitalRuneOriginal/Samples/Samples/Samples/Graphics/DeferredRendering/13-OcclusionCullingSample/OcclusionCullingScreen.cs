@@ -1,12 +1,12 @@
 ﻿
 using System.Collections.Generic;
-using DigitalRune.Diagnostics;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.Rendering;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Diagnostics;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.Rendering;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;

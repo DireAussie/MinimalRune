@@ -16,7 +16,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Represents a control that displays hierarchical data in a tree structure that has items that
@@ -55,9 +55,9 @@ namespace DigitalRune.Windows.Controls
     [TemplatePart(Name = PART_ScrollViewer, Type = typeof(ScrollViewer))]
     public class TreeViewEx : ItemsControl
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private const string PART_ScrollViewer = nameof(PART_ScrollViewer);
 
@@ -68,9 +68,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static bool IsControlDown
         {
@@ -85,9 +85,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="SelectedItems"/> dependency property.
@@ -138,9 +138,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly DependencyPropertyKey IsSelectionActivePropertyKey = DependencyProperty.RegisterAttachedReadOnly(
             "IsSelectionActive",
@@ -205,9 +205,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="TreeViewEx"/> class.
@@ -231,9 +231,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Called when the <see cref="SelectedItems"/> property changed.

@@ -2,10 +2,10 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Windows;
+using MinimalRune.Windows;
 
 
-namespace DigitalRune.Editor.Outlines
+namespace MinimalRune.Editor.Outlines
 {
     /// <summary>
     /// Represents a collection of <see cref="OutlineItem"/>s.

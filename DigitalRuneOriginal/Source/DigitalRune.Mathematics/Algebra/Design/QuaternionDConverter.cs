@@ -9,7 +9,7 @@ using System.ComponentModel;
 using System.Globalization;
 
 
-namespace DigitalRune.Mathematics.Algebra.Design
+namespace MinimalRune.Mathematics.Algebra.Design
 {
   /// <summary>
   /// Converts a <see cref="QuaternionD"/> to and from string representation.

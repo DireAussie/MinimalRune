@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.ServiceLocation
+namespace MinimalRune.ServiceLocation
 {
     /// <summary>
     /// Creates a <see cref="Func{TResult}"/> which returns a service instance.

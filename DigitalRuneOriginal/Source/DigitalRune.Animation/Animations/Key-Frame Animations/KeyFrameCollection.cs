@@ -6,11 +6,11 @@ using System.Collections.Generic;
 
 using System.Collections.ObjectModel;
 #else
-using DigitalRune.Collections.ObjectModel;
+using MinimalRune.Collections.ObjectModel;
 
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Manages a collection of key frames.

@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Linq;
-using DigitalRune.Animation;
-using DigitalRune.Geometry;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.Effects;
-using DigitalRune.Graphics.Rendering;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Animation;
+using MinimalRune.Geometry;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.Effects;
+using MinimalRune.Graphics.Rendering;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Plane = DigitalRune.Geometry.Shapes.Plane;
@@ -233,7 +233,7 @@ See source code for more details.",
       // Compute shadow matrix for the new light direction.
       var lightRayDirection = (lightTarget - position);
       _shadowMatrix = ProjectedShadowRenderer.CreateShadowMatrix(
-        new Plane(new Vector3(0, 1, 0), 0.01f), new Vector4F(-lightRayDirection, 0));
+        new Plane(new Vector3(0, 1, 0), 0.01f), new Vector4(-lightRayDirection, 0));
 
       // Update the scene - this must be called once per frame.
       _scene.Update(gameTime.ElapsedGameTime);

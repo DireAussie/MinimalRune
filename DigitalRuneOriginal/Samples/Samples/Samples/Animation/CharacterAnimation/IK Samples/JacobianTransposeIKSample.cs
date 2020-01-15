@@ -1,8 +1,8 @@
 ﻿using System.Linq;
-using DigitalRune.Animation.Character;
-using DigitalRune.Geometry;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Animation.Character;
+using MinimalRune.Geometry;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
@@ -76,7 +76,7 @@ Limits are used to keep the palm of the hand parallel to the ground.",
       // if it wants to place the hand on horizontal plane.
       SrtTransform bonePoseAbsolute = _meshNode.SkeletonPose.GetBonePoseAbsolute(15);
       Vector3 palmAxis = bonePoseAbsolute.ToParentDirection(-Vector3.UnitY);
-      bonePoseAbsolute.Rotation = Quaternion.CreateRotation(palmAxis, Vector3.UnitY) * bonePoseAbsolute.Rotation;
+      bonePoseAbsolute.Rotation = Quaternion.CreateFromRotationMatrix(palmAxis, Vector3.UnitY) * bonePoseAbsolute.Rotation;
       _meshNode.SkeletonPose.SetBonePoseAbsolute(15, bonePoseAbsolute);
     }
 

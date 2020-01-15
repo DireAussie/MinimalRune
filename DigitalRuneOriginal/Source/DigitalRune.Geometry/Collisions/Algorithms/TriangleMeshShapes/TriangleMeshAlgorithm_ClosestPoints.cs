@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Geometry.Shapes;
+using MinimalRune.Geometry.Shapes;
 
 
-namespace DigitalRune.Geometry.Collisions.Algorithms
+namespace MinimalRune.Geometry.Collisions.Algorithms
 {
   public partial class TriangleMeshAlgorithm
   {

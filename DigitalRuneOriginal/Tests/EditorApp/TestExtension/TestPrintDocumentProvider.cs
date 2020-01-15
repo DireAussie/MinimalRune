@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Markup;
-using DigitalRune.Editor.Printing;
+using MinimalRune.Editor.Printing;
 
 
 namespace EditorApp

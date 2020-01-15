@@ -3,11 +3,11 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Physics.Materials;
-using DigitalRune.Threading;
+using MinimalRune.Physics.Materials;
+using MinimalRune.Threading;
 
 
-namespace DigitalRune.Physics.Settings
+namespace MinimalRune.Physics.Settings
 {
   /// <summary>
   /// Defines simulation settings that control the physics simulation.
@@ -18,15 +18,15 @@ namespace DigitalRune.Physics.Settings
     // This is a separate class so that it can be shared between simulations.
     // or it can be serialized.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the constraint-related simulation settings.
@@ -211,9 +211,9 @@ namespace DigitalRune.Physics.Settings
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="SimulationSettings"/> class.
@@ -252,9 +252,9 @@ namespace DigitalRune.Physics.Settings
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
   }
 

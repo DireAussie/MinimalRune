@@ -1,7 +1,7 @@
 ﻿using System;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Analysis;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Analysis;
 
 // Both XNA and DigitalRune have a class called MathHelper. To avoid compiler errors
 // we need to define which MathHelper we want to use.
@@ -90,7 +90,7 @@ namespace Samples.Mathematics
 
       // Create a quaternion that represents a 50° rotation around the axis given
       // by rotationAxis.
-      Quaternion rotation = Quaternion.CreateRotation(rotationAxis, rotationAngle);
+      Quaternion rotation = Quaternion.CreateFromRotationMatrix(rotationAxis, rotationAngle);
 
       // Rotate the vector v using the rotation quaternion.
       Vector3 vRotated = rotation.Rotate(v);

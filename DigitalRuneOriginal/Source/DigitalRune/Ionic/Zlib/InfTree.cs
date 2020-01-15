@@ -57,7 +57,7 @@
 
 using System;
 
-namespace DigitalRune.Ionic.Zlib
+namespace MinimalRune.Ionic.Zlib
 {
         
         sealed class InfTree

@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Content.Pipeline.Processors;
 using Microsoft.Xna.Framework.Content.Pipeline.Graphics;
 
 
-namespace DigitalRune.Game.UI.Content.Pipeline
+namespace MinimalRune.Game.UI.Content.Pipeline
 {
   /// <summary>
   /// Represents a font of the UI theme.

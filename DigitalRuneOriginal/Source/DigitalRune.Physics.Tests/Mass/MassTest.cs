@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Statistics;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Statistics;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Physics.Tests
+namespace MinimalRune.Physics.Tests
 {
   [TestFixture]
   public class MassTest

@@ -1,10 +1,10 @@
 ﻿using System;
 using DigitalRune;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Statistics;
-using DigitalRune.Particles;
-using DigitalRune.Particles.Effectors;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Statistics;
+using MinimalRune.Particles;
+using MinimalRune.Particles.Effectors;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;

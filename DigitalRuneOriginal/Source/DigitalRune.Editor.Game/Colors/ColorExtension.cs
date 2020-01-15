@@ -4,23 +4,23 @@
 
 using System;
 using System.Windows;
-using DigitalRune.Collections;
-using DigitalRune.Windows.Docking;
-using DigitalRune.Windows.Framework;
-using DigitalRune.Windows.Themes;
+using MinimalRune.Collections;
+using MinimalRune.Windows.Docking;
+using MinimalRune.Windows.Framework;
+using MinimalRune.Windows.Themes;
 using NLog;
 
 
-namespace DigitalRune.Editor.Colors
+namespace MinimalRune.Editor.Colors
 {
     /// <summary>
     /// Provides tools for working with colors.
     /// </summary>
     public sealed class ColorExtension : EditorExtension
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
@@ -31,21 +31,21 @@ namespace DigitalRune.Editor.Colors
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
-
-
-
-        //--------------------------------------------------------------
-
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
+
+
+
+        
+
+        
 
         /// <inheritdoc/>
         protected override void OnInitialize()

@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Data;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
     /// Converts an <see cref="Enum"/> to an <see cref="Array"/> with all defined enumeration

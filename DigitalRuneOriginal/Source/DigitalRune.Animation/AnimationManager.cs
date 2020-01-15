@@ -5,12 +5,12 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Animation.Traits;
-using DigitalRune.Animation.Transitions;
-using DigitalRune.Threading;
+using MinimalRune.Animation.Traits;
+using MinimalRune.Animation.Transitions;
+using MinimalRune.Threading;
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Represents the animations system which can be used to play back animations.
@@ -31,9 +31,9 @@ namespace DigitalRune.Animation
   /// </remarks>
   public class AnimationManager : IAnimationService
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly List<AnimationInstance> _rootInstances;
     private readonly List<AnimationInstance> _completedInstances;
@@ -57,9 +57,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets a value indicating whether multithreading is enabled.
@@ -93,9 +93,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="AnimationManager"/> class.
@@ -131,9 +131,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public bool IsAnimated(IAnimatableObject animatableObject)

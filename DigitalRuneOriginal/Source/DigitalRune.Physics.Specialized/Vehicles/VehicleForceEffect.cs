@@ -4,28 +4,28 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Geometry;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics.ForceEffects;
+using MinimalRune.Geometry;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics.ForceEffects;
 
 
-namespace DigitalRune.Physics.Specialized
+namespace MinimalRune.Physics.Specialized
 {
   /// <summary>
   /// Updates a vehicle and applies suspension, motor and friction forces.
   /// </summary>
   internal class VehicleForceEffect : ForceEffect
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the vehicle.
@@ -35,9 +35,9 @@ namespace DigitalRune.Physics.Specialized
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="VehicleForceEffect"/> class.
@@ -51,9 +51,9 @@ namespace DigitalRune.Physics.Specialized
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Called when the simulation wants this force effect to apply forces to rigid bodies.

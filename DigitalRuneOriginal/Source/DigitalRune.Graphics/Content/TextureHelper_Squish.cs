@@ -29,11 +29,11 @@
 
 using System;
 using System.Threading.Tasks;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Graphics.Content
+namespace MinimalRune.Graphics.Content
 {
   // Notes:
   // Libraries supporting BCn block compression:
@@ -85,9 +85,9 @@ namespace DigitalRune.Graphics.Content
   /// </remarks>
   internal static class Squish
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static int FloatToInt(float a, int limit)
     {
@@ -410,9 +410,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private class ClusterFit
     {
@@ -423,16 +423,16 @@ namespace DigitalRune.Graphics.Content
       private int _iterationCount;
       private Vector3 _principle;
       private byte[] _order;
-      private Vector4F[] _points_weights;
-      private Vector4F _xsum_wsum;
-      private Vector4F _metric;
-      private Vector4F _besterror;
+      private Vector4[] _points_weights;
+      private Vector4 _xsum_wsum;
+      private Vector4 _metric;
+      private Vector4 _besterror;
 
 
       public ClusterFit()
       {
         _order = new byte[16 * MaxIterations];
-        _points_weights = new Vector4F[16];
+        _points_weights = new Vector4[16];
       }
 
 
@@ -440,19 +440,19 @@ namespace DigitalRune.Graphics.Content
       {
         _colours = colours;
         _flags = flags;
-        _xsum_wsum = new Vector4F();
+        _xsum_wsum = new Vector4();
 
         // set the iteration count
         _iterationCount = (flags & SquishFlags.ColourIterativeClusterFit) != 0 ? MaxIterations : 1;
 
         // initialise the metric (old perceptual = 0.2126f, 0.7152f, 0.0722f)
         if (metric.HasValue)
-          _metric = new Vector4F(metric.Value.X, metric.Value.Y, metric.Value.Z, 1.0f);
+          _metric = new Vector4(metric.Value.X, metric.Value.Y, metric.Value.Z, 1.0f);
         else
-          _metric = Vector4F.One;
+          _metric = Vector4.One;
 
         // initialise the best error
-        _besterror = new Vector4F(float.MaxValue);
+        _besterror = new Vector4(float.MaxValue);
 
         // cache some values
         int count = _colours.Count;
@@ -513,13 +513,13 @@ namespace DigitalRune.Graphics.Content
           // copy the ordering and weight all the points
           Vector3[] unweighted = _colours.Points;
           float[] weights = _colours.Weights;
-          _xsum_wsum = new Vector4F(0.0f);
+          _xsum_wsum = new Vector4(0.0f);
           for (int i = 0; i < count; ++i)
           {
             int j = order[i];
-            Vector4F p = new Vector4F(unweighted[j].X, unweighted[j].Y, unweighted[j].Z, 1.0f);
-            Vector4F w = new Vector4F(weights[j]);
-            Vector4F x = p * w;
+            Vector4 p = new Vector4(unweighted[j].X, unweighted[j].Y, unweighted[j].Z, 1.0f);
+            Vector4 w = new Vector4(weights[j]);
+            Vector4 x = p * w;
             _points_weights[i] = x;
             _xsum_wsum += x;
           }
@@ -547,19 +547,19 @@ namespace DigitalRune.Graphics.Content
       {
         // declare variables
         int count = _colours.Count;
-        Vector4F two = new Vector4F(2.0f);
-        Vector4F half_half2 = new Vector4F(0.5f, 0.5f, 0.5f, 0.25f);
-        Vector4F half = new Vector4F(0.5f);
-        Vector4F grid = new Vector4F(31.0f, 63.0f, 31.0f, 0.0f);
-        Vector4F gridrcp = new Vector4F(1.0f / 31.0f, 1.0f / 63.0f, 1.0f / 31.0f, 0.0f);
+        Vector4 two = new Vector4(2.0f);
+        Vector4 half_half2 = new Vector4(0.5f, 0.5f, 0.5f, 0.25f);
+        Vector4 half = new Vector4(0.5f);
+        Vector4 grid = new Vector4(31.0f, 63.0f, 31.0f, 0.0f);
+        Vector4 gridrcp = new Vector4(1.0f / 31.0f, 1.0f / 63.0f, 1.0f / 31.0f, 0.0f);
 
         // prepare an ordering using the principle axis
         ConstructOrdering(_principle, 0);
 
         // check all possible clusters and iterate on the total order
-        Vector4F beststart = new Vector4F(0.0f);
-        Vector4F bestend = new Vector4F(0.0f);
-        Vector4F besterror = _besterror;
+        Vector4 beststart = new Vector4(0.0f);
+        Vector4 bestend = new Vector4(0.0f);
+        Vector4 besterror = _besterror;
         byte* bestindices = stackalloc byte[16];
         int bestiteration = 0;
         int besti = 0, bestj = 0;
@@ -568,47 +568,47 @@ namespace DigitalRune.Graphics.Content
         for (int iterationIndex = 0; ; )
         {
           // first cluster [0,i) is at the start
-          Vector4F part0 = new Vector4F(0.0f);
+          Vector4 part0 = new Vector4(0.0f);
           for (int i = 0; i < count; ++i)
           {
             // second cluster [i,j) is half along
-            Vector4F part1 = (i == 0) ? _points_weights[0] : new Vector4F(0.0f);
+            Vector4 part1 = (i == 0) ? _points_weights[0] : new Vector4(0.0f);
             int jmin = (i == 0) ? 1 : i;
             for (int j = jmin; ; )
             {
               // last cluster [j,count) is at the end
-              Vector4F part2 = _xsum_wsum - part1 - part0;
+              Vector4 part2 = _xsum_wsum - part1 - part0;
 
               // compute least squares terms directly
-              Vector4F alphax_sum = MultiplyAdd(part1, half_half2, part0);
-              Vector4F alpha2_sum = new Vector4F(alphax_sum.W);
+              Vector4 alphax_sum = MultiplyAdd(part1, half_half2, part0);
+              Vector4 alpha2_sum = new Vector4(alphax_sum.W);
 
-              Vector4F betax_sum = MultiplyAdd(part1, half_half2, part2);
-              Vector4F beta2_sum = new Vector4F(betax_sum.W);
+              Vector4 betax_sum = MultiplyAdd(part1, half_half2, part2);
+              Vector4 beta2_sum = new Vector4(betax_sum.W);
 
-              Vector4F alphabeta_sum = new Vector4F((part1 * half_half2).W);
+              Vector4 alphabeta_sum = new Vector4((part1 * half_half2).W);
 
               // compute the least-squares optimal points
-              Vector4F factor =
+              Vector4 factor =
                 Reciprocal(NegativeMultiplySubtract(alphabeta_sum, alphabeta_sum, alpha2_sum * beta2_sum));
-              Vector4F a = NegativeMultiplySubtract(betax_sum, alphabeta_sum, alphax_sum * beta2_sum) * factor;
-              Vector4F b = NegativeMultiplySubtract(alphax_sum, alphabeta_sum, betax_sum * alpha2_sum) * factor;
+              Vector4 a = NegativeMultiplySubtract(betax_sum, alphabeta_sum, alphax_sum * beta2_sum) * factor;
+              Vector4 b = NegativeMultiplySubtract(alphax_sum, alphabeta_sum, betax_sum * alpha2_sum) * factor;
 
               // clamp to the grid
-              a = Vector4F.Clamp(a, 0.0f, 1.0f);
-              b = Vector4F.Clamp(b, 0.0f, 1.0f);
+              a = Vector4.Clamp(a, 0.0f, 1.0f);
+              b = Vector4.Clamp(b, 0.0f, 1.0f);
               a = Truncate(MultiplyAdd(grid, a, half)) * gridrcp;
               b = Truncate(MultiplyAdd(grid, b, half)) * gridrcp;
 
               // compute the error (we skip the constant xxsum)
-              Vector4F e1 = MultiplyAdd(a * a, alpha2_sum, b * b * beta2_sum);
-              Vector4F e2 = NegativeMultiplySubtract(a, alphax_sum, a * b * alphabeta_sum);
-              Vector4F e3 = NegativeMultiplySubtract(b, betax_sum, e2);
-              Vector4F e4 = MultiplyAdd(two, e3, e1);
+              Vector4 e1 = MultiplyAdd(a * a, alpha2_sum, b * b * beta2_sum);
+              Vector4 e2 = NegativeMultiplySubtract(a, alphax_sum, a * b * alphabeta_sum);
+              Vector4 e3 = NegativeMultiplySubtract(b, betax_sum, e2);
+              Vector4 e4 = MultiplyAdd(two, e3, e1);
 
               // apply the metric to the error term
-              Vector4F e5 = e4 * _metric;
-              Vector4F error = new Vector4F(e5.X + e5.Y + e5.Z);
+              Vector4 e5 = e4 * _metric;
+              Vector4 error = new Vector4(e5.X + e5.Y + e5.Z);
 
               // keep the solution if it wins
               if (CompareAnyLessThan(error, besterror))
@@ -679,21 +679,21 @@ namespace DigitalRune.Graphics.Content
       {
         // declare variables
         int count = _colours.Count;
-        Vector4F two = new Vector4F(2.0f);
-        Vector4F onethird_onethird2 = new Vector4F(1.0f / 3.0f, 1.0f / 3.0f, 1.0f / 3.0f, 1.0f / 9.0f);
-        Vector4F twothirds_twothirds2 = new Vector4F(2.0f / 3.0f, 2.0f / 3.0f, 2.0f / 3.0f, 4.0f / 9.0f);
-        Vector4F twonineths = new Vector4F(2.0f / 9.0f);
-        Vector4F half = new Vector4F(0.5f);
-        Vector4F grid = new Vector4F(31.0f, 63.0f, 31.0f, 0.0f);
-        Vector4F gridrcp = new Vector4F(1.0f / 31.0f, 1.0f / 63.0f, 1.0f / 31.0f, 0.0f);
+        Vector4 two = new Vector4(2.0f);
+        Vector4 onethird_onethird2 = new Vector4(1.0f / 3.0f, 1.0f / 3.0f, 1.0f / 3.0f, 1.0f / 9.0f);
+        Vector4 twothirds_twothirds2 = new Vector4(2.0f / 3.0f, 2.0f / 3.0f, 2.0f / 3.0f, 4.0f / 9.0f);
+        Vector4 twonineths = new Vector4(2.0f / 9.0f);
+        Vector4 half = new Vector4(0.5f);
+        Vector4 grid = new Vector4(31.0f, 63.0f, 31.0f, 0.0f);
+        Vector4 gridrcp = new Vector4(1.0f / 31.0f, 1.0f / 63.0f, 1.0f / 31.0f, 0.0f);
 
         // prepare an ordering using the principle axis
         ConstructOrdering(_principle, 0);
 
         // check all possible clusters and iterate on the total order
-        Vector4F beststart = new Vector4F(0.0f);
-        Vector4F bestend = new Vector4F(0.0f);
-        Vector4F besterror = _besterror;
+        Vector4 beststart = new Vector4(0.0f);
+        Vector4 bestend = new Vector4(0.0f);
+        Vector4 besterror = _besterror;
         byte* bestindices = stackalloc byte[16];
         int bestiteration = 0;
         int besti = 0, bestj = 0, bestk = 0;
@@ -702,53 +702,53 @@ namespace DigitalRune.Graphics.Content
         for (int iterationIndex = 0; ; )
         {
           // first cluster [0,i) is at the start
-          Vector4F part0 = new Vector4F(0.0f);
+          Vector4 part0 = new Vector4(0.0f);
           for (int i = 0; i < count; ++i)
           {
             // second cluster [i,j) is one third along
-            Vector4F part1 = new Vector4F(0.0f);
+            Vector4 part1 = new Vector4(0.0f);
             for (int j = i; ; )
             {
               // third cluster [j,k) is two thirds along
-              Vector4F part2 = (j == 0) ? _points_weights[0] : new Vector4F(0.0f);
+              Vector4 part2 = (j == 0) ? _points_weights[0] : new Vector4(0.0f);
               int kmin = (j == 0) ? 1 : j;
               for (int k = kmin; ; )
               {
                 // last cluster [k,count) is at the end
-                Vector4F part3 = _xsum_wsum - part2 - part1 - part0;
+                Vector4 part3 = _xsum_wsum - part2 - part1 - part0;
 
                 // compute least squares terms directly
-                Vector4F alphax_sum = MultiplyAdd(part2, onethird_onethird2,
+                Vector4 alphax_sum = MultiplyAdd(part2, onethird_onethird2,
                   MultiplyAdd(part1, twothirds_twothirds2, part0));
-                Vector4F alpha2_sum = new Vector4F(alphax_sum.W);
+                Vector4 alpha2_sum = new Vector4(alphax_sum.W);
 
-                Vector4F betax_sum = MultiplyAdd(part1, onethird_onethird2,
+                Vector4 betax_sum = MultiplyAdd(part1, onethird_onethird2,
                   MultiplyAdd(part2, twothirds_twothirds2, part3));
-                Vector4F beta2_sum = new Vector4F(betax_sum.W);
+                Vector4 beta2_sum = new Vector4(betax_sum.W);
 
-                Vector4F alphabeta_sum = twonineths * (part1 + part2).W;
+                Vector4 alphabeta_sum = twonineths * (part1 + part2).W;
 
                 // compute the least-squares optimal points
-                Vector4F factor =
+                Vector4 factor =
                   Reciprocal(NegativeMultiplySubtract(alphabeta_sum, alphabeta_sum, alpha2_sum * beta2_sum));
-                Vector4F a = NegativeMultiplySubtract(betax_sum, alphabeta_sum, alphax_sum * beta2_sum) * factor;
-                Vector4F b = NegativeMultiplySubtract(alphax_sum, alphabeta_sum, betax_sum * alpha2_sum) * factor;
+                Vector4 a = NegativeMultiplySubtract(betax_sum, alphabeta_sum, alphax_sum * beta2_sum) * factor;
+                Vector4 b = NegativeMultiplySubtract(alphax_sum, alphabeta_sum, betax_sum * alpha2_sum) * factor;
 
                 // clamp to the grid
-                a = Vector4F.Clamp(a, 0.0f, 1.0f);
-                b = Vector4F.Clamp(b, 0.0f, 1.0f);
+                a = Vector4.Clamp(a, 0.0f, 1.0f);
+                b = Vector4.Clamp(b, 0.0f, 1.0f);
                 a = Truncate(MultiplyAdd(grid, a, half)) * gridrcp;
                 b = Truncate(MultiplyAdd(grid, b, half)) * gridrcp;
 
                 // compute the error (we skip the constant xxsum)
-                Vector4F e1 = MultiplyAdd(a * a, alpha2_sum, b * b * beta2_sum);
-                Vector4F e2 = NegativeMultiplySubtract(a, alphax_sum, a * b * alphabeta_sum);
-                Vector4F e3 = NegativeMultiplySubtract(b, betax_sum, e2);
-                Vector4F e4 = MultiplyAdd(two, e3, e1);
+                Vector4 e1 = MultiplyAdd(a * a, alpha2_sum, b * b * beta2_sum);
+                Vector4 e2 = NegativeMultiplySubtract(a, alphax_sum, a * b * alphabeta_sum);
+                Vector4 e3 = NegativeMultiplySubtract(b, betax_sum, e2);
+                Vector4 e4 = MultiplyAdd(two, e3, e1);
 
                 // apply the metric to the error term
-                Vector4F e5 = e4 * _metric;
-                Vector4F error = new Vector4F(e5.X + e5.Y + e5.Z);
+                Vector4 e5 = e4 * _metric;
+                Vector4 error = new Vector4(e5.X + e5.Y + e5.Z);
 
                 // keep the solution if it wins
                 if (CompareAnyLessThan(error, besterror))
@@ -826,9 +826,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static int FloatTo565(Vector3 colour)
     {
@@ -1000,9 +1000,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Represents a set of block colours.
@@ -1144,38 +1144,38 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
-    private static Vector4F MultiplyAdd(Vector4F a, float b, Vector4F c)
+    private static Vector4 MultiplyAdd(Vector4 a, float b, Vector4 c)
     {
       return a * b + c;
     }
 
 
-    private static Vector4F MultiplyAdd(Vector4F a, Vector4F b, Vector4F c)
+    private static Vector4 MultiplyAdd(Vector4 a, Vector4 b, Vector4 c)
     {
       return a * b + c;
     }
 
 
-    private static Vector4F NegativeMultiplySubtract(Vector4F a, Vector4F b, Vector4F c)
+    private static Vector4 NegativeMultiplySubtract(Vector4 a, Vector4 b, Vector4 c)
     {
       return c - a * b;
     }
 
 
-    private static Vector4F Reciprocal(Vector4F v)
+    private static Vector4 Reciprocal(Vector4 v)
     {
-      return new Vector4F(1.0f / v.X,
+      return new Vector4(1.0f / v.X,
                           1.0f / v.Y,
                           1.0f / v.Z,
                           1.0f / v.W);
     }
 
 
-    private static bool CompareAnyLessThan(Vector4F left, Vector4F right)
+    private static bool CompareAnyLessThan(Vector4 left, Vector4 right)
     {
       return left.X < right.X
              || left.Y < right.Y
@@ -1192,9 +1192,9 @@ namespace DigitalRune.Graphics.Content
     }
 
 
-    private static Vector4F Truncate(Vector4F v)
+    private static Vector4 Truncate(Vector4 v)
     {
-      return new Vector4F((float)Math.Truncate(v.X),
+      return new Vector4((float)Math.Truncate(v.X),
                           (float)Math.Truncate(v.Y),
                           (float)Math.Truncate(v.Z),
                           (float)Math.Truncate(v.W));
@@ -1242,21 +1242,21 @@ namespace DigitalRune.Graphics.Content
 
     private static Vector3 ComputePrincipleComponent(Sym3x3 matrix)
     {
-      Vector4F row0 = new Vector4F(matrix.M0, matrix.M1, matrix.M2, 0.0f);
-      Vector4F row1 = new Vector4F(matrix.M1, matrix.M3, matrix.M4, 0.0f);
-      Vector4F row2 = new Vector4F(matrix.M2, matrix.M4, matrix.M5, 0.0f);
-      Vector4F v = Vector4F.One;
+      Vector4 row0 = new Vector4(matrix.M0, matrix.M1, matrix.M2, 0.0f);
+      Vector4 row1 = new Vector4(matrix.M1, matrix.M3, matrix.M4, 0.0f);
+      Vector4 row2 = new Vector4(matrix.M2, matrix.M4, matrix.M5, 0.0f);
+      Vector4 v = Vector4.One;
 
       const int POWER_ITERATION_COUNT = 8;
       for (int i = 0; i < POWER_ITERATION_COUNT; ++i)
       {
         // matrix multiply
-        Vector4F w = row0 * v.X;
+        Vector4 w = row0 * v.X;
         w = MultiplyAdd(row1, v.Y, w);
         w = MultiplyAdd(row2, v.Z, w);
 
         // get max component from xyz in all channels
-        Vector4F a = new Vector4F(Math.Max(w.X, Math.Max(w.Y, w.Z)));
+        Vector4 a = new Vector4(Math.Max(w.X, Math.Max(w.Y, w.Z)));
 
         // divide through and advance
         v = w / a;
@@ -1267,9 +1267,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private class RangeFit
     {
@@ -1381,7 +1381,7 @@ namespace DigitalRune.Graphics.Content
           int idx = 0;
           for (int j = 0; j < 3; ++j)
           {
-            float d = (_metric * (values[i] - codes[j])).LengthSquared;
+            float d = (_metric * (values[i] - codes[j])).LengthSquared();
             if (d < dist)
             {
               dist = d;
@@ -1435,7 +1435,7 @@ namespace DigitalRune.Graphics.Content
           int idx = 0;
           for (int j = 0; j < 4; ++j)
           {
-            float d = (_metric * (values[i] - codes[j])).LengthSquared;
+            float d = (_metric * (values[i] - codes[j])).LengthSquared();
             if (d < dist)
             {
               dist = d;
@@ -1468,9 +1468,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private struct SourceBlock
     {
@@ -2547,9 +2547,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private class SingleColourFit
     {
@@ -2705,9 +2705,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Provides instances to use per thread. (For thread-safety and to avoid memory allocations.)
     private class Context

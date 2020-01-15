@@ -3,14 +3,14 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System.Collections.Generic;
-using DigitalRune.Geometry.Shapes;
+using MinimalRune.Geometry.Shapes;
 using Microsoft.Xna.Framework.Content;
 
-using DigitalRune.Animation.Character;
+using MinimalRune.Animation.Character;
 
 
 
-namespace DigitalRune.Graphics.Content.Pipeline
+namespace MinimalRune.Graphics.Content.Pipeline
 {
   /// <summary>
   /// Stores the processed data for a <strong>Mesh</strong> asset.

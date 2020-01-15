@@ -11,7 +11,7 @@ using System.Linq;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.PostProcessing
+namespace MinimalRune.Graphics.PostProcessing
 {
   /// <summary>
   /// Chains together a group of post-processors.
@@ -34,9 +34,9 @@ namespace DigitalRune.Graphics.PostProcessing
   [DebuggerTypeProxy(typeof(PostProcessorCollectionView))]
   public class PostProcessorChain : PostProcessor, IList<PostProcessor>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // This view is used as DebuggerTypeProxy. With this, the debugger will display 
     // a readable list of post-processors for the PostProcessorChain.
@@ -57,9 +57,9 @@ namespace DigitalRune.Graphics.PostProcessing
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly List<PostProcessor> _processors;
     private readonly List<PostProcessor> _processorsCopy;
@@ -67,9 +67,9 @@ namespace DigitalRune.Graphics.PostProcessing
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the number of post-processors contained in the post-processor chain.
@@ -141,9 +141,9 @@ namespace DigitalRune.Graphics.PostProcessing
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="PostProcessorChain"/> class.
@@ -162,9 +162,9 @@ namespace DigitalRune.Graphics.PostProcessing
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

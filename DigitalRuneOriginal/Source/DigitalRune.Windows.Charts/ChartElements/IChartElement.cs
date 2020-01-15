@@ -6,7 +6,7 @@ using System;
 using System.Windows;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Represents an chart element.

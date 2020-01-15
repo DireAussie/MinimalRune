@@ -1,13 +1,13 @@
-﻿using DigitalRune.Geometry;
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics.Scene3D;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+﻿using MinimalRune.Geometry;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics.Scene3D;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Graphics.Tests
+namespace MinimalRune.Graphics.Tests
 {
   [TestFixture]
   public class PerspectiveProjectionTest
@@ -35,7 +35,7 @@ namespace DigitalRune.Graphics.Tests
     public void PerspectiveTest()
     {
       Vector3 position = new Vector3(1, 2, 3);
-      Quaternion orientation = Quaternion.CreateRotation(new Vector3(2, 3, 6), 0.123f);
+      Quaternion orientation = Quaternion.CreateFromRotationMatrix(new Vector3(2, 3, 6), 0.123f);
       CameraInstance cameraInstance = new CameraInstance(new Camera(new PerspectiveProjection()))
       {
         PoseLocal = new Pose(position, orientation),
@@ -108,7 +108,7 @@ namespace DigitalRune.Graphics.Tests
     public void PerspectiveOffCenterTest()
     {
       Vector3 position = new Vector3(1, 2, 3);
-      Quaternion orientation = Quaternion.CreateRotation(new Vector3(2, 3, 6), 0.123f);
+      Quaternion orientation = Quaternion.CreateFromRotationMatrix(new Vector3(2, 3, 6), 0.123f);
       CameraInstance cameraInstance = new CameraInstance(new Camera(new PerspectiveProjection()))
       {
         PoseLocal = new Pose(position, orientation),

@@ -5,12 +5,12 @@
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   partial class SceneNode
   {
@@ -25,15 +25,15 @@ namespace DigitalRune.Graphics.SceneGraph
     // we combine scales under the assumption that no shearing occurs.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the axis-aligned bounding box (AABB) in world space.
@@ -366,9 +366,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private void InitializeGeometricObject()
     {
@@ -383,9 +383,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Invalidates this scene node and all children.

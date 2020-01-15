@@ -35,7 +35,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 
 
-namespace DigitalRune
+namespace MinimalRune
 {
   /// <summary>
   /// Represents subscription of a weak event handler to an event. (Can be used to detach the event 

@@ -8,7 +8,7 @@ using System;
 using System.IO;
 
 
-namespace DigitalRune.Storages
+namespace MinimalRune.Storages
 {
   /// <summary>
   /// Specifies how the storage should open a file.

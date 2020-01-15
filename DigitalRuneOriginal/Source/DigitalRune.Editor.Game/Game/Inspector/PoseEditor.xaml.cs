@@ -4,12 +4,12 @@
 
 using System;
 using System.Windows;
-using DigitalRune.Geometry;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Windows;
+using MinimalRune.Geometry;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Windows;
 
 
-namespace DigitalRune.Editor.Game
+namespace MinimalRune.Editor.Game
 {
     /// <summary>
     /// Represents a control that allows to edit a pose (position + orientation).
@@ -22,24 +22,24 @@ namespace DigitalRune.Editor.Game
     {
         // See Vector3Editor for more code comments.
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private bool _isUpdating;
         private Type _valueType;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         public static readonly DependencyProperty IsReadOnlyProperty = DependencyProperty.Register(
             "IsReadOnly",
@@ -227,9 +227,9 @@ namespace DigitalRune.Editor.Game
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         public PoseEditor()
         {
@@ -238,9 +238,9 @@ namespace DigitalRune.Editor.Game
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static void OnIsReadOnlyChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
         {

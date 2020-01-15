@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Represents a scene node which renders data to a texture (e.g. a scene capture, an environment
@@ -24,15 +24,15 @@ namespace DigitalRune.Graphics.SceneGraph
   /// <seealso cref="Graphics.RenderToTexture"/>
   public abstract class RenderToTextureNode : SceneNode
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the render-to-texture target.
@@ -56,9 +56,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="RenderToTextureNode" /> class.
@@ -94,9 +94,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
   }
 }

@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-namespace DigitalRune.Text
+namespace MinimalRune.Text
 {
   /// <summary>
   /// The <see cref="N:DigitalRune.Text"/> namespace provides additional types and methods character

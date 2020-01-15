@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-namespace DigitalRune.Mathematics.Statistics
+namespace MinimalRune.Mathematics.Statistics
 {
   /// <summary>
   /// The <see cref="N:DigitalRune.Mathematics.Statistics"/> namespace types for statistics.

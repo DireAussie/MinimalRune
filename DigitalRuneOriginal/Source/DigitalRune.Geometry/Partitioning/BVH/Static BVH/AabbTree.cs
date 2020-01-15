@@ -4,11 +4,11 @@
 
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Collections;
-using DigitalRune.Geometry.Shapes;
+using MinimalRune.Collections;
+using MinimalRune.Geometry.Shapes;
 
 
-namespace DigitalRune.Geometry.Partitioning
+namespace MinimalRune.Geometry.Partitioning
 {
   /// <summary>
   /// Represents a bounding volume tree using axis-aligned bounding boxes (AABBs).
@@ -47,9 +47,9 @@ namespace DigitalRune.Geometry.Partitioning
     // properties instead of fields, ...)
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     internal static readonly ResourcePool<FastStack<AabbTree<T>.Node>> Stacks =
       new ResourcePool<FastStack<AabbTree<T>.Node>>(
@@ -73,21 +73,21 @@ namespace DigitalRune.Geometry.Partitioning
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
-
-
-
-    //--------------------------------------------------------------
-
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
+
+
+
+    
+
+    
 
 
 

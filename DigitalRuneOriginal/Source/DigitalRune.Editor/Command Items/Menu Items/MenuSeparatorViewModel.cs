@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// Represents a separator in a menu.

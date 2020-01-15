@@ -4,11 +4,11 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry.Collisions.Algorithms
+namespace MinimalRune.Geometry.Collisions.Algorithms
 {
   internal static partial class CcdHelper
   {
@@ -54,7 +54,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
 
       // qEnd = ∆q * qStart 
       // => ∆q = qEnd * qStart.Inverse
-      Quaternion qA = Quaternion.CreateRotation(targetPoseA.Orientation * startPoseA.Orientation.Transposed);
+      Quaternion qA = Quaternion.CreateFromRotationMatrix(targetPoseA.Orientation * startPoseA.Orientation.Transposed);
 
       // ω = ∆α / ∆t, ∆t = 1
       // => ω = ∆α
@@ -63,7 +63,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
 
       // Get angular velocity ω of object B (as magnitude + rotation axis).
       // (Same as above.)
-      Quaternion qB = Quaternion.CreateRotation(targetPoseB.Orientation * startPoseB.Orientation.Transposed);
+      Quaternion qB = Quaternion.CreateFromRotationMatrix(targetPoseB.Orientation * startPoseB.Orientation.Transposed);
       float ωB = qB.Angle;                                                        // Magnitude |ω|
       Vector3 ωAxisB = (!Numeric.AreEqual(qB.W, 1)) ? qB.Axis : Vector3.UnitX;  // Rotation axis of ω
 

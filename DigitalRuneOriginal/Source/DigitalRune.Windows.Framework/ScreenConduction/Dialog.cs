@@ -5,7 +5,7 @@
 using System.Windows;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Base implementation of a screen which represents a dialog box.

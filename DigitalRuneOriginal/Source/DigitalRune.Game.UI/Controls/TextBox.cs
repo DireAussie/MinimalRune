@@ -5,9 +5,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
-using DigitalRune.Game.Input;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Game.Input;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 
 using Keys = Microsoft.Xna.Framework.Input.Keys;
@@ -26,7 +26,7 @@ using Microsoft.Xna.Framework.Input;
 
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   /// <summary>
   /// Represents a control that can be used to display or edit unformatted text.
@@ -45,7 +45,7 @@ namespace DigitalRune.Game.UI.Controls
   /// // Create a multi-line text box.
   /// var textBox = new TextBox
   /// {
-  ///   Margin = new Vector4F(4),
+  ///   Margin = new Vector4(4),
   ///   Text = "Lorem ipsum dolor sit ...",
   ///   MaxLines = 5,   // Show max 5 lines of text.
   ///   HorizontalAlignment = HorizontalAlignment.Stretch,
@@ -71,9 +71,9 @@ namespace DigitalRune.Game.UI.Controls
   /// </example>
   public partial class TextBox : UIControl
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // For platforms which do not have an OS clipboard mechanism:
     // Create a clipboard replacement which is shared by all text boxes and the console.
@@ -109,9 +109,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the position of the caret.
@@ -197,9 +197,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary> 
     /// The ID of the <see cref="Text"/> game object property.
@@ -494,9 +494,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes static members of the <see cref="TextBox"/> class.
@@ -533,9 +533,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override void OnLoad()
@@ -619,7 +619,7 @@ namespace DigitalRune.Game.UI.Controls
         {
           if (inputService.IsDoubleClick(MouseButtons.Left)
               && !_mouseDownPosition.IsNaN
-              && (_mouseDownPosition - context.MousePosition).LengthSquared < MinDragDistanceSquared)
+              && (_mouseDownPosition - context.MousePosition).LengthSquared() < MinDragDistanceSquared)
           {
             // Double-click with left mouse button --> Select word or white-space.
             inputService.IsMouseOrTouchHandled = true;
@@ -735,7 +735,7 @@ namespace DigitalRune.Game.UI.Controls
           // Only update the caret position if the mouse has moved.
           // (This check is necessary because we don't want to clear a selection
           // created by a double-click.)
-          if ((_mouseDownPosition - context.MousePosition).LengthSquared > MinDragDistanceSquared)
+          if ((_mouseDownPosition - context.MousePosition).LengthSquared() > MinDragDistanceSquared)
           {
             // Update the caret index (= end of selection).
             CaretIndex = GetIndex(context.MousePosition, screen);

@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Media;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     internal class DockTabItemProxy : IDockTabItem
     {

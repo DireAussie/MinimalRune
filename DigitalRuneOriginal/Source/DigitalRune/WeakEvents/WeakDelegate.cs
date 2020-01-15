@@ -91,7 +91,7 @@ using System;
 using System.Reflection;
 
 
-namespace DigitalRune
+namespace MinimalRune
 {
   /// <summary>
   /// Represents a <see cref="Delegate"/> that stores the target object as a weak reference.
@@ -107,17 +107,17 @@ namespace DigitalRune
     // Note: The implementation in PRISM (see DelegateReference) has an option to keep the target 
     // alive.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private InternalWeakDelegate _internalWeakDelegate;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the weak reference of the target object.
@@ -194,9 +194,9 @@ namespace DigitalRune
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="WeakDelegate"/> class.
@@ -214,9 +214,9 @@ namespace DigitalRune
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Invokes the stored <see cref="System.Delegate"/> with the given arguments.

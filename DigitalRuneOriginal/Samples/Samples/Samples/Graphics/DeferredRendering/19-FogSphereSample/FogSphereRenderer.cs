@@ -1,10 +1,10 @@
 ﻿
 using System;
 using System.Collections.Generic;
-using DigitalRune.Geometry;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.Rendering;
-using DigitalRune.Graphics.SceneGraph;
+using MinimalRune.Geometry;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.Rendering;
+using MinimalRune.Graphics.SceneGraph;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -22,9 +22,9 @@ namespace Samples.Graphics
   /// </remarks>
   public class FogSphereRenderer : SceneNodeRenderer
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly Effect _effect;
     private readonly EffectParameter _parameterViewportSize;
@@ -45,15 +45,15 @@ namespace Samples.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="FogSphereRenderer"/> class.
@@ -102,9 +102,9 @@ namespace Samples.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override bool CanRender(SceneNode node, RenderContext context)

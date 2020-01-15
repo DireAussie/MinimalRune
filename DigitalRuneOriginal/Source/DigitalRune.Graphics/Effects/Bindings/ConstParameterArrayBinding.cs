@@ -7,7 +7,7 @@ using System.Diagnostics;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Effects
+namespace MinimalRune.Graphics.Effects
 {
   /// <summary>
   /// Binds an effect parameter to an array of values.
@@ -18,15 +18,15 @@ namespace DigitalRune.Graphics.Effects
   [DebuggerDisplay("{GetType().Name,nq}(Parameter = {Parameter.Name}, Value = {Values})")]
   public class ConstParameterArrayBinding<T> : EffectParameterArrayBinding<T>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the values of the effect parameter.
@@ -41,9 +41,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -88,9 +88,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

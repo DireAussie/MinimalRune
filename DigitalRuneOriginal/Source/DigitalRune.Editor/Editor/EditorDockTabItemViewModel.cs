@@ -5,29 +5,29 @@
 using System;
 using System.ComponentModel;
 using System.Windows;
-using DigitalRune.Windows.Docking;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Windows.Docking;
+using MinimalRune.Windows.Framework;
 using NLog;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// Represents a dockable window in the editor layout.
     /// </summary>
     public abstract class EditorDockTabItemViewModel : Screen, IDockTabItem
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
@@ -182,15 +182,15 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0")]

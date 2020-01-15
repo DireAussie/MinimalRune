@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// The exception that is raised for charts-specific errors.

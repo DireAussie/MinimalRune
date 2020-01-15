@@ -4,7 +4,7 @@
 
 
 
-namespace DigitalRune.Mathematics.Algebra.Design
+namespace MinimalRune.Mathematics.Algebra.Design
 {
   /// <summary>
   /// The <see cref="N:DigitalRune.Mathematics.Algebra.Design"/> namespace provides type conversion

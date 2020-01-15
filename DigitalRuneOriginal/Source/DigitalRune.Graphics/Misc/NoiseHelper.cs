@@ -5,13 +5,13 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using DigitalRune.Mathematics.Statistics;
+using MinimalRune.Mathematics.Statistics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Graphics.PackedVector;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Contains helper method for the Noise shaders.
@@ -29,9 +29,9 @@ namespace DigitalRune.Graphics
     // - Quick Noise, ShaderX7 is faster but needs more texture memory, and could 
     //   have texture filter artifacts at low frequencies.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Contains a list of all noise texture for one graphics device.
     private class NoiseTextures : IDisposable
@@ -87,9 +87,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The width of the default jitter map in texels. 
@@ -128,27 +128,27 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
-
-
-
-    //--------------------------------------------------------------
-
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
+
+
+
+    
+
+    
 
     /// <summary>
     /// Gets the noise textures from <see cref="IGraphicsService.Data"/>. If necessary a new entry 

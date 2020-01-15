@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.PostProcessing
+namespace MinimalRune.Graphics.PostProcessing
 {
   /// <summary>
   /// Applies <i>Fast Approximate Anti-Aliasing</i> (FXAA).
@@ -22,9 +22,9 @@ namespace DigitalRune.Graphics.PostProcessing
   [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
   public class FxaaFilter : PostProcessor
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly Effect _effect;
     private readonly EffectParameter _viewportSizeParameter;
@@ -34,9 +34,9 @@ namespace DigitalRune.Graphics.PostProcessing
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets a value indicating whether the luminance should be computed
@@ -51,9 +51,9 @@ namespace DigitalRune.Graphics.PostProcessing
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="FxaaFilter"/> class.
@@ -76,9 +76,9 @@ namespace DigitalRune.Graphics.PostProcessing
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods")]

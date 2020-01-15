@@ -2,11 +2,11 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Physics.Constraints
+namespace MinimalRune.Physics.Constraints
 {
   /// <summary>
   /// Wraps a 1-dimensional constraint (a row in the constraint solver matrix).

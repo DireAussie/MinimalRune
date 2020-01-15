@@ -4,16 +4,16 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Creates the shadow map of a <see cref="CascadedShadow"/>.
@@ -21,9 +21,9 @@ namespace DigitalRune.Graphics.Rendering
   /// <inheritdoc cref="ShadowMapRenderer"/>
   internal class CascadedShadowMapRenderer : SceneNodeRenderer, IShadowMapRenderer
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // A cached array which is reused in GetBoundingSphere().
     private readonly Vector3[] _frustumCorners = new Vector3[8];
@@ -36,9 +36,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public Func<RenderContext, bool> RenderCallback
@@ -56,9 +56,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="CascadedShadowMapRenderer"/> class.
@@ -79,9 +79,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override bool CanRender(SceneNode node, RenderContext context)

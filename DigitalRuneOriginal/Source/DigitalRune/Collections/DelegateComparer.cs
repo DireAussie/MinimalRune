@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace DigitalRune.Collections
+namespace MinimalRune.Collections
 {
   /// <summary>
   /// Compares two items using a user-defined <see cref="Comparison{T}"/> delegate. (Note: In .NET

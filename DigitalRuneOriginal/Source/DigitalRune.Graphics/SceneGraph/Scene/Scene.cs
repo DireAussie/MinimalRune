@@ -6,17 +6,17 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
-using DigitalRune.Collections;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Geometry.Partitioning;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Threading;
+using MinimalRune.Collections;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Geometry.Partitioning;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Threading;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Manages a scene of 3D objects represented by scene nodes (a.k.a the "scene graph"). 
@@ -135,9 +135,9 @@ namespace DigitalRune.Graphics.SceneGraph
     //      HaveContact() does not return any contacts.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private class NullFilter : IPairFilter<SceneNode>
     {
@@ -166,9 +166,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // The collision object filter of the collision domain. This filter is never
     // exchanged. Only the contained IPairFilter<SceneNode> can be exchanged.
@@ -191,9 +191,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets a filter which is used in <see cref="Query{T}"/>.
@@ -262,9 +262,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Scene"/> class.
@@ -311,9 +311,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

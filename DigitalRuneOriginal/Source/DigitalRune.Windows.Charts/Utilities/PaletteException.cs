@@ -9,7 +9,7 @@ using System.Runtime.Serialization;
 
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// The exception is thrown by <see cref="Palette"/> when a operation fails.

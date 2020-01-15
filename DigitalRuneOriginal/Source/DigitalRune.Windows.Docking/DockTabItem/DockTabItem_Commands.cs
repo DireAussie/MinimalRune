@@ -5,7 +5,7 @@
 using System.Windows.Input;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     partial class DockTabItem
     {

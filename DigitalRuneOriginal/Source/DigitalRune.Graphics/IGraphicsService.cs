@@ -4,13 +4,13 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Graphics.Effects;
+using MinimalRune.Graphics.Effects;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 using System.Windows.Forms;
 
-using DigitalRune.Graphics.Interop;
+using MinimalRune.Graphics.Interop;
 using Microsoft.Xna.Framework;
 
 
@@ -18,7 +18,7 @@ using Microsoft.Xna.Framework;
 
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Manages graphics-related objects, like graphics screens and presentation targets, and graphics

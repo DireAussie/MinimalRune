@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune
+namespace MinimalRune
 {
   /// <summary>
   /// Represents an object that supports resource pooling and can be recycled.

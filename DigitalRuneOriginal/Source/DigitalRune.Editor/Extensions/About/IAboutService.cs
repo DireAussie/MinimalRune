@@ -5,10 +5,10 @@
 using System.Collections.Generic;
 using System.Windows.Controls;
 using System.Windows.Media;
-using DigitalRune.Windows.Controls;
+using MinimalRune.Windows.Controls;
 
 
-namespace DigitalRune.Editor.About
+namespace MinimalRune.Editor.About
 {
     /// <summary>
     /// Shows and controls the content of the About dialog.

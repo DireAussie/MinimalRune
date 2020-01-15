@@ -1,12 +1,12 @@
 ﻿
-using DigitalRune.Game;
-using DigitalRune.Graphics.Effects;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Statistics;
+using MinimalRune.Game;
+using MinimalRune.Graphics.Effects;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Statistics;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Xna.Framework;
 using System;
@@ -193,7 +193,7 @@ namespace Samples.Graphics
                                               0,
                                               zOrigin + z * _cellSize + random.NextFloat(0, _cellSize)),
                                  Matrix.CreateRotationY(random.NextFloat(0, 10)));
-            Vector4F color = new Vector4F(1);
+            Vector4 color = new Vector4(1);
 
             instances[i] = new InstanceData(scale, pose, color);
           }

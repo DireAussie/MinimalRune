@@ -7,14 +7,14 @@ using System.Collections.Generic;
 
 using System.Collections.ObjectModel;
 #else
-using DigitalRune.Collections.ObjectModel;
+using MinimalRune.Collections.ObjectModel;
 
 using System.Diagnostics;
 using System.Linq;
-using DigitalRune.Animation.Traits;
+using MinimalRune.Animation.Traits;
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Manages a collection of animations that are combined and applied to a certain property.
@@ -27,9 +27,9 @@ namespace DigitalRune.Animation
   /// </remarks>
   internal sealed class AnimationCompositionChain<T> : Collection<AnimationInstance<T>>, IAnimationCompositionChain, IRecyclable
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // ReSharper disable StaticFieldInGenericType
     private static readonly ResourcePool<AnimationCompositionChain<T>> Pool =
@@ -54,9 +54,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public bool IsEmpty
@@ -90,9 +90,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Prevents a default instance of the <see cref="AnimationCompositionChain{T}"/> class from 
@@ -167,9 +167,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public void Update(AnimationManager animationManager)
@@ -382,9 +382,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns an enumerator that iterates through the <see cref="AnimationCompositionChain{T}"/>. 
@@ -399,9 +399,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns an enumerator that iterates through the collection.

@@ -4,10 +4,10 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Represents an entry in the <see cref="LodCollection"/>.

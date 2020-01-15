@@ -13,20 +13,20 @@ using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Threading;
-using DigitalRune.Editor.Search;
-using DigitalRune.Editor.Themes;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Editor.Search;
+using MinimalRune.Editor.Themes;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Framework;
 using ICSharpCode.AvalonEdit.Document;
 
 
-namespace DigitalRune.Editor.Text
+namespace MinimalRune.Editor.Text
 {
     partial class TextDocument
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private IDisposable _searchUpdateSubscription;
         private TextSegmentCollection<SearchResult> _searchResults;
@@ -38,9 +38,9 @@ namespace DigitalRune.Editor.Text
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private void InitializeSearch()
         {
@@ -102,9 +102,9 @@ namespace DigitalRune.Editor.Text
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private void OnThemeMessage(ThemeMessage message)
         {

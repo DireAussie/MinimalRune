@@ -1,5 +1,5 @@
 ﻿
-using DigitalRune.Graphics.PostProcessing;
+using MinimalRune.Graphics.PostProcessing;
 
 
 namespace Samples.Graphics

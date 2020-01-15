@@ -4,27 +4,27 @@
 
 using System.ComponentModel.DataAnnotations;
 using System.IO;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Windows.Framework;
 
 
-namespace DigitalRune.Editor.Layout
+namespace MinimalRune.Editor.Layout
 {
     /// <summary>
     /// Represents the "Save Layout" dialog.
     /// </summary>
     internal class SaveLayoutViewModel : Dialog
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private const string InvalidCharactersErrorMessage = "The layout name must be a valid file name. Remove any invalid characters.";
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets the name of the layout.
@@ -65,9 +65,9 @@ namespace DigitalRune.Editor.Layout
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SaveLayoutViewModel"/> class.
@@ -80,9 +80,9 @@ namespace DigitalRune.Editor.Layout
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private bool CanOk()
         {

@@ -4,11 +4,11 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Collections;
-using DigitalRune.Game.UI.Controls;
+using MinimalRune.Collections;
+using MinimalRune.Game.UI.Controls;
 
 
-namespace DigitalRune.Game.UI
+namespace MinimalRune.Game.UI
 {
   /// <summary>
   /// Represents a collection of <see cref="UIScreen"/>.
@@ -20,26 +20,26 @@ namespace DigitalRune.Game.UI
     // - Sets item.UIService.
     // - Sets IsDirty when the collection was changed.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly UIManager _uiManager;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // This flag is set when the collection was modified. It is reset by the UIManager.
     internal bool IsDirty { get; set; }
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="UIScreenCollection"/> class.
@@ -53,9 +53,9 @@ namespace DigitalRune.Game.UI
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Removes all elements from the <see cref="UIScreenCollection"/>. 

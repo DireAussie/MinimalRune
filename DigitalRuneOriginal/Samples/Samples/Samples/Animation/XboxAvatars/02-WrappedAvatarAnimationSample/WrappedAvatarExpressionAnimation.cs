@@ -1,7 +1,7 @@
 ﻿
 using System;
-using DigitalRune.Animation;
-using DigitalRune.Animation.Traits;
+using MinimalRune.Animation;
+using MinimalRune.Animation.Traits;
 using Microsoft.Xna.Framework.GamerServices;
 
 

@@ -6,7 +6,7 @@ using System;
 using System.Windows.Input;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// Defines an item that invokes a <see cref="RoutedCommand"/>.

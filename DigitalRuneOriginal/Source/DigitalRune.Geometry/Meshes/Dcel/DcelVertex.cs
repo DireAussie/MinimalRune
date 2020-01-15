@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System.Diagnostics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry.Meshes
+namespace MinimalRune.Geometry.Meshes
 {
   /// <summary>
   /// Vertex data structure for a Doubly-Connected Edge List (DCEL).

@@ -9,7 +9,7 @@ using System.Threading;
 
 
 
-namespace DigitalRune.Threading.Tests
+namespace MinimalRune.Threading.Tests
 {
   [TestFixture]
   public class ParallelTest

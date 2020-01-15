@@ -18,7 +18,7 @@ using System;
 using System.Globalization;
 using System.IO;
 
-namespace DigitalRune.Ionic.Zip
+namespace MinimalRune.Ionic.Zip
 {
     /// <summary>
     /// Collects general purpose utility methods.

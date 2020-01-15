@@ -5,14 +5,14 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics.Settings;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics.Settings;
 
 
-namespace DigitalRune.Physics.Specialized
+namespace MinimalRune.Physics.Specialized
 {
   public partial class KinematicCharacterController
   {
@@ -24,9 +24,9 @@ namespace DigitalRune.Physics.Specialized
     // to boundary planes of the allowed move space.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private struct CCContact
     {
@@ -37,9 +37,9 @@ namespace DigitalRune.Physics.Specialized
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Contacts at the bottom cap of the capsule are considered "opposite" if the angle between the
@@ -52,9 +52,9 @@ namespace DigitalRune.Physics.Specialized
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Result of CollectObstacles(). In each ContactSet the CC is the first object.
     private readonly List<ContactSet> _obstacles = new List<ContactSet>();
@@ -76,9 +76,9 @@ namespace DigitalRune.Physics.Specialized
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private float AllowedPenetration
     {
@@ -189,9 +189,9 @@ namespace DigitalRune.Physics.Specialized
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Stores a copy of the contacts.

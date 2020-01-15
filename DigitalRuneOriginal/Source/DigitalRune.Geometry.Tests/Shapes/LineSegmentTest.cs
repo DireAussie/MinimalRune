@@ -1,9 +1,9 @@
 using System;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Geometry.Shapes.Tests
+namespace MinimalRune.Geometry.Shapes.Tests
 {
   [TestFixture]
   public class LineSegmentTest
@@ -59,7 +59,7 @@ namespace DigitalRune.Geometry.Shapes.Tests
     [Test]
     public void LengthSquaredTest()
     {
-      Assert.AreEqual(4, new LineSegment(new Vector3(1, 2, 3), new Vector3(3, 2, 3)).LengthSquared);
+      Assert.AreEqual(4, new LineSegment(new Vector3(1, 2, 3), new Vector3(3, 2, 3)).LengthSquared());
     }
 
 

@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 
 
-namespace DigitalRune.Collections
+namespace MinimalRune.Collections
 {
   /// <summary>
   /// Helper class which can be used with the <see cref="DebuggerTypeProxyAttribute"/>.

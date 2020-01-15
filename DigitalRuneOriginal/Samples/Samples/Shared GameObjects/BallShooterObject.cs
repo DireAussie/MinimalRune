@@ -1,10 +1,10 @@
 ﻿using System;
-using DigitalRune.Game;
-using DigitalRune.Game.Input;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics;
+using MinimalRune.Game;
+using MinimalRune.Game.Input;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Xna.Framework.Input;
 

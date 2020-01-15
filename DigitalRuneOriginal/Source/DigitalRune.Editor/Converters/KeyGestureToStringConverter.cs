@@ -9,7 +9,7 @@ using System.Windows.Data;
 using System.Windows.Input;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// Converts an <see cref="KeyGesture"/> to a string that represents the key gesture that

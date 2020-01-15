@@ -4,16 +4,16 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Geometry.Shapes;
+using MinimalRune.Geometry.Shapes;
 
 
-using DigitalRune.Collections;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Collections;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
 
-namespace DigitalRune.Geometry.Partitioning
+namespace MinimalRune.Geometry.Partitioning
 {
   public partial class AabbTree<T>
   {

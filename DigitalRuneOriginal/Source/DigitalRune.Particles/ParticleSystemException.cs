@@ -6,7 +6,7 @@ using System;
 //using System.Runtime.Serialization;
 
 
-namespace DigitalRune.Particles
+namespace MinimalRune.Particles
 {
 
   /// <summary>

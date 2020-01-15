@@ -5,10 +5,10 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Media.Imaging;
-using DigitalRune.Windows.Themes;
+using MinimalRune.Windows.Themes;
 
 
-namespace DigitalRune.Editor.About
+namespace MinimalRune.Editor.About
 {
     internal class DesignTimeAboutService : IAboutService
     {

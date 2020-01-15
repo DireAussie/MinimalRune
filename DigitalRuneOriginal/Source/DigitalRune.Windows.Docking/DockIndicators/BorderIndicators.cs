@@ -5,7 +5,7 @@
 using System.Windows;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     /// <summary>
     /// Appears over the <see cref="DockControl"/> when a <see cref="DockTabItem"/> is dragged and

@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Windows;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Enumerates a list and converts from type <see cref="Point"/> to <see cref="DataPoint"/>.

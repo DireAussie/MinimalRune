@@ -4,10 +4,10 @@
 
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Manages a collection of scene nodes as the children of another scene node.
@@ -16,15 +16,15 @@ namespace DigitalRune.Graphics.SceneGraph
     : ChildCollection<SceneNode, SceneNode>,
       ICollection<SceneNode>  // The interface is necessary for the VS class diagrams!
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets (or sets) the parent which owns this child collection.
@@ -40,9 +40,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -71,9 +71,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods")]

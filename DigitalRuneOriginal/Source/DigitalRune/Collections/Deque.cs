@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Threading;
 
 
-namespace DigitalRune.Collections
+namespace MinimalRune.Collections
 {
   /// <summary>
   /// Represents a double-ended queue (deque) of objects. 
@@ -33,9 +33,9 @@ namespace DigitalRune.Collections
   [DebuggerTypeProxy(typeof(CollectionDebugView<>))]
   public class Deque<T> : IList<T>, ICollection
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Enumerates the elements of a <see cref="Deque{T}"/>. 
@@ -162,9 +162,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // ReSharper disable StaticFieldInGenericType
     private static readonly T[] EmptyArray = new T[0];
@@ -180,9 +180,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the number of items contained in the <see cref="Deque{T}"/>.
@@ -338,9 +338,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Deque{T}"/> class that is empty and has the
@@ -397,9 +397,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Adds an item to the <see cref="ICollection{T}"/>.

@@ -8,11 +8,11 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Media;
-using DigitalRune.Linq;
-using DigitalRune.Mathematics;
+using MinimalRune.Linq;
+using MinimalRune.Mathematics;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
     /// Represents an adorner that has max one <see cref="UIElement"/> as its logical/visual child.
@@ -33,15 +33,15 @@ namespace DigitalRune.Windows
         // Note: The SingleChildAdorner is similar to a Popup in Silverlight.
         // (Silverlight Popups are more like adorners with a single child than WPF Popups.)
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets the child element.
@@ -136,15 +136,15 @@ namespace DigitalRune.Windows
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <overloads>
         /// <summary>
@@ -179,9 +179,9 @@ namespace DigitalRune.Windows
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Returns a <see cref="Transform"/> for the adorner, based on the transform that is

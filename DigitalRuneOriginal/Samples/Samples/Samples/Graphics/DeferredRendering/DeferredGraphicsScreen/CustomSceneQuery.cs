@@ -1,8 +1,8 @@
 ﻿
 using System.Collections.Generic;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics;
 
 namespace Samples
 {

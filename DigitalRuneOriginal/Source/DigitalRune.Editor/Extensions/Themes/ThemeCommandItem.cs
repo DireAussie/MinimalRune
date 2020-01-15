@@ -4,21 +4,21 @@
 
 using System;
 using System.Windows.Input;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Framework;
 using static System.FormattableString;
 
 
-namespace DigitalRune.Editor.Themes
+namespace MinimalRune.Editor.Themes
 {
     /// <summary>
     /// Creates a menu or toolbar item for switching the UI theme.
     /// </summary>
     internal class ThemeCommandItem : ObservableObject, ICommandItem
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly ThemeExtension _themeExtension;
         private MenuItemViewModel _menuItemViewModel;
@@ -26,9 +26,9 @@ namespace DigitalRune.Editor.Themes
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public string Name
@@ -93,9 +93,9 @@ namespace DigitalRune.Editor.Themes
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ThemeCommandItem"/> class.
@@ -115,9 +115,9 @@ namespace DigitalRune.Editor.Themes
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public MenuItemViewModel CreateMenuItem()

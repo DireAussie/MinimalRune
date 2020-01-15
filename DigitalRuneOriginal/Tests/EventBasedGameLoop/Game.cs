@@ -2,7 +2,7 @@ using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using DigitalRune.Game.Timing;
+using MinimalRune.Game.Timing;
 
 
 namespace Game

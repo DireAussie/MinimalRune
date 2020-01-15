@@ -5,10 +5,10 @@
 //using System;
 //using System.Globalization;
 //using System.Windows.Data;
-//using DigitalRune.Windows.Themes;
+//using MinimalRune.Windows.Themes;
 
 
-//namespace DigitalRune.Editor.Errors
+//namespace MinimalRune.Editor.Errors
 //{
 //    /// <summary>
 //    /// Converts an <see cref="ErrorType"/> to an icon source.

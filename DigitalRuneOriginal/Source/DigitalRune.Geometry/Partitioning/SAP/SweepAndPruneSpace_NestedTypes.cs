@@ -5,18 +5,18 @@
 
 using System.Collections.ObjectModel;
 #else
-using DigitalRune.Collections.ObjectModel;
+using MinimalRune.Collections.ObjectModel;
 
-using DigitalRune.Geometry.Shapes;
+using MinimalRune.Geometry.Shapes;
 
 
-namespace DigitalRune.Geometry.Partitioning
+namespace MinimalRune.Geometry.Partitioning
 {
   public partial class SweepAndPruneSpace<T>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Represents a minimum or maximum AABB edge of an item for one axis (X, Y or Z).

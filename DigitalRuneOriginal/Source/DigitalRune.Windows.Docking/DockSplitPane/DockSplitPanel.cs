@@ -8,10 +8,10 @@ using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     /// <summary>
     /// Represents a <see cref="Panel"/> that arranges its children horizontally or vertically.
@@ -24,9 +24,9 @@ namespace DigitalRune.Windows.Docking
         // Example: Orientation = Horizontal --> Width = Primary Size, Height = Secondary Size
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         double[] _minSizes;
         private double[] _finalSizes;
@@ -35,9 +35,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets the final arrange sizes of the child elements.
@@ -49,9 +49,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc cref="DockSplitPane.Orientation"/>
         public static readonly DependencyProperty OrientationProperty = DockSplitPane.OrientationProperty.AddOwner(
@@ -119,9 +119,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes the static members of the <see cref="DockSplitPanel"/> class.
@@ -133,9 +133,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// When overridden in a derived class, measures the size in layout required for child elements 

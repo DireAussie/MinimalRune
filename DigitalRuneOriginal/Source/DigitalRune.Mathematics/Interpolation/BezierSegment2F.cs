@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System.Collections.Generic;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Mathematics.Interpolation
+namespace MinimalRune.Mathematics.Interpolation
 {
   /// <summary>
   /// Defines a single segment of a 2-dimensional cubic Bézier splines (single-precision).
@@ -147,9 +147,9 @@ namespace DigitalRune.Mathematics.Interpolation
     }
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static readonly ResourcePool<BezierSegment2F> Pool = new ResourcePool<BezierSegment2F>(
        () => new BezierSegment2F(),                   // Create

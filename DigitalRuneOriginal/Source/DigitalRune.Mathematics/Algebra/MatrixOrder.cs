@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-namespace DigitalRune.Mathematics.Algebra
+namespace MinimalRune.Mathematics.Algebra
 {
   /// <summary>
   /// The matrix order defines in which order the matrix elements would be stored in a 1D array.

@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Graphics.Content
+namespace MinimalRune.Graphics.Content
 {
   /// <summary>
   /// Describes a texture resource.

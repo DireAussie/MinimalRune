@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     /// <summary>
     /// The exception that is thrown when a general error in the docking library occurs.

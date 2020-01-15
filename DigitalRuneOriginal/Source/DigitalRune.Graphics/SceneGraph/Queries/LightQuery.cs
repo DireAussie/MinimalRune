@@ -6,14 +6,14 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Returns the lights that affect a specific scene node.
@@ -34,9 +34,9 @@ namespace DigitalRune.Graphics.SceneGraph
   /// </remarks>
   public class LightQuery : ISceneQuery
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Reference position for calculating light contribution.
     private Vector3? _referencePosition;
@@ -51,9 +51,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public SceneNode ReferenceNode { get; private set; }
@@ -117,9 +117,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="LightQuery"/> class.
@@ -138,9 +138,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public void Reset()
@@ -240,7 +240,7 @@ namespace DigitalRune.Graphics.SceneGraph
 
       // Or simpler: Sort light nodes by distance. --> Use for image-based lights.
       // (We use distance², because it is faster.)
-      //float distance = (position - lightNode.PoseWorld.Position).LengthSquared; 
+      //float distance = (position - lightNode.PoseWorld.Position).LengthSquared(); 
       //lightNode.SortTag = -distance;   // minus because we use descending sort.
       
       if (lightNode.Light is AmbientLight)
@@ -271,7 +271,7 @@ namespace DigitalRune.Graphics.SceneGraph
       else if (lightNode.Light is ImageBasedLight)
       {
         ImageBasedLights.Add(lightNode);
-        float distance = (position - lightNode.PoseWorld.Position).LengthSquared; 
+        float distance = (position - lightNode.PoseWorld.Position).LengthSquared(); 
         lightNode.SortTag = -distance;  // minus because we use descending sort.
       }
       else

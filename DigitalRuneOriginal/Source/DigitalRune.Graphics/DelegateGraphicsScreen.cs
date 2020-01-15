@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// A <see cref="GraphicsScreen"/> that calls user-defined methods to update and render the 

@@ -5,10 +5,10 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Represents an instance of an animation timeline.
@@ -112,9 +112,9 @@ namespace DigitalRune.Animation
     //   Seek() ... see Seek() in WPF.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static readonly ResourcePool<AnimationInstance> Pool = new ResourcePool<AnimationInstance>(
       () => new AnimationInstance(),  // Create
@@ -123,9 +123,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets a value that indicates the version of the animation instance.
@@ -464,9 +464,9 @@ namespace DigitalRune.Animation
 
     
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="AnimationInstance"/> class.
@@ -596,9 +596,9 @@ namespace DigitalRune.Animation
 
       
       
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Creates the child collection of this animation instance.
@@ -1134,9 +1134,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Not implemented.

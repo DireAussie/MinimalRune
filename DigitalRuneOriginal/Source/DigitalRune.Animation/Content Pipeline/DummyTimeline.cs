@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Animation.Content
+namespace MinimalRune.Animation.Content
 {
   internal class DummyTimeline : Singleton<DummyTimeline>, ITimeline
   {

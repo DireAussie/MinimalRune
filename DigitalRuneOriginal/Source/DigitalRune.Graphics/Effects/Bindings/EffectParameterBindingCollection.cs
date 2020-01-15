@@ -9,22 +9,22 @@ using System.Globalization;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Effects
+namespace MinimalRune.Graphics.Effects
 {
   /// <summary>
   /// Manages a collection of <see cref="EffectParameterBinding"/>s.
   /// </summary>
   public class EffectParameterBindingCollection : Collection<EffectParameterBinding>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets a value indicating which effect parameters can be added to this collection.
@@ -96,9 +96,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="EffectParameterBindingCollection"/> class.
@@ -114,9 +114,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns an enumerator that iterates through the 

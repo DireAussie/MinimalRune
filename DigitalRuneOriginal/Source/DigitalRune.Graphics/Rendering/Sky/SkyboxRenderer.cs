@@ -5,13 +5,13 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Renders a cube map ("skybox") into the background of the current render target.
@@ -30,9 +30,9 @@ namespace DigitalRune.Graphics.Rendering
   {
     // TODO: Remove previous SkyboxRenderer and rename this class to SkyboxRenderer.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private Effect _effect;
 
@@ -58,15 +58,15 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="SkyboxRendererInternal"/> class.
@@ -88,9 +88,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override bool CanRender(SceneNode node, RenderContext context)

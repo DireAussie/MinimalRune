@@ -1,11 +1,11 @@
 ﻿using System.Linq;
-using DigitalRune.Collections;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Collections;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Geometry.Partitioning.Tests
+namespace MinimalRune.Geometry.Partitioning.Tests
 {
   [TestFixture]
   public class AdaptiveAabbTreeTest

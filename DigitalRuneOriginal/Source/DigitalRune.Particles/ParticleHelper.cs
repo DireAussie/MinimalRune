@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Geometry;
+using MinimalRune.Geometry;
 
 
-namespace DigitalRune.Particles
+namespace MinimalRune.Particles
 {
   /// <summary>
   /// Provides helper methods and extension methods for particle systems.

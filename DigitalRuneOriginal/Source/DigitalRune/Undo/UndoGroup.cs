@@ -5,10 +5,10 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 
 
-namespace DigitalRune.Undo
+namespace MinimalRune.Undo
 {
   /// <summary>
   /// Groups the last <i>n</i> operation into one operation that can be undone with a single Undo

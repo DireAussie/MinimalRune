@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.Rendering;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.Rendering;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Plane = DigitalRune.Geometry.Shapes.Plane;
@@ -21,9 +21,9 @@ namespace Samples.Graphics
   /// </remarks>
   public class ProjectedShadowRenderer : SceneNodeRenderer
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // To avoid overdraw: Only draw if stencil buffer contains 0, write 1 to stencil buffer.
     private readonly DepthStencilState StencilNoOverdraw = new DepthStencilState
@@ -40,9 +40,9 @@ namespace Samples.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the plane which receives the shadows.
@@ -72,7 +72,7 @@ namespace Samples.Graphics
     /// direction of the light rays and the 4th element to 0.
     /// </para>
     /// </remarks>
-    public Vector4F LightPosition { get; set; }
+    public Vector4 LightPosition { get; set; }
 
 
     /// <summary>
@@ -84,11 +84,11 @@ namespace Samples.Graphics
     /// <remarks>
     /// For example, a value of (0, 0, 0, 0.5) creates a half-transparent black shadow.
     /// </remarks>
-    public Vector4F ShadowColor
+    public Vector4 ShadowColor
     {
       get
       {
-        return new Vector4F(
+        return new Vector4(
           (Vector3)_effect.DiffuseColor,
           _effect.Alpha);
       }
@@ -101,9 +101,9 @@ namespace Samples.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ProjectedShadowRenderer"/> class.
@@ -122,7 +122,7 @@ namespace Samples.Graphics
       };
 
       ShadowedPlane = new Plane(new Vector3(0, 1, 0), 0.01f);
-      LightPosition = new Vector4F(1, 1, 1, 0);
+      LightPosition = new Vector4(1, 1, 1, 0);
     }
 
 
@@ -148,9 +148,9 @@ namespace Samples.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Determines whether this instance can render the specified node.
@@ -243,9 +243,9 @@ namespace Samples.Graphics
     /// Set W to 1, to create a local light. Set W to 0, to create a directional light.
     /// </param>
     /// <returns>The shadow projection matrix.</returns>
-    public static Matrix CreateShadowMatrix(Plane plane, Vector4F lightPosition)
+    public static Matrix CreateShadowMatrix(Plane plane, Vector4 lightPosition)
     {
-      var planeEquation = new Vector4F(plane.Normal, -plane.DistanceFromOrigin);
+      var planeEquation = new Vector4(plane.Normal, -plane.DistanceFromOrigin);
 
       float a = planeEquation.X;
       float b = planeEquation.Y;

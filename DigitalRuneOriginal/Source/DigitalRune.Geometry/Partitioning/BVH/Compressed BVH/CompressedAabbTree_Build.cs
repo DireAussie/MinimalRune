@@ -4,10 +4,10 @@
 
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Geometry.Shapes;
+using MinimalRune.Geometry.Shapes;
 
 
-namespace DigitalRune.Geometry.Partitioning
+namespace MinimalRune.Geometry.Partitioning
 {
   partial class CompressedAabbTree
   {

@@ -1,7 +1,7 @@
-﻿using DigitalRune.Game;
-using DigitalRune.Game.UI;
-using DigitalRune.Game.UI.Controls;
-using DigitalRune.Mathematics.Algebra;
+﻿using MinimalRune.Game;
+using MinimalRune.Game.UI;
+using MinimalRune.Game.UI.Controls;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Xna.Framework;
 
@@ -33,7 +33,7 @@ namespace Samples.Game.UI
 
       var panel = new Canvas
       {
-        Margin = new Vector4F(8),
+        Margin = new Vector4(8),
         HorizontalAlignment = HorizontalAlignment.Stretch,
         VerticalAlignment = VerticalAlignment.Stretch,
       };

@@ -9,7 +9,7 @@ using System.Globalization;
 using System.Runtime.Serialization;
 
 
-namespace DigitalRune.Mathematics.Algebra
+namespace MinimalRune.Mathematics.Algebra
 {
   /// <summary>
   /// Defines a 2 x 2 matrix (double-precision).
@@ -32,9 +32,9 @@ namespace DigitalRune.Mathematics.Algebra
 
   public struct Matrix22D : IEquatable<Matrix22D>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns a <see cref="Matrix22D"/> with all of its components set to zero.
@@ -56,9 +56,9 @@ namespace DigitalRune.Mathematics.Algebra
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The element in first row, first column.
@@ -98,9 +98,9 @@ namespace DigitalRune.Mathematics.Algebra
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -289,7 +289,7 @@ namespace DigitalRune.Mathematics.Algebra
       get
       {
         Matrix22D result = this;
-        result.Transpose();
+        result = Matrix.Transpose(result);
         return result;
       }
     }
@@ -320,9 +320,9 @@ namespace DigitalRune.Mathematics.Algebra
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Matrix22D"/> struct.
@@ -459,9 +459,9 @@ namespace DigitalRune.Mathematics.Algebra
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns the hash code for this instance.
@@ -551,9 +551,9 @@ namespace DigitalRune.Mathematics.Algebra
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Negates a matrix.
@@ -941,9 +941,9 @@ namespace DigitalRune.Mathematics.Algebra
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -1217,9 +1217,9 @@ namespace DigitalRune.Mathematics.Algebra
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns a matrix with the absolute values of the elements of the given matrix.

@@ -7,7 +7,7 @@ using System.Xml.Linq;
 using Microsoft.Xna.Framework.Content.Pipeline;
 
 
-namespace DigitalRune.Graphics.Content.Pipeline
+namespace MinimalRune.Graphics.Content.Pipeline
 {
   /// <summary>
   /// Imports a material definition (.drmat file).

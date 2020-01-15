@@ -6,7 +6,7 @@ using System;
 using System.IO;
 
 
-namespace DigitalRune.Storages
+namespace MinimalRune.Storages
 {
   /// <summary>
   /// Provides access to the file system of the operating system.
@@ -20,15 +20,15 @@ namespace DigitalRune.Storages
   /// </remarks>
   public class FileSystemStorage : Storage, IStorageInternal
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override char DirectorySeparator
@@ -48,9 +48,9 @@ namespace DigitalRune.Storages
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -96,9 +96,9 @@ namespace DigitalRune.Storages
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override string GetRealPath(string path)

@@ -3,12 +3,12 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System.Diagnostics;
-using DigitalRune.Graphics.SceneGraph;
+using MinimalRune.Graphics.SceneGraph;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Effects
+namespace MinimalRune.Graphics.Effects
 {
   /// <summary>
   /// Selects the shaders of a <see cref="SkinnedEffect"/>.

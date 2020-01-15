@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.PostProcessing
+namespace MinimalRune.Graphics.PostProcessing
 {
   /// <summary>
   /// Applies <i>Enhanced Subpixel Morphological Anti-Aliasing</i> (SMAA).
@@ -30,9 +30,9 @@ namespace DigitalRune.Graphics.PostProcessing
     // (But anti-aliasing also works in sRGB space.)
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     //private readonly DepthStencilState _stencilStateReplace;
     //private readonly DepthStencilState _stencilStateKeep;
@@ -53,15 +53,15 @@ namespace DigitalRune.Graphics.PostProcessing
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="SmaaFilter"/> class.
@@ -113,9 +113,9 @@ namespace DigitalRune.Graphics.PostProcessing
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods")]

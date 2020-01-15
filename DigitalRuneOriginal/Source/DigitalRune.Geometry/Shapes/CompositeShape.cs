@@ -6,15 +6,15 @@ using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
-using DigitalRune.Collections;
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Geometry.Meshes;
-using DigitalRune.Geometry.Partitioning;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Collections;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Geometry.Meshes;
+using MinimalRune.Geometry.Partitioning;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry.Shapes
+namespace MinimalRune.Geometry.Shapes
 {
   /// <summary>
   /// Represents a shape consisting of several other geometric objects.
@@ -65,15 +65,15 @@ namespace DigitalRune.Geometry.Shapes
 
   public class CompositeShape : Shape
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the child geometric objects.
@@ -159,9 +159,9 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="CompositeShape"/> class.
@@ -174,9 +174,9 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
     /// <summary>

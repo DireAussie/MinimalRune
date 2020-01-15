@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace DigitalRune.Game
+namespace MinimalRune.Game
 {
   /// <summary>
   /// Manages a collection of <see cref="GameObject"/>s.
@@ -33,26 +33,26 @@ namespace DigitalRune.Game
     // This does only happen if Update is not called anymore and if the GameObjectManager is
     // not garbage collected - a very unlikely scenario.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly List<GameObject> _objectsCopy = new List<GameObject>();
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public GameObjectCollection Objects { get; private set; }
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="GameObjectManager"/> class.
@@ -64,9 +64,9 @@ namespace DigitalRune.Game
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Updates all game objects.

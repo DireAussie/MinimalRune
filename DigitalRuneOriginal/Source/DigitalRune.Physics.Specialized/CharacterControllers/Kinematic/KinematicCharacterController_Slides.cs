@@ -3,14 +3,14 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics.Settings;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics.Settings;
 
 
-namespace DigitalRune.Physics.Specialized
+namespace MinimalRune.Physics.Specialized
 {
   public partial class KinematicCharacterController
   {
@@ -51,15 +51,15 @@ namespace DigitalRune.Physics.Specialized
     // cosine definition formula.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the number of slide iterations.
@@ -122,9 +122,9 @@ namespace DigitalRune.Physics.Specialized
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Tries to move the character to the nearest position where it does not penetrate other
@@ -456,7 +456,7 @@ namespace DigitalRune.Physics.Specialized
           // Solution 1: Try once more with half the desired movement.
           // Abort when desired movement falls under arbitrary limit. 
           //desiredMovement *= 0.5f;
-          //if (desiredMovement.LengthSquared < (AllowedPenetration * AllowedPenetration / 4))
+          //if (desiredMovement.LengthSquared() < (AllowedPenetration * AllowedPenetration / 4))
           //  break;
 
           // Solution 2: Try again with different sliding strategies. 

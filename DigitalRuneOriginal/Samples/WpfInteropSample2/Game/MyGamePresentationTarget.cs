@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Windows;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.Interop;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.Interop;
 using Microsoft.Practices.ServiceLocation;
 
 
@@ -23,9 +23,9 @@ namespace WpfInteropSample2
   /// </remarks>
   internal class MyGamePresentationTarget : D3DImagePresentationTarget
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="MyGamePresentationTarget"/> class.
@@ -41,9 +41,9 @@ namespace WpfInteropSample2
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private void OnLoaded(object sender, RoutedEventArgs eventArgs)
     {

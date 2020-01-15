@@ -3,12 +3,12 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System.Diagnostics;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry.Collisions.Algorithms
+namespace MinimalRune.Geometry.Collisions.Algorithms
 {
   /// <summary>
   /// Manages a simplex of a CSO (configuration space obstacle, Minkowski difference A-B).
@@ -31,9 +31,9 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
     // points pair on the shapes.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// A structure that contains info used in an Update() step.
@@ -54,9 +54,9 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static readonly ResourcePool<GjkSimplexSolver> Pool =
       new ResourcePool<GjkSimplexSolver>(
@@ -85,9 +85,9 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the point in the simplex which is closest to the origin.
@@ -239,7 +239,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
         float maxDistance = 0;
         for (int i = 0; i < NumberOfVertices; i++)
         {
-          float distance = _w[i].LengthSquared;
+          float distance = _w[i].LengthSquared();
           if (distance > maxDistance)
             maxDistance = distance;
         }
@@ -302,9 +302,9 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="GjkSimplexSolver"/> class.
@@ -356,9 +356,9 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Adds a new simplex point in the Minkowski difference A-B.
@@ -542,7 +542,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
       else
       {
         // Line parameter is > 0.
-        float lengthSquared = segmentVector.LengthSquared;
+        float lengthSquared = segmentVector.LengthSquared();
         if (param > lengthSquared)
         {
           // Clamp to 1.
@@ -728,7 +728,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
         Vector3 closestPoint = tempInfo.ClosestPoint;
 
         // No comparison of actual distance with best distance required because this is the first test.
-        bestDistanceSquared = (point - closestPoint).LengthSquared;
+        bestDistanceSquared = (point - closestPoint).LengthSquared();
         info.ClosestPoint = closestPoint;
         info.SetBarycentricCoordinates(tempInfo.U, tempInfo.V, tempInfo.W, 0);
       }
@@ -739,7 +739,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
       {
         GetClosestPointInTriangle(point, tetrahedronVertexA, tetrahedronVertexC, tetrahedronVertexD, ref tempInfo);
         Vector3 closestPoint = tempInfo.ClosestPoint;
-        float distance = (point - closestPoint).LengthSquared;
+        float distance = (point - closestPoint).LengthSquared();
         if (distance < bestDistanceSquared)
         {
           bestDistanceSquared = distance;
@@ -754,7 +754,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
       {
         GetClosestPointInTriangle(point, tetrahedronVertexA, tetrahedronVertexD, tetrahedronVertexB, ref tempInfo);
         Vector3 closestPoint = tempInfo.ClosestPoint;
-        float distance = (point - closestPoint).LengthSquared;
+        float distance = (point - closestPoint).LengthSquared();
         if (distance < bestDistanceSquared)
         {
           bestDistanceSquared = distance;
@@ -769,7 +769,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
       {
         GetClosestPointInTriangle(point, tetrahedronVertexB, tetrahedronVertexD, tetrahedronVertexC, ref tempInfo);
         Vector3 closestPoint = tempInfo.ClosestPoint;
-        float distance = (point - closestPoint).LengthSquared;
+        float distance = (point - closestPoint).LengthSquared();
         if (distance < bestDistanceSquared)
         {
           //bestDistanceSquared = distance; // Not needed anymore.

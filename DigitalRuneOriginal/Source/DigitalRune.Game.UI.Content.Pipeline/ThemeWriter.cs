@@ -2,12 +2,12 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Game.UI.Rendering;
+using MinimalRune.Game.UI.Rendering;
 using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler;
 
 
-namespace DigitalRune.Game.UI.Content.Pipeline
+namespace MinimalRune.Game.UI.Content.Pipeline
 {
   /// <summary>
   /// Write a UI theme to binary format.

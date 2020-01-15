@@ -2,11 +2,11 @@
 using Windows.ApplicationModel;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using DigitalRune.Geometry;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.Interop;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.Interop;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Xna.Framework.Content;
 
@@ -32,17 +32,17 @@ namespace UwpInteropSample
   /// </remarks>
   internal class MyGamePresentationTarget : SwapChainPresentationTarget
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private MyGraphicsScreen _graphicsScreen;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the graphics screens that should be presented in this element.
@@ -53,9 +53,9 @@ namespace UwpInteropSample
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="MyGamePresentationTarget"/> class.
@@ -73,9 +73,9 @@ namespace UwpInteropSample
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private void OnLoaded(object sender, RoutedEventArgs eventArgs)
     {
@@ -208,7 +208,7 @@ namespace UwpInteropSample
       {
         Name = "KeyLight",
         Priority = 10,   // This is the most important light.
-        PoseWorld = new Pose(Quaternion.CreateRotation(Vector3.Forward, new Vector3(-0.5265408f, -0.5735765f, -0.6275069f))),
+        PoseWorld = new Pose(Quaternion.CreateFromRotationMatrix(Vector3.Forward, new Vector3(-0.5265408f, -0.5735765f, -0.6275069f))),
       };
       scene.Children.Add(keyLightNode);
 
@@ -221,7 +221,7 @@ namespace UwpInteropSample
       var fillLightNode = new LightNode(fillLight)
       {
         Name = "FillLight",
-        PoseWorld = new Pose(Quaternion.CreateRotation(Vector3.Forward, new Vector3(0.7198464f, 0.3420201f, 0.6040227f))),
+        PoseWorld = new Pose(Quaternion.CreateFromRotationMatrix(Vector3.Forward, new Vector3(0.7198464f, 0.3420201f, 0.6040227f))),
       };
       scene.Children.Add(fillLightNode);
 
@@ -234,7 +234,7 @@ namespace UwpInteropSample
       var backLightNode = new LightNode(backLight)
       {
         Name = "BackLight",
-        PoseWorld = new Pose(Quaternion.CreateRotation(Vector3.Forward, new Vector3(0.4545195f, -0.7660444f, 0.4545195f))),
+        PoseWorld = new Pose(Quaternion.CreateFromRotationMatrix(Vector3.Forward, new Vector3(0.4545195f, -0.7660444f, 0.4545195f))),
       };
       scene.Children.Add(backLightNode);
     }

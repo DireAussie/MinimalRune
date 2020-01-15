@@ -61,7 +61,7 @@ using System;
 using System.Globalization;
 
 
-namespace DigitalRune.Ionic.Zlib
+namespace MinimalRune.Ionic.Zlib
 {
     sealed class InflateBlocks
     {

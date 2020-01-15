@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.Editor.QuickLaunch
+namespace MinimalRune.Editor.QuickLaunch
 {
     /// <summary>
     /// Displays a search result of the Quick Launch box.

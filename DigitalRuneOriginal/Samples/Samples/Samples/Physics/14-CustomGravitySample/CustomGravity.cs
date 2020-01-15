@@ -1,6 +1,6 @@
-﻿using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics;
-using DigitalRune.Physics.ForceEffects;
+﻿using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics;
+using MinimalRune.Physics.ForceEffects;
 
 
 namespace Samples.Physics

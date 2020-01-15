@@ -7,15 +7,15 @@ using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interactivity;
-using DigitalRune.Geometry;
-using DigitalRune.Graphics.Interop;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Windows;
+using MinimalRune.Geometry;
+using MinimalRune.Graphics.Interop;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Windows;
 
 
-namespace DigitalRune.Editor.Game
+namespace MinimalRune.Editor.Game
 {
     /// <summary>
     /// Allows to orbit the camera around the origin by pressing the left mouse button and moving
@@ -59,9 +59,9 @@ namespace DigitalRune.Editor.Game
     /// </remarks>
     public class TurntableBehavior : Behavior<D3DImagePresentationTarget>
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private CameraNode _cameraNode;
         private Matrix _originalViewMatrix;
@@ -71,9 +71,9 @@ namespace DigitalRune.Editor.Game
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="IsEnabled"/> dependency property.
@@ -174,9 +174,9 @@ namespace DigitalRune.Editor.Game
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Called when the <see cref="CameraTarget"/> property changed.

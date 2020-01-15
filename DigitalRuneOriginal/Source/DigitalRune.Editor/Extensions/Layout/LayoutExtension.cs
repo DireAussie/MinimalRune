@@ -6,24 +6,24 @@ using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
-using DigitalRune.Collections;
-using DigitalRune.Editor.Properties;
-using DigitalRune.Windows.Docking;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Collections;
+using MinimalRune.Editor.Properties;
+using MinimalRune.Windows.Docking;
+using MinimalRune.Windows.Framework;
 using NLog;
 using static System.FormattableString;
 
 
-namespace DigitalRune.Editor.Layout
+namespace MinimalRune.Editor.Layout
 {
     /// <summary>
     /// Adds functions to persist and change the window layout.
     /// </summary>
     public sealed partial class LayoutExtension : EditorExtension
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
@@ -36,21 +36,21 @@ namespace DigitalRune.Editor.Layout
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
-
-
-
-        //--------------------------------------------------------------
-
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
+
+
+
+        
+
+        
 
         /// <inheritdoc/>
         protected override void OnInitialize()

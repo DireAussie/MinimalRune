@@ -9,15 +9,15 @@ using System.Globalization;
 using System.IO;
 
 
-namespace DigitalRune.Editor.Documents
+namespace MinimalRune.Editor.Documents
 {
     partial class DocumentExtension
     {
         // TODO: Add support for monitoring dependencies. (E.g. document = HTML file, dependencies = CSS/JPG files.)
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly List<FileWatcher> _fileWatchers = new List<FileWatcher>();
         private readonly List<FileChangeRecord> _fileChangeRecords = new List<FileChangeRecord>();
@@ -25,15 +25,15 @@ namespace DigitalRune.Editor.Documents
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Starts a <see cref="FileSystemWatcher"/> that monitors all file changes for a document.

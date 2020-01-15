@@ -4,15 +4,15 @@
 
 using System;
 using System.ComponentModel;
-using DigitalRune.Game.Input;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Game.Input;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework.Input;
 
 using Keys = System.Windows.Input.Key;
 
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   /// <summary>
   /// Represents a popup that displays the <see cref="DropDownItem"/>s of a 
@@ -26,7 +26,7 @@ namespace DigitalRune.Game.UI.Controls
   /// var dropDown = new DropDownButton
   /// {
   ///   HorizontalAlignment = HorizontalAlignment.Stretch,
-  ///   Margin = new Vector4F(4),
+  ///   Margin = new Vector4(4),
   ///   MaxDropDownHeight = 250,
   /// };
   /// 
@@ -57,18 +57,18 @@ namespace DigitalRune.Game.UI.Controls
     // ContextMenu code.
     // On Windows Phone the DropDown fills the entire screen and displays a title.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private StackPanel _itemsPanel;
     private ScrollViewer _scrollViewer;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the <see cref="DropDownButton"/> that owns this <see cref="DropDown"/>.
@@ -78,9 +78,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary> 
     /// The ID of the <see cref="DropDownItemStyle"/> game object property.
@@ -132,9 +132,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes static members of the <see cref="DropDown"/> class.
@@ -165,9 +165,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override void OnLoad()

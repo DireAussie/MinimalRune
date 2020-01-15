@@ -4,30 +4,30 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Graphics;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Graphics;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Framework;
 
 
-namespace DigitalRune.Editor.Game
+namespace MinimalRune.Editor.Game
 {
     /// <summary>
     /// Displays a rotating triangle and debug information.
     /// </summary>
     internal class GameViewModel : EditorDockTabItemViewModel
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static int _nextId = 0;
         private readonly IEditorService _editor;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets a <see cref="GameViewModel"/> instance that can be used at design-time.
@@ -55,9 +55,9 @@ namespace DigitalRune.Editor.Game
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GameViewModel"/> class.
@@ -79,9 +79,9 @@ namespace DigitalRune.Editor.Game
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]

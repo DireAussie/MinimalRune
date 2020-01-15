@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 
 
-namespace DigitalRune.Tests
+namespace MinimalRune.Tests
 {
   [TestFixture]
   public class LicensingTest

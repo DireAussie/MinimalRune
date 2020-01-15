@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using DigitalRune.Collections;
-using DigitalRune.Game;
-using DigitalRune.Game.UI.Controls;
-using DigitalRune.Game.UI.Rendering;
-using DigitalRune.Graphics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Statistics;
-using DigitalRune.Physics.ForceEffects;
+using MinimalRune.Collections;
+using MinimalRune.Game;
+using MinimalRune.Game.UI.Controls;
+using MinimalRune.Game.UI.Rendering;
+using MinimalRune.Graphics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Statistics;
+using MinimalRune.Physics.ForceEffects;
 using Microsoft.Xna.Framework;
 
 
@@ -89,7 +89,7 @@ controls. The controls are sorted by their z value before rendering.",
           Y = 100,
           Width = 100,
           Height = 20,
-          Margin = new Vector4F(-50, -10, 0, 0),  // Use a margin to center the control.
+          Margin = new Vector4(-50, -10, 0, 0),  // Use a margin to center the control.
         };
         _uiScreen.Children.Add(progressBar);
 

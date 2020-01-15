@@ -9,8 +9,8 @@ using System.Linq;
 
 using System.Reflection;
 
-using DigitalRune.Game.UI.Controls;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Game.UI.Controls;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -19,7 +19,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 
 
-namespace DigitalRune.Game.UI.Rendering
+namespace MinimalRune.Game.UI.Rendering
 {
   /// <summary>
   /// Manages and renders the visual appearance of a UI. (Default implementation.)
@@ -52,9 +52,9 @@ namespace DigitalRune.Game.UI.Rendering
     // Controls are rendered back to front because we use alpha blending (text and glow images).
     // TODO: Cache info in UIControl.RenderData. Check UIControl IsVisualValid to see if the cache must be updated.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Copy from CullNone but with activate scissors test.
     private static readonly RasterizerState CullNoneWithScissors = new RasterizerState
@@ -75,9 +75,9 @@ namespace DigitalRune.Game.UI.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets a value indicating whether this instance has been disposed of.
@@ -113,9 +113,9 @@ namespace DigitalRune.Game.UI.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
     /// <overloads>
@@ -307,9 +307,9 @@ namespace DigitalRune.Game.UI.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets a style-specific attribute value.
@@ -371,7 +371,7 @@ namespace DigitalRune.Game.UI.Rendering
     /// </returns>
     /// <remarks>
     /// <para>
-    /// The base implementation of this method supports following types: <see cref="Vector4F"/>,
+    /// The base implementation of this method supports following types: <see cref="Vector4"/>,
     /// <see cref="Color"/>, <see cref="Rectangle"/>, <see cref="Rectangle"/>?,
     /// <see cref="Texture2D"/>, enumerations, types that have a <see cref="TypeConverter"/>, and
     /// types that implement <see cref="IConvertible"/>.
@@ -395,9 +395,9 @@ namespace DigitalRune.Game.UI.Rendering
       {
         result = (T)(object)ThemeHelper.ParseVector3(attribute.Value);
       }
-      else if (result is Vector4F)
+      else if (result is Vector4)
       {
-        result = (T)(object)ThemeHelper.ParseVector4F(attribute.Value);
+        result = (T)(object)ThemeHelper.ParseVector4(attribute.Value);
       }
       else if (typeof(T) == typeof(string) || typeof(T) == typeof(object))
       {

@@ -96,22 +96,22 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 
 
-namespace DigitalRune
+namespace MinimalRune
 {
   /// <summary>
   /// Stores <see cref="System.Delegate"/> that contains a weak reference to the target.
   /// </summary>
   internal struct InternalWeakDelegate
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The weak reference of the target object, or <see langword="null"/> if the delegate method is
@@ -198,9 +198,9 @@ namespace DigitalRune
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="InternalWeakDelegate"/> class.
@@ -237,9 +237,9 @@ namespace DigitalRune
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Invokes the stored <see cref="System.Delegate"/> with the given arguments.

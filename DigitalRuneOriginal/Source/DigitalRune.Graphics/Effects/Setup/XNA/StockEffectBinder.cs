@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Effects
+namespace MinimalRune.Graphics.Effects
 {
   /// <summary>
   /// Provides bindings for the XNA stock effects.

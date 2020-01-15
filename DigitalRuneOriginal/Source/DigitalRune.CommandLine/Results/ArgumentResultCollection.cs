@@ -7,22 +7,22 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 
-namespace DigitalRune.CommandLine
+namespace MinimalRune.CommandLine
 {
     /// <summary>
     /// Stores <see cref="ArgumentResult"/>s.
     /// </summary>
     public class ArgumentResultCollection : ReadOnlyCollection<ArgumentResult>
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the <see cref="ArgumentResult"/> for the specified argument.
@@ -77,9 +77,9 @@ namespace DigitalRune.CommandLine
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ArgumentResultCollection"/> class.
@@ -94,9 +94,9 @@ namespace DigitalRune.CommandLine
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Returns an enumerator that iterates through the <see cref="ArgumentResultCollection"/>. 

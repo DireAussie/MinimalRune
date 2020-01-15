@@ -3,42 +3,42 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System.Windows.Input;
-using DigitalRune.Collections;
-using DigitalRune.Windows.Docking;
-using DigitalRune.Windows.Themes;
+using MinimalRune.Collections;
+using MinimalRune.Windows.Docking;
+using MinimalRune.Windows.Themes;
 
 
-namespace DigitalRune.Editor.Printing
+namespace MinimalRune.Editor.Printing
 {
     /// <summary>
     /// Provides commands and services for printing.
     /// </summary>
     public sealed class PrintExtension : EditorExtension
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private MergeableNodeCollection<ICommandItem> _menuNodes;
         private MergeableNodeCollection<ICommandItem> _toolBarNodes;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
-
-
-
-        //--------------------------------------------------------------
-
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
+
+
+
+        
+
+        
 
         /// <inheritdoc/>
         protected override void OnInitialize()

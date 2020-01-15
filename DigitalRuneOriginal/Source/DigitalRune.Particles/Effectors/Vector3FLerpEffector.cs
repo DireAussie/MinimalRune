@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Particles.Effectors
+namespace MinimalRune.Particles.Effectors
 {
   /// <summary>
   /// Linearly interpolates a particle parameter of type <see cref="Vector3"/> between a start and 
@@ -48,9 +48,9 @@ namespace DigitalRune.Particles.Effectors
   /// </remarks>
   public class Vector3LerpEffector : ParticleEffector
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private IParticleParameter<Vector3> _startParameter;
     private IParticleParameter<Vector3> _endParameter;
@@ -59,9 +59,9 @@ namespace DigitalRune.Particles.Effectors
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the name of the parameter that stores the interpolation result.
@@ -132,9 +132,9 @@ namespace DigitalRune.Particles.Effectors
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Vector3LerpEffector"/> class.
@@ -146,9 +146,9 @@ namespace DigitalRune.Particles.Effectors
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override ParticleEffector CreateInstanceCore()

@@ -4,10 +4,10 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 
 
-namespace DigitalRune.Game.Input
+namespace MinimalRune.Game.Input
 {
   /// <summary>
   /// Represents an input command that supports a flexible input mapping.
@@ -31,15 +31,15 @@ namespace DigitalRune.Game.Input
     // - Integrate handling of IsHandled flags.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public IInputService InputService { get; set; }
@@ -180,9 +180,9 @@ namespace DigitalRune.Game.Input
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ConfigurableInputCommand"/> class.
@@ -209,9 +209,9 @@ namespace DigitalRune.Game.Input
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public void Update(TimeSpan deltaTime)

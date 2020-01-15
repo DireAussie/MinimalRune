@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Describes a text label of a <see cref="TextScale"/>.

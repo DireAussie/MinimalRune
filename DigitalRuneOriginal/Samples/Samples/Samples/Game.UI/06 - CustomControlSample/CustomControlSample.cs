@@ -1,10 +1,10 @@
 ﻿
 using System.Windows.Forms;
 
-using DigitalRune.Game.UI.Controls;
-using DigitalRune.Game.UI.Rendering;
-using DigitalRune.Graphics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Game.UI.Controls;
+using MinimalRune.Game.UI.Rendering;
+using MinimalRune.Graphics;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using MouseButtons = DigitalRune.Game.Input.MouseButtons;
 
@@ -52,7 +52,7 @@ The DigitalRune Blog contains a detailed description for this project; see secti
       UIService.Screens.Add(_uiScreen);
 
       // Add a tree view control to the screen.
-      var padding = new Vector4F(0, 2, 4, 2);
+      var padding = new Vector4(0, 2, 4, 2);
       var treeView = new TreeView
       {
         X = 10,

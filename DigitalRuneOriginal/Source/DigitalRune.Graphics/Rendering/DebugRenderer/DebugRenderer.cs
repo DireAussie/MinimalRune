@@ -8,21 +8,21 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 
-using DigitalRune.Animation.Character;
+using MinimalRune.Animation.Character;
 
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Geometry.Meshes;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Text;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Geometry.Meshes;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Provides methods for rendering debug information.
@@ -70,17 +70,17 @@ namespace DigitalRune.Graphics.Rendering
     // ...
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly IGraphicsService _graphicsService;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
     // Render batches and similar things are only allocated when needed because they
@@ -550,9 +550,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="DebugRenderer"/> class.
@@ -628,9 +628,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private void ThrowIfDisposed()
     {
@@ -2379,7 +2379,7 @@ namespace DigitalRune.Graphics.Rendering
         string name = skeleton.GetName(i);
         SrtTransform bonePose = skeletonPose.GetBonePoseAbsolute(i);
         var translation = bonePose.Translation;
-        var rotation = bonePose.Rotation.ToRotationMatrix33();
+        var rotation = bonePose.Matrix.CreateFromQuaternion(Rotation);
 
         var translationWorld = world.TransformPosition(translation);
 

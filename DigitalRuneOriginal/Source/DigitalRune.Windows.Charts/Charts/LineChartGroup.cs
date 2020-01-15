@@ -9,10 +9,10 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Groups multiple <see cref="LineChart"/>s into a single chart.
@@ -24,21 +24,21 @@ namespace DigitalRune.Windows.Charts
     /// </remarks>
     public class LineChartGroup : ChartGroup<LineChart>, ILineChartGroup
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
-
-
-
-        //--------------------------------------------------------------
-
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
+
+
+
+        
+
+        
 
         /// <summary>
         /// Identifies the <see cref="Interpolation"/> dependency property.
@@ -100,9 +100,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
         /// <summary>
@@ -125,9 +125,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Called when a relevant property is changed and the charts needs to be updated.

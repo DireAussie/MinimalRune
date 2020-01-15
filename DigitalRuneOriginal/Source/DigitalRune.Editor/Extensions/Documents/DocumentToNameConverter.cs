@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Data;
 
 
-namespace DigitalRune.Editor.Documents
+namespace MinimalRune.Editor.Documents
 {
     /// <summary>
     /// A value converter that returns the name of a document.

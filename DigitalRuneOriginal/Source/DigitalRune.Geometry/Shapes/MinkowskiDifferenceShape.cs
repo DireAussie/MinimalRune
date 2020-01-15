@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry.Shapes
+namespace MinimalRune.Geometry.Shapes
 {
   /// <summary>
   /// Represents the <i>Minkowski Difference</i> of two geometric objects.
@@ -23,15 +23,15 @@ namespace DigitalRune.Geometry.Shapes
   [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
   public class MinkowskiDifferenceShape : ConvexShape
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets an inner point.
@@ -129,9 +129,9 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -191,9 +191,9 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

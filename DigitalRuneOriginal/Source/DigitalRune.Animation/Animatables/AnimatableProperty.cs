@@ -5,7 +5,7 @@
 using System.Diagnostics;
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Represents a property that can be animated. (Default implementation.)
@@ -43,9 +43,9 @@ namespace DigitalRune.Animation
   [DebuggerDisplay("{GetType().Name,nq}(IsAnimated = {_isAnimated}, Value = {Value})")]
   public class AnimatableProperty<T> : IAnimatableProperty<T>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private T _baseValue;
     private T _animationValue;
@@ -53,9 +53,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
@@ -131,15 +131,15 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
   }
 }

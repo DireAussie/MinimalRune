@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Mathematics.Algebra.Tests
+namespace MinimalRune.Mathematics.Algebra.Tests
 {
   [TestFixture]
   public class Vector4DTest
@@ -614,10 +614,10 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void LengthSquared()
     {
-      Assert.AreEqual(1.0, Vector4D.UnitX.LengthSquared);
-      Assert.AreEqual(1.0, Vector4D.UnitY.LengthSquared);
-      Assert.AreEqual(1.0, Vector4D.UnitZ.LengthSquared);
-      Assert.AreEqual(1.0, Vector4D.UnitW.LengthSquared);
+      Assert.AreEqual(1.0, Vector4D.UnitX.LengthSquared());
+      Assert.AreEqual(1.0, Vector4D.UnitY.LengthSquared());
+      Assert.AreEqual(1.0, Vector4D.UnitZ.LengthSquared());
+      Assert.AreEqual(1.0, Vector4D.UnitW.LengthSquared());
 
       double x = -1.9;
       double y = 2.1;
@@ -625,7 +625,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
       double w = 1.0;
       double length = x * x + y * y + z * z + w * w;
       Vector4D v = new Vector4D(x, y, z, w);
-      Assert.AreEqual(length, v.LengthSquared);
+      Assert.AreEqual(length, v.LengthSquared());
     }
 
 
@@ -679,25 +679,25 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     [Test]
     public void DotProduct()
     {
-      // 0°
+      // 0ï¿½
       Assert.AreEqual(1.0, Vector4D.Dot(Vector4D.UnitX, Vector4D.UnitX));
       Assert.AreEqual(1.0, Vector4D.Dot(Vector4D.UnitY, Vector4D.UnitY));
       Assert.AreEqual(1.0, Vector4D.Dot(Vector4D.UnitZ, Vector4D.UnitZ));
       Assert.AreEqual(1.0, Vector4D.Dot(Vector4D.UnitW, Vector4D.UnitW));
 
-      // 180°
+      // 180ï¿½
       Assert.AreEqual(-1.0, Vector4D.Dot(Vector4D.UnitX, -Vector4D.UnitX));
       Assert.AreEqual(-1.0, Vector4D.Dot(Vector4D.UnitY, -Vector4D.UnitY));
       Assert.AreEqual(-1.0, Vector4D.Dot(Vector4D.UnitZ, -Vector4D.UnitZ));
       Assert.AreEqual(-1.0, Vector4D.Dot(Vector4D.UnitW, -Vector4D.UnitW));
 
-      // 90°
+      // 90ï¿½
       Assert.AreEqual(0.0, Vector4D.Dot(Vector4D.UnitX, Vector4D.UnitY));
       Assert.AreEqual(0.0, Vector4D.Dot(Vector4D.UnitY, Vector4D.UnitZ));
       Assert.AreEqual(0.0, Vector4D.Dot(Vector4D.UnitZ, Vector4D.UnitW));
       Assert.AreEqual(0.0, Vector4D.Dot(Vector4D.UnitW, Vector4D.UnitX));
 
-      // 45°
+      // 45ï¿½
       double angle = Math.Acos(Vector4D.Dot(new Vector4D(1, 1, 0, 0).Normalized, Vector4D.UnitX));
       Assert.IsTrue(Numeric.AreEqual(MathHelper.ToRadians(45.0), angle));
       angle = Math.Acos(Vector4D.Dot(new Vector4D(0, 1, 1, 0).Normalized, Vector4D.UnitY));
@@ -817,7 +817,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
 
 
     [Test]
-    public void ExplicitCastToVector4F()
+    public void ExplicitCastToVector4()
     {
       double x = 23.4;
       double y = -11.0;
@@ -826,13 +826,13 @@ namespace DigitalRune.Mathematics.Algebra.Tests
       double[] elementsD = new[] { x, y, z, w };
       float[] elementsF = new[] { (float)x, (float)y, (float)z, (float)w };
       Vector4D vectorD = new Vector4D(elementsD);
-      Vector4F vectorF = (Vector4F)vectorD;
-      Assert.AreEqual(new Vector4F(elementsF), vectorF);
+      Vector4 vectorF = (Vector4)vectorD;
+      Assert.AreEqual(new Vector4(elementsF), vectorF);
     }
 
 
     [Test]
-    public void ToVector4F()
+    public void ToVector4()
     {
       double x = 23.4;
       double y = -11.0;
@@ -841,8 +841,8 @@ namespace DigitalRune.Mathematics.Algebra.Tests
       double[] elementsD = new[] { x, y, z, w };
       float[] elementsF = new[] { (float)x, (float)y, (float)z, (float)w };
       Vector4D vectorD = new Vector4D(elementsD);
-      Vector4F vectorF = vectorD.ToVector4F();
-      Assert.AreEqual(new Vector4F(elementsF), vectorF);
+      Vector4 vectorF = vectorD.ToVector4();
+      Assert.AreEqual(new Vector4(elementsF), vectorF);
     }
 
 

@@ -6,26 +6,26 @@ using System;
 using Microsoft.Xna.Framework.Input;
 
 
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 #else
 using Vector2F = Microsoft.Xna.Framework.Vector2;
 using Vector3 = Microsoft.Xna.Framework.Vector3;
 
 
 
-namespace DigitalRune.Game.Input
+namespace MinimalRune.Game.Input
 {
   partial class InputManager
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public bool EnableMouseCentering
@@ -119,9 +119,9 @@ namespace DigitalRune.Game.Input
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private void UpdateMouse(TimeSpan deltaTime)
     {

@@ -54,7 +54,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Represents a control that displays an image from a multi-frame image source.
@@ -67,17 +67,17 @@ namespace DigitalRune.Windows.Controls
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Multi")]
     public class MultiFrameImage : Icon
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private BitmapFrame[] _frames;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="MultiFrameImage"/> class.
@@ -89,9 +89,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static void OnSourceChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
         {

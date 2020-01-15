@@ -9,18 +9,18 @@ using System.Globalization;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows;
-using DigitalRune.Collections;
-using DigitalRune.Editor.Properties;
-using DigitalRune.Editor.Output;
-using DigitalRune.Storages;
-using DigitalRune.Windows.Controls;
-using DigitalRune.Windows.Docking;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Collections;
+using MinimalRune.Editor.Properties;
+using MinimalRune.Editor.Output;
+using MinimalRune.Storages;
+using MinimalRune.Windows.Controls;
+using MinimalRune.Windows.Docking;
+using MinimalRune.Windows.Framework;
 using NLog;
 using static System.FormattableString;
 
 
-namespace DigitalRune.Editor.Diagnostics
+namespace MinimalRune.Editor.Diagnostics
 {
     /// <summary>
     /// Provides debugging functionality.
@@ -35,9 +35,9 @@ namespace DigitalRune.Editor.Diagnostics
     /// </remarks>
     public sealed class DiagnosticsExtension : EditorExtension
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private const string NodesView = "Nodes";
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
@@ -48,15 +48,15 @@ namespace DigitalRune.Editor.Diagnostics
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DiagnosticsExtension"/> class.
@@ -72,9 +72,9 @@ namespace DigitalRune.Editor.Diagnostics
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         protected override void OnInitialize()

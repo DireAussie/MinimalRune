@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Mathematics.Interpolation
+namespace MinimalRune.Mathematics.Interpolation
 {
   /// <summary>
   /// Defines a waypoint of a 2-dimensional path (singe-precision).

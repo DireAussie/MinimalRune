@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Effects
+namespace MinimalRune.Graphics.Effects
 {
   /// <summary>
   /// Creates bindings for effect techniques and parameters.

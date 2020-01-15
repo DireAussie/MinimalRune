@@ -6,11 +6,11 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Interpolation;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Interpolation;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Manages a collection of items owned by a <see cref="Figure"/>.
@@ -18,23 +18,23 @@ namespace DigitalRune.Graphics
   /// <typeparam name="T">The type of items.</typeparam>
   public class FigureDataCollection<T> : Collection<T> where T : class
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly Figure _figure;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="FigureDataCollection{T}"/> class.
@@ -48,9 +48,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
     
     /// <summary>
     /// Returns an enumerator that iterates through the <see cref="FigureDataCollection{T}"/>. 

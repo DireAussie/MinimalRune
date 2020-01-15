@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 
 
-namespace DigitalRune.Game.States
+namespace MinimalRune.Game.States
 {
   /// <summary>
   /// Defines a transition between two states.
@@ -31,9 +31,9 @@ namespace DigitalRune.Game.States
     // between the Exit and Enter events.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Remember if Fire() was called.
     private bool _fired;
@@ -45,9 +45,9 @@ namespace DigitalRune.Game.States
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the time delay.
@@ -154,15 +154,15 @@ namespace DigitalRune.Game.States
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>

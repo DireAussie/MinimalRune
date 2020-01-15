@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Game.UI.Consoles
+namespace MinimalRune.Game.UI.Consoles
 {
   /// <summary>
   /// Provides arguments for a <see cref="IConsole.CommandEntered"/> event.

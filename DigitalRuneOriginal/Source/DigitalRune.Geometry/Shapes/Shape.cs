@@ -5,12 +5,12 @@
 using System;
 using System.Globalization;
 using System.Xml.Serialization;
-using DigitalRune.Geometry.Meshes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Meshes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry.Shapes
+namespace MinimalRune.Geometry.Shapes
 {  
   /// <summary>
   /// Defines the volume of an <see cref="IGeometricObject"/>.
@@ -77,9 +77,9 @@ namespace DigitalRune.Geometry.Shapes
   // TODO: Extend list for new shapes.
   public abstract class Shape 
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// An immutable shape that is infinitely small and does not collide with other shapes.
@@ -97,9 +97,9 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets an inner point.
@@ -124,15 +124,15 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

@@ -4,27 +4,27 @@
 
 using System;
 using System.Collections.ObjectModel;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Windows.Framework;
 
 
-namespace DigitalRune.Editor.Layout
+namespace MinimalRune.Editor.Layout
 {
     /// <summary>
     /// Represents the "Manage Layouts" dialog.
     /// </summary>
     internal class ManageLayoutsViewModel : Dialog
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly LayoutExtension _layoutExtension;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the layouts.
@@ -77,9 +77,9 @@ namespace DigitalRune.Editor.Layout
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ManageLayoutsViewModel"/> class.
@@ -107,9 +107,9 @@ namespace DigitalRune.Editor.Layout
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private bool CanRename()
         {

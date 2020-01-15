@@ -4,15 +4,15 @@
 
 using System;
 using System.ComponentModel;
-using DigitalRune.Game.Input;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Game.Input;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework.Input;
 
 using Keys = System.Windows.Input.Key;
 
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {  
   /// <summary>
   /// Represents a control that lets the user select from a range of values by moving a 
@@ -35,13 +35,13 @@ namespace DigitalRune.Game.UI.Controls
   /// var slider = new Slider
   /// {
   ///   Value = 60,
-  ///   Margin = new Vector4F(4),
+  ///   Margin = new Vector4(4),
   ///   HorizontalAlignment = HorizontalAlignment.Stretch,
   /// };
   /// 
   /// var textBlock = new TextBlock
   /// {
-  ///   Margin = new Vector4F(4, 0, 4, 4),
+  ///   Margin = new Vector4(4, 0, 4, 4),
   ///   Text = "(Value = 60)",
   ///   HorizontalAlignment = HorizontalAlignment.Right
   /// };
@@ -63,9 +63,9 @@ namespace DigitalRune.Game.UI.Controls
     // A slider uses a Thumb as visual child.
     // The horizontal Padding determines the allowed visual range the thumb can move.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private Thumb _thumb;
 
@@ -75,9 +75,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // IsDirectionReversed
     // IsMoveToPointEnabled
@@ -89,9 +89,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary> 
     /// The ID of the <see cref="ThumbStyle"/> game object property.
@@ -119,9 +119,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes static members of the <see cref="Slider"/> class.
@@ -144,9 +144,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override void OnLoad()
@@ -194,7 +194,7 @@ namespace DigitalRune.Game.UI.Controls
       float minimum = Minimum;
       float maximum = Maximum;
       float range = maximum - minimum;
-      Vector4F padding = Padding;
+      Vector4 padding = Padding;
 
       if (IsFocusWithin)
       {
@@ -304,7 +304,7 @@ namespace DigitalRune.Game.UI.Controls
         float minimum = Minimum;
         float maximum = Maximum;
         float range = maximum - minimum;
-        Vector4F padding = Padding;
+        Vector4 padding = Padding;
 
         float contentWidth = size.X - padding.X - padding.Z - _thumb.DesiredWidth;
         float thumbCenterPosition = contentWidth / range * (value - Minimum);

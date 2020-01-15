@@ -4,11 +4,11 @@
 
 using System;
 using System.Globalization;
-using DigitalRune.Graphics.SceneGraph;
+using MinimalRune.Graphics.SceneGraph;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Defines the shadow of a specific <see cref="LightNode"/>.
@@ -34,15 +34,15 @@ namespace DigitalRune.Graphics
     // throwing away the settings.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the shadow map.
@@ -117,9 +117,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Shadow"/> class.
@@ -132,9 +132,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

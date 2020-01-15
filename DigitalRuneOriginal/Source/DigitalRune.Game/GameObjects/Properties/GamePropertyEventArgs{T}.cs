@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.Game
+namespace MinimalRune.Game
 {
   /// <summary>
   /// Provides data for the <see cref="GameProperty{T}.Changing"/> and the 
@@ -47,9 +47,9 @@ namespace DigitalRune.Game
     // case were the oldValue is not the oldValue that an event handler has previously seen.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // ReSharper disable StaticFieldInGenericType
     private static readonly ResourcePool<GamePropertyEventArgs<T>> Pool = new ResourcePool<GamePropertyEventArgs<T>>(
@@ -60,15 +60,15 @@ namespace DigitalRune.Game
 
     
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
       
       
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the game object property.
@@ -111,9 +111,9 @@ namespace DigitalRune.Game
 
       
       
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Constructor is private to force use of resource pooling!
     private GamePropertyEventArgs()
@@ -122,9 +122,9 @@ namespace DigitalRune.Game
 
       
       
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Creates a new instance using resource pooling.

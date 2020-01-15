@@ -3,15 +3,15 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using DigitalRune.Geometry;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.PostProcessing;
-using DigitalRune.Graphics.Rendering;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Interpolation;
-using DigitalRune.Storages;
+using MinimalRune.Geometry;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.PostProcessing;
+using MinimalRune.Graphics.Rendering;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Interpolation;
+using MinimalRune.Storages;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -89,10 +89,10 @@ namespace Samples.Graphics
       _cieSkyFilter.Strength = 0.9f;
 
       _gradientSky = new GradientSkyNode();
-      //_gradientSky.GroundColor = new Vector4F(0, 0, 1, 1);
-      //_gradientSky.ZenithColor = new Vector4F(0, 0, 1, 1);
-      //_gradientSky.FrontColor = new Vector4F(0, 0, 1, 1);
-      //_gradientSky.BackColor = new Vector4F(0, 0, 1, 1);
+      //_gradientSky.GroundColor = new Vector4(0, 0, 1, 1);
+      //_gradientSky.ZenithColor = new Vector4(0, 0, 1, 1);
+      //_gradientSky.FrontColor = new Vector4(0, 0, 1, 1);
+      //_gradientSky.BackColor = new Vector4(0, 0, 1, 1);
       //_gradientSky.FrontZenithShift = 0.3f;
       //_gradientSky.FrontGroundShift = 0.1f;
       //_gradientSky.BackGroundShift = 0.1f;
@@ -100,7 +100,7 @@ namespace Samples.Graphics
 
       _gradientTextureSky = new GradientTextureSkyNode();
       _gradientTextureSky.TimeOfDay = _time.TimeOfDay;
-      _gradientTextureSky.Color = new Vector4F(1);
+      _gradientTextureSky.Color = new Vector4(1);
       _gradientTextureSky.FrontTexture = ContentManager.Load<Texture2D>("Sky/GradientSkyFront");
       _gradientTextureSky.BackTexture = ContentManager.Load<Texture2D>("Sky/GradientSkyBack");
       _gradientTextureSky.CieSkyStrength = 1;
@@ -309,9 +309,9 @@ namespace Samples.Graphics
 
       _cloudLayerNode.SunDirection = _scatteringSky.SunDirection;
       _cloudLayerNode.SunLight = ChangeSaturation(_scatteringSky.GetSunlight() / 5f, 1);
-      //_cloudPlaneRenderer.Color = new Vector4F(ChangeSaturation(_scatteringSky.GetFogColor(128), 0.9f) * 1.0f, 1);
+      //_cloudPlaneRenderer.Color = new Vector4(ChangeSaturation(_scatteringSky.GetFogColor(128), 0.9f) * 1.0f, 1);
       //Vector3 c = (_scatteringSky.GetFogColor(128) + _scatteringSky.GetSunlight() / 10) / 2;
-      //_cloudPlaneRenderer.Color = new Vector4F(c, 1);
+      //_cloudPlaneRenderer.Color = new Vector4(c, 1);
       _cloudLayerNode.AmbientLight = _scatteringSky.GetAmbientLight(1024) / 6f;
       //_cloudLayerNode.AmbientLight = _scatteringSky.GetFogColor(128) * _scatteringSky.GetAmbientLight(256).Length / 6f;
     }

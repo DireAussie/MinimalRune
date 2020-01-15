@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Forms;
-using DigitalRune.Graphics;
+using MinimalRune.Graphics;
 
 
 namespace InteropSample

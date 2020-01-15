@@ -6,20 +6,20 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using DigitalRune.Collections;
-using DigitalRune.Physics.Constraints;
+using MinimalRune.Collections;
+using MinimalRune.Physics.Constraints;
 
 
-namespace DigitalRune.Physics
+namespace MinimalRune.Physics
 {
   /// <summary>
   /// Manages <see cref="SimulationIsland"/>s of a <see cref="Simulation"/>.
   /// </summary>
   public class SimulationIslandManager : IComparer<SimulationIsland>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly Simulation _simulation;
 
@@ -32,9 +32,9 @@ namespace DigitalRune.Physics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the simulation islands.
@@ -72,9 +72,9 @@ namespace DigitalRune.Physics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="SimulationIslandManager"/> class.
@@ -97,9 +97,9 @@ namespace DigitalRune.Physics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Updates the <see cref="Islands"/> list and the <see cref="RigidBody.IslandId"/> in the rigid 

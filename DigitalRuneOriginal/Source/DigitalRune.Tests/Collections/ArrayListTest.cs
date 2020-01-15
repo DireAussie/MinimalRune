@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 
 
-namespace DigitalRune.Collections.Tests
+namespace MinimalRune.Collections.Tests
 {
   [TestFixture]
   public class ArrayListTest

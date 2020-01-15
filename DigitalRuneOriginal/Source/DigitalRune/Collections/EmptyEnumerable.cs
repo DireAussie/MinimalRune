@@ -7,7 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-namespace DigitalRune.Collections
+namespace MinimalRune.Collections
 {
   /// <summary>
   /// Provides an implementation for <see cref="IEnumerable{T}"/> and <see cref="IEnumerator{T}"/> 

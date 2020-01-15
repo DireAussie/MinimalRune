@@ -6,11 +6,11 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Markup;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Framework;
 
 
-namespace DigitalRune.Editor.Printing
+namespace MinimalRune.Editor.Printing
 {
     /// <summary>
     /// Represents a "Print Preview" window.

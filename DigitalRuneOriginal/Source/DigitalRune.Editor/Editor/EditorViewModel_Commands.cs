@@ -6,16 +6,16 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     public partial class EditorViewModel
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         // Merge DockTabItem context menu nodes and create the menu items. (Note: The managers need
         // to be kept alive because they manage the visibility of the items but are weak event
@@ -26,9 +26,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public ICollection<MergeableNodeCollection<ICommandItem>> MenuNodeCollections { get; } = new Collection<MergeableNodeCollection<ICommandItem>>();
@@ -72,9 +72,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private void InitializeCommandItems()
         {
@@ -85,9 +85,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public void InvalidateUI()

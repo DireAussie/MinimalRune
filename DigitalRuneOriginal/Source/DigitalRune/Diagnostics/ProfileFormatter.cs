@@ -4,10 +4,10 @@
 
 using System;
 using System.Text;
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 
 
-namespace DigitalRune.Diagnostics
+namespace MinimalRune.Diagnostics
 {
   /// <summary>
   /// Provides methods to format output of profilers.

@@ -5,7 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 using Microsoft.Xna.Framework;
 
@@ -18,7 +18,7 @@ using Keys = System.Windows.Input.Key;
 
 
 
-namespace DigitalRune.Game.Input
+namespace MinimalRune.Game.Input
 {
   /// <summary>
   /// Manages user input from several devices. See <see cref="IInputService"/>.
@@ -42,9 +42,9 @@ namespace DigitalRune.Game.Input
     // but not if GamePadState.IsButtonDown/IsButtonUp is used directly.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Info for the last key/button press to detect double-clicks and key/button repetition.
     private class LastButtonInfo<T>
@@ -63,9 +63,9 @@ namespace DigitalRune.Game.Input
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Arrays containing all keys and buttons so that we can enumerate them easily.
     private static readonly Keys[] _keys;
@@ -76,9 +76,9 @@ namespace DigitalRune.Game.Input
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
     private readonly bool _gamerServicesEnabled;
@@ -95,9 +95,9 @@ namespace DigitalRune.Game.Input
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public InputSettings Settings
@@ -135,9 +135,9 @@ namespace DigitalRune.Game.Input
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes static members of the <see cref="InputManager"/> class.
@@ -266,9 +266,9 @@ namespace DigitalRune.Game.Input
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
     /// <inheritdoc/>

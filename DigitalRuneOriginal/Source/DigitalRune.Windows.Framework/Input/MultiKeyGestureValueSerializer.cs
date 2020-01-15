@@ -8,7 +8,7 @@ using System.Windows.Input;
 using System.Windows.Markup;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Converts instances of <see cref="String"/> to and from instances of 

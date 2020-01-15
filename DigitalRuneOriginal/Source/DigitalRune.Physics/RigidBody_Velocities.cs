@@ -3,19 +3,19 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Geometry;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics.Settings;
+using MinimalRune.Geometry;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics.Settings;
 
 
-namespace DigitalRune.Physics
+namespace MinimalRune.Physics
 {
   public partial class RigidBody
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The time of impact. Used during motion clamping.
@@ -25,9 +25,9 @@ namespace DigitalRune.Physics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets a value indicating whether Continuous Collision Detection (CCD) is enabled.
@@ -70,7 +70,7 @@ namespace DigitalRune.Physics
 
           if (IsSleeping)
           {
-            var velocitySquared = _linearVelocity.LengthSquared;
+            var velocitySquared = _linearVelocity.LengthSquared();
             if (MotionType == MotionType.Dynamic)
             {
               if (Simulation == null || velocitySquared > Simulation.Settings.Sleeping.LinearVelocityThresholdSquared)
@@ -107,7 +107,7 @@ namespace DigitalRune.Physics
 
           if (IsSleeping)
           {
-            var velocitySquared = _angularVelocity.LengthSquared;
+            var velocitySquared = _angularVelocity.LengthSquared();
             if (MotionType == MotionType.Dynamic)
             {
               if (Simulation == null || velocitySquared > Simulation.Settings.Sleeping.AngularVelocityThresholdSquared)
@@ -212,9 +212,9 @@ namespace DigitalRune.Physics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Applies an impulse at a given position.
@@ -402,7 +402,7 @@ namespace DigitalRune.Physics
       {
         _linearVelocity = Vector3.Zero;
       }
-      else if (_linearVelocity.LengthSquared > Simulation.Settings.Motion.MaxLinearVelocitySquared)
+      else if (_linearVelocity.LengthSquared() > Simulation.Settings.Motion.MaxLinearVelocitySquared)
       {
         _linearVelocity.Length = Simulation.Settings.Motion.MaxLinearVelocity;
       }
@@ -411,14 +411,14 @@ namespace DigitalRune.Physics
       {
         _angularVelocity = Vector3.Zero;
       }
-      else if (_angularVelocity.LengthSquared > Simulation.Settings.Motion.MaxAngularVelocitySquared)
+      else if (_angularVelocity.LengthSquared() > Simulation.Settings.Motion.MaxAngularVelocitySquared)
       {
         _angularVelocity.Length = Simulation.Settings.Motion.MaxAngularVelocity;
       }
 
       // Important: Use the center-of-mass pose!
       var x = PoseCenterOfMass.Position;
-      var q = Quaternion.CreateRotation(PoseCenterOfMass.Orientation);
+      var q = Quaternion.CreateFromRotationMatrix(PoseCenterOfMass.Orientation);
 
       // Derivative of position: velocity
       // Derivative of orientation: q' = 1/2 * (0, ω) * q
@@ -428,7 +428,7 @@ namespace DigitalRune.Physics
 
       if (CcdEnabled
           && Simulation.Settings.Motion.CcdEnabled
-          && LinearVelocity.LengthSquared > Simulation.Settings.Motion.CcdVelocityThresholdSquared)
+          && LinearVelocity.LengthSquared() > Simulation.Settings.Motion.CcdVelocityThresholdSquared)
       {
         // Continuous collision detection.
         IsCcdActive = true;

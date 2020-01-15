@@ -11,7 +11,7 @@ using System.Windows.Media;
 using System.Windows.Shapes;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Represents a bar chart where the stroke and fill of the bars is defined in
@@ -27,21 +27,21 @@ namespace DigitalRune.Windows.Charts
     /// </remarks>
     public class ColoredBarChart : BarChart
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
-
-
-
-        //--------------------------------------------------------------
-
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
+
+
+
+        
+
+        
 
         /// <summary>
         /// Identifies the <see cref="FillMode"/> dependency property.
@@ -134,9 +134,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
         /// <summary>
@@ -156,9 +156,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Called when a relevant property is changed and the charts needs to be updated.

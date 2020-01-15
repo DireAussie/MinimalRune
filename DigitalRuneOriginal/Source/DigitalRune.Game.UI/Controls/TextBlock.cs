@@ -7,16 +7,16 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Text;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework.Graphics;
 
 
-using DigitalRune.Text;
+using MinimalRune.Text;
 
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   /// <summary>
   /// Provides a lightweight control for displaying small amounts of text, supporting text 
@@ -30,8 +30,8 @@ namespace DigitalRune.Game.UI.Controls
   /// var button = new Button
   /// {
   ///   Content = new TextBlock { Text = "Click Me!" },
-  ///   Margin = new Vector4F(4),
-  ///   Padding = new Vector4F(6),
+  ///   Margin = new Vector4(4),
+  ///   Padding = new Vector4(6),
   ///   HorizontalAlignment = HorizontalAlignment.Stretch,
   /// };
   /// 
@@ -47,15 +47,15 @@ namespace DigitalRune.Game.UI.Controls
   {
     // TODO: Possible new properties: TextAlignment (Left, Right, Center, Justify)
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the text exactly as it should be displayed (wrapping already applied).
@@ -82,9 +82,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary> 
     /// The ID of the <see cref="UseEllipsis"/> game object property.
@@ -159,9 +159,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="TextBlock"/> class.
@@ -174,9 +174,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
@@ -212,7 +212,7 @@ namespace DigitalRune.Game.UI.Controls
         availableSize.Y = height;
 
       // Remove padding from constraint size.
-      Vector4F padding = Padding;
+      Vector4 padding = Padding;
       Vector2F contentSize = availableSize;
       if (Numeric.IsPositiveFinite(availableSize.X))
         contentSize.X -= padding.X + padding.Z;

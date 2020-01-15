@@ -6,12 +6,12 @@
 using System;
 using System.Diagnostics;
 using System.Globalization;
-using DigitalRune.Animation.Character;
-using DigitalRune.Graphics.SceneGraph;
+using MinimalRune.Animation.Character;
+using MinimalRune.Graphics.SceneGraph;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Effects
+namespace MinimalRune.Graphics.Effects
 {
   /// <summary>
   /// Binds an <see cref="EffectParameter"/> to the skinning matrices of <see cref="SkeletonPose"/>
@@ -20,15 +20,15 @@ namespace DigitalRune.Graphics.Effects
   [DebuggerDisplay("{GetType().Name,nq}(Parameter = {Parameter.Name}, Value = {Value})")]
   public class SkeletonPoseParameterBinding : EffectParameterBinding
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the skeleton pose.
@@ -38,9 +38,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -73,9 +73,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

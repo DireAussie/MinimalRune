@@ -15,8 +15,8 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Media;
 using System.Windows.Threading;
-using DigitalRune.Linq;
-using DigitalRune.Mathematics;
+using MinimalRune.Linq;
+using MinimalRune.Mathematics;
 
 using System.Reflection;
 using System.Threading;
@@ -25,7 +25,7 @@ using System.Threading.Tasks;
 
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
     /// Static class that provides helper functions for WPF and Silverlight.

@@ -4,10 +4,10 @@
 
 using System;
 using System.Windows.Input;
-using DigitalRune.Windows;
+using MinimalRune.Windows;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// Represents a separator between command items.
@@ -18,15 +18,15 @@ namespace DigitalRune.Editor
         // data bindings are implicit interface implementations.
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public string Name { get; }
@@ -83,9 +83,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CommandSeparator"/> class.
@@ -104,9 +104,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public MenuItemViewModel CreateMenuItem()

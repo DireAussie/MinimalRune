@@ -7,25 +7,25 @@ using System.Windows.Controls;
 using System.Windows;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
     /// Arranges its child element at whole device pixels to minimize blurring.
     /// </summary>
     public class PixelSnapper : Decorator
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         // The pixel offset that is required to align the child element to device pixels.
         private Point _pixelOffset;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PixelSnapper"/> class.
@@ -37,9 +37,9 @@ namespace DigitalRune.Windows
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private void OnLayoutUpdated(object sender, EventArgs eventArgs)
         {

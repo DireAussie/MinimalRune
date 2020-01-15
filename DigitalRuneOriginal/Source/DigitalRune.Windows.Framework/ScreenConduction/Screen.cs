@@ -14,7 +14,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Base implementation of <see cref="IScreen"/>.
@@ -26,15 +26,15 @@ namespace DigitalRune.Windows.Framework
           IGuardClose,                  // may prevent closing,
           IDisplayName                  // and has a title.
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public bool IsOpen
@@ -94,9 +94,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Screen"/> class.
@@ -108,9 +108,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes")]

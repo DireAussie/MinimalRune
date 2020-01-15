@@ -12,7 +12,7 @@ using System.Windows;
 using System.Windows.Data;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Extracts <see cref="Double"/> values from a given collection.
@@ -24,18 +24,18 @@ namespace DigitalRune.Windows.Charts
         : Freezable
 
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private Dictionary<string, double> _textLabelDictionary;
         private double _nextLabelValue;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private Dictionary<string, double> TextLabelDictionary
         {
@@ -60,9 +60,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="Collection"/> dependency property.
@@ -186,15 +186,15 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
         /// <summary>

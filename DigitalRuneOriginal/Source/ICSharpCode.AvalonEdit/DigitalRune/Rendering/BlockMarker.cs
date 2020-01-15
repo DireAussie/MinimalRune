@@ -8,15 +8,15 @@ namespace ICSharpCode.AvalonEdit.Rendering
     /// </summary>
     public class BlockMarker : Marker
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets the brush used to fill the block.
@@ -33,9 +33,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Marker"/> class.
@@ -48,9 +48,9 @@ namespace ICSharpCode.AvalonEdit.Rendering
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public override void Draw(TextView textView, DrawingContext drawingContext)

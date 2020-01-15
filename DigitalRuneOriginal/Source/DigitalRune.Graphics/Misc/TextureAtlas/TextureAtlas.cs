@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-//namespace DigitalRune.Graphics
+//namespace MinimalRune.Graphics
 //{
 //  /// <summary>
 //  /// Defines a texture atlas.
@@ -16,27 +16,27 @@
 //  /// <seealso href="http://en.wikipedia.org/wiki/Texture_atlas">Texture Atlas (Wikipedia)</seealso>
 //  public class TextureAtlas
 //  {
-//    //--------------------------------------------------------------
+//    
 //    #region Fields
-//    //--------------------------------------------------------------
+//    
 //    #endregion
 
 
-//    //--------------------------------------------------------------
+//    
 //    #region Properties & Events
-//    //--------------------------------------------------------------
+//    
 //    #endregion
 
 
-//    //--------------------------------------------------------------
+//    
 //    #region Creation & Cleanup
-//    //--------------------------------------------------------------
+//    
 //    #endregion
 
 
-//    //--------------------------------------------------------------
+//    
 //    #region Methods
-//    //--------------------------------------------------------------
+//    
 //    #endregion
 //  }
 //}

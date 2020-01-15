@@ -7,11 +7,11 @@ using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
-using DigitalRune.Mathematics.Statistics;
+using MinimalRune.Mathematics.Statistics;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Mathematics.Algebra.Tests
+namespace MinimalRune.Mathematics.Algebra.Tests
 {
   [TestFixture]
   public class Matrix33DTest
@@ -350,10 +350,10 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     public void Determinant()
     {
       Matrix33D m = new Matrix33D(rowMajor, MatrixOrder.RowMajor);
-      Assert.AreEqual(0.0, m.Determinant);
-      Assert.AreEqual(0.0, Matrix33D.Zero.Determinant);
-      Assert.AreEqual(0.0, Matrix33D.One.Determinant);
-      Assert.AreEqual(1.0, Matrix33D.Identity.Determinant);
+      Assert.AreEqual(0.0, m.Determinant());
+      Assert.AreEqual(0.0, Matrix33D.Zero.Determinant());
+      Assert.AreEqual(0.0, Matrix33D.One.Determinant());
+      Assert.AreEqual(1.0, Matrix33D.Identity.Determinant());
     }
 
 
@@ -459,11 +459,11 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     public void Transpose()
     {
       Matrix33D m = new Matrix33D(rowMajor, MatrixOrder.RowMajor);
-      m.Transpose();
+      m = Matrix.Transpose(m);
       Matrix33D mt = new Matrix33D(rowMajor, MatrixOrder.ColumnMajor);
       Assert.AreEqual(mt, m);
       Matrix33D i = Matrix33D.Identity;
-      i.Transpose();
+      i = Matrix.Transpose(i);
       Assert.AreEqual(Matrix33D.Identity, i);
     }
 

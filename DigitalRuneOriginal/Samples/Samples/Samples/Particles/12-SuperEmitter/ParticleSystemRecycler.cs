@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace DigitalRune.Particles.Effectors
+namespace MinimalRune.Particles.Effectors
 {
   /// <summary>
   /// Recycles the particle system after a certain time or when the particle system does not have 
@@ -35,18 +35,18 @@ namespace DigitalRune.Particles.Effectors
   /// </remarks>
   public class ParticleSystemRecycler : ParticleEffector
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // A lock objects for thread synchronization.
     private static readonly object _lock = new object();
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the minimal time the effector will wait before trying to recycle.
@@ -92,9 +92,9 @@ namespace DigitalRune.Particles.Effectors
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ParticleSystemRecycler"/> class.
@@ -108,9 +108,9 @@ namespace DigitalRune.Particles.Effectors
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

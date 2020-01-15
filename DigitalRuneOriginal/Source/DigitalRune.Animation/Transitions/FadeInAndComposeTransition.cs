@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Animation.Transitions
+namespace MinimalRune.Animation.Transitions
 {
   /// <summary>
   /// Gradually combines the new animation with existing animations by adding the animation into 

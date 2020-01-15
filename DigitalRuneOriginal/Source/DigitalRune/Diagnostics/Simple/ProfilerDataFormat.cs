@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.Diagnostics
+namespace MinimalRune.Diagnostics
 {
   /// <summary>
   /// Provides formatting data for <see cref="ProfilerData"/>.

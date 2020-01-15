@@ -5,22 +5,22 @@
 using System;
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Blends animations within a <see cref="BlendGroup"/>. (For internal use only.)
   /// </summary>
   public abstract class BlendAnimation : IAnimation
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the <see cref="BlendGroup"/>.
@@ -47,15 +47,15 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes the <see cref="BlendAnimation{T}"/> for specified number of animation.

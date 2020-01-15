@@ -20,7 +20,7 @@ using System.Globalization;
 using System.IO;
 using System.Collections.Generic;
 
-namespace DigitalRune.Ionic.Zip
+namespace MinimalRune.Ionic.Zip
 {
     partial class ZipFile
     {

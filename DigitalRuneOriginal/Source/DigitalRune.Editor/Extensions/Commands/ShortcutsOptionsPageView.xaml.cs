@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.Editor.Commands
+namespace MinimalRune.Editor.Commands
 {
     /// <summary>
     /// Shows the available command items and shortcuts in the Options dialog.

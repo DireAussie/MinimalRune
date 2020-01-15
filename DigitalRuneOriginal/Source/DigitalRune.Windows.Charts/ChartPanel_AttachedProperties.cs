@@ -8,13 +8,13 @@ using System.Linq;
 using System.Windows;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     partial class ChartPanel
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="P:DigitalRune.Windows.Charts.ChartPanel.IsDataPoint"/>
@@ -566,9 +566,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static void OnPositioningChanged(DependencyObject element, DependencyPropertyChangedEventArgs eventArgs)
         {

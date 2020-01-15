@@ -4,27 +4,27 @@
 
 using System;
 using System.Windows.Input;
-using DigitalRune.Windows;
+using MinimalRune.Windows;
 
 
-namespace DigitalRune.Editor.Search
+namespace MinimalRune.Editor.Search
 {
     /// <summary>
     /// Creates a combo box for "Quick Find" in the toolbar.
     /// </summary>
     internal class QuickFindCommandItem : ObservableObject, ICommandItem
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private ToolBarQuickFindViewModel _toolBarQuickFindViewModel;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public string Name
@@ -96,9 +96,9 @@ namespace DigitalRune.Editor.Search
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuickFindCommandItem"/> class.
@@ -117,9 +117,9 @@ namespace DigitalRune.Editor.Search
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public MenuItemViewModel CreateMenuItem()

@@ -3,28 +3,28 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
 
 
 using Microsoft.Xna.Framework.Content;
 
 
 
-namespace DigitalRune.Particles
+namespace MinimalRune.Particles
 {
   partial class ParticleSystem
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public Aabb Aabb
@@ -159,9 +159,9 @@ namespace DigitalRune.Particles
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private void InitializeGeometricObject()
     {
@@ -171,9 +171,9 @@ namespace DigitalRune.Particles
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private void OnShapeChanged(object sender, ShapeChangedEventArgs eventArgs)
     {

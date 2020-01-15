@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Editor.Output
+namespace MinimalRune.Editor.Output
 {
     /// <summary>
     /// Provides arguments for the <see cref="INLogTarget.MessageWritten"/> event.

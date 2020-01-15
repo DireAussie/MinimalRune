@@ -6,7 +6,7 @@ using System;
 using System.Globalization;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   partial class Material
   {

@@ -4,10 +4,10 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Animation.Traits;
+using MinimalRune.Animation.Traits;
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Blends animations within a <see cref="BlendGroup"/>. (For internal use only.)
@@ -15,17 +15,17 @@ namespace DigitalRune.Animation
   /// <typeparam name="T">The type of the animation value.</typeparam>
   public class BlendAnimation<T> : BlendAnimation, IAnimation<T> 
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly List<IAnimation<T>> _animations = new List<IAnimation<T>>();
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc cref="IAnimation{T}.Traits"/>
     public IAnimationValueTraits<T> Traits
@@ -35,15 +35,15 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     internal override void Initialize(BlendGroup blendGroup, string targetProperty)

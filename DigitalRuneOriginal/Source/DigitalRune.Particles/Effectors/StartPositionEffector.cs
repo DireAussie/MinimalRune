@@ -2,16 +2,16 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Geometry;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Statistics;
+using MinimalRune.Geometry;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Statistics;
 
 
 using Microsoft.Xna.Framework.Content;
 
 
 
-namespace DigitalRune.Particles.Effectors
+namespace MinimalRune.Particles.Effectors
 {
   /// <summary>
   /// Initializes a <see cref="Vector3"/> particle parameter as a position vector and applies the 
@@ -42,17 +42,17 @@ namespace DigitalRune.Particles.Effectors
   /// </remarks>
   public class StartPositionEffector : ParticleEffector
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private IParticleParameter<Vector3> _parameter;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the name of the particle parameter that is initialized.
@@ -104,9 +104,9 @@ namespace DigitalRune.Particles.Effectors
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="StartPositionEffector"/> class.
@@ -118,9 +118,9 @@ namespace DigitalRune.Particles.Effectors
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override ParticleEffector CreateInstanceCore()

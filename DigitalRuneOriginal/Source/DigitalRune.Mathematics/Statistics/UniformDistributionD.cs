@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Mathematics.Statistics
+namespace MinimalRune.Mathematics.Statistics
 {
   /// <summary>
   /// Represents a uniform distribution that returns random values for a given interval 
@@ -18,15 +18,15 @@ namespace DigitalRune.Mathematics.Statistics
   /// </remarks>
   public class UniformDistributionD : Distribution<double>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the maximum value.
@@ -43,9 +43,9 @@ namespace DigitalRune.Mathematics.Statistics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="UniformDistributionD"/> class.
@@ -70,9 +70,9 @@ namespace DigitalRune.Mathematics.Statistics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override double Next(Random random)

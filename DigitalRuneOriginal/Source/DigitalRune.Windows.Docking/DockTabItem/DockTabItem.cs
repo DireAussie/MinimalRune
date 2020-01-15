@@ -10,10 +10,10 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
-using DigitalRune.Linq;
+using MinimalRune.Linq;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     /// <summary>
     /// Represents a selectable, draggable item in the docking layout.
@@ -54,9 +54,9 @@ namespace DigitalRune.Windows.Docking
     [TemplateVisualState(GroupName = "FocusStates", Name = "Focused")]
     public partial class DockTabItem : ContentControl
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private DockControl _dockControl;
         private bool _activating;
@@ -65,9 +65,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the parent <see cref="Docking.DockTabPane"/>.
@@ -80,9 +80,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------    
+            
 
         /// <summary>
         /// Identifies the <see cref="DockWidth"/> dependency property.
@@ -378,9 +378,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="DockTabItem"/> class.
@@ -417,9 +417,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static void OnAccessKeyPressed(object sender, AccessKeyPressedEventArgs eventArgs)
         {

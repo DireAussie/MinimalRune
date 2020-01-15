@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Represents a custom property shown in a <see cref="PropertyGrid"/>.
@@ -20,15 +20,15 @@ namespace DigitalRune.Windows.Controls
         //   the conversion!
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets the category.
@@ -163,9 +163,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <overloads>
         /// <summary>
@@ -203,9 +203,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public void Reset()

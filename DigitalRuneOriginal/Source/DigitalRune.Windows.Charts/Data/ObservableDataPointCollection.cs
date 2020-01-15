@@ -8,7 +8,7 @@ using System.Collections.ObjectModel;
 using System.Windows;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Represents a list of data points that provides notifications when data points are added,
@@ -16,21 +16,21 @@ namespace DigitalRune.Windows.Charts
     /// </summary>
     public class ObservableDataPointCollection : ObservableCollection<DataPoint>
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
-
-
-
-        //--------------------------------------------------------------
-
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
+
+
+
+        
+
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ObservableDataPointCollection"/> class.
@@ -124,9 +124,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
     }
 }

@@ -4,10 +4,10 @@
 
 using System;
 using System.Windows.Input;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Windows.Framework;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// Defines an item that invokes a <see cref="DelegateCommand"/>.

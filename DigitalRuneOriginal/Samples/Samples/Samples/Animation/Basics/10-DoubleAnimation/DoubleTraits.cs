@@ -1,6 +1,6 @@
 ﻿using DigitalRune;
-using DigitalRune.Animation;
-using DigitalRune.Animation.Traits;
+using MinimalRune.Animation;
+using MinimalRune.Animation.Traits;
 
 
 namespace Samples.Animation

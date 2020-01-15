@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// Represents a button in a toolbar.

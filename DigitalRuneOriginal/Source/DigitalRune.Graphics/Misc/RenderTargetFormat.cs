@@ -6,7 +6,7 @@ using System;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Describes the size and format of a texture or a render target.
@@ -25,15 +25,15 @@ namespace DigitalRune.Graphics
   /// </remarks>
   public struct RenderTargetFormat : IEquatable<RenderTargetFormat>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the width (in pixels).
@@ -157,9 +157,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -391,9 +391,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Determines whether the specified <see cref="Object"/> is equal to this instance.

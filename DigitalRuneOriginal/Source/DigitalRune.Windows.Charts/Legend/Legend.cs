@@ -11,7 +11,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Shows a list that describes the chart elements in a chart panel.
@@ -41,9 +41,9 @@ namespace DigitalRune.Windows.Charts
     [TemplatePart(Name = "PART_ItemsPanel", Type = typeof(Panel))]
     public class Legend : Control
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// The default value of the <see cref="Title"/> property.
@@ -52,9 +52,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly BooleanToVisibilityConverter BooleanToVisibilityConverter = new BooleanToVisibilityConverter();
         private ReadOnlyObservableCollection<ChartElement> _chartElements;
@@ -62,15 +62,15 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------    
+            
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="LegendItemStyle"/> dependency property.
@@ -167,9 +167,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
         /// <summary>
@@ -192,9 +192,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------   
+           
 
         /// <summary>
         /// Called when property <see cref="Source"/> changes.

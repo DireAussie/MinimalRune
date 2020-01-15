@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.Editor.Shader
+namespace MinimalRune.Editor.Shader
 {
     /// <summary>
     /// Describes a region of an DirectX Effect or CgFX file.

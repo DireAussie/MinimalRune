@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Animation.Character
+namespace MinimalRune.Animation.Character
 {
   // Animated bones often only need Rotation, or Rotation + Translation. Therefore,
   // we have different bone key frame types to save memory.

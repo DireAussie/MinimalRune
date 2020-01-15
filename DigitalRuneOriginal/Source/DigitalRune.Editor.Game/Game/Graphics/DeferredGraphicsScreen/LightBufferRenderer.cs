@@ -2,10 +2,10 @@
 using System;
 using System.Collections.Generic;
 using DigitalRune;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.PostProcessing;
-using DigitalRune.Graphics.Rendering;
-using DigitalRune.Graphics.SceneGraph;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.PostProcessing;
+using MinimalRune.Graphics.Rendering;
+using MinimalRune.Graphics.SceneGraph;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -28,9 +28,9 @@ namespace Samples
   // by the graphics screen.
   public sealed class LightBufferRenderer : IDisposable
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private bool _disposed;
     private readonly IGraphicsService _graphicsService;
@@ -44,9 +44,9 @@ namespace Samples
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     public LightRenderer LightRenderer { get; private set; }
 
@@ -102,9 +102,9 @@ namespace Samples
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     public LightBufferRenderer(IGraphicsService graphicsService)
     {
@@ -128,9 +128,9 @@ namespace Samples
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     public void Render(IList<SceneNode> lights, RenderContext context)
     {

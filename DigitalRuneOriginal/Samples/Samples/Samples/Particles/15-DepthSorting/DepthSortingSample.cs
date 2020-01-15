@@ -1,6 +1,6 @@
-﻿using DigitalRune.Diagnostics;
-using DigitalRune.Game.Input;
-using DigitalRune.Graphics.SceneGraph;
+﻿using MinimalRune.Diagnostics;
+using MinimalRune.Game.Input;
+using MinimalRune.Graphics.SceneGraph;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 

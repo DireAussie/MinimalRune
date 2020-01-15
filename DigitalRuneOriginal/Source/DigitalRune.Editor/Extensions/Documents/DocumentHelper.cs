@@ -8,10 +8,10 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
-using DigitalRune.Windows.Docking;
+using MinimalRune.Windows.Docking;
 
 
-namespace DigitalRune.Editor.Documents
+namespace MinimalRune.Editor.Documents
 {
     /// <summary>
     /// Provides helper methods for documents.

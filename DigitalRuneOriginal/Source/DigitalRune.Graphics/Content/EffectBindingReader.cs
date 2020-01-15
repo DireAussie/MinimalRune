@@ -4,12 +4,12 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Graphics.Effects;
+using MinimalRune.Graphics.Effects;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Content
+namespace MinimalRune.Graphics.Content
 {
   /// <summary>
   /// Reads an <see cref="EffectBinding"/> from binary format.

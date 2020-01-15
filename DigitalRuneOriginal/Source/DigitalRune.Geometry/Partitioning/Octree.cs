@@ -7,11 +7,11 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry.Partitioning
+namespace MinimalRune.Geometry.Partitioning
 {
   public class Octree<T> : BaseAabbPartition<T>
   {
@@ -28,9 +28,9 @@ namespace DigitalRune.Geometry.Partitioning
     // For node order see, Real-Time Collision Detection p. 308.
     //
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private sealed class Node
     {
@@ -41,17 +41,17 @@ namespace DigitalRune.Geometry.Partitioning
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private Node Root;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
     public Aabb? MinimumRootAabb
@@ -78,9 +78,9 @@ namespace DigitalRune.Geometry.Partitioning
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     public Octree(Func<T, Aabb> getAabb)
       : base(getAabb)
@@ -89,9 +89,9 @@ namespace DigitalRune.Geometry.Partitioning
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     public override IEnumerable<T> GetOverlaps(Aabb aabb)
     {

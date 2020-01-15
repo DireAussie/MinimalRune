@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Mathematics.Statistics
+namespace MinimalRune.Mathematics.Statistics
 {
   /// <summary>
   /// Represents a probability distribution that contains only 1 value with 100% probability. Hence 
@@ -14,15 +14,15 @@ namespace DigitalRune.Mathematics.Statistics
   /// <typeparam name="T">The type of the constant.</typeparam>
   public class ConstValueDistribution<T> : Distribution<T>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the single constant value.
@@ -32,9 +32,9 @@ namespace DigitalRune.Mathematics.Statistics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ConstValueDistribution{T}"/> class.
@@ -55,9 +55,9 @@ namespace DigitalRune.Mathematics.Statistics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override T Next(Random random)

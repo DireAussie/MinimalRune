@@ -4,9 +4,9 @@
 
 using System;
 using System.Globalization;
-using DigitalRune.Geometry;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
 using System.Diagnostics;
@@ -14,7 +14,7 @@ using Microsoft.Xna.Framework;
 
 
 
-namespace DigitalRune.Animation.Character
+namespace MinimalRune.Animation.Character
 {
   /// <summary>
   /// Defines a transformation that scales, rotates and translates (SRT) an object.
@@ -55,9 +55,9 @@ namespace DigitalRune.Animation.Character
 
   public struct SrtTransform : IEquatable<SrtTransform>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// An SRT transform with no scale, rotation and translation.
@@ -71,9 +71,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The scale.
@@ -94,9 +94,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets a value indicating whether the scale is not (1, 1, 1). 
@@ -170,9 +170,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -199,7 +199,7 @@ namespace DigitalRune.Animation.Character
     public SrtTransform(Matrix rotation)
     {
       Scale = Vector3.One;
-      Rotation = Quaternion.CreateRotation(rotation);
+      Rotation = Quaternion.CreateFromRotationMatrix(rotation);
       Translation = Vector3.Zero;
     }
 
@@ -227,7 +227,7 @@ namespace DigitalRune.Animation.Character
     public SrtTransform(Matrix rotation, Vector3 translation)
     {
       Scale = Vector3.One;
-      Rotation = Quaternion.CreateRotation(rotation);
+      Rotation = Quaternion.CreateFromRotationMatrix(rotation);
       Translation = translation;
     }    
 
@@ -257,15 +257,15 @@ namespace DigitalRune.Animation.Character
     public SrtTransform(Vector3 scale, Matrix rotation, Vector3 translation)
     {
       Scale = scale;
-      Rotation = Quaternion.CreateRotation(rotation);
+      Rotation = Quaternion.CreateFromRotationMatrix(rotation);
       Translation = translation;
     }
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Indicates whether the current object is equal to another object of the same type.
@@ -432,7 +432,7 @@ namespace DigitalRune.Animation.Character
     public Matrix ToXna()
     {
       Vector3 s = Scale;
-      Matrix r = Rotation.ToRotationMatrix33();
+      Matrix r = Matrix.CreateFromQuaternion(Rotation);
       Vector3 t = Translation;
       return new Matrix(s.X * r.M00, s.X * r.M10, s.X * r.M20, 0,
                         s.Y * r.M01, s.Y * r.M11, s.Y * r.M21, 0,
@@ -471,9 +471,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Determines whether two SRT transforms are equal (within a numerical tolerance).
@@ -629,9 +629,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns the hash code for this instance.
@@ -709,9 +709,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -979,7 +979,7 @@ namespace DigitalRune.Animation.Character
     /// Multiplying an SRT transform with a vector is equal to transforming a vector from local 
     /// space to parent space.
     /// </remarks>
-    public static Vector4F operator *(SrtTransform srt, Vector4F vector)
+    public static Vector4 operator *(SrtTransform srt, Vector4 vector)
     {
       return srt.ToMatrix() * vector;
     }
@@ -995,7 +995,7 @@ namespace DigitalRune.Animation.Character
     /// Multiplying a SRT matrix with a vector is equal to transforming a vector from local space
     /// to parent space.
     /// </remarks>
-    public static Vector4F Multiply(SrtTransform srt, Vector4F vector)
+    public static Vector4 Multiply(SrtTransform srt, Vector4 vector)
     {
       return srt.ToMatrix() * vector;
     }
@@ -1043,7 +1043,7 @@ namespace DigitalRune.Animation.Character
     public static implicit operator Matrix(SrtTransform srt)
     {
       //Vector3 s = srt.Scale;
-      //Matrix r = srt.Rotation.ToRotationMatrix33();
+      //Matrix r = srt.Matrix.CreateFromQuaternion(Rotation);
       //Vector3 t = srt.Translation;
       //return new Matrix(s.X * r.M00, s.Y * r.M01, s.Z * r.M02, t.X,
       //                     s.X * r.M10, s.Y * r.M11, s.Z * r.M12, t.Y,
@@ -1114,7 +1114,7 @@ namespace DigitalRune.Animation.Character
     public static implicit operator Matrix(SrtTransform srt)
     {
       //Vector3 s = srt.Scale;
-      //Matrix r = srt.Rotation.ToRotationMatrix33();
+      //Matrix r = srt.Matrix.CreateFromQuaternion(Rotation);
       //Vector3 t = srt.Translation;
       //return new Matrix(s.X * r.M00, s.X * r.M10, s.X * r.M20, 0,
       //                  s.Y * r.M01, s.Y * r.M11, s.Y * r.M21, 0,

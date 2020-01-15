@@ -5,28 +5,28 @@
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 
 
-namespace DigitalRune.Undo
+namespace MinimalRune.Undo
 {
   /// <summary>
   /// Implements an undo/redo buffer.
   /// </summary>
   public class UndoBuffer : INotifyPropertyChanged
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private int _groupDepth;
     private int _numberOfOperationsInGroup;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Occurs after an operation is undone.
@@ -47,9 +47,9 @@ namespace DigitalRune.Undo
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets a value indicating whether this <see cref="UndoBuffer"/> accepts changes.
@@ -233,9 +233,9 @@ namespace DigitalRune.Undo
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="UndoBuffer"/> class.
@@ -250,9 +250,9 @@ namespace DigitalRune.Undo
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Begins a new undo group.

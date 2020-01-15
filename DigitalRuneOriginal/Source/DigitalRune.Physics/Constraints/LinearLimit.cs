@@ -4,12 +4,12 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Geometry;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Physics.Constraints
+namespace MinimalRune.Physics.Constraints
 {
   /// <summary>
   /// Defines a constraint that restricts translational movement. This constraint is configurable
@@ -32,9 +32,9 @@ namespace DigitalRune.Physics.Constraints
   /// </remarks>
   public class LinearLimit : Constraint
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly LimitState[] _limitStates = new LimitState[3];
     private Vector3 _minImpulseLimits;
@@ -48,9 +48,9 @@ namespace DigitalRune.Physics.Constraints
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the constraint anchor pose on <see cref="Constraint.BodyA"/> in local space of 
@@ -309,15 +309,15 @@ namespace DigitalRune.Physics.Constraints
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the state of a linear limit.
@@ -490,7 +490,7 @@ namespace DigitalRune.Physics.Constraints
       impulse.Y = ApplyImpulse(1);
       impulse.Z = ApplyImpulse(2);
 
-      return impulse.LengthSquared > Simulation.Settings.Constraints.MinConstraintImpulseSquared;
+      return impulse.LengthSquared() > Simulation.Settings.Constraints.MinConstraintImpulseSquared;
     }
 
 

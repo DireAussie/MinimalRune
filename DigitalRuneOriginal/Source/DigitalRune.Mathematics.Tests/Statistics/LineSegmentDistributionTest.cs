@@ -1,9 +1,9 @@
 using System;
 using NUnit.Framework;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Mathematics.Statistics.Tests
+namespace MinimalRune.Mathematics.Statistics.Tests
 {
   [TestFixture]
   public class LineSegmentDistributionTest

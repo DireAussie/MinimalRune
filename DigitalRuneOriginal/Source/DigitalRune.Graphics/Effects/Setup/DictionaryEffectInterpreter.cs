@@ -4,11 +4,11 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Text;
+using MinimalRune.Text;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Effects
+namespace MinimalRune.Graphics.Effects
 {
   /// <summary>
   /// Provides description of effect techniques and parameters by comparing their names, semantics, 
@@ -26,9 +26,9 @@ namespace DigitalRune.Graphics.Effects
   /// </remarks>
   public class DictionaryEffectInterpreter : IEffectInterpreter
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Creates the description for the specified effect technique.
@@ -50,15 +50,15 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets factory methods for effect technique descriptions.
@@ -90,9 +90,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="DictionaryEffectInterpreter"/> class.
@@ -106,9 +106,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public virtual EffectTechniqueDescription GetDescription(Effect effect, EffectTechnique technique)

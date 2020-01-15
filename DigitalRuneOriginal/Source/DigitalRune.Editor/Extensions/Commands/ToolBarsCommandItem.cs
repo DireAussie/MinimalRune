@@ -8,22 +8,22 @@ using System.Globalization;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Windows.Input;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Framework;
 using NLog;
 using static System.FormattableString;
 
 
-namespace DigitalRune.Editor.Commands
+namespace MinimalRune.Editor.Commands
 {
     /// <summary>
     /// Creates a menu that controls the visibility of the toolbars.
     /// </summary>
     internal sealed class ToolBarsCommandItem : ObservableObject, ICommandItem, IDisposable
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
@@ -36,9 +36,9 @@ namespace DigitalRune.Editor.Commands
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets a value indicating whether this instance has been disposed of.
@@ -109,9 +109,9 @@ namespace DigitalRune.Editor.Commands
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolBarsCommandItem"/> class.
@@ -176,9 +176,9 @@ namespace DigitalRune.Editor.Commands
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         public MenuItemViewModel CreateMenuItem()
         {

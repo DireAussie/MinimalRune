@@ -1,5 +1,5 @@
 ﻿
-using DigitalRune.Game.Input;
+using MinimalRune.Game.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 

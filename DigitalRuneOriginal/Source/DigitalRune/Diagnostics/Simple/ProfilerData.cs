@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Diagnostics
+namespace MinimalRune.Diagnostics
 {
   /// <summary>
   /// Stores profiler data.
@@ -18,18 +18,18 @@ namespace DigitalRune.Diagnostics
   {
     // Methods are all internal because the user should only use the thread-safe Profiler methods.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // The total elapsed seconds when Start() was called. -1 means that Start() was not called.
     private double _startTime = -1;
 
       
       
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
     
     /// <summary>
     /// Gets the name of the profiler data.
@@ -85,9 +85,9 @@ namespace DigitalRune.Diagnostics
 
       
       
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Profiler"/> class.
@@ -102,9 +102,9 @@ namespace DigitalRune.Diagnostics
 
       
       
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     internal void Reset()
     {

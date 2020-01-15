@@ -8,7 +8,7 @@ using ICSharpCode.AvalonEdit.Document;
 using ICSharpCode.AvalonEdit.Editing;
 
 
-namespace DigitalRune.Editor.Shader
+namespace MinimalRune.Editor.Shader
 {
     /// <summary>
     /// <see cref="CompletionData"/> that has a name.
@@ -19,15 +19,15 @@ namespace DigitalRune.Editor.Shader
     /// </remarks>
     internal class NamedCompletionData : ICompletionData, INamedObject
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets (or sets) the displayed content.
@@ -86,9 +86,9 @@ namespace DigitalRune.Editor.Shader
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CompletionData"/> class.
@@ -112,9 +112,9 @@ namespace DigitalRune.Editor.Shader
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Perform the completion.

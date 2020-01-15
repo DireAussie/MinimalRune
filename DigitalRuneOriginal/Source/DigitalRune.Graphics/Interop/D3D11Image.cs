@@ -10,7 +10,7 @@ using System.Windows.Interop;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Interop
+namespace MinimalRune.Graphics.Interop
 {
   /// <summary>
   /// Wraps the <see cref="D3DImage"/> to make it compatible with Direct3D 11.
@@ -20,9 +20,9 @@ namespace DigitalRune.Graphics.Interop
   /// </remarks>
   internal class D3D11Image : D3DImage, IDisposable
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly bool _enableAlpha;
 
@@ -55,9 +55,9 @@ namespace DigitalRune.Graphics.Interop
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets a value indicating whether this instance has been disposed of.
@@ -93,9 +93,9 @@ namespace DigitalRune.Graphics.Interop
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="D3D11Image"/> class.
@@ -173,9 +173,9 @@ namespace DigitalRune.Graphics.Interop
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     ///// <summary>
     ///// When implemented in a derived class, creates a new instance of the <see cref="D3DImage" />

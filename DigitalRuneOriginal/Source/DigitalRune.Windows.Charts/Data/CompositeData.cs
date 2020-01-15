@@ -6,7 +6,7 @@ using System;
 using System.Globalization;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Combines the x and y item from a <see cref="CompositeDataSource"/> into a single object.
@@ -14,15 +14,15 @@ namespace DigitalRune.Windows.Charts
     /// </summary>
     public class CompositeData
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets the original item that contains the x value.
@@ -39,9 +39,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <overloads>
         /// <summary>
@@ -72,9 +72,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Determines whether the specified <see cref="Object"/> is equal to the current 

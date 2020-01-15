@@ -5,10 +5,10 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using DigitalRune.Windows.Controls;
+using MinimalRune.Windows.Controls;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     /// <summary>
     /// Represents a context menu that shows a list of <see cref="DockTabItem"/>s.
@@ -21,9 +21,9 @@ namespace DigitalRune.Windows.Docking
     /// </remarks>
     public class DockPaneMenu : ContextMenu
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="DockPaneMenu"/> class.
@@ -35,9 +35,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Called when the <see cref="ContextMenu.Opened"/> event occurs.

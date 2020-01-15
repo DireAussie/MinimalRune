@@ -13,7 +13,7 @@ using System.Reflection;
 
 
 
-namespace DigitalRune
+namespace MinimalRune
 {
   /// <summary>
   /// Provides extension methods applicable to all objects.

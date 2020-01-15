@@ -15,7 +15,7 @@
 // ------------------------------------------------------------------
 
 
-namespace DigitalRune.Ionic.Zip
+namespace MinimalRune.Ionic.Zip
 {
     /// <summary>
     /// An enum that specifies the source of the ZipEntry. 

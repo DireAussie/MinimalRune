@@ -4,11 +4,11 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Graphics.SceneGraph;
+using MinimalRune.Graphics.SceneGraph;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Defines a morph target (blend shape) of a submesh.
@@ -45,15 +45,15 @@ namespace DigitalRune.Graphics
   [DebuggerDisplay("{GetType().Name,nq}(Name = {Name})")]
   public class MorphTarget : IDisposable, INamedObject
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the name of the morph target.
@@ -81,9 +81,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="MorphTarget"/> class. 
@@ -148,9 +148,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
   }
 }

@@ -5,7 +5,7 @@
 using System.Collections.Generic;
 
 
-namespace DigitalRune.Mathematics.Interpolation
+namespace MinimalRune.Mathematics.Interpolation
 {
   /// <summary>
   /// Defines a step interpolation between two values (single-precision).
@@ -74,9 +74,9 @@ namespace DigitalRune.Mathematics.Interpolation
     }
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static readonly ResourcePool<StepSegment1F> Pool = new ResourcePool<StepSegment1F>(
        () => new StepSegment1F(),                     // Create

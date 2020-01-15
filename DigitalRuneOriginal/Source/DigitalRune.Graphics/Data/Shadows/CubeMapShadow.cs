@@ -6,25 +6,25 @@ using System;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Defines an omnidirectional cube map shadow that can be used for <see cref="PointLight"/>s.
   /// </summary>
   public class CubeMapShadow : Shadow
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     internal float EffectiveDepthBias;      // Bias in light space [0, 1] range. Usually negative.
     internal float EffectiveNormalOffset;   // Offset in world space.
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc cref="Shadow.ShadowMap"/>
     public new RenderTargetCube ShadowMap
@@ -166,9 +166,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="CubeMapShadow"/> class.
@@ -190,9 +190,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

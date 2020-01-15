@@ -7,7 +7,7 @@ using System.ComponentModel;
 using System.Globalization;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Converts string values to a <see cref="Predicate{T}"/> for <see cref="Axis"/>.

@@ -4,14 +4,14 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Animation.Easing;
-using DigitalRune.Mathematics;
+using MinimalRune.Animation.Easing;
+using MinimalRune.Mathematics;
 
 using Microsoft.Xna.Framework.Content;
 
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Animates a value from/to/by a certain value. (Base implementation.)
@@ -125,15 +125,15 @@ namespace DigitalRune.Animation
   /// </remarks>
   public abstract class FromToByAnimation<T> : Animation<T> where T : struct
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the duration of the interpolation.
@@ -206,9 +206,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="FromToByAnimation{T}"/> class.
@@ -220,9 +220,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override TimeSpan GetTotalDuration()

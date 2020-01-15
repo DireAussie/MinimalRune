@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.Particles
+namespace MinimalRune.Particles
 {
   /// <summary>
   /// Manages a collection of particle systems.

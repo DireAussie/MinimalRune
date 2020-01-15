@@ -5,7 +5,7 @@
 using System.Threading.Tasks;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Provides helper methods for working with parallel tasks.

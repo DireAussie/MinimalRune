@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.Animation.Transitions
+namespace MinimalRune.Animation.Transitions
 {
   /// <summary>
   /// Takes a snapshot of the current animation values and then replaces all existing animations 

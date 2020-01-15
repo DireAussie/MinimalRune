@@ -6,15 +6,15 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics.Rendering;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Particles;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics.Rendering;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Particles;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Represents an instance of a particle effect in a 3D scene.
@@ -410,15 +410,15 @@ namespace DigitalRune.Graphics.SceneGraph
     // To document:
     // ParticleSystem parameters should not be added/removed.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the particle system.
@@ -468,9 +468,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ParticleSystemNode" /> class.
@@ -494,9 +494,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

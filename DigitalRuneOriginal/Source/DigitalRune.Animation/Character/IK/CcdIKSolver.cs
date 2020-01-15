@@ -4,11 +4,11 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Animation.Character
+namespace MinimalRune.Animation.Character
 {
   /// <summary>
   /// Modifies a skeleton using the cyclic-coordinate descent (CCD) algorithm.
@@ -45,9 +45,9 @@ namespace DigitalRune.Animation.Character
     // CCD is described in Game Programming Gems 3.
     // TODO: Add support for solving several concurrent chains.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private bool _isDirty = true;
 
@@ -56,9 +56,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the index of the root bone.
@@ -183,9 +183,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="CcdIKSolver"/> class.
@@ -199,9 +199,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Called when the <see cref="SkeletonPose"/> was exchanged.
@@ -276,7 +276,7 @@ namespace DigitalRune.Animation.Character
             tipLocal = bonePoseAbsolute.ToLocalPosition(tipAbsolute);
           }
 
-          if ((tipLocal - targetPositionLocal).LengthSquared < toleranceSquared)
+          if ((tipLocal - targetPositionLocal).LengthSquared() < toleranceSquared)
           {
             // Target reached! If this is the first iteration and the first bone, then we
             // didn't have to do anything and can abort. Otherwise we just leave the loops.
@@ -291,7 +291,7 @@ namespace DigitalRune.Animation.Character
           // Rotate bone so that it points to the target.
           if (tipLocal.TryNormalize() && targetPositionLocal.TryNormalize())
           {
-            var rotation = Quaternion.CreateRotation(tipLocal, targetPositionLocal);
+            var rotation = Quaternion.CreateFromRotationMatrix(tipLocal, targetPositionLocal);
             var angle = rotation.Angle;
 
             // If the bone gain is less than 1, then we make a smaller correction. We will need

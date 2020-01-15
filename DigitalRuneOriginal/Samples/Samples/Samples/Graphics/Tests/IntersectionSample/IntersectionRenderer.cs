@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using DigitalRune;
-using DigitalRune.Collections;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Collections;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -24,9 +24,9 @@ namespace Samples.Graphics
   /// </remarks>
   public sealed class IntersectionRenderer : IDisposable
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// A default depth/stencil state object for rendering stencil volumes using the single pass
@@ -135,9 +135,9 @@ namespace Samples.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly IGraphicsService _graphicsService;
 
@@ -167,9 +167,9 @@ namespace Samples.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the downsample factor.
@@ -199,9 +199,9 @@ namespace Samples.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="IntersectionRenderer"/> class.
@@ -252,9 +252,9 @@ namespace Samples.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Computes the intersection of <see cref="MeshNode"/>s.

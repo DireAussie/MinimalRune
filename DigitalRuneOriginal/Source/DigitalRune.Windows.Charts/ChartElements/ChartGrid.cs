@@ -11,7 +11,7 @@ using System.Windows.Media;
 using System.Windows.Shapes;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Draws grid lines inside a chart area.
@@ -60,9 +60,9 @@ namespace DigitalRune.Windows.Charts
         // application is idle. See RenderMode.
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private PathRenderer _horizontalMajorLinesRenderer;
         private PathRenderer _horizontalMinorLinesRenderer;
@@ -77,15 +77,15 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
@@ -222,9 +222,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
         /// <summary>
@@ -247,9 +247,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// When overridden in a derived class, is invoked whenever application code or internal

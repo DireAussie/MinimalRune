@@ -7,14 +7,14 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using DigitalRune.Graphics.PostProcessing;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics;
+using MinimalRune.Graphics.PostProcessing;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Renders the shadow mask from the shadow map of a <see cref="LightNode"/>.
@@ -56,9 +56,9 @@ namespace DigitalRune.Graphics.Rendering
     // node. --> Set all SortTags to -1. And initialize it in a custom IComparer when needed. 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly IGraphicsService _graphicsService;
 
@@ -70,9 +70,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the max number of shadows masks.
@@ -175,9 +175,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -245,9 +245,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override bool CanRender(SceneNode node, RenderContext context)

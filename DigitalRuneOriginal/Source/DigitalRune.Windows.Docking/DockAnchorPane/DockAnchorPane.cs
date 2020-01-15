@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     /// <summary>
     /// Represents an anchored pane in the docking layout.
@@ -34,17 +34,17 @@ namespace DigitalRune.Windows.Docking
         // IDockPane.IsVisible of the content and collapses the associated ContentPresenter.
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private ContentPresenter _contentPresenter;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------    
+            
 
         /// <summary>
         /// Gets the <see cref="FrameworkElement"/> that represents the
@@ -61,9 +61,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="DockWidth"/> dependency property.
@@ -98,9 +98,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="DockAnchorPane"/> class.
@@ -126,9 +126,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// When overridden in a derived class, is invoked whenever application code or internal

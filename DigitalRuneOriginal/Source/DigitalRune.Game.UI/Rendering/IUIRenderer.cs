@@ -4,11 +4,11 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Game.UI.Controls;
+using MinimalRune.Game.UI.Controls;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Game.UI.Rendering
+namespace MinimalRune.Game.UI.Rendering
 {
   /// <summary>
   /// Manages and renders the visual appearance of a UI.

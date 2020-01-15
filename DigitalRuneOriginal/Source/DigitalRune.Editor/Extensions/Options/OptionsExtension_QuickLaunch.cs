@@ -4,13 +4,13 @@
 
 using System.Linq;
 using System.Text;
-using DigitalRune.Collections;
-using DigitalRune.Editor.QuickLaunch;
-using DigitalRune.Windows.Framework;
-using DigitalRune.Windows.Themes;
+using MinimalRune.Collections;
+using MinimalRune.Editor.QuickLaunch;
+using MinimalRune.Windows.Framework;
+using MinimalRune.Windows.Themes;
 
 
-namespace DigitalRune.Editor.Options
+namespace MinimalRune.Editor.Options
 {
     partial class OptionsExtension
     {

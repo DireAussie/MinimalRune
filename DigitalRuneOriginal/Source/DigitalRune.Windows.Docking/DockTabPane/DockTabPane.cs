@@ -14,7 +14,7 @@ using System.Windows.Data;
 using System.Windows.Input;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     /// <summary>
     /// Represents a pane that contains multiple items that share the same space on the screen.
@@ -43,9 +43,9 @@ namespace DigitalRune.Windows.Docking
     [StyleTypedProperty(Property = "ItemContainerStyle", StyleTargetType = typeof(DockTabItem))]
     public partial class DockTabPane : Selector
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         // Workaround for creating item containers.
         private object _currentItem;
@@ -67,15 +67,15 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="DockWidth"/> dependency property.
@@ -158,9 +158,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="DockTabPane"/> class.
@@ -195,9 +195,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static void OnAccessKeyPressed(object sender, AccessKeyPressedEventArgs eventArgs)
         {

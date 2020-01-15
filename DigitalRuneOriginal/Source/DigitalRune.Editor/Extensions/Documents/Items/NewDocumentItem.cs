@@ -6,12 +6,12 @@ using System;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Input;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Framework;
 using NLog;
 
 
-namespace DigitalRune.Editor.Documents
+namespace MinimalRune.Editor.Documents
 {
     /// <summary>
     /// Creates the "New" menu and toolbar item that contains a list of all document types that can
@@ -19,9 +19,9 @@ namespace DigitalRune.Editor.Documents
     /// </summary>
     internal class NewDocumentItem : ObservableObject, ICommandItem
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
@@ -31,9 +31,9 @@ namespace DigitalRune.Editor.Documents
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public string Name { get { return "New"; } }
@@ -92,9 +92,9 @@ namespace DigitalRune.Editor.Documents
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="NewDocumentItem"/> class.
@@ -114,9 +114,9 @@ namespace DigitalRune.Editor.Documents
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public MenuItemViewModel CreateMenuItem()

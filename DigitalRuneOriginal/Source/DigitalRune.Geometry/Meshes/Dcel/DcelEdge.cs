@@ -5,7 +5,7 @@
 using System.Diagnostics;
 
 
-namespace DigitalRune.Geometry.Meshes
+namespace MinimalRune.Geometry.Meshes
 {
   /// <summary>
   /// Edge data structure for a Doubly-Connected Edge List (DCEL).

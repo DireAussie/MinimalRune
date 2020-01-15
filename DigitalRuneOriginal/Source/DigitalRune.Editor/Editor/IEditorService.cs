@@ -6,16 +6,16 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Media;
 using System.Xml.Linq;
-using DigitalRune.Collections;
-using DigitalRune.CommandLine;
-using DigitalRune.Editor.Commands;
-using DigitalRune.ServiceLocation;
-using DigitalRune.Windows.Controls;
-using DigitalRune.Windows.Docking;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Collections;
+using MinimalRune.CommandLine;
+using MinimalRune.Editor.Commands;
+using MinimalRune.ServiceLocation;
+using MinimalRune.Windows.Controls;
+using MinimalRune.Windows.Docking;
+using MinimalRune.Windows.Framework;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// Represents the editor.

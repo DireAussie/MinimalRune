@@ -5,11 +5,11 @@
 using System;
 using System.ComponentModel;
 using System.Globalization;
-using DigitalRune.Graphics.Effects;
+using MinimalRune.Graphics.Effects;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Represents a batch of geometry information to submit to the graphics device during rendering.
@@ -39,18 +39,18 @@ namespace DigitalRune.Graphics
   [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
   public class Submesh : IDisposable
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>Temporary ID set during rendering.</summary>
     internal uint Id;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the mesh that own this submesh.
@@ -259,9 +259,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Submesh"/> class.
@@ -312,9 +312,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Clears the morph target names, which are cached by the <see cref="Mesh"/>.

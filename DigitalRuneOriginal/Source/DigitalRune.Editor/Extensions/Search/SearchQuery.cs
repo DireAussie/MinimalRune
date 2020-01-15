@@ -2,13 +2,13 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Windows;
+using MinimalRune.Windows;
 using System;
 using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace DigitalRune.Editor.Search
+namespace MinimalRune.Editor.Search
 {
     /// <summary>
     /// Describes a text search query.

@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 
 
-namespace DigitalRune.Mathematics.Functions.Tests
+namespace MinimalRune.Mathematics.Functions.Tests
 {
   [TestFixture]
   public class GaussianFunctionFTest

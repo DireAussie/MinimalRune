@@ -5,11 +5,11 @@
 using System;
 using System.Diagnostics;
 using System.Linq;
-using DigitalRune.CommandLine;
+using MinimalRune.CommandLine;
 using static System.FormattableString;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling")]
     partial class EditorViewModel

@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.Game.Input
+namespace MinimalRune.Game.Input
 {
   /// <summary>
   /// Identifies a player.

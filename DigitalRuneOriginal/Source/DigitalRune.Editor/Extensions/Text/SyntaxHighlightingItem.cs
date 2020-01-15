@@ -5,21 +5,21 @@
 using System;
 using System.Linq;
 using System.Windows.Input;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Framework;
 using ICSharpCode.AvalonEdit.Highlighting;
 
 
-namespace DigitalRune.Editor.Text
+namespace MinimalRune.Editor.Text
 {
     /// <summary>
     /// Creates a menu that controls syntax highlighting of the currently active text editor control.
     /// </summary>
     internal sealed class SyntaxHighlightingItem : ObservableObject, ICommandItem
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly TextExtension _textExtension;
         private readonly IHighlightingService _highlightingService;
@@ -27,9 +27,9 @@ namespace DigitalRune.Editor.Text
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public string Name
@@ -101,9 +101,9 @@ namespace DigitalRune.Editor.Text
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SyntaxHighlightingItem"/> class.
@@ -123,9 +123,9 @@ namespace DigitalRune.Editor.Text
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public MenuItemViewModel CreateMenuItem()

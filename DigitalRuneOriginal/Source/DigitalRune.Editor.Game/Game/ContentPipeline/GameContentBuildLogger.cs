@@ -5,11 +5,11 @@
 using System;
 using System.Globalization;
 using System.Text;
-using DigitalRune.Editor.Output;
+using MinimalRune.Editor.Output;
 using Microsoft.Xna.Framework.Content.Pipeline;
 
 
-namespace DigitalRune.Editor.Game
+namespace MinimalRune.Editor.Game
 {
     /// <summary>
     /// Forwards content pipeline build messages to the <see cref="IOutputService"/>.
@@ -17,23 +17,23 @@ namespace DigitalRune.Editor.Game
     //[CLSCompliant(false)]
     internal sealed class GameContentBuildLogger : ContentBuildLogger
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly IOutputService _outputService;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GameContentBuildLogger"/> class.
@@ -48,9 +48,9 @@ namespace DigitalRune.Editor.Game
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public override void LogMessage(string message, params object[] messageArgs)

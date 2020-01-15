@@ -1,7 +1,7 @@
 ﻿using System;
-using DigitalRune.Animation;
-using DigitalRune.Game.UI.Controls;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Animation;
+using MinimalRune.Game.UI.Controls;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Practices.ServiceLocation;
 
 
@@ -20,7 +20,7 @@ namespace Samples.Game.UI
 
       Content = new TextBlock
       {
-        Margin = new Vector4F(8),
+        Margin = new Vector4(8),
         Text = "The 'Opacity' of this window is animated.",
         WrapText = true,
       };

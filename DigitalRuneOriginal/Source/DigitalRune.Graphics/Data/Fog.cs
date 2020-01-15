@@ -4,13 +4,13 @@
 
 using System;
 using System.Globalization;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Interpolation;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Interpolation;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Represents fog.
@@ -63,15 +63,15 @@ namespace DigitalRune.Graphics
     //   camera. This way the fog is relative to the horizon and not the ground.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the name of the fog.
@@ -177,7 +177,7 @@ namespace DigitalRune.Graphics
     /// Gets or sets the color of the fog at <see cref="Height0"/>.
     /// </summary>
     /// <value>The color of the fog at <see cref="Height0"/> (using premultiplied alpha).</value>
-    public Vector4F Color0 { get; set; }
+    public Vector4 Color0 { get; set; }
 
 
     /// <summary>
@@ -211,7 +211,7 @@ namespace DigitalRune.Graphics
     /// Gets or sets the color of the fog at <see cref="Height1"/>.
     /// </summary>
     /// <value>The color of the fog at <see cref="Height1"/> (using premultiplied alpha).</value>
-    public Vector4F Color1 { get; set; }
+    public Vector4 Color1 { get; set; }
 
 
     /// <summary>
@@ -273,9 +273,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Fog"/> class.
@@ -284,9 +284,9 @@ namespace DigitalRune.Graphics
     {
       Density = 1f;
       Height0 = 0;
-      Color0 = new Vector4F(0.5f, 0.5f, 0.5f, 1);
+      Color0 = new Vector4(0.5f, 0.5f, 0.5f, 1);
       Height1 = 100;
-      Color1 = new Vector4F(0.5f, 0.5f, 0.5f, 1);
+      Color1 = new Vector4(0.5f, 0.5f, 0.5f, 1);
       HeightFalloff = 0;
       Start = 0;
       End = 50;
@@ -294,9 +294,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-namespace DigitalRune.Particles
+namespace MinimalRune.Particles
 {
   /// <summary>
   /// The <see cref="N:DigitalRune.Particles"/> namespace provides a particle system and related

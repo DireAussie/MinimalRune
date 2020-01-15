@@ -21,7 +21,7 @@ using System.Windows.Threading;
 
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Instantiates a WPF, Silverlight or Windows Phone 7 application.

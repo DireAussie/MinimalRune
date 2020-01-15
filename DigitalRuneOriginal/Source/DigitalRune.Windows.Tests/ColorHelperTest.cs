@@ -1,5 +1,5 @@
 ﻿using System.Windows.Media;
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 using TestFixtureAttribute = Microsoft.VisualStudio.TestPlatform.UnitTestFramework.TestClassAttribute;
@@ -13,7 +13,7 @@ using NUnit.Framework;
 
 
 
-namespace DigitalRune.Windows.Tests
+namespace MinimalRune.Windows.Tests
 {
     [TestFixture]
     public class ColorHelperTest

@@ -9,7 +9,7 @@ using System.Windows.Input;
 using System.Windows.Markup;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Binds a <see cref="MultiKeyGesture"/> to an <see cref="ICommand"/>.
@@ -17,15 +17,15 @@ namespace DigitalRune.Windows.Framework
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
     public class MultiKeyBinding : InputBinding
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets the <see cref="MultiKeyGesture"/>.
@@ -85,9 +85,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MultiKeyBinding"/> class.
@@ -121,9 +121,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
     }
 }

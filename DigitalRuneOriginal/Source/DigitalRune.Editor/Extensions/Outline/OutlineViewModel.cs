@@ -4,10 +4,10 @@
 
 using System;
 using System.Windows;
-using DigitalRune.Windows.Themes;
+using MinimalRune.Windows.Themes;
 
 
-namespace DigitalRune.Editor.Outlines
+namespace MinimalRune.Editor.Outlines
 {
     /// <summary>
     /// Represents the Outline window.
@@ -18,25 +18,25 @@ namespace DigitalRune.Editor.Outlines
         // TODO: Disable timer if PropertySource supports INotifyPropertyChanged.
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         internal const string DockIdString = "Outline";
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         //private readonly IEditorService _editor;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets an instance of the <see cref="OutlineViewModel"/> that can be used at
@@ -113,9 +113,9 @@ namespace DigitalRune.Editor.Outlines
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="OutlineViewModel"/> class.
@@ -146,9 +146,9 @@ namespace DigitalRune.Editor.Outlines
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
     }
 }

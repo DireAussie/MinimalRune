@@ -9,11 +9,11 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
-using DigitalRune.Collections;
-using DigitalRune.Mathematics;
+using MinimalRune.Collections;
+using MinimalRune.Mathematics;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Represents a horizontal or vertical chart axis.
@@ -51,9 +51,9 @@ namespace DigitalRune.Windows.Charts
         // For example: GetPositions(double[] valueIn, int index, int count, double[] valuesOut)
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// The default value of the <see cref="Length"/> dependency property.
@@ -104,9 +104,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly WeakCollection<IChartElement> _chartElements = new WeakCollection<IChartElement>();
         private Canvas _canvas;
@@ -145,9 +145,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the default scale that should be used if <see cref="Scale"/> is not set.
@@ -323,9 +323,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
@@ -853,9 +853,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
         /// <summary>
@@ -878,9 +878,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// When overridden in a derived class, is invoked whenever application code or internal

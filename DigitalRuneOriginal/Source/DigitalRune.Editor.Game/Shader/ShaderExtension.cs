@@ -9,18 +9,18 @@ using System.Linq;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Input;
-using DigitalRune.Collections;
-using DigitalRune.Editor.Output;
-using DigitalRune.Editor.Text;
-using DigitalRune.Windows.Framework;
-using DigitalRune.Editor.About;
-using DigitalRune.Editor.Documents;
-using DigitalRune.Editor.Errors;
-using DigitalRune.Editor.Game.Properties;
-using DigitalRune.Editor.Options;
-using DigitalRune.Editor.Status;
-using DigitalRune.Windows.Docking;
-using DigitalRune.Windows.Themes;
+using MinimalRune.Collections;
+using MinimalRune.Editor.Output;
+using MinimalRune.Editor.Text;
+using MinimalRune.Windows.Framework;
+using MinimalRune.Editor.About;
+using MinimalRune.Editor.Documents;
+using MinimalRune.Editor.Errors;
+using MinimalRune.Editor.Game.Properties;
+using MinimalRune.Editor.Options;
+using MinimalRune.Editor.Status;
+using MinimalRune.Windows.Docking;
+using MinimalRune.Windows.Themes;
 using ICSharpCode.AvalonEdit.Document;
 using ICSharpCode.AvalonEdit.Rendering;
 using NLog;
@@ -29,7 +29,7 @@ using static System.FormattableString;
 using TextDocument = DigitalRune.Editor.Text.TextDocument;
 
 
-namespace DigitalRune.Editor.Shader
+namespace MinimalRune.Editor.Shader
 {
     /// <summary>
     /// Provides functions for editing GPU shaders.
@@ -40,9 +40,9 @@ namespace DigitalRune.Editor.Shader
         // TODO: Make options dialog to set paths and select settings (e.g. GPUs for ShaderPerf).
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
@@ -65,15 +65,15 @@ namespace DigitalRune.Editor.Shader
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ShaderExtension"/> class.
@@ -85,9 +85,9 @@ namespace DigitalRune.Editor.Shader
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         protected override void OnInitialize()

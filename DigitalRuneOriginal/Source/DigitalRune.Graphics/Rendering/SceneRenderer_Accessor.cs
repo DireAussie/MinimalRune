@@ -6,11 +6,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Collections;
-using DigitalRune.Graphics.SceneGraph;
+using MinimalRune.Collections;
+using MinimalRune.Graphics.SceneGraph;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   partial class SceneRenderer
   {
@@ -19,9 +19,9 @@ namespace DigitalRune.Graphics.Rendering
     /// </summary>
     internal class Accessor : IList<SceneNode>
     {
-      //--------------------------------------------------------------
+      
 
-      //--------------------------------------------------------------
+      
 
       private class Enumerator : IEnumerator<SceneNode>
       {
@@ -82,9 +82,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-      //--------------------------------------------------------------
+      
 
-      //--------------------------------------------------------------
+      
 
       private const string MessageListIsReadOnly = "The list is read-only.";
       private Job[] _jobs;
@@ -93,9 +93,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-      //--------------------------------------------------------------
+      
 
-      //--------------------------------------------------------------
+      
 
       public int Count
       {
@@ -117,15 +117,15 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-      //--------------------------------------------------------------
+      
 
-      //--------------------------------------------------------------
+      
 
 
 
-      //--------------------------------------------------------------
+      
 
-      //--------------------------------------------------------------
+      
 
       /// <summary>
       /// Assigns a section of the jobs list to the accessor.

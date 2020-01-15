@@ -1,8 +1,8 @@
 ﻿
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.PostProcessing;
-using DigitalRune.Graphics.Rendering;
-using DigitalRune.Graphics.SceneGraph;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.PostProcessing;
+using MinimalRune.Graphics.Rendering;
+using MinimalRune.Graphics.SceneGraph;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;

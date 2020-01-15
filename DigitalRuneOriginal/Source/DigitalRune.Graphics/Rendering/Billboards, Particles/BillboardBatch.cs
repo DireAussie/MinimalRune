@@ -6,7 +6,7 @@ using System;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Base implementation of <see cref="IBillboardBatch"/>.
@@ -15,9 +15,9 @@ namespace DigitalRune.Graphics.Rendering
   /// <inheritdoc/>
   internal abstract class BillboardBatch<T> : IBillboardBatch where T : struct, IVertexType
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The maximum buffer size (number of billboards).
@@ -30,17 +30,17 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly RenderBatch<T, ushort> _renderBatch; 
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets a value indicating whether this instance has been disposed of.
@@ -71,9 +71,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
     
     /// <summary>
     /// Initializes a new instance of the <see cref="BillboardBatch{T}"/> class.
@@ -162,9 +162,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public virtual void Begin(RenderContext context)

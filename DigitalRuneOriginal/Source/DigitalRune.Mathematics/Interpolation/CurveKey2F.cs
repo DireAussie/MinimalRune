@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Mathematics.Interpolation
+namespace MinimalRune.Mathematics.Interpolation
 {
   /// <summary>
   /// Defines a control point on a <see cref="Curve2F"/> (single-precision).

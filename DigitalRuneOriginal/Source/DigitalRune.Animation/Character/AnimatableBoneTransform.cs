@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 
 
-namespace DigitalRune.Animation.Character
+namespace MinimalRune.Animation.Character
 {
   /// <summary>
   /// Represents an <see cref="SrtTransform"/> of a bone that can be animated (no base value).
@@ -16,9 +16,9 @@ namespace DigitalRune.Animation.Character
   /// </remarks>
   internal sealed class AnimatableBoneTransform : IAnimatableProperty<SrtTransform>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     internal SkeletonPose SkeletonPose; // Internal because the AnimatableBoneTransforms are pooled.
                                         // The field is set/reset when created/recycled.
@@ -26,9 +26,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
@@ -92,9 +92,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="AnimatableBoneTransform"/> class.
@@ -111,9 +111,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
   }
 }

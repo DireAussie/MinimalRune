@@ -9,11 +9,11 @@ using System.Diagnostics;
 using System.Linq;
 using System.Windows;
 using System.Windows.Threading;
-using DigitalRune.Collections;
-using DigitalRune.Windows;
+using MinimalRune.Collections;
+using MinimalRune.Windows;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// Merges and manages a collection of command item nodes that represent toolbars.
@@ -43,18 +43,18 @@ namespace DigitalRune.Editor
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
     internal class ToolBarManager : IWeakEventListener
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly Action _coerceVisibilityAction;
         private DispatcherOperation _coerceVisibilityOperation;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// The merged command item nodes.
@@ -91,9 +91,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolBarManager"/> class.
@@ -108,9 +108,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Merges the node collections.

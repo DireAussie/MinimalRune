@@ -6,7 +6,7 @@ using System;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Editor.Game
+namespace MinimalRune.Editor.Game
 {
     /// <summary>
     /// Implements <see cref="IGraphicsDeviceService"/> which is needed by the MonoGame/XNA content

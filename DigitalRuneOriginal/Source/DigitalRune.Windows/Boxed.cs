@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Media;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
     /// Provides boxed values for common values.

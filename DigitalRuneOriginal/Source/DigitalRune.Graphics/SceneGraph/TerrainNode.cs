@@ -3,12 +3,12 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics.Rendering;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics.Rendering;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Represents an instance of a height-field-based terrain.
@@ -97,15 +97,15 @@ namespace DigitalRune.Graphics.SceneGraph
     //   be used for glowing lava veins or SciFy-Tron-like glowing lines). Specular color is only 
     //   needed for metals. In most cases specular intensity is enough.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the terrain definition.
@@ -233,9 +233,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="TerrainNode"/> class.
@@ -299,9 +299,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

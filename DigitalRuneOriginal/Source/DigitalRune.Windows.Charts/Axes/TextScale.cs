@@ -8,10 +8,10 @@ using System.Collections.Specialized;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Markup;
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// A scale that displays text labels.
@@ -23,15 +23,15 @@ namespace DigitalRune.Windows.Charts
     [ContentProperty("Labels")]
     public class TextScale : AxisScale
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------   
+           
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets a collection of text labels.
@@ -90,9 +90,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <overloads>
         /// <summary>
@@ -123,9 +123,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Called when the contents of the <see cref="Labels"/> collection changes.

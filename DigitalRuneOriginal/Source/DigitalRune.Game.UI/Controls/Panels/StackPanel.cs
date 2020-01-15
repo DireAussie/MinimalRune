@@ -4,11 +4,11 @@
 
 using System;
 using System.ComponentModel;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   /// <summary>
   /// Arranges child elements into a single line that can be oriented horizontally or vertically. 
@@ -30,7 +30,7 @@ namespace DigitalRune.Game.UI.Controls
   /// 
   /// buttonContentPanel.Children.Add(new TextBlock
   /// {
-  ///   Margin = new Vector4F(4, 0, 0, 0),
+  ///   Margin = new Vector4(4, 0, 0, 0),
   ///   Text = "Label",
   ///   VerticalAlignment = VerticalAlignment.Center,
   /// });
@@ -38,7 +38,7 @@ namespace DigitalRune.Game.UI.Controls
   /// var button = new Button
   /// {
   ///   Content = buttonContentPanel,
-  ///   Margin = new Vector4F(4),
+  ///   Margin = new Vector4(4),
   /// };
   /// 
   /// // To show the button, add it to an existing content control or panel.
@@ -51,9 +51,9 @@ namespace DigitalRune.Game.UI.Controls
   /// </example>
   public class StackPanel : Panel
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary> 
     /// The ID of the <see cref="Orientation"/> game object property.
@@ -78,9 +78,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="StackPanel"/> class.
@@ -92,9 +92,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override Vector2F OnMeasure(Vector2F availableSize)
@@ -114,7 +114,7 @@ namespace DigitalRune.Game.UI.Controls
       if (hasHeight && height < availableSize.Y)
         availableSize.Y = height;
 
-      Vector4F padding = Padding;
+      Vector4 padding = Padding;
       availableSize.X -= padding.X + padding.Z;
       availableSize.Y -= padding.Y + padding.W;
 
@@ -167,7 +167,7 @@ namespace DigitalRune.Game.UI.Controls
     /// <inheritdoc/>
     protected override void OnArrange(Vector2F position, Vector2F size)
     {
-      Vector4F padding = Padding;
+      Vector4 padding = Padding;
       position.X += padding.X;
       position.Y += padding.Y;
       size.X -= padding.X + padding.Z;

@@ -6,14 +6,14 @@ using System;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Input;
-using DigitalRune.Collections;
-using DigitalRune.Windows.Docking;
-using DigitalRune.Windows.Framework;
-using DigitalRune.Windows.Themes;
+using MinimalRune.Collections;
+using MinimalRune.Windows.Docking;
+using MinimalRune.Windows.Framework;
+using MinimalRune.Windows.Themes;
 using NLog;
 
 
-namespace DigitalRune.Editor.Errors
+namespace MinimalRune.Editor.Errors
 {
     /// <summary>
     /// Provides the Errors window.
@@ -29,9 +29,9 @@ namespace DigitalRune.Editor.Errors
     /// </remarks>
     public sealed class ErrorExtension : EditorExtension, IErrorService
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
@@ -42,9 +42,9 @@ namespace DigitalRune.Editor.Errors
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         ///// <inheritdoc/>
         //EditorDockTabItemViewModel IErrorService.ErrorsViewModel
@@ -61,9 +61,9 @@ namespace DigitalRune.Editor.Errors
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ErrorExtension"/> class.
@@ -75,9 +75,9 @@ namespace DigitalRune.Editor.Errors
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         protected override void OnInitialize()

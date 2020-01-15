@@ -12,13 +12,13 @@ using System.Windows.Input;
 using System.Windows.Media;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     public partial class DragDropBehavior
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly DataFormat DefaultFormat = DataFormats.GetDataFormat("DigitalRune.DragDropBehavior.DefaultFormat");
 
@@ -33,15 +33,15 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="DefaultEffects"/> dependency property.
@@ -73,15 +73,15 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
         private bool CanExecuteDrag(DragCommandParameter parameter)

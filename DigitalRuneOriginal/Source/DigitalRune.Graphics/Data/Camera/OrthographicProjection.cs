@@ -4,12 +4,12 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Defines an orthographic projection.
@@ -52,9 +52,9 @@ namespace DigitalRune.Graphics
   /// <seealso cref="Projection"/>
   public class OrthographicProjection : Projection
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The default value for <see cref="Projection.Near"/>.
@@ -81,21 +81,21 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
-
-
-
-    //--------------------------------------------------------------
-
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
+
+
+
+    
+
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="OrthographicProjection"/> class.
@@ -108,9 +108,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

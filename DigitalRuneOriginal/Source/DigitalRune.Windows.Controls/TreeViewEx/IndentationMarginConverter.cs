@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Data;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Calculates the margin for the specified indentation level.

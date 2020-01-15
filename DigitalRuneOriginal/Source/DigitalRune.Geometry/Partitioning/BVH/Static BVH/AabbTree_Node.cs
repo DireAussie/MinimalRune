@@ -4,10 +4,10 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Geometry.Shapes;
+using MinimalRune.Geometry.Shapes;
 
 
-namespace DigitalRune.Geometry.Partitioning
+namespace MinimalRune.Geometry.Partitioning
 {
   public partial class AabbTree<T>
   {

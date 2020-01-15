@@ -1,9 +1,9 @@
 using System;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Mathematics.Analysis.Tests
+namespace MinimalRune.Mathematics.Analysis.Tests
 {
   [TestFixture]
   public class MidpointIntegratorDTest

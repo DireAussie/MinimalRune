@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Game
+namespace MinimalRune.Game
 {
   /// <summary>
   /// Provides the <see cref="EventHandler{TEventArgs}"/> that connects a game property with

@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System.Diagnostics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry.Collisions
+namespace MinimalRune.Geometry.Collisions
 {
   /// <summary>
   /// Removes contacts if a <see cref="ContactSet"/> contains more than 4 <see cref="Contact"/>s.
@@ -94,25 +94,25 @@ namespace DigitalRune.Geometry.Collisions
       Vector3 edge24 = contactSet[4].Position - contactSet[2].Position;
 
       // Check 4 parallelograms.
-      float area = Vector3.Cross(edge12, edge13).LengthSquared;
+      float area = Vector3.Cross(edge12, edge13).LengthSquared();
       float maxArea = area;
       int contactToDelete = 4;
 
-      area = Vector3.Cross(edge12, edge14).LengthSquared;
+      area = Vector3.Cross(edge12, edge14).LengthSquared();
       if (area > maxArea)
       {
         maxArea = area;
         contactToDelete = 3;
       }
 
-      area = Vector3.Cross(edge13, edge14).LengthSquared;
+      area = Vector3.Cross(edge13, edge14).LengthSquared();
       if (area > maxArea)
       {
         maxArea = area;
         contactToDelete = 2;
       }
 
-      area = Vector3.Cross(edge23, edge24).LengthSquared;
+      area = Vector3.Cross(edge23, edge24).LengthSquared();
       if (area > maxArea)
       {
         // maxArea = area;

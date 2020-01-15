@@ -14,7 +14,7 @@
 
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   partial class Spectrum
   {

@@ -60,10 +60,10 @@
 
 using System;
 using System.Threading;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 
 
-namespace DigitalRune.Threading
+namespace MinimalRune.Threading
 {
   internal sealed class Worker
   {

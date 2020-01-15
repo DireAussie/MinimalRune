@@ -5,15 +5,15 @@
 using System;
 using System.Diagnostics;
 using System.Threading;
-using DigitalRune.Collections;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Collections;
+using MinimalRune.Mathematics.Algebra;
 
 
 using Microsoft.Xna.Framework;
 
 
 
-namespace DigitalRune.Animation.Character
+namespace MinimalRune.Animation.Character
 {
   /// <summary>
   /// Handles efficient access to derived bone transformations.
@@ -48,9 +48,9 @@ namespace DigitalRune.Animation.Character
     // instead of partial lock in vNext.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private SkeletonPose _skeletonPose;
 
@@ -78,9 +78,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Array must not be modified by user!
     public Matrix[] SkinningMatrices
@@ -133,9 +133,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="SkeletonBoneAccessor"/> class.
@@ -239,9 +239,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the relative bone pose of the specified bone.

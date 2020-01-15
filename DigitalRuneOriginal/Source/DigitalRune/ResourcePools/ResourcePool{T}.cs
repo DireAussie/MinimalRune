@@ -5,12 +5,12 @@
 using System;
 using System.Diagnostics;
 using System.Threading;
-using DigitalRune.Collections;
-using DigitalRune.Threading;
+using MinimalRune.Collections;
+using MinimalRune.Threading;
 
 
 
-namespace DigitalRune
+namespace MinimalRune
 {
   /// <summary>
   /// Manages a pool of typed, reusable items. (Thread-safe)
@@ -31,9 +31,9 @@ namespace DigitalRune
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly SynchronizedHashtable<int, WorkStealingQueue<T>> _queues;
     private readonly Func<T> _create;
@@ -42,15 +42,15 @@ namespace DigitalRune
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ResourcePool{T}"/> class with the given
@@ -85,9 +85,9 @@ namespace DigitalRune
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override void Clear()
@@ -196,9 +196,9 @@ namespace DigitalRune
 
 #elif (SILVERLIGHT || WP7 || XBOX || UNITY)
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly FastStack<T> _stack;
     private readonly Func<T> _create;
@@ -207,15 +207,15 @@ namespace DigitalRune
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ResourcePool{T}"/> class with the given
@@ -249,9 +249,9 @@ namespace DigitalRune
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override void Clear()

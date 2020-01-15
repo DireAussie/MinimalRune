@@ -5,13 +5,13 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Renders <see cref="ScatteringSkyNode"/>s.
@@ -24,9 +24,9 @@ namespace DigitalRune.Graphics.Rendering
   /// </remarks>
   internal class ScatteringSkyRenderer : SceneNodeRenderer
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly Effect _effect;
     private readonly EffectParameter _parameterView;
@@ -50,15 +50,15 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ScatteringSkyRenderer"/> class.
@@ -100,9 +100,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override bool CanRender(SceneNode node, RenderContext context)
@@ -178,7 +178,7 @@ namespace DigitalRune.Graphics.Rendering
         else
         {
           // Add base color.
-          _parameterBaseHorizonColor.SetValue((Vector4)new Vector4F(node.BaseHorizonColor, node.BaseColorShift));
+          _parameterBaseHorizonColor.SetValue((Vector4)new Vector4(node.BaseHorizonColor, node.BaseColorShift));
           _parameterBaseZenithColor.SetValue((Vector3)node.BaseZenithColor);
 
           if (context.IsHdrEnabled())

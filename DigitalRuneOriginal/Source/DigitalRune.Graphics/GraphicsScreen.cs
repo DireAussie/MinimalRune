@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Graphics.Interop;
+using MinimalRune.Graphics.Interop;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Provides the base class for graphics screens, which implement the rendering pipeline and draw 
@@ -73,17 +73,17 @@ namespace DigitalRune.Graphics
   /// <seealso cref="GraphicsManager"/>
   public abstract class GraphicsScreen : INamedObject
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private int _lastFrame = -1;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the graphics service.
@@ -163,9 +163,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="GraphicsScreen"/> class.
@@ -186,9 +186,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Updates the state of the graphics screen.

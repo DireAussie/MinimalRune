@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.GamerServices;
 
 
-namespace DigitalRune.Animation.Character
+namespace MinimalRune.Animation.Character
 {
   /// <summary>
   /// Represents the skeletal pose and facial expression of an Xbox LIVE Avatar. 
@@ -48,15 +48,15 @@ namespace DigitalRune.Animation.Character
   /// </remarks>
   public class AvatarPose : IAnimatableObject, IAvatarAnimation
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the bone names of the Xbox LIVE Avatar.
@@ -118,9 +118,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -170,9 +170,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Creates a skeleton for the given avatar renderer.
@@ -210,9 +210,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes")]
@@ -243,9 +243,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Not implemented.

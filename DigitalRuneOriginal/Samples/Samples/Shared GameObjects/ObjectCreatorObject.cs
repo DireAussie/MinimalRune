@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
-using DigitalRune.Game;
-using DigitalRune.Game.Input;
+using MinimalRune.Game;
+using MinimalRune.Game.Input;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Xna.Framework.Input;
 

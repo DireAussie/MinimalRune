@@ -2,7 +2,7 @@ using System;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Mathematics.Statistics.Tests
+namespace MinimalRune.Mathematics.Statistics.Tests
 {
   [TestFixture]
   public class FastGaussianDistributionDTest

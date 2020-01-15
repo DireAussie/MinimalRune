@@ -3,14 +3,14 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Animation.Traits;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Animation.Traits;
+using MinimalRune.Mathematics.Algebra;
 
 using Microsoft.Xna.Framework.Content;
 
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Animates a <see cref="Quaternion"/> value by applying an animation to each component of the
@@ -18,15 +18,15 @@ namespace DigitalRune.Animation
   /// </summary>
   public class QuaternionAnimation : Animation<Quaternion>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override IAnimationValueTraits<Quaternion> Traits
@@ -76,9 +76,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
     
     /// <overloads>
     /// <summary>
@@ -112,9 +112,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override TimeSpan GetTotalDuration()

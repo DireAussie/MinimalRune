@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Positions an animation along a timeline.

@@ -10,11 +10,11 @@ using System.Reactive.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using DigitalRune.Windows.Framework;
-using DigitalRune.Editor.Documents;
-using DigitalRune.Editor.Printing;
-using DigitalRune.Editor.Search;
-using DigitalRune.Windows;
+using MinimalRune.Windows.Framework;
+using MinimalRune.Editor.Documents;
+using MinimalRune.Editor.Printing;
+using MinimalRune.Editor.Search;
+using MinimalRune.Windows;
 using ICSharpCode.AvalonEdit;
 using ICSharpCode.AvalonEdit.Document;
 using ICSharpCode.AvalonEdit.Editing;
@@ -24,7 +24,7 @@ using ICSharpCode.AvalonEdit.Highlighting;
 using ICSharpCode.AvalonEdit.Indentation;
 
 
-namespace DigitalRune.Editor.Text
+namespace MinimalRune.Editor.Text
 {
     /// <summary>
     /// Represents a <see cref="DocumentViewModel"/> showing a <see cref="TextDocument"/>.
@@ -38,9 +38,9 @@ namespace DigitalRune.Editor.Text
         // TODO: IntelliSense is currently hard-coded. Make extensible.
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly IHighlightingService _highlightingService;
         private readonly ISearchService _searchService;
@@ -56,9 +56,9 @@ namespace DigitalRune.Editor.Text
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public new TextDocument Document
@@ -241,9 +241,9 @@ namespace DigitalRune.Editor.Text
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TextDocumentViewModel"/> class.
@@ -278,9 +278,9 @@ namespace DigitalRune.Editor.Text
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Updates the syntax highlighting mode depending on the current document.

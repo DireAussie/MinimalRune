@@ -6,7 +6,7 @@ using System;
 using System.Runtime.Serialization;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// The exception that is raised when an error occurs during execution of the editor.

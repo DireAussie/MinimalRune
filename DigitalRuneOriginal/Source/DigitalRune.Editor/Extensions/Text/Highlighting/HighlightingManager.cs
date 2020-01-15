@@ -11,14 +11,14 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Xml;
-using DigitalRune.Editor.Properties;
-using DigitalRune.Editor.Themes;
+using MinimalRune.Editor.Properties;
+using MinimalRune.Editor.Themes;
 using ICSharpCode.AvalonEdit.Highlighting;
 using ICSharpCode.AvalonEdit.Highlighting.Xshd;
 using NLog;
 
 
-namespace DigitalRune.Editor.Text
+namespace MinimalRune.Editor.Text
 {
     /// <summary>
     /// Manages syntax highlighting definitions. (Replaces AvalonEdit's built-in
@@ -38,9 +38,9 @@ namespace DigitalRune.Editor.Text
     /// </remarks>
     internal class HighlightingManager : IHighlightingService
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
@@ -54,9 +54,9 @@ namespace DigitalRune.Editor.Text
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets a read-only copy of all registered highlighting definitions.
@@ -76,9 +76,9 @@ namespace DigitalRune.Editor.Text
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="HighlightingManager"/> class.
@@ -97,9 +97,9 @@ namespace DigitalRune.Editor.Text
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Ensures that all definitions are registered.

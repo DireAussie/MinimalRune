@@ -1,6 +1,6 @@
 ﻿using System;
-using DigitalRune.Animation;
-using DigitalRune.Graphics;
+using MinimalRune.Animation;
+using MinimalRune.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 

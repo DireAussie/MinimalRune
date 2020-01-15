@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Geometry.Shapes
+namespace MinimalRune.Geometry.Shapes
 {
   /// <summary>
   /// Provides arguments for an <see cref="Shape.Changed"/> event of a <see cref="Shape"/>.

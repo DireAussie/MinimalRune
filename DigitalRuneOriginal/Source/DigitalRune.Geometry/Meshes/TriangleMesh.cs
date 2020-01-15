@@ -6,9 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
 using Microsoft.Xna.Framework;
@@ -16,7 +16,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 
 
-namespace DigitalRune.Geometry.Meshes
+namespace MinimalRune.Geometry.Meshes
 {
   /// <summary>
   /// Provides a simple <see cref="ITriangleMesh"/> implementation using vertex and index lists.
@@ -76,15 +76,15 @@ namespace DigitalRune.Geometry.Meshes
     // We could split the Clone() method into a Clone() and a virtual CloneCore() 
     // method to allow inheritance.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the number of triangles.
@@ -133,9 +133,9 @@ namespace DigitalRune.Geometry.Meshes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -175,9 +175,9 @@ namespace DigitalRune.Geometry.Meshes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
@@ -630,15 +630,15 @@ namespace DigitalRune.Geometry.Meshes
       var numberOfTriangles = NumberOfTriangles;
 
       // Array with the normalized triangle normals. The weight is stored in the W component.
-      Vector4F[] triangleNormals = new Vector4F[numberOfTriangles];
+      Vector4[] triangleNormals = new Vector4[numberOfTriangles];
 
       // An array of lists. One list per vertex. Each list contains all triangle 
       // normals for a vertex.
-      List<Vector4F>[] normalsPerVertex = new List<Vector4F>[numberOfVertices];
+      List<Vector4>[] normalsPerVertex = new List<Vector4>[numberOfVertices];
       for (int i = 0; i < numberOfVertices; i++)
       {
         // For each vertex there will be on average less than 6 neighbor triangles.
-        normalsPerVertex[i] = new List<Vector4F>(6);
+        normalsPerVertex[i] = new List<Vector4>(6);
       }
 
       // Loop over triangles and collect triangle normal info.
@@ -653,12 +653,12 @@ namespace DigitalRune.Geometry.Meshes
         Vector3 v2 = Vertices[i2];
 
         Vector3 normal = Vector3.Cross(v1 - v0, v2 - v0);
-        float lengthSquared = normal.LengthSquared;
+        float lengthSquared = normal.LengthSquared();
         if (!Numeric.IsZero(lengthSquared, Numeric.EpsilonFSquared))  // Degenerate triangles are ignored.
         {
           float weight = (float)Math.Sqrt(lengthSquared);
 
-          var normal4 = new Vector4F(normal / weight, weight);
+          var normal4 = new Vector4(normal / weight, weight);
           triangleNormals[i] = normal4;
           normalsPerVertex[i0].Add(normal4);
           normalsPerVertex[i1].Add(normal4);

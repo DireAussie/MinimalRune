@@ -53,7 +53,7 @@ using System.Windows;
 using System.Windows.Controls;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Represents a control that indicates the progress of an ongoing operation in the form of dots
@@ -75,24 +75,24 @@ namespace DigitalRune.Windows.Controls
     [TemplateVisualState(Name = "Active", GroupName = "ActiveStates")]
     public class ProgressRing : Control
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         // Defer actions until template is applied.
         private List<Action> _deferredActions = new List<Action>();
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="IsActive"/> dependency property.
@@ -219,9 +219,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="ProgressRing"/> class.
@@ -243,9 +243,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static void OnIsActiveChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
         {

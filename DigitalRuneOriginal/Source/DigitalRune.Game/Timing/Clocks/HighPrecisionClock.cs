@@ -6,11 +6,11 @@ using System;
 
 using System.Diagnostics;
 #else
-using DigitalRune.Diagnostics;
+using MinimalRune.Diagnostics;
 
 
 
-namespace DigitalRune.Game.Timing
+namespace MinimalRune.Game.Timing
 {
   /// <summary>
   /// Accurately measures the time by using the system's performance counter.
@@ -32,9 +32,9 @@ namespace DigitalRune.Game.Timing
   /// </remarks>
   public class HighPrecisionClock : IGameClock
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // TimeEventArgs object is reused to avoid unnecessary memory allocations.
     private readonly GameClockEventArgs _eventArgs = new GameClockEventArgs(); 
@@ -49,9 +49,9 @@ namespace DigitalRune.Game.Timing
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public bool IsRunning
@@ -84,9 +84,9 @@ namespace DigitalRune.Game.Timing
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="HighPrecisionClock"/> class.
@@ -98,9 +98,9 @@ namespace DigitalRune.Game.Timing
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public void Start()

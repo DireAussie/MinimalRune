@@ -5,7 +5,7 @@ using System.Windows;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Windows.Tests
+namespace MinimalRune.Windows.Tests
 {
     internal enum MockEnum { Value1, Value2, Value3 }
 

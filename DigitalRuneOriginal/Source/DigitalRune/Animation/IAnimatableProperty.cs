@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Represents a property that can be animated.

@@ -5,18 +5,18 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Collections;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Interpolation;
-using DigitalRune.Threading;
+using MinimalRune.Collections;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Interpolation;
+using MinimalRune.Threading;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MathHelper = DigitalRune.Mathematics.MathHelper;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   partial class TerrainRoadLayer
   {
@@ -505,10 +505,10 @@ namespace DigitalRune.Graphics
 
       {
         // Get the line segments which of the road border.
-        List<Vector4F> segments = new List<Vector4F>();  // 2 points per segment.
+        List<Vector4> segments = new List<Vector4>();  // 2 points per segment.
         Vector3 lastOrthonormal = Vector3.Right;
-        Vector4F previousV1 = Vector4F.Zero;
-        Vector4F previousV2 = Vector4F.Zero;
+        Vector4 previousV1 = Vector4.Zero;
+        Vector4 previousV2 = Vector4.Zero;
         for (int i = 0; i < flattenedPoints.Count; i++)
         {
           Vector3 start = flattenedPoints[i];
@@ -547,8 +547,8 @@ namespace DigitalRune.Graphics
           //
           // We store the side falloff with the vertex:
           // Vectors are 4D. Height is y. Side falloff is w.
-          Vector4F v1 = new Vector4F(start - orthonormal * (halfWidths[i] + 0), sideFalloffs[i]);
-          Vector4F v2 = new Vector4F(start + orthonormal * (halfWidths[i] + 0), sideFalloffs[i]);
+          Vector4 v1 = new Vector4(start - orthonormal * (halfWidths[i] + 0), sideFalloffs[i]);
+          Vector4 v2 = new Vector4(start + orthonormal * (halfWidths[i] + 0), sideFalloffs[i]);
 
           if (i > 0)
           {
@@ -747,7 +747,7 @@ namespace DigitalRune.Graphics
     }
 
 
-    private static void ClampHeightsToLineSegments(HeightField terrain, Aabb aabb, List<Vector4F> segments, float padding)
+    private static void ClampHeightsToLineSegments(HeightField terrain, Aabb aabb, List<Vector4> segments, float padding)
     {
       // TODO: Optimize this (see software rasterizers).
 
@@ -790,7 +790,7 @@ namespace DigitalRune.Graphics
             var segment = new LineSegment(segmentStartFlat, segmentEndFlat);
             float parameter;
             GetLineParameter(ref segment, ref terrainPointFlat, out parameter);
-            Vector4F closestPoint = segments[segmentIndex * 2] + parameter * (segments[segmentIndex * 2 + 1] - segments[segmentIndex * 2]);
+            Vector4 closestPoint = segments[segmentIndex * 2] + parameter * (segments[segmentIndex * 2 + 1] - segments[segmentIndex * 2]);
             Vector3 closestPointFlat = new Vector3(closestPoint.X, 0, closestPoint.Z);
             float distance = (closestPointFlat - terrainPointFlat).Length - padding;
             float influence = MathHelper.Clamp(1 - distance / (closestPoint.W - padding), 0, 1);
@@ -815,7 +815,7 @@ namespace DigitalRune.Graphics
 
     internal static void GetLineParameter(ref LineSegment lineSegment, ref Vector3 point, out float parameter)
     {
-      float lengthSquared = lineSegment.LengthSquared;
+      float lengthSquared = lineSegment.LengthSquared();
       if (lengthSquared < Numeric.EpsilonFSquared)
       {
         // Segment has zero length.

@@ -7,11 +7,11 @@ using System.Collections.Specialized;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Interop;
-using DigitalRune.Mathematics;
-using DigitalRune.Windows.Interop;
+using MinimalRune.Mathematics;
+using MinimalRune.Windows.Interop;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     partial class DockControl
     {

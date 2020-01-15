@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.Editor.Errors
+namespace MinimalRune.Editor.Errors
 {
     /// <summary>
     /// Defines the type of item in the Errors window.

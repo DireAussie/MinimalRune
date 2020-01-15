@@ -1,5 +1,5 @@
-﻿using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics.ForceEffects;
+﻿using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics.ForceEffects;
 using Microsoft.Xna.Framework;
 
 

@@ -4,12 +4,12 @@
 
 
 using System;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.PostProcessing
+namespace MinimalRune.Graphics.PostProcessing
 {
   /// <summary>
   /// Scales the color of an image and adds an offset. (MAD = Multiply/Add).

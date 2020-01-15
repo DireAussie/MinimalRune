@@ -4,10 +4,10 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 
 
-namespace DigitalRune.Game
+namespace MinimalRune.Game
 {
   // Factory method for use in the GameEventCollection.
   internal interface IGameEventFactory
@@ -23,24 +23,24 @@ namespace DigitalRune.Game
   [DebuggerDisplay("{GetType().Name,nq}(Name = {Name})")]
   public class GameEventMetadata<T> : IGameEventMetadata, IGameEventFactory where T : EventArgs
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
     
     // The global store for all event metadata for events of type T.
     internal static NamedObjectCollection<GameEventMetadata<T>> Events { get; private set; }
 
     
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
       
       
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public string Name { get; private set; }
@@ -77,9 +77,9 @@ namespace DigitalRune.Game
 
       
       
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes static members of the <see cref="GameEventMetadata{T}"/> class.
@@ -109,9 +109,9 @@ namespace DigitalRune.Game
 
       
       
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     IGameEvent IGameEventFactory.CreateGameEvent(GameObject owner)
     {

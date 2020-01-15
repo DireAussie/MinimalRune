@@ -62,7 +62,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace DigitalRune.Threading
+namespace MinimalRune.Threading
 {
   /// <summary>
   /// A task scheduler that supports "work stealing" to balance tasks across multiple worker 

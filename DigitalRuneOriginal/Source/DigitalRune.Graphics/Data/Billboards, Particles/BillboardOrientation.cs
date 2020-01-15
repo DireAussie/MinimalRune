@@ -3,13 +3,13 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Graphics.SceneGraph;
+using MinimalRune.Graphics.SceneGraph;
 
-using DigitalRune.Particles;
+using MinimalRune.Particles;
 
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Defines the orientation of a billboard.
@@ -104,9 +104,9 @@ namespace DigitalRune.Graphics
     // custom,              view,          axis          ?
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Internal the billboard orientation is stored as an enum.
     // (The enum value can be used for state sorting.)
@@ -138,9 +138,9 @@ namespace DigitalRune.Graphics
 
     
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly Flags _flags;
 
@@ -251,9 +251,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets a value indicating which normal vector is used for rendering the billboard.
@@ -312,9 +312,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="BillboardOrientation" /> struct.
@@ -351,9 +351,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns a hash code for this instance.

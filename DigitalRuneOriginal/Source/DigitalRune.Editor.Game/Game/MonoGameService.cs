@@ -5,13 +5,13 @@
 using System;
 using System.Diagnostics;
 using System.IO;
-using DigitalRune.Storages;
+using MinimalRune.Storages;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Xna.Framework.Content;
 using DRPath = DigitalRune.Storages.Path;
 
 
-namespace DigitalRune.Editor.Game
+namespace MinimalRune.Editor.Game
 {
     internal sealed class MonoGameContent : IDisposable
     {

@@ -12,7 +12,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Provides helper functions for charts.

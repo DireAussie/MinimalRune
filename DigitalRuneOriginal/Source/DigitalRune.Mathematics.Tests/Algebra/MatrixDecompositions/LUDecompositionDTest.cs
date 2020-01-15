@@ -1,9 +1,9 @@
 using System;
-using DigitalRune.Mathematics.Statistics;
+using MinimalRune.Mathematics.Statistics;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Mathematics.Algebra.Tests
+namespace MinimalRune.Mathematics.Algebra.Tests
 {
   [TestFixture]
   public class LUDecompositionDTest
@@ -67,7 +67,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     public void TestRectangularA()
     {
       MatrixD a = new MatrixD(new double[,] { { 1, 2, 3 }, { 4, 5, 6 } });
-      a.Transpose();
+      a = Matrix.Transpose(a);
       LUDecompositionD d = new LUDecompositionD(a);
       Assert.IsFalse(d.IsNumericallySingular);
     }
@@ -110,7 +110,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
 
       LUDecompositionD d = new LUDecompositionD(a);
       Assert.AreEqual(true, d.IsNumericallySingular);
-      Assert.IsTrue(Numeric.IsZero(d.Determinant));
+      Assert.IsTrue(Numeric.IsZero(d.Determinant()));
     }
 
 
@@ -121,7 +121,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
 
       LUDecompositionD d = new LUDecompositionD(a);
       Assert.AreEqual(false, d.IsNumericallySingular);
-      Assert.IsTrue(Numeric.AreEqual(-24, d.Determinant));
+      Assert.IsTrue(Numeric.AreEqual(-24, d.Determinant()));
 
       MatrixD aPermuted = d.L * d.U;
       Assert.IsTrue(MatrixD.AreNumericallyEqual(aPermuted, a.GetSubmatrix(d.PivotPermutationVector, 0, 3)));
@@ -135,7 +135,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
       MatrixD a = new MatrixD(new double[,] { { 1, 2 }, { 5, 6 }, { 0, 1 } });
 
       LUDecompositionD d = new LUDecompositionD(a);
-      double det = d.Determinant;
+      double det = d.Determinant();
     }
 
 

@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Globalization;
 
 
-namespace DigitalRune.Game
+namespace MinimalRune.Game
 {
   /// <summary>
   /// Manages a collection of game object properties.
@@ -25,15 +25,15 @@ namespace DigitalRune.Game
     // game object.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the game object that owns this collection.
@@ -47,9 +47,9 @@ namespace DigitalRune.Game
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="GamePropertyCollection"/> struct.
@@ -64,9 +64,9 @@ namespace DigitalRune.Game
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns an enumerator that iterates through the collection.

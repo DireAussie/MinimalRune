@@ -6,11 +6,11 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows.Input;
-using DigitalRune.Collections;
-using DigitalRune.Editor.QuickLaunch;
+using MinimalRune.Collections;
+using MinimalRune.Editor.QuickLaunch;
 
 
-namespace DigitalRune.Editor.Commands
+namespace MinimalRune.Editor.Commands
 {
     partial class CommandExtension
     {

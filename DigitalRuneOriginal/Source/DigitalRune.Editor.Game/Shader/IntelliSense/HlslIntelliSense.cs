@@ -10,28 +10,28 @@ using ICSharpCode.AvalonEdit.CodeCompletion;
 using ICSharpCode.AvalonEdit.Snippets;
 
 
-namespace DigitalRune.Editor.Shader
+namespace MinimalRune.Editor.Shader
 {
     /// <summary>
     /// Provides IntelliSense for DirectX HLSL and DirectX Effect Files.
     /// </summary>
     internal class HlslIntelliSense : ShaderIntelliSense
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
-
-
-
-        //--------------------------------------------------------------
-
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
+
+
+
+        
+
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="HlslIntelliSense"/> class.
@@ -65,9 +65,9 @@ namespace DigitalRune.Editor.Shader
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes the HLSL snippets.

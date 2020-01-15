@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Threading;
 
 
-namespace DigitalRune.Collections
+namespace MinimalRune.Collections
 {
   /// <summary>
   /// Represents a collection of objects of type <typeparamref name="T"/> using weak references. 
@@ -19,9 +19,9 @@ namespace DigitalRune.Collections
   [DebuggerTypeProxy(typeof(CollectionDebugView<>))]
   public sealed class WeakCollection<T> : ICollection<T>, ICollection where T : class
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Enumerates the elements of a <see cref="WeakCollection{T}"/>. 
@@ -163,9 +163,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private const int PurgeThreshold = 1;
     private WeakReference[] _weakHandles;
@@ -175,9 +175,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the number of items contained in the <see cref="WeakCollection{T}"/>.
@@ -242,9 +242,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="WeakCollection{T}"/> class.
@@ -256,9 +256,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns a read-only wrapper for the current collection.

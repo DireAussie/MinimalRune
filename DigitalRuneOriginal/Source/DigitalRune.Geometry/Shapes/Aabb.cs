@@ -4,11 +4,11 @@
 
 using System;
 using System.Globalization;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry.Shapes
+namespace MinimalRune.Geometry.Shapes
 {
   /// <summary>
   /// Defines an axis-aligned bounding box (AABB).
@@ -41,9 +41,9 @@ namespace DigitalRune.Geometry.Shapes
     // Translate(Vectore3F) - Moves the AABB
 
     
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The minimum position.
@@ -66,9 +66,9 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the center.
@@ -104,9 +104,9 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of <see cref="Aabb"/>.
@@ -121,9 +121,9 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //-------------------------------------------------------------- 
+     
 
 
 

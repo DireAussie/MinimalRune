@@ -7,10 +7,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 
 
-namespace DigitalRune.Geometry.Collisions
+namespace MinimalRune.Geometry.Collisions
 {
   /// <summary>
   /// A collection of contact sets.
@@ -23,9 +23,9 @@ namespace DigitalRune.Geometry.Collisions
   [DebuggerTypeProxy(typeof(ContactSetCollectionView))]
   public class ContactSetCollection : ICollection<ContactSet>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // This view is used as DebuggerTypeProxy. With this, the debugger will display 
     // a readable list of contact sets for the ContactSetCollection.
@@ -183,9 +183,9 @@ namespace DigitalRune.Geometry.Collisions
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // The hash table stores the index into the slots array plus 1.
     // A value of 0 indicates that there is no entry.
@@ -222,9 +222,9 @@ namespace DigitalRune.Geometry.Collisions
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the number of contact sets in the collection. 
@@ -278,9 +278,9 @@ namespace DigitalRune.Geometry.Collisions
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -345,9 +345,9 @@ namespace DigitalRune.Geometry.Collisions
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     internal static int GetHashCode(CollisionObject objectA, CollisionObject objectB)
     {
@@ -1197,9 +1197,9 @@ namespace DigitalRune.Geometry.Collisions
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Contact sets are stored in linked lists for fast access (one linked list 
     // per collision object):
@@ -1303,9 +1303,9 @@ namespace DigitalRune.Geometry.Collisions
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // The following methods are used by the broad phase to synchronize the self-overlaps
     // of the spatial partition with the candidate pairs.

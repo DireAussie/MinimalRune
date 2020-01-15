@@ -4,10 +4,10 @@
 
 using System;
 using System.Xml.Linq;
-using DigitalRune.Windows;
+using MinimalRune.Windows;
 
 
-namespace DigitalRune.Editor.Layout
+namespace MinimalRune.Editor.Layout
 {
     /// <summary>
     /// Represents a window layout.

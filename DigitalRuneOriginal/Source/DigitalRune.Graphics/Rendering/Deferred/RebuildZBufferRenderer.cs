@@ -3,12 +3,12 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Reconstructs the hardware Z-buffer from the G-buffer.
@@ -25,9 +25,9 @@ namespace DigitalRune.Graphics.Rendering
   /// </remarks>
   public class RebuildZBufferRenderer
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly Effect _effect;
     private readonly EffectParameter _parameterViewportSize;
@@ -41,9 +41,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the factor used to bias the camera near plane distance to avoid 
@@ -62,9 +62,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="RebuildZBufferRenderer"/> class.
@@ -94,9 +94,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -117,7 +117,7 @@ namespace DigitalRune.Graphics.Rendering
     /// <exception cref="ArgumentNullException">
     /// <paramref name="context"/> is <see langword="null"/>.
     /// </exception>
-    public void Render(RenderContext context, Vector4F color)
+    public void Render(RenderContext context, Vector4 color)
     {
       Render(context, color, null, false);
     }
@@ -139,7 +139,7 @@ namespace DigitalRune.Graphics.Rendering
     /// </exception>
     public void Render(RenderContext context, Texture2D colorTexture)
     {
-      Render(context, Vector4F.Zero, colorTexture, colorTexture == null);
+      Render(context, Vector4.Zero, colorTexture, colorTexture == null);
     }
 
 
@@ -164,11 +164,11 @@ namespace DigitalRune.Graphics.Rendering
     /// </exception>
     public void Render(RenderContext context, bool preserveColor)
     {
-      Render(context, Vector4F.Zero, null, preserveColor);
+      Render(context, Vector4.Zero, null, preserveColor);
     }
 
 
-    private void Render(RenderContext context, Vector4F color, Texture2D colorTexture, bool preserveColor)
+    private void Render(RenderContext context, Vector4 color, Texture2D colorTexture, bool preserveColor)
     {
       if (context == null)
         throw new ArgumentNullException("context");

@@ -4,10 +4,10 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Mathematics.Interpolation
+namespace MinimalRune.Mathematics.Interpolation
 {
   /// <summary>
   /// Defines a 2-dimensional line segment (single-precision).
@@ -72,9 +72,9 @@ namespace DigitalRune.Mathematics.Interpolation
     }
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static readonly ResourcePool<LineSegment2F> Pool = new ResourcePool<LineSegment2F>(
        () => new LineSegment2F(),                     // Create

@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Represents a drawing composed of lines and shapes rendered with a certain stroke and fill.
@@ -40,15 +40,15 @@ namespace DigitalRune.Graphics.SceneGraph
   /// <seealso cref="DigitalRune.Graphics.Figure"/>
   public class FigureNode : SceneNode
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the drawing.
@@ -168,7 +168,7 @@ namespace DigitalRune.Graphics.SceneGraph
     /// in world space units and whether perspective foreshortening is applied.
     /// </para>
     /// </remarks>
-    public Vector4F StrokeDashPattern
+    public Vector4 StrokeDashPattern
     {
       get { return _strokeDashPattern; }
       set
@@ -180,7 +180,7 @@ namespace DigitalRune.Graphics.SceneGraph
         RenderData.SafeDispose();
       }
     }
-    private Vector4F _strokeDashPattern;
+    private Vector4 _strokeDashPattern;
 
 
     /// <summary>
@@ -291,9 +291,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="FigureNode" /> class.
@@ -314,7 +314,7 @@ namespace DigitalRune.Graphics.SceneGraph
       StrokeColor = new Vector3(1, 1, 1);
       StrokeAlpha = 1;
       StrokeThickness = 1;
-      StrokeDashPattern = new Vector4F(1, 0, 0, 0);
+      StrokeDashPattern = new Vector4(1, 0, 0, 0);
       DashInWorldSpace = true;
       FillColor = new Vector3(1, 1, 1);
       FillAlpha = 1;
@@ -322,9 +322,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

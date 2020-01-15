@@ -6,13 +6,13 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Creates the shadow mask from the shadow map of a light node with a 
@@ -21,9 +21,9 @@ namespace DigitalRune.Graphics.Rendering
   /// <inheritdoc cref="ShadowMaskRenderer"/>
   internal class StandardShadowMaskRenderer : SceneNodeRenderer
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Poisson disk kernel (n = 32, min distance = 0.28, sorted by radius):
     internal static readonly Vector2[] PoissonKernel =
@@ -64,9 +64,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly Vector3[] _frustumFarCorners = new Vector3[4];
 
@@ -91,15 +91,15 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="StandardShadowMaskRenderer"/> class.
@@ -139,9 +139,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override bool CanRender(SceneNode node, RenderContext context)

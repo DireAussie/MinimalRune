@@ -5,7 +5,7 @@
 using System.Windows.Input;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Represents a command that calls .NET delegates to execute and query the state.

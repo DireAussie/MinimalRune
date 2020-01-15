@@ -4,11 +4,11 @@
 
 using System;
 using System.Windows.Media;
-using DigitalRune.Editor.Game.Properties;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Editor.Game.Properties;
+using MinimalRune.Windows.Framework;
 
 
-namespace DigitalRune.Editor.Colors
+namespace MinimalRune.Editor.Colors
 {
     /// <summary>
     /// Represents the Color window.
@@ -19,17 +19,17 @@ namespace DigitalRune.Editor.Colors
     /// </remarks>
     internal class ColorViewModel : EditorDockTabItemViewModel
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         internal const string DockIdString = "ColorPicker";
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly IMessageBus _messageBus;
 
@@ -41,9 +41,9 @@ namespace DigitalRune.Editor.Colors
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets a <see cref="ColorViewModel"/> instance that can be used at design-time.
@@ -92,9 +92,9 @@ namespace DigitalRune.Editor.Colors
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ColorViewModel" /> class.
@@ -121,9 +121,9 @@ namespace DigitalRune.Editor.Colors
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0")]

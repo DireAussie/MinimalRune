@@ -6,17 +6,17 @@ using System;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Xml.Linq;
-using DigitalRune.Windows.Docking;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Windows.Docking;
+using MinimalRune.Windows.Framework;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     partial class EditorViewModel
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public DockStrategy DockStrategy
@@ -142,9 +142,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private void OnFloatWindowsChanged(object sender, NotifyCollectionChangedEventArgs eventArgs)
         {

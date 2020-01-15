@@ -6,27 +6,27 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Interop;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.Interop;
-using DigitalRune.Windows;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.Interop;
+using MinimalRune.Windows;
 
 
-namespace DigitalRune.Editor.Game
+namespace MinimalRune.Editor.Game
 {
     /// <summary>
     /// Implements the <see cref="IPresentationTarget"/>
     /// </summary>
     public class GamePresentationTarget : D3DImagePresentationTarget
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         // Used by GameExtension
         internal Size LastSize { get; set; }
@@ -50,9 +50,9 @@ namespace DigitalRune.Editor.Game
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="GraphicsScreens"/> dependency property.
@@ -81,9 +81,9 @@ namespace DigitalRune.Editor.Game
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GamePresentationTarget"/> class.
@@ -100,9 +100,9 @@ namespace DigitalRune.Editor.Game
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         //private void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs eventArgs)
         //{

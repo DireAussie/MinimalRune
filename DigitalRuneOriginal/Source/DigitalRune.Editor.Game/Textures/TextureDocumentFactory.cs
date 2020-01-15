@@ -4,37 +4,37 @@
 
 using System;
 using System.IO;
-using DigitalRune.Editor.Documents;
-using DigitalRune.Editor.Game;
-using DigitalRune.Windows.Themes;
+using MinimalRune.Editor.Documents;
+using MinimalRune.Editor.Game;
+using MinimalRune.Windows.Themes;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Editor.Textures
+namespace MinimalRune.Editor.Textures
 {
     /// <summary>
     /// Handles image and texture documents (e.g. JPEG, PNG, DDS files).
     /// </summary>
     internal class TextureDocumentFactory : DocumentFactory
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly IEditorService _editor;
         private readonly DocumentType _processedTextureDocumentType;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TextureDocumentFactory" /> class.
@@ -86,9 +86,9 @@ namespace DigitalRune.Editor.Textures
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public override DocumentType GetDocumentType(Uri uri)

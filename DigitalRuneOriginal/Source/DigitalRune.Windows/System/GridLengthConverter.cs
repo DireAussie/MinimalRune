@@ -6,7 +6,7 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Globalization;
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 
 
 namespace System.Windows

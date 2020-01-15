@@ -4,11 +4,11 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry
+namespace MinimalRune.Geometry
 {
   public static partial class GeometryHelper
   {
@@ -183,9 +183,9 @@ namespace DigitalRune.Geometry
       // See http://en.wikipedia.org/wiki/Circumscribed_circle
 
       // Get the squared side lengths.
-      float a2 = (point2 - point1).LengthSquared;
-      float b2 = (point2 - point0).LengthSquared;
-      float c2 = (point1 - point0).LengthSquared;
+      float a2 = (point2 - point1).LengthSquared();
+      float b2 = (point2 - point0).LengthSquared();
+      float c2 = (point1 - point0).LengthSquared();
 
       float d = 2 * a2 * b2 + 2 * a2 * c2 + 2 * b2 * c2 - a2 * a2 - b2 * b2 - c2 * c2;
       float oneOverD = 1 / d;
@@ -230,9 +230,9 @@ namespace DigitalRune.Geometry
       Vector3 p3 = point3 - point0;
 
       // Compute the distances to point0.
-      float length1Squared = p1.LengthSquared;
-      float length2Squared = p2.LengthSquared;
-      float length3Squared = p3.LengthSquared;
+      float length1Squared = p1.LengthSquared();
+      float length2Squared = p2.LengthSquared();
+      float length3Squared = p3.LengthSquared();
 
       // Compute the volume of the tetrahedron formed by the four points.
       float volume = 1f / 6 * (Vector3.Dot(p1, Vector3.Cross(p2, p3)));
@@ -268,7 +268,7 @@ namespace DigitalRune.Geometry
     public static bool HaveContact(float sphereRadius, Vector3 point)
     {
       // Point distance to the sphere center.
-      float distanceToCenterSquared = point.LengthSquared;
+      float distanceToCenterSquared = point.LengthSquared();
 
       // To fight numerical problems: Extrude the sphere.
       float extendedRadius = sphereRadius + Math.Max(1, sphereRadius) * Numeric.EpsilonF;

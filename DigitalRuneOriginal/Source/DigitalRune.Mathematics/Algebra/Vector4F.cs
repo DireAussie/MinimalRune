@@ -10,7 +10,7 @@ using System.Runtime.Serialization;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 
-using DigitalRune.Mathematics.Algebra.Design;
+using MinimalRune.Mathematics.Algebra.Design;
 
 
 using Microsoft.Xna.Framework;
@@ -18,7 +18,7 @@ using Microsoft.Xna.Framework.Content;
 
 
 
-namespace DigitalRune.Mathematics.Algebra
+namespace MinimalRune.Mathematics.Algebra
 {
   /// <summary>
   /// Defines a 4-dimensional vector (single-precision).
@@ -30,52 +30,52 @@ namespace DigitalRune.Mathematics.Algebra
   [Serializable]
 
 
-  [TypeConverter(typeof(Vector4FConverter))]
+  [TypeConverter(typeof(Vector4Converter))]
 
 
   [DataContract]
 
-  public struct Vector4F : IEquatable<Vector4F>
+  public struct Vector4 : IEquatable<Vector4>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
-
-    /// <summary>
-    /// Returns a <see cref="Vector4F"/> with all of its components set to zero.
-    /// </summary>
-    public static readonly Vector4F Zero = new Vector4F(0, 0, 0, 0);
+    
 
     /// <summary>
-    /// Returns a <see cref="Vector4F"/> with all of its components set to one.
+    /// Returns a <see cref="Vector4"/> with all of its components set to zero.
     /// </summary>
-    public static readonly Vector4F One = new Vector4F(1, 1, 1, 1);
+    public static readonly Vector4 Zero = new Vector4(0, 0, 0, 0);
 
     /// <summary>
-    /// Returns the x unit <see cref="Vector4F"/> (1, 0, 0, 0).
+    /// Returns a <see cref="Vector4"/> with all of its components set to one.
     /// </summary>
-    public static readonly Vector4F UnitX = new Vector4F(1, 0, 0, 0);
+    public static readonly Vector4 One = new Vector4(1, 1, 1, 1);
 
     /// <summary>
-    /// Returns the y unit <see cref="Vector4F"/> (0, 1, 0, 0).
+    /// Returns the x unit <see cref="Vector4"/> (1, 0, 0, 0).
     /// </summary>
-    public static readonly Vector4F UnitY = new Vector4F(0, 1, 0, 0);
+    public static readonly Vector4 UnitX = new Vector4(1, 0, 0, 0);
 
     /// <summary>
-    /// Returns the z unit <see cref="Vector4F"/> (0, 0, 1, 0).
+    /// Returns the y unit <see cref="Vector4"/> (0, 1, 0, 0).
     /// </summary>
-    public static readonly Vector4F UnitZ = new Vector4F(0, 0, 1, 0);
+    public static readonly Vector4 UnitY = new Vector4(0, 1, 0, 0);
 
     /// <summary>
-    /// Returns the w unit <see cref="Vector4F"/> (0, 0, 0, 1).
+    /// Returns the z unit <see cref="Vector4"/> (0, 0, 1, 0).
     /// </summary>
-    public static readonly Vector4F UnitW = new Vector4F(0, 0, 0, 1);
+    public static readonly Vector4 UnitZ = new Vector4(0, 0, 1, 0);
+
+    /// <summary>
+    /// Returns the w unit <see cref="Vector4"/> (0, 0, 0, 1).
+    /// </summary>
+    public static readonly Vector4 UnitW = new Vector4(0, 0, 0, 1);
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The x component.
@@ -119,9 +119,9 @@ namespace DigitalRune.Mathematics.Algebra
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the component at the specified index.
@@ -266,11 +266,11 @@ namespace DigitalRune.Mathematics.Algebra
     /// <exception cref="DivideByZeroException">
     /// The length of the vector is zero. The quaternion cannot be normalized.
     /// </exception>
-    public Vector4F Normalized
+    public Vector4 Normalized
     {
       get
       {
-        Vector4F v = this;
+        Vector4 v = this;
         v.Normalize();
         return v;
       }
@@ -403,25 +403,25 @@ namespace DigitalRune.Mathematics.Algebra
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
-    /// Initializes a new instance of <see cref="Vector4F"/>.
+    /// Initializes a new instance of <see cref="Vector4"/>.
     /// </summary>
     /// </overloads>
     /// 
     /// <summary>
-    /// Initializes a new instance of <see cref="Vector4F"/>.
+    /// Initializes a new instance of <see cref="Vector4"/>.
     /// </summary>
     /// <param name="x">Initial value for the x component.</param>
     /// <param name="y">Initial value for the y component.</param>
     /// <param name="z">Initial value for the z component.</param>
     /// <param name="w">Initial value for the z component.</param>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-    public Vector4F(float x, float y, float z, float w)
+    public Vector4(float x, float y, float z, float w)
     {
       X = x;
       Y = y;
@@ -431,13 +431,13 @@ namespace DigitalRune.Mathematics.Algebra
 
 
     /// <summary>
-    /// Initializes a new instance of <see cref="Vector4F"/>.
+    /// Initializes a new instance of <see cref="Vector4"/>.
     /// </summary>
     /// <param name="componentValue">The initial value for 4 the vector components.</param>
     /// <remarks>
     /// All components are set to <paramref name="componentValue"/>.
     /// </remarks>
-    public Vector4F(float componentValue)
+    public Vector4(float componentValue)
     {
       X = componentValue;
       Y = componentValue;
@@ -447,7 +447,7 @@ namespace DigitalRune.Mathematics.Algebra
 
 
     /// <summary>
-    /// Initializes a new instance of <see cref="Vector4F"/>.
+    /// Initializes a new instance of <see cref="Vector4"/>.
     /// </summary>
     /// <param name="components">
     /// Array with the initial values for the components x, y, z and w.
@@ -459,7 +459,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <paramref name="components"/> must not be <see langword="null"/>.
     /// </exception>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods")]
-    public Vector4F(float[] components)
+    public Vector4(float[] components)
     {
       X = components[0];
       Y = components[1];
@@ -469,7 +469,7 @@ namespace DigitalRune.Mathematics.Algebra
 
 
     /// <summary>
-    /// Initializes a new instance of <see cref="Vector4F"/>.
+    /// Initializes a new instance of <see cref="Vector4"/>.
     /// </summary>
     /// <param name="components">
     /// List with the initial values for the components x, y, z and w.
@@ -481,7 +481,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <paramref name="components"/> must not be <see langword="null"/>.
     /// </exception>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods")]
-    public Vector4F(IList<float> components)
+    public Vector4(IList<float> components)
     {
       X = components[0];
       Y = components[1];
@@ -491,12 +491,12 @@ namespace DigitalRune.Mathematics.Algebra
 
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Vector4F"/> class.
+    /// Initializes a new instance of the <see cref="Vector4"/> class.
     /// </summary>
     /// <param name="vector">The vector (x, y, z).</param>
     /// <param name="w">The w component.</param>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-    public Vector4F(Vector3 vector, float w)
+    public Vector4(Vector3 vector, float w)
     {
       X = vector.X;
       Y = vector.Y;
@@ -506,9 +506,9 @@ namespace DigitalRune.Mathematics.Algebra
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns the hash code for this instance.
@@ -545,7 +545,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// </returns>
     public override bool Equals(object obj)
     {
-      return obj is Vector4F && this == (Vector4F)obj;
+      return obj is Vector4 && this == (Vector4)obj;
     }
 
 
@@ -558,7 +558,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <see langword="true"/> if the current object is equal to the other parameter; otherwise, 
     /// <see langword="false"/>.
     /// </returns>
-    public bool Equals(Vector4F other)
+    public bool Equals(Vector4 other)
     {
       return this == other;
     }
@@ -596,16 +596,16 @@ namespace DigitalRune.Mathematics.Algebra
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Negates a vector.
     /// </summary>
     /// <param name="vector">The vector.</param>
     /// <returns>The negated vector.</returns>
-    public static Vector4F operator -(Vector4F vector)
+    public static Vector4 operator -(Vector4 vector)
     {
       vector.X = -vector.X;
       vector.Y = -vector.Y;
@@ -620,7 +620,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// </summary>
     /// <param name="vector">The vector.</param>
     /// <returns>The negated vector.</returns>
-    public static Vector4F Negate(Vector4F vector)
+    public static Vector4 Negate(Vector4 vector)
     {
       vector.X = -vector.X;
       vector.Y = -vector.Y;
@@ -636,7 +636,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="vector1">The first vector.</param>
     /// <param name="vector2">The second vector.</param>
     /// <returns>The sum of the two vectors.</returns>
-    public static Vector4F operator +(Vector4F vector1, Vector4F vector2)
+    public static Vector4 operator +(Vector4 vector1, Vector4 vector2)
     {
       vector1.X += vector2.X;
       vector1.Y += vector2.Y;
@@ -652,7 +652,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="vector1">The first vector.</param>
     /// <param name="vector2">The second vector.</param>
     /// <returns>The sum of the two vectors.</returns>
-    public static Vector4F Add(Vector4F vector1, Vector4F vector2)
+    public static Vector4 Add(Vector4 vector1, Vector4 vector2)
     {
       vector1.X += vector2.X;
       vector1.Y += vector2.Y;
@@ -668,7 +668,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="minuend">The first vector (minuend).</param>
     /// <param name="subtrahend">The second vector (subtrahend).</param>
     /// <returns>The difference of the two vectors.</returns>
-    public static Vector4F operator -(Vector4F minuend, Vector4F subtrahend)
+    public static Vector4 operator -(Vector4 minuend, Vector4 subtrahend)
     {
       minuend.X -= subtrahend.X;
       minuend.Y -= subtrahend.Y;
@@ -684,7 +684,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="minuend">The first vector (minuend).</param>
     /// <param name="subtrahend">The second vector (subtrahend).</param>
     /// <returns>The difference of the two vectors.</returns>
-    public static Vector4F Subtract(Vector4F minuend, Vector4F subtrahend)
+    public static Vector4 Subtract(Vector4 minuend, Vector4 subtrahend)
     {
       minuend.X -= subtrahend.X;
       minuend.Y -= subtrahend.Y;
@@ -706,7 +706,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="vector">The vector.</param>
     /// <param name="scalar">The scalar.</param>
     /// <returns>The vector with each component multiplied by scalar.</returns>
-    public static Vector4F operator *(Vector4F vector, float scalar)
+    public static Vector4 operator *(Vector4 vector, float scalar)
     {
       vector.X *= scalar;
       vector.Y *= scalar;
@@ -722,7 +722,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="vector">The vector.</param>
     /// <param name="scalar">The scalar.</param>
     /// <returns>The vector with each component multiplied by <paramref name="scalar"/>.</returns>
-    public static Vector4F operator *(float scalar, Vector4F vector)
+    public static Vector4 operator *(float scalar, Vector4 vector)
     {
       vector.X *= scalar;
       vector.Y *= scalar;
@@ -744,7 +744,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="vector">The vector.</param>
     /// <param name="scalar">The scalar.</param>
     /// <returns>The vector with each component multiplied by <paramref name="scalar"/>.</returns>
-    public static Vector4F Multiply(float scalar, Vector4F vector)
+    public static Vector4 Multiply(float scalar, Vector4 vector)
     {
       vector.X *= scalar;
       vector.Y *= scalar;
@@ -760,7 +760,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="vector1">The first vector.</param>
     /// <param name="vector2">The second vector.</param>
     /// <returns>The component-wise product of the two vectors.</returns>
-    public static Vector4F operator *(Vector4F vector1, Vector4F vector2)
+    public static Vector4 operator *(Vector4 vector1, Vector4 vector2)
     {
       vector1.X *= vector2.X;
       vector1.Y *= vector2.Y;
@@ -776,7 +776,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="vector1">The first vector.</param>
     /// <param name="vector2">The second vector.</param>
     /// <returns>The component-wise product of the two vectors.</returns>
-    public static Vector4F Multiply(Vector4F vector1, Vector4F vector2)
+    public static Vector4 Multiply(Vector4 vector1, Vector4 vector2)
     {
       vector1.X *= vector2.X;
       vector1.Y *= vector2.Y;
@@ -798,7 +798,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="vector">The vector.</param>
     /// <param name="scalar">The scalar.</param>
     /// <returns>The vector with each component divided by <paramref name="scalar"/>.</returns>
-    public static Vector4F operator /(Vector4F vector, float scalar)
+    public static Vector4 operator /(Vector4 vector, float scalar)
     {
       float f = 1 / scalar;
       vector.X *= f;
@@ -821,7 +821,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="vector">The vector.</param>
     /// <param name="scalar">The scalar.</param>
     /// <returns>The vector with each component divided by <paramref name="scalar"/>.</returns>
-    public static Vector4F Divide(Vector4F vector, float scalar)
+    public static Vector4 Divide(Vector4 vector, float scalar)
     {
       float f = 1 / scalar;
       vector.X *= f;
@@ -839,7 +839,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="dividend">The first vector (dividend).</param>
     /// <param name="divisor">The second vector (divisor).</param>
     /// <returns>The component-wise product of the two vectors.</returns>
-    public static Vector4F operator /(Vector4F dividend, Vector4F divisor)
+    public static Vector4 operator /(Vector4 dividend, Vector4 divisor)
     {
       dividend.X /= divisor.X;
       dividend.Y /= divisor.Y;
@@ -856,7 +856,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="dividend">The first vector (dividend).</param>
     /// <param name="divisor">The second vector (divisor).</param>
     /// <returns>The component-wise division of the two vectors.</returns>
-    public static Vector4F Divide(Vector4F dividend, Vector4F divisor)
+    public static Vector4 Divide(Vector4 dividend, Vector4 divisor)
     {
       dividend.X /= divisor.X;
       dividend.Y /= divisor.Y;
@@ -877,7 +877,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <remarks>
     /// For the test the corresponding components of the vectors are compared.
     /// </remarks>
-    public static bool operator ==(Vector4F vector1, Vector4F vector2)
+    public static bool operator ==(Vector4 vector1, Vector4 vector2)
     {
       return vector1.X == vector2.X
           && vector1.Y == vector2.Y
@@ -897,7 +897,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <remarks>
     /// For the test the corresponding components of the vectors are compared.
     /// </remarks>
-    public static bool operator !=(Vector4F vector1, Vector4F vector2)
+    public static bool operator !=(Vector4 vector1, Vector4 vector2)
     {
       return vector1.X != vector2.X
           || vector1.Y != vector2.Y
@@ -917,7 +917,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// counterpart in <paramref name="vector2"/>; otherwise, <see langword="false"/>.
     /// </returns>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates")]
-    public static bool operator >(Vector4F vector1, Vector4F vector2)
+    public static bool operator >(Vector4 vector1, Vector4 vector2)
     {
       return vector1.X > vector2.X
           && vector1.Y > vector2.Y
@@ -937,7 +937,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// than its counterpart in <paramref name="vector2"/>; otherwise, <see langword="false"/>.
     /// </returns>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates")]
-    public static bool operator >=(Vector4F vector1, Vector4F vector2)
+    public static bool operator >=(Vector4 vector1, Vector4 vector2)
     {
       return vector1.X >= vector2.X
           && vector1.Y >= vector2.Y
@@ -957,7 +957,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// counterpart in <paramref name="vector2"/>; otherwise, <see langword="false"/>.
     /// </returns>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates")]
-    public static bool operator <(Vector4F vector1, Vector4F vector2)
+    public static bool operator <(Vector4 vector1, Vector4 vector2)
     {
       return vector1.X < vector2.X
           && vector1.Y < vector2.Y
@@ -977,7 +977,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// its counterpart in <paramref name="vector2"/>; otherwise, <see langword="false"/>.
     /// </returns>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2225:OperatorOverloadsHaveNamedAlternates")]
-    public static bool operator <=(Vector4F vector1, Vector4F vector2)
+    public static bool operator <=(Vector4 vector1, Vector4 vector2)
     {
       return vector1.X <= vector2.X
           && vector1.Y <= vector2.Y
@@ -999,7 +999,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <returns>
     /// The array with 4 <see langword="float"/> values. The order of the elements is: x, y, z, w
     /// </returns>
-    public static explicit operator float[](Vector4F vector)
+    public static explicit operator float[](Vector4 vector)
     {
       return new[] { vector.X, vector.Y, vector.Z, vector.W };
     }
@@ -1025,7 +1025,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// The list with 4 <see langword="float"/> values. The order of the elements is: x, y, z, w
     /// </returns>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1002:DoNotExposeGenericLists")]
-    public static explicit operator List<float>(Vector4F vector)
+    public static explicit operator List<float>(Vector4 vector)
     {
       List<float> result = new List<float>(4) { vector.X, vector.Y, vector.Z, vector.W };
       return result;
@@ -1047,23 +1047,23 @@ namespace DigitalRune.Mathematics.Algebra
 
     /// <overloads>
     /// <summary>
-    /// Performs an implicit conversion from <see cref="Vector4F"/> to another data type.
+    /// Performs an implicit conversion from <see cref="Vector4"/> to another data type.
     /// </summary>
     /// </overloads>
     /// 
     /// <summary>
-    /// Performs an implicit conversion from <see cref="Vector4F"/> to <see cref="Vector4D"/>.
+    /// Performs an implicit conversion from <see cref="Vector4"/> to <see cref="Vector4D"/>.
     /// </summary>
-    /// <param name="vector">The DigitalRune <see cref="Vector4F"/>.</param>
+    /// <param name="vector">The DigitalRune <see cref="Vector4"/>.</param>
     /// <returns>The result of the conversion.</returns>
-    public static implicit operator Vector4D(Vector4F vector)
+    public static implicit operator Vector4D(Vector4 vector)
     {
       return new Vector4D(vector.X, vector.Y, vector.Z, vector.W);
     }
 
 
     /// <summary>
-    /// Converts this <see cref="Vector4F"/> to <see cref="Vector4D"/>.
+    /// Converts this <see cref="Vector4"/> to <see cref="Vector4D"/>.
     /// </summary>
     /// <returns>The result of the conversion.</returns>
     public Vector4D ToVector4D()
@@ -1073,11 +1073,11 @@ namespace DigitalRune.Mathematics.Algebra
 
 
     /// <summary>
-    /// Performs an implicit conversion from <see cref="Vector4F"/> to <see cref="VectorF"/>.
+    /// Performs an implicit conversion from <see cref="Vector4"/> to <see cref="VectorF"/>.
     /// </summary>
     /// <param name="vector">The vector.</param>
     /// <returns>The result of the conversion.</returns>
-    public static implicit operator VectorF(Vector4F vector)
+    public static implicit operator VectorF(Vector4 vector)
     {
       VectorF result = new VectorF(4);
       result[0] = vector.X; 
@@ -1089,7 +1089,7 @@ namespace DigitalRune.Mathematics.Algebra
 
 
     /// <summary>
-    /// Converts this <see cref="Vector4F"/> to <see cref="VectorF"/>.
+    /// Converts this <see cref="Vector4"/> to <see cref="VectorF"/>.
     /// </summary>
     /// <returns>The result of the conversion.</returns>
     public VectorF ToVectorF()
@@ -1100,56 +1100,56 @@ namespace DigitalRune.Mathematics.Algebra
 
 
     /// <summary>
-    /// Performs an conversion from <see cref="Vector4"/> (XNA Framework) to <see cref="Vector4F"/>
+    /// Performs an conversion from <see cref="Vector4"/> (XNA Framework) to <see cref="Vector4"/>
     /// (DigitalRune Mathematics).
     /// </summary>
     /// <param name="vector">The <see cref="Vector4"/> (XNA Framework).</param>
-    /// <returns>The <see cref="Vector4F"/> (DigitalRune Mathematics).</returns>
+    /// <returns>The <see cref="Vector4"/> (DigitalRune Mathematics).</returns>
     /// <remarks>
     /// This method is available only in the XNA-compatible build of the
     /// DigitalRune.Mathematics.dll.
     /// </remarks>
-    public static explicit operator Vector4F(Vector4 vector)
-    {
-      return new Vector4F(vector.X, vector.Y, vector.Z, vector.W);
-    }
-
-
-    /// <summary>
-    /// Converts this <see cref="Vector4F"/> (DigitalRune Mathematics) to <see cref="Vector4"/> 
-    /// (XNA Framework).
-    /// </summary>
-    /// <param name="vector">The <see cref="Vector4"/> (XNA Framework).</param>
-    /// <returns>The <see cref="Vector4F"/> (DigitalRune Mathematics).</returns>
-    /// <remarks>
-    /// This method is available only in the XNA-compatible build of the 
-    /// DigitalRune.Mathematics.dll.
-    /// </remarks>
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-    public static Vector4F FromXna(Vector4 vector)
-    {
-      return new Vector4F(vector.X, vector.Y, vector.Z, vector.W);
-    }
-
-
-    /// <summary>
-    /// Performs an conversion from <see cref="Vector4F"/> (DigitalRune Mathematics) to 
-    /// <see cref="Vector4"/> (XNA Framework).
-    /// </summary>
-    /// <param name="vector">The <see cref="Vector4F"/> (DigitalRune Mathematics).</param>
-    /// <returns>The <see cref="Vector4"/> (XNA Framework).</returns>
-    /// <remarks>
-    /// This method is available only in the XNA-compatible build of the
-    /// DigitalRune.Mathematics.dll.
-    /// </remarks>
-    public static explicit operator Vector4(Vector4F vector)
+    public static explicit operator Vector4(Vector4 vector)
     {
       return new Vector4(vector.X, vector.Y, vector.Z, vector.W);
     }
 
 
     /// <summary>
-    /// Converts this <see cref="Vector4F"/> (DigitalRune Mathematics) to <see cref="Vector4"/> 
+    /// Converts this <see cref="Vector4"/> (DigitalRune Mathematics) to <see cref="Vector4"/> 
+    /// (XNA Framework).
+    /// </summary>
+    /// <param name="vector">The <see cref="Vector4"/> (XNA Framework).</param>
+    /// <returns>The <see cref="Vector4"/> (DigitalRune Mathematics).</returns>
+    /// <remarks>
+    /// This method is available only in the XNA-compatible build of the 
+    /// DigitalRune.Mathematics.dll.
+    /// </remarks>
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
+    public static Vector4 FromXna(Vector4 vector)
+    {
+      return new Vector4(vector.X, vector.Y, vector.Z, vector.W);
+    }
+
+
+    /// <summary>
+    /// Performs an conversion from <see cref="Vector4"/> (DigitalRune Mathematics) to 
+    /// <see cref="Vector4"/> (XNA Framework).
+    /// </summary>
+    /// <param name="vector">The <see cref="Vector4"/> (DigitalRune Mathematics).</param>
+    /// <returns>The <see cref="Vector4"/> (XNA Framework).</returns>
+    /// <remarks>
+    /// This method is available only in the XNA-compatible build of the
+    /// DigitalRune.Mathematics.dll.
+    /// </remarks>
+    public static explicit operator Vector4(Vector4 vector)
+    {
+      return new Vector4(vector.X, vector.Y, vector.Z, vector.W);
+    }
+
+
+    /// <summary>
+    /// Converts this <see cref="Vector4"/> (DigitalRune Mathematics) to <see cref="Vector4"/> 
     /// (XNA Framework).
     /// </summary>
     /// <returns>The <see cref="Vector4"/> (XNA Framework).</returns>
@@ -1166,9 +1166,9 @@ namespace DigitalRune.Mathematics.Algebra
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -1312,16 +1312,16 @@ namespace DigitalRune.Mathematics.Algebra
     /// Sets this vector to its projection onto the axis given by the target vector.
     /// </summary>
     /// <param name="target">The target vector.</param>
-    public void ProjectTo(Vector4F target)
+    public void ProjectTo(Vector4 target)
     {
-      this = Dot(this, target) / target.LengthSquared * target;
+      this = Dot(this, target) / target.LengthSquared() * target;
     }
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns a vector with the absolute values of the elements of the given vector.
@@ -1332,9 +1332,9 @@ namespace DigitalRune.Mathematics.Algebra
     /// The original vector is copied and then each vector element is set to its absolute value (see
     /// <see cref="Math.Abs(float)"/>).
     /// </remarks>
-    public static Vector4F Absolute(Vector4F vector)
+    public static Vector4 Absolute(Vector4 vector)
     {
-      return new Vector4F(Math.Abs(vector.X), Math.Abs(vector.Y), Math.Abs(vector.Z), Math.Abs(vector.W));
+      return new Vector4(Math.Abs(vector.X), Math.Abs(vector.Y), Math.Abs(vector.Z), Math.Abs(vector.W));
     }
 
 
@@ -1358,7 +1358,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// The two vectors are compared component-wise. If the differences of the components are less
     /// than <see cref="Numeric.EpsilonF"/> the vectors are considered as being equal.
     /// </remarks>
-    public static bool AreNumericallyEqual(Vector4F vector1, Vector4F vector2)
+    public static bool AreNumericallyEqual(Vector4 vector1, Vector4 vector2)
     {
       return Numeric.AreEqual(vector1.X, vector2.X)
           && Numeric.AreEqual(vector1.Y, vector2.Y)
@@ -1381,7 +1381,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// The two vectors are compared component-wise. If the differences of the components are less
     /// than <paramref name="epsilon"/> the vectors are considered as being equal.
     /// </remarks>
-    public static bool AreNumericallyEqual(Vector4F vector1, Vector4F vector2, float epsilon)
+    public static bool AreNumericallyEqual(Vector4 vector1, Vector4 vector2, float epsilon)
     {
       return Numeric.AreEqual(vector1.X, vector2.X, epsilon)
           && Numeric.AreEqual(vector1.Y, vector2.Y, epsilon)
@@ -1402,9 +1402,9 @@ namespace DigitalRune.Mathematics.Algebra
     /// <paramref name="min"/> are set to <paramref name="min"/>. Component values greater than 
     /// <paramref name="max"/> are set to <paramref name="max"/>.
     /// </remarks>
-    public static Vector4F Clamp(Vector4F vector, float min, float max)
+    public static Vector4 Clamp(Vector4 vector, float min, float max)
     {
-      return new Vector4F(MathHelper.Clamp(vector.X, min, max),
+      return new Vector4(MathHelper.Clamp(vector.X, min, max),
                           MathHelper.Clamp(vector.Y, min, max),
                           MathHelper.Clamp(vector.Z, min, max),
                           MathHelper.Clamp(vector.W, min, max));
@@ -1421,7 +1421,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// interval [-<see cref="Numeric.EpsilonF"/>, +<see cref="Numeric.EpsilonF"/>] it is set to 
     /// zero, otherwise it remains unchanged.
     /// </remarks>
-    public static Vector4F ClampToZero(Vector4F vector)
+    public static Vector4 ClampToZero(Vector4 vector)
     {
       vector.X = Numeric.ClampToZero(vector.X);
       vector.Y = Numeric.ClampToZero(vector.Y);
@@ -1442,7 +1442,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// interval [-<paramref name="epsilon"/>, +<paramref name="epsilon"/>] it is set to zero, 
     /// otherwise it remains unchanged.
     /// </remarks>
-    public static Vector4F ClampToZero(Vector4F vector, float epsilon)
+    public static Vector4 ClampToZero(Vector4 vector, float epsilon)
     {
       vector.X = Numeric.ClampToZero(vector.X, epsilon);
       vector.Y = Numeric.ClampToZero(vector.Y, epsilon);
@@ -1461,7 +1461,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <remarks>
     /// The method calculates the dot product (also known as scalar product or inner product).
     /// </remarks>
-    public static float Dot(Vector4F vector1, Vector4F vector2)
+    public static float Dot(Vector4 vector1, Vector4 vector2)
     {
       return vector1.X * vector2.X
            + vector1.Y * vector2.Y
@@ -1478,7 +1478,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <exception cref="DivideByZeroException">
     /// Component W is 0.
     /// </exception>
-    public static Vector3 HomogeneousDivide(Vector4F vector)
+    public static Vector3 HomogeneousDivide(Vector4 vector)
     {
       float w = vector.W;
 
@@ -1496,7 +1496,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="vector1">The first vector.</param>
     /// <param name="vector2">The second vector.</param>
     /// <returns>The minimized vector.</returns>
-    public static Vector4F Min(Vector4F vector1, Vector4F vector2)
+    public static Vector4 Min(Vector4 vector1, Vector4 vector2)
     {
       vector1.X = Math.Min(vector1.X, vector2.X);
       vector1.Y = Math.Min(vector1.Y, vector2.Y);
@@ -1512,7 +1512,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="vector1">The first vector.</param>
     /// <param name="vector2">The second vector.</param>
     /// <returns>The maximized vector.</returns>
-    public static Vector4F Max(Vector4F vector1, Vector4F vector2)
+    public static Vector4 Max(Vector4 vector1, Vector4 vector2)
     {
       vector1.X = Math.Max(vector1.X, vector2.X);
       vector1.Y = Math.Max(vector1.Y, vector2.Y);
@@ -1530,34 +1530,34 @@ namespace DigitalRune.Mathematics.Algebra
     /// <returns>
     /// The projection of <paramref name="vector"/> onto <paramref name="target"/>.
     /// </returns>
-    public static Vector4F ProjectTo(Vector4F vector, Vector4F target)
+    public static Vector4 ProjectTo(Vector4 vector, Vector4 target)
     {
-      return Dot(vector, target) / target.LengthSquared * target;
+      return Dot(vector, target) / target.LengthSquared() * target;
     }
 
 
 
     /// <overloads>
     /// <summary>
-    /// Converts the string representation of a 4-dimensional vector to its <see cref="Vector4F"/>
+    /// Converts the string representation of a 4-dimensional vector to its <see cref="Vector4"/>
     /// equivalent.
     /// </summary>
     /// </overloads>
     /// 
     /// <summary>
-    /// Converts the string representation of a 4-dimensional vector to its <see cref="Vector4F"/>
+    /// Converts the string representation of a 4-dimensional vector to its <see cref="Vector4"/>
     /// equivalent.
     /// </summary>
     /// <param name="s">A string representation of a 4-dimensional vector.</param>
     /// <returns>
-    /// A <see cref="Vector4F"/> that represents the vector specified by the <paramref name="s"/>
+    /// A <see cref="Vector4"/> that represents the vector specified by the <paramref name="s"/>
     /// parameter.
     /// </returns>
     /// <exception cref="FormatException">
-    /// <paramref name="s"/> is not a valid <see cref="Vector4F"/>.
+    /// <paramref name="s"/> is not a valid <see cref="Vector4"/>.
     /// </exception>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-    public static Vector4F Parse(string s)
+    public static Vector4 Parse(string s)
     {
       return Parse(s, CultureInfo.CurrentCulture);
     }
@@ -1565,7 +1565,7 @@ namespace DigitalRune.Mathematics.Algebra
 
     /// <summary>
     /// Converts the string representation of a 4-dimensional vector in a specified culture-specific
-    /// format to its <see cref="Vector4F"/> equivalent.
+    /// format to its <see cref="Vector4"/> equivalent.
     /// </summary>
     /// <param name="s">A string representation of a 4-dimensional vector.</param>
     /// <param name="provider">
@@ -1573,25 +1573,25 @@ namespace DigitalRune.Mathematics.Algebra
     /// <paramref name="s"/>. 
     /// </param>
     /// <returns>
-    /// A <see cref="Vector4F"/> that represents the vector specified by the <paramref name="s"/>
+    /// A <see cref="Vector4"/> that represents the vector specified by the <paramref name="s"/>
     /// parameter.</returns>
     /// <exception cref="FormatException">
-    /// <paramref name="s"/> is not a valid <see cref="Vector4F"/>.
+    /// <paramref name="s"/> is not a valid <see cref="Vector4"/>.
     /// </exception>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-    public static Vector4F Parse(string s, IFormatProvider provider)
+    public static Vector4 Parse(string s, IFormatProvider provider)
     {
       Match m = Regex.Match(s, @"\((?<x>.*);(?<y>.*);(?<z>.*);(?<w>.*)\)", RegexOptions.None);
       if (m.Success)
       {
-        return new Vector4F(
+        return new Vector4(
           float.Parse(m.Groups["x"].Value, provider),
           float.Parse(m.Groups["y"].Value, provider),
           float.Parse(m.Groups["z"].Value, provider),
           float.Parse(m.Groups["w"].Value, provider));
       }
 
-      throw new FormatException("String is not a valid Vector4F.");
+      throw new FormatException("String is not a valid Vector4.");
     }
 
   }

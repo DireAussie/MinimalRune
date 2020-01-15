@@ -4,14 +4,14 @@
 
 using System;
 using System.ComponentModel;
-using DigitalRune.Game.Input;
+using MinimalRune.Game.Input;
 using Microsoft.Xna.Framework.Input;
 
 using Keys = System.Windows.Input.Key;
 
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   /// <summary>
   /// Implements the basic functionality common to button controls.
@@ -28,15 +28,15 @@ namespace DigitalRune.Game.UI.Controls
   /// </remarks>
   public class ButtonBase : ContentControl
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override string VisualState
@@ -61,9 +61,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary> 
     /// The ID of the <see cref="ClickMode"/> game object property.
@@ -166,9 +166,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes static members of the <see cref="ButtonBase"/> class.
@@ -201,9 +201,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private void OnDisable(object sender, GamePropertyEventArgs<bool> eventArgs)
     {

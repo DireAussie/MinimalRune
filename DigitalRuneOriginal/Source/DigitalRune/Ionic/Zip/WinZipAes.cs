@@ -19,7 +19,7 @@ using System;
 using System.IO;
 using System.Security.Cryptography;
 
-namespace DigitalRune.Ionic.Zip
+namespace MinimalRune.Ionic.Zip
 {
     /// <summary>
     ///   This is a helper class supporting WinZip AES encryption.

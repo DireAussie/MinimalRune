@@ -1,7 +1,7 @@
 ﻿using System.Linq;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Interpolation;
-using DigitalRune.Mathematics.Statistics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Interpolation;
+using MinimalRune.Mathematics.Statistics;
 using Microsoft.Xna.Framework;
 
 // Both XNA and DigitalRune also have a type called CurveLoopType. To avoid compiler 

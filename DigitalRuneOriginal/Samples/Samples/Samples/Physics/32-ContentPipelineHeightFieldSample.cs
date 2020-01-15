@@ -1,11 +1,11 @@
 ﻿
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Statistics;
-using DigitalRune.Physics;
-using DigitalRune.Physics.ForceEffects;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Statistics;
+using MinimalRune.Physics;
+using MinimalRune.Physics.ForceEffects;
 
 
 namespace Samples.Physics

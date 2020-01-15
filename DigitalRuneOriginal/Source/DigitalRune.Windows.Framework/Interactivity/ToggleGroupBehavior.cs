@@ -10,31 +10,31 @@ using System.Windows.Interactivity;
 using System.Windows.Media;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Enables easy toggling of <see cref="ToggleButton"/>s that belong to the same group.
     /// </summary>
     public class ToggleGroupBehavior : Behavior<FrameworkElement>
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private object _groupId;
         private bool _isChecked;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="P:DigitalRune.Windows.Framework.ToggleGroupBehavior.Id"/> attached dependency
@@ -94,9 +94,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Called after the behavior is attached to an <see cref="Behavior{T}.AssociatedObject"/>.

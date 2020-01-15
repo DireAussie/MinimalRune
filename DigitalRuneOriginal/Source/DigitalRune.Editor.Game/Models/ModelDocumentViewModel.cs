@@ -7,39 +7,39 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
-using DigitalRune.Editor.Documents;
-using DigitalRune.Editor.Game;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Editor.Documents;
+using MinimalRune.Editor.Game;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Windows.Framework;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Samples;
 
 
-namespace DigitalRune.Editor.Models
+namespace MinimalRune.Editor.Models
 {
     /// <summary>
     /// Shows a 3D model for viewing and editing.
     /// </summary>
     internal class ModelDocumentViewModel : DocumentViewModel
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private GameExtension _gameExtension;
         private ModelNode _groundModelNode;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public new ModelDocument Document
@@ -232,9 +232,9 @@ namespace DigitalRune.Editor.Models
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ModelDocumentViewModel" /> class.
@@ -252,9 +252,9 @@ namespace DigitalRune.Editor.Models
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]

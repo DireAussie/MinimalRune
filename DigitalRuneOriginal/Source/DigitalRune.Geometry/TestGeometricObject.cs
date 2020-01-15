@@ -4,12 +4,12 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry
+namespace MinimalRune.Geometry
 {
   /// <summary>
   /// A lightweight <see cref="IGeometricObject"/> implementation without events. (For internal use 
@@ -24,9 +24,9 @@ namespace DigitalRune.Geometry
   [DebuggerDisplay("{GetType().Name,nq}(Shape = {Shape})")]
   internal sealed class TestGeometricObject : IGeometricObject, IRecyclable
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static readonly ResourcePool<TestGeometricObject> Pool =
       new ResourcePool<TestGeometricObject>(
@@ -36,9 +36,9 @@ namespace DigitalRune.Geometry
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     public Aabb Aabb
     {
@@ -99,9 +99,9 @@ namespace DigitalRune.Geometry
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private TestGeometricObject()
     {
@@ -124,9 +124,9 @@ namespace DigitalRune.Geometry
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     IGeometricObject IGeometricObject.Clone()
     {

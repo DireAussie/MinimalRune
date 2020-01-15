@@ -5,13 +5,13 @@
 using System;
 using System.Diagnostics;
 using System.Globalization;
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Geometry.Meshes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Geometry.Meshes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry.Shapes
+namespace MinimalRune.Geometry.Shapes
 {
   /// <summary>
   /// Represents a height field which can be used for simple terrains.
@@ -102,9 +102,9 @@ namespace DigitalRune.Geometry.Shapes
     // - Add properties BaseIndex and RowStride (StrideX, Stride) to allow to use a
     //   region of a larger 1-dimensional array.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // The cached difference of the highest and lowest height field point.
     private float _minHeight = float.NaN;
@@ -115,9 +115,9 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the height field.
@@ -398,9 +398,9 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -513,9 +513,9 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

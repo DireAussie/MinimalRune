@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Media.Animation;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     /// <summary>
     /// Appears over the <see cref="DockControl"/> or a <see cref="DockTabPane"/> when a
@@ -44,9 +44,9 @@ namespace DigitalRune.Windows.Docking
     [TemplateVisualState(GroupName = "DockStates", Name = "Inside")]
     public abstract class DockIndicatorOverlay : DockOverlay
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         // _dockIndicators[(int)DockPosition] = DockIndicator
         private readonly DockIndicator[] _dockIndicators = new DockIndicator[6];
@@ -55,15 +55,15 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="AllowDockLeft"/> dependency property.
@@ -273,9 +273,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DockIndicatorOverlay"/> class.
@@ -294,9 +294,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static void OnAllowedDockPositionChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
         {

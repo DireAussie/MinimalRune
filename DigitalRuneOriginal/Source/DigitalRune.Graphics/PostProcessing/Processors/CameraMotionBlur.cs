@@ -4,13 +4,13 @@
 
 
 using System;
-using DigitalRune.Geometry;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.PostProcessing
+namespace MinimalRune.Graphics.PostProcessing
 {
   /// <summary>
   /// Creates a motion blur that depends on the camera movement.
@@ -25,9 +25,9 @@ namespace DigitalRune.Graphics.PostProcessing
     // Note:
     // see "GPU Gems 3: Motion Blur as a Post-Processing Effect"
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly Vector3[] _cameraFrustumFarCorners = new Vector3[4];
 
@@ -43,9 +43,9 @@ namespace DigitalRune.Graphics.PostProcessing
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the number of samples used to compute a blurred pixel.
@@ -62,9 +62,9 @@ namespace DigitalRune.Graphics.PostProcessing
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="CameraMotionBlur"/> class.
@@ -92,9 +92,9 @@ namespace DigitalRune.Graphics.PostProcessing
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods")]

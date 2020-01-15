@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using System.Text;
-using DigitalRune.Storages;
+using MinimalRune.Storages;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
@@ -67,9 +67,9 @@ namespace Samples
     //   In this example George W. Clingerman shows how to handle error reporting
     //   and feedback in XBLIG.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
@@ -84,9 +84,9 @@ namespace Samples
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the name of the application that threw the exception.
@@ -106,9 +106,9 @@ namespace Samples
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ExceptionGame"/> class.
@@ -127,9 +127,9 @@ namespace Samples
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Called after the Game and GraphicsDevice are created, but before LoadContent. 

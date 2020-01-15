@@ -4,10 +4,10 @@
 
 using System;
 using System.Globalization;
-using DigitalRune.Geometry;
+using MinimalRune.Geometry;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   partial class SceneNode
   {

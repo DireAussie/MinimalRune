@@ -6,7 +6,7 @@ using System.Diagnostics;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Provides helper methods for the <see cref="RenderContext"/> type.

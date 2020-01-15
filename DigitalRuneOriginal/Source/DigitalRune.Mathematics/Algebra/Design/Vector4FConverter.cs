@@ -9,12 +9,12 @@ using System.ComponentModel;
 using System.Globalization;
 
 
-namespace DigitalRune.Mathematics.Algebra.Design
+namespace MinimalRune.Mathematics.Algebra.Design
 {
   /// <summary>
-  /// Converts a <see cref="Vector4F"/> to and from string representation.
+  /// Converts a <see cref="Vector4"/> to and from string representation.
   /// </summary>
-  public class Vector4FConverter 
+  public class Vector4Converter 
 
     : ExpandableObjectConverter
 #else
@@ -81,7 +81,7 @@ namespace DigitalRune.Mathematics.Algebra.Design
     {
       string s = value as string;
       if (s != null)
-        return Vector4F.Parse(s, culture);
+        return Vector4.Parse(s, culture);
 
       return base.ConvertFrom(context, culture, value);
     }
@@ -102,8 +102,8 @@ namespace DigitalRune.Mathematics.Algebra.Design
     /// <returns>An <see cref="Object"/> that represents the converted value.</returns>
     public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
     {
-      if (destinationType == typeof(string) && value is Vector4F)
-        return ((Vector4F)value).ToString(culture);
+      if (destinationType == typeof(string) && value is Vector4)
+        return ((Vector4)value).ToString(culture);
 
       return base.ConvertTo(context, culture, value, destinationType);
     }

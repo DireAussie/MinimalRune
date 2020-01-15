@@ -5,13 +5,13 @@
 using System;
 using System.Globalization;
 using System.Text;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Game.UI.Rendering
+namespace MinimalRune.Game.UI.Rendering
 {
   /// <summary>
   /// Represents a render transformation.
@@ -46,9 +46,9 @@ namespace DigitalRune.Game.UI.Rendering
 
   public struct RenderTransform : IEquatable<RenderTransform>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The identity transform.
@@ -57,9 +57,9 @@ namespace DigitalRune.Game.UI.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The origin of the render transformations in screen coordinates.
@@ -94,15 +94,15 @@ namespace DigitalRune.Game.UI.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -152,9 +152,9 @@ namespace DigitalRune.Game.UI.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns the hash code for this instance.

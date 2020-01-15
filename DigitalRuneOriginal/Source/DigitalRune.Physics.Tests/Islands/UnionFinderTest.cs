@@ -1,8 +1,8 @@
-﻿using DigitalRune.Physics;
+﻿using MinimalRune.Physics;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Physics.Tests
+namespace MinimalRune.Physics.Tests
 {
   [TestFixture]
   public class UnionFinderTest

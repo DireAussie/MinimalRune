@@ -5,14 +5,14 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Collections;
-using DigitalRune.Geometry;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Collections;
+using MinimalRune.Geometry;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// A configurable renderer that combines multiple scene node renderers.
@@ -38,9 +38,9 @@ namespace DigitalRune.Graphics.Rendering
     // - SceneRenderer may be nested. In this case the ArrayList<Job> cannot be reused.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Defines a draw job of the <see cref="SceneRenderer"/>.
@@ -75,18 +75,18 @@ namespace DigitalRune.Graphics.Rendering
 
 
     
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     internal readonly ArrayList<Job> Jobs;
     internal readonly Accessor JobsAccessor;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the list of scene node renderers managed by this instance.
@@ -96,9 +96,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new empty instance of the <see cref="SceneRenderer" /> class.
@@ -132,9 +132,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------    
+        
 
     /// <inheritdoc/>
     public override bool CanRender(SceneNode node, RenderContext context)

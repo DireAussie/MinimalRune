@@ -5,7 +5,7 @@
 using System.ComponentModel;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Provides category strings for the <see cref="CategoryAttribute"/> that can be used when

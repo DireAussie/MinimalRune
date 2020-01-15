@@ -10,7 +10,7 @@ using System.Globalization;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Effects
+namespace MinimalRune.Graphics.Effects
 {
   /// <summary>
   /// Stores an <see cref="EffectParameterDescription"/> for all parameters of an effect.
@@ -21,17 +21,17 @@ namespace DigitalRune.Graphics.Effects
   /// </remarks>
   public sealed class EffectParameterDescriptionCollection : KeyedCollection<EffectParameter, EffectParameterDescription>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private bool _isReadOnly;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the internal <see cref="List{T}" /> ot the <see cref="Collection{T}" />.
@@ -43,9 +43,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="EffectParameterDescriptionCollection"/> class.
@@ -68,9 +68,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes the <see cref="EffectParameterDescriptionCollection"/> for the specified effect.

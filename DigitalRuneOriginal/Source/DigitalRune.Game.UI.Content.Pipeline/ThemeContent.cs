@@ -3,11 +3,11 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System.Xml.Linq;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 using Microsoft.Xna.Framework.Content.Pipeline;
 
 
-namespace DigitalRune.Game.UI.Content.Pipeline
+namespace MinimalRune.Game.UI.Content.Pipeline
 {
   /// <summary>
   /// Represents a UI theme that defines the properties and visual appearance of UI controls.

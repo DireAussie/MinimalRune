@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.Mathematics
+namespace MinimalRune.Mathematics
 {
   /// <summary>
   /// Provides useful constants (double-precision).

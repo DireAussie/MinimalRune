@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Effects
+namespace MinimalRune.Graphics.Effects
 {
   /// <summary>
   /// Binds a parameter of an effect to a certain value.
@@ -39,7 +39,7 @@ namespace DigitalRune.Graphics.Effects
     ///// <para>
     ///// <strong>Notes for users of DigitalRune Mathematics:</strong><br/> 
     ///// The DigitalRune vector types (see <see cref="Vector2F"/>, <see cref="Vector3"/>, 
-    ///// <see cref="Vector4F"/>) are column-vectors, whereas vectors in DirectX and XNA are 
+    ///// <see cref="Vector4"/>) are column-vectors, whereas vectors in DirectX and XNA are 
     ///// row-vectors. When the DigitalRune vector types are set using an 
     ///// <see cref="EffectParameterBinding{T}"/> they are automatically converted to the corresponding 
     ///// XNA vector types and then applied using the right 
@@ -48,15 +48,15 @@ namespace DigitalRune.Graphics.Effects
     ///// automatically transposed and converted to an XNA matrix type. 
     ///// </para>
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the effect parameter.
@@ -76,9 +76,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -130,9 +130,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

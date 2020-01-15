@@ -3,28 +3,28 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System.Collections.Generic;
-using DigitalRune.Geometry;
-using DigitalRune.Linq;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry;
+using MinimalRune.Linq;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework.Content;
 
 
-namespace DigitalRune.Graphics.Content.Pipeline
+namespace MinimalRune.Graphics.Content.Pipeline
 {
   /// <summary>
   /// Stores the processed data for a <strong>SceneNode</strong> asset.
   /// </summary>
   public class DRSceneNodeContent : INamedObject
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the parent of this node.
@@ -103,9 +103,9 @@ namespace DigitalRune.Graphics.Content.Pipeline
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="DRSceneNodeContent"/> class.
@@ -119,9 +119,9 @@ namespace DigitalRune.Graphics.Content.Pipeline
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Animation.Character
+namespace MinimalRune.Animation.Character
 {
   /// <summary>
   /// Maps the orientation of a whole bone chain.
@@ -38,9 +38,9 @@ namespace DigitalRune.Animation.Character
   /// </remarks>
   public class ChainBoneMapper : BoneMapper
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // true if cached data is invalid.
     private bool _isDirty = true;
@@ -50,9 +50,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the bone index of the first bone of the bone chain in the first skeleton.
@@ -163,9 +163,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ChainBoneMapper"/> class.
@@ -196,9 +196,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Called when <see cref="BoneMapper.Invalidate"/> is called.
@@ -294,7 +294,7 @@ namespace DigitalRune.Animation.Character
       directionA = SkeletonMapper.RotationOffset.Rotate(directionA);
 
       // Compute and apply rotation between the two direction vectors.
-      var rotation = Quaternion.CreateRotation(directionB, directionA);
+      var rotation = Quaternion.CreateFromRotationMatrix(directionB, directionA);
       skeletonInstanceB.RotateBoneAbsolute(RootBoneIndexB, rotation);
     }
 
@@ -332,7 +332,7 @@ namespace DigitalRune.Animation.Character
 
       directionB = SkeletonMapper.RotationOffset.Conjugated.Rotate(directionB);
 
-      var rotation = Quaternion.CreateRotation(directionA, directionB);
+      var rotation = Quaternion.CreateFromRotationMatrix(directionA, directionB);
       skeletonInstanceA.RotateBoneAbsolute(RootBoneIndexA, rotation);
     }
 

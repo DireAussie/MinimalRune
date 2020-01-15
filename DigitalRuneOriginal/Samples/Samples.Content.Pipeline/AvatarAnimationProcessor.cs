@@ -5,12 +5,12 @@
 // Microsoft Permissive License (Ms-PL, see http://create.msdn.com/downloads/?id=15) 
 //
 // Original copyrights:
-//-----------------------------------------------------------------------------
+---------------
 // CustomAvatarAnimationProcessor.cs
 //
 // Microsoft XNA Community Game Platform
 // Copyright (C) Microsoft Corporation. All rights reserved.
-//-----------------------------------------------------------------------------
+---------------
 
 
 
@@ -19,8 +19,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
-using DigitalRune.Animation;
-using DigitalRune.Animation.Character;
+using MinimalRune.Animation;
+using MinimalRune.Animation.Character;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Content.Pipeline.Graphics;
@@ -36,9 +36,9 @@ namespace Samples.Content.Pipeline
   [ContentProcessor(DisplayName = "Avatar Animation Processor (DigitalRune Samples)")]
   public class AvatarAnimation : ContentProcessor<NodeContent, TimelineGroup>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // The bone bind poses.
     private readonly List<Matrix> _bindPoses = new List<Matrix>();
@@ -48,9 +48,9 @@ namespace Samples.Content.Pipeline
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     [DisplayName("Facial expression file")]
     [Description("Specify the file to use for facial animations (relative to the folder of the animation file).")]
@@ -91,9 +91,9 @@ namespace Samples.Content.Pipeline
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     public override TimelineGroup Process(NodeContent input, ContentProcessorContext context)
     {
@@ -148,9 +148,9 @@ namespace Samples.Content.Pipeline
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Finds node that is the root node of the skeleton.
@@ -270,9 +270,9 @@ namespace Samples.Content.Pipeline
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Converts the input expression animation file into expression animation keyframes.
@@ -342,9 +342,9 @@ namespace Samples.Content.Pipeline
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Converts an intermediate-format content pipeline AnimationContent object 

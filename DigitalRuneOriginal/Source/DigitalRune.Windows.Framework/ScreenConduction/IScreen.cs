@@ -10,7 +10,7 @@
 
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Represents an item which is controlled by a <see cref="IConductor"/>.

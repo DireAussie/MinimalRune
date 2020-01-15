@@ -9,8 +9,8 @@ using System.IO;
 using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
-using DigitalRune.Graphics.Content.Pipeline;
-using DigitalRune.Linq;
+using MinimalRune.Graphics.Content.Pipeline;
+using MinimalRune.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Content.Pipeline.Graphics;
@@ -18,7 +18,7 @@ using DRPath = DigitalRune.Storages.Path;
 using static System.FormattableString;
 
 
-namespace DigitalRune.Editor.Game
+namespace MinimalRune.Editor.Game
 {
     /// <summary>
     /// Creates .DRMDL/.DRMAT files (if required) and calls the <see cref="DRModelProcessor"/>.
@@ -27,9 +27,9 @@ namespace DigitalRune.Editor.Game
     [ContentProcessor(DisplayName = "GameModelProcessor")]
     internal class GameModelProcessor : DRModelProcessor
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         // Input
         private NodeContent _input;
@@ -37,9 +37,9 @@ namespace DigitalRune.Editor.Game
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets a value indicating whether the model description (*.DRMDL file) should be
@@ -72,9 +72,9 @@ namespace DigitalRune.Editor.Game
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Converts mesh content to model content.

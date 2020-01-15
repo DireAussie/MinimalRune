@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using DigitalRune.Animation;
-using DigitalRune.Animation.Easing;
-using DigitalRune.Game.Input;
-using DigitalRune.Game.States;
-using DigitalRune.Game.UI;
-using DigitalRune.Game.UI.Controls;
-using DigitalRune.Game.UI.Rendering;
-using DigitalRune.Graphics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Threading;
+using MinimalRune.Animation;
+using MinimalRune.Animation.Easing;
+using MinimalRune.Game.Input;
+using MinimalRune.Game.States;
+using MinimalRune.Game.UI;
+using MinimalRune.Game.UI.Controls;
+using MinimalRune.Game.UI.Rendering;
+using MinimalRune.Graphics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Threading;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
@@ -440,7 +440,7 @@ GameComponent with a StateMachine.",
         Orientation = Orientation.Vertical,
         HorizontalAlignment = HorizontalAlignment.Left,
         VerticalAlignment = VerticalAlignment.Bottom,
-        Margin = new Vector4F(150, 0, 0, 200)
+        Margin = new Vector4(150, 0, 0, 200)
       };
       _menuWindow.Content = stackPanel;
 
@@ -604,7 +604,7 @@ GameComponent with a StateMachine.",
         Orientation = Orientation.Vertical,
         HorizontalAlignment = HorizontalAlignment.Left,
         VerticalAlignment = VerticalAlignment.Bottom,
-        Margin = new Vector4F(150, 0, 0, 200)
+        Margin = new Vector4(150, 0, 0, 200)
       };
       _subMenuWindow.Content = stackPanel;
 

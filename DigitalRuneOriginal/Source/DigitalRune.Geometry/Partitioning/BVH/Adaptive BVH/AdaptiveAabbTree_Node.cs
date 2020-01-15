@@ -4,16 +4,16 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Geometry.Shapes;
+using MinimalRune.Geometry.Shapes;
 
 
-namespace DigitalRune.Geometry.Partitioning
+namespace MinimalRune.Geometry.Partitioning
 {
   partial class AdaptiveAabbTree<T>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Represents a node of an <see cref="AdaptiveAabbTree{T}"/>.

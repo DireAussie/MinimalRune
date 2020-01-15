@@ -5,14 +5,14 @@
 using System;
 using System.Globalization;
 using System.Linq;
-using DigitalRune.Linq;
-using DigitalRune.Mathematics;
+using MinimalRune.Linq;
+using MinimalRune.Mathematics;
 using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Content.Pipeline.Graphics;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Content.Pipeline
+namespace MinimalRune.Graphics.Content.Pipeline
 {
   partial class DRModelProcessor
   {

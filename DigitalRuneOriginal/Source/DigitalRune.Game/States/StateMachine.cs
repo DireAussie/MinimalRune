@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Game.States
+namespace MinimalRune.Game.States
 {
   /// <summary>
   /// Represents a state machine.
@@ -23,18 +23,18 @@ namespace DigitalRune.Game.States
   /// </remarks>
   public class StateMachine
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Re-use StateEventArgs instance to avoid unnecessary memory allocations.
     private readonly StateEventArgs StateEventArgs = new StateEventArgs();
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the states.
@@ -44,9 +44,9 @@ namespace DigitalRune.Game.States
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="StateMachine"/> class.
@@ -59,9 +59,9 @@ namespace DigitalRune.Game.States
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Updates the state machine.

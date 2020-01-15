@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Particles
+namespace MinimalRune.Particles
 {
   /// <summary>
   /// Describes if a particle effector reads and/or writes a particle parameter.

@@ -30,7 +30,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 
 
-namespace DigitalRune.Graphics.Content
+namespace MinimalRune.Graphics.Content
 {
   /// <summary>
   /// Provides methods for loading/saving Truevision TARGA images (.TGA files).

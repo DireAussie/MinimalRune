@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 
 
 namespace System.Collections.Generic

@@ -1,4 +1,4 @@
-﻿using DigitalRune.Windows.Framework;
+﻿using MinimalRune.Windows.Framework;
 
 
 namespace ScreenConductionApp

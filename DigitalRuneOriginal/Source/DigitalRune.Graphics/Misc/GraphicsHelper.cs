@@ -3,13 +3,13 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Provides helper methods for graphics-related tasks.
@@ -110,7 +110,7 @@ namespace DigitalRune.Graphics
     /// </summary>
     /// <param name="color">The color in gamma space.</param>
     /// <returns>The color value in linear space.</returns>
-    internal static Vector4F FromGamma(Vector4F color)
+    internal static Vector4 FromGamma(Vector4 color)
     {
       color.X = FromGamma(color.X);
       color.Y = FromGamma(color.Y);
@@ -155,7 +155,7 @@ namespace DigitalRune.Graphics
     /// </summary>
     /// <param name="color">The color in linear space.</param>
     /// <returns>The color value in gamma space.</returns>
-    internal static Vector4F ToGamma(Vector4F color)
+    internal static Vector4 ToGamma(Vector4 color)
     {
       color.X = ToGamma(color.X);
       color.Y = ToGamma(color.Y);

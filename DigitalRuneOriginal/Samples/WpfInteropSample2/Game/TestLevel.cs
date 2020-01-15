@@ -1,7 +1,7 @@
-﻿using DigitalRune.Geometry;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
+﻿using MinimalRune.Geometry;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Xna.Framework.Content;
 
@@ -52,7 +52,7 @@ namespace WpfInteropSample2
       {
         Name = "KeyLight",
         Priority = 10,   // This is the most important light.
-        PoseWorld = new Pose(Quaternion.CreateRotation(Vector3.Forward, new Vector3(-0.5265408f, -0.5735765f, -0.6275069f))),
+        PoseWorld = new Pose(Quaternion.CreateFromRotationMatrix(Vector3.Forward, new Vector3(-0.5265408f, -0.5735765f, -0.6275069f))),
       };
       scene.Children.Add(keyLightNode);
 
@@ -65,7 +65,7 @@ namespace WpfInteropSample2
       var fillLightNode = new LightNode(fillLight)
       {
         Name = "FillLight",
-        PoseWorld = new Pose(Quaternion.CreateRotation(Vector3.Forward, new Vector3(0.7198464f, 0.3420201f, 0.6040227f))),
+        PoseWorld = new Pose(Quaternion.CreateFromRotationMatrix(Vector3.Forward, new Vector3(0.7198464f, 0.3420201f, 0.6040227f))),
       };
       scene.Children.Add(fillLightNode);
 
@@ -78,7 +78,7 @@ namespace WpfInteropSample2
       var backLightNode = new LightNode(backLight)
       {
         Name = "BackLight",
-        PoseWorld = new Pose(Quaternion.CreateRotation(Vector3.Forward, new Vector3(0.4545195f, -0.7660444f, 0.4545195f))),
+        PoseWorld = new Pose(Quaternion.CreateFromRotationMatrix(Vector3.Forward, new Vector3(0.4545195f, -0.7660444f, 0.4545195f))),
       };
       scene.Children.Add(backLightNode);
     }

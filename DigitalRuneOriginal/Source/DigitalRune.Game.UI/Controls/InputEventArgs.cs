@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   /// <summary>
   /// Provides arguments for <see cref="UIControl.InputProcessing"/> and

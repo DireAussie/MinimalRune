@@ -2,10 +2,10 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 
 
-namespace DigitalRune.Game.States
+namespace MinimalRune.Game.States
 {
   /// <summary>
   /// Manages the parallel sub-states of a <see cref="State"/>.

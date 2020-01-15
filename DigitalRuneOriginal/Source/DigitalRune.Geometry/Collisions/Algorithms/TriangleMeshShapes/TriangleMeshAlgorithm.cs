@@ -5,15 +5,15 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Collections;
-using DigitalRune.Geometry.Meshes;
-using DigitalRune.Geometry.Partitioning;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Collections;
+using MinimalRune.Geometry.Meshes;
+using MinimalRune.Geometry.Partitioning;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry.Collisions.Algorithms
+namespace MinimalRune.Geometry.Collisions.Algorithms
 {
   /// <summary>
   /// Computes contact or closest-point information for <see cref="TriangleMeshShape"/> vs. any 

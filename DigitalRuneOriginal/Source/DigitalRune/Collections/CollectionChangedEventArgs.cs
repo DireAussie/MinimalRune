@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace DigitalRune.Collections
+namespace MinimalRune.Collections
 {
   /// <summary>
   /// Provides data for the <see cref="NotifyingCollection{T}.CollectionChanged"/> event.

@@ -3,13 +3,13 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System.Collections.Generic;
-using DigitalRune.Geometry.Meshes;
-using DigitalRune.Geometry.Partitioning;
-using DigitalRune.Geometry.Shapes;
+using MinimalRune.Geometry.Meshes;
+using MinimalRune.Geometry.Partitioning;
+using MinimalRune.Geometry.Shapes;
 using Microsoft.Xna.Framework.Content;
 
 
-namespace DigitalRune.Geometry.Content
+namespace MinimalRune.Geometry.Content
 {
   /// <summary>
   /// Reads a <see cref="TriangleMeshShape"/> from binary format.

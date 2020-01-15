@@ -1,6 +1,6 @@
-﻿using DigitalRune.Game.UI;
-using DigitalRune.Game.UI.Consoles;
-using DigitalRune.Game.UI.Controls;
+﻿using MinimalRune.Game.UI;
+using MinimalRune.Game.UI.Consoles;
+using MinimalRune.Game.UI.Controls;
 
 
 namespace Samples.Game.UI

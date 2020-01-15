@@ -6,10 +6,10 @@ using System;
 using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Media;
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Represents an adorner that draws a selection rectangle.

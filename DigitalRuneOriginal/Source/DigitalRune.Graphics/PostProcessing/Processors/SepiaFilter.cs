@@ -4,12 +4,12 @@
 
 
 using System;
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.PostProcessing
+namespace MinimalRune.Graphics.PostProcessing
 {
   /// <summary>
   /// Converts a colored image to sepia colors.

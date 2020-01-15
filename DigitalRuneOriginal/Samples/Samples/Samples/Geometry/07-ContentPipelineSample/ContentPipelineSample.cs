@@ -1,6 +1,6 @@
-﻿using DigitalRune.Geometry;
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Mathematics.Algebra;
+﻿using MinimalRune.Geometry;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 

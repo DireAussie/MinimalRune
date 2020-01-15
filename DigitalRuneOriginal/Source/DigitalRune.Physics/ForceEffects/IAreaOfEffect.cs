@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Physics.ForceEffects
+namespace MinimalRune.Physics.ForceEffects
 {
   /// <summary>
   /// Defines the area of effect of a <see cref="ForceField"/>. Only rigid bodies in the area of

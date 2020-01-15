@@ -3,43 +3,43 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Animation.Traits;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Animation.Traits;
+using MinimalRune.Mathematics.Algebra;
 
 using Microsoft.Xna.Framework.Content;
 
 
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
-  /// Animates a <see cref="Vector4F"/> value by applying an animation to each component of the
+  /// Animates a <see cref="Vector4"/> value by applying an animation to each component of the
   /// vector.
   /// </summary>
-  public class Vector4FAnimation : Animation<Vector4F>
+  public class Vector4Animation : Animation<Vector4>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
-    public override IAnimationValueTraits<Vector4F> Traits
+    public override IAnimationValueTraits<Vector4> Traits
     {
-      get { return Vector4FTraits.Instance; }
+      get { return Vector4Traits.Instance; }
     }
 
 
     /// <summary>
-    /// Gets or sets the animation of the <see cref="Vector4F.X"/> component.
+    /// Gets or sets the animation of the <see cref="Vector4.X"/> component.
     /// </summary>
-    /// <value>The animation of the <see cref="Vector4F.X"/> component.</value>
+    /// <value>The animation of the <see cref="Vector4.X"/> component.</value>
 
     [ContentSerializer(SharedResource = true)]
 
@@ -47,9 +47,9 @@ namespace DigitalRune.Animation
 
 
     /// <summary>
-    /// Gets or sets the animation of the <see cref="Vector4F.Y"/> component.
+    /// Gets or sets the animation of the <see cref="Vector4.Y"/> component.
     /// </summary>
-    /// <value>The animation of the <see cref="Vector4F.Y"/> component.</value>
+    /// <value>The animation of the <see cref="Vector4.Y"/> component.</value>
 
     [ContentSerializer(SharedResource = true)]
 
@@ -57,9 +57,9 @@ namespace DigitalRune.Animation
 
 
     /// <summary>
-    /// Gets or sets the animation of the <see cref="Vector4F.Z"/> component.
+    /// Gets or sets the animation of the <see cref="Vector4.Z"/> component.
     /// </summary>
-    /// <value>The animation of the <see cref="Vector4F.Z"/> component.</value>
+    /// <value>The animation of the <see cref="Vector4.Z"/> component.</value>
 
     [ContentSerializer(SharedResource = true)]
 
@@ -67,9 +67,9 @@ namespace DigitalRune.Animation
 
 
     /// <summary>
-    /// Gets or sets the animation of the <see cref="Vector4F.W"/> component.
+    /// Gets or sets the animation of the <see cref="Vector4.W"/> component.
     /// </summary>
-    /// <value>The animation of the <see cref="Vector4F.W"/> component.</value>
+    /// <value>The animation of the <see cref="Vector4.W"/> component.</value>
 
     [ContentSerializer(SharedResource = true)]
 
@@ -77,33 +77,33 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
-    /// Initializes a new instance of the <see cref="Vector4FAnimation"/> class.
+    /// Initializes a new instance of the <see cref="Vector4Animation"/> class.
     /// </summary>
     /// </overloads>
     /// 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Vector4FAnimation"/> class.
+    /// Initializes a new instance of the <see cref="Vector4Animation"/> class.
     /// </summary>
-    public Vector4FAnimation()
+    public Vector4Animation()
     {
     }
 
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Vector4FAnimation"/> class with the specified
+    /// Initializes a new instance of the <see cref="Vector4Animation"/> class with the specified
     /// animations.
     /// </summary>
-    /// <param name="x">The animation of the <see cref="Vector4F.X"/> component.</param>
-    /// <param name="y">The animation of the <see cref="Vector4F.Y"/> component.</param>
-    /// <param name="z">The animation of the <see cref="Vector4F.Z"/> component.</param>
-    /// <param name="w">The animation of the <see cref="Vector4F.W"/> component.</param>
-    public Vector4FAnimation(IAnimation<float> x, IAnimation<float> y, IAnimation<float> z, IAnimation<float> w)
+    /// <param name="x">The animation of the <see cref="Vector4.X"/> component.</param>
+    /// <param name="y">The animation of the <see cref="Vector4.Y"/> component.</param>
+    /// <param name="z">The animation of the <see cref="Vector4.Z"/> component.</param>
+    /// <param name="w">The animation of the <see cref="Vector4.W"/> component.</param>
+    public Vector4Animation(IAnimation<float> x, IAnimation<float> y, IAnimation<float> z, IAnimation<float> w)
     {
       X = x;
       Y = y;
@@ -113,9 +113,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override TimeSpan GetTotalDuration()
@@ -139,7 +139,7 @@ namespace DigitalRune.Animation
 
 
     /// <inheritdoc/>
-    protected override void GetValueCore(TimeSpan time, ref Vector4F defaultSource, ref Vector4F defaultTarget, ref Vector4F result)
+    protected override void GetValueCore(TimeSpan time, ref Vector4 defaultSource, ref Vector4 defaultTarget, ref Vector4 result)
     {
       if (X != null)
         X.GetValue(time, ref defaultSource.X, ref defaultTarget.X, ref result.X);

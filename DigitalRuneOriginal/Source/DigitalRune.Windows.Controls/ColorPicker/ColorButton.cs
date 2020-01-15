@@ -9,7 +9,7 @@ using System.Windows.Controls.Primitives;
 using System.ComponentModel;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Represents a control that displays a color and opens a <see cref="ColorDialog"/> when
@@ -23,23 +23,23 @@ namespace DigitalRune.Windows.Controls
         // Color button and color dialog and use this code as a starting point.
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private ButtonBase _button;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="Color"/> dependency property.
@@ -66,9 +66,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="ColorButton"/> class.
@@ -80,9 +80,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// When overridden in a derived class, is invoked whenever application code or internal

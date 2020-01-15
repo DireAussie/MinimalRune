@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace DigitalRune.Mathematics.Interpolation
+namespace MinimalRune.Mathematics.Interpolation
 {
   /// <summary>
   /// Defines a single segment of a 1-dimensional cubic Hermite spline (single-precision).
@@ -116,9 +116,9 @@ namespace DigitalRune.Mathematics.Interpolation
     }
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static readonly ResourcePool<HermiteSegment1F> Pool = new ResourcePool<HermiteSegment1F>(
        () => new HermiteSegment1F(),                  // Create

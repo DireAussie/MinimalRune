@@ -11,7 +11,7 @@ using System.Reflection;
 using System.Text;
 
 
-namespace DigitalRune.CommandLine
+namespace MinimalRune.CommandLine
 {
     /// <summary>
     /// A disposable object that creates a temporary console if no console is attached. The temporary
@@ -53,17 +53,17 @@ namespace DigitalRune.CommandLine
     /// </summary>
     public static class ConsoleHelper
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private const int DefaultWindowWidth = 80;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets a value indicating whether this application has console.
@@ -103,9 +103,9 @@ namespace DigitalRune.CommandLine
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Makes sure a console instance is attached to the process.

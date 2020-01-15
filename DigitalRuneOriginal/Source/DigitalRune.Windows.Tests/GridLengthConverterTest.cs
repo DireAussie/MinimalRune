@@ -1,6 +1,6 @@
 ﻿
 using System.Globalization;
-using DigitalRune.Windows.Tests;
+using MinimalRune.Windows.Tests;
 
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 using TestFixtureAttribute = Microsoft.VisualStudio.TestPlatform.UnitTestFramework.TestClassAttribute;

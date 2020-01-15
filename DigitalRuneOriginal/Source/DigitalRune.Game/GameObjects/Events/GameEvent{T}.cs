@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 
 
-namespace DigitalRune.Game
+namespace MinimalRune.Game
 {
   /// <summary>
   /// Represents event of a <see cref="GameObject"/>.
@@ -15,18 +15,18 @@ namespace DigitalRune.Game
   [DebuggerDisplay("{GetType().Name,nq}(Name = {Name})")]
   public struct GameEvent<T> : IGameEvent, IEquatable<GameEvent<T>> where T : EventArgs
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly GameObject _owner;
     private readonly GameEventMetadata<T> _metadata;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public GameObject Owner
@@ -109,9 +109,9 @@ namespace DigitalRune.Game
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="GameEvent{T}"/> struct.
@@ -129,9 +129,9 @@ namespace DigitalRune.Game
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private GameEventData<T> GetOrCreateLocalData()
     {

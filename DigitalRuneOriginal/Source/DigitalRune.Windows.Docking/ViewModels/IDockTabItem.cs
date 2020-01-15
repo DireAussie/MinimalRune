@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     /// <summary>
     /// Represents a selectable, draggable item in the docking layout.

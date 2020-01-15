@@ -7,15 +7,15 @@ using System.IO;
 using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
-using DigitalRune.Collections;
-using DigitalRune.Game.UI.Rendering;
+using MinimalRune.Collections;
+using MinimalRune.Game.UI.Rendering;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Content.Pipeline.Graphics;
 using Microsoft.Xna.Framework.Content.Pipeline.Processors;
 
 
-namespace DigitalRune.Game.UI.Content.Pipeline
+namespace MinimalRune.Game.UI.Content.Pipeline
 {
   /// <summary>
   /// Builds a UI theme including cursors, textures, fonts, etc.
@@ -372,11 +372,11 @@ namespace DigitalRune.Game.UI.Content.Pipeline
                   Name = (string)imageElement.Attribute("Name"),
                   Texture = (string)imageElement.Attribute("Texture"),
                   SourceRectangle = ThemeHelper.ParseRectangle((string)imageElement.Attribute("Source")),
-                  Margin = ThemeHelper.ParseVector4F((string)imageElement.Attribute("Margin")),
+                  Margin = ThemeHelper.ParseVector4((string)imageElement.Attribute("Margin")),
                   HorizontalAlignment = ThemeHelper.ParseHorizontalAlignment((string)imageElement.Attribute("HorizontalAlignment")),
                   VerticalAlignment = ThemeHelper.ParseVerticalAlignment((string)imageElement.Attribute("VerticalAlignment")),
                   TileMode = ThemeHelper.ParseTileMode((string)imageElement.Attribute("TileMode")),
-                  Border = ThemeHelper.ParseVector4F((string)imageElement.Attribute("Border")),
+                  Border = ThemeHelper.ParseVector4((string)imageElement.Attribute("Border")),
                   IsOverlay = (bool?)imageElement.Attribute("IsOverlay") ?? false,
                   Color = ThemeHelper.ParseColor((string)imageElement.Attribute("Color"), Color.White),
                 };

@@ -6,7 +6,7 @@ using System.Collections;
 using System.Linq;
 
 
-namespace DigitalRune.ServiceLocation
+namespace MinimalRune.ServiceLocation
 {
     // The interface IEnumerable is implemented because it is helpful for debugging.
     // (I.e. for inspecting all registered service instances.)

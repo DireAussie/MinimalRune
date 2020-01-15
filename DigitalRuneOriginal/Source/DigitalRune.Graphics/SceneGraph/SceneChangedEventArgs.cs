@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Provides arguments for an event concerning a <see cref="SceneNode"/>.

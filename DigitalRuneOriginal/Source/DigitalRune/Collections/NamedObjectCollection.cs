@@ -8,11 +8,11 @@ using System.Diagnostics;
 
 using System.Collections.ObjectModel;
 #else
-using DigitalRune.Collections.ObjectModel;
+using MinimalRune.Collections.ObjectModel;
 
 
 
-namespace DigitalRune.Collections
+namespace MinimalRune.Collections
 {
   /// <summary>
   /// Stores objects by their names.
@@ -38,17 +38,17 @@ namespace DigitalRune.Collections
     // when the items is null. (Can't check for null because T can be a struct.)
     // Derived types can override the virtual methods and throw an ArgumentNullException.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private bool _suppressCollectionChangedEvent;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Occurs when items were added, replaced or removed.
@@ -57,9 +57,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -108,9 +108,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns an enumerator that iterates through the <see cref="KeyedCollection{TKey,TItem}"/>. 

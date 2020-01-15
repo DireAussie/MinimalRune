@@ -61,7 +61,7 @@
 using System;
 
 
-namespace DigitalRune.Threading
+namespace MinimalRune.Threading
 {
   internal sealed class DelegateWork : IWork, IRecyclable
   {

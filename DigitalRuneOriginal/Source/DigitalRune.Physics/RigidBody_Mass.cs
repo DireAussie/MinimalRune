@@ -3,23 +3,23 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics.Constraints;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics.Constraints;
 
 
-namespace DigitalRune.Physics
+namespace MinimalRune.Physics
 {
   public partial class RigidBody
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the mass frame which defines the mass properties of this body.
@@ -253,9 +253,9 @@ namespace DigitalRune.Physics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Updates the mass frame for a new shape and scale.

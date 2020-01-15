@@ -11,7 +11,7 @@ using System.Reactive.Subjects;
 
 
 
-namespace DigitalRune.Linq.Tests
+namespace MinimalRune.Linq.Tests
 {
   [TestFixture]
   public class RxTest

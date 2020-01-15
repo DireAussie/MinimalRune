@@ -13,12 +13,12 @@ using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Threading;
-using DigitalRune.Linq;
-using DigitalRune.Mathematics;
-using DigitalRune.Windows.Interop;
+using MinimalRune.Linq;
+using MinimalRune.Mathematics;
+using MinimalRune.Windows.Interop;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     partial class WindowsHelper
     {

@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 
-namespace DigitalRune.Linq
+namespace MinimalRune.Linq
 {
   /// <summary>
   /// Provides new extension methods for traversing trees using LINQ.

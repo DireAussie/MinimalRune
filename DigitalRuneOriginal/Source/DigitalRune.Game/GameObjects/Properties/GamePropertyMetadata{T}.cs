@@ -4,10 +4,10 @@
 
 using System.ComponentModel;
 using System.Diagnostics;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 
 
-namespace DigitalRune.Game
+namespace MinimalRune.Game
 {
   // Factory method for use in the GamePropertyCollection.
   internal interface IGamePropertyFactory
@@ -23,24 +23,24 @@ namespace DigitalRune.Game
   [DebuggerDisplay("{GetType().Name,nq}(Name = {Name})")]
   public class GamePropertyMetadata<T> : IGamePropertyMetadata, IGamePropertyFactory
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // The global store for all property metadata for properties of type T.
     internal static NamedObjectCollection<GamePropertyMetadata<T>> Properties { get; private set; }
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public string Name { get; private set; }
@@ -90,9 +90,9 @@ namespace DigitalRune.Game
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes static members of the <see cref="GamePropertyMetadata{T}"/> class.
@@ -122,9 +122,9 @@ namespace DigitalRune.Game
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     IGameProperty IGamePropertyFactory.CreateGameProperty(GameObject owner)
     {

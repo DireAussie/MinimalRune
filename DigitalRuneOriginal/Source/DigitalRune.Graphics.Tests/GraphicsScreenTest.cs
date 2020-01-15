@@ -3,7 +3,7 @@ using NUnit.Framework;
 using Rhino.Mocks;
 
 
-namespace DigitalRune.Graphics.Tests
+namespace MinimalRune.Graphics.Tests
 {
   internal class MyGraphicsScreen : GraphicsScreen
   {

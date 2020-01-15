@@ -1,11 +1,11 @@
 ﻿using System;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Interpolation;
-using DigitalRune.Mathematics.Statistics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Interpolation;
+using MinimalRune.Mathematics.Statistics;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Animation.Tests
+namespace MinimalRune.Animation.Tests
 {
   [TestFixture]
   public class QuaternionFromToByAnimationTest

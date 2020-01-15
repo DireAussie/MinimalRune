@@ -8,7 +8,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 
 
-namespace DigitalRune.Collections.Tests
+namespace MinimalRune.Collections.Tests
 {
   [TestFixture]
   public class Pair1Test

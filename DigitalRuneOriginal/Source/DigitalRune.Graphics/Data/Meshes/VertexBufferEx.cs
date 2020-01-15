@@ -5,7 +5,7 @@
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Provides additional data for a <see cref="VertexBuffer"/>.

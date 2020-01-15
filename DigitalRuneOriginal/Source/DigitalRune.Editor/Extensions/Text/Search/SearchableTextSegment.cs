@@ -4,10 +4,10 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Editor.Search;
+using MinimalRune.Editor.Search;
 
 
-namespace DigitalRune.Editor.Text.Search
+namespace MinimalRune.Editor.Text.Search
 {
     /// <summary>
     /// Defines a segment of a text document that can be searched.

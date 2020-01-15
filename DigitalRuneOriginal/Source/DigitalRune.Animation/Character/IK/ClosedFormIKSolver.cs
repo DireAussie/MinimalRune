@@ -4,11 +4,11 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Animation.Character
+namespace MinimalRune.Animation.Character
 {
   /// <summary>
   /// Modifies a skeleton using a non-iterative, closed-form IK solver.
@@ -36,9 +36,9 @@ namespace DigitalRune.Animation.Character
 
     // TODO: Optimize: Do not cache the values for all bones. Only for the needed bones.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Cached values for the bone chain. Bones are sorted from root to tip.
     private readonly List<float> _boneLengths = new List<float>();
@@ -55,9 +55,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the index of the root bone.
@@ -127,15 +127,15 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Called when the <see cref="SkeletonPose"/> was exchanged.
@@ -285,7 +285,7 @@ namespace DigitalRune.Animation.Character
         {
           // This is the first bone: Compute rotation that aligns the whole initial chain with
           // the target.
-          chainRotation = Quaternion.CreateRotation(boneToTip, boneToTarget);
+          chainRotation = Quaternion.CreateFromRotationMatrix(boneToTip, boneToTarget);
 
           // Update tip.
           tipAbsolute = _bones[i].Translation + (boneToTarget * boneToTipLength);
@@ -301,7 +301,7 @@ namespace DigitalRune.Animation.Character
           // TODO: Find an explanation/derivation of this additional rotation.
           _bones[i] = new SrtTransform(
             _bones[i].Scale, 
-            Quaternion.CreateRotation(boneToTip, boneToTarget) * chainRotation * _bones[i].Rotation, 
+            Quaternion.CreateFromRotationMatrix(boneToTip, boneToTarget) * chainRotation * _bones[i].Rotation, 
             _bones[i].Translation);
         }
 
@@ -391,7 +391,7 @@ namespace DigitalRune.Animation.Character
           // Apply the rotation to the current bones 
           _bones[i] = new SrtTransform(
             _bones[i].Scale, 
-            (Quaternion.CreateRotation(rotationAxis, deltaAngle) * _bones[i].Rotation).Normalized, 
+            (Quaternion.CreateFromRotationMatrix(rotationAxis, deltaAngle) * _bones[i].Rotation).Normalized, 
             _bones[i].Translation);
         }
       }

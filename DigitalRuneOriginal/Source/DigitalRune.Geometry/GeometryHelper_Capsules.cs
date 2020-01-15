@@ -5,12 +5,12 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Geometry.Meshes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Meshes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry
+namespace MinimalRune.Geometry
 {
   public static partial class GeometryHelper
   {
@@ -65,7 +65,7 @@ namespace DigitalRune.Geometry
       // If anything happens in the convex hull creation, we can still go on including the
       // interior points and compute the covariance matrix for the points instead of the 
       // surface.
-      if (cov == null || Numeric.IsNaN(cov.Determinant))
+      if (cov == null || Numeric.IsNaN(cov.Determinant()))
         cov = ComputeCovarianceMatrixFromPoints(points);
 
       // Perform Eigenvalue decomposition.
@@ -151,7 +151,7 @@ namespace DigitalRune.Geometry
         if (p.Y > cylinderTop)
         {
           // Point is above cylinder. We might have to grow the cylinder upwards.
-          if ((p - new Vector3(0, cylinderTop, 0)).LengthSquared > radiusSquared)
+          if ((p - new Vector3(0, cylinderTop, 0)).LengthSquared() > radiusSquared)
           {
             // p is not contained by the spherical cap. :-(
             // Grow cylinderTop so that the point is exactly on the spherical cap surface.
@@ -160,7 +160,7 @@ namespace DigitalRune.Geometry
             // In other words:
             cylinderTop = p.Y; // Now the point is in the cylinder.
             // Move cylinder down as far as possible.
-            float distanceToAxisSquared = new Vector3(p.X, 0, p.Z).LengthSquared;
+            float distanceToAxisSquared = new Vector3(p.X, 0, p.Z).LengthSquared();
             if (distanceToAxisSquared < radiusSquared)
               cylinderTop -= (float)Math.Sqrt(radiusSquared - distanceToAxisSquared);
           }
@@ -168,10 +168,10 @@ namespace DigitalRune.Geometry
         else if (p.Y < cylinderBottom)
         {
           // Same as above but with the bottom of the cylinder.
-          if ((p - new Vector3(0, cylinderBottom, 0)).LengthSquared > radiusSquared)
+          if ((p - new Vector3(0, cylinderBottom, 0)).LengthSquared() > radiusSquared)
           {
             cylinderBottom = p.Y;
-            float distanceToAxisSquared = new Vector3(p.X, 0, p.Z).LengthSquared;
+            float distanceToAxisSquared = new Vector3(p.X, 0, p.Z).LengthSquared();
             if (distanceToAxisSquared < radiusSquared)
               cylinderBottom += (float)Math.Sqrt(radiusSquared - distanceToAxisSquared);
           }

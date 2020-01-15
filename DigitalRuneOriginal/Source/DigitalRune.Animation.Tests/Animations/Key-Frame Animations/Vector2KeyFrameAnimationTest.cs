@@ -1,8 +1,8 @@
-﻿using DigitalRune.Animation.Traits;
+﻿using MinimalRune.Animation.Traits;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Animation.Tests
+namespace MinimalRune.Animation.Tests
 {
   [TestFixture]
   public class Vector2KeyFrameAnimationTest

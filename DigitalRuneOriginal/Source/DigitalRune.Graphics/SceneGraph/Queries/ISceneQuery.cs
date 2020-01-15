@@ -5,7 +5,7 @@
 using System.Collections.Generic;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Represents a query that can be executed against a scene.
@@ -52,8 +52,8 @@ namespace DigitalRune.Graphics.SceneGraph
   /// <code lang="csharp" title="MeshQuery">
   /// <![CDATA[
   /// using System.Collections.Generic;
-  /// using DigitalRune.Graphics;
-  /// using DigitalRune.Graphics.SceneGraph;
+  /// using MinimalRune.Graphics;
+  /// using MinimalRune.Graphics.SceneGraph;
   ///
   /// namespace Samples
   /// {
@@ -105,9 +105,9 @@ namespace DigitalRune.Graphics.SceneGraph
   /// <code lang="csharp" title="Scene Query with Distance Culling">
   /// <![CDATA[
   /// using System.Collections.Generic;
-  /// using DigitalRune.Graphics;
-  /// using DigitalRune.Graphics.SceneGraph;
-  /// using DigitalRune.Mathematics;
+  /// using MinimalRune.Graphics;
+  /// using MinimalRune.Graphics.SceneGraph;
+  /// using MinimalRune.Mathematics;
   /// 
   /// namespace Samples
   /// {
@@ -163,9 +163,9 @@ namespace DigitalRune.Graphics.SceneGraph
   /// <code lang="csharp" title="Scene Query with Level Of Detail">
   /// <![CDATA[
   /// using System.Collections.Generic;
-  /// using DigitalRune.Graphics;
-  /// using DigitalRune.Graphics.SceneGraph;
-  /// using DigitalRune.Mathematics;
+  /// using MinimalRune.Graphics;
+  /// using MinimalRune.Graphics.SceneGraph;
+  /// using MinimalRune.Mathematics;
   /// 
   /// namespace Samples
   /// {

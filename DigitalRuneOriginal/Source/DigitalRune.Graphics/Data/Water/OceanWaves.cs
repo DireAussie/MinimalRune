@@ -3,18 +3,18 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Graphics.Rendering;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Analysis;
-using DigitalRune.Mathematics.Interpolation;
-using DigitalRune.Mathematics.Statistics;
+using MinimalRune.Graphics.Rendering;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Analysis;
+using MinimalRune.Mathematics.Interpolation;
+using MinimalRune.Mathematics.Statistics;
 using Microsoft.Xna.Framework.Graphics;
 using MathHelper = DigitalRune.Mathematics.MathHelper;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Represents ocean waves computed using Fast Fourier Transformation and a statistical wave
@@ -50,9 +50,9 @@ namespace DigitalRune.Graphics
     // http://graphics.ucsd.edu/courses/rendering/2005/jdewall/tessendorf.pdf
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private bool _isDirty;
 
@@ -97,9 +97,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Data of the WaterWavesRenderer:
     internal int LastFrame = -1;   // When the wave map was updated the last time.
@@ -389,9 +389,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="OceanWaves"/> class.
@@ -439,9 +439,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Called by the WaterWavesRenderer.
     internal void Update(GraphicsDevice graphicsDevice, float time)
@@ -689,7 +689,7 @@ namespace DigitalRune.Graphics
       Vector2F kDirection = k / kLength;
 
       // Largest possible wave L = V² / g
-      float windSpeedSquared = Wind.LengthSquared;
+      float windSpeedSquared = Wind.LengthSquared();
       float windSpeed = (float)Math.Sqrt(windSpeedSquared);
       if (windSpeed < Numeric.EpsilonF)
         return 0;

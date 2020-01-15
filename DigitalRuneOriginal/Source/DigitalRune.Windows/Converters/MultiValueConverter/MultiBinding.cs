@@ -12,7 +12,7 @@ using System.Windows.Data;
 using System.Windows.Markup;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
   /// <summary>
   /// Describes a collection of <see cref="Binding"/> objects attached to a single binding target 
@@ -50,15 +50,15 @@ namespace DigitalRune.Windows
     // BindingSlaves will inherit the DataContext and we don't have to copy the DataContext
     // manually to all BindingSlaves.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
       
       
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The target property on the element which this <see cref="MultiBinding"/> is associated with.
@@ -90,9 +90,9 @@ namespace DigitalRune.Windows
 
       
       
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Identifies the <strong>ConvertedValue</strong> dependency property.
@@ -117,9 +117,9 @@ namespace DigitalRune.Windows
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="MultiBinding"/> class.
@@ -131,9 +131,9 @@ namespace DigitalRune.Windows
 
       
       
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static void OnConvertedValueChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
     {

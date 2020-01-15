@@ -7,7 +7,7 @@ using System.Globalization;
 using System.Windows;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
   /// <summary>
   /// Provides a way to apply custom logic in a MultiBinding. 

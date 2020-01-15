@@ -4,16 +4,16 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Xml;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Statistics;
-using DigitalRune.Particles.Effectors;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Statistics;
+using MinimalRune.Particles.Effectors;
 using Microsoft.Xna.Framework.Content.Pipeline.Serialization.Intermediate;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Particles.Tests
+namespace MinimalRune.Particles.Tests
 {
   [TestFixture]
   public class IntermediateSerializationTest

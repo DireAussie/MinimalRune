@@ -6,7 +6,7 @@ using System;
 using System.IO;
 
 
-namespace DigitalRune.Storages
+namespace MinimalRune.Storages
 {
   /// <summary>
   /// Implements base functionality for storage providers.
@@ -14,15 +14,15 @@ namespace DigitalRune.Storages
   /// <inheritdoc cref="IStorage"/>
   public abstract class Storage : IStorage
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets a value indicating whether this instance has been disposed of.
@@ -42,9 +42,9 @@ namespace DigitalRune.Storages
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Releases all resources used by an instance of the <see cref="Storage"/> class.
@@ -86,9 +86,9 @@ namespace DigitalRune.Storages
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public abstract string GetRealPath(string path);

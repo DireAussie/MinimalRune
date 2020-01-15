@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using DigitalRune.Collections;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Interpolation;
-using DigitalRune.Mathematics.Statistics;
+using MinimalRune.Collections;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Interpolation;
+using MinimalRune.Mathematics.Statistics;
 using Microsoft.Xna.Framework;
 
 // Both XNA and DigitalRune have a class called MathHelper. To avoid compiler errors

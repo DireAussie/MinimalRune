@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Linq;
-using DigitalRune.Game;
-using DigitalRune.Game.Input;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics;
-using DigitalRune.Physics.Materials;
-using DigitalRune.Physics.Specialized;
+using MinimalRune.Game;
+using MinimalRune.Game.Input;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics;
+using MinimalRune.Physics.Materials;
+using MinimalRune.Physics.Specialized;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Input;
@@ -32,9 +32,9 @@ namespace Samples.Physics.Specialized
     //  _vehicle.Chassis.AngularVelocity = Vector3.Zero;
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly IServiceLocator _services;
     private readonly IInputService _inputService;
@@ -51,17 +51,17 @@ namespace Samples.Physics.Specialized
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     public Vehicle Vehicle { get; private set; }
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     public VehicleObject(IServiceLocator services)
     {
@@ -158,9 +158,9 @@ namespace Samples.Physics.Specialized
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     protected override void OnLoad()
     {

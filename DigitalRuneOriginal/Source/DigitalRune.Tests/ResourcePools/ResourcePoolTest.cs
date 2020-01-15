@@ -3,7 +3,7 @@ using System.Linq;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Tests
+namespace MinimalRune.Tests
 {
   [TestFixture]
   public class ResourcePoolTest

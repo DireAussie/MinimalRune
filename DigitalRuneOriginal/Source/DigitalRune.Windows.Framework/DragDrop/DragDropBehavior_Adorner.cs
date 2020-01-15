@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Documents;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     public partial class DragDropBehavior
     {

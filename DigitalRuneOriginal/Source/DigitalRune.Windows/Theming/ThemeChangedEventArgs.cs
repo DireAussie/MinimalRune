@@ -5,7 +5,7 @@
 using System.Windows;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
     /// Provides event data for the <see cref="E:DigitalRune.Windows.ThemeManager.ThemeChanged"/>

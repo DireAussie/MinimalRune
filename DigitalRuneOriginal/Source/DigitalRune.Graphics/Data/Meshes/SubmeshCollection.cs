@@ -4,10 +4,10 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Represents a collection of <see cref="Submesh"/>es. 

@@ -5,7 +5,7 @@
 using System.ComponentModel;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     /// <summary>
     /// Represents the control that contains and manages the docking layout.

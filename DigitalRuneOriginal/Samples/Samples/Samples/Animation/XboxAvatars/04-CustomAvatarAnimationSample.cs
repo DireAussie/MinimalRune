@@ -1,12 +1,12 @@
 ﻿
 using System;
-using DigitalRune.Animation;
-using DigitalRune.Animation.Character;
-using DigitalRune.Game.Input;
-using DigitalRune.Geometry;
-using DigitalRune.Graphics;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Animation;
+using MinimalRune.Animation.Character;
+using MinimalRune.Game.Input;
+using MinimalRune.Geometry;
+using MinimalRune.Graphics;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Input;

@@ -8,7 +8,7 @@
 //using Microsoft.Xna.Framework.Content.Pipeline.Serialization.Intermediate;
 
 
-//namespace DigitalRune.Graphics.Content.Pipeline
+//namespace MinimalRune.Graphics.Content.Pipeline
 //{
 //  /// <summary>
 //  /// Serializes a collection of shared resources.

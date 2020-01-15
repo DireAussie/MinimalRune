@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Game
+namespace MinimalRune.Game
 {
   /// <summary>
   /// Provides data for the <see cref="GameProperty{T}.Changing"/> and the 

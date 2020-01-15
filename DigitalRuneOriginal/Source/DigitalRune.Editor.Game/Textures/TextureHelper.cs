@@ -4,14 +4,14 @@
 
 using System;
 using System.IO;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.Content;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.Content;
 using Microsoft.Xna.Framework.Graphics;
 using SharpDX.WIC;
 using Texture = DigitalRune.Graphics.Content.Texture;
 
 
-namespace DigitalRune.Editor.Textures
+namespace MinimalRune.Editor.Textures
 {
     internal static class TextureHelper
     {

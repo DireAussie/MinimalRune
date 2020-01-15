@@ -4,10 +4,10 @@
 
 using System;
 using System.Globalization;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry.Shapes
+namespace MinimalRune.Geometry.Shapes
 {
   /// <summary>
   /// Defines a line segment.
@@ -28,9 +28,9 @@ namespace DigitalRune.Geometry.Shapes
 
   public struct LineSegment : IEquatable<LineSegment>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The start point.
@@ -47,9 +47,9 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the length.
@@ -67,14 +67,14 @@ namespace DigitalRune.Geometry.Shapes
     /// <value>The squared length.</value>
     public float LengthSquared
     {
-      get { return (End - Start).LengthSquared; }
+      get { return (End - Start).LengthSquared(); }
     }
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -115,9 +115,9 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //-------------------------------------------------------------- 
+     
 
 
 

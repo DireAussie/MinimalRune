@@ -4,11 +4,11 @@
 
 using System;
 using System.Globalization;
-using DigitalRune.Graphics.Rendering;
+using MinimalRune.Graphics.Rendering;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Effects
+namespace MinimalRune.Graphics.Effects
 {
   /// <summary>
   /// Describes a technique of an effect.
@@ -28,15 +28,15 @@ namespace DigitalRune.Graphics.Effects
   /// </remarks>
   public class EffectTechniqueDescription
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the effect technique.
@@ -136,9 +136,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="EffectTechniqueDescription"/> class.
@@ -206,9 +206,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Validates the specified technique and returns its index.

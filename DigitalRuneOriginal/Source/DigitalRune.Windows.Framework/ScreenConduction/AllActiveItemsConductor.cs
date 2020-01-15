@@ -15,10 +15,10 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Controls;
-using DigitalRune.Linq;
+using MinimalRune.Linq;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// A <see cref="IConductor"/> that holds on to many items which are all activated.
@@ -59,15 +59,15 @@ namespace DigitalRune.Windows.Framework
     /// </remarks>
     public class AllActiveItemsConductor : Screen, IConductor
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         IEnumerable<object> IConductor.Items
@@ -120,9 +120,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AllActiveItemsConductor"/> class.
@@ -161,9 +161,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         Task<bool> IConductor.ActivateItemAsync(object item)

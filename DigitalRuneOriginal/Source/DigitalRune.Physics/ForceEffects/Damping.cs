@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Physics.ForceEffects
+namespace MinimalRune.Physics.ForceEffects
 {
   /// <summary>
   /// Applies a damping force (viscous drag).

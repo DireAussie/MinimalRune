@@ -13,7 +13,7 @@ using System.Dynamic;
 
 
 
-namespace DigitalRune.Animation.Character
+namespace MinimalRune.Animation.Character
 {
   /// <summary>
   /// Describes a skeleton for 3D character animation in the bind pose.
@@ -35,9 +35,9 @@ namespace DigitalRune.Animation.Character
   [DebuggerDisplay("{GetType().Name,nq}(Name = {Name})")]
   public class Skeleton : INamedObject
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // A node in the skeleton tree.
     internal struct Bone
@@ -48,9 +48,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     internal readonly ResourcePool<SkeletonPose> SkeletonPosePool;
     internal readonly ResourcePool<SkeletonBoneAccessor> SkeletonBoneAccessorPool;
@@ -58,9 +58,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // The bone nodes describing the parent-child relationships.
     internal Bone[] Bones { get; set; }
@@ -122,9 +122,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Skeleton"/> class.
@@ -185,9 +185,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes the skeleton.

@@ -5,13 +5,13 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MathHelper = DigitalRune.Mathematics.MathHelper;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Performs a Fast Fourier Transform (FFT) on the source image.
@@ -29,9 +29,9 @@ namespace DigitalRune.Graphics.Rendering
     //   FFTs simultaneously. In the last pass the result is stored in ocean displacement and
     //   normal map. fft
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly RenderTargetBinding[] _renderTargetBindings = new RenderTargetBinding[2];
 
@@ -55,15 +55,15 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="OceanFft"/> class.
@@ -136,9 +136,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
     private Texture2D GetButterflyTexture(bool forward, int numberOfButterflyPasses)

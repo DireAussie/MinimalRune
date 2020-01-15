@@ -5,11 +5,11 @@
 
 using System;
 using System.Runtime.InteropServices;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Represents a billboard/particle in the billboard renderer. (The structure contains only 

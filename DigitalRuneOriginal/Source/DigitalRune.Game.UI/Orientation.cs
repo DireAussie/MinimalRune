@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.Game.UI
+namespace MinimalRune.Game.UI
 {
   /// <summary>
   /// Defines the different orientations that a control or layout can have. 

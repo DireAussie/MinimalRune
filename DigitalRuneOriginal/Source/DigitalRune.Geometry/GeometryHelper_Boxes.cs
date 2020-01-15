@@ -6,14 +6,14 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using DigitalRune.Geometry.Meshes;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Statistics;
+using MinimalRune.Geometry.Meshes;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Statistics;
 
 
-namespace DigitalRune.Geometry
+namespace MinimalRune.Geometry
 {
   public static partial class GeometryHelper
   {
@@ -75,7 +75,7 @@ namespace DigitalRune.Geometry
       // If anything happens in the convex hull creation, we can still go on including the
       // interior points and compute the covariance matrix for the points instead of the 
       // surface.
-      if (cov == null || Numeric.IsNaN(cov.Determinant))
+      if (cov == null || Numeric.IsNaN(cov.Determinant()))
       {
         // Make copy of points list because ComputeBoundingBox() will reorder the points.
         points = points.ToList();
@@ -141,7 +141,7 @@ namespace DigitalRune.Geometry
             {
               Vector3 centerNew;
               Vector3 boxExtentNew;
-              Matrix vNew = Quaternion.CreateRotation(αX, Vector3.UnitX, αY, Vector3.UnitY, αZ, Vector3.UnitZ, true).ToRotationMatrix33();
+              Matrix vNew = Quaternion.CreateFromRotationMatrix(αX, Vector3.UnitX, αY, Vector3.UnitY, αZ, Vector3.UnitZ, true).ToRotationMatrix33();
               float volumeNew = ComputeBoundingBox(points, vNew, volume, out boxExtentNew, out centerNew);
               if (volumeNew < volume)
               {
@@ -505,7 +505,7 @@ namespace DigitalRune.Geometry
     internal static float GetDistanceLowerBoundSquared(Vector3 boxExtentA, Pose poseA, Vector3 boxExtentB, Pose poseB)
     {
       Vector3 aToB = poseB.Position - poseA.Position;
-      float distanceSquared = aToB.LengthSquared;
+      float distanceSquared = aToB.LengthSquared();
       if (Numeric.IsZero(distanceSquared))
         return 0;
 

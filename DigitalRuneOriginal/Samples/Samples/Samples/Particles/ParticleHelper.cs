@@ -1,4 +1,4 @@
-﻿using DigitalRune.Particles;
+﻿using MinimalRune.Particles;
 
 
 namespace Samples.Particles

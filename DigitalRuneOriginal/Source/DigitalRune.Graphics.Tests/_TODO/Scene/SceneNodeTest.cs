@@ -1,10 +1,10 @@
 ﻿using System.Linq;
-using DigitalRune.Geometry;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry;
+using MinimalRune.Mathematics.Algebra;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Graphics.Tests
+namespace MinimalRune.Graphics.Tests
 {
   [TestFixture]
   public class SceneNodeTest

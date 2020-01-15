@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Mathematics.Algebra.Tests
+namespace MinimalRune.Mathematics.Algebra.Tests
 {
   [TestFixture]
   public class VectorDTest
@@ -676,13 +676,13 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     public void LengthSquared()
     {
       VectorD v = new VectorD(new double[] { 1, 0, 0, 0 });
-      Assert.AreEqual(1.0, v.LengthSquared);
+      Assert.AreEqual(1.0, v.LengthSquared());
       v = new VectorD(new double[] { 0, 1, 0, 0 });
-      Assert.AreEqual(1.0, v.LengthSquared);
+      Assert.AreEqual(1.0, v.LengthSquared());
       v = new VectorD(new double[] { 0, 0, 1, 0 });
-      Assert.AreEqual(1.0, v.LengthSquared);
+      Assert.AreEqual(1.0, v.LengthSquared());
       v = new VectorD(new double[] { 0, 0, 0, 1 });
-      Assert.AreEqual(1.0, v.LengthSquared);
+      Assert.AreEqual(1.0, v.LengthSquared());
 
       double x = -1.9;
       double y = 2.1;
@@ -690,7 +690,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
       double w = 1.0;
       double lengthSquared = x * x + y * y + z * z + w * w;
       v = new VectorD(new[] { x, y, z, w });
-      Assert.AreEqual(lengthSquared, v.LengthSquared);
+      Assert.AreEqual(lengthSquared, v.LengthSquared());
     }
 
 
@@ -1201,25 +1201,25 @@ namespace DigitalRune.Mathematics.Algebra.Tests
       VectorD unitZ = new VectorD(new double[] { 0, 0, 1, 0 });
       VectorD unitW = new VectorD(new double[] { 0, 0, 0, 1 });
 
-      // 0°
+      // 0ï¿½
       Assert.AreEqual(1.0, VectorD.Dot(unitX, unitX));
       Assert.AreEqual(1.0, VectorD.Dot(unitY, unitY));
       Assert.AreEqual(1.0, VectorD.Dot(unitZ, unitZ));
       Assert.AreEqual(1.0, VectorD.Dot(unitW, unitW));
 
-      // 180°
+      // 180ï¿½
       Assert.AreEqual(-1.0, VectorD.Dot(unitX, -unitX));
       Assert.AreEqual(-1.0, VectorD.Dot(unitY, -unitY));
       Assert.AreEqual(-1.0, VectorD.Dot(unitZ, -unitZ));
       Assert.AreEqual(-1.0, VectorD.Dot(unitW, -unitW));
 
-      // 90°
+      // 90ï¿½
       Assert.AreEqual(0.0, VectorD.Dot(unitX, unitY));
       Assert.AreEqual(0.0, VectorD.Dot(unitY, unitZ));
       Assert.AreEqual(0.0, VectorD.Dot(unitZ, unitW));
       Assert.AreEqual(0.0, VectorD.Dot(unitW, unitX));
 
-      // 45°
+      // 45ï¿½
       double angle = Math.Acos(VectorD.Dot(new VectorD(new double[] { 1, 1, 0, 0 }).Normalized, unitX));
       Assert.IsTrue(Numeric.AreEqual(MathHelper.ToRadians(45.0), angle));
       angle = Math.Acos(VectorD.Dot(new VectorD(new double[] { 0, 1, 1, 0 }).Normalized, unitY));

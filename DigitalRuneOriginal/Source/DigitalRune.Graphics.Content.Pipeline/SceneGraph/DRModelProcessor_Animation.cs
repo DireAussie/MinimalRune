@@ -7,20 +7,20 @@ using System.Globalization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DigitalRune.Animation.Character;
-using DigitalRune.Linq;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Animation.Character;
+using MinimalRune.Linq;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Content.Pipeline.Graphics;
 
 
-namespace DigitalRune.Graphics.Content.Pipeline
+namespace MinimalRune.Graphics.Content.Pipeline
 {
   partial class DRModelProcessor
   {
-    //--------------------------------------------------------------
+    
 
-    //-------------------------------------------------------------- 
+     
 
     /*
     /// <summary>
@@ -115,9 +115,9 @@ namespace DigitalRune.Graphics.Content.Pipeline
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Merge animations defined in other files.
     private void MergeAnimationFiles()

@@ -7,7 +7,7 @@ using System;
 using BclPath = System.IO.Path;
 
 
-namespace DigitalRune.Storages
+namespace MinimalRune.Storages
 {
   /// <summary>
   /// A portable replacement of <strong>System.IO.Path</strong>.

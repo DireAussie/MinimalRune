@@ -6,7 +6,7 @@
 using System;
 
 
-namespace DigitalRune.Graphics.PostProcessing
+namespace MinimalRune.Graphics.PostProcessing
 {
   /// <summary>
   /// Provides default instances of post-processors that are used frequently.

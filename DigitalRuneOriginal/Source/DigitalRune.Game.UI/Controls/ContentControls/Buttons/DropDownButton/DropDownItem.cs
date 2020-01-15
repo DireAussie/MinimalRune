@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   /// <summary>
   /// Represents an item of <see cref="DropDownButton"/> control.
@@ -16,7 +16,7 @@ namespace DigitalRune.Game.UI.Controls
   /// var dropDown = new DropDownButton
   /// {
   ///   HorizontalAlignment = HorizontalAlignment.Stretch,
-  ///   Margin = new Vector4F(4),
+  ///   Margin = new Vector4(4),
   ///   MaxDropDownHeight = 250,
   /// };
   /// 

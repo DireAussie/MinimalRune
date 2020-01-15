@@ -1,8 +1,8 @@
 ﻿
-using DigitalRune.Game.Input;
-using DigitalRune.Graphics.Rendering;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Physics.ForceEffects;
+using MinimalRune.Game.Input;
+using MinimalRune.Graphics.Rendering;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Physics.ForceEffects;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 

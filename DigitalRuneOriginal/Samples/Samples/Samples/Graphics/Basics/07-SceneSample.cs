@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq;
-using DigitalRune.Animation;
-using DigitalRune.Geometry;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.Rendering;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Animation;
+using MinimalRune.Geometry;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.Rendering;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -129,7 +129,7 @@ LightNodes, CameraNodes, ...) and how to animate a skinned model.",
       {
         Name = "KeyLight",
         Priority = 10,   // This is the most important light.
-        PoseWorld = new Pose(Quaternion.CreateRotation(Vector3.Forward, new Vector3(-0.5265408f, -0.5735765f, -0.6275069f))),
+        PoseWorld = new Pose(Quaternion.CreateFromRotationMatrix(Vector3.Forward, new Vector3(-0.5265408f, -0.5735765f, -0.6275069f))),
       };
       scene.Children.Add(keyLightNode);
 
@@ -142,7 +142,7 @@ LightNodes, CameraNodes, ...) and how to animate a skinned model.",
       var fillLightNode = new LightNode(fillLight)
       {
         Name = "FillLight",
-        PoseWorld = new Pose(Quaternion.CreateRotation(Vector3.Forward, new Vector3(0.7198464f, 0.3420201f, 0.6040227f))),
+        PoseWorld = new Pose(Quaternion.CreateFromRotationMatrix(Vector3.Forward, new Vector3(0.7198464f, 0.3420201f, 0.6040227f))),
       };
       scene.Children.Add(fillLightNode);
 
@@ -155,7 +155,7 @@ LightNodes, CameraNodes, ...) and how to animate a skinned model.",
       var backLightNode = new LightNode(backLight)
       {
         Name = "BackLight",
-        PoseWorld = new Pose(Quaternion.CreateRotation(Vector3.Forward, new Vector3(0.4545195f, -0.7660444f, 0.4545195f))),
+        PoseWorld = new Pose(Quaternion.CreateFromRotationMatrix(Vector3.Forward, new Vector3(0.4545195f, -0.7660444f, 0.4545195f))),
       };
       scene.Children.Add(backLightNode);
     }

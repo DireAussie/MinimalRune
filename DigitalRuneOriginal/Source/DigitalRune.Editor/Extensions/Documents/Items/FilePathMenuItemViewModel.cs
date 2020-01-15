@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Editor.Documents
+namespace MinimalRune.Editor.Documents
 {
     /// <summary>
     /// Represents a command item in a menu that represents a file path, e.g. "1 X:\...\foo.txt".

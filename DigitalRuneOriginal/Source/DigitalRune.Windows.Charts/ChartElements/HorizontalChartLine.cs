@@ -8,8 +8,8 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
 using System.Windows.Shapes;
-using DigitalRune.Mathematics;
-namespace DigitalRune.Windows.Charts
+using MinimalRune.Mathematics;
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Draws a horizontal line inside a chart area.
@@ -22,23 +22,23 @@ namespace DigitalRune.Windows.Charts
     [TemplatePart(Name = "PART_Line", Type = typeof(Line))]
     public class HorizontalChartLine : ChartElement
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private Line _line;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="LineStyle"/> dependency property.
@@ -86,9 +86,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
         /// <summary>
@@ -111,9 +111,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static void OnYChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
         {

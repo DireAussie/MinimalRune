@@ -8,14 +8,14 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using DigitalRune.Collections;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Collections;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Content.Pipeline.Graphics;
 
 
-namespace DigitalRune.Graphics.Content.Pipeline
+namespace MinimalRune.Graphics.Content.Pipeline
 {
   /// <summary>
   /// Provides helper methods for content processing.
@@ -99,7 +99,7 @@ namespace DigitalRune.Graphics.Content.Pipeline
           || (elementType == typeof(Quaternion))
           || (elementType == typeof(Vector2F))
           || (elementType == typeof(Vector3))
-          || (elementType == typeof(Vector4F)))
+          || (elementType == typeof(Vector4)))
       {
         return true;
       }

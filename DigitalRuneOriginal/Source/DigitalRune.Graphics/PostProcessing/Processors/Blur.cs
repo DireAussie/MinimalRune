@@ -6,13 +6,13 @@
 using System;
 using System.Diagnostics;
 using System.Linq;
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MathHelper = DigitalRune.Mathematics.MathHelper;
 
 
-namespace DigitalRune.Graphics.PostProcessing
+namespace MinimalRune.Graphics.PostProcessing
 {
   /// <summary>
   /// Blurs the image using a convolution filter.
@@ -52,9 +52,9 @@ namespace DigitalRune.Graphics.PostProcessing
   /// </remarks>
   public class Blur : PostProcessor
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // 13-tap Poisson Disk
     // (Offsets taken from Shader X² Depth of Field article. New Poisson disk 
@@ -78,9 +78,9 @@ namespace DigitalRune.Graphics.PostProcessing
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly Effect _effect;
     private readonly EffectParameter _parameterViewportSize;
@@ -99,9 +99,9 @@ namespace DigitalRune.Graphics.PostProcessing
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the maximum number of samples that are supported.
@@ -347,9 +347,9 @@ namespace DigitalRune.Graphics.PostProcessing
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Blur"/> class.
@@ -386,9 +386,9 @@ namespace DigitalRune.Graphics.PostProcessing
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Computes sample offsets and weights for a 13-tap Poisson disk filter kernel.

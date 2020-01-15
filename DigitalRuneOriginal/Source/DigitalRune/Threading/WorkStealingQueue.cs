@@ -5,7 +5,7 @@
 using System.Threading;
 
 
-namespace DigitalRune.Threading
+namespace MinimalRune.Threading
 {
   /// <summary>
   /// A special kind of queue in that it has two ends, and allows lock-free pushes and pops from one 

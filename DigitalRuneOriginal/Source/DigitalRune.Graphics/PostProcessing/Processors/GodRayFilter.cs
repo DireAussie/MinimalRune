@@ -4,13 +4,13 @@
 
 
 using System;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MathHelper = DigitalRune.Mathematics.MathHelper;
 
 
-namespace DigitalRune.Graphics.PostProcessing
+namespace MinimalRune.Graphics.PostProcessing
 {
   /// <summary>
   /// Adds crepuscular rays ("god rays") to a scene.
@@ -37,9 +37,9 @@ namespace DigitalRune.Graphics.PostProcessing
     // See "Bringing AAA graphics to mobile platforms", Niklas Smedberg, Epic, GDC 2012
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly EffectParameter _viewportSizeParameter;
     private readonly EffectParameter _parameters0Parameter;
@@ -57,9 +57,9 @@ namespace DigitalRune.Graphics.PostProcessing
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the scale of the light shafts.
@@ -224,9 +224,9 @@ namespace DigitalRune.Graphics.PostProcessing
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="GodRayFilter"/> class.
@@ -265,9 +265,9 @@ namespace DigitalRune.Graphics.PostProcessing
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods")]
@@ -307,11 +307,11 @@ namespace DigitalRune.Graphics.PostProcessing
       Matrix viewProjection = projection * view;
 
       // We simply place the light source "far away" in opposite light ray direction.
-      Vector4F lightPositionWorld = new Vector4F(-LightDirection * 10000, 1);
+      Vector4 lightPositionWorld = new Vector4(-LightDirection * 10000, 1);
 
       // Convert to clip space.
-      Vector4F lightPositionProj = viewProjection * lightPositionWorld;
-      Vector3 lightPositionClip = Vector4F.HomogeneousDivide(lightPositionProj);
+      Vector4 lightPositionProj = viewProjection * lightPositionWorld;
+      Vector3 lightPositionClip = Vector4.HomogeneousDivide(lightPositionProj);
 
       // Convert from clip space [-1, 1] to texture space [0, 1].
       Vector2 lightPosition = new Vector2(lightPositionClip.X * 0.5f + 0.5f, -lightPositionClip.Y * 0.5f + 0.5f);

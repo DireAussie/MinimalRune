@@ -7,14 +7,14 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Threading.Tasks;
-using DigitalRune.Editor.Output;
+using MinimalRune.Editor.Output;
 using Microsoft.Build.Construction;
 using Microsoft.Build.Evaluation;
 using Microsoft.Build.Execution;
 using NLog;
 
 
-namespace DigitalRune.Editor.Shader
+namespace MinimalRune.Editor.Shader
 {
     /// <summary>
     /// This class wraps the MSBuild functionality needed to build XNA Framework content dynamically
@@ -33,9 +33,9 @@ namespace DigitalRune.Editor.Shader
         // because using the .NET API directly I could not build an x86 XNA content project when the
         // executing project is x64.
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         // TODO: Auto-detect MSBuild.exe and let user change path in options page.
         private const string MSBuildPath = @"C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe";
@@ -62,9 +62,9 @@ namespace DigitalRune.Editor.Shader
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
@@ -81,9 +81,9 @@ namespace DigitalRune.Editor.Shader
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets a value indicating whether this instance has been disposed of.
@@ -105,9 +105,9 @@ namespace DigitalRune.Editor.Shader
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Creates a new content builder.
@@ -180,9 +180,9 @@ namespace DigitalRune.Editor.Shader
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Creates a temporary MSBuild content project in memory.

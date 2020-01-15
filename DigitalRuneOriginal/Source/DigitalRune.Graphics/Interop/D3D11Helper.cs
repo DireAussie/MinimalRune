@@ -13,7 +13,7 @@ using Texture2D = SharpDX.Direct3D11.Texture2D;
 using SurfaceFormat = Microsoft.Xna.Framework.Graphics.SurfaceFormat;
 
 
-namespace DigitalRune.Graphics.Interop
+namespace MinimalRune.Graphics.Interop
 {
   /// <summary>
   /// Provides helper methods for Direct3D 11.

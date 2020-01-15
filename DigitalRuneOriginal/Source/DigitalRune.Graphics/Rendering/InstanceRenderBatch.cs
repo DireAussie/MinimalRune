@@ -4,11 +4,11 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Graphics.Effects;
+using MinimalRune.Graphics.Effects;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Renders instances of one mesh.
@@ -28,9 +28,9 @@ namespace DigitalRune.Graphics.Rendering
   /// </remarks>
   internal sealed class InstanceRenderBatch<T> : IDisposable where T : struct, IVertexType
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private RenderContext _renderContext;
     private Submesh _submesh;
@@ -52,9 +52,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets a value indicating whether this instance has been disposed of.
@@ -74,9 +74,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="InstanceRenderBatch{T}"/> class.
@@ -121,9 +121,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Resets the indices to the beginning of the buffers.

@@ -7,7 +7,7 @@
 using System;
 
 
-namespace DigitalRune.Storages
+namespace MinimalRune.Storages
 {
   /// <summary>
   /// Specifies advanced options for creating a file.

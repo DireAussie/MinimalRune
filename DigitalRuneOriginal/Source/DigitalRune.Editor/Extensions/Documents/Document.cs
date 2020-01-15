@@ -9,11 +9,11 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows.Input;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Docking;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Docking;
 
 
-namespace DigitalRune.Editor.Documents
+namespace MinimalRune.Editor.Documents
 {
     /// <summary>
     /// Represents a document that is managed by the <see cref="IDocumentService"/>.
@@ -38,18 +38,18 @@ namespace DigitalRune.Editor.Documents
         // In contrast, the document service open/save methods show dialogs if necessary and 
         // handle exceptions.
         
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         // Table with key = file extension (e.g. ".fx") and value = last used number for untitled name.
         private static readonly Dictionary<string, int> _lastUntitledNumbers = new Dictionary<string, int>();
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets a value indicating whether this document has been closed.
@@ -245,9 +245,9 @@ namespace DigitalRune.Editor.Documents
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Document"/> class.
@@ -324,9 +324,9 @@ namespace DigitalRune.Editor.Documents
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private void ThrowIfDisposed()
         {

@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Effects
+namespace MinimalRune.Graphics.Effects
 {
   /// <summary>
   /// Iterates the effect passes of the current technique in the order determined by the effect pass
@@ -16,9 +16,9 @@ namespace DigitalRune.Graphics.Effects
   /// </summary>
   public struct EffectPassEnumerator : IEnumerator<EffectPass>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly EffectTechniqueBinding _techniqueBinding;
     private readonly EffectTechnique _technique;
@@ -28,9 +28,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the element in the collection at the current position of the enumerator.
@@ -53,9 +53,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="EffectPassEnumerator"/> struct.
@@ -85,9 +85,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Advances the enumerator to the next element of the collection.

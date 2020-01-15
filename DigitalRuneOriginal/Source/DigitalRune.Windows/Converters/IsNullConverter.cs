@@ -7,7 +7,7 @@ using System.Globalization;
 using System.Windows.Data;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
     /// Converts an <see cref="object"/> to a <see cref="bool"/> by checking whether the reference

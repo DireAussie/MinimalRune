@@ -5,12 +5,12 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Effects
+namespace MinimalRune.Graphics.Effects
 {
   /// <summary>
   /// Binds an effect parameter to a value of a given type.
@@ -33,7 +33,7 @@ namespace DigitalRune.Graphics.Effects
   /// <see cref="Vector4"/>, 
   /// <see cref="Vector2F"/>, 
   /// <see cref="Vector3"/>, 
-  /// <see cref="Vector4F"/>.
+  /// <see cref="Vector4"/>.
   /// </typeparam>
   /// <remarks>
   /// <para>
@@ -92,9 +92,9 @@ namespace DigitalRune.Graphics.Effects
     // <see cref="Matrix22F"/>, 
     // <see cref="Matrix"/>
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // ReSharper disable StaticFieldInGenericType
 
@@ -120,9 +120,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets (or sets) the value of the effect parameter.
@@ -150,9 +150,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes static members of the <see cref="EffectParameterBinding{T}"/> class.
@@ -240,9 +240,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

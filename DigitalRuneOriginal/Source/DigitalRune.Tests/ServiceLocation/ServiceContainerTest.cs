@@ -5,7 +5,7 @@ using Microsoft.Practices.ServiceLocation;
 using NUnit.Framework;
 
 
-namespace DigitalRune.ServiceLocation.Tests
+namespace MinimalRune.ServiceLocation.Tests
 {
   [TestFixture]
   public class ServiceContainerTest

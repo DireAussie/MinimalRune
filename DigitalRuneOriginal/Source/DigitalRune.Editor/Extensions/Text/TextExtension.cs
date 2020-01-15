@@ -9,20 +9,20 @@ using System.Reactive.Linq;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Media.Imaging;
-using DigitalRune.Editor.Text.Search;
-using DigitalRune.Editor.About;
-using DigitalRune.Editor.Documents;
-using DigitalRune.Editor.Search;
-using DigitalRune.Linq;
-using DigitalRune.Windows.Docking;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Editor.Text.Search;
+using MinimalRune.Editor.About;
+using MinimalRune.Editor.Documents;
+using MinimalRune.Editor.Search;
+using MinimalRune.Linq;
+using MinimalRune.Windows.Docking;
+using MinimalRune.Windows.Framework;
 using ICSharpCode.AvalonEdit;
 using ICSharpCode.AvalonEdit.Highlighting;
 using NLog;
 using static System.FormattableString;
 
 
-namespace DigitalRune.Editor.Text
+namespace MinimalRune.Editor.Text
 {
     /// <summary>
     /// Provides functions for editing text documents.
@@ -30,9 +30,9 @@ namespace DigitalRune.Editor.Text
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling")]
     public sealed partial class TextExtension : EditorExtension, ITextService
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
@@ -49,15 +49,15 @@ namespace DigitalRune.Editor.Text
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TextExtension"/> class.
@@ -69,9 +69,9 @@ namespace DigitalRune.Editor.Text
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         protected override void OnInitialize()

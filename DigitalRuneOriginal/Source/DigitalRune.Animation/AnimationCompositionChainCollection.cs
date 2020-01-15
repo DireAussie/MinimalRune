@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Manages a collection of <see cref="IAnimationCompositionChain"/>s.
@@ -30,9 +30,9 @@ namespace DigitalRune.Animation
     // of the list because animation weights affect other animations and need to 
     // be updated first. (Animation weights are of type IImmediateAnimatableProperty.)
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Dummy hash code which is stored for IImmediateAnimatableProperties instead of the real hash
     // code. (The composition chains for IImmediateAnimatableProperties are not sorted.)
@@ -49,9 +49,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the total number of composition chains in this collection.
@@ -83,9 +83,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="AnimationCompositionChainCollection"/> class.
@@ -98,9 +98,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns an enumerator that iterates through a collection.

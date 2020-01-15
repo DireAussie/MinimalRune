@@ -5,7 +5,7 @@
 using System.Collections.Generic;
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Defines a method to compare <see cref="IKeyFrame{T}"/> objects.

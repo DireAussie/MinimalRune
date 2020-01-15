@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Data;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
   /// <summary>
   /// A simple element with a single Value property, used as a 'slave' for a <see cref="Binding"/>.

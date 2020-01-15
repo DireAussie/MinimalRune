@@ -3,12 +3,12 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics.Rendering;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics.Rendering;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Captures a snapshot of the scene.
@@ -66,15 +66,15 @@ namespace DigitalRune.Graphics.SceneGraph
   /// </example>
   public class SceneCaptureNode : RenderToTextureNode
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the camera node.
@@ -100,9 +100,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="SceneCaptureNode" /> class.
@@ -118,9 +118,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

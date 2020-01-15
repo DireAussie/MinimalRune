@@ -11,7 +11,7 @@ using System;
 using System.Diagnostics;
 
 
-namespace DigitalRune.Mathematics.Statistics
+namespace MinimalRune.Mathematics.Statistics
 {
   /// <summary>
   /// Computes <i>Improved Perlin Noise</i>.
@@ -67,9 +67,9 @@ namespace DigitalRune.Mathematics.Statistics
     //   We use different scale factors determined by experiments to scale the noise to [-1, 1].
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Permutation table for <i>improved noise</i> by Ken Perlin.
@@ -79,9 +79,9 @@ namespace DigitalRune.Mathematics.Statistics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes static members of the <see cref="PerlinNoise"/> class.
@@ -116,9 +116,9 @@ namespace DigitalRune.Mathematics.Statistics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

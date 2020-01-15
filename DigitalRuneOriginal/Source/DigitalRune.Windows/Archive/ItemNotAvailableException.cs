@@ -9,7 +9,7 @@ using System.Runtime.Serialization;
 
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
     /// Occurs when no more items are available or the specified item is not available.

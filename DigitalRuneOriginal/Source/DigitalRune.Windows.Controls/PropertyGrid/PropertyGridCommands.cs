@@ -5,7 +5,7 @@
 using System.Windows.Input;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Provides a set of commands for manipulating a <see cref="PropertyGrid"/>.

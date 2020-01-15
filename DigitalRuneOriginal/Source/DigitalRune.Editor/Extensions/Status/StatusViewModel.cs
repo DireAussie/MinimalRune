@@ -10,13 +10,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Shell;
-using DigitalRune.Mathematics;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Mathematics;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Framework;
 using NLog;
 
 
-namespace DigitalRune.Editor.Status
+namespace MinimalRune.Editor.Status
 {
     /// <summary>
     /// Represents an object that tracks the status of an operation and can be displayed the status
@@ -79,9 +79,9 @@ namespace DigitalRune.Editor.Status
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1001:TypesThatOwnDisposableFieldsShouldBeDisposable")]
     public sealed class StatusViewModel : Screen, IProgress<double>, IProgress<int>
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
         private static readonly TimeSpan DefaultDuration = TimeSpan.FromSeconds(3);
@@ -90,9 +90,9 @@ namespace DigitalRune.Editor.Status
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets a status message that describes the state of the current operation.
@@ -225,9 +225,9 @@ namespace DigitalRune.Editor.Status
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="StatusViewModel"/> class.
@@ -257,9 +257,9 @@ namespace DigitalRune.Editor.Status
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         [Conditional("DEBUG")]
         private static void CheckAccess()

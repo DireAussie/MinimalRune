@@ -3,15 +3,15 @@ using System;
 using System.Diagnostics;
 using System.Linq;
 using DigitalRune;
-using DigitalRune.Game;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.Effects;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Statistics;
-using DigitalRune.Physics;
+using MinimalRune.Game;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.Effects;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Statistics;
+using MinimalRune.Physics;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -26,9 +26,9 @@ namespace Samples.Graphics
   // slope values.
   public class ProceduralTerrainObject : GameObject
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // The resolution (world units per texel) of the detail textures which are splatted
     // onto the terrain.
@@ -36,9 +36,9 @@ namespace Samples.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly IServiceLocator _services;
     private IGraphicsService _graphicsService;
@@ -60,18 +60,18 @@ namespace Samples.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // The scene node which represents the whole terrain.
     public TerrainNode TerrainNode { get; private set; }
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     public ProceduralTerrainObject(IServiceLocator services)
     {
@@ -83,9 +83,9 @@ namespace Samples.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     protected override void OnLoad()
     {

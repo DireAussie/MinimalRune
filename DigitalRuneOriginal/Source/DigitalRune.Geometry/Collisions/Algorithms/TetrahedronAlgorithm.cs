@@ -6,7 +6,7 @@
 //using System.Collections.Generic;
 //using System.Text;
 
-//namespace DigitalRune.Geometry.CollisionDetection.Algorithms
+//namespace MinimalRune.Geometry.CollisionDetection.Algorithms
 //{
 //  class TetrahedronAlgorithm
 //  {
@@ -38,8 +38,8 @@
 //      Vector3 c = vertices[_indices[2]];
 //      Vector3 ab = b - a;
 //      Vector3 ac = c - a;
-//      float ab2 = ab.LengthSquared;
-//      float ac2 = ac.LengthSquared;
+//      float ab2 = ab.LengthSquared();
+//      float ac2 = ac.LengthSquared();
 //      float aDotAb = Vector3.Dot(a, ab);
 //      float aDotAc = Vector3.Dot(a, ac);
 //      float abDotAc = Vector3.Dot(ab, ac);
@@ -51,7 +51,7 @@
 //      if (_det > Numeric.EpsilonF)
 //      {
 //        _closestPointToOrigin = a + (_lambda1 * ab + _lambda2 * ac) / _det;
-//        _distanceToOriginSquared = _closestPointToOrigin.LengthSquared;
+//        _distanceToOriginSquared = _closestPointToOrigin.LengthSquared();
 //        return true;
 //      }
 

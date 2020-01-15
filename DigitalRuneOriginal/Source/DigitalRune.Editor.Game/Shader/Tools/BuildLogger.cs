@@ -6,21 +6,21 @@ using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.Text;
-using DigitalRune.Editor.Output;
-using DigitalRune.Windows;
+using MinimalRune.Editor.Output;
+using MinimalRune.Windows;
 using Microsoft.Build.Framework;
 
 
-namespace DigitalRune.Editor.Shader
+namespace MinimalRune.Editor.Shader
 {
     /// <summary>
     /// Sends MSBuild log messages to the <see cref="IOutputService"/>.
     /// </summary>
     internal class BuildLogger : ILogger
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private const string Indentation = "  ";
 
@@ -30,9 +30,9 @@ namespace DigitalRune.Editor.Shader
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets the user-defined parameters of the logger.
@@ -51,9 +51,9 @@ namespace DigitalRune.Editor.Shader
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BuildLogger"/> class.
@@ -74,9 +74,9 @@ namespace DigitalRune.Editor.Shader
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
         /// <summary>

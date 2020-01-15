@@ -14,7 +14,7 @@ using NUnit.Framework;
 
 
 
-namespace DigitalRune.Windows.Tests
+namespace MinimalRune.Windows.Tests
 {
     [TestFixture]
     public class DoubleToBooleanConverterTest

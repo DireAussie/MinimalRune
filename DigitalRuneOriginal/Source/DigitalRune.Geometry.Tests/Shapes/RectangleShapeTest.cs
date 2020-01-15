@@ -3,12 +3,12 @@ using System.Diagnostics;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Xml.Serialization;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Geometry.Shapes.Tests
+namespace MinimalRune.Geometry.Shapes.Tests
 {
   [TestFixture]
   public class RectangleTest
@@ -122,7 +122,7 @@ namespace DigitalRune.Geometry.Shapes.Tests
       Assert.AreEqual(new Aabb(), new RectangleShape().GetAabb(Pose.Identity));
       Assert.AreEqual(new Aabb(new Vector3(10, 100, -13), new Vector3(10, 100, -13)),
                      new RectangleShape().GetAabb(new Pose(new Vector3(10, 100, -13),
-                                                                         Quaternion.CreateRotation(new Vector3(1, 1, 1), 0.7f))));
+                                                                         Quaternion.CreateFromRotationMatrix(new Vector3(1, 1, 1), 0.7f))));
       Assert.AreEqual(new Aabb(new Vector3(5, 90, 1000), new Vector3(15, 110, 1000)),
                      new RectangleShape(10, 20).GetAabb(new Pose(new Vector3(10, 100, 1000),
                                                                    Quaternion.Identity)));

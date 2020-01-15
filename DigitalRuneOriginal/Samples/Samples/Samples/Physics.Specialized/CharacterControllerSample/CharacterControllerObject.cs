@@ -4,17 +4,17 @@
 
 using System;
 using System.Linq;
-using DigitalRune.Game;
-using DigitalRune.Game.Input;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics.Rendering;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics;
-using DigitalRune.Physics.ForceEffects;
-using DigitalRune.Physics.Specialized;
+using MinimalRune.Game;
+using MinimalRune.Game.Input;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics.Rendering;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics;
+using MinimalRune.Physics.ForceEffects;
+using MinimalRune.Physics.Specialized;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
@@ -45,9 +45,9 @@ namespace Samples.Physics.Specialized
     //   but also a lot more complex and slower.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private const float LinearVelocityMagnitude = 5f;
     private const float AngularVelocityMagnitude = 0.1f;
@@ -62,9 +62,9 @@ namespace Samples.Physics.Specialized
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly IInputService _inputService;
     private readonly DebugRenderer _debugRenderer;
@@ -81,9 +81,9 @@ namespace Samples.Physics.Specialized
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // A "CharacterController" controls the character that can collide with other objects.
 
@@ -112,9 +112,9 @@ namespace Samples.Physics.Specialized
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     public CharacterControllerObject(IServiceLocator services)
     {
@@ -158,9 +158,9 @@ namespace Samples.Physics.Specialized
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     protected override void OnLoad()
     {

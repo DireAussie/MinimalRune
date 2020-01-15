@@ -14,7 +14,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
     /// Provides a base class for <see cref="INotifyPropertyChanged"/> and
@@ -40,23 +40,23 @@ namespace DigitalRune.Windows
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Validatable")]
     public class ValidatableObservableObject : ObservableObject, INotifyDataErrorInfo
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private const string HasErrorsPropertyName = "HasErrors";
 
 
     
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the container that manages validation errors.
@@ -85,9 +85,9 @@ namespace DigitalRune.Windows
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ValidatableObservableObject"/> class.
@@ -103,9 +103,9 @@ namespace DigitalRune.Windows
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the validation errors for a specified property or for the entire object.

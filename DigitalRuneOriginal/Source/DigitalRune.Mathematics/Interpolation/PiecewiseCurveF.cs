@@ -4,10 +4,10 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Mathematics.Interpolation
+namespace MinimalRune.Mathematics.Interpolation
 {
   /// <summary>
   /// Represents a curve that is defined by piecewise interpolation of curve keys (control points).
@@ -28,27 +28,27 @@ namespace DigitalRune.Mathematics.Interpolation
     : PiecewiseCurve<float, TPoint, TCurveKey>
       where TCurveKey : CurveKey<float, TPoint>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
-
-
-
-    //--------------------------------------------------------------
-
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
+
+
+
+    
+
+    
 
     /// <summary>
     /// Gets the index of the curve key <i>before</i> or at the given parameter value.

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 
 
-namespace DigitalRune.Windows.Interop
+namespace MinimalRune.Windows.Interop
 {
     /// <remarks>
     /// <para>

@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using DigitalRune.Game.UI;
-using DigitalRune.Game.UI.Controls;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Meshes;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.Effects;
-using DigitalRune.Graphics.Rendering;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics.Constraints;
-using DigitalRune.Physics.Specialized;
+using MinimalRune.Game.UI;
+using MinimalRune.Game.UI.Controls;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Meshes;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.Effects;
+using MinimalRune.Graphics.Rendering;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics.Constraints;
+using MinimalRune.Physics.Specialized;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -28,9 +28,9 @@ namespace Samples
   /// </summary>
   public static class SampleHelper
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -273,9 +273,9 @@ namespace Samples
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Visualizes the constraints of the ragdoll (for debugging).
@@ -471,7 +471,7 @@ namespace Samples
         return;
 
       // Line from circle center to start of arc.
-      Vector3 previousArcPoint = center + scale * constraintToWorld.ToWorldDirection(Quaternion.CreateRotation(axis, minimum).Rotate(direction));
+      Vector3 previousArcPoint = center + scale * constraintToWorld.ToWorldDirection(Quaternion.CreateFromRotationMatrix(axis, minimum).Rotate(direction));
       debugRenderer.DrawLine(center, previousArcPoint, color, drawOverScene);
 
       // Draw arc.
@@ -479,7 +479,7 @@ namespace Samples
       float segmentAngle = (maximum - minimum) / numberOfSegments;
       for (int i = 0; i < numberOfSegments; i++)
       {
-        Vector3 arcPoint = center + scale * constraintToWorld.ToWorldDirection(Quaternion.CreateRotation(axis, minimum + (i + 1) * segmentAngle).Rotate(direction));
+        Vector3 arcPoint = center + scale * constraintToWorld.ToWorldDirection(Quaternion.CreateFromRotationMatrix(axis, minimum + (i + 1) * segmentAngle).Rotate(direction));
         debugRenderer.DrawLine(previousArcPoint, arcPoint, color, drawOverScene);
         previousArcPoint = arcPoint;
       }
@@ -490,9 +490,9 @@ namespace Samples
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Following methods add UI controls to a given parent panel or parent control.
     // This is used to quickly add controls to the Options window.
@@ -520,7 +520,7 @@ namespace Samples
       {
         Orientation = Orientation.Vertical,
         HorizontalAlignment = HorizontalAlignment.Stretch,
-        Margin = new Vector4F(Margin, Margin, Margin, 0),
+        Margin = new Vector4(Margin, Margin, Margin, 0),
       };
       scrollViewer.Content = panel;
 
@@ -544,7 +544,7 @@ namespace Samples
       var groupBox = new GroupBox
       {
         Title = title,
-        Margin = new Vector4F(0, 0, 0, Margin),
+        Margin = new Vector4(0, 0, 0, Margin),
         HorizontalAlignment = HorizontalAlignment.Stretch,
 
         // For GroupBoxes inside TabControls we need a different style 
@@ -555,7 +555,7 @@ namespace Samples
 
       var panel = new StackPanel
       {
-        Margin = new Vector4F(Margin, Margin + 4, Margin, -2),
+        Margin = new Vector4(Margin, Margin + 4, Margin, -2),
       };
       groupBox.Content = panel;
 
@@ -568,7 +568,7 @@ namespace Samples
       var button = new Button
       {
         Content = new TextBlock { Text = title },
-        Margin = new Vector4F(0, 0, 0, Margin),
+        Margin = new Vector4(0, 0, 0, Margin),
         ToolTip = toolTip,
       };
       button.Click += (s, e) => clickHandler();
@@ -582,7 +582,7 @@ namespace Samples
       var checkBox = new CheckBox
       {
         Content = new TextBlock { Text = title },
-        Margin = new Vector4F(0, 0, 0, Margin),
+        Margin = new Vector4(0, 0, 0, Margin),
         IsChecked = defaultValue,
         ToolTip = toolTip,
       };
@@ -603,7 +603,7 @@ namespace Samples
       var horizontalStackPanel = new StackPanel
       {
         Orientation = Orientation.Horizontal,
-        Margin = new Vector4F(0, 0, 0, Margin),
+        Margin = new Vector4(0, 0, 0, Margin),
         HorizontalAlignment = HorizontalAlignment.Stretch,
         ToolTip = toolTip,
       };
@@ -612,7 +612,7 @@ namespace Samples
       horizontalStackPanel.Children.Add(new TextBlock
       {
         Text = title + ": ",
-        Margin = new Vector4F(0, 4, 0, 0),
+        Margin = new Vector4(0, 4, 0, 0),
         Width = 170,
       });
 
@@ -646,7 +646,7 @@ namespace Samples
       var horizontalStackPanel = new StackPanel
       {
         Orientation = Orientation.Horizontal,
-        Margin = new Vector4F(0, 0, 0, Margin),
+        Margin = new Vector4(0, 0, 0, Margin),
         HorizontalAlignment = HorizontalAlignment.Stretch,
         ToolTip = toolTip,
       };
@@ -701,9 +701,9 @@ namespace Samples
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets a human-readable exception message for an exception instance.

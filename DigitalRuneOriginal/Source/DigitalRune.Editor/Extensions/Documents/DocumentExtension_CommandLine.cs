@@ -7,10 +7,10 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Threading.Tasks;
-using DigitalRune.CommandLine;
+using MinimalRune.CommandLine;
 
 
-namespace DigitalRune.Editor.Documents
+namespace MinimalRune.Editor.Documents
 {
     partial class DocumentExtension
     {

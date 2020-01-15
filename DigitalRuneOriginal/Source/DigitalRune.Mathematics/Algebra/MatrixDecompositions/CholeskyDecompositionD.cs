@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Mathematics.Algebra
+namespace MinimalRune.Mathematics.Algebra
 {
   /// <summary>
   /// Computes the Cholesky Decomposition of a matrix (double-precision).
@@ -40,18 +40,18 @@ namespace DigitalRune.Mathematics.Algebra
   [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Cholesky")]
   public class CholeskyDecompositionD
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly MatrixD _l;
     private readonly bool _isSymmetricPositiveDefinite;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets a value indicating whether the original matrix is symmetric and positive definite.
@@ -78,9 +78,9 @@ namespace DigitalRune.Mathematics.Algebra
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Creates the Cholesky decomposition of the given matrix.
@@ -135,9 +135,9 @@ namespace DigitalRune.Mathematics.Algebra
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Solves the equation <c>A * X = B</c>.

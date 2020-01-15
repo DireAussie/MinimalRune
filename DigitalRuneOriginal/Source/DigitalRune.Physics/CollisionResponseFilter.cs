@@ -4,13 +4,13 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Collections;
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Geometry.Partitioning;
-using DigitalRune.Physics.Constraints;
+using MinimalRune.Collections;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Geometry.Partitioning;
+using MinimalRune.Physics.Constraints;
 
 
-namespace DigitalRune.Physics
+namespace MinimalRune.Physics
 {
   /// <summary>
   /// Defines whether collision response between rigid bodies is enabled or disabled.
@@ -34,18 +34,18 @@ namespace DigitalRune.Physics
   /// </remarks>
   public class CollisionResponseFilter : IPairFilter<RigidBody>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Pairwise filtering. If object pair is contained, filtering is disabled.
     private readonly HashSet<Pair<RigidBody>> _disabledPairs = new HashSet<Pair<RigidBody>>();
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Occurs when the filter rules have changed.
@@ -54,15 +54,15 @@ namespace DigitalRune.Physics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Resets this filter. Collision response will be enabled for all pairs of rigid bodies.

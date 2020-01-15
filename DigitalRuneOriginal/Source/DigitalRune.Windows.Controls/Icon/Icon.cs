@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Represents an image or glyph based icon.
@@ -46,9 +46,9 @@ namespace DigitalRune.Windows.Controls
     /// </remarks>
     public class Icon : FrameworkElement, IUriContext // IUriContext is required to resolve ImageSource URIs.
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Dictionary<FontFamily, Typeface> TypefaceCache = new Dictionary<FontFamily, Typeface>();
         private MultiColorGlyph _multiColorGlyph;
@@ -57,15 +57,15 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="DisabledOpacity"/> dependency property.
@@ -259,9 +259,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="Icon"/> class.
@@ -278,9 +278,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static Typeface GetTypeface(FontFamily fontFamily)
         {

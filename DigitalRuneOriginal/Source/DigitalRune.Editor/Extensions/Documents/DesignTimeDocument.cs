@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Editor.Documents
+namespace MinimalRune.Editor.Documents
 {
     internal sealed class DesignTimeDocument : Document
     {

@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Threading;
 
 
-namespace DigitalRune.Collections
+namespace MinimalRune.Collections
 {
   /// <summary>
   /// Represents a queue of values where the greatest item can be accessed quickly.
@@ -41,9 +41,9 @@ namespace DigitalRune.Collections
     // - Book: Informatik-Handbuch, Rechenberg et al.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Enumerates the elements of a <see cref="PriorityQueue{T}"/>. 
@@ -163,9 +163,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Start with 4 heap levels.
     private const int InitialSize = 7;
@@ -176,9 +176,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the <see cref="IComparer{T}"/> used for comparing items type <typeparamref name="T"/>.
@@ -256,9 +256,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="PriorityQueue{T}" /> class.
@@ -308,9 +308,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the greatest item in the queue without removing the item.

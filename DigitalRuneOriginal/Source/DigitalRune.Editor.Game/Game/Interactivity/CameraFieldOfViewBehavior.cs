@@ -5,22 +5,22 @@
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Interactivity;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.Interop;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Windows;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.Interop;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Windows;
 
 
-namespace DigitalRune.Editor.Game
+namespace MinimalRune.Editor.Game
 {
     /// <summary>
     /// Updates the camera's field of view (FOV) when the size of the presentation target changes.
     /// </summary>
     public class CameraFieldOfViewBehavior : Behavior<D3DImagePresentationTarget>
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="IsEnabled"/> dependency property.
@@ -73,9 +73,9 @@ namespace DigitalRune.Editor.Game
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static void OnCameraNodeChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
         {

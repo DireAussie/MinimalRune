@@ -5,14 +5,14 @@
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
-using DigitalRune.Collections;
-using DigitalRune.Game.UI.Rendering;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Collections;
+using MinimalRune.Game.UI.Rendering;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   /// <summary>
   /// Manages and draws <see cref="UIControl"/>s and <see cref="Window"/>s.
@@ -46,9 +46,9 @@ namespace DigitalRune.Game.UI.Controls
     , IDrawable
 
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // We reuse the InputContext and RenderContext instances between frames.
     private readonly InputContext _inputContext = new InputContext();
@@ -56,9 +56,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the <see cref="IUIService"/>.
@@ -228,9 +228,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary> 
     /// The ID of the <see cref="ToolTipDelay"/> game object property.
@@ -324,9 +324,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes static members of the <see cref="UIScreen"/> class.
@@ -384,9 +384,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private void OnChildrenChanged(object sender, CollectionChangedEventArgs<UIControl> eventArgs)
     {

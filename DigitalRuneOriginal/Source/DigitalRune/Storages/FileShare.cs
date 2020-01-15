@@ -7,7 +7,7 @@
 using System;
 
 
-namespace DigitalRune.Storages
+namespace MinimalRune.Storages
 {
   /// <summary>
   /// Controls how file access is shared with other processes when trying to open the same file.

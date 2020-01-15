@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Defines the upsampling filter that is used when combining the low-resolution, off-screen

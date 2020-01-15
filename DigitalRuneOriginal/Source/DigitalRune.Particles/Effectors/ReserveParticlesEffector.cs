@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Particles.Effectors
+namespace MinimalRune.Particles.Effectors
 {
   /// <summary>
   /// Kills old particles if the particle system reaches the 
@@ -24,18 +24,18 @@ namespace DigitalRune.Particles.Effectors
   /// </remarks>
   public class ReserveParticleEffector : ParticleEffector
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private int _numberOfFreeParticles;
     private IParticleParameter<float> _normalizedAgeParameter;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the number of particles to reserve.
@@ -47,9 +47,9 @@ namespace DigitalRune.Particles.Effectors
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ReserveParticleEffector"/> class.
@@ -61,9 +61,9 @@ namespace DigitalRune.Particles.Effectors
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override ParticleEffector CreateInstanceCore()

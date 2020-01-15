@@ -5,15 +5,15 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics.Effects;
-using DigitalRune.Linq;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics.Effects;
+using MinimalRune.Linq;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Provides helper methods for working with a scene graph and <see cref="SceneNode"/>s.
@@ -42,9 +42,9 @@ namespace DigitalRune.Graphics.SceneGraph
     private static CollisionDetection _collisionDetection;
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static readonly Func<SceneNode, SceneNode> GetParentCallback = node => node.Parent;
     private static readonly Func<SceneNode, IEnumerable<SceneNode>> GetChildrenCallback = GetChildren;
@@ -318,7 +318,7 @@ namespace DigitalRune.Graphics.SceneGraph
 
       Matrix view = Matrix.CreateLookAt(position, target, upVector);
       Matrix viewInverse = view.Inverse;
-      Quaternion orientation = Quaternion.CreateRotation(viewInverse.Minor);
+      Quaternion orientation = Quaternion.CreateFromRotationMatrix(viewInverse.Minor);
       node.PoseWorld = new Pose(position, orientation);
     }
 

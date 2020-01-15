@@ -2,12 +2,12 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Game.UI.Rendering;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Game.UI.Rendering;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 
 
-namespace DigitalRune.Game.UI.Content.Pipeline
+namespace MinimalRune.Game.UI.Content.Pipeline
 {
   /// <summary>
   /// Represents an image of the UI theme.
@@ -41,7 +41,7 @@ namespace DigitalRune.Game.UI.Content.Pipeline
     /// <value>
     /// The margin (left, top, right, bottom). Can be negative to draw outside of the control area.
     /// </value>
-    public Vector4F Margin { get; set; }
+    public Vector4 Margin { get; set; }
 
 
     /// <summary>
@@ -71,7 +71,7 @@ namespace DigitalRune.Game.UI.Content.Pipeline
     /// Gets or sets the border that defines the 9-grid layout for image stretching.
     /// </summary>
     /// <value>The border that defines the 9-grid layout.</value>
-    public Vector4F Border { get; set; }
+    public Vector4 Border { get; set; }
 
 
     /// <summary>

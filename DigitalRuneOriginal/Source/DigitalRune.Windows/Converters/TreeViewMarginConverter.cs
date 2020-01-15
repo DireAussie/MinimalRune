@@ -10,7 +10,7 @@ using System.Windows.Data;
 using System.Windows.Media;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
     /// Calculates the margin for <see cref="TreeViewItem"/>s in a <see cref="TreeView"/>.

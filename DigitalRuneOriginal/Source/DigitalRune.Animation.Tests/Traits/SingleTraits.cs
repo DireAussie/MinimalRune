@@ -1,8 +1,8 @@
-﻿using DigitalRune.Mathematics;
+﻿using MinimalRune.Mathematics;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Animation.Traits.Tests
+namespace MinimalRune.Animation.Traits.Tests
 {
   [TestFixture]
   public class SingleTraitsTest

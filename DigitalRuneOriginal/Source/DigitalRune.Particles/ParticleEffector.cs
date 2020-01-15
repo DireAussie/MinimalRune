@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Content;
 
 
 
-namespace DigitalRune.Particles
+namespace MinimalRune.Particles
 {
   /// <summary>
   /// Manipulates a particle system and/or its particles.
@@ -78,15 +78,15 @@ namespace DigitalRune.Particles
   [DebuggerDisplay("{GetType().Name,nq}(Name = {Name})")]
   public abstract partial class ParticleEffector : INamedObject
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
     
     /// <summary>
     /// Gets the name of this particle effector.
@@ -151,9 +151,9 @@ namespace DigitalRune.Particles
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ParticleEffector"/> class.
@@ -165,9 +165,9 @@ namespace DigitalRune.Particles
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Requeries the particle parameters.

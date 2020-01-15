@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 
 
-namespace DigitalRune.Graphics.Content.Tests
+namespace MinimalRune.Graphics.Content.Tests
 {
 
   [TestFixture]

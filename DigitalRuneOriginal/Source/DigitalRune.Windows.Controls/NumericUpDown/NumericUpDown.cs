@@ -12,7 +12,7 @@ using System.Windows.Input;
 using static System.FormattableString;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Represent a control that displays a decimal value that can be increased or decreases using
@@ -43,9 +43,9 @@ namespace DigitalRune.Windows.Controls
         //   --> Bind to string property and parse text manually.
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private TextBox _textBox;
         private Binding _textBoxBinding;
@@ -54,15 +54,15 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------   
+           
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="DecimalPlaces"/> dependency property.
@@ -141,9 +141,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="NumericUpDown"/> class.
@@ -157,9 +157,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------    
+            
 
         /// <summary>
         /// <see cref="PropertyChangedCallback"/> for <see cref="DecimalPlaces"/>.

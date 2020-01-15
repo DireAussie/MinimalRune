@@ -1,4 +1,4 @@
-﻿namespace DigitalRune.Windows.Docking.Tests
+﻿namespace MinimalRune.Windows.Docking.Tests
 {
     public class TestDockStrategy : DockStrategy
     {

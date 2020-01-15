@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq;
 using System.Xml.Linq;
-using DigitalRune.Game.UI;
-using DigitalRune.Game.UI.Controls;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Game.UI;
+using MinimalRune.Game.UI.Controls;
+using MinimalRune.Mathematics.Algebra;
 
-using DigitalRune.Storages;
+using MinimalRune.Storages;
 using Microsoft.Practices.ServiceLocation;
 
 
@@ -23,18 +23,18 @@ namespace Samples.Game.UI
       var button0 = new Button
       {
         Content = new TextBlock { Text = "Open dialog with layout from code", WrapText = true },
-        Margin = new Vector4F(4),
+        Margin = new Vector4(4),
       };
       button0.Click += OpenDialogFromCode;
 
       var button1 = new Button
       {
         Content = new TextBlock { Text = "Open dialog with layout from XML", WrapText = true },
-        Margin = new Vector4F(4),
+        Margin = new Vector4(4),
       };
       button1.Click += OpenDialogFromXml;
 
-      var stackPanel = new StackPanel { Margin = new Vector4F(4) };
+      var stackPanel = new StackPanel { Margin = new Vector4(4) };
       stackPanel.Children.Add(button0);
       stackPanel.Children.Add(button1);
 
@@ -48,7 +48,7 @@ namespace Samples.Game.UI
       var text = new TextBlock
       {
         Text = "This layout was defined in code.",
-        Margin = new Vector4F(4),
+        Margin = new Vector4(4),
         HorizontalAlignment = HorizontalAlignment.Center,
       };
 
@@ -57,12 +57,12 @@ namespace Samples.Game.UI
         Content = new TextBlock { Text = "Ok" },
         IsCancel = true,       // Cancel buttons are clicked when the user presses ESC (or BACK or B on the gamepad).
         IsDefault = true,      // Default buttons are clicked when the user presses ENTER or SPACE (or START or A on the gamepad).
-        Margin = new Vector4F(4),
+        Margin = new Vector4(4),
         Width = 60,
         HorizontalAlignment = HorizontalAlignment.Center,
       };
 
-      var stackPanel = new StackPanel { Margin = new Vector4F(4) };
+      var stackPanel = new StackPanel { Margin = new Vector4(4) };
       stackPanel.Children.Add(text);
       stackPanel.Children.Add(button);
 

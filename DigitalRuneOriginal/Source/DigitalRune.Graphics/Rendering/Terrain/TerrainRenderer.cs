@@ -6,13 +6,13 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using DigitalRune.Collections;
-using DigitalRune.Graphics.Effects;
-using DigitalRune.Graphics.SceneGraph;
+using MinimalRune.Collections;
+using MinimalRune.Graphics.Effects;
+using MinimalRune.Graphics.SceneGraph;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Renders <see cref="TerrainNode"/>s.
@@ -59,18 +59,18 @@ namespace DigitalRune.Graphics.Rendering
   /// </remarks>
   public class TerrainRenderer : SceneNodeRenderer
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     //private readonly IGraphicsService _graphicsService;
     private readonly Dictionary<Pair<int, int>, TerrainRendererMesh> _meshes = new Dictionary<Pair<int, int>, TerrainRendererMesh>(1);
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets a value indicating whether the wire frame of the terrain should be rendered for
@@ -86,9 +86,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="TerrainRenderer"/> class.
@@ -130,9 +130,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Clears the internally stored <see cref="TerrainRendererMesh"/>es.

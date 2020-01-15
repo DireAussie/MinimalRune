@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Threading;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Automatically scrolls any <see cref="ScrollViewer"/> in the visual tree when an object is
@@ -25,9 +25,9 @@ namespace DigitalRune.Windows.Framework
     /// </remarks>
     public class AutoScrollBehavior : Behavior<FrameworkElement>
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         [Flags]
         private enum Direction
@@ -40,9 +40,9 @@ namespace DigitalRune.Windows.Framework
         }
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private const double AutoScrollTolerance = 32;      // Area near border in device-independent pixels.
         private const double AutoScrollDistance = 10;       // Distance scrolled in device-independent pixels.
@@ -51,9 +51,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private ScrollViewer _scrollViewer;
         private DispatcherTimer _hoverTimer;
@@ -62,9 +62,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="IsEnabled"/> dependency property.
@@ -92,9 +92,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Called after the behavior is attached to an <see cref="Behavior{T}.AssociatedObject"/>.

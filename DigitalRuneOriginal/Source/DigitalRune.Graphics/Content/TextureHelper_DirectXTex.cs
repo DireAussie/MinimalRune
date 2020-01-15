@@ -29,7 +29,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 
 
-namespace DigitalRune.Graphics.Content
+namespace MinimalRune.Graphics.Content
 {
   /// <summary>
   /// Additional options for <see cref="TextureHelper.ComputePitch(DataFormat,int,int,out int,out int,ComputePitchFlags)"/>.
@@ -86,9 +86,9 @@ namespace DigitalRune.Graphics.Content
 
   partial class TextureHelper
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Determines whether the specified texture format is valid.
@@ -1612,9 +1612,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Copies an image row with optional clearing of alpha value to 1.0.
@@ -1629,7 +1629,7 @@ namespace DigitalRune.Graphics.Content
       {
         switch (format)
         {
-          //-----------------------------------------------------------------------------
+          ---------------
           case DataFormat.R32G32B32A32_TYPELESS:
           case DataFormat.R32G32B32A32_FLOAT:
           case DataFormat.R32G32B32A32_UINT:
@@ -1656,7 +1656,7 @@ namespace DigitalRune.Graphics.Content
             }
             return;
 
-          //-----------------------------------------------------------------------------
+          ---------------
           case DataFormat.R16G16B16A16_TYPELESS:
           case DataFormat.R16G16B16A16_FLOAT:
           case DataFormat.R16G16B16A16_UNORM:
@@ -1686,7 +1686,7 @@ namespace DigitalRune.Graphics.Content
             }
             return;
 
-          //-----------------------------------------------------------------------------
+          ---------------
           case DataFormat.R10G10B10A2_TYPELESS:
           case DataFormat.R10G10B10A2_UNORM:
           case DataFormat.R10G10B10A2_UINT:
@@ -1705,7 +1705,7 @@ namespace DigitalRune.Graphics.Content
             }
             return;
 
-          //-----------------------------------------------------------------------------
+          ---------------
           case DataFormat.R8G8B8A8_TYPELESS:
           case DataFormat.R8G8B8A8_UNORM:
           case DataFormat.R8G8B8A8_UNORM_SRGB:
@@ -1730,7 +1730,7 @@ namespace DigitalRune.Graphics.Content
             }
             return;
 
-          //-----------------------------------------------------------------------------
+          ---------------
           case DataFormat.B5G5R5A1_UNORM:
             if (inSize >= 2 && outSize >= 2)
             {
@@ -1742,13 +1742,13 @@ namespace DigitalRune.Graphics.Content
             }
             return;
 
-          //-----------------------------------------------------------------------------
+          ---------------
           case DataFormat.A8_UNORM:
             for (int i = 0; i < outSize; i++)
               writer.Write((byte)0xff);
             return;
 
-          //-----------------------------------------------------------------------------
+          ---------------
           case DataFormat.B4G4R4A4_UNORM:
             if (inSize >= 2 && outSize >= 2)
             {
@@ -1780,7 +1780,7 @@ namespace DigitalRune.Graphics.Content
 
       switch (format)
       {
-        //---------------------------------------------------------------------------------
+        -------------------
         case DataFormat.R10G10B10A2_TYPELESS:
         case DataFormat.R10G10B10A2_UNORM:
         case DataFormat.R10G10B10A2_UINT:
@@ -1808,7 +1808,7 @@ namespace DigitalRune.Graphics.Content
           }
           break;
 
-        //---------------------------------------------------------------------------------
+        -------------------
         case DataFormat.R8G8B8A8_TYPELESS:
         case DataFormat.R8G8B8A8_UNORM:
         case DataFormat.R8G8B8A8_UNORM_SRGB:
@@ -1837,7 +1837,7 @@ namespace DigitalRune.Graphics.Content
           }
           break;
 
-        //---------------------------------------------------------------------------------
+        -------------------
         case DataFormat.YUY2:
           if (inSize >= 4 && outSize >= 4)
           {

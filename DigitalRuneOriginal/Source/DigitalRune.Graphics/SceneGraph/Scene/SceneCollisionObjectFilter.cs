@@ -3,12 +3,12 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Collections;
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Geometry.Partitioning;
+using MinimalRune.Collections;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Geometry.Partitioning;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Filters collision objects by forwarding to a filter that works on scene nodes.

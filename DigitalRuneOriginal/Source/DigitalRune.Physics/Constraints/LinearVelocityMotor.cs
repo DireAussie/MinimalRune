@@ -3,11 +3,11 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Geometry;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Physics.Constraints
+namespace MinimalRune.Physics.Constraints
 {
   /// <summary>
   /// Defines a motor that controls the relative linear velocity of two constrained bodies.
@@ -22,9 +22,9 @@ namespace DigitalRune.Physics.Constraints
   /// </remarks>
   public class LinearVelocityMotor : Constraint
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private Vector3 _minImpulseLimits;
     private Vector3 _maxImpulseLimits;
@@ -37,9 +37,9 @@ namespace DigitalRune.Physics.Constraints
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the constraint anchor position on <see cref="Constraint.BodyA"/> in local space 
@@ -250,15 +250,15 @@ namespace DigitalRune.Physics.Constraints
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override void OnSetup()
@@ -333,7 +333,7 @@ namespace DigitalRune.Physics.Constraints
         impulse.Y = ApplyImpulse(1);
         impulse.Z = ApplyImpulse(2);
 
-        return impulse.LengthSquared > Simulation.Settings.Constraints.MinConstraintImpulseSquared;
+        return impulse.LengthSquared() > Simulation.Settings.Constraints.MinConstraintImpulseSquared;
       }
       else
       {

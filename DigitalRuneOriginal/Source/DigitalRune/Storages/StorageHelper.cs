@@ -6,7 +6,7 @@ using System;
 using System.IO;
 
 
-namespace DigitalRune.Storages
+namespace MinimalRune.Storages
 {
   /// <summary>
   /// Provides conversion and extension methods for <see cref="DigitalRune.Storages"/>.

@@ -6,7 +6,7 @@
 using System;
 
 
-namespace DigitalRune.Geometry.Collisions.Algorithms
+namespace MinimalRune.Geometry.Collisions.Algorithms
 {
   public partial class CompositeShapeAlgorithm
   {

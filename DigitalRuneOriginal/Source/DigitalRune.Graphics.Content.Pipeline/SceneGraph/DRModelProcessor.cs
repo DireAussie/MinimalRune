@@ -14,11 +14,11 @@ using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Content.Pipeline.Graphics;
 using Microsoft.Xna.Framework.Content.Pipeline.Processors;
 
-using DigitalRune.Animation.Character;
+using MinimalRune.Animation.Character;
 
 
 
-namespace DigitalRune.Graphics.Content.Pipeline
+namespace MinimalRune.Graphics.Content.Pipeline
 {
   /// <summary>
   /// Processes a game asset mesh to a model content that is optimal for runtime.
@@ -37,9 +37,9 @@ namespace DigitalRune.Graphics.Content.Pipeline
     //   XNA will show an error if it finds two processors with the same name in a content 
     //   project. Therefore, this processor cannot be simply named "ModelProcessor".
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Input
     private NodeContent _input;
@@ -75,9 +75,9 @@ namespace DigitalRune.Graphics.Content.Pipeline
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the value of the <strong>Create Missing Model Description</strong> 
@@ -180,9 +180,9 @@ namespace DigitalRune.Graphics.Content.Pipeline
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Converts mesh content to model content.

@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.Geometry.Collisions
+namespace MinimalRune.Geometry.Collisions
 {
   /// <summary>
   /// The type of collision query.

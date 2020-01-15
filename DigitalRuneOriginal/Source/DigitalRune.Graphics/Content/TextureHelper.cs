@@ -7,20 +7,20 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Threading.Tasks;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Graphics.Content
+namespace MinimalRune.Graphics.Content
 {
   /// <summary>
   /// Provides methods for converting data formats.
   /// </summary>
   internal static class DataFormatHelper
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Converts a <see cref="DataFormat.B5G6R5_UNORM"/> to <see cref="DataFormat.R8G8B8A8_UNORM"/>.
@@ -102,9 +102,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // References: 
     // - Data Conversion Rules, http://msdn.microsoft.com/en-us/library/windows/desktop/dd607323(v=vs.85).aspx
@@ -298,9 +298,9 @@ namespace DigitalRune.Graphics.Content
   /// </summary>
   internal static partial class TextureHelper
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the depth of the specified mipmap level.
@@ -403,9 +403,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -519,9 +519,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Wraps the specified index to [0, width - 1] using CLAMP.
@@ -570,9 +570,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Note:
     // - Linear and sRGB formats are treated identically. There is no conversion
@@ -2953,9 +2953,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Reference: http://msdn.microsoft.com/en-us/library/bb694531.aspx
 
@@ -3428,9 +3428,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -3481,8 +3481,8 @@ namespace DigitalRune.Graphics.Content
           for (int x0 = 0; x0 < halfWidth; x0++)
           {
             int x1 = width - x0 - 1;
-            Vector4F color0 = image4F.GetPixel(x0, y);
-            Vector4F color1 = image4F.GetPixel(x1, y);
+            Vector4 color0 = image4F.GetPixel(x0, y);
+            Vector4 color1 = image4F.GetPixel(x1, y);
             image4F.SetPixel(x0, y, color1);
             image4F.SetPixel(x1, y, color0);
           }
@@ -3540,8 +3540,8 @@ namespace DigitalRune.Graphics.Content
           for (int x = 0; x < width; x++)
           {
             int y1 = height - y0 - 1;
-            Vector4F color0 = image4F.GetPixel(x, y0);
-            Vector4F color1 = image4F.GetPixel(x, y1);
+            Vector4 color0 = image4F.GetPixel(x, y0);
+            Vector4 color1 = image4F.GetPixel(x, y1);
             image4F.SetPixel(x, y0, color1);
             image4F.SetPixel(x, y1, color0);
           }
@@ -3709,9 +3709,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -3789,7 +3789,7 @@ namespace DigitalRune.Graphics.Content
         {
           for (int x = 0; x < image4F.Width; x++)
           {
-            Vector4F color = image4F.GetPixel(x, y);
+            Vector4 color = image4F.GetPixel(x, y);
             color.X = (float)Math.Pow(color.X, gamma);
             color.Y = (float)Math.Pow(color.Y, gamma);
             color.Z = (float)Math.Pow(color.Z, gamma);
@@ -3882,7 +3882,7 @@ namespace DigitalRune.Graphics.Content
         {
           for (int x = 0; x < image4F.Width; x++)
           {
-            Vector4F color = image4F.GetPixel(x, y);
+            Vector4 color = image4F.GetPixel(x, y);
             color.X = (float)Math.Pow(color.X, gammaCorrection);
             color.Y = (float)Math.Pow(color.Y, gammaCorrection);
             color.Z = (float)Math.Pow(color.Z, gammaCorrection);
@@ -3991,7 +3991,7 @@ namespace DigitalRune.Graphics.Content
     /// <exception cref="ArgumentNullException">
     /// <paramref name="texture"/> is <see langword="null"/>.
     /// </exception>
-    public static void ApplyColorKey(Texture texture, Vector4F colorKey)
+    public static void ApplyColorKey(Texture texture, Vector4 colorKey)
     {
       if (texture == null)
         throw new ArgumentNullException("texture");
@@ -4013,7 +4013,7 @@ namespace DigitalRune.Graphics.Content
     /// <exception cref="ArgumentNullException">
     /// <paramref name="image"/> is <see langword="null"/>.
     /// </exception>
-    public static void ApplyColorKey(Image image, Vector4F colorKey)
+    public static void ApplyColorKey(Image image, Vector4 colorKey)
     {
       if (image == null)
         throw new ArgumentNullException("image");
@@ -4029,9 +4029,9 @@ namespace DigitalRune.Graphics.Content
         {
           for (int x = 0; x < image4F.Width; x++)
           {
-            Vector4F color = image4F.GetPixel(x, y);
-            if (Vector4F.AreNumericallyEqual(color, colorKey))
-              image4F.SetPixel(x, y, new Vector4F(color.X, color.Y, color.Z, 0));
+            Vector4 color = image4F.GetPixel(x, y);
+            if (Vector4.AreNumericallyEqual(color, colorKey))
+              image4F.SetPixel(x, y, new Vector4(color.X, color.Y, color.Z, 0));
           }
         }
 
@@ -4091,7 +4091,7 @@ namespace DigitalRune.Graphics.Content
         {
           for (int x = 0; x < image4F.Width; x++)
           {
-            Vector4F color = image4F.GetPixel(x, y);
+            Vector4 color = image4F.GetPixel(x, y);
             if (color.W < 1.0f)
             {
               color.X *= color.W;
@@ -4207,7 +4207,7 @@ namespace DigitalRune.Graphics.Content
           {
             for (int i = 0; i < numberOfPixels; i++)
             {
-              Vector4F color = image4F.GetPixel(i);
+              Vector4 color = image4F.GetPixel(i);
               if (Numeric.IsLess(color.W, 1.0f))
               {
                 hasAlpha = true;
@@ -4285,7 +4285,7 @@ namespace DigitalRune.Graphics.Content
       {
         for (int i = 0; i < size; i++)
         {
-          Vector4F color = image4F.GetPixel(i);
+          Vector4 color = image4F.GetPixel(i);
           float alpha = MathHelper.Clamp(color.W * alphaScale, 0, 1);
           if (alpha >= referenceAlpha)
             coverage++;
@@ -4410,7 +4410,7 @@ namespace DigitalRune.Graphics.Content
           {
             for (int x = 0; x < image4F.Width; x++)
             {
-              Vector4F color = image4F.GetPixel(x, y);
+              Vector4 color = image4F.GetPixel(x, y);
               float alpha = color.W;
               if (alpha > Numeric.EpsilonF)
               {
@@ -4451,7 +4451,7 @@ namespace DigitalRune.Graphics.Content
           {
             for (int x = 0; x < image4F.Width; x++)
             {
-              Vector4F color = image4F.GetPixel(x, y);
+              Vector4 color = image4F.GetPixel(x, y);
               color.W = MathHelper.Clamp(color.W * alphaScale, 0, 1);
               image4F.SetPixel(x, y, color);
             }
@@ -4519,7 +4519,7 @@ namespace DigitalRune.Graphics.Content
           for (int x = 0; x < image4F.Width; x++)
           {
             // Only for normal map: (byte)128 maps to (float)0.
-            Vector4F color = image4F.GetPixel(x, y);
+            Vector4 color = image4F.GetPixel(x, y);
             color.X = color.X * 255 / 128 - 1;
             color.Y = color.Y * 255 / 128 - 1;
             color.Z = color.Z * 255 / 128 - 1;
@@ -4588,7 +4588,7 @@ namespace DigitalRune.Graphics.Content
         {
           for (int x = 0; x < image4F.Width; x++)
           {
-            Vector4F v = image4F.GetPixel(x, y);
+            Vector4 v = image4F.GetPixel(x, y);
             Vector3 normal = new Vector3(v.X, v.Y, v.Z);
 
             // Renormalize normals. (Important for higher mipmap levels.)

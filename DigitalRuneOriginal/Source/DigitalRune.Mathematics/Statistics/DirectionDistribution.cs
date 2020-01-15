@@ -3,13 +3,13 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 using Microsoft.Xna.Framework.Content;
 
 
 
-namespace DigitalRune.Mathematics.Statistics
+namespace MinimalRune.Mathematics.Statistics
 {
   /// <summary>
   /// A distribution that returns a random direction vector.
@@ -113,7 +113,7 @@ namespace DigitalRune.Mathematics.Statistics
       float angle2 = (float)random.NextDouble() * ConstantsF.TwoPi;
 
       // TODO: Optimize!
-      return (Quaternion.CreateRotation(_normalizedDirection, angle2) * Quaternion.CreateRotation(_orthonormal, angle1)).Rotate(_normalizedDirection);
+      return (Quaternion.CreateFromRotationMatrix(_normalizedDirection, angle2) * Quaternion.CreateFromRotationMatrix(_orthonormal, angle1)).Rotate(_normalizedDirection);
     }
   }
 }

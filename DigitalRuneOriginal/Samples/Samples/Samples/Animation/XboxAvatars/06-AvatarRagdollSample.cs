@@ -1,15 +1,15 @@
 ﻿
 using Microsoft.Xna.Framework.Graphics;
-using DigitalRune.Animation.Character;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.Rendering;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics;
-using DigitalRune.Physics.ForceEffects;
-using DigitalRune.Physics.Specialized;
+using MinimalRune.Animation.Character;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.Rendering;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics;
+using MinimalRune.Physics.ForceEffects;
+using MinimalRune.Physics.Specialized;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.GamerServices;
 

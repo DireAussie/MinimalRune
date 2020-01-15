@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Graphics.PackedVector;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Describes a custom vertex format structure for terrain rendering.
@@ -24,9 +24,9 @@ namespace DigitalRune.Graphics
     // This struct is like VertexPosition. However, we use HalfVector4 instead of Vector3.
     // HalfVector3 would be even better - or HalfVector2 (X, Z) + Byte (LOD).
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The vertex declaration.
@@ -48,9 +48,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the size of the <see cref="TerrainVertex"/> structure in bytes.
@@ -63,9 +63,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="TerrainVertex"/> struct.
@@ -78,9 +78,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Indicates whether this instance and a specified object are equal.

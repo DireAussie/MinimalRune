@@ -5,10 +5,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 
 
-namespace DigitalRune
+namespace MinimalRune
 {
   /// <summary>
   /// Manages a pool of reusable items (base implementation).
@@ -75,9 +75,9 @@ namespace DigitalRune
   /// </example>
   public abstract class ResourcePool
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static readonly WeakCollection<ResourcePool> PoolsInternal = new WeakCollection<ResourcePool>();
 
@@ -85,9 +85,9 @@ namespace DigitalRune
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets a value indicating whether resource pooling is enabled.
@@ -144,16 +144,16 @@ namespace DigitalRune
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
-
-
+    
 
 
-    //--------------------------------------------------------------
 
-    //--------------------------------------------------------------
+
+    
+
+    
 
     /// <summary>
     /// Registers the specified resource pool.

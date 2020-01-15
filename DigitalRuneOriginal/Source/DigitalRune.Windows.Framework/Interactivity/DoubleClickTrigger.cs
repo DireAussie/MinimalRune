@@ -7,7 +7,7 @@ using System.Windows.Input;
 using System.Windows.Interactivity;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Triggers when a double-click is detected.

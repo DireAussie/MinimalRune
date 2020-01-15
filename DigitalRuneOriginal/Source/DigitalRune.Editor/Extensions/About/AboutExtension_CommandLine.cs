@@ -4,10 +4,10 @@
 
 using System;
 using System.Globalization;
-using DigitalRune.CommandLine;
+using MinimalRune.CommandLine;
 
 
-namespace DigitalRune.Editor.About
+namespace MinimalRune.Editor.About
 {
     partial class AboutExtension
     {

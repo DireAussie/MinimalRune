@@ -5,20 +5,20 @@
 using System;
 using System.Linq;
 using System.Windows.Input;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Framework;
 
 
-namespace DigitalRune.Editor.Layout
+namespace MinimalRune.Editor.Layout
 {
     /// <summary>
     /// Represents the menu and toolbar item for managing the window layouts.
     /// </summary>
     internal class WindowLayoutItem : ObservableObject, ICommandItem
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly LayoutExtension _layoutExtensions;
         private MenuItemViewModel _menuItem;
@@ -27,9 +27,9 @@ namespace DigitalRune.Editor.Layout
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public string Name { get { return "WindowLayout"; } }
@@ -88,9 +88,9 @@ namespace DigitalRune.Editor.Layout
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="WindowLayoutItem"/> class.
@@ -110,9 +110,9 @@ namespace DigitalRune.Editor.Layout
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public MenuItemViewModel CreateMenuItem()

@@ -3,14 +3,14 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System.ComponentModel;
-using DigitalRune.Game.Input;
+using MinimalRune.Game.Input;
 using Microsoft.Xna.Framework.Input;
 
 using Keys = System.Windows.Input.Key;
 
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   /// <summary>
   /// Represents a button control. 
@@ -23,8 +23,8 @@ namespace DigitalRune.Game.UI.Controls
   /// var button = new Button
   /// {
   ///   Content = new TextBlock { Text = "Click Me!" },
-  ///   Margin = new Vector4F(4),
-  ///   Padding = new Vector4F(6),
+  ///   Margin = new Vector4(4),
+  ///   Padding = new Vector4(6),
   ///   HorizontalAlignment = HorizontalAlignment.Stretch,
   /// };
   /// 
@@ -38,21 +38,21 @@ namespace DigitalRune.Game.UI.Controls
   /// </example>
   public class Button : ButtonBase
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
-
-
-
-    //--------------------------------------------------------------
-
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
+
+
+
+    
+
+    
 
     /// <summary> 
     /// The ID of the <see cref="IsCancel"/> game object property.
@@ -143,9 +143,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Button"/> class.
@@ -166,9 +166,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods")]

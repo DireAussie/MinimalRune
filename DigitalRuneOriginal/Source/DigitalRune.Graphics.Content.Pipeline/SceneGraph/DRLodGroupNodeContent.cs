@@ -5,7 +5,7 @@
 using System.Collections.Generic;
 
 
-namespace DigitalRune.Graphics.Content.Pipeline
+namespace MinimalRune.Graphics.Content.Pipeline
 {
   /// <summary>
   /// Stores processing data for a <strong>LodGroupNode</strong>.

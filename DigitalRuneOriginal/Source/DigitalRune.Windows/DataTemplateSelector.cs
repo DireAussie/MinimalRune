@@ -8,7 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
   /// <summary>
   /// Automatically applies a <see cref="DataTemplate"/> to the content that matches the type of the

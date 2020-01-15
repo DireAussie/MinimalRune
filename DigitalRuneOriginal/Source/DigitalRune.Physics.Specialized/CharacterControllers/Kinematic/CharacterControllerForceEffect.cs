@@ -3,14 +3,14 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics.Constraints;
-using DigitalRune.Physics.ForceEffects;
-using DigitalRune.Physics.Materials;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics.Constraints;
+using MinimalRune.Physics.ForceEffects;
+using MinimalRune.Physics.Materials;
 
 
-namespace DigitalRune.Physics.Specialized
+namespace MinimalRune.Physics.Specialized
 {
   /// <summary>
   /// Applies gravity and push forces to bodies touched by the <see cref="KinematicCharacterController"/> 

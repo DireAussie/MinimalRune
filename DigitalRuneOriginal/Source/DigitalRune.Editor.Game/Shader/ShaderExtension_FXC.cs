@@ -8,28 +8,28 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using DigitalRune.Editor.Documents;
-using DigitalRune.Editor.Errors;
-using DigitalRune.Editor.Status;
-using DigitalRune.Editor.Text;
-using DigitalRune.ServiceLocation;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Editor.Documents;
+using MinimalRune.Editor.Errors;
+using MinimalRune.Editor.Status;
+using MinimalRune.Editor.Text;
+using MinimalRune.ServiceLocation;
+using MinimalRune.Windows.Framework;
 using static System.FormattableString;
 
 
-namespace DigitalRune.Editor.Shader
+namespace MinimalRune.Editor.Shader
 {
     partial class ShaderExtension
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets a value indicating whether to compile effects with FXC.EXE.
@@ -53,9 +53,9 @@ namespace DigitalRune.Editor.Shader
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static async Task<Tuple<bool, List<Error>>> BuildFxcAsync(
             ServiceContainer services, TextDocument document, DelegateCommand<Error> goToLocationCommand)

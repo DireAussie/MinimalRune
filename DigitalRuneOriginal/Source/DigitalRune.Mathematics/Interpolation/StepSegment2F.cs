@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System.Collections.Generic;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Mathematics.Interpolation
+namespace MinimalRune.Mathematics.Interpolation
 {
   /// <summary>
   /// Defines a step interpolation between two 2-dimensional points (single-precision).
@@ -75,9 +75,9 @@ namespace DigitalRune.Mathematics.Interpolation
     }
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static readonly ResourcePool<StepSegment2F> Pool = new ResourcePool<StepSegment2F>(
        () => new StepSegment2F(),                     // Create

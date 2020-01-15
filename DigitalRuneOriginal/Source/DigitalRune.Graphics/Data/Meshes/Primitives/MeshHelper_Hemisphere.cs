@@ -4,12 +4,12 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   partial class MeshHelper
   {

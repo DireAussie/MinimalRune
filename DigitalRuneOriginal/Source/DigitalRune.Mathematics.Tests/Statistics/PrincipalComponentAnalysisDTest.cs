@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 using NUnit.Framework;
 
-namespace DigitalRune.Mathematics.Statistics.Tests
+namespace MinimalRune.Mathematics.Statistics.Tests
 {
   [TestFixture]
   public class PrincipalComponentsAnalysisDTest

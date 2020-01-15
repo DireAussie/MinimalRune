@@ -16,18 +16,18 @@
 //  /// </remarks>
 //  public class VerticalLineRenderer : IBackgroundRenderer
 //  {
-//    //--------------------------------------------------------------
+//    
 //    #region Fields
-//    //--------------------------------------------------------------
+//    
 
 //    private readonly TextEditor _textEditor;
 //    private readonly Pen _pen;
 //    #endregion
 
 
-//    //--------------------------------------------------------------
+//    
 //    #region Properties & Events
-//    //--------------------------------------------------------------
+//    
 
 //    /// <summary>
 //    /// Gets or sets the column.
@@ -86,9 +86,9 @@
 //    #endregion
 
 
-//    //--------------------------------------------------------------
+//    
 //    #region Creation & Cleanup
-//    //--------------------------------------------------------------
+//    
 
 //    /// <summary>
 //    /// Initializes a new instance of the <see cref="VerticalLineRenderer"/> class.
@@ -109,9 +109,9 @@
 //    #endregion
 
 
-//    //--------------------------------------------------------------
+//    
 //    #region Methods
-//    //--------------------------------------------------------------
+//    
 
 //    /// <summary>
 //    /// Causes the background renderer to draw.

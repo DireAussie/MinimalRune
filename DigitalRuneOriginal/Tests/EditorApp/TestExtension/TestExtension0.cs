@@ -5,23 +5,23 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
-using DigitalRune.Collections;
-using DigitalRune.Windows.Framework;
-using DigitalRune.Editor;
-using DigitalRune.Editor.About;
-using DigitalRune.Editor.Options;
-using DigitalRune.Editor.Status;
-using DigitalRune.Windows.Docking;
-using DigitalRune.Windows.Themes;
+using MinimalRune.Collections;
+using MinimalRune.Windows.Framework;
+using MinimalRune.Editor;
+using MinimalRune.Editor.About;
+using MinimalRune.Editor.Options;
+using MinimalRune.Editor.Status;
+using MinimalRune.Windows.Docking;
+using MinimalRune.Windows.Themes;
 
 
 namespace EditorApp
 {
     public sealed class TestExtension0 : EditorExtension
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private ResourceDictionary _resourceDictionary;
         private MergeableNodeCollection<ICommandItem> _toolBarNodes;            // Toolbar items
@@ -31,21 +31,21 @@ namespace EditorApp
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
-
-
-
-        //--------------------------------------------------------------
-
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
+
+
+
+        
+
+        
 
         protected override void OnInitialize()
         {

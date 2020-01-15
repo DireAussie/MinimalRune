@@ -3,11 +3,11 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Animation.Character
+namespace MinimalRune.Animation.Character
 {
   /// <summary>
   /// Modifies a two-bone chain to reach a certain target.
@@ -39,17 +39,17 @@ namespace DigitalRune.Animation.Character
     // - Support TipRotationAbsolute that the user can specify optionally.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private bool _isDirty = true;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the index of the root bone.
@@ -211,9 +211,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="TwoJointIKSolver"/> class.
@@ -227,9 +227,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Called when the <see cref="SkeletonPose"/> was exchanged.
@@ -305,7 +305,7 @@ namespace DigitalRune.Animation.Character
       {
         rootToTip /= rootToTipLength;
         
-        var rotation = Quaternion.CreateRotation(rootToTip, rootToTarget);
+        var rotation = Quaternion.CreateFromRotationMatrix(rootToTip, rootToTarget);
         if (rotation.Angle > Numeric.EpsilonF)
         {
           // Apply rotation to root bone.
@@ -359,7 +359,7 @@ namespace DigitalRune.Animation.Character
 
       // Compute delta rotation between current and desired angle.
       float deltaAngle = desiredHingeAngle - currentHingeAngle;
-      var hingeRotation = Quaternion.CreateRotation(hingeAxis, deltaAngle);
+      var hingeRotation = Quaternion.CreateFromRotationMatrix(hingeAxis, deltaAngle);
       hingeBonePoseAbsolute.Rotation = hingeRotation * hingeBonePoseAbsolute.Rotation;
 
       // Update tip position.
@@ -373,7 +373,7 @@ namespace DigitalRune.Animation.Character
       if (!Numeric.IsZero(rootToTipLength))
       {
         rootToTip /= rootToTipLength;
-        var rotation = Quaternion.CreateRotation(rootToTip, rootToTarget);
+        var rotation = Quaternion.CreateFromRotationMatrix(rootToTip, rootToTarget);
         rootBonePoseAbsolute.Rotation = rotation * rootBonePoseAbsolute.Rotation;
         hingeBonePoseAbsolute.Rotation = rotation * hingeBonePoseAbsolute.Rotation;
       }

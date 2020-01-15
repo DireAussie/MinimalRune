@@ -9,7 +9,7 @@ using System.Windows.Documents;
 using System.Windows.Media;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Represent an adorner that renders a <see cref="System.Windows.Controls.TextBox"/> above a
@@ -17,9 +17,9 @@ namespace DigitalRune.Windows.Controls
     /// </summary>
     internal class TextBoxAdorner : Adorner
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Extra space that is shown in the <see cref="System.Windows.Controls.TextBox"/>
@@ -35,18 +35,18 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly VisualCollection _visualChildren;
         private readonly TextBox _textBox;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the <see cref="System.Windows.Controls.TextBox"/>.
@@ -70,9 +70,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TextBoxAdorner"/> class.
@@ -93,9 +93,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private void OnTextBoxLayoutUpdated(object sender, EventArgs eventArgs)
         {

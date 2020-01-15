@@ -8,10 +8,10 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
 using System.Windows.Shapes;
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Draws coordinate cross (a horizontal and a vertical line) inside a chart area.
@@ -27,24 +27,24 @@ namespace DigitalRune.Windows.Charts
     [TemplatePart(Name = "PART_VerticalLine", Type = typeof(Line))]
     public class ChartCross : ChartElement
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private Line _horizontalLine;
         private Line _verticalLine;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="HorizontalLineStyle"/> dependency property.
@@ -137,9 +137,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
         /// <summary>
@@ -162,9 +162,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static void OnOriginChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
         {

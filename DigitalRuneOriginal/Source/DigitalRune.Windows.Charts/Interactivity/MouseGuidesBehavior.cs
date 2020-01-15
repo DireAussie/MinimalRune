@@ -12,31 +12,31 @@ using System.Windows.Media;
 using System.Windows.Shapes;
 
 
-namespace DigitalRune.Windows.Charts.Interactivity
+namespace MinimalRune.Windows.Charts.Interactivity
 {
     /// <summary>
     /// Draws a horizontal and vertical line on the chart area at the position of the mouse cursor.
     /// </summary>
     public class MouseGuidesBehavior : Behavior<ChartPanel>
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private Line _horizontalLine;
         private Line _verticalLine;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------    
+            
 
         /// <summary>
         /// Identifies the <see cref="Color"/> dependency property.
@@ -191,15 +191,15 @@ namespace DigitalRune.Windows.Charts.Interactivity
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static void OnXAxisChangedStatic(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
         {

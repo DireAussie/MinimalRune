@@ -6,7 +6,7 @@
 using Microsoft.Xna.Framework;
 
 
-namespace DigitalRune.Animation.Traits
+namespace MinimalRune.Animation.Traits
 {
   /// <summary>
   /// Describes the properties of a <see cref="Vector2"/>.

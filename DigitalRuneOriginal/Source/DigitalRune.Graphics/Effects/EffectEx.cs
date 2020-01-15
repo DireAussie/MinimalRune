@@ -7,25 +7,25 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Effects
+namespace MinimalRune.Graphics.Effects
 {
   /// <summary>
   /// Provides additional data for an <see cref="Effect"/>.
   /// </summary>
   internal sealed class EffectEx : GraphicsResourceEx<Effect>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>Counts the bindings for this effect during rendering.</summary>
     internal uint BindingCount;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the original effect parameter values as specified in the .fx file.
@@ -65,9 +65,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the <see cref="EffectEx"/> for the specified <see cref="Effect"/>.
@@ -109,9 +109,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
   }
 }

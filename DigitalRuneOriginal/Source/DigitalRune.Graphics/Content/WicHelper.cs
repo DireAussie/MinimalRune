@@ -32,7 +32,7 @@ using SharpDX;
 using SharpDX.WIC;
 
 
-namespace DigitalRune.Graphics.Content
+namespace MinimalRune.Graphics.Content
 {
   /// <summary>
   /// Additional options for <see cref="WicHelper"/>.
@@ -86,9 +86,9 @@ namespace DigitalRune.Graphics.Content
   /// </summary>
   internal static class WicHelper
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // WIC Pixel Format Translation Data
     private struct WicTranslate

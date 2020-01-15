@@ -10,7 +10,7 @@ using System.Windows.Data;
 using System.Windows.Markup;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
     /// Represents a (key, value) pair for use with the <see cref="LookupConverter"/>.

@@ -16,7 +16,7 @@ using System.Windows.Controls.Primitives;
 
 
 
-namespace DigitalRune.Windows.Charts.Interactivity
+namespace MinimalRune.Windows.Charts.Interactivity
 {
     /// <summary>
     /// Allows the user to select objects inside a <see cref="ChartPanel"/> using the mouse.
@@ -59,9 +59,9 @@ namespace DigitalRune.Windows.Charts.Interactivity
     /// </remarks>
     public class ChartSelectionBehavior : Behavior<ChartPanel>
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private bool _mouseLeftButtonDownHandled;
         private Point _mouseDownPosition;
@@ -75,9 +75,9 @@ namespace DigitalRune.Windows.Charts.Interactivity
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------    
+            
 
         /// <summary>
         /// Event raised when a child of the <see cref="DefaultChartPanel"/> is going to be selected
@@ -102,9 +102,9 @@ namespace DigitalRune.Windows.Charts.Interactivity
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="IsEnabled"/> dependency property.
@@ -168,9 +168,9 @@ namespace DigitalRune.Windows.Charts.Interactivity
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="P:DigitalRune.Windows.Charts.Interactivity.ChartSelectionBehavior.IsSelected"/>
@@ -299,15 +299,15 @@ namespace DigitalRune.Windows.Charts.Interactivity
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <overloads>
         /// <summary>

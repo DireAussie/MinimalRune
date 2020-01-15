@@ -12,11 +12,11 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using DigitalRune.Mathematics;
-using DigitalRune.Text;
+using MinimalRune.Mathematics;
+using MinimalRune.Text;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Represents a control that lets the user choose a font.
@@ -33,9 +33,9 @@ namespace DigitalRune.Windows.Controls
     [TemplatePart(Name = "PART_StrikethroughCheckBox", Type = typeof(CheckBox))]
     public class FontChooser : Control
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private TextBox _fontFamilyTextBox;
         private ListBox _fontFamilyListBox;
@@ -52,15 +52,15 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly DependencyPropertyKey IsLoadingPropertyKey = DependencyProperty.RegisterReadOnly(
             "IsLoading",
@@ -286,9 +286,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes the static members of the <see cref="FontChooser"/> class.
@@ -311,9 +311,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// When overridden in a derived class, is invoked whenever application code or internal 

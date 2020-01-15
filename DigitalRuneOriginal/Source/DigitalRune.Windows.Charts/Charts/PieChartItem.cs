@@ -10,7 +10,7 @@ using System.Windows.Media;
 using System.Windows.Shapes;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Renders a sector of the pie chart including labels.
@@ -59,9 +59,9 @@ namespace DigitalRune.Windows.Charts
     [TemplatePart(Name = "PART_OuterLabel", Type = typeof(ContentControl))]
     public class PieChartItem : Control
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private bool _isValid;
         private Path _sectorPath;
@@ -73,15 +73,15 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="CenterX"/> dependency property.
@@ -473,9 +473,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
         /// <summary>
@@ -498,9 +498,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Called when a relevant property is changed and the element needs to be updated.

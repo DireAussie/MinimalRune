@@ -9,7 +9,7 @@ using System.Text;
 using static System.FormattableString;
 
 
-namespace DigitalRune.CommandLine
+namespace MinimalRune.CommandLine
 {
     /// <summary>
     /// Describes a command line switch with a value (such as "--sort=ascending").
@@ -18,15 +18,15 @@ namespace DigitalRune.CommandLine
     [Serializable]
     public class SwitchValueArgument<T> : SwitchArgument
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets the value of the command line switch.
@@ -50,9 +50,9 @@ namespace DigitalRune.CommandLine
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <overloads>
         /// <summary>
@@ -129,9 +129,9 @@ namespace DigitalRune.CommandLine
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public override ArgumentResult Parse(IReadOnlyList<string> args, ref int index)

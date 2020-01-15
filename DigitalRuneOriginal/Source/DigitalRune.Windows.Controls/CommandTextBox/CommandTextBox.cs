@@ -8,7 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Represents a <see cref="TextBox"/> with a watermark and a button.
@@ -20,21 +20,21 @@ namespace DigitalRune.Windows.Controls
     /// </remarks>
     public class CommandTextBox : WatermarkedTextBox
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
-
-
-
-        //--------------------------------------------------------------
-
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
+
+
+
+        
+
+        
 
         /// <summary>
         /// Identifies the <see cref="ButtonContent"/> dependency property.
@@ -83,9 +83,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="CommandTextBox"/> class.
@@ -97,9 +97,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
     }
 }

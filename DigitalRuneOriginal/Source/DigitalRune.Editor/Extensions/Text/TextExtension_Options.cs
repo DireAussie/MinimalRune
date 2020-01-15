@@ -2,36 +2,36 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Collections;
-using DigitalRune.Editor.Options;
-using DigitalRune.Editor.Properties;
+using MinimalRune.Collections;
+using MinimalRune.Editor.Options;
+using MinimalRune.Editor.Properties;
 using ICSharpCode.AvalonEdit;
 
 
-namespace DigitalRune.Editor.Text
+namespace MinimalRune.Editor.Text
 {
     partial class TextExtension
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private MergeableNodeCollection<OptionsPageViewModel> _optionsNodes;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public TextEditorOptions Options { get; private set; }
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private void AddOptions()
         {

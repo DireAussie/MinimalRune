@@ -2,17 +2,17 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Statistics;
-using DigitalRune.Physics;
-using DigitalRune.Physics.Constraints;
-using DigitalRune.Physics.ForceEffects;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Statistics;
+using MinimalRune.Physics;
+using MinimalRune.Physics.Constraints;
+using MinimalRune.Physics.ForceEffects;
 using Microsoft.Devices;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input.Touch;
@@ -515,7 +515,7 @@ collision is detected.",
         // looks down onto the scene. When the phone is tilted we want to rotate the position of
         // the camera. Quaternion contains a useful helper function that creates a rotation from
         // two given directions - exactly what we need here.
-        cameraTilt = Quaternion.CreateRotation(currentGravityDirection, new Vector3(0, -1, 0)).ToRotationMatrix33();
+        cameraTilt = Quaternion.CreateFromRotationMatrix(currentGravityDirection, new Vector3(0, -1, 0)).ToRotationMatrix33();
       }
       else
       {

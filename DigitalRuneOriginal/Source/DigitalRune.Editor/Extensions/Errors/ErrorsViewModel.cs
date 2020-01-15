@@ -8,37 +8,37 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Windows.Data;
 using System.Windows.Input;
-using DigitalRune.Editor.Documents;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Editor.Documents;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Framework;
 
 
-namespace DigitalRune.Editor.Errors
+namespace MinimalRune.Editor.Errors
 {
     /// <summary>
     /// Represents the Errors window.
     /// </summary>
     internal class ErrorsViewModel : EditorDockTabItemViewModel
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         internal const string DockIdString = "Errors";
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly IEditorService _editor;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets an instance of the <see cref="ErrorsViewModel"/> that can be used at
@@ -194,9 +194,9 @@ namespace DigitalRune.Editor.Errors
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ErrorsViewModel" /> class.
@@ -244,9 +244,9 @@ namespace DigitalRune.Editor.Errors
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private void OnItemsChanged(object sender, NotifyCollectionChangedEventArgs eventArgs)
         {

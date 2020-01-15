@@ -13,7 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Represents a text block which displays a trimmed file path, e.g. "C:\...\Abc\Foo.txt".
@@ -26,18 +26,18 @@ namespace DigitalRune.Windows.Controls
     [TemplatePart(Name = "PART_TextBlock", Type = typeof(TextBlock))]
     public class PathTextBlock : Control, ICommandSource
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private Typeface _typeface;
         private TextBlock _textBlock;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="Text"/> dependency property.
@@ -134,9 +134,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="PathTextBlock"/> class.
@@ -157,9 +157,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public override void OnApplyTemplate()

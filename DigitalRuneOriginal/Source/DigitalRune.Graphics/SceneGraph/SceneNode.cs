@@ -5,12 +5,12 @@
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
-using DigitalRune.Geometry;
-using DigitalRune.Graphics.Rendering;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry;
+using MinimalRune.Graphics.Rendering;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Represents an object in a 3D scene.
@@ -207,17 +207,17 @@ namespace DigitalRune.Graphics.SceneGraph
     // When a local pose is changed, the world poses of this node and the world poses all 
     // descendant nodes needs to be updated.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private SceneNodeFlags _flags;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the name of this scene node.
@@ -692,9 +692,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="SceneNode"/> class.
@@ -804,9 +804,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     internal bool GetFlag(SceneNodeFlags flag)
     {

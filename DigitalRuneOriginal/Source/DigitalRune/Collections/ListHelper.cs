@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace DigitalRune.Collections
+namespace MinimalRune.Collections
 {
   /// <summary>
   /// Provides extension methods for <see cref="IList{T}"/>.

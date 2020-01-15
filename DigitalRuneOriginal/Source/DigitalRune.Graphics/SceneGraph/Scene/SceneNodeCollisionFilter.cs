@@ -4,11 +4,11 @@
 
 using System;
 using System.Globalization;
-using DigitalRune.Collections;
-using DigitalRune.Geometry.Partitioning;
+using MinimalRune.Collections;
+using MinimalRune.Geometry.Partitioning;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Filters collisions between scene nodes using their group IDs.
@@ -23,18 +23,18 @@ namespace DigitalRune.Graphics.SceneGraph
   /// </remarks>
   public class SceneNodeCollisionFilter : IPairFilter<SceneNode>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Use jagged array [i][j] for lower triangular matrix where i ≥ j.
     private readonly bool[][] _groupPairFlags;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the scene.
@@ -63,9 +63,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="SceneNodeCollisionFilter"/> class.
@@ -108,9 +108,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Resets this filter. All collisions will be enabled.

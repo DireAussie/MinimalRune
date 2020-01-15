@@ -22,7 +22,7 @@ using NUnit.Framework;
 
 
 
-namespace DigitalRune.Windows.Charts.Tests
+namespace MinimalRune.Windows.Charts.Tests
 {
     [TestFixture]
     public class DateTimeRangeTest

@@ -4,16 +4,16 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Game.Input;
-using DigitalRune.Game.UI.Controls;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Game.Input;
+using MinimalRune.Game.UI.Controls;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework.Input;
 
 using Keys = System.Windows.Input.Key;
 
 
 
-namespace DigitalRune.Game.UI
+namespace MinimalRune.Game.UI
 {
   /// <summary>
   /// Controls which UI control has the focus.
@@ -49,9 +49,9 @@ namespace DigitalRune.Game.UI
   /// </remarks>
   public class FocusManager
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // The focus manager adds a "LastFocusedControl" property to controls that are focus scopes.
     // The property stores the control that had the focus before the focus moved out of the scope.
@@ -64,9 +64,9 @@ namespace DigitalRune.Game.UI
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private IInputService InputService { get { return Screen.InputService; } }
 
@@ -98,9 +98,9 @@ namespace DigitalRune.Game.UI
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="FocusManager"/> class.
@@ -119,9 +119,9 @@ namespace DigitalRune.Game.UI
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Removes the focus from the current <see cref="FocusedControl"/>.

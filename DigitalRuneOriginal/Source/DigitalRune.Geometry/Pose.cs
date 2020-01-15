@@ -6,16 +6,16 @@ using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.Runtime.Serialization;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Interpolation;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Interpolation;
 
 using Microsoft.Xna.Framework;
 
 
 
-namespace DigitalRune.Geometry
+namespace MinimalRune.Geometry
 {
   /// <summary>
   /// A pose defines the position and orientation of a shape in world space (or the parent 
@@ -55,9 +55,9 @@ namespace DigitalRune.Geometry
 
   public struct Pose : IEquatable<Pose>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// A pose with no translation and no rotation.
@@ -66,9 +66,9 @@ namespace DigitalRune.Geometry
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The position.
@@ -94,9 +94,9 @@ namespace DigitalRune.Geometry
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the inverse of this pose.
@@ -149,9 +149,9 @@ namespace DigitalRune.Geometry
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -201,7 +201,7 @@ namespace DigitalRune.Geometry
     public Pose(Vector3 position, Quaternion orientation)
     {
       Position = position;
-      Orientation = orientation.ToRotationMatrix33();
+      Orientation = Matrix.CreateFromQuaternion(orientation);
     }
 
 
@@ -212,14 +212,14 @@ namespace DigitalRune.Geometry
     public Pose(Quaternion orientation)
     {
       Position = Vector3.Zero;
-      Orientation = orientation.ToRotationMatrix33();
+      Orientation = Matrix.CreateFromQuaternion(orientation);
     }
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Indicates whether the current object is equal to another object of the same type.
@@ -257,7 +257,7 @@ namespace DigitalRune.Geometry
 
       // Calculate the inverse of the orientation. 
       // (The inverse of an orthogonal is the same as the transposed matrix.)
-      Orientation.Transpose();     // R'
+      Orientation = Matrix.Transpose(Orientation);     // R'
 
       // Calculate the new translation
       Position = Orientation * -Position; // R'(-t)
@@ -460,9 +460,9 @@ namespace DigitalRune.Geometry
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -550,8 +550,8 @@ namespace DigitalRune.Geometry
 
       // Slerp orientation.
       var interpolatedOrientation = InterpolationHelper.Lerp(
-        Quaternion.CreateRotation(startPose.Orientation),
-        Quaternion.CreateRotation(endPose.Orientation),
+        Quaternion.CreateFromRotationMatrix(startPose.Orientation),
+        Quaternion.CreateFromRotationMatrix(endPose.Orientation),
         parameter);
 
       return new Pose(interpolatedPosition, interpolatedOrientation);
@@ -571,17 +571,17 @@ namespace DigitalRune.Geometry
     /// </remarks>
     public static bool IsValid(Matrix matrix)
     {
-      Vector4F v1 = matrix * Vector4F.UnitX;
-      Vector4F v2 = matrix * Vector4F.UnitY;
-      Vector4F v3 = matrix * Vector4F.UnitZ;
+      Vector4 v1 = matrix * Vector4.UnitX;
+      Vector4 v2 = matrix * Vector4.UnitY;
+      Vector4 v3 = matrix * Vector4.UnitZ;
 
-      return Numeric.AreEqual(v1.LengthSquared, 1)
-             && Numeric.AreEqual(v2.LengthSquared, 1)
-             && Numeric.AreEqual(v3.LengthSquared, 1)
-             && Numeric.IsZero(Vector4F.Dot(v1, v2))
-             && Numeric.IsZero(Vector4F.Dot(v2, v3))
-             && Numeric.IsZero(Vector4F.Dot(v1, v3))
-             && Numeric.AreEqual(1.0f, matrix.Determinant)
+      return Numeric.AreEqual(v1.LengthSquared(), 1)
+             && Numeric.AreEqual(v2.LengthSquared(), 1)
+             && Numeric.AreEqual(v3.LengthSquared(), 1)
+             && Numeric.IsZero(Vector4.Dot(v1, v2))
+             && Numeric.IsZero(Vector4.Dot(v2, v3))
+             && Numeric.IsZero(Vector4.Dot(v1, v3))
+             && Numeric.AreEqual(1.0f, matrix.Determinant())
              && Numeric.IsZero(matrix.M30)
              && Numeric.IsZero(matrix.M31)
              && Numeric.IsZero(matrix.M32)
@@ -590,9 +590,9 @@ namespace DigitalRune.Geometry
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns the hash code for this instance.
@@ -664,9 +664,9 @@ namespace DigitalRune.Geometry
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -758,7 +758,7 @@ namespace DigitalRune.Geometry
     /// Multiplying a pose matrix with a vector is equal to transforming a vector from local space
     /// to world space (or parent space for nested coordinate spaces).
     /// </remarks>
-    public static Vector4F operator *(Pose pose, Vector4F vector)
+    public static Vector4 operator *(Pose pose, Vector4 vector)
     {
       return pose.ToMatrix() * vector;
     }
@@ -774,7 +774,7 @@ namespace DigitalRune.Geometry
     /// Multiplying a pose matrix with a vector is equal to transforming a vector from local space
     /// to world space (or parent space for nested coordinate spaces).
     /// </remarks>
-    public static Vector4F Multiply(Pose pose, Vector4F vector)
+    public static Vector4 Multiply(Pose pose, Vector4 vector)
     {
       return pose.ToMatrix() * vector;
     }

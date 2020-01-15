@@ -7,11 +7,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using DigitalRune.Animation;
-using DigitalRune.Graphics.SceneGraph;
+using MinimalRune.Animation;
+using MinimalRune.Graphics.SceneGraph;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Defines the weights for a set of morph targets.
@@ -58,9 +58,9 @@ namespace DigitalRune.Graphics
     //  - No easy way to Reset() all morph target weights.
     //  - No Clone() mechanism.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     internal sealed class MorphWeightCollectionView
     {
@@ -188,18 +188,18 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly string[] _names;
     private readonly MorphWeight[] _weights;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the name of the <see cref="MorphWeightCollection"/>.
@@ -240,9 +240,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="MorphWeightCollection"/> class for the specified mesh.
@@ -307,9 +307,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static string[] GetMorphTargetNames(Mesh mesh)
     {

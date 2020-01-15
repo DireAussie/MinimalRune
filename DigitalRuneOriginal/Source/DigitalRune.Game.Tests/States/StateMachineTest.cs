@@ -2,7 +2,7 @@
 using NUnit.Framework;
 
 
-namespace DigitalRune.Game.States.Tests
+namespace MinimalRune.Game.States.Tests
 {
   [TestFixture]
   public class StateMachineTest
@@ -814,9 +814,9 @@ namespace DigitalRune.Game.States.Tests
     }
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private State CreateState(string name)
     {

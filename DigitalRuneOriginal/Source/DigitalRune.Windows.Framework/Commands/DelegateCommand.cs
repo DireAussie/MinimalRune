@@ -6,7 +6,7 @@ using System;
 using System.Windows.Input;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// A command that calls .NET delegates to execute and query the state.
@@ -49,9 +49,9 @@ namespace DigitalRune.Windows.Framework
         // -----------------------------------------------------------------------------------------
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly Action _execute;
         private readonly Func<bool> _canExecute;
@@ -61,9 +61,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
         /// <summary>
@@ -97,9 +97,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DelegateCommand"/> class.
@@ -129,9 +129,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Defines the method that determines whether the command can execute in its current state.

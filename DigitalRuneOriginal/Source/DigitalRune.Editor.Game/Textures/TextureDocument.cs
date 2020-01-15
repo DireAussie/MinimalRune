@@ -4,16 +4,16 @@
 
 using System;
 using System.Windows;
-using DigitalRune.Editor.Documents;
-using DigitalRune.Editor.Game;
-using DigitalRune.Editor.Properties;
-using DigitalRune.Graphics;
-using DigitalRune.Windows.Controls;
+using MinimalRune.Editor.Documents;
+using MinimalRune.Editor.Game;
+using MinimalRune.Editor.Properties;
+using MinimalRune.Graphics;
+using MinimalRune.Windows.Controls;
 using Microsoft.Xna.Framework.Graphics;
 using Path = System.IO.Path;
 
 
-namespace DigitalRune.Editor.Textures
+namespace MinimalRune.Editor.Textures
 {
     /// <summary>
     /// Represents a texture.
@@ -23,9 +23,9 @@ namespace DigitalRune.Editor.Textures
     /// </remarks>
     internal class TextureDocument : Document
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly IGraphicsService _graphicsService;
         private readonly IMonoGameService _monoGameService;
@@ -37,9 +37,9 @@ namespace DigitalRune.Editor.Textures
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets the 2D texture.
@@ -58,9 +58,9 @@ namespace DigitalRune.Editor.Textures
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TextureDocument"/> class.
@@ -106,9 +106,9 @@ namespace DigitalRune.Editor.Textures
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         protected override DocumentViewModel OnCreateViewModel()

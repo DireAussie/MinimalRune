@@ -3,13 +3,13 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System.Diagnostics;
-using DigitalRune.Geometry.Partitioning;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Partitioning;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler;
 
 
-namespace DigitalRune.Geometry.Content.Pipeline
+namespace MinimalRune.Geometry.Content.Pipeline
 {
   /// <summary>
   /// Writes a <see cref="CompressedAabbTree"/> to binary format.

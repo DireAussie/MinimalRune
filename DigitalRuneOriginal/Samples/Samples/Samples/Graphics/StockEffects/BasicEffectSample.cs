@@ -1,10 +1,10 @@
 ﻿using System;
-using DigitalRune.Animation;
-using DigitalRune.Animation.Easing;
-using DigitalRune.Geometry;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Animation;
+using MinimalRune.Animation.Easing;
+using MinimalRune.Geometry;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 
 

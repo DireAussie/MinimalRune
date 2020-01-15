@@ -35,7 +35,7 @@ using System;
 using System.Reflection;
 
 
-namespace DigitalRune
+namespace MinimalRune
 {
   /// <summary>
   /// Represents an event that stores the target objects as weak 

@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 
-namespace DigitalRune.CommandLine
+namespace MinimalRune.CommandLine
 {
     /// <summary>
     /// Stores the result of a <see cref="CommandLineParser"/>.<see cref="CommandLineParser.Parse"/>
@@ -15,15 +15,15 @@ namespace DigitalRune.CommandLine
     /// </summary>
     public sealed class ParseResult
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets the original command line arguments which were parsed.
@@ -75,9 +75,9 @@ namespace DigitalRune.CommandLine
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ParseResult" /> class.
@@ -100,9 +100,9 @@ namespace DigitalRune.CommandLine
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
     }
 }

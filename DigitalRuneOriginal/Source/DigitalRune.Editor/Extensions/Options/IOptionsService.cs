@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System.Collections.Generic;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 
 
-namespace DigitalRune.Editor.Options
+namespace MinimalRune.Editor.Options
 {
     /// <summary>
     /// Shows and controls the content of the Options dialog.

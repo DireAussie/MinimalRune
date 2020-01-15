@@ -5,26 +5,26 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using DigitalRune.Collections;
-using DigitalRune.Editor.Commands;
+using MinimalRune.Collections;
+using MinimalRune.Editor.Commands;
 
 
-namespace DigitalRune.Editor.Text
+namespace MinimalRune.Editor.Text
 {
     partial class TextExtension
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly MenuManager _menuManager;
         private MergeableNodeCollection<ICommandItem> _contextMenuNodes;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public ICollection<MergeableNodeCollection<ICommandItem>> ContextMenuNodeCollections
@@ -42,9 +42,9 @@ namespace DigitalRune.Editor.Text
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Creates the structure of the text document's context menu.

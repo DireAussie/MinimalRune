@@ -5,7 +5,7 @@
 using System.Collections.Generic;
 
 
-namespace DigitalRune.Editor.QuickLaunch
+namespace MinimalRune.Editor.QuickLaunch
 {
     /// <summary>
     /// Manages the items available in the Quick Launch box.

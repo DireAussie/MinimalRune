@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Particles.Effectors
+namespace MinimalRune.Particles.Effectors
 {
   /// <summary>
   /// Linearly interpolates a particle parameter of type <see cref="float"/> between a start and an 
@@ -50,9 +50,9 @@ namespace DigitalRune.Particles.Effectors
   /// </remarks>
   public class SingleLerpEffector : ParticleEffector
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private IParticleParameter<float> _startParameter;
     private IParticleParameter<float> _endParameter;
@@ -61,9 +61,9 @@ namespace DigitalRune.Particles.Effectors
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the name of the parameter that stores the interpolation result.
@@ -134,9 +134,9 @@ namespace DigitalRune.Particles.Effectors
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="SingleLerpEffector"/> class.
@@ -148,9 +148,9 @@ namespace DigitalRune.Particles.Effectors
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override ParticleEffector CreateInstanceCore()

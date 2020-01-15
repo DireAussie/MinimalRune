@@ -2,11 +2,11 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Geometry;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Physics.Constraints
+namespace MinimalRune.Physics.Constraints
 {
   /// <summary>
   /// Defines a cylindrical slider joint.
@@ -23,18 +23,18 @@ namespace DigitalRune.Physics.Constraints
   /// </remarks>
   public class CylindricalJoint : Constraint
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly LinearLimit _linearLimit;
     private readonly AngularLimit _angularLimit;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the constraint anchor pose on <see cref="Constraint.BodyA"/> in local space of 
@@ -302,9 +302,9 @@ namespace DigitalRune.Physics.Constraints
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="CylindricalJoint"/> class.
@@ -325,9 +325,9 @@ namespace DigitalRune.Physics.Constraints
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override void OnAddToSimulation()

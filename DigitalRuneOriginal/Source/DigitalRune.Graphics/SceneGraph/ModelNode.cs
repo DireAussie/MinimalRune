@@ -6,11 +6,11 @@ using System;
 
 using System.Collections.Generic;
 using System.Linq;
-using DigitalRune.Animation.Character;
+using MinimalRune.Animation.Character;
 
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Represents a 3D model composed of multiple <see cref="SceneNode"/>s.
@@ -73,21 +73,21 @@ namespace DigitalRune.Graphics.SceneGraph
   /// </remarks>
   public class ModelNode : SceneNode
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
-
-
-
-    //--------------------------------------------------------------
-
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
+
+
+
+    
+
+    
 
     internal void OnAssetLoaded(object sender, EventArgs eventArgs)
     {
@@ -116,9 +116,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

@@ -18,7 +18,7 @@
 
 using System.IO;
 
-namespace DigitalRune.Ionic.Zip
+namespace MinimalRune.Ionic.Zip
 {
     internal class ZipContainer
     {

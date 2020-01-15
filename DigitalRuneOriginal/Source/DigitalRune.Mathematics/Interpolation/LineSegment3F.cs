@@ -4,10 +4,10 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Mathematics.Interpolation
+namespace MinimalRune.Mathematics.Interpolation
 {
   /// <summary>
   /// Defines a 3-dimensional line segment (single-precision).
@@ -72,9 +72,9 @@ namespace DigitalRune.Mathematics.Interpolation
     }
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static readonly ResourcePool<LineSegment3F> Pool = new ResourcePool<LineSegment3F>(
        () => new LineSegment3F(),                     // Create

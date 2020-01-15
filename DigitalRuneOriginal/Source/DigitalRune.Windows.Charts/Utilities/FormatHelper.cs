@@ -6,7 +6,7 @@ using System;
 using System.Globalization;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Provides methods for formatting strings.

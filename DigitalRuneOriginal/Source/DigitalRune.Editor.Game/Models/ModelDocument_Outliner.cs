@@ -4,25 +4,25 @@
 
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using DigitalRune.Animation.Character;
-using DigitalRune.Editor.Outlines;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Windows.Controls;
-using DigitalRune.Windows.Themes;
+using MinimalRune.Animation.Character;
+using MinimalRune.Editor.Outlines;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Windows.Controls;
+using MinimalRune.Windows.Themes;
 using Microsoft.Xna.Framework.Graphics;
 using Material = DigitalRune.Graphics.Material;
 using Mesh = DigitalRune.Graphics.Mesh;
 using Path = System.IO.Path;
 
 
-namespace DigitalRune.Editor.Models
+namespace MinimalRune.Editor.Models
 {
     partial class ModelDocument
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private const string ToolTipGeneral = "Select an item to show additional information in Properties window.";
         private const string ToolTipSceneNode = "Select node to show in Properties window and highlight in 3D view.\n(Highlighting is only visible when animations are stopped.)";
@@ -30,29 +30,29 @@ namespace DigitalRune.Editor.Models
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         internal Outline Outline;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
-
-
-
-        //--------------------------------------------------------------
-
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
+
+
+
+        
+
+        
 
         private void UpdateOutline()
         {

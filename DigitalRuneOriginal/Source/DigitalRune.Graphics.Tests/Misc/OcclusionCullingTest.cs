@@ -1,10 +1,10 @@
-﻿using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+﻿using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Graphics.Tests
+namespace MinimalRune.Graphics.Tests
 {
   [TestFixture]
   public class OcclusionCullingTest
@@ -43,28 +43,28 @@ namespace DigitalRune.Graphics.Tests
       Vector3 minimum = aabbWorld.Minimum;
       Vector3 maximum = aabbWorld.Maximum;
 
-      Vector3 v0 = (viewProj * new Vector4F(minimum.X, minimum.Y, minimum.Z, 1)).XYZ;
+      Vector3 v0 = (viewProj * new Vector4(minimum.X, minimum.Y, minimum.Z, 1)).XYZ;
       Vector3 minimumClip = v0;
       Vector3 maximumClip = v0;
-      Vector3 v1 = (viewProj * new Vector4F(maximum.X, minimum.Y, minimum.Z, 1)).XYZ;
+      Vector3 v1 = (viewProj * new Vector4(maximum.X, minimum.Y, minimum.Z, 1)).XYZ;
       minimumClip = Vector3.Min(minimumClip, v1);
       maximumClip = Vector3.Max(maximumClip, v1);
-      Vector3 v2 = (viewProj * new Vector4F(minimum.X, maximum.Y, minimum.Z, 1)).XYZ;
+      Vector3 v2 = (viewProj * new Vector4(minimum.X, maximum.Y, minimum.Z, 1)).XYZ;
       minimumClip = Vector3.Min(minimumClip, v2);
       maximumClip = Vector3.Max(maximumClip, v2);
-      Vector3 v3 = (viewProj * new Vector4F(maximum.X, maximum.Y, minimum.Z, 1)).XYZ;
+      Vector3 v3 = (viewProj * new Vector4(maximum.X, maximum.Y, minimum.Z, 1)).XYZ;
       minimumClip = Vector3.Min(minimumClip, v3);
       maximumClip = Vector3.Max(maximumClip, v3);
-      Vector3 v4 = (viewProj * new Vector4F(minimum.X, minimum.Y, maximum.Z, 1)).XYZ;
+      Vector3 v4 = (viewProj * new Vector4(minimum.X, minimum.Y, maximum.Z, 1)).XYZ;
       minimumClip = Vector3.Min(minimumClip, v4);
       maximumClip = Vector3.Max(maximumClip, v4);
-      Vector3 v5 = (viewProj * new Vector4F(maximum.X, minimum.Y, maximum.Z, 1)).XYZ;
+      Vector3 v5 = (viewProj * new Vector4(maximum.X, minimum.Y, maximum.Z, 1)).XYZ;
       minimumClip = Vector3.Min(minimumClip, v5);
       maximumClip = Vector3.Max(maximumClip, v5);
-      Vector3 v6 = (viewProj * new Vector4F(minimum.X, maximum.Y, maximum.Z, 1)).XYZ;
+      Vector3 v6 = (viewProj * new Vector4(minimum.X, maximum.Y, maximum.Z, 1)).XYZ;
       minimumClip = Vector3.Min(minimumClip, v6);
       maximumClip = Vector3.Max(maximumClip, v6);
-      Vector3 v7 = (viewProj * new Vector4F(maximum.X, maximum.Y, maximum.Z, 1)).XYZ;
+      Vector3 v7 = (viewProj * new Vector4(maximum.X, maximum.Y, maximum.Z, 1)).XYZ;
       minimumClip = Vector3.Min(minimumClip, v7);
       maximumClip = Vector3.Max(maximumClip, v7);
 
@@ -79,7 +79,7 @@ namespace DigitalRune.Graphics.Tests
       Vector3 maximum = aabbWorld.Maximum;
       Vector3 extent = maximum - minimum;
 
-      Vector3 v0 = (viewProj * new Vector4F(minimum.X, minimum.Y, minimum.Z, 1)).XYZ;
+      Vector3 v0 = (viewProj * new Vector4(minimum.X, minimum.Y, minimum.Z, 1)).XYZ;
       Vector3 minimumClip = v0;
       Vector3 maximumClip = v0;
 
@@ -167,7 +167,7 @@ namespace DigitalRune.Graphics.Tests
       Vector3 minimum = aabbWorld.Minimum;
       Vector3 maximum = aabbWorld.Maximum;
 
-      Vector4F v0 = (viewProj * new Vector4F(minimum.X, minimum.Y, minimum.Z, 1));
+      Vector4 v0 = (viewProj * new Vector4(minimum.X, minimum.Y, minimum.Z, 1));
       Vector3 v;
       if (v0.Z < Numeric.EpsilonF)
         v = new Vector3();
@@ -177,7 +177,7 @@ namespace DigitalRune.Graphics.Tests
       Vector3 minimumClip = v;
       Vector3 maximumClip = v;
 
-      Vector4F v1 = (viewProj * new Vector4F(maximum.X, minimum.Y, minimum.Z, 1));
+      Vector4 v1 = (viewProj * new Vector4(maximum.X, minimum.Y, minimum.Z, 1));
       if (v1.Z < 0)
         v = new Vector3();
       else
@@ -186,7 +186,7 @@ namespace DigitalRune.Graphics.Tests
       minimumClip = Vector3.Min(minimumClip, v);
       maximumClip = Vector3.Max(maximumClip, v);
 
-      Vector4F v2 = (viewProj * new Vector4F(minimum.X, maximum.Y, minimum.Z, 1));
+      Vector4 v2 = (viewProj * new Vector4(minimum.X, maximum.Y, minimum.Z, 1));
       if (v2.Z < 0)
         v = new Vector3();
       else
@@ -195,7 +195,7 @@ namespace DigitalRune.Graphics.Tests
       minimumClip = Vector3.Min(minimumClip, v);
       maximumClip = Vector3.Max(maximumClip, v);
 
-      Vector4F v3 = (viewProj * new Vector4F(maximum.X, maximum.Y, minimum.Z, 1));
+      Vector4 v3 = (viewProj * new Vector4(maximum.X, maximum.Y, minimum.Z, 1));
       if (v3.Z < 0)
         v = new Vector3();
       else
@@ -204,7 +204,7 @@ namespace DigitalRune.Graphics.Tests
       minimumClip = Vector3.Min(minimumClip, v);
       maximumClip = Vector3.Max(maximumClip, v);
 
-      Vector4F v4 = (viewProj * new Vector4F(minimum.X, minimum.Y, maximum.Z, 1));
+      Vector4 v4 = (viewProj * new Vector4(minimum.X, minimum.Y, maximum.Z, 1));
       if (v4.Z < 0)
         v = new Vector3();
       else
@@ -213,7 +213,7 @@ namespace DigitalRune.Graphics.Tests
       minimumClip = Vector3.Min(minimumClip, v);
       maximumClip = Vector3.Max(maximumClip, v);
 
-      Vector4F v5 = (viewProj * new Vector4F(maximum.X, minimum.Y, maximum.Z, 1));
+      Vector4 v5 = (viewProj * new Vector4(maximum.X, minimum.Y, maximum.Z, 1));
       if (v5.Z < 0)
         v = new Vector3();
       else
@@ -222,7 +222,7 @@ namespace DigitalRune.Graphics.Tests
       minimumClip = Vector3.Min(minimumClip, v);
       maximumClip = Vector3.Max(maximumClip, v);
 
-      Vector4F v6 = (viewProj * new Vector4F(minimum.X, maximum.Y, maximum.Z, 1));
+      Vector4 v6 = (viewProj * new Vector4(minimum.X, maximum.Y, maximum.Z, 1));
       if (v6.Z < 0)
         v = new Vector3();
       else
@@ -231,7 +231,7 @@ namespace DigitalRune.Graphics.Tests
       minimumClip = Vector3.Min(minimumClip, v);
       maximumClip = Vector3.Max(maximumClip, v);
 
-      Vector4F v7 = (viewProj * new Vector4F(maximum.X, maximum.Y, maximum.Z, 1));
+      Vector4 v7 = (viewProj * new Vector4(maximum.X, maximum.Y, maximum.Z, 1));
       if (v7.Z < 0)
         v = new Vector3();
       else
@@ -251,18 +251,18 @@ namespace DigitalRune.Graphics.Tests
       Vector3 maximum = aabbWorld.Maximum;
       Vector3 extent = maximum - minimum;
 
-      Vector4F v0 = viewProj * new Vector4F(minimum.X, minimum.Y, minimum.Z, 1);
-      Vector4F d0 = extent.X * viewProj.GetColumn(0);
-      Vector4F d1 = extent.Y * viewProj.GetColumn(1);
-      Vector4F d2 = extent.Z * viewProj.GetColumn(2);
+      Vector4 v0 = viewProj * new Vector4(minimum.X, minimum.Y, minimum.Z, 1);
+      Vector4 d0 = extent.X * viewProj.GetColumn(0);
+      Vector4 d1 = extent.Y * viewProj.GetColumn(1);
+      Vector4 d2 = extent.Z * viewProj.GetColumn(2);
 
-      Vector4F v1 = v0 + d0;
-      Vector4F v2 = v0 + d1;
-      Vector4F v3 = v0 + d2;
-      Vector4F v4 = v1 + d1;
-      Vector4F v5 = v1 + d2;
-      Vector4F v6 = v2 + d2;
-      Vector4F v7 = v4 + d2;
+      Vector4 v1 = v0 + d0;
+      Vector4 v2 = v0 + d1;
+      Vector4 v3 = v0 + d2;
+      Vector4 v4 = v1 + d1;
+      Vector4 v5 = v1 + d2;
+      Vector4 v6 = v2 + d2;
+      Vector4 v7 = v4 + d2;
 
       Vector3 v;
       if (v0.Z < 0)

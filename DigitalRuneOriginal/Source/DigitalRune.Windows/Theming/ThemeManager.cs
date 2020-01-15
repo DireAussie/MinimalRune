@@ -8,7 +8,7 @@ using System.Linq;
 using System.Windows;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
     /// Applies a visual theme to the WPF application or control.
@@ -44,9 +44,9 @@ namespace DigitalRune.Windows
     /// </remarks>
     public static class ThemeManager
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private abstract class ThemeResourceDictionary : ResourceDictionary
         {
@@ -65,9 +65,9 @@ namespace DigitalRune.Windows
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly WeakEvent<EventHandler<ThemeChangedEventArgs>> ThemeChangedEvent = new WeakEvent<EventHandler<ThemeChangedEventArgs>>();
 
@@ -82,15 +82,15 @@ namespace DigitalRune.Windows
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <overloads>
         /// <summary>

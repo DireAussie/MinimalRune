@@ -2,10 +2,10 @@
 using System;
 using System.Linq;
 using DigitalRune;
-using DigitalRune.Game;
-using DigitalRune.Game.UI.Controls;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.PostProcessing;
+using MinimalRune.Game;
+using MinimalRune.Game.UI.Controls;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.PostProcessing;
 using Microsoft.Practices.ServiceLocation;
 
 

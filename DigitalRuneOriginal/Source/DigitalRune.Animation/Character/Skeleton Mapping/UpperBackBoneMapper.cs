@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Animation.Character
+namespace MinimalRune.Animation.Character
 {
   /// <summary>
   /// Maps the orientation of a spine bone in the upper back of a character.
@@ -19,17 +19,17 @@ namespace DigitalRune.Animation.Character
   /// </remarks>
   public class UpperBackBoneMapper : BoneMapper
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private bool _isDirty = true;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the spine bone index for the first skeleton.
@@ -184,9 +184,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="UpperBackBoneMapper"/> class.
@@ -213,9 +213,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Called when <see cref="BoneMapper.Invalidate"/> is called.
@@ -318,7 +318,7 @@ namespace DigitalRune.Animation.Character
       var shoulderAxisB = rightShoulderB - leftShoulderB;
 
       // Create a twist rotation from the shoulder vectors.
-      var shoulderRotation = Quaternion.CreateRotation(shoulderAxisB, shoulderAxisA);
+      var shoulderRotation = Quaternion.CreateFromRotationMatrix(shoulderAxisB, shoulderAxisA);
 
       // Apply this twist to the spine. (Modifies the neckB position.)
       neckB = boneB + shoulderRotation.Rotate(neckB - boneB);
@@ -329,7 +329,7 @@ namespace DigitalRune.Animation.Character
       var spineAxisB = neckB - boneB;
 
       // Create swing rotation from spine vectors.
-      var spineRotation = Quaternion.CreateRotation(spineAxisB, spineAxisA);
+      var spineRotation = Quaternion.CreateFromRotationMatrix(spineAxisB, spineAxisA);
 
       // Apply the shoulder twist rotation followed by the spine swing rotation.
       skeletonB.RotateBoneAbsolute(boneIndexB, spineRotation * shoulderRotation);

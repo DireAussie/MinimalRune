@@ -4,7 +4,7 @@ using System.Windows.Input;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Windows.Framework.Tests
+namespace MinimalRune.Windows.Framework.Tests
 {
     [TestFixture]
     public class DelegateCommandOfTTest

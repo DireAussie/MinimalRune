@@ -1,6 +1,6 @@
-﻿using DigitalRune.Game;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.SceneGraph;
+﻿using MinimalRune.Game;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.SceneGraph;
 using Microsoft.Practices.ServiceLocation;
 
 

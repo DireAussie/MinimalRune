@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Editor.Search
+namespace MinimalRune.Editor.Search
 {
     /// <summary>
     /// Represents a Quick Find combo box in a toolbar.

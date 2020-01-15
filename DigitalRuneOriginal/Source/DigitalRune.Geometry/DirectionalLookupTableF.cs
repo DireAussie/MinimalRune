@@ -4,7 +4,7 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 using System.ComponentModel;
 
@@ -14,7 +14,7 @@ using System.Dynamic;
 
 
 
-namespace DigitalRune.Geometry
+namespace MinimalRune.Geometry
 {
   /// <exclude/>
   [CLSCompliant(false)]
@@ -50,9 +50,9 @@ namespace DigitalRune.Geometry
     // Note: DirectionalLookupTableF<T> is only binary serializable, not xml-serializable.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Face indices.
     private const int PositiveX = 0;
@@ -64,9 +64,9 @@ namespace DigitalRune.Geometry
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The cube map indexed as [face, y, x].
@@ -76,9 +76,9 @@ namespace DigitalRune.Geometry
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the data associated with the specified direction.
@@ -139,9 +139,9 @@ namespace DigitalRune.Geometry
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="DirectionalLookupTableF{T}"/> class. (For 
@@ -165,9 +165,9 @@ namespace DigitalRune.Geometry
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the cube map indices from a direction vector.

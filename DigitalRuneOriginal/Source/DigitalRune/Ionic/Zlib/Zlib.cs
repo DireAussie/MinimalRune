@@ -83,7 +83,7 @@
 // -----------------------------------------------------------------------
 
 
-namespace DigitalRune.Ionic.Zlib
+namespace MinimalRune.Ionic.Zlib
 {
     /// <summary>
     /// Describes how to flush the current deflate operation.

@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   /// <summary>
   /// Defines how the property influences layout and rendering.

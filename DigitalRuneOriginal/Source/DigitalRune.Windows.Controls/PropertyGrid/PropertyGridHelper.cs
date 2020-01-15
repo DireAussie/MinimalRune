@@ -7,11 +7,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 using static System.FormattableString;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Provides helper methods for the <see cref="PropertyGrid"/> control.

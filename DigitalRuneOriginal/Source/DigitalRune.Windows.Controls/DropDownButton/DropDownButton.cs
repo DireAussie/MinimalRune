@@ -14,7 +14,7 @@ using System.Windows.Media;
 using Microsoft.Windows.Themes;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Represents a button that opens a drop-down when the button is clicked.
@@ -84,17 +84,17 @@ namespace DigitalRune.Windows.Controls
         //   Perhaps this is a WPF problem...
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         internal const string PART_DropDownButton = nameof(PART_DropDownButton);
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private ToggleButton _toggleButton;
 
@@ -105,9 +105,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets the button that raises the <see cref="Command"/> and the
@@ -149,9 +149,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="DropDown"/> dependency property.
@@ -288,9 +288,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="DropDownButton"/> class.
@@ -305,9 +305,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Raises the <see cref="DropDownOpened"/> event.

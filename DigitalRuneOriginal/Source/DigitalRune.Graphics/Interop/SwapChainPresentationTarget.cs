@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 
 
-namespace DigitalRune.Graphics.Interop
+namespace MinimalRune.Graphics.Interop
 {
   /// <summary>
   /// Represents a UWP <strong>SwapChainPanel</strong> control that implements
@@ -32,9 +32,9 @@ namespace DigitalRune.Graphics.Interop
 
     IPresentationTarget
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
     private readonly object _dummyLock = new object();
@@ -49,9 +49,9 @@ namespace DigitalRune.Graphics.Interop
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
     /// <inheritdoc/>
@@ -177,9 +177,9 @@ namespace DigitalRune.Graphics.Interop
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
     /// <summary>
@@ -211,9 +211,9 @@ namespace DigitalRune.Graphics.Interop
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]

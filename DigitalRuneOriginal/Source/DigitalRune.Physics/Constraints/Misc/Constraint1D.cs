@@ -3,11 +3,11 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Physics.Constraints
+namespace MinimalRune.Physics.Constraints
 {
   /// <summary>
   /// Wraps a 1-dimensional constraint (a row in the constraint solver matrix).
@@ -28,9 +28,9 @@ namespace DigitalRune.Physics.Constraints
     //   impulse = JWJTInverse * (TargetRelativeVelocity - relativeVelocity - Softness * ConstraintImpulse);
     // This is derived in http://bulletphysics.org/Bullet/phpBB3/viewtopic.php?f=4&t=1354&hilit=cfm.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // The Jacobian matrices J.
     public Vector3 JLinA;
@@ -59,21 +59,21 @@ namespace DigitalRune.Physics.Constraints
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
-
-
-
-    //--------------------------------------------------------------
-
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
+
+
+
+    
+
+    
 
     /// <summary>
     /// Initializes the 1-dimensional constraint.

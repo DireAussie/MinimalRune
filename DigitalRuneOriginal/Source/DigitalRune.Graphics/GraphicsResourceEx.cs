@@ -2,11 +2,11 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Graphics.Effects;
+using MinimalRune.Graphics.Effects;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   // Unfortunately, we cannot easily extend a graphics resource: There is no way for sub-classing 
   // most GraphicsResource types in XNA.

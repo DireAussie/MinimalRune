@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using DigitalRune.Game;
+using MinimalRune.Game;
 using Microsoft.Xna.Framework;
 
 

@@ -1,13 +1,13 @@
 ﻿
-using DigitalRune.Diagnostics;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Particles;
-using DigitalRune.Physics;
-using DigitalRune.Physics.ForceEffects;
+using MinimalRune.Diagnostics;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Particles;
+using MinimalRune.Physics;
+using MinimalRune.Physics.ForceEffects;
 using Microsoft.Xna.Framework;
 
 

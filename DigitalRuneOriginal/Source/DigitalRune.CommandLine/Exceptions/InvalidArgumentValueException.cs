@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 using static System.FormattableString;
 
 
-namespace DigitalRune.CommandLine
+namespace MinimalRune.CommandLine
 {
     /// <summary>
     /// The exception that is thrown when a value of a <see cref="ValueArgument{T}"/> 

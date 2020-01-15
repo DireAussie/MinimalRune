@@ -8,7 +8,7 @@ using System;
 //#endif
 
 
-namespace DigitalRune
+namespace MinimalRune
 {
   /// <exclude/>
   [Obsolete("Use GlobalSettings instead of Global. (Reason: The name Global may conflict with the global keyword in languages other than C#. Therefore the class Global has been renamed to GlobalSettings.)")]

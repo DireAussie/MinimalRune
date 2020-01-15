@@ -14,7 +14,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using DigitalRune.Linq;
+using MinimalRune.Linq;
 
 
 using Window = DigitalRune.Windows.Framework.DialogHost;
@@ -31,16 +31,16 @@ using ClosedEventHandler = System.EventHandler;
 
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// A <see cref="IConductor"/> that controls a window.
     /// </summary>
     internal class WindowConductor : IConductor
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly object _viewModel;
         private readonly Window _view;
@@ -50,15 +50,15 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="WindowConductor"/> class.
@@ -99,9 +99,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private void OnViewClosing(object sender, CancelEventArgs eventArgs)
         {
@@ -215,9 +215,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         IEnumerable<object> IConductor.Items

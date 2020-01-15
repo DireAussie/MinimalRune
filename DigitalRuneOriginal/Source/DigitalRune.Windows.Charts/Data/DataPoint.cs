@@ -7,7 +7,7 @@ using System.Globalization;
 using System.Windows;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Defines a data point in a chart.
@@ -18,9 +18,9 @@ namespace DigitalRune.Windows.Charts
     /// </remarks>
     public struct DataPoint : IFormattable, IEquatable<DataPoint>
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private double _x;
         private double _y;
@@ -28,9 +28,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the point (X, Y).
@@ -89,9 +89,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <overloads>
         /// <summary>
@@ -129,9 +129,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Compares two <see cref="DataPoint"/> structures for equality.

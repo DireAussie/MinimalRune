@@ -7,7 +7,7 @@ using System.ComponentModel;
 using System.Windows;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Represents a property of an instance (any CLR object) shown in a <see cref="PropertyGrid"/>.
@@ -38,9 +38,9 @@ namespace DigitalRune.Windows.Controls
         // Value getter.
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private object _oldValue;
 
@@ -54,9 +54,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public string Category
@@ -155,9 +155,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ReflectedProperty"/> class.
@@ -183,9 +183,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private void OnValueChanged(object sender, EventArgs eventArgs)
         {

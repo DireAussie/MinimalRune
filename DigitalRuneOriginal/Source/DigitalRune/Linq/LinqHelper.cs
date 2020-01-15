@@ -5,10 +5,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 
 
-namespace DigitalRune.Linq
+namespace MinimalRune.Linq
 {
   /// <summary>
   /// Provides new extension methods for LINQ.

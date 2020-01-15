@@ -11,7 +11,7 @@ using System.Windows.Data;
 using System.Windows.Markup;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
   /// <summary>
   /// Represents a collection of <see cref="MultiBinding"/>s.
@@ -27,17 +27,17 @@ namespace DigitalRune.Windows
   {
     // TODO: !Silverlight code path is not tested.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
     
     private FrameworkElement _targetElement;
 
       
       
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the <see cref="MultiBinding"/>s.
@@ -47,9 +47,9 @@ namespace DigitalRune.Windows
 
       
       
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
     
     /// <summary>
     /// Initializes a new instance of the <see cref="MultiBindings"/> class.
@@ -61,9 +61,9 @@ namespace DigitalRune.Windows
 
       
       
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
     private void Loaded(object sender, RoutedEventArgs e)

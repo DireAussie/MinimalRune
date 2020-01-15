@@ -3,11 +3,11 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Geometry.Partitioning;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Geometry.Partitioning;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Manages a collection of 3D objects represented by scene nodes (a.k.a the "scene graph"). 

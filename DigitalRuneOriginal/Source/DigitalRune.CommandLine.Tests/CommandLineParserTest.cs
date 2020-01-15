@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using NUnit.Framework;
 
 
-namespace DigitalRune.CommandLine.Tests
+namespace MinimalRune.CommandLine.Tests
 {
     [TestFixture]
     public class CommandLineParserTest

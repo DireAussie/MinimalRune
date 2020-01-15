@@ -5,10 +5,10 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using DigitalRune.Ionic.Zip;
+using MinimalRune.Ionic.Zip;
 
 
-namespace DigitalRune.Storages
+namespace MinimalRune.Storages
 {
   /// <summary>
   /// Provides access to the files stored in a ZIP archive.
@@ -30,9 +30,9 @@ namespace DigitalRune.Storages
   /// </remarks>
   public class ZipStorage : Storage, IStorageInternal
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly object _lock = new object();
     private readonly Stream _zipStream;
@@ -45,9 +45,9 @@ namespace DigitalRune.Storages
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override char DirectorySeparator
@@ -88,9 +88,9 @@ namespace DigitalRune.Storages
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ZipStorage"/> class.
@@ -194,9 +194,9 @@ namespace DigitalRune.Storages
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override string GetRealPath(string path)

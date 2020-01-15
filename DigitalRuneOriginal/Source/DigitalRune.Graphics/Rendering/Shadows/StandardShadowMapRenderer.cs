@@ -4,12 +4,12 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Graphics.SceneGraph;
+using MinimalRune.Graphics.SceneGraph;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Creates the shadow map of a <see cref="StandardShadow"/>.
@@ -17,18 +17,18 @@ namespace DigitalRune.Graphics.Rendering
   /// <inheritdoc cref="ShadowMapRenderer"/>
   internal class StandardShadowMapRenderer : SceneNodeRenderer, IShadowMapRenderer
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly CameraNode _perspectiveCameraNode;
     private readonly CameraNode _orthographicCameraNode;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public Func<RenderContext, bool> RenderCallback
@@ -46,9 +46,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="StandardShadowMapRenderer"/> class.
@@ -69,9 +69,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override bool CanRender(SceneNode node, RenderContext context)

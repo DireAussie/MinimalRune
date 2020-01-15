@@ -4,7 +4,7 @@
 
 //using System;
 
-//namespace DigitalRune.Diagnostics
+//namespace MinimalRune.Diagnostics
 //{
 //  /// <summary>
 //  /// Automatically calls <see cref="HierarchicalProfiler.Start"/> and 

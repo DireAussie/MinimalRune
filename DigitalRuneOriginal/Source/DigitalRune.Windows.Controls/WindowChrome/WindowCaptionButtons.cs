@@ -7,11 +7,11 @@ using System.ComponentModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using DigitalRune.Windows.Interop;
+using MinimalRune.Windows.Interop;
 using SystemCommands = System.Windows.SystemCommands;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Represent a control that renders the Minimize/Maximize/Close buttons of a window.
@@ -24,9 +24,9 @@ namespace DigitalRune.Windows.Controls
     [TemplatePart(Name = "PART_MinimizeButton", Type = typeof(Button))]
     public class WindowCaptionButtons : Control
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private SafeLibraryHandle _user32;
         private Button _closeButton;
@@ -35,9 +35,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the caption (= tooltip text) of the Close button.
@@ -109,9 +109,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="ShowCloseButton"/> dependency property.
@@ -261,9 +261,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="WindowCaptionButtons"/> class.
@@ -275,9 +275,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private string GetCaption(uint id)
         {

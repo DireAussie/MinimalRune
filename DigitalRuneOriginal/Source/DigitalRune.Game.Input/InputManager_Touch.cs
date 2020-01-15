@@ -8,19 +8,19 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework.Input.Touch;
 
 
-namespace DigitalRune.Game.Input
+namespace MinimalRune.Game.Input
 {
   partial class InputManager
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public TouchCollection TouchCollection
@@ -40,9 +40,9 @@ namespace DigitalRune.Game.Input
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", Justification = "Signature should be consistent with other Update methods.")]
     private void UpdateTouch(TimeSpan deltaTime)

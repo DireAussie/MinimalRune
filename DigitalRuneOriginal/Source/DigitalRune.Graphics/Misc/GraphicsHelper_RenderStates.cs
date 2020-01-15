@@ -5,7 +5,7 @@
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   public static partial class GraphicsHelper
   {

@@ -4,10 +4,10 @@
 
 using System.Collections;
 using System.Linq;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Windows.Framework;
 
 
-namespace DigitalRune.Editor.Status
+namespace MinimalRune.Editor.Status
 {
     /// <summary>
     /// Manages the messages shown in the status bar.

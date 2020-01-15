@@ -7,7 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// Defines an item that invokes an <see cref="ICommand"/>.

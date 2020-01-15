@@ -7,7 +7,7 @@ using System.Globalization;
 using System.Windows.Data;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
     /// Converts a <see cref="string"/> to uppercase. (Global instance to be used by the main menu

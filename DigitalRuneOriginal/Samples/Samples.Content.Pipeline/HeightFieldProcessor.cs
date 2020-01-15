@@ -1,8 +1,8 @@
 
 using System;
 using System.ComponentModel;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics.Content.Pipeline;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics.Content.Pipeline;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Content.Pipeline.Graphics;

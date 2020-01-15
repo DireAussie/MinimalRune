@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.ServiceLocation
+namespace MinimalRune.ServiceLocation
 {
     /// <summary>
     /// Represents an entry in the <see cref="ServiceContainer"/>.

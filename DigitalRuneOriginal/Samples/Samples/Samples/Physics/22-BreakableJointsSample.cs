@@ -1,9 +1,9 @@
-﻿using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Statistics;
-using DigitalRune.Physics;
-using DigitalRune.Physics.Constraints;
-using DigitalRune.Physics.ForceEffects;
+﻿using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Statistics;
+using MinimalRune.Physics;
+using MinimalRune.Physics.Constraints;
+using MinimalRune.Physics.ForceEffects;
 
 
 namespace Samples.Physics

@@ -4,13 +4,13 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics.ForceEffects;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics.ForceEffects;
 
 
-namespace DigitalRune.Physics.Specialized
+namespace MinimalRune.Physics.Specialized
 {
   // This class implements a force effect and handles the Simulation.SubTimeStepFinished
   // event. ForceEffect.OnApply() is called in the physics simulation after the

@@ -1,12 +1,12 @@
 using System;
 using System.Diagnostics;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Statistics;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Statistics;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Geometry.Shapes.Tests
+namespace MinimalRune.Geometry.Shapes.Tests
 {
   [TestFixture]
   public class TriangleTest
@@ -155,7 +155,7 @@ namespace DigitalRune.Geometry.Shapes.Tests
     [Test]
     public void LengthSquaredTest()
     {
-      Assert.AreEqual(4, new LineSegment(new Vector3(1, 2, 3), new Vector3(3, 2, 3)).LengthSquared);
+      Assert.AreEqual(4, new LineSegment(new Vector3(1, 2, 3), new Vector3(3, 2, 3)).LengthSquared());
     }
 
 
@@ -176,9 +176,9 @@ namespace DigitalRune.Geometry.Shapes.Tests
     }
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     [Test]
     public void NegativeScale()

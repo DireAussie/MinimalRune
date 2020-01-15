@@ -4,11 +4,11 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Physics.Constraints
+namespace MinimalRune.Physics.Constraints
 {
   /// <summary>
   /// Defines a constraint that restricts rotational movement. This constraint is configurable
@@ -50,9 +50,9 @@ namespace DigitalRune.Physics.Constraints
   /// </remarks>
   public class AngularLimit : Constraint
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly LimitState[] _limitStates = new LimitState[3];
     private Vector3 _minImpulseLimits;
@@ -66,9 +66,9 @@ namespace DigitalRune.Physics.Constraints
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the constraint anchor orientation on <see cref="Constraint.BodyA"/> in local 
@@ -327,15 +327,15 @@ namespace DigitalRune.Physics.Constraints
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the state of an angular limit about a certain axis.
@@ -518,7 +518,7 @@ namespace DigitalRune.Physics.Constraints
       impulse.Y = ApplyImpulse(1);
       impulse.Z = ApplyImpulse(2);
 
-      return impulse.LengthSquared > Simulation.Settings.Constraints.MinConstraintImpulseSquared;
+      return impulse.LengthSquared() > Simulation.Settings.Constraints.MinConstraintImpulseSquared;
     }
 
 

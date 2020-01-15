@@ -1,8 +1,8 @@
 ﻿using System;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Particles;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Particles;
 
 
 namespace Samples.Particles
@@ -21,9 +21,9 @@ namespace Samples.Particles
   // can be found in the user documentation of DigitalRune Particles.
   public class CollisionPlaneEffector : ParticleEffector
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private IParticleParameter<Vector3> _positionParameter;
     private IParticleParameter<Vector3> _directionParameter;
@@ -32,9 +32,9 @@ namespace Samples.Particles
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     [ParticleParameter(ParticleParameterUsage.In)]
     public string PositionParameter { get; set; }
@@ -58,9 +58,9 @@ namespace Samples.Particles
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     public CollisionPlaneEffector()
     {
@@ -72,9 +72,9 @@ namespace Samples.Particles
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

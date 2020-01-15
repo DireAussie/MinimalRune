@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Media;
-using DigitalRune.Windows.Controls;
+using MinimalRune.Windows.Controls;
 
 
 namespace WindowsThemesApp.Views

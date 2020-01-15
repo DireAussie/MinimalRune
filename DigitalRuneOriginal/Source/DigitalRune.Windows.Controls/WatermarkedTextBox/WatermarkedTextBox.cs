@@ -10,7 +10,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Represents a <see cref="TextBox"/>, which shows a watermark (a custom object, usually a
@@ -23,23 +23,23 @@ namespace DigitalRune.Windows.Controls
     [TemplatePart(Name = "PART_ContentHost", Type = typeof(ScrollViewer))]
     public class WatermarkedTextBox : TextBox
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private ScrollViewer _contentHost;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="ClearOnEscape"/> dependency property.
@@ -186,9 +186,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="WatermarkedTextBox"/> class.
@@ -200,9 +200,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// When overridden in a derived class, is invoked whenever application code or internal

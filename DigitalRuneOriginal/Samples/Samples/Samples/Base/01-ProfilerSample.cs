@@ -3,8 +3,8 @@
 #define DIGITALRUNE_PROFILE
 
 using System;
-using DigitalRune.Diagnostics;
-using DigitalRune.Threading;
+using MinimalRune.Diagnostics;
+using MinimalRune.Threading;
 
 
 namespace Samples.Base

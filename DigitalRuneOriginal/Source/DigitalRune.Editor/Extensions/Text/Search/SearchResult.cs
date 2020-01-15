@@ -4,30 +4,30 @@
 
 using System;
 using System.Text.RegularExpressions;
-using DigitalRune.Editor.Search;
+using MinimalRune.Editor.Search;
 using ICSharpCode.AvalonEdit.Document;
 using ICSharpCode.AvalonEdit.Folding;
 
 
-namespace DigitalRune.Editor.Text
+namespace MinimalRune.Editor.Text
 {
     /// <summary>
     /// Represents a result of a text search in a <see cref="TextDocument"/>.
     /// </summary>
     internal class SearchResult : TextSegment, ISearchResult
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly TextDocument _document;
         private readonly Match _match;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public bool IsSelected
@@ -97,9 +97,9 @@ namespace DigitalRune.Editor.Text
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchResult"/> class.
@@ -124,9 +124,9 @@ namespace DigitalRune.Editor.Text
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public void Replace(string replacement)

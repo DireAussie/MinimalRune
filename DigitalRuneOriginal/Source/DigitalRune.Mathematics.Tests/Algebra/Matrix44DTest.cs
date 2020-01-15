@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Mathematics.Algebra.Tests
+namespace MinimalRune.Mathematics.Algebra.Tests
 {
   [TestFixture]
   public class Matrix44DTest
@@ -432,11 +432,11 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     public void Transpose()
     {
       Matrix44D m = new Matrix44D(rowMajor, MatrixOrder.RowMajor);
-      m.Transpose();
+      m = Matrix.Transpose(m);
       Matrix44D mt = new Matrix44D(rowMajor, MatrixOrder.ColumnMajor);
       Assert.AreEqual(mt, m);
       Matrix44D i = Matrix44D.Identity;
-      i.Transpose();
+      i = Matrix.Transpose(i);
       Assert.AreEqual(Matrix44D.Identity, i);
     }
 
@@ -541,13 +541,13 @@ namespace DigitalRune.Mathematics.Algebra.Tests
                                 5, 6, 7, 8,
                                 9, 10, 11, 12,
                                 13, 14, 15, 16);
-      Assert.AreEqual(0, m.Determinant);
+      Assert.AreEqual(0, m.Determinant());
 
       m = new Matrix44D(1, 2, 3, 4,
                        -3, 4, 5, 6,
                        2, -5, 7, 4,
                        10, 2, -3, 9);
-      Assert.AreEqual(1142, m.Determinant);
+      Assert.AreEqual(1142, m.Determinant());
     }
 
 
@@ -1917,9 +1917,9 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     }
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     [Test]
     public void CreateOrthographicTest()

@@ -4,11 +4,11 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Physics.Materials
+namespace MinimalRune.Physics.Materials
 {
   /// <summary>
   /// Defines a material with different materials for each shape feature of a rigid body.
@@ -35,15 +35,15 @@ namespace DigitalRune.Physics.Materials
   /// </remarks>
   public class CompositeMaterial : IMaterial
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the default material that is used for shape features that have no entry
@@ -70,9 +70,9 @@ namespace DigitalRune.Physics.Materials
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -107,9 +107,9 @@ namespace DigitalRune.Physics.Materials
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the <see cref="MaterialProperties"/> for the given rigid body, position and shape

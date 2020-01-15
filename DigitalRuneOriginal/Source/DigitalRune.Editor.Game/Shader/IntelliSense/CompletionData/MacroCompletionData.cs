@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-using DigitalRune.Windows.Themes;
+using MinimalRune.Windows.Themes;
 
 
-namespace DigitalRune.Editor.Shader
+namespace MinimalRune.Editor.Shader
 {
     /// <summary>
     /// Code completion data for macros of the shader language.

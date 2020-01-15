@@ -1,11 +1,11 @@
 using System;
-using DigitalRune.Geometry.Collisions.Algorithms;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Collisions.Algorithms;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Geometry.Collisions.Tests
+namespace MinimalRune.Geometry.Collisions.Tests
 {
   [TestFixture]
   public class CollisionDetectionTest

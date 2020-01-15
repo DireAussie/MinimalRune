@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.Editor.Outlines
+namespace MinimalRune.Editor.Outlines
 {
     /// <summary>
     /// Provides the Outline window for browsing object hierarchies.

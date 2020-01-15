@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using DigitalRune;
-using DigitalRune.Diagnostics;
-using DigitalRune.Geometry;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Statistics;
+using MinimalRune.Diagnostics;
+using MinimalRune.Geometry;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Statistics;
 using Microsoft.Xna.Framework;
 
 

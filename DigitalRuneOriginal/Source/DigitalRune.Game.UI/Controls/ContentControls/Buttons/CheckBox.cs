@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   /// <summary>
   /// Represents a check box.
@@ -16,7 +16,7 @@ namespace DigitalRune.Game.UI.Controls
   /// <![CDATA[
   /// var checkBox = new CheckBox
   /// {
-  ///   Margin = new Vector4F(4),
+  ///   Margin = new Vector4(4),
   ///   Content = new TextBlock { Text = "Enable feature XYZ" },
   ///   IsChecked = true
   /// };

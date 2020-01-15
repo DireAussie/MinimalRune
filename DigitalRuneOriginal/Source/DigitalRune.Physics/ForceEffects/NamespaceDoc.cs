@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-namespace DigitalRune.Physics.ForceEffects
+namespace MinimalRune.Physics.ForceEffects
 {
   /// <summary>
   /// The <see cref="N:DigitalRune.Physics.ForceEffects"/> namespace provides force effects that

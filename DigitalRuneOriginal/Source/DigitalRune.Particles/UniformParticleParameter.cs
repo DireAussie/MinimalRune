@@ -5,14 +5,14 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Animation;
+using MinimalRune.Animation;
 
 
 using Microsoft.Xna.Framework.Content;
 
 
 
-namespace DigitalRune.Particles
+namespace MinimalRune.Particles
 {  
   /// <summary>
   /// Represents a uniform particle parameter. (All particles have the same parameter value.)
@@ -102,9 +102,9 @@ namespace DigitalRune.Particles
     }
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     bool IAnimatableProperty.HasBaseValue

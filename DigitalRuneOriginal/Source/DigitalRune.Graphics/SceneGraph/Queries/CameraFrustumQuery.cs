@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Returns the scene nodes that touch a specific reference scene node (usually the 
@@ -28,15 +28,15 @@ namespace DigitalRune.Graphics.SceneGraph
   /// </remarks>
   public class CameraFrustumQuery : ISceneQuery
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public SceneNode ReferenceNode { get; private set; }
@@ -51,9 +51,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="CameraFrustumQuery"/> class.
@@ -65,9 +65,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public void Reset()

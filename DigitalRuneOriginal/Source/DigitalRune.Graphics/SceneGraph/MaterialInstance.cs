@@ -5,10 +5,10 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Graphics.Effects;
+using MinimalRune.Graphics.Effects;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Represents an instance of a specific material.
@@ -62,17 +62,17 @@ namespace DigitalRune.Graphics.SceneGraph
   [DebuggerDisplay("{GetType().Name,nq}(Name = {Material.Name})")]
   public partial class MaterialInstance : IDictionary<string, EffectBinding>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private Dictionary<string, EffectBinding> _bindingsPerPass;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the material.
@@ -148,9 +148,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="MaterialInstance"/> class.
@@ -189,9 +189,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns an enumerator that iterates through a collection. 

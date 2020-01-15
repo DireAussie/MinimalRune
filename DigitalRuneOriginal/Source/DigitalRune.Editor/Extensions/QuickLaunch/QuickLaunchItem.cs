@@ -3,11 +3,11 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System.Windows.Input;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Themes;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Themes;
 
 
-namespace DigitalRune.Editor.QuickLaunch
+namespace MinimalRune.Editor.QuickLaunch
 {
     /// <summary>
     /// Represents an item (search result) in the Quick Launch box.

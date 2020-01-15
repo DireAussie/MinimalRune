@@ -3,13 +3,13 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Graphics.Rendering;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Graphics.Rendering;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Defines a cascaded shadow that can be used for <see cref="DirectionalLight"/>s.
@@ -38,21 +38,21 @@ namespace DigitalRune.Graphics
   /// </remarks>
   public class CascadedShadow : Shadow
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Cached values.
     // Transformation from world space to shadow map.
     internal Matrix[] ViewProjections = new Matrix[4];
-    internal Vector4F EffectiveDepthBias;      // Bias in light space [0, 1] range. Usually negative.
-    internal Vector4F EffectiveNormalOffset;   // Offset in world space.
+    internal Vector4 EffectiveDepthBias;      // Bias in light space [0, 1] range. Usually negative.
+    internal Vector4 EffectiveNormalOffset;   // Offset in world space.
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc cref="Shadow.ShadowMap"/>
     public new RenderTarget2D ShadowMap
@@ -103,7 +103,7 @@ namespace DigitalRune.Graphics
     /// 80 units in front of the camera.
     /// </para>
     /// </remarks>
-    public Vector4F Distances { get; set; }
+    public Vector4 Distances { get; set; }
 
 
     /// <summary>
@@ -149,7 +149,7 @@ namespace DigitalRune.Graphics
     /// artifacts.
     /// </para>
     /// </remarks>
-    public Vector4F DepthBias { get; set; }
+    public Vector4 DepthBias { get; set; }
 
 
     /// <summary>
@@ -180,7 +180,7 @@ namespace DigitalRune.Graphics
     /// artifacts.
     /// </para>
     /// </remarks>
-    public Vector4F NormalOffset { get; set; }
+    public Vector4 NormalOffset { get; set; }
 
 
     /// <summary>
@@ -361,7 +361,7 @@ namespace DigitalRune.Graphics
     /// the occluder (a.k.a. "Peter Panning").
     /// </remarks>
     [Obsolete("The properties DepthBiasScale and DepthBiasOffset have been replaced by DepthBias.")]
-    public Vector4F DepthBiasScale { get; set; }
+    public Vector4 DepthBiasScale { get; set; }
 
 
     /// <summary>
@@ -376,14 +376,14 @@ namespace DigitalRune.Graphics
     /// occluder (a.k.a. "Peter Panning").
     /// </remarks>
     [Obsolete("The properties DepthBiasScale and DepthBiasOffset have been replaced by DepthBias.")]
-    public Vector4F DepthBiasOffset { get; set; }
+    public Vector4 DepthBiasOffset { get; set; }
 
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="CascadedShadow"/> class.
@@ -391,10 +391,10 @@ namespace DigitalRune.Graphics
     public CascadedShadow()
     {
       NumberOfCascades = 4;
-      Distances = new Vector4F(4, 12, 20, 80);
+      Distances = new Vector4(4, 12, 20, 80);
       MinLightDistance = 100;
-      DepthBias = new Vector4F(5);
-      NormalOffset = new Vector4F(2);
+      DepthBias = new Vector4(5);
+      NormalOffset = new Vector4(2);
       NumberOfSamples = -1;
       FilterRadius = 1;
       JitterResolution = 2048;
@@ -410,16 +410,16 @@ namespace DigitalRune.Graphics
       SplitDistribution = 0.9f;
       FadeOutDistance = 50;
       MaxDistance = 70;
-      DepthBiasScale = new Vector4F(0.99f);
-      DepthBiasOffset = new Vector4F(-0.001f);
+      DepthBiasScale = new Vector4(0.99f);
+      DepthBiasOffset = new Vector4(-0.001f);
 #pragma warning restore 618
     }
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
@@ -485,7 +485,7 @@ namespace DigitalRune.Graphics
     /// <paramref name="numberOfCascades"/> is greater than 4. Or,
     /// <paramref name="splitDistribution"/> is not in the range [0, 1].
     /// </exception>
-    public static Vector4F ComputeSplitDistances(float near, float maxDistance,
+    public static Vector4 ComputeSplitDistances(float near, float maxDistance,
       int numberOfCascades, float splitDistribution)
     {
       // lambda = 0 --> Uniform split scheme
@@ -497,7 +497,7 @@ namespace DigitalRune.Graphics
       if (numberOfCascades > 4)
         throw new ArgumentOutOfRangeException("numberOfCascades", "The number of cascades must be 4 or less.");
 
-      var splits = new Vector4F();
+      var splits = new Vector4();
 
       // Compute distances using the practical split scheme:
       //   SplitUniform(i) = near + (maxDistance - near) * i / numberOfSplits;

@@ -4,13 +4,13 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 
 using Microsoft.Xna.Framework.Content;
 
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Plays back a clip of another animation timeline.
@@ -74,15 +74,15 @@ namespace DigitalRune.Animation
   /// </remarks>
   public class TimelineClip : ITimeline
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the original animation timeline from which a clip is played back.
@@ -299,9 +299,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -342,9 +342,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public AnimationInstance CreateInstance()

@@ -26,7 +26,7 @@ using System.Windows.Data;
 using System.Windows.Markup;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
   /// <summary>
   /// Allows to set data bindings in Silverlight styles. (Only available in Silverlight and on
@@ -99,15 +99,15 @@ namespace DigitalRune.Windows
   [ContentProperty("Values")]
   public class SetterValueBindingHelper
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets an optional type parameter used to specify the type of an attached
@@ -152,9 +152,9 @@ namespace DigitalRune.Windows
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Identifies the <strong>PropertyBinding</strong> attached dependency property.
@@ -205,15 +205,15 @@ namespace DigitalRune.Windows
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Change handler for the <strong>PropertyBinding</strong> attached dependency property.

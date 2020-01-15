@@ -5,7 +5,7 @@
 using System.Collections.ObjectModel;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// Manages a collection of toolbars.

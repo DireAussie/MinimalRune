@@ -3,8 +3,8 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Game.Input;
-using DigitalRune.Game.UI.Controls;
+using MinimalRune.Game.Input;
+using MinimalRune.Game.UI.Controls;
 
 using Keys = Microsoft.Xna.Framework.Input.Keys;
 #else
@@ -12,7 +12,7 @@ using Keys = System.Windows.Input.Key;
 
 
 
-namespace DigitalRune.Game.UI
+namespace MinimalRune.Game.UI
 {
   /// <summary>
   /// Provides the ability to configure and control the graphical user interface.

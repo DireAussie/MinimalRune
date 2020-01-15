@@ -1,5 +1,5 @@
-﻿using DigitalRune.Windows.Framework;
-using DigitalRune.Editor;
+﻿using MinimalRune.Windows.Framework;
+using MinimalRune.Editor;
 using Microsoft.Practices.ServiceLocation;
 
 
@@ -7,17 +7,17 @@ namespace EditorApp
 {
     internal sealed class TestDockTabItemViewModel : EditorDockTabItemViewModel
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         public new const string DockId = "TestView";
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         public DelegateCommand PrintPreviewCommand { get; private set; }
 
@@ -25,9 +25,9 @@ namespace EditorApp
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         public TestDockTabItemViewModel()
         {
@@ -41,9 +41,9 @@ namespace EditorApp
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static void ShowPrintPreview()
         {

@@ -7,31 +7,31 @@ using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
-using DigitalRune.Editor;
-using DigitalRune.Editor.About;
-using DigitalRune.Editor.Colors;
-using DigitalRune.Editor.Commands;
-using DigitalRune.Editor.Diagnostics;
-using DigitalRune.Editor.Documents;
-using DigitalRune.Editor.Errors;
-using DigitalRune.Editor.Game;
-using DigitalRune.Editor.Properties;
-using DigitalRune.Editor.Options;
-using DigitalRune.Editor.Output;
-using DigitalRune.Editor.Printing;
-using DigitalRune.Editor.QuickLaunch;
-using DigitalRune.Editor.Search;
-using DigitalRune.Editor.Status;
-using DigitalRune.Editor.Themes;
-using DigitalRune.Editor.Layout;
-using DigitalRune.Editor.Models;
-using DigitalRune.Editor.Outlines;
-using DigitalRune.Editor.Shader;
-using DigitalRune.Editor.Text;
-using DigitalRune.Editor.Textures;
-using DigitalRune.ServiceLocation;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Editor;
+using MinimalRune.Editor.About;
+using MinimalRune.Editor.Colors;
+using MinimalRune.Editor.Commands;
+using MinimalRune.Editor.Diagnostics;
+using MinimalRune.Editor.Documents;
+using MinimalRune.Editor.Errors;
+using MinimalRune.Editor.Game;
+using MinimalRune.Editor.Properties;
+using MinimalRune.Editor.Options;
+using MinimalRune.Editor.Output;
+using MinimalRune.Editor.Printing;
+using MinimalRune.Editor.QuickLaunch;
+using MinimalRune.Editor.Search;
+using MinimalRune.Editor.Status;
+using MinimalRune.Editor.Themes;
+using MinimalRune.Editor.Layout;
+using MinimalRune.Editor.Models;
+using MinimalRune.Editor.Outlines;
+using MinimalRune.Editor.Shader;
+using MinimalRune.Editor.Text;
+using MinimalRune.Editor.Textures;
+using MinimalRune.ServiceLocation;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Framework;
 using NLog;
 
 
@@ -40,9 +40,9 @@ namespace EditorApp
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1001:TypesThatOwnDisposableFieldsShouldBeDisposable")]
     public class AppBootstrapper : Bootstrapper
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private const string UniqueName = "DigitalRune_EditorApp";
         private const string ApplicationName = "EditorApp";
@@ -51,9 +51,9 @@ namespace EditorApp
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
@@ -64,21 +64,21 @@ namespace EditorApp
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
-
-
-
-        //--------------------------------------------------------------
-
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
+
+
+
+        
+
+        
 
         protected override void OnConfigure()
         {

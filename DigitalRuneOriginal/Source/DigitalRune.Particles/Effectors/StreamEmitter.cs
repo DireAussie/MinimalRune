@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Content;
 
 
 
-namespace DigitalRune.Particles.Effectors
+namespace MinimalRune.Particles.Effectors
 {
   /// <summary>
   /// Creates particles at a configurable emission rate.
@@ -34,9 +34,9 @@ namespace DigitalRune.Particles.Effectors
   /// </remarks>
   public class StreamEmitter : ParticleEffector
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
     
     private IParticleParameter<float> _emissionRateParameter;
     private float _leftoverParticles;
@@ -44,9 +44,9 @@ namespace DigitalRune.Particles.Effectors
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the name of the particle parameter that defines the emission rate (particles 
@@ -92,9 +92,9 @@ namespace DigitalRune.Particles.Effectors
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="StreamEmitter"/> class.
@@ -107,9 +107,9 @@ namespace DigitalRune.Particles.Effectors
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override ParticleEffector CreateInstanceCore()

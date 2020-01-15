@@ -8,11 +8,11 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Globalization;
-using DigitalRune.Geometry.Collisions.Algorithms;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Collisions.Algorithms;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry.Collisions
+namespace MinimalRune.Geometry.Collisions
 {
   /// <summary>
   /// A collection of <see cref="Contact"/>s that describe the contact points or closest points
@@ -47,9 +47,9 @@ namespace DigitalRune.Geometry.Collisions
     // referenced from different places, therefore the order of a and b should be constant.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Dummy CollisionObjects required for un-/initialization of ContactSets.
     private static readonly List<Contact> Empty = new List<Contact>(0);
@@ -63,9 +63,9 @@ namespace DigitalRune.Geometry.Collisions
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
@@ -307,9 +307,9 @@ namespace DigitalRune.Geometry.Collisions
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Prevents a default instance of the <see cref="ContactSet"/> class from being created.
@@ -420,9 +420,9 @@ namespace DigitalRune.Geometry.Collisions
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private void EnsureList()
     {

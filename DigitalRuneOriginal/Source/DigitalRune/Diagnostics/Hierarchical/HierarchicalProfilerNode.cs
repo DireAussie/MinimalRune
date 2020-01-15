@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 
 
-namespace DigitalRune.Diagnostics
+namespace MinimalRune.Diagnostics
 {
   /// <summary>
   /// Defines a node in the hierarchical measurements of a <see cref="HierarchicalProfiler"/>.
@@ -32,9 +32,9 @@ namespace DigitalRune.Diagnostics
   [DebuggerDisplay("{GetType().Name,nq}(Name = {Name})")]
   public class HierarchicalProfilerNode : INamedObject
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private TimeSpan _startTime; 
 
@@ -46,9 +46,9 @@ namespace DigitalRune.Diagnostics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the name of this node.
@@ -147,9 +147,9 @@ namespace DigitalRune.Diagnostics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="HierarchicalProfilerNode"/> class.
@@ -180,9 +180,9 @@ namespace DigitalRune.Diagnostics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Resets this node, all siblings and all children.

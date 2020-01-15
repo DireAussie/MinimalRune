@@ -6,16 +6,16 @@ using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.Runtime.Serialization;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Interpolation;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Interpolation;
 
 using Microsoft.Xna.Framework;
 
 
 
-namespace DigitalRune.Geometry
+namespace MinimalRune.Geometry
 {
   /// <summary>
   /// A pose defines the position and orientation of a shape in world space (or the parent 
@@ -37,9 +37,9 @@ namespace DigitalRune.Geometry
 
   public struct PoseD : IEquatable<PoseD>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// A pose with no translation and no rotation.
@@ -48,9 +48,9 @@ namespace DigitalRune.Geometry
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The position.
@@ -76,9 +76,9 @@ namespace DigitalRune.Geometry
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the inverse of this pose.
@@ -131,9 +131,9 @@ namespace DigitalRune.Geometry
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -183,7 +183,7 @@ namespace DigitalRune.Geometry
     public PoseD(Vector3D position, QuaternionD orientation)
     {
       Position = position;
-      Orientation = orientation.ToRotationMatrix33();
+      Orientation = Matrix.CreateFromQuaternion(orientation);
     }
 
 
@@ -194,14 +194,14 @@ namespace DigitalRune.Geometry
     public PoseD(QuaternionD orientation)
     {
       Position = Vector3D.Zero;
-      Orientation = orientation.ToRotationMatrix33();
+      Orientation = Matrix.CreateFromQuaternion(orientation);
     }
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Indicates whether the current object is equal to another object of the same type.
@@ -239,7 +239,7 @@ namespace DigitalRune.Geometry
 
       // Calculate the inverse of the orientation. 
       // (The inverse of an orthogonal is the same as the transposed matrix.)
-      Orientation.Transpose();     // R'
+      Orientation = Matrix.Transpose(Orientation);     // R'
 
       // Calculate the new translation
       Position = Orientation * -Position; // R'(-t)
@@ -443,9 +443,9 @@ namespace DigitalRune.Geometry
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -558,13 +558,13 @@ namespace DigitalRune.Geometry
       Vector4D v2 = matrix * Vector4D.UnitY;
       Vector4D v3 = matrix * Vector4D.UnitZ;
 
-      return Numeric.AreEqual(v1.LengthSquared, 1)
-             && Numeric.AreEqual(v2.LengthSquared, 1)
-             && Numeric.AreEqual(v3.LengthSquared, 1)
+      return Numeric.AreEqual(v1.LengthSquared(), 1)
+             && Numeric.AreEqual(v2.LengthSquared(), 1)
+             && Numeric.AreEqual(v3.LengthSquared(), 1)
              && Numeric.IsZero(Vector4D.Dot(v1, v2))
              && Numeric.IsZero(Vector4D.Dot(v2, v3))
              && Numeric.IsZero(Vector4D.Dot(v1, v3))
-             && Numeric.AreEqual(1.0, matrix.Determinant)
+             && Numeric.AreEqual(1.0, matrix.Determinant())
              && Numeric.IsZero(matrix.M30)
              && Numeric.IsZero(matrix.M31)
              && Numeric.IsZero(matrix.M32)
@@ -573,9 +573,9 @@ namespace DigitalRune.Geometry
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns the hash code for this instance.
@@ -647,9 +647,9 @@ namespace DigitalRune.Geometry
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>

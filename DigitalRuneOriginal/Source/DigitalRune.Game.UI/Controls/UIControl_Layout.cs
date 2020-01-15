@@ -4,18 +4,18 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Game.UI.Rendering;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Game.UI.Rendering;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   public partial class UIControl
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private bool _isMeasureInProgress;
     private bool _isArrangeInProgress;
@@ -27,9 +27,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the desired width (including <see cref="Margin"/>) (which is computed in
@@ -165,9 +165,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Invalidates the measurement state (layout) for the control.
@@ -278,7 +278,7 @@ namespace DigitalRune.Game.UI.Controls
       _isMeasureInProgress = true;
 
       // Subtract margin before calling OnMeasure().
-      Vector4F margin = Margin;
+      Vector4 margin = Margin;
       availableSize.X -= margin.X + margin.Z;
       availableSize.Y -= margin.Y + margin.W;
 
@@ -401,7 +401,7 @@ namespace DigitalRune.Game.UI.Controls
       _isArrangeInProgress = true;
 
       // Determine actual position.
-      Vector4F margin = Margin;
+      Vector4 margin = Margin;
       ActualX = position.X + margin.X;
       ActualY = position.Y + margin.Y;
 

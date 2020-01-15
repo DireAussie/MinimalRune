@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.Editor.About
+namespace MinimalRune.Editor.About
 {
     /// <summary>
     /// Represents the About dialog.

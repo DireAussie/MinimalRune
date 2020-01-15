@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Data;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
   /// <summary>
   /// Provides a mechanism for attaching <see cref="MultiBindings"/> to an element.
@@ -32,15 +32,15 @@ namespace DigitalRune.Windows
     // the PropertyChangedCallback and we can pass the new DataContext on to the MultiBindings.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Identifies the <strong>AttachedDataContext</strong> attached dependency property.
@@ -127,15 +127,15 @@ namespace DigitalRune.Windows
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static void OnAttachedDataContextChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
     {

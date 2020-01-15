@@ -15,7 +15,7 @@ using Microsoft.Xna.Framework.Content.Pipeline.Processors;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Content.Pipeline
+namespace MinimalRune.Graphics.Content.Pipeline
 {
   /// <summary>
   /// Builds a material, which can be used for rendering a model.
@@ -23,9 +23,9 @@ namespace DigitalRune.Graphics.Content.Pipeline
   [ContentProcessor(DisplayName = "Material - DigitalRune Graphics")]
   public class DRMaterialProcessor : ContentProcessor<MaterialContent, DRMaterialContent>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The name of the default render pass.
@@ -34,9 +34,9 @@ namespace DigitalRune.Graphics.Content.Pipeline
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the color used when color keying for a texture is enabled. When color keying, 
@@ -257,9 +257,9 @@ namespace DigitalRune.Graphics.Content.Pipeline
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Processes the specified input data and returns the result.

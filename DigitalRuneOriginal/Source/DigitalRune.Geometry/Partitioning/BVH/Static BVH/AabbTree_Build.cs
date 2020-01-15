@@ -5,11 +5,11 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Linq;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Linq;
 
 
-namespace DigitalRune.Geometry.Partitioning
+namespace MinimalRune.Geometry.Partitioning
 {
   partial class AabbTree<T>
   {

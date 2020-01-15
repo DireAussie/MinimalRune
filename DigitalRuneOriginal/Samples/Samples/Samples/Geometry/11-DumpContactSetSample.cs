@@ -3,12 +3,12 @@ using System;
 using System.Globalization;
 using System.IO;
 using System.Text;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Geometry.Partitioning;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Statistics;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Geometry.Partitioning;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Statistics;
 using Microsoft.Xna.Framework;
 
 
@@ -60,13 +60,13 @@ contacts. This works only for a contact set of two triangle mesh shapes!",
     {
       var className = Path.GetFileNameWithoutExtension(filename);
       var text = new StringBuilder();
-      text.Append(@"using DigitalRune.Geometry;
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Geometry.Meshes;
-using DigitalRune.Geometry.Partitioning;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics;
-using DigitalRune.Mathematics.Algebra;
+      text.Append(@"using MinimalRune.Geometry;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Geometry.Meshes;
+using MinimalRune.Geometry.Partitioning;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
@@ -193,7 +193,7 @@ namespace Samples.Geometry
         var pose = new Pose(");
       Append(text, co.GeometricObject.Pose.Position);
       text.Append(", ");
-      Append(text, Quaternion.CreateRotation(co.GeometricObject.Pose.Orientation));
+      Append(text, Quaternion.CreateFromRotationMatrix(co.GeometricObject.Pose.Orientation));
       text.Append(@");
         var scale = ");
       Append(text, co.GeometricObject.Scale);

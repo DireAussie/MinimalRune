@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Editor.Textures
+namespace MinimalRune.Editor.Textures
 {
     [Flags]
     internal enum ColorChannels

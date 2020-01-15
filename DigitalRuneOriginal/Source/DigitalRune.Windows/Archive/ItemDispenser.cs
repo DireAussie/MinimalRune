@@ -9,7 +9,7 @@ using System.Linq;
 using System.Windows.Markup;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
     /// Manages a pool of items from which the user can allocate items.
@@ -48,9 +48,9 @@ namespace DigitalRune.Windows
         //       E.g. ItemsControl of LineCharts. Each LineChart should get a unique style!?
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private IList<T> _items;
 
@@ -59,9 +59,9 @@ namespace DigitalRune.Windows
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets the items in the pool.
@@ -124,9 +124,9 @@ namespace DigitalRune.Windows
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemDispenser{T}"/> class.
@@ -148,9 +148,9 @@ namespace DigitalRune.Windows
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Retrieves the next available item and marks it as 'in use'.

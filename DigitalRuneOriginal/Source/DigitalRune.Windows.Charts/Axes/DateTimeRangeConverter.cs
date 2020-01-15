@@ -7,7 +7,7 @@ using System.ComponentModel;
 using System.Globalization;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Converts a <see cref="DateTimeRange"/> to and from string representation.

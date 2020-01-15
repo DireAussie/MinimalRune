@@ -6,11 +6,11 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using DigitalRune.Collections;
-using DigitalRune.Geometry.Partitioning;
+using MinimalRune.Collections;
+using MinimalRune.Geometry.Partitioning;
 
 
-namespace DigitalRune.Geometry.Collisions
+namespace MinimalRune.Geometry.Collisions
 {
   /// <summary>
   /// A collision detection broad phase method which computes candidates for narrow phase
@@ -36,9 +36,9 @@ namespace DigitalRune.Geometry.Collisions
   /// </remarks>
   internal sealed class CollisionDetectionBroadPhase : IBroadPhase<CollisionObject>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly CollisionDomain _collisionDomain;
 
@@ -55,9 +55,9 @@ namespace DigitalRune.Geometry.Collisions
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the candidate pairs.
@@ -142,9 +142,9 @@ namespace DigitalRune.Geometry.Collisions
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="CollisionDetectionBroadPhase"/> class.
@@ -164,9 +164,9 @@ namespace DigitalRune.Geometry.Collisions
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Adds/Removes objects in the spatial partition.
     private void OnCollisionObjectsChanged(object sender, CollectionChangedEventArgs<CollisionObject> eventArgs)

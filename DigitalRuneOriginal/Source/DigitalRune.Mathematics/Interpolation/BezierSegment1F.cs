@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace DigitalRune.Mathematics.Interpolation
+namespace MinimalRune.Mathematics.Interpolation
 {
   /// <summary>
   /// Defines a single segment of a 1-dimensional cubic Bézier spline (single-precision).
@@ -186,9 +186,9 @@ namespace DigitalRune.Mathematics.Interpolation
     //}    
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static readonly ResourcePool<BezierSegment1F> Pool = new ResourcePool<BezierSegment1F>(
        () => new BezierSegment1F(),                   // Create

@@ -4,10 +4,10 @@
 
 using System;
 using System.Windows.Controls;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Windows.Framework;
 
 
-namespace DigitalRune.Editor.Options
+namespace MinimalRune.Editor.Options
 {
     /// <summary>
     /// Represents a single options page in the Options dialog.
@@ -31,15 +31,15 @@ namespace DigitalRune.Editor.Options
     /// </remarks>
     public abstract class OptionsPageViewModel : Screen, INamedObject
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         string INamedObject.Name { get { return DisplayName; } }
@@ -82,9 +82,9 @@ namespace DigitalRune.Editor.Options
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="OptionsPageViewModel"/> class.
@@ -103,9 +103,9 @@ namespace DigitalRune.Editor.Options
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Applies the changes.

@@ -1,8 +1,8 @@
-﻿using DigitalRune.Mathematics;
+﻿using MinimalRune.Mathematics;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Animation.Easing.Tests
+namespace MinimalRune.Animation.Easing.Tests
 {
   [TestFixture]
   public class CircleEaseTest : BaseEasingFunctionTest<CircleEase>

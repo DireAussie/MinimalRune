@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune
+namespace MinimalRune
 {
   /// <summary>
   /// Represents a <see cref="MulticastDelegate"/> that stores the target objects as weak 

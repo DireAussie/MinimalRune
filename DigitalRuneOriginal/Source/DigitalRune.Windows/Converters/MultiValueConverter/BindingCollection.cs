@@ -6,7 +6,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Data;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
   /// <summary>
   /// Stores a collection of <see cref="BindingBase"/> objects.

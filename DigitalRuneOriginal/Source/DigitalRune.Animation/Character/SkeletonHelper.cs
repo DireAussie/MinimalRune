@@ -4,7 +4,7 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
 using Microsoft.Xna.Framework;
@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 
 
-namespace DigitalRune.Animation.Character
+namespace MinimalRune.Animation.Character
 {
   /// <summary>
   /// Provides helper methods for working with skeletons.
@@ -133,7 +133,7 @@ namespace DigitalRune.Animation.Character
 
     //public static void RotateBoneWorld(this SkeletonPose SkeletonPose, int boneIndex, Quaternion rotation, Matrix world)
     //{
-    //  Quaternion worldRotation = Quaternion.CreateRotation(world.Minor);
+    //  Quaternion worldRotation = Quaternion.CreateFromRotationMatrix(world.Minor);
     //  RotateBoneAbsolute(SkeletonPose, boneIndex, worldRotation.Conjugated * rotation);
     //}
 

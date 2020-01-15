@@ -5,16 +5,16 @@
 using System;
 
 
-namespace DigitalRune.Mathematics.Analysis
+namespace MinimalRune.Mathematics.Analysis
 {
   /// <summary>
   /// A base class for numerical integration of a function over an interval (double-precision).
   /// </summary>
   public abstract class IntegratorD
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private int _maxNumberOfIterations = 20;
     private int _minNumberOfIterations = 5;
@@ -22,9 +22,9 @@ namespace DigitalRune.Mathematics.Analysis
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets (or sets) the number of iterations of the last <see cref="Integrate"/> method call.
@@ -112,15 +112,15 @@ namespace DigitalRune.Mathematics.Analysis
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Integrates the specified function within the given interval.

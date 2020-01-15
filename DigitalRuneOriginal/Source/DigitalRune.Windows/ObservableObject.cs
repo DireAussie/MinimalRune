@@ -12,7 +12,7 @@ using System.Runtime.CompilerServices;
 
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
     /// Provides a base class for all <see cref="INotifyPropertyChanged"/> implementations.

@@ -15,7 +15,7 @@
 // ------------------------------------------------------------------
 
 
-namespace DigitalRune.Ionic.Zip
+namespace MinimalRune.Ionic.Zip
 {
     partial class ZipFile
     {

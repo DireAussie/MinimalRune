@@ -6,12 +6,12 @@ using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Input;
-using DigitalRune.Collections;
-using DigitalRune.Windows.Docking;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Collections;
+using MinimalRune.Windows.Docking;
+using MinimalRune.Windows.Framework;
 
 
-namespace DigitalRune.Editor.QuickLaunch
+namespace MinimalRune.Editor.QuickLaunch
 {
     /// <summary>
     /// Adds a Quick Launch box to the caption bar which allows to execute editor commands.
@@ -27,17 +27,17 @@ namespace DigitalRune.Editor.QuickLaunch
     /// </remarks>
     public sealed class QuickLaunchExtension : EditorExtension, IQuickLaunchService
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         internal const string FocusQuickLaunchMessage = "FocusQuickLaunch";
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private ResourceDictionary _resourceDictionary;
         private MergeableNodeCollection<ICommandItem> _menuNodes;
@@ -45,24 +45,24 @@ namespace DigitalRune.Editor.QuickLaunch
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public IList<QuickLaunchItem> Items { get; } = new List<QuickLaunchItem>();
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         protected override void OnInitialize()

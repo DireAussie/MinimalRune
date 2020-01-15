@@ -5,10 +5,10 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Mathematics.Interpolation
+namespace MinimalRune.Mathematics.Interpolation
 {
   /// <summary>
   /// Defines a 2-dimensional elliptic arc segment (single-precision).
@@ -31,9 +31,9 @@ namespace DigitalRune.Mathematics.Interpolation
     // the arc is computed.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private bool _isDirty = true;
     private float _sinTheta;       // sin(RotationAngle)
@@ -46,9 +46,9 @@ namespace DigitalRune.Mathematics.Interpolation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the start point.
@@ -182,9 +182,9 @@ namespace DigitalRune.Mathematics.Interpolation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ArcSegment2F"/> class.
@@ -198,9 +198,9 @@ namespace DigitalRune.Mathematics.Interpolation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private void ComputeParameters()
     {
@@ -375,9 +375,9 @@ namespace DigitalRune.Mathematics.Interpolation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static ResourcePool<ArcSegment2F> _pool;
 

@@ -64,7 +64,7 @@ using System.Linq;
 using System.Threading;
 
 
-namespace DigitalRune.Threading
+namespace MinimalRune.Threading
 {
   /// <summary>
   /// Provides support for parallel execution of tasks.

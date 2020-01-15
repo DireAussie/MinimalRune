@@ -7,7 +7,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 
 
-namespace DigitalRune.Threading.Tests
+namespace MinimalRune.Threading.Tests
 {
   [TestFixture]
   public class TaskExceptionTest

@@ -9,23 +9,23 @@ using System.Globalization;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
-using DigitalRune.Collections;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Docking;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Collections;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Docking;
+using MinimalRune.Windows.Framework;
 using NLog;
 
 
-namespace DigitalRune.Editor.QuickLaunch
+namespace MinimalRune.Editor.QuickLaunch
 {
     /// <summary>
     /// Represents the Quick Launch box.
     /// </summary>
     internal class QuickLaunchViewModel : ObservableObject
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
         private static readonly char[] Separators = { '\t', ' ', ',', ';' };
@@ -34,9 +34,9 @@ namespace DigitalRune.Editor.QuickLaunch
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets an instance of the <see cref="QuickLaunchViewModel"/> that can be used at
@@ -143,9 +143,9 @@ namespace DigitalRune.Editor.QuickLaunch
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private QuickLaunchViewModel()
         {
@@ -174,9 +174,9 @@ namespace DigitalRune.Editor.QuickLaunch
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private bool CanFind()
         {

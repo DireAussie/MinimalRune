@@ -6,7 +6,7 @@ using System;
 using Microsoft.Xna.Framework.Content;
 
 
-namespace DigitalRune.Geometry.Content
+namespace MinimalRune.Geometry.Content
 {
   /// <summary>
   /// Reads a <see cref="DirectionalLookupTableF{T}"/> from binary format.

@@ -6,20 +6,20 @@ using System;
 using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Media;
-using DigitalRune.Animation;
-using DigitalRune.Collections;
-using DigitalRune.Editor.Game.Properties;
-using DigitalRune.Game.Timing;
-using DigitalRune.Graphics;
-using DigitalRune.Storages;
-using DigitalRune.Windows.Docking;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Animation;
+using MinimalRune.Collections;
+using MinimalRune.Editor.Game.Properties;
+using MinimalRune.Game.Timing;
+using MinimalRune.Graphics;
+using MinimalRune.Storages;
+using MinimalRune.Windows.Docking;
+using MinimalRune.Windows.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using NLog;
 
 
-namespace DigitalRune.Editor.Game
+namespace MinimalRune.Editor.Game
 {
     /// <summary>
     /// Adds a game loop.
@@ -42,9 +42,9 @@ namespace DigitalRune.Editor.Game
         // TODO: Make IGameService.
         // TODO: Implement full game loop with all services, game components and game objects.
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
@@ -59,9 +59,9 @@ namespace DigitalRune.Editor.Game
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Occurs each frame at the start of the game loop
@@ -76,15 +76,15 @@ namespace DigitalRune.Editor.Game
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         protected override void OnInitialize()

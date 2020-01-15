@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Effects
+namespace MinimalRune.Graphics.Effects
 {
   /// <summary>
   /// Creates bindings for effect parameters using dictionaries with factory methods.
@@ -27,9 +27,9 @@ namespace DigitalRune.Graphics.Effects
   /// </remarks>
   public class DictionaryEffectBinder : IEffectBinder
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Creates a new <see cref="EffectParameterBinding"/> for the given effect parameter.
@@ -45,9 +45,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the factory methods that create effect parameter bindings for 
@@ -392,9 +392,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public virtual EffectTechniqueBinding GetBinding(Effect effect)

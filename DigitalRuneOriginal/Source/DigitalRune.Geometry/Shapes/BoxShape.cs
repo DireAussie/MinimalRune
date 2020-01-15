@@ -5,15 +5,15 @@
 using System;
 using System.Globalization;
 using System.Xml.Serialization;
-using DigitalRune.Geometry.Meshes;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Meshes;
+using MinimalRune.Mathematics.Algebra;
 
 
 using Microsoft.Xna.Framework.Content;
 
 
 
-namespace DigitalRune.Geometry.Shapes
+namespace MinimalRune.Geometry.Shapes
 {
   /// <summary>
   /// Represents a box centered at the origin.
@@ -25,15 +25,15 @@ namespace DigitalRune.Geometry.Shapes
   {
     // TODO: Optimize: The support vertex distance could be simply computed as Dot(v.absolute().Normalized, halfExtentVector).
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the extent vector.
@@ -156,9 +156,9 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -213,9 +213,9 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

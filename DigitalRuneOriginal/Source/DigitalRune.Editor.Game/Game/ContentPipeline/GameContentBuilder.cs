@@ -5,14 +5,14 @@
 using System;
 using System.IO;
 using System.Reflection;
-using DigitalRune.Editor.Output;
+using MinimalRune.Editor.Output;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Framework.Content.Pipeline.Builder;
 
 
-namespace DigitalRune.Editor.Game
+namespace MinimalRune.Editor.Game
 {
     /// <summary>
     /// Uses the MonoGame Content Pipeline to process assets.
@@ -26,25 +26,25 @@ namespace DigitalRune.Editor.Game
     [CLSCompliant(false)]
     public sealed class GameContentBuilder
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly string[] SupportedModelFileExtensions = { ".DAE", ".FBX", ".X" };
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly GameContentBuildLogger _logger;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the folder containing the currently executing assembly.
@@ -76,9 +76,9 @@ namespace DigitalRune.Editor.Game
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GameContentBuilder" /> class.
@@ -101,9 +101,9 @@ namespace DigitalRune.Editor.Game
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Builds the specified source file.

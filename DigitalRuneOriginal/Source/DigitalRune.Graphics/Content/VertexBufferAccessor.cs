@@ -6,10 +6,10 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Graphics.Content
+namespace MinimalRune.Graphics.Content
 {
   /// <summary>
   /// Reads or writes elements from/to vertex buffer(s) based on a vertex declaration.
@@ -174,7 +174,7 @@ namespace DigitalRune.Graphics.Content
       if (buffer == null)
         throw new ArgumentNullException("buffer");
 
-      var tempBuffer = new Vector4F[buffer.Length];
+      var tempBuffer = new Vector4[buffer.Length];
       for (int i = 0; i < buffer.Length; i++)
         tempBuffer[i].X = buffer[i];
 
@@ -203,7 +203,7 @@ namespace DigitalRune.Graphics.Content
       if (buffer == null)
         throw new ArgumentNullException("buffer");
 
-      var tempBuffer = new Vector4F[buffer.Length];
+      var tempBuffer = new Vector4[buffer.Length];
       for (int i = 0; i < buffer.Length; i++)
       {
         tempBuffer[i].X = buffer[i].X;
@@ -235,7 +235,7 @@ namespace DigitalRune.Graphics.Content
       if (buffer == null)
         throw new ArgumentNullException("buffer");
 
-      var tempBuffer = new Vector4F[buffer.Length];
+      var tempBuffer = new Vector4[buffer.Length];
       for (int i = 0; i < buffer.Length; i++)
       {
         tempBuffer[i].X = buffer[i].X;
@@ -263,7 +263,7 @@ namespace DigitalRune.Graphics.Content
     /// <exception cref="NotSupportedException">
     /// Format conversion to/from <see cref="DataFormat.R11G11B10_FLOAT"/> is not supported.
     /// </exception>
-    public unsafe void SetElements(Vector4F[] buffer, VertexElementSemantic semantic, int semanticIndex)
+    public unsafe void SetElements(Vector4[] buffer, VertexElementSemantic semantic, int semanticIndex)
     {
       if (buffer == null)
         throw new ArgumentNullException("buffer");
@@ -1171,7 +1171,7 @@ namespace DigitalRune.Graphics.Content
       if (buffer == null)
         throw new ArgumentNullException("buffer");
 
-      var tempBuffer = new Vector4F[buffer.Length];
+      var tempBuffer = new Vector4[buffer.Length];
 
       GetElements(tempBuffer, semantic, semanticIndex);
 
@@ -1201,7 +1201,7 @@ namespace DigitalRune.Graphics.Content
       if (buffer == null)
         throw new ArgumentNullException("buffer");
 
-      var tempBuffer = new Vector4F[buffer.Length];
+      var tempBuffer = new Vector4[buffer.Length];
 
       GetElements(tempBuffer, semantic, semanticIndex);
 
@@ -1234,7 +1234,7 @@ namespace DigitalRune.Graphics.Content
       if (buffer == null)
         throw new ArgumentNullException("buffer");
 
-      var tempBuffer = new Vector4F[buffer.Length];
+      var tempBuffer = new Vector4[buffer.Length];
 
       GetElements(tempBuffer, semantic, semanticIndex);
 
@@ -1263,7 +1263,7 @@ namespace DigitalRune.Graphics.Content
     /// <exception cref="NotSupportedException">
     /// Format conversion to/from <see cref="DataFormat.R11G11B10_FLOAT"/> is not supported.
     /// </exception>
-    public unsafe void GetElements(Vector4F[] buffer, VertexElementSemantic semantic, int semanticIndex)
+    public unsafe void GetElements(Vector4[] buffer, VertexElementSemantic semantic, int semanticIndex)
     {
       if (buffer == null)
         throw new ArgumentNullException("buffer");

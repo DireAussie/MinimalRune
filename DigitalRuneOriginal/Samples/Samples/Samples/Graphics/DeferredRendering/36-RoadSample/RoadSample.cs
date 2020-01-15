@@ -1,14 +1,14 @@
 ﻿
 using System.Linq;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.Rendering;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Interpolation;
-using DigitalRune.Mathematics.Statistics;
-using DigitalRune.Physics.ForceEffects;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.Rendering;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Interpolation;
+using MinimalRune.Mathematics.Statistics;
+using MinimalRune.Physics.ForceEffects;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Samples.Physics.Specialized;
@@ -131,7 +131,7 @@ This sample also uses the vehicle of one of the vehicle samples.",
 
         // The border blend range controls how the border of the road fades out.
         // We fade out 5% of the texture on each side of the road.
-        BorderBlendRange = new Vector4F(0.05f, 0.05f, 0.05f, 0.05f),
+        BorderBlendRange = new Vector4(0.05f, 0.05f, 0.05f, 0.05f),
       };
 
       // Create 3D spline path with some semi-random control points.
@@ -188,7 +188,7 @@ This sample also uses the vehicle of one of the vehicle samples.",
           ((TerrainRoadPathKey)_roadPath[0]).SideFalloff;
 
         // Since the path is closed we do not have to fade out the start and the end of the road.
-        _roadLayer.BorderBlendRange *= new Vector4F(1, 0, 1, 0);
+        _roadLayer.BorderBlendRange *= new Vector4(1, 0, 1, 0);
       }
 
       // Convert the path to a mesh.

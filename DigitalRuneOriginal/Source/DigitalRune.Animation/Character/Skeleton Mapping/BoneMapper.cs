@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Animation.Character
+namespace MinimalRune.Animation.Character
 {
   /// <summary>
   /// Defines the mapping direction of a <see cref="BoneMapper"/>
@@ -41,15 +41,15 @@ namespace DigitalRune.Animation.Character
   /// </remarks>
   public abstract class BoneMapper
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the skeleton mapper. (This property is set automatically and should be
@@ -78,9 +78,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="BoneMapper"/> class.
@@ -92,9 +92,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Invalidates all cached data of this bone mapper.

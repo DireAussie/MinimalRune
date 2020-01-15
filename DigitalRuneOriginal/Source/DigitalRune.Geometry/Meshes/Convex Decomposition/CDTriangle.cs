@@ -4,10 +4,10 @@
 
 
 using System.Diagnostics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry.Meshes
+namespace MinimalRune.Geometry.Meshes
 {
   /// <summary>
   /// Describes a triangle during the convex decomposition process.
@@ -15,9 +15,9 @@ namespace DigitalRune.Geometry.Meshes
   [DebuggerDisplay("Triangle: Island = {Island.Id}")]
   internal sealed class CDTriangle
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // A unique number
     public int Id;
@@ -43,21 +43,21 @@ namespace DigitalRune.Geometry.Meshes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
-
-
-
-    //--------------------------------------------------------------
-
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
+
+
+
+    
+
+    
 
     // Creates CDTriangle.Neighbor references if the triangles are edge neighbors.
     public static void FindNeighbors(CDTriangle triangleA, CDTriangle triangleB)

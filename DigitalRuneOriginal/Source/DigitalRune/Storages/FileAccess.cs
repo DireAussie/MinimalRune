@@ -7,7 +7,7 @@
 using System;
 
 
-namespace DigitalRune.Storages
+namespace MinimalRune.Storages
 {
   /// <summary>
   /// Defines constants for read, write, or read/write access to a file.

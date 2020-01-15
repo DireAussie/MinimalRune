@@ -7,37 +7,37 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Framework;
-using DigitalRune.Windows.Themes;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Framework;
+using MinimalRune.Windows.Themes;
 
 
-namespace DigitalRune.Editor.Search
+namespace MinimalRune.Editor.Search
 {
     /// <summary>
     /// Represents the Find and Replace dialog.
     /// </summary>
     internal class FindAndReplaceViewModel : EditorDockTabItemViewModel
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         internal const string DockIdString = "FindAndReplace";
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly SearchExtension _searchExtension;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets a <see cref="FindAndReplaceViewModel"/> instance that can be used at design-time.
@@ -188,9 +188,9 @@ namespace DigitalRune.Editor.Search
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="FindAndReplaceViewModel"/> class.
@@ -240,9 +240,9 @@ namespace DigitalRune.Editor.Search
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private void OnQueryChanged(object sender, PropertyChangedEventArgs eventArgs)
         {

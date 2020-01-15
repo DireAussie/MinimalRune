@@ -1,9 +1,9 @@
 using System;
 using NUnit.Framework;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Mathematics.Statistics.Tests
+namespace MinimalRune.Mathematics.Statistics.Tests
 {
   [TestFixture]
   public class RandomHelperTest
@@ -162,22 +162,22 @@ namespace DigitalRune.Mathematics.Statistics.Tests
 
 
     [Test]
-    public void RandomVector4F()
+    public void RandomVector4()
     {
-      Vector4F vector = RandomHelper.Random.NextVector4F(-20.0f, -10.0f);
+      Vector4 vector = RandomHelper.Random.NextVector4(-20.0f, -10.0f);
       Assert.IsTrue(-20.0f <= vector.X && vector.X <= -10.0f);
       Assert.IsTrue(-20.0f <= vector.Y && vector.Y <= -10.0f);
       Assert.IsTrue(-20.0f <= vector.Z && vector.Z <= -10.0f);
       Assert.IsTrue(-20.0f <= vector.W && vector.W <= -10.0f);
 
-      vector = RandomHelper.Random.NextVector4F(-1.0f, -1.0f);
+      vector = RandomHelper.Random.NextVector4(-1.0f, -1.0f);
       Assert.AreEqual(-1.0f, vector.X);
       Assert.AreEqual(-1.0f, vector.Y);
       Assert.AreEqual(-1.0f, vector.Z);
       Assert.AreEqual(-1.0f, vector.W);
 
       // Must not throw exception.
-      RandomHelper.NextVector4F(null, 1, 3);
+      RandomHelper.NextVector4(null, 1, 3);
     }
 
 

@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 
 
-namespace DigitalRune.Graphics.Content.Pipeline.Tests
+namespace MinimalRune.Graphics.Content.Pipeline.Tests
 {
   [TestFixture]
   public class ContentHelperTest

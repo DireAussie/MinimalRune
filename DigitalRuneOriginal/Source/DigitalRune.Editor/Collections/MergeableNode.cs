@@ -5,10 +5,10 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using DigitalRune.Linq;
+using MinimalRune.Linq;
 
 
-namespace DigitalRune.Collections
+namespace MinimalRune.Collections
 {
     /// <summary>
     /// Describes a node in a tree, which can be merged with another tree.
@@ -31,15 +31,15 @@ namespace DigitalRune.Collections
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Mergeable")]
     public sealed class MergeableNode<T> where T : class, INamedObject
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets the content.
@@ -111,9 +111,9 @@ namespace DigitalRune.Collections
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <overloads>
         /// <summary>
@@ -290,9 +290,9 @@ namespace DigitalRune.Collections
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the relative node in group.
@@ -324,9 +324,9 @@ namespace DigitalRune.Collections
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the children of the specified node.

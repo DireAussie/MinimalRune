@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Graphics.Content.Pipeline
+namespace MinimalRune.Graphics.Content.Pipeline
 {
   /// <summary>
   /// Defines a region in the original (merged) animation.

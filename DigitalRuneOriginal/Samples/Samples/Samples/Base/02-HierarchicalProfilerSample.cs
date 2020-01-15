@@ -3,7 +3,7 @@
 #define DIGITALRUNE_PROFILE
 
 using System;
-using DigitalRune.Diagnostics;
+using MinimalRune.Diagnostics;
 
 
 namespace Samples.Base

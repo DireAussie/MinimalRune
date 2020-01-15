@@ -5,24 +5,24 @@
 using System;
 using System.Windows;
 using System.Windows.Input;
-using DigitalRune.Collections;
-using DigitalRune.Windows.Controls;
-using DigitalRune.Windows.Docking;
-using DigitalRune.Windows.Framework;
-using DigitalRune.Windows.Themes;
+using MinimalRune.Collections;
+using MinimalRune.Windows.Controls;
+using MinimalRune.Windows.Docking;
+using MinimalRune.Windows.Framework;
+using MinimalRune.Windows.Themes;
 using NLog;
 
 
-namespace DigitalRune.Editor.Properties
+namespace MinimalRune.Editor.Properties
 {
     /// <summary>
     /// Provides the Properties window for browsing object properties.
     /// </summary>
     public sealed class PropertiesExtension : EditorExtension, IPropertiesService
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
@@ -35,9 +35,9 @@ namespace DigitalRune.Editor.Properties
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         EditorDockTabItemViewModel IPropertiesService.PropertiesViewModel
@@ -69,9 +69,9 @@ namespace DigitalRune.Editor.Properties
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PropertiesExtension"/> class.
@@ -83,9 +83,9 @@ namespace DigitalRune.Editor.Properties
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         protected override void OnInitialize()

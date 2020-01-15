@@ -2,79 +2,79 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Animation.Traits
+namespace MinimalRune.Animation.Traits
 {
   /// <summary>
-  /// Describes the properties of a <see cref="Vector4F"/>.
+  /// Describes the properties of a <see cref="Vector4"/>.
   /// </summary>
-  public class Vector4FTraits : Singleton<Vector4FTraits>, IAnimationValueTraits<Vector4F>
+  public class Vector4Traits : Singleton<Vector4Traits>, IAnimationValueTraits<Vector4>
   {
     /// <inheritdoc/>
-    public void Create(ref Vector4F reference, out Vector4F value)
+    public void Create(ref Vector4 reference, out Vector4 value)
     {
-      value = new Vector4F();
+      value = new Vector4();
     }
 
 
     /// <inheritdoc/>
-    public void Recycle(ref Vector4F value)
+    public void Recycle(ref Vector4 value)
     {
     }
 
 
     /// <inheritdoc/>
-    public void Copy(ref Vector4F source, ref Vector4F target)
+    public void Copy(ref Vector4 source, ref Vector4 target)
     {
       target = source;
     }
 
 
     /// <inheritdoc/>
-    public void Set(ref Vector4F value, IAnimatableProperty<Vector4F> property)
+    public void Set(ref Vector4 value, IAnimatableProperty<Vector4> property)
     {
       property.AnimationValue = value;
     }
 
 
     /// <inheritdoc/>
-    public void Reset(IAnimatableProperty<Vector4F> property)
+    public void Reset(IAnimatableProperty<Vector4> property)
     {      
     }
 
 
     /// <inheritdoc/>
-    public void SetIdentity(ref Vector4F identity)
+    public void SetIdentity(ref Vector4 identity)
     {
-      identity = new Vector4F();
+      identity = new Vector4();
     }
 
 
     /// <inheritdoc/>
-    public void Invert(ref Vector4F value, ref Vector4F inverse)
+    public void Invert(ref Vector4 value, ref Vector4 inverse)
     {
       inverse = -value;
     }
 
 
     /// <inheritdoc/>
-    public void Add(ref Vector4F value0, ref Vector4F value1, ref Vector4F result)
+    public void Add(ref Vector4 value0, ref Vector4 value1, ref Vector4 result)
     {
       result = value0 + value1;
     }
 
 
     /// <inheritdoc/>
-    public void Multiply(ref Vector4F value, int factor, ref Vector4F result)
+    public void Multiply(ref Vector4 value, int factor, ref Vector4 result)
     {
       result = value * factor;
     }
 
 
     /// <inheritdoc/>
-    public void Interpolate(ref Vector4F source, ref Vector4F target, float parameter, ref Vector4F result)
+    public void Interpolate(ref Vector4 source, ref Vector4 target, float parameter, ref Vector4 result)
     {
       //result = source + (target - source) * parameter;
 
@@ -87,21 +87,21 @@ namespace DigitalRune.Animation.Traits
 
 
     /// <inheritdoc/>
-    public void BeginBlend(ref Vector4F value)
+    public void BeginBlend(ref Vector4 value)
     {
-      value = new Vector4F();
+      value = new Vector4();
     }
 
 
     /// <inheritdoc/>
-    public void BlendNext(ref Vector4F value, ref Vector4F nextValue, float normalizedWeight)
+    public void BlendNext(ref Vector4 value, ref Vector4 nextValue, float normalizedWeight)
     {
       value += normalizedWeight * nextValue;
     }
 
 
     /// <inheritdoc/>
-    public void EndBlend(ref Vector4F value)
+    public void EndBlend(ref Vector4 value)
     {
     }
   }

@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Mathematics.Algebra
+namespace MinimalRune.Mathematics.Algebra
 {
   /// <summary>
   /// An iterative method for solving a linear system of equations <i>A * x = b</i>

@@ -10,30 +10,30 @@ using System.Linq;
 using System.Windows;
 
 
-namespace DigitalRune.Editor.Search
+namespace MinimalRune.Editor.Search
 {
     partial class SearchExtension
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private const int MaxNumberOfCachedEntries = 20;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private IEnumerator<ISearchable> _searchableIterator;
         private IEnumerator<ISearchResult> _searchResultIterator;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the recent find patterns.
@@ -66,9 +66,9 @@ namespace DigitalRune.Editor.Search
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private void InitializeSearchService()
         {
@@ -83,9 +83,9 @@ namespace DigitalRune.Editor.Search
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static void Reset<T>(ref IEnumerator<T> enumerator)
         {

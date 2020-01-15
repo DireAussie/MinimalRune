@@ -5,7 +5,7 @@
 using Microsoft.Xna.Framework.Content.Pipeline;
 
 
-namespace DigitalRune.Graphics.Content.Pipeline
+namespace MinimalRune.Graphics.Content.Pipeline
 {
   /// <summary>
   /// Wraps a <see cref="ContentImporterContext"/> or a <see cref="ContentProcessorContext"/> and

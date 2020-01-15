@@ -4,7 +4,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using NUnit.Framework;
 
 
-namespace DigitalRune.CommandLine.Tests
+namespace MinimalRune.CommandLine.Tests
 {
     [TestFixture]
     public class UnknownArgumentExceptionTest

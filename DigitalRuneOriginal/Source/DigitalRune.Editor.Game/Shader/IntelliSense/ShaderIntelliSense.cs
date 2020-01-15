@@ -4,22 +4,22 @@
 
 using System.Collections;
 using System.Collections.Generic;
-using DigitalRune.Collections;
-using DigitalRune.Windows.Themes;
+using MinimalRune.Collections;
+using MinimalRune.Windows.Themes;
 using ICSharpCode.AvalonEdit.CodeCompletion;
 using ICSharpCode.AvalonEdit.Snippets;
 
 
-namespace DigitalRune.Editor.Shader
+namespace MinimalRune.Editor.Shader
 {
     /// <summary>
     /// Provides IntelliSense for shaders. (Base for HLSL and Cg.)
     /// </summary>
     internal abstract partial class ShaderIntelliSense
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly ShaderParser _parser;
 
@@ -46,9 +46,9 @@ namespace DigitalRune.Editor.Shader
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         protected internal Dictionary<string, SnippetCompletionData> Snippets { get; }
 
@@ -437,9 +437,9 @@ namespace DigitalRune.Editor.Shader
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         protected ShaderIntelliSense()
         {
@@ -476,9 +476,9 @@ namespace DigitalRune.Editor.Shader
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 

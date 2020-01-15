@@ -1,8 +1,8 @@
-﻿using DigitalRune.Mathematics.Algebra;
+﻿using MinimalRune.Mathematics.Algebra;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Graphics.Tests
+namespace MinimalRune.Graphics.Tests
 {
   [TestFixture]
   public class MiscTest

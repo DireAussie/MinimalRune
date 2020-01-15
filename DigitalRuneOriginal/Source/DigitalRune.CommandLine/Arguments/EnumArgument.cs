@@ -8,7 +8,7 @@ using System.Text;
 using static System.FormattableString;
 
 
-namespace DigitalRune.CommandLine
+namespace MinimalRune.CommandLine
 {
     /// <summary>
     /// Describes a command line argument that is an enumeration.
@@ -51,24 +51,24 @@ namespace DigitalRune.CommandLine
     /// </example>
     public class EnumArgument<T> : ValueArgument<T>
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly Type _type;
         private Dictionary<string, object> _namesAndValues;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="EnumArgument{T}"/> class.
@@ -110,9 +110,9 @@ namespace DigitalRune.CommandLine
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public override ArgumentResult Parse(IReadOnlyList<string> args, ref int index)

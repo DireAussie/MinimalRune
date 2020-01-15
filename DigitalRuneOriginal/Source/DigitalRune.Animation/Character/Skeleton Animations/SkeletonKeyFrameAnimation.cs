@@ -5,8 +5,8 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Animation.Traits;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Animation.Traits;
+using MinimalRune.Mathematics.Algebra;
 
 using System.ComponentModel;
 
@@ -15,7 +15,7 @@ using System.Dynamic;
 
 
 
-namespace DigitalRune.Animation.Character
+namespace MinimalRune.Animation.Character
 {
   /// <summary>
   /// Animates a <see cref="SkeletonPose"/> based on predefined key frames.
@@ -72,9 +72,9 @@ namespace DigitalRune.Animation.Character
   /// </remarks>
   public partial class SkeletonKeyFrameAnimation : IAnimation<SkeletonPose>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private class PreprocessingData
     {
@@ -89,9 +89,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // ----- Preprocessing data ("not yet frozen")
     private PreprocessingData _preprocessData;
@@ -134,9 +134,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets a value indicating whether values between key frames are interpolated.
@@ -266,9 +266,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="SkeletonKeyFrameAnimation"/> class.
@@ -284,9 +284,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private void EnsurePreprocessingData()
     {

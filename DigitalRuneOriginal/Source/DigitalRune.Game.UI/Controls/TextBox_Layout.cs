@@ -6,28 +6,28 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework.Graphics;
 
 
-using DigitalRune.Text;
+using MinimalRune.Text;
 
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   partial class TextBox
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the offset which is the horizontal offset for single-line text boxes or the vertical
@@ -75,9 +75,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override Vector2F OnMeasure(Vector2F availableSize)
@@ -108,7 +108,7 @@ namespace DigitalRune.Game.UI.Controls
         availableSize.Y = height;
 
       // Remove padding from constraint size.
-      Vector4F padding = Padding;
+      Vector4 padding = Padding;
       Vector2F contentSize = availableSize; // Text area size
       if (Numeric.IsPositiveFinite(availableSize.X))
         contentSize.X -= padding.X + padding.Z;
@@ -207,7 +207,7 @@ namespace DigitalRune.Game.UI.Controls
       RectangleF controlBounds = new RectangleF(position.X, position.Y, size.X, size.Y);
 
       // Get content bounds by subtracting the padding.
-      Vector4F padding = Padding;
+      Vector4 padding = Padding;
       RectangleF contentBounds = controlBounds;
       contentBounds.X += padding.X;
       contentBounds.Y += padding.Y;
@@ -216,7 +216,7 @@ namespace DigitalRune.Game.UI.Controls
 
       // Determine whether the actual size is different than the desired size, which
       // has been calculated in OnMeasure().
-      Vector4F margin = Margin;
+      Vector4 margin = Margin;
       bool sizeChanged = (DesiredWidth != size.X + margin.X + margin.Z);
 
       // If the actual size is different, we need to reevaluate the visibility of

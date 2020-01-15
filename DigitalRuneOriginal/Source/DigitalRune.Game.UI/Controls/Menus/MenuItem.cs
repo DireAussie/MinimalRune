@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   /// <summary>
   /// Represents an item of a menu (e.g. a <see cref="ContextMenu"/>).
@@ -18,7 +18,7 @@ namespace DigitalRune.Game.UI.Controls
   /// // Create a multi-line text box.
   /// var textBox = new TextBox
   /// {
-  ///   Margin = new Vector4F(4),
+  ///   Margin = new Vector4(4),
   ///   Text = "Lorem ipsum dolor sit ...",
   ///   MaxLines = 5,   // Show max 5 lines of text.
   ///   HorizontalAlignment = HorizontalAlignment.Stretch,

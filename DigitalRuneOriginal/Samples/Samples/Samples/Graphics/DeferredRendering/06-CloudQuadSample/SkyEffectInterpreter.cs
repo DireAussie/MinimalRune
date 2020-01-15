@@ -1,4 +1,4 @@
-﻿using DigitalRune.Graphics.Effects;
+﻿using MinimalRune.Graphics.Effects;
 
 
 namespace Samples.Graphics

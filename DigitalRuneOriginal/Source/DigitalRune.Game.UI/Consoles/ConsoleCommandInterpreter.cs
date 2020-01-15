@@ -5,19 +5,19 @@
 using System;
 using System.Globalization;
 using System.Linq;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 
 
-namespace DigitalRune.Game.UI.Consoles
+namespace MinimalRune.Game.UI.Consoles
 {
   /// <summary>
   /// Handles game console commands.
   /// </summary>
   public class ConsoleCommandInterpreter
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the <see cref="IConsole"/>.
@@ -38,9 +38,9 @@ namespace DigitalRune.Game.UI.Consoles
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ConsoleCommandInterpreter"/> class.
@@ -66,9 +66,9 @@ namespace DigitalRune.Game.UI.Consoles
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Handles the specified command. 

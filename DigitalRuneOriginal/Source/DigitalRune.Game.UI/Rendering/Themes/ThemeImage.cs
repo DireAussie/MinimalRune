@@ -2,11 +2,11 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 
 
-namespace DigitalRune.Game.UI.Rendering
+namespace MinimalRune.Game.UI.Rendering
 {
   /// <summary>
   /// Represents an image of the UI theme.
@@ -46,7 +46,7 @@ namespace DigitalRune.Game.UI.Rendering
     /// <value>
     /// The margin (left, top, right, bottom). Can be negative to draw outside of the control area.
     /// </value>
-    public Vector4F Margin { get; set; }
+    public Vector4 Margin { get; set; }
 
 
     /// <summary>
@@ -90,7 +90,7 @@ namespace DigitalRune.Game.UI.Rendering
     /// horizontally. The left-center and right-center parts will be stretched vertically. The 
     /// center part will be stretched horizontally and vertically.
     /// </remarks>
-    public Vector4F Border { get; set; }
+    public Vector4 Border { get; set; }
 
 
     /// <summary>

@@ -7,14 +7,14 @@ using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interactivity;
-using DigitalRune.Geometry;
-using DigitalRune.Graphics.Interop;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Windows;
+using MinimalRune.Geometry;
+using MinimalRune.Graphics.Interop;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Windows;
 
 
-namespace DigitalRune.Editor.Game
+namespace MinimalRune.Editor.Game
 {
     /// <summary>
     /// Allows to control the viewing direction by pressing the left mouse button and moving the
@@ -26,9 +26,9 @@ namespace DigitalRune.Editor.Game
     /// </remarks>
     public class MouseLookBehavior : Behavior<D3DImagePresentationTarget>
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private CameraNode _cameraNode;
         private Point _lastMousePosition;
@@ -36,9 +36,9 @@ namespace DigitalRune.Editor.Game
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="IsEnabled"/> dependency property.
@@ -114,9 +114,9 @@ namespace DigitalRune.Editor.Game
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Called after the behavior is attached to an <see cref="Behavior{T}.AssociatedObject"/>.

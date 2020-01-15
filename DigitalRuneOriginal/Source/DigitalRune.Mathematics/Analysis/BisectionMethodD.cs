@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Mathematics.Analysis
+namespace MinimalRune.Mathematics.Analysis
 {
   /// <summary>
   /// Finds roots using the bisection method (double-precision).

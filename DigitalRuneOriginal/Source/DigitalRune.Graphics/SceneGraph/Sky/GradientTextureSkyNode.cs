@@ -3,11 +3,11 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Renders the sky using lookup textures which contain color gradients.
@@ -44,15 +44,15 @@ namespace DigitalRune.Graphics.SceneGraph
   /// </remarks>
   public class GradientTextureSkyNode : SkyNode
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the direction to the sun.
@@ -105,7 +105,7 @@ namespace DigitalRune.Graphics.SceneGraph
     /// <remarks>
     /// This property can be used to tint the sky, change the brightness or change its opacity.
     /// </remarks>
-    public Vector4F Color { get; set; }
+    public Vector4 Color { get; set; }
 
 
     /// <summary>
@@ -141,9 +141,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="GradientTextureSkyNode" /> class.
@@ -152,15 +152,15 @@ namespace DigitalRune.Graphics.SceneGraph
     {
       SunDirection = new Vector3(1, 1, 1);
       TimeOfDay = new TimeSpan(12, 0, 0);
-      Color = new Vector4F(1, 1, 1, 1);
+      Color = new Vector4(1, 1, 1, 1);
       CieSkyParameters = CieSkyParameters.Type12;
     }
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc cref="SceneNode.Clone"/>
     public new GradientTextureSkyNode Clone()

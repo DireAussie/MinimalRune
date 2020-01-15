@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 
 
-namespace DigitalRune.Graphics.Effects
+namespace MinimalRune.Graphics.Effects
 {
   /// <summary>
   /// Defines the standard semantics for default effect parameters.

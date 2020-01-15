@@ -4,10 +4,10 @@
 
 using System;
 using System.Runtime.InteropServices;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Graphics.Content
+namespace MinimalRune.Graphics.Content
 {
   /// <summary>
   /// Wraps a floating-point image (format <see cref="DataFormat.R32G32B32A32_FLOAT"/>) for easy
@@ -71,7 +71,7 @@ namespace DigitalRune.Graphics.Content
     /// </summary>
     /// <param name="index">The index.</param>
     /// <returns>The pixel color.</returns>
-    public Vector4F GetPixel(int index)
+    public Vector4 GetPixel(int index)
     {
       if ((uint)index >= (uint)_size)
         throw new ArgumentOutOfRangeException();
@@ -79,7 +79,7 @@ namespace DigitalRune.Graphics.Content
       unsafe
       {
         float* ptr = (float*)_intPtr.ToPointer() + index * 4;
-        return new Vector4F(*ptr++, *ptr++, *ptr++, *ptr);
+        return new Vector4(*ptr++, *ptr++, *ptr++, *ptr);
       }
     }
 
@@ -89,7 +89,7 @@ namespace DigitalRune.Graphics.Content
     /// </summary>
     /// <param name="index">The index.</param>
     /// <param name="color">The pixel color.</param>
-    public void SetPixel(int index, Vector4F color)
+    public void SetPixel(int index, Vector4 color)
     {
       if ((uint)index >= (uint)_size)
         throw new ArgumentOutOfRangeException();
@@ -111,7 +111,7 @@ namespace DigitalRune.Graphics.Content
     /// <param name="x">The x position.</param>
     /// <param name="y">The y position.</param>
     /// <returns>The pixel color.</returns>
-    public Vector4F GetPixel(int x, int y)
+    public Vector4 GetPixel(int x, int y)
     {
 
       if ((uint)x >= (uint)_width || (uint)y >= (uint)_height)
@@ -129,7 +129,7 @@ namespace DigitalRune.Graphics.Content
     /// <param name="y">The y position.</param>
     /// <param name="wrapMode">The wrap mode.</param>
     /// <returns>The pixel color.</returns>
-    public Vector4F GetPixel(int x, int y, TextureAddressMode wrapMode)
+    public Vector4 GetPixel(int x, int y, TextureAddressMode wrapMode)
     {
       switch (wrapMode)
       {
@@ -157,7 +157,7 @@ namespace DigitalRune.Graphics.Content
     /// <param name="x">The x position.</param>
     /// <param name="y">The y position.</param>
     /// <param name="color">The pixel color.</param>
-    public void SetPixel(int x, int y, Vector4F color)
+    public void SetPixel(int x, int y, Vector4 color)
     {
 
       if ((uint)x >= (uint)_width || (uint)y >= (uint)_height)
@@ -253,7 +253,7 @@ namespace DigitalRune.Graphics.Content
     /// <param name="z">The z position.</param>
     /// <param name="wrapMode">The wrap mode.</param>
     /// <returns>The pixel color.</returns>
-    public Vector4F GetPixel(int x, int y, int z, TextureAddressMode wrapMode)
+    public Vector4 GetPixel(int x, int y, int z, TextureAddressMode wrapMode)
     {
       switch (wrapMode)
       {
@@ -277,7 +277,7 @@ namespace DigitalRune.Graphics.Content
       unsafe
       {
         float* ptr = (float*)_intPtrs[z].ToPointer() + (y * _width + x) * 4;
-        return new Vector4F(*ptr++, *ptr++, *ptr++, *ptr);
+        return new Vector4(*ptr++, *ptr++, *ptr++, *ptr);
       }
     }
 
@@ -289,7 +289,7 @@ namespace DigitalRune.Graphics.Content
     /// <param name="y">The y position.</param>
     /// <param name="z">The z position.</param>
     /// <param name="color">The pixel color.</param>
-    public void SetPixel(int x, int y, int z, Vector4F color)
+    public void SetPixel(int x, int y, int z, Vector4 color)
     {
 
       if ((uint)x >= (uint)_width || (uint)y >= (uint)_height || (uint)z >= (uint)_depth)

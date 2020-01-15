@@ -5,15 +5,15 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Geometry;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Renders <see cref="SkyObjectNode"/>s.
@@ -26,9 +26,9 @@ namespace DigitalRune.Graphics.Rendering
   /// </remarks>
   internal class SkyObjectRenderer : SceneNodeRenderer
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly VertexPositionTexture[] _vertices = new VertexPositionTexture[4];
 
@@ -52,15 +52,15 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="SkyObjectRenderer"/> class.
@@ -100,9 +100,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override bool CanRender(SceneNode node, RenderContext context)
@@ -212,7 +212,7 @@ namespace DigitalRune.Graphics.Rendering
         }
 
         // ----- Render glows.
-        if (node.GlowColor0.LengthSquared > 0 || node.GlowColor1.LengthSquared > 0)
+        if (node.GlowColor0.LengthSquared() > 0 || node.GlowColor1.LengthSquared() > 0)
         {
           _effectParameterGlow0.SetValue(new Vector4((Vector3)node.GlowColor0, node.GlowExponent0));
           _effectParameterGlow1.SetValue(new Vector4((Vector3)node.GlowColor1, node.GlowExponent1));

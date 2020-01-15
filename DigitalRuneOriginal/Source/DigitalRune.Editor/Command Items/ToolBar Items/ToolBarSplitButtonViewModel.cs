@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// Represents split button in a toolbar.

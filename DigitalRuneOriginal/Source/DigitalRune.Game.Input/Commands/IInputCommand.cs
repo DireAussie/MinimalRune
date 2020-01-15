@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Game.Input
+namespace MinimalRune.Game.Input
 {
   /// <summary>
   /// Defines a command that is activated by user input.

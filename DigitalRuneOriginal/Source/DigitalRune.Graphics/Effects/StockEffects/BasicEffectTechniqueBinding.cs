@@ -3,13 +3,13 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System.Diagnostics;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Effects
+namespace MinimalRune.Graphics.Effects
 {
   /// <summary>
   /// Selects the shaders of a <see cref="BasicEffect"/>.
@@ -135,7 +135,7 @@ namespace DigitalRune.Graphics.Effects
       if (binding4 != null)
         return binding4.Value;
 
-      var binding4F = binding as EffectParameterBinding<Vector4F>;
+      var binding4F = binding as EffectParameterBinding<Vector4>;
       if (binding4F != null)
         return (Vector4)binding4F.Value;
 

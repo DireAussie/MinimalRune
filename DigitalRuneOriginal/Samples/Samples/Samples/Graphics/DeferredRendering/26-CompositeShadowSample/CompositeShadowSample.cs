@@ -1,13 +1,13 @@
 ﻿
 using System.Collections.Generic;
 using System.Linq;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.PostProcessing;
-using DigitalRune.Graphics.Rendering;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics.ForceEffects;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.PostProcessing;
+using MinimalRune.Graphics.Rendering;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics.ForceEffects;
 using Microsoft.Xna.Framework;
 
 
@@ -92,7 +92,7 @@ Press <F4> to show the Options window where you can disable shadow map caching."
       {
         PreferredSize = 1024,
         Prefer16Bit = true,
-        Distances = new Vector4F(4, 12, 20, 80),
+        Distances = new Vector4(4, 12, 20, 80),
         MinLightDistance = 200,
       };
 
@@ -102,7 +102,7 @@ Press <F4> to show the Options window where you can disable shadow map caching."
         PreferredSize = 1024,
         Prefer16Bit = true,
         NumberOfCascades = 2,
-        Distances = new Vector4F(4, 12, 0, 0),
+        Distances = new Vector4(4, 12, 0, 0),
         MinLightDistance = 200,
       };
 

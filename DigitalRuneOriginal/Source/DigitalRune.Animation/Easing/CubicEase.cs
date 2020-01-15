@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.Animation.Easing
+namespace MinimalRune.Animation.Easing
 {
   /// <summary>
   /// Represents an easing function that accelerates towards the target value using a cubic 

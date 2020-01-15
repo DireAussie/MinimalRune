@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// An enumeration for the possible color components.

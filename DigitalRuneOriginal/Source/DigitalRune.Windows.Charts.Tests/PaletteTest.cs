@@ -17,7 +17,7 @@ using NUnit.Framework;
 
 
 
-namespace DigitalRune.Windows.Charts.Tests
+namespace MinimalRune.Windows.Charts.Tests
 {
     // Notes:
     // - The Offsets of GradientStops in Silverlight are only computed using single precision. Some

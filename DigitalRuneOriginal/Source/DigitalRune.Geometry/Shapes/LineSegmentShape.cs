@@ -4,12 +4,12 @@
 
 using System;
 using System.Globalization;
-using DigitalRune.Geometry.Meshes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Meshes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry.Shapes
+namespace MinimalRune.Geometry.Shapes
 {
   /// <summary>
   /// Represents a line segment.
@@ -26,15 +26,15 @@ namespace DigitalRune.Geometry.Shapes
 
   public class LineSegmentShape : ConvexShape
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets an inner point (center of line segment).
@@ -103,14 +103,14 @@ namespace DigitalRune.Geometry.Shapes
     /// <value>The squared length.</value>
     public float LengthSquared
     {
-      get { return (_end - _start).LengthSquared; }
+      get { return (_end - _start).LengthSquared(); }
     }
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -157,9 +157,9 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

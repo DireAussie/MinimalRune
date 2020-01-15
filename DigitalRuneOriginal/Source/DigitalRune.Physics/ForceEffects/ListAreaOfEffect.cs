@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace DigitalRune.Physics.ForceEffects
+namespace MinimalRune.Physics.ForceEffects
 {
   /// <summary>
   /// Applies a force field effect to all objects in a given list.

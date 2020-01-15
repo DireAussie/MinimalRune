@@ -1,6 +1,6 @@
 ﻿using System;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Particles;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Particles;
 
 
 namespace Samples.Particles
@@ -24,7 +24,7 @@ namespace Samples.Particles
       // If the particle system has moved a minimum distance, then we emit the 
       // next particle of the ribbon.
       Vector3 newPosition = ParticleSystem.Pose.Position;
-      if ((newPosition - _lastPosition).LengthSquared >= 0.3f)
+      if ((newPosition - _lastPosition).LengthSquared() >= 0.3f)
       {
         ParticleSystem.AddParticles(1, this);
         _lastPosition = ParticleSystem.Pose.Position;

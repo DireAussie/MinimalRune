@@ -5,10 +5,10 @@
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 
 
-namespace DigitalRune.Game.Input
+namespace MinimalRune.Game.Input
 {
   /// <summary>
   /// Manages a collection of <see cref="IInputCommand"/>s.

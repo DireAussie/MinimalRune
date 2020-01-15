@@ -1,8 +1,8 @@
-﻿using DigitalRune.Mathematics.Algebra;
+﻿using MinimalRune.Mathematics.Algebra;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Graphics.Content.Tests
+namespace MinimalRune.Graphics.Content.Tests
 {
   [TestFixture]
   public class VertexBufferAccessorTest
@@ -25,17 +25,17 @@ namespace DigitalRune.Graphics.Content.Tests
       };
       var vbAccessor = new VertexBufferAccessor(vertexDeclaration);
 
-      var positions = new Vector4F[numberOfVertices];
+      var positions = new Vector4[numberOfVertices];
       for (int i = 0; i < positions.Length; i++)
-        positions[i] = new Vector4F(
+        positions[i] = new Vector4(
           i / (float)numberOfVertices,
           (i + 10) / (float)numberOfVertices,
           (i + 20) / (float)numberOfVertices,
           (i + 30) / (float)numberOfVertices);
 
-      var normals = new Vector4F[numberOfVertices];
+      var normals = new Vector4[numberOfVertices];
       for (int i = 0; i < normals.Length; i++)
-        normals[i] = new Vector4F(
+        normals[i] = new Vector4(
           (i + 40) / (float)numberOfVertices,
           (i + 50) / (float)numberOfVertices,
           (i + 60) / (float)numberOfVertices,
@@ -57,14 +57,14 @@ namespace DigitalRune.Graphics.Content.Tests
       vbAccessor = new VertexBufferAccessor(vertexDeclaration);
       vbAccessor.SetStream(0, vb, numberOfVertices);
 
-      var positions1 = new Vector4F[numberOfVertices];
-      var normals1 = new Vector4F[numberOfVertices];
+      var positions1 = new Vector4[numberOfVertices];
+      var normals1 = new Vector4[numberOfVertices];
       vbAccessor.GetElements(positions1, VertexElementSemantic.Position, 0);
       vbAccessor.GetElements(normals1, VertexElementSemantic.Normal, 0);
 
       for (int i = 0; i < positions.Length; i++)
       {
-        Vector4F expected = AsFloat(positions[i], redMask, greenMask, blueMask, alphaMask);
+        Vector4 expected = AsFloat(positions[i], redMask, greenMask, blueMask, alphaMask);
         Assert.AreEqual(expected.X, positions1[i].X);
         Assert.AreEqual(expected.Y, positions1[i].Y);
         Assert.AreEqual(expected.Z, positions1[i].Z);
@@ -73,7 +73,7 @@ namespace DigitalRune.Graphics.Content.Tests
 
       for (int i = 0; i < normals.Length; i++)
       {
-        Vector4F expected = AsFloat(normals[i], redMask, greenMask, blueMask, alphaMask);
+        Vector4 expected = AsFloat(normals[i], redMask, greenMask, blueMask, alphaMask);
         Assert.AreEqual(expected.X, normals1[i].X);
         Assert.AreEqual(expected.Y, normals1[i].Y);
         Assert.AreEqual(expected.Z, normals1[i].Z);
@@ -99,17 +99,17 @@ namespace DigitalRune.Graphics.Content.Tests
       };
       var vbAccessor = new VertexBufferAccessor(vertexDeclaration);
 
-      var positions = new Vector4F[numberOfVertices];
+      var positions = new Vector4[numberOfVertices];
       for (int i = 0; i < positions.Length; i++)
-        positions[i] = new Vector4F(
+        positions[i] = new Vector4(
           i / (float)numberOfVertices,
           (i + 10) / (float)numberOfVertices,
           (i + 20) / (float)numberOfVertices,
           (i + 30) / (float)numberOfVertices);
 
-      var normals = new Vector4F[numberOfVertices];
+      var normals = new Vector4[numberOfVertices];
       for (int i = 0; i < normals.Length; i++)
-        normals[i] = new Vector4F(
+        normals[i] = new Vector4(
           (i + 40) / (float)numberOfVertices,
           (i + 50) / (float)numberOfVertices,
           (i + 60) / (float)numberOfVertices,
@@ -131,14 +131,14 @@ namespace DigitalRune.Graphics.Content.Tests
       vbAccessor = new VertexBufferAccessor(vertexDeclaration);
       vbAccessor.SetStream(0, vb, numberOfVertices);
 
-      var positions1 = new Vector4F[numberOfVertices];
-      var normals1 = new Vector4F[numberOfVertices];
+      var positions1 = new Vector4[numberOfVertices];
+      var normals1 = new Vector4[numberOfVertices];
       vbAccessor.GetElements(positions1, VertexElementSemantic.Position, 0);
       vbAccessor.GetElements(normals1, VertexElementSemantic.Normal, 0);
 
       for (int i = 0; i < positions.Length; i++)
       {
-        Vector4F expected = AsHalf(positions[i], redMask, greenMask, blueMask, alphaMask);
+        Vector4 expected = AsHalf(positions[i], redMask, greenMask, blueMask, alphaMask);
         Assert.AreEqual(expected.X, positions1[i].X);
         Assert.AreEqual(expected.Y, positions1[i].Y);
         Assert.AreEqual(expected.Z, positions1[i].Z);
@@ -147,7 +147,7 @@ namespace DigitalRune.Graphics.Content.Tests
 
       for (int i = 0; i < normals.Length; i++)
       {
-        Vector4F expected = AsHalf(normals[i], redMask, greenMask, blueMask, alphaMask);
+        Vector4 expected = AsHalf(normals[i], redMask, greenMask, blueMask, alphaMask);
         Assert.AreEqual(expected.X, normals1[i].X);
         Assert.AreEqual(expected.Y, normals1[i].Y);
         Assert.AreEqual(expected.Z, normals1[i].Z);
@@ -182,17 +182,17 @@ namespace DigitalRune.Graphics.Content.Tests
       };
       var vbAccessor = new VertexBufferAccessor(vertexDeclaration);
 
-      var positions = new Vector4F[numberOfVertices];
+      var positions = new Vector4[numberOfVertices];
       for (int i = 0; i < positions.Length; i++)
-        positions[i] = new Vector4F(
+        positions[i] = new Vector4(
           i / (float)numberOfVertices,
           (i + 10) / (float)numberOfVertices,
           (i + 20) / (float)numberOfVertices,
           (i + 30) / (float)numberOfVertices);
 
-      var normals = new Vector4F[numberOfVertices];
+      var normals = new Vector4[numberOfVertices];
       for (int i = 0; i < normals.Length; i++)
-        normals[i] = new Vector4F(
+        normals[i] = new Vector4(
           (i + 40) / (float)numberOfVertices,
           (i + 50) / (float)numberOfVertices,
           (i + 60) / (float)numberOfVertices,
@@ -214,14 +214,14 @@ namespace DigitalRune.Graphics.Content.Tests
       vbAccessor = new VertexBufferAccessor(vertexDeclaration);
       vbAccessor.SetStream(0, vb, numberOfVertices);
 
-      var positions1 = new Vector4F[numberOfVertices];
-      var normals1 = new Vector4F[numberOfVertices];
+      var positions1 = new Vector4[numberOfVertices];
+      var normals1 = new Vector4[numberOfVertices];
       vbAccessor.GetElements(positions1, VertexElementSemantic.Position, 0);
       vbAccessor.GetElements(normals1, VertexElementSemantic.Normal, 0);
 
       for (int i = 0; i < positions.Length; i++)
       {
-        Vector4F expected = AsUNorm(positions[i], redMask, greenMask, blueMask, alphaMask);
+        Vector4 expected = AsUNorm(positions[i], redMask, greenMask, blueMask, alphaMask);
         Assert.AreEqual(expected.X, positions1[i].X);
         Assert.AreEqual(expected.Y, positions1[i].Y);
         Assert.AreEqual(expected.Z, positions1[i].Z);
@@ -230,7 +230,7 @@ namespace DigitalRune.Graphics.Content.Tests
 
       for (int i = 0; i < normals.Length; i++)
       {
-        Vector4F expected = AsUNorm(normals[i], redMask, greenMask, blueMask, alphaMask);
+        Vector4 expected = AsUNorm(normals[i], redMask, greenMask, blueMask, alphaMask);
         Assert.AreEqual(expected.X, normals1[i].X);
         Assert.AreEqual(expected.Y, normals1[i].Y);
         Assert.AreEqual(expected.Z, normals1[i].Z);
@@ -264,17 +264,17 @@ namespace DigitalRune.Graphics.Content.Tests
       };
       var vbAccessor = new VertexBufferAccessor(vertexDeclaration);
 
-      var positions = new Vector4F[numberOfVertices];
+      var positions = new Vector4[numberOfVertices];
       for (int i = 0; i < positions.Length; i++)
-        positions[i] = new Vector4F(
+        positions[i] = new Vector4(
           i / (float)numberOfVertices,
           (i + 1) / (float)numberOfVertices,
           (i + 2) / (float)numberOfVertices,
           (i + 3) / (float)numberOfVertices);
 
-      var normals = new Vector4F[numberOfVertices];
+      var normals = new Vector4[numberOfVertices];
       for (int i = 0; i < normals.Length; i++)
-        normals[i] = new Vector4F(
+        normals[i] = new Vector4(
           (i + 4) / (float)numberOfVertices,
           (i + 5) / (float)numberOfVertices,
           (i + 6) / (float)numberOfVertices,
@@ -296,14 +296,14 @@ namespace DigitalRune.Graphics.Content.Tests
       vbAccessor = new VertexBufferAccessor(vertexDeclaration);
       vbAccessor.SetStream(0, vb, numberOfVertices);
 
-      var positions1 = new Vector4F[numberOfVertices];
-      var normals1 = new Vector4F[numberOfVertices];
+      var positions1 = new Vector4[numberOfVertices];
+      var normals1 = new Vector4[numberOfVertices];
       vbAccessor.GetElements(positions1, VertexElementSemantic.Position, 0);
       vbAccessor.GetElements(normals1, VertexElementSemantic.Normal, 0);
 
       for (int i = 0; i < positions.Length; i++)
       {
-        Vector4F expected = AsUInt(positions[i], redMask, greenMask, blueMask, alphaMask);
+        Vector4 expected = AsUInt(positions[i], redMask, greenMask, blueMask, alphaMask);
         Assert.AreEqual(expected.X, positions1[i].X);
         Assert.AreEqual(expected.Y, positions1[i].Y);
         Assert.AreEqual(expected.Z, positions1[i].Z);
@@ -312,7 +312,7 @@ namespace DigitalRune.Graphics.Content.Tests
 
       for (int i = 0; i < normals.Length; i++)
       {
-        Vector4F expected = AsUInt(normals[i], redMask, greenMask, blueMask, alphaMask);
+        Vector4 expected = AsUInt(normals[i], redMask, greenMask, blueMask, alphaMask);
         Assert.AreEqual(expected.X, normals1[i].X);
         Assert.AreEqual(expected.Y, normals1[i].Y);
         Assert.AreEqual(expected.Z, normals1[i].Z);
@@ -341,17 +341,17 @@ namespace DigitalRune.Graphics.Content.Tests
       };
       var vbAccessor = new VertexBufferAccessor(vertexDeclaration);
 
-      var positions = new Vector4F[numberOfVertices];
+      var positions = new Vector4[numberOfVertices];
       for (int i = 0; i < positions.Length; i++)
-        positions[i] = new Vector4F(
+        positions[i] = new Vector4(
           i / (float)numberOfVertices,
           (i + 1) / (float)numberOfVertices,
           (i + 2) / (float)numberOfVertices,
           (i + 3) / (float)numberOfVertices);
 
-      var normals = new Vector4F[numberOfVertices];
+      var normals = new Vector4[numberOfVertices];
       for (int i = 0; i < normals.Length; i++)
-        normals[i] = new Vector4F(
+        normals[i] = new Vector4(
           (i + 4) / (float)numberOfVertices,
           (i + 5) / (float)numberOfVertices,
           (i + 6) / (float)numberOfVertices,
@@ -373,14 +373,14 @@ namespace DigitalRune.Graphics.Content.Tests
       vbAccessor = new VertexBufferAccessor(vertexDeclaration);
       vbAccessor.SetStream(0, vb, numberOfVertices);
 
-      var positions1 = new Vector4F[numberOfVertices];
-      var normals1 = new Vector4F[numberOfVertices];
+      var positions1 = new Vector4[numberOfVertices];
+      var normals1 = new Vector4[numberOfVertices];
       vbAccessor.GetElements(positions1, VertexElementSemantic.Position, 0);
       vbAccessor.GetElements(normals1, VertexElementSemantic.Normal, 0);
 
       for (int i = 0; i < positions.Length; i++)
       {
-        Vector4F expected = AsSNorm(positions[i], redMask, greenMask, blueMask, alphaMask);
+        Vector4 expected = AsSNorm(positions[i], redMask, greenMask, blueMask, alphaMask);
         Assert.AreEqual(expected.X, positions1[i].X);
         Assert.AreEqual(expected.Y, positions1[i].Y);
         Assert.AreEqual(expected.Z, positions1[i].Z);
@@ -389,7 +389,7 @@ namespace DigitalRune.Graphics.Content.Tests
 
       for (int i = 0; i < normals.Length; i++)
       {
-        Vector4F expected = AsSNorm(normals[i], redMask, greenMask, blueMask, alphaMask);
+        Vector4 expected = AsSNorm(normals[i], redMask, greenMask, blueMask, alphaMask);
         Assert.AreEqual(expected.X, normals1[i].X);
         Assert.AreEqual(expected.Y, normals1[i].Y);
         Assert.AreEqual(expected.Z, normals1[i].Z);
@@ -422,17 +422,17 @@ namespace DigitalRune.Graphics.Content.Tests
       };
       var vbAccessor = new VertexBufferAccessor(vertexDeclaration);
 
-      var positions = new Vector4F[numberOfVertices];
+      var positions = new Vector4[numberOfVertices];
       for (int i = 0; i < positions.Length; i++)
-        positions[i] = new Vector4F(
+        positions[i] = new Vector4(
           i / (float)numberOfVertices,
           (i + 1) / (float)numberOfVertices,
           (i + 2) / (float)numberOfVertices,
           (i + 3) / (float)numberOfVertices);
 
-      var normals = new Vector4F[numberOfVertices];
+      var normals = new Vector4[numberOfVertices];
       for (int i = 0; i < normals.Length; i++)
-        normals[i] = new Vector4F(
+        normals[i] = new Vector4(
           (i + 4) / (float)numberOfVertices,
           (i + 5) / (float)numberOfVertices,
           (i + 6) / (float)numberOfVertices,
@@ -454,14 +454,14 @@ namespace DigitalRune.Graphics.Content.Tests
       vbAccessor = new VertexBufferAccessor(vertexDeclaration);
       vbAccessor.SetStream(0, vb, numberOfVertices);
 
-      var positions1 = new Vector4F[numberOfVertices];
-      var normals1 = new Vector4F[numberOfVertices];
+      var positions1 = new Vector4[numberOfVertices];
+      var normals1 = new Vector4[numberOfVertices];
       vbAccessor.GetElements(positions1, VertexElementSemantic.Position, 0);
       vbAccessor.GetElements(normals1, VertexElementSemantic.Normal, 0);
 
       for (int i = 0; i < positions.Length; i++)
       {
-        Vector4F expected = AsSInt(positions[i], redMask, greenMask, blueMask, alphaMask);
+        Vector4 expected = AsSInt(positions[i], redMask, greenMask, blueMask, alphaMask);
         Assert.AreEqual(expected.X, positions1[i].X);
         Assert.AreEqual(expected.Y, positions1[i].Y);
         Assert.AreEqual(expected.Z, positions1[i].Z);
@@ -470,7 +470,7 @@ namespace DigitalRune.Graphics.Content.Tests
 
       for (int i = 0; i < normals.Length; i++)
       {
-        Vector4F expected = AsSInt(normals[i], redMask, greenMask, blueMask, alphaMask);
+        Vector4 expected = AsSInt(normals[i], redMask, greenMask, blueMask, alphaMask);
         Assert.AreEqual(expected.X, normals1[i].X);
         Assert.AreEqual(expected.Y, normals1[i].Y);
         Assert.AreEqual(expected.Z, normals1[i].Z);
@@ -479,7 +479,7 @@ namespace DigitalRune.Graphics.Content.Tests
     }
 
 
-    private static Vector4F AsFloat(Vector4F v, uint redMask, uint greenMask, uint blueMask, uint alphaMask)
+    private static Vector4 AsFloat(Vector4 v, uint redMask, uint greenMask, uint blueMask, uint alphaMask)
     {
       v.X = (redMask> 0) ? v.X : 0;
       v.Y = (greenMask> 0) ? v.Y : 0;
@@ -489,7 +489,7 @@ namespace DigitalRune.Graphics.Content.Tests
     }
 
 
-    private static Vector4F AsHalf(Vector4F v, uint redMask, uint greenMask, uint blueMask, uint alphaMask)
+    private static Vector4 AsHalf(Vector4 v, uint redMask, uint greenMask, uint blueMask, uint alphaMask)
     {
       v.X = (redMask> 0) ? HalfHelper.Unpack(HalfHelper.Pack(v.X)) : 0;
       v.Y = (greenMask> 0) ? HalfHelper.Unpack(HalfHelper.Pack(v.Y)) : 0;
@@ -499,7 +499,7 @@ namespace DigitalRune.Graphics.Content.Tests
     }
 
 
-    private static Vector4F AsUNorm(Vector4F v, uint redMask, uint greenMask, uint blueMask, uint alphaMask)
+    private static Vector4 AsUNorm(Vector4 v, uint redMask, uint greenMask, uint blueMask, uint alphaMask)
     {
       v.X = (redMask> 0) ? DataFormatHelper.UNormToFloat(DataFormatHelper.FloatToUNorm(v.X, redMask), redMask) : 0;
       v.Y = (greenMask> 0) ? DataFormatHelper.UNormToFloat(DataFormatHelper.FloatToUNorm(v.Y, greenMask), greenMask) : 0;
@@ -509,7 +509,7 @@ namespace DigitalRune.Graphics.Content.Tests
     }
 
 
-    private static Vector4F AsUInt(Vector4F v, uint redMask, uint greenMask, uint blueMask, uint alphaMask)
+    private static Vector4 AsUInt(Vector4 v, uint redMask, uint greenMask, uint blueMask, uint alphaMask)
     {
       v.X = (redMask> 0) ? DataFormatHelper.UIntToFloat(DataFormatHelper.FloatToUInt(v.X, redMask), redMask) : 0;
       v.Y = (greenMask> 0) ? DataFormatHelper.UIntToFloat(DataFormatHelper.FloatToUInt(v.Y, greenMask), greenMask) : 0;
@@ -519,7 +519,7 @@ namespace DigitalRune.Graphics.Content.Tests
     }
 
 
-    private static Vector4F AsSNorm(Vector4F v, uint redMask, uint greenMask, uint blueMask, uint alphaMask)
+    private static Vector4 AsSNorm(Vector4 v, uint redMask, uint greenMask, uint blueMask, uint alphaMask)
     {
       v.X = (redMask> 0) ? DataFormatHelper.SNormToFloat(DataFormatHelper.FloatToSNorm(v.X, redMask), redMask) : 0;
       v.Y = (greenMask> 0) ? DataFormatHelper.SNormToFloat(DataFormatHelper.FloatToSNorm(v.Y, greenMask), greenMask) : 0;
@@ -529,7 +529,7 @@ namespace DigitalRune.Graphics.Content.Tests
     }
 
 
-    private static Vector4F AsSInt(Vector4F v, uint redMask, uint greenMask, uint blueMask, uint alphaMask)
+    private static Vector4 AsSInt(Vector4 v, uint redMask, uint greenMask, uint blueMask, uint alphaMask)
     {
       v.X = (redMask> 0) ? DataFormatHelper.SIntToFloat(DataFormatHelper.FloatToSInt(v.X, redMask), redMask) : 0;
       v.Y = (greenMask> 0) ? DataFormatHelper.SIntToFloat(DataFormatHelper.FloatToSInt(v.Y, greenMask), greenMask) : 0;

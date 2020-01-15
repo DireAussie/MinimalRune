@@ -4,28 +4,28 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Collections;
-using DigitalRune.Geometry.Collisions.Algorithms;
-using DigitalRune.Geometry.Partitioning;
-using DigitalRune.Geometry.Shapes;
+using MinimalRune.Collections;
+using MinimalRune.Geometry.Collisions.Algorithms;
+using MinimalRune.Geometry.Partitioning;
+using MinimalRune.Geometry.Shapes;
 
 
-namespace DigitalRune.Geometry.Collisions
+namespace MinimalRune.Geometry.Collisions
 {
   /// <summary>
   /// Provides methods and settings for collision detection.
   /// </summary>
   public class CollisionDetection
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the collision algorithm matrix.
@@ -211,9 +211,9 @@ namespace DigitalRune.Geometry.Collisions
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="CollisionDetection"/> class.
@@ -231,9 +231,9 @@ namespace DigitalRune.Geometry.Collisions
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns <see langword="true"/> if the axis-aligned bounding boxes (AABBs) of two

@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Physics.ForceEffects
+namespace MinimalRune.Physics.ForceEffects
 {
   /// <summary>
   /// Applies a force onto rigid bodies.
@@ -85,15 +85,15 @@ namespace DigitalRune.Physics.ForceEffects
   {
     // Order: Simulation --> OnAddToSimulation --> OnApply --> ... --> OnApply --> OnRemoveFromSimulation --> Simulation = null 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the simulation to which this force effect belongs.
@@ -159,9 +159,9 @@ namespace DigitalRune.Physics.ForceEffects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ForceEffect"/> class.
@@ -173,9 +173,9 @@ namespace DigitalRune.Physics.ForceEffects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Applies forces to the rigid bodies.

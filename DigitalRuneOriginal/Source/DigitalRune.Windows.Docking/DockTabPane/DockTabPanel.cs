@@ -13,16 +13,16 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     /// <summary>
     /// Hosts tabs inside a <see cref="DockTabPane"/>.
     /// </summary>
     public class DockTabPanel : Panel
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private double _elementHeight;
         private readonly List<double> _elementWidths = new List<double>();
@@ -37,15 +37,15 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="InvertZOrder"/> dependency property.
@@ -133,9 +133,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="DockTabPanel"/> class.
@@ -152,9 +152,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Called when the <see cref="P:DigitalRune.Windows.Docking.DockTabPanel.IsDraggedProperty"/> property changed.

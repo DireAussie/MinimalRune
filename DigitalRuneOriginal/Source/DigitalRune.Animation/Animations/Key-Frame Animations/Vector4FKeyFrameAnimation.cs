@@ -2,22 +2,22 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Animation.Traits;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Animation.Traits;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
-  /// Animates a <see cref="Vector4F"/> value using key frames.
+  /// Animates a <see cref="Vector4"/> value using key frames.
   /// </summary>
   /// <inheritdoc/>
-  public class Vector4FKeyFrameAnimation : KeyFrameAnimation<Vector4F>
+  public class Vector4KeyFrameAnimation : KeyFrameAnimation<Vector4>
   {
     /// <inheritdoc/>
-    public override IAnimationValueTraits<Vector4F> Traits
+    public override IAnimationValueTraits<Vector4> Traits
     {
-      get { return Vector4FTraits.Instance; }
+      get { return Vector4Traits.Instance; }
     }
   }
 }

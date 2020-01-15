@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Physics.ForceEffects
+namespace MinimalRune.Physics.ForceEffects
 {
   /// <summary>
   /// Applies an explosion force for a short duration.
@@ -30,15 +30,15 @@ namespace DigitalRune.Physics.ForceEffects
   {
     // TODO: Make auto-removal optional.
     
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the duration of the explosion.
@@ -80,9 +80,9 @@ namespace DigitalRune.Physics.ForceEffects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -124,9 +124,9 @@ namespace DigitalRune.Physics.ForceEffects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Called when this force effect is added to a simulation.
@@ -180,7 +180,7 @@ namespace DigitalRune.Physics.ForceEffects
 
       // Calculate distance to explosion center.
       Vector3 explosionToBody = body.PoseCenterOfMass.Position - Position;
-      float distanceSquared = explosionToBody.LengthSquared;
+      float distanceSquared = explosionToBody.LengthSquared();
 
       float radiusSquared = Radius * Radius;
       if (distanceSquared > radiusSquared)

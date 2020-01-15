@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Geometry.Meshes.Tests
+namespace MinimalRune.Geometry.Meshes.Tests
 {
   [TestFixture]
   public class DcelTest

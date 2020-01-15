@@ -2,7 +2,7 @@
 using NUnit.Framework;
 
 
-namespace DigitalRune.Windows.Docking.Tests
+namespace MinimalRune.Windows.Docking.Tests
 {
     [TestFixture]
     public class SerializationTest

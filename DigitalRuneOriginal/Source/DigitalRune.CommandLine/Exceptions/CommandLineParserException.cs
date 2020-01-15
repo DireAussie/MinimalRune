@@ -6,7 +6,7 @@ using System;
 using System.Runtime.Serialization;
 
 
-namespace DigitalRune.CommandLine
+namespace MinimalRune.CommandLine
 {
     /// <summary>
     /// The exception thrown by the <see cref="CommandLineParser"/>.

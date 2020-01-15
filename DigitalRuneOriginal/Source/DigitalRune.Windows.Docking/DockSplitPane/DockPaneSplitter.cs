@@ -7,10 +7,10 @@ using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     /// <summary>
     /// Represents a control that changes the size of the elements in a <see cref="DockSplitPane"/>.
@@ -25,9 +25,9 @@ namespace DigitalRune.Windows.Docking
     [TemplateVisualState(GroupName = "CommonStates", Name = "Disabled")]
     public class DockPaneSplitter : Control
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly DockSplitPanel _panel;
         private readonly int _index;
@@ -45,21 +45,21 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
-
-
-
-        //--------------------------------------------------------------
-
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
+
+
+
+        
+
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="DockPaneSplitter"/> class.
@@ -94,9 +94,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------    
+            
 
         /// <summary>
         /// When overridden in a derived class, is invoked whenever application code or internal 

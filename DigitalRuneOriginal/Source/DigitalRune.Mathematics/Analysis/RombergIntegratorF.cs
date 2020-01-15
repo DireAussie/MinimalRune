@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Mathematics.Analysis
+namespace MinimalRune.Mathematics.Analysis
 {
   /// <summary>
   /// Performs numerical integration using the <i>Romberg's method</i> (single-precision).

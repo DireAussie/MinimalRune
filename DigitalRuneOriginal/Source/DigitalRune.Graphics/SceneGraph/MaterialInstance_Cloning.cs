@@ -5,10 +5,10 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using DigitalRune.Graphics.Effects;
+using MinimalRune.Graphics.Effects;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   partial class MaterialInstance
   {

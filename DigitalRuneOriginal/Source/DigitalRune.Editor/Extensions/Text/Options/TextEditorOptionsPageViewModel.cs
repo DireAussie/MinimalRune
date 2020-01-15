@@ -6,25 +6,25 @@ using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Media;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Controls;
-using DigitalRune.Windows.Framework;
-using DigitalRune.Editor.Options;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Controls;
+using MinimalRune.Windows.Framework;
+using MinimalRune.Editor.Options;
 using ICSharpCode.AvalonEdit;
 using NLog;
 using static System.FormattableString;
 
 
-namespace DigitalRune.Editor.Text
+namespace MinimalRune.Editor.Text
 {
     /// <summary>
     /// Represents an options page that allows the user to customize the text editor settings.
     /// </summary>
     internal class TextEditorOptionsPageViewModel : OptionsPageViewModel
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
@@ -35,9 +35,9 @@ namespace DigitalRune.Editor.Text
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets the text editor options.
@@ -70,9 +70,9 @@ namespace DigitalRune.Editor.Text
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TextEditorOptionsPageViewModel"/> class. 
@@ -113,9 +113,9 @@ namespace DigitalRune.Editor.Text
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0")]

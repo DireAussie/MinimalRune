@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.ServiceLocation
+namespace MinimalRune.ServiceLocation
 {
     partial class ServiceContainer
     {

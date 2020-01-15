@@ -1,14 +1,14 @@
 ﻿
 using DigitalRune;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.Rendering;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Statistics;
-using DigitalRune.Physics.ForceEffects;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.Rendering;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Statistics;
+using MinimalRune.Physics.ForceEffects;
 using Microsoft.Xna.Framework;
 using System;
 using System.Linq;
@@ -187,7 +187,7 @@ Debug drawing can be enabled in the Options window (F4) in the Batching tab:
         // Strategy C: Create one MeshInstancingNode which contains all instances for one mesh.
         var instances = new InstanceData[numberOfInstances];
         for (int i = 0; i < numberOfInstances; i++)
-          instances[i] = new InstanceData(scales[i], poses[i], new Vector4F(1));
+          instances[i] = new InstanceData(scales[i], poses[i], new Vector4(1));
 
         // Create MeshInstancingNode.
         var instancingMeshNode = new MeshInstancingNode<InstanceData>(mesh, instances)

@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System.Windows.Input;
-using DigitalRune.Windows.Docking.Resources;
+using MinimalRune.Windows.Docking.Resources;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     /// <summary>
     /// Provides a commands for adding, moving or removing elements from the docking layout.

@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 
 
-namespace DigitalRune.Mathematics.Analysis
+namespace MinimalRune.Mathematics.Analysis
 {
   /// <summary>
   /// Finds roots using an improved Newton-Raphson method (single-precision).

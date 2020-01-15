@@ -9,7 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     /// <summary>
     /// Represents a pane in the docking layout that is split horizontally or vertically into two
@@ -17,24 +17,24 @@ namespace DigitalRune.Windows.Docking
     /// </summary>
     public class DockSplitPane : ItemsControl
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         // Workaround for creating item containers.
         private object _currentItem;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="DockWidth"/> dependency property.
@@ -98,9 +98,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes the static members of the <see cref="DockSplitPane"/> class.
@@ -112,9 +112,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Called when the <see cref="ItemsControl.ItemsSource"/> property changes.

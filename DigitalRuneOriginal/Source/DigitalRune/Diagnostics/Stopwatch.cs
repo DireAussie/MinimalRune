@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Diagnostics
+namespace MinimalRune.Diagnostics
 {
   /// <summary>
   /// Wraps the <strong>Stopwatch</strong> class for use in a portable class library profile which 

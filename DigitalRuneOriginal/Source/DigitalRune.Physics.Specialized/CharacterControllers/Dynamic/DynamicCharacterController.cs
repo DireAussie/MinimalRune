@@ -3,15 +3,15 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics.Materials;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics.Materials;
 
 
-namespace DigitalRune.Physics.Specialized
+namespace MinimalRune.Physics.Specialized
 {
   /// <summary>
   /// Controls the movement of a game character.
@@ -73,9 +73,9 @@ namespace DigitalRune.Physics.Specialized
     //   s' = s + v∙t + 1/2∙g∙t²
 
     
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private Vector3 _gravityVelocity;   // Current velocity from gravity.
     private Vector3 _jumpVelocity;      // Current velocity from jumping.
@@ -85,9 +85,9 @@ namespace DigitalRune.Physics.Specialized
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the simulation.
@@ -328,9 +328,9 @@ namespace DigitalRune.Physics.Specialized
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="KinematicCharacterController"/> class.
@@ -398,9 +398,9 @@ namespace DigitalRune.Physics.Specialized
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Moves the character to a new position while avoiding penetrations and sliding along 

@@ -6,7 +6,7 @@ using System;
 using System.Globalization;
 
 
-namespace DigitalRune.Particles
+namespace MinimalRune.Particles
 {
   partial class ParticleEffector
   {

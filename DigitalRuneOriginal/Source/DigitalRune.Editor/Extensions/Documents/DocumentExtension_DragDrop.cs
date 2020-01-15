@@ -9,12 +9,12 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
-using DigitalRune.Editor.Status;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Docking;
+using MinimalRune.Editor.Status;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Docking;
 
 
-namespace DigitalRune.Editor.Documents
+namespace MinimalRune.Editor.Documents
 {
     partial class DocumentExtension
     {

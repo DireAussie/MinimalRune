@@ -12,7 +12,7 @@
 using System.Threading.Tasks;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Represents an item which may prevent closing.

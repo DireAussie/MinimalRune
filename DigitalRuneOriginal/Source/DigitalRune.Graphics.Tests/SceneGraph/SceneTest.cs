@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Linq;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Meshes;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Statistics;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Meshes;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Statistics;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Graphics.SceneGraph.Tests
+namespace MinimalRune.Graphics.SceneGraph.Tests
 {
   [TestFixture]
   public class SceneTest

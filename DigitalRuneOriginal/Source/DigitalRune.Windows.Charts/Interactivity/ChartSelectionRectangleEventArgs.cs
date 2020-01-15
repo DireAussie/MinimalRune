@@ -6,7 +6,7 @@ using System;
 using System.Windows.Input;
 
 
-namespace DigitalRune.Windows.Charts.Interactivity
+namespace MinimalRune.Windows.Charts.Interactivity
 {
     /// <summary>
     /// Provides arguments for the <see cref="ChartSelectionBehavior.SelectionRectangle"/> event.
@@ -16,15 +16,15 @@ namespace DigitalRune.Windows.Charts.Interactivity
 
     public class ChartSelectionRectangleEventArgs : EventArgs
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the left edge of the selection relative to the <see cref="ChartPanel"/>.
@@ -77,9 +77,9 @@ namespace DigitalRune.Windows.Charts.Interactivity
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ChartSelectionRectangleEventArgs"/> class.
@@ -111,9 +111,9 @@ namespace DigitalRune.Windows.Charts.Interactivity
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
     }
 }

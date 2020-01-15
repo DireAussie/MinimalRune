@@ -9,29 +9,29 @@ using System.Diagnostics;
 using System.Linq;
 using System.Windows;
 using System.Windows.Threading;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Controls;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Controls;
+using MinimalRune.Windows.Framework;
 
 
-namespace DigitalRune.Editor.Properties
+namespace MinimalRune.Editor.Properties
 {
     /// <summary>
     /// Represents the Properties window.
     /// </summary>
     internal class PropertiesViewModel : EditorDockTabItemViewModel
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         internal const string DockIdString = "Properties";
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly IEditorService _editor;
 
@@ -44,9 +44,9 @@ namespace DigitalRune.Editor.Properties
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets an instance of the <see cref="PropertiesViewModel"/> that can be used at
@@ -128,9 +128,9 @@ namespace DigitalRune.Editor.Properties
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PropertiesViewModel"/> class.
@@ -166,9 +166,9 @@ namespace DigitalRune.Editor.Properties
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0")]

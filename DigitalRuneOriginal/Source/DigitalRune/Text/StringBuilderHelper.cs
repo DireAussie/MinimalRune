@@ -47,12 +47,12 @@
 
 
 
-//-----------------------------------------------------------------------------
+---------------
 // StringBuilderExtensions.cs
 //
 // Microsoft XNA Community Game Platform
 // Copyright (C) Microsoft Corporation. All rights reserved.
-//-----------------------------------------------------------------------------
+---------------
 
 
 
@@ -61,7 +61,7 @@ using System.Globalization;
 using System.Text;
 
 
-namespace DigitalRune.Text
+namespace MinimalRune.Text
 {
   /// <summary>
   /// Options for <see cref="StringBuilder"/> extension methods.

@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Input;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Framework;
 
 
 namespace DragDropApp

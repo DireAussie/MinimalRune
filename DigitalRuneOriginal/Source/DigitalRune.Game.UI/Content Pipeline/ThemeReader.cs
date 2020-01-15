@@ -4,15 +4,15 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Storages;
-using DigitalRune.Game.UI.Rendering;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Storages;
+using MinimalRune.Game.UI.Rendering;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Game.UI.Content
+namespace MinimalRune.Game.UI.Content
 {
   /// <summary>
   /// Reads a UI theme from binary format.
@@ -121,11 +121,11 @@ namespace DigitalRune.Game.UI.Content
             }
 
             image.SourceRectangle = input.ReadRawObject<Rectangle>();
-            image.Margin = input.ReadRawObject<Vector4F>();
+            image.Margin = input.ReadRawObject<Vector4>();
             image.HorizontalAlignment = (HorizontalAlignment)input.ReadInt32();
             image.VerticalAlignment = (VerticalAlignment)input.ReadInt32();
             image.TileMode = (TileMode)input.ReadInt32();
-            image.Border = input.ReadRawObject<Vector4F>();
+            image.Border = input.ReadRawObject<Vector4>();
             image.IsOverlay = input.ReadBoolean();
             image.Color = input.ReadColor();
             state.Images.Add(image);

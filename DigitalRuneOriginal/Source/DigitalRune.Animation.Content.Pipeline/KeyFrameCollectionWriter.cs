@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler;
 
 
-namespace DigitalRune.Animation.Content.Pipeline
+namespace MinimalRune.Animation.Content.Pipeline
 {
   /// <summary>
   /// Writes a <see cref="KeyFrameCollection{T}"/> to binary format.

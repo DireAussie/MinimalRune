@@ -1,7 +1,7 @@
-﻿using DigitalRune.Animation;
-using DigitalRune.Graphics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Interpolation;
+﻿using MinimalRune.Animation;
+using MinimalRune.Graphics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Interpolation;
 using Microsoft.Xna.Framework;
 using CurveLoopType = DigitalRune.Mathematics.Interpolation.CurveLoopType;
 

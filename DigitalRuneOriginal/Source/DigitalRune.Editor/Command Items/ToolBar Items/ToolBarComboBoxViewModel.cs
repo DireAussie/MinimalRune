@@ -6,7 +6,7 @@ using System;
 using System.Collections;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// Represents a combo box in a toolbar.

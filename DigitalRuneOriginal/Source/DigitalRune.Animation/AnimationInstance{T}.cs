@@ -5,10 +5,10 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Represents an instance of an animation.
@@ -17,9 +17,9 @@ namespace DigitalRune.Animation
   /// <inheritdoc/>
   public sealed class AnimationInstance<T> : AnimationInstance
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // ReSharper disable StaticFieldInGenericType
     private static readonly ResourcePool<AnimationInstance<T>> Pool = new ResourcePool<AnimationInstance<T>>(
@@ -30,9 +30,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the target property that is being animated.
@@ -60,9 +60,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Prevents a default instance of the <see cref="AnimationInstance{T}"/> class from being
@@ -124,9 +124,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     internal override AnimationInstanceCollection CreateChildCollection()

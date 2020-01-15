@@ -2,11 +2,11 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Windows.Interop;
+using MinimalRune.Windows.Interop;
 using Microsoft.Win32.SafeHandles;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
     /// Represents a wrapper class for a library handle.

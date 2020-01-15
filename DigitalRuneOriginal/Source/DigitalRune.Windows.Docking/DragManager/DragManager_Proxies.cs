@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     // Helper methods
     internal partial class DragManager

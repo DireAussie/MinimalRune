@@ -10,7 +10,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Represents a slider-like control that displays a color gradient.
@@ -24,23 +24,23 @@ namespace DigitalRune.Windows.Controls
     [TemplatePart(Name = "PART_Thumb", Type = typeof(FrameworkElement))]
     public class ColorSlider1D : Control
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private FrameworkElement _thumb;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="Value"/> dependency property.
@@ -90,9 +90,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="ColorSlider1D"/> class.
@@ -104,9 +104,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static double ClampValue(double value)
         {

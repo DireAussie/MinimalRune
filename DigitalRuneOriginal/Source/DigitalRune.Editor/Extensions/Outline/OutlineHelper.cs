@@ -4,19 +4,19 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Linq;
+using MinimalRune.Linq;
 
 
-namespace DigitalRune.Editor.Outlines
+namespace MinimalRune.Editor.Outlines
 {
     /// <summary>
     /// Provides helper methods for outlines.
     /// </summary>
     public static class OutlineHelper
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Func<OutlineItem, OutlineItem> GetParentCallback = item => item.Parent;
         private static readonly Func<OutlineItem, IEnumerable<OutlineItem>> GetChildrenCallback = GetChildren;

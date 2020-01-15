@@ -8,13 +8,13 @@ using System.Windows;
 using System.Windows.Controls;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     partial class DockControl
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------    
+            
 
         /// <summary>
         /// Identifies the <see cref="P:DigitalRune.Windows.Docking.DockControl.DockWidth"/>
@@ -139,9 +139,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Called when the <see cref="P:DigitalRune.Windows.Docking.DockControl.DockWidth"/> or the

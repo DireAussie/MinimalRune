@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace DigitalRune
+namespace MinimalRune
 {
   /// <summary>
   /// Compares objects for equality by checking whether the specified <see cref="object"/> instances 

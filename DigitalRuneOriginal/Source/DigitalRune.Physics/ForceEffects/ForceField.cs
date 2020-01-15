@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Physics.ForceEffects
+namespace MinimalRune.Physics.ForceEffects
 {
   /// <summary>
   /// Applies a force effect to all bodies in the <see cref="AreaOfEffect"/> individually.
@@ -23,15 +23,15 @@ namespace DigitalRune.Physics.ForceEffects
   /// </remarks>
   public abstract class ForceField : ForceEffect
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the area of effect.
@@ -46,9 +46,9 @@ namespace DigitalRune.Physics.ForceEffects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -80,9 +80,9 @@ namespace DigitalRune.Physics.ForceEffects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Called when the simulation wants this force effect to apply forces to rigid bodies.

@@ -12,16 +12,16 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
-using DigitalRune.Editor.Commands;
-using DigitalRune.Editor.Printing;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Editor.Commands;
+using MinimalRune.Editor.Printing;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Framework;
 using ICSharpCode.AvalonEdit;
 using NLog;
 using TextDocument = ICSharpCode.AvalonEdit.Document.TextDocument;
 
 
-namespace DigitalRune.Editor.Output
+namespace MinimalRune.Editor.Output
 {
     /// <summary>
     /// Represents the output window.
@@ -33,9 +33,9 @@ namespace DigitalRune.Editor.Output
         // Otherwise, log messages could be out of order.
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         internal const string DockIdString = "OutputWindow";
         public const string DefaultView = "Default";
@@ -43,9 +43,9 @@ namespace DigitalRune.Editor.Output
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
@@ -57,9 +57,9 @@ namespace DigitalRune.Editor.Output
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets an instance of the <see cref="OutputViewModel"/> that can be used at design-time.
@@ -149,9 +149,9 @@ namespace DigitalRune.Editor.Output
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputViewModel" /> class.
@@ -193,9 +193,9 @@ namespace DigitalRune.Editor.Output
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0")]
         protected override void OnActivated(ActivationEventArgs eventArgs)

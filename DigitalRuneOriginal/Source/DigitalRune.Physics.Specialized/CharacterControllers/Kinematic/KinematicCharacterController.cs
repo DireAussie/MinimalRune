@@ -3,12 +3,12 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Interpolation;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Interpolation;
 
 
-namespace DigitalRune.Physics.Specialized
+namespace MinimalRune.Physics.Specialized
 {
   /// <summary>
   /// Controls the movement of a game character.
@@ -86,9 +86,9 @@ namespace DigitalRune.Physics.Specialized
     // - ...
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // A force effect that takes applies pushing and gravity forces to touched objects.
     // It also makes the character move with moving ground.
@@ -107,9 +107,9 @@ namespace DigitalRune.Physics.Specialized
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the simulation.
@@ -301,9 +301,9 @@ namespace DigitalRune.Physics.Specialized
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="KinematicCharacterController"/> class.
@@ -340,9 +340,9 @@ namespace DigitalRune.Physics.Specialized
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Moves the character to a new position while avoiding penetrations and sliding along 
@@ -457,7 +457,7 @@ namespace DigitalRune.Physics.Specialized
 
             // v' = v + g∙t
             _gravityVelocity += -UpVector * Gravity * deltaTime;
-            if (_gravityVelocity.LengthSquared > MaxVelocity * MaxVelocity) // Limit gravity.
+            if (_gravityVelocity.LengthSquared() > MaxVelocity * MaxVelocity) // Limit gravity.
               _gravityVelocity.Length = MaxVelocity;
 
             // s' = s + v∙t + 1/2∙g∙t² 

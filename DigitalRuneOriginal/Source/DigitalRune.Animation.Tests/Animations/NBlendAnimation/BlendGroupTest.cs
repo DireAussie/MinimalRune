@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Animation.Tests.Animations.NBlendAnimation
+namespace MinimalRune.Animation.Tests.Animations.NBlendAnimation
 {
   [TestFixture]
   public class BlendGroupTest

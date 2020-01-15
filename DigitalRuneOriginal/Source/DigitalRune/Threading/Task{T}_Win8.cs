@@ -10,7 +10,7 @@ using System.Linq;
 using Tpl = System.Threading.Tasks;
 
 
-namespace DigitalRune.Threading
+namespace MinimalRune.Threading
 {
   /// <summary>
   /// Represents an asynchronous operation that can return a value.

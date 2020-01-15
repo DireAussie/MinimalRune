@@ -1,10 +1,10 @@
-﻿using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics.PostProcessing;
+﻿using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics.PostProcessing;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Creates a shadow using Variance Shadow Mapping (VSM). This shadow can be used for
@@ -23,18 +23,18 @@ namespace DigitalRune.Graphics
   /// </remarks>
   public class VarianceShadow : Shadow
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Cached values:
     internal Matrix ViewProjection;   // Transformation from world space to shadow map projection space.
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the shadow map.
@@ -147,9 +147,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="VarianceShadow"/> class.
@@ -166,9 +166,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

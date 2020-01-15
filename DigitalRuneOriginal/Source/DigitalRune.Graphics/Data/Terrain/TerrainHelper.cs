@@ -3,15 +3,15 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Threading;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Threading;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Graphics.PackedVector;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Provides helper methods for terrain rendering.
@@ -23,9 +23,9 @@ namespace DigitalRune.Graphics
     // TODO: Implement GetTextureLevel for levels > 0.
     // TODO: Discuss order of method arguments.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the texture data of the specified mipmap level as a <see cref="Vector4"/> array.
@@ -463,9 +463,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     ///// <overloads>
     ///// <summary>
@@ -517,9 +517,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     //public static void SmoothTexture(Texture2D texture, float smoothness)
     //{
@@ -690,9 +690,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     //private static void CreateTerrainGeometryMipLevels(Texture2D texture, bool useNearestNeighborFilter)
     //{
@@ -929,9 +929,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     //public static void CreateHeightTexture(Texture2D inputHeightTexture, float minHeight, float maxHeight, float smoothness, bool useNearestNeighborFilter, ref Texture2D heightTexture)
     //{

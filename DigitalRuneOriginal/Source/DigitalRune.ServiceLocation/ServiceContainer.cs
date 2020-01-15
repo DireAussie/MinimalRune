@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 using Microsoft.Practices.ServiceLocation;
 
 // Workaround for C# 6 (Roslyn) bug:
@@ -18,7 +18,7 @@ using Microsoft.Practices.ServiceLocation;
 //      cref="GetInstance(System.Type,string)".
 
 
-namespace DigitalRune.ServiceLocation
+namespace MinimalRune.ServiceLocation
 {
     /// <summary>
     /// Implements a simple <i>inversion of control</i> (IoC) container.
@@ -108,9 +108,9 @@ namespace DigitalRune.ServiceLocation
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1010:CollectionsShouldImplementGenericInterface")]
     public partial class ServiceContainer : IDisposable
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly Dictionary<ServiceRegistration, ServiceEntry> _registry;
         private readonly WeakCollection<ServiceContainer> _childContainers;
@@ -118,9 +118,9 @@ namespace DigitalRune.ServiceLocation
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets a value indicating whether this instance has been disposed of.
@@ -133,9 +133,9 @@ namespace DigitalRune.ServiceLocation
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ServiceContainer"/> class.
@@ -207,9 +207,9 @@ namespace DigitalRune.ServiceLocation
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Throws an <see cref="ObjectDisposedException"/> if the service container has already

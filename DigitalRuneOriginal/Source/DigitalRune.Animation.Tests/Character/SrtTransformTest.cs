@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using DigitalRune.Geometry;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using NUnit.Framework;
-using DigitalRune.Animation.Character;
+using MinimalRune.Animation.Character;
 
 
-namespace DigitalRune.Animation.Character.Tests
+namespace MinimalRune.Animation.Character.Tests
 {
   [TestFixture]
   public class SrtTransformTest
@@ -369,15 +369,15 @@ namespace DigitalRune.Animation.Character.Tests
     public void MultiplyVector4()
     {
       var a = new SrtTransform(new Vector3(1, 2, 7), new Quaternion(1, 2, 3, 4).Normalized, new Vector3(4, -5, 6));
-      var v = new Vector4F(7, 9, -12, -2);
+      var v = new Vector4(7, 9, -12, -2);
 
       var result1 = a * v;
       var result2 = a.ToMatrix() * v;
-      Assert.IsTrue(Vector4F.AreNumericallyEqual(result1, result2));
+      Assert.IsTrue(Vector4.AreNumericallyEqual(result1, result2));
 
       result1 = SrtTransform.Multiply(a, v);
       result2 = a.ToMatrix() * v;
-      Assert.IsTrue(Vector4F.AreNumericallyEqual(result1, result2));
+      Assert.IsTrue(Vector4.AreNumericallyEqual(result1, result2));
     }
 
 

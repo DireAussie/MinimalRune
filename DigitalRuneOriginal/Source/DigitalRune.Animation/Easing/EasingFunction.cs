@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.Animation.Easing
+namespace MinimalRune.Animation.Easing
 {
   /// <summary>
   /// Provides the base implementation for all easing functions.

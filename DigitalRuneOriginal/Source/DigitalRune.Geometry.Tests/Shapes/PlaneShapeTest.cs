@@ -3,11 +3,11 @@ using System.Diagnostics;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Xml.Serialization;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Geometry.Shapes.Tests
+namespace MinimalRune.Geometry.Shapes.Tests
 {
   [TestFixture]
   public class PlaneShapeTest
@@ -117,7 +117,7 @@ namespace DigitalRune.Geometry.Shapes.Tests
       Assert.AreEqual(new Aabb(new Vector3(nInf, nInf, nInf), new Vector3(pInf, 0, pInf)), new PlaneShape().GetAabb(Pose.Identity));
       Assert.AreEqual(new Aabb(new Vector3(nInf), new Vector3(pInf)),
                      new PlaneShape().GetAabb(new Pose(new Vector3(10, 100, -13),
-                                                                         Quaternion.CreateRotation(new Vector3(1, 1, 1), 0.7f))));
+                                                                         Quaternion.CreateFromRotationMatrix(new Vector3(1, 1, 1), 0.7f))));
       Assert.AreEqual(new Aabb(new Vector3(nInf, nInf, nInf), new Vector3(12, pInf, pInf)),
                       new PlaneShape(new Vector3(1, 0, 0), 2).GetAabb(new Pose(new Vector3(10, 100, 1000), Quaternion.Identity)));
       Assert.AreEqual(new Aabb(new Vector3(8, nInf, nInf), new Vector3(pInf, pInf, pInf)),

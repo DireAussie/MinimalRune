@@ -8,28 +8,28 @@ using System.Diagnostics;
 using System.Globalization;
 
 
-namespace DigitalRune.Editor.Shader
+namespace MinimalRune.Editor.Shader
 {
     /// <summary>
     /// Provides IntelliSense for NVIDIA Cg and CgFX files.
     /// </summary>
     internal class CgIntelliSense : ShaderIntelliSense
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
-
-
-
-        //--------------------------------------------------------------
-
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
+
+
+
+        
+
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CgIntelliSense"/> class.
@@ -56,9 +56,9 @@ namespace DigitalRune.Editor.Shader
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes the Cg-specific snippets.

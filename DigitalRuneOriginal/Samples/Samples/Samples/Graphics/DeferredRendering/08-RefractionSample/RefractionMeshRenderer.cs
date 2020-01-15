@@ -1,10 +1,10 @@
 ﻿
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.Effects;
-using DigitalRune.Graphics.Rendering;
-using DigitalRune.Graphics.SceneGraph;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.Effects;
+using MinimalRune.Graphics.Rendering;
+using MinimalRune.Graphics.SceneGraph;
 
 namespace Samples.Graphics
 {

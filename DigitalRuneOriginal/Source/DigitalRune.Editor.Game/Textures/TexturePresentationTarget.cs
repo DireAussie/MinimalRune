@@ -11,22 +11,22 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Media;
-using DigitalRune.Editor.Game;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.Interop;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Windows;
+using MinimalRune.Editor.Game;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.Interop;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Windows;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Editor.Textures
+namespace MinimalRune.Editor.Textures
 {
     internal class TexturePresentationTarget : GamePresentationTarget, IScrollInfo
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private const double LineSize = 10.0;           // ScrollBar button scrolls 10 px.
         private const double MouseWheelZoom = 1.25;     // Zoom factor per mouse wheel increment.
@@ -51,9 +51,9 @@ namespace DigitalRune.Editor.Textures
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
@@ -177,9 +177,9 @@ namespace DigitalRune.Editor.Textures
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="Texture2D"/> dependency property.
@@ -475,9 +475,9 @@ namespace DigitalRune.Editor.Textures
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TexturePresentationTarget"/> class.
@@ -499,9 +499,9 @@ namespace DigitalRune.Editor.Textures
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Called when the <see cref="Texture2D"/> property changed.
@@ -896,12 +896,12 @@ namespace DigitalRune.Editor.Textures
             _textureGraphicsScreen.OutputGamma = 2.2f;
 
             Matrix colorTransform;
-            Vector4F colorOffset;
+            Vector4 colorOffset;
             if (EnableRedChannel && EnableGreenChannel && EnableBlueChannel && EnableAlphaChannel)
             {
                 // RGBA
                 colorTransform = Matrix.Identity;
-                colorOffset = Vector4F.Zero;
+                colorOffset = Vector4.Zero;
             }
             else if (EnableRedChannel && EnableGreenChannel && EnableBlueChannel && !EnableAlphaChannel)
             {
@@ -910,7 +910,7 @@ namespace DigitalRune.Editor.Textures
                                                0, 1, 0, 0,
                                                0, 0, 1, 0,
                                                0, 0, 0, 0);
-                colorOffset = new Vector4F(0, 0, 0, 1);
+                colorOffset = new Vector4(0, 0, 0, 1);
             }
             else if (EnableRedChannel && !EnableGreenChannel && !EnableBlueChannel && !EnableAlphaChannel)
             {
@@ -919,7 +919,7 @@ namespace DigitalRune.Editor.Textures
                                                1, 0, 0, 0,
                                                1, 0, 0, 0,
                                                0, 0, 0, 0);
-                colorOffset = new Vector4F(0, 0, 0, 1);
+                colorOffset = new Vector4(0, 0, 0, 1);
             }
             else if (!EnableRedChannel && EnableGreenChannel && !EnableBlueChannel && !EnableAlphaChannel)
             {
@@ -928,7 +928,7 @@ namespace DigitalRune.Editor.Textures
                                                0, 1, 0, 0,
                                                0, 1, 0, 0,
                                                0, 0, 0, 0);
-                colorOffset = new Vector4F(0, 0, 0, 1);
+                colorOffset = new Vector4(0, 0, 0, 1);
             }
             else if (!EnableRedChannel && !EnableGreenChannel && EnableBlueChannel && !EnableAlphaChannel)
             {
@@ -937,7 +937,7 @@ namespace DigitalRune.Editor.Textures
                                                0, 0, 1, 0,
                                                0, 0, 1, 0,
                                                0, 0, 0, 0);
-                colorOffset = new Vector4F(0, 0, 0, 1);
+                colorOffset = new Vector4(0, 0, 0, 1);
             }
             else if (!EnableRedChannel && !EnableGreenChannel && !EnableBlueChannel && EnableAlphaChannel)
             {
@@ -946,7 +946,7 @@ namespace DigitalRune.Editor.Textures
                                                0, 0, 0, 1,
                                                0, 0, 0, 1,
                                                0, 0, 0, 0);
-                colorOffset = new Vector4F(0, 0, 0, 1);
+                colorOffset = new Vector4(0, 0, 0, 1);
             }
             else if (EnableRedChannel && EnableGreenChannel && !EnableBlueChannel && !EnableAlphaChannel)
             {
@@ -955,7 +955,7 @@ namespace DigitalRune.Editor.Textures
                                                0, 1, 0, 0,
                                                0, 0, 0, 0,
                                                0, 0, 0, 0);
-                colorOffset = new Vector4F(0, 0, 0, 1);
+                colorOffset = new Vector4(0, 0, 0, 1);
             }
             else if (EnableRedChannel && !EnableGreenChannel && EnableBlueChannel && !EnableAlphaChannel)
             {
@@ -964,7 +964,7 @@ namespace DigitalRune.Editor.Textures
                                                0, 0, 0, 0,
                                                0, 0, 1, 0,
                                                0, 0, 0, 0);
-                colorOffset = new Vector4F(0, 0, 0, 1);
+                colorOffset = new Vector4(0, 0, 0, 1);
             }
             else if (EnableRedChannel && !EnableGreenChannel && !EnableBlueChannel && EnableAlphaChannel)
             {
@@ -973,7 +973,7 @@ namespace DigitalRune.Editor.Textures
                                                0, 0, 0, 0,
                                                0, 0, 0, 0,
                                                0, 0, 0, 1);
-                colorOffset = new Vector4F(0, 0, 0, 0);
+                colorOffset = new Vector4(0, 0, 0, 0);
             }
             else if (EnableRedChannel && EnableGreenChannel && !EnableBlueChannel && EnableAlphaChannel)
             {
@@ -982,7 +982,7 @@ namespace DigitalRune.Editor.Textures
                                                0, 1, 0, 0,
                                                0, 0, 0, 0,
                                                0, 0, 0, 1);
-                colorOffset = new Vector4F(0, 0, 0, 0);
+                colorOffset = new Vector4(0, 0, 0, 0);
             }
             else if (EnableRedChannel && !EnableGreenChannel && EnableBlueChannel && EnableAlphaChannel)
             {
@@ -991,7 +991,7 @@ namespace DigitalRune.Editor.Textures
                                                0, 0, 0, 0,
                                                0, 0, 1, 0,
                                                0, 0, 0, 1);
-                colorOffset = new Vector4F(0, 0, 0, 0);
+                colorOffset = new Vector4(0, 0, 0, 0);
             }
             else if (!EnableRedChannel && EnableGreenChannel && EnableBlueChannel && !EnableAlphaChannel)
             {
@@ -1000,7 +1000,7 @@ namespace DigitalRune.Editor.Textures
                                                0, 1, 0, 0,
                                                0, 0, 1, 0,
                                                0, 0, 0, 0);
-                colorOffset = new Vector4F(0, 0, 0, 1);
+                colorOffset = new Vector4(0, 0, 0, 1);
             }
             else if (!EnableRedChannel && EnableGreenChannel && !EnableBlueChannel && EnableAlphaChannel)
             {
@@ -1009,7 +1009,7 @@ namespace DigitalRune.Editor.Textures
                                                0, 1, 0, 0,
                                                0, 0, 0, 0,
                                                0, 0, 0, 1);
-                colorOffset = new Vector4F(0, 0, 0, 0);
+                colorOffset = new Vector4(0, 0, 0, 0);
             }
             else if (!EnableRedChannel && EnableGreenChannel && EnableBlueChannel && EnableAlphaChannel)
             {
@@ -1018,7 +1018,7 @@ namespace DigitalRune.Editor.Textures
                                                0, 1, 0, 0,
                                                0, 0, 1, 0,
                                                0, 0, 0, 1);
-                colorOffset = new Vector4F(0, 0, 0, 0);
+                colorOffset = new Vector4(0, 0, 0, 0);
             }
             else if (!EnableRedChannel && !EnableGreenChannel && EnableBlueChannel && EnableAlphaChannel)
             {
@@ -1027,13 +1027,13 @@ namespace DigitalRune.Editor.Textures
                                                0, 0, 0, 0,
                                                0, 0, 1, 0,
                                                0, 0, 0, 1);
-                colorOffset = new Vector4F(0, 0, 0, 0);
+                colorOffset = new Vector4(0, 0, 0, 0);
             }
             else
             {
                 // -
                 colorTransform = Matrix.Zero;
-                colorOffset = Vector4F.Zero;
+                colorOffset = Vector4.Zero;
             }
 
             _textureGraphicsScreen.ColorTransform = colorTransform;

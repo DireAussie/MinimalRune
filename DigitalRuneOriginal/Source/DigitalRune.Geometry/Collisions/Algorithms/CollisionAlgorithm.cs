@@ -5,10 +5,10 @@
 using System;
 using System.Diagnostics;
 using System.Linq;
-using DigitalRune.Geometry.Shapes;
+using MinimalRune.Geometry.Shapes;
 
 
-namespace DigitalRune.Geometry.Collisions.Algorithms
+namespace MinimalRune.Geometry.Collisions.Algorithms
 {
   /// <summary>
   /// A collision algorithm computes contact information or closest-point information for 
@@ -19,15 +19,15 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
   /// </remarks>
   public abstract class CollisionAlgorithm
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the collision detection service.
@@ -37,9 +37,9 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="CollisionAlgorithm"/> class.
@@ -58,9 +58,9 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the closest points of two collision objects.

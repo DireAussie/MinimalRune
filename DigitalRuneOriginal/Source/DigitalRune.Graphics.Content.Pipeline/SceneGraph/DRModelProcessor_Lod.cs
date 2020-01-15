@@ -6,13 +6,13 @@ using System.Collections.Generic;
 using System.Linq;
 
 
-namespace DigitalRune.Graphics.Content.Pipeline
+namespace MinimalRune.Graphics.Content.Pipeline
 {
   partial class DRModelProcessor
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Compares scene nodes by LOD distance and LOD level.
@@ -38,9 +38,9 @@ namespace DigitalRune.Graphics.Content.Pipeline
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Traverses the scene graph and collapses all LODs into <strong>LodGroupNodes</strong>.

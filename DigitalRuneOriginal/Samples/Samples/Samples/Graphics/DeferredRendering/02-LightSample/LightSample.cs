@@ -1,7 +1,7 @@
 ﻿
-using DigitalRune.Graphics.Rendering;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Physics.ForceEffects;
+using MinimalRune.Graphics.Rendering;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Physics.ForceEffects;
 using Microsoft.Xna.Framework;
 
 

@@ -5,12 +5,12 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using DigitalRune.Geometry.Meshes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Meshes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry.Shapes
+namespace MinimalRune.Geometry.Shapes
 {
   /// <summary>
   /// Represents a convex hull of a set of points.
@@ -33,9 +33,9 @@ namespace DigitalRune.Geometry.Shapes
   //[Serializable]   // Property Points is not serializable because interfaces are not automatically serializable.
   public class ConvexHullOfPoints : ConvexShape
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // The cached local space AABB
     private Aabb _aabbLocal = new Aabb(new Vector3(float.NaN), new Vector3(float.NaN));
@@ -45,9 +45,9 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets an inner point.
@@ -117,9 +117,9 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -176,9 +176,9 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

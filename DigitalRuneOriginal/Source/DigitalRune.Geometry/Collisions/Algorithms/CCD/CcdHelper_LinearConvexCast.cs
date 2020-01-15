@@ -3,12 +3,12 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry.Collisions.Algorithms
+namespace MinimalRune.Geometry.Collisions.Algorithms
 {
   internal static partial class CcdHelper
   {
@@ -92,7 +92,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
         Vector3 supportB = poseB.ToWorldPosition(convexB.GetSupportPoint(poseB.ToLocalDirection(r), scaleB));
         Vector3 v = supportA - supportB;
 
-        float distanceSquared = v.LengthSquared;    // ||v||²
+        float distanceSquared = v.LengthSquared();    // ||v||²
         int iterationCount = 0;
         while (distanceSquared > Numeric.EpsilonF   // We could use a higher EpsilonF to abort earlier.
                && iterationCount < MaxNumberOfIterations)
@@ -138,7 +138,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
 
           simplex.Update();
           v = simplex.ClosestPoint;
-          distanceSquared = (simplex.IsValid && !simplex.IsFull) ? v.LengthSquared : 0;
+          distanceSquared = (simplex.IsValid && !simplex.IsFull) ? v.LengthSquared() : 0;
         }
 
         // We have a contact if the hit is inside the ray length.

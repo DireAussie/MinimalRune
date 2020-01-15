@@ -5,19 +5,19 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using DigitalRune.Graphics.Effects;
-using DigitalRune.Graphics.Rendering;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Graphics.Interop;
+using MinimalRune.Graphics.Effects;
+using MinimalRune.Graphics.Rendering;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Graphics.Interop;
 
-using DigitalRune.Graphics.PostProcessing;
+using MinimalRune.Graphics.PostProcessing;
 
-using DigitalRune.Graphics.SceneGraph;
+using MinimalRune.Graphics.SceneGraph;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Provides information about the current render states.
@@ -40,15 +40,15 @@ namespace DigitalRune.Graphics
   /// </remarks>
   public class RenderContext
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
@@ -608,9 +608,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="RenderContext"/> class.
@@ -630,9 +630,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

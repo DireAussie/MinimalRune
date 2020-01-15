@@ -7,7 +7,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 
 
-namespace DigitalRune
+namespace MinimalRune
 {
   /// <summary>
   /// Provides helper methods for working with unmanaged and managed memory blocks.

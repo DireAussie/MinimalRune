@@ -4,16 +4,16 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Collections;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Collections;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
 
 
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 
 
 
-namespace DigitalRune.Geometry.Partitioning
+namespace MinimalRune.Geometry.Partitioning
 {
   public partial class BasePartition<T>
   {

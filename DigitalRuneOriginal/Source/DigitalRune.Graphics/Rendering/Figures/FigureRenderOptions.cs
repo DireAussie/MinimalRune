@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Defines options for rendering figures.

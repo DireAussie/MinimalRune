@@ -5,22 +5,22 @@
 using System;
 using System.Linq;
 using System.Windows;
-using DigitalRune.Editor.Documents;
-using DigitalRune.Editor.Game;
-using DigitalRune.Windows.Docking;
+using MinimalRune.Editor.Documents;
+using MinimalRune.Editor.Game;
+using MinimalRune.Windows.Docking;
 using NLog;
 
 
-namespace DigitalRune.Editor.Textures
+namespace MinimalRune.Editor.Textures
 {
     /// <summary>
     /// Provides support for images and textures.
     /// </summary>
     public sealed class TexturesExtension : EditorExtension
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
@@ -30,15 +30,15 @@ namespace DigitalRune.Editor.Textures
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TexturesExtension"/> class.
@@ -50,9 +50,9 @@ namespace DigitalRune.Editor.Textures
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         protected override void OnInitialize()

@@ -6,10 +6,10 @@ using System;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Interop;
-using DigitalRune.Windows.Interop;
+using MinimalRune.Windows.Interop;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     /// <summary>
     /// Hosts an <see cref="AutoHidePane"/>.

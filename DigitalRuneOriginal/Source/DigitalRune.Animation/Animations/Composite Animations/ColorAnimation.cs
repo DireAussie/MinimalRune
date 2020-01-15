@@ -4,12 +4,12 @@
 
 
 using System;
-using DigitalRune.Animation.Traits;
+using MinimalRune.Animation.Traits;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Animates a <see cref="Color"/> value by applying an animation to each component of the color.
@@ -20,15 +20,15 @@ namespace DigitalRune.Animation
   /// </remarks>
   public class ColorAnimation : Animation<Color>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override IAnimationValueTraits<Color> Traits
@@ -70,9 +70,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -106,9 +106,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override TimeSpan GetTotalDuration()

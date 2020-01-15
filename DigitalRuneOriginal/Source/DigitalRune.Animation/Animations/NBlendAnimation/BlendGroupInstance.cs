@@ -5,16 +5,16 @@
 using System;
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Represents an instance of a <see cref="BlendGroup"/>.
   /// </summary>
   internal sealed class BlendGroupInstance : AnimationInstance
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static readonly ResourcePool<BlendGroupInstance> Pool = new ResourcePool<BlendGroupInstance>(
       () => new BlendGroupInstance(),   // Create
@@ -27,15 +27,15 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Prevents a default instance of the <see cref="BlendGroupInstance"/> class from being 
@@ -96,9 +96,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     internal override void SetTime(TimeSpan? time)

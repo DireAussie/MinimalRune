@@ -8,7 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Represents a control that shows the window icon in the title bar and shows the system menu
@@ -20,9 +20,9 @@ namespace DigitalRune.Windows.Controls
     /// </remarks>
     public class WindowCaptionIcon : ContentControl
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="WindowCaptionIcon"/> class.
@@ -34,9 +34,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Invoked when an unhandled <see cref="UIElement.MouseDown"/> attached event reaches an

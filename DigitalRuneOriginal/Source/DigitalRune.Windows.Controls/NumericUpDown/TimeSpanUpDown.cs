@@ -13,7 +13,7 @@ using System.Windows.Data;
 using System.Windows.Input;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Represents a control that can be used to display and edit a <see cref="TimeSpan"/> using
@@ -35,9 +35,9 @@ namespace DigitalRune.Windows.Controls
     /// </remarks>
     public class TimeSpanUpDown : BaseUpDownControl<TimeSpan>, IValueConverter
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private enum TimeUnit
         {
@@ -50,18 +50,18 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private TextBox _textBox;
         private Binding _textBoxBinding;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------   
+           
 
         private bool IsBindingValid
         {
@@ -70,9 +70,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="AlwaysShowSign"/> dependency property.
@@ -206,9 +206,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="TimeSpanUpDown"/> class.
@@ -222,9 +222,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------    
+            
 
         private static void OnAlwaysShowXChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
         {

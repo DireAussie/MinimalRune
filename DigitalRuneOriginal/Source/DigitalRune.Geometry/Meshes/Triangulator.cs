@@ -27,12 +27,12 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry.Meshes
+namespace MinimalRune.Geometry.Meshes
 {
   /// <summary>
   /// Triangulates polygons.
@@ -42,9 +42,9 @@ namespace DigitalRune.Geometry.Meshes
   /// </remarks>
   internal class Triangulator
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static readonly ResourcePool<Triangulator> Pool =
       new ResourcePool<Triangulator>(
@@ -57,15 +57,15 @@ namespace DigitalRune.Geometry.Meshes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Prevents a default instance of the <see cref="Triangulator"/> class from being created.
@@ -115,9 +115,9 @@ namespace DigitalRune.Geometry.Meshes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>

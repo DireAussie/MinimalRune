@@ -13,14 +13,14 @@ using System.Collections.Generic;
 using Keys = System.Windows.Input.Key;
 
 
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 #else
 using Vector2F = Microsoft.Xna.Framework.Vector2;
 using Vector3 = Microsoft.Xna.Framework.Vector3;
 
 
 
-namespace DigitalRune.Game.Input
+namespace MinimalRune.Game.Input
 {
 #pragma warning disable 1584,1711,1572,1581,1580,1574       // cref attribute could not be resolved.
   /// <summary>

@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Graphics;
 using MathHelper = DigitalRune.Mathematics.MathHelper;
 
 
-namespace DigitalRune.Graphics.Content.Pipeline
+namespace MinimalRune.Graphics.Content.Pipeline
 {
   /// <summary>
   /// Processes a model texture.
@@ -26,9 +26,9 @@ namespace DigitalRune.Graphics.Content.Pipeline
     // for sharp alpha masks. (Though some consider BC2 a relic of the past.)
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the color used when color keying for a texture is enabled. When color keying, 
@@ -209,9 +209,9 @@ namespace DigitalRune.Graphics.Content.Pipeline
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Processes a texture.

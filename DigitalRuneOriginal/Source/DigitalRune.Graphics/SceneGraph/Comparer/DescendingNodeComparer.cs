@@ -5,7 +5,7 @@
 using System.Collections.Generic;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Sorts <see cref="SceneNode"/>s by their <see cref="SceneNode.SortTag"/> in descending

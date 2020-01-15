@@ -6,7 +6,7 @@ using System;
 using System.ComponentModel;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Describes a single property shown in a <see cref="PropertyGrid"/>.

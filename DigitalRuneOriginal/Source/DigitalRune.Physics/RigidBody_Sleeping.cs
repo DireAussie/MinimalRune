@@ -3,12 +3,12 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics.Settings;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics.Settings;
 
 
-namespace DigitalRune.Physics
+namespace MinimalRune.Physics
 {
   public partial class RigidBody
   {
@@ -19,18 +19,18 @@ namespace DigitalRune.Physics
     // is no sleeping candidate.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // How long the body's velocities were below the sleeping thresholds [s].
     private float _noMovementTime;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets a value indicating whether this body can sleep.
@@ -104,9 +104,9 @@ namespace DigitalRune.Physics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Makes sure the body is not sleeping for the given duration.
@@ -174,8 +174,8 @@ namespace DigitalRune.Physics
 
       if (MotionType == MotionType.Dynamic)
       {
-        if (LinearVelocity.LengthSquared < Simulation.Settings.Sleeping.LinearVelocityThresholdSquared
-           && AngularVelocity.LengthSquared < Simulation.Settings.Sleeping.AngularVelocityThresholdSquared)
+        if (LinearVelocity.LengthSquared() < Simulation.Settings.Sleeping.LinearVelocityThresholdSquared
+           && AngularVelocity.LengthSquared() < Simulation.Settings.Sleeping.AngularVelocityThresholdSquared)
         {
           // Movement is below threshold. Increase counter.
           _noMovementTime += deltaTime;
@@ -194,8 +194,8 @@ namespace DigitalRune.Physics
       }
       else
       {
-        if (LinearVelocity.LengthSquared < Numeric.EpsilonFSquared
-           && AngularVelocity.LengthSquared < Numeric.EpsilonFSquared)
+        if (LinearVelocity.LengthSquared() < Numeric.EpsilonFSquared
+           && AngularVelocity.LengthSquared() < Numeric.EpsilonFSquared)
         {
           // Kinematic bodies are set to sleep immediately!
           IsSleeping = true;

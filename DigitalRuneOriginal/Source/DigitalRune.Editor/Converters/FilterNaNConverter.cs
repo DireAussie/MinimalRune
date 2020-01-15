@@ -7,7 +7,7 @@ using System.Globalization;
 using System.Windows.Data;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// Removes all NaN from a <see cref="double"/> value (NaN values are replaced by 0).

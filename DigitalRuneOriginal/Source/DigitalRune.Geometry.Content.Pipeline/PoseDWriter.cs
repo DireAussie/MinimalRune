@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler;
 
 
-namespace DigitalRune.Geometry.Content.Pipeline
+namespace MinimalRune.Geometry.Content.Pipeline
 {
   /// <summary>
   /// Writes a <see cref="PoseD"/> to binary format.

@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Input;
 
 
-namespace DigitalRune.Editor.Status
+namespace MinimalRune.Editor.Status
 {
     /// <summary>
     /// Displays a status information.

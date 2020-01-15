@@ -10,15 +10,15 @@ using System.Reflection;
 using System.Text;
 using System.Windows;
 using System.Windows.Media;
-using DigitalRune.Collections;
-using DigitalRune.Windows.Docking;
-using DigitalRune.Windows.Framework;
-using DigitalRune.Windows.Themes;
+using MinimalRune.Collections;
+using MinimalRune.Windows.Docking;
+using MinimalRune.Windows.Framework;
+using MinimalRune.Windows.Themes;
 using NLog;
 using static System.FormattableString;
 
 
-namespace DigitalRune.Editor.About
+namespace MinimalRune.Editor.About
 {
     /// <summary>
     /// Adds an About dialog to the application.
@@ -37,9 +37,9 @@ namespace DigitalRune.Editor.About
     /// </remarks>
     public partial class AboutExtension : EditorExtension, IAboutService
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
@@ -48,9 +48,9 @@ namespace DigitalRune.Editor.About
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public string ApplicationName { get; set; }
@@ -81,9 +81,9 @@ namespace DigitalRune.Editor.About
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AboutExtension"/> class.
@@ -120,9 +120,9 @@ namespace DigitalRune.Editor.About
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         protected override void OnInitialize()

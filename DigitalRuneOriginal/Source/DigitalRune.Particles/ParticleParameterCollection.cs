@@ -7,10 +7,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 
 
-namespace DigitalRune.Particles
+namespace MinimalRune.Particles
 {
   /// <summary>
   /// Manages a collection of particle parameters.
@@ -58,17 +58,17 @@ namespace DigitalRune.Particles
   /// </remarks>
   public class ParticleParameterCollection : IEnumerable<IParticleParameter>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly NamedObjectCollection<IParticleParameter> _collection;
 
       
       
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the particle system that owns this particle parameter collection.
@@ -87,9 +87,9 @@ namespace DigitalRune.Particles
 
       
       
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ParticleParameterCollection"/> class.
@@ -112,9 +112,9 @@ namespace DigitalRune.Particles
 
       
       
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Removes all particle parameters in this collection.

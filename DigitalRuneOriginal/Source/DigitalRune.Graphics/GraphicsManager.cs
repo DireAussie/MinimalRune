@@ -5,9 +5,9 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Collections;
-using DigitalRune.Graphics.Effects;
-using DigitalRune.Graphics.Interop;
+using MinimalRune.Collections;
+using MinimalRune.Graphics.Effects;
+using MinimalRune.Graphics.Interop;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -17,7 +17,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Manages graphics-related objects, like graphics screens and presentation targets, and graphics
@@ -73,18 +73,18 @@ namespace DigitalRune.Graphics
     // TODO: Use other constructors for Silverlight, XNA+SL on WP7.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly List<GraphicsScreen> _tempScreens = new List<GraphicsScreen>();
     private RenderContext _context;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets a value indicating whether this instance has been disposed of.
@@ -203,9 +203,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -333,9 +333,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     internal void ThrowIfDisposed()
     {

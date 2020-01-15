@@ -8,13 +8,13 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
-using DigitalRune.Collections;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Collections;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry.Partitioning
+namespace MinimalRune.Geometry.Partitioning
 {
   /// <summary>
   /// Provides basic functionality of an <see cref="ISpatialPartition{T}"/>. (For internal use 
@@ -54,9 +54,9 @@ namespace DigitalRune.Geometry.Partitioning
   [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
   public abstract partial class BasePartition<T> : ISpatialPartition<T>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The comparer that is used to compare items.
@@ -84,9 +84,9 @@ namespace DigitalRune.Geometry.Partitioning
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the axis-aligned bounding box (AABB) that contains all items.
@@ -234,9 +234,9 @@ namespace DigitalRune.Geometry.Partitioning
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="BasePartition{T}"/> class.
@@ -248,9 +248,9 @@ namespace DigitalRune.Geometry.Partitioning
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

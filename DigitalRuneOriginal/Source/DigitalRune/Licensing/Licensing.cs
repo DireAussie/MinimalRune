@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune
+namespace MinimalRune
 {
   /// <summary>
   /// Manages copy protection and licensing.

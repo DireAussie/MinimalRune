@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Mathematics.Algebra.Tests
+namespace MinimalRune.Mathematics.Algebra.Tests
 {
 
   [TestFixture]
@@ -285,10 +285,10 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     public void Determinant()
     {
       Matrix22D m = new Matrix22D(columnMajor, MatrixOrder.ColumnMajor);
-      Assert.AreEqual(-2.0, m.Determinant);
-      Assert.AreEqual(0.0, Matrix22D.Zero.Determinant);
-      Assert.AreEqual(0.0, Matrix22D.One.Determinant);
-      Assert.AreEqual(1.0, Matrix22D.Identity.Determinant);
+      Assert.AreEqual(-2.0, m.Determinant());
+      Assert.AreEqual(0.0, Matrix22D.Zero.Determinant());
+      Assert.AreEqual(0.0, Matrix22D.One.Determinant());
+      Assert.AreEqual(1.0, Matrix22D.Identity.Determinant());
     }
 
 
@@ -344,11 +344,11 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     public void Transpose()
     {
       Matrix22D m = new Matrix22D(columnMajor, MatrixOrder.ColumnMajor);
-      m.Transpose();
+      m = Matrix.Transpose(m);
       Matrix22D mt = new Matrix22D(rowMajor, MatrixOrder.ColumnMajor);
       Assert.AreEqual(mt, m);
       Matrix22D i = Matrix22D.Identity;
-      i.Transpose();
+      i = Matrix.Transpose(i);
       Assert.AreEqual(Matrix22D.Identity, i);
     }
 

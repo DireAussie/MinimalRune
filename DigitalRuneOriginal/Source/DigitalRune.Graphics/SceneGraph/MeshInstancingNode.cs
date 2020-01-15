@@ -4,12 +4,12 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Allows access to <see cref="MeshInstancingNode{T}"/> members which are relevant for a renderer.
@@ -87,9 +87,9 @@ namespace DigitalRune.Graphics.SceneGraph
     //   could be faster in some cases.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // ReSharper disable once StaticFieldInGenericType
     private static readonly object SharedArrayLock = new object();
@@ -102,9 +102,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the bounding shape of this scene node.
@@ -161,9 +161,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="MeshInstancingNode{T}"/> class.
@@ -230,9 +230,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

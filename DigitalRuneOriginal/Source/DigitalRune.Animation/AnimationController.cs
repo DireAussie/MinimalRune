@@ -4,10 +4,10 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Animation.Transitions;
+using MinimalRune.Animation.Transitions;
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Provides interactive control over an animation.
@@ -108,17 +108,17 @@ namespace DigitalRune.Animation
   /// </remarks>
   public struct AnimationController
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly int _id; // 0 indicates an invalid AnimationController.
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the animation service.
@@ -377,9 +377,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="AnimationController"/> struct.
@@ -397,9 +397,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Automatically recycles the animation instances when the animation is stopped and removed 

@@ -4,10 +4,10 @@
 
 using System;
 using System.Windows.Media;
-using DigitalRune.Windows.Controls;
+using MinimalRune.Windows.Controls;
 
 
-namespace DigitalRune.Windows.Themes
+namespace MinimalRune.Windows.Themes
 {
     /// <summary>
     /// Provides a set of predefined <see cref="MultiColorGlyph" /> objects.

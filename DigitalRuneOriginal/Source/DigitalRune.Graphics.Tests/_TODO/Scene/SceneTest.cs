@@ -1,9 +1,9 @@
 ﻿using System;
-using DigitalRune.Graphics.Scene3D;
+using MinimalRune.Graphics.Scene3D;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Graphics.Tests
+namespace MinimalRune.Graphics.Tests
 {
   [TestFixture]
   public class SceneTest

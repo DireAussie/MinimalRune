@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Content;
 
 
 
-namespace DigitalRune.Mathematics.Statistics
+namespace MinimalRune.Mathematics.Statistics
 {
   /// <summary>
   /// Base class of probability distributions.

@@ -7,13 +7,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using DigitalRune.Threading;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Threading;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry.Meshes
+namespace MinimalRune.Geometry.Meshes
 {
   /// <summary>
   /// Performs an approximate convex decomposition of an input mesh. (Not available on these
@@ -47,9 +47,9 @@ namespace DigitalRune.Geometry.Meshes
     //   axis. The algorithm is faster but less optimal. 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private ITriangleMesh _mesh;
     private bool _cancel;
@@ -60,9 +60,9 @@ namespace DigitalRune.Geometry.Meshes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the allowed concavity.
@@ -248,9 +248,9 @@ namespace DigitalRune.Geometry.Meshes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ConvexDecomposition"/> class.
@@ -268,9 +268,9 @@ namespace DigitalRune.Geometry.Meshes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Decomposes the specified mesh.

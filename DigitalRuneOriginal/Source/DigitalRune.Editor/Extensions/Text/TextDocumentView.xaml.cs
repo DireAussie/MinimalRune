@@ -5,7 +5,7 @@
 using System.Windows;
 
 
-namespace DigitalRune.Editor.Text
+namespace MinimalRune.Editor.Text
 {
     /// <summary>
     /// Displays a text document using the <see cref="ICSharpCode.AvalonEdit.TextEditor"/> control.

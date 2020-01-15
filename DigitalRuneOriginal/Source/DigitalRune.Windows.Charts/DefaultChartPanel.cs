@@ -9,7 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// A <see cref="ChartPanel"/> that provides a fixed set of x- and y-axes.
@@ -43,9 +43,9 @@ namespace DigitalRune.Windows.Charts
     [StyleTypedProperty(Property = "YAxis2Style", StyleTargetType = typeof(Axis))]
     public class DefaultChartPanel : ChartPanel
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private const double DefaultWidth = 600;
         private const double DefaultHeight = 400;
@@ -55,17 +55,17 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private bool _positioningAxes;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the bottom x-axis (primary x-axis).
@@ -100,9 +100,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
@@ -289,9 +289,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
         /// <summary>
@@ -353,9 +353,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static void OnRelevantPropertyChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
         {

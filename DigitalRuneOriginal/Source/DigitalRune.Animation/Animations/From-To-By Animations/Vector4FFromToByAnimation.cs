@@ -2,22 +2,22 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Animation.Traits;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Animation.Traits;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
-  /// Animates a <see langword="Vector4F"/> value from/to/by a certain value.
+  /// Animates a <see langword="Vector4"/> value from/to/by a certain value.
   /// </summary>
   /// <inheritdoc/>
-  public class Vector4FFromToByAnimation : FromToByAnimation<Vector4F>
+  public class Vector4FromToByAnimation : FromToByAnimation<Vector4>
   {
     /// <inheritdoc/>
-    public override IAnimationValueTraits<Vector4F> Traits
+    public override IAnimationValueTraits<Vector4> Traits
     {
-      get { return Vector4FTraits.Instance; }
+      get { return Vector4Traits.Instance; }
     }
   }
 }

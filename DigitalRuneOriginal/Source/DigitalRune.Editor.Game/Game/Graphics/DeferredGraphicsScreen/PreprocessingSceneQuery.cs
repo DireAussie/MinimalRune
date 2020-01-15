@@ -1,7 +1,7 @@
 ﻿
 using System.Collections.Generic;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.SceneGraph;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.SceneGraph;
 
 namespace Samples.Graphics
 {

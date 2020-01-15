@@ -6,7 +6,7 @@ using System.ComponentModel;
 using System.Windows.Media;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
     /// Provides category strings for the <see cref="CategoryAttribute"/> that can be used when

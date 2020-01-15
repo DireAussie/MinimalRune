@@ -2,10 +2,10 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Physics.Constraints
+namespace MinimalRune.Physics.Constraints
 {
   /// <summary>
   /// Defines a ball-and-socked joint.
@@ -21,9 +21,9 @@ namespace DigitalRune.Physics.Constraints
   /// </remarks>
   public class BallJoint : Constraint
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private float _deltaTime;
     private Vector3 _anchorAWorld;
@@ -33,9 +33,9 @@ namespace DigitalRune.Physics.Constraints
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the constraint anchor position on <see cref="Constraint.BodyA"/> in local space
@@ -168,15 +168,15 @@ namespace DigitalRune.Physics.Constraints
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override void OnSetup()
@@ -207,7 +207,7 @@ namespace DigitalRune.Physics.Constraints
       // < 0 objects are getting closer.
       // The target velocity is ≤ 0 because when we have an error, anchors must come closer.
       _targetVelocity = -deviationLength * (1f / _deltaTime) * ErrorReduction * dirAToB;
-      if (_targetVelocity.LengthSquared > Simulation.Settings.Constraints.MaxErrorCorrectionVelocitySquared)
+      if (_targetVelocity.LengthSquared() > Simulation.Settings.Constraints.MaxErrorCorrectionVelocitySquared)
         _targetVelocity = -Simulation.Settings.Constraints.MaxErrorCorrectionVelocity * dirAToB;
 
       // Warmstart
@@ -242,7 +242,7 @@ namespace DigitalRune.Physics.Constraints
       BodyA.ApplyImpulse(-impulse, _anchorAWorld);
       BodyB.ApplyImpulse(impulse, _anchorBWorld);
 
-      return impulse.LengthSquared > Simulation.Settings.Constraints.MinConstraintImpulseSquared;
+      return impulse.LengthSquared() > Simulation.Settings.Constraints.MinConstraintImpulseSquared;
     }
 
 

@@ -2,10 +2,10 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Animation.Easing;
+using MinimalRune.Animation.Easing;
 
 
-namespace DigitalRune.Animation.Transitions
+namespace MinimalRune.Animation.Transitions
 {
   /// <summary>
   /// Controls how animations interact with any existing ones as they are added
@@ -13,9 +13,9 @@ namespace DigitalRune.Animation.Transitions
   /// </summary>
   public abstract class AnimationTransition
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The default easing function used by fade-in/out transitions.
@@ -24,9 +24,9 @@ namespace DigitalRune.Animation.Transitions
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the animation instance that is controlled by this animation transition.
@@ -36,15 +36,15 @@ namespace DigitalRune.Animation.Transitions
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes the animation transition.

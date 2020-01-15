@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Represents an empty read-only version of the <see cref="AnimationInstanceCollection"/>.

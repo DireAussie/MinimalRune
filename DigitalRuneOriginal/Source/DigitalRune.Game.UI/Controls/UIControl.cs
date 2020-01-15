@@ -6,10 +6,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
-using DigitalRune.Game.Input;
-using DigitalRune.Game.UI.Rendering;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Game.Input;
+using MinimalRune.Game.UI.Rendering;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 
 using Microsoft.Xna.Framework.Input.Touch;
@@ -17,7 +17,7 @@ using Microsoft.Xna.Framework.Input.Touch;
 using MouseButtons = DigitalRune.Game.Input.MouseButtons;
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   /// <summary>
   /// Represents the base class for user interface (UI) controls.
@@ -154,9 +154,9 @@ namespace DigitalRune.Game.UI.Controls
   /// </remarks>
   public partial class UIControl : GameObject
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // The input event args can be cached and reused since UIControls are never updated in parallel.
     private static readonly InputEventArgs _inputEventArgs = new InputEventArgs();
@@ -174,9 +174,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // When we loop over the visual children we loop over a copy of the collection. This way
     // the children can remove themselves from the original collection.
@@ -184,9 +184,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the <see cref="UIScreen"/>.
@@ -482,9 +482,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary> 
     /// The ID of the <see cref="Background"/> game object property.
@@ -1183,7 +1183,7 @@ namespace DigitalRune.Game.UI.Controls
     [Browsable(false)]
 
     public static readonly int PaddingPropertyId = CreateProperty(
-      typeof(UIControl), "Padding", GamePropertyCategories.Layout, null, Vector4F.Zero,
+      typeof(UIControl), "Padding", GamePropertyCategories.Layout, null, Vector4.Zero,
       UIPropertyOptions.AffectsMeasure);
 
     /// <summary>
@@ -1194,9 +1194,9 @@ namespace DigitalRune.Game.UI.Controls
     /// <remarks>
     /// How this value is used depends on the control type.
     /// </remarks>
-    public Vector4F Padding
+    public Vector4 Padding
     {
-      get { return GetValue<Vector4F>(PaddingPropertyId); }
+      get { return GetValue<Vector4>(PaddingPropertyId); }
       set { SetValue(PaddingPropertyId, value); }
     }
 
@@ -1208,7 +1208,7 @@ namespace DigitalRune.Game.UI.Controls
     [Browsable(false)]
 
     public static readonly int MarginPropertyId = CreateProperty(
-      typeof(UIControl), "Margin", GamePropertyCategories.Layout, null, Vector4F.Zero,
+      typeof(UIControl), "Margin", GamePropertyCategories.Layout, null, Vector4.Zero,
       UIPropertyOptions.AffectsMeasure);
 
     /// <summary>
@@ -1216,9 +1216,9 @@ namespace DigitalRune.Game.UI.Controls
     /// This is a game object property.
     /// </summary>
     /// <value>The margin as 4D vector (left, top, right bottom).</value>
-    public Vector4F Margin
+    public Vector4 Margin
     {
-      get { return GetValue<Vector4F>(MarginPropertyId); }
+      get { return GetValue<Vector4>(MarginPropertyId); }
       set { SetValue(MarginPropertyId, value); }
     }
 
@@ -1278,9 +1278,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes static members of the <see cref="UIControl"/> class.
@@ -1312,9 +1312,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override void OnLoad()

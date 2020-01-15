@@ -9,7 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     [TemplatePart(Name = "PART_AutoHideBarLeft", Type = typeof(AutoHideBar))]
     [TemplatePart(Name = "PART_AutoHideBarRight", Type = typeof(AutoHideBar))]
@@ -18,9 +18,9 @@ namespace DigitalRune.Windows.Docking
     [TemplatePart(Name = "PART_AutoHidePanel", Type = typeof(Panel))]
     partial class DockControl
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private AutoHideBar _leftAutoHideBar;
         private AutoHideBar _rightAutoHideBar;
@@ -31,15 +31,15 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// When overridden in a derived class, is invoked whenever application code or internal 

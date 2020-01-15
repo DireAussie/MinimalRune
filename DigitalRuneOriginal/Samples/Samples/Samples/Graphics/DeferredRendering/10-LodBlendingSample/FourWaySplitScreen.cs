@@ -1,5 +1,5 @@
 ﻿
-using DigitalRune.Graphics;
+using MinimalRune.Graphics;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;

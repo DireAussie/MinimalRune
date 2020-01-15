@@ -5,7 +5,7 @@
 using System.Windows.Markup;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     /// <summary>
     /// Represents a pane that contains multiple items that share the same space on the screen.

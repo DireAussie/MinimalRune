@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 
 
 
-namespace DigitalRune.Physics
+namespace MinimalRune.Physics
 {
   /// <summary>
   /// The exception that is thrown when a general error in the physics library occurs.

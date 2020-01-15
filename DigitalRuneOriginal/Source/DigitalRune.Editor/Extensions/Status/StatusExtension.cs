@@ -4,12 +4,12 @@
 
 using System;
 using System.Windows;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Docking;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Docking;
+using MinimalRune.Windows.Framework;
 
 
-namespace DigitalRune.Editor.Status
+namespace MinimalRune.Editor.Status
 {
     /// <summary>
     /// Manages status information.
@@ -26,9 +26,9 @@ namespace DigitalRune.Editor.Status
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1001:TypesThatOwnDisposableFieldsShouldBeDisposable")]
     public sealed class StatusExtension : EditorExtension, IStatusService
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private ResourceDictionary _resourceDictionary;
 
@@ -40,21 +40,21 @@ namespace DigitalRune.Editor.Status
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
-
-
-
-        //--------------------------------------------------------------
-
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
+
+
+
+        
+
+        
 
         /// <inheritdoc/>
         protected override void OnInitialize()

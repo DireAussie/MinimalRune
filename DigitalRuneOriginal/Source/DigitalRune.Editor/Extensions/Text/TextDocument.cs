@@ -10,10 +10,10 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Threading;
-using DigitalRune.Editor.Documents;
-using DigitalRune.Editor.Properties;
-using DigitalRune.Editor.Search;
-using DigitalRune.Windows.Controls;
+using MinimalRune.Editor.Documents;
+using MinimalRune.Editor.Properties;
+using MinimalRune.Editor.Search;
+using MinimalRune.Windows.Controls;
 using ICSharpCode.AvalonEdit;
 using ICSharpCode.AvalonEdit.Document;
 using ICSharpCode.AvalonEdit.Rendering;
@@ -21,7 +21,7 @@ using ICSharpCode.AvalonEdit.Utils;
 using AvalonEditDocument = ICSharpCode.AvalonEdit.Document.TextDocument;
 
 
-namespace DigitalRune.Editor.Text
+namespace MinimalRune.Editor.Text
 {
     /// <summary>
     /// Represents an editable text document.
@@ -29,9 +29,9 @@ namespace DigitalRune.Editor.Text
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling")]
     public partial class TextDocument : Document, ISearchable
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private enum LineEndingType
         {
@@ -46,9 +46,9 @@ namespace DigitalRune.Editor.Text
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         // Line ending characters.
         private const char CarriageReturn = '\u000D';
@@ -59,9 +59,9 @@ namespace DigitalRune.Editor.Text
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Encoding UTF8NoBOM = new UTF8Encoding(false);
 
@@ -75,9 +75,9 @@ namespace DigitalRune.Editor.Text
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the text document of the AvalonEdit text editor.
@@ -108,9 +108,9 @@ namespace DigitalRune.Editor.Text
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TextDocument"/> class.
@@ -183,9 +183,9 @@ namespace DigitalRune.Editor.Text
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         protected override DocumentViewModel OnCreateViewModel()

@@ -6,13 +6,13 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Creates the shadow mask from the shadow map of a light node with a 
@@ -21,9 +21,9 @@ namespace DigitalRune.Graphics.Rendering
   /// <inheritdoc cref="ShadowMaskRenderer"/>
   internal class CascadedShadowMaskRenderer : SceneNodeRenderer
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly Vector3[] _frustumFarCorners = new Vector3[4];
 
@@ -54,15 +54,15 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="CascadedShadowMaskRenderer"/> class.
@@ -105,9 +105,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override bool CanRender(SceneNode node, RenderContext context)
@@ -220,7 +220,7 @@ namespace DigitalRune.Graphics.Rendering
         if (_parameterDistances != null)
         {
           // Set not used entries to large values.
-          Vector4F distances = shadow.Distances;
+          Vector4 distances = shadow.Distances;
           for (int j = shadow.NumberOfCascades; j < 4; j++)
             distances[j] = 10 * cameraFar;
 

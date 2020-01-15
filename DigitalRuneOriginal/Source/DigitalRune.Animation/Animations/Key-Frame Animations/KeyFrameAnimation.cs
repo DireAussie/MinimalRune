@@ -4,13 +4,13 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 using Microsoft.Xna.Framework.Content;
 
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Animates a value based on predefined key frames. (Base implementation.)
@@ -54,15 +54,15 @@ namespace DigitalRune.Animation
   /// </remarks>
   public abstract class KeyFrameAnimation<T> : Animation<T> 
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets a value indicating whether values between key frames are interpolated.
@@ -85,9 +85,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="KeyFrameAnimation{T}"/> class.
@@ -100,9 +100,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the index of the key frame <i>before</i> or at the given animation time.

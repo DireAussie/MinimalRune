@@ -6,7 +6,7 @@ using System;
 using System.Globalization;
 
 
-namespace DigitalRune
+namespace MinimalRune
 {
   /// <summary>
   /// Base class for types to restrict instantiation to one object ("singleton pattern").

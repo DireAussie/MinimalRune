@@ -1,6 +1,6 @@
 ﻿using System.Windows;
-using DigitalRune.Windows.Framework;
-using DigitalRune.Editor.Options;
+using MinimalRune.Windows.Framework;
+using MinimalRune.Editor.Options;
 using NLog;
 
 

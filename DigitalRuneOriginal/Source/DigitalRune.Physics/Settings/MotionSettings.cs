@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Physics.Settings
+namespace MinimalRune.Physics.Settings
 {
   /// <summary>
   /// Defines motion-related simulation settings.

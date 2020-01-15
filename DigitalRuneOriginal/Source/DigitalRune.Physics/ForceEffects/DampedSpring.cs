@@ -2,11 +2,11 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics.Constraints;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics.Constraints;
 
 
-namespace DigitalRune.Physics.ForceEffects
+namespace MinimalRune.Physics.ForceEffects
 {
   /// <summary>
   /// Connects to rigid bodies with a damped spring.
@@ -18,15 +18,15 @@ namespace DigitalRune.Physics.ForceEffects
   /// </remarks>
   public class DampedSpring : ForceEffect
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the first rigid body.
@@ -120,9 +120,9 @@ namespace DigitalRune.Physics.ForceEffects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="DampedSpring"/> class.
@@ -135,9 +135,9 @@ namespace DigitalRune.Physics.ForceEffects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Called when the simulation wants this force effect to apply forces to rigid bodies.

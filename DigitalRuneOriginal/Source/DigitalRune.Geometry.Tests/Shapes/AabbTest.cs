@@ -1,9 +1,9 @@
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Geometry.Shapes.Tests
+namespace MinimalRune.Geometry.Shapes.Tests
 {
   [TestFixture]
   public class AabbTest
@@ -88,7 +88,7 @@ namespace DigitalRune.Geometry.Shapes.Tests
       Assert.AreEqual(new Aabb(new Vector3(10, 100, 1000), new Vector3(10, 100, 1000)),
                       new Aabb().GetAabb(new Pose(new Vector3(10, 100, 1000), Quaternion.Identity)));
       Assert.AreEqual(new Aabb(new Vector3(10, 100, 1000), new Vector3(10, 100, 1000)),
-                      new Aabb().GetAabb(new Pose(new Vector3(10, 100, 1000), Quaternion.CreateRotation(new Vector3(1, 2, 3), 0.7f))));
+                      new Aabb().GetAabb(new Pose(new Vector3(10, 100, 1000), Quaternion.CreateFromRotationMatrix(new Vector3(1, 2, 3), 0.7f))));
       
       
       Aabb aabb = new Aabb(new Vector3(1, 10, 100), new Vector3(2, 20, 200));

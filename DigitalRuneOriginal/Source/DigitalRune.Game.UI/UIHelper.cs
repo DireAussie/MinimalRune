@@ -4,11 +4,11 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Game.UI.Controls;
-using DigitalRune.Linq;
+using MinimalRune.Game.UI.Controls;
+using MinimalRune.Linq;
 
 
-namespace DigitalRune.Game.UI
+namespace MinimalRune.Game.UI
 {
   /// <summary>
   /// Provides helper methods for working with <see cref="UIControl"/>s.
@@ -40,9 +40,9 @@ namespace DigitalRune.Game.UI
     //}
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static readonly Func<UIControl, UIControl> GetParent = control => control.VisualParent;
     private static readonly Func<UIControl, IEnumerable<UIControl>> GetChildren = control => control.VisualChildren;

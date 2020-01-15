@@ -6,7 +6,7 @@
 using System.Collections.ObjectModel;
 
 
-namespace DigitalRune.Editor.Errors
+namespace MinimalRune.Editor.Errors
 {
     /// <summary>
     /// Represents the Errors window.

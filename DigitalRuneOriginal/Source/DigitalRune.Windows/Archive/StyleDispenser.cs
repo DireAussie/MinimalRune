@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Windows;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
     /// Manages a pool of <see cref="Style"/>s.

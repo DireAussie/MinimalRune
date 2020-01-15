@@ -6,7 +6,7 @@ using NUnit.Framework;
 
 
 
-namespace DigitalRune.Windows.Tests
+namespace MinimalRune.Windows.Tests
 {
     public static class AssertHelper
     {

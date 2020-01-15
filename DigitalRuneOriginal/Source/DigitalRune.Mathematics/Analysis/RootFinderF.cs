@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 
 
-namespace DigitalRune.Mathematics.Analysis
+namespace MinimalRune.Mathematics.Analysis
 {
   /// <summary>
   /// A base class for methods which solve a single equation (single-precision). 
@@ -17,17 +17,17 @@ namespace DigitalRune.Mathematics.Analysis
   /// </remarks>
   public abstract class RootFinderF
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private int _maxNumberOfIterations = 50;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the function f(x), which root we want to find.
@@ -153,9 +153,9 @@ namespace DigitalRune.Mathematics.Analysis
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="RootFinderF"/> class.
@@ -174,9 +174,9 @@ namespace DigitalRune.Mathematics.Analysis
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>

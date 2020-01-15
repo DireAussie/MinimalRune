@@ -1,6 +1,6 @@
 using System;
 using System.Linq;
-using DigitalRune.CommandLine;
+using MinimalRune.CommandLine;
 
 
 namespace CommandLineParserTest
@@ -187,7 +187,7 @@ namespace CommandLineParserTest
                 Console.Out.WriteLine("SYNTAX");
                 Console.Out.WriteLineIndented(parser.GetSyntax(), 4);
                 Console.Out.WriteLine();
-                Console.Out.WriteLine("Try 'CommandLineApp --help' for more information.");
+                Console.Out.WriteLine("Try 'CommandLineApp --help'ï¿½forï¿½moreï¿½information.");
                 return ERROR_BAD_ARGUMENTS;
             }
 

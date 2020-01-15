@@ -2,14 +2,14 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Interpolation;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Interpolation;
 
 using Microsoft.Xna.Framework.Content;
 
 
 
-namespace DigitalRune.Mathematics.Content
+namespace MinimalRune.Mathematics.Content
 {
   /// <summary>
   /// Reads a <see cref="CurveKey2F"/> from binary format. (Only available in the XNA-compatible

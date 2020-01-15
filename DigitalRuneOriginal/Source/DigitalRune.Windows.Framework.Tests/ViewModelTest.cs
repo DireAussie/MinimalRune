@@ -3,7 +3,7 @@ using System;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Windows.Framework.Tests
+namespace MinimalRune.Windows.Framework.Tests
 {
   [TestFixture]
   public class ViewModelTest

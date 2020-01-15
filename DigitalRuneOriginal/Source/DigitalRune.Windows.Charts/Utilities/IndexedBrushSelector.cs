@@ -6,7 +6,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Media;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Manages a collection of brushes and selects brushes for items based on their index.

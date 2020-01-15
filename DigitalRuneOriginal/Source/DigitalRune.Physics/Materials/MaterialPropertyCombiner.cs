@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 
 
-namespace DigitalRune.Physics.Materials
+namespace MinimalRune.Physics.Materials
 {
   /// <summary>
   /// Computes the material properties for two materials in contact using simple mathematical

@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.Collections
+namespace MinimalRune.Collections
 {
     /// <summary>
     /// Describes how a node should be merged into collection of nodes. Some operations are relative

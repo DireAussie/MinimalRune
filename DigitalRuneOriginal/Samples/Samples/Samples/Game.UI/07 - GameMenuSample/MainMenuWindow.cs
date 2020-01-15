@@ -1,7 +1,7 @@
 
-using DigitalRune.Game.UI;
-using DigitalRune.Game.UI.Controls;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Game.UI;
+using MinimalRune.Game.UI.Controls;
+using MinimalRune.Mathematics.Algebra;
 
 
 namespace Samples.Game.UI
@@ -24,7 +24,7 @@ namespace Samples.Game.UI
 
       var playButton = new Button
       {
-        Margin = new Vector4F(10),
+        Margin = new Vector4(10),
         Width = 200,
         Height = 60,
         Content = new TextBlock { Text = "Play" },
@@ -33,7 +33,7 @@ namespace Samples.Game.UI
 
       var optionsButton = new Button
       {
-        Margin = new Vector4F(10),
+        Margin = new Vector4(10),
         Width = 200,
         Height = 60,
         Content = new TextBlock { Text = "Options" },
@@ -42,7 +42,7 @@ namespace Samples.Game.UI
 
       var exitButton = new Button
       {
-        Margin = new Vector4F(10),
+        Margin = new Vector4(10),
         Width = 200,
         Height = 60,
         Content = new TextBlock { Text = "Exit" },

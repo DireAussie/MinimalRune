@@ -5,7 +5,7 @@
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Game.UI.Rendering
+namespace MinimalRune.Game.UI.Rendering
 {
   /// <summary>
   /// Represents a font of the UI theme.

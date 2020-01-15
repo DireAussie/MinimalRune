@@ -16,7 +16,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 
 
-namespace DigitalRune.Graphics.Interop
+namespace MinimalRune.Graphics.Interop
 {
   /// <summary>
   /// A WPF control that implements <see cref="IPresentationTarget"/> to host a 3D view.
@@ -121,9 +121,9 @@ namespace DigitalRune.Graphics.Interop
     // far more seldom.)
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
     private D3D11Image _d3D11Image;
@@ -136,9 +136,9 @@ namespace DigitalRune.Graphics.Interop
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
     /// <inheritdoc/>
@@ -415,9 +415,9 @@ namespace DigitalRune.Graphics.Interop
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes static members of the <see cref="D3DImagePresentationTarget"/> class.
@@ -450,9 +450,9 @@ namespace DigitalRune.Graphics.Interop
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Called when the <see cref="EnableAlpha"/> property changed.

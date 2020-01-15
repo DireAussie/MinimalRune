@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Linq;
-using DigitalRune.Animation.Character;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Statistics;
+using MinimalRune.Animation.Character;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Statistics;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Animation.Tests
+namespace MinimalRune.Animation.Tests
 {
   [TestFixture]
   public class AnimationHelperTest
@@ -259,10 +259,10 @@ namespace DigitalRune.Animation.Tests
     public void ComputeAngularVelocity()
     {
       var v = new Vector3(0.1f, 0.2f, 0.3f);
-      var o0 = Quaternion.CreateRotation(new Vector3(-7, 8, 0.3f).Normalized, 4.2f);
+      var o0 = Quaternion.CreateFromRotationMatrix(new Vector3(-7, 8, 0.3f).Normalized, 4.2f);
       var dt = 1 / 60f;
 
-      var o1 = (Quaternion.CreateRotation(v, v.Length * dt) * o0).Normalized;
+      var o1 = (Quaternion.CreateFromRotationMatrix(v, v.Length * dt) * o0).Normalized;
       
       // Negate quaternion. This is still the same rotation, but now we can test if 
       // the rotation around the shortest arc is used.
@@ -588,7 +588,7 @@ namespace DigitalRune.Animation.Tests
 
         // Apply small variation (within thresholds).
         value.Scale += random.NextVector3(-1, 1).Normalized * (scaleThreshold / 2);
-        value.Rotation = Quaternion.CreateRotation(random.NextVector3(-1, 1), rotationThreshold / 2) * value.Rotation;
+        value.Rotation = Quaternion.CreateFromRotationMatrix(random.NextVector3(-1, 1), rotationThreshold / 2) * value.Rotation;
         value.Translation += random.NextVector3(-1, 1).Normalized * (translationThreshold / 2);
 
         animation.KeyFrames.Insert(insertionIndex, new KeyFrame<SrtTransform>(time, value));

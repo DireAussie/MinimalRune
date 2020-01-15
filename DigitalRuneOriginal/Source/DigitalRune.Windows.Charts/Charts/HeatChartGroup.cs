@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Shapes;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Represents a group of <see cref="HeatChart"/>s.
@@ -18,21 +18,21 @@ namespace DigitalRune.Windows.Charts
     [StyleTypedProperty(Property = "BarStyle", StyleTargetType = typeof(Rectangle))]
     public class HeatChartGroup : ChartGroup<HeatChart>
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
-
-
-
-        //--------------------------------------------------------------
-
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
+
+
+
+        
+
+        
 
         /// <summary>
         /// Identifies the <see cref="BarGap"/> dependency property.
@@ -133,9 +133,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
         /// <summary>
@@ -155,9 +155,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Called when a relevant property is changed and the charts needs to be updated.

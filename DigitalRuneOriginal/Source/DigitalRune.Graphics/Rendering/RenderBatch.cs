@@ -6,7 +6,7 @@ using System;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Renders primitives in batches.
@@ -27,9 +27,9 @@ namespace DigitalRune.Graphics.Rendering
   /// </remarks>
   internal sealed class RenderBatch<TVertex, TIndex> : IDisposable where TVertex : struct where TIndex : struct
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly VertexDeclaration _vertexDeclaration;
     private readonly VertexBuffer _vertexBuffer;
@@ -55,9 +55,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets a value indicating whether this instance has been disposed of.
@@ -84,9 +84,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="RenderBatch{TVertex,TIndex}"/> class.
@@ -179,9 +179,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Resets the indices to the beginning of the buffers.

@@ -11,15 +11,15 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
     /// </summary>
     public class OverloadProvider : IOverloadProvider
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public int Count
@@ -95,9 +95,9 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <overloads>
         /// <summary>
@@ -125,9 +125,9 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Raises the <see cref="PropertyChanged"/> event.

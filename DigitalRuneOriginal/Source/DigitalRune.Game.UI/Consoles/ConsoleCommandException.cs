@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 
 
 
-namespace DigitalRune.Game.UI.Consoles
+namespace MinimalRune.Game.UI.Consoles
 {
   /// <summary>
   /// Is raised when a console command needs to report errors.

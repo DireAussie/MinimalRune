@@ -7,7 +7,7 @@ using System.IO;
 using Microsoft.Xna.Framework.Content;
 
 
-namespace DigitalRune.Storages
+namespace MinimalRune.Storages
 {
   /// <summary>
   /// Extends the XNA <see cref="ContentManager"/> and loads assets from any <see cref="IStorage"/>
@@ -15,15 +15,15 @@ namespace DigitalRune.Storages
   /// </summary>
   public class StorageContentManager : ContentManager, IStorageProvider
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the storage that provides the content.
@@ -33,9 +33,9 @@ namespace DigitalRune.Storages
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -113,9 +113,9 @@ namespace DigitalRune.Storages
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
     /// <summary>

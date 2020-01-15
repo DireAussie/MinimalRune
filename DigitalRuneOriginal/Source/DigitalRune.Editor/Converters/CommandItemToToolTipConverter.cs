@@ -9,7 +9,7 @@ using System.Windows;
 using System.Windows.Data;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// Converts a command item to a tooltip with text and shortcut info.

@@ -2,7 +2,7 @@ using System;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Mathematics.Statistics.Tests
+namespace MinimalRune.Mathematics.Statistics.Tests
 {
   [TestFixture]
   public class PerlinNoiseTest
@@ -99,7 +99,7 @@ namespace DigitalRune.Mathematics.Statistics.Tests
       var random = new Random(15485863);
       for (int i = 0; i < 1000000; i++)
       {
-        var v = random.NextVector4F(0, 255);
+        var v = random.NextVector4(0, 255);
         var n = PerlinNoise.Compute(v.X, v.Y, v.Z, v.W);
         min = Math.Min(min, n);
         max = Math.Max(max, n);

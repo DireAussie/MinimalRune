@@ -2,12 +2,12 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics.Settings;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics.Settings;
 
 
-namespace DigitalRune.Physics.Constraints
+namespace MinimalRune.Physics.Constraints
 {  
   /// <summary>
   /// Defines a constraint between two rigid bodies.
@@ -25,15 +25,15 @@ namespace DigitalRune.Physics.Constraints
     // Optional:
     // - Property Name for debugging.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the first body.
@@ -199,15 +199,15 @@ namespace DigitalRune.Physics.Constraints
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Called when this constraint is added to a simulation.

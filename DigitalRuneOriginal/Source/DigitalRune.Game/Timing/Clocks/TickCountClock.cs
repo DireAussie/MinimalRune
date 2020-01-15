@@ -6,7 +6,7 @@
 
 using System;
 
-namespace DigitalRune.Game.Timing
+namespace MinimalRune.Game.Timing
 {
   /// <summary>
   /// Measures the real time (wall clock time) by polling the computer's system 
@@ -18,30 +18,30 @@ namespace DigitalRune.Game.Timing
   /// </remarks>
   public class TickCountClock : GameClock
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
  
     private int _lastTickCount;  // The tick count of the last update.
     private int _stopTickCount;  // The tick count when the clock is suspended.
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
-
-
-
-    //--------------------------------------------------------------
-
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
+
+
+
+    
+
+    
 
     /// <inheritdoc/>
     public override void Start()

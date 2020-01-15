@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 
 
-namespace DigitalRune.Game
+namespace MinimalRune.Game
 {
   /// <summary>
   /// Manages a collection of game objects.
@@ -15,9 +15,9 @@ namespace DigitalRune.Game
   {
     // This collection calls GameObject.Load/Unload when game objects are added/removed.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // This flag is set when the collection is modified. It is read and reset by the 
     // GameObjectManager.
@@ -25,15 +25,15 @@ namespace DigitalRune.Game
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     internal GameObjectCollection()
     {
@@ -41,9 +41,9 @@ namespace DigitalRune.Game
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Removes all elements from the <see cref="GameObjectCollection"/>. 

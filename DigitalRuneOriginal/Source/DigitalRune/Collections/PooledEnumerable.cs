@@ -7,7 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-namespace DigitalRune.Collections
+namespace MinimalRune.Collections
 {
   /// <summary>
   /// Provides a base implementation for an <see cref="IEnumerable{T}"/> and an
@@ -27,18 +27,18 @@ namespace DigitalRune.Collections
     // When the enumerator is disposed, the OnRecycle is called which should be used to clean and 
     // recycle the whole object.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private int _state; // 0 = in pool, 1 = in use, 2 = in use and enumerator was given out.
     private T _current;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the element in the collection at the current position of the enumerator.
@@ -63,9 +63,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes this instance.
@@ -107,9 +107,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns an enumerator that iterates through a collection.

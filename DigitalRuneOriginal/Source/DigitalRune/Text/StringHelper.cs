@@ -6,7 +6,7 @@ using System;
 using System.Globalization;
 
 
-namespace DigitalRune.Text
+namespace MinimalRune.Text
 {
   /// <summary>
   /// Contains additional string methods.

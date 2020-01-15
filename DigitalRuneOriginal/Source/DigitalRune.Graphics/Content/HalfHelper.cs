@@ -6,7 +6,7 @@ using System;
 using System.Runtime.InteropServices;
 
 
-namespace DigitalRune.Graphics.Content
+namespace MinimalRune.Graphics.Content
 {
   /// <summary>
   /// Converts between Half and Float values.
@@ -20,9 +20,9 @@ namespace DigitalRune.Graphics.Content
     // Reference: Jeroen van der Zijp, "Fast Half Float Conversions",
     //            ftp://www.fox-toolkit.org/pub/fasthalffloatconversion.pdf
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // ReSharper disable FieldCanBeMadeReadOnly.Local
     [StructLayout(LayoutKind.Explicit)]
@@ -36,9 +36,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Half to Float
     static readonly uint[] MantissaTable = new uint[2048];
@@ -51,15 +51,15 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes static members of the <see cref="HalfHelper"/> class.
@@ -168,9 +168,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Converts the specified 16-bit Half value to a 32-bit Float value.

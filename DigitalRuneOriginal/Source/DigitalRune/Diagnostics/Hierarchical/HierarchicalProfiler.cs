@@ -8,7 +8,7 @@ using System.Globalization;
 using System.Text;
 
 
-namespace DigitalRune.Diagnostics
+namespace MinimalRune.Diagnostics
 {
   /// <summary>
   /// Provides support for hierarchical profiling. (Not available in Silverlight.)
@@ -53,7 +53,7 @@ namespace DigitalRune.Diagnostics
   /// 
   ///  using System;
   ///  using System.Threading;
-  ///  using DigitalRune.Diagnostics;
+  ///  using MinimalRune.Diagnostics;
   ///
   ///namespace ProfilingTest
   ///  {
@@ -146,15 +146,15 @@ namespace DigitalRune.Diagnostics
     // See Hierarchical Profiler in GPG3.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the name of this profiler.
@@ -209,9 +209,9 @@ namespace DigitalRune.Diagnostics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="HierarchicalProfiler"/> class.
@@ -233,9 +233,9 @@ namespace DigitalRune.Diagnostics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Resets all timing data.

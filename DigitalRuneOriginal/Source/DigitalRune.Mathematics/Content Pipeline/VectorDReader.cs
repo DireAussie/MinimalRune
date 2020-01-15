@@ -4,13 +4,13 @@
 
 using System;
 using System.Globalization;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 using Microsoft.Xna.Framework.Content;
 
 
 
-namespace DigitalRune.Mathematics.Content
+namespace MinimalRune.Mathematics.Content
 {
   /// <summary>
   /// Reads a <see cref="VectorD"/> from binary format. (Only available in the XNA-compatible

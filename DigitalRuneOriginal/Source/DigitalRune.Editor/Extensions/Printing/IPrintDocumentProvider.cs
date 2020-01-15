@@ -5,7 +5,7 @@
 using System.Windows.Documents;
 
 
-namespace DigitalRune.Editor.Printing
+namespace MinimalRune.Editor.Printing
 {
     /// <summary>
     /// Represents an object which provides a print document.

@@ -5,13 +5,13 @@
 using System;
 
 
-namespace DigitalRune.Game
+namespace MinimalRune.Game
 {
   public partial class GameObject 
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // The local property data of this game object.
     internal DataStore<IGamePropertyData> PropertyData
@@ -103,9 +103,9 @@ namespace DigitalRune.Game
 
     
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary> 

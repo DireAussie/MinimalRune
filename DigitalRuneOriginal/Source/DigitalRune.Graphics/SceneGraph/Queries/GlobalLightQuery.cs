@@ -6,24 +6,24 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   // A light query for global lights.
   internal sealed class GlobalLightQuery : ISceneQuery
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public SceneNode ReferenceNode { get; private set; }
@@ -59,9 +59,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="GlobalLightQuery"/> class.
@@ -77,9 +77,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public void Reset()
@@ -142,7 +142,7 @@ namespace DigitalRune.Graphics.SceneGraph
 
           // Or simpler: Sort light nodes by distance.
           // (We use distance², because it is faster.)
-          //float distance = (referencePosition - lightNode.PoseWorld.Position).LengthSquared; 
+          //float distance = (referencePosition - lightNode.PoseWorld.Position).LengthSquared(); 
           //lightNode.SortTag = distance;
         }
       }

@@ -12,11 +12,11 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 using Image = System.Windows.Controls.Image;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Represents a context menu for selecting the mode and scale of an <see cref="ExplorerView"/>.
@@ -24,9 +24,9 @@ namespace DigitalRune.Windows.Controls
     [TemplatePart(Name = "PART_ViewSlider", Type = typeof(Slider))]
     public class ExplorerViewMenu : ContextMenu
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         // The scales that correspond to the individual view modes.
         internal const double ScaleExtraLarge = 16;
@@ -48,9 +48,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private bool _initialized;
         private bool _updating;
@@ -59,15 +59,15 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
@@ -498,9 +498,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="ExplorerViewMenu"/> class.
@@ -513,9 +513,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Raises the <see cref="FrameworkElement.Initialized"/> event. This method is invoked whenever 

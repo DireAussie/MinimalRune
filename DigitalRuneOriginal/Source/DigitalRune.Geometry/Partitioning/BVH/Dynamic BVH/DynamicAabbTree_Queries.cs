@@ -5,17 +5,17 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Linq;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Linq;
+using MinimalRune.Mathematics.Algebra;
 
 
-using DigitalRune.Collections;
-using DigitalRune.Mathematics;
+using MinimalRune.Collections;
+using MinimalRune.Mathematics;
 
 
 
-namespace DigitalRune.Geometry.Partitioning
+namespace MinimalRune.Geometry.Partitioning
 {
   partial class DynamicAabbTree<T>
   {

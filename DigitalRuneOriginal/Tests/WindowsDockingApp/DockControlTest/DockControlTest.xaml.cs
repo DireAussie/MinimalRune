@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Windows;
 using System.Windows.Media.Imaging;
 using System.Xml.Linq;
-using DigitalRune.Windows.Docking;
+using MinimalRune.Windows.Docking;
 
 
 namespace WindowsDockingApp

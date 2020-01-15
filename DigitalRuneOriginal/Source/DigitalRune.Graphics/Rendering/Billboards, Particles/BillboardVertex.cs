@@ -5,11 +5,11 @@
 using System;
 using System.Globalization;
 using System.Runtime.InteropServices;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Vertex format used in "Billboard.fx".
@@ -20,9 +20,9 @@ namespace DigitalRune.Graphics.Rendering
   [StructLayout(LayoutKind.Sequential)]
   internal struct BillboardVertex : IVertexType
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The vertex declaration.
@@ -46,18 +46,18 @@ namespace DigitalRune.Graphics.Rendering
     public Vector3 Position;
     public Vector3 Normal;   // If (0, 0, 0) => vertex belongs to ribbon.
     public Vector3 Axis;
-    public Vector4F Color;
+    public Vector4 Color;
     public Vector2F TextureCoordinate;
-    public Vector4F Args0;
-    public Vector4F Args1;
-    public Vector4F Args2;
-    public Vector4F Args3;
+    public Vector4 Args0;
+    public Vector4 Args1;
+    public Vector4 Args2;
+    public Vector4 Args3;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the size of the <see cref="BillboardVertex"/> structure in bytes.
@@ -166,15 +166,15 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Indicates whether this instance and a specified object are equal.

@@ -4,32 +4,32 @@
 
 using System;
 using System.Threading.Tasks;
-using DigitalRune.Editor.Documents;
-using DigitalRune.Editor.Status;
-using DigitalRune.Editor.Text;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Editor.Documents;
+using MinimalRune.Editor.Status;
+using MinimalRune.Editor.Text;
+using MinimalRune.Windows.Framework;
 using static System.FormattableString;
 
 
-namespace DigitalRune.Editor.Shader
+namespace MinimalRune.Editor.Shader
 {
     partial class ShaderExtension
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
-
-
-
-        //--------------------------------------------------------------
-
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
+
+
+
+        
+
+        
 
         private bool CanAnalyze()
         {

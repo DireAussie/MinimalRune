@@ -2,18 +2,18 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler;
 
 
-namespace DigitalRune.Mathematics.Content.Pipeline
+namespace MinimalRune.Mathematics.Content.Pipeline
 {
   /// <summary>
-  /// Writes a <see cref="Vector4F"/> to binary format.
+  /// Writes a <see cref="Vector4"/> to binary format.
   /// </summary>
   [ContentTypeWriter]
-  public class Vector4FWriter : ContentTypeWriter<Vector4F>
+  public class Vector4Writer : ContentTypeWriter<Vector4>
   {
     /// <summary>
     /// Gets the assembly qualified name of the runtime target type.
@@ -22,7 +22,7 @@ namespace DigitalRune.Mathematics.Content.Pipeline
     /// <returns>The qualified name.</returns>
     public override string GetRuntimeType(TargetPlatform targetPlatform)
     {
-      return typeof(Vector4F).AssemblyQualifiedName;
+      return typeof(Vector4).AssemblyQualifiedName;
     }
 
 
@@ -33,7 +33,7 @@ namespace DigitalRune.Mathematics.Content.Pipeline
     /// <returns>Name of the runtime loader.</returns>
     public override string GetRuntimeReader(TargetPlatform targetPlatform)
     {
-      return typeof(Vector4FReader).AssemblyQualifiedName;
+      return typeof(Vector4Reader).AssemblyQualifiedName;
     }
 
 
@@ -43,7 +43,7 @@ namespace DigitalRune.Mathematics.Content.Pipeline
     /// <param name="output">The content writer serializing the value.</param>
     /// <param name="value">The value to write.</param>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods")]
-    protected override void Write(ContentWriter output, Vector4F value)
+    protected override void Write(ContentWriter output, Vector4 value)
     {
       output.Write(value.X);
       output.Write(value.Y);

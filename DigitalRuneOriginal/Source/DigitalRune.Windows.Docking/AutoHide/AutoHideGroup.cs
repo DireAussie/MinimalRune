@@ -9,7 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     /// <summary>
     /// Represents a <see cref="IDockTabPane"/> with multiple <see cref="IDockTabItem"/>s that are
@@ -17,21 +17,21 @@ namespace DigitalRune.Windows.Docking
     /// </summary>
     public class AutoHideGroup : ItemsControl
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
-
-
-
-        //--------------------------------------------------------------
-
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
+
+
+
+        
+
+        
 
         /// <summary>
         /// Initializes the <see cref="AutoHideGroup"/> class.
@@ -43,9 +43,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Called when the <see cref="ItemsControl.ItemsSource"/> property changes.

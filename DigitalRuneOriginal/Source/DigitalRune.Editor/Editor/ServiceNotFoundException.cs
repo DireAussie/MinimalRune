@@ -2,7 +2,7 @@
 using System.Runtime.Serialization;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// The exception that is raised when a required service is not registered in the editor.

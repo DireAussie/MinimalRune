@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Particles.Effectors
+namespace MinimalRune.Particles.Effectors
 {
   /// <summary>
   /// Applies a damping to a particle parameter of type <see cref="float"/>.
@@ -41,18 +41,18 @@ namespace DigitalRune.Particles.Effectors
   /// </remarks>
   public class SingleDampingEffector : ParticleEffector
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private IParticleParameter<float> _valueParameter;
     private IParticleParameter<float> _dampingParameter;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the name of the particle parameter that is damped.
@@ -89,9 +89,9 @@ namespace DigitalRune.Particles.Effectors
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="SingleDampingEffector"/> class.
@@ -104,9 +104,9 @@ namespace DigitalRune.Particles.Effectors
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override ParticleEffector CreateInstanceCore()

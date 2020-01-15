@@ -5,11 +5,11 @@
 using System;
 using System.Diagnostics;
 using System.Globalization;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry
+namespace MinimalRune.Geometry
 {
   /// <summary>
   /// Defines an object that has a <see cref="Shape"/> and a <see cref="Pose"/> (position and 
@@ -22,15 +22,15 @@ namespace DigitalRune.Geometry
   [DebuggerDisplay("{GetType().Name,nq}(Shape = {Shape})")]
   public class GeometricObject : IGeometricObject
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the axis-aligned bounding box (AABB).
@@ -143,9 +143,9 @@ namespace DigitalRune.Geometry
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -259,9 +259,9 @@ namespace DigitalRune.Geometry
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

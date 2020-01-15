@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Windows.Interop
+namespace MinimalRune.Windows.Interop
 {
     // ReSharper disable InconsistentNaming
 

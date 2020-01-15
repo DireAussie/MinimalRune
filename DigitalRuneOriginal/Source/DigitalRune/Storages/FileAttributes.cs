@@ -7,7 +7,7 @@
 using System;
 
 
-namespace DigitalRune.Storages
+namespace MinimalRune.Storages
 {
   /// <summary>
   /// Provides attributes for files and directories.

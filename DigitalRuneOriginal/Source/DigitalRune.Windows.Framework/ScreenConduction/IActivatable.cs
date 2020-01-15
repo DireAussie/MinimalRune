@@ -12,7 +12,7 @@
 using System;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Represents the activation logic of an item.

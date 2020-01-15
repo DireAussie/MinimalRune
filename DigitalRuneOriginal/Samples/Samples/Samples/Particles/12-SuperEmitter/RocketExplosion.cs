@@ -1,7 +1,7 @@
 ﻿using DigitalRune;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Particles;
-using DigitalRune.Particles.Effectors;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Particles;
+using MinimalRune.Particles.Effectors;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Xna.Framework.Content;
 

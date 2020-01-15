@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Represents the current LOD or LOD transition.
@@ -15,15 +15,15 @@ namespace DigitalRune.Graphics.SceneGraph
   [DebuggerDisplay("{GetType().Name,nq}(CurrentIndex = {CurrentIndex}, NextIndex = {NextIndex}, Transition = {Transition})")]
   public struct LodSelection : IEquatable<LodSelection>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The index of the current LOD.
@@ -66,9 +66,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -121,9 +121,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
     

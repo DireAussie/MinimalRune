@@ -7,16 +7,16 @@ using System.Globalization;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Content
+namespace MinimalRune.Graphics.Content
 {
   /// <summary>
   /// Provides methods for converting types from/to XNA.
   /// </summary>
   internal static class XnaHelper
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Converts the specified DigitalRune <see cref="DataFormat"/> to the XNA
@@ -222,9 +222,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Converts the specified DigitalRune <see cref="DataFormat"/> to the XNA

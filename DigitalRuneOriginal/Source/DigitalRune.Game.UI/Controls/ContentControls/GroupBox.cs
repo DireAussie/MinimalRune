@@ -4,7 +4,7 @@
 using System.ComponentModel;
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   /// <summary>
   /// Represents a control that creates a container that has a border and a header for other user 
@@ -18,7 +18,7 @@ namespace DigitalRune.Game.UI.Controls
   /// // Group 123
   /// var radioButton1 = new RadioButton
   /// {
-  ///   Margin = new Vector4F(4, 8, 4, 4),
+  ///   Margin = new Vector4(4, 8, 4, 4),
   ///   Content = new TextBlock { Text = "Option 1" },
   ///   IsChecked = true,
   ///   GroupName = "Group 123"
@@ -26,14 +26,14 @@ namespace DigitalRune.Game.UI.Controls
   /// 
   /// var radioButton2 = new RadioButton
   /// {
-  ///   Margin = new Vector4F(4, 2, 4, 2),
+  ///   Margin = new Vector4(4, 2, 4, 2),
   ///   Content = new TextBlock { Text = "Option 2" },
   ///   GroupName = "Group 123"
   /// };
   /// 
   /// var radioButton3 = new RadioButton
   /// {
-  ///   Margin = new Vector4F(4, 2, 4, 4),
+  ///   Margin = new Vector4(4, 2, 4, 4),
   ///   Content = new TextBlock { Text = "Option 3" },
   ///   GroupName = "Group 123"
   /// };
@@ -47,14 +47,14 @@ namespace DigitalRune.Game.UI.Controls
   /// {
   ///   Title = "Options 1, 2, 3",
   ///   HorizontalAlignment = HorizontalAlignment.Stretch,
-  ///   Margin = new Vector4F(4),
+  ///   Margin = new Vector4(4),
   ///   Content = stackPanel
   /// };
   /// 
   /// // Group ABC
   /// var radioButtonA = new RadioButton
   /// {
-  ///   Margin = new Vector4F(4, 8, 4, 4),
+  ///   Margin = new Vector4(4, 8, 4, 4),
   ///   Content = new TextBlock { Text = "Option A" },
   ///   IsChecked = true,
   ///   GroupName = "Group ABC"
@@ -62,14 +62,14 @@ namespace DigitalRune.Game.UI.Controls
   /// 
   /// var radioButtonB = new RadioButton
   /// {
-  ///   Margin = new Vector4F(4, 2, 4, 2),
+  ///   Margin = new Vector4(4, 2, 4, 2),
   ///   Content = new TextBlock { Text = "Option B" },
   ///   GroupName = "Group ABC"
   /// };
   /// 
   /// var radioButtonC = new RadioButton
   /// {
-  ///   Margin = new Vector4F(4, 2, 4, 4),
+  ///   Margin = new Vector4(4, 2, 4, 4),
   ///   Content = new TextBlock { Text = "Option C" },
   ///   GroupName = "Group ABC"
   /// };
@@ -83,7 +83,7 @@ namespace DigitalRune.Game.UI.Controls
   /// {
   ///   Title = "Options A, B, C",
   ///   HorizontalAlignment = HorizontalAlignment.Stretch,
-  ///   Margin = new Vector4F(4),
+  ///   Margin = new Vector4(4),
   ///   Content = stackPanel
   /// };
   /// 
@@ -98,23 +98,23 @@ namespace DigitalRune.Game.UI.Controls
     // A group box draws a text block with the title and the renderer draws a border.
     // A group box does not have a special functionality.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private TextBlock _titleTextBlock;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary> 
     /// The ID of the <see cref="TitleTextBlockStyle"/> game object property.
@@ -164,9 +164,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="GroupBox"/> class.
@@ -178,9 +178,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override void OnLoad()

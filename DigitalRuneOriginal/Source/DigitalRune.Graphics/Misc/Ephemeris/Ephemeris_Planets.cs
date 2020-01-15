@@ -13,10 +13,10 @@
 // Code is used with permission from Frank Kane.
 
 
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// The planets which are visible to the naked eye.
@@ -34,9 +34,9 @@ namespace DigitalRune.Graphics
 
   partial class Ephemeris
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Stores the parameters required to uniquely identify a specific planet orbit.
     private struct OrbitalElements
@@ -83,9 +83,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     //private const int NumberOfPlanets = 6;
 
@@ -119,23 +119,23 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     //private readonly PlanetData[] _planetData = new PlanetData[NumberOfPlanets];
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     ///// <summary>
     ///// Computes the planet data of the specified planet.

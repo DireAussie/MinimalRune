@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Represents a control that lets the user choose a color.
@@ -46,9 +46,9 @@ namespace DigitalRune.Windows.Controls
     [TemplatePart(Name = "PART_ColorSpace", Type = typeof(RadioButton))]
     public class ColorPicker : Control
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         // True if the eye dropper button was clicked.
         private bool _isInEyeDropperMode;
@@ -109,15 +109,15 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="ColorSpace"/> dependency property.
@@ -257,9 +257,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes the static members of the <see cref="ColorPicker"/> class.
@@ -288,9 +288,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private void OnResetColorExecuted(object sender, ExecutedRoutedEventArgs eventArgs)
         {

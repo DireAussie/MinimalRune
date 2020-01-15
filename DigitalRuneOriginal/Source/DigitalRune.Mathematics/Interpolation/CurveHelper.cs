@@ -3,20 +3,20 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Analysis;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Analysis;
 
 
-namespace DigitalRune.Mathematics.Interpolation
+namespace MinimalRune.Mathematics.Interpolation
 {
   /// <summary>
   /// Provides helper methods for curves.
   /// </summary>
   internal static partial class CurveHelper
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // This nested class gets a curve parameter using a root finder. This class can be 
     // resource pooled to avoid the allocation of new root finders and delegates.

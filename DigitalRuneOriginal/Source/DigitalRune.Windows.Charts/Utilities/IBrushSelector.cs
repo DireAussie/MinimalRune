@@ -5,7 +5,7 @@
 using System.Windows.Media;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Provides brushes for items. (Selects brush for pie chart elements.)

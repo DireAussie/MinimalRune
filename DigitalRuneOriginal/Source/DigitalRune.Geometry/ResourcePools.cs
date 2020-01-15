@@ -2,11 +2,11 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Geometry.Shapes;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Geometry.Shapes;
 
 
-namespace DigitalRune.Geometry
+namespace MinimalRune.Geometry
 {
   /// <summary>
   /// Provides resource pools for reusable items. (For internal use only.)

@@ -4,9 +4,9 @@
 
 using System;
 using System.ComponentModel;
-using DigitalRune.Collections;
-using DigitalRune.Game.Input;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Collections;
+using MinimalRune.Game.Input;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework.Input;
 
 using Microsoft.Xna.Framework.Input.Touch;
@@ -16,7 +16,7 @@ using Keys = System.Windows.Input.Key;
 
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   /// <summary>
   /// Represents a popup menu that enables a control to expose functionality that is specific to 
@@ -34,7 +34,7 @@ namespace DigitalRune.Game.UI.Controls
   /// // Create a multi-line text box.
   /// var textBox = new TextBox
   /// {
-  ///   Margin = new Vector4F(4),
+  ///   Margin = new Vector4(4),
   ///   Text = "Lorem ipsum dolor sit ...",
   ///   MaxLines = 5,   // Show max 5 lines of text.
   ///   HorizontalAlignment = HorizontalAlignment.Stretch,
@@ -62,17 +62,17 @@ namespace DigitalRune.Game.UI.Controls
   {
     // The context menu is a scroll viewer with a stack panel filled with menu items.
     
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private StackPanel _panel;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the <see cref="UIControl"/> that opened this <see cref="ContextMenu"/>.
@@ -94,9 +94,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary> 
     /// The ID of the <see cref="Offset"/> game object property.
@@ -146,9 +146,9 @@ namespace DigitalRune.Game.UI.Controls
 
     
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes static members of the <see cref="ContextMenu"/> class.
@@ -178,9 +178,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override void OnLoad()

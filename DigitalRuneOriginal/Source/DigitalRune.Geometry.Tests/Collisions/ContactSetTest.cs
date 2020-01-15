@@ -1,10 +1,10 @@
 ﻿using System;
-using DigitalRune.Geometry.Collisions.Algorithms;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Collisions.Algorithms;
+using MinimalRune.Mathematics.Algebra;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Geometry.Collisions.Tests
+namespace MinimalRune.Geometry.Collisions.Tests
 {
   [TestFixture]
   public class ContactSetTest

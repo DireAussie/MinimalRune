@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Manages windows and dialog boxes.

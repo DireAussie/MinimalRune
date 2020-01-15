@@ -5,16 +5,16 @@
 using System.Diagnostics;
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Represents a blend weight of an animation in a <see cref="BlendGroup"/>.
   /// </summary>
   internal sealed class AnimatableBlendWeight : IAnimatableProperty<float>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly BlendGroup _blendGroup;
     private float _baseValue;
@@ -23,9 +23,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
@@ -122,9 +122,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="AnimatableBlendWeight"/> class.
@@ -140,9 +140,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
   }
 }

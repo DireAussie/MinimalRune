@@ -4,10 +4,10 @@
 
 using System.Collections.Generic;
 using System.Windows.Media;
-using DigitalRune.Windows.Controls;
+using MinimalRune.Windows.Controls;
 
 
-namespace DigitalRune.Editor.Documents
+namespace MinimalRune.Editor.Documents
 {
     /// <summary>
     /// Describes a type of document and the <see cref="DocumentFactory"/> that is used to

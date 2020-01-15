@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Collections
+namespace MinimalRune.Collections
 {
     /// <summary>
     /// Manages a collection of <see cref="MergeableNode{T}"/> objects.

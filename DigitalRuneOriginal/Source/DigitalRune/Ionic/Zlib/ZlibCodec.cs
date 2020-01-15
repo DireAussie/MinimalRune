@@ -59,7 +59,7 @@
 // -----------------------------------------------------------------------
 
 
-namespace DigitalRune.Ionic.Zlib
+namespace MinimalRune.Ionic.Zlib
 {
     /// <summary>
     /// Encoder and Decoder for ZLIB and DEFLATE (IETF RFC1950 and RFC1951).

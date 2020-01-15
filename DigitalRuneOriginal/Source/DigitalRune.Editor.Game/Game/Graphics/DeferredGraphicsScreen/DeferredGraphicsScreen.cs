@@ -1,11 +1,11 @@
 ﻿
 using System;
 using System.Collections.Generic;
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.PostProcessing;
-using DigitalRune.Graphics.Rendering;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.PostProcessing;
+using MinimalRune.Graphics.Rendering;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
@@ -25,9 +25,9 @@ namespace Samples
   // the render pipeline to their needs.
   public class DeferredGraphicsScreen : GraphicsScreen, IDisposable
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     //private readonly SampleFramework _sampleFramework;
 
@@ -52,9 +52,9 @@ namespace Samples
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     public bool IsDisposed { get; private set; }
 
@@ -102,9 +102,9 @@ namespace Samples
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     public DeferredGraphicsScreen(IServiceLocator services)
       : base(services.GetInstance<IGraphicsService>())
@@ -321,9 +321,9 @@ namespace Samples
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Updates the graphics screen. - This method is called by GraphicsManager.Update().
     protected override void OnUpdate(TimeSpan deltaTime)

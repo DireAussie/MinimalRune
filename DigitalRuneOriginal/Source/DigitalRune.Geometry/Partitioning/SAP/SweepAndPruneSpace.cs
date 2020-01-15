@@ -3,12 +3,12 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System.Collections.Generic;
-using DigitalRune.Collections;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Collections;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry.Partitioning
+namespace MinimalRune.Geometry.Partitioning
 {
   /// <summary>
   /// Sorts items using the <i>Sweep and Prune</i> method.
@@ -32,9 +32,9 @@ namespace DigitalRune.Geometry.Partitioning
     // - Stabbing numbers (see Gino van den Bergen book)
     // - 3D-DDA for fast ray casting support.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Sorted lists of edges for the axes X, Y and Z. 
     private readonly List<Edge>[] _edges = new List<Edge>[3];
@@ -44,9 +44,9 @@ namespace DigitalRune.Geometry.Partitioning
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     IBroadPhase<T> ISupportBroadPhase<T>.BroadPhase
@@ -58,9 +58,9 @@ namespace DigitalRune.Geometry.Partitioning
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="SweepAndPruneSpace{T}"/> class.
@@ -74,9 +74,9 @@ namespace DigitalRune.Geometry.Partitioning
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

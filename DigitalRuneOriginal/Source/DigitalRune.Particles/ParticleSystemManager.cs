@@ -4,11 +4,11 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Collections;
-using DigitalRune.Threading;
+using MinimalRune.Collections;
+using MinimalRune.Threading;
 
 
-namespace DigitalRune.Particles
+namespace MinimalRune.Particles
 {
   /// <summary>
   /// Manages a collection of particle systems.
@@ -26,9 +26,9 @@ namespace DigitalRune.Particles
   /// </remarks>
   public class ParticleSystemManager : IParticleSystemService
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly List<ParticleSystem> _particleSystemsCopy = new List<ParticleSystem>();
     private bool _collectionDirty;
@@ -38,9 +38,9 @@ namespace DigitalRune.Particles
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the particle systems.
@@ -85,9 +85,9 @@ namespace DigitalRune.Particles
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ParticleSystemManager"/> class.
@@ -114,9 +114,9 @@ namespace DigitalRune.Particles
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private void OnParticleSystemsChanged(object sender, CollectionChangedEventArgs<ParticleSystem> eventArgs)
     {

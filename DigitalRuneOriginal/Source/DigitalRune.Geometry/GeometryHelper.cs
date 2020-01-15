@@ -4,9 +4,9 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Geometry.Meshes;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Meshes;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
 using Plane = DigitalRune.Geometry.Shapes.Plane;
 
 
@@ -14,7 +14,7 @@ using Microsoft.Xna.Framework;
 
 
 
-namespace DigitalRune.Geometry
+namespace MinimalRune.Geometry
 {
   /// <summary>
   /// Provides helper methods for various geometry tasks.
@@ -170,9 +170,9 @@ namespace DigitalRune.Geometry
     }
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Converts the given Cartesian coordinates spherical coordinates.
@@ -229,9 +229,9 @@ namespace DigitalRune.Geometry
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>

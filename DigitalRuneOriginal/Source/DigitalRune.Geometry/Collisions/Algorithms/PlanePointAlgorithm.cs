@@ -2,12 +2,12 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-//using DigitalRune.Geometry.Shapes;
-//using DigitalRune.Mathematics;
-//using DigitalRune.Mathematics.Algebra;
+//using MinimalRune.Geometry.Shapes;
+//using MinimalRune.Mathematics;
+//using MinimalRune.Mathematics.Algebra;
 
 
-//namespace DigitalRune.Geometry.CollisionDetection.Algorithms
+//namespace MinimalRune.Geometry.CollisionDetection.Algorithms
 //{
 //  /// <summary>
 //  /// Answers different geometric queries between a point and a plane.

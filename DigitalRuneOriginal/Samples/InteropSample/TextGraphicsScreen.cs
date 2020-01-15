@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
-using DigitalRune.Graphics;
-using DigitalRune.Text;
+using MinimalRune.Graphics;
+using MinimalRune.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;

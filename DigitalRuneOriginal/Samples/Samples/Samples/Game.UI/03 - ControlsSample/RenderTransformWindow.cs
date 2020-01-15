@@ -1,7 +1,7 @@
 ﻿using System;
-using DigitalRune.Game.UI.Controls;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Game.UI.Controls;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
 namespace Samples.Game.UI

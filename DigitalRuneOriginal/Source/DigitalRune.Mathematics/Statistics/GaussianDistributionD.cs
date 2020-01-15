@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Mathematics.Statistics
+namespace MinimalRune.Mathematics.Statistics
 {
   /// <summary>
   /// Creates random values using an approximate Gaussian distribution (double-precision).
@@ -35,15 +35,15 @@ namespace DigitalRune.Mathematics.Statistics
   {
     // See Game Programming Gems 7, for an explanation.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the expected value.
@@ -60,9 +60,9 @@ namespace DigitalRune.Mathematics.Statistics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="FastGaussianDistributionD"/> class.
@@ -86,9 +86,9 @@ namespace DigitalRune.Mathematics.Statistics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override double Next(Random random)

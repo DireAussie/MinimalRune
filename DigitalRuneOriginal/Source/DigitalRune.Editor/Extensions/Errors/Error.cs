@@ -2,11 +2,11 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Windows;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Framework;
 
 
-namespace DigitalRune.Editor.Errors
+namespace MinimalRune.Editor.Errors
 {
     /// <summary>
     /// Represents an item in the Errors window.
@@ -17,9 +17,9 @@ namespace DigitalRune.Editor.Errors
         // number of errors/warnings/messages up-to-date.
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the error type.
@@ -105,9 +105,9 @@ namespace DigitalRune.Editor.Errors
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Error"/> class.

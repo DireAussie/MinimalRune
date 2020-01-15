@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
   // Note: ComponentResourceKeys are not properly supported in Expression Blend!
   // This file is not build. It is kept only for reference.

@@ -3,10 +3,10 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.System.Threading;
-using DigitalRune.Game.Timing;
-using DigitalRune.Graphics;
-using DigitalRune.ServiceLocation;
-using DigitalRune.Storages;
+using MinimalRune.Game.Timing;
+using MinimalRune.Graphics;
+using MinimalRune.ServiceLocation;
+using MinimalRune.Storages;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -24,9 +24,9 @@ namespace UwpInteropSample
   // Code which uses game services must use the Lock object to synchronize access.
   internal sealed class MyGame : IDisposable
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private bool _isDisposed;
     
@@ -44,17 +44,17 @@ namespace UwpInteropSample
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     public object Lock { get; private set; }
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     public MyGame()
     {
@@ -161,9 +161,9 @@ namespace UwpInteropSample
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // This method runs in a parallel task.
     private void GameLoopTaskAction(IAsyncAction action)

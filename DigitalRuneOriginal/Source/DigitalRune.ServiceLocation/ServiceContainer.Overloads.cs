@@ -9,7 +9,7 @@ using System.Reflection;
 
 
 
-namespace DigitalRune.ServiceLocation
+namespace MinimalRune.ServiceLocation
 {
     partial class ServiceContainer
     {

@@ -5,18 +5,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using DigitalRune.Graphics.Effects;
+using MinimalRune.Graphics.Effects;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   partial class MaterialInstance
   {
     // Explicit interface implementations.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets a value indicating whether the <see cref="ICollection{T}"/> is read-only.
@@ -75,9 +75,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns an enumerator that iterates through a collection. 

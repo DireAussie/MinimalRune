@@ -3,11 +3,11 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Collections;
-using DigitalRune.Mathematics;
+using MinimalRune.Collections;
+using MinimalRune.Mathematics;
 
 
-namespace DigitalRune.Physics.Specialized
+namespace MinimalRune.Physics.Specialized
 {
   /// <summary>
   /// Represents a simulated vehicle.
@@ -43,9 +43,9 @@ namespace DigitalRune.Physics.Specialized
     //   penetration" depth can be used for the suspension.
     
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // A force effect is used to update the car and to compute forces. The force effect is 
     // updated by the simulation. It is not necessary for the user to call something like
@@ -54,9 +54,9 @@ namespace DigitalRune.Physics.Specialized
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the simulation.
@@ -140,9 +140,9 @@ namespace DigitalRune.Physics.Specialized
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Vehicle"/> class.
@@ -173,9 +173,9 @@ namespace DigitalRune.Physics.Specialized
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Called when the <see cref="Wheels"/> collection is modified.

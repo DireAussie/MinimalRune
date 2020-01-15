@@ -4,12 +4,12 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics.Settings;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics.Settings;
 
 
-namespace DigitalRune.Physics.Constraints
+namespace MinimalRune.Physics.Constraints
 {
   /// <summary>
   /// Defines a constraint at a rigid body contact that models non-penetration, dry friction and
@@ -53,9 +53,9 @@ namespace DigitalRune.Physics.Constraints
     // be a problem and leads to a much cleaner API design.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static readonly ResourcePool<ContactConstraint> Pool =
       new ResourcePool<ContactConstraint>(
@@ -94,9 +94,9 @@ namespace DigitalRune.Physics.Constraints
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public RigidBody BodyA
@@ -286,9 +286,9 @@ namespace DigitalRune.Physics.Constraints
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ContactConstraint"/> class.
@@ -416,9 +416,9 @@ namespace DigitalRune.Physics.Constraints
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public void Setup()
@@ -435,8 +435,8 @@ namespace DigitalRune.Physics.Constraints
         _frictionConstraint0.Prepare(BodyA, BodyB, -_t0, -Vector3.Cross(_rA, _t0), _t0, Vector3.Cross(_rB, _t0));
         _frictionConstraint1.Prepare(BodyA, BodyB, -_t1, -Vector3.Cross(_rA, _t1), _t1, Vector3.Cross(_rB, _t1));
 
-        _rALengthSquared = _rA.LengthSquared;
-        _rBLengthSquared = _rB.LengthSquared;
+        _rALengthSquared = _rA.LengthSquared();
+        _rBLengthSquared = _rB.LengthSquared();
       }
       else if (tolerance == 0)
       {

@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-namespace DigitalRune.Windows.Docking.Resources
+namespace MinimalRune.Windows.Docking.Resources
 {
     /// <summary>
     /// Manages resource strings.

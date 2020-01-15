@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Game.States
+namespace MinimalRune.Game.States
 {
   /// <summary>
   /// Provides arguments for the <see cref="State.Enter"/>, <see cref="State.Update"/> and

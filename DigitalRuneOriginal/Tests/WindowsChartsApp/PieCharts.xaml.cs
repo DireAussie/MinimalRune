@@ -4,7 +4,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interactivity;
 using System.Windows.Media.Animation;
-using DigitalRune.Windows.Charts;
+using MinimalRune.Windows.Charts;
 
 
 namespace SampleApplication

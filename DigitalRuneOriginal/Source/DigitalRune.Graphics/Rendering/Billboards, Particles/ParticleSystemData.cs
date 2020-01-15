@@ -5,15 +5,15 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Collections;
-using DigitalRune.Geometry;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Particles;
+using MinimalRune.Collections;
+using MinimalRune.Geometry;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Particles;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Caches render data for a particle system instance. (Data will be stored in 
@@ -30,9 +30,9 @@ namespace DigitalRune.Graphics.Rendering
   {
     // TODO: Improve performance by using unsafe code.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // The frame in which the ParticleSystemData was updated the last time.
     public int Frame;
@@ -98,15 +98,15 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ParticleSystemData" /> class.
@@ -120,9 +120,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     public void RequeryParameters(ParticleSystem particleSystem)
     {

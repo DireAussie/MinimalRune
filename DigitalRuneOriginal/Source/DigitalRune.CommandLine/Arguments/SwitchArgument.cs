@@ -8,7 +8,7 @@ using System.Text;
 using static System.FormattableString;
 
 
-namespace DigitalRune.CommandLine
+namespace MinimalRune.CommandLine
 {
     /// <summary>
     /// Describes a command line switch (such as "--sort").
@@ -29,18 +29,18 @@ namespace DigitalRune.CommandLine
     [Serializable]
     public class SwitchArgument : Argument
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>A list of characters that are not allowed in the name of a switch</summary>
         private static readonly char[] BadCharacters = { '/', '-', ':', ',', ';', '=', ' ', '|' };
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the name aliases.
@@ -65,9 +65,9 @@ namespace DigitalRune.CommandLine
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SwitchArgument"/> class.
@@ -152,9 +152,9 @@ namespace DigitalRune.CommandLine
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Validates the name of the switch-argument.

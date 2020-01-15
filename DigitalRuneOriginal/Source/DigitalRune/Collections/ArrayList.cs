@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Linq;
 
 
-namespace DigitalRune.Collections
+namespace MinimalRune.Collections
 {
   /// <summary>
   /// Represents array-based list with minimal overhead.
@@ -47,9 +47,9 @@ namespace DigitalRune.Collections
     // are 8 instead of 4 bytes)!
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // This view is used as DebuggerTypeProxy.
     internal sealed class ArrayListCollectionView
@@ -69,18 +69,18 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private T[] _items;
     private int _count;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the list's internal array.
@@ -116,9 +116,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ArrayList{T}" /> class.
@@ -131,9 +131,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Removes all items from the list.
@@ -371,9 +371,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Not all methods are used. (Add methods when needed.)
 

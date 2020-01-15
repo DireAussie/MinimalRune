@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Manages a pool of reusable render targets.
@@ -40,9 +40,9 @@ namespace DigitalRune.Graphics
     // Dispose() has the same effect as Clear(). The RenderTargetPool stays usable.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Fields are internal for unit testing.
     internal readonly List<RenderTarget2D> RenderTargets2D = new List<RenderTarget2D>();
@@ -52,9 +52,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the graphics service.
@@ -107,9 +107,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="RenderTargetPool"/> class.
@@ -162,9 +162,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Removes all cached render targets.

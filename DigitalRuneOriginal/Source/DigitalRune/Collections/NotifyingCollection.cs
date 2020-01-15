@@ -7,12 +7,12 @@ using System.Collections.Generic;
 
 using System.Collections.ObjectModel;
 #else
-using DigitalRune.Collections.ObjectModel;
+using MinimalRune.Collections.ObjectModel;
 
 using System.Diagnostics;
 
 
-namespace DigitalRune.Collections
+namespace MinimalRune.Collections
 {
   /// <summary>
   /// Represents collection of objects that sends notifications (events) when the collection is 
@@ -29,17 +29,17 @@ namespace DigitalRune.Collections
   /// </remarks>
   public class NotifyingCollection<T> : Collection<T>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private bool _suppressCollectionChangedEvent;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Occurs when items were added, replaced or removed.
@@ -69,9 +69,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -107,9 +107,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns an enumerator that iterates through the <see cref="NotifyingCollection{T}"/>. 

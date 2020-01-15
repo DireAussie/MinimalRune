@@ -2,22 +2,22 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 using Microsoft.Xna.Framework.Content;
 
 
 
-namespace DigitalRune.Mathematics.Content
+namespace MinimalRune.Mathematics.Content
 {
   /// <summary>
-  /// Reads a <see cref="Vector4F"/> from binary format. (Only available in the XNA-compatible
+  /// Reads a <see cref="Vector4"/> from binary format. (Only available in the XNA-compatible
   /// build.)
   /// </summary>
   /// <remarks>
   /// This type is available only in the XNA-compatible build of the DigitalRune.Mathematics.dll.
   /// </remarks>
-  public class Vector4FReader : ContentTypeReader<Vector4F>
+  public class Vector4Reader : ContentTypeReader<Vector4>
   {
     /// <summary>
     /// Reads a strongly typed object from the current stream.
@@ -26,13 +26,13 @@ namespace DigitalRune.Mathematics.Content
     /// <param name="existingInstance">An existing object to read into.</param>
     /// <returns>The type of object to read.</returns>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods")]
-    protected override Vector4F Read(ContentReader input, Vector4F existingInstance)
+    protected override Vector4 Read(ContentReader input, Vector4 existingInstance)
     {
       float x = input.ReadSingle();
       float y = input.ReadSingle();
       float z = input.ReadSingle();
       float w = input.ReadSingle();
-      return new Vector4F(x, y, z, w);
+      return new Vector4(x, y, z, w);
     }
   }
 }

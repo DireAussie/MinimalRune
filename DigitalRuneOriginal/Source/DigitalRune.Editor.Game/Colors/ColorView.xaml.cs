@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.Editor.Colors
+namespace MinimalRune.Editor.Colors
 {
     /// <summary>
     /// Represents the Color Picker window.

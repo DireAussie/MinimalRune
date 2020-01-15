@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 
 
-namespace DigitalRune.Animation.Easing
+namespace MinimalRune.Animation.Easing
 {
   /// <summary>
   /// Represents an easing function that moves slightly in the opposite direction but then starts

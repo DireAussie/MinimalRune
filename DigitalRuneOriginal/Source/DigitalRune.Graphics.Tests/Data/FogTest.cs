@@ -1,8 +1,8 @@
-﻿using DigitalRune.Mathematics;
+﻿using MinimalRune.Mathematics;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Graphics.Tests.Data
+namespace MinimalRune.Graphics.Tests.Data
 {
   [TestFixture]
   public class FogTest

@@ -4,14 +4,14 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Animation.Traits;
-using DigitalRune.Mathematics;
+using MinimalRune.Animation.Traits;
+using MinimalRune.Mathematics;
 
 using Microsoft.Xna.Framework.Content;
 
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Plays back a clip of another animation.
@@ -74,15 +74,15 @@ namespace DigitalRune.Animation
   /// </remarks>
   public class AnimationClip<T> : IAnimation<T>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the original animation from which a clip is played back.
@@ -341,9 +341,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -387,9 +387,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc cref="ITimeline.CreateInstance"/>
     public AnimationInstance CreateInstance()

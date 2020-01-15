@@ -3,11 +3,11 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-using DigitalRune.Animation.Traits;
+using MinimalRune.Animation.Traits;
 using Microsoft.Xna.Framework;
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Animates a <see langword="Vector2"/> value from/to/by a certain value.

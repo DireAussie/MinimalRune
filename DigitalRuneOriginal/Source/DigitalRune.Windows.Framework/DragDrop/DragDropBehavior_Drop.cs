@@ -11,28 +11,28 @@ using System.Windows.Input;
 using System.Windows.Media;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     public partial class DragDropBehavior
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private DropCommandParameter _dropCommandParameter;
         private Point _currentMousePosition;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="AllowDrop"/> dependency property.
@@ -214,9 +214,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static void OnAllowDropChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
         {

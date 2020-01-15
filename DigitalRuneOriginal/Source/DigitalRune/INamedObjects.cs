@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune
+namespace MinimalRune
 {
   /// <summary>
   /// Represents an objects with a (unique) name.

@@ -78,11 +78,11 @@ using System.Text;
 using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Interop;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Interop;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// Helper class that ensures that only one instance of an application is running at a time.
@@ -154,9 +154,9 @@ namespace DigitalRune.Editor
     /// </example>
     public static class SingleInstanceApplication
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Remoting service class which is exposed by the server i.e the first instance and called by
@@ -193,9 +193,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// String delimiter used in channel names.
@@ -244,9 +244,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets an array of command line arguments for the application.
@@ -260,15 +260,15 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes the application and checks whether this is the first instance of the

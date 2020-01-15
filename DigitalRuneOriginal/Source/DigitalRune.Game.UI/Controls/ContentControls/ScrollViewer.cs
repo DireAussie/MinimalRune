@@ -4,18 +4,18 @@
 
 using System;
 using System.ComponentModel;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 
-using DigitalRune.Game.Input;
+using MinimalRune.Game.Input;
 using Microsoft.Xna.Framework.Input.Touch;
 
 
 using MathHelper = Microsoft.Xna.Framework.MathHelper;
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   /// <summary>
   /// Represents a scrollable area that can contain other visible controls. 
@@ -61,7 +61,7 @@ namespace DigitalRune.Game.UI.Controls
   /// // Use a scroll viewer to show a region of the texture.
   /// var scrollViewer = new ScrollViewer
   /// {
-  ///   Margin = new Vector4F(4),
+  ///   Margin = new Vector4(4),
   ///   Width = 200
   ///   Height = 200,
   /// };
@@ -92,9 +92,9 @@ namespace DigitalRune.Game.UI.Controls
     //   dragging it can attempt to handle dragging.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private ScrollBar _horizontalScrollBar;
     private ScrollBar _verticalScrollBar;
@@ -117,9 +117,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Phone/tablet only: Gets or sets the minimal scroll velocity that determines when scrolling
@@ -295,9 +295,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary> 
     /// The ID of the <see cref="HorizontalScrollBarVisibility"/> game object property.
@@ -448,9 +448,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ScrollViewer"/> class.
@@ -481,9 +481,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override void OnLoad()
@@ -597,7 +597,7 @@ namespace DigitalRune.Game.UI.Controls
         if (child != _horizontalScrollBar && child != _verticalScrollBar && child != Content)
           child.Measure(availableSize);
 
-      Vector4F padding = Padding;
+      Vector4 padding = Padding;
 
       // Determine the extent size (the desired size of the content).
       ExtentWidth = 0;
@@ -682,7 +682,7 @@ namespace DigitalRune.Game.UI.Controls
       // This method handles only the content and the scroll bars. Other visual children are
       // ignored.
 
-      Vector4F padding = Padding;
+      Vector4 padding = Padding;
       var horizontalScrollBarVisibility = HorizontalScrollBarVisibility;
       var verticalScrollBarVisibility = VerticalScrollBarVisibility;
 
@@ -769,7 +769,7 @@ namespace DigitalRune.Game.UI.Controls
     }
 
 
-    private void CalculateViewport(Vector2F size, Vector4F padding, ScrollBarVisibility horizontalScrollBarVisibility, ScrollBarVisibility verticalScrollBarVisibility,
+    private void CalculateViewport(Vector2F size, Vector4 padding, ScrollBarVisibility horizontalScrollBarVisibility, ScrollBarVisibility verticalScrollBarVisibility,
                                    out bool horizontalScrollBarVisible, out bool verticalScrollBarVisible, ref Vector2F viewportSize)
     {
       // Determine whether scroll bars are visible.
@@ -1088,7 +1088,7 @@ namespace DigitalRune.Game.UI.Controls
         // ----- Velocity Clamping
         // When the velocity reaches a min limit, clamp it to zero. Otherwise, the content 
         // never really stops.
-        if (_scrollVelocity.LengthSquared < MinScrollVelocity * MinScrollVelocity)
+        if (_scrollVelocity.LengthSquared() < MinScrollVelocity * MinScrollVelocity)
           _scrollVelocity = Vector2F.Zero;
 
         // ----- Update HorizontalOffset and VerticalOffset.
@@ -1148,7 +1148,7 @@ namespace DigitalRune.Game.UI.Controls
       if (_isTouchDevice)
       {
         // Animate opacity of horizontal and vertical scroll bars.
-        if (!_isDragging && _scrollVelocity.LengthSquared < 1)
+        if (!_isDragging && _scrollVelocity.LengthSquared() < 1)
         {
           // Fade out.
           if (_horizontalScrollBar != null
@@ -1165,7 +1165,7 @@ namespace DigitalRune.Game.UI.Controls
             _verticalScrollBar.Opacity = MathHelper.Clamp(_verticalScrollBar.Opacity - ScrollBarFadeVelocity * t, 0, 1);
           }
         }
-        else if (_scrollVelocity.LengthSquared >= 1)
+        else if (_scrollVelocity.LengthSquared() >= 1)
         {
           // Fade in.
           if (_horizontalScrollBar != null

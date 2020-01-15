@@ -4,10 +4,10 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Mathematics.Statistics
+namespace MinimalRune.Mathematics.Statistics
 {
   /// <summary>
   /// Performs a Principal Component Analysis (PCA) using the covariance method (double-precision).
@@ -30,15 +30,15 @@ namespace DigitalRune.Mathematics.Statistics
   /// </remarks>
   public class PrincipalComponentAnalysisD
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
       
       
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the matrix of the principal components.
@@ -65,9 +65,9 @@ namespace DigitalRune.Mathematics.Statistics
 
       
       
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Creates the principal component analysis for the given list of points.
@@ -114,9 +114,9 @@ namespace DigitalRune.Mathematics.Statistics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
   }
 }

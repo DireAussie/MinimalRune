@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Linq;
 
 
-namespace DigitalRune.Geometry.Meshes
+namespace MinimalRune.Geometry.Meshes
 {
   /// <summary>
   /// Stores the adjacency lists for the vertices of a mesh. (For internal use only.)

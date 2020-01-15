@@ -12,7 +12,7 @@ using System.Windows.Controls;
 using static System.FormattableString;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     /// <summary>
     /// Controls the docking inside an <see cref="IDockControl"/> and its

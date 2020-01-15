@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Game
+namespace MinimalRune.Game
 {
   /// <summary>
   /// Stores the event handlers of a game event.

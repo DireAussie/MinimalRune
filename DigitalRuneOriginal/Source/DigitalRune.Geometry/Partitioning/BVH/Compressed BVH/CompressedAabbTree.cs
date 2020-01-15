@@ -28,11 +28,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using DigitalRune.Collections;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Linq;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Collections;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Linq;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 using System.ComponentModel;
 
@@ -41,7 +41,7 @@ using System.Dynamic;
 
 
 
-namespace DigitalRune.Geometry.Partitioning
+namespace MinimalRune.Geometry.Partitioning
 {
   /// <summary>
   /// Represents a compressed and optimized bounding volume tree using axis-aligned bounding boxes 
@@ -77,9 +77,9 @@ namespace DigitalRune.Geometry.Partitioning
     // Cache-oblivious implementation: see Ericson, pp. 530 and Game Programming Gems 5, pp. 159
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     [Flags]
     internal enum State
@@ -91,9 +91,9 @@ namespace DigitalRune.Geometry.Partitioning
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// A margin which is added to the tree's AABB to avoid divisions by zero.
@@ -102,9 +102,9 @@ namespace DigitalRune.Geometry.Partitioning
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Note: When the items are added or removed the tree becomes invalid.
     // All items are copied into plain List<int>. In Update() the tree is rebuilt.
@@ -126,9 +126,9 @@ namespace DigitalRune.Geometry.Partitioning
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public Aabb Aabb
@@ -265,9 +265,9 @@ namespace DigitalRune.Geometry.Partitioning
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="CompressedAabbTree"/> class.
@@ -282,9 +282,9 @@ namespace DigitalRune.Geometry.Partitioning
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

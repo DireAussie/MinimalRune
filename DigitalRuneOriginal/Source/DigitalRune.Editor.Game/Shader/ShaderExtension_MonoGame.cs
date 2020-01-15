@@ -6,26 +6,26 @@ using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using DigitalRune.Editor.Errors;
-using DigitalRune.Editor.Game;
-using DigitalRune.Editor.Text;
-using DigitalRune.ServiceLocation;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Editor.Errors;
+using MinimalRune.Editor.Game;
+using MinimalRune.Editor.Text;
+using MinimalRune.ServiceLocation;
+using MinimalRune.Windows.Framework;
 
 
-namespace DigitalRune.Editor.Shader
+namespace MinimalRune.Editor.Shader
 {
     partial class ShaderExtension
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets a value indicating whether to compile effects with MonoGame.
@@ -49,9 +49,9 @@ namespace DigitalRune.Editor.Shader
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static async Task<Tuple<bool, List<Error>>> BuildMonoGameAsync(
             ServiceContainer services, string applicationName, TextDocument document, DelegateCommand<Error> goToLocationCommand)

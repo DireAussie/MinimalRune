@@ -15,13 +15,13 @@ using Keys = System.Windows.Input.Key;
 
 
 
-namespace DigitalRune.Game.Input
+namespace MinimalRune.Game.Input
 {
   partial class InputManager
   {
-    //--------------------------------------------------------------
+    
 
-      //--------------------------------------------------------------
+      
 
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1060:MovePInvokesToNativeMethodsClass")]
@@ -31,15 +31,15 @@ namespace DigitalRune.Game.Input
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public KeyboardState KeyboardState
@@ -103,9 +103,9 @@ namespace DigitalRune.Game.Input
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private void UpdateKeyboard(TimeSpan deltaTime)
     {

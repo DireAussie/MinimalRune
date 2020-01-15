@@ -61,7 +61,7 @@ using System;
 
 
 
-namespace DigitalRune.Threading
+namespace MinimalRune.Threading
 {
   /// <summary>
   /// Defines how an <see cref="IWork"/> instance can be executed.

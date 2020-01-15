@@ -5,23 +5,23 @@
 using System;
 using System.Linq;
 using System.Windows;
-using DigitalRune.Editor.Documents;
-using DigitalRune.Editor.Game;
-using DigitalRune.Editor.Game.Properties;
-using DigitalRune.Windows.Docking;
+using MinimalRune.Editor.Documents;
+using MinimalRune.Editor.Game;
+using MinimalRune.Editor.Game.Properties;
+using MinimalRune.Windows.Docking;
 using NLog;
 
 
-namespace DigitalRune.Editor.Models
+namespace MinimalRune.Editor.Models
 {
     /// <summary>
     /// Provides functions for 3D model documents.
     /// </summary>
     public sealed class ModelsExtension : EditorExtension
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
@@ -31,9 +31,9 @@ namespace DigitalRune.Editor.Models
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         internal bool UseDigitalRuneGraphics
         {
@@ -43,9 +43,9 @@ namespace DigitalRune.Editor.Models
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ModelsExtension"/> class.
@@ -57,9 +57,9 @@ namespace DigitalRune.Editor.Models
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         protected override void OnInitialize()

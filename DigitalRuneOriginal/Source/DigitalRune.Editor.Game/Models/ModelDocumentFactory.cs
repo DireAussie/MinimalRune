@@ -4,45 +4,45 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Editor.Documents;
-using DigitalRune.Editor.Game;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Windows.Themes;
+using MinimalRune.Editor.Documents;
+using MinimalRune.Editor.Game;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Windows.Themes;
 using Microsoft.Xna.Framework.Graphics;
 using Path = System.IO.Path;
 
 
-namespace DigitalRune.Editor.Models
+namespace MinimalRune.Editor.Models
 {
     /// <summary>
     /// Handles 3d model documents (i.e. FBX, X, DAE, XNB files).
     /// </summary>
     internal class ModelDocumentFactory : DocumentFactory
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly IEditorService _editor;
         private readonly DocumentType _processedModelDocumentType;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ModelDocumentFactory" /> class.
@@ -93,9 +93,9 @@ namespace DigitalRune.Editor.Models
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public override DocumentType GetDocumentType(Uri uri)

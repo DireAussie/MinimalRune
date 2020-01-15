@@ -92,7 +92,7 @@ using System.Reflection;
 
 
 
-namespace DigitalRune
+namespace MinimalRune
 {
   /// <summary>
   /// Represents a <see cref="MulticastDelegate"/> that stores the target objects as weak 
@@ -106,17 +106,17 @@ namespace DigitalRune
   [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
   public class WeakMulticastDelegate
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly List<InternalWeakDelegate> _delegates = new List<InternalWeakDelegate>();
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the number of live delegates in the collection.
@@ -133,15 +133,15 @@ namespace DigitalRune
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Adds a new <see cref="Delegate"/> to the <see cref="WeakMulticastDelegate"/>.

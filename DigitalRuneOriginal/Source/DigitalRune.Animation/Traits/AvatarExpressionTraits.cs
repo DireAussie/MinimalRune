@@ -7,7 +7,7 @@ using System;
 using Microsoft.Xna.Framework.GamerServices;
 
 
-namespace DigitalRune.Animation.Traits
+namespace MinimalRune.Animation.Traits
 {
   /// <summary>
   /// Describes the properties of an <see cref="AvatarExpression"/>. 

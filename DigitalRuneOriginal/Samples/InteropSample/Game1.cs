@@ -1,8 +1,8 @@
 using System;
 using System.Windows.Forms;
 using System.Windows.Forms.Integration;
-using DigitalRune.Graphics;
-using DigitalRune.Storages;
+using MinimalRune.Graphics;
+using MinimalRune.Storages;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Input;

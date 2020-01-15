@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.Windows.Interop
+namespace MinimalRune.Windows.Interop
 {
     // ReSharper disable InconsistentNaming
 

@@ -1,4 +1,4 @@
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
 namespace Samples.Physics

@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Interactivity;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Adds a watermark to a <see cref="TextBox"/> or <see cref="ComboBox"/>.
@@ -19,9 +19,9 @@ namespace DigitalRune.Windows.Framework
     [StyleTypedProperty(Property = nameof(WatermarkStyle), StyleTargetType = typeof(TextBlock))]
     public sealed class WatermarkBehavior : Behavior<Control>
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private TextBox _textBox;
         private TextBlock _watermarkTextBlock;
@@ -30,15 +30,15 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="IsEnabled"/> dependency property.
@@ -112,15 +112,15 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static void OnPropertyChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
         {

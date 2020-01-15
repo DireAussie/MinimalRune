@@ -2,11 +2,11 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Geometry.Partitioning;
+using MinimalRune.Geometry.Partitioning;
 using Microsoft.Xna.Framework.Content;
 
 
-namespace DigitalRune.Geometry.Content
+namespace MinimalRune.Geometry.Content
 {
   /// <summary>
   /// Reads a <see cref="AdaptiveAabbTree{T}"/> from binary format.

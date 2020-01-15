@@ -16,7 +16,7 @@
 
 using System;
 
-namespace DigitalRune.Ionic.Zip
+namespace MinimalRune.Ionic.Zip
 {
   static class ZipConstants
   {

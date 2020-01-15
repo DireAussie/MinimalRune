@@ -7,7 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-namespace DigitalRune.Collections
+namespace MinimalRune.Collections
 {
   /// <summary>
   /// Provides a read-only wrapper around a <see cref="WeakCollection{T}"/>.
@@ -15,17 +15,17 @@ namespace DigitalRune.Collections
   /// <typeparam name="T">The type of the elements in the collection.</typeparam>
   public sealed class ReadOnlyWeakCollection<T> : ICollection<T>, ICollection where T : class
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly WeakCollection<T> _weakCollection;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the number of items contained in the <see cref="ReadOnlyWeakCollection{T}"/>.
@@ -74,9 +74,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ReadOnlyWeakCollection{T}"/> class.
@@ -95,9 +95,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns an enumerator that iterates through a collection.

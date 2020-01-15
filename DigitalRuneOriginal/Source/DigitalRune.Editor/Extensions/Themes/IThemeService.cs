@@ -4,10 +4,10 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Windows;
+using MinimalRune.Windows;
 
 
-namespace DigitalRune.Editor.Themes
+namespace MinimalRune.Editor.Themes
 {
     /// <summary>
     /// Manages the the UI themes.

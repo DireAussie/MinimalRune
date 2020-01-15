@@ -2,15 +2,15 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Geometry.Shapes;
+using MinimalRune.Geometry.Shapes;
 using Microsoft.Xna.Framework.Content;
 
 using System.Collections.Generic;
-using DigitalRune.Animation.Character;
+using MinimalRune.Animation.Character;
 
 
 
-namespace DigitalRune.Graphics.Content
+namespace MinimalRune.Graphics.Content
 {
   /// <summary>
   /// Reads a <see cref="Mesh"/> from binary format.

@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Game
+namespace MinimalRune.Game
 {
   /// <summary>
   /// Identifies and describes a game object event.

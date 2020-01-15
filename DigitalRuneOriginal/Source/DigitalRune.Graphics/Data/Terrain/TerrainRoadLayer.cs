@@ -3,15 +3,15 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics.Effects;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics.Effects;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Represents a road which is rendered onto the terrain.
@@ -47,17 +47,17 @@ namespace DigitalRune.Graphics
     // - Alpha is useful for "roads" which should disappear, like skid marks!
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private bool _disposeMesh;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the mesh that represents the road.
@@ -282,9 +282,9 @@ namespace DigitalRune.Graphics
     /// This is material parameter. Changing this property affects all terrain layers that share
     /// the same material.
     /// </remarks>
-    public Vector4F BorderBlendRange
+    public Vector4 BorderBlendRange
     {
-      get { return (Vector4F)GetParameter<Vector4>(true, "BorderBlendRange"); }
+      get { return (Vector4)GetParameter<Vector4>(true, "BorderBlendRange"); }
       set { SetParameter(true, "BorderBlendRange", (Vector4)value); }
     }
 
@@ -312,9 +312,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -377,9 +377,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Sets the road mesh and related properties.

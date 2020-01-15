@@ -4,12 +4,12 @@
 
 using System;
 using System.Globalization;
-using DigitalRune.Windows.Docking;
+using MinimalRune.Windows.Docking;
 using NLog;
 using static System.FormattableString;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// Extends the editor with new functionality. (Base class)
@@ -56,9 +56,9 @@ namespace DigitalRune.Editor
     /// </remarks>
     public abstract class EditorExtension
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
@@ -66,9 +66,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the editor.
@@ -100,9 +100,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="EditorExtension"/> class.
@@ -114,9 +114,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes the editor extension.

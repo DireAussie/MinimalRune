@@ -5,10 +5,10 @@
 using System;
 using System.Diagnostics;
 using System.Threading;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 
 
-namespace DigitalRune.Game.States
+namespace MinimalRune.Game.States
 {
   /// <summary>
   /// Defines a state in a state machine.
@@ -23,17 +23,17 @@ namespace DigitalRune.Game.States
     // Note: The property StateMachine can be removed. It is only used for consistency checks at 
     // runtime. --> It has been commented out.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static int _lastId = -1;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets a value indicating whether this state is active.
@@ -166,9 +166,9 @@ namespace DigitalRune.Game.States
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="State"/> class.
@@ -197,9 +197,9 @@ namespace DigitalRune.Game.States
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Determines whether the given state is a sub-state.

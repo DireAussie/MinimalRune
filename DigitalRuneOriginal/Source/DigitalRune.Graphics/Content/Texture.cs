@@ -8,7 +8,7 @@ using System.IO;
 using System.Threading.Tasks;
 
 
-namespace DigitalRune.Graphics.Content
+namespace MinimalRune.Graphics.Content
 {
   /// <summary>
   /// Represents a texture resource. (For use in content pipeline. Not intended to be used at
@@ -28,15 +28,15 @@ namespace DigitalRune.Graphics.Content
   /// </remarks>
   internal class Texture
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the texture description.
@@ -53,9 +53,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Texture"/> class.
@@ -295,9 +295,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the content of the texture.

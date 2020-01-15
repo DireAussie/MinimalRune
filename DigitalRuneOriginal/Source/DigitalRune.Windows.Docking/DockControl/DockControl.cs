@@ -12,7 +12,7 @@ using System.Windows.Data;
 using System.Windows.Input;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     /// <summary>
     /// Represents a control that contains and manages the docking layout.
@@ -24,17 +24,17 @@ namespace DigitalRune.Windows.Docking
         // - VM ... view-model
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------    
+            
 
         private ContentPresenter _contentPresenter;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc cref="IDockControl.DockStrategy"/>
         internal DockStrategy DockStrategy { get; private set; }
@@ -97,15 +97,15 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="DockControl"/> class.
@@ -143,9 +143,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the view for a view model.

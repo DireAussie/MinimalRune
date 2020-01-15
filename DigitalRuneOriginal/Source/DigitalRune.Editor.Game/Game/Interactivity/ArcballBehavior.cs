@@ -7,13 +7,13 @@ using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interactivity;
-using DigitalRune.Graphics.Interop;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Windows;
+using MinimalRune.Graphics.Interop;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Windows;
 
 
-namespace DigitalRune.Editor.Game
+namespace MinimalRune.Editor.Game
 {
     /// <summary>
     /// Allows to orbit the camera around the origin by pressing the left mouse button and moving
@@ -33,9 +33,9 @@ namespace DigitalRune.Editor.Game
         // http://rainwarrior.ca/dragon/arcball.html
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private CameraNode _cameraNode;
         private Vector3 _startVector;
@@ -45,9 +45,9 @@ namespace DigitalRune.Editor.Game
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="IsEnabled"/> dependency property.
@@ -123,9 +123,9 @@ namespace DigitalRune.Editor.Game
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Called when the <see cref="CameraTarget"/> property changed.
@@ -287,7 +287,7 @@ namespace DigitalRune.Editor.Game
                 // Rotate view.
                 Point mousePosition = eventArgs.GetPosition(AssociatedObject);
                 Vector3 dragVector = MapToSphere(mousePosition);
-                Matrix rotation = Quaternion.CreateRotation(_startVector, dragVector).ToRotationMatrix44();
+                Matrix rotation = Quaternion.CreateFromRotationMatrix(_startVector, dragVector).ToRotationMatrix44();
                 _transform = rotation * _originalTransform;
                 UpdateCamera(_cameraNode);
             }
@@ -305,7 +305,7 @@ namespace DigitalRune.Editor.Game
             // (Note: Since the viewport is usually rectangular, we do not actually map
             // to a sphere, but to an ellipsoid.)
 
-            float lengthSquared = p.LengthSquared;
+            float lengthSquared = p.LengthSquared();
             if (lengthSquared > 1)
             {
                 // The mouse position is outside of the sphere.

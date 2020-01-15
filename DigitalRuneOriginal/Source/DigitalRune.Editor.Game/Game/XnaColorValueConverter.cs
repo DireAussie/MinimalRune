@@ -11,7 +11,7 @@ using XnaColor = Microsoft.Xna.Framework.Color;
 using WpfColor = System.Windows.Media.Color;
 
 
-namespace DigitalRune.Editor.Game
+namespace MinimalRune.Editor.Game
 {
     /// <summary>
     /// Converts colors from XNA to WPF (and back).

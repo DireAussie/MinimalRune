@@ -7,7 +7,7 @@ using System.ComponentModel;
 using System.Globalization;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Converts a <see cref="DoubleRange"/> to and from string representation.

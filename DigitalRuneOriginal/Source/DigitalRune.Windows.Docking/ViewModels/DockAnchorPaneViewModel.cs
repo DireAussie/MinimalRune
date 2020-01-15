@@ -5,7 +5,7 @@
 using System.Windows.Markup;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     /// <summary>
     /// Represents an anchored pane in the docking layout.

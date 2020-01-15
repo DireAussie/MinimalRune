@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Mathematics.Algebra.Tests
+namespace MinimalRune.Mathematics.Algebra.Tests
 {
   [TestFixture]
   public class MatrixDTest
@@ -433,7 +433,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     public void Transpose()
     {
       MatrixD m = new MatrixD(3, 4, rowMajor, MatrixOrder.RowMajor);
-      m.Transpose();
+      m = Matrix.Transpose(m);
       MatrixD mt = new MatrixD(4, 3, rowMajor, MatrixOrder.ColumnMajor);
       Assert.AreEqual(mt, m);
     }
@@ -607,13 +607,13 @@ namespace DigitalRune.Mathematics.Algebra.Tests
                                 5, 6, 7, 8,
                                 9, 10, 11, 12,
                                 13, 14, 15, 16).ToMatrixD();
-      Assert.IsTrue(Numeric.IsZero(m.Determinant));
+      Assert.IsTrue(Numeric.IsZero(m.Determinant()));
 
       m = new Matrix44D(1, 2, 3, 4,
                        -3, 4, 5, 6,
                        2, -5, 7, 4,
                        10, 2, -3, 9).ToMatrixD();
-      Assert.IsTrue((Numeric.AreEqual(1142, m.Determinant)));
+      Assert.IsTrue((Numeric.AreEqual(1142, m.Determinant())));
     }
 
 
@@ -622,7 +622,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     public void DeterminantException1()
     {
       MatrixD m = new MatrixD(3, 4, rowMajor, MatrixOrder.RowMajor);
-      double det = m.Determinant;
+      double det = m.Determinant();
     }
 
 
@@ -631,7 +631,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     public void DeterminantException2()
     {
       MatrixD m = new MatrixD(4, 3, rowMajor, MatrixOrder.RowMajor);
-      double det = m.Determinant;
+      double det = m.Determinant();
     }
 
 

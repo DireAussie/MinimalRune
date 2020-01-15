@@ -20,7 +20,7 @@ using Microsoft.Xna.Framework.Content;
 
 
 
-namespace DigitalRune.Mathematics.Algebra
+namespace MinimalRune.Mathematics.Algebra
 {
   /// <summary>
   /// Defines an n-dimensional vector (double-precision).
@@ -38,17 +38,17 @@ namespace DigitalRune.Mathematics.Algebra
   {
     // TODO: Remove ArgumentNullException and let runtime throw NullReferenceException. (Minor optimization)
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private double[] _v;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the internal array that is used to store the vector values.
@@ -322,9 +322,9 @@ namespace DigitalRune.Mathematics.Algebra
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="VectorD"/> class with 4 vector elements.
@@ -446,9 +446,9 @@ namespace DigitalRune.Mathematics.Algebra
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns the hash code for this instance.
@@ -660,9 +660,9 @@ namespace DigitalRune.Mathematics.Algebra
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Negates a vector.
@@ -1408,9 +1408,9 @@ namespace DigitalRune.Mathematics.Algebra
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -1591,7 +1591,7 @@ namespace DigitalRune.Mathematics.Algebra
       if (target == null)
         throw new ArgumentNullException("target");
 
-      Set(Dot(this, target) / target.LengthSquared * target);
+      Set(Dot(this, target) / target.LengthSquared() * target);
     }
 
 
@@ -1713,9 +1713,9 @@ namespace DigitalRune.Mathematics.Algebra
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
     /// <summary>
     /// Returns a vector with the absolute values of the elements of the given vector.
     /// </summary>
@@ -1994,7 +1994,7 @@ namespace DigitalRune.Mathematics.Algebra
       if (target == null)
         throw new ArgumentNullException("target");
 
-      return Dot(vector, target) / target.LengthSquared * target;
+      return Dot(vector, target) / target.LengthSquared() * target;
     }
 
   }

@@ -4,11 +4,11 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Animation.Character
+namespace MinimalRune.Animation.Character
 {
   /// <summary>
   /// Rotates a bone to look at a target.
@@ -39,15 +39,15 @@ namespace DigitalRune.Animation.Character
   {
     // TODO: more flexible limits
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the index of the bone.
@@ -88,9 +88,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="LookAtIKSolver"/> class.
@@ -102,9 +102,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Called when <see cref="IKSolver.Solve"/> is called.
@@ -187,7 +187,7 @@ namespace DigitalRune.Animation.Character
         side.Z, up.Z, -forward.Z);
 
       // Apply a bone transform that rotates the rest view space to the desired view space.
-      Quaternion boneTransform = Quaternion.CreateRotation(boneFromNewView * boneFromView.Transposed);
+      Quaternion boneTransform = Quaternion.CreateFromRotationMatrix(boneFromNewView * boneFromView.Transposed);
 
       var startTransform = SkeletonPose.GetBoneTransform(BoneIndex);
       var lookAtTransform = new SrtTransform(startTransform.Scale, boneTransform, startTransform.Translation);

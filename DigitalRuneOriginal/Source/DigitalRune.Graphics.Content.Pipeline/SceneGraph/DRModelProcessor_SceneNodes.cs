@@ -6,13 +6,13 @@ using System;
 using System.Globalization;
 using System.Linq;
 using System.Collections.Generic;
-using DigitalRune.Geometry;
-using DigitalRune.Linq;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry;
+using MinimalRune.Linq;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework.Content.Pipeline.Graphics;
 
 
-namespace DigitalRune.Graphics.Content.Pipeline
+namespace MinimalRune.Graphics.Content.Pipeline
 {
   partial class DRModelProcessor
   {

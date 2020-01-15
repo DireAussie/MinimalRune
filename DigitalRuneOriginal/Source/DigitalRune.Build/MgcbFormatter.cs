@@ -13,7 +13,7 @@ using System.Xml;
 using System.Xml.Linq;
 
 
-namespace DigitalRune.Build
+namespace MinimalRune.Build
 {
     /// <summary>
     /// Sorts the assets in a MonoGame content project (.mgcb) files.

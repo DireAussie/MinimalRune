@@ -3,13 +3,13 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics.Materials;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics.Materials;
 
 
-namespace DigitalRune.Physics.Specialized
+namespace MinimalRune.Physics.Specialized
 {
   public partial class KinematicCharacterController
   {
@@ -18,15 +18,15 @@ namespace DigitalRune.Physics.Specialized
     // The CC is represented by capsule-shaped rigid body. The capsule is always upright and does
     // not rotate. The position of the CC is the bottom of the capsule.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the body.
@@ -123,9 +123,9 @@ namespace DigitalRune.Physics.Specialized
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private void InitializeBody(Vector3 upVector)
     {
@@ -166,7 +166,7 @@ namespace DigitalRune.Physics.Specialized
         Name = "CharacterController",
         
         Pose = new Pose(shape.Height / 2 * upVector, 
-                        Quaternion.CreateRotation(Vector3.UnitY, upVector)),
+                        Quaternion.CreateFromRotationMatrix(Vector3.UnitY, upVector)),
       };
 
       // When the user changes the shape, we must re-compute all contacts.

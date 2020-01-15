@@ -10,23 +10,23 @@ namespace ICSharpCode.AvalonEdit.Folding
     /// </summary>
     public class HlslFoldingStrategy : FoldingStrategy
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Dictionary<string, object> Blocks;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes the static members of the <see cref="HlslFoldingStrategy"/> class.
@@ -55,9 +55,9 @@ namespace ICSharpCode.AvalonEdit.Folding
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         protected override IEnumerable<NewFolding> CreateNewFoldings(TextDocument document, out int firstErrorOffset)

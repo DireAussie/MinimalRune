@@ -4,11 +4,11 @@
 
 using System;
 using System.Reactive.Linq;
-using DigitalRune.Windows;
+using MinimalRune.Windows;
 using static System.FormattableString;
 
 
-namespace DigitalRune.Editor.Status
+namespace MinimalRune.Editor.Status
 {
     /// <summary>
     /// Shows the total managed memory at regular intervals.

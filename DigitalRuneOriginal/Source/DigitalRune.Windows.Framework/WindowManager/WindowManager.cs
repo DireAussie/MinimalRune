@@ -19,7 +19,7 @@ using System.Windows.Interactivity;
 using System.Windows.Navigation;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Default implementation of the <see cref="IWindowService"/> for WPF.
@@ -45,23 +45,23 @@ namespace DigitalRune.Windows.Framework
         // the code is not as sophisticated as the PhoneNavigationService in Windows
         // Phone. If necessary, port functionality from Windows Phone project.
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly IViewLocator _viewLocator;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="WindowManager"/> class.
@@ -77,9 +77,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public bool? ShowDialog(object viewModel, object context = null)

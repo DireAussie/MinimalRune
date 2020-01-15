@@ -8,7 +8,7 @@ using System.Globalization;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Effects
+namespace MinimalRune.Graphics.Effects
 {
   /// <summary>
   /// Selects a technique when rendering a certain effect.
@@ -40,9 +40,9 @@ namespace DigitalRune.Graphics.Effects
   /// </remarks>
   public class EffectTechniqueBinding
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // The default EffectTechniqueBinding always has the same state (Id is always 0)
     // and can be shared.
@@ -55,9 +55,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets (or sets) an ID, which can be used for state-sorting.
@@ -70,15 +70,15 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

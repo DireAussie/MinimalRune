@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Represents view-dependent LOD data which is stored per camera.

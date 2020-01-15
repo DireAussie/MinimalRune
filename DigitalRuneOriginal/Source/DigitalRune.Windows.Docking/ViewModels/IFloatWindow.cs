@@ -5,7 +5,7 @@
 using System.Windows;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     /// <summary>
     /// Represents a window that contains elements when they are dragged from the docking layout.

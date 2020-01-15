@@ -5,20 +5,20 @@
 using System;
 using System.Globalization;
 using System.Windows.Input;
-using DigitalRune.Collections;
-using DigitalRune.Windows.Framework;
-using DigitalRune.Editor.Documents;
-using DigitalRune.Windows.Themes;
+using MinimalRune.Collections;
+using MinimalRune.Windows.Framework;
+using MinimalRune.Editor.Documents;
+using MinimalRune.Windows.Themes;
 using ICSharpCode.AvalonEdit;
 
 
-namespace DigitalRune.Editor.Text
+namespace MinimalRune.Editor.Text
 {
     partial class TextExtension
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private bool _showCommands = true;
         private MergeableNodeCollection<ICommandItem> _menuNodes;
@@ -26,9 +26,9 @@ namespace DigitalRune.Editor.Text
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private void AddCommands()
         {

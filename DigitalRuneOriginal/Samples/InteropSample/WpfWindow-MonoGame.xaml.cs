@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
-using DigitalRune.Graphics;
+using MinimalRune.Graphics;
 
 
 namespace InteropSample

@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.Editor.Themes
+namespace MinimalRune.Editor.Themes
 {
     /// <summary>
     /// Displays the available themes in the options dialog.

@@ -4,12 +4,12 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics;
 
 
-namespace DigitalRune.Geometry.Collisions.Algorithms
+namespace MinimalRune.Geometry.Collisions.Algorithms
 {
   /// <summary>
   /// The Minkowski Portal Refinement (MPR) algorithm for computing contacts between convex objects.
@@ -45,9 +45,9 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
     // guess and refines from there.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // To avoid unnecessary memory allocations we do not use lambda expressions to wrap the 
     // DoMpr() methods calls for perturbations tests. The lambda expression is a closure that 
@@ -72,9 +72,9 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // A pool of reusable test-methods wrappers.
     private readonly static ResourcePool<TestMethodWrapper> TestMethodWrappers =
@@ -90,15 +90,15 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="MinkowskiPortalRefinement"/> class.
@@ -113,9 +113,9 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     /// <exception cref="ArgumentException">
@@ -513,7 +513,7 @@ namespace DigitalRune.Geometry.Collisions.Algorithms
 
         //if (!n.TryNormalize())
         // ----- Optimized version:
-        float nLengthSquared = n.LengthSquared;
+        float nLengthSquared = n.LengthSquared();
         if (nLengthSquared < Numeric.EpsilonFSquared)
         {
           // The portal is degenerate (some vertices of v1, v2, v3 are identical).

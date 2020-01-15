@@ -56,7 +56,7 @@
 // -----------------------------------------------------------------------
 
 
-namespace DigitalRune.Ionic.Zlib
+namespace MinimalRune.Ionic.Zlib
 {
     /// <summary>
     /// A bunch of constants used in the Zlib interface.

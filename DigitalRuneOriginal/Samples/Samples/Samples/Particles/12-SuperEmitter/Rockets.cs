@@ -1,7 +1,7 @@
-﻿using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Statistics;
-using DigitalRune.Particles;
-using DigitalRune.Particles.Effectors;
+﻿using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Statistics;
+using MinimalRune.Particles;
+using MinimalRune.Particles.Effectors;
 
 
 namespace Samples.Particles

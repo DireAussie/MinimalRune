@@ -1,18 +1,14 @@
-// DigitalRune Engine - Copyright (C) DigitalRune GmbH
-// This file is subject to the terms and conditions defined in
-// file 'LICENSE.TXT', which is part of this source code package.
-
 using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.Runtime.Serialization;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Interpolation;
+
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+
 using Microsoft.Xna.Framework;
 
-namespace DigitalRune.Geometry
+namespace MinimalRune.Geometry
 {
   /// <summary>
   /// A pose defines the position and orientation of a shape in world space (or the parent 
@@ -48,20 +44,15 @@ namespace DigitalRune.Geometry
   [DataContract]
   public struct Pose : IEquatable<Pose>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// A pose with no translation and no rotation.
     /// </summary>
     public static readonly Pose Identity = new Pose(Vector3.Zero, Matrix.Identity);
 
-
-
-    //--------------------------------------------------------------
-
-    //--------------------------------------------------------------
 
     /// <summary>
     /// The position.
@@ -85,11 +76,6 @@ namespace DigitalRune.Geometry
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1051:DoNotDeclareVisibleInstanceFields")]
     public Matrix Orientation;
 
-
-
-    //--------------------------------------------------------------
-
-    //--------------------------------------------------------------
 
     /// <summary>
     /// Gets the inverse of this pose.
@@ -115,7 +101,7 @@ namespace DigitalRune.Geometry
     /// </value>
     public bool HasTranslation
     {
-      get { return !Position.IsNumericallyZero; }
+      get { return !Position.IsNumericallyZero(); }
     }
 
 
@@ -131,20 +117,15 @@ namespace DigitalRune.Geometry
     {
       get
       {
-        if (!Numeric.AreEqual(1, Orientation.M00))
-          return true;
         if (!Numeric.AreEqual(1, Orientation.M11))
+          return true;
+        if (!Numeric.AreEqual(1, Orientation.M22))
           return true;
 
         return false;
       }
     }
 
-
-
-    //--------------------------------------------------------------
-
-    //--------------------------------------------------------------
 
     /// <overloads>
     /// <summary>
@@ -194,7 +175,7 @@ namespace DigitalRune.Geometry
     public Pose(Vector3 position, Quaternion orientation)
     {
       Position = position;
-      Orientation = orientation.ToRotationMatrix33();
+      Orientation = Matrix.CreateFromQuaternion(orientation);
     }
 
 
@@ -205,14 +186,9 @@ namespace DigitalRune.Geometry
     public Pose(Quaternion orientation)
     {
       Position = Vector3.Zero;
-      Orientation = orientation.ToRotationMatrix33();
+      Orientation = Matrix.CreateFromQuaternion(orientation);
     }
 
-
-
-    //--------------------------------------------------------------
-
-    //--------------------------------------------------------------
 
     /// <summary>
     /// Indicates whether the current object is equal to another object of the same type.
@@ -250,10 +226,10 @@ namespace DigitalRune.Geometry
 
       // Calculate the inverse of the orientation. 
       // (The inverse of an orthogonal is the same as the transposed matrix.)
-      Orientation.Transpose();     // R'
+      Orientation = Matrix.Transpose(Orientation);     // R'
 
       // Calculate the new translation
-      Position = Orientation * -Position; // R'(-t)
+      Position = (Orientation * Matrix.CreateTranslation(-Position)).Translation; // R'(-t)
     }
 
 
@@ -275,9 +251,9 @@ namespace DigitalRune.Geometry
 
       // ----- Optimized version:
       Vector3 result;
-      result.X = Orientation.M00 * localDirection.X + Orientation.M01 * localDirection.Y + Orientation.M02 * localDirection.Z;
-      result.Y = Orientation.M10 * localDirection.X + Orientation.M11 * localDirection.Y + Orientation.M12 * localDirection.Z;
-      result.Z = Orientation.M20 * localDirection.X + Orientation.M21 * localDirection.Y + Orientation.M22 * localDirection.Z;
+      result.X = Orientation.M11 * localDirection.X + Orientation.M21 * localDirection.Y + Orientation.M31 * localDirection.Z;
+      result.Y = Orientation.M12 * localDirection.X + Orientation.M22 * localDirection.Y + Orientation.M32 * localDirection.Z;
+      result.Z = Orientation.M13 * localDirection.X + Orientation.M23 * localDirection.Y + Orientation.M33 * localDirection.Z;
       return result;
     }
 
@@ -300,9 +276,9 @@ namespace DigitalRune.Geometry
 
       // ----- Optimized version:
       Vector3 result;
-      result.X = Orientation.M00 * worldDirection.X + Orientation.M10 * worldDirection.Y + Orientation.M20 * worldDirection.Z;
-      result.Y = Orientation.M01 * worldDirection.X + Orientation.M11 * worldDirection.Y + Orientation.M21 * worldDirection.Z;
-      result.Z = Orientation.M02 * worldDirection.X + Orientation.M12 * worldDirection.Y + Orientation.M22 * worldDirection.Z;
+      result.X = Orientation.M11 * worldDirection.X + Orientation.M12 * worldDirection.Y + Orientation.M13 * worldDirection.Z;
+      result.Y = Orientation.M21 * worldDirection.X + Orientation.M22 * worldDirection.Y + Orientation.M23 * worldDirection.Z;
+      result.Z = Orientation.M31 * worldDirection.X + Orientation.M32 * worldDirection.Y + Orientation.M33 * worldDirection.Z;
       return result;
     }
 
@@ -321,9 +297,9 @@ namespace DigitalRune.Geometry
 
       // ----- Optimized version:
       Vector3 result;
-      result.X = Orientation.M00 * localPosition.X + Orientation.M01 * localPosition.Y + Orientation.M02 * localPosition.Z + Position.X;
-      result.Y = Orientation.M10 * localPosition.X + Orientation.M11 * localPosition.Y + Orientation.M12 * localPosition.Z + Position.Y;
-      result.Z = Orientation.M20 * localPosition.X + Orientation.M21 * localPosition.Y + Orientation.M22 * localPosition.Z + Position.Z;
+      result.X = Orientation.M11 * localPosition.X + Orientation.M21 * localPosition.Y + Orientation.M31 * localPosition.Z + Position.X;
+      result.Y = Orientation.M12 * localPosition.X + Orientation.M22 * localPosition.Y + Orientation.M32 * localPosition.Z + Position.Y;
+      result.Z = Orientation.M13 * localPosition.X + Orientation.M23 * localPosition.Y + Orientation.M33 * localPosition.Z + Position.Z;
       return result;
     }
 
@@ -346,9 +322,9 @@ namespace DigitalRune.Geometry
       diff.Y = worldPosition.Y - Position.Y;
       diff.Z = worldPosition.Z - Position.Z;
       Vector3 result;
-      result.X = Orientation.M00 * diff.X + Orientation.M10 * diff.Y + Orientation.M20 * diff.Z;
-      result.Y = Orientation.M01 * diff.X + Orientation.M11 * diff.Y + Orientation.M21 * diff.Z;
-      result.Z = Orientation.M02 * diff.X + Orientation.M12 * diff.Y + Orientation.M22 * diff.Z;
+      result.X = Orientation.M11 * diff.X + Orientation.M12 * diff.Y + Orientation.M13 * diff.Z;
+      result.Y = Orientation.M21 * diff.X + Orientation.M22 * diff.Y + Orientation.M23 * diff.Z;
+      result.Z = Orientation.M31 * diff.X + Orientation.M32 * diff.Y + Orientation.M33 * diff.Z;
       return result;
     }
 
@@ -367,20 +343,11 @@ namespace DigitalRune.Geometry
       Debug.Assert(IsValid(poseMatrix), "Matrix is not a valid pose matrix. Pose matrix must only contain rotations and translations.");
 
       return new Pose(
-        new Vector3(poseMatrix.M03, poseMatrix.M13, poseMatrix.M23),
-        new Matrix(poseMatrix.M00, poseMatrix.M01, poseMatrix.M02,
-                      poseMatrix.M10, poseMatrix.M11, poseMatrix.M12,
-                      poseMatrix.M20, poseMatrix.M21, poseMatrix.M22));
-    }
-
-
-    /// <summary>
-    /// Converts this single-precision pose to a double-precision pose.
-    /// </summary>
-    /// <returns>The pose (double-precision).</returns>
-    public PoseD ToPoseD()
-    {
-      return this;
+        new Vector3(poseMatrix.M41, poseMatrix.M42, poseMatrix.M43),
+        new Matrix(poseMatrix.M11, poseMatrix.M12, poseMatrix.M13, 0f,
+                      poseMatrix.M21, poseMatrix.M22, poseMatrix.M23, 0f,
+                      poseMatrix.M31, poseMatrix.M32, poseMatrix.M33, 0f,
+                      0f, 0f, 0f, 1f));
     }
 
 
@@ -392,70 +359,9 @@ namespace DigitalRune.Geometry
     /// </returns>
     public Matrix ToMatrix()
     {
-      return this;
+        return this;
     }
 
-
-
-    /// <overloads>
-    /// <summary>
-    /// Creates a <see cref="Pose"/> from a matrix that contains a translation and a rotation.
-    /// </summary>
-    /// </overloads>
-    /// 
-    /// <summary>
-    /// Creates a <see cref="Pose"/> from a <see cref="Matrix"/> (XNA Framework) that contains a 
-    /// translation and a rotation. (Only available in the XNA-compatible build.)
-    /// </summary>
-    /// <param name="poseMatrix">The pose matrix.</param>
-    /// <returns>A pose that represents the same transformation as the 4x4-matrix.</returns>
-    /// <remarks>
-    /// <para>
-    /// <paramref name="poseMatrix"/> must only contain rotations and translations, otherwise the
-    /// result is undefined.
-    /// </para>
-    /// <para>
-    /// This method is available only in the XNA-compatible build of the DigitalRune.Geometry.dll.
-    /// </para>
-    /// </remarks>
-    public static Pose FromMatrix(Matrix poseMatrix)
-    {
-      Debug.Assert(IsValid((Matrix)poseMatrix), "Matrix is not a valid pose matrix. Pose matrix must only contain rotations and translations.");
-
-      return new Pose(
-        new Vector3(poseMatrix.M41, poseMatrix.M42, poseMatrix.M43),
-        new Matrix(poseMatrix.M11, poseMatrix.M21, poseMatrix.M31,
-                      poseMatrix.M12, poseMatrix.M22, poseMatrix.M32,
-                      poseMatrix.M13, poseMatrix.M23, poseMatrix.M33));
-    }
-
-
-    /// <summary>
-    /// Converts a pose to a 4x4 transformation matrix (XNA Framework). (Only available in the 
-    /// XNA-compatible build.)
-    /// </summary>
-    /// <returns>A 4x4-matrix that represents the same transformation as the pose.</returns>
-    /// <remarks>
-    /// <para>
-    /// This method is available only in the XNA-compatible build of the DigitalRune.Geometry.dll.
-    /// </para>
-    /// </remarks>
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
-    public Matrix ToXna()
-    {
-      Matrix m = Orientation;
-      return new Matrix(m.M00, m.M10, m.M20, 0,
-                        m.M01, m.M11, m.M21, 0,
-                        m.M02, m.M12, m.M22, 0,
-                        Position.X, Position.Y, Position.Z, 1);
-    }
-
-
-
-
-    //--------------------------------------------------------------
-
-    //--------------------------------------------------------------
 
     /// <overloads>
     /// <summary>
@@ -482,15 +388,15 @@ namespace DigitalRune.Geometry
       return Numeric.AreEqual(pose1.Position.X, pose2.Position.X)
           && Numeric.AreEqual(pose1.Position.Y, pose2.Position.Y)
           && Numeric.AreEqual(pose1.Position.Z, pose2.Position.Z)
-          && Numeric.AreEqual(pose1.Orientation.M00, pose2.Orientation.M00)
-          && Numeric.AreEqual(pose1.Orientation.M01, pose2.Orientation.M01)
-          && Numeric.AreEqual(pose1.Orientation.M02, pose2.Orientation.M02)
-          && Numeric.AreEqual(pose1.Orientation.M10, pose2.Orientation.M10)
           && Numeric.AreEqual(pose1.Orientation.M11, pose2.Orientation.M11)
-          && Numeric.AreEqual(pose1.Orientation.M12, pose2.Orientation.M12)
-          && Numeric.AreEqual(pose1.Orientation.M20, pose2.Orientation.M20)
           && Numeric.AreEqual(pose1.Orientation.M21, pose2.Orientation.M21)
-          && Numeric.AreEqual(pose1.Orientation.M22, pose2.Orientation.M22);
+          && Numeric.AreEqual(pose1.Orientation.M31, pose2.Orientation.M31)
+          && Numeric.AreEqual(pose1.Orientation.M12, pose2.Orientation.M12)
+          && Numeric.AreEqual(pose1.Orientation.M22, pose2.Orientation.M22)
+          && Numeric.AreEqual(pose1.Orientation.M32, pose2.Orientation.M32)
+          && Numeric.AreEqual(pose1.Orientation.M13, pose2.Orientation.M13)
+          && Numeric.AreEqual(pose1.Orientation.M23, pose2.Orientation.M23)
+          && Numeric.AreEqual(pose1.Orientation.M33, pose2.Orientation.M33);
     }
 
 
@@ -513,15 +419,15 @@ namespace DigitalRune.Geometry
       return Numeric.AreEqual(pose1.Position.X, pose2.Position.X, epsilon)
           && Numeric.AreEqual(pose1.Position.Y, pose2.Position.Y, epsilon)
           && Numeric.AreEqual(pose1.Position.Z, pose2.Position.Z, epsilon)
-          && Numeric.AreEqual(pose1.Orientation.M00, pose2.Orientation.M00, epsilon)
-          && Numeric.AreEqual(pose1.Orientation.M01, pose2.Orientation.M01, epsilon)
-          && Numeric.AreEqual(pose1.Orientation.M02, pose2.Orientation.M02, epsilon)
-          && Numeric.AreEqual(pose1.Orientation.M10, pose2.Orientation.M10, epsilon)
           && Numeric.AreEqual(pose1.Orientation.M11, pose2.Orientation.M11, epsilon)
-          && Numeric.AreEqual(pose1.Orientation.M12, pose2.Orientation.M12, epsilon)
-          && Numeric.AreEqual(pose1.Orientation.M20, pose2.Orientation.M20, epsilon)
           && Numeric.AreEqual(pose1.Orientation.M21, pose2.Orientation.M21, epsilon)
-          && Numeric.AreEqual(pose1.Orientation.M22, pose2.Orientation.M22, epsilon);
+          && Numeric.AreEqual(pose1.Orientation.M31, pose2.Orientation.M31, epsilon)
+          && Numeric.AreEqual(pose1.Orientation.M12, pose2.Orientation.M12, epsilon)
+          && Numeric.AreEqual(pose1.Orientation.M22, pose2.Orientation.M22, epsilon)
+          && Numeric.AreEqual(pose1.Orientation.M32, pose2.Orientation.M32, epsilon)
+          && Numeric.AreEqual(pose1.Orientation.M13, pose2.Orientation.M13, epsilon)
+          && Numeric.AreEqual(pose1.Orientation.M23, pose2.Orientation.M23, epsilon)
+          && Numeric.AreEqual(pose1.Orientation.M33, pose2.Orientation.M33, epsilon);
     }
 
 
@@ -542,9 +448,9 @@ namespace DigitalRune.Geometry
       var interpolatedPosition = startPose.Position * (1 - parameter) + endPose.Position * parameter;
 
       // Slerp orientation.
-      var interpolatedOrientation = InterpolationHelper.Lerp(
-        Quaternion.CreateRotation(startPose.Orientation),
-        Quaternion.CreateRotation(endPose.Orientation),
+      var interpolatedOrientation = Quaternion.Lerp(
+        Quaternion.CreateFromRotationMatrix(startPose.Orientation),
+        Quaternion.CreateFromRotationMatrix(endPose.Orientation),
         parameter);
 
       return new Pose(interpolatedPosition, interpolatedOrientation);
@@ -564,28 +470,23 @@ namespace DigitalRune.Geometry
     /// </remarks>
     public static bool IsValid(Matrix matrix)
     {
-      Vector4F v1 = matrix * Vector4F.UnitX;
-      Vector4F v2 = matrix * Vector4F.UnitY;
-      Vector4F v3 = matrix * Vector4F.UnitZ;
+      Vector4 v1 = matrix.Multiply(Vector4.UnitX);
+      Vector4 v2 = matrix.Multiply(Vector4.UnitY);
+      Vector4 v3 = matrix.Multiply(Vector4.UnitZ);
 
-      return Numeric.AreEqual(v1.LengthSquared, 1)
-             && Numeric.AreEqual(v2.LengthSquared, 1)
-             && Numeric.AreEqual(v3.LengthSquared, 1)
-             && Numeric.IsZero(Vector4F.Dot(v1, v2))
-             && Numeric.IsZero(Vector4F.Dot(v2, v3))
-             && Numeric.IsZero(Vector4F.Dot(v1, v3))
-             && Numeric.AreEqual(1.0f, matrix.Determinant)
-             && Numeric.IsZero(matrix.M30)
-             && Numeric.IsZero(matrix.M31)
-             && Numeric.IsZero(matrix.M32)
-             && Numeric.AreEqual(matrix.M33, 1);
+      return Numeric.AreEqual(v1.LengthSquared(), 1)
+             && Numeric.AreEqual(v2.LengthSquared(), 1)
+             && Numeric.AreEqual(v3.LengthSquared(), 1)
+             && Numeric.IsZero(Vector4.Dot(v1, v2))
+             && Numeric.IsZero(Vector4.Dot(v2, v3))
+             && Numeric.IsZero(Vector4.Dot(v1, v3))
+             && Numeric.AreEqual(1.0f, matrix.Determinant())
+             && Numeric.IsZero(matrix.M14)
+             && Numeric.IsZero(matrix.M24)
+             && Numeric.IsZero(matrix.M34)
+             && Numeric.AreEqual(matrix.M44, 1);
     }
 
-
-
-    //--------------------------------------------------------------
-
-    //--------------------------------------------------------------
 
     /// <summary>
     /// Returns the hash code for this instance.
@@ -656,11 +557,6 @@ namespace DigitalRune.Geometry
     }
 
 
-
-    //--------------------------------------------------------------
-
-    //--------------------------------------------------------------
-
     /// <overloads>
     /// <summary>
     /// Multiplies a <see cref="Pose"/> with another value.
@@ -697,7 +593,7 @@ namespace DigitalRune.Geometry
       //          = R1 R2 v + R1 t2 + t1
       // => R' = R1 R2
       //    t' = R1 t2 + t1
-      return new Pose(p1.Orientation * p2.Position + p1.Position, p1.Orientation * p2.Orientation);
+      return new Pose(p1.Orientation.Multiply(p2.Position) + p1.Position, p1.Orientation * p2.Orientation);
     }
 
 
@@ -737,7 +633,7 @@ namespace DigitalRune.Geometry
       //          = R1 R2 v + R1 t2 + t1
       // => R' = R1 R2
       //    t' = R1 t2 + t1
-      return new Pose(p1.Orientation * p2.Position + p1.Position, p1.Orientation * p2.Orientation);
+      return new Pose(p1.Orientation.Multiply(p2.Position) + p1.Position, p1.Orientation * p2.Orientation);
     }
 
 
@@ -751,9 +647,9 @@ namespace DigitalRune.Geometry
     /// Multiplying a pose matrix with a vector is equal to transforming a vector from local space
     /// to world space (or parent space for nested coordinate spaces).
     /// </remarks>
-    public static Vector4F operator *(Pose pose, Vector4F vector)
+    public static Vector4 operator *(Pose pose, Vector4 vector)
     {
-      return pose.ToMatrix() * vector;
+      return pose.ToMatrix().Multiply(vector);
     }
 
 
@@ -767,9 +663,9 @@ namespace DigitalRune.Geometry
     /// Multiplying a pose matrix with a vector is equal to transforming a vector from local space
     /// to world space (or parent space for nested coordinate spaces).
     /// </remarks>
-    public static Vector4F Multiply(Pose pose, Vector4F vector)
+    public static Vector4 Multiply(Pose pose, Vector4 vector)
     {
-      return pose.ToMatrix() * vector;
+      return pose.ToMatrix().Multiply(vector);
     }
 
 
@@ -802,18 +698,6 @@ namespace DigitalRune.Geometry
       return !(pose1 == pose2);
     }
 
-
-    /// <summary>
-    /// Converts a single-precision pose to a double-precision pose.
-    /// </summary>
-    /// <param name="pose">The pose (single-precision).</param>
-    /// <returns>The pose (double-precision).</returns>
-    public static implicit operator PoseD(Pose pose)
-    {
-      return new PoseD(pose.Position, pose.Orientation);
-    }
-
-
     /// <summary>
     /// Converts a pose to a 4x4 transformation matrix.
     /// </summary>
@@ -823,35 +707,10 @@ namespace DigitalRune.Geometry
     {
       Vector3 v = pose.Position;
       Matrix m = pose.Orientation;
-      return new Matrix(m.M00, m.M01, m.M02, v.X,
-                           m.M10, m.M11, m.M12, v.Y,
-                           m.M20, m.M21, m.M22, v.Z,
+      return new Matrix(m.M11, m.M21, m.M31, v.X,
+                           m.M12, m.M22, m.M32, v.Y,
+                           m.M13, m.M23, m.M33, v.Z,
                            0, 0, 0, 1);
     }
-
-
-
-    /// <summary>
-    /// Converts a pose to a 4x4 transformation matrix (XNA Framework). (Only available in the 
-    /// XNA-compatible build.)
-    /// </summary>
-    /// <param name="pose">The pose.</param>
-    /// <returns>A 4x4-matrix that represents the same transformation as the pose.</returns>
-    /// <remarks>
-    /// <para>
-    /// This method is available only in the XNA-compatible build of the DigitalRune.Geometry.dll.
-    /// </para>
-    /// </remarks>
-    public static implicit operator Matrix(Pose pose)
-    {
-      Vector3 v = pose.Position;
-      Matrix m = pose.Orientation;
-      return new Matrix(m.M00, m.M10, m.M20, 0,
-                        m.M01, m.M11, m.M21, 0,
-                        m.M02, m.M12, m.M22, 0,
-                        v.X, v.Y, v.Z, 1);
-    }
-
-
   }
 }

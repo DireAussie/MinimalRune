@@ -10,7 +10,7 @@ using System.Threading;
 using NLog;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// Creates and destroys a temporary directory.
@@ -40,9 +40,9 @@ namespace DigitalRune.Editor
         // - Debugging in Visual Studio
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
@@ -58,9 +58,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
         /// <summary>
@@ -81,9 +81,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TempDirectoryHelper"/> class.
@@ -171,9 +171,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         // Try to delete any directories that were left over from other application instances.
         private void PurgeStaleProcessDirectories()

@@ -7,7 +7,7 @@ using System.Diagnostics;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Effects
+namespace MinimalRune.Graphics.Effects
 {
   /// <summary>
   /// Describes a parameter of an effect.
@@ -49,15 +49,15 @@ namespace DigitalRune.Graphics.Effects
   [DebuggerDisplay("{GetType().Name,nq}(Parameter = {Parameter.Name}, Semantic = {Semantic}, Index = {Index}, Hint = {Hint})")]
   public class EffectParameterDescription
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the standard semantic (case-sensitive).
@@ -125,9 +125,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="EffectParameterDescription"/> class.
@@ -164,9 +164,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     [Conditional("DEBUG")]
     private static void ValidateHint(EffectParameterHint hint)

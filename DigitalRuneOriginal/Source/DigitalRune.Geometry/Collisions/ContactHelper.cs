@@ -5,12 +5,12 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry.Collisions
+namespace MinimalRune.Geometry.Collisions
 {
   /// <summary>
   /// Helper methods for managing collision contacts.
@@ -286,7 +286,7 @@ namespace DigitalRune.Geometry.Collisions
         if (contact.FeatureA == otherContact.FeatureA && contact.FeatureB == otherContact.FeatureB)
         {
           // Check position difference.
-          float distanceSquared = (otherContact.Position - contact.Position).LengthSquared;
+          float distanceSquared = (otherContact.Position - contact.Position).LengthSquared();
           if (distanceSquared < minDistanceSquared)
           {
             minDistanceSquared = distanceSquared;
@@ -635,13 +635,13 @@ namespace DigitalRune.Geometry.Collisions
         if (contact.IsRayHit)
         {
           // For ray casts: Remove contact if movement in any direction is too large.
-          driftSquared = bToA.LengthSquared;
+          driftSquared = bToA.LengthSquared();
         }
         else
         {
           // For contacts: Remove contacts if horizontal movement (perpendicular to contact normal) 
           // is too large.
-          driftSquared = (bToA - contact.Normal * contact.PenetrationDepth).LengthSquared;
+          driftSquared = (bToA - contact.Normal * contact.PenetrationDepth).LengthSquared();
         }
 
         // Remove contact if drift is too large.
@@ -779,7 +779,7 @@ namespace DigitalRune.Geometry.Collisions
         testMethod(testContactSet);
 
         // Invert rotation2.
-        rotation2.Transpose();
+        rotation2 = Matrix.Transpose(rotation2);
         testGeometricObject.Pose = new Pose(pose.Position, pose.Orientation * rotation2);
 
         // Compute next contacts.

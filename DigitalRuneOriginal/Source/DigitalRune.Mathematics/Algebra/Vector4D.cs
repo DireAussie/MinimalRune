@@ -10,7 +10,7 @@ using System.Runtime.Serialization;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 
-using DigitalRune.Mathematics.Algebra.Design;
+using MinimalRune.Mathematics.Algebra.Design;
 
 
 using Microsoft.Xna.Framework;
@@ -18,7 +18,7 @@ using Microsoft.Xna.Framework.Content;
 
 
 
-namespace DigitalRune.Mathematics.Algebra
+namespace MinimalRune.Mathematics.Algebra
 {
   /// <summary>
   /// Defines a 4-dimensional vector (double-precision).
@@ -37,9 +37,9 @@ namespace DigitalRune.Mathematics.Algebra
 
   public struct Vector4D : IEquatable<Vector4D>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns a <see cref="Vector4D"/> with all of its components set to zero.
@@ -73,9 +73,9 @@ namespace DigitalRune.Mathematics.Algebra
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The x component.
@@ -119,9 +119,9 @@ namespace DigitalRune.Mathematics.Algebra
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the component at the specified index.
@@ -403,9 +403,9 @@ namespace DigitalRune.Mathematics.Algebra
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -506,9 +506,9 @@ namespace DigitalRune.Mathematics.Algebra
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns the hash code for this instance.
@@ -596,9 +596,9 @@ namespace DigitalRune.Mathematics.Algebra
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Negates a vector.
@@ -1046,23 +1046,23 @@ namespace DigitalRune.Mathematics.Algebra
 
 
     /// <summary>
-    /// Performs an explicit conversion from <see cref="Vector4D"/> to <see cref="Vector4F"/>.
+    /// Performs an explicit conversion from <see cref="Vector4D"/> to <see cref="Vector4"/>.
     /// </summary>
     /// <param name="vector">The DigitalRune <see cref="Vector4D"/>.</param>
     /// <returns>The result of the conversion.</returns>
-    public static explicit operator Vector4F(Vector4D vector)
+    public static explicit operator Vector4(Vector4D vector)
     {
-      return new Vector4F((float)vector.X, (float)vector.Y, (float)vector.Z, (float)vector.W);
+      return new Vector4((float)vector.X, (float)vector.Y, (float)vector.Z, (float)vector.W);
     }
 
 
     /// <summary>
-    /// Converts this <see cref="Vector4D"/> to <see cref="Vector4F"/>.
+    /// Converts this <see cref="Vector4D"/> to <see cref="Vector4"/>.
     /// </summary>
     /// <returns>The result of the conversion.</returns>
-    public Vector4F ToVector4F()
+    public Vector4 ToVector4()
     {
-      return new Vector4F((float)X, (float)Y, (float)Z, (float)W);
+      return new Vector4((float)X, (float)Y, (float)Z, (float)W);
     }
 
 
@@ -1160,9 +1160,9 @@ namespace DigitalRune.Mathematics.Algebra
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -1308,14 +1308,14 @@ namespace DigitalRune.Mathematics.Algebra
     /// <param name="target">The target vector.</param>
     public void ProjectTo(Vector4D target)
     {
-      this = Dot(this, target) / target.LengthSquared * target;
+      this = Dot(this, target) / target.LengthSquared() * target;
     }
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns a vector with the absolute values of the elements of the given vector.
@@ -1526,7 +1526,7 @@ namespace DigitalRune.Mathematics.Algebra
     /// </returns>
     public static Vector4D ProjectTo(Vector4D vector, Vector4D target)
     {
-      return Dot(vector, target) / target.LengthSquared * target;
+      return Dot(vector, target) / target.LengthSquared() * target;
     }
 
 

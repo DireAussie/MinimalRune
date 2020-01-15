@@ -9,7 +9,7 @@ using System.Windows;
 using System.Windows.Input;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     public partial class DragDropBehavior
     {
@@ -26,24 +26,24 @@ namespace DigitalRune.Windows.Framework
         //      Cancels the operation by setting _dragCommandParameter to null.
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private DragCommandParameter _dragCommandParameter;
         private bool _inDragDrop;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="AllowDrag"/> dependency property.
@@ -137,9 +137,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static void OnAllowDragChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
         {

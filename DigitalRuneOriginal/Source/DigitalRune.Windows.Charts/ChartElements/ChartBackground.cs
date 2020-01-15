@@ -8,7 +8,7 @@ using System.Windows.Data;
 using System.Windows.Shapes;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Draws the background of a chart area.
@@ -21,29 +21,29 @@ namespace DigitalRune.Windows.Charts
     [TemplatePart(Name = "PART_Background", Type = typeof(FrameworkElement))]
     public class ChartBackground : ChartElement
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private FrameworkElement _background;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
-
-
-
-        //--------------------------------------------------------------
-
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
+
+
+
+        
+
+        
 
 
         /// <summary>
@@ -65,9 +65,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// When overridden in a derived class, is invoked whenever application code or internal

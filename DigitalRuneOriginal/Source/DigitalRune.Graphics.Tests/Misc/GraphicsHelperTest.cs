@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Graphics.Tests
+namespace MinimalRune.Graphics.Tests
 {
   [TestFixture]
   public class GraphicsHelperTest

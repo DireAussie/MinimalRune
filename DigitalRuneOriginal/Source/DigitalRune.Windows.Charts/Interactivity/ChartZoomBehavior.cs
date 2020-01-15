@@ -12,7 +12,7 @@ using System.Windows.Interactivity;
 using System.Windows.Media;
 
 
-namespace DigitalRune.Windows.Charts.Interactivity
+namespace MinimalRune.Windows.Charts.Interactivity
 {
     /// <summary>
     /// Allows the user to zoom the chart area by using the mouse wheel.
@@ -30,30 +30,30 @@ namespace DigitalRune.Windows.Charts.Interactivity
     /// <seealso cref="Axis.Zoom"/>
     public class ChartZoomBehavior : Behavior<UIElement>
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private const double MinZoomFactor = -0.5;
         private const double MaxZoomFactor = 0.5;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
-
-
-
-        //--------------------------------------------------------------
-
-        //--------------------------------------------------------------    
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+            
+
+
+
+        
+
+        
 
         /// <summary>
         /// Identifies the <see cref="Axes"/> dependency property.
@@ -193,15 +193,15 @@ namespace DigitalRune.Windows.Charts.Interactivity
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Called after the behavior is attached to an <see cref="Behavior{T}.AssociatedObject"/>.

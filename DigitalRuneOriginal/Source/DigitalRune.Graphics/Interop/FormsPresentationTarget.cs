@@ -13,7 +13,7 @@ using Rectangle = Microsoft.Xna.Framework.Rectangle;
 
 
 
-namespace DigitalRune.Graphics.Interop
+namespace MinimalRune.Graphics.Interop
 {
   /// <summary>
   /// A Windows Forms control that implements <see cref="IPresentationTarget"/> to host a 3D view.
@@ -25,9 +25,9 @@ namespace DigitalRune.Graphics.Interop
     // the graphics, we have a cross-thread call.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private bool _rendering;
 
@@ -36,9 +36,9 @@ namespace DigitalRune.Graphics.Interop
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     IGraphicsService IPresentationTarget.GraphicsService
@@ -92,9 +92,9 @@ namespace DigitalRune.Graphics.Interop
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="FormsPresentationTarget"/> class.
@@ -138,9 +138,9 @@ namespace DigitalRune.Graphics.Interop
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
     private void OnGraphicsServiceChanged(IGraphicsService oldGraphicsService, IGraphicsService newGraphicsService)

@@ -4,11 +4,11 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Editor.Options;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Editor.Options;
+using MinimalRune.Windows.Framework;
 
 
-namespace DigitalRune.Editor.Themes
+namespace MinimalRune.Editor.Themes
 {
     /// <summary>
     /// Allows to choose the WPF theme.

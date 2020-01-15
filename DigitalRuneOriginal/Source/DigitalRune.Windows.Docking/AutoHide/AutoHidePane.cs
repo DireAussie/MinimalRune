@@ -13,12 +13,12 @@ using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
-using DigitalRune.Mathematics;
-using DigitalRune.Windows.Interop;
+using MinimalRune.Mathematics;
+using MinimalRune.Windows.Interop;
 using static System.FormattableString;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     /// <summary>
     /// Represents a pane that automatically appears when it becomes active and disappears when it
@@ -52,9 +52,9 @@ namespace DigitalRune.Windows.Docking
     [TemplateVisualState(GroupName = "DockStates", Name = "Bottom")]
     public class AutoHidePane : ContentControl
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         // When moving the auto-hide pane out of the view, add this offset. This offset is necessary
         // to hide effects, such as a DropShadowEffect, that are drawn outside of the window bounds.
@@ -62,9 +62,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         // Template parts
         private Grid _grid;
@@ -82,9 +82,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the <see cref="Docking.DockControl"/>.
@@ -125,9 +125,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="Dock"/> dependency property.
@@ -258,9 +258,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="AutoHidePane"/> class.
@@ -289,9 +289,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 

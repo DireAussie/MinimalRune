@@ -5,16 +5,16 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Game.UI.Controls;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Game.UI.Controls;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ProgressBar = DigitalRune.Game.UI.Controls.ProgressBar;
 using TextBox = DigitalRune.Game.UI.Controls.TextBox;
 
 
-namespace DigitalRune.Game.UI.Rendering
+namespace MinimalRune.Game.UI.Rendering
 {
   public partial class UIRenderer
   {
@@ -46,9 +46,9 @@ namespace DigitalRune.Game.UI.Rendering
     }
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // For drawing of blinking caret:
     // To keep it simple: We use the same animation timing for all carets. 
@@ -65,9 +65,9 @@ namespace DigitalRune.Game.UI.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets a white 1x1 texture.
@@ -117,9 +117,9 @@ namespace DigitalRune.Game.UI.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private void InitializeRendering()
     {
@@ -138,9 +138,9 @@ namespace DigitalRune.Game.UI.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static void SetState(UIRenderContext context, ThemeState state)
     {
@@ -285,7 +285,7 @@ namespace DigitalRune.Game.UI.Rendering
     /// </summary>
     private static RectangleF GetContentBoundsRounded(UIControl control)
     {
-      Vector4F padding = control.Padding;
+      Vector4 padding = control.Padding;
       return new RectangleF(
         (int)(control.ActualX + padding.X + 0.5f),
         (int)(control.ActualY + padding.Y + 0.5f),
@@ -615,7 +615,7 @@ namespace DigitalRune.Game.UI.Rendering
             && IsCaretVisible(new Vector2F(console.VisualCaretX, console.VisualCaretY)))
         {
           float charWidth = font.MeasureString("A").X;
-          Vector4F padding = console.Padding;
+          Vector4 padding = console.Padding;
           RectangleF caretRectangle = new RectangleF(
             console.ActualX + padding.X + console.VisualCaretX * charWidth - 1,  // minus 1 pixel
             console.ActualY + padding.Y + console.VisualCaretY * font.LineSpacing - 1,
@@ -804,7 +804,7 @@ namespace DigitalRune.Game.UI.Rendering
       
       // Get bounds without margin.
       Rectangle source = image.SourceRectangle;
-      Vector4F margin = image.Margin;
+      Vector4 margin = image.Margin;
       bounds.X += margin.X;
       bounds.Y += margin.Y;
       bounds.Width -= margin.X + margin.Z;

@@ -9,7 +9,7 @@ using System.Windows;
 using System.Windows.Interactivity;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Manages a collection of behaviors. (To be used in a <see cref="Style"/>.)

@@ -12,22 +12,22 @@ using Ionic.Zip;
 using Ionic.Zlib;
 
 
-namespace DigitalRune.Tools
+namespace MinimalRune.Tools
 {
     /// <summary>
     /// Tool for packaging files into ZIP archives.
     /// </summary>
     public class PackageHelper
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets a value indicating whether this is a test run. (No files are changed.)
@@ -65,9 +65,9 @@ namespace DigitalRune.Tools
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PackageHelper"/> class.
@@ -79,9 +79,9 @@ namespace DigitalRune.Tools
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <overloads>
         /// <summary>

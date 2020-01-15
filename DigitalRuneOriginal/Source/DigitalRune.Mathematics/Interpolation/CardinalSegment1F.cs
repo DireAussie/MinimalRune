@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace DigitalRune.Mathematics.Interpolation
+namespace MinimalRune.Mathematics.Interpolation
 {
   /// <summary>
   /// Defines a single segment of a 1-dimensional cubic Cardinal spline (single-precision).
@@ -122,9 +122,9 @@ namespace DigitalRune.Mathematics.Interpolation
     }
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static readonly ResourcePool<CardinalSegment1F> Pool = new ResourcePool<CardinalSegment1F>(
        () => new CardinalSegment1F(),                 // Create

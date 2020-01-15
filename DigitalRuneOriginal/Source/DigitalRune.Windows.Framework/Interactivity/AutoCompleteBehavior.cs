@@ -15,7 +15,7 @@ using System.Windows.Interactivity;
 using System.Windows.Markup;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Provides suggestions for the <see cref="AutoCompleteBehavior"/>.
@@ -134,9 +134,9 @@ namespace DigitalRune.Windows.Framework
     /// </example>
     public class AutoCompleteBehavior : Behavior<TextBox>
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private Window _window;
         private Popup _popup;
@@ -148,9 +148,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the key that references the style that is defined for the <see cref="ListBox"/>
@@ -195,9 +195,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="IsEnabled"/> dependency property.
@@ -275,15 +275,15 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Called after the behavior is attached to an <see cref="Behavior{T}.AssociatedObject"/>.

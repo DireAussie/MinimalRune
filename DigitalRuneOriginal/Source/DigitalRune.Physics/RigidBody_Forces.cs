@@ -2,17 +2,17 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics.ForceEffects;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics.ForceEffects;
 
 
-namespace DigitalRune.Physics
+namespace MinimalRune.Physics
 {
   public partial class RigidBody
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Force effects must use different AddForce() method, so that the user set forces are not deleted.
     // Accumulated external force (gravity, explosions, etc.) without constraint forces (from hinges, contacts, ...)
@@ -29,15 +29,15 @@ namespace DigitalRune.Physics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Clears all forces that were set with <see cref="AddForce(Vector3, Vector3)"/>,

@@ -6,7 +6,7 @@ using System;
 using System.IO;
 
 
-namespace DigitalRune.Storages
+namespace MinimalRune.Storages
 {
 #pragma warning disable 1574
 

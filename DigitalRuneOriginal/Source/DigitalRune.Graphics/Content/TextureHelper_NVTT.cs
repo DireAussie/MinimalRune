@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 using Nvidia.TextureTools;
 
 
-namespace DigitalRune.Graphics.Content
+namespace MinimalRune.Graphics.Content
 {
   partial class TextureHelper
   {

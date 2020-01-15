@@ -1,5 +1,5 @@
 ﻿using System.Collections.ObjectModel;
-using DigitalRune.Windows;
+using MinimalRune.Windows;
 
 
 namespace DragDropApp

@@ -7,14 +7,14 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
-using DigitalRune.Collections;
-using DigitalRune.Windows.Docking;
-using DigitalRune.Windows.Framework;
-using DigitalRune.Windows.Themes;
+using MinimalRune.Collections;
+using MinimalRune.Windows.Docking;
+using MinimalRune.Windows.Framework;
+using MinimalRune.Windows.Themes;
 using NLog;
 
 
-namespace DigitalRune.Editor.Output
+namespace MinimalRune.Editor.Output
 {
     /// <summary>
     /// Provides functions for logging and displaying output messages.
@@ -30,9 +30,9 @@ namespace DigitalRune.Editor.Output
     /// </remarks>
     public sealed class OutputExtension : EditorExtension
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private ResourceDictionary _resourceDictionary;
         private OutputViewModel _output;
@@ -41,21 +41,21 @@ namespace DigitalRune.Editor.Output
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
-
-
-
-        //--------------------------------------------------------------
-
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
+
+
+
+        
+
+        
 
         /// <inheritdoc/>
         protected override void OnInitialize()

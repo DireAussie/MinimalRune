@@ -8,7 +8,7 @@ using System.Reflection;
 
 
 
-namespace DigitalRune
+namespace MinimalRune
 {
   /// <summary>
   /// Represents a <see cref="Delegate"/> of a specific type that stores the target object as a weak 

@@ -4,13 +4,13 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Geometry.Meshes;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Meshes;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry
+namespace MinimalRune.Geometry
 {
   public static partial class GeometryHelper
   {
@@ -467,8 +467,8 @@ namespace DigitalRune.Geometry
     //  Vector3 c = vertices[_indices[2]];
     //  Vector3 ab = b - a;
     //  Vector3 ac = c - a;
-    //  float ab2 = ab.LengthSquared;
-    //  float ac2 = ac.LengthSquared;
+    //  float ab2 = ab.LengthSquared();
+    //  float ac2 = ac.LengthSquared();
     //  float aDotAb = Vector3.Dot(a, ab);
     //  float aDotAc = Vector3.Dot(a, ac);
     //  float abDotAc = Vector3.Dot(ab, ac);
@@ -480,7 +480,7 @@ namespace DigitalRune.Geometry
     //  if (_det > Numeric.EpsilonF)
     //  {
     //    _closestPointToOrigin = a + (_lambda1 * ab + _lambda2 * ac) / _det;
-    //    _distanceToOriginSquared = _closestPointToOrigin.LengthSquared;
+    //    _distanceToOriginSquared = _closestPointToOrigin.LengthSquared();
     //    return true;
     //  }
 

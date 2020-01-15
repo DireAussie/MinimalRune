@@ -9,25 +9,25 @@ using System.ComponentModel;
 using System.Linq;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
     /// Manages validation errors for objects implementing <see cref="INotifyDataErrorInfo"/>.
     /// </summary>
     public sealed class ErrorsContainer
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly Dictionary<string, List<string>> _errorsPerProperty = new Dictionary<string, List<string>>();
         private readonly Action<string> _errorsChanged;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets a value that indicates whether the object has validation errors.
@@ -60,9 +60,9 @@ namespace DigitalRune.Windows
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ErrorsContainer"/> class.
@@ -80,9 +80,9 @@ namespace DigitalRune.Windows
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the validation errors for a specified property or for the entire object.

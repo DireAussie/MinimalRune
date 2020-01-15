@@ -7,10 +7,10 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
-using DigitalRune.Windows.Controls;
+using MinimalRune.Windows.Controls;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// Converts a bitmap source to an <see cref="Icon"/> for use in a menu item.

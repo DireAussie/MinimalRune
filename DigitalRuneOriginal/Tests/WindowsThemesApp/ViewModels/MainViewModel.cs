@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Docking;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Docking;
 
 
 namespace WindowsThemesApp.ViewModels

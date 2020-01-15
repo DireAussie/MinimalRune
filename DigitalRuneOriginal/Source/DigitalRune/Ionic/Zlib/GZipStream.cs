@@ -15,7 +15,7 @@
 // ------------------------------------------------------------------
 
 
-namespace DigitalRune.Ionic.Zlib
+namespace MinimalRune.Ionic.Zlib
 {
     /// <summary>
     /// Not implemented.

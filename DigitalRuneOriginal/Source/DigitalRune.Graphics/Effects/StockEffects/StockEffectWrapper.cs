@@ -6,7 +6,7 @@ using System;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Effects
+namespace MinimalRune.Graphics.Effects
 {
   // We wrap the stock effects and removes the default function of OnApply().
   // We do not want the OnApply() method to change our effect parameters.

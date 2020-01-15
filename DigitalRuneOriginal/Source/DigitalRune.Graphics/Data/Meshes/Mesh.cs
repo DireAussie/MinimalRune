@@ -5,15 +5,15 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics.Effects;
-using DigitalRune.Graphics.SceneGraph;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics.Effects;
+using MinimalRune.Graphics.SceneGraph;
 
-using DigitalRune.Animation.Character;
+using MinimalRune.Animation.Character;
 
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Represents a mesh of a 3D model.
@@ -75,17 +75,17 @@ namespace DigitalRune.Graphics
     // share vertex and index buffers. Therefore, it makes little sense to duplicate 
     // the shared buffers for clones. 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private string[] _cachedMorphTargetNames;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the bounding shape of this mesh.
@@ -214,9 +214,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Mesh"/> class.
@@ -265,9 +265,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

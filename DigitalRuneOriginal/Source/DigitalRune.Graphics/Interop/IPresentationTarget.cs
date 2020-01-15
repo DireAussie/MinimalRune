@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Graphics.Interop
+namespace MinimalRune.Graphics.Interop
 {
   /// <summary>
   /// Provides a window handle (HWND) which can be used to present a 3D scene.

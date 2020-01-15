@@ -5,21 +5,21 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Collections;
-using DigitalRune.Geometry;
+using MinimalRune.Collections;
+using MinimalRune.Geometry;
 
-using DigitalRune.Graphics.PostProcessing;
+using MinimalRune.Graphics.PostProcessing;
 
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework.Graphics;
 
-using DigitalRune.Particles;
+using MinimalRune.Particles;
 
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Renders billboards and particles.
@@ -168,9 +168,9 @@ namespace DigitalRune.Graphics.Rendering
     // - Support "Origin" for easier placement of billboards.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Represent a <see cref="BillboardNode"/> or a <see cref="ParticleSystem"/> of a 
@@ -221,9 +221,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The maximum buffer size (number of billboards).
@@ -242,9 +242,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
     
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private uint _textureCount;
     private readonly ArrayList<Job> _jobs;
@@ -256,9 +256,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the graphics service.
@@ -418,9 +418,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -507,9 +507,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override bool CanRender(SceneNode node, RenderContext context)
@@ -617,7 +617,7 @@ namespace DigitalRune.Graphics.Rendering
 
         // Use linear distance for viewpoint-oriented and world-oriented billboards.
         if (billboard.Orientation.Normal != BillboardNormal.ViewPlaneAligned)
-          distance = cameraToNode.LengthSquared * Math.Sign(distance);
+          distance = cameraToNode.LengthSquared() * Math.Sign(distance);
 
         if (backToFront)
           distance = -distance;
@@ -686,7 +686,7 @@ namespace DigitalRune.Graphics.Rendering
 
         // Use linear distance for viewpoint-oriented and world-oriented billboards.
         if (particleSystemData.BillboardOrientation.Normal != BillboardNormal.ViewPlaneAligned)
-          distance = cameraToNode.LengthSquared * Math.Sign(distance);
+          distance = cameraToNode.LengthSquared() * Math.Sign(distance);
 
         if (backToFront)
           distance = -distance;

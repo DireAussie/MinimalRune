@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-namespace DigitalRune.Game.UI.Content
+namespace MinimalRune.Game.UI.Content
 {
   /// <summary>
   /// The <see cref="N:DigitalRune.Game.UI.Content"/> namespace contains the run-time components of

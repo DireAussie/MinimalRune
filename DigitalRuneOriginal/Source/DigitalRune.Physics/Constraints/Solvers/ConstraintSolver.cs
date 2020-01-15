@@ -5,7 +5,7 @@
 using System.Diagnostics;
 
 
-namespace DigitalRune.Physics.Constraints
+namespace MinimalRune.Physics.Constraints
 {
   /// <summary>
   /// Solves constraints (joints, contacts).

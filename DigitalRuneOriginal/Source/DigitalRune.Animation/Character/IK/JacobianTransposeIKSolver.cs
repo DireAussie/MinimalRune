@@ -5,10 +5,10 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Animation.Character
+namespace MinimalRune.Animation.Character
 {
   /// <summary>
   /// Modifies a skeleton using the Jacobian Transpose method.
@@ -58,9 +58,9 @@ namespace DigitalRune.Animation.Character
     // by Watt & Watt.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private bool _isDirty = true;
 
@@ -69,9 +69,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the index of the root bone.
@@ -190,9 +190,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="JacobianTransposeIKSolver"/> class.
@@ -206,9 +206,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Called when the <see cref="SkeletonPose"/> was exchanged.
@@ -277,7 +277,7 @@ namespace DigitalRune.Animation.Character
         var tipBoneAbsolute = SkeletonPose.GetBonePoseAbsolute(TipBoneIndex);
         var tipAbsolute = tipBoneAbsolute.ToParentPosition(TipOffset);
         var targetToTip = tipAbsolute - Target;
-        if (targetToTip.LengthSquared < toleranceSquared)
+        if (targetToTip.LengthSquared() < toleranceSquared)
         {
           if (iteration == 0)
             return;
@@ -343,7 +343,7 @@ namespace DigitalRune.Animation.Character
           float angle = velocities[i] * StepSize;
 
           // Apply rotation.
-          Quaternion rotationChange = Quaternion.CreateRotation(axis, angle);
+          Quaternion rotationChange = Quaternion.CreateFromRotationMatrix(axis, angle);
           SkeletonPose.RotateBoneAbsolute(currentBoneIndex, rotationChange);
 
           currentBoneIndex = skeleton.GetParent(currentBoneIndex);

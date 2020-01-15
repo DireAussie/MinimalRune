@@ -1,8 +1,8 @@
 
 using System;
 using System.Linq;
-using DigitalRune.Animation.Character;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Animation.Character;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Kinect;
 using Microsoft.Xna.Framework;
 
@@ -18,9 +18,9 @@ namespace Samples.Kinect
   // not used - it is not required for the motion retargeting.
   public class KinectWrapper : GameComponent
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Describes a bone in the skeleton pose.
     private struct BoneInfo
@@ -41,9 +41,9 @@ namespace Samples.Kinect
 
     
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // We represent the Kinect data with following bone hierarchy:
     private readonly BoneInfo[] Bones =
@@ -78,9 +78,9 @@ namespace Samples.Kinect
     
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Microsoft.Kinect types:
     private KinectSensor _kinectSensor;
@@ -91,9 +91,9 @@ namespace Samples.Kinect
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Is the Kinect sensor running?
     public bool IsRunning
@@ -133,9 +133,9 @@ namespace Samples.Kinect
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     public KinectWrapper(Game game)
       : base(game)
@@ -192,9 +192,9 @@ namespace Samples.Kinect
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Called when Kinect has new body data.
     private void OnKinectBodyFrameArrived(object sender, BodyFrameArrivedEventArgs eventArgs)

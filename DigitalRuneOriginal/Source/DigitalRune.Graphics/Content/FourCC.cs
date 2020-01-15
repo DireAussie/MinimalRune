@@ -27,7 +27,7 @@ using System.Globalization;
 using System.Runtime.InteropServices;
 
 
-namespace DigitalRune.Graphics.Content
+namespace MinimalRune.Graphics.Content
 {
   /// <summary>
   /// Represents a FourCC descriptor.
@@ -35,9 +35,9 @@ namespace DigitalRune.Graphics.Content
   [StructLayout(LayoutKind.Sequential, Size = 4)]
   internal struct FourCC : IEquatable<FourCC>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly uint _value;
 
@@ -46,15 +46,15 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="FourCC" /> struct.
@@ -107,9 +107,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Performs an implicit conversion from <see cref="FourCC"/> to <see cref="Int32"/>.

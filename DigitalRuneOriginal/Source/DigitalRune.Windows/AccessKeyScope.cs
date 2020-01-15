@@ -8,7 +8,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
     /// Contains attached dependency properties to correct the scoping of access keys

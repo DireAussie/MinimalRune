@@ -7,7 +7,7 @@ using System;
 using System.Windows.Media;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
   static partial class ColorHelper
   {

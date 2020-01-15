@@ -2,7 +2,7 @@ using System;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Particles.Tests
+namespace MinimalRune.Particles.Tests
 {
   [TestFixture]
   public class ParticleParameterTest

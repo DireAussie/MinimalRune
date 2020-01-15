@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using DigitalRune.Windows.Controls;
+using MinimalRune.Windows.Controls;
 
 
 namespace WindowsThemesApp.Views

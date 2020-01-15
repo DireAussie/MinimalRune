@@ -5,7 +5,7 @@
 //using System;
 
 
-//namespace DigitalRune.Graphics
+//namespace MinimalRune.Graphics
 //{
 //  /// <summary>
 //  /// Represents an object that can be drawn.

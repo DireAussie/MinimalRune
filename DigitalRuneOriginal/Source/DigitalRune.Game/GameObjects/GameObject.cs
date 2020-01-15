@@ -7,10 +7,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Threading;
-using DigitalRune.Animation;
+using MinimalRune.Animation;
 
 
-namespace DigitalRune.Game
+namespace MinimalRune.Game
 {
   /// <summary>
   /// Represents an object of a game.
@@ -70,9 +70,9 @@ namespace DigitalRune.Game
     // template.ShirtColor.Changed += soldier.ShirtColor.Change;
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static readonly PropertyChangedEventArgs IsLoadedChangedEventArgs = new PropertyChangedEventArgs("IsLoaded");
     private static readonly PropertyChangedEventArgs NameChangedEventArgs = new PropertyChangedEventArgs("Name");
@@ -84,9 +84,9 @@ namespace DigitalRune.Game
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets a value indicating whether the content of this object was loaded.
@@ -211,9 +211,9 @@ namespace DigitalRune.Game
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="GameObject"/> class.
@@ -244,9 +244,9 @@ namespace DigitalRune.Game
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Loads the content of the game object.

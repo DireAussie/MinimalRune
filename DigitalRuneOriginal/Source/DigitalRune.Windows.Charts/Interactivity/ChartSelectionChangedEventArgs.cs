@@ -6,7 +6,7 @@ using System;
 using System.Windows;
 
 
-namespace DigitalRune.Windows.Charts.Interactivity
+namespace MinimalRune.Windows.Charts.Interactivity
 {
     /// <summary>
     /// Provides arguments for the <see cref="ChartSelectionBehavior.SelectionChanged"/> event.
@@ -16,15 +16,15 @@ namespace DigitalRune.Windows.Charts.Interactivity
 
     public class ChartSelectionChangedEventArgs : EventArgs
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets the <see cref="Element"/> to be selected or unselected.
@@ -70,9 +70,9 @@ namespace DigitalRune.Windows.Charts.Interactivity
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ChartSelectionChangedEventArgs"/> class.
@@ -96,9 +96,9 @@ namespace DigitalRune.Windows.Charts.Interactivity
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
     }
 }

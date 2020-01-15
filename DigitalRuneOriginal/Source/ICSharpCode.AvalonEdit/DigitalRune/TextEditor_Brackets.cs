@@ -21,18 +21,18 @@ namespace ICSharpCode.AvalonEdit
         //     SharpDevelop\src\Main\Base\Project\Src\Editor\Commands\GoToMatchingBrace.cs
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly char[] OpeningBrackets = { '(', '{', '[' };
         private static readonly char[] ClosingBrackets = { ')', '}', ']' };
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="EnableBracketHighlighting"/> dependency property.
@@ -106,9 +106,9 @@ namespace ICSharpCode.AvalonEdit
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private void UpdateBracketHighlighting()
         {

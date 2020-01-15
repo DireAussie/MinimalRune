@@ -4,29 +4,29 @@
 
 using System;
 using System.Linq;
-using DigitalRune.Collections;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Collections;
+using MinimalRune.Windows.Framework;
 using NLog;
 
 
-namespace DigitalRune.Editor.Options
+namespace MinimalRune.Editor.Options
 {
     /// <summary>
     /// Represents the Options dialog.
     /// </summary>
     internal sealed class OptionsViewModel : OneActiveItemsConductor
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets an instance of the <see cref="OptionsViewModel"/> that can be used at design-time.
@@ -106,9 +106,9 @@ namespace DigitalRune.Editor.Options
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private OptionsViewModel()
         {
@@ -145,9 +145,9 @@ namespace DigitalRune.Editor.Options
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0")]

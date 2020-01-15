@@ -7,26 +7,26 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using DigitalRune.Editor.Errors;
-using DigitalRune.Editor.Text;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Editor.Errors;
+using MinimalRune.Editor.Text;
+using MinimalRune.Windows.Framework;
 using Microsoft.Practices.ServiceLocation;
 using static System.FormattableString;
 
 
-namespace DigitalRune.Editor.Shader
+namespace MinimalRune.Editor.Shader
 {
     partial class ShaderExtension
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets a value indicating whether to compile effects with XNA.
@@ -50,9 +50,9 @@ namespace DigitalRune.Editor.Shader
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static async Task<Tuple<bool, List<Error>>> BuildXnaAsync(
             IServiceLocator services, TextDocument document, DelegateCommand<Error> goToLocationCommand)

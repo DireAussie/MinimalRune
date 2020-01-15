@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Collections
+namespace MinimalRune.Collections
 {
     /// <summary>
     /// Describes where a <see cref="MergeableNode{T}"/> should be merged into a

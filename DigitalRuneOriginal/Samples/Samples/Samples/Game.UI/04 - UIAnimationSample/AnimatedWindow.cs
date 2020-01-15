@@ -1,9 +1,9 @@
 ﻿using System;
 using System.ComponentModel;
-using DigitalRune.Animation;
-using DigitalRune.Game.UI.Controls;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Statistics;
+using MinimalRune.Animation;
+using MinimalRune.Game.UI.Controls;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Statistics;
 using Microsoft.Practices.ServiceLocation;
 
 

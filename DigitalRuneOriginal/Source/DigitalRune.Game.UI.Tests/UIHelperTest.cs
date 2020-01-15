@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
-using DigitalRune.Game.UI.Controls;
+using MinimalRune.Game.UI.Controls;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Game.UI.Tests
+namespace MinimalRune.Game.UI.Tests
 {
   [TestFixture]
   public class UIHelperTest

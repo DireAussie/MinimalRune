@@ -29,12 +29,12 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using DigitalRune.Collections;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Collections;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Graphics.Content
+namespace MinimalRune.Graphics.Content
 {
   /// <summary>
   /// Defines the algorithm for calculating vertex normals.
@@ -214,9 +214,9 @@ namespace DigitalRune.Graphics.Content
     // http://directxmesh.codeplex.com/wikipage?title=Resources
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The maximum number of elements per vertex declaration.
@@ -261,9 +261,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private class VertexHashEntry
     {
@@ -557,7 +557,7 @@ namespace DigitalRune.Graphics.Content
               {
                 Vector3 inner = positionsArray[curIndex];
 
-                float diff = (inner - outer).LengthSquared;
+                float diff = (inner - outer).LengthSquared();
 
                 if (diff < epsilonSquared)
                 {
@@ -922,9 +922,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Generates an index buffer suited for use with the Geometry Shader including adjacency
@@ -1069,9 +1069,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // unordered_multimap<>
     private class UnorderedMultiMap<TKey, TValue>
@@ -1562,9 +1562,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Generates the vertex normals.
@@ -1789,9 +1789,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -1917,7 +1917,7 @@ namespace DigitalRune.Graphics.Content
     /// <exception cref="InvalidDataException">
     /// <paramref name="normals"/> contains an invalid normal (length = 0).
     /// </exception>
-    public static void ComputeTangentFrame(IList<int> indices, IList<Vector3> positions, IList<Vector3> normals, IList<Vector2F> textureCoordinates, out Vector4F[] tangentsAndHandedness)
+    public static void ComputeTangentFrame(IList<int> indices, IList<Vector3> positions, IList<Vector3> normals, IList<Vector2F> textureCoordinates, out Vector4[] tangentsAndHandedness)
     {
       // References:
       // - Lengyel, Eric: “Computing Tangent Space Basis Vectors for an Arbitrary Mesh”. Terathon
@@ -1943,13 +1943,13 @@ namespace DigitalRune.Graphics.Content
         throw new ArgumentNullException("textureCoordinates");
 
       int numberOfVertices = positions.Count;
-      tangentsAndHandedness = new Vector4F[numberOfVertices];
+      tangentsAndHandedness = new Vector4[numberOfVertices];
 
       ComputeTangentFrame(indices, positions, normals, textureCoordinates, tangentsAndHandedness, null, null);
     }
 
 
-    private static void ComputeTangentFrame(IList<int> indices, IList<Vector3> positions, IList<Vector3> normals, IList<Vector2F> textureCoordinates, Vector4F[] tangentsAndHandedness, Vector3[] tangents, Vector3[] bitangents)
+    private static void ComputeTangentFrame(IList<int> indices, IList<Vector3> positions, IList<Vector3> normals, IList<Vector2F> textureCoordinates, Vector4[] tangentsAndHandedness, Vector3[] tangents, Vector3[] bitangents)
     {
       // References:
       // - Lengyel, Eric: “Computing Tangent Space Basis Vectors for an Arbitrary Mesh”. Terathon
@@ -1958,7 +1958,7 @@ namespace DigitalRune.Graphics.Content
       //   Rendering Techniques, 2006
 
       const float epsilon = 0.0001f;
-      Vector4F sFlips = new Vector4F(1, -1, -1, 1);
+      Vector4 sFlips = new Vector4(1, -1, -1, 1);
 
       int numberOfVertices = positions.Count;
       int numberOfFaces = indices.Count / 3;
@@ -1986,7 +1986,7 @@ namespace DigitalRune.Graphics.Content
         Vector2F uv1 = textureCoordinates[i1];
         Vector2F uv2 = textureCoordinates[i2];
 
-        Vector4F s;
+        Vector4 s;
         s.X = uv1.X - uv0.X;
         s.Y = uv2.X - uv0.X;
         s.Z = uv1.Y - uv0.Y;
@@ -2002,15 +2002,15 @@ namespace DigitalRune.Graphics.Content
                                      0, 0, 0, 0,
                                      0, 0, 0, 0);
 
-        Vector4F p0 = new Vector4F(positions[i0], 0);
-        Vector4F p1 = new Vector4F(positions[i1], 0);
-        Vector4F p2 = new Vector4F(positions[i2], 0);
+        Vector4 p0 = new Vector4(positions[i0], 0);
+        Vector4 p1 = new Vector4(positions[i1], 0);
+        Vector4 p2 = new Vector4(positions[i2], 0);
 
         Matrix m1 = new Matrix();
         m1.SetRow(0, p1 - p0);
         m1.SetRow(1, p2 - p0);
-        //m1.SetRow(2, Vector4F.Zero);
-        //m1.SetRow(3, Vector4F.Zero);
+        //m1.SetRow(2, Vector4.Zero);
+        //m1.SetRow(3, Vector4.Zero);
 
         Matrix uv = m0 * m1;
 
@@ -2086,7 +2086,7 @@ namespace DigitalRune.Graphics.Content
           // Calculate handedness.
           Vector3 bi = Vector3.Cross(b0, tan0);
           float w = (Vector3.Dot(bi, tan1) < 0) ? 1.0f : 1.0f;
-          tangentsAndHandedness[i] = new Vector4F(b1, w);
+          tangentsAndHandedness[i] = new Vector4(b1, w);
         }
 
         if (tangents != null)
@@ -2099,9 +2099,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private class MeshStatus
     {
@@ -3033,9 +3033,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -4020,9 +4020,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Checks whether the mesh is valid. Optionally includes diagnostic messages describing the
@@ -4387,9 +4387,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private enum WalkType
     {
@@ -4668,9 +4668,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns a list of face offsets and counts based on the input attributes id array.
@@ -5072,9 +5072,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static Vector3 Normalize(Vector3 v)
     {

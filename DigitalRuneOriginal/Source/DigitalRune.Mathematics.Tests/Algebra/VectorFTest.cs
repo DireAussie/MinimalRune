@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Mathematics.Algebra.Tests
+namespace MinimalRune.Mathematics.Algebra.Tests
 {
   [TestFixture]
   public class VectorFTest
@@ -676,13 +676,13 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     public void LengthSquared()
     {
       VectorF v = new VectorF(new float[] { 1, 0, 0, 0 });
-      Assert.AreEqual(1.0f, v.LengthSquared);
+      Assert.AreEqual(1.0f, v.LengthSquared());
       v = new VectorF(new float[] { 0, 1, 0, 0 });
-      Assert.AreEqual(1.0f, v.LengthSquared);
+      Assert.AreEqual(1.0f, v.LengthSquared());
       v = new VectorF(new float[] { 0, 0, 1, 0 });
-      Assert.AreEqual(1.0f, v.LengthSquared);
+      Assert.AreEqual(1.0f, v.LengthSquared());
       v = new VectorF(new float[] { 0, 0, 0, 1 });
-      Assert.AreEqual(1.0f, v.LengthSquared);
+      Assert.AreEqual(1.0f, v.LengthSquared());
 
       float x = -1.9f;
       float y = 2.1f;
@@ -690,7 +690,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
       float w = 1.0f;
       float lengthSquared = x * x + y * y + z * z + w * w;
       v = new VectorF(new[] { x, y, z, w });
-      Assert.AreEqual(lengthSquared, v.LengthSquared);
+      Assert.AreEqual(lengthSquared, v.LengthSquared());
     }
 
 
@@ -1406,10 +1406,10 @@ namespace DigitalRune.Mathematics.Algebra.Tests
 
 
     [Test]
-    public void ExplicitCastToVector4F()
+    public void ExplicitCastToVector4()
     {
       VectorF v = new VectorF(new[] { 1.1f, 2.2f, 3.3f, 4.4f });
-      Vector4F u = (Vector4F)v;
+      Vector4 u = (Vector4)v;
 
       Assert.AreEqual(1.1f, u[0]);
       Assert.AreEqual(2.2f, u[1]);
@@ -1419,10 +1419,10 @@ namespace DigitalRune.Mathematics.Algebra.Tests
 
 
     [Test]
-    public void ToVector4F()
+    public void ToVector4()
     {
       VectorF v = new VectorF(new[] { 1.1f, 2.2f, 3.3f, 4.4f });
-      Vector4F u = v.ToVector4F();
+      Vector4 u = v.ToVector4();
 
       Assert.AreEqual(1.1f, u[0]);
       Assert.AreEqual(2.2f, u[1]);
@@ -1433,19 +1433,19 @@ namespace DigitalRune.Mathematics.Algebra.Tests
 
     [Test]
     [ExpectedException(typeof(ArgumentNullException))]
-    public void ExplicitCastToVector4FException1()
+    public void ExplicitCastToVector4Exception1()
     {
       VectorF v = null;
-      Vector4F u = (Vector4F)v;
+      Vector4 u = (Vector4)v;
     }
 
 
     [Test]
     [ExpectedException(typeof(InvalidCastException))]
-    public void ExplicitCastToVector4FException2()
+    public void ExplicitCastToVector4Exception2()
     {
       VectorF v = new VectorF(new[] { 1.1f, 2.2f, 3.3f, 4.4f, 5.5f });
-      Vector4F u = (Vector4F)v;
+      Vector4 u = (Vector4)v;
     }
 
 

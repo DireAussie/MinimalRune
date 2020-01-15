@@ -7,7 +7,7 @@ using System;
 using System.Diagnostics;
 
 
-namespace DigitalRune
+namespace MinimalRune
 {
   /// <summary>
   /// Provides additional information and methods for portable projects.

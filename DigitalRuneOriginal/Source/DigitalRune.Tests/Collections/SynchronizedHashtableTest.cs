@@ -1,9 +1,9 @@
 ﻿using System.Threading;
-using DigitalRune.Threading;
+using MinimalRune.Threading;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Collections.Tests
+namespace MinimalRune.Collections.Tests
 {
   [TestFixture]
   public class SynchronizedHashtableTest

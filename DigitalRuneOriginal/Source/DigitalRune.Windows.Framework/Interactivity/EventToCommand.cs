@@ -29,7 +29,7 @@ using System.Windows.Input;
 using System.Windows.Interactivity;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// This <see cref="System.Windows.Interactivity.TriggerAction"/> can be used to bind any event

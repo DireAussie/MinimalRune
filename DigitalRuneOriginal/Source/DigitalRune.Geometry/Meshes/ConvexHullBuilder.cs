@@ -6,12 +6,12 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry.Meshes
+namespace MinimalRune.Geometry.Meshes
 {
   /// <summary>
   /// The type of the convex hull.
@@ -492,7 +492,7 @@ namespace DigitalRune.Geometry.Meshes
           //  bool degenerate = false;
           //  foreach (var face in _faces)
           //  {
-          //    if (face.Normal.LengthSquared < Numeric.EpsilonF * Numeric.EpsilonF)
+          //    if (face.Normal.LengthSquared() < Numeric.EpsilonF * Numeric.EpsilonF)
           //    {
           //      degenerate = true;
           //      break;
@@ -1195,7 +1195,7 @@ namespace DigitalRune.Geometry.Meshes
     {
       Vector3 lineToPoint = point - line.PointOnLine;
       Vector3 normalFromLineToPoint = lineToPoint - Vector3.ProjectTo(lineToPoint, line.Direction);
-      return normalFromLineToPoint.LengthSquared;
+      return normalFromLineToPoint.LengthSquared();
     }
 
 

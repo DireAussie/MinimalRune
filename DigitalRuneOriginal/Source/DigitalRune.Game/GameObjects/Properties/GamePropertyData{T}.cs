@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Game
+namespace MinimalRune.Game
 {
   /// <summary>
   /// Stores the value of a game property.
@@ -13,9 +13,9 @@ namespace DigitalRune.Game
   /// <typeparam name="T">The type of the property value.</typeparam>
   internal class GamePropertyData<T> : IGamePropertyData
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // ----- The actual data that is stored for a property instance:
 
@@ -40,9 +40,9 @@ namespace DigitalRune.Game
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     public GamePropertyData()
     {
@@ -63,9 +63,9 @@ namespace DigitalRune.Game
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Factory method of IGamePropertyData.
     IGameProperty IGamePropertyData.CreateGameProperty(GameObject owner, int propertyId)

@@ -5,12 +5,12 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Graphics.Effects;
-using DigitalRune.Graphics.SceneGraph;
+using MinimalRune.Graphics.Effects;
+using MinimalRune.Graphics.SceneGraph;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Defines the material (visual properties) of a mesh.
@@ -70,17 +70,17 @@ namespace DigitalRune.Graphics
   [DebuggerDisplay("{GetType().Name,nq}(Name = {Name})")]
   public partial class Material : IDictionary<string, EffectBinding>, INamedObject
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly Dictionary<string, EffectBinding> _bindingsPerPass;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the name of the material.
@@ -154,9 +154,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new binding of the <see cref="Material"/> class.
@@ -168,9 +168,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns an enumerator that iterates through a collection. 

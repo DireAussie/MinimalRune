@@ -6,19 +6,19 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
-using DigitalRune.Collections;
-using DigitalRune.Geometry;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Interpolation;
+using MinimalRune.Collections;
+using MinimalRune.Geometry;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Interpolation;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Graphics.PackedVector;
 using MathHelper = DigitalRune.Mathematics.MathHelper;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Renders <see cref="FigureNode"/>s. 
@@ -43,9 +43,9 @@ namespace DigitalRune.Graphics.Rendering
     // (Currently only the effect for rendering strokes can be overridden.)
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private struct Job
     {
@@ -71,9 +71,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The maximum buffer size (number of line segments).
@@ -86,9 +86,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private IGraphicsService _graphicsService;
 
@@ -116,9 +116,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the size of the buffer (= number of line segments/triangles).
@@ -142,9 +142,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="FigureRenderer" /> class.
@@ -265,9 +265,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Called when the <see cref="Effect" /> for rendering lines and shapes is loaded.
@@ -811,7 +811,7 @@ namespace DigitalRune.Graphics.Rendering
         float thickness = node.StrokeThickness;
         Vector3 color3F = node.StrokeColor * node.StrokeAlpha;
         HalfVector4 color = new HalfVector4(color3F.X, color3F.Y, color3F.Z, node.StrokeAlpha);
-        Vector4F dash = node.StrokeDashPattern * node.StrokeThickness;
+        Vector4 dash = node.StrokeDashPattern * node.StrokeThickness;
         bool usesDashPattern = (dash.Y + dash.Z) != 0;
         HalfVector4 dashSum = new HalfVector4(
           dash.X,

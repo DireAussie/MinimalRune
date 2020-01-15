@@ -15,7 +15,7 @@ using System.Windows.Input;
 using System.Windows.Threading;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Represents a control that provides a user interface for browsing the properties of an
@@ -37,9 +37,9 @@ namespace DigitalRune.Windows.Controls
     [TemplatePart(Name = "PART_ListBox", Type = typeof(ListBox))]
     public class PropertyGrid : Control
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private Thumb _thumb;
         private ListBox _listBox;
@@ -51,15 +51,15 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="PropertySource"/> dependency property.
@@ -260,9 +260,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes the static members of the <see cref="PropertyGrid"/>.
@@ -289,9 +289,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static void OnPropertiesSourceChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs eventArgs)
         {

@@ -4,11 +4,11 @@
 
 using System;
 using System.Globalization;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 
 
-namespace DigitalRune.Game.UI
+namespace MinimalRune.Game.UI
 {
   /// <summary>
   /// Represents a 2-dimensional rectangle (single precision).
@@ -18,9 +18,9 @@ namespace DigitalRune.Game.UI
 
   public struct RectangleF : IEquatable<RectangleF>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// An empty rectangle (all values set to zero).
@@ -29,9 +29,9 @@ namespace DigitalRune.Game.UI
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The x-coordinate of the rectangle. (Same as <see cref="Left"/>.)
@@ -64,9 +64,9 @@ namespace DigitalRune.Game.UI
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the x-coordinate of the left side of the rectangle.
@@ -139,9 +139,9 @@ namespace DigitalRune.Game.UI
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -181,9 +181,9 @@ namespace DigitalRune.Game.UI
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Returns the hash code for this instance.

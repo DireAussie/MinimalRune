@@ -5,13 +5,13 @@
 using System;
 using System.Diagnostics;
 using System.Linq;
-using DigitalRune.Editor.Documents;
-using DigitalRune.Windows.Docking;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Editor.Documents;
+using MinimalRune.Windows.Docking;
+using MinimalRune.Windows.Framework;
 using NLog;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// Extends the default <see cref="DockStrategy"/> and deactivate screens when they are closed

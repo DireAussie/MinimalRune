@@ -9,7 +9,7 @@ using NLog;
 using NLog.Targets;
 
 
-namespace DigitalRune.Editor.Output
+namespace MinimalRune.Editor.Output
 {
     /// <summary>
     /// Provides an in-app logging target for NLog.

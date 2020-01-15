@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Game.UI.Consoles
+namespace MinimalRune.Game.UI.Consoles
 {
   /// <summary>
   /// Represents an interactive console for debugging.

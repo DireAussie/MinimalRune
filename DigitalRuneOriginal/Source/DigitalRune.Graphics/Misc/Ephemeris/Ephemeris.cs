@@ -14,11 +14,11 @@
 
 
 using System;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Computes the physically-based properties of sky objects like the sun and the moon.
@@ -98,9 +98,9 @@ namespace DigitalRune.Graphics
     // - Add unit tests.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // The fractional number of centuries elapsed since January 1, 2000 GMT, terrestrial time
     // (which does not account for leap seconds).
@@ -126,9 +126,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the latitude of the world space origin (using the Geographic coordinate space).
@@ -275,9 +275,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Ephemeris"/> class.
@@ -298,9 +298,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Computes the derived values, like sun/moon positions, transformation matrices and light

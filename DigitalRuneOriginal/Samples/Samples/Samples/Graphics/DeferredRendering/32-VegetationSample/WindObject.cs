@@ -1,10 +1,10 @@
-﻿using DigitalRune.Game;
-using DigitalRune.Graphics.Effects;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Interpolation;
-using DigitalRune.Graphics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Statistics;
+﻿using MinimalRune.Game;
+using MinimalRune.Graphics.Effects;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Interpolation;
+using MinimalRune.Graphics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Statistics;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Xna.Framework;
 using System;

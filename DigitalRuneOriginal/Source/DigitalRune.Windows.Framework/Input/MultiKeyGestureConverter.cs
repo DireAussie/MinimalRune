@@ -11,7 +11,7 @@ using System.Text;
 using System.Windows.Input;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Converts a <see cref="MultiKeyGesture"/> object to and from other types.
@@ -19,9 +19,9 @@ namespace DigitalRune.Windows.Framework
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly")]
     public class MultiKeyGestureConverter : TypeConverter
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private const char DisplayStringSeparator = ':';
         private const char KeysSeparator = ',';
@@ -31,27 +31,27 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
-
-
-
-        //--------------------------------------------------------------
-
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
+
+
+
+        
+
+        
 
         /// <summary>
         /// Returns whether this converter can convert an object of the given type to the type of

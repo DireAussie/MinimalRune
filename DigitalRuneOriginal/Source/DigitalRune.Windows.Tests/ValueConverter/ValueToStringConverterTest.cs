@@ -19,7 +19,7 @@ using System.Windows.Controls;
 
 
 
-namespace DigitalRune.Windows.Tests
+namespace MinimalRune.Windows.Tests
 {
     [TestFixture]
     public class ValueToStringConverterTest

@@ -5,11 +5,11 @@
 using System;
 using System.Windows.Input;
 using System.Windows.Media;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Controls;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Controls;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// Defines an item that invokes an <see cref="ICommand"/>.
@@ -17,15 +17,15 @@ namespace DigitalRune.Editor
     /// <inheritdoc cref="ICommandItem"/>
     public abstract class CommandItem : ObservableObject, ICommandItem
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public string Name { get; }
@@ -192,9 +192,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <overloads>
         /// <summary>
@@ -236,9 +236,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public virtual MenuItemViewModel CreateMenuItem()

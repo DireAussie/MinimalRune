@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-namespace DigitalRune.Editor.Output
+namespace MinimalRune.Editor.Output
 {
     /// <summary>
     /// Provides the Output window which is used to show display messages or errors.

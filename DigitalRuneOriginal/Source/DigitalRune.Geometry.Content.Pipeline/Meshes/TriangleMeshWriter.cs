@@ -2,12 +2,12 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Geometry.Meshes;
+using MinimalRune.Geometry.Meshes;
 using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler;
 
 
-namespace DigitalRune.Geometry.Content.Pipeline
+namespace MinimalRune.Geometry.Content.Pipeline
 {
   /// <summary>
   /// Writes a <see cref="TriangleMesh"/> to binary format.

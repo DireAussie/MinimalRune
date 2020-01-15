@@ -12,7 +12,7 @@ using System.Windows.Input;
 using System.Windows.Markup;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Represents a <see cref="TextBlock"/> that can be edited.
@@ -27,9 +27,9 @@ namespace DigitalRune.Windows.Controls
     [TemplatePart(Name = "PART_TextBlock", Type = typeof(TextBlock))]
     public class EditableTextBlock : Control
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private TextBlock _textBlock;
         private TextBoxAdorner _textBoxAdorner;
@@ -39,15 +39,15 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="IsEditable"/> dependency property.
@@ -169,9 +169,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="EditableTextBlock"/> class.
@@ -183,9 +183,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// When overridden in a derived class, is invoked whenever application code or internal 

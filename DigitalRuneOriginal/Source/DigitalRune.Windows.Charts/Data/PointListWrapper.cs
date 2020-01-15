@@ -8,24 +8,24 @@ using System.Collections.Generic;
 using System.Windows;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Wraps an existing list of <see cref="Point"/>s for use as a chart data source.
     /// </summary>
     internal class PointListWrapper : IList<DataPoint>
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly IList<Point> _list;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the number of elements contained in the <see cref="ICollection{T}"/>.
@@ -61,9 +61,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PointListWrapper"/> class.
@@ -82,9 +82,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Returns an enumerator that iterates through the collection.

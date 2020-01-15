@@ -6,7 +6,7 @@ using System;
 using System.IO;
 
 
-namespace DigitalRune.Storages
+namespace MinimalRune.Storages
 {
   /// <summary>
   /// Provides a virtual file system that maps existing storages into a virtual directory hierarchy.
@@ -59,15 +59,15 @@ namespace DigitalRune.Storages
     // MonoGame\MonoGame.Framework\TitleContainer.cs
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override char DirectorySeparator
@@ -85,9 +85,9 @@ namespace DigitalRune.Storages
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="VfsStorage"/> class.
@@ -99,9 +99,9 @@ namespace DigitalRune.Storages
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override string GetRealPath(string path)

@@ -2,7 +2,7 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-namespace DigitalRune.Game.Timing
+namespace MinimalRune.Game.Timing
 {
   /// <summary>
   /// The <see cref="N:DigitalRune.Game.Timing"/> namespace contains clocks and timers for and

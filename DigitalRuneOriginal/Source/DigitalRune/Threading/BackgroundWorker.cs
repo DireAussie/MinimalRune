@@ -62,7 +62,7 @@ using System.Collections.Generic;
 using System.Threading;
 
 
-namespace DigitalRune.Threading
+namespace MinimalRune.Threading
 {
   [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1001:TypesThatOwnDisposableFieldsShouldBeDisposable", Justification = "BackgroundWorkers are kept alive and can only be reclaimed by garbage collector.")]
   internal sealed class BackgroundWorker

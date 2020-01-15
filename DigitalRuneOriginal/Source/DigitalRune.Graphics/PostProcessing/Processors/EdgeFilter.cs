@@ -3,14 +3,14 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 using System;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.PostProcessing
+namespace MinimalRune.Graphics.PostProcessing
 {
   /// <summary>
   /// Renders silhouette outlines and creases edge using edge detection.
@@ -26,9 +26,9 @@ namespace DigitalRune.Graphics.PostProcessing
   /// </remarks>
   public class EdgeFilter : PostProcessor
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly Effect _effect;
     private readonly EffectParameter _parameterViewportSize;
@@ -48,9 +48,9 @@ namespace DigitalRune.Graphics.PostProcessing
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the width of the edge outline in pixel.
@@ -142,20 +142,20 @@ namespace DigitalRune.Graphics.PostProcessing
     /// Gets or sets the color of the silhouette edges.
     /// </summary>
     /// <value>The color of the silhouette edges.</value>
-    public Vector4F SilhouetteColor { get; set; }
+    public Vector4 SilhouetteColor { get; set; }
 
 
     /// <summary>
     /// Gets or sets the color of the crease edges.
     /// </summary>
     /// <value>The color of the crease edges.</value>
-    public Vector4F CreaseColor { get; set; }
+    public Vector4 CreaseColor { get; set; }
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="EdgeFilter"/> class.
@@ -188,15 +188,15 @@ namespace DigitalRune.Graphics.PostProcessing
       DepthSensitivity = 1000;  // = farPlaneDistance / (maxDistance - minDistance)
       NormalThreshold = 0.1f;
       NormalSensitivity = 2f;
-      SilhouetteColor = new Vector4F(0, 0, 0, 1);
-      CreaseColor = new Vector4F(0, 0, 0, 1);
+      SilhouetteColor = new Vector4(0, 0, 0, 1);
+      CreaseColor = new Vector4(0, 0, 0, 1);
     }
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods")]

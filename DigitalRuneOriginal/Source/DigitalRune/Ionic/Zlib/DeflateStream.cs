@@ -17,7 +17,7 @@
 
 using System;
 
-namespace DigitalRune.Ionic.Zlib
+namespace MinimalRune.Ionic.Zlib
 {
     /// <summary>
     /// A class for decompressing streams using the Deflate algorithm.

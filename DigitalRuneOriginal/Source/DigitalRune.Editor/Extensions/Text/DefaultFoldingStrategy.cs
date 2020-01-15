@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using ICSharpCode.AvalonEdit.Folding;
 using AvalonEditDocument = ICSharpCode.AvalonEdit.Document.TextDocument;
 
-namespace DigitalRune.Editor.Text
+namespace MinimalRune.Editor.Text
 {
     /// <summary>
     /// Creates foldings based on indentation.

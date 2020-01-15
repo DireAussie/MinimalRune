@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Content;
 
 
 
-namespace DigitalRune.Particles
+namespace MinimalRune.Particles
 {
   /// <summary>
   /// Represents a varying particle parameter. (Each particles has its own parameter value.)

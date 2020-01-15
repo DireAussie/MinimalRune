@@ -6,20 +6,20 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using DigitalRune.Animation;
-using DigitalRune.Collections;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Linq;
-using DigitalRune.Mathematics;
-using DigitalRune.Threading;
+using MinimalRune.Animation;
+using MinimalRune.Collections;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Linq;
+using MinimalRune.Mathematics;
+using MinimalRune.Threading;
 
 
 using Microsoft.Xna.Framework.Content;
 
 
 
-namespace DigitalRune.Particles
+namespace MinimalRune.Particles
 {
   /// <summary>
   /// Represents a system of particles.
@@ -150,9 +150,9 @@ namespace DigitalRune.Particles
     // Note: Currently all particles have the same MaxLifetime. So the particles are always sorted 
     // by their age. Order of indices in buffer: _firstLiving <= _firstFree <= _firstLiving <= ...
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private bool _isInitialized;
     private bool _parametersAreQueried;
@@ -175,9 +175,9 @@ namespace DigitalRune.Particles
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the random number generator used by the particle system.
@@ -758,9 +758,9 @@ namespace DigitalRune.Particles
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ParticleSystem"/> class.
@@ -786,9 +786,9 @@ namespace DigitalRune.Particles
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private void OnParametersChanged(object sender, EventArgs eventArgs)
     {

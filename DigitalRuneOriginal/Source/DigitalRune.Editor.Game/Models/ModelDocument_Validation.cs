@@ -3,13 +3,13 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System.Linq;
-using DigitalRune.Graphics.Effects;
-using DigitalRune.Graphics.SceneGraph;
+using MinimalRune.Graphics.Effects;
+using MinimalRune.Graphics.SceneGraph;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Editor.Models
+namespace MinimalRune.Editor.Models
 {
     partial class ModelDocument
     {

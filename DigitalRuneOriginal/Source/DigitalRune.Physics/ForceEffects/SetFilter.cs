@@ -5,11 +5,11 @@
 //using System.Collections.Generic;
 
 //#if NETFX_CORE || WP7 || XBOX
-//using DigitalRune.Collections;
+//using MinimalRune.Collections;
 //#endif
 
 
-//namespace DigitalRune.Physics
+//namespace MinimalRune.Physics
 //{
 //  /// <summary>
 //  /// Manages a <see cref="Set"/> of objects and checks if objects are in the set.

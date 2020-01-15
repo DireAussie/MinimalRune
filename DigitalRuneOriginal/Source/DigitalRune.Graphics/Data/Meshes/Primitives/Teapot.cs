@@ -19,7 +19,7 @@ using System.Diagnostics;
 using Microsoft.Xna.Framework;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// "The" teapot.
@@ -37,9 +37,9 @@ namespace DigitalRune.Graphics
   /// </remarks>
   internal sealed class Teapot
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The teapot model consists of 10 Bézier patches. Each patch has 16 control
@@ -64,9 +64,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Static data array defines the Bézier patches that make up the teapot.
@@ -268,18 +268,18 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly List<VertexPositionNormal> _vertices;
     private readonly List<ushort> _indices;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Queries the index of the current vertex. This starts at zero, and increments every time 
@@ -306,9 +306,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -368,9 +368,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Tessellates the specified Bézier patch.

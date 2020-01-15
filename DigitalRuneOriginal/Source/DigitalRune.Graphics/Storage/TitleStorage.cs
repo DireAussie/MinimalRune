@@ -6,7 +6,7 @@ using System.IO;
 using Microsoft.Xna.Framework;
 
 
-namespace DigitalRune.Storages
+namespace MinimalRune.Storages
 {
   /// <summary>
   /// Provides access to the title's default storage location. (Only available in the XNA-compatible
@@ -17,15 +17,15 @@ namespace DigitalRune.Storages
   /// </remarks>
   public class TitleStorage : Storage
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override char DirectorySeparator
@@ -48,9 +48,9 @@ namespace DigitalRune.Storages
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
     
     /// <overloads>
     /// <summary>
@@ -79,9 +79,9 @@ namespace DigitalRune.Storages
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override string GetRealPath(string path)

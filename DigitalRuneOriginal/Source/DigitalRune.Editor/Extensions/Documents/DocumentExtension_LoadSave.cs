@@ -14,12 +14,12 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
-using DigitalRune.Editor.Status;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Editor.Status;
+using MinimalRune.Windows.Framework;
 using static System.FormattableString;
 
 
-namespace DigitalRune.Editor.Documents
+namespace MinimalRune.Editor.Documents
 {
     public partial class DocumentExtension
     {

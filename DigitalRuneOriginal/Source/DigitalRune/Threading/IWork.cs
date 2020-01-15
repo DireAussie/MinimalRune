@@ -59,7 +59,7 @@
 
 
 
-namespace DigitalRune.Threading
+namespace MinimalRune.Threading
 {
   /// <summary>
   /// Represents a piece of work which can be executed in parallel.

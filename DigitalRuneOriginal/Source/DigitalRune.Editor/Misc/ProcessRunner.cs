@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// Runs an external process, allows to write to its standard input stream and reads the
@@ -34,9 +34,9 @@ namespace DigitalRune.Editor
     /// </example>
     public class ProcessRunner : IDisposable
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private Process _process;
         private readonly ManualResetEvent _errorComplete = new ManualResetEvent(true);
@@ -46,9 +46,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets a value indicating whether this instance has been disposed of.
@@ -179,9 +179,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ProcessRunner"/> class.
@@ -253,9 +253,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private void ThrowIfDisposed()
         {

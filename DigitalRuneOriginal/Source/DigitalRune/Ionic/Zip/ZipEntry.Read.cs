@@ -19,7 +19,7 @@ using System;
 using System.Globalization;
 using System.IO;
 
-namespace DigitalRune.Ionic.Zip
+namespace MinimalRune.Ionic.Zip
 {
     partial class ZipEntry
     {

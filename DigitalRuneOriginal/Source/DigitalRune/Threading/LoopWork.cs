@@ -63,7 +63,7 @@ using System.Collections.Generic;
 using System.Threading;
 
 
-namespace DigitalRune.Threading
+namespace MinimalRune.Threading
 {
   internal sealed class ForLoopWork : IWork, IRecyclable
   {

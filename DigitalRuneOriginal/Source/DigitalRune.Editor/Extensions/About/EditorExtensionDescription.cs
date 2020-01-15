@@ -5,10 +5,10 @@
 using System;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using DigitalRune.Windows.Themes;
+using MinimalRune.Windows.Themes;
 
 
-namespace DigitalRune.Editor.About
+namespace MinimalRune.Editor.About
 {
     /// <summary>
     /// Describes an editor extension.

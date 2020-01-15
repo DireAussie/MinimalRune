@@ -4,10 +4,10 @@
 
 //using System;
 //using System.Collections.Generic;
-//using DigitalRune.Mathematics.Interpolation;
+//using MinimalRune.Mathematics.Interpolation;
 
 
-//namespace DigitalRune.Particles.Effectors
+//namespace MinimalRune.Particles.Effectors
 //{
 //  /// <summary>
 //  /// Evaluates a piecewise curve (<see cref="Curve2F"/>) and multiplies the result with a 
@@ -61,9 +61,9 @@
 //  /// </remarks>
 //  public class CurveEffector : ParticleEffector
 //  {
-//    //--------------------------------------------------------------
+//    
 //    #region Fields
-//    //--------------------------------------------------------------
+//    
 
 //    private IParticleParameter<float> _inputParameter;
 //    private IParticleParameter<float> _outputParameter;
@@ -71,9 +71,9 @@
 //    #endregion
 
 
-//    //--------------------------------------------------------------
+//    
 //    #region Properties & Events
-//    //--------------------------------------------------------------
+//    
 
 //    /// <summary>
 //    /// Gets or sets the name of the parameter that is multiplied with curve value.
@@ -156,9 +156,9 @@
 //    #endregion
 
 
-//    //--------------------------------------------------------------
+//    
 //    #region Creation & Cleanup
-//    //--------------------------------------------------------------
+//    
 
 //    /// <summary>
 //    /// Initializes a new instance of the <see cref="CurveEffector"/> class.
@@ -170,9 +170,9 @@
 //    #endregion
 
 
-//    //--------------------------------------------------------------
+//    
 //    #region Methods
-//    //--------------------------------------------------------------
+//    
 
 //    /// <inheritdoc/>
 //    protected override ParticleEffector CreateInstanceCore()

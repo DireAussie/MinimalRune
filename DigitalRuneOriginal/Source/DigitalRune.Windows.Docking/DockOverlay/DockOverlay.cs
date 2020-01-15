@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Windows;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     /// <summary>
     /// Represents an overlay that is shown over a target element.
@@ -20,18 +20,18 @@ namespace DigitalRune.Windows.Docking
     /// </remarks>
     public abstract class DockOverlay : Window
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private FrameworkElement _targetElement;
         private Window _targetWindow;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets the target element over which the overlay is shown.
@@ -59,15 +59,15 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="DockOverlay"/> class.
@@ -102,9 +102,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private void AttachToTarget()
         {

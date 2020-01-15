@@ -1,10 +1,10 @@
 using System;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Geometry.Collisions.Algorithms.Tests
+namespace MinimalRune.Geometry.Collisions.Algorithms.Tests
 {
   [TestFixture]
   public class RayTriangleAlgorithmTest

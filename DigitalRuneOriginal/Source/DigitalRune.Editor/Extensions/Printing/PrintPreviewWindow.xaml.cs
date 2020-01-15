@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Documents;
 
 
-namespace DigitalRune.Editor.Printing
+namespace MinimalRune.Editor.Printing
 {
     /// <summary>
     /// Shows a print preview.

@@ -6,10 +6,10 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 
 
-namespace DigitalRune.Game.States
+namespace MinimalRune.Game.States
 {
   /// <summary>
   /// Manages a collection of <see cref="State"/>s.
@@ -26,18 +26,18 @@ namespace DigitalRune.Game.States
     // Note: The property StateMachine can be removed. It is only used for consistency checks at 
     // runtime. --> It has been commented out.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Threshold for creating a lookup dictionary in the base NamedObjectCollection<T>.
     private const int DictionaryCreationThreshold = 8;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the initial state.
@@ -188,9 +188,9 @@ namespace DigitalRune.Game.States
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="StateCollection"/> class.
@@ -201,9 +201,9 @@ namespace DigitalRune.Game.States
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Determines whether the specified state is directly or indirectly contained in this 

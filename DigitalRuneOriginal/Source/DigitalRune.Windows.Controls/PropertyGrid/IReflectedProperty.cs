@@ -5,7 +5,7 @@
 using System.ComponentModel;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Describes a single field/property that was created using reflection.

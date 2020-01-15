@@ -5,7 +5,7 @@ using System.Collections.Specialized;
 using System.Diagnostics;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
     /// Manages a collection of children. (Implements <see cref="INotifyCollectionChanged"/>.)
@@ -28,15 +28,15 @@ namespace DigitalRune.Windows
         // - This is a copy of DigitalRune.Collections.ChildCollection. Used with permission.
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets (or sets) the parent which owns this child collection.
@@ -64,9 +64,9 @@ namespace DigitalRune.Windows
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <overloads>
         /// <summary>
@@ -103,9 +103,9 @@ namespace DigitalRune.Windows
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Returns an enumerator that iterates through the

@@ -3,11 +3,11 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System.Collections.Generic;
-using DigitalRune.Animation.Character;
+using MinimalRune.Animation.Character;
 using Microsoft.Xna.Framework.Content;
 
 
-namespace DigitalRune.Animation.Content
+namespace MinimalRune.Animation.Content
 {
   /// <summary>
   /// Reads a <see cref="Skeleton"/> from binary format. 

@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Mathematics.Algebra
+namespace MinimalRune.Mathematics.Algebra
 {
   /// <summary>
   /// An iterative solver using the Gauss-Seidel method (single-precision).

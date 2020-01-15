@@ -12,15 +12,15 @@ using System.Linq;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Media.Imaging;
-using DigitalRune.ServiceLocation;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Docking;
-using DigitalRune.Windows.Framework;
+using MinimalRune.ServiceLocation;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Docking;
+using MinimalRune.Windows.Framework;
 using NLog;
 using static System.FormattableString;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// Provides helper method for the editor.
@@ -30,9 +30,9 @@ namespace DigitalRune.Editor
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Converts a sequence of <see cref="string"/>s to a <see cref="StringCollection"/>.
@@ -84,9 +84,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the name of the application from the assembly information of the entry assembly.
@@ -157,9 +157,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the <see cref="BitmapSource"/> for a packed bitmap.
@@ -208,9 +208,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Registers a view model.
@@ -331,9 +331,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Removes the '_' which is used to indicate access keys from the specified text.

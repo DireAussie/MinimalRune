@@ -9,16 +9,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using Assimp;
-using DigitalRune.Animation;
-using DigitalRune.Editor.Documents;
-using DigitalRune.Editor.Errors;
-using DigitalRune.Editor.Game;
-using DigitalRune.Editor.Properties;
-using DigitalRune.Editor.Outlines;
-using DigitalRune.Editor.Output;
-using DigitalRune.Editor.Status;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Windows;
+using MinimalRune.Animation;
+using MinimalRune.Editor.Documents;
+using MinimalRune.Editor.Errors;
+using MinimalRune.Editor.Game;
+using MinimalRune.Editor.Properties;
+using MinimalRune.Editor.Outlines;
+using MinimalRune.Editor.Output;
+using MinimalRune.Editor.Status;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Windows;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Graphics;
@@ -28,7 +28,7 @@ using DRPath = DigitalRune.Storages.Path;
 using static System.FormattableString;
 
 
-namespace DigitalRune.Editor.Models
+namespace MinimalRune.Editor.Models
 {
     /// <summary>
     /// Represents a 3D model asset.
@@ -38,9 +38,9 @@ namespace DigitalRune.Editor.Models
     /// </remarks>
     internal partial class ModelDocument : Document
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
@@ -71,9 +71,9 @@ namespace DigitalRune.Editor.Models
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets a value indicating whether DigitalRune Graphics (property
@@ -153,9 +153,9 @@ namespace DigitalRune.Editor.Models
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ModelDocument"/> class.
@@ -208,9 +208,9 @@ namespace DigitalRune.Editor.Models
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         protected override DocumentViewModel OnCreateViewModel()

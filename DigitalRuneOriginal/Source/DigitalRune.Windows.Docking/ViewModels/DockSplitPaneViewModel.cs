@@ -6,7 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Markup;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     /// <summary>
     /// Represents a pane in the docking layout that is split horizontally or vertically into two

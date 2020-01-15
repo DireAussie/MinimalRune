@@ -5,10 +5,10 @@
 using System;
 using System.Diagnostics;
 using System.Globalization;
-using DigitalRune.Geometry.Shapes;
+using MinimalRune.Geometry.Shapes;
 
 
-namespace DigitalRune.Geometry.Collisions
+namespace MinimalRune.Geometry.Collisions
 {
   /// <summary>
   /// Represents an object which can collide with other objects.
@@ -38,9 +38,9 @@ namespace DigitalRune.Geometry.Collisions
   /// </remarks>
   public class CollisionObject
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private enum ShapeType
     {
@@ -51,9 +51,9 @@ namespace DigitalRune.Geometry.Collisions
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Cached shape info to avoid casting the shape to find out if it is a ray.
     // Is set in OnShapeChanged().
@@ -65,9 +65,9 @@ namespace DigitalRune.Geometry.Collisions
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     internal bool ShapeTypeChanged = true;
 
@@ -261,9 +261,9 @@ namespace DigitalRune.Geometry.Collisions
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -297,9 +297,9 @@ namespace DigitalRune.Geometry.Collisions
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 

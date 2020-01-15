@@ -1,9 +1,9 @@
-﻿using DigitalRune.Diagnostics;
-using DigitalRune.Geometry;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Particles;
+﻿using MinimalRune.Diagnostics;
+using MinimalRune.Geometry;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Particles;
 using Microsoft.Xna.Framework;
 
 

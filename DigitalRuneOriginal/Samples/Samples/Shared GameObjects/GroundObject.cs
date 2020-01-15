@@ -1,8 +1,8 @@
-﻿using DigitalRune.Game;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics;
+﻿using MinimalRune.Game;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Xna.Framework.Content;
 

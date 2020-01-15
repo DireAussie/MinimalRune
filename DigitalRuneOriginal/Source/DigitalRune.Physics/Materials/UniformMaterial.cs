@@ -3,26 +3,26 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Physics.Materials
+namespace MinimalRune.Physics.Materials
 {
   /// <summary>
   /// Defines a <see cref="IMaterial"/> with constant material properties for the whole rigid body.
   /// </summary>
   public class UniformMaterial : IMaterial, INamedObject
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the static friction coefficient.
@@ -142,9 +142,9 @@ namespace DigitalRune.Physics.Materials
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -231,9 +231,9 @@ namespace DigitalRune.Physics.Materials
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the <see cref="MaterialProperties"/> for the given rigid body, position and shape

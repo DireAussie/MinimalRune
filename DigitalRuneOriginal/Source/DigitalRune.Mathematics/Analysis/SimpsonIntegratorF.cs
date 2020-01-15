@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Mathematics.Analysis
+namespace MinimalRune.Mathematics.Analysis
 {
   /// <summary>
   /// Performs numerical integration using the <i>Simpson's rule</i> (single-precision).

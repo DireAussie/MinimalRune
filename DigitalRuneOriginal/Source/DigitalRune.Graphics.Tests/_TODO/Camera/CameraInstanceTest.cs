@@ -1,11 +1,11 @@
-﻿using DigitalRune.Geometry;
-using DigitalRune.Graphics.Scene3D;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+﻿using MinimalRune.Geometry;
+using MinimalRune.Graphics.Scene3D;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Graphics.Tests
+namespace MinimalRune.Graphics.Tests
 {
   [TestFixture]
   public class CameraInstanceTest
@@ -20,7 +20,7 @@ namespace DigitalRune.Graphics.Tests
 
       // Set new Pose
       Vector3 position = new Vector3(1, 2, 3);
-      Quaternion orientation = Quaternion.CreateRotation(new Vector3(3, 4, 5), 0.123f);
+      Quaternion orientation = Quaternion.CreateFromRotationMatrix(new Vector3(3, 4, 5), 0.123f);
       cameraInstance.PoseWorld = new Pose(position, orientation);
       Assert.AreEqual(position, cameraInstance.PoseWorld.Position);
       Assert.AreEqual(orientation.ToRotationMatrix33(), cameraInstance.PoseWorld.Orientation);
@@ -29,7 +29,7 @@ namespace DigitalRune.Graphics.Tests
 
       // Set Position and Orientation
       position = new Vector3(5, 6, 7);
-      orientation = Quaternion.CreateRotation(new Vector3(1, -1, 6), -0.123f);
+      orientation = Quaternion.CreateFromRotationMatrix(new Vector3(1, -1, 6), -0.123f);
       cameraInstance.PoseWorld = new Pose(position, orientation);
       Assert.AreEqual(position, cameraInstance.PoseWorld.Position);
       Assert.AreEqual(orientation.ToRotationMatrix33(), cameraInstance.PoseWorld.Orientation);
@@ -59,18 +59,18 @@ namespace DigitalRune.Graphics.Tests
       originOfCamera = cameraInstance.View.TransformPosition(originOfCamera);
       Assert.IsTrue(Vector3.AreNumericallyEqual(Vector3.Zero, originOfCamera));
 
-      Vector4F positionView = new Vector4F(0, 0, -1, 1);
-      Vector4F positionView2;
+      Vector4 positionView = new Vector4(0, 0, -1, 1);
+      Vector4 positionView2;
 
       // Transform a point from view space to world space.
-      Vector4F positionWorld = cameraInstance.PoseWorld * positionView;
-      Vector4F positionWorld2 = cameraInstance.ViewInverse * positionView;
-      Assert.IsTrue(Vector4F.AreNumericallyEqual(positionWorld, positionWorld2));
+      Vector4 positionWorld = cameraInstance.PoseWorld * positionView;
+      Vector4 positionWorld2 = cameraInstance.ViewInverse * positionView;
+      Assert.IsTrue(Vector4.AreNumericallyEqual(positionWorld, positionWorld2));
 
       // Transform a point from world space to view space.
       positionView = cameraInstance.PoseWorld.Inverse * positionWorld;
       positionView2 = cameraInstance.View * positionWorld;
-      Assert.IsTrue(Vector4F.AreNumericallyEqual(positionView, positionView2));
+      Assert.IsTrue(Vector4.AreNumericallyEqual(positionView, positionView2));
 
       cameraInstance.View = Matrix.Identity;
       Assert.AreEqual(Vector3.Zero, cameraInstance.PoseWorld.Position);

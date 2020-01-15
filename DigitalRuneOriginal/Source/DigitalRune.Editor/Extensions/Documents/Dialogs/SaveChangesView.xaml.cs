@@ -5,7 +5,7 @@
 using System.Windows;
 
 
-namespace DigitalRune.Editor.Documents
+namespace MinimalRune.Editor.Documents
 {
     /// <summary>
     /// Represents the Save Changes dialog that prompts the user to save modified files.

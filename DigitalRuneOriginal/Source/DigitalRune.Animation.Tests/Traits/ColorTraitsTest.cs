@@ -2,7 +2,7 @@
 using NUnit.Framework;
 
 
-namespace DigitalRune.Animation.Traits.Tests
+namespace MinimalRune.Animation.Traits.Tests
 {
   [TestFixture]
   public class ColorTraitsTest

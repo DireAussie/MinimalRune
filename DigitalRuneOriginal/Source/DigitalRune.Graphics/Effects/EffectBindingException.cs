@@ -9,7 +9,7 @@ using System.Runtime.Serialization;
 
 
 
-namespace DigitalRune.Graphics.Effects
+namespace MinimalRune.Graphics.Effects
 {
   /// <summary>
   /// Occurs if an effect binding fails.

@@ -31,11 +31,11 @@ using System.Runtime.InteropServices;
 using System.Text;
 
 
-namespace DigitalRune.Graphics.Content
+namespace MinimalRune.Graphics.Content
 {
-  //--------------------------------------------------------------
+  
 
-  //--------------------------------------------------------------
+  
 
   /// <summary>
   /// Additional options for <see cref="DdsHelper"/>.
@@ -78,9 +78,9 @@ namespace DigitalRune.Graphics.Content
   /// </summary>
   internal static class DdsHelper
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Identifies the type of resource being used (D3D11_RESOURCE_DIMENSION).
@@ -115,9 +115,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private const uint MagicHeader = 0x20534444; // "DDS "
 
@@ -297,9 +297,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     [Flags]
     private enum ConversionFlags

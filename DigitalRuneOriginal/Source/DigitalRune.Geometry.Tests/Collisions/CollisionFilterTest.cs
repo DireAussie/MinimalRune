@@ -1,9 +1,9 @@
 ﻿using System;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Geometry.Collisions.Tests
+namespace MinimalRune.Geometry.Collisions.Tests
 {
   [TestFixture]
   public class CollisionFilterTest

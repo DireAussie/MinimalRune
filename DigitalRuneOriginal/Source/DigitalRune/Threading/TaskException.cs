@@ -66,7 +66,7 @@ using System.Runtime.Serialization;
 
 
 
-namespace DigitalRune.Threading
+namespace MinimalRune.Threading
 {
   /// <summary>
   /// Occurs when an unhandled exception is thrown within a <see cref="Task"/>.

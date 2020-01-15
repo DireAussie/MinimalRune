@@ -13,7 +13,7 @@ using System.Windows.Interactivity;
 using System.Windows.Media;
 
 
-namespace DigitalRune.Windows.Charts.Interactivity
+namespace MinimalRune.Windows.Charts.Interactivity
 {
     /// <summary>
     /// Allows the user to pan (scroll) the charts by dragging the chart area with the mouse.
@@ -31,9 +31,9 @@ namespace DigitalRune.Windows.Charts.Interactivity
     /// <seealso cref="Axis.Pan"/>
     public class ChartPanBehavior : Behavior<UIElement>
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private ChartPanel _chartPanel;     // The chart panel is set during panning.
         private List<Axis> _affectedAxes;
@@ -43,15 +43,15 @@ namespace DigitalRune.Windows.Charts.Interactivity
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------    
+            
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="Axes"/> dependency property.
@@ -205,15 +205,15 @@ namespace DigitalRune.Windows.Charts.Interactivity
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Called after the behavior is attached to an <see cref="Behavior{T}.AssociatedObject"/>.

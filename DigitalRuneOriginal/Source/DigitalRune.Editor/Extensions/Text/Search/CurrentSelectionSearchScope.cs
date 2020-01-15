@@ -4,12 +4,12 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Editor.Documents;
-using DigitalRune.Editor.Search;
+using MinimalRune.Editor.Documents;
+using MinimalRune.Editor.Search;
 using ICSharpCode.AvalonEdit;
 
 
-namespace DigitalRune.Editor.Text.Search
+namespace MinimalRune.Editor.Text.Search
 {
     /// <summary>
     /// Provides a search scope for the current selection in the <see cref="TextEditor"/> control.

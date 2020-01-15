@@ -11,7 +11,7 @@ using System.Xml;
 using System.Xml.Linq;
 
 
-namespace DigitalRune.Build
+namespace MinimalRune.Build
 {
     /// <summary>
     /// Sorts the XML elements in C# project (.csproj) files .

@@ -3,7 +3,7 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 
-//namespace DigitalRune.Windows.Framework
+//namespace MinimalRune.Windows.Framework
 //{
 //  /// <summary>
 //  /// Uses <see cref="Help"/> to display Help information.

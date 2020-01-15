@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 
 
 
-namespace DigitalRune.Mathematics
+namespace MinimalRune.Mathematics
 {
   /// <summary>
   /// The exception that is thrown when a general error in the mathematics library occurs.

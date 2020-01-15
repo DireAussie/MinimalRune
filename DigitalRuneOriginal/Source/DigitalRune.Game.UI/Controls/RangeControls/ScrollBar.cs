@@ -4,12 +4,12 @@
 
 using System;
 using System.ComponentModel;
-using DigitalRune.Game.Input;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Game.Input;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   /// <summary>
   /// Represents a control that provides a scroll bar that has a sliding <see cref="Thumb"/> whose
@@ -26,9 +26,9 @@ namespace DigitalRune.Game.UI.Controls
   {
     // See also comments in Slider.cs!
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private Button _decrementButton;
     private Button _incrementButton;
@@ -40,15 +40,15 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary> 
     /// The ID of the <see cref="Orientation"/> game object property.
@@ -182,9 +182,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes static members of the <see cref="ScrollBar"/> class.
@@ -206,9 +206,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override void OnLoad()
@@ -318,7 +318,7 @@ namespace DigitalRune.Game.UI.Controls
       float minimum = Minimum;
       float maximum = Maximum;
       float range = maximum - minimum;
-      Vector4F padding = Padding;
+      Vector4 padding = Padding;
 
       if (!inputService.IsMouseOrTouchHandled)
       {
@@ -396,7 +396,7 @@ namespace DigitalRune.Game.UI.Controls
         float minimum = Minimum;
         float maximum = Maximum;
         float range = maximum - minimum;
-        Vector4F padding = Padding;
+        Vector4 padding = Padding;
 
         if (Orientation == Orientation.Horizontal)
         {

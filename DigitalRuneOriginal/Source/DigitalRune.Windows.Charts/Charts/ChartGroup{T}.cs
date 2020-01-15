@@ -5,7 +5,7 @@
 using System.Windows;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Groups multiple charts of a certain type into a single chart. (Base class)

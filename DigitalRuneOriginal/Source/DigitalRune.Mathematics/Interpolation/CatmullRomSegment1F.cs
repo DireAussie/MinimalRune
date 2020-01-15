@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace DigitalRune.Mathematics.Interpolation
+namespace MinimalRune.Mathematics.Interpolation
 {
   /// <summary>
   /// Defines a single segment of a 1-dimensional cubic Catmull-Rom spline (single-precision).
@@ -119,9 +119,9 @@ namespace DigitalRune.Mathematics.Interpolation
     }
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static readonly ResourcePool<CatmullRomSegment1F> Pool = new ResourcePool<CatmullRomSegment1F>(
        () => new CatmullRomSegment1F(),               // Create

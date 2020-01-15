@@ -1,12 +1,12 @@
-﻿using DigitalRune.Geometry;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics.Constraints;
+﻿using MinimalRune.Geometry;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics.Constraints;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Physics.Constraints.Tests
+namespace MinimalRune.Physics.Constraints.Tests
 {
   [TestFixture]
   public class ConstraintHelperTest

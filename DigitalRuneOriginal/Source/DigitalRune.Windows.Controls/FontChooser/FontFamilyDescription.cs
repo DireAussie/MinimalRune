@@ -5,7 +5,7 @@
 using System.Windows.Media;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Describes a font family. (Used internally by the <see cref="FontChooser"/>.)

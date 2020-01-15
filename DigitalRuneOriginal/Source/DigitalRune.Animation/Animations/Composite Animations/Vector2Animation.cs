@@ -4,12 +4,12 @@
 
 
 using System;
-using DigitalRune.Animation.Traits;
+using MinimalRune.Animation.Traits;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Animates a <see cref="Vector2"/> value by applying an animation to each component of the
@@ -20,15 +20,15 @@ namespace DigitalRune.Animation
   /// </remarks>
   public class Vector2Animation : Animation<Vector2>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override IAnimationValueTraits<Vector2> Traits
@@ -54,9 +54,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>
@@ -86,9 +86,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public override TimeSpan GetTotalDuration()

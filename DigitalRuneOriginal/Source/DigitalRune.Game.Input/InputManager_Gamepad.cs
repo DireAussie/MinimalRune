@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
 
-namespace DigitalRune.Game.Input
+namespace MinimalRune.Game.Input
 {
   partial class InputManager
   {
@@ -18,9 +18,9 @@ namespace DigitalRune.Game.Input
     //   - IsUp() returns true if LogicalPlayerIndex is not assigned.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Constants to identify certain groups of buttons.
     private const Buttons LeftThumbstickButtons = Buttons.LeftThumbstickDown
@@ -40,24 +40,24 @@ namespace DigitalRune.Game.Input
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly GamePadState[] _newGamePadStates;
     private readonly GamePadState[] _previousGamePadStates;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public PlayerIndex? GetLogicalPlayer(LogicalPlayerIndex player)

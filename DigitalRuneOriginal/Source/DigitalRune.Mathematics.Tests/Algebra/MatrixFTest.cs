@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Mathematics.Algebra.Tests
+namespace MinimalRune.Mathematics.Algebra.Tests
 {
   [TestFixture]
   public class MatrixFTest
@@ -432,7 +432,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     public void Transpose()
     {
       MatrixF m = new MatrixF(3, 4, rowMajor, MatrixOrder.RowMajor);
-      m.Transpose();
+      m = Matrix.Transpose(m);
       MatrixF mt = new MatrixF(4, 3, rowMajor, MatrixOrder.ColumnMajor);
       Assert.AreEqual(mt, m);
     }
@@ -606,13 +606,13 @@ namespace DigitalRune.Mathematics.Algebra.Tests
                                 5, 6, 7, 8,
                                 9, 10, 11, 12,
                                 13, 14, 15, 16).ToMatrixF();
-      Assert.IsTrue(Numeric.IsZero(m.Determinant));
+      Assert.IsTrue(Numeric.IsZero(m.Determinant()));
 
       m = new Matrix(1, 2, 3, 4,
                        -3, 4, 5, 6,
                        2, -5, 7, 4,
                        10, 2, -3, 9).ToMatrixF();
-      Assert.AreEqual(1142, m.Determinant);
+      Assert.AreEqual(1142, m.Determinant());
     }
 
 
@@ -621,7 +621,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     public void DeterminantException1()
     {
       MatrixF m = new MatrixF(3, 4, rowMajor, MatrixOrder.RowMajor);
-      float det = m.Determinant;
+      float det = m.Determinant();
     }
 
 
@@ -630,7 +630,7 @@ namespace DigitalRune.Mathematics.Algebra.Tests
     public void DeterminantException2()
     {
       MatrixF m = new MatrixF(4, 3, rowMajor, MatrixOrder.RowMajor);
-      float det = m.Determinant;
+      float det = m.Determinant();
     }
 
 

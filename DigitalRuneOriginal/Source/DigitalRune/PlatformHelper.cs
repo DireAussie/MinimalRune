@@ -16,7 +16,7 @@ using System.Windows;
 
 
 
-namespace DigitalRune
+namespace MinimalRune
 {
   /// <summary>
   /// Provides helper methods for platform-specific tasks. (For internal use by other DigitalRune
@@ -322,9 +322,9 @@ namespace DigitalRune
     }
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets a value indicating whether the <strong>System.Windows.Forms.Clipboard</strong> is
@@ -413,9 +413,9 @@ namespace DigitalRune
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the amount of the delta value of a single mouse wheel rotation increment.
@@ -457,9 +457,9 @@ namespace DigitalRune
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
     [Flags]

@@ -6,22 +6,22 @@ using System;
 using System.Windows.Media;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Provides predicates that identify the axes of a <see cref="DefaultChartPanel"/>.
     /// </summary>
     public static class AxisPredicates
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets a predicate that accepts all axes.
@@ -154,15 +154,15 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static bool MatchesAll(Axis axis)
         {

@@ -1,10 +1,10 @@
 using System;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Geometry.Tests
+namespace MinimalRune.Geometry.Tests
 {
 
   [TestFixture]

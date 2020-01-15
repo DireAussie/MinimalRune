@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Editor.Options
+namespace MinimalRune.Editor.Options
 {
     /// <summary>
     /// Represents a node that groups other option pages.

@@ -4,10 +4,10 @@
 
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Animation;
+using MinimalRune.Animation;
 
 
-namespace DigitalRune.Game
+namespace MinimalRune.Game
 {
   /// <summary>
   /// Wraps a <see cref="GameProperty{T}"/> and makes it animatable.
@@ -25,9 +25,9 @@ namespace DigitalRune.Game
     // - Value and base.Value
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly GameObject _owner;
     private readonly GamePropertyMetadata<T> _metadata;
@@ -38,9 +38,9 @@ namespace DigitalRune.Game
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     public override T Value
     {
@@ -244,9 +244,9 @@ namespace DigitalRune.Game
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     public AnimatableGamePropertyData(GameObject owner, GamePropertyMetadata<T> metadata, GamePropertyData<T> data)
       : base(data)
@@ -260,9 +260,9 @@ namespace DigitalRune.Game
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
   }
 }

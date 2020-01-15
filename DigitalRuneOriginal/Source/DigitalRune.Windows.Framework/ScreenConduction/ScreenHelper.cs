@@ -12,7 +12,7 @@
 using System;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Provides extensions methods for screens and conductors.

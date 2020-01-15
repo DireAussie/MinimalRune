@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.ServiceLocation
+namespace MinimalRune.ServiceLocation
 {
     /// <summary>
     /// Specifies when a service instance will be disposed.

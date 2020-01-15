@@ -2,12 +2,12 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Mathematics.Interpolation;
+using MinimalRune.Mathematics.Interpolation;
 using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler;
 
 
-namespace DigitalRune.Mathematics.Content.Pipeline
+namespace MinimalRune.Mathematics.Content.Pipeline
 {
   /// <summary>
   /// Writes a <see cref="CurveKey2F"/> to binary format.

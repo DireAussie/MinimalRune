@@ -6,7 +6,7 @@ using System;
 using System.Runtime.Serialization;
 
 
-namespace DigitalRune.Collections
+namespace MinimalRune.Collections
 {
     /// <summary>
     /// The exception that is thrown when two collections of type <see cref="MergeableNode{T}"/>

@@ -5,7 +5,7 @@
 using System.Windows.Input;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Provides commands handled by the <see cref="ColorPicker"/>.

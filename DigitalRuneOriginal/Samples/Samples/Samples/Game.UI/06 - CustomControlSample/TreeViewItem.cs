@@ -1,10 +1,10 @@
 ﻿using System.Linq;
-using DigitalRune.Collections;
-using DigitalRune.Game;
-using DigitalRune.Game.Input;
-using DigitalRune.Game.UI;
-using DigitalRune.Game.UI.Controls;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Collections;
+using MinimalRune.Game;
+using MinimalRune.Game.Input;
+using MinimalRune.Game.UI;
+using MinimalRune.Game.UI.Controls;
+using MinimalRune.Mathematics.Algebra;
 
 
 namespace Samples.Game.UI
@@ -127,8 +127,8 @@ namespace Samples.Game.UI
         };
 
         // Whenever the padding is changed, the panel margin should be updated.
-        var panelMargin = _panel.Properties.Get<Vector4F>(UIControl.MarginPropertyId);
-        var padding = this.Properties.Get<Vector4F>(UIControl.PaddingPropertyId);
+        var panelMargin = _panel.Properties.Get<Vector4>(UIControl.MarginPropertyId);
+        var padding = this.Properties.Get<Vector4>(UIControl.PaddingPropertyId);
         padding.Changed += panelMargin.Change;
 
         // Add Items to the panel.

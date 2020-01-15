@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Media;
-using DigitalRune.Windows;
+using MinimalRune.Windows;
 
 
 namespace CustomWindowChromeApp

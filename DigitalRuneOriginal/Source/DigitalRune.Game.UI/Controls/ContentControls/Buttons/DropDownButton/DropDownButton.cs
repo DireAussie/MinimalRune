@@ -4,10 +4,10 @@
 
 using System;
 using System.ComponentModel;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   /// <summary>
   /// Represents a drop down button. 
@@ -33,7 +33,7 @@ namespace DigitalRune.Game.UI.Controls
   /// var dropDown = new DropDownButton
   /// {
   ///   HorizontalAlignment = HorizontalAlignment.Stretch,
-  ///   Margin = new Vector4F(4),
+  ///   Margin = new Vector4(4),
   ///   MaxDropDownHeight = 250,
   /// };
   /// 
@@ -65,18 +65,18 @@ namespace DigitalRune.Game.UI.Controls
     // possible that an item is a UIControl and this control is Content of the DropDownButton 
     // and simultaneously Content of the DropDown.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private DropDown _dropDown;
     private bool _wasOpened;  // true if the DropDown was opened in the last frame.
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the items.
@@ -97,9 +97,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary> 
     /// The ID of the <see cref="DropDownStyle"/> game object property.
@@ -197,9 +197,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
     /// <summary>
@@ -245,9 +245,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override void OnLoad()

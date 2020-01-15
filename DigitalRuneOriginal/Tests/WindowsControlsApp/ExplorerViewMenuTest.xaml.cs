@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using DigitalRune.Windows.Controls;
+using MinimalRune.Windows.Controls;
 
 
 namespace WindowsControlsApp

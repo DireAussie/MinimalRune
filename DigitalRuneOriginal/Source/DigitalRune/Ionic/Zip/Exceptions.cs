@@ -20,7 +20,7 @@ using System;
 using System.Runtime.Serialization;
 
 
-namespace DigitalRune.Ionic.Zip
+namespace MinimalRune.Ionic.Zip
 {
     /// <summary>
     /// Issued when an <c>ZipEntry.ExtractWithPassword()</c> method is invoked

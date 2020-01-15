@@ -6,7 +6,7 @@ using NUnit.Framework;
 #pragma warning disable 618       // WeakEventListener is obsolete.
 
 
-namespace DigitalRune.Windows.Tests
+namespace MinimalRune.Windows.Tests
 {
     class Dummy : INotifyPropertyChanged
     {

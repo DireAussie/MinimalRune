@@ -6,10 +6,10 @@ using System;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
     /// Compares two values of type <see cref="Double"/> and returns the comparison result as

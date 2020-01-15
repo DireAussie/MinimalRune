@@ -3,42 +3,42 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Editor.Documents;
-using DigitalRune.Windows.Themes;
+using MinimalRune.Editor.Documents;
+using MinimalRune.Windows.Themes;
 
 
-namespace DigitalRune.Editor.Text
+namespace MinimalRune.Editor.Text
 {
     /// <summary>
     /// Handles text documents.
     /// </summary>
     internal class TextDocumentFactory : DocumentFactory
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         internal const string AnyDocumentTypeName = "All files";
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly IEditorService _editor;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TextDocumentFactory"/> class.
@@ -99,9 +99,9 @@ namespace DigitalRune.Editor.Text
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------    
+            
 
         /// <inheritdoc/>
         protected override Document OnCreate(DocumentType documentType)

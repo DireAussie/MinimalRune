@@ -4,14 +4,14 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Geometry.Shapes;
+using MinimalRune.Geometry.Shapes;
 
 
 using System.Linq;
 
 
 
-namespace DigitalRune.Geometry.Partitioning
+namespace MinimalRune.Geometry.Partitioning
 {
   partial class DualPartition<T>
   {

@@ -3,10 +3,10 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Animation.Character
+namespace MinimalRune.Animation.Character
 {
   /// <summary>
   /// Copies a bone transform from one skeleton to the other skeleton.
@@ -33,9 +33,9 @@ namespace DigitalRune.Animation.Character
   /// </remarks>
   public class DirectBoneMapper : BoneMapper
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // true if cached data is invalid.
     private bool _isDirty = true;
@@ -45,9 +45,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the bone index for the first skeleton.
@@ -151,9 +151,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="DirectBoneMapper"/> class.
@@ -171,9 +171,9 @@ namespace DigitalRune.Animation.Character
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Analyzes the skeletons and sets <see cref="ScaleAToB"/> to a guessed scale factor.

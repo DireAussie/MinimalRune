@@ -4,34 +4,34 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 using ICSharpCode.AvalonEdit.Document;
 
 
-namespace DigitalRune.Editor.Shader
+namespace MinimalRune.Editor.Shader
 {
     /// <summary>
     /// Parses a DirectX Effect or CgFX file.
     /// </summary>
     internal class ShaderParser
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly ShaderIntelliSense _intelliSense;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ShaderParser"/> class.
@@ -47,9 +47,9 @@ namespace DigitalRune.Editor.Shader
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
         /// <summary>

@@ -4,11 +4,11 @@
 
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Geometry.Shapes;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Geometry.Shapes;
 
 
-namespace DigitalRune.Geometry.Partitioning
+namespace MinimalRune.Geometry.Partitioning
 {
   /// <summary>
   /// Builds a bounding volume tree using axis-aligned bounding boxes (AABBs), which adapts
@@ -94,9 +94,9 @@ namespace DigitalRune.Geometry.Partitioning
   [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix")]
   public partial class AdaptiveAabbTree<T> : BasePartition<T>, ISupportClosestPointQueries<T>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // ReSharper disable StaticFieldInGenericType
     private static readonly ResourcePool<Node> Nodes = new ResourcePool<Node>(
@@ -131,21 +131,21 @@ namespace DigitalRune.Geometry.Partitioning
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
-
-
-
-    //--------------------------------------------------------------
-
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
+
+
+
+    
+
+    
 
 
 

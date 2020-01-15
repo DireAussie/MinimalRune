@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 
 
-namespace DigitalRune.Collections
+namespace MinimalRune.Collections
 {
     /// <summary>
     /// Merges a collection of <see cref="MergeableNode{T}"/>s to another collection of 
@@ -20,15 +20,15 @@ namespace DigitalRune.Collections
     /// </remarks>
     public class MergeAlgorithm<T> where T : class, INamedObject
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets a value indicating whether merged nodes are copied or moved.
@@ -42,15 +42,15 @@ namespace DigitalRune.Collections
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Merges a collection of nodes to an existing collection.

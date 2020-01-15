@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// Represents drop-down button in a toolbar.

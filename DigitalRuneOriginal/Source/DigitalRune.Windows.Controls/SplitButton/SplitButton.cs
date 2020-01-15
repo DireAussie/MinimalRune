@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Represents a combination of a button and a toggle button, which opens a drop-down.
@@ -14,17 +14,17 @@ namespace DigitalRune.Windows.Controls
     [TemplatePart(Name = PART_ActionButton, Type = typeof(Button))]
     public class SplitButton : DropDownButton
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         internal const string PART_ActionButton = nameof(PART_ActionButton);
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="SplitButton"/> class.
@@ -36,9 +36,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// When overridden in a derived class, is invoked whenever application code or internal

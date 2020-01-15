@@ -3,8 +3,8 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 using System;
 using System.ComponentModel;
-using DigitalRune.Game.Input;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Game.Input;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -13,7 +13,7 @@ using Keys = System.Windows.Input.Key;
 
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   /// <summary>
   /// Provides the ability to create, configure, show, and manage the lifetime of windows and 
@@ -49,7 +49,7 @@ namespace DigitalRune.Game.UI.Controls
   ///   var text = new TextBlock
   ///   {
   ///     Text = message,
-  ///     Margin = new Vector4F(4),
+  ///     Margin = new Vector4(4),
   ///     HorizontalAlignment = HorizontalAlignment.Center,
   ///   };
   /// 
@@ -58,12 +58,12 @@ namespace DigitalRune.Game.UI.Controls
   ///     Content = new TextBlock { Text = "Ok" },
   ///     IsCancel = true,    // Cancel buttons are clicked when the user presses ESC (or BACK or B on the gamepad).
   ///     IsDefault = true,   // Default buttons are clicked when the user presses ENTER or SPACE (or START or A on the gamepad).
-  ///     Margin = new Vector4F(4),
+  ///     Margin = new Vector4(4),
   ///     Width = 60,
   ///     HorizontalAlignment = HorizontalAlignment.Center,
   ///   };
   /// 
-  ///   var stackPanel = new StackPanel { Margin = new Vector4F(4) };
+  ///   var stackPanel = new StackPanel { Margin = new Vector4(4) };
   ///   stackPanel.Children.Add(text);
   ///   stackPanel.Children.Add(button);
   ///   
@@ -97,9 +97,9 @@ namespace DigitalRune.Game.UI.Controls
   /// </example>
   public class Window : ContentControl
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // The direction in which we are currently resizing. Determines the appearance 
     // of the mouse cursor.
@@ -119,9 +119,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private Image _icon;
     private TextBlock _caption;
@@ -146,9 +146,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the owner of this window that was specified in <see cref="Show"/> (typically a 
@@ -178,9 +178,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary> 
     /// The ID of the <see cref="CanDrag"/> game object property.
@@ -243,7 +243,7 @@ namespace DigitalRune.Game.UI.Controls
     [Browsable(false)]
 
     public static readonly int ResizeBorderPropertyId = CreateProperty(
-      typeof(Window), "ResizeBorder", GamePropertyCategories.Layout, null, new Vector4F(4),
+      typeof(Window), "ResizeBorder", GamePropertyCategories.Layout, null, new Vector4(4),
       UIPropertyOptions.AffectsRender);
 
     /// <summary>
@@ -254,9 +254,9 @@ namespace DigitalRune.Game.UI.Controls
     /// The dimensions of the window border where resize operations can start. The default value
     /// is (4, 4, 4, 4).
     /// </value>
-    public Vector4F ResizeBorder
+    public Vector4 ResizeBorder
     {
-      get { return GetValue<Vector4F>(ResizeBorderPropertyId); }
+      get { return GetValue<Vector4>(ResizeBorderPropertyId); }
       set { SetValue(ResizeBorderPropertyId, value); }
     }
 
@@ -686,9 +686,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes static members of the <see cref="Window"/> class.
@@ -711,9 +711,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override void OnLoad()

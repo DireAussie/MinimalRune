@@ -4,10 +4,10 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Animation.Character;
+using MinimalRune.Animation.Character;
 
 
-namespace DigitalRune.Animation.Traits
+namespace MinimalRune.Animation.Traits
 {
   /// <summary>
   /// Describes the properties of a <see cref="SkeletonPose"/>.

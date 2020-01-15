@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 
 
-namespace DigitalRune.Game.States.Tests
+namespace MinimalRune.Game.States.Tests
 {
   [TestFixture]
   public class StateTest

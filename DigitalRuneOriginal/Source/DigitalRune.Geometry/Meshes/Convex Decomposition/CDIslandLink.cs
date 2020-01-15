@@ -6,14 +6,14 @@
 using System;
 using System.Diagnostics;
 using System.Linq;
-using DigitalRune.Geometry.Partitioning;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Statistics;
+using MinimalRune.Geometry.Partitioning;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Statistics;
 
 
-namespace DigitalRune.Geometry.Meshes
+namespace MinimalRune.Geometry.Meshes
 {
   /// <summary>
   /// Describes a link between two <see cref="CDIsland"/>s.
@@ -24,15 +24,15 @@ namespace DigitalRune.Geometry.Meshes
   [DebuggerDisplay("Link {IslandA.Id}-{IslandB.Id}: Concavity = {Concavity}, DecimationCost = {DecimationCost}")]
   internal sealed class CDIslandLink
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     public readonly CDIsland IslandA;
     public readonly CDIsland IslandB;
@@ -54,9 +54,9 @@ namespace DigitalRune.Geometry.Meshes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     public CDIslandLink(CDIsland islandA, CDIsland islandB, float allowedConcavity, float smallIslandBoost, int vertexLimit, bool sampleVertices, bool sampleCenters)
     {
@@ -94,9 +94,9 @@ namespace DigitalRune.Geometry.Meshes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Computes the aspect ratio: 
     // AspectRatio = (Perimeter of merged Islands)² / (4 * π * Surface Area of merged Islands)

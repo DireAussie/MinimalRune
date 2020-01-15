@@ -2,7 +2,7 @@
 using NUnit.Framework;
 
 
-namespace DigitalRune.Windows.Framework.Tests.MVVM
+namespace MinimalRune.Windows.Framework.Tests.MVVM
 {
     [TestFixture]
     public class CompositeCommandTest

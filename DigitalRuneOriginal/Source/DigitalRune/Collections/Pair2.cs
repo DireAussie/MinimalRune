@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Globalization;
 
 
-namespace DigitalRune.Collections
+namespace MinimalRune.Collections
 {
   /// <summary>
   /// Stores two ordered related objects.
@@ -27,9 +27,9 @@ namespace DigitalRune.Collections
 
   public struct Pair<TFirst, TSecond> : IEquatable<Pair<TFirst, TSecond>>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // ReSharper disable StaticFieldInGenericType
     private static readonly EqualityComparer<TFirst> EqualityComparer1 = EqualityComparer<TFirst>.Default;
@@ -38,9 +38,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the first object.
@@ -67,9 +67,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Pair{TFirst, TSecond}"/> class with the given
@@ -85,9 +85,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>

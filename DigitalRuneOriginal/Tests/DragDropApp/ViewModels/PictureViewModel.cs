@@ -1,5 +1,5 @@
 ﻿using System;
-using DigitalRune.Windows;
+using MinimalRune.Windows;
 
 
 namespace DragDropApp

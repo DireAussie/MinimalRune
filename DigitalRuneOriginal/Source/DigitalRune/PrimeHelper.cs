@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 
 
-namespace DigitalRune
+namespace MinimalRune
 {
   /// <summary>
   /// Selecting prime numbers suitable for hash table sizes.

@@ -9,7 +9,7 @@ using System;
 using System.Globalization;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
     /// Converts a value to and from a <see cref="bool"/> by comparing the value with a reference

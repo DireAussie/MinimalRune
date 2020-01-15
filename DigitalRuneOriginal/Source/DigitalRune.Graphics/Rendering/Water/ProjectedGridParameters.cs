@@ -6,7 +6,7 @@ using System;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Rendering
+namespace MinimalRune.Graphics.Rendering
 {
   /// <summary>
   /// Defines settings for a projected grid.
@@ -18,17 +18,17 @@ namespace DigitalRune.Graphics.Rendering
   /// </remarks>
   public class ProjectedGridParameters
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly GraphicsDevice _graphicsDevice;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the horizontal resolution of the grid.
@@ -147,9 +147,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     internal ProjectedGridParameters(GraphicsDevice graphicsDevice)
     {
@@ -168,9 +168,9 @@ namespace DigitalRune.Graphics.Rendering
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     internal void Dispose()
     {

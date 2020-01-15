@@ -12,7 +12,7 @@ using System.Windows.Input;
 using System.Windows.Threading;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Implements a selectable item in a <see cref="TreeViewEx"/> control.
@@ -33,18 +33,18 @@ namespace DigitalRune.Windows.Controls
         // -> When pressing a key, jump to the first TreeViewItem with a Value starting with the key.
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private const string PART_Header = nameof(PART_Header);
         private FrameworkElement _header;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the parent <see cref="ItemsControl"/>.
@@ -123,9 +123,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly DependencyPropertyKey IndentationLevelPropertyKey = DependencyProperty.RegisterReadOnly(
             "IndentationLevel",
@@ -298,9 +298,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="TreeViewItemEx"/> class.
@@ -326,9 +326,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Called when the <see cref="FrameworkElement.DataContext"/> property changed.

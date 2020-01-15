@@ -5,10 +5,10 @@
 using System;
 using System.ComponentModel;
 using System.Globalization;
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Determines how data values are distributed and presented along an axis. (The base class for
@@ -25,15 +25,15 @@ namespace DigitalRune.Windows.Charts
     /// </remarks>
     public abstract class AxisScale : INotifyPropertyChanged
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets the range of the axis.
@@ -132,9 +132,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <overloads>
         /// <summary>
@@ -185,9 +185,9 @@ namespace DigitalRune.Windows.Charts
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Raises the <see cref="PropertyChanged"/> event.

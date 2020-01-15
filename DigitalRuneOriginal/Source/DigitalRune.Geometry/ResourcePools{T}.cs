@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Geometry
+namespace MinimalRune.Geometry
 {
   /// <summary>
   /// Provides resource pools for reusable generic collections or items. (For internal use only.)

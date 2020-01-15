@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Linq;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Interpolation;
-using DigitalRune.Mathematics.Statistics;
-using DigitalRune.Physics;
-using DigitalRune.Physics.ForceEffects;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Interpolation;
+using MinimalRune.Mathematics.Statistics;
+using MinimalRune.Physics;
+using MinimalRune.Physics.ForceEffects;
 using Microsoft.Xna.Framework;
 using CurveLoopType = DigitalRune.Mathematics.Interpolation.CurveLoopType;
 
@@ -173,8 +173,8 @@ namespace Samples.Physics
       // Get the path tangent at newPathPosition and use it as the forward direction.
       Vector3 forward = _path.GetTangent(parameter).Normalized;
 
-      Quaternion currentOrientation = Quaternion.CreateRotation(_kinematicBody.Pose.Orientation);
-      Quaternion targetOrientation = Quaternion.CreateRotation(Vector3.UnitY, forward);
+      Quaternion currentOrientation = Quaternion.CreateFromRotationMatrix(_kinematicBody.Pose.Orientation);
+      Quaternion targetOrientation = Quaternion.CreateFromRotationMatrix(Vector3.UnitY, forward);
       Quaternion orientationDelta = targetOrientation * currentOrientation.Conjugated;
 
       // Selective Negation:

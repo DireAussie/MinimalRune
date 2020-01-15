@@ -8,7 +8,7 @@ using System;
 
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// A strategy for determining which view to use for a specific view model.

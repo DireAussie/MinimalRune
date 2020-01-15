@@ -3,14 +3,14 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Animation.Character;
-using DigitalRune.Collections;
-using DigitalRune.Geometry;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics.Constraints;
+using MinimalRune.Animation.Character;
+using MinimalRune.Collections;
+using MinimalRune.Geometry;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics.Constraints;
 
 
-namespace DigitalRune.Physics.Specialized
+namespace MinimalRune.Physics.Specialized
 {
   /// <summary>
   /// Represents a ragdoll of a 3D animated character.
@@ -118,15 +118,15 @@ namespace DigitalRune.Physics.Specialized
     // - Serialization
     // - Test position motors instead of rotation motors.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the pose (position and orientation) of the character in world space.
@@ -211,9 +211,9 @@ namespace DigitalRune.Physics.Specialized
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Ragdoll"/> class.
@@ -237,9 +237,9 @@ namespace DigitalRune.Physics.Specialized
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private void OnBodiesChanged(object sender, CollectionChangedEventArgs<RigidBody> eventArgs)
     {

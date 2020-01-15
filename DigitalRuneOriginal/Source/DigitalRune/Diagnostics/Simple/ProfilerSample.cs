@@ -6,7 +6,7 @@
 //using System.Diagnostics;
 
 
-//namespace DigitalRune.Diagnostics
+//namespace MinimalRune.Diagnostics
 //{
 //  /// <summary>
 //  /// Automatically calls <see cref="Profiler.Start"/> and <see cref="Profiler.Stop"/> to 

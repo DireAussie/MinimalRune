@@ -4,25 +4,25 @@
 
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 
 
-namespace DigitalRune.Editor.Documents
+namespace MinimalRune.Editor.Documents
 {
     partial class DocumentExtension
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly MenuManager _menuManager;
         private MergeableNodeCollection<ICommandItem> _contextMenuNodes;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public ICollection<MergeableNodeCollection<ICommandItem>> DockContextMenuNodeCollections { get; } = new Collection<MergeableNodeCollection<ICommandItem>>();
@@ -36,9 +36,9 @@ namespace DigitalRune.Editor.Documents
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private void AddContextMenu()
         {

@@ -1,7 +1,7 @@
 ﻿using System.Linq;
-using DigitalRune.Collections;
-using DigitalRune.Game.UI;
-using DigitalRune.Game.UI.Controls;
+using MinimalRune.Collections;
+using MinimalRune.Game.UI;
+using MinimalRune.Game.UI.Controls;
 
 
 namespace Samples.Game.UI

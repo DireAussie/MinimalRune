@@ -5,7 +5,7 @@
 using Microsoft.Xna.Framework.Content;
 
 
-namespace DigitalRune.Animation.Content
+namespace MinimalRune.Animation.Content
 {
   /// <summary>
   /// Reads a <see cref="TimelineGroup"/> from binary format. 

@@ -11,7 +11,7 @@ using System.Globalization;
 using System.Windows;
 
 
-namespace DigitalRune.Windows.Charts
+namespace MinimalRune.Windows.Charts
 {
     /// <summary>
     /// Provides functions to create a list of data points from other data sources.

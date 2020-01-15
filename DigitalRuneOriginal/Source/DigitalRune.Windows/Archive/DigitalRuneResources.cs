@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Media;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
 
   // Note: ComponentResourceKeys are not properly supported in Expression Blend!
@@ -18,9 +18,9 @@ namespace DigitalRune.Windows
   /// </summary>
   public class DigitalRuneResources
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
@@ -248,9 +248,9 @@ namespace DigitalRune.Windows
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static ResourceKey CreateKey(DigitalRuneResourceKeyID id)
     {

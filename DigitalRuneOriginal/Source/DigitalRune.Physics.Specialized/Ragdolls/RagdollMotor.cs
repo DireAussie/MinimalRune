@@ -4,14 +4,14 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Animation;
-using DigitalRune.Animation.Character;
-using DigitalRune.Geometry;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Physics.Constraints;
+using MinimalRune.Animation;
+using MinimalRune.Animation.Character;
+using MinimalRune.Geometry;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Physics.Constraints;
 
 
-namespace DigitalRune.Physics.Specialized
+namespace MinimalRune.Physics.Specialized
 {
   /// <summary>
   /// Drives a body of a ragdoll to a target position.
@@ -41,17 +41,17 @@ namespace DigitalRune.Physics.Specialized
   /// </remarks>
   public class RagdollMotor
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
     
     private readonly QuaternionMotor _quaternionMotor;
 
       
       
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the ragdoll.
@@ -214,9 +214,9 @@ namespace DigitalRune.Physics.Specialized
 
       
       
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="RagdollMotor"/> class.
@@ -256,9 +256,9 @@ namespace DigitalRune.Physics.Specialized
 
       
       
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
     
     internal void AddToSimulation()
     {
@@ -381,7 +381,7 @@ namespace DigitalRune.Physics.Specialized
 
         // Set the relative motor target.
         var rotationMatrix = parentPose.Orientation.Transposed * childPose.Orientation;
-        _quaternionMotor.TargetOrientation = Quaternion.CreateRotation(rotationMatrix);
+        _quaternionMotor.TargetOrientation = Quaternion.CreateFromRotationMatrix(rotationMatrix);
       }
     }
 

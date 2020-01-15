@@ -8,14 +8,14 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
-using DigitalRune.Editor.Properties;
-using DigitalRune.ServiceLocation;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Editor.Properties;
+using MinimalRune.ServiceLocation;
+using MinimalRune.Windows.Framework;
 using NLog;
 using static System.FormattableString;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// Manages the editor (including main window, services, extensions, etc.).
@@ -33,9 +33,9 @@ namespace DigitalRune.Editor
     /// </remarks>
     public partial class EditorViewModel : Screen, IEditorService
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
@@ -44,9 +44,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets an <see cref="EditorViewModel" /> instance which can be used at design-time.
@@ -204,9 +204,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="EditorViewModel"/> class using the given
@@ -239,9 +239,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Configures the editor.

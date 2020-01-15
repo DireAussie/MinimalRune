@@ -59,7 +59,7 @@
 
 
 
-namespace DigitalRune.Threading
+namespace MinimalRune.Threading
 {
   /// <summary>
   /// Defines a task scheduler.

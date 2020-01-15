@@ -8,7 +8,7 @@ using System.Text;
 using static System.FormattableString;
 
 
-namespace DigitalRune.CommandLine
+namespace MinimalRune.CommandLine
 {
     /// <summary>
     /// Describes a command line argument that has a value which lies in an interval.
@@ -18,15 +18,15 @@ namespace DigitalRune.CommandLine
     /// </typeparam>
     public class BoundedValueArgument<T> : ValueArgument<T> where T : struct, IComparable<T>
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets the minimal value.
@@ -43,9 +43,9 @@ namespace DigitalRune.CommandLine
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BoundedValueArgument{T}"/> class.
@@ -80,9 +80,9 @@ namespace DigitalRune.CommandLine
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public override ArgumentResult Parse(IReadOnlyList<string> args, ref int index)

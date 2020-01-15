@@ -1,4 +1,4 @@
-﻿using DigitalRune.Windows.Docking;
+﻿using MinimalRune.Windows.Docking;
 
 
 namespace WindowsThemesApp.ViewModels

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Linq;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Statistics;
-using DigitalRune.Particles.Effectors;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Statistics;
+using MinimalRune.Particles.Effectors;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Particles.Tests.Effectors
+namespace MinimalRune.Particles.Tests.Effectors
 {
   [TestFixture]
   public class StartValueEffectorTest

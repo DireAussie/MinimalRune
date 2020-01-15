@@ -1,7 +1,7 @@
-﻿using DigitalRune.Geometry;
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
+﻿using MinimalRune.Geometry;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
@@ -60,7 +60,7 @@ If an object is in contact with another object, it is drawn yellow.",
       complexShape.Children.Add(new GeometricObject(new CircleShape(1), new Pose(new Vector3(0, 0, -1))));
       var geometricObjectC = new GeometricObject(
         complexShape,
-        new Pose(new Vector3(0, 2, 0), Quaternion.CreateRotation(Vector3.UnitZ, new Vector3(1, 1, 1))));
+        new Pose(new Vector3(0, 2, 0), Quaternion.CreateFromRotationMatrix(Vector3.UnitZ, new Vector3(1, 1, 1))));
 
       // Create collision objects for the geometric objects.
       // (A collision object is just a wrapper around the geometric object that

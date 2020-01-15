@@ -3,11 +3,11 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System.Windows.Media;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Controls;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Controls;
 
 
-namespace DigitalRune.Editor.Outlines
+namespace MinimalRune.Editor.Outlines
 {
     /// <summary>
     /// Represents a tree view item in the outline.

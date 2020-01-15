@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows.Media;
-using DigitalRune.Game.Timing;
-using DigitalRune.Graphics;
-using DigitalRune.ServiceLocation;
-using DigitalRune.Storages;
+using MinimalRune.Game.Timing;
+using MinimalRune.Graphics;
+using MinimalRune.ServiceLocation;
+using MinimalRune.Storages;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;

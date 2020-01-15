@@ -6,12 +6,12 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Effects
+namespace MinimalRune.Graphics.Effects
 {
   partial class EffectHelper
   {
@@ -194,8 +194,8 @@ namespace DigitalRune.Graphics.Effects
           {
             if (value is Vector4)
               binding = new ConstParameterBinding<Vector4>(effect, parameter, (Vector4)value);
-            else if (value is Vector4F)
-              binding = new ConstParameterBinding<Vector4F>(effect, parameter, (Vector4F)value);
+            else if (value is Vector4)
+              binding = new ConstParameterBinding<Vector4>(effect, parameter, (Vector4)value);
           }
         }
         else if (parameter.ParameterClass == EffectParameterClass.Matrix && parameter.ParameterType == EffectParameterType.Single)
@@ -269,8 +269,8 @@ namespace DigitalRune.Graphics.Effects
           {
             if (value is Vector4[])
               binding = new ConstParameterArrayBinding<Vector4>(effect, parameter, (Vector4[])value);
-            else if (value is Vector4F[])
-              binding = new ConstParameterArrayBinding<Vector4F>(effect, parameter, (Vector4F[])value);
+            else if (value is Vector4[])
+              binding = new ConstParameterArrayBinding<Vector4>(effect, parameter, (Vector4[])value);
           }
         }
         else if (parameter.ParameterClass == EffectParameterClass.Matrix &&

@@ -15,7 +15,7 @@ using System.Windows.Threading;
 using static System.FormattableString;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Defines a keyboard combination of multiple key strokes that can be used to invoke a command.
@@ -58,9 +58,9 @@ namespace DigitalRune.Windows.Framework
         // But I [MartinG] had to change the class drastically. The original design did not handle 
         // conflicting key gestures such as "Ctrl+X" and "Ctrl+K, Ctrl+X" correctly.
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly List<Key> _keys;
         private int _currentKeyIndex;
@@ -70,9 +70,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets the keys associated with the gesture.
@@ -96,9 +96,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="MultiKeyGesture"/> class.
@@ -182,9 +182,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// When overridden in a derived class, determines whether the specified

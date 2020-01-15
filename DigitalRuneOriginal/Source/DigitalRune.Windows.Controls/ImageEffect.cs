@@ -10,30 +10,30 @@ using System.Windows.Media.Effects;
 using static System.FormattableString;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Provides miscellaneous options for processing an image.
     /// </summary>
     public class ImageEffect : ShaderEffect
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static readonly PixelShader ImageEffectShader = new PixelShader { UriSource = MakePackUri("Resources/ImageEffect.ps") };
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //-------------------------------------------------------------- 
+         
 
         /// <summary>
         /// Identifies the <see cref="Input"/> dependency property.
@@ -129,9 +129,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageEffect"/> class.
@@ -148,9 +148,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         // MakePackUri is a utility method for computing a pack URI for the given resource.
         private static Uri MakePackUri(string relativeFile)

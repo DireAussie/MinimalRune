@@ -7,7 +7,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 
 
-namespace DigitalRune.Editor.Search
+namespace MinimalRune.Editor.Search
 {
     /// <summary>
     /// Manages a collection of search scopes.

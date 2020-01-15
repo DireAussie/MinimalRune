@@ -14,30 +14,30 @@ using Microsoft.Xna.Framework.Graphics.PackedVector;
 
 
 
-namespace DigitalRune.Graphics.Content.Pipeline
+namespace MinimalRune.Graphics.Content.Pipeline
 {
   partial class DRModelProcessor
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private const int MaxBonesPerVertex = 4;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly int[] _tempIndices = new int[MaxBonesPerVertex];
     private readonly float[] _tempWeights = new float[MaxBonesPerVertex];
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /*
     /// <summary>
@@ -59,9 +59,9 @@ namespace DigitalRune.Graphics.Content.Pipeline
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private void ProcessVertexChannels(MeshContent mesh)
     {

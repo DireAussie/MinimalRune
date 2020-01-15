@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Geometry.Meshes;
-using DigitalRune.Geometry.Partitioning;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Statistics;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Geometry.Meshes;
+using MinimalRune.Geometry.Partitioning;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Statistics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
@@ -167,7 +167,7 @@ pick object using the mouse cursor.",
         // shooting in viewing direction (rayEnd - rayStart).
         ((GeometricObject)_ray.GeometricObject).Pose = new Pose(
           (Vector3)rayStart,
-          Quaternion.CreateRotation(Vector3.Forward, (Vector3)(rayEnd - rayStart)));
+          Quaternion.CreateFromRotationMatrix(Vector3.Forward, (Vector3)(rayEnd - rayStart)));
       }
       else
       {

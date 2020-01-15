@@ -10,7 +10,7 @@ using System.Xml.Linq;
 using static System.FormattableString;
 
 
-namespace DigitalRune.Editor.Commands
+namespace MinimalRune.Editor.Commands
 {
     partial class CommandExtension
     {

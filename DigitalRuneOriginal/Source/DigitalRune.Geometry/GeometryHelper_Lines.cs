@@ -4,12 +4,12 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry
+namespace MinimalRune.Geometry
 {
   public static partial class GeometryHelper
   {
@@ -177,8 +177,8 @@ namespace DigitalRune.Geometry
       Vector3 lB = segmentB.End - segmentB.Start;
 
       // From Equation (15)
-      float l11 = lA.LengthSquared;
-      float l22 = lB.LengthSquared;
+      float l11 = lA.LengthSquared();
+      float l22 = lB.LengthSquared();
 
       if (l11 < epsilonSquared)
       {
@@ -244,7 +244,7 @@ namespace DigitalRune.Geometry
     // Similar to GetLineParameters(LineSegment, LineSegment, ...)
     internal static void GetLineParameter(LineSegment lineSegment, Vector3 point, out float parameter)
     {
-      float lengthSquared = lineSegment.LengthSquared;
+      float lengthSquared = lineSegment.LengthSquared();
       if (lengthSquared < Numeric.EpsilonFSquared)
       {
         // Segment has zero length.

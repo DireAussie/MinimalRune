@@ -10,10 +10,10 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
-using DigitalRune.Windows.Interop;
+using MinimalRune.Windows.Interop;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     /// <summary>
     /// Handles dragging of docking objects with the mouse.
@@ -37,9 +37,9 @@ namespace DigitalRune.Windows.Docking
         // mouse events.
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         // Tolerance when dragging items in DockTabPanel.
         private const double VerticalTolerance = 24;
@@ -81,9 +81,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets a value indicating whether a dragging operation is in progress.
@@ -126,9 +126,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DragManager"/> class.
@@ -152,9 +152,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------    
+            
 
         /// <summary>
         /// Resets all fields.

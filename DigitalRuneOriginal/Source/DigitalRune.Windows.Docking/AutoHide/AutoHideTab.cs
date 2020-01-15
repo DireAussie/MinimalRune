@@ -9,7 +9,7 @@ using System.Windows.Input;
 using System.Windows.Threading;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     /// <summary>
     /// Represents an <see cref="IDockTabItem"/> in an <see cref="Docking.AutoHideBar"/>.
@@ -21,17 +21,17 @@ namespace DigitalRune.Windows.Docking
     [TemplateVisualState(GroupName = "LayoutStates", Name = "UpsideDown")]
     public class AutoHideTab : Control
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly DispatcherTimer _hoverTimer;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets the parent <see cref="AutoHideGroup"/>.
@@ -76,15 +76,15 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="AutoHideTab"/> class.
@@ -110,9 +110,9 @@ namespace DigitalRune.Windows.Docking
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// When overridden in a derived class, is invoked whenever application code or internal 

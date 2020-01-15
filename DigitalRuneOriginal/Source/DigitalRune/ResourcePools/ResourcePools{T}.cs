@@ -5,7 +5,7 @@
 using System.Collections.Generic;
 
 
-namespace DigitalRune
+namespace MinimalRune
 {
   /// <summary>
   /// Provides resource pools for reusable generic collections.

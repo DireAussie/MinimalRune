@@ -6,16 +6,16 @@ using System;
 using System.Globalization;
 
 
-namespace DigitalRune.ServiceLocation
+namespace MinimalRune.ServiceLocation
 {
     /// <summary>
     /// Identifies an entry in the <see cref="ServiceContainer"/>.
     /// </summary>
     internal struct ServiceRegistration : IEquatable<ServiceRegistration>
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// The type of the service.
@@ -31,15 +31,15 @@ namespace DigitalRune.ServiceLocation
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ServiceRegistration"/> struct.
@@ -57,9 +57,9 @@ namespace DigitalRune.ServiceLocation
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <overloads>
         /// <summary>

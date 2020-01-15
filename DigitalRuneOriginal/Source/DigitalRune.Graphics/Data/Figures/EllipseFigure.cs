@@ -2,20 +2,20 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.TXT', which is part of this source code package.
 
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Interpolation;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Interpolation;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Represents an ellipse in the xy plane.
   /// </summary>
   public class EllipseFigure : Figure
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly ArcSegment2F _arcSegment = new ArcSegment2F
     {
@@ -24,9 +24,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------    
+        
 
     /// <summary>
     /// Gets or sets a value indicating whether the ellipse is filled.
@@ -95,15 +95,15 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     internal override void Flatten(Collections.ArrayList<Vector3> vertices, Collections.ArrayList<int> strokeIndices, Collections.ArrayList<int> fillIndices)

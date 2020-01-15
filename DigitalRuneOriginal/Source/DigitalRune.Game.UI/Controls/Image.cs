@@ -3,13 +3,13 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System.ComponentModel;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   /// <summary>
   /// Represents a control that displays an image.
@@ -35,7 +35,7 @@ namespace DigitalRune.Game.UI.Controls
   /// 
   /// buttonContentPanel.Children.Add(new TextBlock
   /// {
-  ///   Margin = new Vector4F(4, 0, 0, 0),
+  ///   Margin = new Vector4(4, 0, 0, 0),
   ///   Text = "Label",
   ///   VerticalAlignment = VerticalAlignment.Center,
   /// });
@@ -43,7 +43,7 @@ namespace DigitalRune.Game.UI.Controls
   /// var button = new Button
   /// {
   ///   Content = buttonContentPanel,
-  ///   Margin = new Vector4F(4),
+  ///   Margin = new Vector4(4),
   /// };
   /// 
   /// // To show the button, add it to an existing content control or panel.
@@ -56,21 +56,21 @@ namespace DigitalRune.Game.UI.Controls
   /// </example>
   public class Image : UIControl
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
-
-
-
-    //--------------------------------------------------------------
-
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
+
+
+
+    
+
+    
 
     /// <summary> 
     /// The ID of the <see cref="Texture"/> game object property.
@@ -164,9 +164,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes static members of the <see cref="Image"/> class.
@@ -190,9 +190,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override Vector2F OnMeasure(Vector2F availableSize)
@@ -207,7 +207,7 @@ namespace DigitalRune.Game.UI.Controls
 
       float width = Width;
       float height = Height;
-      Vector4F padding = Padding;
+      Vector4 padding = Padding;
       Vector2F desiredSize = Vector2F.Zero;
 
       if (Numeric.IsPositiveFinite(width))

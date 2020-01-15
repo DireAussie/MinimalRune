@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Supports messaging between loosely-coupled components.

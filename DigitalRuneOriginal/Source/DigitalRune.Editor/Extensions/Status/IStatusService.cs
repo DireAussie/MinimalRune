@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Editor.Status
+namespace MinimalRune.Editor.Status
 {
     /// <summary>
     /// Manages status information.

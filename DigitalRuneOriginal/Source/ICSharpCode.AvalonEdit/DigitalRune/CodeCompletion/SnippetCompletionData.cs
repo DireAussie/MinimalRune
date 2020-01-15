@@ -16,15 +16,15 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
     /// </remarks>
     public class SnippetCompletionData : ICompletionData
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets the image.
@@ -76,9 +76,9 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <overloads>
         /// <summary>
@@ -118,9 +118,9 @@ namespace ICSharpCode.AvalonEdit.CodeCompletion
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         public void Complete(TextArea textArea, ISegment completionSegment, EventArgs insertionRequestEventArgs)

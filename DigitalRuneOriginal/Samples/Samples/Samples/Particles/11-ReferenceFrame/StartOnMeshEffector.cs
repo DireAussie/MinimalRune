@@ -1,8 +1,8 @@
-﻿using DigitalRune.Geometry;
-using DigitalRune.Geometry.Meshes;
-using DigitalRune.Mathematics.Algebra;
-using DigitalRune.Mathematics.Statistics;
-using DigitalRune.Particles;
+﻿using MinimalRune.Geometry;
+using MinimalRune.Geometry.Meshes;
+using MinimalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Statistics;
+using MinimalRune.Particles;
 
 
 namespace Samples.Particles

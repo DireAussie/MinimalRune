@@ -6,10 +6,10 @@ using System.Collections;
 using System.Globalization;
 using System.Text;
 using System.Threading;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 
 
-namespace DigitalRune.Diagnostics
+namespace MinimalRune.Diagnostics
 {
   /// <summary>
   /// Stores a collection of <see cref="ProfilerData"/> instances for one thread.

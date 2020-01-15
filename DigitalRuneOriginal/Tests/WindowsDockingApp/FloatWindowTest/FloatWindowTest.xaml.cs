@@ -2,8 +2,8 @@
 using System.Linq;
 using System.Windows;
 using System.Windows.Media.Imaging;
-using DigitalRune.Windows.Docking;
-using DigitalRune.Windows.Docking.Tests;
+using MinimalRune.Windows.Docking;
+using MinimalRune.Windows.Docking.Tests;
 
 
 namespace WindowsDockingApp

@@ -1,6 +1,6 @@
 ﻿
-using DigitalRune.Graphics;
-using DigitalRune.Graphics.PostProcessing;
+using MinimalRune.Graphics;
+using MinimalRune.Graphics.PostProcessing;
 using Microsoft.Xna.Framework.Graphics;
 
 

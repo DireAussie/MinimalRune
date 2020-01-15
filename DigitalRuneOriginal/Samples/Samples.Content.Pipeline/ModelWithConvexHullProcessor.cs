@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics.Content.Pipeline;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics.Content.Pipeline;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Content.Pipeline.Graphics;

@@ -1,8 +1,8 @@
-﻿using DigitalRune.Mathematics.Algebra;
+﻿using MinimalRune.Mathematics.Algebra;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Animation.Traits.Tests
+namespace MinimalRune.Animation.Traits.Tests
 {
   [TestFixture]
   public class Vector3TraitsTest

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 
 
-namespace DigitalRune
+namespace MinimalRune
 {
   /// <summary>
   /// Provides access to native methods using P/Invoke.

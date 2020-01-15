@@ -3,15 +3,15 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics.Rendering;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics.Rendering;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Graphics.SceneGraph
+namespace MinimalRune.Graphics.SceneGraph
 {
   /// <summary>
   /// Represents a body of water, e.g. a lake, river or an infinite ocean.
@@ -50,9 +50,9 @@ namespace DigitalRune.Graphics.SceneGraph
     // This node can perform IsUnderwater tests, it caches the single last result. 
     // The IsDirty flag is used to invalidate the cached result.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // For underwater tests. Use these only in a critical section.
     private static readonly object _underwaterTestLock = new object();
@@ -63,9 +63,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Cached underwater test result.
     private Vector3 _lastTestPosition = new Vector3(float.NaN);
@@ -73,9 +73,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the water properties.
@@ -303,9 +303,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="WaterNode" /> class.
@@ -359,9 +359,9 @@ namespace DigitalRune.Graphics.SceneGraph
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
@@ -432,7 +432,7 @@ namespace DigitalRune.Graphics.SceneGraph
       // Check if we have a valid AABB.
       var aabb = Volume.GetAabb();
 
-      if (!Numeric.IsZeroOrPositiveFinite(aabb.Extent.LengthSquared))
+      if (!Numeric.IsZeroOrPositiveFinite(aabb.Extent.LengthSquared()))
         throw new GraphicsException("Invalid water volume. The water volume must be a finite shape or null.");
 
       // Apply ExtraHeight. We also apply it horizontally because choppy waves

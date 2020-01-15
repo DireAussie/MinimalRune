@@ -7,7 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
-using DigitalRune.Windows.Controls;
+using MinimalRune.Windows.Controls;
 
 namespace WindowsControlsApp
 {

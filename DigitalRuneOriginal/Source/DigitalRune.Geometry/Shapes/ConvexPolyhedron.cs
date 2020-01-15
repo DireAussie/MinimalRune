@@ -9,8 +9,8 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Xml.Serialization;
-using DigitalRune.Geometry.Meshes;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Meshes;
+using MinimalRune.Mathematics.Algebra;
 
 using System.ComponentModel;
 
@@ -19,7 +19,7 @@ using System.Dynamic;
 
 
 
-namespace DigitalRune.Geometry.Shapes
+namespace MinimalRune.Geometry.Shapes
 {
   /// <summary>
   /// Represents a convex polyhedron.
@@ -164,9 +164,9 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The vertex threshold. If the number of vertices exceeds the vertex threshold a directional
@@ -192,18 +192,18 @@ namespace DigitalRune.Geometry.Shapes
 
 
     
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // The cached local space AABB
     private Aabb _aabbLocal = new Aabb(new Vector3(float.NaN), new Vector3(float.NaN));
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets an inner point.
@@ -292,9 +292,9 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ConvexPolyhedron"/> class. (For internal use 
@@ -325,9 +325,9 @@ namespace DigitalRune.Geometry.Shapes
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     internal void Set(Vector3[] vertices, Aabb aabb, Vector3 innerPoint, DirectionalLookupTableUInt16F directionalLookupTable, VertexAdjacency vertexAdjacency)
     {
@@ -549,7 +549,7 @@ namespace DigitalRune.Geometry.Shapes
       float minDistanceSquared = float.MaxValue;
       for (ushort i = 0; i < _vertices.Length; i++)
       {
-        float distanceSquared = (samplePoint - _vertices[i]).LengthSquared;
+        float distanceSquared = (samplePoint - _vertices[i]).LengthSquared();
         if (distanceSquared < minDistanceSquared)
         {
           minDistanceSquared = distanceSquared;

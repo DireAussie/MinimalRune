@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace DigitalRune.Mathematics.Interpolation
+namespace MinimalRune.Mathematics.Interpolation
 {
   /// <summary>
   /// Defines a single segment of a 1-dimensional cubic B-spline (single-precision).
@@ -102,9 +102,9 @@ namespace DigitalRune.Mathematics.Interpolation
     }
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static readonly ResourcePool<BSplineSegment1F> Pool = new ResourcePool<BSplineSegment1F>(
        () => new BSplineSegment1F(),                  // Create

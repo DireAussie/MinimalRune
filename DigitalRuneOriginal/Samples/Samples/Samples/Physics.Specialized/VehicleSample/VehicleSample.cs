@@ -1,5 +1,5 @@
 ﻿
-using DigitalRune.Physics.ForceEffects;
+using MinimalRune.Physics.ForceEffects;
 
 
 namespace Samples.Physics.Specialized

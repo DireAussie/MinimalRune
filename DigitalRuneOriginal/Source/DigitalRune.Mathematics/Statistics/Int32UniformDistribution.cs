@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Mathematics.Statistics
+namespace MinimalRune.Mathematics.Statistics
 {
   /// <summary>
   /// Represents a uniform distribution that returns random <see cref="Int32"/> values for a given 

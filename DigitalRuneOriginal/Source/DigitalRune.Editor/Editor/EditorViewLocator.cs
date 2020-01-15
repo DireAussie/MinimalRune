@@ -5,12 +5,12 @@
 using System;
 using System.Globalization;
 using System.Windows;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Windows.Framework;
 using Microsoft.Practices.ServiceLocation;
 using NLog;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     /// <summary>
     /// Resolves views for the view models of the editor and the editor extensions.

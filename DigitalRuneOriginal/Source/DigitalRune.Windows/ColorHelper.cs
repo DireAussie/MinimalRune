@@ -5,10 +5,10 @@
 using System;
 using System.Diagnostics;
 using System.Windows.Media;
-using DigitalRune.Mathematics;
+using MinimalRune.Mathematics;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
     /// Helper functions for <see cref="Color"/>s.

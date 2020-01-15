@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
-using DigitalRune.Animation;
-using DigitalRune.Animation.Character;
-using DigitalRune.Graphics.SceneGraph;
+using MinimalRune.Animation;
+using MinimalRune.Animation.Character;
+using MinimalRune.Graphics.SceneGraph;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 

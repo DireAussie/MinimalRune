@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 
 
-namespace DigitalRune.Windows.Controls
+namespace MinimalRune.Windows.Controls
 {
     /// <summary>
     /// Represents a slider-like control that displays a color gradient in a 2D area.
@@ -33,23 +33,23 @@ namespace DigitalRune.Windows.Controls
     [TemplatePart(Name = "PART_Thumb", Type = typeof(FrameworkElement))]
     public class ColorSlider2D : Control
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private FrameworkElement _thumb;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="ImageSource"/> dependency property.
@@ -127,9 +127,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="ColorSlider2D"/> class.
@@ -141,9 +141,9 @@ namespace DigitalRune.Windows.Controls
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private static Point ClampValue(Point value)
         {

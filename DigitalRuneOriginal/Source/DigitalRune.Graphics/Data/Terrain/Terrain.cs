@@ -4,13 +4,13 @@
 
 using System;
 using System.Collections.Generic;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Graphics.Rendering;
-using DigitalRune.Graphics.SceneGraph;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Graphics.Rendering;
+using MinimalRune.Graphics.SceneGraph;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Represents a height field based terrain.
@@ -45,9 +45,9 @@ namespace DigitalRune.Graphics
   /// </remarks>
   public class Terrain : IDisposable
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// A large value which can be used in the AABBs if the AABB should cover "everything".
@@ -57,15 +57,15 @@ namespace DigitalRune.Graphics
 
 
     
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets a value indicating whether this instance has been disposed of.
@@ -102,7 +102,7 @@ namespace DigitalRune.Graphics
     /// textures.
     /// </value>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
-    public Vector4F[] BaseClearValues { get; private set; }
+    public Vector4[] BaseClearValues { get; private set; }
 
 
     /// <summary>
@@ -114,7 +114,7 @@ namespace DigitalRune.Graphics
     /// 0, 0, 0).
     /// </value>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays")]
-    public Vector4F[] DetailClearValues { get; private set; }
+    public Vector4[] DetailClearValues { get; private set; }
 
 
     /// <summary>
@@ -137,9 +137,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="Terrain"/> class.
@@ -149,9 +149,9 @@ namespace DigitalRune.Graphics
       InvalidBaseRegions = new List<Aabb>();
       InvalidDetailRegions = new List<Aabb>();
       Shape = Shape.Infinite;
-      BaseClearValues = new Vector4F[4];
-      DetailClearValues = new Vector4F[4];
-      BaseClearValues[0] = new Vector4F(-10000, 0, 0, 1);
+      BaseClearValues = new Vector4[4];
+      DetailClearValues = new Vector4[4];
+      BaseClearValues[0] = new Vector4(-10000, 0, 0, 1);
 
       Tiles = new TerrainTileCollection(this);
 
@@ -200,9 +200,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <overloads>
     /// <summary>

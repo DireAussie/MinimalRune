@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 
 
-namespace DigitalRune.Game
+namespace MinimalRune.Game
 {
   public partial class GameObject 
   {

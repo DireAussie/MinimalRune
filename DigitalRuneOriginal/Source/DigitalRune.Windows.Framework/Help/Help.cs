@@ -8,7 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Provides the ability to easily attach Help functionality to elements.
@@ -80,9 +80,9 @@ namespace DigitalRune.Windows.Framework
         //   all parents.
         // - The Help provider is no longer hardcoded and can be set via a property.
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Gets or sets the help provider.
@@ -103,9 +103,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Identifies the <see cref="P:DigitalRune.Windows.Framework.Help.Url"/> attached
@@ -224,9 +224,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes static members of the <see cref="Help"/> class.
@@ -241,9 +241,9 @@ namespace DigitalRune.Windows.Framework
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Determines whether the <see cref="ApplicationCommands.Help"/> command can be executed.

@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Interactivity;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Sets the focus when the element is loaded.

@@ -1,17 +1,17 @@
-﻿using DigitalRune.Animation.Traits;
+﻿using MinimalRune.Animation.Traits;
 using NUnit.Framework;
 
 
-namespace DigitalRune.Animation.Tests
+namespace MinimalRune.Animation.Tests
 {
   [TestFixture]
-  public class Vector4FKeyFrameAnimationTest
+  public class Vector4KeyFrameAnimationTest
   {
     [Test]
     public void TraitsTest()
     {
-      var animationEx = new Vector4FKeyFrameAnimation();
-      Assert.AreEqual(Vector4FTraits.Instance, animationEx.Traits);
+      var animationEx = new Vector4KeyFrameAnimation();
+      Assert.AreEqual(Vector4Traits.Instance, animationEx.Traits);
     }
   }
 }

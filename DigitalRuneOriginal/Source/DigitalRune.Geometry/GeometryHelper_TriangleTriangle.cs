@@ -3,11 +3,11 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry
+namespace MinimalRune.Geometry
 {
   // Triangle-Triangle Overlap Test Routines
   // Implementation of "Fast and Robust Triangle-Triangle Overlap Test Using Orientation 
@@ -28,9 +28,9 @@ namespace DigitalRune.Geometry
     // - Robustness problems if triangles are nearly coplanar or when an edge is nearly coplanar
     //   to the other triangle. Bugfix: See Real-Time Rendering p. 760.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     //private static void CROSS(out Vector3 result, ref Vector3 v1, ref Vector3 v2)
     //{
@@ -111,9 +111,9 @@ namespace DigitalRune.Geometry
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static bool coplanar_tri_tri3d(ref Vector3 p1, ref Vector3 q1, ref Vector3 r1,
                                            ref Vector3 p2, ref Vector3 q2, ref Vector3 r2,
@@ -386,9 +386,9 @@ namespace DigitalRune.Geometry
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     //// This method is called when the triangles surely intersect
     //// It constructs the segment of intersection of the two triangles
@@ -665,9 +665,9 @@ namespace DigitalRune.Geometry
 
 
     
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static float ORIENT_2D(ref Vector2F a, ref Vector2F b, ref Vector2F c)
     {

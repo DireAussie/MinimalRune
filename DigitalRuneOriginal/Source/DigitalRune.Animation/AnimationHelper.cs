@@ -5,13 +5,13 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Animation.Traits;
-using DigitalRune.Linq;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Animation.Traits;
+using MinimalRune.Linq;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Provides helper methods for working with animations.
@@ -550,7 +550,7 @@ namespace DigitalRune.Animation
     /// </returns>
     public static Vector3 ComputeAngularVelocity(Matrix currentOrientation, Matrix targetOrientation, float deltaTime)
     {
-      return ComputeAngularVelocity(Quaternion.CreateRotation(currentOrientation), Quaternion.CreateRotation(targetOrientation), deltaTime);
+      return ComputeAngularVelocity(Quaternion.CreateFromRotationMatrix(currentOrientation), Quaternion.CreateFromRotationMatrix(targetOrientation), deltaTime);
     }
   }
 }

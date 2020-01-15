@@ -4,13 +4,13 @@
 
 using System;
 using System.Linq;
-using DigitalRune.Collections;
+using MinimalRune.Collections;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Content.Pipeline.Graphics;
 
 
-namespace DigitalRune.Graphics.Content.Pipeline
+namespace MinimalRune.Graphics.Content.Pipeline
 {
   /// <summary>
   /// Represents a placeholder for a <see cref="NodeContent"/> which hasn't been imported yet.

@@ -3,11 +3,11 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Geometry
+namespace MinimalRune.Geometry
 {
   /// <summary>
   /// Defines an object that has a <see cref="Shape"/> and a <see cref="Pose"/> (position and 
@@ -59,18 +59,18 @@ namespace DigitalRune.Geometry
   /// <code lang="csharp">
   /// <![CDATA[
   /// using System;
-  /// using DigitalRune.Geometry.Shapes;
-  /// using DigitalRune.Mathematics.Algebra;
+  /// using MinimalRune.Geometry.Shapes;
+  /// using MinimalRune.Mathematics.Algebra;
   /// 
   /// 
-  /// namespace DigitalRune.Geometry
+  /// namespace MinimalRune.Geometry
   /// {
   ///   [Serializable]
   ///   public class GeometricObject : IGeometricObject
   ///   {
-  ///     //--------------------------------------------------------------
+  ///     
   ///     #region Properties & Events
-  ///     //--------------------------------------------------------------
+  ///     
   /// 
   ///     public Aabb Aabb
   ///     {
@@ -154,9 +154,9 @@ namespace DigitalRune.Geometry
   ///     #endregion
   /// 
   /// 
-  ///     //--------------------------------------------------------------
+  ///     
   ///     #region Creation & Cleanup
-  ///     //--------------------------------------------------------------
+  ///     
   /// 
   ///     public GeometricObject()
   ///     {
@@ -167,9 +167,9 @@ namespace DigitalRune.Geometry
   ///     #endregion
   /// 
   /// 
-  ///     //--------------------------------------------------------------
+  ///     
   ///     #region Methods
-  ///     //--------------------------------------------------------------
+  ///     
   /// 
   ///     IGeometricObject IGeometricObject.Clone()
   ///     {

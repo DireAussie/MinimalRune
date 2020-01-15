@@ -5,7 +5,7 @@
 using System;
 
 
-namespace DigitalRune.Graphics.Content
+namespace MinimalRune.Graphics.Content
 {
   /// <summary>
   /// Defines a single element for the input-assembler stage.

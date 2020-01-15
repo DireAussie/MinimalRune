@@ -3,11 +3,11 @@
 // file 'LICENSE.TXT', which is part of this source code package.
 
 using System;
-using DigitalRune.Game.UI.Controls;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Game.UI.Controls;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Game.UI
+namespace MinimalRune.Game.UI
 {
   /// <summary>
   /// Manages tool tips.
@@ -60,9 +60,9 @@ namespace DigitalRune.Game.UI
     // It will be displayed on top of all other UIControls if the mouse hasn't moved
     // for a certain time and the control under the mouse has specified a ToolTip.
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // How long the mouse cursor has been still.
     private TimeSpan _noMouseMoveDuration;
@@ -72,9 +72,9 @@ namespace DigitalRune.Game.UI
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets a callback that creates a <see cref="UIControl"/> for a 
@@ -138,9 +138,9 @@ namespace DigitalRune.Game.UI
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ToolTipManager"/> class.
@@ -161,9 +161,9 @@ namespace DigitalRune.Game.UI
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private void OnScreenInputProcessed(object sender, InputEventArgs eventArgs)
     {

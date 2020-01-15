@@ -6,11 +6,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DigitalRune;
-using DigitalRune.Game.Input;
-using DigitalRune.Game.UI.Controls;
+using MinimalRune.Game.Input;
+using MinimalRune.Game.UI.Controls;
 
 
-namespace DigitalRune.Game.UI
+namespace MinimalRune.Game.UI
 {
   /// <summary>
   /// Manages the game user interface.
@@ -27,9 +27,9 @@ namespace DigitalRune.Game.UI
   /// </remarks>
   public class UIManager : IUIService
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private class UIScreenComparer : IComparer<UIScreen>
     {
@@ -44,18 +44,18 @@ namespace DigitalRune.Game.UI
 
 
     
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // The screens sorted front-to-back.
     private readonly List<UIScreen> _sortedScreens = new List<UIScreen>();
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public object Cursor { get; set; }
@@ -92,9 +92,9 @@ namespace DigitalRune.Game.UI
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
     /// <summary>
@@ -146,9 +146,9 @@ namespace DigitalRune.Game.UI
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private void OnGameWindowOrientationChanged(object sender, EventArgs eventArgs)
     {

@@ -4,12 +4,12 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Graphics
+namespace MinimalRune.Graphics
 {
   /// <summary>
   /// Defines a perspective projection.
@@ -66,9 +66,9 @@ namespace DigitalRune.Graphics
     //   http://www.terathon.com/lengyel/Lengyel-Oblique.pdf.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// The default value for <see cref="Projection.Near"/>.
@@ -95,15 +95,15 @@ namespace DigitalRune.Graphics
 
 
     
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the near clip plane in view space.
@@ -146,9 +146,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="PerspectiveProjection"/> class.
@@ -161,9 +161,9 @@ namespace DigitalRune.Graphics
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
@@ -382,19 +382,19 @@ namespace DigitalRune.Graphics
 
       if (_nearClipPlane.HasValue)
       {
-        Vector4F clipPlane = new Vector4F(_nearClipPlane.Value.Normal, -_nearClipPlane.Value.DistanceFromOrigin);
+        Vector4 clipPlane = new Vector4(_nearClipPlane.Value.Normal, -_nearClipPlane.Value.DistanceFromOrigin);
 
         // Calculate the clip-space corner point opposite the clipping plane as
         // (-sign(clipPlane.x), -sign(clipPlane.y), 1, 1) and transform it into
         // camera space by multiplying it by the inverse of the projection matrix.
-        Vector4F q;
+        Vector4 q;
         q.X = (-Math.Sign(clipPlane.X) + projection.M02) / projection.M00;
         q.Y = (-Math.Sign(clipPlane.Y) + projection.M12) / projection.M11;
         q.Z = -1.0f;
         q.W = (1.0f + projection.M22) / projection.M23;
 
         // Calculate the scaled plane vector
-        Vector4F c = clipPlane * (1.0f / Vector4F.Dot(clipPlane, q));
+        Vector4 c = clipPlane * (1.0f / Vector4.Dot(clipPlane, q));
 
         // Replace the third row of the projection matrix
         projection.M20 = c.X;

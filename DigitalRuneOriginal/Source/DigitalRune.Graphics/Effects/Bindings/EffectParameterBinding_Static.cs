@@ -6,18 +6,18 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace DigitalRune.Graphics.Effects
+namespace MinimalRune.Graphics.Effects
 {
   partial class EffectParameterBinding
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Provides delegates that check whether the effect parameter binding has the correct type.
@@ -46,7 +46,7 @@ namespace DigitalRune.Graphics.Effects
       { typeof(Vector4),      ValidateVector4     },
       { typeof(Vector2F),     ValidateVector2     },
       { typeof(Vector3),     ValidateVector3     },
-      { typeof(Vector4F),     ValidateVector4     },
+      { typeof(Vector4),     ValidateVector4     },
     };
 
 
@@ -77,7 +77,7 @@ namespace DigitalRune.Graphics.Effects
       { typeof(Vector4),     (Action<EffectParameter, Vector4>)    ((parameter, value) => parameter.SetValue(value))             },
       { typeof(Vector2F),    (Action<EffectParameter, Vector2F>)   ((parameter, value) => parameter.SetValue((Vector2)value))    },
       { typeof(Vector3),    (Action<EffectParameter, Vector3>)   ((parameter, value) => parameter.SetValue((Vector3)value))    },
-      { typeof(Vector4F),    (Action<EffectParameter, Vector4F>)   ((parameter, value) => parameter.SetValue((Vector4)value))    },
+      { typeof(Vector4),    (Action<EffectParameter, Vector4>)   ((parameter, value) => parameter.SetValue((Vector4)value))    },
     };
 
 
@@ -103,7 +103,7 @@ namespace DigitalRune.Graphics.Effects
       { typeof(Vector4),     (Action<EffectParameter, Vector4[]>)    ((parameter, value) => parameter.SetValue(value)) },
       //{ typeof(Vector2F),    (Action<EffectParameter, Vector2F[]>)   ((parameter, value) => parameter.SetValue(value)) },
       //{ typeof(Vector3),    (Action<EffectParameter, Vector3[]>)   ((parameter, value) => parameter.SetValue(value)) },
-      //{ typeof(Vector4F),    (Action<EffectParameter, Vector4F[]>)   ((parameter, value) => parameter.SetValue(value)) },
+      //{ typeof(Vector4),    (Action<EffectParameter, Vector4[]>)   ((parameter, value) => parameter.SetValue(value)) },
 
 // Following methods cause garbage!
 ////#if !XBOX
@@ -116,9 +116,9 @@ namespace DigitalRune.Graphics.Effects
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly")]
     internal static void ThrowIfArray(Effect effect, EffectParameterDescription description)
@@ -227,7 +227,7 @@ namespace DigitalRune.Graphics.Effects
               if (parameter.ColumnCount == 3 && parameter.RowCount == 1)
                 return "Vector3, Vector3";
               if (parameter.ColumnCount == 4 && parameter.RowCount == 1)
-                return "Vector4, Vector4F, Quaternion, Quaternion4F";
+                return "Vector4, Vector4, Quaternion, Quaternion4F";
               break;
             case EffectParameterClass.Matrix:
               return "Matrix, Matrix";

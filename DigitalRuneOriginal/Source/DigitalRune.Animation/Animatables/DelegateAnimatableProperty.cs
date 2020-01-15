@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Wraps an existing field or property and makes it animatable.
@@ -40,17 +40,17 @@ namespace DigitalRune.Animation
   [DebuggerDisplay("{GetType().Name,nq}(IsAnimated = {_isAnimated}, Value = {GetValue()})")]
   public class DelegateAnimatableProperty<T> : IAnimatableProperty<T>
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private bool _isAnimated;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the callback that reads the property value.
@@ -159,9 +159,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="DelegateAnimatableProperty{T}"/> class.
@@ -176,9 +176,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
   }
 }

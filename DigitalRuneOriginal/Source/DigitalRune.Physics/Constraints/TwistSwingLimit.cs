@@ -4,11 +4,11 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
-namespace DigitalRune.Physics.Constraints
+namespace MinimalRune.Physics.Constraints
 {
   /// <summary>
   /// Defines a twist and swing limits to limit rotations.
@@ -46,9 +46,9 @@ namespace DigitalRune.Physics.Constraints
     // cone border. Maybe use the normal direction of the ellipse...
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly LimitState[] _limitStates = new LimitState[2];
     private Vector2F _minImpulseLimits;
@@ -61,9 +61,9 @@ namespace DigitalRune.Physics.Constraints
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the constraint anchor orientation on <see cref="Constraint.BodyA"/> in local 
@@ -324,15 +324,15 @@ namespace DigitalRune.Physics.Constraints
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override void OnSetup()
@@ -345,13 +345,13 @@ namespace DigitalRune.Physics.Constraints
       // anchor orientation B:
       //   QB = QTotal * QA
       //   => QTotal = QB * QA.Inverse
-      Quaternion total = Quaternion.CreateRotation(anchorOrientationB * anchorOrientationA.Transposed);
+      Quaternion total = Quaternion.CreateFromRotationMatrix(anchorOrientationB * anchorOrientationA.Transposed);
 
       // Compute swing axis and angle.
       Vector3 xAxisA = anchorOrientationA.GetColumn(0);
       Vector3 yAxisA = anchorOrientationA.GetColumn(1);
       Vector3 xAxisB = anchorOrientationB.GetColumn(0);
-      Quaternion swing = Quaternion.CreateRotation(xAxisA, xAxisB);
+      Quaternion swing = Quaternion.CreateFromRotationMatrix(xAxisA, xAxisB);
 
       Vector3 swingAxis = new Vector3(swing.X, swing.Y, swing.Z);
       if (!swingAxis.TryNormalize())
@@ -361,7 +361,7 @@ namespace DigitalRune.Physics.Constraints
 
       Debug.Assert(
         0 <= swingAngle && swingAngle <= ConstantsF.Pi,
-        "Quaternion.CreateRotation(Vector3, Vector3) should only create rotations along the \"short arc\".");
+        "Quaternion.CreateFromRotationMatrix(Vector3, Vector3) should only create rotations along the \"short arc\".");
 
       // The swing limits create a deformed cone. If we look onto the x-axis of A:
       // y-axis goes to the right. z-axis goes up. 
@@ -643,7 +643,7 @@ namespace DigitalRune.Physics.Constraints
       }
 
       var swingAxis = new Vector3(0, -directionZ, directionY);
-      var swing = Quaternion.CreateRotation(swingAxis, swingLimit);
+      var swing = Quaternion.CreateFromRotationMatrix(swingAxis, swingLimit);
 
       var pointInAnchorA = swing.Rotate(new Vector3(distanceFromTip, 0, 0));
 

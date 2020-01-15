@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 
 
-namespace DigitalRune.Physics.Tests
+namespace MinimalRune.Physics.Tests
 {
   [TestFixture]
   public class SimulationTest

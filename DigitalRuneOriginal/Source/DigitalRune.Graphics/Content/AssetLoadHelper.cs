@@ -9,7 +9,7 @@ using System.Threading;
 using Microsoft.Xna.Framework.Content;
 
 
-namespace DigitalRune.Graphics.Content
+namespace MinimalRune.Graphics.Content
 {
   /// <summary>
   /// Helps to determine when an asset with shared resources is fully loaded.
@@ -83,9 +83,9 @@ namespace DigitalRune.Graphics.Content
     // - LodGroupNode: When all LOD nodes are loaded, the bounding shape is updated.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Wraps a fixup action and calls AssetLoadHelper.OnFixupExecuted when the 
     // fixup action was executed.
@@ -112,9 +112,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // A static register for (asset name, AssetLoadHelper) pairs.
     private static readonly Dictionary<string, AssetLoadHelper> AssetLoadHelpers = new Dictionary<string, AssetLoadHelper>();
@@ -128,9 +128,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the name of the asset.
@@ -146,9 +146,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Prevents a default instance of the <see cref="AssetLoadHelper"/> class from being created.
@@ -170,9 +170,9 @@ namespace DigitalRune.Graphics.Content
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the <see cref="AssetLoadHelper"/> for a specific asset.

@@ -9,7 +9,7 @@ using System.Windows;
 using System.Xml.Linq;
 
 
-namespace DigitalRune.Windows.Docking
+namespace MinimalRune.Windows.Docking
 {
     partial class DockSerializer
     {

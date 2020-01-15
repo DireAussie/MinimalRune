@@ -6,10 +6,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
-using DigitalRune.Windows.Docking;
+using MinimalRune.Windows.Docking;
 
 
-namespace DigitalRune.Editor
+namespace MinimalRune.Editor
 {
     public partial class EditorViewModel
     {
@@ -25,9 +25,9 @@ namespace DigitalRune.Editor
         // needs work, but this is handled by the EditorWindow code-behind.
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         // Original input bindings of the main window.
         private readonly List<InputBinding> _inputBindings = new List<InputBinding>();
@@ -40,9 +40,9 @@ namespace DigitalRune.Editor
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private void UpdateInputAndCommandBindings()
         {

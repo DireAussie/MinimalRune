@@ -7,7 +7,7 @@ using System.Globalization;
 using System.Linq;
 
 
-namespace DigitalRune
+namespace MinimalRune
 {
   /// <summary>
   /// Auxiliary methods for enumerations.

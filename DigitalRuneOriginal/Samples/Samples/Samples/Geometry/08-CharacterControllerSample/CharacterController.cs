@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using DigitalRune.Geometry;
-using DigitalRune.Geometry.Collisions;
-using DigitalRune.Geometry.Shapes;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Geometry;
+using MinimalRune.Geometry.Collisions;
+using MinimalRune.Geometry.Shapes;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 
 
 namespace Samples.Geometry
 {
-  //----------------------------------------------------------------------------
+  --------------
   // Important: 
   // This character controller is an educational example. The DigitalRune.Physics
   // library contains a more advanced, faster and more stable character controller
   // implementation.
-  //----------------------------------------------------------------------------
+  --------------
 
 
   // A basic character controller.
@@ -60,9 +60,9 @@ namespace Samples.Geometry
   // - ...
   public class CharacterController
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // The dimensions of the character controller capsule (in meter).
     private const float Height = 1.8f;
@@ -100,9 +100,9 @@ namespace Samples.Geometry
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // The collision domain that computes all collisions of the character controller.
     private readonly CollisionDomain _collisionDomain;
@@ -121,9 +121,9 @@ namespace Samples.Geometry
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // The geometric object of the character.
     public GeometricObject GeometricObject { get; private set; }
@@ -154,9 +154,9 @@ namespace Samples.Geometry
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     public CharacterController(CollisionDomain domain)
     {
@@ -174,9 +174,9 @@ namespace Samples.Geometry
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Move the character to the new desired position, sliding along obstacles and stepping 
     // automatically up and down. Gravity is applied.

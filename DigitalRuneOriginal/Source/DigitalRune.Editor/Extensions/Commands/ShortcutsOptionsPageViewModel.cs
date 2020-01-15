@@ -5,29 +5,29 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DigitalRune.Editor.Options;
-using DigitalRune.Windows;
-using DigitalRune.Windows.Framework;
+using MinimalRune.Editor.Options;
+using MinimalRune.Windows;
+using MinimalRune.Windows.Framework;
 
 
-namespace DigitalRune.Editor.Commands
+namespace MinimalRune.Editor.Commands
 {
     /// <summary>
     /// Shows the available command items and shortcuts in the Options dialog.
     /// </summary>
     internal class ShortcutsOptionsPageViewModel : OptionsPageViewModel
     {
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         private readonly IEditorService _editor;
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         internal static ShortcutsOptionsPageViewModel DesignInstance
         {
@@ -60,9 +60,9 @@ namespace DigitalRune.Editor.Commands
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ShortcutsOptionsPageViewModel"/> class.
@@ -82,9 +82,9 @@ namespace DigitalRune.Editor.Commands
 
 
 
-        //--------------------------------------------------------------
+        
 
-        //--------------------------------------------------------------
+        
 
         /// <inheritdoc/>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0")]

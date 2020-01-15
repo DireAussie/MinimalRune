@@ -6,12 +6,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using DigitalRune.Collections;
-using DigitalRune.Mathematics;
-using DigitalRune.Text;
+using MinimalRune.Collections;
+using MinimalRune.Mathematics;
+using MinimalRune.Text;
 
 
-namespace DigitalRune.Animation
+namespace MinimalRune.Animation
 {
   /// <summary>
   /// Blends two or more animations.
@@ -136,9 +136,9 @@ namespace DigitalRune.Animation
     //   thread blocks another worker thread.
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // Data per timeline.
     private struct Entry
@@ -271,9 +271,9 @@ namespace DigitalRune.Animation
 
     
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private readonly ArrayList<Entry> _entries;
     private readonly Dictionary<string, BlendAnimation> _blendAnimations;
@@ -288,9 +288,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets a value that specifies how the animation behaves when it reaches the end of its 
@@ -491,9 +491,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="BlendGroup"/> class.
@@ -519,9 +519,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     public AnimationInstance CreateInstance()
@@ -1351,9 +1351,9 @@ namespace DigitalRune.Animation
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Not implemented.

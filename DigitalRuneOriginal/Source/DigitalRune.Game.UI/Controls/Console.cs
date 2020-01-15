@@ -7,20 +7,20 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
-using DigitalRune.Game.Input;
-using DigitalRune.Game.UI.Consoles;
-using DigitalRune.Mathematics;
-using DigitalRune.Mathematics.Algebra;
+using MinimalRune.Game.Input;
+using MinimalRune.Game.UI.Consoles;
+using MinimalRune.Mathematics;
+using MinimalRune.Mathematics.Algebra;
 using Microsoft.Xna.Framework.Input;
 
-using DigitalRune.Text;
+using MinimalRune.Text;
 
 
 using Keys = System.Windows.Input.Key;
 
 
 
-namespace DigitalRune.Game.UI.Controls
+namespace MinimalRune.Game.UI.Controls
 {
   /// <summary>
   /// Provides an interactive console for debugging.
@@ -81,9 +81,9 @@ namespace DigitalRune.Game.UI.Controls
   /// </example>
   public class Console : UIControl, IConsole
   {
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     // The index of the selected history index. -1 means no history entry is selected.
     private int _historyIndex = -1;
@@ -108,9 +108,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets or sets the position of the caret.
@@ -247,9 +247,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary> 
     /// The ID of the <see cref="LineOffset"/> game object property.
@@ -328,9 +328,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes static members of the <see cref="Console"/> class.
@@ -364,9 +364,9 @@ namespace DigitalRune.Game.UI.Controls
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <inheritdoc/>
     protected override void OnLoad()
@@ -908,7 +908,7 @@ namespace DigitalRune.Game.UI.Controls
         _charWidth = font.MeasureString("A").X;
 
         // The number of visual rows and columns that fit into the console.
-        Vector4F padding = Padding;
+        Vector4 padding = Padding;
         _numberOfLines = (int)((size.Y - padding.Y - padding.W) / font.LineSpacing);
         _numberOfColumns = (int)((size.X - padding.X - padding.Z) / _charWidth);
 

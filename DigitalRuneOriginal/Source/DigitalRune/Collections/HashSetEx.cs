@@ -63,7 +63,7 @@ using System.Runtime.Serialization;
 
 
 
-namespace DigitalRune.Collections
+namespace MinimalRune.Collections
 {
 
   /// <summary>
@@ -103,9 +103,9 @@ namespace DigitalRune.Collections
     // https://github.com/mono/mono/blob/master/mcs/class/System.Core/System.Collections.Generic/HashSet.cs
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private struct Slot
     {
@@ -288,17 +288,17 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private const int InitialSize = 4;
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     private static HashSetEqualityComparer _setComparer;
 
@@ -337,9 +337,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Gets the <see cref="IEqualityComparer{T}"/> used for calculating hash codes and for 
@@ -380,9 +380,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
     /// <summary>
     /// Initializes a new instance of the <see cref="HashSetEx{T}" /> class.
@@ -468,9 +468,9 @@ namespace DigitalRune.Collections
 
 
 
-    //--------------------------------------------------------------
+    
 
-    //--------------------------------------------------------------
+    
 
 
     /// <summary>

@@ -7,7 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 
 
-namespace DigitalRune.Windows.Framework
+namespace MinimalRune.Windows.Framework
 {
     /// <summary>
     /// Represents the parameter of the <see cref="DragDropBehavior.DropCommand"/>.

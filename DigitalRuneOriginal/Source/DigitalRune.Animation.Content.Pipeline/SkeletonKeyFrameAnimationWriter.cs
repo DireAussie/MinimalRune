@@ -4,12 +4,12 @@
 
 using System;
 using System.Diagnostics;
-using DigitalRune.Animation.Character;
+using MinimalRune.Animation.Character;
 using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler;
 
 
-namespace DigitalRune.Animation.Content.Pipeline
+namespace MinimalRune.Animation.Content.Pipeline
 {
   /// <summary>
   /// Writes a <see cref="SkeletonKeyFrameAnimationWriter"/> to binary format.

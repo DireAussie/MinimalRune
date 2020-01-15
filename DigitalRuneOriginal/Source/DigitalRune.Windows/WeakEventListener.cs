@@ -7,7 +7,7 @@ using System.ComponentModel;
 using System.Windows;
 
 
-namespace DigitalRune.Windows
+namespace MinimalRune.Windows
 {
     /// <summary>
     /// Implements the <see cref="IWeakEventListener"/>.
